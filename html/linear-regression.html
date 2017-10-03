@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2017-08-27T15:26:33-07:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MFG Linear Regression</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>(function() {
+  var cx = '006592449927388994635:w0x-ox5bpme';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+})();
+</script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="http://pythontutor.com/build/pytutor-embed.bundle.js?cc25af72af" charset="utf-8"></script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\alert}[1]{\boldsymbol{\color{magenta}{#1}}}
+\newcommand{\blert}[1]{\boldsymbol{\color{blue}{#1}}}
+\newcommand{\bluetext}[1]{\color{skyblue}{#1}} 
+\delimitershortfall-1sp
+\newcommand\abs[1]{\left|#1\right|}
+\newcommand\degree[0]{^{\circ}}
+
+\renewcommand{\CancelColor}{blue}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner">
+<div class="searchwrapper"><div class="gcse-search"></div></div>
+<div class="container">
+<a id="logo-link" href="https://byoshiwara.github.io/MFG-online/" target="_blank"><img src="images/cover.png" alt="Logo image for document"></a><div class="title-container">
+<h1 class="heading"><a href="Test.html"><span class="title">Test chapter</span><span class="subtitle">test subtitle</span></a></h1>
+<p class="byline">Katherine Yoshiwara</p>
+</div>
+</div>
+</div>
+<nav id="primary-navbar" class="navbar" style=""><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index" alt="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="linear-functions.html" title="Previous" alt="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap1.html" title="Up" alt="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="chap1-summary.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="linear-functions.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="chap1.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="chap1-summary.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="index.html" data-scroll="index"><span class="title">Front Matter</span></a></h2>
+<ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="biography-1.html" data-scroll="biography-1">Author Biography</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li>
+<li><a href="preface-2.html" data-scroll="preface-2">Contributors to the 5\(^\mathrm{th}\) Edition</a></li>
+</ul>
+<h2 class="link active"><a href="chap1.html" data-scroll="chap1"><span class="codenumber">1</span><span class="title">Functions and Their Graphs</span></a></h2>
+<ul>
+<li><a href="LinMod.html" data-scroll="LinMod">Linear Models</a></li>
+<li><a href="functions.html" data-scroll="functions">Functions</a></li>
+<li><a href="graphs-of-functions.html" data-scroll="graphs-of-functions">Graphs of Functions</a></li>
+<li><a href="slope-and-rate-of-change.html" data-scroll="slope-and-rate-of-change">Slope and Rate of Change</a></li>
+<li><a href="linear-functions.html" data-scroll="linear-functions">Linear Functions</a></li>
+<li><a href="linear-regression.html" data-scroll="linear-regression" class="active">Linear Regression</a></li>
+<li><a href="chap1-summary.html" data-scroll="chap1-summary">Chapter Summary and Review</a></li>
+<li><a href="chap1-rev-projects.html" data-scroll="chap1-rev-projects">Projects for Chapter 1</a></li>
+</ul>
+<h2 class="link"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Appendices</span></a></h2>
+<ul>
+<li><a href="appendix-a.html" data-scroll="appendix-a">Algebra Skills Refresher</a></li>
+<li><a href="appendix-b.html" data-scroll="appendix-b">Using a Graphing Calculator</a></li>
+<li><a href="glossary.html" data-scroll="glossary">Glossary</a></li>
+<li><a href="properties.html" data-scroll="properties">Properties of Numbers</a></li>
+<li><a href="geometry.html" data-scroll="geometry">Geometry formulas</a></li>
+<li><a href="bibliography.html" data-scroll="bibliography">Bibliography</a></li>
+<li><a href="appendix-4.html" data-scroll="appendix-4">Answers to selected exercises</a></li>
+<li><a href="index-1.html" data-scroll="index-1">Index</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="linear-regression"><header title="Section 1.6 Linear Regression"><h1 class="heading hide-type" alt="Section 1.6 Linear Regression">
+<span class="type">Section</span><span class="codenumber">1.6</span><span class="title">Linear Regression</span><a href="linear-regression.html" class="permalink">¶ permalink</a>
+</h1></header><section class="introduction" id="introduction-48"><p id="p-2090">We have spent most of this chapter analyzing models described by graphs or equations. To create a model, however, we often start with a quantity of data. Choosing an appropriate function for a model is a complicated process. In this section, we consider only linear models and explore methods for fitting a linear function to a collection of data points. First, we fit a line through two data points.</p></section><section class="subsection" id="subsection-33"><header title="Subsection  Fitting a Line through Two Points"><h1 class="heading hide-type" alt="Subsection  Fitting a Line through Two Points">
+<span class="type">Subsection</span><span class="codenumber"></span><span class="title">Fitting a Line through Two Points</span>
+</h1></header><p id="p-2091">If we already know that two variables are related by a linear function, we can find a formula from just two data points. For example, variables that increase or decrease at a constant rate can be described by linear functions.</p>
+<article class="example-like" id="example-wine"><h5 class="heading">
+<span class="type">Example</span><span class="codenumber">1.147</span>
+</h5>
+<p id="p-2092">In 1993, Americans drank 188.6 million cases of wine. Wine consumption increased at a constant rate over the next decade, and we drank 258.3 million cases of wine in 2003. (Source: Los Angeles Times, Adams Beverage Group)</p>
+<ol id="ol-403" style="list-style-type: lower-alpha;">
+<li id="li-1300">Find a formula for wine consumption, \(W\text{,}\) in millions of cases, as a linear function of time, \(t\text{,}\) in years since 1990.</li>
+<li id="li-1301">State the slope as a rate of change. What does the slope tell us about this problem?</li>
+</ol></article><div class="posterior">
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-solution-35" id="solution-35"><span class="solution"><span class="type">Solution</span></span></a></span><span id="hk-solution-35" style="display: none;" class="tex2jax_ignore"><span class="solution"><p id="p-2093"></p>
+<ol id="ol-404" style="list-style-type: lower-alpha;">
+<li id="li-1302">We have two data points of the form \((t, W)\text{,}\) namely \((3, 188.6)\) and \((13, 258.3)\text{.}\) We use the point-slope formula to fit a line through these two points. First, we compute the slope.
+\begin{equation*}
+\frac{\Delta W}{\Delta t}=\frac {258.3 - 188.6}{13 - 3}= 6.97
+\end{equation*}
+Next, we use the slope m = \(6.97\) and either of the two data points in the point-slope formula. \begin{align*} W \amp =W_1 + m(t - t_1) \\ W \amp = 188.6 + 6.97(t - 3) \\ W \amp = 167.69 + 6.97t \end{align*} Thus, \(W = f (t) = 167.69 + 6.97t\text{.}\)</li>
+<li id="li-1303">The slope gives us the rate of change of the function, and the units of the variables can help us interpret the slope in context.
+\begin{equation*}
+\frac{\Delta W}{\Delta t}= 
+\frac{258.3 - 188.6 \text{ millions of cases}}{13 - 3\text{ years}}
+= 6.97 \text{ millions of cases / year}
+\end{equation*}
+Over the 10 years between 1993 and 2003, wine consumption in the United States increased at a rate of 6.97 million cases per year.</li>
+</ol></span></span>
+</div>
+<article class="assemblage-like" id="assemblage-19"><h5 class="heading"><span class="title">To Fit a Line through Two Points:</span></h5>
+<p id="p-2094"></p>
+<ol id="ol-405" style="list-style-type: decimal;">
+<li id="li-1304"><p id="p-2095">Compute the slope between the two points.</p></li>
+<li id="li-1305">
+<p id="p-2096">Substitute the slope and either point into the point-slope formula</p>
+\begin{equation*}
+y = y_1 + m(x - x_1)
+\end{equation*}
+</li>
+</ol></article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-exercise-burglaries" id="exercise-burglaries"><article class="exercise-like"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">1.148</span>
+</h5></article></a></div>
+<div id="hk-exercise-burglaries" style="display: none;" class="tex2jax_ignore"><article class="exercise-like"><p id="p-2097">In 1991, there were 64.6 burglaries per 1000 households in the United States. The number of burglaries reported annually declined at a roughly constant rate over the next decade, and in 2001 there were 28.7 burglaries per 1000 households. (Source: U.S. Department of Justice) </p>
+<ol id="ol-406" style="list-style-type: lower-alpha;">
+<li id="li-1306"><p id="p-2098">Find a function for the number of burglaries, \(B\text{,}\) as a function of time, \(t\text{,}\) in years, since 1990.</p></li>
+<li id="li-1307"><p id="p-2099">State the slope as a rate of change. What does the slope tell us about this problem?</p></li>
+</ol></article></div></section><section class="subsection" id="subsection-34"><header title="Subsection  Scatterplots"><h1 class="heading hide-type" alt="Subsection  Scatterplots">
+<span class="type">Subsection</span><span class="codenumber"></span><span class="title">Scatterplots</span>
+</h1></header><p id="p-2103">Empirical data points in a linear relation may not lie exactly on a line. There are many factors that can affect experimental data, including measurement error, the influence of environmental conditions, and the presence of related variable quantities.</p>
+<article class="example-like" id="example-gas-mileage"><h5 class="heading">
+<span class="type">Example</span><span class="codenumber">1.149</span>
+</h5>
+<p id="p-2104">A consumer group wants to test the gas mileage of a new model SUV. They test-drive six vehicles under similar conditions and record the distance each drove on various amounts of gasoline.</p>
+<p id="p-2105"><div class="sidebyside" style="" id="sidebyside-133"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r1 l1 t3 lines">Gasoline used (gal)</td>
+<td class="c m b1 r1 l0 t3 lines">\(9.6\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(11.3\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(8.8\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(5.2\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(10.3\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(6.7\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">Miles driven</td>
+<td class="c m b1 r1 l0 t0 lines">\(155.8\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(183.6\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(139.6\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(80.4\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(167.1\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(99.7\)</td>
+</tr>
+</table></div></div></div> </p>
+<ol id="ol-408" style="list-style-type: lower-alpha;">
+<li id="li-1310"><p id="p-2106">Are the data linear?</p></li>
+<li id="li-1311"><p id="p-2107">Draw a line that fits the data.</p></li>
+<li id="li-1312"><p id="p-2108">What does the slope of the line tell us about the data?</p></li>
+</ol></article><div class="posterior">
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-solution-36" id="solution-36"><span class="solution"><span class="type">Solution</span></span></a></span><span id="hk-solution-36" style="display: none;" class="tex2jax_ignore"><span class="solution"><p id="p-2109"></p>
+<ol id="ol-409" style="list-style-type: lower-alpha;">
+<li id="li-1313">
+<p id="p-2110">No, the data are not strictly linear. If we compute the slopes between successive data points, the values are not constant. We can see from an accurate plot of the data, shown in <a knowl="./knowl/fig-gas-mileage.html" knowl-id="xref-fig-gas-mileage" alt="Figure 1.150 " title="Figure 1.150 ">Figure 1.150</a>, that the points lie close to, but not precisely on, a straight line.</p>
+<p id="p-2111"><div class="sidebyside" style="" id="sidebyside-134">
+<div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><object type="image/svg+xml" style="width:100%; margin:auto; display:block;" data="images/fig-gas-mileage.svg" alt="gas mileage"><p style="margin:auto">&lt;&lt;SVG image is unavailable, or your browser cannot render it&gt;&gt;</p></object></div>
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><object type="image/svg+xml" style="width:100%; margin:auto; display:block;" data="images/fig-gas-mileage2.svg" alt="gas mileage"><p style="margin:auto">&lt;&lt;SVG image is unavailable, or your browser cannot render it&gt;&gt;</p></object></div>
+</div>
+<div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<figcaption class="sbscaption" style="width:47.3684210526316%;"><span class="heading">Figure</span><span class="codenumber">1.150</span></figcaption><figcaption class="sbscaption" style="width:47.3684210526316%;"><span class="heading">Figure</span><span class="codenumber">1.151</span></figcaption>
+</div>
+</div></p>
+</li>
+<li id="li-1314">We would like to draw a line that comes as close as possible to all the data points, even though it may not pass precisely through any of them. In particular, we try to adjust the line so that we have the same number of data points above the line and below the line. One possible solution is shown in <a knowl="./knowl/fig-gas-mileage2.html" knowl-id="xref-fig-gas-mileage2" alt="Figure 1.151 " title="Figure 1.151 ">Figure 1.151</a>.</li>
+<li id="li-1315">To compute the slope of the our estimated line, we first choose two points on the line. Our line appears to pass through one of the data points,\((8.8, 139.6)\text{.}\) We look for a second point on the line whose coordinates are easy to read, perhaps \((6.5,100)\text{.}\) The slope is
+\begin{equation*}
+m = \frac{139.6 - 100}{8.8 - 6.5}= 17.2\text{ miles per gallon}
+\end{equation*}
+According to our data, the SUV gets about 17.2 miles to the gallon.</li>
+</ol></span></span>
+</div>
+<article class="remark-like" id="warning-3"><h5 class="heading">
+<span class="type">Caution</span><span class="codenumber">1.152</span>
+</h5>
+<p id="p-2112">To find the slope of your estimated line, be sure to choose points <!--Style me with CSS--><em>on the line</em>; do not choose any of the data points (unless they happen to lie on your line).</p></article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-exercise-scatterplot" id="exercise-scatterplot"><article class="exercise-like"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">1.153</span>
+</h5></article></a></div>
+<div id="hk-exercise-scatterplot" style="display: none;" class="tex2jax_ignore"><article class="exercise-like"><p id="p-2113"></p>
+<ol id="ol-410" style="list-style-type: lower-alpha;">
+<li id="li-1316"><p id="p-2114">Plot the data points. Do the points lie on a line?</p></li>
+<li id="li-1317"><p id="p-2115">Draw a line that fits the data.</p></li>
+</ol>
+<p id="p-2116"><div class="sidebyside" style="" id="sidebyside-135"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r1 l1 t3 lines">\(x\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(1.49\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(3.68\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(4.95\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(5.49\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(7.88\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(8.41\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(y\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(2.69\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(3.7\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(4.6\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(5.2\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(7.2\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(7.3\)</td>
+</tr>
+</table></div></div></div></p></article></div>
+<p id="p-2120">The graph in <a knowl="./knowl/example-gas-mileage.html" knowl-id="xref-example-gas-mileage" alt="Example 1.149 " title="Example 1.149 ">Example 1.149</a> is called a <em class="terminology">scatterplot</em>. The points on a scatterplot may or may not show some sort of pattern. Consider the three plots in <a knowl="./knowl/fig-scatterplots.html" knowl-id="xref-fig-scatterplots" alt="Figure 1.154 " title="Figure 1.154 ">Figure 1.154</a>. </p>
+<ul id="ul-13" style="list-style-type: disc;">
+<li id="li-1320">In <a knowl="./knowl/fig-scatterplots.html" knowl-id="xref-fig-scatterplots" alt="Figure 1.154 " title="Figure 1.154 ">Figure 1.154</a>a, the data points resemble a cloud of gnats; there is no apparent pattern to their locations.</li>
+<li id="li-1321">In <a knowl="./knowl/fig-scatterplots.html" knowl-id="xref-fig-scatterplots" alt="Figure 1.154 " title="Figure 1.154 ">Figure 1.154</a>b, the data follow a generally decreasing trend, but certainly do not all lie on the same line.</li>
+<li id="li-1322">The points in <a knowl="./knowl/fig-scatterplots.html" knowl-id="xref-fig-scatterplots" alt="Figure 1.154 " title="Figure 1.154 ">Figure 1.154</a>c are even more organized; they seem to lie very close to an imaginary line.</li>
+</ul>
+<figure class="figure-like" id="fig-scatterplots"><object type="image/svg+xml" style="width:80%; margin:auto; display:block;" data="images/fig-scatterplots.svg" alt="three scatterplots"><p style="margin:auto">&lt;&lt;SVG image is unavailable, or your browser cannot render it&gt;&gt;</p></object><figcaption><span class="heading">Figure</span><span class="codenumber">1.154</span></figcaption></figure><p id="p-2121">If the data in a scatterplot are roughly linear, we can estimate the location of an imaginary <em class="terminology">line of best</em> fit that passes as close as possible to the data points. We can then use this line to make predictions about the data.</p></section><section class="subsection" id="subsection-35"><header title="Subsection  Linear Regression"><h1 class="heading hide-type" alt="Subsection  Linear Regression">
+<span class="type">Subsection</span><span class="codenumber"></span><span class="title">Linear Regression</span>
+</h1></header><p id="p-2122">One measure of a person's physical fitness is the <em class="terminology">body mass index</em>, or BMI. Your BMI is the ratio of your weight in kilograms to the square of your height in centimeters. Thus, thinner people have lower BMI scores, and fatter people have higher scores. The Centers for Disease Control considers a BMI between 18.5 and 24.9 to be healthy.</p>
+<p id="p-2123">The points on the scatterplot in <a knowl="./knowl/fig-BMI.html" knowl-id="xref-fig-BMI" alt="Figure 1.155 " title="Figure 1.155 ">Figure 1.155</a> show the BMI of Miss America from 1918 to 1998. From the data in the scatterplot, can we see a trend in Americans’ ideal of female beauty?</p>
+<figure class="figure-like" id="fig-BMI"><object type="image/svg+xml" style="width:80%; margin:auto; display:block;" data="images/fig-BMI.svg" alt="Miss America BMI"><p style="margin:auto">&lt;&lt;SVG image is unavailable, or your browser cannot render it&gt;&gt;</p></object><figcaption><span class="heading">Figure</span><span class="codenumber">1.155</span></figcaption></figure><article class="example-like" id="example-BMI"><h5 class="heading">
+<span class="type">Example</span><span class="codenumber">1.156</span>
+</h5>
+<p id="p-2124"></p>
+<ol id="ol-412" style="list-style-type: lower-alpha;">
+<li id="li-1323">Estimate a line of best fit for the scatterplot in <a knowl="./knowl/fig-BMI.html" knowl-id="xref-fig-BMI" alt="Figure 1.155 " title="Figure 1.155 ">Figure 1.155</a>. (Source: http://www.pbs.org)</li>
+<li id="li-1324">Use your line to estimate the BMI of Miss America 1980.</li>
+</ol></article><div class="posterior">
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-solution-37" id="solution-37"><span class="solution"><span class="type">Solution</span></span></a></span><span id="hk-solution-37" style="display: none;" class="tex2jax_ignore"><span class="solution"><p id="p-2125"></p>
+<ol id="ol-413" style="list-style-type: lower-alpha;">
+<li id="li-1325">We draw a line that fits the data points as best we can, as shown in <a knowl="./knowl/fig-BMI2.html" knowl-id="xref-fig-BMI2" alt="Figure 1.157 " title="Figure 1.157 ">Figure 1.157</a>. (Note that we have set \(t = 0\) in 1920 on this graph.) We try to end up with roughly equal numbers of data points above and below our line. <figure class="figure-like" id="fig-BMI2"><object type="image/svg+xml" style="width:80%; margin:auto; display:block;" data="images/fig-BMI2.svg" alt="Miss America BMI"><p style="margin:auto">&lt;&lt;SVG image is unavailable, or your browser cannot render it&gt;&gt;</p></object><figcaption><span class="heading">Figure</span><span class="codenumber">1.157</span></figcaption></figure>
+</li>
+<li id="li-1326">We see that when \(t = 60\) on this line, the \(y\)-value is approximately 18.3. We therefore estimate that Miss America 1980 had a BMI of 18.3. (Her actual BMI was 17.85.)</li>
+</ol></span></span>
+</div>
+<div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-hominid-brains" id="hominid-brains"><article class="exercise-like"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">1.158</span>
+</h5></article></a></div>
+<div id="hk-hominid-brains" style="display: none;" class="tex2jax_ignore"><article class="exercise-like"><p id="p-2126">Human brains consume a large amount of energy, about 16 times as much as muscle tissue per unit weight. In fact, brain metabolism accounts for about 25% of an adult human’s energy needs, as compared to about 5% for other mammals.</p>
+<p id="p-2127">As hominid species evolved, their brains required larger and larger amounts of energy, as shown in <a knowl="./knowl/fig-hominid-brains.html" knowl-id="xref-fig-hominid-brains" alt="Figure 1.159 " title="Figure 1.159 ">Figure 1.159</a>. (Source: Scientific American, December 2002) <figure class="figure-like" id="fig-hominid-brains"><object type="image/svg+xml" style="width:55%; margin:auto; display:block;" data="images/fig-hominid-brains.svg" alt="hominid brains"><p style="margin:auto">&lt;&lt;SVG image is unavailable, or your browser cannot render it&gt;&gt;</p></object><figcaption><span class="heading">Figure</span><span class="codenumber">1.159</span></figcaption></figure> </p>
+<ol id="ol-414" style="list-style-type: lower-alpha;">
+<li id="li-1327">Draw a line of best fit through the data points.</li>
+<li id="li-1328">Estimate the amount of energy used by the brain of a hominid species that lived three million years ago.</li>
+</ol></article></div>
+<p id="p-2130">The process of predicting an output value based on a straight line that fits the data is called <em class="terminology">linear regression</em>, and the line itself is called the <em class="terminology">regression line</em>. The equation of the regression line is usually used (instead of a graph) to predict values.</p>
+<article class="example-like" id="example-BMI-regression"><h5 class="heading">
+<span class="type">Example</span><span class="codenumber">1.160</span>
+</h5>
+<p id="p-2131"></p>
+<ol id="ol-416" style="list-style-type: lower-alpha;">
+<li id="li-1331">Find the equation of the regression line in <a knowl="./knowl/example-BMI.html" knowl-id="xref-example-BMI" alt="Example 1.156 " title="Example 1.156 ">Example 1.156</a>, <a knowl="./knowl/fig-BMI.html" knowl-id="xref-fig-BMI" alt="Figure 1.155 " title="Figure 1.155 ">Figure 1.155</a>.</li>
+<li id="li-1332">Use the regression equation to predict the BMI of Miss America 1980.</li>
+</ol></article><div class="posterior">
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-solution-38" id="solution-38"><span class="solution"><span class="type">Solution</span></span></a></span><span id="hk-solution-38" style="display: none;" class="tex2jax_ignore"><span class="solution"><p id="p-2132"></p>
+<ol id="ol-417" style="list-style-type: lower-alpha;">
+<li id="li-1333">We first calculate the slope by choosing two points on the regression line we drew in <a knowl="./knowl/fig-BMI2.html" knowl-id="xref-fig-BMI2" alt="Figure 1.157 " title="Figure 1.157 ">Figure 1.157</a>. The points we choose are not necessarily any of the original data points; instead they should be points on the regression line itself. The line appears to pass through the points \((17, 20)\) and \((67, 18)\text{.}\) The slope of the line is then
+\begin{equation*}
+m = \frac{18 - 20}{67 - 17}\approx -0.04
+\end{equation*}
+Now we use the point-slope formula to find the equation of the line. (If you need to review the point-slope formula, see <a href="linear-functions.html" alt="Section 1.5 Linear Functions" title="Section 1.5 Linear Functions">Section 1.5</a>.) We substitute \(m = -0.04\) and use either of the two points for \((x_1, y_1)\text{;}\) we will choose \((17, 20)\text{.}\) The equation of the regression line is \begin{align*} y \amp = y_1 + m(x - x_1)\\ y \amp = 20-0.04(x-17) \amp \amp \text{Simplify.}\\ y \amp = 20.68 - 0.04t\\ \end{align*}</li>
+<li id="li-1334">We will use the regression equation to make our prediction. For Miss America 1980, \(t = 60\) and
+\begin{equation*}
+y = 20.68 - 0.04(60) = 18.28
+\end{equation*}
+This value agrees well with the estimate we made in <a knowl="./knowl/example-BMI.html" knowl-id="xref-example-BMI" alt="Example 1.156 " title="Example 1.156 ">Example 1.156</a>.</li>
+</ol></span></span>
+</div>
+<div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-exercise-manatees" id="exercise-manatees"><article class="exercise-like"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">1.161</span>
+</h5></article></a></div>
+<div id="hk-exercise-manatees" style="display: none;" class="tex2jax_ignore"><article class="exercise-like"><p id="p-2133">The number of manatees killed by watercraft in Florida waters has been increasing since 1975. Data are given at 5-year intervals in the table. (Source: Florida Fish and Wildlife Conservation Commission) <div class="sidebyside" style="" id="sidebyside-137">
+<div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel fixed-width" style="width:50%;justify-content:center;"><table>
+<tr>
+<td class="c m b1 r1 l1 t3 lines">Year</td>
+<td class="c m b1 r1 l0 t3 lines">Manatee deaths</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(1975\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(6\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(1980\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(16\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(1985\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(33\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(1990\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(47\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(1995\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(42\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(2000\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(78\)</td>
+</tr>
+</table></div>
+<div class="sbspanel" style="width:50%;justify-content:center;"><object type="image/svg+xml" style="width:100%; margin:auto; display:block;" data="images/fig-manatees.svg" alt="manatee deaths"><p style="margin:auto">&lt;&lt;SVG image is unavailable, or your browser cannot render it&gt;&gt;</p></object></div>
+</div>
+<div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<figcaption class="sbscaption" style="width:50%;"></figcaption><figcaption class="sbscaption" style="width:50%;"><span class="heading">Figure</span><span class="codenumber">1.162</span></figcaption>
+</div>
+</div> </p>
+<ol id="ol-418" style="list-style-type: lower-alpha;">
+<li id="li-1335">Draw a regression line through the data points shown in <a knowl="./knowl/fig-manatees.html" knowl-id="xref-fig-manatees" alt="Figure 1.162 " title="Figure 1.162 ">Figure 1.162</a>.</li>
+<li id="li-1336">Use the regression equation to estimate the number of manatees killed by watercraft in 1998.</li>
+</ol></article></div></section><section class="subsection" id="subsection-36"><header title="Subsection  Linear Interpolation and Extrapolation"><h1 class="heading hide-type" alt="Subsection  Linear Interpolation and Extrapolation">
+<span class="type">Subsection</span><span class="codenumber"></span><span class="title">Linear Interpolation and Extrapolation</span>
+</h1></header><p id="p-2138">Using a regression line to estimate values between known data points is called <em class="terminology">interpolation</em>. Making predictions beyond the range of known data is called <em class="terminology">extrapolation</em>.</p>
+<article class="example-like" id="example-BMI-extrapolation"><h5 class="heading">
+<span class="type">Example</span><span class="codenumber">1.163</span>
+</h5>
+<p id="p-2139"></p>
+<ol id="ol-420" style="list-style-type: lower-alpha;">
+<li id="li-1340">Use linear interpolation to estimate the BMI of Miss America 1960.</li>
+<li id="li-1341">Use linear extrapolation to predict the BMI of Miss America 2001.</li>
+</ol></article><div class="posterior">
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-solution-39" id="solution-39"><span class="solution"><span class="type">Solution</span></span></a></span><span id="hk-solution-39" style="display: none;" class="tex2jax_ignore"><span class="solution"><p id="p-2140"></p>
+<ol id="ol-421" style="list-style-type: lower-alpha;">
+<li id="li-1342">For 1960, we substitute \(t = 40\) into the regression equation we found in <a knowl="./knowl/example-BMI-regression.html" knowl-id="xref-example-BMI-regression" alt="Example 1.160 " title="Example 1.160 ">Example 1.160</a>.
+\begin{equation*}
+y = 20.68 - 0.04(40) = 19.08
+\end{equation*}
+We estimate that Miss America 1960 had a BMI of 19.08. (Her BMI was actually 18.79.)</li>
+<li id="li-1343">For 2001, we substitute \(t = 81\) into the regression equation.
+\begin{equation*}
+y = 20.68 - 0.04(81) = 17.44
+\end{equation*}
+</li>
+</ol>
+<p> <p id="p-2141">Our model predicts that Miss America 2001 had a BMI of 17.44. In fact, her BMI was 20.25. By the late 1990s, public concern over the self-image of young women had led to a reversal of the trend toward ever-thinner role models.</p></p></span></span>
+</div>
+<p id="p-2142"><a knowl="./knowl/example-BMI-extrapolation.html" knowl-id="xref-example-BMI-extrapolation" alt="Example 1.163 " title="Example 1.163 ">Example 1.163</a>b illustrates an important fact about extrapolation: If we try to extrapolate too far, we may get unreasonable results. For example, if we use our model to predict the BMI of Miss America 2520 (when \(t = 600\)), we get</p>
+\begin{equation*}
+y = 20.68 - 0.04(600) =-3.32
+\end{equation*}
+<p>Even if the Miss America pageant is still operating in 600 years, the winner cannot have a negative BMI. Our linear model provides a fair approximation for 1920–1990, but if we try to extrapolate too far beyond the known data, the model may no longer apply.</p>
+<p id="p-2143">We can also use interpolation and extrapolation to make estimates for nonlinear functions. Sometimes a variable relationship is not linear, but a portion of its graph can be approximated by a line.</p>
+<div class="sidebyside" style="" id="sidebyside-138">
+<div class="sbsrow" style="margin-left:3.75%;margin-right:3.75%;">
+<div class="sbspanel" style="width:37.8378378378378%;justify-content:flex-start;"><object type="image/svg+xml" style="width:100%; margin:auto; display:block;" data="images/fig-Emily-height.svg" alt="Emily's height"><p style="margin:auto">&lt;&lt;SVG image is unavailable, or your browser cannot render it&gt;&gt;</p></object></div>
+<div class="sbspanel" style="width:54.0540540540541%;justify-content:flex-start;"><p id="p-2144">The graph in <a knowl="./knowl/fig-Emily-height.html" knowl-id="xref-fig-Emily-height" alt="Figure 1.164 " title="Figure 1.164 ">Figure 1.164</a> shows a child’s height each month. The graph is not linear because her rate of growth is not constant; her growth slows down as she approaches her adult height. However, over a short time interval the graph is close to a line, and that line can be used to approximate the coordinates of points on the curve.</p></div>
+</div>
+<div class="sbsrow" style="margin-left:3.75%;margin-right:3.75%;">
+<figcaption class="sbscaption" style="width:37.8378378378378%;"><span class="heading">Figure</span><span class="codenumber">1.164</span></figcaption><figcaption class="sbscaption" style="width:54.0540540540541%;"></figcaption>
+</div>
+</div>
+<div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-exercise-Emily-height" id="exercise-Emily-height"><article class="exercise-like"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">1.165</span>
+</h5></article></a></div>
+<div id="hk-exercise-Emily-height" style="display: none;" class="tex2jax_ignore"><article class="exercise-like"><p id="p-2145">Emily was 82 centimeters tall at age 36 months and 88 centimeters tall at age 48 months. </p>
+<ol id="ol-422" style="list-style-type: lower-alpha;">
+<li id="li-1344"><p id="p-2146">Find a linear equation that approximates Emily's height in terms of her age over the given time interval.</p></li>
+<li id="li-1345"><p id="p-2147">Use linear interpolation to estimate Emily’s height when she was 38 months old, and extrapolate to predict her height at age 50 months.</p></li>
+<li id="li-1346"><p id="p-2148">Predict Emily's height at age 25 (300 months). Is your answer reasonable?</p></li>
+</ol></article></div>
+<p id="p-2153">Estimating a line of best fit is a subjective process. Rather than base their estimates on such a line, statisticians often use the <em class="terminology">least squares regression line</em>.</p>
+<div class="sidebyside" style="" id="sidebyside-139">
+<div class="sbsrow" style="margin-left:5.75%;margin-right:5.75%;">
+<div class="sbspanel" style="width:24.8587570621469%;justify-content:flex-start;"><object type="image/svg+xml" style="width:100%; margin:auto; display:block;" data="images/fig-least-squares.svg" alt="least squares line"><p style="margin:auto">&lt;&lt;SVG image is unavailable, or your browser cannot render it&gt;&gt;</p></object></div>
+<div class="sbspanel" style="width:62.1468926553672%;justify-content:flex-start;"><p id="p-2154">This regression line minimizes the sum of the squares of all the vertical distances between the data points and the corresponding points on the line (see <a knowl="./knowl/fig-least-squares.html" knowl-id="xref-fig-least-squares" alt="Figure 1.166 " title="Figure 1.166 ">Figure 1.166</a>). Many calculators are programmed to find the least squares regression line, using an algorithm that depends only on the data, not on the appearance of the graph.</p></div>
+</div>
+<div class="sbsrow" style="margin-left:5.75%;margin-right:5.75%;">
+<figcaption class="sbscaption" style="width:24.8587570621469%;"><span class="heading">Figure</span><span class="codenumber">1.166</span></figcaption><figcaption class="sbscaption" style="width:62.1468926553672%;"></figcaption>
+</div>
+</div>
+<article class="remark-like" id="technology-8"><h5 class="heading">
+<span class="type">Technology</span><span class="codenumber">1.167</span><span class="title">Using a Calculator for Linear Regression</span>
+</h5>
+<figure class="figure-like" id="fig-GC-lists"><object type="image/svg+xml" style="width:60%; margin:auto; display:block;" data="images/fig-GC-lists.svg" alt="least squares line"><p style="margin:auto">&lt;&lt;SVG image is unavailable, or your browser cannot render it&gt;&gt;</p></object><figcaption><span class="heading">Figure</span><span class="codenumber">1.168</span></figcaption></figure><p id="p-2155">You can use a graphing calculator to make a scatterplot, find a regression line, and graph the regression line with the data points. On the TI-83 calculator, we use the statistics mode, which you can access by pressing <tt class="code-inline tex2jax_ignore">STAT</tt>. You will see a display that looks like <a knowl="./knowl/fig-GC-lists.html" knowl-id="xref-fig-GC-lists" alt="Figure 1.168 " title="Figure 1.168 ">Figure 1.168</a>a. Choose \(1\) to Edit (enter or alter) data. Now follow the instructions in <a knowl="./knowl/example-GC-regression.html" knowl-id="xref-example-GC-regression" alt="Example 1.169 " title="Example 1.169 ">Example 1.169</a> for using your calculator’s statistics features.</p></article><article class="example-like" id="example-GC-regression"><h5 class="heading">
+<span class="type">Example</span><span class="codenumber">1.169</span>
+</h5>
+<p id="p-2156"></p>
+<ol id="ol-424" style="list-style-type: lower-alpha;">
+<li id="li-1350">Find the equation of the least squares regression line for the following data:
+\begin{equation*}
+(10, 12), (11, 14), (12, 14), (12, 16), (14, 20)
+\end{equation*}
+</li>
+<li id="li-1351">Plot the data points and the least squares regression line on the same axes.</li>
+</ol></article><div class="posterior">
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-solution-40" id="solution-40"><span class="solution"><span class="type">Solution</span></span></a></span><span id="hk-solution-40" style="display: none;" class="tex2jax_ignore"><span class="solution"><p id="p-2157"></p>
+<ol id="ol-425" style="list-style-type: lower-alpha;">
+<li id="li-1352">We must first enter the data. Press <tt class="code-inline tex2jax_ignore">STAT</tt><tt class="code-inline tex2jax_ignore">ENTER</tt> to select Edit. If there are data in column \(L_1\) or \(L_2\text{,}\) clear them out: Use the <tt class="code-inline tex2jax_ignore">↑</tt> key to select \(L_1\text{,}\) press <tt class="code-inline tex2jax_ignore">CLEAR</tt>, then do the same for \(L_2\text{.}\) Enter the \(x\)-coordinates of the data points in the \(L_1\) column and enter the \(y\)-coordinates in the \(L_2\) column, as shown in <a knowl="./knowl/fig-GC-regression.html" knowl-id="xref-fig-GC-regression" alt="Figure 1.170 " title="Figure 1.170 ">Figure 1.170</a>a. <figure class="figure-like" id="fig-GC-regression"><object type="image/svg+xml" style="width:70%; margin:auto; display:block;" data="images/fig-GC-regression.svg" alt="GC regression windows"><p style="margin:auto">&lt;&lt;SVG image is unavailable, or your browser cannot render it&gt;&gt;</p></object><figcaption><span class="heading">Figure</span><span class="codenumber">1.170</span></figcaption></figure> Now we are ready to find the regression equation for our data. Press <tt class="code-inline tex2jax_ignore">STAT</tt><tt class="code-inline tex2jax_ignore">→</tt> 4 to select linear regression, or LinReg (ax + b), then press <tt class="code-inline tex2jax_ignore">ENTER</tt>. The calculator will display the equation \(y = ax + b\) and the values for \(a\) and \(b\text{,}\) as shown in <a knowl="./knowl/fig-GC-regression.html" knowl-id="xref-fig-GC-regression" alt="Figure 1.170 " title="Figure 1.170 ">Figure 1.170</a>b. You should find that your regression line is approximately \(y = 1.95x - 7.86\text{.}\)</li>
+<li id="li-1353">First, we first clear out any old definitions in the list. Position the cursor after \(Y_1 =\) and copy in the regression equation as follows: Press <tt class="code-inline tex2jax_ignore">VARS</tt>\(5\)<tt class="code-inline tex2jax_ignore">→</tt><tt class="code-inline tex2jax_ignore">→</tt><tt class="code-inline tex2jax_ignore">ENTER</tt>. To draw a scatterplot, press <tt class="code-inline tex2jax_ignore">2nd</tt><tt class="code-inline tex2jax_ignore">Y=</tt>\(1\) and set the Plot1 menu as shown in <a knowl="./knowl/fig-GC-regression2.html" knowl-id="xref-fig-GC-regression2" alt="Figure 1.171 " title="Figure 1.171 ">Figure 1.171</a>a. Finally, press <tt class="code-inline tex2jax_ignore">ZOOM</tt> \(9\) to see the scatterplot of the data and the regression line. The graph is shown in <a knowl="./knowl/fig-GC-regression2.html" knowl-id="xref-fig-GC-regression2" alt="Figure 1.171 " title="Figure 1.171 ">Figure 1.171</a>b. <figure class="figure-like" id="fig-GC-regression2"><object type="image/svg+xml" style="width:70%; margin:auto; display:block;" data="images/fig-GC-regression2.svg" alt="GC regression windows"><p style="margin:auto">&lt;&lt;SVG image is unavailable, or your browser cannot render it&gt;&gt;</p></object><figcaption><span class="heading">Figure</span><span class="codenumber">1.171</span></figcaption></figure>
+</li>
+</ol></span></span>
+</div>
+<article class="remark-like" id="warning-4"><h5 class="heading">
+<span class="type">Caution</span><span class="codenumber">1.172</span>
+</h5>
+<p id="p-2158">When you are through with the scatterplot, press <tt class="code-inline tex2jax_ignore">Y=</tt><tt class="code-inline tex2jax_ignore">↑</tt><tt class="code-inline tex2jax_ignore">ENTER</tt> to turn off the Stat Plot. If you neglect to do this, the calculator will continue to show the scatterplot even after you ask it to plot a new equation.</p></article>   <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-exercise-GC-regression" id="exercise-GC-regression"><article class="exercise-like"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">1.173</span>
+</h5></article></a></div>
+<div id="hk-exercise-GC-regression" style="display: none;" class="tex2jax_ignore"><article class="exercise-like"><p id="p-2159"></p>
+<ol id="ol-426" style="list-style-type: lower-alpha;">
+<li id="li-1354"><p id="p-2160">Use your calculator’s statistics features to find the least squares regression equation for the data in <a knowl="./knowl/exercise-scatterplot.html" knowl-id="xref-exercise-scatterplot" alt="Exercise 1.153 " title="Exercise 1.153 ">Exercise 1.153</a>.</p></li>
+<li id="li-1355"><p id="p-2161">Plot the data and the graph of the regression equation.</p></li>
+</ol></article></div></section><section class="subsection" id="summary-1-6"><header title="Subsection  Section Summary"><h1 class="heading hide-type" alt="Subsection  Section Summary">
+<span class="type">Subsection</span><span class="codenumber"></span><span class="title">Section Summary</span><a href="linear-regression.html#summary-1-6" class="permalink">¶ permalink</a>
+</h1></header><section class="subsubsection" id="subsubsection-21"><header title="Subsubsection  Vocabulary"><h1 class="heading hide-type" alt="Subsubsection  Vocabulary">
+<span class="type">Subsubsection</span><span class="codenumber"></span><span class="title">Vocabulary</span>
+</h1></header><p id="p-2165">Look up the definitions of new terms in the Glossary. </p>
+<ul id="ul-14" class="cols3" style="list-style-type: disc;">
+<li id="li-1358" style="width:32.6666666666667%; float:left;"><p id="p-2166">Scatterplot</p></li>
+<li id="li-1359" style="width:32.6666666666667%; float:left;"><p id="p-2167">Least squares regression line</p></li>
+<li id="li-1360" style="width:32.6666666666667%; float:left;"><p id="p-2168">Extrapolate</p></li>
+<li id="li-1361" style="width:32.6666666666667%; float:left;"><p id="p-2169">Regression line</p></li>
+<li id="li-1362" style="width:32.6666666666667%; float:left;"><p id="p-2170">Interpolate</p></li>
+<li id="li-1363" style="width:32.6666666666667%; float:left;"><p id="p-2171">Linear regression</p></li>
+</ul></section><section class="subsubsection" id="subsubsection-22"><header title="Subsubsection  CONCEPTS"><h1 class="heading hide-type" alt="Subsubsection  CONCEPTS">
+<span class="type">Subsubsection</span><span class="codenumber"></span><span class="title">CONCEPTS</span>
+</h1></header><p id="p-2172"></p>
+<ol id="ol-428" style="list-style-type: decimal;">
+<li id="li-1364"><p id="p-2173">Data points may not lie exactly on the graph of an equation.</p></li>
+<li id="li-1365"><p id="p-2174">Points in a scatterplot may or may not exhibit a pattern.</p></li>
+<li id="li-1366"><p id="p-2175">We can approximate a linear pattern by a regression line.</p></li>
+<li id="li-1367"><p id="p-2176">We can use interpolation or extrapolation to make estimates and predictions.</p></li>
+<li id="li-1368"><p id="p-2177">If we extrapolate too far beyond the known data, we may get unreasonable results.</p></li>
+</ol></section><section class="subsubsection" id="subsubsection-23"><header title="Subsubsection  STUDY QUESTIONS"><h1 class="heading hide-type" alt="Subsubsection  STUDY QUESTIONS">
+<span class="type">Subsubsection</span><span class="codenumber"></span><span class="title">STUDY QUESTIONS</span>
+</h1></header><p id="p-2178"></p>
+<ol id="ol-429" style="list-style-type: decimal;">
+<li id="li-1369"><p id="p-2179">What is a regression line?</p></li>
+<li id="li-1370"><p id="p-2180">State two formulas you will need to calculate the equation of a line through two points.</p></li>
+<li id="li-1371"><p id="p-2181">Explain the difference between interpolation and extrapolation.</p></li>
+<li id="li-1372"><p id="p-2182">In general, should you have more confidence in figures obtained by interpolation or by extrapolation? Why?</p></li>
+</ol></section><section class="subsubsection" id="subsubsection-24"><header title="Subsubsection  SKILLS"><h1 class="heading hide-type" alt="Subsubsection  SKILLS">
+<span class="type">Subsubsection</span><span class="codenumber"></span><span class="title">SKILLS</span>
+</h1></header><p id="p-2183">Practice each skill in the <a href="linear-regression.html#section-1-6-exercises" alt="Exercises  Homework" title="Exercises  Homework">Homework </a> problems listed. </p>
+<ol id="ol-430" style="list-style-type: decimal;">
+<li id="li-1373"><p id="p-2184">Find the equation of a line through two points: #1–6, 29–36</p></li>
+<li id="li-1374"><p id="p-2185">Draw a line of best fit: #7–18</p></li>
+<li id="li-1375"><p id="p-2186">Find the equation of a regression line: #11–28, 37–40</p></li>
+<li id="li-1376"><p id="p-2187">Use interpolation and extrapolation to make predictions: #11–40</p></li>
+</ol></section></section><section class="exercises" id="section-1-6-exercises"><header title="Exercises  Homework"><h1 class="heading hide-type" alt="Exercises  Homework">
+<span class="type">Subsection</span><span class="codenumber"></span><span class="title">Homework</span><a href="linear-regression.html#section-1-6-exercises" class="permalink">¶ permalink</a>
+</h1></header><div class="exercisegroup" id="exercisegroup-46">
+<article class="introduction" id="introduction-49"><p id="p-2188">In Problems 1–6, we find a linear model from two data points. </p>
+<ol id="ol-431" style="list-style-type: lower-alpha;">
+<li id="li-1377"><p id="p-2189">Make a table showing the coordinates of two data points for the model. (Which variable should be plotted on the horizontal axis?)</p></li>
+<li id="li-1378"><p id="p-2190">Find a linear equation relating the variables.</p></li>
+<li id="li-1379"><p id="p-2191">State the slope of the line, including units, and explain its meaning in the context of the problem.</p></li>
+</ol></article><div class="exercisegroup-exercises">
+<article class="exercise-like" id="exercise-357"><h5 class="heading"><span class="codenumber">1</span></h5>
+<p id="p-2192">It cost a bicycle company \(\$9000\) to make \(40\) touring bikes in its first month of operation and \(\$15,000\) to make \(125\) bikes during its second month. Express the company's monthly production cost, \(C\text{,}\) in terms of the number, \(x\text{,}\) of bikes it makes.</p></article><article class="exercise-like" id="exercise-358"><h5 class="heading"><span class="codenumber">2</span></h5>
+<p id="p-2197">Flying lessons cost \(\$645\) for an \(8\)-hour course and \(\$1425\) for a \(20\)-hour course. Both prices include a fixed insurance fee. Express the cost, \(C\text{,}\) of flying lessons in terms of the length, \(h\text{,}\) of the course in hours.</p></article><article class="exercise-like" id="exercise-359"><h5 class="heading"><span class="codenumber">3</span></h5>
+<p id="p-2198">Under ideal conditions, Andrea's Porsche can travel \(312\) miles on a full tank (\(12\) gallons of gasoline) and \(130\) miles on \(5\) gallons. Express the distance, \(d\text{,}\) Andrea can drive in terms of the amount of gasoline, \(g\text{,}\) she buys.</p></article><article class="exercise-like" id="exercise-360"><h5 class="heading"><span class="codenumber">4</span></h5>
+<p id="p-2203">On an international flight, a passenger may check two bags each weighing \(70\) kilograms, or \(154\) pounds, and one carry-on bag weighing \(50\) kilograms, or \(110\) pounds. Express the weight, \(p\text{,}\) of a bag in pounds in terms of its weight, \(k\text{,}\) in kilograms.</p></article><article class="exercise-like" id="exercise-361"><h5 class="heading"><span class="codenumber">5</span></h5>
+<p id="p-2204">A radio station in Detroit, Michigan, reports the high and low temperatures in the Detroit/Windsor area as \(59\degree\)F and \(23\degree\)F, respectively. A station in Windsor, Ontario, reports the same temperatures as \(15\degree\)C and \(-5\degree\)C. Express the Fahrenheit temperature, \(F\text{,}\) in terms of the Celsius temperature, \(C\text{.}\)</p></article><article class="exercise-like" id="exercise-362"><h5 class="heading"><span class="codenumber">6</span></h5>
+<p id="p-2209">Ms. Randolph bought a used car in 2000. In 2002, the car was worth \(\$9000\text{,}\) and in 2005 it was valued at \(\$4500\text{.}\) Express the value, \(V\) , of Ms. Randolph's car in terms of the number of years, \(t\text{,}\) she has owned it.</p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-47">
+<article class="introduction" id="introduction-50"><p id="p-2210">Each regression line can be improved by adjusting either m or b. Draw a line that fits the data points more closely.</p></article><div class="exercisegroup-exercises cols2">
+<article class="exercise-like" id="exercise-363"><h5 class="heading"><span class="codenumber">7</span></h5>
+<p id="p-2211"><object type="image/svg+xml" style="width:60%; margin:auto; display:block;" data="images/fig-ex-1-6-7.svg" alt="scatterplot and line"><p style="margin:auto">&lt;&lt;SVG image is unavailable, or your browser cannot render it&gt;&gt;</p></object></p></article><article class="exercise-like" id="exercise-364"><h5 class="heading"><span class="codenumber">8</span></h5>
+<p id="p-2213"><object type="image/svg+xml" style="width:60%; margin:auto; display:block;" data="images/fig-ex-1-6-8.svg" alt="scatterplot and line"><p style="margin:auto">&lt;&lt;SVG image is unavailable, or your browser cannot render it&gt;&gt;</p></object></p></article><article class="exercise-like" id="exercise-365"><h5 class="heading"><span class="codenumber">9</span></h5>
+<p id="p-2214"><object type="image/svg+xml" style="width:60%; margin:auto; display:block;" data="images/fig-ex-1-6-9.svg" alt="scatterplot and line"><p style="margin:auto">&lt;&lt;SVG image is unavailable, or your browser cannot render it&gt;&gt;</p></object></p></article><article class="exercise-like" id="exercise-366"><h5 class="heading"><span class="codenumber">10</span></h5>
+<p id="p-2216"><object type="image/svg+xml" style="width:60%; margin:auto; display:block;" data="images/fig-ex-1-6-10.svg" alt="scatterplot and line"><p style="margin:auto">&lt;&lt;SVG image is unavailable, or your browser cannot render it&gt;&gt;</p></object></p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-48">
+<article class="introduction" id="introduction-51"><p id="p-2217">In Problems 11 and 12, use information from the graphs to answer the questions.</p></article><div class="exercisegroup-exercises">
+<article class="exercise-like" id="exercise-367"><h5 class="heading"><span class="codenumber">11</span></h5>
+<p id="p-2218">The scatterplot shows the ages of 10 army drill sergeants and the time it took each to run 100 meters, in seconds. <object type="image/svg+xml" style="width:40%; margin:auto; display:block;" data="images/fig-ex-1-6-11.svg" alt="scatterplot"><p style="margin:auto">&lt;&lt;SVG image is unavailable, or your browser cannot render it&gt;&gt;</p></object> </p>
+<ol id="ol-435" style="list-style-type: lower-alpha;">
+<li id="li-1389"><p id="p-2219">What was the hundred-meter time for the 25-year-old drill sergeant?</p></li>
+<li id="li-1390"><p id="p-2220">How old was the drill sergeant whose hundred-meter time was \(12.6\) seconds?</p></li>
+<li id="li-1391"><p id="p-2221">Use a straightedge to draw a line of best fit through the data points.</p></li>
+<li id="li-1392"><p id="p-2222">Use your line of best fit to predict the hundred-meter time of a \(28\)-year-old drill sergeant.</p></li>
+<li id="li-1393"><p id="p-2223">Choose two points on your regression line and find its equation.</p></li>
+<li id="li-1394"><p id="p-2224">Use the equation to predict the hundred-meter time of a 40-year-old drill sergeant and a 12 year-old drill sergeant. Are these predictions reasonable?</p></li>
+</ol></article><article class="exercise-like" id="exercise-368"><h5 class="heading"><span class="codenumber">12</span></h5>
+<p id="p-2232">The scatterplot shows the outside temperature and the number of cups of cocoa sold at an outdoor skating rink snack bar on 13 consecutive nights. <object type="image/svg+xml" style="width:60%; margin:auto; display:block;" data="images/fig-ex-1-6-12.svg" alt="scatterplot"><p style="margin:auto">&lt;&lt;SVG image is unavailable, or your browser cannot render it&gt;&gt;</p></object> </p>
+<ol id="ol-437" style="list-style-type: lower-alpha;">
+<li id="li-1401"><p id="p-2233">How many cups of cocoa were sold when the temperature was \(2\degree\)C?</p></li>
+<li id="li-1402"><p id="p-2234">What was the temperature on the night when \(25\) cups of cocoa were sold?</p></li>
+<li id="li-1403"><p id="p-2235">Use a straightedge to draw a line of best fit through the data points</p></li>
+<li id="li-1404"><p id="p-2236">Use your line of best fit to predict the number of cups of cocoa that will be sold at the snack bar if the temperature is \(7\degree\)C.</p></li>
+<li id="li-1405"><p id="p-2237">Choose two points on your regression line and find its equation.</p></li>
+<li id="li-1406"><p id="p-2238">Use the equation to predict the number of cups of cocoa that will be sold when the temperature is \(10\degree\)C and when the temperature is \(24\degree\)C. Are these predictions reasonable?</p></li>
+</ol></article>
+</div>
+</div>
+<article class="exercise-like" id="exercise-369"><h5 class="heading"><span class="codenumber">13</span></h5>
+<p id="p-2239">With Americans' increased use of faxes, pagers, and cell phones, new area codes are being created at a steady rate. The table shows the number of area codes in the United States each year. (Source: USA Today, NeuStar, Inc.)</p>
+<p id="p-2240"><div class="sidebyside" style="" id="sidebyside-140"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="l m b1 r1 l1 t1 lines">Year</td>
+<td class="c m b1 r1 l0 t1 lines">\(1997\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(1998\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(1999\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(2000\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(2001\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(2002\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(2003\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Number of area codes</td>
+<td class="c m b1 r1 l0 t0 lines">\(151\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(186\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(204\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(226\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(239\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(262\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(274\)</td>
+</tr>
+</table></div></div></div> </p>
+<ol id="ol-438" style="list-style-type: lower-alpha;">
+<li id="li-1407"><p id="p-2241">Let \(t\) represent the number of years after 1995 and plot the data. Draw a line of best fit for the data points.</p></li>
+<li id="li-1408"><p id="p-2242">Find an equation for your regression line.</p></li>
+<li id="li-1409"><p id="p-2243">How many area codes do you predict for 2010?</p></li>
+</ol></article><article class="exercise-like" id="exercise-370"><h5 class="heading"><span class="codenumber">14</span></h5>
+<p id="p-2248">The number of mobile homes in the United States has been increasing since 1960. The data in the table are given in millions of mobile homes. (Source: USA Today, U.S. Census Bureau)</p>
+<p id="p-2249"><div class="sidebyside" style="" id="sidebyside-141"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="l m b1 r1 l1 t1 lines">Year</td>
+<td class="c m b1 r1 l0 t1 lines">\(1960\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(1970\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(1980\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(1990\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(2000\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Number of mobile homes</td>
+<td class="c m b1 r1 l0 t0 lines">\(0.8\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(2.1\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(4.7\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(7.4\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(8.8\)</td>
+</tr>
+</table></div></div></div> </p>
+<ol id="ol-440" style="list-style-type: lower-alpha;">
+<li id="li-1413"><p id="p-2250">Let \(t\) represent the number of years after 1960 and plot the data. Draw a line of best fit for the data points</p></li>
+<li id="li-1414"><p id="p-2251">Find an equation for your regression line.</p></li>
+<li id="li-1415"><p id="p-2252">How many mobile homes do you predict for 2010?</p></li>
+</ol></article><article class="exercise-like" id="exercise-371"><h5 class="heading"><span class="codenumber">15</span></h5>
+<p id="p-2253">Teenage birth rates in the United States declined from 1991 to 2000. The table shows the number of births per 1000 women in selected years. (Source: U.S. National Health Statistics)</p>
+<p id="p-2254"><div class="sidebyside" style="" id="sidebyside-142"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="l m b1 r1 l1 t1 lines">Year</td>
+<td class="c m b1 r1 l0 t1 lines">\(1991\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(1993\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(1995\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(1996\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(1997\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(1998\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Births</td>
+<td class="c m b1 r1 l0 t0 lines">\(62.1\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(59.6\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(56.8\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(54.4\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(52.3\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(51.1\)</td>
+</tr>
+</table></div></div></div> </p>
+<ol id="ol-441" style="list-style-type: lower-alpha;">
+<li id="li-1416"><p id="p-2255">Let \(t\) represent the number of years after 1990 and plot the data. Draw a line of best fit for the data points.</p></li>
+<li id="li-1417"><p id="p-2256">Find an equation for your regression line.</p></li>
+<li id="li-1418"><p id="p-2257">Estimate the teen birth rate in 1994.</p></li>
+<li id="li-1419"><p id="p-2258">Predict the teen birth rate in 2010.</p></li>
+</ol></article><article class="exercise-like" id="exercise-372"><h5 class="heading"><span class="codenumber">16</span></h5>
+<p id="p-2264">The table shows the minimum wage in the United States at five-year intervals. (Source: Economic Policy Institute)</p>
+<p id="p-2265"><div class="sidebyside" style="" id="sidebyside-143"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="l m b1 r1 l1 t1 lines">Year</td>
+<td class="c m b1 r1 l0 t1 lines">\(1960\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(1965\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(1970\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(1975\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(1980\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(1985\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(1990\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(1995\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(2000\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Minimum wage</td>
+<td class="c m b1 r1 l0 t0 lines">\(1.00\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(1.25\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(1.60\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(2.10\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(3.10\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(3.35\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(3.80\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(4.25\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(5.15\)</td>
+</tr>
+</table></div></div></div> </p>
+<ol id="ol-443" style="list-style-type: lower-alpha;">
+<li id="li-1424"><p id="p-2266">Let \(t\) represent the number of years after 1960 and plot the data. Draw a line of best fit for the data points.</p></li>
+<li id="li-1425"><p id="p-2267">Find an equation for your regression line.</p></li>
+<li id="li-1426"><p id="p-2268">Estimate the minimum wage in 1972.</p></li>
+<li id="li-1427"><p id="p-2269">Predict the minimum wage in 2010.</p></li>
+</ol></article><article class="exercise-like" id="exercise-373"><h5 class="heading"><span class="codenumber">17</span></h5>
+<p id="p-2270">Life expectancy in the United States has been rising since the nineteenth century. The table shows the U.S. life expectancy in selected years. (Source: http://www.infoplease.com)</p>
+<p id="p-2271"><div class="sidebyside" style="" id="sidebyside-144"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="l m b1 r1 l1 t1 lines">Year</td>
+<td class="c m b1 r1 l0 t1 lines">\(1950\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(1960\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(1970\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(1980\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(1990\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(2000\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Life expectancy at birth</td>
+<td class="c m b1 r1 l0 t0 lines">\(68.2\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(69.7\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(70.8\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(73.7\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(75.4\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(77\)</td>
+</tr>
+</table></div></div></div> </p>
+<ol id="ol-444" style="list-style-type: lower-alpha;">
+<li id="li-1428"><p id="p-2272">Let \(t\) represent the number of years after 1950, and plot the data. Draw a line of best fit for the data points.</p></li>
+<li id="li-1429"><p id="p-2273">Find an equation for your regression line.</p></li>
+<li id="li-1430"><p id="p-2274">Estimate the life expectancy of someone born in 1987.</p></li>
+<li id="li-1431"><p id="p-2275">Predict the life expectancy of someone born in 2010.</p></li>
+</ol></article><article class="exercise-like" id="exercise-374"><h5 class="heading"><span class="codenumber">18</span></h5>
+<p id="p-2281">The table shows the per capita cigarette consumption in the United States at five-year intervals. (Source: http://www.infoplease.com)</p>
+<p id="p-2282"><div class="sidebyside" style="" id="sidebyside-145"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="l m b1 r1 l1 t1 lines">Year</td>
+<td class="c m b1 r1 l0 t1 lines">\(1980\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(1985\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(1990\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(1995\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(2000\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Per capita cigarette consumption</td>
+<td class="c m b1 r1 l0 t0 lines">\(3,851\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(3,461\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(2,827\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(2,515\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(2,092\)</td>
+</tr>
+</table></div></div></div> </p>
+<ol id="ol-446" style="list-style-type: lower-alpha;">
+<li id="li-1436"><p id="p-2283">Let \(t\) represent the number of years after 1980, and plot the data. Draw a line of best fit for the data points.</p></li>
+<li id="li-1437"><p id="p-2284">Find an equation for your regression line.</p></li>
+<li id="li-1438"><p id="p-2285">Estimate the per capita cigarette consumption in 1998.</p></li>
+<li id="li-1439"><p id="p-2286">Predict the per capita cigarette consumption in 2010.</p></li>
+</ol></article><article class="exercise-like" id="exercise-375"><h5 class="heading"><span class="codenumber">19</span></h5>
+<p id="p-2287">"The earnings gap between high-school and college graduates continues to widen, the Census Bureau says. On average, college graduates now earn just over \(\$51,000\) a year, almost twice as much as high-school graduates. And those with no high-school diploma have actually seen their earnings drop in recent years." The table shows the unemployment rate and the median weekly earnings for employees with different levels of education. (Source: Morning Edition, National Public Radio, March 28, 2005)</p>
+<p id="p-2288"><div class="sidebyside" style="" id="sidebyside-146"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="l m b1 r1 l1 t1 lines"></td>
+<td class="c m b1 r1 l0 t1 lines">Years of<br>education</td>
+<td class="c m b1 r1 l0 t1 lines">Unemployment<br>rate</td>
+<td class="c m b1 r1 l0 t1 lines">Weekly<br>earnings ($)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Some<br>high school<br>no diploma</td>
+<td class="c m b1 r1 l0 t0 lines">\(10\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(8.8\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(396\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">High-school<br>graduate</td>
+<td class="c m b1 r1 l0 t0 lines">\(12\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(5.5     \)</td>
+<td class="c m b1 r1 l0 t0 lines">\(554\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Some college<br>no degree</td>
+<td class="c m b1 r1 l0 t0 lines">\(13\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(5.2\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(622\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Associate's<br>degree</td>
+<td class="c m b1 r1 l0 t0 lines">\(14\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(4.0\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(672\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Bachelor's<br>degree</td>
+<td class="c m b1 r1 l0 t0 lines">\(16\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(3.3\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(900\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Master's<br>degree</td>
+<td class="c m b1 r1 l0 t0 lines">\(18\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(2.9\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(1064\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Professional<br>degree</td>
+<td class="c m b1 r1 l0 t0 lines">\(20\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(1.7\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(1307\)</td>
+</tr>
+</table></div></div></div> </p>
+<ol id="ol-447" style="list-style-type: lower-alpha;">
+<li id="li-1440"><p id="p-2289">Plot years of education on the horizontal axis and weekly earnings on the vertical axis.</p></li>
+<li id="li-1441"><p id="p-2290">Find an equation for the regression line.</p></li>
+<li id="li-1442"><p id="p-2291">State the slope of the regression line, including units, and explain what it means in the context of the data.</p></li>
+<li id="li-1443"><p id="p-2292">Do you think this model is useful for extrapolation or interpolation? For example, what weekly earnings does the model predict for someone with 15 years of education? For 25 years? Do you think these predictions are valid? Why or why not?</p></li>
+</ol></article><article class="exercise-like" id="exercise-376"><h5 class="heading"><span class="codenumber">20</span></h5>
+<p id="p-2298">The table shows the birth rate (in births per woman) and the female literacy rate (as a percent of the adult female population) in a number of nations. (Source: UNESCO, The World Fact Book, EarthTrends)</p>
+<p id="p-2299"><div class="sidebyside" style="" id="sidebyside-147"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="l m b1 r1 l1 t1 lines">Country</td>
+<td class="c m b1 r1 l0 t1 lines">Literacy rate</td>
+<td class="c m b1 r1 l0 t1 lines">Birth rate</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Brazil</td>
+<td class="c m b1 r1 l0 t0 lines">\(88.6\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(1.93\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Egypt</td>
+<td class="c m b1 r1 l0 t0 lines">\(43.6\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(2.88\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Germany</td>
+<td class="c m b1 r1 l0 t0 lines">\(99\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(1.39\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Iraq</td>
+<td class="c m b1 r1 l0 t0 lines">\(53\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(4.28\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Japan</td>
+<td class="c m b1 r1 l0 t0 lines">\(99\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(1.39\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Niger</td>
+<td class="c m b1 r1 l0 t0 lines">\(9.4\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(6.75\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Pakistan</td>
+<td class="c m b1 r1 l0 t0 lines">\(35.2\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(4.14\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Peru</td>
+<td class="c m b1 r1 l0 t0 lines">\(82.1\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(2.56\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Philippines</td>
+<td class="c m b1 r1 l0 t0 lines">\(92.7\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(3.16\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Portugal</td>
+<td class="c m b1 r1 l0 t0 lines">\(91\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(1.47\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Russian Federation</td>
+<td class="c m b1 r1 l0 t0 lines">\(99.2\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(1.27\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Saudi Arabia</td>
+<td class="c m b1 r1 l0 t0 lines">\(69.3\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(4.05\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">United States</td>
+<td class="c m b1 r1 l0 t0 lines">\(97\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(2.08\)</td>
+</tr>
+</table></div></div></div> </p>
+<ol id="ol-449" style="list-style-type: lower-alpha;">
+<li id="li-1448"><p id="p-2300">Plot the data with literacy rate on the horizontal axis. Draw a line of best fit for the data points.</p></li>
+<li id="li-1449"><p id="p-2301">Find an equation for the regression line.</p></li>
+<li id="li-1450"><p id="p-2302">What values for the input variable make sense for the model? What are the largest and smallest values predicted by the model for the output variable?</p></li>
+<li id="li-1451"><p id="p-2303">State the slope of the regression line, including units, and explain what it means in the context of the data.</p></li>
+</ol></article><article class="exercise-like" id="exercise-377"><h5 class="heading"><span class="codenumber">21</span></h5>
+<p id="p-2304">The table shows the amount of carbon released into the atmosphere annually from burning fossil fuels, in billions of tons, at 5-year intervals from 1950 to 1995. (Source: www.worldwatch.org)</p>
+<p id="p-2305"><div class="sidebyside" style="" id="sidebyside-148"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="l m b1 r1 l1 t1 lines">Year</td>
+<td class="c m b1 r1 l0 t1 lines">\(1950\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(1955\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(1960\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(1965\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(1970\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(1975\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(1980\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(1985\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(1990\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(1995\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Carbon<br>emissions</td>
+<td class="c m b1 r1 l0 t0 lines">\(1.6\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(2.0\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(2.5\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(3.1\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(4.0\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(4.5\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(5.2\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(5.3\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(5.9\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(6.2\)</td>
+</tr>
+</table></div></div></div> </p>
+<ol id="ol-450" style="list-style-type: lower-alpha;">
+<li id="li-1452"><p id="p-2306">Let \(t\) represent the number of years after 1950 and plot the data. Draw a line of best fit for the data points.</p></li>
+<li id="li-1453"><p id="p-2307">Find an equation for your regression line.</p></li>
+<li id="li-1454"><p id="p-2308">Estimate the amount of carbon released in 1992.</p></li>
+</ol></article><article class="exercise-like" id="exercise-378"><h5 class="heading"><span class="codenumber">22</span></h5>
+<p id="p-2313">High-frequency radiation is harmful to living things because it can cause changes in their genetic material. The data below, collected by C. P. Oliver in 1930, show the frequency of genetic transmutations induced in fruit flies by doses of X-rays, measured in roentgens. (Source: C. P. Oliver, 1930) <div class="sidebyside" style="" id="sidebyside-149"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="l m b1 r1 l1 t1 lines">Dosage<br>(roentgens)</td>
+<td class="c m b1 r1 l0 t1 lines">\(285\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(570\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(1640\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(3280\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(6560\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Percentage of<br>mutated genes</td>
+<td class="c m b1 r1 l0 t0 lines">\(1.18\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(2.99\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(4.56\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(9.63\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(15.85\)</td>
+</tr>
+</table></div></div></div> </p>
+<ol id="ol-452" style="list-style-type: lower-alpha;">
+<li id="li-1458"><p id="p-2314">Plot the data and draw a line of best fit through the data points.</p></li>
+<li id="li-1459"><p id="p-2315">Find an equation for your regression line.</p></li>
+<li id="li-1460"><p id="p-2316">Use the regression equation to predict the percent of mutations that might result from exposure to \(5000\) roentgens of radiation.</p></li>
+</ol></article><article class="exercise-like" id="exercise-379"><h5 class="heading"><span class="codenumber">23</span></h5>
+<p id="p-2317">Bracken, a type of fern, is one of the most successful plants in the world, growing on every continent except Antarctica. New plants, which are genetic clones of the original, spring from a network of underground stems, or rhizomes, to form a large circular colony. The graph shows the diameters of various colonies plotted against their age. (Source: Chapman et al.,1992) <object type="image/svg+xml" style="width:35%; margin:auto; display:block;" data="images/fig-ex-1-6-23.svg" alt="bracken colony diameter vs age"><p style="margin:auto">&lt;&lt;SVG image is unavailable, or your browser cannot render it&gt;&gt;</p></object> </p>
+<ol id="ol-453" style="list-style-type: lower-alpha;">
+<li id="li-1461"><p id="p-2318">Calculate the rate of growth of the diameter of a bracken colony, in meters per year.</p></li>
+<li id="li-1462"><p id="p-2319">Find an equation for the line of best fit. (What should the vertical intercept of the line be?)</p></li>
+<li id="li-1463"><p id="p-2320">In Finland, bracken colonies over \(450\) meters in diameter have been found. How old are these colonies?</p></li>
+</ol></article><article class="exercise-like" id="exercise-380"><h5 class="heading"><span class="codenumber">24</span></h5>
+<p id="p-2325">The European sedge warbler can sing several different songs consisting of trills, whistles, and buzzes. Male warblers who sing the largest number of songs are the first to acquire mates in the spring. The data below show the number of different songs sung by several male warblers and the day on which they acquired mates, where day 1 is April 20. (Source: Krebs and Davies, 1993)</p>
+<p id="p-2326"><div class="sidebyside" style="" id="sidebyside-150"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="l m b1 r1 l1 t1 lines">Number<br>of songs</td>
+<td class="c m b1 r1 l0 t1 lines">\(41\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(38\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(34\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(32\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(30\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(25\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(24\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(24\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(23\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(14\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Pairing day</td>
+<td class="c m b1 r1 l0 t0 lines">\(20\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(24\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(25\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(21\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(24\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(27\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(31\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(35\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(40\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(42\)</td>
+</tr>
+</table></div></div></div> </p>
+<ol id="ol-455" style="list-style-type: lower-alpha;">
+<li id="li-1467"><p id="p-2327">Plot the data points, with number of songs on the horizontal axis. A regression line for the data is \(y = -0.85x + 53\text{.}\) Graph this line on the same axes with the data.</p></li>
+<li id="li-1468"><p id="p-2328">What does the slope of the regression line represent?</p></li>
+<li id="li-1469"><p id="p-2329">When can a sedge warbler that knows \(10\) songs expect to find a mate?</p></li>
+<li id="li-1470"><p id="p-2330">What do the intercepts of the regression line represent? Do these values make sense in context?</p></li>
+</ol></article><article class="exercise-like" id="exercise-381"><h5 class="heading"><span class="codenumber">25</span></h5>
+<p id="p-2331">The European sedge warbler can sing several different songs consisting of trills, whistles, and buzzes. Male warblers who sing the largest number of songs are the first to acquire mates in the spring. The data below show the number of different songs sung by several male warblers and the day on which they acquired mates, where day 1 is April 20. (Source: Krebs and Davies, 1993)</p>
+<p id="p-2332"><div class="sidebyside" style="" id="sidebyside-151"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="l m b1 r1 l1 t1 lines">Women</td>
+<td class="c m b1 r1 l0 t1 lines">Area (sq cm)</td>
+<td class="c m b1 r1 l0 t1 lines">\(11.5\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(10.8\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(11.7\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(12.0\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(12.5\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(12.7\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(14.4\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(14.4 \)</td>
+<td class="c m b1 r1 l0 t1 lines">\(15.7\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines"></td>
+<td class="c m b1 r1 l0 t0 lines">Strength (kg)</td>
+<td class="c m b1 r1 l0 t0 lines">\(11.3\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(13.2\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(13.2\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(14.5\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(15.6\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(14.8\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(15.6\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(16.1 \)</td>
+<td class="c m b1 r1 l0 t0 lines">\(18.4\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Men</td>
+<td class="c m b1 r1 l0 t0 lines">Area (sq cm)</td>
+<td class="c m b1 r1 l0 t0 lines">\(13.5\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(13.8\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(15.4\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(15.4\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(17.7\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(18.6\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(20.8\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(- \)</td>
+<td class="c m b1 r1 l0 t0 lines">\(- \)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines"></td>
+<td class="c m b1 r1 l0 t0 lines">Strength (kg)</td>
+<td class="c m b1 r1 l0 t0 lines">\(15.0\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(17.3\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(19.0\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(19.8\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(20.6\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(20.8\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(26.3\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(- \)</td>
+<td class="c m b1 r1 l0 t0 lines">\(- \)</td>
+</tr>
+</table></div></div></div> </p>
+<ol id="ol-456" style="list-style-type: lower-alpha;">
+<li id="li-1471"><p id="p-2333">Plot the data for both men and women on the same graph using different symbols for the data points for men and the data points for women.</p></li>
+<li id="li-1472"><p id="p-2334">Are the data for both men and women described reasonably well by the same regression line? Draw a line of best fit through the data.</p></li>
+<li id="li-1473"><p id="p-2335">Find the equation of your line of best fit, or use a calculator to find the regression line for the data.</p></li>
+<li id="li-1474"><p id="p-2336">What does the slope mean in this context?</p></li>
+</ol></article><article class="exercise-like" id="exercise-382"><h5 class="heading"><span class="codenumber">26</span></h5>
+<p id="p-2342">Astronomers use a numerical scale called <em class="terminology">magnitude</em> to measure the brightness of a star, with brighter stars assigned smaller magnitudes. When we view a star from Earth, dust in the air absorbs some of the light, making the star appear fainter than it really is. Thus, the observed magnitude of a star, \(m\text{,}\) depends on the distance its light rays must travel through the Earth's atmosphere. The observed magnitude is given by</p>
+\begin{equation*}
+m = m_0 + kx
+\end{equation*}
+<p>where \(m_0\) is the actual magnitude of the star outside the atmosphere, \(x\) is the air mass (a measure of the distance through the atmosphere), and \(k\) is a constant called the <em class="terminology">extinction coefficient</em>. To calculate \(m_0\text{,}\) astronomers observe the same object several times during the night at different positions in the sky, and hence for different values of \(x\text{.}\) Here are data from such observations. (Source: Karttunen et al., 1987)</p>
+<p id="p-2343"><div class="sidebyside" style="" id="sidebyside-152"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="l m b1 r1 l1 t1 lines">Altitude</td>
+<td class="c m b1 r1 l0 t1 lines">Air mass, \(x\)</td>
+<td class="c m b1 r1 l0 t1 lines">Magnitude, \(m\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">\(50\degree\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(1.31\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(0.90\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">\(35\degree\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(1.74\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(0.98\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">\(25\degree\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(2.37\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(1.07\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">\(20\degree\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(2.92\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(1.17\)</td>
+</tr>
+</table></div></div></div> </p>
+<ol id="ol-458" style="list-style-type: lower-alpha;">
+<li id="li-1479"><p id="p-2344">Plot observed magnitude against air mass, and draw a line of best fit through the data.</p></li>
+<li id="li-1480"><p id="p-2345">Find the equation of your line of best fit, or use a calculator to find the regression line for the data.</p></li>
+<li id="li-1481"><p id="p-2346">Find the equation of your line of best fit, or use a calculator to find the regression line for the data.</p></li>
+<li id="li-1482"><p id="p-2347">What is the value of the extinction coefficient? What is the apparent magnitude of the star outside Earth's atmosphere?</p></li>
+</ol></article><article class="exercise-like" id="exercise-383"><h5 class="heading"><span class="codenumber">27</span></h5>
+<p id="p-2348">Six students are trying to identify an unknown chemical compound by heating the substance and measuring the density of the gas that evaporates. (Density \(=\) mass/volume.) The students record the mass lost by the solid substance and the volume of the gas that evaporated from it. They know that the mass lost by the solid must be the same as the mass of the gas that evaporated. (Source: Hunt and Sykes, 1984)</p>
+<p id="p-2349"><div class="sidebyside" style="" id="sidebyside-153"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="l m b1 r1 l1 t1 lines">Student</td>
+<td class="c m b1 r1 l0 t1 lines">A</td>
+<td class="c m b1 r1 l0 t1 lines">B</td>
+<td class="c m b1 r1 l0 t1 lines">C</td>
+<td class="c m b1 r1 l0 t1 lines">D</td>
+<td class="c m b1 r1 l0 t1 lines">E</td>
+<td class="c m b1 r1 l0 t1 lines">F</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Volume of<br>gas (\(\text{cm}^3\))</td>
+<td class="c m b1 r1 l0 t0 lines">\(48\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(60\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(24\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(81\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(76\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(54\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Loss in<br>mass (mg)</td>
+<td class="c m b1 r1 l0 t0 lines">\(64\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(81\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(32\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(107\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(88\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(72\)</td>
+</tr>
+</table></div></div></div> </p>
+<ol id="ol-459" style="list-style-type: lower-alpha;">
+<li id="li-1483"><p id="p-2350">Plot the data with volume on the horizontal axis. Which student made an error in the experiment?</p></li>
+<li id="li-1484"><p id="p-2351">Ignoring the incorrect data point, draw a line of best fit through the other points.</p></li>
+<li id="li-1485"><p id="p-2352">Find an equation of the form \(y = kx\) for the data. Why should you expect the regression line to pass through the origin?</p></li>
+<li id="li-1486"><p id="p-2353">Use your equation to calculate the mass of \(1000\text{ cm}^3\) (one liter) of the gas.</p></li>
+<li id="li-1487">
+<p id="p-2354">Here are the densities of some gases at room temperature:</p>
+<p id="p-2355"><div class="sidebyside" style="" id="sidebyside-154"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Hydrogen</td>
+<td class="r m b0 r0 l0 t0 lines">\(8\)</td>
+<td class="l m b0 r0 l0 t0 lines">mg/liter</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Nitrogen</td>
+<td class="r m b0 r0 l0 t0 lines">\(1160\)</td>
+<td class="l m b0 r0 l0 t0 lines">mg/liter</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Oxygen</td>
+<td class="r m b0 r0 l0 t0 lines">\(1330\)</td>
+<td class="l m b0 r0 l0 t0 lines">mg/liter</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Carbon dioxide</td>
+<td class="r m b0 r0 l0 t0 lines">\(1830\)</td>
+<td class="l m b0 r0 l0 t0 lines">mg/liter</td>
+</tr>
+</table></div></div></div> Which of these might have been the gas that evaporated from the unknown substance?</p>
+</li>
+</ol>
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-hint-4" id="hint-4"><span class="solution"><span class="type">Hint</span></span></a></span><span id="hk-hint-4" style="display: none;" class="tex2jax_ignore"><span class="solution"><p id="p-2356">Use your answer to part (d) to calculate the density of the gas. \(1 \text{ cm}^3 = 1 \text{ milliliter}\text{.}\)</p></span></span></article><article class="exercise-like" id="exercise-384"><h5 class="heading"><span class="codenumber">28</span></h5>
+<p id="p-2363">The formulas for many chemical compounds involve ratios of small integers. For example, the formula for water, H\(_2\)0, means that two atoms of hydrogen combine with one atom of oxygen to make one water molecule. Similarly, magnesium and oxygen combine to produce magnesium oxide. In this problem, we will discover the chemical formula for magnesium oxide. (Source: Hunt and Sykes, 1984) </p>
+<ol id="ol-461" style="list-style-type: lower-alpha;">
+<li id="li-1493">
+<p id="p-2364">Twenty-four grams of magnesium contain the same number of atoms as sixteen grams of oxygen. Complete the table showing the amount of oxygen needed if the formula for magnesium oxide is \(\text{MgO}\text{,}\) \(\text{Mg}_2\text{O}\text{,}\) or \(\text{MgO}_2\text{.}\)</p>
+<p id="p-2365"><div class="sidebyside" style="" id="sidebyside-155"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r1 l1 t1 lines">Grams of Mg</td>
+<td class="c m b1 r1 l0 t1 lines">Grams of<br>O (if MgO)</td>
+<td class="c m b1 r1 l0 t1 lines">Grams of<br>O (if Mg\(_2\)O)</td>
+<td class="c m b1 r1 l0 t1 lines">Grams of<br>O (if MgO\(_2\))</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(24\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(16\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(48\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(12\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(6\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+</tr>
+</table></div></div></div></p>
+</li>
+<li id="li-1494"><p id="p-2366">Graph three lines on the same axes to represent the three possibilities, with grams of magnesium on the horizontal axis and grams of oxygen on the vertical axis.</p></li>
+<li id="li-1495">
+<p id="p-2367">Here are the results of some experiments synthesizing magnesium oxide.</p>
+<p id="p-2368"><div class="sidebyside" style="" id="sidebyside-156"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r1 l1 t1 lines">Experiment</td>
+<td class="c m b1 r1 l0 t1 lines">Grams of<br>Magnesium</td>
+<td class="c m b1 r1 l0 t1 lines">Grams<br>of oxygen</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(1\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(15\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(10\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(2\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(22\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(14\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(3\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(30\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(20\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(4\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(28\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(18\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(5\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(10\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(6\)</td>
+</tr>
+</table></div></div></div> Plot the data on your graph from part (b). Which is the correct formula for magnesium oxide?</p>
+</li>
+</ol></article><div class="exercisegroup" id="exercisegroup-49">
+<article class="introduction" id="introduction-52"><p id="p-2369">For Problems 29–32, </p>
+<ol id="ol-462" style="list-style-type: lower-alpha;">
+<li id="li-1496"><p id="p-2370">Use linear interpolation to give approximate answers.</p></li>
+<li id="li-1497"><p id="p-2371">What is the meaning of the slope in the context of the problem?</p></li>
+</ol></article><div class="exercisegroup-exercises">
+<article class="exercise-like" id="exercise-385"><h5 class="heading"><span class="codenumber">29</span></h5>
+<p id="p-2372">The temperature in Encino dropped from \(81\degree\)F at 1 a.m. to \(73\degree\)F at 5 a.m. Estimate the temperature at 4 a.m.</p></article><article class="exercise-like" id="exercise-386"><h5 class="heading"><span class="codenumber">30</span></h5>
+<p id="p-2376">Newborn blue whales are about \(24\) feet long and weigh \(3\) tons. The young whale nurses for \(7\) months, at which time it is \(53\) feet long. Estimate the length of a \(1\)-year-old blue whale.</p></article><article class="exercise-like" id="exercise-387"><h5 class="heading"><span class="codenumber">31</span></h5>
+<p id="p-2377">A car starts from a standstill and accelerates to a speed of \(60\) miles per hour in \(6\) seconds. Estimate the car's speed \(2\) seconds after it began to accelerate.</p></article><article class="exercise-like" id="exercise-388"><h5 class="heading"><span class="codenumber">32</span></h5>
+<p id="p-2381">A truck on a slippery road is moving at \(24\) feet per second when the driver steps on the brakes. The truck needs \(3\) seconds to come to a stop. Estimate the truck's speed \(2\) seconds after the brakes were applied</p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-50">
+<article class="introduction" id="introduction-53"><p id="p-2382">In Problems 33–36, use linear interpolation or extrapolation to answer the questions.</p></article><div class="exercisegroup-exercises">
+<article class="exercise-like" id="exercise-389"><h5 class="heading"><span class="codenumber">33</span></h5>
+<p id="p-2383">The temperature of an automobile engine is \(9\degree\) Celsius when the engine is started and \(51\degree\)C \(7\) minutes later. Use a linear model to predict the engine temperature for both \(2\) minutes and \(2\) hours after it started. Are your predictions reasonable?</p></article><article class="exercise-like" id="exercise-390"><h5 class="heading"><span class="codenumber">34</span></h5>
+<p id="p-2385">The temperature in Death Valley is \(95\degree\) Fahrenheit at 5 a.m. and rises to \(110\degree\) Fahrenheit by noon. Use a linear model to predict the temperature at 2 p.m. and at midnight. Are your predictions reasonable?</p></article><article class="exercise-like" id="exercise-391"><h5 class="heading"><span class="codenumber">35</span></h5>
+<p id="p-2386">Ben weighed \(8\) pounds at birth and \(20\) pounds at age \(1\) year. How much will he weigh at age \(10\) if his weight increases at a constant rate?</p></article><article class="exercise-like" id="exercise-392"><h5 class="heading"><span class="codenumber">36</span></h5>
+<p id="p-2388">The elephant at the City Zoo becomes ill and loses weight. She weighed \(10,012\) pounds when healthy and only \(9641\) pounds a week later. Predict her weight after \(10\) days of illness.</p></article>
+</div>
+</div>
+<article class="exercise-like" id="exercise-393"><h5 class="heading"><span class="codenumber">37</span></h5>
+<p id="p-2389">Birds' nests are always in danger from predators. If there are other nests close by, the chances of predators finding the nest increase. The table shows the probability of a nest being found by predators and the distance to the nearest neighboring nest. (Source: Perrins, 1979)</p>
+<p id="p-2390"><div class="sidebyside" style="" id="sidebyside-157"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="l m b1 r1 l1 t1 lines">Distance to<br>nearest neighbor<br>(meters)</td>
+<td class="c m b1 r1 l0 t1 lines">\(20\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(40\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(60\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(80\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(100\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Probability of<br>predators (%)</td>
+<td class="c m b1 r1 l0 t0 lines">\(47\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(34\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(32\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(17\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(1.5\)</td>
+</tr>
+</table></div></div></div> </p>
+<ol id="ol-465" style="list-style-type: lower-alpha;">
+<li id="li-1502"><p id="p-2391">Plot the data and the least squares regression line.</p></li>
+<li id="li-1503"><p id="p-2392">Use the regression line to estimate the probability of predators finding a nest if its nearest neighbor is \(50\) meters away.</p></li>
+<li id="li-1504"><p id="p-2393">If the probability of predators finding a nest is \(10\%\text{,}\) how far away is its nearest neighbor?</p></li>
+<li id="li-1505"><p id="p-2394">What is the probability of predators finding a nest if its nearest neighbor is \(120\) meters away? Is your answer reasonable?</p></li>
+</ol></article><article class="exercise-like" id="exercise-394"><h5 class="heading"><span class="codenumber">38</span></h5>
+<p id="p-2400">A trained cyclist pedals faster as he increases his cycling speed, even with a multiple-gear bicycle. The table shows the pedal frequency, \(p\) (in revolutions per minute), and the cycling speed, \(c\) (in kilometers per hour), of one cyclist. (Source: Pugh, 1974)</p>
+<p id="p-2401"><div class="sidebyside" style="" id="sidebyside-158"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="l m b1 r1 l1 t1 lines">Speed<br>(km/hr)</td>
+<td class="c m b1 r1 l0 t1 lines">\(8.8\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(12.5\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(16.2\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(24.4\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(31.9\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(35.0\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Pedal<br>frequency (rpm)</td>
+<td class="c m b1 r1 l0 t0 lines">\(44.5\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(50.7\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(60.6\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(77.9\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(81.9\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(95.3\)</td>
+</tr>
+</table></div></div></div> </p>
+<ol id="ol-467" style="list-style-type: lower-alpha;">
+<li id="li-1510"><p id="p-2402">Plot the data and the least squares regression line.</p></li>
+<li id="li-1511"><p id="p-2403">Estimate the cyclist's pedal frequency at a speed of \(20\) kilometers per hour.</p></li>
+<li id="li-1512"><p id="p-2404">Estimate the cyclist's speed when he is pedaling at \(70\) revolutions per minute.</p></li>
+<li id="li-1513"><p id="p-2405">Does your regression line give a reasonable prediction for the pedaling frequency when the cyclist is not moving? Explain.</p></li>
+</ol></article><article class="exercise-like" id="exercise-395"><h5 class="heading"><span class="codenumber">39</span></h5>
+<p id="p-2406">In this problem we will calculate the efficiency of swimming as a means of locomotion. A swimmer generates power to maintain a constant speed in the water. If she must swim against an opposing force, the power increases. The following table shows the power expended by a swimmer while working against different amounts of force. (A positive force opposes the swimmer, and a negative force helps her.) (Source: diPrampero et al., 1974, and Alexander, 1992)</p>
+<p id="p-2407"><div class="sidebyside" style="" id="sidebyside-159"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="l m b1 r1 l1 t1 lines">Force<br>(newtons)</td>
+<td class="c m b1 r1 l0 t1 lines">\(-3.5\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(0\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(0\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(6\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(8\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(10\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(17\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(17\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Metabolic<br>power<br>(watts)</td>
+<td class="c m b1 r1 l0 t0 lines">\(100\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(190\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(230\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(320\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(380\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(450\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(560\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(600\)</td>
+</tr>
+</table></div></div></div> </p>
+<ol id="ol-468" style="list-style-type: lower-alpha;">
+<li id="li-1514"><p id="p-2408">Plot the data on the grid, or use the <em class="terminology">StatPlot</em> feature on your calculator. Use your calculator to find the least squares regression line. Graph the regression line on top of the data.</p></li>
+<li id="li-1515"><p id="p-2409">Use your regression line to estimate the power needed for the swimmer to overcome an opposing force of \(15\) newtons.</p></li>
+<li id="li-1516"><p id="p-2410">Use your regression line to estimate the power generated by the swimmer when there is no force either hindering or helping her.</p></li>
+<li id="li-1517"><p id="p-2411">Estimate the force needed to tow the swimmer at \(0.4\) meters per second while she rests. (If she is resting, she is not generating any power).</p></li>
+<li id="li-1518"><p id="p-2412">The swimmer's <em class="terminology">mechanical</em> power (or rate of work) is computed by multiplying her speed times the force needed to tow her at rest. Use your answer to part (d) to calculate the mechanical power she generates by swimming at \(0.4\) meters per second.</p></li>
+<li id="li-1519"><p id="p-2413">The ratio of mechanical power to metabolic power is a measure of the swimmer's efficiency. Compute the efficiency of the swimmer when there is no external force opposing or helping her.</p></li>
+</ol></article><article class="exercise-like" id="exercise-396"><h5 class="heading"><span class="codenumber">40</span></h5>
+<p id="p-2421">In this problem, we calculate the amount of energy generated by a cyclist. An athlete uses oxygen slowly when resting but more quickly during physical exertion. In an experiment, several trained cyclists took turns pedaling on a bicycle ergometer, which measures their work rate. The table shows the work rate of the cyclists, in watts, measured against their oxygen intake, in liters per minute. (Source: Pugh, 1974)</p>
+<p id="p-2422"><div class="sidebyside" style="" id="sidebyside-160"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="l m b1 r1 l1 t1 lines">Oxygen<br>consumption<br>(liters/)</td>
+<td class="c m b1 r1 l0 t1 lines">\(1\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(1.7\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(2\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(3.3\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(3.9\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(3.6\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(4.3\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(5\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Work rate<br>(watts)</td>
+<td class="c m b1 r1 l0 t0 lines">\(40\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(100\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(180\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(220\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(280\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(300\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(320\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(410\)</td>
+</tr>
+</table></div></div></div> </p>
+<ol id="ol-470" style="list-style-type: lower-alpha;">
+<li id="li-1526"><p id="p-2423">Plot the data on the grid, or use the <em class="terminology">StatPlot</em> feature on your calculator. Use your calculator to find the least squares regression line. Graph the regression line on top of the data.</p></li>
+<li id="li-1527"><p id="p-2424">Find the horizontal intercept of the regression line. What does the horizontal intercept tell you about this situation?</p></li>
+<li id="li-1528"><p id="p-2425">Estimate the power produced by a cyclist consuming oxygen at \(5.9\) liters per minute.</p></li>
+<li id="li-1529"><p id="p-2426">What is the slope of the regression line? The slope represents the amount of power, in watts, generated by a cyclist for each liter of oxygen consumed per minute. How many watts of power does a cyclist generate from each liter of oxygen?</p></li>
+<li id="li-1530"><p id="p-2427">One watt of power represents an energy output of one joule per second. How many joules of energy does the cyclist generate in one minute?</p></li>
+<li id="li-1531"><p id="p-2428">How many joules of energy can be extracted from each cubic centimeter of oxygen used? (One liter is equal to 1000 cubic centimeters.)</p></li>
+</ol></article></section></section></div></main>
+</div>
+<script type="text/javascript">createAllVisualizersFromHtmlAttrs();</script>
+</body>
+</html>
