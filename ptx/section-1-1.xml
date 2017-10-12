@@ -13,13 +13,100 @@
         <li> One quarter of a full rotation is <m>90\degree</m> and is called a <term>right angle</term>.</li>
     </ul>  
  </p>
-<sidebyside width="100%"><image source="images/angles-in-degrees.png"><description>quadrantal angles</description></image> </sidebyside>
+<sidebyside width="100%">
+<!--	<image source="images/angles-in-degrees.png"><description>quadrantal angles</description></image>-->
+    <image xml:id="angles-in-degrees">
+        <description>quadrantal angles</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+
+        \begin{tikzpicture}[auto, thick, node distance=2cm]
+
+            \filldraw[black] (0,0) circle (2pt) ;
+            \draw[blue, thick] (0,0)rectangle (.25,.25);
+            \draw [very thick, -> ] (0,0) -- (2,0);
+            \draw[very thick, black!50!blue,->] (0,0) -- (0,2);
+            \draw[red, thick, ->] (0.6,0) arc (0:90:.6) node [above right, midway] {$90 \degree$};
+
+
+            \filldraw[black] (5,0) circle (2pt);
+            %\draw[blue, thick] (5,0)rectangle (5.25,.25);
+            \draw [very thick, -> ] (5,0) -- (7,0);
+            \draw[very thick,black!50!blue, ->] (5,0) -- (3,0);
+            \draw[red, thick, ->] (5.5,0) arc (0:180:.5) node [above , midway] {$180 \degree$};
+
+
+            \filldraw[black] (8,0) circle (2pt);
+            \draw[blue, thick] (8,0)rectangle (8.25,-.25);
+            \draw [very thick, -> ] (8,0) -- (10,0);
+            \draw[very thick,black!50!blue, ->] (8,0) -- (8,-2);
+            \draw[red, thick, ->] (8.4,0) arc (0:270:.4) node [above left, midway] {$270 \degree$};
+
+
+            \filldraw[black] (11,0) circle (2pt);
+            %\draw[blue, thick] (5,0)rectangle (5.25,.25);
+            \draw [very thick, -> ] (11,0) -- (13,0);
+            \draw[very thick,black!50!blue, ->] (11,0) -- (13.2,0);
+            \draw[red, thick, ->] (11.4,0) arc (0:360:.4) node [below right] {$360 \degree$};
+
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+</sidebyside>
  </introduction>
 
 <subsection> <title>Triangles</title>
 <p> If you tear off the corners of any triangle and line them up, as shown below, they will always form a straight angle.
 </p>
-<sidebyside width="90%"><image source="images/tear-off-corners.png"><description>tear corners off triangle</description></image> </sidebyside>
+<sidebyside width="40%">
+<!--	<image source="images/tear-off-corners.png"><description>tear corners off triangle</description></image>-->    <image xml:id="tear-off-corners">
+        <description>tear corners off triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+
+        \begin{tikzpicture}[auto, thick, node distance=2cm]
+
+            \filldraw[black] (0,0) circle (.2pt) node[anchor=south west, xshift=15] {$x$};
+            \filldraw[black] (3.6,0) circle (.2pt) node[anchor=south east, xshift=-8]{$z$};
+            \filldraw[black] (2.3,1.5) circle (.2pt) node[anchor=north, yshift=-5]{$y$};
+            \draw[black,  thick] (0,0) -- (3.6,0) -- (2.3,1.5) -- cycle;
+
+            \filldraw[black] (6,1.5) circle (.2pt) node[anchor=north east, xshift=-15] {$x$};
+            \filldraw[black] (6,1.5) circle (.2pt) node[anchor=north, yshift=-3] {$y$};
+            \filldraw[black] (6,1.5) circle (.2pt) node[anchor=north west, xshift=9] {$z$};
+            \draw[black,  very thick] (6,1.5) -- (4.85,1.5);
+            \draw[black,  very thick] (6,1.5) -- (4.85,0.75);
+            \draw[black,  very thick] (6,1.5) -- (6.65,0.75);
+            \draw[black,  very thick] (6,1.5) -- (6.65,1.5);
+
+            \draw[black, thick] (1.2,0) -- (1.2,.15) -- (1.1,.15) -- (1.05,.35) -- (.9,.4) -- (.88, .55)
+            -- (.83,.55);
+            \draw[black, thick] (2.5,0) -- (2.5,.15) -- (2.6,.16)--(2.65,.24)--(2.8,.26)--(2.85,.45)--(2.95, .5)
+            --(3.05,.65);
+            \draw[black, thick] (1.6,1.05)--(1.65,.9) -- (1.9,.78) --(2,.83) -- (2.3,.75) -- (2.4,.8)--(2.6,.8)
+            --(2.85,.85);
+            %\draw[green, ultra thick, dashed] (1.2,1) -- (1.2,-0.3);
+            %\draw[green, ultra thick, dashed] (2.9,1) -- (2.9,-0.3);
+            %\draw[green, ultra thick, dashdotted] (1,.8) -- (3.2,.8);
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+    
+</sidebyside>
 
 <assemblage>
         <p>1.  The sum of the angles in a triangle is <m>180\degree</m>.</p>
@@ -28,7 +115,35 @@
 <example><statement>
 <sidebyside widths="50% 35%">
     <p>Two of the angles in the triangle at right are <m>25\degree</m> and <m>115\degree</m>.  Find the third angle.</p>
-    <image source="images/exam1-1-1.png"><description>triangle with 25 and 115 angles</description></image></sidebyside>
+<!--    <image source="images/exam1-1-1.png"><description>triangle with 25 and 115 angles</description></image>-->
+    <image xml:id="exam1-1-1">
+        <description>triangle with 25 and 115 angles</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+
+        \begin{tikzpicture}[auto, thick, node distance=2cm]
+
+            \coordinate (A) at (0,0);
+            \coordinate (B) at (5,0.7);
+            \coordinate(C) at (3,2.1);
+            \filldraw[black] (A) circle (.2pt) node[anchor=south west, xshift=19, yshift=3] {$25\degree$};
+            \filldraw[black] (B) circle (.2pt) node[anchor=south east, xshift=-8, yshift=-3] {$x$};
+            \filldraw[black] (C) circle (.2pt) node[anchor=north, yshift=-8] {$115\degree$};
+            \draw[black,  thick] (A) -- (B) --( C) -- cycle;
+
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+
+
+</sidebyside>
 </statement>
 <solution><p>To find the third angle, we write an equation.</p>
             <p>
@@ -44,7 +159,33 @@
 <exercise><statement>
     <sidebyside widths="50% 38%">
     <p>Find each of the angles in the triangle at right.</p>
-    <image source="images/exer1-1-2.png"><description>triangle with angles x, 2x, and 2x-15</description></image></sidebyside>
+<!--    <image source="images/exer1-1-2.png"><description>triangle with angles x, 2x, and 2x-15</description></image>-->
+    <image xml:id="exer1-1-2">
+        <description>triangle with angles x, 2x, and 2x-15</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+
+        \begin{tikzpicture}[auto, thick, node distance=2cm]
+
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (5,0);
+        \coordinate(C) at (3,2.7);
+        \filldraw[black] (A) circle (.2pt) node[anchor=south west, xshift=12, yshift=1] {$x$};
+        \filldraw[black] (B) circle (.2pt) node[anchor=south east, xshift=-8, yshift=1] {$2x-15$};
+        \filldraw[black] (C) circle (.2pt) node[anchor=north, yshift=-8]{$2x$};
+        \draw[black,  thick] (A) -- (B) --( C) -- cycle;
+
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+    </sidebyside>
 </statement></exercise>
 
 <p>Some special categories of triangles are particularly useful.  Most important of these are the <term>right triangles</term>.</p>
@@ -56,7 +197,33 @@
 <example><statement>
 <sidebyside widths="50% 20%">
     <p>One of the smaller angles of a right triangle is <m>34\degree</m>.  What is the third angle?</p>
-    <image source="images/exam1-1-3.png"><description>right triangle with 34 angle</description></image></sidebyside>
+<!--    <image source="images/exam1-1-3.png"><description>right triangle with 34 angle</description></image></sidebyside>-->
+    <image xml:id="exam1-1-3">
+        <description>right triangle with 34 angle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+
+        \begin{tikzpicture}[auto, thick, node distance=2cm]
+
+            \coordinate (A) at (0,0);
+            \coordinate (B) at (3,0);
+            \coordinate(C) at (0,4);
+            \filldraw[black] (A) circle (.2pt) node[anchor=south west, xshift=10, yshift=1]{};
+            \filldraw[black] (B) circle (.2pt) node[anchor=south east, xshift=-8, yshift=1]{$x$};
+            \filldraw[black] (C) circle (.2pt) node[anchor=north west, yshift=-23]{$34\degree$};
+            \draw[black,  thick] (A) -- (B) --( C) -- cycle;
+            \draw[blue, thick] (0,0)rectangle (.25,.25);
+
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image></sidebyside>
 </statement>
 <solution><p>The sum of the two smaller angles in a right triangle is <m>90\degree</m>. So</p>
             <p>
@@ -67,6 +234,7 @@
             </p>
         <p>The unknown angle must be <m>56\degree</m>.</p></solution>
 </example>
+
 
 <exercise><statement>
       <p>Two angles of a triangle are <m>35\degree</m> and <m>45\degree</m>.  Can it be a right triangle?</p>
@@ -81,7 +249,36 @@
 <example><statement>
 <sidebyside widths="50% 25%">
     <p>All three sides of a triangle are 4 feet long.  Find the angles.</p>
-    <image source="images/exam1-1-5.png"><description>equilateral triangle</description></image></sidebyside>
+<!--    <image source="images/exam1-1-5.png"><description>equilateral triangle</description></image></sidebyside>-->
+    <image xml:id="exam1-1-5">
+        <description>equilateral triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+
+        \begin{tikzpicture}[auto, thick, node distance=2cm]
+
+            \coordinate (A) at (0,0);
+            \coordinate (B) at (2.5,0);
+            \coordinate(C) at (1.25,2.165);
+            \filldraw[black] (A) circle (.2pt) node[anchor=south west, xshift=10, yshift=1]{$x$};
+            \filldraw[black] (B) circle (.2pt) node[anchor=south east, xshift=-8, yshift=1]{$x$};
+            \filldraw[black] (C) circle (.2pt) node[anchor=north , yshift=-10]{$x$};
+            %\draw[black,  thick] (A) -- (B) --( C) -- cycle;
+            \draw[black] (A) --  (B) node [below, midway] {$4$};
+            \draw[black] (A) --  (C) node [above left, midway,yshift=-4] {$4$};
+            \draw[black] (C) --  (B) node [above right, midway,yshift=-4] {$4$};
+
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image></sidebyside>
+
 </statement>
 <solution><p>The triangle is equilateral, so all of its angles are equal.  Thus</p>
             <p>
@@ -96,7 +293,36 @@
 <exercise><statement>
     <sidebyside widths="50% 25%">
     <p>Find <m>x</m>, <m>y</m>, and <m>z</m> in the triangle at right.</p>
-    <image source="images/exer1-1-6.png"><description>equilateral triangle with side 8</description></image></sidebyside>
+<!--    <image source="images/exer1-1-6.png"><description>equilateral triangle with side 8</description></image>-->
+    <image xml:id="exer1-1-6">
+        <description>equilateral triangle with side 8</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+
+        \begin{tikzpicture}[auto, thick, node distance=2cm]
+
+            \coordinate (A) at (0,0);
+            \coordinate (B) at (2.5,0);
+            \coordinate(C) at (1.25,2.165);
+            \filldraw[black] (A) circle (.2pt) node[anchor=south west, xshift=10, yshift=1]{$60\degree$};
+            \filldraw[black] (B) circle (.2pt) node[anchor=south east, xshift=-8, yshift=1]{$x$};
+            \filldraw[black] (C) circle (.2pt) node[anchor=north , yshift=-15]{$60\degree$};
+            \draw[black] (A) --  (B) node [below, midway] {$z$};
+            \draw[black] (A) --  (C) node [above left, midway,yshift=-4] {$y$};
+            \draw[black] (C) --  (B) node [above right, midway,yshift=-4] {$8$};
+
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+
+    </sidebyside>
 </statement></exercise>
 
 <p> An <term>isosceles</term> triangle has two sides of equal length.  The angle between the equal sides is the <term>vertex angle</term> .  The other two angles are the <term>base angles</term>. </p>

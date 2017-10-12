@@ -1,144 +1,55 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<!--********************************************************************
--->
-
-<!-- Overall element for a Mathbook XML document; mandatory, always  -->
-<!-- Experiment with the "xml:lang" attribute to see localization    -->
-<!-- changes, the  xsl/localizations  directory has more information -->
 <mathbook>
     <docinfo>
-        <brandlogo url="https://cdn.rawgit.com/byoshiwara/MFG-html/master/" source="images/cover.png" /> 
+        <brandlogo url="https://byoshiwara.github.io/MFG-online/" source="images/coverthumbnail.png" /> 
         <latex-preamble>
             <package>cancel</package>
+<!--            <package>{xcolor}</package>
+            <package>{stackengine}</package>
+            <package>gensymb</package> -->
         </latex-preamble>
-        <!--
-        TeX/LaTeX macros can be written in the usual way.
-        Whitespace and line breaks are irrelevant here.
-        These are "write once, use everywhere".
-        -->
+
+   <macros>
+        \newcommand\degree[0]{^{\circ}}
+        \newcommand\Ccancel[2][black]{\renewcommand\CancelColor{\color{#1}}\cancel{#2}}
+        \newcommand{\alert}[1]{\boldsymbol{\color{magenta}{#1}}}
+        \newcommand{\blert}[1]{\boldsymbol{\color{blue}{#1}}}
+        \newcommand{\bluetext}[1]{\color{skyblue}{#1}} <!-- comments in aligned equations -->
+        \delimitershortfall-1sp
+        \newcommand\abs[1]{\left|#1\right|}
+    </macros>
+
         <cross-references text="type-hybrid" />
         <!--
-        Extra packages, package options, and package settings for latex-based images.
-        Inserted in the preamble for LaTeX output.
-        Inserted in the preamble to each standalone latex-based image for HMTL SVG output.
         -->
         <latex-image-preamble>
-        \usepackage{pgfplots}               % loads tikz package
-        \usepackage{smartdiagram}           % for a circular diagram
-        \pgfplotsset{axis x line = middle,
-                     axis y line = middle}
-        \usetikzlibrary{backgrounds}
-        \usetikzlibrary{arrows,matrix}
-        </latex-image-preamble>
-        <!--
-        The Sage Notebook has its own interface and worksheet list.
-        To use the sorting features optimally, it helps to have subdivisions
-        begin with the same short prefix.  An "initialism" (nee acronym)
-        here will be used for that purpose if present.  This is only employed
-        for producing Sage notebook versions and in the title shown in the
-        browser. (If not present, you will get a harmless warning just for
-        Sage worksheet production.)
-        -->
+            \usepackage[T1]{fontenc}
+            \usepackage{tikz}
+       </latex-image-preamble>
+<!--    <macros>
+        \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+    </macros> -->
+
         <initialism>Scratch</initialism>
-        <!--
-        With a <feedback> element, in the HTML version, you get a button
-        for reporting typos and errors.  You might link to a Google Docs
-        spreadsheet or something similar.  Default is to get a button
-        labeled "Feedback", which will be localized to your target language.
-        You can override this with some text of your choosing, but then you
-        lose the localization feature.
-        -->
+
         <feedback>
             <url>not-implemented.html</url>
              <!-- <text>My Button Text</text>  -->
         </feedback>
 
-        <!--
-        "Names" for various parts of a document are determined exactly
-        once for each language, ensuring consistency and saving you the
-        bother of always typing them in.  These can be found in the
-        files in the  xsl/localizations  directory.
 
-        You can make a document-specific, global override.  Here we
-        decide we have no need for any "proposition"s and repurpose
-        that environment in US English as a "Conundrum."
-
-        See the localization file for more on language codes, and realize
-        that US English is the default if there is no "lang" attribute
-        given on the document.
-        -->
         <rename element="warning" lang="en-US">Caution</rename>
 
-        <!-- Various third-party add-ons need some sort of token     -->
-        <!-- Using an element here serves two purposes               -->
-        <!--   (1)  it is a flag to enable the addon                 -->
-        <!--   (2)  it holds the token and MBX supplies generic code -->
-        <!-- This is for the Google Custom Search Engine in HTML     -->
-        <search>
-            <google>
-                <cx>006592449927388994635:w0x-ox5bpme</cx>
-            </google>
-        </search>
-
-        <!-- Images in HTML output may carry a discreet list of links    -->
-        <!-- to "archival" versions of images in a variety of formats.   -->
-        <!-- Authors have complete freedom to do this as they choose,    -->
-        <!-- along with complete responsibility to provide the actual    -->
-        <!-- files, with proper filenames and suffices.  Search this     -->
-        <!-- source file for "archive=" to see particular examples.      -->
-        <!-- The following demonstrates a global specification, which    -->
-        <!-- we just use for testing - it just makes totally fake links. -->
-        <!--
-        <images>
-            <archive>One Two Three</archive>
-        </images>
-        -->
-
-        <!-- Demonstration of subtree specifications for archive formats -->
-        <!-- (Do not use in concert with above global test)              -->
-        <!-- Chapter on graphics, fake "A B" links throughout            -->
-        <!-- No other part of the @archive scheme is affected            -->
-        <!-- Two images, inside figures, within graphics chapter         -->
-        <!--   1) one has "A B" links turned off                         -->
-        <!--   2) single link "exceptional"                              -->
-        <!--
-        <images>
-            <archive from="graphics">A B</archive>
-            <archive from="figure-asymptote-levers" />
-            <archive from="figure-asymptote-contour-plot">exceptional</archive>
-        </images>
-        -->
 
     </docinfo>
 
-    <!--
-    The article element is top-level for anything short of a book.
-    There is a book element, which is not demonstrated here.
-    The "xml:id" attribute will be used for the filename of the
-    HTML output.
-    -->
     <article xml:id="scratch">
         <title>Testing Snippets</title>
         <subtitle>Just checking ptx coding</subtitle>
 
-        <!--
-        The frontmatter contains a variety of items that precede
-        the actual content.  They should be placed in the proper order,
-        here the title material should precede a table of contents.
-        They differ from "docinfo" items in that they will be *content*
-        that a reader will actually see.
-
-        The xml:id string is used to form a filename for a webpage.
-        Setting this one to "index" makes for a good default page
-        when you host your project on a server.
-        -->
-
         <frontmatter xml:id="index">
-            <!--
-            Items typically on the main title page of a book,
-            but here as an article they are handled more compactly
-             -->
 
             <titlepage>
 
@@ -163,38 +74,67 @@
             <abstract>
                 <p>This is a sample of many of the things you can do with <pretext />.  Sometimes the math makes sense, sometimes it seems to be written in the first person, sort of like this Abstract.</p>
             </abstract>
-            <!--
-            Acknowledgements, dedications, colophon (ISBN, copyright, etc)
-            are supported in the book document type.  Such a diverse range
-            is not yet available for articles.  Send requests.
-             -->
-        </frontmatter>
 
-        <!--
-        Articles have sections, which have subsections,
-        which have subsubsections.These are all "containers"
-        and so line breaks and extraneous whitespace gets
-        scrubbed.  Use indentation and line breaks liberally
-        within containers to make the structure of your
-        source readable.
-        -->
+        </frontmatter>
 
         <section>
             <title>Introduction</title>
-
-
-
+            <p>Stuff to test</p>
 
             <!--
             start of test code
             -->
 
 
-<example><statement>
-<sidebyside widths="50% 35%">
-    <p>In the figure at right,   and  are supplementary.   and  are complementary.   is obtuse, and  is acute.</p>
-    <image source="images/example1-9fig.png"><description>types of angles</description></image></sidebyside>
-</statement></example>
+
+
+
+
+<exercise><statement>
+    <sidebyside widths="50% 25%">
+    <p>Find <m>x</m>, <m>y</m>, and <m>z</m> in the triangle at right.</p>
+<!--    <image source="images/exer1-1-6.png"><description>equilateral triangle with side 8</description></image>-->
+    <image xml:id="exer1-1-6">
+        <description>equilateral triangle with side 8</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+
+        \begin{tikzpicture}[auto, thick, node distance=2cm]
+
+            \coordinate (A) at (0,0);
+            \coordinate (B) at (2.5,0);
+            \coordinate(C) at (1.25,2.165);
+            \filldraw[black] (A) circle (.2pt) node[anchor=south west, xshift=10, yshift=1]{$60\degree$};
+            \filldraw[black] (B) circle (.2pt) node[anchor=south east, xshift=-8, yshift=1]{$x$};
+            \filldraw[black] (C) circle (.2pt) node[anchor=north , yshift=-15]{$60\degree$};
+            \draw[black] (A) --  (B) node [below, midway] {$z$};
+            \draw[black] (A) --  (C) node [above left, midway,yshift=-4] {$y$};
+            \draw[black] (C) --  (B) node [above right, midway,yshift=-4] {$8$};
+
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+
+    </sidebyside>
+</statement></exercise>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -214,7 +154,7 @@
 
         </section>
 
-
+<!--
         <backmatter xml:id="backmatter">
             <title>Reference</title>
 
@@ -254,10 +194,10 @@
                     <p>Most all of the index entries below to page 2 (PDF output) are just from a suite of non-sensical tests.  These are harder to recognize in the <init>HTML</init> output.</p>
                 </paragraphs>
             </appendix>
-
+-->
             <!-- Bibliography/References can appear anywhere, -->
             <!-- but these are in the backmatter              -->
-
+<!--
             <references>
                 <title>References</title>
 
@@ -277,6 +217,6 @@
             <colophon>
                 <p>This article was authored in <pretext />.</p>
             </colophon>
-        </backmatter>
+        </backmatter>  -->
     </article>
 </mathbook>
