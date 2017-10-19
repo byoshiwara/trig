@@ -334,7 +334,37 @@
 <example><statement>
 <sidebyside widths="50% 35%">
     <p>Find <m>x</m> and <m>y</m> in the triangle at right.</p>
-    <image source="images/exam1-1-7.png"><description>isosceles triangle with side 12, base angle 38</description></image></sidebyside>
+<!--    <image source="images/exam1-1-7.png"><description>isosceles triangle with side 12, base angle 38</description></image>-->
+    <image xml:id="exer1-1-6">
+        <description>equilateral triangle with side 8</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+
+        \begin{tikzpicture}[auto, thick, node distance=2cm]
+
+            \coordinate (A) at (0,0);
+            \coordinate (B) at (4.7,0);
+            \coordinate(C) at (2.35,1.5);
+            \filldraw[black] (A) circle (.2pt) node[anchor=south west, xshift=18]{$y$};
+            \filldraw[black] (B) circle (.2pt) node[anchor=south east, xshift=-18]{$38\degree$};
+            \filldraw[black] (C) circle (.2pt) node[anchor=north , yshift=-3]{$x$};
+            %\draw[black,  thick] (A) -- (B) --( C) -- cycle;
+            \draw[black] (A) --  (B) node [below, midway] {};
+            \draw[black] (A) --  (C) node [above left, midway,yshift=-4] {$12$};
+            \draw[black] (C) --  (B) node [above right, midway,yshift=-4] {$12$};
+
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+
+    </sidebyside>
 </statement>
 <solution><p>The triangle is isosceles, so the base angles are equal.  Therefore, <m>y=38\degree</m>.  To find the vertex angle, we solve </p>
             <p>
@@ -350,7 +380,33 @@
 <exercise><statement>
     <sidebyside widths="50% 50%">
     <p>Find <m>x</m>, <m>y</m>, and <m>z</m> in the triangle at right.</p>
-    <image source="images/exer1-1-8.png"><description>isosceles triangle with side 9, base angle 20</description></image></sidebyside>
+<!--    <image source="images/exer1-1-8.png"><description>isosceles triangle with side 9, base angle 20</description></image>-->
+    <image xml:id="exer1-1-8">
+        <description>isosceles triangle with side 9, base angle 20</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}[auto, thick, node distance=2cm]
+            \coordinate (A) at (0,0);
+            \coordinate (B) at (5.6,0);
+            \coordinate(C) at (2.8,1.2);
+            \filldraw[black] (A) circle (.2pt) node[anchor=south west, xshift=28]{$20\degree$};
+            \filldraw[black] (B) circle (.2pt) node[anchor=south east, xshift=-28]{$20\degree$};
+            \filldraw[black] (C) circle (.2pt) node[anchor=north , yshift=-2]{$x$};
+            %\draw[black,  thick] (A) -- (B) --( C) -- cycle;
+            \draw[black] (A) --  (B) node [below, midway] {};
+            \draw[black] (A) --  (C) node [above left, midway,yshift=-2] {$9$};
+            \draw[black] (C) --  (B) node [above right, midway,yshift=-2] {$y$};
+        \end{tikzpicture}]]>    </latex-image-code>
+    </image>
+
+</sidebyside>
 </statement></exercise>
 
 </subsection>
@@ -364,7 +420,73 @@
         <li> Angles between <m>90\degree</m> and <m>180\degree</m> are called <term>obtuse</term>. </li>
     </ul></p> 
 
-   <sidebyside width="100%"><image source="images/angleterms.png"><description>types of angles</description></image> </sidebyside> 
+   <sidebyside width="100%">
+<!--       <image source="images/angleterms.png"><description>types of angles</description></image> -->
+    <image xml:id="angleterms">
+        <description>types of angles</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}[auto, thick, node distance=2cm]
+            %supplementary
+            \coordinate (O) at (0,0);
+            \coordinate (A) at (-2,0);
+            \coordinate (B) at (2,0);
+            \coordinate(C) at (1.65,1);
+
+            \filldraw[blue] (O) circle (.2pt) node[anchor=north]{supplementary angles};
+
+            \draw[black, thick, <->] (A)--(B); 
+            \draw[black, thick, ->] (O)--(C); 
+            \draw[red, thick, ->] (.7,0) arc (0:30:.7);
+            \draw[red, thick, ->] (.41,.25) arc (30:180:.5);
+
+            %complementary
+            \coordinate (O2) at (3.5,0);
+            \coordinate (A2) at (5.5,0);
+            \coordinate (B2) at (3.5,2);
+            \coordinate(C2) at (4.65,1.64);
+
+            %\filldraw[blue] (O) circle (.2pt) node[anchor=north]{complementary angles};
+
+            \draw[black, thick, ->] (O2)--(A2)  node[below,midway ]{\color{blue}complementary angles}; 
+            \draw[black, thick, ->] (O2)--(B2); 
+            \draw[black, thick, ->] (O2)--(C2); 
+            \draw[red, thick, ->] (4.2,0) arc (0:55:.7);
+            \draw[red, thick, ->] (3.78,.41) arc (55:90:.5);
+
+            %acute
+            \coordinate (O3) at (7,0);
+            \coordinate (A3) at (9,0);
+            \coordinate (B3) at (8,1.73);
+
+            %\filldraw[blue] (O) circle (.2pt) node[anchor=north]{complementary angles};
+
+            \draw[black, thick, ->] (O3)--(A3)  node[below,midway ]{\color{blue}acute angle}; 
+            \draw[black, thick, ->] (O3)--(B3); 
+            \draw[red, thick, ->] (7.7,0) arc (0:60:.7);
+
+            %obtuse
+            \coordinate (O4) at (11.2,0);
+            \coordinate (A4) at (13.,0);
+            \coordinate (B4) at (9.67,1.29);
+
+            \filldraw[blue] (O4) circle (.2pt) node[anchor=north]{obtuse angle};
+
+            \draw[black, thick, ->] (O4)--(A4); 
+            \draw[black, thick, ->] (O4)--(B4); 
+            \draw[red, thick, ->] (11.7,0) arc (0:140:.5);
+
+        \end{tikzpicture}]]>
+        </latex-image-code>
+    </image>
+   </sidebyside> 
 
 <example><statement>
 <sidebyside widths="58% 42%">
@@ -375,7 +497,42 @@
             <li> <m>\angle</m><m>AOC</m> is obtuse,</li> 
             <li>and <m>\angle</m><m>BOC</m> is acute.</li>
         </ul></p>
-    <image source="images/exam1-1-9.png"><description>types of angles</description></image></sidebyside>
+<!--    <image source="images/exam1-1-9.png"><description>types of angles</description></image>-->
+    <image xml:id="exam1-1-9">
+        <description>types of angles</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}[auto, thick, node distance=2cm]
+            \coordinate (O) at (0,0);
+            \coordinate (A) at (-2,0);
+            \coordinate (B) at (2,0);
+            \coordinate(C) at (.7,1.2);
+            \coordinate (D) at (0,-1.7);
+            \coordinate(E) at (1.8,-.5);
+            \draw[blue, thick] (O)rectangle (-.25,-.25);
+            \filldraw[black] (O) circle (.2pt) node[anchor=south east]{$O$};
+            \filldraw[black] (A) circle (.2pt) node[anchor=east]{$A$};
+            \filldraw[black] (B) circle (.2pt) node[anchor=west]{$B$};
+            \filldraw[black] (C) circle (.2pt) node[anchor=south west]{$C$};
+            \filldraw[black] (D) circle (.2pt) node[anchor=north west]{$D$};
+            \filldraw[black] (E) circle (.2pt) node[anchor=north west]{$E$};
+            %\draw[black,  thick] (A) -- (B) --( C) -- cycle;
+            \draw[black] (A) --  (O) --  (B);
+            \draw[black] (O) --  (C) ;
+            \draw[black] (O) --  (D) ;
+            \draw[black] (O) --  (E) ;
+        \end{tikzpicture}]]>
+        </latex-image-code>
+    </image>
+
+</sidebyside>
 </statement></example>
 
 <p>In trigonometry we often use lower-case Greek letters to represent unknown angles (or, more specifically, the measure of the angle in degrees).  In the next Exercise, we use the Greek letters <m>\alpha</m> (alpha), <m>\beta</m> (beta), and <m>\gamma</m> (gamma).</p>
@@ -389,7 +546,35 @@
             <li> Find the measure of angle <m>\gamma</m>.</li>
             <li> What do you notice about the measures of the angles?</li>
         </ol></p>
-    <image source="images/exer1-1-10.png"><description>straight angles with 50 degrees</description></image></sidebyside>
+<!--    <image source="images/exer1-1-10.png"><description>straight angles with 50 degrees</description></image>-->
+    <image xml:id="exer1-1-6">
+        <description>equilateral triangle with side 8</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}[auto, thick, node distance=2cm]
+            \coordinate (O) at (0,0);
+            \coordinate (A) at (-2,0);
+            \coordinate (B) at (2,0);
+            \coordinate(C) at (-1.157,-1.3789);
+            \coordinate (D) at (1.157,1.3789);
+            \filldraw[black] (O) circle (.2pt) node[anchor=south east]{$\alpha$};
+            \filldraw[black] (O) circle (.2pt) node[anchor=north east, xshift=-10]{$\beta$};
+            \filldraw[black] (O) circle (.2pt) node[anchor=north west, yshift=0]{$\gamma$};
+            \filldraw[black] (O) circle (.2pt) node[anchor=south west, xshift=9]{$50\degree$};
+            \draw[black] (A) --  (B);
+            \draw[black] (C) --  (D) ;
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+
+</sidebyside>
 </statement></exercise>
 
 <p>Non-adjacent angles formed by the intersection of two straight lines are called <term>vertical angles</term>.  In the previous exercise, the angles labeled <m>\alpha</m> and <m>\gamma</m> are vertical angles, as are the angles labeled <m>\beta</m> and <m>50\degree</m>.</p>
@@ -401,7 +586,38 @@
 <example><statement>
 <sidebyside widths="45% 30%">
     <p>Explain why <m>\alpha=\beta</m> in the triangle at right.</p>
-    <image source="images/exam1-1-11.png"><description>isosceles triangle with alpha and beta</description></image></sidebyside>
+<!--    <image source="images/exam1-1-11.png"><description>isosceles triangle with alpha and beta</description></image>-->
+    <image xml:id="exam1-1-11">
+        <description>isosceles triangle with alpha and beta</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}[auto, thick, node distance=2cm]
+
+            \coordinate (A) at (-.6,0);
+            \coordinate (B) at (0.6,0);
+            \coordinate(C) at (-.6,0);
+            \coordinate (D) at (0.6,0);
+            \filldraw[black] (A) circle (.2pt) node[anchor=south west, xshift=2]{$\theta$};
+            \filldraw[black] (B) circle (.2pt) node[anchor=south east, xshift=-3]{$\phi$};
+            \filldraw[black] (C) circle (.2pt) node[anchor=north east. xshift=-2]{$\alpha$};
+            \filldraw[black] (D) circle (.2pt) node[anchor=north west, xshift=3]{$\beta$};
+            \draw[black,  thick] (-1.5,0) -- (1.5,0);
+            \draw[black] (-.8,-.6) --  (0,1.8);
+            \draw[black] (0.8,-0.6) --  (0,1.8) ;
+            \draw[blue] (-.48,.86) -- (-.15,.75);
+            \draw[blue] (.48,.86) -- (.15,.75);
+
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+    </sidebyside>
 </statement>
 <solution><p>Because they are the base angles of an isosceles triangle, <m>\theta</m> (theta) and <m>\phi</m> (phi) are equal.  Also, <m>\alpha=\theta</m> because they are vertical angles, and similarly <m>\beta=\phi</m>.  Therefore, <m>\alpha=\beta</m> because they are equal to equal quantities.</p>
 </solution>
@@ -410,22 +626,123 @@
 <exercise><statement>
     <sidebyside widths="50% 45%">
     <p>Find all the unknown angles in the figure at right.  (You will find a list of all the Greek letters and their names at the end of this section.)</p>
-    <image source="images/exer1-1-12.png"><description>triangle with external angle 150</description></image></sidebyside>
+<!--    <image source="images/exer1-1-12.png"><description>triangle with external angle 150</description></image>-->
+    <image xml:id="exer1-1-12">
+        <description>triangle with external angle 150</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}[auto, thick, node distance=2cm]
+            \coordinate (A) at (-1.8,0);
+            \coordinate (B) at (0.7,0);
+            \coordinate (C) at (0,1.50);
+            \filldraw[black] (A) circle (.2pt) node[anchor=south east, xshift=4]{$\beta$};
+            \filldraw[black] (A) circle (.2pt) node[anchor=south west, xshift=10]{$40\degree$};
+            \filldraw[black] (B) circle (.2pt) node[anchor=south east, xshift=-5]{$\delta$};
+            \filldraw[black] (A) circle (.2pt) node[anchor=north east, xshift=-10]{$\alpha$};
+            \filldraw[black] (B) circle (.2pt) node[anchor=south west, xshift=-3]{$115\degree$};
+            \filldraw[black] (C) circle (.2pt) node[anchor=north,xshift=-3, yshift=-5]{$\gamma$};
+            \draw[black,  thick] (-3.5,0) -- (1.5,0);
+            \draw[black] (-2.4,-.5) --  (0,1.5);
+            \draw[black] (B) --  (0,1.5) ;
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+</sidebyside>
 </statement></exercise>
 
-<sidebyside widths="55% 40%">
+<sidebyside widths="55% 40%" valigns="middle middle">
 <p> A line that intersects two parallel lines forms eight angles, as shown in the figure at right.  There are four pairs of vertical angles, and four pairs of <term>corresponding angles</term>, or angles in the same position relative to the transversal on each of the parallel lines.  For example, the angles labeled 1 and 5 are corresponding angles, as are the angles labeled 4 and 8.   </p>  
-<image source="images/transversal.png"><description>transversal</description></image></sidebyside>
+<!--<image source="images/transversal.png"><description>transversal</description></image>-->
+    <image xml:id="transversal">
+        <description>transversal</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}[auto, thick, node distance=2cm]
+            \coordinate (A) at (.6,1.8);
+            \coordinate (B) at (-.6,0);
+            \filldraw[black] (A) circle (.2pt) node[anchor=south east, xshift=3]{$1$};
+            \filldraw[black] (A) circle (.2pt) node[anchor=south west, xshift=7]{$2$};
+            \filldraw[black] (A) circle (.2pt) node[anchor=north east, xshift=-5]{$3$};
+            \filldraw[black] (A) circle (.2pt) node[anchor=north west, xshift=-1]{$4$};
+            \filldraw[black] (B) circle (.2pt) node[anchor=south east, xshift=5]{$5$};
+            \filldraw[black] (B) circle (.2pt) node[anchor=south west, xshift=7]{$6$};
+            \filldraw[black] (B) circle (.2pt) node[anchor=north east, xshift=-5]{$7$};
+            \filldraw[black] (B) circle (.2pt) node[anchor=north west, xshift=-1]{$8$};
+            \draw[black,  thick] (-2.5,1.8) -- (2.5,1.8);
+            \draw[black,  thick] (-2.5,0) -- (2.5,0);
+            \draw[black,  thick, ->] (-2.5,1.8) -- (2.,1.8);
+            \draw[black,  thick, ->] (-2.5,0) -- (2.,0);
+            \draw[black, thick] (-1.2,-.9) --  (1.2,2.7) ;
+
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+</sidebyside>
 <p>Finally, angles 3 and 6 are called <term>alternate interior angles</term>, and so are angles 4 and 5.</p>
 
 <assemblage>
         <p>6.  If parallel lines are intersected by a transversal, the alternate interior angles are equal.  Corresponding angles are also equal.</p>
 </assemblage>
 
+
 <example><statement>
 <sidebyside widths="45% 45%">
     <p>The parallelogram <m>ABCD</m> shown at right is formed by the intersection of two sets of parallel lines.  Show that the opposite angles of the parallelogram are equal.</p>
-    <image source="images/parallelogram.png"><description>parallelogram</description></image></sidebyside>
+<!--    <image source="images/parallelogram.png"><description>parallelogram</description></image>-->
+    <image xml:id="parallelogram">
+        <description>parallelogram</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}[auto, thick, node distance=2cm]
+            \coordinate (A) at (0,0);
+            \coordinate (B) at (.4,1.6);
+            \coordinate (C) at( 4.4,1.6);
+            \coordinate (D) at (4,0);
+            \filldraw[black] (A) circle (.2pt) node[anchor=north east, xshift=-2]{$A$};
+            \filldraw[black] (B) circle (.2pt) node[anchor=south east, xshift=0]{$B$};
+            \filldraw[black] (C) circle (.2pt) node[anchor=south west, xshift=2]{$C$};
+            \filldraw[black] (D) circle (.2pt) node[anchor=north west, xshift=-2]{$D$};
+            \filldraw[black] (D) circle (.2pt) node[anchor=south east, xshift=-1]{$4$};
+            \filldraw[black] (C) circle (.2pt) node[anchor=north east, xshift=-2]{$3$};
+            \filldraw[black] (C) circle (.2pt) node[anchor=north west, xshift=0]{$5$};
+            \filldraw[black] (A) circle (.2pt) node[anchor=south west, xshift=3]{$1$};
+            \filldraw[black] (B) circle (.2pt) node[anchor=north east, xshift=-5]{$2$};
+            \filldraw[black] (B) circle (.2pt) node[anchor=north west, xshift=-1]{$6$};
+            \draw[black,  thick] (-.9,1.6) -- (4.9,1.6);
+            \draw[black,  thick] (-.9,0) -- (4.9,0);
+            \draw[black,  thick, ->] (-.5,1.6) -- (2.,1.6);
+            \draw[black,  thick, ->] (-.5,0) -- (2.3,0);
+            \draw[black,  thick, ->] (-.5,1.6) -- (2.3,1.6);
+            \draw[black,  thick, ->] (-.5,0) -- (2.,0);
+            \draw[black, thick] (-.2,-.8) --  (.6,2.4) ;
+            \draw[black, thick] (3.8,-.8) --  (4.6,2.4) ;
+            \draw[black, thick, ->] (-.2,-.8) --  (.2,.8) ;
+            \draw[black, thick, ->] (3.8,-.8) --  (4.2,.8) ;
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+</sidebyside>
 </statement>
 <solution><p>Angles 1 and 2 are equal because they are alternate interior angles, and angles 2 and 3 are equal because they are corresponding angles.  Therefore angles 1 and 3, the opposite angles of the parallelogram, are equal. Similarly, you can show that angles 4, 5, and 6 are equal.</p>
 </solution>
