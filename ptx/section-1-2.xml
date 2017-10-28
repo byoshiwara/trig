@@ -8,12 +8,92 @@
 <p>
     Two triangles are <term>congruent</term> if they have exactly the same size and shape.  This means that their corresponding angles are equal, and their corresponding sides have the same lengths, as shown below.
 </p>
-<sidebyside width="100%"><image source="images/congtri.png"><description>congruent triangles</description></image> </sidebyside>
+<sidebyside width="100%">
+    <!--<image source="images/congtri.png"><description>congruent triangles</description></image>-->
+    <image xml:id="congtri">
+        <description>congruent triangles</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}[auto, thick]
+            \coordinate (A) at (0,0 );
+            \coordinate (B) at (1.3,1.8);
+            \coordinate (C) at (4.5,.25);
+
+
+            \filldraw[black] (A) circle (.2pt) node[anchor=north east, xshift=0, yshift=0]{$A$};
+            \filldraw[black] (B) circle (.2pt) node[anchor=south , xshift=0, yshift=0]{$B$};
+            \filldraw[black] (C) circle (.2pt) node[anchor= west, xshift=0, yshift=0]{$C$};
+
+            \filldraw[ black, shift={(7 cm, 3 cm)}, rotate=-65]  (0,0) circle (.2pt) node[anchor=east, xshift=0, yshift=0]{$D$};
+            \filldraw[black, shift={(7 cm, 3 cm)}, rotate=-65] (1.3,1.8) circle (.2pt) node[anchor=west , xshift=0, yshift=0]{$E$};
+            \filldraw[black, shift={(7 cm, 3 cm)}, rotate=-65] (4.5,.25) circle (.2pt) node[anchor=north west, xshift=0, yshift=0]{$F$};
+
+            \draw (A)--(B) node[left, midway, xshift=-3,yshift=1] {\color{blue}$c$};
+            \draw (B)--(C) node[right, midway, xshift=3,yshift=2] {\color{blue}$a$};
+            \draw (A)--(C) node[below, midway, yshift=-3] {\color{blue}$b$};
+
+            \draw[black, shift={(7 cm, 3 cm)}, rotate=-65]  (0,0)--(1.3,1.8) node[above, midway, xshift=0,yshift=3] {\color{blue}$f$};
+            \draw[black, shift={(7 cm, 3 cm)}, rotate=-65]  (1.3,1.8)--(4.5,.25) node[right, midway, xshift=3,yshift=2] {\color{blue}$d$};
+            \draw[black, shift={(7 cm, 3 cm)}, rotate=-65]  (0,0)--(4.5,.25) node[left, midway, xshift=-2, yshift=-3] {\color{blue}$e$};
+            \end{tikzpicture}]]>
+            </latex-image-code>
+                </image>
+    </sidebyside>
 
 
 <example><statement>
     <p>The two triangles below are congruent.  List the corresponding parts, and find the angles <m>\theta</m>, <m>\phi</m>, and <m>\chi</m>, and side <m>z</m>.</p>
-    <sidebyside width="60%"> <image source="images/exam1-2-1.png"><description>cong triangles w vert angles</description></image></sidebyside>
+    <sidebyside width="60%"><!-- <image source="images/exam1-2-1.png"><description>cong triangles w vert angles</description></image>-->
+    <image xml:id="exam1-2-1">
+        <description>cong triangles w vert angles</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}[auto, thick]
+            \coordinate (A) at (-4,-1.5 );
+            \coordinate (B) at (-4,0);
+            \coordinate (C) at(0,0);
+            \coordinate (D) at (4,0);
+            \coordinate (E) at(4,1.5);
+
+            \filldraw[black] (A) circle (.2pt) node[anchor=north east, xshift=0, yshift=0]{$A$};
+            \filldraw[black] (A) circle (.2pt) node[anchor=south west, xshift=0, yshift=2]{\color{red}$\phi$};
+
+            \filldraw[black] (B) circle (.2pt) node[anchor=south east, xshift=0, yshift=0]{$B$};
+            \draw[blue] (B) rectangle +(0.25,-0.25);
+
+            \filldraw[black] (C) circle (.2pt) node[anchor=south, xshift=0, yshift=0]{$C$};
+            \filldraw[black] (C) circle (.2pt) node[anchor=north east, xshift=-30, yshift=1]{\color{red}$\theta$};
+            \filldraw[black] (C) circle (.2pt) node[anchor=south west, xshift=30, yshift=-1]{\color{red}$25\degree$};
+
+            \filldraw[black] (D) circle (.2pt) node[anchor=north west, xshift=0, yshift=0]{$D$};
+            \draw[blue] (D) rectangle +(-0.25,0.25);
+
+
+            \filldraw[black] (E) circle (.2pt) node[anchor=south west, xshift=0, yshift=0]{$E$};
+            \filldraw[black] (E) circle (.2pt) node[anchor=north east, xshift=0, yshift=-6]{\color{red}$\chi$};
+
+            \draw[black,  thick] (A) -- (B) node [left, midway, xshift=-2] {\color{blue}9};
+            \draw[black,  thick] (B) --( D)  ;
+            \draw[black,  thick] (A) -- (E)  ;
+            \draw[black, thick] (E) -- (D) node[right, midway]{\color{blue}$z$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+</sidebyside>
 </statement>
 <solution><p> In these triangles, <m>\angle B=\angle D</m> because they are both right angles, and <m>\angle BCA=\angle DCE</m>  because they are vertical angles, so <m>\theta =25\degree</m>. The third angles, <m>\angle A</m> and <m>\angle E</m>, must also be equal, so <m>\phi = \chi =65\degree</m>. (Do you see why?)  The sides opposite each pair of corresponding angles are equal, so <m>AB=DE</m>, <m>BC=CD</m> and <m>AC=CE</m>.  In particular, we find that <m>z=9</m>.</p>
 </solution></example>
@@ -21,14 +101,109 @@
 <exercise><statement>
     <sidebyside widths="50% 45%">
     <p>The two triangles at right are congruent.  Find the values of <m>\alpha</m>, <m>\beta</m>, and <m>\gamma</m>.</p>
-    <image source="images/exer1-2-1.png"><description>two cong triangles</description></image></sidebyside>
+    <!--<image source="images/exer1-2-1.png"><description>two cong triangles</description></image>-->
+    <image xml:id="exer1-2-1">
+        <description>two cong triangles</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}[auto, thick]
+            \coordinate (A) at (0,0 );
+            \coordinate (B) at (4,0);
+            \coordinate (C) at (3.6,1.3);
+
+
+            \filldraw[black] (A) circle (.2pt) node[anchor=south west, xshift=20, yshift=-3]{\color{red}$20\degree$};
+            \filldraw[black] (B) circle (.2pt) node[anchor=south east, xshift=0, yshift=0]{\color{red}$75\degree$};
+            \filldraw[black] (C) circle (.2pt) node[anchor= north east, xshift=0, yshift=-2]{\color{red}$\alpha$};
+
+            \filldraw[ black, shift={(5.5 cm, -1.5 cm)}, rotate=85]  (0,0) circle (.2pt) node[anchor=south, xshift=-3, yshift=42]{\color{red}$20\degree$};
+            \filldraw[black, shift={(5.5 cm, -1.5 cm)}, rotate=85] (4,0) circle (.2pt) node[anchor=north east , xshift=0, yshift=0]{\color{red}$\beta$};
+            \filldraw[black, shift={(5.5 cm, -1.5 cm)}, rotate=85] (3.6,1.3) circle (.2pt) node[anchor=north west, xshift=0, yshift=0]{\color{red}$\gamma$};
+
+
+            \draw (A)--(B) ;
+            \draw (B)--(C) ;
+            \draw (A)--(C) node[above, midway, yshift=3] {\color{blue}$16$};
+
+            \draw[black, shift={(5.5 cm, -1.5 cm)}, rotate=85]  (0,0)--(4,0);
+            \draw[black, shift={(5.5 cm, -1.5 cm)}, rotate=85]  (4,0)--(3.6,1.3) ;
+            \draw[black, shift={(5.5 cm, -1.5 cm)}, rotate=85]  (0,0)--(3.6,1.3) node[left, midway, xshift=0, yshift=2] {\color{blue}$16$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+    </sidebyside>
 </statement></exercise>
 
 <p>Recall that the <term>altitude</term> of a triangle is the segment from one vertex of the triangle perpendicular to the opposite side.</p>
 
 <example><statement>
     <p>Show that the altitude of an equilateral triangle divides it into two congruent right triangles.</p>
-    <sidebyside width="70%"> <image source="images/exam1-2-2.png"><description>equil triangle with altitude</description></image></sidebyside>
+    <sidebyside width="70%"><!-- <image source="images/exam1-2-2.png"><description>equil triangle with altitude</description></image>-->
+    <image xml:id="exam1-2-2">
+        <description>equil triangle with altitude</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}[auto, thick]
+            \coordinate (A) at (0,0);
+            \coordinate (B) at (3,0);
+            \coordinate(C) at (1.5,2.6);
+
+            \filldraw[black] (A) circle (.2pt) node[anchor=south west, xshift=5, yshift=-1]{\color{red}$60\degree$};
+            \filldraw[black] (B) circle (.2pt) node[anchor=south east, xshift=-4, yshift=-1]{\color{red}$60\degree$};
+            \filldraw[black] (C) circle (.2pt) node[anchor=north , yshift=-12]{\color{red}$60\degree$};
+
+            \draw[black] (A) --  (B) ;
+            \draw[black] (A) --  (C) node [above left, midway,yshift=-4] {\color{blue}$8$};
+            \draw[black] (C) --  (B) node [above right, midway,yshift=-4] {\color{blue}$8$};
+
+            \coordinate (A2) at (3.5,0);
+            \coordinate (B2) at (6.5,0);
+            \coordinate(C2) at (5,2.6);
+            \coordinate(D2) at (5,0);
+
+            \filldraw[black] (A2) circle (.2pt) node[anchor=south west, xshift=5, yshift=-1]{\color{red}$60\degree$};
+            \filldraw[black] (B2) circle (.2pt) node[anchor=south east, xshift=-4, yshift=-1]{\color{red}$60\degree$};
+
+            \draw[blue] (D2) rectangle +(.25,.25);
+            \draw[black] (A2) --  (B2) ;
+            \draw[gray] (C2) --  (D2) ;
+            \draw[black] (A2) --  (C2) node [above left, midway,yshift=-4] {\color{blue}$8$};
+            \draw[black] (C2) --  (B2) node [above right, midway,yshift=-4] {\color{blue}$8$};
+
+            \coordinate (A3) at (7,0);
+            \coordinate (B3) at (10,0);
+            \coordinate(C3) at (8.5,2.6);
+            \coordinate(D3) at (8.5,0);
+
+            \filldraw[black] (A3) circle (.2pt) node[anchor=south west, xshift=5, yshift=-1]{\color{red}$60\degree$};
+            \filldraw[black] (B3) circle (.2pt) node[anchor=south east, xshift=-4, yshift=-1]{\color{red}$60\degree$};
+            \filldraw[black] (C3) circle (.2pt) node[anchor=north east, xshift=3, yshift=-28]{\color{red}$30\degree$};
+            \filldraw[black] (C3) circle (.2pt) node[anchor=north west, xshift=-1, yshift=-28]{\color{red}$30\degree$};
+
+            \draw[blue] (D3) rectangle +(.25,.25);
+            \draw[black] (A3) --  (D3)  node [below, midway,yshift=0] {\color{blue}$4$};
+            \draw[black] (B3) --  (D3)  node [below, midway,yshift=0] {\color{blue}$4$};
+            \draw[gray] (C3) --  (D3) ;
+            \draw[black] (A3) --  (C3) node [above left, midway,yshift=-4] {\color{blue}$8$};
+            \draw[black] (C3) --  (B3) node [above right, midway,yshift=-4] {\color{blue}$8$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+    </sidebyside>
 </statement>
 <solution><p> Consider for example an equilateral triangle of side 8 inches, as shown above.  The altitude is perpendicular to the base, so each half of the original triangle is a right triangle.  Because each right triangle contains a <m>60\degree</m> angle, the remaining angle in each triangle must be <m>90\degree - 60\degree = 30\degree</m>.   Both triangles have a side of length 8 between the angles of 30° and 60°, so they are congruent. (Consequently, the short sides of the congruent triangles are equal, so each is half the original base.)</p>
 </solution></example>
@@ -38,7 +213,34 @@
 <exercise><statement>
     <sidebyside widths="50% 40%">
     <p>The diagonal of a <term>parallelogram</term> divides it into two congruent triangles, as shown at right.  List the corresponding parts of the two triangles, and explain why each pair is equal.</p>
-    <image source="images/exer1-2-2.png"><description>parallelogram</description></image></sidebyside>
+    <!--<image source="images/exer1-2-2.png"><description>parallelogram</description></image>-->
+    <image xml:id="exer1-2-2">
+        <description>parallelogram</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}[auto, thick]
+            \coordinate (A) at (0,0);
+            \coordinate (B) at (.8,2.3);
+            \coordinate(C) at (4.5,2.3);
+            \coordinate (D) at (3.7,0);
+
+            \filldraw[black] (A) circle (.2pt) node[anchor=north east]{$A$};
+            \filldraw[black] (B) circle (.2pt) node[anchor=south east, xshift=0]{$B$};
+            \filldraw[black] (C) circle (.2pt) node[anchor=south west]{$C$};
+            \filldraw[black] (D) circle (.2pt) node[anchor=north west]{$D$};
+            \draw[black,  thick] (A) -- (B) --( C) --(D)-- cycle;
+            \draw[black] (A) --  (C);
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+    </sidebyside>
 </statement></exercise>
 
 </subsection>
@@ -46,9 +248,94 @@
 <subsection><title>Similar Triangles</title>
 <p> Two triangles are <term>similar</term> if they have the same shape but not necessarily the same size.  The corresponding angles are equal, and the corresponding sides are <term>proportional</term>.  We can think of one similar triangle as an enlargement or a reduction of the other.  (See the figures below.)</p>
 
-<sidebyside widths="35%, 20%, 35%"> <image source="images/simtri.png"><description>similar triangles</description></image>
+<!-- <sidebyside widths="35%, 20%, 35%"><image source="images/simtri.png"><description>similar triangles</description></image>
             <image source="images/simtrieqns.png"><description>similar triangle equations</description></image>
-            <image source="images/simtriproj.png"><description>similar triangles projected</description></image></sidebyside>
+            <image source="images/simtriproj.png"><description>similar triangles projected</description></image></sidebyside>-->
+<sidebyside widths="35% 20% 35%">
+    <image xml:id="simtri">
+        <description>similar triangles</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}[auto, thick]
+            \coordinate (A) at (1.8,0);
+            \coordinate (B) at (-.2,1.2);
+            \coordinate(C) at (0,0);
+
+            \filldraw[black] (A) circle (.2pt) node[anchor=north west]{$A$};
+            \filldraw[black] (B) circle (.2pt) node[anchor=south east, xshift=0]{$B$};
+            \filldraw[black] (C) circle (.2pt) node[anchor=north east]{$C$};
+
+            %\draw[black,  thick] (A) -- (B) --( C) -- cycle;
+            \draw[black,  thick] (A) --  (C) node[below, midway] {$\color{blue}b$};
+            \draw[black,  thick] (A) --  (B) node[above, midway] {$\color{blue}c$};
+            \draw[black,  thick] (B) --  (C) node[left, midway] {$\color{blue}a$};
+
+            \filldraw[black, shift={(1.3 cm, 2 cm)},scale=1.8] (1.8,0) circle (.2pt) node[anchor=north west]{$A'$};
+            \filldraw[black, shift={(1.3 cm, 2 cm)},scale=1.8] (-.2,1.2) circle (.2pt) node[anchor=south east, yshift=-2]{$B'$};
+            \filldraw[black, shift={(1.3 cm, 2 cm)},scale=1.8] (0,0) circle (.2pt) node[anchor=north east]{$C'$};
+
+
+            \draw[black,  thick, shift={(1.3 cm, 2 cm)},scale=1.8]  (0,0)--(1.8,0) node[below, midway, xshift=0,yshift=0] {$\color{blue}b '$};
+            \draw[black,  thick, shift={(1.3 cm, 2 cm)}, scale=1.8]  (1.8,0)--(-.2,1.2) node[right, midway, xshift=0,yshift=6] {$\color{blue}c '$};
+            \draw[black,  thick, shift={(1.3 cm, 2 cm)}, scale=1.8]  (0,0)--(-.2,1.2) node[left, midway, xshift=-2, yshift=-3] {$\color{blue}a '$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+    <p><md>
+        <mrow>\angle A \amp \angle A'</mrow>
+        <mrow>\angle B \amp \angle B'</mrow>
+        <mrow>\angle C \amp \angle C'</mrow>
+        </md>
+    <me>\frac{a}{a'}=\frac{b}{b'}=\frac{c}{c'}</me></p>
+    <image xml:id="simtriproj">
+        <description>similar triangles projected</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}[auto, thick]
+            \coordinate (A) at (1.8,0);
+            \coordinate (B) at (-.2,1.2);
+            \coordinate(C) at (0,0);
+            \coordinate(O) at (-1.44,-2.22);
+
+
+            \filldraw[black] (A) circle (.2pt) node[anchor=north west]{$A$};
+            \filldraw[black] (B) circle (.2pt) node[anchor=south east, xshift=0]{$B$};
+            \filldraw[black] (C) circle (.2pt) node[anchor=north east]{$C$};
+
+            \draw[black,  thick] (A) --  (C);
+            \draw[black,  thick] (A) --  (B) ;
+            \draw[black,  thick] (B) --  (C) ;
+
+            \filldraw[black, shift={(1.3 cm, 2 cm)},scale=1.8] (1.8,0) circle (.2pt) node[anchor=north west]{$A'$};
+            \filldraw[black, shift={(1.3 cm, 2 cm)},scale=1.8] (-.2,1.2) circle (.2pt) node[anchor=south east, yshift=-2]{$B'$};
+            \filldraw[black, shift={(1.3 cm, 2 cm)},scale=1.8] (0,0) circle (.2pt) node[anchor=north east]{$C'$};
+
+
+            \draw[black,  thick, shift={(1.3 cm, 2 cm)},scale=1.8]  (0,0)--(1.8,0) ;
+            \draw[black,  thick, shift={(1.3 cm, 2 cm)}, scale=1.8]  (1.8,0)--(-.2,1.2) ;
+            \draw[black,  thick, shift={(1.3 cm, 2 cm)}, scale=1.8]  (0,0)--(-.2,1.2) ;
+
+            \draw[gray, dashed] (O) --  +(3.9,6);
+            \draw[gray, dashed] (O) --    +(2.5,6.84) ;
+            \draw[gray, dashed] (O) --    +(6.4,4.44) ;
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+</sidebyside>
 
 <p> To decide whether two triangles are similar, it turns out that we need to verify only one of the two conditions for similarity, and the other condition will be true automatically.</p>
 
@@ -63,9 +350,106 @@
 <example><statement>
     <p>Which of the pairs of triangles shown below are similar?</p>
     <p><ol label="a">
-        <li><sidebyside width="35%"> <image source="images/exam1-2-3a.png"><description>sim triangles</description></image></sidebyside></li>
-        <li><sidebyside width="40%"> <image source="images/exam1-2-3b.png"><description>not sim triangles</description></image></sidebyside></li>
-        <li><sidebyside width="50%"> <image source="images/exam1-2-3c.png"><description>sim triangles 42 deg</description></image></sidebyside></li>
+        <li><sidebyside width="35%"><!-- <image source="images/exam1-2-3a.png"><description>sim triangles</description></image>-->
+    <image xml:id="exam1-2-3a">
+        <description>sim triangles</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}[auto, thick]
+            \coordinate (A) at (0,0);
+            \coordinate (B) at (1.6,0);
+            \coordinate(C) at (1.6,-1.2);
+
+            \draw[blue, thick] (B) rectangle +(-0.25,-0.25);
+
+            \draw[black,  thick] (A) --  (C) node[below left, midway] {\color{blue}$15$};
+            \draw[black,  thick] (A) --  (B) node[above, midway] {\color{blue}$12$} ;
+            \draw[black,  thick] (B) --  (C) node[right, midway] {\color{blue}$9$};
+
+
+            \draw[blue,  thick, shift={(3.5 cm, .1 cm)},scale=0.67, rotate=-90]  (1.6,0) rectangle +(-0.375,-0.375);
+            \draw[black,  thick, shift={(3.5 cm, .1 cm)},scale=0.67, rotate=-90]  (0,0)--(1.6,0) node [right, midway] {\color{blue}$8$};
+            \draw[black,  thick, shift={(3.5 cm, .1 cm)},scale=0.67, rotate=-90]   (1.6,0)--(1.6,-1.2) node [below, midway] {\color{blue}$6$};
+            \draw[black,  thick, shift={(3.5 cm, .1 cm)},scale=0.67, rotate=-90]   (0,0)--(1.6,-1.2) node [above left, midway, xshift=2, yshift=-3] {\color{blue}$10$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+            </sidebyside></li>
+        <li><sidebyside width="40%"><!-- <image source="images/exam1-2-3b.png"><description>not sim triangles</description></image>-->
+    <image xml:id="exam1-2-3b">
+        <description>not sim triangles</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}[auto, thick]
+            \coordinate (A) at (0,0);
+            \coordinate (B) at (1.8,0);
+            \coordinate(C) at (0,2.4);
+
+            \draw[black,  thick] (A) --  (C) node[below left, midway] {\color{blue}$4$};
+            \draw[black,  thick] (A) --  (B) node[below, midway] {\color{blue}$3$} ;
+            \draw[black,  thick] (B) --  (C) node[above right, midway] {\color{blue}$5$};
+
+
+            \coordinate (A2) at (2.4,-0.2);
+            \coordinate (B2) at (4.8,-0.2);
+            \coordinate(C2) at (2.6,2.6);
+
+            \draw[black,  thick] (A2) --  (C2) node[below left, midway] {\color{blue}$5$};
+            \draw[black,  thick] (A2) --  (B2) node[below, midway] {\color{blue}$4$} ;
+            \draw[black,  thick] (B2) --  (C2) node[above right, midway] {\color{blue}$6$};
+
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+            </sidebyside></li>
+        <li><sidebyside width="50%"><!-- <image source="images/exam1-2-3c.png"><description>sim triangles 42 deg</description></image>-->
+    <image xml:id="exam1-2-3c">
+        <description>sim triangles 42 deg</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}[auto, thick]
+            \coordinate (A) at (0,0);
+            \coordinate (B) at (-1.6,-2);
+            \coordinate (C) at (1.8,-1.44);
+
+            \draw[black,  thick] (A) --  (B) -- (C) -- cycle ;
+            \draw[blue,  thick]  (A) -- ++(-.16,-.2) -- ++(.2,-.16) -- ++(.16,.2);
+            \draw[blue, thick] (-1.3,-1.6) arc ({atan(1.25)}:{atan(.1647}:.5) node [above right, midway] {$42\degree$};
+
+
+            \coordinate (A2) at (2.5,-1.71);
+            \coordinate (B2) at (.6,0);
+            \coordinate (C2) at (4.04,0);
+
+            \draw[black,  thick] (A2) --  (B2) -- (C2) -- cycle ;
+            \draw[blue,  thick]  (A2) -- ++(-.14,.126) -- ++(.126,.14) -- ++(.14,-.126);
+            \draw[blue, thick] (3.54,0) arc (180:228:.5) node [below left, midway] {$48\degree$};
+
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+            </sidebyside></li>
     </ol></p>
 </statement>
 <solution><p> 
@@ -82,8 +466,74 @@
 <exercise><statement>
     <p>Are the triangles below similar?  Explain why or why not in each case.</p>
     <p><ol label="a">
-        <li><sidebyside width="45%"> <image source="images/exer1-2-3a.png"><description>sim triangles by sides</description></image></sidebyside></li>
-        <li><sidebyside width="35%"> <image source="images/exer1-2-3b.png"><description>sim triangles by angles</description></image></sidebyside></li>
+        <li><sidebyside width="45%"><!-- <image source="images/exer1-2-3a.png"><description>sim triangles by sides</description></image>-->
+    <image xml:id="exer1-2-3a">
+        <description>sim triangles by sides</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}[auto, thick]
+            \coordinate (A) at (0,0);
+            \coordinate (B) at (-.5,2.3);
+            \coordinate (C) at (1.8,0);
+
+            %\draw[black,  thick] (A) --  (B) -- (C) -- cycle ;
+            \draw[black, thick] (A) --  (B) node[left,midway] {\color{blue}$6$} ;
+            \draw[black, thick] (A)  -- (C) node[below,midway] {\color{blue}$4$} ;
+            \draw[black, thick] (B) -- (C) node[above ,midway,xshift=2] {\color{blue}$8$} ;
+
+
+            \coordinate (A2) at (4.5,2);
+            \coordinate (B2) at (5.2,0);
+            \coordinate (C2) at (1.3,1.6);
+
+            %\draw[black,  thick] (A2) --  (B2) -- (C2) -- cycle ;
+            \draw[black, thick] (A2) --  (B2) node[right,midway] {\color{blue}$6$} ;
+            \draw[black, thick] (A2)  -- (C2) node[above,midway] {\color{blue}$9$} ;
+            \draw[black, thick] (B2) -- (C2) node[below,midway,xshift=-2] {\color{blue}$12$} ;
+
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+            </sidebyside></li>
+        <li><sidebyside width="35%"><!-- <image source="images/exer1-2-3b.png"><description>sim triangles by angles</description></image>-->
+    <image xml:id="exer1-2-3b">
+        <description>sim triangles by angles</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}[auto, thick]
+            \coordinate (A) at (0,0);
+            \coordinate (B) at (-.6,2.4);
+            \coordinate (C) at (1.27,2.6);
+
+            \draw[black,  thick] (A) --  (B) -- (C) -- cycle ;
+            \draw[red, thick] (-.121,.485) arc (104:64:0.5) node [above, midway, xshift=3, yshift=3] {\color{red}$40\degree$};
+            \draw[red, thick] (1.05,2.15) arc (244:184:0.5) node [below left, midway, xshift=0, yshift=2] {\color{red}$60\degree$};
+
+            \draw[red, thick,shift={(1 cm, .5 cm)}, rotate=-50, scale=.8] (-.121,.485) arc (104:64:0.5) node [above, midway, xshift=10, yshift=-2] {\color{red}$40\degree$};
+            \draw[red, thick, shift={(1 cm, .5 cm)}, rotate=-50, scale=.8] (1.05,2.15) arc (244:184:0.5) node [below left, midway, xshift=2, yshift=8] {\color{red}$60\degree$};
+
+            \draw[black, shift={(1 cm, .5 cm)}, rotate=-50, scale=.8]  (0,0)--(-.6,2.4);
+            \draw[black, shift={(1 cm, .5 cm)}, rotate=-50, scale=.8]  (-.6,2.4)--(1.27,2.6) ;
+            \draw[black, shift={(1 cm, .5 cm)}, rotate=-50, scale=.8]  (0,0)--(1.27,2.6) ;
+
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+            </sidebyside></li>
     </ol></p>
 </statement></exercise>
 
@@ -99,7 +549,45 @@
  <example><statement>
     <sidebyside widths="45% 40%"> 
         <p>Find the value of <m>x</m> in the figure at right.</p>
-        <image source="images/exam1-2-4.png"><description>parallelogram triangles</description></image></sidebyside>   
+        <!--<image source="images/exam1-2-4.png"><description>parallelogram triangles</description></image>-->
+    <image xml:id="exam1-2-4">
+        <description>parallelogram triangles</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}[auto, thick]
+            \coordinate (A) at (0,0);
+            \coordinate (B) at (.7,3);
+            \coordinate (C) at (4.3,3);
+            \coordinate (D) at (3.6,0);
+            \coordinate (E) at (3.27,3);
+            \coordinate (F) at (4.58,4.2);
+
+            \draw[black,  thick] (A) --  (B) -- (C) -- (D) -- cycle ;
+            \draw[black,  thick] (F) -- (C) node[right, midway] {\color{blue}$6$} ;
+            \draw[black,  thick] (F) -- (E) node[left, midway, yshift=2] {\color{blue}$8$} ;
+            \draw[black,  thick] (A) -- (E) node[left, midway,yshift=2] {\color{blue}$y$} ;
+            \draw[black,  thick] (C) -- (E) node[below, midway] {\color{blue}$4$} ;
+            \draw[black,  thick] (B) -- (E) node[below, midway] {\color{blue}$x$} ;
+            \draw[black,  thick] (B) -- (A) node[left, midway] {\color{blue}$15$} ;
+
+            \filldraw[black] (A) circle (.2pt) node[anchor=north east]{$A$};
+            \filldraw[black] (B) circle (.2pt) node[anchor= east]{$B$};
+            \filldraw[black] (C) circle (.2pt) node[anchor=west]{$C$};
+            \filldraw[black] (D) circle (.2pt) node[anchor=north west]{$D$};
+            \filldraw[black] (E) circle (1.8pt) node[anchor=south east]{$E$};
+            \filldraw[black] (F) circle (.2pt) node[anchor= west]{$F$};
+
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+     </sidebyside>   
 </statement>
 <solution><p>  We see that <m>x</m> is the length of the shortest side in <m>\triangle ABE</m>. We know the short side in <m>\triangle FCE</m> and the lengths of the medium sides in each triangle.  If we form the ratios of the short sides and the medium sides, we obtain the following proportion.</p>
 
@@ -132,7 +620,8 @@
         <li>Use similar triangles to write a proportion involving the height of the building.</li>
         <li>Solve the proportion to find the height of the building.</li></ol></p>
 
-       <sidebyside width="60%"><image source="images/exam1-2-5.png"><description>building</description></image></sidebyside>   
+       <sidebyside width="60%"><!--<image source="images/exam1-2-5.png">-->
+           <image source="images/exam1-2-5"><description>building</description></image></sidebyside>   
 </statement>
 <solution>
     <p><ol label="a">  
@@ -161,12 +650,78 @@
 
 <example><statement>
        <sidebyside widths="50% 40%"><p>Identify two similar triangles in the figure at right, and write a proportion to find <m>H</m>.</p>
-       <image source="images/exam1-2-6.png"><description>overlapping triangles</description></image></sidebyside>   
+       <!--<image source="images/exam1-2-6.png"><description>overlapping triangles</description></image>-->
+    <image xml:id="exam1-2-6">
+        <description>overlapping triangles</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}[auto, thick]
+            \coordinate (A) at (0,0);
+            \coordinate (B) at (2.4,1);
+            \coordinate (C) at (2.4,0);
+            \coordinate (D) at (3.6,1.5);
+            \coordinate (E) at (3.6,0);
+
+            \draw[blue, thick] (C) rectangle +(-.25, .25);
+            \draw[blue, thick] (E) rectangle +(-.25, .25);
+            \draw[black,  thick] (A) --  (C) node[below,midway] {\color{blue}$24$} ;
+            \draw[black,  thick] (B) -- (C) node[right, midway] {\color{blue}$10$} ;
+            \draw[black,  thick] (C) -- (E) node[below, midway, yshift=0] {\color{blue}$12$} ;
+            \draw[black,  thick] (D) -- (E) node[right, midway,yshift=0] {\color{blue}$H$} ;
+            \draw[black,  thick] (A) -- (D)  ;
+
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+    </sidebyside>   
 </statement>
 <solution>
     <p> The two triangles overlap, sharing the marked angle, as shown below.  Because each triangle also has a right angle, they are similar.</p>
 
-    <sidebyside width="75%"><image source="images/exam1-2-6soln.png"><description>separated triangles</description></image></sidebyside>
+    <sidebyside width="75%"><!--<image source="images/exam1-2-6soln.png"><description>separated triangles</description></image>-->
+    <image xml:id="exam1-2-6soln">
+        <description>separated triangles</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}[auto, thick, scale=1.2]
+            \coordinate (A) at (0,0);
+            \coordinate (B) at (2.4,1);
+            \coordinate (C) at (2.4,0);
+            \coordinate (D) at (6.6,1.5);
+            \coordinate (E) at (6.6,0);
+            \coordinate (A2) at (3,0);
+
+            \draw[blue, thick] (C) rectangle +(-.25, .25);
+            \draw[blue, thick] (E) rectangle +(-.25, .25);
+            \draw[black,  thick] (A) -- (B)  ;
+            \draw[black, thick] (A) --  (C) node[below,midway] {\color{blue}$24$};
+            \draw[black,  thick] (B) -- (C) node[right, midway] {\color{blue}$10$} ;
+
+            \draw[red,thick] (0.48,-0.13) arc (-15:35:0.5);
+
+            \draw[black,  thick] (A2) -- (E) node[below, midway, xshift=5] {\color{blue}$24~~~+~~~12$} ;
+            \draw[black,  thick] (D) -- (E) node[right, midway,yshift=0] {\color{blue}$H$} ;
+            \draw[black,  thick] (A2) -- (D)  ;
+            \draw[red,thick] (3.48,-0.13) arc (-15:35:0.5);
+
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+    </sidebyside>
 
     <p>Note that the base of the larger triangle is <m>24+12=36</m>.  The ratio of the heights and the ratio of the bases must be equal, so we write the following proportion.            
                 \begin{align*}
@@ -178,7 +733,8 @@
 
 <exercise><statement>  
     <sidebyside widths="50% 35%"><p>Heather wants to know the height of a street lamp.  She discovers that when she is 12 feet from the lamp, her shadow is 6 feet long.  Find the height of the street lamp.</p>
-       <image source="images/exer1-2-6.png"><description>streetlamp</description></image></sidebyside>
+       <!--<image source="images/exer1-2-6.png">-->
+        <image source="images/exer1-2-6"><description>streetlamp</description></image></sidebyside>
 </statement></exercise>
 </subsection>
 
@@ -280,7 +836,38 @@
     <li>What is the name of the short-cut method for solving proportions?  Why does the method work?</li>
     <li>In two triangles, if two corresponding pairs of angles are equal, are the triangles similar?  How do you know?</li>
     <li><p>For the triangles shown, which of the following equations is true?  Explain why.</p>
-        <sidebyside widths="35% 60%"><image source="images/1-2SQ4.png"><description>simtri</description></image>
+        <sidebyside widths="35% 60%"><!--<image source="images/1-2SQ4.png"><description>simtri</description></image>-->
+    <image xml:id="1-2SQ4">
+        <description>simtri</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}[auto, thick]
+            \coordinate (A) at (0,0);
+            \coordinate (B) at (3.6,0);
+            \coordinate (C) at (2.7,1.5);
+            \coordinate (D) at (4.8,0);
+            \coordinate (E) at (3.6,2);
+
+            \draw[black, thick] (A)--(D)--(E)--cycle;
+            \draw[black, thick] (A) -- (B) node [below, midway] {\color{blue}$x$};
+            \draw[black, thick] (D) -- (B) node [below, midway] {\color{blue}$4$};
+            \draw[black, thick] (D) -- (E) node [above right, midway] {\color{blue}$8$};
+            \draw[black, thick] (C) -- (B) node [above right, midway] {\color{blue}$6$};
+
+            \draw[black,  thick, ->] (C) --  (3.15,.75)  ;
+            \draw[black,  thick, ->] (E) --  (4.2,1)  ;
+
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+            
         <p><ol label="a" cols="2">
             <li><m>\dfrac{4}{x} = \dfrac{6}{8}</m></li>
             <li><m>\dfrac{x}{4} = \dfrac{6}{8}</m></li>
