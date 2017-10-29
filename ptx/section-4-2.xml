@@ -1,542 +1,725 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!-- <mathbook><book> -->
 
-<section xml:id="Exponential-Functions"   xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Exponential Functions</title>
-<introduction>
-<p>
-	In <xref ref="Exponential-Growth-and-Decay" text="type-global"/>, we studied functions that describe exponential growth or decay. More formally, we define an <term>exponential function</term> as follows,
-</p>
-<assemblage><title>Exponential Function</title>
-<p>
-	<me>f(x) = ab^x \text{, where } b \gt 0 \text{ and } b \ne 1 \text{, } a \ne 0</me>
+<section xml:id="Graphs-of-Trigonometric-Functions"   xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Graphs of Trigonometric Functions</title>
+
+<subsection><title>Location by Coordinates</title>
+<p> One of the most useful applications of the trigonometric ratios allows us to find distances or locations specified by angles. Starting with the definitions of sine and cosine,
+    <me>\cos \theta = \dfrac{x}{r} ~~~~   \text{and} ~~~~   \sin \theta = \dfrac{y}{r}</me>
+ we can solve for <m>x</m> and <m>y</m>, the coordinates of points on the terminal side of the angle, and obtain the following results.</p>
+
+<assemblage><title>Coordinates</title>
+<p>If point <m>P</m> is located at a distance <m>r</m> from the origin in the direction specified by angle <m>\theta</m> in standard position, then the coordinates of <m>P</m> are
+	<me>x = r \cos \theta ~~~~ \text{and} ~~~~ y = r \sin \theta</me>
 </p></assemblage>
-<p>
-	Some examples of exponential functions are
-	<me>f (x) = 5^x \text{, } P(t) = 250(1.7)^t \text{, and } g(n) = 2.4(0.3)^n</me>
-	The constant <m>a</m> is the <m>y</m>-intercept of the graph because
-	<me>f (0) = a \cdot b^0 = a \cdot 1 = a</me>
-	For the examples above, we find that the <m>y</m>-intercepts are
-	\begin{align*}
-	f(0) \amp= 5^0 = 1 \text{,} \\
-	P(0) \amp= 250(1.7)^0 = 250\text{, and} \\
-	g(0) \amp= 2.4(0.3)^0 = 2.4
-	\end{align*}
-</p>
-<p>
-	The positive constant <m>b</m> is called the <term>base</term> of the exponential function.</p>
 
+<sidebyside widths="55% 45%"><p>These formulas make sense when we think of the unit circle. On a unit circle, the coordinates of a point designated by angle <m>\theta</m> are <m>(\cos \theta, \sin \theta</m>, as shown at right.  On a circle of radius <m>r</m>, the angle <m>\theta</m> forms a similar triangle whose dimensions are scaled up by a factor of <m>r</m>. In particular, the legs of the new triangle are <m>r</m> times larger than the original triangle.</p><image source="images/4-2-rcircle.png"><description>circle</description></image></sidebyside>
+
+<example>
+<statement><p>Point <m>P</m> is located 6 centimeters from the origin in the direction of <m>292\degree</m>. Find the coordinates of <m>P</m>, rounded to hundredths.</p></statement>
+
+<solution><sidebyside widths="55% 35%"><p>The location of point <m>P</m> is shown at right. We see that <m>r = 6</m>, and we can use a calculator to evaluate <m>\cos 292\degree</m> and <m>\sin 292\degree</m>.    
+    \begin{aligned}
+                x \amp = r \cos 292\degree \amp\amp \text{and} \amp y \amp = r \sin 292\degree\\
+                  \amp = 6(0.3746)       \amp\amp\amp            \amp = 6(-0.9272)\\
+                  \amp = 2.2476          \amp\amp\amp          \amp = -5.5632\\ 
+        \end{aligned}                                        
+</p><image source="images/exam4-2-1.png"><description>angle</description></image></sidebyside><p>The coordinates of <m>P</m> are approximately <m>(2.25, -5.56)</m>.</p></solution></example>
+
+<exercise><statement><sidebyside widths="55% 35%" valigns="middle middle"><p>You find an old map that shows a buried treasure located 500 yards from the big oak tree in the direction <m>215\degree</m>, as shown at right. You don't have anything  with you to measure angles, but you have your calculator.</p><image source="images/exer4-2-1.png"><description>angle</description></image></sidebyside> 
+    <p><ol label="a">
+        <li>Find the cosine of <m>215\degree</m>. How far west should you walk from the big oak in order to be directly north of the treasure?</li>
+        <li>Find the tangent of <m>215\degree</m>. How far south should you walk from your present location before you begin digging?</li>
+    </ol></p></statement></exercise>
+</subsection>
+
+<subsection><title> Bearings</title>
+<sidebyside widths="55% 35%" valigns="middle middle"><p>Navigational directions for ships and planes are sometimes given as <term>bearings</term>, which are angles measured clockwise from north.  For example, a bearing of <m>110\degree</m> is equivalent to an angle of <m>20\degree</m> in standard position, or to its coterminal angle <m>340\degree</m>, as shown at right.</p><image source="images/4-2-bearings.png"><description>angle</description></image></sidebyside>
+<p>From this example, we see that to convert a bearing to an angle <m>\theta</m> in standard position, we can subtract the bearing from <m>90\degree</m>, or
+    <me>\theta = -\text{bearing} + 90\degree</me></p>
+
+<example>
+<statement><p>Francine leaves the airport at a bearing of <m>245\degree</m> and flies 60 miles. How far south of the airport is she at that time?</p></statement>
+
+<solution><p>A bearing of <m>245\degree</m> is in the same direction as an angle of</p><sidebyside widths="50% 40%" valigns="middle middle"><p>  <me>-245\degree + 90\degree = -155\degree</me> in standard position, as shown at right, or as the coterminal angle <me>-155\degree + 360\degree = 205\degree</me>.</p><image source="images/exam4-2-2.png"><description>angle</description></image></sidebyside>
+<p> We would like the <m>y</m>-coordinate of Francine's position, so we calculate <m>y = r \sin 205\degree</m>. 
+ \begin{align*}
+                y \amp = r \sin 205\degree \\
+                  \amp = 60(-0.4226) = -25.36 \\
+        \end{align*}    
+Francine is about 25.4 miles south of the airport.</p></solution></example>
+
+<exercise><statement><p>Delbert leaves the airport and flies 150 miles at a bearing of <m>132\degree</m>. How far east of the airport is he at that time?</p></statement></exercise>
+</subsection>
+
+<subsection><title>A Periodic Function of Angle</title>
+<p> Imagine that you are riding on a Ferris wheel. As the wheel turns, your height above the ground increases and then decreases again, repeating the same pattern each time the Ferris wheel makes a complete rotation. This pattern is an example of a <term>periodic function</term>. We use periodic functions to model phenomena that exhibit cyclical behavior, such as the height of tides, seasonal patterns of growth in plants and animals, radio waves, and planetary motion.</p>
+
+<p>We'll create a <term>mathematical model</term> for a ride on a Ferris wheel. Our Ferris wheel has a radius of 100 feet and rotates counterclockwise. In order to graph the Ferris wheel function, we must first specify the input and output variables, and then choose a coordinate system to display their values.</p> 
+
+ <sidebyside widths="55% 45%" valigns="middle middle"><p> We'll place the origin at the center of the Ferris wheel. Then the line from the origin to your position on the wheel makes an angle with the horizontal, as shown at right.  This angle, <m>\theta</m>, will be the <term>input variable</term> for the function. Your height, <m>h</m>, is also a variable, and is related to the <m>y</m>-coordinate of your position; in fact, you can check that <m>h = y + 100</m>, because the center of the wheel is 100 feet above the ground. </p><image source="images/4-2-ferris.png"><description>angle</description></image></sidebyside>
+
+<p>To simplify the model, we'll first graph <m>y</m> as the <term>output variable</term>, instead of <m>h</m>. As the angle <m>\theta</m> increases from <m>0\degree</m> to <m>90\degree</m>, your <m>y</m>-coordinate increases from 0 to 100. You are then at the top of the wheel. Then, as <m>\theta</m> increases from <m>90\degree</m> to <m>180\degree</m>, your <m>y</m>-coordinate decreases from 100 back to 0.</p>
+
+<sidebyside width="80%"><image source="images/4-2-ferris2.png"><description>angle</description></image></sidebyside>
+
+<p> Finally, as <m>\theta</m> increases from <m>180\degree</m> to <m>360\degree</m>, your <m>y</m>-coordinate decreases from 0 to <m>-100</m> and then increases from <m>-100</m> back to 0. You have made one complete rotation on the Ferris wheel. If you go around again, <m>\theta</m> increases from <m>360\degree</m> to <m>720\degree</m>, and the graph of your <m>y</m>-coordinate will repeat the pattern of the first rotation. The figure above shows how your <m>y</m>-coordinate is plotted as a function of the angle <m>\theta</m>.</p>
+
+<p>You may have noticed that you can find the <m>y</m>-coordinate of your position on the Ferris wheel by using the coordinate formulas from the beginning of this section. Because the Ferris wheel has radius 100 feet, we have <me>y = 100 \sin \theta</me></p>
+  
+<p>For example, when <m>\theta = 30\degree</m>, the <m>y</m>-coordinate is</p> <sidebyside widths="60% 40%"><p><me>y = 100 \sin 30\degree = 100(\dfrac{1}{2}) = 50</me>  and your height above the ground is <me>h = y + 100 = 150~~ \text{feet}</me></p> <image source="images/4-2-ferris3.png"><description>angle</description></image></sidebyside>
+<p>In general, then, <m>h</m> is given as a function of <m>\theta</m> by 
+<me> h = y + 100 = 100 \sin \theta + 100</me></p>
+</subsection>
+
+<subsection><title>The Sine Function</title>
+<p> The trigonometric ratio <m>\sin \theta</m> is actually a function of the angle <m>\theta</m>. As we have seen, the value of <m>\sin \theta</m>  does not depend on the size of the triangle that contains the angle <m>\theta</m>, but only on the size of the angle itself. Thus, for each value of <m>\theta</m>, there is only one value of <m>\sin \theta</m>, and we may write <m>f(\theta) = \sin \theta</m>.</p>  
+
+<example>
+<statement><p>Graph the sine function <m>f(\theta) = \sin \theta</m>.</p></statement>
+
+<solution><p>We first make a table of values. You can use your calculator's table feature to verify the following values, rounded to two decimal places.</p>
+
+<sidebyside><tabular top="major" halign="left" right="minor" left="minor" bottom="minor">                  
+                    <row bottom="minor">
+                        <cell><m>\theta</m></cell>
+                        <cell><m>0\degree</m></cell>
+                        <cell><m>10\degree</m></cell>
+                        <cell><m>20\degree</m></cell>
+                        <cell><m>30\degree</m></cell>
+                        <cell><m>40\degree</m></cell>
+                        <cell><m>50\degree</m></cell>
+                        <cell><m>60\degree</m></cell>
+                        <cell><m>70\degree</m></cell>
+                        <cell><m>80\degree</m></cell>
+                        <cell><m>90\degree</m></cell></row>
+                    <row>
+                        <cell><m>\sin \theta</m></cell> 
+                        <cell><m>0</m></cell>
+                        <cell><m>0.17</m></cell>
+                        <cell><m>0.34</m></cell>
+                        <cell><m>0.50</m></cell>
+                        <cell><m>0.64</m></cell>
+                        <cell><m>0.77</m></cell>
+                        <cell><m>0.87</m></cell>
+                        <cell><m>0.94</m></cell>
+                        <cell><m>0.98</m></cell>
+                        <cell><m>1</m></cell></row>
+                        </tabular></sidebyside>
+
+<p>If we plot the points in the table, we can graph the sine function in the first quadrant, from <m>0\degree</m> to <m>90\degree</m>.</p><p> Recall that the values of <m>\sin \theta</m> in the second quadrant can be found using reference angles: <m>\sin (180\degree - \theta) = \sin \theta</m>.  This fact gives us values of <m>\sin \theta</m>  from <m>90\degree</m> to <m>180\degree</m>.</p>
+
+<sidebyside><tabular top="major" halign="left" right="minor" left="minor" bottom="minor">                  
+                    <row bottom="minor">
+                        <cell><m>\theta</m></cell>
+                        <cell><m>100\degree</m></cell>
+                        <cell><m>110\degree</m></cell>
+                        <cell><m>120\degree</m></cell>
+                        <cell><m>130\degree</m></cell>
+                        <cell><m>140\degree</m></cell>
+                        <cell><m>150\degree</m></cell>
+                        <cell><m>160\degree</m></cell>
+                        <cell><m>170\degree</m></cell>
+                        <cell><m>180\degree</m></cell></row>
+                    <row>
+                        <cell><m>\sin \theta</m></cell> 
+                        <cell><m>0.98</m></cell>
+                        <cell><m>0.94</m></cell>
+                        <cell><m>0.87</m></cell>
+                        <cell><m>0.77</m></cell>
+                        <cell><m>0.64</m></cell>
+                        <cell><m>0.50</m></cell>
+                        <cell><m>0.34</m></cell>
+                        <cell><m>0.17</m></cell>
+                        <cell><m>0</m></cell></row>
+                        </tabular></sidebyside>
+
+<p>The values of <m>\sin \theta</m> in the third and fourth quadrants are the negatives of their values in the second and first quadrants.</p>
+
+<sidebyside><tabular top="major" halign="left" right="minor" left="minor" bottom="minor">                  
+                    <row bottom="minor">
+                        <cell><m>\theta</m></cell>
+                        <cell><m>190\degree</m></cell>
+                        <cell><m>200\degree</m></cell>
+                        <cell><m>210\degree</m></cell>
+                        <cell><m>220\degree</m></cell>
+                        <cell><m>230\degree</m></cell>
+                        <cell><m>240\degree</m></cell>
+                        <cell><m>250\degree</m></cell>
+                        <cell><m>260\degree</m></cell>
+                        <cell><m>270\degree</m></cell></row>
+                       
+                    <row>
+                        <cell><m>\sin \theta</m></cell> 
+                        <cell><m>-0.17</m></cell>
+                        <cell><m>-0.34</m></cell>
+                        <cell><m>-0.50</m></cell>
+                        <cell><m>-0.64</m></cell>
+                        <cell><m>-0.77</m></cell>
+                        <cell><m>-0.87</m></cell>
+                        <cell><m>-0.94</m></cell>
+                        <cell><m>-0.98</m></cell>
+                        <cell><m>-1</m></cell></row>
+                        </tabular></sidebyside>
+
+<sidebyside><tabular top="major" halign="left" right="minor" left="minor" bottom="minor">                  
+                    <row bottom="minor">
+                        <cell><m>\theta</m></cell>
+                        <cell><m>280\degree</m></cell>
+                        <cell><m>290\degree</m></cell>
+                        <cell><m>300\degree</m></cell>
+                        <cell><m>310\degree</m></cell>
+                        <cell><m>320\degree</m></cell>
+                        <cell><m>330\degree</m></cell>
+                        <cell><m>340\degree</m></cell>
+                        <cell><m>350\degree</m></cell>
+                        <cell><m>360\degree</m></cell></row>
+                    <row>
+                        <cell><m>\sin \theta</m></cell> 
+                        <cell><m>-0.98</m></cell>
+                        <cell><m>-0.94</m></cell>
+                        <cell><m>-0.87</m></cell>
+                        <cell><m>-0.77</m></cell>
+                        <cell><m>-0.64</m></cell>
+                        <cell><m>-0.50</m></cell>
+                        <cell><m>-0.34</m></cell>
+                        <cell><m>-0.17</m></cell>
+                        <cell><m>0</m></cell></row>
+                        </tabular></sidebyside>
+
+<p>The graph of <m>f(\theta) = \sin \theta</m> from <m>0\degree</m> to <m>360\degree</m> is shown below.</p>
+<sidebyside width="65%"><image source="images/exam4-2-3a.png"><description>sine graph</description></image></sidebyside></solution></example>
+
+ <p>If we continue the graph for angles larger than <m>360\degree</m> or smaller than <m>0\degree</m>, we find that the same pattern repeats, as shown below. This should not be surprising, because we know that coterminal angles have the same trigonometric ratios.</p>
+<sidebyside widths="90%"><image source="images/exam4-2-3b.png"><description>sine graph</description></image></sidebyside>  
+
+<p> The sine is an example of a periodic function. The smallest interval on which the graph repeats is called the <term>period</term> of the graph. From the graph in the previous example, we make the following observations:</p>
 <p><ul>
-    <li> We do not allow <m>b</m> to be negative, because if <m>b \lt 0</m>, then <m>b^x</m> is not a real number for some values of <m>x</m>. For example, if <m>b = -4</m> and <m>f (x) = (-4)^x</m>, then <m>f (1/2) = (-4)^{1/2}</m> is an imaginary number.</li>
-    <li> We also exclude <m>b = 1</m> as a base because <m>1^x = 1</m> for all values of <m>x</m>; hence the function <m>f (x) = 1^x</m> is actually the constant function <m>f (x) = 1</m>.</li>
-</ul>
-</p>
-</introduction>
-<subsection><title>Graphs of Exponential Functions</title>
-<p>
-    The graphs of exponential functions have two characteristic shapes, depending on whether the base, <m>b</m>, is greater than <m>1</m> or less than <m>1</m>. As typical examples, consider the graphs of <m>f (x) = 2^x</m> and <m>g(x) =\left(\dfrac{1}{2}\right)^x</m> shown in <xref ref="fig-exponential-growth-and-decay" text="type-global"/>. Some values for <m>f</m> and <m>g</m> are recorded in <xref ref="table-exp-growth">Tables</xref> and <xref ref="table-exp-decay" text="global"/>
-</p>
-<sidebyside widths="16% 16% 68%">
-	<table width="17%" xml:id="table-exp-growth"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
-        <row bottom="minor">
-            <cell><m>x</m></cell>
-            <cell><m>f(x)</m></cell>
-        </row>
-        <row>
-            <cell><m>-3</m></cell>
-            <cell><m>\frac{1}{8}</m></cell>
-        </row>
-        <row>
-            <cell><m>-2</m></cell>
-            <cell><m>\frac{1}{4}</m></cell>
-        </row>
-        <row>
-            <cell><m>-1</m></cell>
-            <cell><m>\frac{1}{2}</m></cell>
-        </row>
-        <row>
-            <cell><m>0</m></cell>
-            <cell><m>1</m></cell>
-        </row>
-        <row>
-            <cell><m>1</m></cell>
-            <cell><m>2</m></cell>
-        </row>
-        <row>
-            <cell><m>2</m></cell>
-            <cell><m>4</m></cell>
-        </row>
-        <row>
-            <cell><m>3</m></cell>
-            <cell><m>8</m></cell>
-        </row>
-    </tabular><caption></caption></table>
+<li>The period of the sine function is <m>360\degree</m>.</li> 
+<li>The maximum and minimum function values are 1 and 1, respectively.</li> 
+<li>The graph oscillates around its <term>midline</term>, the horizontal line <m>y = 0</m>.</li>  
+<li>The distance between the midline and either the maximum or minimum value is called the <term>amplitude</term> of the function, so the amplitude of the sine function is 1.</li>
+</ul></p>
 
-	<table width="17%" xml:id="table-exp-decay"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
-        <row bottom="minor">
-            <cell><m>x</m></cell>
-            <cell><m>g(x)</m></cell>
-        </row>
-        <row>
-            <cell><m>-3</m></cell>
-            <cell><m>8</m></cell>
-        </row>
-        <row>
-            <cell><m>-2</m></cell>
-            <cell><m>4</m></cell>
-        </row>
-        <row>
-            <cell><m>-1</m></cell>
-            <cell><m>2</m></cell>
-        </row>
-        <row>
-            <cell><m>0</m></cell>
-            <cell><m>1</m></cell>
-        </row>
-        <row>
-            <cell><m>1</m></cell>
-            <cell><m>\frac{1}{2}</m></cell>
-        </row>
-        <row>
-            <cell><m>2</m></cell>
-            <cell><m>\frac{1}{4}</m></cell>
-        </row>
-        <row>
-            <cell><m>3</m></cell>
-            <cell><m>\frac{1}{8}</m></cell>
-        </row>
-    </tabular><caption></caption></table>
+ <p>You can use your calculator to graph the sine function, by entering  
+    <me> \text{Y}_{1} = \boxed{\text{SIN}}~~ \boxed{X,T,\theta, n}~~\boxed{)} </me>  and pressing  <m>\boxed{\text{ZOOM}}~~ \boxed{7}</m>  for the trig window.  The graph shows two periods of the sine function, from  <m>\theta = -360\degree</m> to <m>\theta = 360\degree</m>.</p>
 
-    <figure xml:id="fig-exponential-growth-and-decay"><caption></caption><image source="images/fig-exponential-growth-and-decay"><description>graphs of exponential growth and decay</description></image></figure>
+<exercise><statement><p>Your height <m>h</m> on the Ferris wheel is a function of <m>\theta</m>, <me>h = 100 + y = 100 + 100 \sin \theta</me> Complete the table of values and graph the Ferris wheel function, <m>h = F(\theta)</m>.</p>
 
-</sidebyside>
+<sidebyside><tabular top="major" halign="left" right="minor" left="minor" bottom="minor">                  
+                    <row bottom="minor">
+                        <cell><m>\theta</m></cell>
+                        <cell><m>0\degree</m></cell>
+                        <cell><m>30\degree</m></cell>
+                        <cell><m>60\degree</m></cell>
+                        <cell><m>90\degree</m></cell>
+                        <cell><m>120\degree</m></cell>
+                        <cell><m>150\degree</m></cell>
+                        <cell><m>180\degree</m></cell></row>   
+                    <row>
+                        <cell><m>\sin \theta</m></cell> 
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row>
+                    <row>
+                        <cell><m>h = F(\theta)</m></cell> 
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row>
+                        </tabular></sidebyside>
 
-<p>
-	Notice that <m>f (x) = 2^x</m> is an increasing function and <m>g(x) = \left(\dfrac{1}{2}\right)^x</m> is a decreasing function. Both are concave up. In general, exponential functions have the following properties.
-</p>
+<sidebyside><tabular top="major" halign="left" right="minor" left="minor" bottom="minor">                  
+                    <row bottom="minor">
+                        <cell><m>\theta</m></cell>
+                        <cell><m>210\degree</m></cell>
+                        <cell><m>240\degree</m></cell>
+                        <cell><m>270\degree</m></cell>
+                        <cell><m>300\degree</m></cell>
+                        <cell><m>330\degree</m></cell>
+                        <cell><m>360\degree</m></cell></row>   
+                    <row>
+                        <cell><m>\sin \theta</m></cell> 
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row>
+                    <row>
+                        <cell><m>h = F(\theta)</m></cell> 
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row>
+                        </tabular></sidebyside>
 
-<assemblage><title>Properties of Exponential Functions, <m>f(x) = ab^x</m>, <m>a \gt 0</m></title><p>
-<ol>
-	<li>
-		<p>Domain: all real numbers.</p>
-	</li>
-	<li>
-		<p>Range: all positive numbers.</p>
-	</li>
-	<li>
-		<p>If <m>b \gt 1</m>, the function is increasing and concave up;</p> 
-		<p>if <m>0 \lt b \lt 1</m>, the function is decreasing and concave up.</p>
-	</li>
-	<li>
-		<p>The <m>y</m>-intercept is <m>(0, a)</m>. There is no <m>x</m>-intercept.</p>
-	</li>
-</ol></p>
-</assemblage>
-
-<p>
-	In <xref ref="table-exp-growth" text="type-global"/> you can see that as the <m>x</m>-values decrease toward negative infinity, the corresponding <m>y</m>-values decrease toward zero. As a result, the graph of <m>f</m> decreases toward the <m>x</m>-axis as we move to the left. Thus, the negative <m>x</m>-axis is a <term>horizontal asymptote</term> for exponential functions with <m>b \gt 1</m>, as shown in <xref ref="fig-exponential-growth-and-decay" text="type-global"/>a.</p>
-    <p> For exponential functions with <m>0 \lt b \lt 1</m>, the positive <m>x</m>-axis is an asymptote, as illustrated in <xref ref="fig-exponential-growth-and-decay" text="type-global"/>b. (See <xref ref="basic-functions" text="type-global"/> to review asymptotes.)
-</p>
-<p>
-	In <xref ref="example-two-exponential-growth" text="type-global"/>, we compare two increasing exponential functions. The larger the value of the base, <m>b</m>, the faster the function grows. In this example, both functions have <m>a = 1</m>.
-</p>
-<example xml:id="example-two-exponential-growth">
-<p>
-	Compare the graphs of <m>f (x) = 3^x</m> and <m>g(x) = 4^x</m>.
-</p>
-<solution><p>
-	We evaluate each function for several convenient values, as shown in <xref ref="table-two-exponential-growth" text="type-global"/>.
-</p>
-<p>
-	Plot the points for each function and connect them with smooth curves. For positive <m>x</m>-values, <m>g(x)</m> is always larger than <m>f (x)</m>, and is increasing more rapidly. In <xref ref="fig-two-exponential-growth" text="type-global"/>, <m>g(x) = 4^x</m> climbs more rapidly than <m>f (x) = 3^x</m>. Both graphs cross the <m>y</m>-axis at (0, 1).
-</p>
-<p>
-<sidebyside widths="50% 35%">
-<table valign="middle" width="40%" xml:id="table-two-exponential-growth"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
-        <row bottom="minor">
-            <cell><m>x</m></cell>
-            <cell><m>f(x)</m></cell>
-            <cell><m>g(x)</m></cell>
-        </row>
-        <row>
-            <cell><m>-2</m></cell>
-            <cell><m>\dfrac{1}{9}</m></cell>
-            <cell><m>\dfrac{1}{16}</m></cell>
-        </row>
-        <row>
-            <cell><m>-1</m></cell>
-            <cell><m>\dfrac{1}{3}</m></cell>
-            <cell><m>\dfrac{1}{4}</m></cell>
-        </row>
-        <row>
-            <cell><m>0</m></cell>
-            <cell><m>1</m></cell>
-            <cell><m>1</m></cell>
-        </row>
-        <row>
-            <cell><m>1</m></cell>
-            <cell><m>3</m></cell>
-            <cell><m>4</m></cell>
-        </row>
-        <row>
-            <cell><m>2</m></cell>
-            <cell><m>9</m></cell>
-            <cell><m>16</m></cell>
-        </row>
-    </tabular><caption></caption></table>
-	<figure valign="middle"  xml:id="fig-two-exponential-growth"><caption></caption><image source="images/fig-two-exponential-growth"><description>two exponential growth functions</description></image></figure>
-</sidebyside></p>
-</solution>
-</example>
-
-<sidebyside widths="50% 35%">
-<p valign="top">
-	For decreasing exponential functions, those with bases between <m>0</m> and <m>1</m>, the smaller the base, the more steeply the graph decreases. For example, compare the graphs of <m>p(x) = 0.8^x</m> and <m>q(x) = 0.5^x</m> shown in <xref ref="fig-two-exponential-decay" text="type-global"/>.
-</p>
-<figure xml:id="fig-two-exponential-decay"><caption></caption><image source="images/fig-two-exponential-decay"><description>two exponential decay functions</description></image></figure>
-</sidebyside>
-
-<exercise xml:id="exercise-compare-exponential"><statement>
-<ol label="a">
-	<li>
-		State the ranges of the functions <m>f</m> and <m>g</m> in <xref ref="fig-two-exponential-growth" text="type-global"/> from <xref ref="example-two-exponential-growth" text="type-global"/> on the domain <m>[-2, 2]</m>.
-	</li>
-	<li>
-		State the ranges of the functions <m>p</m> and <m>q</m> shown in <xref ref="fig-two-exponential-decay" text="type-global"/> on the domain <m>[-2, 2]</m>. Round your answers to two decimal places.
-	</li>
-</ol>
-</statement></exercise>
+<sidebyside width="80%"><image source="images/exer4-2-3.png"><description>grid</description></image></sidebyside></statement></exercise>
 </subsection>
 
+<subsection><title>The Cosine Function</title>
+<p>In the previous exercise you graphed the height of a person riding on a Ferris wheel. Your graph involved <m>\sin \theta</m>, because the sine function tells us the <m>y</m>-coordinate of a point that travels around a circle.  The cosine function tells us the <m>x</m>-coordinate of a point that travels around a circle.</p>
 
+<example>
+<statement><sidebyside widths="50% 40%"><p>Small adjustments to the fit of a bicycle can affect both the cyclist's efficiency and the stress on his or her jounts.  The KOPS rule (Knee Over Pedal Stem) aligns the cyclist's knee directly over the pedal at the point of maximum force, as shown at right.  As the cyclist's foot rotates away from this KOPS line, stress on the knee increases.</p><image source="images/exam4-2-4bike.png"><description>bicycle</description></image></sidebyside> 
+<p><ol label="a">
+    <li>Suppose the pedal crank is 18 centimeters long.  When the crank makes an angle  with the horizontal, how far is the cyclist's foot displaced horizontally from the KOPS line?</li>
+    <li>Graph the horizontal displacement, <m>d</m>, as a function of <m>\theta</m>.</li>
+</ol></p></statement>
+<solution><p><ol label="a">
+    <li><p>The cyclist's foot travels around a circle of radius 18 centimeters. If we place the origin at the center of the chain gear, the <m>x</m>-coordinate of the foot is given by </p> <sidebyside widths="50% 40%"><p><me>x = r \cos \theta = 18 \cos \theta</me> The KOPS line is the vertical line <m>x = 18</m>, so the horizontal distance between the cyclist's foot and the KOPS line is <me>d = 18 - 18 \cos \theta</me>  See the figure at right.</p><image source="images/exam4-2-4a.png"><description>circle</description></image></sidebyside></li>
+    <li><p>You can use your calculator to verify the table and graph for the function <me>d = 18 - 18 \cos \theta</me> shown below.</p>
 
-<subsection><title>Transformations of Exponential Functions</title>
-<p>
-	In <xref ref="chap2" text="type-global"/>, we considered transformations of the basic graphs. For instance, the graphs of the functions <m>y = x^2 - 4</m> and <m>y = (x - 4)^2</m> are shifts of the basic parabola, <m>y = x^2</m>. In a similar way, we can shift or stretch the graph of an exponential function while the basic shape is preserved.
-</p>
-<example xml:id="example-GC-shift-exponentials">
-<p>
-	Use your calculator to graph the following functions. Describe how these graphs compare with the graph of <m>h(x) = 2^x</m>.
-	<ol label="a">
-		<li><m>f (x) = 2^x + 3</m></li>
-		<li><m>g(x) = 2^{x+3}</m></li>
-	</ol>
-</p>
-<solution>
-<p>
-	Enter the formulas for the three functions as shown below. Note the parentheses around the exponent in the keying sequence for <m>Y_3 = g(x)</m>
-</p>
-<p>
-	<m>Y_1 = 2 </m> <c>^</c> X 
-</p>
-<p>
-	<m>Y_2 = 2 </m> <c>^</c> X <c>+</c> 3
-</p>
-	<p>
-	<m>Y_3 = 2 </m> <c>^</c> <c>(</c> X <c>+</c> 3 <c>)</c>
-</p>
-<p>
-	The graphs of <m>h(x) = 2^x</m>, <m>f(x) = 2^x + 3</m>, and <m>g(x) = 2^{x+3}</m> are shown using the standard window in <xref ref="fig-GC-exponential-growth" text="type-global"/>
-	<figure xml:id="fig-GC-exponential-growth"><caption></caption><image source="images/fig-GC-exponential-growth"  width="100%"><description>GC graphs of transformations of exponential growth</description></image></figure>
-<ol label="a">
-	<li>
-		The graph of <m>f(x) = 2^x + 3</m>, shown in <xref ref="fig-GC-exponential-growth" text="type-global"/>b, has the same basic shape as that of <m>h(x) = 2^x</m>, but it has a horizontal asymptote at <m>y = 3</m> instead of at <m>y = 0</m> (the <m>x</m>-axis). In fact, <m>f(x) = h(x) + 3</m>, so the graph of <m>f</m> is a vertical translation of the graph of <m>h</m> by <m>3</m> units. If every point on the graph of <m>h(x) = 2^x</m> is moved <m>3</m> units upward, the result is the graph of <m>f (x) = 2^x + 3</m>.
-	</li>
-	<li>
-		First note that <m>g(x) = 2^x+3 = h(x + 3)</m>. In fact, the graph of <m>g(x) = 2^{x+3}</m> shown in Figure <xref ref="fig-GC-exponential-growth" text="type-global"/>c has the same basic shape as <m>h(x) = 2^x</m> but has been translated <m>3</m> units to the left.
-	</li>
-</ol>
-</p></solution>
-</example>
-<p>
-	Recall that the graph of <m>y = -f (x)</m> is the reflection about the <m>x</m>-axis of the graph of <m>y = f (x)</m>. The graphs of <m>y = 2^x</m> and <m>y = -2^x</m> are shown in  <xref ref="fig-exponential-vertical-flip" text="type-global"/>. You may have also noticed a relationship between the graphs of <m>f (x) = 2^x</m> and <m>g(x) = \left(\dfrac{1}{2}\right)^x</m>, which are shown in <xref ref="fig-exponential-horizontal-flip" text="type-global"/>.
-</p>
-	
-<sidebyside widths="35% 35%">
-	<figure xml:id="fig-exponential-vertical-flip"><caption></caption><image source="images/fig-exponential-vertical-flip"><description>vertical flip of an exponential function</description></image></figure>
-	<figure xml:id="fig-exponential-horizontal-flip"><caption></caption><image source="images/fig-exponential-horizontal-flip"><description>horizontal flip of an exponential function</description></image></figure>
-</sidebyside>
-<p>
-	The graph of <m>g</m> is the reflection of the graph of <m>f</m> about the <m>y</m>-axis. We can see why this is true by writing the formula for <m>g(x)</m> in another way:
-	<me>g(x) =\left(\frac{1}{2}\right)^x= \left(2^{-1}\right)^x = 2^{-x}</me>
-	We see that <m>g(x)</m> is the same function as <m>f (-x)</m>. Replacing <m>x</m> by <m>-x</m> in the formula for a function switches every point <m>( p, q)</m> on the graph with the point <m>(-p, q)</m> and thus reflects the graph about the <m>y</m>-axis.
-</p>
-<assemblage><title>Reflections of Graphs</title><idx>reflections of graphs</idx><p>
-<ol>
-	<li>
-		<p>The graph of <m>y = -f (x)</m> is the reflection of the graph of <m>y = f (x)</m> about the <m>x</m>-axis.</p>
-	</li>
-	<li><p>
-		The graph of <m>y = f (-x)</m> is the reflection of the graph of <m>y = f (x)</m> about the <m>y</m>-axis.</p>
-	</li>
-</ol></p>
-</assemblage>
+    <p><sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                  
+                    <row bottom="minor">
+                        <cell><m>\theta</m></cell>
+                        <cell><m>0\degree</m></cell>
+                        <cell><m>30\degree</m></cell>
+                        <cell><m>60\degree</m></cell>
+                        <cell><m>90\degree</m></cell>
+                        <cell><m>120\degree</m></cell>
+                        <cell><m>150\degree</m></cell>
+                        <cell><m>180\degree</m></cell>
+                        <cell><m>210\degree</m></cell>
+                        <cell><m>240\degree</m></cell>
+                        <cell><m>270\degree</m></cell>
+                        <cell><m>300\degree</m></cell>
+                        <cell><m>330\degree</m></cell>
+                        <cell><m>360\degree</m></cell></row>
+                    <row>
+                        <cell><m>d</m></cell> 
+                        <cell><m>0</m></cell>
+                        <cell><m>2.4</m></cell>
+                        <cell><m>9</m></cell>
+                        <cell><m>18</m></cell>
+                        <cell><m>27</m></cell>
+                        <cell><m>33.6</m></cell>
+                        <cell><m>36</m></cell>
+                        <cell><m>33.6</m></cell>
+                        <cell><m>27</m></cell>
+                        <cell><m>18</m></cell>
+                        <cell><m>9</m></cell>
+                        <cell><m>2.4</m></cell>
+                        <cell><m>0</m></cell></row>
+                        </tabular></sidebyside></p>
 
-<exercise xml:id="exercise-exponential-flips"><statement>
-	Which of the functions below have the same graph? Explain why.
-	<ol label="a">
-		<li><m>f (x) =\left(\dfrac{1}{4}\right)^x</m></li>
-		<li><m>g(x) = -4^x</m></li>
-		<li><m>h(x) = 4^{-x}</m></li>
-	</ol>
-</statement></exercise>
+     <sidebyside widths="75%"><image source="images/exam4-2-4b.png"><description>cosine graph</description></image></sidebyside></li>
+ </ol></p></solution></example>
+
+ <p>You can see that the cosine graph is similar to the sine graph, but they are not identical.</p>
+
+ <exercise><statement><p><ol label="a">
+    <li><p>Complete the table below with values rounded to two decimal places. Use the table and your knowledge of reference angles to graph the cosine function, <m>f(\theta) = \cos \theta~</m> from <m>-180\degree</m> to <m>540\degree</m>.</p>
+
+    <sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                  
+                    <row bottom="minor">
+                        <cell><m>\theta</m></cell>
+                        <cell><m>0\degree</m></cell>
+                        <cell><m>10\degree</m></cell>
+                        <cell><m>20\degree</m></cell>
+                        <cell><m>30\degree</m></cell>
+                        <cell><m>40\degree</m></cell>
+                        <cell><m>50\degree</m></cell>
+                        <cell><m>60\degree</m></cell>
+                        <cell><m>70\degree</m></cell>
+                        <cell><m>80\degree</m></cell>
+                        <cell><m>90\degree</m></cell></row>
+                    <row>
+                        <cell><m>\cos \theta</m></cell> 
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row>
+                        </tabular></sidebyside>
+
+    <sidebyside width="95%"><image source="images/exer4-2-4.png"><description>grid</description></image></sidebyside></li>
+    <li>Use your graph to find the period, amplitude, and midline of the cosine function. How does the graph of cosine differ from the graph of sine? (Hint:  Consider the intercepts of the graph, and the location of the maximum and minimum values.)</li>
+    </ol></p></statement></exercise>                    
 </subsection>
 
+<subsection><title>Function Notation</title>
+<p>We use the notation <m>y = f(x)</m> to indicate that <m>y</m> is a function of <m>x</m>, that is, <m>x</m> is the input variable and <m>y</m> is the output variable.</p> 
 
+<example><statement><p>Make a table of input and output values and a graph for the function <m>y = f(x) = \sqrt{9 - x^2}</m>.</p></statement>
 
-<subsection><title>Comparing Exponential and Power Functions</title>
-<p>
-	Exponential functions<idx>exponential functions</idx> are not the same as the power functions <idx>power functions</idx> we studied in <xref ref="chap3" text="type-global"/>. Although both involve expressions with exponents, it is the location of the variable that makes the difference.
-</p>
-<assemblage><title>Power Functions vs Exponential Functions</title><p>
-<sidebyside>
-   <tabular>
-        <col halign="left" width="40%"/>
-        <col halign="left" width="25%"/>
-        <col halign="left" width="25%"/>
-         <row>
-            <cell><p></p></cell>
-            <cell><p><term>Power Functions</term></p></cell>
-            <cell><p><term>Exponential Functions</term></p></cell>
-        </row>
-        <row>
-            <cell><p><em>General formula</em></p></cell>
-            <cell><p><m>h(x)=kx^p</m></p></cell>
-            <cell><p><m>f(x)=ab^x</m></p></cell>
-        </row>
-        <row>
-            <cell><p><em>Description</em></p></cell>
-            <cell><p>variable base and constant exponent</p></cell>
-            <cell><p>constant base and variable exponent</p></cell>
-        </row>
-        <row>
-            <cell><p><em>Example</em></p></cell>
-            <cell><p><m>h(x)=2x^3</m></p></cell>
-            <cell><p><m>f(x)=2(3^x)</m></p></cell>
-        </row>
-    </tabular>
-</sidebyside></p>
-</assemblage>
-<p>
-	These two families of functions have very different properties, as well.
-</p>
-<example xml:id="example-power-vs-exponential">
-<p>
-	Compare the power function <m>h(x) = 2x^3</m> and the exponential function <m>f(x) = 2(3^x)</m>.
-</p>
-<solution>
-   <p>First, compare the values for these two functions in <xref ref="table-power-vs-exponential" text="type-global"/>.</p>  
-<sidebyside>
-<p width="55%"><parapgraphs>
-	<p>The scaling exponent for <m>h(x)</m> is <m>3</m>, so that when <m>x</m> doubles, say, from <m>1</m> to <m>2</m>, the output is multiplied by <m>2^3</m>, or <m>8</m>.</p>
-    <p>On the other hand, we can tell that <m>f</m> is exponential because its values increase by a factor of <m>3</m> for each unit increase in <m>x</m>. (To see this, divide any function value by the previous one.)</p></parapgraphs>
-</p>
-<table valign="top" xml:id="table-power-vs-exponential"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
-        <row bottom="minor">
-            <cell><m>x</m></cell>
-            <cell><m>h(x)=2x^3</m></cell>
-            <cell><m>f(x)=2(3^x)</m></cell>
-        </row>
-        <row>
-            <cell><m>-3</m></cell>
-            <cell><m>-54</m></cell>
-            <cell><m>\dfrac{2}{27}</m></cell>
-        </row>
-        <row>
-            <cell><m>-2</m></cell>
-            <cell><m>-16</m></cell>
-            <cell><m>\dfrac{1}{4}</m></cell>
-        </row>
-        <row>
-            <cell><m>-1</m></cell>
-            <cell><m>-2</m></cell>
-            <cell><m>\dfrac{2}{3}</m></cell>
-        </row>
-        <row>
-            <cell><m>0</m></cell>
-            <cell><m>0</m></cell>
-            <cell><m>2</m></cell>
-        </row>
-        <row>
-            <cell><m>1</m></cell>
-            <cell><m>2</m></cell>
-            <cell><m>6</m></cell>
-        </row>
-        <row>
-            <cell><m>2</m></cell>
-            <cell><m>16</m></cell>
-            <cell><m>18</m></cell>
-        </row>
-        <row>
-            <cell><m>3</m></cell>
-            <cell><m>54</m></cell>
-            <cell><m>54</m></cell>
-        </row>
-    </tabular><caption></caption></table>
-</sidebyside>
-<p>
-	As you would expect, the graphs of the two functions are also quite different. For starters, note that the power function goes through the origin, while the exponential function has <m>y</m>-intercept <m>(0, 2)</m>. (See <xref ref="fig-power-vs-exponential-1" text="type-global"/>)</p>
-    <p> From the table, we see that <m>h(3) = f(3) = 54</m>, so the two graphs intersect at <m>x = 3</m>. (They also intersect at approximately <m>x = 2.48</m>.) However, if you compare the values of <m>h(x) = 2x^3</m> and <m>f(x) = 2(3^x)</m> for larger values of <m>x</m>, you will see that eventually the exponential function overtakes the power function, as shown in <xref ref="fig-power-vs-exponential-2" text="type-global"/>.
-</p>
-<p>
-<sidebyside widths="40% 40%">
-<figure valign="top" xml:id="fig-power-vs-exponential-1"><caption></caption><image source="images/fig-power-vs-exponential-1"><description>power function vs exponential from -2 to 3</description></image></figure>
-<figure valign="top"  xml:id="fig-power-vs-exponential-2"><caption></caption><image source="images/fig-power-vs-exponential-2"><description>power function vs exponential from 0 to 6</description></image></figure>
-</sidebyside></p>
-</solution>
-</example>
+<solution><p>We choose several values for the input variable, <m>x</m>, and evaluate the function to find the corresponding values of the output variable, <m>y</m>. For example, <me>f(-3) = \sqrt{9 - (-3)^2} = 0</me></p>
+<sidebyside widths="50% 40%"><p>We plot the points in the table and connect them to obtain the graph shown at right.
+    <sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                  
+                    <row bottom="minor">
+                        <cell><m>x</m></cell>
+                        <cell><m>-3</m></cell>
+                        <cell><m>-2</m></cell>
+                        <cell><m>-1</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>2</m></cell>
+                        <cell><m>3</m></cell></row>
+                    <row>
+                        <cell><m>y</m></cell>
+                        <cell><m>0</m></cell> 
+                        <cell><m>\sqrt{5}</m></cell>
+                        <cell><m>2\sqrt{2}</m></cell>
+                        <cell><m>3</m></cell>
+                        <cell><m>2\sqrt{2}</m></cell>
+                        <cell><m>\sqrt{5}</m></cell>
+                        <cell><m>0</m></cell></row>
+                        </tabular></sidebyside></p>
 
-<sidebyside widths="40% 50%">
-<figure valign="top"  xml:id="fig-power-vs-exponential-3"><caption></caption><image source="images/fig-power-vs-exponential-3"><description>power function vs exponential from 0 to 50</description></image></figure>
-<p>
-	The relationship in <xref ref="example-power-vs-exponential" text="type-global"/> holds true for all increasing power and exponential functions: For large enough values of <m>x</m>, the exponential function will always be greater than the power function, regardless of the parameters in the functions. <xref ref="fig-power-vs-exponential-3" text="type-global"/> shows the graphs of <m>f(x) = x^6</m> and <m>g(x) = 1.8^x</m>. At first, <m>f (x) \gt g(x)</m>, but at around <m>x = 37</m>, <m>g(x)</m> overtakes <m>f (x)</m>, and <m>g(x) \gt f (x)</m> for all <m>x \gt 37</m>.
-</p>
-</sidebyside>
+  <image source="images/exam4-2-5.png"><description>graph</description></image></sidebyside></solution></example> 
 
-<exercise xml:id="exercise-identify-power-and-exponential-functions"><statement>
-Which of the following functions are exponential functions, and which are power functions?
-<ol label="a">
-	<li><m>F(x) = 1.5^x</m></li>
-	<li><m>G(x) = 3x^{1.5}</m></li>
-	<li><m>H(x) = 3^{1.5x}</m></li>
-	<li><m> K(x) = (3x)^{1.5}</m></li>
-</ol>
-</statement></exercise>
+<p>Of course, we don't always use <m>x</m> and <m>y</m> for the input and output variables.  In the previous example, we could write <m>w = f(t) = \sqrt{9 - t^2}</m> for the function, so that <m>t</m> is the input and <m>w</m> is the output. The table of values and the graph are the same; only the names of the variables have changed.</p>
 
+<warning><p>When we discuss trigonometric functions, there are several variables involved.  Our definitions of the trig ratios involve four variables: <m>x</m>, <m>y</m>, <m>r</m>, and <m>\theta</m>, as illustrated below.</p>
+
+<sidebyside width="75%"><image source="images/4-2-caut1.png"><description>angles</description></image></sidebyside>
+
+ <p>If the value of <m>r</m> is fixed for a given situation, such as the Ferris wheel or the bicycle wheel discussed above, then <m>x</m> and <m>y</m> are both functions of <m>\theta</m>. This means that the values of <m>x</m> and <m>y</m> depend only on the value of the angle <m>\theta</m>.  If <m>r = 1</m>, we have
+ \begin{align*}
+                x \amp = f(\theta) = \cos \theta\\
+                y \amp = g(\theta) = \sin \theta\\              
+                \end{align*} 
+The graphs of these functions are shown below. Note particularly that the horizontal axis displays values of the input variable, and the vertical axis displays the output variable. </p>
+<sidebyside width="80%"><image source="images/4-2-caut2.png"><description>graphs</description></image></sidebyside>
+<p>If we use different variables for the input and output, the functions and their graphs are the same, but the axes should be labeled with the appropriate variables.</p></warning>
+                     
+<exercise><statement><p>Sketch a graph of each function, and label the axes.</p>
+<p><ol label="a">
+    <li><m>d = F(\phi) = \sin \phi</m></li>
+    <li><m>t = G(\beta) = \cos \beta</m></li>
+</ol></p></statement></exercise>
+
+<warning><p>When we write <m>\cos \theta</m>, we really mean <m>\cos (\theta)</m>, because we are using "cos" as the name of a function whose input is <m>\theta</m>.</p>
+<p> A common mistake is to think of <m>\cos \theta</m>  or <m>\cos (\theta)</m> as a product, cos <em>times</em> <m>\theta</m>, but this makes no sense, because "cos" by itself has no meaning. Remember that <m>\cos \theta</m>  represents a single number, namely the output of the cosine function.</p></warning>
 </subsection>
 
+<subsection><title>The Tangent Function</title>
+<sidebyside widths="70% 20%" valigns="middle middle"><p>The tangent function is periodic, but its graph is not similar to the graphs of sine and cosine. Recall that the tangent of an angle in standard position is defined by <me>\tan \theta = \dfrac{y}{x}</me> Study the figure at right to see that as <m>\theta</m> increases from <m>0\degree</m> to <m>90\degree</m>, <m>y</m> increases while <m>x</m> remains constant, so the value of <m>\tan \theta</m> increases.</p> 
+<image source="images/4-2-tan.png"><description>graphs</description></image></sidebyside>
+
+<example><statement><p>Sketch a graph of <m>f(\theta) = \tan \theta</m> for <m>0\degree \le \theta \le 180\degree</m>.</p></statement>
+
+<solution><p>You can use your calculator to verify the following values for <m>\tan \theta</m>.</p>
+<sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
+                    <row bottom="minor">
+                        <cell><m>\theta</m></cell>
+                        <cell><m>0\degree</m></cell>
+                        <cell><m>30\degree</m></cell>
+                        <cell><m>60\degree</m></cell>
+                        <cell><m>70\degree</m></cell>
+                        <cell><m>80\degree</m></cell>
+                        <cell><m>85\degree</m></cell></row>
+                    <row>
+                        <cell><m>\tan \theta</m></cell> 
+                        <cell><m>0</m></cell>
+                        <cell><m>0.58</m></cell>
+                        <cell><m>1.73</m></cell>
+                        <cell><m>2.75</m></cell>
+                        <cell><m>5.67</m></cell>
+                        <cell><m>11.43</m></cell></row>
+                    </tabular></sidebyside>
+
+<sidebyside widths="50% 30%" valigns="middle middle"><p>As <m>\theta</m> gets closer to <m>90\degree</m>, <m>\tan \theta</m> increases very rapidly. Recall that <m>\tan 90\degree</m> is undefined, so there is no point on the graph at <m>\theta = 90\degree</m>. The graph of <m>f(\theta) = \tan \theta</m> in the first quadrant is shown at right.</p>
+<image source="images/exam4-2-6a.png"><description>graph</description></image></sidebyside>
+
+<sidebyside widths="50% 40%"><p> In the second quadrant, the tangent is negative. The reference angle for each angle in the second quadrant is its supplement, so <me>\tan \theta =-\tan (180\degree - \theta)</me> </p>
+<image source="images/exam4-2-6b.png"><description>graphs</description></image></sidebyside> 
+<p>as shown at right. For example, you can verify that <me>\tan 130\degree = -\tan (180\degree - 130\degree) = -\tan 50\degree = -1.19</me></p>
+
+<sidebyside widths="60% 30%" valigns="middle middle"><p>In particular, for values of <m>\theta</m> close to <m>90\degree</m>, the values of <m>\tan \theta</m> are large negative numbers. We plot several points and sketch the graph in the second quadrant.
+<sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
+                    <row bottom="minor">
+                        <cell><m>\theta</m></cell>
+                        <cell><m>100\degree</m></cell>
+                        <cell><m>110\degree</m></cell>
+                        <cell><m>120\degree</m></cell>
+                        <cell><m>150\degree</m></cell>
+                        <cell><m>1850\degree</m></cell></row>
+                    <row>
+                        <cell><m>\tan \theta</m></cell> 
+                        <cell><m>-5.67</m></cell>
+                        <cell><m>-2.75</m></cell>
+                        <cell><m>-1.73</m></cell>
+                        <cell><m>-0.58</m></cell>
+                        <cell><m>0</m></cell></row>
+                    </tabular></sidebyside>
+
+</p><image source="images/exam4-2-6c.png"><description>graph</description></image></sidebyside>
+<p>In the figure above, note that the graph has a break at <m>\theta = 90\degree</m>, because  <m>\tan 90\degree</m> is undefined.</p></solution></example>
 
 
-<subsection><title>Exponential Equations</title>
-<p>
-	An <term>exponential equation</term><idx>exponential equation</idx> is one in which the variable is part of an exponent. For example, the equation
-	<me>3^x = 81</me>
-	is exponential. Many exponential equations can be solved by writing both sides of the equation as powers with the same base. To solve the equation above, we write
-	<me>3^x = 3^4</me>
-	which is true if and only if <m>x = 4</m>. In general, if two equivalent powers have the same base, then their exponents must be equal also, as long as the base is not <m>0</m> or <m>\pm 1</m>.
-</p>
-<p>
-	Sometimes the laws of exponents can be used to express both sides of an equation as single powers of a common base.
-</p>
+<p>Now let's consider the graph of <m>f(\theta) = \tan \theta</m> in the third and fourth quadrants. The tangent is positive in the third quadrant, and negative in the fourth quadrant. In fact, from the figure below you can see that the angles <m>\theta</m> and <m>180\degree + \theta</m> are vertical angles.</p>
+<sidebyside width="60%"><image source="images/exam4-2-6d.png"><description>graph</description></image></sidebyside>
 
-<example xml:id="example-exponential-equations">
-<p>
-	Solve the following equations.
-	<ol label="a">
-		<li><m>3^{x-2} = 9^3</m></li>
-		<li><m> 27 \cdot 3^{-2x} = 9^{x+1}</m></li>
-	</ol>
-</p>
-<solution>
-<ol label="a">
-	<li>
-		Using the fact that <m>9 = 3^2</m>, we write each side of the equation as a power of <m>3</m>:
-		\begin{align*}
-		3^{x-2} \amp = \left(3^2\right)^3 \\
-		3^{x-2} \amp = 3^6 
-		\end{align*}
-		Now we equate the exponents to obtain
-		\begin{align*}
-		x - 2 \amp = 6 \\
-		x  \amp = 8
-		\end{align*}
-	</li>
-	<li>
-		We write each factor as a power of <m>3</m>.
-		<me>3^3 \cdot 3^{-2x} = \left(3^2\right)^{x+1}</me>
-		We use the laws of exponents to simplify each side:
-		<me>3^{3-2x} = 3^{2x+2}</me>
-		Now we equate the exponents to obtain
-		\begin{align*}
-		3 - 2x \amp = 2x + 2 \\
-		-4x =\amp  -1
-		\end{align*}
-		The solution is <m>x = \dfrac{1}{4}</m>.
-	</li>
-</ol></solution>
-</example>
+<p>Because <m>\theta</m> and <m>180\degree + \theta</m> have the same reference angle, they have the same tangent.  For example,
+\begin{align*}
+                \tan 200\degree \amp = \tan 20\degree\\
+                \tan 230\degree \amp = \tan 50\degree\\
+                \tan 250\degree \amp = \tan 70\degree              
+                \end{align*}
+Thus, the graph of <m>\tan \theta</m> in the third quadrant is the same as its graph in the first quadrant. Similarly, the graph of the tangent function in the fourth quadrant is the same as its graph in the second quadrant. The completed graph is shown below.</p>
+<sidebyside width="60%"><image source="images/exam4-2-6e.png"><description>graph</description></image></sidebyside>
 
-<exercise xml:id="exercise-exponential-equation"><statement>
-<p>Solve the equation <m>2^{x+2} = 128</m>.</p>
-</statement>
-<hint>
-    <p>
-        Write each side as a power of <m>2</m>.
-    </p>
-    <p>
-        Equate exponents.
-    </p>
-</hint>
-</exercise>
-
-<example xml:id="example-flea-population">
-	<p>
-		During the summer a population of fleas doubles in number every <m>5</m> days. If a population starts with <m>10</m> fleas, how long will it be before there are <m>10,240</m> fleas?
-	</p>
-<solution>
-<p>
-	Let <m>P</m> represent the number of fleas present after <m>t</m> days. The original population of <m>10</m> is multiplied by a factor of <m>2</m> every <m>5</m> days, or
-	<me>P(t) = 10 \cdot 2^{t/5}</me>
-	We set <m>P = \alert{10,240}</m> and solve for <m>t</m>:
-	\begin{align*}
-	\alert{10,240} \amp = 10\cdot 2^{t/5}\amp\amp \text{Divide both sides by 10.} \\
-	1024 \amp = 2^{t/5} \amp\amp \text {Write 1024 as a power of 2.} \\
-	2^{10} \amp = 2^{t/5}
-	\end{align*}
-	We equate the exponents to get <m>10 = \dfrac{t}{5}</m>, or <m>t = 50</m>. The population will grow to <m>10,240</m> fleas in <m>50</m> days.
-</p>
-</solution></example>
-
-<exercise xml:id="exercise-ad-campaign"><statement>
-<p>
-	During an advertising campaign in a large city, the makers of Chip-O’s corn chips estimate that the number of people who have heard of Chip-O’s increases by a factor of <m>8</m> every 4 days.
-	<ol label="a">
-		<li>
-			If 100 people are given trial bags of Chip-O's to start the campaign, write a function, <m>N(t)</m>, for the number of people who have heard of Chip-O's after <m>t</m> days of advertising.
-		</li>
-		<li>
-			Use your calculator to graph the function <m>N(t)</m> on the domain <m>0 \le t \le 15</m>.
-		</li>
-		<li>
-			How many days should the makers run the campaign in order for Chip-O's to be familiar to <m>51,200</m> people? Use algebraic methods to find your answer and verify on your graph.
-		</li>
-	</ol>
-</p>
-</statement></exercise>
-
-<technology><title>Graphical Solution of Exponential Equations</title>
-<p>
-	It is not always so easy to express both sides of the equation as powers of the same base. In the following sections, we will develop more general methods for finding exact solutions to exponential equations. But we can use a graphing calculator to obtain approximate solutions.
-</p>
-
-<example xml:id="example-gc-exponential-equation">
-<p>
-	Use the graph of <m>y = 2^x</m> to find an approximate solution to the equation <m>2^x = 5</m> accurate to the nearest hundredth.
-</p>
-<solution>
-<p>
-	Enter <m>Y_1 = 2</m> <c>^</c> X and use the standard graphing window (<c>ZOOM</c> 6) to obtain the graph shown in <xref ref="fig-GC-exponential-equation" text="type-global"/>a. We are looking for a point on this graph with <m>y</m>-coordinate <m>5</m>. Using the TRACE feature, we see that the <m>y</m>-coordinates are too small when <m>x \lt 2.1</m> and too large when <m>x \gt 2.4</m>. 
-</p>
-<figure xml:id="fig-GC-exponential-equation"><caption></caption><image source="images/fig-GC-exponential-equation"  width="100%"><description>two GC displays of exponential function</description></image></figure>
-<p>
-	The solution we want lies somewhere between <m>x = 2.1</m> and <m>x = 2.4</m>, but this approximation is not accurate enough. To improve our approximation, we will use the <term>intersect</term><idx>intersect</idx> feature. Set <m>Y_2 = 5</m> and press <c>GRAPH</c>. The <m>x</m>-coordinate of the intersection point of the two graphs is the solution of the equation <m>2^x = 5</m> Activating the <term>intersect</term> command results in <xref ref="fig-GC-exponential-equation" text="type-global"/>b, and we see that, to the nearest hundredth, the solution is <m>2.32</m>.
-</p>
-<p>
-	We can verify that our estimate is reasonable by substituting into the equation:
-	<me>2^{2.32}  \stackrel{?}{=} 5</me>
-	We enter 2 <c>^</c> 2.32 <c>ENTER</c> to get <m>4.993322196</m>. This number is not equal to <m>5</m>, but it is close, so we believe that <m>x = 2.32</m> is a reasonable approximation to the solution of the equation <m>2^x = 5</m>.
-</p>
- </solution>
-</example>
-</technology>
-
-<exercise xml:id="exercise-GC-exponential-equation"><statement>
-	Use the graph of <m>y = 5^x</m> to find an approximate solution to <m>5^x = 285</m>, accurate to two decimal places.
-</statement></exercise>
-
-
+<exercise><statement>
+<p><ol label="a">
+    <li>What is the period of the tangent function?</li>
+    <li>Does the graph of tangent have an amplitude?</li>
+    <li>For what values of <m>\theta</m> is <m>\tan \theta</m> undefined?</li>
+    <li>Give the equations of any horizontal or vertical asymptotes for <m>0\degree \le \theta \le 360\degree</m>.</li>
+</ol></p></statement></exercise>
 </subsection>
-<xi:include href="./summary-4-2.xml" /> <!-- summary  -->
-<xi:include href="./section-4-2-exercises.xml" /> <!-- exercises  -->
+
+<subsection><title>Angle of Inclination</title>
+<p> The figure at right shows a graph of the line <me>y = \frac{3}{4}x - 3</me> The angle <m>\alpha</m> measured in the positive direction from the positive <m>x</m>-axis to the line is called the <term>angle of inclination</term> of the line.</p> 
+
+<note><p>Recall that the <term>slope</term> of a line is given by the ratio <m>\dfrac {\text{change in}~ y}{\text{change in}~x}</m> as we move from one point to another on the line. So, if we create a right triangle by dropping a perpendicular segment from the line to the <m>x</m>-axis, the ratio of sides <m>\dfrac {\text{opposite}}{\text{adjacent}}</m> gives the slope of the line.</p> </note>
+
+<assemblage><title>Angle of Inclination</title>
+<p>The <term>angle of inclination</term> of a line is the angle <m>\alpha</m> measured in the positive direction from the positive <m>x</m>-axis to the line. If the slope of the line is <m>m</m>, then
+<me>\tan \alpha = m</me> where  <m>0\degree \le \alpha \le 180\degree</m>.</p></assemblage>
+
+<example><statement><p>Find the angle of inclination of the line <m>y = \frac{3}{4}x - 3</m>.</p></statement>
+
+<solution><sidebyside widths="50% 35%"><p>The slope of the line is <m>\frac{3}{4}</m>. Therefore,
+\begin{align*}
+                \tan \alpha \amp = \dfrac{3}{4}\\
+                \alpha \amp = \tan^{-1} (\dfrac{3}{4}) = 36.9\degree\\              
+                \end{align*} 
+The angle of inclination is <m>36.9\degree</m>.</p><image source="images/exam4-2-7.png"><description>graph</description></image></sidebyside></solution></example>
+
+<exercise><statement><sidebyside widths="50% 35%">
+<p>Find the angle of inclination of the line <me>y = \dfrac{-6}{5}x + 2</me> shown at right.</p><image source="images/exer4-2-7.png"><description>graph</description></image></sidebyside></statement></exercise>
+</subsection>
+
+<subsection><title>Algebra Refresher</title>
+<exercises><exercisegroup cols="3"><introduction><p><ol label="a">
+<li>Graph the function.</li>
+<li>Give the coordinates of any intercepts, and any maximum or minimum values.</li>
+</ol></p></introduction>
+<exercise number="1"><statement><m>f(x) = -6 + \dfrac{2}{3} x</m></statement></exercise>
+<exercise number="2"><statement><m>g(x) = 4 - \dfrac{3}{2} x</m></statement></exercise>
+<exercise number="3"><statement><m>p(t) = t^2 - 4</m></statement></exercise>
+<exercise number="4"><statement><m>q(t) = 9 - t^2</m></statement></exercise>
+<exercise number="5"><statement><m>F(x) = 2 - \sqrt{z}</m></statement></exercise>
+<exercise number="6"><statement><m>G(z) = \sqrt{z - 4}</m></statement></exercise>
+</exercisegroup></exercises>
+
+<subsubsection><title>Answers to 4.2 Exercises</title>
+<p><ol label="1">
+<li>a.  409.58 yds    b.  286.79 yds</li>
+<li>111.5 mile</li>
+<li><sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                  
+                    <row bottom="minor">
+                        <cell><m>\theta</m></cell>
+                        <cell><m>0\degree</m></cell>
+                        <cell><m>30\degree</m></cell>
+                        <cell><m>60\degree</m></cell>
+                        <cell><m>90\degree</m></cell>
+                        <cell><m>120\degree</m></cell>
+                        <cell><m>150\degree</m></cell>
+                        <cell><m>180\degree</m></cell></row>   
+                    <row>
+                        <cell><m>\sin \theta</m></cell> 
+                        <cell><m>0</m></cell>
+                        <cell><m>0.5</m></cell>
+                        <cell><m>0.866</m></cell>
+                        <cell><m>1.0</m></cell>
+                        <cell><m>0.866</m></cell>
+                        <cell><m>0.5</m></cell>
+                        <cell><m>0</m></cell></row>
+                    <row>
+                        <cell><m>h = F(\theta)</m></cell> 
+                        <cell><m>100</m></cell>
+                        <cell><m>150</m></cell>
+                        <cell><m>186.6</m></cell>
+                        <cell><m>200</m></cell>
+                        <cell><m>186.6</m></cell>
+                        <cell><m>150</m></cell>
+                        <cell><m>100</m></cell></row>
+                        </tabular></sidebyside>
+
+<sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                  
+                    <row bottom="minor">
+                        <cell><m>\theta</m></cell>
+                        <cell><m>210\degree</m></cell>
+                        <cell><m>240\degree</m></cell>
+                        <cell><m>270\degree</m></cell>
+                        <cell><m>300\degree</m></cell>
+                        <cell><m>330\degree</m></cell>
+                        <cell><m>360\degree</m></cell></row>   
+                    <row>
+                        <cell><m>\sin \theta</m></cell> 
+                        <cell><m>-0.5</m></cell>
+                        <cell><m>-0.866</m></cell>
+                        <cell><m>-1.0</m></cell>
+                        <cell><m>-0.866</m></cell>
+                        <cell><m>-0.5</m></cell>
+                        <cell><m>0</m></cell></row>
+                    <row>
+                        <cell><m>h = F(\theta)</m></cell> 
+                        <cell><m>50</m></cell>
+                        <cell><m>13.4</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>13.4</m></cell>
+                        <cell><m>50</m></cell>
+                        <cell><m>100</m></cell></row>
+                        </tabular></sidebyside>
+
+<sidebyside width="30%"><image source="images/exer4-2-3ans.png"><description>graph</description></image></sidebyside></li>
+<li><p><ol label="a">
+    <li><sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                  
+                    <row bottom="minor">
+                        <cell><m>\theta</m></cell>
+                        <cell><m>0\degree</m></cell>
+                        <cell><m>10\degree</m></cell>
+                        <cell><m>20\degree</m></cell>
+                        <cell><m>30\degree</m></cell>
+                        <cell><m>40\degree</m></cell>
+                        <cell><m>50\degree</m></cell>
+                        <cell><m>60\degree</m></cell>
+                        <cell><m>70\degree</m></cell>
+                        <cell><m>80\degree</m></cell>
+                        <cell><m>90\degree</m></cell></row>
+                    <row>
+                        <cell><m>\cos \theta</m></cell> 
+                        <cell><m>1</m></cell>
+                        <cell><m>0.98</m></cell>
+                        <cell><m>0.94</m></cell>
+                        <cell><m>0.87</m></cell>
+                        <cell><m>0.77}</m></cell>
+                        <cell><m>0.64</m></cell>
+                        <cell><m>0.50</m></cell>
+                        <cell><m>0.34</m></cell>
+                        <cell><m>0.17</m></cell>
+                        <cell><m>0</m></cell></row>
+                        </tabular></sidebyside>
+    <sidebyside width="40%"><image source="images/exer4-2-4ans.png"><description>graph</description></image></sidebyside></li>
+    <li>Period: <m>360\degree</m>, amplitude: 1,  midline: <m>y = 0</m>.  The cosine graph starts <m>(\theta = 0\degree)</m> at its high point, while the sine graph starts <m>(\theta = 0\degree)</m> at its midline.</li></ol></p></li>
+<li><p><ol label="a">
+    <li><sidebyside width="40%"><image source="images/exer4-2-5ansa.png"><description>graph</description></image></sidebyside></li>
+    <li><sidebyside width="40%"><image source="images/exer4-2-5ansb.png"><description>graph</description></image></sidebyside></li>
+</ol></p></li>
+<li><p><ol label="a">
+    <li><m>180\degree</m></li>
+    <li>No</li>
+    <li><m>90\degree, ~270\degree</m>, and their coterminal angles</li>
+    <li><m>\theta = 90\degree, ~\theta = 270\degree</m></li>
+</ol></p></li>
+<li><m>129.8\degree</m></li>
+</ol></p></subsubsection>
+
+<subsubsection><title>Algebra Refresher Answers</title>
+<p><ol label="1">
+    <li><p><ol label="a">
+        <li><sidebyside width="30%"><image source="images/ar4-2-1.png"><description>graph</description></image></sidebyside></li>
+        <li><m>(0,-6), ~ (9,0)</m></li>
+    </ol></p></li>
+    <li><p><ol label="a">
+        <li><sidebyside width="30%"><image source="images/ar4-2-2.png"><description>graph</description></image></sidebyside></li>
+        <li><m>(0,4), ~ (\dfrac{8}{3},0)</m></li>
+    </ol></p></li>
+    <li><p><ol label="a">
+        <li><sidebyside width="30%"><image source="images/ar4-2-3.png"><description>graph</description></image></sidebyside></li>
+        <li><m>(0,-4), ~ (-2,0), ~ (2,0), ~ \text{Min:}~-4</m></li>
+    </ol></p></li>
+    <li><p><ol label="a">
+        <li><sidebyside width="30%"><image source="images/ar4-2-4.png"><description>graph</description></image></sidebyside></li>
+        <li><m>(0,9), ~ (-3,0), ~ (3,0), ~ \text{Max:}~9</m></li>
+    </ol></p></li>
+    <li><p><ol label="a">
+        <li><sidebyside width="30%"><image source="images/ar4-2-5.png"><description>graph</description></image></sidebyside></li>
+        <li><m>(0,2), ~ (4,0), ~ \text{Max:}~2</m></li>
+    </ol></p></li>
+    <li><p><ol label="a">
+        <li><sidebyside width="30%"><image source="images/ar4-2-6.png"><description>graph</description></image></sidebyside></li>
+        <li><m>(0,2), ~ (4,0),  ~ \text{Min:}~0</m></li>
+    </ol></p></li>
+</ol></p></subsubsection>
+</subsection>
+
+<subsection><title>Section 4.2 Summary</title>
+<subsubsection><title>Vocabulary</title>
+<p><ul cols="3">
+    <li>Input variable</li>
+    <li>Output variable</li>
+    <li>Periodic function</li>
+    <li>Period</li>
+    <li>Midline</li>
+    <li>Amplitude</li>
+    <li>Asymptote</li>
+    <li>Angle of Inclination</li>
+    <li>Bearings</li>
+</ul></p>
+</subsubsection>
+
+<subsubsection><title>Concepts</title>
+<p><ol label="1">
+    <li><assemblage><title>Coordinates</title>
+    <p>If point <m>P</m> is located at a distance <m>r</m> from the origin in the direction specified by angle <m>\theta</m> in standard position, then the coordinates of <m>P</m> are
+    <me>x = r \cos \theta ~~~~ \text{and} ~~~~ y = r \sin \theta</me>
+    </p></assemblage></li>
+    <li>Navigational directions for ships and planes are sometimes given as <term>bearings</term>, which are angles measured clockwise from north.</li>
+    <li>Periodic functions are used to model phenomena that exhibit cyclical behavior.</li>
+    <li>The trigonometric ratios <m>\sin \theta</m> and <m>\cos \theta</m> are functions of the angle <m>\theta</m>.</li>
+    <li>The <term>period</term> of the sine function is <m>360\degree</m>. Its <term>midline</term> is the horizontal line <m>y = 0</m>, and the <term>amplitude</term> of the sine function is 1.</li>
+    <li> The graph of the cosine function has the same period, midline, and amplitude as the graph of the sine function. However, the locations of the intercepts and of the maximum and minimum values are different.</li>
+    <li>We use the notation <m>y = f(x)</m> to indicate that <m>y</m> is a function of <m>x</m>, that is, <m>x</m> is the input variable and <m>y</m> is the output variable.</li>
+    <li>The tangent function has period <m>180\degree</m>. It is undefined at odd multiples of <m>90\degree</m>, and is increasing on each interval of its domain.</li>
+    <li><assemblage><title>Angle of Inclination</title>
+    <p>The <term>angle of inclination</term> of a line is the angle <m>\alpha</m> measured in the positive direction from the positive <m>x</m>-axis to the line. If the slope of the line is <m>m</m>, then
+    <me>\tan \alpha = m</me> where  <m>0\degree \le \alpha \le 180\degree</m>.</p></assemblage></li>
+</ol></p></subsubsection>
+
+<subsubsection><title>Study Questions</title>
+<p><ol label="1">
+    <li><sidebyside widths="50% 30%"><p>Use the figure to help you fill in the blanks.</p><image source="images/sq4-2-1.png"><description>circle</description></image></sidebyside>        
+    <p><ol label="a">
+        <li><p>As <m>\theta</m> increases from <m>0\degree</m> to <m>90\degree</m>, <m>f(\theta) = \sin \theta</m> <fillin characters="6"/> from <fillin characters="4"/> to <fillin characters="4"/> .</p></li>
+        <li><p>As <m>\theta</m> increases from <m>90\degree</m> to <m>180\degree</m>, <m>f(\theta) = \sin \theta</m> <fillin characters="6"/> from <fillin characters="4"/> to <fillin characters="4"/> .</p></li>
+        <li><p>As <m>\theta</m> increases from <m>180\degree</m> to <m>270\degree</m>, <m>f(\theta) = \sin \theta</m> <fillin characters="6"/> from <fillin characters="4"/> to <fillin characters="4"/> .</p></li>
+        <li><p>As <m>\theta</m> increases from <m>270\degree</m> to <m>360\degree</m>, <m>f(\theta) = \sin \theta</m> <fillin characters="6"/> from <fillin characters="4"/> to <fillin characters="4"/> .</p></li>
+    </ol></p></li>
+    <li><sidebyside widths="50% 30%"><p>Use the figure to help you fill in the blanks.</p><image source="images/sq4-2-2.png"><description>circle</description></image></sidebyside>        
+    <p><ol label="a">
+        <li><p>As <m>\theta</m> increases from <m>0\degree</m> to <m>90\degree</m>, <m>f(\theta) = \cos \theta</m> <fillin characters="6"/> from <fillin characters="4"/> to <fillin characters="4"/> .</p></li>
+        <li><p>As <m>\theta</m> increases from <m>90\degree</m> to <m>180\degree</m>, <m>f(\theta) = \cos \theta</m> <fillin characters="6"/> from <fillin characters="4"/> to <fillin characters="4"/> .</p></li>
+        <li><p>As <m>\theta</m> increases from <m>180\degree</m> to <m>270\degree</m>, <m>f(\theta) = \cos \theta</m> <fillin characters="6"/> from <fillin characters="4"/> to <fillin characters="4"/> .</p></li>
+        <li><p>As <m>\theta</m> increases from <m>270\degree</m> to <m>360\degree</m>, <m>f(\theta) = \cos \theta</m> <fillin characters="6"/> from <fillin characters="4"/> to <fillin characters="4"/> .</p></li>
+    </ol></p></li>
+    <li>List several ways in which the graph of <m>y = \tan \theta</m> is different from the graphs of <m>y = \sin \theta</m> and <m>y = \cos \theta</m>.</li>
+    <li>If the angle of inclination of a line is greater than <m>45\degree</m>, what can you say about its slope?</li>
+</ol></p></subsubsection>
+
+<subsubsection><title>Skills</title>
+<p><ol label="1">
+    <li>Find coordinates    #1-12, 19-20</li>
+    <li>Use bearings to determine position    #13-18</li>
+    <li>Sketch graphs of the sine and cosine functions    #21-26, 31-32</li>
+    <li>Find the coordinates of points on a sine or cosine graph    #27-30, 41-44</li>
+    <li>Use function notation    #33-40</li>
+    <li>Find reference angles    #45-48</li>
+    <li>Solve equations graphically    #49-56</li>
+    <li>Graph the tangent function    #57-60</li>
+    <li>Find and use the angle of inclination of a line    #61-70</li>
+</ol></p></subsubsection>
+</subsection>
+
+<!--<xi:include href="./summary-4-2.xml" />  summary  -->
+<!--<xi:include href="./section-4-2-exercises.xml" />  exercises  -->
 </section> 
 <!-- </book>  </mathbook> -->
