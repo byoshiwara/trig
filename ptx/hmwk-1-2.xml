@@ -950,11 +950,81 @@
     <li>  If <m>\angle ACB = 20\degree</m>, find <m>\angle B, \angle CAD</m>, and <m>\angle DAB</m>.</li>
     <li>  Find two triangles similar to <m>\triangle ABC</m>.  List the corresponding sides in each of the triangles.</li>
 </ol></p>
-    <image source="images/hp1-2-39"><description>right triangle</description></image></sidebyside></statement>
+    <!--<image source="images/hp1-2-39.png"><description>right triangle</description></image>-->
+    <image xml:id="hp1-2-39">
+        <description>right triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}[auto, thick]
+            \coordinate (A) at (0,0);
+            \coordinate (B) at (0,1.82);
+            \coordinate (C) at (5,0);
+            \coordinate (D) at (.585,1.6);
+
+            \draw[blue, thick] (A) rectangle +(.25,.25);
+            \draw[blue,thick] (D) -- ++(-.235,.0855) -- ++(-.0855,-.235) -- ++(.235,-.0855);
+            \draw[black,  thick] (A) --  (B) --(C)--cycle;
+            \draw[black,  thick] (A) --  (D) ;
+
+            \draw[red, thick] (4.1,0) arc (180:{180-atan(1.5/4)}:0.9) node [above left, midway, xshift=-3,yshift=-5] {$20\degree$};
+            \filldraw [black] (A) circle (.2pt) node[anchor=north east] {$A$};
+            \filldraw [black] (B) circle (.2pt) node[anchor=south east] {$B$};
+            \filldraw [black] (C) circle (.2pt) node[anchor=north west] {$C$};
+            \filldraw [black] (D) circle (.2pt) node[anchor=south west] {$D$};
+
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+    </sidebyside></statement>
 <answer><p><m>\triangle DBA</m> and <m>\triangle DBC.</m> The hypotenuse is <m>BC</m> in <m>\triangle ABC</m>, <m>BA</m> in <m>\triangle DBA</m>, and <m>AC</m> in <m>\triangle DAC</m>.  The short leg is <m>AB</m> in <m>\triangle ABC</m>, <m>DB</m> in <m>\triangle DBA</m>, and <m>DA</m> in <m>\triangle DAC</m>. The longer leg is <m>AC</m> in <m>\triangle ABC</m>, <m>DA</m> in <m>\triangle DBA</m>, and <m>DC</m> in <m>\triangle DAC</m>.</p></answer></exercise>
 
 <exercise number="40"><statement><p>Here is a way to find the distance across a gorge using a carpenter's square and a five-foot pole.  Plant the pole vertically on one side of the gorge at point <m>A</m> and place the angle of the carpenter's square on top of the pole at point <m>B</m>, as shown in the figure.  Sight along one side of the square so that it points to the opposite side of the gorge at point <m>P</m>.  Without moving the square, sight along the other side and mark point <m>Q</m>.  If the distance from <m>Q</m> to <m>A</m> is six inches, calculate the width of the gorge.  Explain your method.
 </p>
-    <sidebyside  width="50%"><image source="images/hp1-2-40"><description>right triangle</description></image></sidebyside></statement></exercise>
+    <sidebyside  width="50%"><!--<image source="images/hp1-2-40.png"><description>right triangle</description></image>-->
+    <image xml:id="hp1-2-40">
+        <description>right triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}[auto, thick]
+            \coordinate (A) at (0,0);
+            \coordinate (B) at (0,3);
+            \coordinate (C) at (9,0);
+            \coordinate (Q) at (-1,0);
+
+            \draw[black,  thick] (A) --  (B) node[right, midway] {\color{blue}$5'$};
+            \draw[black,  thick] (A) --  (Q) node[above, midway] {\color{blue}$6''$};
+            \draw[black,  thick] (Q) --  (B) --(C)--cycle;
+
+            \filldraw [black] (A) circle (1.6pt) node[anchor=north east] {$A$};
+            \filldraw [black] (B) circle (.2pt) node[anchor=south east] {$B$};
+            \filldraw [black] (C) circle (1.6pt) node[anchor=north west] {$P$};
+            \filldraw [black] (Q) circle (1.6pt) node[anchor=north east] {$Q$};
+            \draw[brown,line width=3pt] (B) -- +(-.2,-.6);
+            \draw[brown,line width=3pt] (B) -- +(.9,-.3);
+
+            \draw[black,thin] (0,-.4) -- +(0,-.4);
+            \draw[black,thin] (9,-.4) -- +(0,-.4);
+            \draw[black,thin] (0,-.6) -- +(3.5,0);
+            \node at (4.5,-.6)  {(gorge)};
+            \draw[black,thin] (9,-.6) -- +(-3.5,0);
+
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+    </sidebyside></statement></exercise>
 
 </exercises>
