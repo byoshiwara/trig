@@ -99,7 +99,35 @@
 <sidebyside widths="60% 40%"><p>The circle shown at right has its center at the origin, <m>(0,0)</m>, and its radius is <m>r</m>.  Now, the distance from the origin to any point <m>P(x,y)</m> on the circle is <m>r</m>.  Therefore,
 <me>\sqrt{(x-0)^2+(y-0)^2} = r</me>   or, squaring both sides,
 <me>(x-0)^2+(y-0)^2=r^2</me></p>
-<image source="images/circle.png"><description>circle</description></image></sidebyside>  
+<!--<image source="images/circle.png"><description>circle</description></image>-->
+    <image xml:id="circle">
+        <description>circle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \coordinate(O) at (0,0);
+        \coordinate (A) at (0.8,1.386 );
+
+        \draw (0,0) circle (1.6);
+
+        \draw[thick,->] (-2,0) -- (2,0) node[anchor=west] {$x$};
+        \draw[thick,->] (0,-2) -- (0,2) node[anchor=south] {$y$};
+
+        \filldraw[red] (A) circle (1.4pt) node[anchor=south west, xshift=0, yshift=0]{\color{black}$P(x,y)$};
+
+        \draw[red, thick] (O) -- (A) node[below right, midway]{\color{blue}$r$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+    </sidebyside>  
 
 <p>Because every point on the circle must satisfy this equation, we have found an equation for the circle.</p>
 
