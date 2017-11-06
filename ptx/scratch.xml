@@ -91,11 +91,17 @@
 
 
 <exercise><statement>
-    <sidebyside widths="50% 25%">
-    <p>Find <m>x</m>, <m>y</m>, and <m>z</m> in the triangle at right.</p>
-<!--    <image source="images/exer1-1-6.png"><description>equilateral triangle with side 8</description></image>-->
-    <image xml:id="exer1-1-6">
-        <description>equilateral triangle with side 8</description>
+    <p>In the figure, <m>\alpha</m>, <m>\beta</m>, and <m>\gamma</m> denote the measures of the angles in degrees.</p>
+    <sidebyside widths="50% 40%"><p>
+            <ol label="a">
+            <li> Find the measure of angle <m>\alpha</m>.</li>
+            <li> Find the measure of angle <m>\beta</m>.</li>
+            <li> Find the measure of angle <m>\gamma</m>.</li>
+            <li> What do you notice about the measures of the angles?</li>
+        </ol></p>
+<!--    <image source="images/exer1-1-10.png"><description>straight angles with 50 degrees</description></image>-->
+    <image xml:id="exer1-1-10">
+        <description>straight angles with 50 degrees</description>
         <latex-image-code>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
@@ -105,25 +111,26 @@
           input/.style    = {coordinate}, % Input
           output/.style   = {coordinate} % Output
         }
-
         \begin{tikzpicture}[auto, thick, node distance=2cm]
-
-            \coordinate (A) at (0,0);
-            \coordinate (B) at (2.5,0);
-            \coordinate(C) at (1.25,2.165);
-            \filldraw[black] (A) circle (.2pt) node[anchor=south west, xshift=10, yshift=1]{$60\degree$};
-            \filldraw[black] (B) circle (.2pt) node[anchor=south east, xshift=-8, yshift=1]{$x$};
-            \filldraw[black] (C) circle (.2pt) node[anchor=north , yshift=-15]{$60\degree$};
-            \draw[black] (A) --  (B) node [below, midway] {$z$};
-            \draw[black] (A) --  (C) node [above left, midway,yshift=-4] {$y$};
-            \draw[black] (C) --  (B) node [above right, midway,yshift=-4] {$8$};
-
+            \coordinate (O) at (0,0);
+            \coordinate (A) at (-2,0);
+            \coordinate (B) at (2,0);
+            \coordinate(C) at (-1.157,-1.3789);
+            \coordinate (D) at (1.157,1.3789);
+            \filldraw[black] (O) circle (.2pt) node[anchor=south east]{$\alpha$};
+            \filldraw[black] (O) circle (.2pt) node[anchor=north east, xshift=-10]{$\beta$};
+            \filldraw[black] (O) circle (.2pt) node[anchor=north west, yshift=0]{$\gamma$};
+            \filldraw[black] (O) circle (.2pt) node[anchor=south west, xshift=9]{$50\degree$};
+            \draw[black] (A) --  (B);
+            \draw[black] (C) --  (D) ;
         \end{tikzpicture}]]>
     </latex-image-code>
     </image>
 
-    </sidebyside>
-</statement></exercise>
+</sidebyside>
+</statement>
+<answer><p><m>\alpha=130\degree, ~\beta=50\degree, ~\gamma=130\degree.</m> The non-adjacent angles are equal.</p></answer></exercise>
+
 
 
 
