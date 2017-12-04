@@ -1,433 +1,316 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!-- <mathbook><book> -->
 
-<section xml:id="Factors-and-x-Intercepts"   xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Factors and <m>x</m>-Intercepts</title>
+<section xml:id="Arclength-and-Radians"   xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Arclength and Radians</title>
+
 <introduction>
-<p>
-	In <xref ref="investigation-height-of-baseball" text="type-global"/>, perhaps you recognized the graph of the baseball's height as a parabola. In this chapter, we shall see that the graph of any quadratic function is a parabola.
-</p>
-<xi:include href="./assemblage-quadratic-function.xml" />
-<p>
-	In the definition above, notice that if <m>a</m> is zero, there is no <m>x</m>-squared term, so the function is not quadratic.
-</p>
-<p>
-	In <xref ref="investigation-height-of-baseball" text="type-global"/>, the height of a baseball <m>t</m> seconds after being hit was given by
-	<me>h = -16t^2 + 64t + 4</me>
-	We used a graph to find two times when the baseball was <m>64</m> feet high. Can we solve the same problem algebraically?
-</p>
-<p>
-	We are looking for values of <m>t</m> that produce <m>h = 64</m> in the height equation. So, if we substitute <m>h = 64</m> into the height equation, we would like to solve the <term>quadratic equation</term>
-	<me>64 = -16t^2 + 64t + 4</me>
-	This equation cannot be solved by extraction of roots, because there are two terms containing the variable <m>t</m>, and they cannot be combined. To solve this equation, we will appeal to a property of our number system, called the <term>zero-factor principle</term>.
-</p>
-</introduction>
+  <sidebyside widths="55% 35%"><p>Imagine that you are riding on a Ferris wheel of radius 100 feet, and each rotation takes eight minutes.  We can use angles in standard position to describe your location as you travel around the wheel. The figure at right shows the locations indicated by <m>\theta = 0\degree,~ 90\degree,~ 180\degree,~ \text{and}~ 270\degree</m>.  But degrees are not the only way to specify location on a circle.</p><image source="images/6-1-intro.png"><description>circle</description></image></sidebyside>  
 
+  <p>We could use percent of one complete rotation and label the same locations by <m>p = 0,~ p = 25,~ p = 50,~\text{and}~ p = 75</m>. Or we could use the time elapsed, so that for this example we would have <m>t = 0,~ t = 2,~t = 4,~\text{and}~ t = 6</m> minutes.</p>  
 
-<subsection><title>Zero-Factor Principle</title>
-<p>
-	Can you multiply two numbers together and obtain a product of zero? Only if one of the two numbers happens to be zero. This property of numbers is called the <term>zero-factor principle</term>.
-</p>
-<xi:include href="./assemblage-zero-factor-principle.xml" />
-<p>
-	The principle is true even if the numbers <m>a</m> and <m>b</m> are represented by algebraic expressions, such as <m>x - 5</m> or <m>2x + 1</m>. For example, if
-	<me>(x - 5)(2x + 1) = 0</me>
-	then it must be true that either <m>x - 5 = 0</m> or <m>2x + 1 = 0</m>. Thus, we can use the zero-factor principle to solve equations.
-</p>
+  <p>Another useful method uses distance traveled, or arclength, along the circle.  How far have you traveled around the Ferris wheel at each of the locations shown?
+  </p></introduction>
 
-<example xml:id="example-ZFP">
-<p>
-	<ol label="a">
-		<li>
-			Solve the equation <m>(x - 6)(x + 2) = 0</m>.
-		</li>
-		<li>
-		Find the <m>x</m>-intercepts of the graph of <m>f(x) = x^2 - 4x - 12</m>.
-		</li>
-	</ol>
-</p>
-<solution>
-	<ol label="a">
-		<li><p>
-			We apply the zero-factor principle to the product <m>(x - 6)(x + 2)</m>.</p><p>
-			<sidebyside><tabular><col /><col/><col/><col/>
-			<row>
-				<cell colspan="2"><m>(x - 6)(x+ 2) = 0</m></cell>
-				<cell>	</cell>
-				<cell>Set each factor equal to zero.</cell>
-			</row>
-			<row>	
-				<cell><m>x - 6 =0	</m></cell>
-				<cell>	or</cell>
-				<cell><m>	x + 2 = 0</m></cell>
-				<cell>Solve each equation.</cell>
-			</row>
-			<row>
-				<cell><m>x =6</m></cell>
-				<cell>	or</cell>	
-				<cell><m>x=-2</m></cell>
-			</row>
-			</tabular></sidebyside>
-			There are two solutions, <m>6</m> and <m>-2</m>. (You should check that both of these values satisfy the original equation.)</p>
-		</li>
-		<li>
-			To find the <m>x</m>-intercepts of the graph, we set <m>y = 0</m> and solve the equation 
-			<me>0 = x^2 - 4x - 12</me>
-			But this is the equation we solved in part (a), because <m>(x - 6)(x + 2) = x^2 - 4x - 12</m>.
-			The solutions of that equation were <m>6</m> and <m>-2</m>, so the <m>x</m>-intercepts of the graph are <m>6</m> and <m>-2</m>. You can see this by graphing the equation on your calculator, as shown in <xref ref="fig-GC-parab-with-x-intercepts" text="type-global"/>.	
-			<figure xml:id="fig-GC-parab-with-x-intercepts"><caption></caption><image source="images/fig-GC-parab-with-x-intercepts"  width="40%"><description>parabola with x-intercepts</description></image></figure>
-		</li>
-	</ol>
-</solution>
-</example>
+<subsection><title>Arclength</title>
+<p> Recall that the circumference of a circle is proportional to its radius,  
+  <me> \blert{C = 2 \pi r}</me>
+  If we walk around the entire circumference of a circle, the distance we travel is <m>2\pi</m> times the length of the radius, or about 6.28 times the radius.  If we walk only part of the way around the circle, then the distance we travel depends also on the angle of displacement. </p> 
+  <sidebyside widths="40% 50%" ><p>For example, an angle of <m>45\degree</m> is <m>\dfrac{1}{8}</m> of a complete revolution, so the arclength, <m>s</m>, from point <m>A</m> to point <m>B</m> in the figure at right is <m>\dfrac{1}{8}</m> of the circumference. Thus </p><image source="images/6-1-arca.png"><description>circle</description></image></sidebyside>
+<me>s = \dfrac{1}{8}(2\pi r) = \dfrac{\pi}{4} r</me>
 
-<note><p>
-	<xref ref="example-ZFP" text="type-global"/> illustrates an important fact about the <m>x</m>-intercepts of a graph.
-</p></note>
+<sidebyside widths="50% 40%" ><p>Similarly, the angle of displacement from point <m>A</m> to point <m>C</m> is <m>\dfrac{3}{4}</m> of a complete revolution, so the arclength along the circle from <m>A</m> to <m>C</m>, shown at right, is </p><image source="images/6-1-arcb.png"><description>circle</description></image></sidebyside>
+<me>s = \dfrac{3}{4}(2\pi r) = \dfrac{3\pi}{2} r</me>
 
-<xi:include href="./assemblage-x-intercepts-of-graph.xml" />
+<p>In general, for a given circle the length of the arc spanned by an angle is proportional to the size of the angle.</p>
 
-<exercise xml:id="exercise-ZFP"><statement>
-	<p>
-		Graph the function
-		<me>f(x) = (x - 3)(2x + 3)</me>
-		on a calculator, and use your graph to solve the equation <m>f(x) = 0</m>. (Use
-		<m>\text{Xmin} = -9.4</m>, <m>\text{Xmax} = 9.4</m>.) Check your answer with the zero-factor principle.
-	</p>
-</statement>
-<answer><p><m>x=-\frac{3}{2} </m>, <m>~x=3</m></p></answer>
-</exercise>
+<assemblage><p><me>\blert{\textbf{Arclength}}~ = ~ \blert{(\textbf{fraction of one revolution}) \cdot (2\pi r)}</me></p></assemblage>
 
+<p> The Ferris wheel in the introduction has circumference 
+  <me>C = 2\pi (100) = 628~ \text{feet}</me>
+  so in half a revolution you travel 314 feet around the edge, and in one-quarter revolution you travel 157 feet.</p>
+  <sidebyside widths="55% 35%" ><p> To indicate the same four locations on the wheel by distance traveled, we would use 
+    <me>s = 0,~ s = 157,~ s = 314,~ \text{and}~ s = 471</me>, as shown at right. </p><image source="images/6-1-arcc.png"><description>circle</description></image></sidebyside>
+
+<example><statement><p>What length of arc is spanned by an angle of <m>120\degree</m> on a circle of radius 12 centimeters?</p></statement>
+
+<solution><sidebyside widths="50% 35%"><p>Because <m>\dfrac{120}{360} = \dfrac{1}{3}</m>, an angle of <m>120\degree</m> is <m>\dfrac{1}{3}</m> of a complete revolution, as shown at right.  Using the formula above with <m>r = 12</m>, we find that 
+<me>s = \dfrac{1}{3}(2\pi \cdot 12) = \dfrac{2 \pi}{3} \cdot 12 = 8\pi ~ \text{cm}</me>
+or about 25.1 cm.
+</p><image source="images/exam6-1-1.png"><description>circle</description></image></sidebyside></solution></example>
+
+<exercise><statement><p>How far have you traveled around the edge of a Ferris wheel of radius 100 feet when you have turned through an angle of <m>150\degree</m>?</p></statement></exercise>
 </subsection>
 
+<subsection><title>Measuring Angles in Radians</title>
+<p>If you think about measuring arclength, you will see that the degree measure of the spanning angle is not as important as the fraction of one revolution it covers.  This observation suggests a new unit of measurement for angles, one that is better suited to calculations involving arclength.  We'll make one change in our formula for arclength, from
+  <me>\textbf{Arclength}~ = ~ (\textbf{fraction of one revolution}) \cdot (2\pi r)</me>
+to
+<me>\blert{\textbf{Arclength}~ =} ~ \blert{(\textbf{fraction of one revolution}\times 2\pi) \cdot r}</me>  
 
+We'll call the quantity in parentheses, (fraction of one revolution <m>\times 2\pi</m>), the <term>radian measure</term> of the angle that spans the arc.</p>
 
-<subsection><title>Solving Quadratic Equations by Factoring</title>
-<p>
-	Before we apply the zero-factor principle to solve a quadratic equation, we must first write the equation so that one side of the equation is zero. Let us introduce some terminology.
-</p>
+<assemblage><title>Radians</title>
+<p>The <term>radian measure</term> of an angle is given by
+<me>(\textbf{fraction of one revolution}\times 2\pi)</me></p></assemblage>
 
-<assemblage><title>Forms for Quadratic Equations</title>
-<p>
-	<ol>
-		<li>
-			 A quadratic equation written
-			 <me>ax^2 + bx + c = 0</me>
-			 is in <term>standard form</term><idx>standard form</idx>.
-		</li>
-		<li>
-			A quadratic equation written 
-			<me>a(x - r_1)(x - r_2) = 0</me>
-			 is in <term>factored form</term><idx>factored form</idx>.
-		</li>
-	</ol>
-</p></assemblage>
+<p>For example, one complete revolution, or <m>360\degree</m>, is equal to <m>2\pi</m> radians, and one-quarter revolution, or <m>90\degree</m>, is equal to <m>\dfrac{1}{4}(2\pi)</m> or <m>\dfrac{\pi}{2}</m> radians. The figure below shows the radian measure of the quadrantal angles.</p>  
 
-<p>
-	Once we have written the equation in standard form, we factor the left side and set each variable factor equal to zero separately.
-</p>
+<sidebyside width="90%"><image source="images/6-1-rad.png"><description>circle</description></image></sidebyside>
 
-<example xml:id="example-quadratic-via-factoring">
-	<p>
-		Solve <m>3x(x + 1) = 2x + 2</m>.
-	</p>
-<solution>
-	<p>
-		First, we write the equation in standard form.
-		\begin{align*}
-		3x(x + 1) \amp = 2x + 2\amp\amp\text{Apply the distributive law to the left side.}\\
-		3x^2 + 3x \amp = 2x + 2\amp\amp\text{Subtract }2x + 2 \text{ from both sides.}\\
-		3x^2 + x - 2 \amp = 0
-		\end{align*}
-		Next, we factor the left side to obtain
-		<me>(3x - 2)(x + 1) = 0</me>
-		We then apply the zero-factor principle by setting each factor equal to zero.
-		<me>3x - 2 =0 ~~\text{ or }~~ x + 1 = 0</me>
-		Finally, we solve each equation to find
-		<me>x = \frac{2}{3} ~~\text{ or }~~ x = -1</me>
-		The solutions are <m>\dfrac{2}{3}</m> and <m>-1</m>.
-	</p>
-</solution>
-</example>
+<example><statement><p>What is the radian measure of an angle of <m>120\degree</m>?</p></statement>
 
-<warning><title></title><statement>
-	When we apply the zero-factor principle, one side of the equation must be zero. For example, to solve the equation
-	<me>(x - 2)(x - 4) = 15</me>
-	it is incorrect to set each factor equal to <m>15</m>! (There are many ways that the product of two numbers can equal <m>15</m>; it is not necessary that one of the numbers be <m>15</m>.) We must first simplify the left side and write the equation in standard form. (The correct solutions are <m>7</m> and <m>-1</m>; make sure you can find these solutions.)
-</statement></warning>
+<solution><p>An angle of <m>120\degree</m> is <m>\dfrac{1}{3}</m> of a complete revolution, as we saw in the previous example.  Thus, an angle of <m>120\degree</m> has a radian measure of<m>\dfrac{1}{3}(2\pi)</m>, or  <m>\dfrac{2\pi}{3}</m>.</p></solution></example>
 
-<p>
-	We summarize the factoring method for solving quadratic equations as follows.
-</p>
+<exercise><statement><p>What fraction of a revolution is <m>\pi</m> radians?  How many degrees is that?</p></statement></exercise>
 
-<xi:include href="./assemblage-solve-quadratic-by-factoring.xml" />
+<p>Radian measure does not have to be expressed in multiples of <m>\pi</m>.  Remember that <m>\pi \approx 3.14</m>, so one complete revolution is about 6.28 radians, and one-quarter revolution is <m>\dfrac{1}{4}(2\pi) = \dfrac{\pi}{2}</m>, or about 1.57 radians. The figure below shows decimal approximations for the quadrantal angles.</p>
 
-<exercise xml:id="exercise-quadratic-via-factoring"><statement>
-	<p>
-		Solve by factoring: <m>(t - 3)^2 = 3(9 - t)</m>.
-	</p>
-</statement>
-<answer><p><m>x=-3</m>, <m>~x=6</m></p></answer>
-</exercise>
+<sidebyside widths="60% 40%">
+                <tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                        
+                    <row bottom="minor">
+                        <cell>Degrees</cell>
+                        <cell><line>Radians:</line><line>Exact Values</line></cell>
+                        <cell><line>Radians: Decimal</line><line>Approximations</line></cell></row>
+                    <row> 
+                        <cell><m>0\degree</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>0</m></cell></row>
+                    <row> 
+                        <cell><m>90\degree</m></cell>
+                        <cell><m>\dfrac{\pi}{2}</m></cell>
+                        <cell><m>1.57</m></cell></row>
+                    <row> 
+                        <cell><m>180\degree</m></cell>
+                        <cell><m>\pi</m></cell>
+                        <cell><m>3.14</m></cell></row>
+                    <row>
+                        <cell><m>270\degree</m></cell>
+                        <cell><m>\dfrac{3\pi}{2}</m></cell>
+                        <cell><m>4.71</m></cell></row>  
+                    <row>
+                        <cell><m>360\degree</m></cell>
+                        <cell><m>2\pi</m></cell>
+                        <cell><m>6.28</m></cell></row>                
+                </tabular><image source="images/6-1-decrad.png"><description>circle</description></image></sidebyside>  
 
-<p>
-	We can use factoring to solve the equation from <xref ref="investigation-height-of-baseball" text="type-global"/>.
-</p>
+  <note><p>You should memorize both the exact values of these angles in radians and their approximations!</p></note>
 
-<example xml:id="example-height-of-baseball">
-	<p>
-		The height, <m>h</m>, of a baseball <m>t</m> seconds after being hit is given by
-		<me>h = -16t^2 + 64t + 4</me>
-		When will the baseball reach a height of <m>64</m> feet?
-	</p>
-<solution>
-	<p>
-		We substitute <m>64</m> for <m>h</m> in the formula, and solve for <m>t</m>.
-		\begin{align*}
-		64 = -16t^2 + 64t \amp + 4\amp\amp\text{Write the equation in standard form.}\\
-		16t^2 - 64t + 60 \amp= 0\amp\amp\text{Factor 4 from the left side.}\\
-		4(4t^2 - 16t + 15) \amp= 0\amp\amp\text{Factor the quadratic expression.}\\
-		4(2t - 3)(2t - 5) \amp= 0\amp\amp\text{Set each variable factor equal to zero.}\\
-		2t - 3 =0 ~~\text{ or }~~ 2t - 5 \amp= 0\amp\amp\text{Solve each equation.}\\
-		t = \frac{3}{2}  ~~\text{ or }~~  t \amp = \frac{5}{2}
-		\end{align*}
-		There are two solutions to the quadratic equation. At <m>t = \dfrac{3}{2}</m> seconds, the ball reaches a height of <m>64</m> feet on the way up, and at <m>t = \dfrac{5}{2}</m> seconds, the ball is <m>64</m> feet high on its way down. (See <xref ref="fig-height-of-baseball" text="type-global"/>.)
-		<figure xml:id="fig-height-of-baseball"><caption></caption><image source="images/fig-height-of-baseball"  width="35%"><description>height of baseball</description></image></figure>
-	</p>
-</solution>
-</example>
+<example><statement><p>In which quadrant would you find an angle of 2 radians?  An angle of 5 radians?</p></statement>
 
-<note><p>
-	In the solution to <xref ref="example-height-of-baseball" text="type-global"/>, the factor <m>4</m> does not affect the solutions of the equation at all. You can understand why this is true by looking at some graphs. First, check that the two equations
-	<me>x^2 - 4x + 3 = 0 ~~\text{ and }~~ 4(x^2 - 4x + 3) = 0</me>
-	have the same solutions, <m>x = 1</m> and <m>x = 3</m>. Then use your graphing calculator to graph the equation
-	<me>Y_1 = X^2 - 4X + 3</me>
-	in the window
-	    \begin{align}
-        \text{Xmin} \amp = -2 \amp\amp \text{Xmax} = 8\\
-        \text{Ymin} \amp = -5 \amp\amp \text{Ymax} = 10
-        \end{align}
-       Notice that when <m>y = 0</m>, <m>x = 3</m> or <m>x = 1</m>. These two points are the <m>x</m>-intercepts of the graph. In the same window, now graph
-       <me>Y_2 = 4(X^2 - 4X + 3)</me>
-       (See <xref ref="fig-GC-scaled-parabola" text="type-global"/>.) This graph has the same <m>x</m>-values when <m>y = 0</m>. The factor of <m>4</m> stretches the graph vertically but does not change the location of the <m>x</m>-intercepts. The value of the constant factor <m>a</m> in the factored form of a quadratic function, <m>f(x) = a(x - r_1)(x - r_2)</m>, does not affect the location of the <m>x</m>-intercepts, because it does not affect the solutions of the equation <m>a(x - r_1)(x - r_2) = 0</m>. 
-       <figure xml:id="fig-GC-scaled-parabola"><caption></caption><image source="images/fig-GC-scaled-parabola"  width="40%"><description>two parabolas with the same x-intercepts</description></image></figure>
-</p></note>
+<solution><p>Look at the figure above. The second quadrant includes angles between <m>\dfrac{\pi}{2}</m> and <m>\pi</m>, or 1.57 and 3.14 radians, so 2 radians lies in the second quadrant. An angle of 5 radians is between 4.71 and 6.28, or between <m>\dfrac{3\pi}{2}</m> and <m>2\pi</m> radians, so it lies in the fourth quadrant.</p></solution></example>
 
-<exercise xml:id="exercise-scaled-parabola"><statement>
-	<ol label="a">
-		<li>
-			Solve <m>f(t) = 4t - t^2 = 0</m> by factoring.
-		</li>
-		<li>
-			Solve <m>g(t) = 20t - 5t^2 = 0</m> by factoring.
-		</li>
-		<li>
-			Graph <m>y = f(t)</m> and <m>y = g(t)</m> together in the window
-		    \begin{align}
-	        \text{Xmin} \amp = -2 \amp\amp \text{Xmax} = 6\\
-	        \text{Ymin} \amp = -20 \amp\amp \text{Ymax} = 25
-	        \end{align}
-	        and locate the horizontal intercepts of each graph.
-		</li>
-	</ol>
-</statement>
-<answer><p><ol label="a" cols="3">
-	<li><p><m>t=0</m>, <m>~t=4</m></p></li>
-	<li><p><m>t=0</m>,	<m>~t=4</m></p></li>
-	<li><p><m>(0,0) </m>, <m>~(4,0) </m></p></li>
-</ol></p></answer>
-</exercise>
-
+<exercise><statement><p>Draw a circle centered at the origin and sketch (in standard position) angles of approximately 3 radians, 4 radians, and 6 radians.</p></statement></exercise>         
 </subsection>
 
+<subsection><title>Converting Between Degrees and Radians</title>
+<p> It is not difficult to convert the measure of an angle in degrees to its measure in radians, or vice versa.  One complete revolution is equal to 2 radians or to <m>360\degree</m>, so <me>2\pi ~\text{radians} = 360\degree</me>
+Dividing both sides of this equation by 2 gives us a <em>conversion factor</em>:</p>
 
+<assemblage><title>Unit Conversion for Angles</title>
+<p><me>\dfrac{180\degree}{\pi~\text{radians}} = 1</me></p>
+</assemblage>
 
-<subsection><title>Applications</title>
-<p>
-	Here is another example of how quadratic equations arise in applications.
-</p>
-<example xml:id="example-computer-screen">
-	<sidebyside widths="25% 60%">
-	<figure valign="middle" width="30%" xml:id="fig-computer-screen"><caption></caption><image source="images/fig-computer-screen"><description>computer screen</description></image></figure>
-	<p valign="middle">
-		The size of a rectangular computer monitor screen is given by the length of its diagonal. (See <xref ref="fig-computer-screen" text="type-global"/>.) If the length of the screen should be <m>3</m> inches greater than its width, what are the dimensions of a <m>15</m>-inch monitor? 
-	</p>
-	</sidebyside>
-<solution>
-	<p>
-		We express the two dimensions of the screen in terms of a single variable:</p><p>
-		<sidebyside><tabular>
-			<row>
-				<cell>
-					Width of screen: <m>~~ w</m>
-				</cell>
-			</row>
-			<row>
-				<cell>
-					Length of screen: <m>~~ w + 3</m>
-				</cell>
-			</row>
-		</tabular></sidebyside>
-		We can use the Pythagorean theorem to write an equation.
-		<me>w^2 + (w + 3)^2 = 15^2</me>
-		Solve the equation. Begin by simplifying the left side.
-		\begin{align*}
-		w^2 + w^2 + 6w + 9 \amp = 225\amp\amp\text{Write the equation in standard form.}\\
-		2w^2 + 6w - 216 \amp= 0\amp\amp\text{Factor 2 from the left side.}\\
-		2(w^2 + 3w - 108) \amp = 0\amp\amp\text{Factor the quadratic expression.}\\
-		2(w - 9)(w + 12) \amp= 0\amp\amp\text{Set each variable factor equal to zero.}\\
-		w - 9 =0 \text{ or } w + 12 \amp= 0\amp\amp\text{Solve each equation.}\\
-		w =9{} ~~~\text{ or } ~~~{}w \amp= -12
-		\end{align*}
-		Because the width of the screen cannot be a negative number, we discard the solution <m>w = -12</m>. Thus, the width is <m>w = 9</m> inches, and the length is <m>w + 3 = 12</m> inches.
-	</p>
-</solution>
-</example>
+<note><p><ul>
+  <li> To convert from radians to degrees we can multiply the radian measure by <m>\dfrac{180\degree}{\pi}</m>.</li>
+  <li> To convert from degrees to radians we multiply the degree measure by <m>\dfrac{\pi}{180}</m>. </li>
+</ul></p></note>
 
-<exercise xml:id="exercise-garden"><statement><sidebyside widths="60% 30%">
-<p valign="middle" width="65%">
-	Francine is designing the layout for a botanical garden. The plan includes a square herb garden, with a path <m>5</m> feet wide through the center of the garden, as shown in <xref ref="fig-garden" text="type-global"/>. To include all the species of herbs, the planted area must be <m>300</m> square feet. Find the dimensions of the herb garden.
-</p>
-<figure valign="middle" xml:id="fig-garden"><caption></caption><image source="images/fig-garden"><description>garden</description></image></figure>
-</sidebyside></statement>
-<answer><p><m>20</m> feet by <m>20</m> feet</p></answer>
-</exercise>
+  <example><statement><p><ol label="a">
+    <li>Convert 3 radians to degrees.</li>
+    <li>Convert 3 degrees to radians.</li>
+  </ol></p></statement>
+  
+  <solution><p><ol label="a">
+    <li><m>(3 ~\text{radians}) \times (\dfrac{180\degree}{\pi}) = \dfrac{540\degree}{\pi} \approx 171.9\degree</m></li>
+    <li><m>(3\degree) \times (\dfrac{\pi}{180\degree}) = \dfrac{\pi}{60}\approx 0.05~ \text{radians.}</m></li>
+  </ol></p></solution></example>
 
+   <exercise><statement><p><ol label="a">
+    <li>Convert <m>60\degree</m> to radians. Give both an exact answer and an approximation to three decimal places.</li>
+    <li>Convert <m>\dfrac{3\pi}{4}</m> radians to degrees.</li>
+  </ol></p></statement></exercise>
+
+  <sidebyside widths="60% 35%" valigns="middle middle"><p>From our conversion factor we also learn that 
+    <me>\blert{ 1~\text{radian} = \dfrac{180\degree}{\pi} \approx 57.3\degree}</me>
+  So while <m>1\degree</m> is a relatively small angle, 1 radian is much larger — nearly <m>60\degree</m>, in fact. But this is reasonable, because there are only a little more than 6 radians in an entire revolution. An angle of 1 radian is shown at right.</p><image source="images/6-1-onerad.png"><description>circle</description></image></sidebyside>   
+
+  <p>We'll soon see that, for many applications, it is easier to work entirely in radians. For reference, the figure below shows a radian protractor.</p>
+
+  <sidebyside width="60%"><image source="images/6-1-radpro.png"><description>circle</description></image></sidebyside>
 </subsection>
 
+<subsection><title>Arclength Formula</title>
+<p>Measuring angles in radians has the following advantage: To calculate an arclength we need only multiply the radius of the circle by the radian measure of the spanning angle, <m>\theta</m>. Look again at our formula for arclength:</p>
 
+<me>\blert{\textbf{Arclength}~ =} ~ \blert{(\textbf{fraction of one revolution}\times 2\pi) \cdot r}</me>
 
-<subsection><title>Solutions of Quadratic Equations</title>
-<p>
-	We have seen that the solutions of the quadratic equation
-	<me>a(x - r_1)(x - r_2) = 0</me>
-	are <m>r_1</m> and <m>r_2</m>. Thus, if we know the two solutions of a quadratic equation, we can work backward and reconstruct the equation, starting from its factored form. We can then write the equation in standard form by multiplying together the factors.
-</p>
+ <p> The quantity in parentheses, fraction of one revolution <m>\times 2\pi</m>, is just the measure of the spanning angle in radians.  Thus, if <m>\theta</m> is measured in radians, we have the following formula for arclength, <m>s</m>.</p>
 
-<example xml:id="example-quadratic-equation-from-solutions">
-	<p>
-		Find a quadratic equation whose solutions are <m>\dfrac{1}{2}</m> and <m>-3</m>.
-	</p>
-<solution>
-	<p>
-		The quadratic equation is 
-		\begin{align*}
-		\left(x-\frac{1}{2}\right)\left[x-(-3)\right] \amp= 0\\
-		\left(x-\frac{1}{2}\right)(x + 3) \amp = 0
-		\end{align*}
-		To write the equation in standard form, multiply the factors together.
-		<me>x^2 + \frac{5}{2}x - \frac{3}{2}= 0</me>
-		We can also find an equation with integer coefficients if we clear the equation of fractions. Multiply both sides by <m>2</m>:
-		\begin{align*}
-		2\left(x^2 + \frac{5}{2}x - \frac{3}{2}\right)\amp= 2(0)\\
-		2x^2 + 5x - 3 \amp = 0
-		\end{align*}
-		You can check that the solutions of this last equation are in fact <m>\dfrac{1}{2}</m> and <m>-3</m>. Multiplying both sides of an equation by a constant factor does not change its solutions.
-	</p>
-</solution>
-</example>
+ <assemblage><title>Arclength Formula</title>
+ <p>On a circle of radius <m>r</m>, the <term>length <m>s</m> of an arc</term> spanned by an angle <m>\theta</m> in radians is
+ <me>s = r\theta</me></p></assemblage>
 
-<exercise xml:id="exercise-quadratic-equation-from-solutions"><statement>
-	<p>
-		Find a quadratic equation with integer coefficients whose solutions are <m>\dfrac{2}{3}</m> and <m>-5</m>.
-	</p>
-</statement>
-<answer><p><m>3x^2 + 13x - 10 = 0</m></p></answer>
-</exercise>
+<sidebyside widths="55% 35%" valigns="middle middle"><p> In particular, if <m>\theta = 1</m> we have <m>s = r</m>. We see that an angle of one radian spans an arc whose length is the radius of the circle. This is true for a circle of any size, as illustrated at right:  <em>an arclength equal to one radius determines a central angle of one radian,</em> or about <m>57.3\degree</m>.</p><image source="images/6-1-arclength.png"><description>circle</description></image></sidebyside>
 
-<note><p>
-	A quadratic equation in one variable always has two solutions. However, in some cases, the solutions may be equal. For example, the equation
-	<m>x^2 - 2x + 1 = 0</m>
-	can be solved by factoring as follows:
-	\begin{align*}
-	(x - 1)(x - 1) \amp = 0\amp\amp\text{Apply the zero-factor principle.}\\
-	x - 1 =0 ~~\text{ or } ~~ x - 1 \amp= 0
-	\end{align*}
-	Both of these equations have solution <m>1</m>. We say that <m>1</m> is a solution of <term>multiplicity</term><idx>multiplicity</idx> two, meaning that it occurs twice as a solution of the quadratic equation.
-</p></note>
+<p>In the next example, we use the arclength formula to compute a change in latitude on the Earth's surface. Latitude is measured in degrees north or south of the equator.</p>
 
+<example><statement><p>The radius of the Earth is about 3960 miles. If you travel 500 miles due north, how many degrees of latitude will you traverse?</p></statement>
+  
+  <solution><sidebyside widths="55% 35%" valigns="middle middle"><p>We think of the distance 500 miles as an arclength on the surface of the Earth, as shown at right. Substituting <m>s = 500</m> and <m>r = 3960</m> into the arclength formula gives 
+      \begin{align*}
+      500 \amp = 3960 \theta\\
+      \theta \amp = \dfrac{500}{3960} = 0.1263~ \text{radians}\\
+      \end{align*}
+</p><image source="images/exam6-1-5.png"><description>circle</description></image></sidebyside>
+<p>To convert the angle measure to degrees, we multiply by <m>\dfrac{180\degree}{\pi}</m> to get
+<me>0.1263(\dfrac{180\degree}{\pi}) = 7.23\degree</me>
+Your latitude has changed by about <m>7.23\degree</m>.</p></solution></example>  
+
+<exercise><statement><p>The distance around the face of a large clock from 2 to 3 is five feet. What is the radius of the clock?</p></statement></exercise>
 </subsection>
 
+<subsection><title>Unit Circle</title>
+<p> On a unit circle, <m>r = 1</m>, so the arclength formula becomes <m>s = \theta</m>. Thus, <em>on a unit circle, the measure of a (positive) angle in radians is equal to the length of the arc it spans. </em></p>
 
+<example><statement><p>You have walked 4 miles around a circular pond of radius one mile.  What is your position relative to your starting point?</p></statement>
 
-<subsection><title>Equations Quadratic in Form</title>
-<p>
-	The equation <me>x^6 - 4x^3 - 5 = 0</me> is not quadratic, but if we make the substitution <m>u = x^3</m>, the equation becomes <me>u^2 - 4u - 5 = 0</me>. An equation is called <term>quadratic in form</term><idx>quadratic in form</idx> if we can use a substitution to write it as <me>au^2 + bu + c = 0</me>, where <m>u</m> stands for an algebraic expression. Such equations can be solved by the same techniques we use to solve quadratic equations.
-</p>
+<solution><p>The pond is a unit circle, so you have traversed an angle in radians equal to the arc length traveled, 4 miles. An angle of 4 radians is in the middle of the third quadrant relative to your starting point, more than halfway but less than three-quarters around the pond.</p></solution></example>
 
-<example xml:id="example-quadratic-in-form">
-	<p>
-		Use the substitution <m>u = x^3</m> to solve the equation <me>x^6 - 4x^3 - 5 = 0</me>.
-	</p>
-<solution>
-	<p>
-		We set <m>u = x^3</m>, so that <m>u^2 = \left(x^3\right)^2 = x^6</m>. The original equation then becomes a quadratic equation in the variable <m>u</m>, which we can solve by factoring.
-		\begin{align*}
-		u^2 - 4u - 5 \amp= 0\amp\amp\text{Factor the left side.}\\
-		(u + 1)(u - 5) \amp= 0\amp\amp\text{Apply the zero-factor principle.}\\
-		u + 1 \amp =0 \text{  or }u - 5 = 0\amp\amp\text{Solve each equation for }u.\\
-		u \amp = -1  \text{  or } u = 5
-		\end{align*}
-		Finally, we replace <m>u</m> by <m>x^3</m> and solve for <m>x</m>.
-		\begin{align*}
-		x^3 \amp = -1 ~~~~~~~\text{ or } \amp x^3 \amp= 5\amp\amp\text{Take cube roots.}\\
-		x\amp= \sqrt[3]{-1} = -1 ~~~\text{ or } \amp x \amp = \sqrt[3]{5}
-		\end{align*}
-		You can verify that the solutions of the original equation are <m>-1</m> and <m>\sqrt[3]{5}</m>.
-	</p>
-</solution>
-</example>
-
-<p>
-	We say that the equation in <xref ref="example-quadratic-in-form" text="type-global"/>, <m>x^6 - 4x^3 - 5 = 0</m>, is <term>quadratic in</term><idx>quadratic in</idx> <m>x^3</m>. We chose the substitution <m>u = x^3</m> because <m>x^6 = u^2</m>.
-</p>
-
-<exercise xml:id="exercise-quadratic-in-form"><statement>
-	<p>
-		Use the substitution <m>u = x^2</m> to solve the equation <m>x^4 - 5x^2 + 6 = 0</m>.
-	</p>
-</statement>
-<answer><p><m>x=\pm\sqrt{2} </m>, <m>~x=\pm\sqrt{3} </m></p></answer>
-</exercise>
-
-<note><p>
-	Usually, you can choose the simpler variable term in the equation for the <m>u</m>-substitution. For example, in <xref ref="exercise-quadratic-in-form" text="type-global"/> we chose <m>u = x^2</m> because <m>u^2 = \left(x^2\right)^2 = x^4</m>, which is the first term of the equation. Once you have chosen the <m>u</m>-substitution, you should check that the other variable term is then a multiple of <m>u^2</m>; otherwise, the equation is not quadratic in form.
-</p></note>
-
-<example xml:id="example-quadratic-in-form2">
-	<p>
-		Solve the equation <m>e^{2x} - 7e^x + 12 = 0</m>.
-	</p>
-<solution>
-	<p>
-		We use the substitution <m>u = e^x</m>, because <m>u^2 = \left(e^x\right)^2 = e^{2x}</m>. The original equation then becomes
-		\begin{align*}
-		u^2 - 7u + 12 \amp= 0\amp\amp\text{Factor the left side.}\\
-		(u - 3)(u - 4) \amp = 0\amp\amp\text{Apply the zero-factor principle.}\\
-		u - 3 \amp =0 ~~\text{ or } ~~  u - 4 = 0\amp\amp\text{Solve each equation for u.}\\
-		u \amp =3 ~~\text{ or } ~~ u = 4
-		\end{align*}
-		Finally, we replace <m>u</m> by <m>e^x</m> and solve for <m>x</m>.
-		\begin{align*}
-		e^x \amp =3  ~~~~~\text{ or }\amp  e^x \amp= 4\\
-		x \amp = \ln 3  ~~~\text{ or }\amp x \amp= \ln 4
-		\end{align*}
-		You should verify that the solutions of the original equation are <m>\ln 3</m> and <m>\ln 4</m>.
-	</p>
-</solution>
-</example>
-
-<exercise><statement>
-	<p>
-		Solve the equation <m>10^{2x} - 3 \cdot 10^x + 2 = 0</m>, and check the solutions.
-	</p>
-</statement>
-<answer><p><m>x=0</m>, <m>~x=\log 2</m></p></answer>
-</exercise>
-
-
+<exercise><statement><p>An ant walks around the rim of a circular birdbath of radius 1 foot. How far has the ant walked when it has turned through an angle of <m>210\degree</m>?</p></statement></exercise>
 </subsection>
-<xi:include href="./summary-6-1.xml" /> <!-- summary  -->
-<xi:include href="./section-6-1-exercises.xml" /> <!-- exercises  -->
+
+<subsection><title>Algebra Refresher</title>
+<exercises>
+<exercisegroup cols="2"><introduction><p>Use the appropriate conversion factor to convert units.</p></introduction>
+
+<exercise number="1"><statement><m>\dfrac{1~ \text{mile}}{1.609~\text{kilometers}} = 1</m>
+<p><ol label = "a">
+  <li>10 miles = <fillin characters="6"/> km</li>
+<li>50 km = <fillin characters="6"/> miles</li>
+</ol></p></statement></exercise>
+
+<exercise number="2"><statement><m>\dfrac{1~ \text{acre}}{0.405~\text{hectare}} = 1</m>
+<p><ol label = "a">
+  <li>40 acres = <fillin characters="6"/> hectares</li>
+<li>5 hectares = <fillin characters="6"/>acres</li>
+</ol></p></statement></exercise>
+
+<exercise number="3"><statement><m>\dfrac{1~ \text{horsepower}}{746~\text{watts}} = 1</m>
+<p><ol label = "a">
+  <li>250 horsepower = <fillin characters="6"/> watts</li>
+<li>1000 watts = <fillin characters="6"/> horsepower</li>
+</ol></p></statement></exercise>
+
+<exercise number="4"><statement><m>\dfrac{1~ \text{troy ounce}}{480~\text{grains}} = 1</m>
+<p><ol label = "a">
+  <li>0.5 troy oz = <fillin characters="6"/> grains</li>
+<li>100 grains = <fillin characters="6"/> troy oz</li>
+</ol></p></statement></exercise>
+
+</exercisegroup></exercises>
+
+<subsubsection><title>Answers to 6.1 Exercises</title>
+<p><ol label="1">
+    <li><m>261.8</m> ft</li>
+    <li>Half a revolution, <m>180\degree</m></li>
+    <li><sidebyside width="25%" margins="0% 50%"><image source="images/exer6-1-3ans.png"><description>circle</description></image></sidebyside></li>
+    <li>a. <m>\dfrac{\pi}{3} \approx 1.047</m>  b. <m>135\degree</m></li>
+    <li><m>9.55</m> ft</li>
+    <li><m>3.67</m> ft</li>
+</ol></p>
+</subsubsection>
+
+<subsubsection><title>Algebra Refresher Answers</title>
+<p><ol label="1">
+    <li>a.<m>16.09</m> km b. <m>31.08</m> mi</li>
+    <li>a. <m>16.2</m> hectares b.<m>12.35</m> acres </li>
+    <li>a. <m>186,500</m> watts b. <m>1.34</m> horsepower</li>
+    <li>a. <m>240</m> grains b. <m>0.21</m> troy oz</li>  
+</ol></p>
+</subsubsection>
+</subsection>
+
+<subsection><title>Section 6.1 Summary</title>
+<subsubsection><title>Vocabulary</title>
+<p><ul cols="3">
+    <li>Arclength</li>
+    <li>Radian</li>
+    <li>Conversion factor</li>
+    <li>Latitude</li>
+    <li>Unit circle</li>
+</ul></p>
+</subsubsection>
+
+<subsubsection><title>Concepts</title>
+<p><ol label="1">
+    <li>The distance we travel around a circle of radius  is proportional to the angle of displacement.
+    <me>\textbf{Arclength}~ = ~ (\textbf{fraction of one revolution}) \cdot (2\pi r)</me></li>
+    <li><p>We measure angles in radians when we work with arclength.</p>
+    <assemblage><title>Radians</title>
+    <p>The <term>radian measure</term> of an angle is given by
+    <me>(\textbf{fraction of one revolution}\times 2\pi)</me></p></assemblage></li>
+    <li>An arclength equal to one radius determines a central angle of one radian.</li>
+    <li><p>Radian measure can be expressed as multiples of  or as decimals.</p>
+      <sidebyside widths="60% 40%">
+                <tabular top="major" halign="left" right="minor" left="minor" bottom="minor">                        
+                    <row bottom="minor">
+                        <cell>Degrees</cell>
+                        <cell><m>\dfrac{\text{Radians:}}{\text{Exact Values}}</m></cell>
+                        <cell><m>\dfrac{\text{Radians: Decimal}}{\text{Approximations}}</m></cell></row>
+                    <row> 
+                        <cell><m>0\degree</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>0</m></cell></row>
+                    <row> 
+                        <cell><m>90\degree</m></cell>
+                        <cell><m>\dfrac{\pi}{2}</m></cell>
+                        <cell><m>1.57</m></cell></row>
+                    <row> 
+                        <cell><m>180\degree</m></cell>
+                        <cell><m>\pi</m></cell>
+                        <cell><m>3.14</m></cell></row>
+                    <row>
+                        <cell><m>270\degree</m></cell>
+                        <cell><m>\dfrac{3\pi}{2}</m></cell>
+                        <cell><m>4.71</m></cell></row>  
+                    <row>
+                        <cell><m>360\degree</m></cell>
+                        <cell><m>2\pi</m></cell>
+                        <cell><m>6.28</m></cell></row>                
+                </tabular><image source="images/6-1-decrad.png"><description>circle</description></image></sidebyside></li>
+     <li><p>We multiply by the appropriate conversion factor to convert between degrees and radians.</p>
+      <assemblage><title>Unit Conversion for Angles</title>
+      <p><me>\dfrac{180\degree}{\pi~\text{radians}} = 1</me></p></assemblage>
+        <p>To convert from radians to degrees we multiply the radian measure by <m>\dfrac{180\degree}{\pi}</m>.</p>
+        <p>To convert from degrees to radians we multiply the degree measure by <m>\dfrac{\pi}{180}</m>.</p> </li>
+     <li><assemblage><title>Arclength Formula</title>
+ <p>On a circle of radius <m>r</m>, the <term>length <m>s</m> of an arc</term> spanned by an angle <m>\theta</m> in radians is
+ <me>s = r\theta</me></p></assemblage></li>
+ <li>On a <term>unit circle</term>, the measure of a (positive) angle in radians is equal to the length of the arc it spans.</li>             
+</ol></p></subsubsection>
+
+<subsubsection><title> Study Questions</title>
+<p><ol label="1">
+  <li>The length of a circular arc depends on what two variables?</li>
+  <li>Define the radian measure of an angle.</li>
+  <li>What is the conversion factor from radians to degrees?</li>
+  <li>On a unit circle, the length of an arc is equal to what other quantity?</li>
+</ol></p>
+</subsubsection>
+
+<subsubsection><title>Skills</title>
+<p><ol label="1">
+    <li>Express angles in degrees and radians   #1-8, 25-32</li>
+  <li>Sketch angles given in radians    #1 and 2, 11 and 12</li>
+  <li>Estimate angles in radians    #9-10, 13-24</li>
+  <li> Use the arclength formula    #33-46</li>   
+  <li>Find coordinates of a point on a unit circle    #47-52</li>
+  <li>Calculate angular velocity and area of a sector    #55-60</li>
+</ol></p></subsubsection>
+</subsection>
+
+<!--<xi:include href="./summary-4-1.xml" /> summary  -->
+<!--<xi:include href="./section-4-1-exercises.xml" />  exercises  -->
 </section> 
 <!-- </book>  </mathbook> -->

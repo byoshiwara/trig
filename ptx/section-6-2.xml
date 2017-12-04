@@ -1,492 +1,405 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!-- <mathbook><book> -->
 
-<section xml:id="Solving-Quadratic-Equations"   xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Solving Quadratic Equations</title>
-<introduction>
-<p>
-	Not every quadratic equation can be solved by factoring or by extraction of roots. For example, the expression <m>x^2 + x - 1</m> cannot be factored, so the equation <m>x^2 + x - 1 = 0</m> cannot be solved by factoring. For other equations, factoring may be difficult. In this section we learn two methods that can be used to solve any quadratic equation.
-</p>
-</introduction>
+<section xml:id="The-Circular-Functions"   xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>The Circular Functions</title>
 
-<subsection><title>Squares of Binomials</title>
-<p>
-	In <xref ref="nonlinear-models" text="type-global"/> we used extraction of roots to solve equations of the form 
-	<me>a( px + q)^2 + r = 0</me>
-	where the left side of the equation includes the square of a binomial, or a <term>perfect square</term><idx>perfect square</idx>. We can write any quadratic equation in this form by <term>completing the square</term>.
-</p>
-<p>
-	Consider the following squares of binomials.
-</p><p>
+<subsection><title>Trigonometric Functions of Angles in Radians</title>
+<p>Measuring angles in radians has other applications besides calculating arclength, and we will need to evaluate trigonometric functions of angles in radians.  The sine, cosine, or tangent of a particular angle is the same whether the angle is measured in radians or in degrees.</p>  
+<p>For example, <m>\dfrac{\pi}{3}</m> radians is the same as <m>60\degree</m>, because <m>\dfrac{\pi}{3} \cdot \dfrac{180\degree}{\pi} = 60\degree</m>, so  
+<me>\sin \dfrac{\pi}{3} = \sin 60\degree = \dfrac{\sqrt{3}}{2}</me>
+However, we don't have to convert radians to degrees in order to evaluate trig ratios;  your calculator can give you the trigonometric function values for angles expressed in radians.  First, change the calculator setting from Degree mode to Radian mode. Then enter
+<me>\boxed{\text{SIN}}~(\pi / 3)</me>
+and the calculator will return <m>0.8660254038</m>. You can check that this number is a decimal approximation for <m> \dfrac{\sqrt{3}}{2}</m>.</p>
 
-<sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
-    <row bottom="major">
-        <cell>Square of binomial <m>(x+p)^2</m></cell>
-        <cell><m>p</m></cell>
-        <cell><m>2p</m></cell>
-        <cell><m>p^2</m></cell>
-    </row>
-    <row>
-        <cell>1.  <m>(x+\alert{5})^2=x^2+10x+25</m></cell>
-        <cell><m>\alert{5}</m></cell>
-        <cell><m>2(\alert{5})=10</m></cell>
-        <cell><m>\alert{5}^2=25</m></cell>
-    </row>
-    <row>
-        <cell>2.  <m>(x\alert{{}-{}3})^2=x^2-6x+9</m></cell>
-        <cell><m>\alert{-3}</m></cell>
-        <cell><m>2(\alert{-3})=-6</m></cell>
-        <cell><m>\alert{-3}^2=9</m></cell>
-    </row>
-    <row>
-        <cell>3.  <m>(x\alert{{}-{}12})^2=x^2-24x+144</m></cell>
-        <cell><m>\alert{-12}</m></cell>
-        <cell><m>2(\alert{-12})=-24</m></cell>
-        <cell><m>\alert{-12}^2=144</m></cell>
-    </row>
-</tabular></sidebyside></p>
+<example><statement><p>Use your calculator to find the sine and cosine of the following angles in radians. Round your answers to four decimal places.</p><p><ol label="a" cols="2">
+  <li><m>\theta = \dfrac{7\pi}{4}</m></li>
+  <li><m>\theta = 3.5</m></li>
+</ol></p></statement>
 
-<p>
-	In each case, the square of the binomial is a quadratic trinomial,
-	<me>(x + p)^2= x^2 + 2px + p^2</me>
-	Note that the coefficient of the linear term, <m>2p</m>, is twice the constant in the binomial, and the constant term of the trinomial, <m>p^2</m>, is its square.
-</p>
-<p>
-	We would like to reverse the process and write a quadratic expression as the square of a binomial. For example, what constant term can we add to
-	<me>x^2 - 16x</me>
-	to produce a perfect square trinomial? Compare the expression to the formula above:
-	<me>
-		\begin{alignedat}{4}
-		x^2 \amp {}+{} \amp 2px \amp {}+{} \amp p^2 \amp {}={} \amp (x + p)^2 \\
-		x^2 \amp {}-{} \amp 16x \amp {}+{} \amp \text{?} \amp {}={} \amp (x + \text{?})^2 \\
-		\end{alignedat}
-	</me>
-	We see that 
-	<me>2p = -16\text{, so }p = \frac{1}{2}(-16) = -8</me>
-	and 
-	<me>p^2 = (-8)^2 = 64</me> 
-	Substitute these values for <m>p^2</m> and <m>p</m> into the equation to find
-	<me>x^2 - 16x + 64 = (x - 8)^2</me>
-	Notice that in the resulting trinomial, the constant term is equal to <em>the square of one-half the coefficient of</em> <m>x</m>. In other words, we can find the constant term by taking one-half the coefficient of <m>x</m> and then squaring the result. Adding a constant term obtained in this way is called <term>completing the square</term><idx>completing the square</idx>.
-</p>
+<solution><p><ol label="a">
+  <li>With your calculator in radian mode, enter <m>\boxed{\text{COS}}~(7\pi/4)</m> and <m>\boxed{\text{SIN}}~ (7\pi/4)</m>
+      to find
+      \begin{align*}
+          \cos (7\pi/4) \amp = 0.7071067812\\
+          \sin (7\pi/4) \amp = -0.7071067812\\
+       \end{align*}
+   Rounding to four decimal places gives <m>\cos \dfrac{7\pi}{4} = 0.7071</m> and <m>\sin \dfrac{7\pi}{4} = -0.7071</m>.</li>
+   <li>Your calculator will give you the values
+    \begin{align*}
+          \cos (3.5) \amp = -0.9364566873\\
+          \sin (3.5) \amp = -0.3507832277\\
+       \end{align*}
+       Rounding to four places, we have <m>\cos (3.5) = -0.9365</m> and <m>\sin (3.5) = -0.3508</m>. Note that 3.5 radians is a third-quadrant angle, so the signs of the trig values make sense.</li>
+     </ol></p></solution></example>
 
-<example xml:id="example-completing-the-square">
-	<p>
-		Complete the square by adding an appropriate constant; write the result as the square of a binomial.
-		<ol label="a">
-			<li>
-				<m>x^2 - 12x + {}<fillin characters="6" /></m>
-			</li>
-			<li>
-				<m>x^2 + 5x + {}<fillin characters="6" /></m>
-			</li>
-		</ol>
-	</p>
-<solution>
-	<p><ol label="a">
-		<li>
-			One-half of <m>-12</m> is <m>-6</m>, so the constant term is <m>(-6)^2</m>, or <m>36</m>. Add <m>36</m> to obtain
-			<me>x^2 - 12x \alert{{}+{}36}=(x - 6)^2~~~~~~~  \underset{p^2 = (-6)^2 = 36}{\stackrel {p = \frac{1}{2}(-12) = -6}{}}</me>
-			
-		</li>
-		<li>
-			One-half of <m>5</m> is <m>\dfrac{5}{2}</m>, so the constant term is <m>\left(\dfrac{5}{2}\right)^2</m>, or <m>\dfrac{25}{4}</m>. Add <m>\dfrac{25}{4}</m> to obtain
-			<me>x^2 +5x \alert{{}+{}\frac{25}{4}}=\left(x +\frac{5}{2}\right)^2~~~~~~~  \underset{p^2 = (\frac{5}{2})^2 = \frac{25}{4}}{\stackrel {p = \frac{1}{2}(5) = \frac{5}{2}}{}}</me>
-		</li></ol>
-	</p>
-</solution></example>
+ <note><p>Recall the formula for arclength when the angle is measured in radians:  <m>s = r \theta</m>.
+If we solve for <m>\theta</m>, we see that <m>\theta = \dfrac{s}{r}</m>, a ratio of two lengths.  The units of length cancel out, so that radian measure has no units; it is a "dimensionless" quantity.</p>
+<p>  We shall see that this property makes radians especially useful in applications.  From now on we shall omit the tag "radians," and you may assume that any angle given without units is in radians.</p></note>   
 
-<note><p>
-	You may find it helpful to visualize completing the square geometrically. We can think of the expression <m>x^2 + 2px</m> as the area of a rectangle with dimensions <m>x</m> and <m>x + 2p</m>.</p>
-	<p> For example, the rectangle with length <m>x + 10</m> and width <m>x</m> has area <m>x(x + 10) = x^2 + 10x</m>, as shown in <xref ref="fig-completing-the-square" text="type-global"/>a. We would like to cut the rectangle into pieces and rearrange them so that we can make a square.</p>
-	<p> In <xref ref="fig-completing-the-square" text="type-global"/>b, we move half of the <m>x</m>-term so that each side of the square has length <m>x + 5</m> (note that <m>p = \frac{1}{2} (10) = 5</m>), and in <xref ref="fig-completing-the-square" text="type-global"/>c we see that the missing corner piece has area <m>p^2 = 5^2 = 25</m>.
-</p>
-<figure xml:id="fig-completing-the-square"><caption></caption><image source="images/fig-completing-the-square"  width="70%"><description>completing the square</description></image></figure></note>
-
-<exercise xml:id="exercise-completing-the-square"><statement>
-	<p>
-		Complete the square by adding an appropriate constant; write the result as the square of a binomial.
-		<ol label="a">
-			<li>
-				<m>x^2 - 18x{} + {}<fillin characters="6" />{}= (x{}<fillin characters="6" /> )^2</m>
-			</li>
-			<li>
-				<m>x^2 +9x{} + {}<fillin characters="6" />{}= (x{}<fillin characters="6" /> )^2</m>
-			</li>
-		</ol>
-	</p>
-</statement>
-<hint><p>For part (a):
-	<m>p=\frac{1}{2}(-18)={}<fillin characters="6" />, p^2={}<fillin characters="6" /></m></p>
-	<p>For part (b): 
-	<m>p=\frac{1}{2}(9)={}<fillin characters="6" />, p^2={}<fillin characters="6" /></m>
-</p>
-</hint>
-<answer><p><ol label="a" cols="2">
-	<li><p><m>x^2 - 18x + 81 = (x - 9)^2</m></p></li>
-	<li><p><m>x^2+9x+\frac{81}{4}=\left(x+\frac{9}{2}\right)^2 </m></p></li>
-</ol></p></answer>
-</exercise>
-
+<exercise><statement><p>Use your calculator to find the tangents of the following angles in radians.  Round your answers to four decimal places.</p><p><ol label="a" cols="2">
+  <li><m>\theta = \dfrac{5\pi}{12}</m></li>
+  <li><m>\theta = 5.2</m></li>
+</ol></p></statement></exercise>
 </subsection>
 
+<subsection><title>The Special Values</title>
+<p>Many applications of trigonometric functions, including most of the periodic functions we encountered in Chapter 5, use radians for input values, rather than degrees.  For this reason, it is important to know the trig values for the special angles, which you learned in degrees in Chapter 2, when the angles are given in radians.</p>
 
+<sidebyside widths="60% 40%">
+                <tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                        
+                    <row bottom="minor">
+                        <cell>Degrees</cell>
+                        <cell>Radians</cell>
+                        <cell>Sine</cell>
+                        <cell>Cosine</cell>
+                        <cell>Tangent</cell></row>
+                    <row> 
+                        <cell><m>0\degree</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>0</m></cell></row>
+                    <row> 
+                        <cell><m>30\degree</m></cell>
+                        <cell><m>\dfrac{\pi}{6}</m></cell>
+                        <cell><m>\dfrac{1}{2}</m></cell>
+                        <cell><m>\dfrac{\sqrt{3}}{2}</m></cell>
+                        <cell><m>\dfrac{1}{\sqrt{3}}</m></cell></row>
+                    <row> 
+                        <cell><m>45\degree</m></cell>
+                        <cell><m>\dfrac{\pi}{4}</m></cell>
+                        <cell><m>\dfrac{1}{\sqrt{2}}</m></cell>
+                        <cell><m>\dfrac{1}{\sqrt{2}}</m></cell>
+                        <cell><m>1</m></cell></row>
+                    <row>
+                        <cell><m>60\degree</m></cell>
+                        <cell><m>\dfrac{\pi}{3}</m></cell>
+                        <cell><m>\dfrac{\sqrt{3}}{2}</m></cell>
+                        <cell><m>\dfrac{1}{2}</m></cell>
+                        <cell><m>\sqrt{3}</m></cell></row>  
+                    <row>
+                        <cell><m>90\degree</m></cell>
+                        <cell><m>\dfrac{\pi}{2}</m></cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell>undefined</cell></row>                
+                </tabular><image source="images/6-2-rads.png"><description>circle</description></image></sidebyside>
 
+<p>You should memorize these function values, and be able to use them to find trig values for the special angles in all four quadrants.</p>  
+<p>Recall that we use reference angles to define the trigonometric ratios for angles greater than <m>90\degree</m>. (See Section 4.1 to review reference angles.) The figure below shows how to calculate reference angles in radians.</p>  
 
+<sidebyside width="85%"><image source="images/6-2-refang.png"><description>angles</description></image></sidebyside>
 
-<subsection><title>Solving Quadratic Equations by Completing the Square</title><idx>completing the square</idx>
-<p>
-	Now we will use completing the square to solve quadratic equations. First, we will solve equations in which the coefficient of the squared term is 1. Consider the equation 
-	<me>x^2 - 6x - 7 = 0</me>
-and follow the steps to find the solutions.</p>
-<ol>
-	<li><p>
-		Begin by moving the constant term to the other side of the equation, to get</p><p>
-		<sidebyside><tabular><row><cell><m>x^2 - 6x{}<fillin characters="6"/> = 7</m></cell></row></tabular></sidebyside></p>
-	</li>
-	<li>
-		Now complete the square on the left. Because
-		<me>p = \frac{1}{2}(-6) = -3 ~~~\text{ and } ~~~ p^2 = (-3)^2 = 9</me>
-		we add <m>9</m> to <em>both</em> sides of our equation to get
-		<me>x^2 - 6x \alert{{}+9}=7\alert{{}+9}</me>
-	</li>
-	<li>
-		The left side of the equation is now the square of a binomial, namely <m>(x - 3)^2</m>. We write the left side in its square form and simplify the right side, which gives us
-		<me>(x - 3)^2 =16</me>
-		(You can check that this equation is equivalent to the original one; if you expand the left side and collect like terms, you will return to the original equation.)
-	</li>
-	<li>
-		We can now use extraction of roots to find the solutions. Taking square roots of both sides, we get
-		\begin{align*}
-		x - 3 \amp =4 \amp\text{or}\amp\amp x - 3 \amp= -4\amp\text{Solve each equation.}\\
-		x \amp =7 \amp\text{or}\amp\amp x \amp= -1
-		\end{align*}
-		The solutions are <m>7</m> and <m>-1</m>.
-	</li>
-</ol>
-<sidebyside widths="30% 65%">
-<figure valign="middle" xml:id="fig-parabola-with-symmetry-line"><caption></caption><image source="images/fig-parabola-with-symmetry-line"><description>parabola showing x-intercepts and line of symmetry</description></image></figure>
-<paragraphs><p  valign="middle">
-	The graph of <m>y = x^2 - 6x - 7</m> is shown in <xref ref="fig-parabola-with-symmetry-line" text="type-global"/>. Note that the <m>x</m>-intercepts of the graph are <m>x = 7</m> and <m>x = -1</m>, and the parabola is symmetric about the vertical line halfway between the intercepts, at <m>x = 3</m>.
-</p><p>
-	We can also solve <m>x^2 - 6x - 7 = 0</m> by factoring instead of completing the square. Of course, we get the same solutions by either method. In Example 2, we will solve an equation that cannot be solved by factoring.
-</p></paragraphs> </sidebyside>
+<example><statement><p>Give exact values for the following.</p>
+<p><ol label="a" cols="2">
+<li><m>\tan \dfrac{2\pi}{3}</m></li>
+<li><m>\cos \dfrac{5\pi}{4}</m></li>
+</ol></p></statement>
 
+<solution><p><ol label="a">
+<li><sidebyside widths="65% 35%"><p>The reference angle for <m>\dfrac{2\pi}{3}</m> is <m>\pi - \dfrac{2\pi}{3} = \dfrac{\pi}{3}</m>, and the tangent is negative in the second quadrant. (See the figure at right.)  Thus,
+<me>\tan \dfrac{2\pi}{3} = -\tan \dfrac{\pi}{3} = -\sqrt{3}</me></p><image source="images/exam6-2-2a.png"><description>angles</description></image></sidebyside></li>
+<li><sidebyside widths="65% 35%"><p>The reference angle for <m>\dfrac{5\pi}{4}</m> is <m>\dfrac{5\pi}{4} - \pi = \dfrac{\pi}{4}</m>, and the cosine is negative in the third quadrant, so
+<me>\cos \dfrac{5\pi}{4} = - \cos \dfrac{\pi}{4} = \dfrac{-1}{\sqrt{2}}</me>See the figure at right.</p><image source="images/exam6-2-2b.png"><description>angles</description></image></sidebyside></li>
+</ol></p></solution></example>
 
-<example xml:id="example-completing-the-square2">
-	<p>
-		Solve <m>x^2 - 4x - 3 = 0</m> by completing the square.
-	</p>
-<solution>
-<ol label="1">
-	<li>
-		Write the equation with the constant term on the right side.
-		<me>x^2 - 4x{}\text{______}{}=3</me>
-	</li>
-	<li>
-		Now complete the square on the left side. The coefficient of <m>x</m> is <m>-4</m>, so
-		<me>p = \frac{1}{2}(-4) = -2 ~~~\text{ and } ~~~ p^2 = (-2)^2 = 4</me>
-		We add <m>4</m> to both sides of our equation:
-		<me>x^2 - 4x  \alert{{}+4}=3\alert{{}+4}</me>
-	</li>
-	<li>
-		Write the left side as the square of a binomial, and combine terms on the right side:
-		<me>(x - 2)^2 =7</me>
-	</li>
-	<li>
-		Finally, use extraction of roots to obtain
-		\begin{align*}
-		x - 2 \amp =\sqrt{7} \amp\text{or}\amp\amp x - 2 \amp= -\sqrt{7}\amp\text{Solve each equation.}\\
-		x \amp =2+\sqrt{7} \amp\text{or}\amp\amp x \amp=2 -\sqrt{7}
-		\end{align*}
-		The solutions are <m>2+\sqrt{7}\approx 4.646</m> and <m>2-\sqrt{7}\approx -0.646</m>.
-		The graph of <m>y = x^2 - 4x - 3</m> is shown in <xref ref="fig-parabola-with-symmetry-line2" text="type-global"/>.
-		<figure xml:id="fig-parabola-with-symmetry-line2"><caption></caption><image source="images/fig-parabola-with-symmetry-line2"  width="30%"><description>parabola showing x-intercepts and line of symmetry</description></image></figure>
-	</li>
-</ol>
-</solution></example>
+  <note><p>At this point, you may feel that expressions such as <m>~\cos \dfrac{5\pi}{4} = \dfrac{-1}{\sqrt{2}}~</m> look like hieroglyphics.  Keep in mind that <m>\dfrac{5\pi}{4}</m> and <m>\dfrac{-1}{\sqrt{2}}</m> are just numbers, so the equation above says that "the cosine of an angle of 3.9 radians is about -0.7."</p></note>
 
-<exercise xml:id="exercise-completing-the-square2"><statement>
-<p>
-	<ol label="a">
-		<li>
-		<p>Follow the steps to solve by completing the square: <m>x^2 - 1 = 3x</m>.
-		<ol label="1">
-			<li>
-				<p>Write the equation with the constant on the right.</p>
-			</li>
-			<li>
-				<p>Complete the square on the left:
-				<me>p = \frac{1}{2}(-3) ={}\text{______, } ~~~{} p^2 = \text{______}</me>
-				Add <m>p^2</m> to both sides.</p>
-			</li>
-			<li>
-				<p>Write the left side as a perfect square; simplify the right side.</p>
-			</li>
-			<li>
-				<p>Solve by extracting roots.</p>
-			</li>
-		</ol></p>
-	</li>
-	<li>
-		<p>Find approximations to two decimal places for the solutions.</p>
-	</li>
-	<li>
-		<p>Graph the parabola <m>y = x^2 - 3x - 1</m> in the window
-        \begin{align}
-        \text{Xmin} \amp = -4.7 \amp\amp \text{Xmax} = 4.7\\
-        \text{Ymin} \amp = -5 \amp\amp \text{Ymax} = 5
-        \end{align}</p>
-	</li></ol>
-</p>
-</statement>
-<answer><p><ol label="a" cols="2">
-	<li><p><m>x=\frac{3}{2}\pm\sqrt{\frac{13}{4}} </m></p></li>
-	<li><p><m>x\approx -0.30</m> or \<m>x\approx 3.30</m></p></li>
-</ol></p></answer>
-</exercise>
-
+<exercise><statement><p>Give exact values for the following.</p>
+<p><ol label="a" cols="2">
+<li><m>\sin \dfrac{5\pi}{6}</m></li>
+<li><m>\tan \dfrac{7\pi}{4}</m></li>
+</ol></p></statement></exercise>
 </subsection>
 
+<subsection><title>Sine and Cosine of Real Numbers</title>
+<p>In Section 6.1 we derived the arclength formula, <m>s = r\theta</m>, where <m>\theta</m> is measured in radians, and observed that, on a unit circle where <m>r = 1</m>, the measure of a positive angle in radians is equal to the length of the arc it spans.  This is an important observation, because it allows us to define the sine and cosine as functions of real numbers, instead of as functions of angles.</p>  
+<sidebyside widths="65% 30%" valigns="middle middle"><p>Consider the unit circle shown at right, and the angle <m>\theta</m> determined by the arc of length <m>t</m>. The radian measure of <m>\theta</m> is the same as the length <m>t</m> of the arc. (For example, in this figure
+<m>\theta = t = 2</m>.) </p><image source="images/6-2-realnos.png"><description>circle</description></image></sidebyside>
 
+<assemblage><title>Sine and Cosine of Real Numbers</title>
+<p>We define the trigonometric functions of the number <m>t</m> by
+<me>\cos t = \cos \theta ~~~~\text{and} ~~~~ \sin t = \sin \theta</me>
+where <m>t</m> is the length of the arc subtended by an angle <m>\theta</m>, measured in radians, on a unit circle.</p></assemblage>
 
-<subsection><title>The General Case</title>
-<p>
-	Our method for completing the square works only if the coefficient of <m>x^2</m> is <m>1</m>. If we want to solve a quadratic equation whose lead coefficient is not <m>1</m>, we first divide each term of the equation by the lead coefficient.
-</p>
+<p>We can think of the definition this way:  to find the sine or cosine of a real number <m>t</m>, we draw an arc of length <m>t</m> on a unit circle, and then find the sine or cosine of the angle <m>\theta</m> determined by the arc.</p>
 
-<example xml:id="example-general-quadratic">
-	<p>
-		Solve <m>2x^2 - 6x - 5 = 0</m>.
-	</p>
-<solution>
+<note><p>In practice, there is no difference between finding the sine or cosine of the number 2 and the sine or cosine of an angle of 2 radians:  in each case we set the calculator in Radian mode and evaluate
+<me>\boxed{\text{COS}}~ 2 = -0.4161~~~~\text{and} ~~~~ \boxed{\text{SIN}}~ 2 = 0.9093</me></p></note>
+
+  <example><statement><p>The sunset time in Stockholm, Sweden, on the <m>n</m>th day of the year can be modeled by 
+  <me>T = 3.11 \sin (0.017n - 1.38) + 6.03</me>
+  where <m>T</m> is given in hours after noon.  Find the sunset time on January 1 (day <m>n = 1</m>) and on July 1 (day <m>n = 182</m>).</p></statement>
+  
+  <solution><p>Evaluate the function for <m>n = \alert{1}</m> to find
+  <me>T = 3.11 \sin (0.017(\alert{1}) - 1.38) + 6.03 = 2.99</me>
+  On January 1, sunset in Stockholm occurs about 2.99 hours after noon, or at 2:59 pm.</p>
+  <p> Evaluate the function at <m>n = \alert{182}</m> to find
+  <me>T = 3.11 \sin (0.017(\alert{182}) - 1.38) + 6.03 = 9.11</me>
+  On July 1, sunset occurs about 9.11 hours after noon, or at 9:07 pm. (Actually, 10:07 pm, because of daylight savings time.)</p></solution></example>
+
+   <exercise><statement><p>Variable stars are important in astronomy because they are used to estimate distances. Their magnitude, or brightness, varies periodically and can be modeled by trigonometric functions. The star T Herculis reached its maximum magnitude on December 27, 2004, and <m>t</m> days later its magnitude is approximately
+   <me>M = 10.2 - 2.2 \cos(0.038t)</me></p>
+   <p><ol label = "a">
+    <li>What was the magnitude of T Herculis on December 27, 2004?</li>
+    <li>What was the magnitude of T Herculis be on December 27, 2006 (730 days later)?</li>
+  </ol></p></statement></exercise>
+</subsection>
+
+<subsection><title>Coordinates on a Unit Circle</title>
+<p> There is another useful connection between the unit circle and the trigonometric functions. Consider an arc of length <m>t</m> in standard position on a unit circle, and the angle <m>\theta</m> spanned by the arc. Because <m>r = 1</m> on a unit circle, 
+<me> \cos \theta = \dfrac{x}{r} = \dfrac{x}{1}~~~~\text{and}~~~~  \sin \theta = \dfrac{y}{r} = \dfrac{y}{1}</me>
+But because <m>\cos t = \cos \theta</m> and <m>\sin t = \sin \theta</m>, we have
+<me>\cos t = x ~~~~ \text{and} ~~~~  \sin t = y</me>
+We have established the following result for the sine and cosine of a real number <m>t</m>.</p>
+
+ <assemblage><title>Coordinates on a Unit Circle</title>
+ <sidebyside widths="60% 35%"><p>The <term>coordinates</term> of the point <m>P</m> determined by an arc of length <m>t</m> in standard position on a unit circle are 
+ <me>(x, y) = (\cos t, \sin t)</me></p><image source="images/6-2-coords.png"><description>circle</description></image></sidebyside></assemblage>
+
+<p>We sometimes call the trigonometric functions of arclength, <m>\sin t</m> and <m>\cos t</m>, the <term>circular functions</term>, because they are defined by the coordinates of points on a unit circle.</p>
+
+<example><statement><p>Find the coordinates of the terminal point, <m>P</m>, of an arc of length <m>t</m> starting at <m>(1,0)</m> on a unit circle.</p>
+<p><ol label="a" cols="2">
+<li><m>t = \dfrac{\pi}{2}</m></li>
+<li><m>t = \dfrac{5\pi}{6}</m></li>
+</ol></p></statement>
+  
+<solution><p><ol label="a">
+  <li><sidebyside widths="60% 30%"><p>On a unit circle, the coordinates of <m>P</m> are <m>(\cos \dfrac{\pi}{2}, \sin \dfrac{\pi}{2})</m>, so
+  <me>x = \cos \dfrac{\pi}{2} = 0~~~\text{and}~~~ y = \sin \dfrac{\pi}{2} = 1</me>
+  The coordinates of <m>P</m> are <m>(0,1)</m>, as shown at right.</p><image source="images/exam6-2-4a.png"><description>circle</description></image></sidebyside><p>(We could also observe that an arc of length <m>\dfrac{\pi}{2}</m> is one quarter of a unit circle, so the point <m>P</m> sits at the twelve o'clock position on the circle.)</p></li>
+  <li><sidebyside widths="65% 35%" valigns="middle middle"><p>The coordinates of <m>P</m> are <m>(\cos \dfrac{5\pi}{6}, \sin \dfrac{5\pi}{6})</m>, so
+    \begin{align*}
+      x \amp= \cos \dfrac{5\pi}{6} = \dfrac{-\sqrt{3}}{2}~~~\\
+      y \amp= \sin \dfrac{5\pi}{6} = \dfrac{1}{2}\\
+      \end{align*}
+  Thus, the coordinates of <m>P</m> are <m>(\dfrac{-\sqrt{3}}{2},\dfrac{1}{2})</m>, as shown at right.</p><image source="images/exam6-2-4b.png"><description>circle</description></image></sidebyside></li>
+</ol></p></solution></example>  
+
+<exercise><statement><p>Find the coordinates of the terminal point, <m>P</m>, of an arc of length <m>t</m> starting at <m>(1,0)</m> on a unit circle.</p><p><ol label="a" cols="2">
+<li><m>t = \pi</m></li>
+<li><m>t = \dfrac{\pi}{3}</m></li>
+  </ol></p></statement></exercise>
+</subsection>
+
+<subsection><title>The Tangent Function</title>
+<p>We can also define the tangent function for real numbers. Let <m>P(x,y)</m> be the terminal point of an arc of length <m>t</m> in standard position on a unit circle. Then</p>
+<sidebyside widths="65% 35%" valigns="middle middle"><p>
+  <me>\tan t = \dfrac{y}{x}</me>
+Of course, this definition agrees with our earlier definition of the tangent function for angles, because the point <m>P</m> lies on the terminal side of the angle <m>\theta = t</m> radians.</p><image source="images/6-2-tan.png"><description>circle</description></image></sidebyside>
+
+<p> For example, we saw earlier that, rounded to four decimal places,
+<me>\cos 2 = -0.4161~~~~\text{and} ~~~~ \sin 2 = 0.9093</me>
+so the coordinates of point <m>P</m> on the unit circle in the figure above are <m>(-0.4161, 0.9093)</m>. Therefore,
+<me>\tan 2 = \dfrac{0.9093}{-0.4161} = -2.1853</me>
+You can set your calculator in radian mode to verify that, to three decimal places, 
+<me>\boxed{\text{TAN}} ~2 = -2.185</me>  
+  We now have the following definitions for the circular functions of real numbers.</p>
+
+  <assemblage><title>The Circular Functions</title>
+  <p>Let <m>P</m> be the terminal point of an arc of length <m>t</m> in standard position on a unit circle. The <term>circular functions</term> of <m>t</m> are defined by</p>
+  <sidebyside widths="65% 35%" valigns="middle middle"><p>
+    \begin{align*}
+      \cos t \amp = x\\
+      \sin t \amp = y\\
+      \tan t \amp = \dfrac{y}{x},~~x \not= 0\\
+      \end{align*}</p>
+    <image source="images/6-2-circfun.png"><description>circle</description></image></sidebyside></assemblage>
+      
+<example><statement><p>Use the graph of the unit circle shown below to estimate <m>\cos 2.5,~\sin 2.5</m>, and <m>\tan 2.5</m>.</p>
+<sidebyside width="55%"><image source="images/exam6-2-5.png"><description>circle</description></image></sidebyside></statement>
+
+<solution><p>The circle is scaled in units of 0.1 radians, and an arc of 2.5 radians in standard position has its terminal point, <m>P</m>, in the second quadrant. The coordinates of <m>P</m> are approximately <m>(-0.8,0.6)</m>, so we have
+<me>\cos 2.5 = -0.8~~~~\text{and}~~~~\sin 2.5 = 0.6</me>
+To find <m>\tan 2.5</m>,  we calculate <m>\dfrac{y}{x}</m>.
+<me>\tan 2.5 = \dfrac{y}{x} = \dfrac{0.6}{-0.8} = -0.75</me></p></solution></example>
+
+<exercise><statement><p>Use the graph of the unit circle in the previous example to estimate <m>\cos 4.2,~ \sin 4.2</m>, and <m>\tan 4.2</m>.</p></statement></exercise>
+</subsection>
+
+<subsection><title>Algebra Refresher</title>
+<exercises>
+<exercisegroup cols="3"><introduction><p>Simplify.</p></introduction>
+
+<exercise number="1"><statement><p><ol label = "a">
+  <li><m>\dfrac{2}{3} + \dfrac{1}{6}</m></li>
+  <li><m>\dfrac{2x}{3} + \dfrac{x}{6}</m></li>
+</ol></p></statement></exercise>
+
+<exercise number="2"><statement><p><ol label = "a">
+  <li><m>\dfrac{3}{4} - \dfrac{5}{8}</m></li>
+  <li><m>\dfrac{3n}{4} - \dfrac{5n}{8}</m></li>
+</ol></p></statement></exercise>
+
+<exercise number="3"><statement><p><ol label = "a">
+  <li><m>2 - \dfrac{3}{4}</m></li>
+  <li><m>2b - \dfrac{3b}{4}</m></li>
+</ol></p></statement></exercise>
+
+<exercise number="4"><statement><p><ol label = "a">
+  <li><m>1 + \dfrac{3}{8}</m></li>
+  <li><m>m + \dfrac{3m}{8}</m></li>
+</ol></p></statement></exercise>
+
+<exercise number="5"><statement><p><ol label = "a">
+  <li><m>\dfrac{5}{6} - \dfrac{7}{6}</m></li>
+  <li><m>\dfrac{5q}{6} - \dfrac{7q}{6}</m></li>
+</ol></p></statement></exercise>
+
+<exercise number="6"><statement><p><ol label = "a">
+  <li><m>\dfrac{2}{3} - \dfrac{5}{3}</m></li>
+  <li><m>\dfrac{2p}{3} - \dfrac{5p}{3}</m></li>
+</ol></p></statement></exercise>
+</exercisegroup></exercises>
+
+<subsubsection><title>Answers to 6.2 Exercises</title>
 <p><ol label="1">
-	<li>
-		<p>Because the coefficient of <m>x^2</m> is <m>2</m>, we must divide each term of the equation by <m>2</m>.
-		<me>x^2 - 3x - \frac{5}{2}= 0</me>
-		Now we proceed as before. Rewrite the equation with the constant on the right side.
-		<me>x^2 - 3x \text{______} = \frac{5}{2}</me></p>
-	</li>
-	<li>
-		<p>Complete the square:
-		<me>p = \frac{1}{2}(-3) = \frac{-3}{2} ~~~\text{ and } ~~~ p^2 = \left(\frac{-3}{2}\right)^2 = \frac{9}{4}</me>
-		Add <m>\frac{9}{4}</m> to both sides of our equation:
-		<me>x^2 - 3x  \alert{{}+\frac{9}{4}}=\frac{5}{2}\alert{{}+\frac{9}{4}}</me></p>
-	</li>
-	<li>
-		<p>Rewrite the left side as the square of a binomial and simplify the right side to get
-		<me>\left(x - \frac{3}{2}\right)^2 =\frac{19}{4}</me></p>
-	</li>
-	<li>
-		<p>Finally, extract roots and solve each equation for <m>x</m>.
-		<me>
-		x - \frac{3}{2}  =\sqrt{\frac{19}{4}} ~~~\text{ or }~~~ x - \frac{3}{2} = -\sqrt{\frac{19}{4}} 
-		</me>
-		The solutions are <m>\dfrac{3}{2}+\sqrt{\dfrac{19}{4}}</m> and <m>\dfrac{3}{2}-\sqrt{\dfrac{19}{4}}</m>. Using a calculator, we can find decimal approximations for the solutions: <m>3.679</m> and <m>-0.679</m>.</p>
-	</li>
+  <li><p><ol label="a">
+    <li><m>3.7321</m></li>
+    <li><m>-1.8856</m></li>
+    </ol></p></li>
+  <li><p><ol label="a">
+    <li><m>\dfrac{1}{2}</m></li>
+    <li><m>-1</m></li>
+    </ol></p></li>
+  <li><p><ol label="a">
+    <li><m>8</m></li>
+    <li><m>12.09</m></li>
+    </ol></p></li>
+  <li><p><ol label="a">
+    <li><m>(-1,0)</m></li>
+    <li><m>(\dfrac{1}{2},\dfrac{\sqrt{3}}{2})</m></li>
+    </ol></p></li>
+  <li><m>-0.49,~-0.87,~1.78</m></li>
+  </ol></p></subsubsection>
+
+<subsubsection><title>Algebra Refresher Answers</title>
+<p><ol label="1">
+    <li><p><ol label = "a">
+      <li><m>\dfrac{5}{6}</m></li> 
+      <li><m>\dfrac{5x}{6}</m></li>
+    </ol></p></li>
+    <li><p><ol label = "a">
+      <li><m>\dfrac{1}{8}</m></li> 
+      <li><m>\dfrac{n}{8}</m></li>
+    </ol></p></li>
+    <li><p><ol label = "a">
+      <li><m>\dfrac{5}{4}</m></li> 
+      <li><m>\dfrac{5b}{4}</m></li>
+    </ol></p></li>
+    <li><p><ol label = "a">
+      <li><m>\dfrac{11}{8}</m></li> 
+      <li><m>\dfrac{11m}{8}</m></li>
+    </ol></p></li>
+    <li><p><ol label = "a">
+      <li><m>\dfrac{-1}{6}</m></li> 
+      <li><m>\dfrac{-q}{6}</m></li>
+    </ol></p></li>
+    <li><p><ol label = "a">
+      <li><m>-1</m></li> 
+      <li><m>-p</m></li>
+    </ol></p></li>
+  </ol></p></subsubsection>
+</subsection>
+
+<subsection><title>Section 6.2 Summary</title>
+<subsubsection><title>Vocabulary</title>
+<p><ul cols="3">
+    <li>Circular functions</li>
+</ul></p>
+</subsubsection>
+
+<subsubsection><title>Concepts</title>
+<p><ol label="1">
+  <li>The sine, cosine, or tangent of a particular angle is the same whether the angle is measured in radians or in degrees.</li>
+  <li><p>You should memorize the trig values of the special angles in radians.</p><p>
+      <sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                        
+                    <row bottom="minor">
+                        <cell>Degrees</cell>
+                        <cell>Radians</cell>
+                        <cell>Sine</cell>
+                        <cell>Cosine</cell>
+                        <cell>Tangent</cell></row>
+                    <row> 
+                        <cell><m>0\degree</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>0</m></cell></row>
+                    <row> 
+                        <cell><m>30\degree</m></cell>
+                        <cell><m>\dfrac{\pi}{6}</m></cell>
+                        <cell><m>\dfrac{1}{2}</m></cell>
+                        <cell><m>\dfrac{\sqrt{3}}{2}</m></cell>
+                        <cell><m>\dfrac{1}{\sqrt{3}}</m></cell></row>
+                    <row> 
+                        <cell><m>45\degree</m></cell>
+                        <cell><m>\dfrac{\pi}{4}</m></cell>
+                        <cell><m>\dfrac{1}{\sqrt{2}}</m></cell>
+                        <cell><m>\dfrac{1}{\sqrt{2}}</m></cell>
+                        <cell><m>1</m></cell></row>
+                    <row>
+                        <cell><m>60\degree</m></cell>
+                        <cell><m>\dfrac{\pi}{3}</m></cell>
+                        <cell><m>\dfrac{\sqrt{3}}{2}</m></cell>
+                        <cell><m>\dfrac{1}{2}</m></cell>
+                        <cell><m>\sqrt{3}</m></cell></row>  
+                    <row>
+                        <cell><m>90\degree</m></cell>
+                        <cell><m>\dfrac{\pi}{2}</m></cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell>undefined</cell></row>                
+                </tabular></sidebyside></p></li>
+     <li>To find the sine or cosine of a real number <m>t</m>, we draw an arc of length <m>t</m> on a unit circle, and then find the sine or cosine of the angle <m>\theta</m> determined by the arc.</li>
+    <li><assemblage><title>Coordinates on a Unit Circle</title>
+    <sidebyside widths="60% 35%"><p>The <term>coordinates</term> of the point <m>P</m> determined by an arc of length <m>t</m> in standard position on a unit circle are 
+    <me>(x, y) = (\cos t, \sin t)</me></p><image source="images/6-2-coords.png"><description>circle</description></image></sidebyside></assemblage></li>
+    <li><assemblage><title>The Circular Functions</title>
+    <p>Let <m>P</m> be the terminal point of an arc of length <m>t</m> in standard position on a unit circle. The <term>circular functions</term> of <m>t</m> are defined by</p>
+    <sidebyside widths="65% 35%" valigns="middle middle"><p>
+    \begin{align*}
+      \cos t \amp = x\\
+      \sin t \amp = y\\
+      \tan t \amp = \dfrac{y}{x},~~x \not= 0\\
+      \end{align*}</p>
+    <image source="images/6-2-circfun.png"><description>circle</description></image></sidebyside></assemblage></li>
+</ol></p></subsubsection>
+
+<subsubsection><title> Study Questions</title>
+<p><ol label="1">
+  <li><p>Write each statement using decimal approximations to four places.</p>
+      <p><ol label="a" cols="2">
+          <li><m>\cos \dfrac{\pi}{6} = \dfrac{\sqrt{3}}{2}</m></li>  
+          <li><m>\sin \dfrac{5\pi}{4} = \dfrac{-1}{\sqrt{2}}</m></li>
+        </ol></p></li>
+  <li><p>Sketch a figure on a unit circle to illustrate each equation.</p>
+      <p><ol label="a" cols="2">
+          <li><m>\sin \dfrac{3\pi}{4} = 0.7071</m></li>  
+          <li><m>\cos 2.5 = -0.8011</m></li>
+        </ol></p></li>
+  <li>Write down the multiples of <m>\dfrac{\pi}{12}</m> from <m>0</m> to <m>2\pi</m>. Reduce each fraction.</li>
+  <li>On a unit circle, sketch arcs in standard position with the following lengths.
+      <me>s = \dfrac{\pi}{2},~s = \dfrac{3\pi}{4},~s = \dfrac{\pi}{3},~s = \dfrac{2\pi}{3}</me></li>
 </ol></p>
-</solution></example>
+</subsubsection>
 
-<warning><statement>
-	<p>
-		In <xref ref="example-completing-the-square2" text="type-global"/>, it is essential that we first divide each term of the equation by <m>2</m>, the coefficient of <m>x^2</m>. The following attempt at a solution is <em>incorrect</em>.
-		\begin{align*}
-		2x^2 - 6x \amp= 5\\
-		2x^2 - 6x + 9 \amp= 5 + 9\\
-		(2x - 3)^2 \amp= 14 ~~~ \rightarrow ~~~ \text{ Incorrect!}
-		\end{align*}
-		You can check that <m>(2x - 3)^2</m> is not equal to <m>2x^2 - 6x + 9</m>. We have not written the left side of the equation as a perfect square, so the solutions we obtain by extracting roots will not be correct.
-	</p>
-</statement></warning>
-
-<exercise xml:id="exercise-completing-the-square3"><statement>
-<p>
-	<ol label="a">
-		<li>
-		<p>Follow the steps to solve by completing the square: <m>-4x^2 - 36-65 = 0</m>.
-		<ol label="1">
-			<li>
-				<p>Divide each term by <m>-4</m>. Write the equation with the constant on the right.</p>
-			</li>
-			<li>
-				<p>Complete the square on the left:
-				<me>p = \frac{1}{2}(9) ={}\text{______, } ~~~{} p^2 = \text{______}</me>
-				Add <m>p^2</m> to both sides.</p>
-			</li>
-			<li>
-				<p>Write the left side as a perfect square; simplify the right side.</p>
-			</li>
-			<li>
-				<p>Solve by extracting roots.</p>
-			</li>
-		</ol></p>
-	</li>
-	<li>
-		<p>Graph <m>y = -4x^2 - 36x - 65</m> in the window
-        \begin{align}
-        \text{Xmin} \amp = -9.4 \amp\amp \text{Xmax} = 0\\
-        \text{Ymin} \amp = -10 \amp\amp \text{Ymax} = 20
-        \end{align}</p>
-	</li></ol>
-</p>
-</statement>
-<answer><p><m>x=\frac{-13}{2} </m>, <m>~x=\frac{-5}{2} </m></p></answer>
-</exercise>
-
-<p>
-	Here is a summary of the steps for solving quadratic equations by completing the square
-</p>
-
-<xi:include href="./assemblage-solve-quadratic-by-completing-square.xml" />
-
+<subsubsection><title>Skills</title>
+<p><ol label="1">
+  <li>Know the trigonometric function values for the special angles in radians  #1-4, 46-48</li>
+  <li>Use a unit circle to find trig values  #5-30, 45-58</li>
+  <li>Find reference angles in radians    #33-45</li>
+  <li>Evaluate trigonometric expressions    #31-32, 49-54</li>
+  <li>Find coordinates on a unit circle    #55-60, 67-68</li>
+  <li>Find an angle with a given terminal point on a unit circle    #61-66</li>
+  <li>Use the tangent ratio to find slope    #69-74</li>
+  <li>Find coordinates on a circle of radius     #77-80</li> 
+</ol></p></subsubsection>
 </subsection>
 
-
-
-
-<subsection><title>Quadratic Formula</title>
-<p>
-	Instead of completing the square every time we solve a new quadratic equation, we can complete the square on the general quadratic equation,
-	<me>ax^2 + bx + c = 0\text{, }~~~ a \ne 0</me>
-	and obtain a formula for the solutions of any quadratic equation.
-</p>
-
-<xi:include href="./assemblage-quadratic-formula.xml" />
-
-<p>
-	This formula expresses the solutions of a quadratic equation in terms of its coefficients. (The proof of the formula is considered in the Homework problems.) The symbol <m>\pm</m>, read plus or minus, is used to combine the two equations
-	<me>x =\dfrac{-b + \sqrt{b^2 - 4ac}}{2a} ~~~~ \text{and} ~~~~x =\dfrac{-b - \sqrt{b^2 - 4ac}}{2a}</me> 
-	into a single equation.
-</p>
-<p>
-	To solve a quadratic equation using the quadratic formula, all we have to do is substitute the coefficients <m>a</m>, <m>b</m>, and <m>c</m> into the formula.
-</p>
-
-<example xml:id="example-quadratic-formula">
-	<p>
-		Solve <m>2x^2 + 1 = 4x</m>.
-	</p>
-<solution>
-	<p>
-		Write the equation in standard form as
-		<me>2x^2 - 4x + 1 = 0</me>
-		Substitute <m>\alert{2}</m> for <m>a</m>, <m>\alert{-4}</m> for <m>b</m>, and <m>\alert{1}</m> for <m>c</m> into the quadratic formula, then simplify.
-		\begin{align*}
-		x \amp =\frac{-(\alert{-4})\pm \sqrt{(\alert{-4})^2 - 4(\alert{2})(\alert{1})}}{2(\alert{2})} \\
-		\amp = \frac{4 \pm \sqrt{8}}{4}
-		\end{align*}
-		Using a calculator, we find that the solutions are approximately <m>1.707</m> and <m>0.293</m>. (If you would like to review following the order of operations on a calculator, please see Appendix B.)</p>
-		<p> We can also verify that the <m>x</m>-intercepts of the graph of <m>y = 2x^2 - 4x + 1</m> are approximately <m>1.707</m> and <m>0.293</m>, as shown in <xref ref="fig-parabola-intercepts" text="type-global"/>.
-	<figure xml:id="fig-parabola-intercepts"><caption></caption><image source="images/fig-parabola-intercepts"  width="40%"><description>parabola with irrational x-intercepts</description></image></figure>
-	</p>
-</solution></example>
-
-<exercise xml:id="exercise-quadratic-formula"><statement>
-	<p>
-		Use the quadratic formula to solve <m>x^2 - 3x = 1</m>.
-	</p>
-</statement>
-<answer><p><m>x=\frac{3\pm \sqrt{13}}{2} </m></p></answer>
-</exercise>
-
-<p>
-	Note that the solutions to this equation are the same as the solutions we found in <xref ref="exercise-completing-the-square2" text="type-global"/>.
-</p>
-
-</subsection>
-
-
-
-
-<subsection><title>Applications</title>
-<p>
-	We have now seen four different algebraic methods for solving quadratic equations:
-	<ol>
-		<li>
-			Factoring
-		</li>
-		<li>
-			Extraction of roots
-		</li>
-		<li>
-			Completing the square
-		</li>
-		<li>
-			Quadratic formula
-		</li>
-	</ol>
-	Factoring and extraction of roots are relatively fast and simple, but they do not work on all quadratic equations. The quadratic formula will work on any quadratic equation.
-</p>
-
-<example xml:id="example-fencing-areas">
-	<p>
-		The owners of a day-care center plan to enclose a divided play area against the back wall of their building, as shown in <xref ref="fig-fencing-areas" text="type-global"/>. They have <m>300</m> feet of picket fence and would like the total area of the playground to be <m>6000</m> square feet. Can they enclose the playground with the fence they have, and if so, what should the dimensions of the playground be?
-		<figure xml:id="fig-fencing-areas"><caption></caption><image source="images/fig-fencing-areas"  width="30%"><description>two fenced rectangles against wall</description></image> </figure>
-	</p>
-<solution>
-	<p>
-		Suppose the width of the play area is <m>x</m> feet. Because there are three sections of fence along the width of the play area, that leaves <m>300 - 3x</m> feet of fence for its length. The area of the play area should be <m>6000</m> square feet, so we have the equation
-		<me>x(300 - 3x) = 6000</me>
-		This is a quadratic equation. In standard form,
-		\begin{align*}
-		3x^2 - 300x + 6000 \amp= 0\amp\amp\text{Divide each term by 3.}\\
-		x^2 - 100x + 2000 \amp= 0
-		\end{align*} 
-		The left side cannot be factored, so we use the quadratic formula with <m>a = \alert{1}</m>, <m>b = \alert{-100}</m>, and <m>c = \alert{2000}</m>.
-		\begin{align*}
-		x \amp=\frac{-(\alert{-100}) \pm\sqrt{(\alert{-100})^2 - 4(\alert{1})(\alert{2000})}}{2(\alert{1})}\\
-		\amp= \frac{100 \pm\sqrt{2000}}{2}\approx \frac{100 \pm 44.7}{2}
-		\end{align*}
-		Simplifying the last fraction, we find that <m>x \approx 72.35</m> or <m>x\approx 27.65</m>. Both values give solutions to the problem.
-		<ul>
-		<li> If the width of the play area is <m>72.35</m> feet, then the length is <m>300 - 3(72.35)</m>, or <m>82.95</m> feet.</li>
-		<li> If the width is <m>27.65</m> feet, the length is <m>300 - 3(27.65)</m>, or <m>217.05</m> feet.</li>
-	</ul>
-	</p>
-</solution>
-</example>
-
-<exercise xml:id="exercise-height-of-baseball"><statement>
-<p>
-	In <xref ref="investigation-height-of-baseball" text="type-global"/>, we considered the height of a baseball, given by the equation
-	<me>h = -16t^2 + 64t + 4</me>
-	Find two times when the ball is at a height of <m>20</m> feet. Give your answers to two decimal places.
-</p></statement>
-<answer><p><m>0.27</m> sec, <m>3.73</m> sec</p></answer>
-</exercise>
-
-<p>
-	Sometimes it is useful to solve a quadratic equation for one variable in terms of the others.
-</p>
-
-<example xml:id="example-quadratic-in-two-variables">
-	<p>
-		Solve <m>x^2 - xy + y = 2</m> for <m>x</m> in terms of <m>y</m>.
-	</p>
-<solution>
-	<p>
-		We first write the equation in standard form as a quadratic equation in the variable <m>x</m>.
-		<me>x^2 - yx + (y - 2) = 0</me>
-		Expressions in <m>y</m> are treated as constants with respect to <m>x</m>, so that <m>a = \alert{1}</m>, <m>b = \alert{-y}</m>, and <m>c = \alert{y - 2}</m>. Substitute these expressions into the quadratic formula.
-		\begin{align*}
-		x \amp=\frac{-(\alert{-y}) \pm\sqrt{(\alert{-y})^2 - 4(\alert{1})(\alert{y - 2})}}{2(\alert{1})}\\
-		\amp = \frac{y \pm\sqrt{y^2 - 4y + 8}}{2}
-		\end{align*}
-	</p>
-</solution>
-</example>
-
-<exercise xml:id="exercise-quadratic-in-two-variables"><statement>
-	<p>
-		Solve <m>2x^2 + kx + k^2 = 1</m> for <m>x</m> in terms of <m>k</m>.
-	</p>
-</statement>
-<answer><p><m>x=\frac{-k\pm\sqrt{8-7k^2}}{4} </m></p></answer>
-</exercise>
-
-
-</subsection>
-<xi:include href="./summary-6-2.xml" /> <!-- summary  -->
-<xi:include href="./section-6-2-exercises.xml" /> <!-- exercises  -->
+<!--<xi:include href="./summary-4-1.xml" /> summary  -->
+<!--<xi:include href="./section-4-1-exercises.xml" />  exercises  -->
 </section> 
 <!-- </book>  </mathbook> -->
