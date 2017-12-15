@@ -6,12 +6,47 @@
     <title>Homework 2.2</title>
 
 <exercise number="1">
-        <statement><p>Here are two right triangles with a <m>65 \degree</m> angle.</p><sidebyside widths="60% 30%">
+        <statement><p>Here are two right triangles with a <m>65 \degree</m> angle.</p><sidebyside widths="60% 24%">
         <p><ol label="a">
             <li>Measure the sides <m>AB</m> and <m>BC</m> with a ruler. Use the lengths to estimate <m>\sin 65\degree</m>.</li>
             <li>Measure the sides <m>AD</m> and <m>DE</m> with a ruler. Use the lengths to estimate <m>\sin 65\degree</m>.</li>
             <li>Use your calculator to look up <m>\sin 65\degree</m>.  Compare your answers. How close were your estimates?</li>
-        </ol></p><image source="images/hp2-2-1.png"><description>triangles</description></image></sidebyside></statement>
+        </ol></p><!--<image source="images/hp2-2-1.png"><description>triangles</description></image>-->
+    <image xml:id="hp2-2-1">
+        <description>triangles</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (3,6.433);
+        \coordinate (C) at (3,0);
+        \coordinate (D) at (2,4.289);
+        \coordinate (E) at (2,0);
+
+        \draw[blue,thick] (C) rectangle +(-.25,.25);
+        \draw[blue,thick] (E) rectangle +(-.25,.25);
+        \draw[black, thick] (A)--(B)--(C)--cycle;
+        \draw[black,thick] (D)--(E);
+
+        \draw[red,thick] (0.3,0) arc(0:65:.3) node[right, midway, yshift=2] {$65\degree$};
+
+        \filldraw[black] (A) circle (.2pt) node[anchor=north east] {$A$};
+        \filldraw[black] (B) circle (.2pt) node[anchor=west] {$B$};
+        \filldraw[black] (C) circle (.2pt) node[anchor=north west] {$C$};
+        \filldraw[black] (D) circle (.2pt) node[anchor=south east] {$D$};
+        \filldraw[black] (E) circle (.2pt) node[anchor=north ] {$E$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside></statement>
         <answer><p><ol label="a">
             <li>0.91</li>
             <li>0.91</li>
@@ -27,7 +62,41 @@
             <li>Measure the sides <m>AB</m> and <m>AC</m> with a ruler. Use the lengths to estimate <m>\cos 40\degree</m>.</li>
             <li>Measure the sides <m>AD</m> and <m>AE</m> with a ruler. Use the lengths to estimate <m>\cos 40\degree</m>.</li>
             <li>Use your calculator to look up <m>\cos 40\degree</m>.  Compare your answers. How close were your estimates?</li>
-        </ol></p><image source="images/hp2-2-3.png"><description>triangles</description></image></sidebyside></statement>
+        </ol></p><!--<image source="images/hp2-2-3.png"><description>triangles</description></image>-->
+    <image xml:id="hp2-2-3">
+        <description>triangles</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (3.5,2.9368);
+        \coordinate (C) at (3.5,0);
+        \coordinate (D) at (-2.4,-2.013);
+        \coordinate (E) at (-2.4,0);
+
+        \draw[blue,thick] (C) rectangle +(-.25,.25);
+        \draw[blue,thick] (E) rectangle +(.25,-.25);
+        \draw[black, thick] (B)--(C)--(E)--(D)--cycle;
+
+        \draw[red,thick] (0.4,0) arc(0:40:.4) node[right, midway, yshift=3] {$40\degree$};
+
+        \filldraw[black] (A) circle (.2pt) node[anchor=north ] {$A$};
+        \filldraw[black] (B) circle (.2pt) node[anchor=west] {$B$};
+        \filldraw[black] (C) circle (.2pt) node[anchor=north west] {$C$};
+        \filldraw[black] (D) circle (.2pt) node[anchor= east] {$D$};
+        \filldraw[black] (E) circle (.2pt) node[anchor=east ] {$E$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside></statement>
         <answer><p><ol label="a">
             <li>0.77</li>
             <li>0.77</li>
@@ -46,7 +115,35 @@
 
 <exercise number="5">
         <statement>
-            <sidebyside width="80%"><image source="images/hp2-2-5.png"><description>triangle</description></image></sidebyside></statement>
+            <sidebyside width="80%"><!--<image source="images/hp2-2-5.png"><description>triangle</description></image>-->
+    <image xml:id="hp2-2-5">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (3,0);
+        \coordinate (C) at (0,-2);
+
+        \draw[blue,thick] (A) rectangle +(.25,-.25);
+
+        \draw[black, thick] (B)--(C) node[below right, midway] {\color{blue}$v$};
+        \draw[black, thick] (B)--(A) node[above, midway] {\color{blue}$12$};
+        \draw[black, thick] (A)--(C) node[left, midway] {\color{blue}$8$};
+
+        \draw[red,thick] (B)++(-0.6,0) arc(180:{180+atan(2/3)}:.6) node[left, midway, yshift=-3] {$\theta$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+            </sidebyside></statement>
         <answer><p><ol label = "a"> 
             <li><m>4\sqrt{13} \approx 14.42</m></li>
             <li>sin <m>\theta = 0.5547</m>, cos <m>\theta = 0.8321</m>, tan <m>\theta = 0.6667</m></li>
@@ -54,12 +151,69 @@
     
  <exercise number="6">
         <statement>
-            <sidebyside width="55%"><image source="images/hp2-2-6.png"><description>triangle</description></image></sidebyside></statement>
+            <sidebyside width="45%"><!--image source="images/hp2-2-6.png"><description>triangle</description></image>-->
+    <image xml:id="hp2-2-6">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [scale=1.1]
+
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (1,0);
+        \coordinate (C) at (0,2);
+
+        \draw[blue,thick] (A) rectangle +(.25,.25);
+
+        \draw[black, thick] (B)--(C) node[above right, midway] {\color{blue}$z$};
+        \draw[black, thick] (B)--(A) node[below, midway] {\color{blue}$5$};
+        \draw[black, thick] (A)--(C) node[left, midway] {\color{blue}$10$};
+
+        \draw[red,thick] (B)++(-0.3,0) arc(180:{180-atan(2)}:.3) node[left, midway, yshift=3] {$\theta$};
+
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+            </sidebyside></statement>
         </exercise>
 
 <exercise number="7">
         <statement>
-            <sidebyside width="100%"><image source="images/hp2-2-7.png"><description>triangle</description></image></sidebyside></statement>
+            <sidebyside width="100%"><!--<image source="images/hp2-2-7.png"><description>triangle</description></image>-->
+    <image xml:id="hp2-2-7">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (4.2,0);
+        \coordinate (C) at (0,1);
+
+        \draw[blue,thick] (A) rectangle +(.25,.25);
+
+        \draw[black, thick] (B)--(C) node[above right, midway] {\color{blue}$16$};
+        \draw[black, thick] (B)--(A) node[below, midway] {\color{blue}$w$};
+        \draw[black, thick] (A)--(C) node[left, midway] {\color{blue}$4$};
+
+        \draw[red,thick] (C)++(0,-.3) arc(-90:{-atan(1/4.2)}:.3) node[below, midway, xshift=1, yshift=1] {$\theta$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+            </sidebyside></statement>
         <answer><p><ol label = "a"> 
             <li><m>4\sqrt{15} \approx 15.49</m></li>
             <li>sin <m>\theta = 0.9682</m>, cos <m>\theta = 0.2500</m>, tan <m>\theta = 3.8730</m></li>
@@ -67,12 +221,68 @@
 
 <exercise number="8">
         <statement>
-            <sidebyside width="60%"><image source="images/hp2-2-8.png"><description>rectangle</description></image></sidebyside></statement>
+            <sidebyside width="60%"><!--<image source="images/hp2-2-8.png"><description>rectangle</description></image>-->
+    <image xml:id="hp2-2-8">
+        <description>rectngle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (-1.8,0);
+        \coordinate (C) at (0,2.6);
+
+        \draw[blue,thick] (A) rectangle +(-.25,.25);
+
+        \draw[black, thick] (B)--(C) node[above left, midway] {\color{blue}$24$};
+        \draw[black, thick] (B)--(A) node[below, midway] {\color{blue}$m$};
+        \draw[black, thick] (A)--(C) node[right, midway] {\color{blue}$20$};
+
+        \draw[red,thick] (C)++(0,-.5) arc(270:{180+atan(2.6/1.8)}:.5) node[below, midway, xshift=-1] {$\theta$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+            </sidebyside></statement>
        </exercise>
 
 <exercise number="9">
         <statement>
-            <sidebyside width="100%"><image source="images/hp2-2-9.png"><description>triangle</description></image></sidebyside></statement>
+            <sidebyside width="100%"><!--<image source="images/hp2-2-9.png"><description>triangle</description></image>-->
+    <image xml:id="hp2-2-9">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (-3,0);
+        \coordinate (C) at (0,-1.2);
+
+        \draw[blue,thick] (A) rectangle +(-.25,-.25);
+
+        \draw[black, thick] (B)--(C) node[below left, midway] {\color{blue}$n$};
+        \draw[black, thick] (B)--(A) node[above, midway] {\color{blue}$16$};
+        \draw[black, thick] (A)--(C) node[right, midway] {\color{blue}$2\sqrt{3}$};
+
+        \draw[red,thick] (B)++(.9,0) arc(0:{-atan(.4)}:.9) node[right, midway, yshift=-1] {$\theta$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+            </sidebyside></statement>
         <answer><p><ol label = "a"> 
             <li><m>2\sqrt{67} \approx 16.37</m></li>
             <li>sin <m>\theta = 0.2116</m>, cos <m>\theta = 0.9774</m>, tan <m>\theta = 0.2165</m></li>
@@ -80,7 +290,35 @@
     
  <exercise number="10">
         <statement>
-            <sidebyside width="80%"><image source="images/hp2-2-10.png"><description>triangle</description></image></sidebyside></statement>
+            <sidebyside width="80%"><!--<image source="images/hp2-2-10.png"><description>triangle</description></image>-->
+    <image xml:id="hp2-2-10">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (-3,0);
+        \coordinate (C) at (0,1.8);
+
+        \draw[blue,thick] (A) rectangle +(-.25,.25);
+
+        \draw[black, thick] (B)--(C) node[above left, midway] {\color{blue}$2\sqrt{5}$};
+        \draw[black, thick] (B)--(A) node[below, midway] {\color{blue}$\sqrt{7}$};
+        \draw[black, thick] (A)--(C) node[right, midway] {\color{blue}$d$};
+
+        \draw[red,thick] (C)++(0,-0.3) arc(-90:{-180+atan(.6)}:.3) node[below left, midway, xshift=1] {$\theta$};=5=5
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+            </sidebyside></statement>
         </exercise>
 </exercisegroup>
 
@@ -93,21 +331,137 @@
 
 <exercise number="11">
         <statement><m>\cos \theta = \dfrac{3}{5}</m> </statement>
-        <answer><sidebyside width="60%"><image source="images/hp2-2-11ans.png"><description>triangles</description></image></sidebyside><p>(Answers may vary)</p></answer></exercise>
+        <answer><sidebyside width="60%"><!--<image source="images/hp2-2-11ans.png"><description>triangles</description></image>-->
+    <image xml:id="hp2-2-11ans">
+        <description>triangles</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (1.2,1.6);
+        \coordinate (C) at (1.2,0);
+
+        \draw[blue,thick] (C) rectangle +(-.25,.25);
+
+        \draw[black, thick] (B)--(C) node[right, midway] {\color{blue}$4$};
+        \draw[black, thick] (B)--(A) node[above left, midway] {\color{blue}$5$};
+        \draw[black, thick] (A)--(C) node[below, midway] {\color{blue}$3$};
+
+        \draw[red,thick] (A)++(.3,0) arc(0:{atan(4/3)}:.3) node[right, midway, yshift=1] {$\theta$};
+
+        \coordinate (A) at (2,-.5);
+        \coordinate (B) at (4.4,2.7);
+        \coordinate (C) at (4.4,-.5);
+
+        \draw[blue,thick] (C) rectangle +(-.25,.25);
+
+        \draw[black, thick] (B)--(C) node[right, midway] {\color{blue}$8$};
+        \draw[black, thick] (B)--(A) node[above left, midway] {\color{blue}$10$};
+        \draw[black, thick] (A)--(C) node[below, midway] {\color{blue}$6$};
+
+        \draw[red,thick] (A)++(.3,0) arc(0:{atan(4/3)}:.3) node[right, midway, yshift=1] {$\theta$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside><p>(Answers may vary)</p></answer></exercise>
 
 <exercise number="12">
         <statement><m>\tan \theta = \dfrac{7}{2}</m> </statement></exercise>
 
 <exercise number="13">
         <statement><m>\tan \theta = \dfrac{11}{4}</m> </statement>
-        <answer><sidebyside width="60%"><image source="images/hp2-2-13ans.png"><description>triangles</description></image></sidebyside><p>(Answers may vary)</p></answer></exercise>
+        <answer><sidebyside width="60%"><!--<image source="images/hp2-2-13ans.png"><description>triangles</description></image>-->
+    <image xml:id="hp2-2-13ans">
+        <description>triangles</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [scale=0.9]
+
+        \coordinate (C) at (0,0);
+        \coordinate (B) at (4.125,0);
+        \coordinate (A) at (0,1.5);
+
+        \draw[blue,thick] (C) rectangle +(.25,.25);
+
+        \draw[black, thick] (B)--(C) node[below, midway] {\color{blue}$\frac{33}{4}$};
+        \draw[black, thick] (B)--(A);
+        \draw[black, thick] (A)--(C) node[left, midway] {\color{blue}$3$};
+
+        \draw[red,thick] (A)++(0,-0.3) arc(-90:{-atan(4/11)}:.3) node[below right, midway, yshift=1] {$\theta$};
+
+        \coordinate (C) at (5.5,-.25);
+        \coordinate (B) at (11,-.25);
+        \coordinate (A) at (5.5,1.75);
+
+        \draw[blue,thick] (C) rectangle +(.25,.25);
+
+        \draw[black, thick] (B)--(C) node[below, midway] {\color{blue}$11$};
+        \draw[black, thick] (B)--(A);
+        \draw[black, thick] (A)--(C) node[left, midway] {\color{blue}$4$};
+
+        \draw[red,thick] (A)++(0,-0.3) arc(-90:{-atan(4/11)}:.3) node[below right, midway, yshift=1] {$\theta$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside><p>(Answers may vary)</p></answer></exercise>
     
  <exercise number="14">
            <statement><m>\sin \theta = \dfrac{4}{9}</m> </statement></exercise>
 
 <exercise number="15">
         <statement><m>\sin \theta = \dfrac{1}{9}</m> </statement>
-        <answer><sidebyside width="60%"><image source="images/hp2-2-15ans.png"><description>triangles</description></image></sidebyside><p>(Answers may vary)</p></answer></exercise>
+        <answer><sidebyside width="60%"><!--<image source="images/hp2-2-15ans.png"><description>triangles</description></image>-->
+    <image xml:id="hp2-2-15ans">
+        <description>triangles</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [scale=0.85]
+
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (10.7,0);
+        \coordinate (C) at (10.7,1.2);
+
+        \draw[blue,thick] (B) rectangle +(-.25,.25);
+
+        \draw[black, thick] (B)--(C) node[right, midway] {\color{blue}$3$};
+        \draw[black, thick] (B)--(A);
+        \draw[black, thick] (A)--(C) node[above, midway] {\color{blue}$27$};
+
+        \coordinate (A) at (-.7,-2);
+        \coordinate (B) at (13.6,-2);
+        \coordinate (C) at (13.6,-.4);
+
+        \draw[blue,thick] (B) rectangle +(-.25,.25);
+
+        \draw[black, thick] (B)--(C) node[right, midway] {\color{blue}$4$};
+        \draw[black, thick] (B)--(A);
+        \draw[black, thick] (A)--(C) node[above, midway] {\color{blue}$36$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside><p>(Answers may vary)</p></answer></exercise>
 
 <exercise number="16">
         <statement><m>\cos \theta = \dfrac{7}{8}</m> </statement></exercise> 
@@ -117,25 +471,193 @@
         <introduction><p>For Problems 17<ndash/>22, use one of the three trigonometric ratios to find the unknown side of the triangle.  Round your answer to hundredths.</p></introduction>
 
 <exercise number="17">
-        <statement><sidebyside width="80%"><image source="images/hp2-2-17.png"><description>triangle</description></image></sidebyside></statement>
+        <statement><sidebyside width="70%"><!--<image source="images/hp2-2-17.png"><description>triangle</description></image>-->
+    <image xml:id="hp2-2-17">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [rotate=-75]
+
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (2.8,0);
+        \coordinate (C) at (0,3);
+
+        \draw[blue,thick] (A) rectangle +(.25,.25);
+
+        \draw[black, thick] (B)--(C);
+        \draw[black, thick] (B)--(A) node[ left, midway] {\color{blue}$x$};
+        \draw[black, thick] (A)--(C) node[above left, midway] {\color{blue}$16$};
+
+        \draw[red,thick] (B)++(-0.5,0) arc(180:{180-atan(3/2.8)}:.5) node[above, midway, xshift=3] {$48\degree$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside></statement>
         <answer><p>14.41</p></answer></exercise>
 
     <exercise number="18">
-        <statement><sidebyside width="80%"><image source="images/hp2-2-18.png"><description>triangle</description></image></sidebyside></statement></exercise>
+        <statement><sidebyside width="70%"><!--<image source="images/hp2-2-18.png"><description>triangle</description></image>-->
+    <image xml:id="hp2-2-18">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [rotate=15]
+
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (2.1,0);
+        \coordinate (C) at (0,3.5);
+
+        \draw[blue,thick] (A) rectangle +(.25,.25);
+
+        \draw[black, thick] (B)--(C) node[above right, midway] {\color{blue}$38$};
+        \draw[black, thick] (B)--(A) node[below right, midway] {\color{blue}$x$};
+        \draw[black, thick] (A)--(C);
+
+        \draw[red,thick] (C)++(0,-0.9) arc(-90:{-atan(3.5/2.1)}:.9) node[below , midway, xshift=5] {$31\degree$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside></statement></exercise>
 
      <exercise number="19">
-        <statement><sidebyside width="80%"><image source="images/hp2-2-19.png"><description>triangle</description></image></sidebyside></statement>
+        <statement><sidebyside width="80%"><!--<image source="images/hp2-2-19.png"><description>triangle</description></image>-->
+    <image xml:id="hp2-2-19">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [rotate=-130]
+
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (2.25,0);
+        \coordinate (C) at (0,2.68);
+
+        \draw[blue,thick] (A) rectangle +(.25,.25);
+
+        \draw[black, thick] (B)--(C) node[below, midway] {\color{blue}$x$};
+        \draw[black, thick] (B)--(A);
+        \draw[black, thick] (A)--(C) node[above right, midway] {\color{blue}$29$};
+
+        \draw[red,thick] (B)++(-0.4,0) arc(180:{180-atan(2.68/2.25)}:.4) node[right , midway, yshift=2] {$50\degree$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside></statement>
         <answer><p>37.86</p></answer></exercise>
 
     <exercise number="20">
-        <statement><sidebyside width="85%"><image source="images/hp2-2-20.png"><description>triangle</description></image></sidebyside></statement></exercise> 
+        <statement><sidebyside width="85%"><!--<image source="images/hp2-2-20.png"><description>triangle</description></image>-->
+    <image xml:id="NAME">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [rotate=-135]
+
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (1.82,0);
+        \coordinate (C) at (0,3.56);
+
+        \draw[blue,thick] (A) rectangle +(.25,.25);
+
+        \draw[black, thick] (B)--(C) node[below left, midway] {\color{blue}$420$};
+        \draw[black, thick] (B)--(A) node[above left, midway] {\color{blue}$x$};
+        \draw[black, thick] (A)--(C);
+
+        \draw[red,thick] (B)++(-0.4,0) arc(180:{180-atan(3.56/1.82)}:.4) node[right , midway, yshift=2] {$63\degree$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside></statement></exercise> 
 
      <exercise number="21">
-        <statement><sidebyside width="55%"><image source="images/hp2-2-21.png"><description>triangle</description></image></sidebyside></statement>
+        <statement><sidebyside width="43%"><!--<image source="images/hp2-2-21.png"><description>triangle</description></image>-->
+    <image xml:id="hp2-2-21">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [rotate=15]
+
+        \coordinate (C) at (0,0 );
+        \coordinate (A) at (0,3.4);
+        \coordinate (B) at (-1.17,0);
+
+        \draw[blue,thick] (C) rectangle +(-0.25,.25);
+        \draw[black,thick] (A)--(B) ;
+        \draw[black,thick] (C)--(B)  node[below,midway] {\color{blue}$x$};
+        \draw[black,thick] (A) --(C) node[right,midway, xshift=2, yshift=-3] {\color{blue}$250$};
+
+        \draw[red,thick] (A)++(0,-1.2) arc(270:251:1.2) node[ below, midway, xshift=1, yshift=-8] {\footnotesize$19\degree$};
+
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside></statement>
         <answer><p>86.08</p></answer></exercise>
 
     <exercise number="22">
-        <statement><sidebyside width="90%"><image source="images/hp2-2-22.png"><description>triangle</description></image></sidebyside></statement></exercise>
+        <statement><sidebyside width="90%"><!--<image source="images/hp2-2-22.png"><description>triangle</description></image>-->
+    <image xml:id="hp2-2-22">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [rotate=47]
+
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (3.6,0);
+        \coordinate (C) at (0,1.5);
+
+        \draw[blue,thick] (A) rectangle +(.25,.25);
+
+        \draw[black, thick] (B)--(C) node[above left, midway] {\color{blue}$x$};
+        \draw[black, thick] (B)--(A) node[below right, midway] {\color{blue}$3.6$};
+        \draw[black, thick] (A)--(C);
+
+        \draw[red,thick] (C)++(0,-.5) arc(-90:{-atan(1.5/3.6)}:.5) node[right, midway, xshift=0, yshift=0] {$82\degree$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside></statement></exercise>
 </exercisegroup>
 
 <exercisegroup>
@@ -166,7 +688,36 @@
 <exercise number="27">
         <statement><p> To measure the height of cloud cover, airport controllers fix a searchlight to shine a vertical beam on the clouds. The searchlight is 120 yards from the office. A technician in the office measures the angle of elevation to the light on the cloud cover at <m>54.8\degree</m>. What is the height of the cloud cover?</p></statement>
         <answer><p><ol label = "a"> 
-            <li><sidebyside width="20%"><image source="images/hp2-2-27ans.png"><description>triangle</description></image></sidebyside></li>
+            <li><sidebyside width="20%"><!--<image source="images/hp2-2-27ans.png"><description>triangle</description></image>-->
+    <image xml:id="hp2-2-27ans">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (2.19,3.105);
+        \coordinate (C) at (2.19,0);
+
+        \draw[blue,thick] (C) rectangle +(-.25,.25);
+
+        \draw[black, thick] (B)--(C) node[right, midway] {\color{blue}$h$};
+        \draw[black, thick] (B)--(A);
+        \draw[black, thick] (A)--(C) node[below, midway] {\color{blue}120 yd};
+
+        \draw[red,thick] (A)++(0.4,0) arc(0:54.8:.4) node[right, midway, xshift=0, yshift=2] {$54.8\degree$};
+
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+            </sidebyside></li>
             <li>tan <m>54.8\degree = \dfrac{h}{20}</m>, 170.1 yd</li>
         </ol></p></answer></exercise>
 
@@ -176,7 +727,35 @@
 <exercise number="29">
         <statement><p>A salvage ship is searching for the wreck of a pirate vessel on the ocean floor. Using sonar, they locate the wreck at an angle of depression of <m>36.2\degree</m>. The depth of the ocean at their location is 260 feet. How far should they move so that they are directly above the wrecked vessel?</p></statement>
         <answer><p><ol label = "a"> 
-            <li><sidebyside width="30%"><image source="images/hp2-2-29ans.png"><description>triangle</description></image></sidebyside></li>
+            <li><sidebyside width="30%"><!--<image source="images/hp2-2-29ans.png"><description>triangle</description></image>-->
+    <image xml:id="hp2-2-29ans">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (3.066,-2.244);
+        \coordinate (C) at (3.066,0);
+
+        \draw[blue,thick] (C) rectangle +(-.25,-.25);
+
+        \draw[black, thick] (B)--(C) node[right, midway] {\color{blue}260 ft};
+        \draw[black, thick] (B)--(A);
+        \draw[black, thick] (A)--(C) node[above, midway] {\color{blue}$d$};
+
+        \draw[red,thick] (A)++(0.6,0) arc(0:-36.2:.6) node[right, midway, xshift=0, yshift=-2] {$36.2\degree$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+            </sidebyside></li>
             <li>tan <m>36.2\degree = \dfrac{260}{d}</m>, 355.2 ft</li>
         </ol></p></answer></exercise>
 
@@ -186,7 +765,35 @@
 <exercise number="31">
         <statement><p>The radio signal from a weather balloon indicates that it is 1500 meters from a meteorologist on the ground. The angle of elevation to the balloon is <m>48\degree</m>. What is the balloon's altitude?</p></statement>
         <answer><p><ol label = "a"> 
-            <li><sidebyside width="20%"><image source="images/hp2-2-31ans.png"><description>triangle</description></image></sidebyside></li>
+            <li><sidebyside width="20%"><!--<image source="images/hp2-2-31ans.png"><description>triangle</description></image>-->
+    <image xml:id="hp2-2-31ans">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (2,2.23);
+        \coordinate (C) at (2,0);
+
+        \draw[blue,thick] (C) rectangle +(-.25,.25);
+
+        \draw[black, thick] (B)--(C) node[right, midway] {\color{blue}$a$};
+        \draw[black, thick] (B)--(A) node[above left, midway, xshift=4] {\small\color{blue}1500 m};
+        \draw[black, thick] (A)--(C);
+
+        \draw[red,thick] (A)++(0.4,0) arc(0:48:.4) node[right, midway, xshift=0, yshift=2] {$48\degree$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+            </sidebyside></li>
             <li>sin <m>48\degree = \dfrac{a}{1500}</m>, 1114.7 m</li>
         </ol></p></answer></exercise>
 
@@ -196,7 +803,35 @@
 <exercise number="33">
         <statement><p>A cable car on a ski lift traverses a horizontal distance of 1800 meters at an angle of <m>38\degree</m>. How long is the cable?</p></statement>
         <answer><p><ol label = "a"> 
-            <li><sidebyside width="25%"><image source="images/hp2-2-33ans.png"><description>triangle</description></image></sidebyside></li>
+            <li><sidebyside width="25%"><!--<image source="images/hp2-2-33ans.png"><description>triangle</description></image>-->
+    <image xml:id="hp2-2-33ans">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (2.76,2.15);
+        \coordinate (C) at (2.76,0);
+
+        \draw[blue,thick] (C) rectangle +(-.25,.25);
+
+        \draw[black, thick] (B)--(C);
+        \draw[black, thick] (B)--(A) node[above left, midway, xshift=4] {\small\color{blue}$x$};
+        \draw[black, thick] (A)--(C) node[below, midway] {\color{blue}1800 m};
+
+        \draw[red,thick] (A)++(0.5,0) arc(0:38:.5) node[right, midway, xshift=0, yshift=2] {$38\degree$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+            </sidebyside></li>
             <li>cos <m>38\degree = \dfrac{1800}{x}</m>,2284.2 m</li>
         </ol></p></answer></exercise>
 
@@ -209,61 +844,440 @@
 </p></introduction>
 
 <exercise number="35">
-        <statement><sidebyside width="90%"><image source="images/hp2-2-35.png"><description>triangle</description></image></sidebyside></statement>
+        <statement><sidebyside width="80%"><!--<image source="images/hp2-2-35.png"><description>triangle</description></image>-->
+    <image xml:id="hp2-2-35">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+
+        \coordinate (C) at (0,0 );
+        \coordinate (A) at (0,-1.1);
+        \coordinate (B) at (2.8,0);
+
+        \draw[blue,thick] (C) rectangle +(0.25,-.25);
+        \draw[black,thick] (A)--(B) ;
+        \draw[black,thick] (C)--(B)  node[above,midway] {\color{blue}$82$};
+        \draw[black,thick] (A) --(C) node[left,midway] {\color{blue}$x$};
+
+        \draw[red,thick] (A)++(0,.3) arc(90:{atan(1.1/2.8)}:.3) node[above right, midway, xshift=-3, yshift=-3] {$\theta$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside></statement>
         <answer><m>x=\dfrac{82}{\text{tan}~\theta}</m> </answer></exercise>
 
     <exercise number="36">
-        <statement><sidebyside width="90%"><image source="images/hp2-2-36.png"><description>triangle</description></image></sidebyside></statement></exercise>
+        <statement><sidebyside width="75%"><!--<image source="images/hp2-2-36.png"><description>triangle</description></image>-->
+    <image xml:id="hp2-2-36">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [rotate=160]
+
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (3.2,0);
+        \coordinate (C) at (0,1.6);
+
+        \draw[blue,thick] (A) rectangle +(.25,.25);
+
+        \draw[black, thick] (B)--(C) node[below left, midway] {\color{blue}$9$};
+        \draw[black, thick] (B)--(A) node[above right, midway] {\color{blue}$x$};
+        \draw[black, thick] (A)--(C) ;
+
+        \draw[red,thick] (B)++(-.7,0) arc(180:{180-atan(1/2)}:.7) node[below right, midway, xshift=2, yshift=2] {$\theta$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside></statement></exercise>
 
      <exercise number="37">
-        <statement><sidebyside width="90%"><image source="images/hp2-2-37.png"><description>triangle</description></image></sidebyside></statement>
+        <statement><sidebyside width="90%"><!--<image source="images/hp2-2-37.png"><description>triangle</description></image>-->
+    <image xml:id="hp2-2-37">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [rotate=-110]
+
+        \coordinate (C) at (0,0 );
+        \coordinate (A) at (0,3);
+        \coordinate (B) at (1.5,0);
+
+        \draw[blue,thick] (C) rectangle +(0.25,.25);
+        \draw[black,thick] (A)--(B) node[below,midway] {\color{blue}$11$} ;
+        \draw[black,thick] (C)--(B)  node[above left,midway] {\color{blue}$x$};
+        \draw[black,thick] (A) --(C);
+
+        \draw[red,thick] (A)++(0,-.5) arc(-90:{-atan(3/1.5)}:.5) node[left, midway, xshift=-5, yshift=1] {$\theta$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside></statement>
         <answer><m>x=11~\text{sin}~\theta</m></answer></exercise>
 
     <exercise number="38">
-        <statement><sidebyside width="90%"><image source="images/hp2-2-38.png"><description>triangle</description></image></sidebyside></statement></exercise> 
+        <statement><sidebyside width="85%"><!--<image source="images/hp2-2-38.png"><description>triangle</description></image>-->
+    <image xml:id="hp2-2-38">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [rotate=23.199]
+
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (2.8,0);
+        \coordinate (C) at (0,1.2);
+
+        \draw[blue,thick] (A) rectangle +(.25,.25);
+
+        \draw[black, thick] (B)--(C) ;
+        \draw[black, thick] (B)--(A) node[ below, midway] {\color{blue}$47$};
+        \draw[black, thick] (A)--(C) node[left , midway] {\color{blue}$x$};
+
+        \draw[red,thick] (B)++(-.8,0) arc(180:{180-atan(1.2/2.8)}:.8) node[left, midway, xshift=-1, yshift=-2] {$\theta$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside></statement></exercise> 
 
      <exercise number="39">
-        <statement><sidebyside width="90%"><image source="images/hp2-2-39.png"><description>triangle</description></image></sidebyside></statement>
+        <statement><sidebyside width="80%"><!--<image source="images/hp2-2-39.png"><description>triangle</description></image>-->
+    <image xml:id="hp2-2-39">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [rotate=25.7]
+
+        \coordinate (C) at (0,0 );
+        \coordinate (A) at (0,-1.3);
+        \coordinate (B) at (-2.7,0);
+
+        \draw[blue,thick] (C) rectangle +(-0.25,-.25);
+        \draw[black,thick] (A)--(B)   node[below,midway] {\color{blue}$x$};
+        \draw[black,thick] (C)--(B);
+        \draw[black,thick] (A) --(C)node[right,midway,yshift=2] {\color{blue}$9$} ;
+
+        \draw[red,thick] (A)++(0,.3) arc(90:{180-atan(1.3/2.7)}:.3) node[left, midway, xshift=0, yshift=3] {$\theta$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside></statement>
         <answer><m>x=\dfrac{9}{\text{cos}~\theta}</m></answer></exercise>
 
     <exercise number="40">
-        <statement><sidebyside width="90%"><image source="images/hp2-2-40.png"><description>triangle</description></image></sidebyside></statement></exercise>
+        <statement><sidebyside width="87%"><!--<image source="images/hp2-2-40.png"><description>triangle</description></image>-->
+    <image xml:id="hp2-2-40">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [rotate=-15]
+
+        \coordinate (C) at (0,0 );
+        \coordinate (A) at (0,1.3);
+        \coordinate (B) at (-3.3,0);
+
+        \draw[blue,thick] (C) rectangle +(-0.25,.25);
+        \draw[black,thick] (A)--(B)   node[above,midway] {\color{blue}$x$};
+        \draw[black,thick] (C)--(B)node[below,midway,yshift=0] {\color{blue}$6$} ;
+        \draw[black,thick] (A) --(C);
+
+        \draw[red,thick] (A)++(0,-.3) arc(270:{180+atan(1.3/3.3)}:.3) node[below left, midway, xshift=0, yshift=3] {$\theta$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside></statement></exercise>
 </exercisegroup>
 
 <exercisegroup cols="2">
         <introduction><p>For Problems 41<ndash/>44, find the altitude of the triangle. Round your answer to two decimal places.</p></introduction>
 
  <exercise number="41">
-        <statement><sidebyside width="60%"><image source="images/hp2-2-41.png"><description>triangle</description></image></sidebyside></statement>
+        <statement><sidebyside width="60%"><!--<image source="images/hp2-2-41.png"><description>triangle</description></image>-->
+    <image xml:id="hp2-2-41">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (2.7189,0);
+        \coordinate (C) at (2.7189,1.2679);
+        \coordinate (D) at (3.7189,0);
+
+        \draw[blue,thick] (B) rectangle +(-.25,.25);
+
+        \draw[black, thick] (A)--(C)  node[above, midway, xshift=-2] {\color{blue}$36$};
+        \draw[black, thick] (C)--(D)--(A);
+        \draw[gray, thick, dashed] (B)--(C) node[right , midway, xshift=-1, yshift=-2] {\color{blue}$h$};
+
+        \draw[red,thick] (A)++(.6,0) arc(0:25:.6) node[right, midway, xshift=1, yshift=2] {$25\degree$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside></statement>
         <answer><m>36 ~\text{sin}~25\degree \approx 15.21</m></answer></exercise>
 
     <exercise number="42">
-        <statement><sidebyside width="60%"><image source="images/hp2-2-42.png"><description>triangle</description></image></sidebyside></statement></exercise> 
+        <statement><sidebyside width="60%"><!--<image source="images/hp2-2-42.png"><description>triangle</description></image>-->
+    <image xml:id="hp2-2-42">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (3.135,0);
+        \coordinate (C) at (2,2.228);
+        \coordinate (D) at (2,0);
+
+        \draw[blue,thick] (D) rectangle +(-.25,.25);
+
+        \draw[black, thick] (B)--(C)  node[right, midway] {\color{blue}$14$};
+        \draw[black, thick] (B)--(A)--(C);
+        \draw[gray, thick, dashed] (D)--(C) node[left , midway, xshift=1, yshift=-4] {\color{blue}$h$};
+
+        \draw[red,thick] (B)++(-.3,0) arc(180:117:.3) node[above left, midway, xshift=1, yshift=-2] {$63\degree$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside></statement></exercise> 
 
      <exercise number="43">
-        <statement><sidebyside width="60%"><image source="images/hp2-2-43.png"><description>triangle</description></image></sidebyside></statement>
+        <statement><sidebyside width="60%"><!--<image source="images/hp2-2-43.png"><description>triangle</description></image>-->
+    <image xml:id="hp2-2-43">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \coordinate (A) at (0,0 );
+        \coordinate (C) at (3.289,1.197);
+        \coordinate (B) at (3.289,0);
+        \coordinate (D) at (1.6,0);
+
+        \draw[blue,thick] (B) rectangle +(-0.25,.25);
+        \draw[black,thick] (A)--(D) --(C);
+        \draw[black,thick] (C)--(A)node[above left,midway,yshift=0] {\color{blue}$46$} ;
+        \draw[gray,thick,dashed] (D)--(B);
+        \draw[gray,thick,dashed] (B) --(C)  node[right,midway,xshift=-1] {\color{blue}$h$};
+
+        \draw[red,thick] (A)++(0.7,0) arc(0:20:.7) node[right, midway, xshift=3, yshift=2] {\small$20\degree$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside></statement>
         <answer><m>46~ \text{sin}~20\degree \approx 15.73</m></answer></exercise>
 
     <exercise number="44">
-        <statement><sidebyside width="60%"><image source="images/hp2-2-44.png"><description>triangle</description></image></sidebyside></statement></exercise>
+        <statement><sidebyside width="60%"><!--<image source="images/hp2-2-44.png"><description>triangle</description></image>-->
+    <image xml:id="hp2-2-44">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \coordinate (A) at (0,0 );
+        \coordinate (C) at (-.803,1.722);
+        \coordinate (B) at (-.803,0);
+        \coordinate (D) at (2.5,0);
+
+        \draw[blue,thick] (B) rectangle +(0.25,.25);
+        \draw[black,thick] (A)--(D) --(C);
+        \draw[black,thick] (C)--(A) node[right,midway,yshift=0] {\color{blue}$9$} ;
+        \draw[gray,thick,dashed] (D)--(B);
+        \draw[gray,thick,dashed] (B) --(C)  node[left,midway,xshift=0] {\color{blue}$h$};
+
+        \draw[red,thick] (A)++(0.3,0) arc(0:115:.3) node[right, midway, xshift=0, yshift=3] {$115\degree$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside></statement></exercise>
 </exercisegroup> 
 
 <exercisegroup cols="2">
         <introduction><p>For Problems 45 and 46, find the length of the chord <m>AB</m>. Round your answer to two decimal places.</p></introduction> 
 
 <exercise number="45">
-        <statement><sidebyside width="70%"><image source="images/hp2-2-45.png"><description>triangle</description></image></sidebyside></statement>
+        <statement><sidebyside width="65%"><!--<image source="images/hp2-2-45.png"><description>triangle</description></image>-->
+    <image xml:id="hp2-2-45">
+        <description>circle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \coordinate(O) at (0,0);
+        \coordinate (A) at (0.278,1.576 );
+        \coordinate (B) at (1.6,0 );
+        \coordinate (C) at (0.939,0.788);
+        \coordinate (D) at (1.226,1.028);
+
+        \draw (0,0) circle (1.6);
+
+        \draw[thick, blue] (C)++(-.1878,-.1576)--++(-.1576,.1878)--++(.1878,.1576);
+
+        \filldraw[black] (A) circle (.4pt) node[anchor=south, xshift=0, yshift=0]{\color{black}$A$};
+        \filldraw[black] (B) circle (.4pt) node[anchor=west, xshift=0, yshift=0]{\color{black}$B$};
+        \filldraw[black] (O) circle (.4pt) node[anchor=north east, xshift=0, yshift=0]{\color{black}$O$};
+        \draw[gray,thick] (A)--(O)--(D);
+        \draw[gray,thick] (O)--(B) node[below,midway] {\color{blue}6};
+        \draw[black,thick] (B)--(A);
+
+        \draw[red,thick] (0.4,0) arc(0:40:0.4) node[right, midway, yshift=2] {\small$40\degree$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside></statement>
         <answer><m>12~ \text{sin}~40\degree \approx 7.71</m></answer></exercise>
 
     <exercise number="46">
-        <statement><sidebyside width="70%"><image source="images/hp2-2-46.png"><description>triangle</description></image></sidebyside></statement></exercise>
+        <statement><sidebyside width="65%"><!--<image source="images/hp2-2-46.png"><description>triangle</description></image>-->
+    <image xml:id="hp2-2-46">
+        <description>circle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \coordinate(O) at (0,0);
+        \coordinate (A) at (-1.3856,0.8 );
+        \coordinate (B) at (1.6,0 );
+        \coordinate (C) at (0.1072,0.4);
+        \coordinate (D) at (0.414,1.545);
+
+        \draw (0,0) circle (1.6);
+
+        \draw[thick, blue] (C)++(0.05175,0.193125)--++(.193125,-0.05175)--++(-0.05175,-0.193125);
+
+        \filldraw[black] (A) circle (.4pt) node[anchor=south east, xshift=0, yshift=0]{\color{black}$A$};
+        \filldraw[black] (B) circle (.4pt) node[anchor=west, xshift=0, yshift=0]{\color{black}$B$};
+        \filldraw[black] (O) circle (.4pt) node[anchor=north east, xshift=0, yshift=0]{\color{black}$O$};
+        \draw[gray,thick] (B)--(O)--(D);
+        \draw[gray,thick] (O)--(A) node[below left,midway] {\color{blue}8};
+        \draw[black,thick] (B)--(A);
+
+        \draw[red,thick] (B)++(-0.6,0) arc(180:165:0.6) node[above, yshift=0] {\small$15\degree$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside></statement></exercise>
 </exercisegroup> 
 
 <exercisegroup cols="2">
         <introduction><p>For Problems 47<ndash/>50, fill in the table.</p></introduction> 
 
 <exercise number="47">
-        <statement><sidebyside width="60%"><image source="images/hp2-2-47.png"><description>triangle</description></image></sidebyside>
+        <statement><sidebyside width="55%"><!--<image source="images/hp2-2-47.png"><description>triangle</description></image>-->
+    <image xml:id="hp2-2-47">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \coordinate (A) at (0,0 );
+        \coordinate (B) at (2.8,0 );
+        \coordinate (C) at (0,2.1);
+
+        \draw[thick, blue] (A) rectangle (.25,.25);
+
+        \draw[black,thick] (B)--(A) node[below, midway] {\color{blue}4};
+        \draw[black,thick] (B)--(C) node[above right, midway] {\color{blue}5};
+        \draw[black,thick] (C)--(A) node[left, midway] {\color{blue}3};
+
+        \draw[red,thick] (B)++(-0.4,0) arc(180:{180-atan(3/4)}:0.4) node[left,midway, yshift=2] {$\theta$};
+        \draw[red,thick] (C)++(0,-0.3) arc(-90:{-atan(3/4)}:0.3) node[below, xshift=0] {$\phi$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside>
         <sidebyside><tabular top="major" halign="left" right="minor" left="minor" bottom="minor">
                     <row bottom="minor">
                         <cell><m>~~~~</m></cell>
@@ -300,7 +1314,36 @@
                     </tabular></sidebyside></answer></exercise>
 
     <exercise number="48">
-        <statement><sidebyside width="35%"><image source="images/hp2-2-48.png"><description>triangle</description></image></sidebyside>
+        <statement><sidebyside width="32%"><!--<image source="images/hp2-2-48.png"><description>triangle</description></image>-->
+    <image xml:id="hp2-2-48">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \coordinate (A) at (0,0 );
+        \coordinate (B) at (1.25,0 );
+        \coordinate (C) at (0,-3);
+
+        \draw[thick, blue] (A) rectangle (.25,-.25);
+
+        \draw[black,thick] (B)--(A) node[above, midway] {\color{blue}5};
+        \draw[black,thick] (B)--(C) node[ right, midway] {\color{blue}13};
+        \draw[black,thick] (C)--(A) node[left, midway] {\color{blue}12};
+
+        \draw[red,thick] (B)++(-0.3,0) arc(180:{180+atan(12/5)}:0.3) node[below left,midway, yshift=2] {$\theta$};
+        \draw[red,thick] (C)++(0,0.7) arc(90:{atan(12/5)}:0.7) node[above, xshift=-2] {$\phi$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside>
         <sidebyside><tabular top="major" halign="left" right="minor" left="minor" bottom="minor">
                     <row bottom="minor">
                         <cell><m>~~~~</m></cell>
@@ -320,7 +1363,36 @@
                     </tabular></sidebyside></statement></exercise> 
 
      <exercise number="49">
-        <statement><sidebyside width="35%"><image source="images/hp2-2-49.png"><description>triangle</description></image></sidebyside>
+        <statement><sidebyside width="32%"><!--<image source="images/hp2-2-49.png"><description>triangle</description></image>-->
+    <image xml:id="hp2-2-49">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \coordinate (A) at (0,0 );
+        \coordinate (B) at (-1.1,0 );
+        \coordinate (C) at (0,2.2);
+
+        \draw[thick, blue] (A) rectangle (-.25,.25);
+
+        \draw[black,thick] (B)--(A) node[below, midway] {\color{blue}2};
+        \draw[black,thick] (B)--(C) node[above left, midway] {\color{blue}$2\sqrt{5}$};
+        \draw[black,thick] (C)--(A) node[right, midway] {\color{blue}4};
+
+        \draw[red,thick] (B)++(0.3,0) arc(0:{atan(2)}:0.3) node[above right,midway, yshift=-4] {$\phi$};
+        \draw[red,thick] (C)++(0,-0.6) arc(-90:{-90-atan(2/4)}:0.6) node[below, xshift=2] {$\theta$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside>
         <sidebyside><tabular top="major" halign="left" right="minor" left="minor" bottom="minor">
                     <row bottom="minor">
                         <cell><m>~~~~</m></cell>
@@ -357,7 +1429,36 @@
                     </tabular></sidebyside></answer></exercise>
 
     <exercise number="50">
-        <statement><sidebyside width="60%"><image source="images/hp2-2-50.png"><description>triangle</description></image></sidebyside>
+        <statement><sidebyside width="55%"><!--<image source="images/hp2-2-50.png"><description>triangle</description></image>-->
+    <image xml:id="hp2-2-50">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \coordinate (A) at (0,0 );
+        \coordinate (B) at (-2.4,0 );
+        \coordinate (C) at (0,-2.12);
+
+        \draw[thick, blue] (A) rectangle (-.25,-.25);
+
+        \draw[black,thick] (B)--(A) node[above, midway] {\color{blue}3};
+        \draw[black,thick] (B)--(C) node[below left, midway] {\color{blue}$4$};
+        \draw[black,thick] (C)--(A) node[right, midway] {\color{blue}$\sqrt{7}$};
+
+        \draw[red,thick] (B)++(0.4,0) arc(0:{-atan(2.12/2.4)}:0.4) node[ right,midway, yshift=-2] {$\theta$};
+        \draw[red,thick] (C)++(0,0.4) arc(90:{180-atan(2.12/2.4)}:0.4) node[above , xshift=0] {$\phi$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside>
         <sidebyside><tabular top="major" halign="left" right="minor" left="minor" bottom="minor">
                     <row bottom="minor">
                         <cell><m>~~~~</m></cell>
@@ -391,10 +1492,44 @@
         <statement><p>There is a relationship between the tangent, the sine, and the cosine of any angle. Study the tables for Problems 47-50 to discover this relationship. Write your answer as an equation.</p></statement></exercise>
 
 <exercise number="53">
-        <statement><sidebyside widths="60% 25%"><p><ol label="a"> 
+        <statement><sidebyside widths="60% 20%"><p><ol label="a"> 
             <li>Use the figure to explain what happens to <m>\tan \theta</m> as <m>\theta</m> increases, and why.</li>
             <li>Use the figure to explain what happens to <m>\cos \theta</m> as <m>\theta</m> increases, and why.</li>
-        </ol></p><image source="images/hp2-2-53.png"><description>triangles</description></image></sidebyside></statement>
+        </ol></p><!--<image source="images/hp2-2-53.png"><description>triangles</description></image>-->
+    <image xml:id="hp2-2-53">
+        <description>triangles</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \coordinate (A) at (0,0 );
+        \coordinate (B) at (2.2,0 );
+        \coordinate (C) at (2.2,0.6);
+        \coordinate (D) at (2.2,1.5);
+        \coordinate (E) at (2.2,2.6);
+        \coordinate (F) at (2.2,4);
+
+        \draw[thick, blue] (B) rectangle +(-.25,.25);
+
+        \draw[black,thick] (A)--(B)--(F) --cycle;
+        \draw[black,thick] (C)--(A) --(D);
+        \draw[black,thick] (A) --(E);
+
+        \draw[red,thick] (A)++(0.4,0) arc(0:{atan(0.6/2.2)}:0.4) ;
+        \draw[red,thick] (A)++(0.55,0) arc(0:{atan(1.5/2.2)}:0.55);
+        \draw[red,thick] (A)++(0.7,0) arc(0:{atan(2.6/2.2)}:0.7);
+        \draw[red,thick] (A)++(0.85,0) arc(0:{atan(4/2.2)}:0.85);
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside></statement>
         <answer><p><ol label="a"> 
             <li>As <m>\theta</m> increases, tan <m>\theta</m> increases also. The side opposite <m>\theta</m> increases in length while the side adjacent to <m>\theta</m> remains fixed.</li>
             <li>As <m>\theta</m> increases, cos <m>\theta</m> decreases. The side adjacent to <m>\theta</m> remains fixed while the hypotenuse increases in length.</li>
@@ -468,18 +1603,127 @@
 </p></introduction>
 
  <exercise number="57">
-        <statement><sidebyside widths="40% 50%"><p><m>\sin \theta = \dfrac{5}{9}</m></p><image source="images/hp2-2-57.png"><description>triangle</description></image></sidebyside></statement>
+        <statement><sidebyside widths="40% 50%"><p><m>\sin \theta = \dfrac{5}{9}</m></p><!--<image source="images/hp2-2-57.png"><description>triangle</description></image>-->
+    <image xml:id="hp2-2-57">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \coordinate (A) at (0,0 );
+        \coordinate (B) at (3.6,0 );
+        \coordinate (C) at (2.44,1.141);
+
+        \draw[black,thick] (A)--(B);
+        \draw[black,thick] (C)--(B)  node[above right,midway] {\color{blue}5};
+        \draw[black,thick] (A) --(C)  node[above left, midway] {\color{blue}9};
+
+        \draw[red,thick] (A)++(0.7,0) arc(0:25:0.7) node[right,midway, yshift=2] {$\theta$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside></statement>
         <answer><p>The triangle is not a right tringle.</p></answer></exercise>
 
     <exercise number="58">
-        <statement><sidebyside widths="40% 50%"><p><m>\tan \theta = \dfrac{4}{7}</m></p><image source="images/hp2-2-58.png"><description>triangle</description></image></sidebyside></statement></exercise> 
+        <statement><sidebyside widths="40% 45%"><p><m>\tan \theta = \dfrac{4}{7}</m></p><!--<image source="images/hp2-2-58.png"><description>triangle</description></image>-->
+    <image xml:id="hp2-2-58">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \coordinate (A) at (0,0 );
+        \coordinate (B) at (-2.1,0 );
+        \coordinate (C) at (0,-1.2);
+
+        \draw[blue,thick] (A) rectangle +(-.25,-.25);
+        \draw[black,thick] (A)--(B)  node[above,midway] {\color{blue}7};
+        \draw[black,thick] (C)--(B);
+        \draw[black,thick] (A) --(C) node[right, midway] {\color{blue}4};
+
+        \draw[red,thick] (C)++(0,0.3) arc(90:{180-atan(4/7)}:0.3) node[above left,midway, xshift=2, yshift=-2] {$\theta$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside></statement></exercise> 
 
      <exercise number="59">
-        <statement><sidebyside widths="40% 50%"><p><m>\cos \theta = \dfrac{21}{20}</m></p><image source="images/hp2-2-59.png"><description>triangle</description></image></sidebyside></statement>
+        <statement><sidebyside widths="40% 50%"><p><m>\cos \theta = \dfrac{21}{20}</m></p><!--<image source="images/hp2-2-59.png"><description>triangle</description></image>-->
+    <image xml:id="hp2-2-59">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \coordinate (A) at (0,0 );
+        \coordinate (B) at (3.5,0 );
+        \coordinate (C) at (3.5,1.2);
+
+        \draw[blue,thick] (B) rectangle +(-.25,.25);
+        \draw[black,thick] (A)--(B)  node[below,midway] {\color{blue}21};
+        \draw[black,thick] (C)--(B);
+        \draw[black,thick] (A) --(C) node[above, midway] {\color{blue}20};
+
+        \draw[red,thick] (A)++(0.9,0) arc(00:{atan(1.2/3.5)}:0.9) node[right,midway, yshift=1] {$\theta$};
+
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside></statement>
         <answer><p><m>\dfrac{21}{20}</m> is the ratio of hypotenuse to the adjacent side, which is the reciprocal of cos <m>\theta</m>.</p></answer></exercise>
 
     <exercise number="60">
-        <statement><sidebyside widths="40% 40%"><p><m>\sin \theta = \dfrac{8}{10}</m></p><image source="images/hp2-2-60.png"><description>triangle</description></image></sidebyside></statement></exercise>
+        <statement><sidebyside widths="40% 36%"><p><m>\sin \theta = \dfrac{8}{10}</m></p><!--<image source="images/hp2-2-60.png"><description>triangle</description></image>-->
+    <image xml:id="hp2-2-60">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \coordinate (A) at (0,0 );
+        \coordinate (B) at (1.8,0 );
+        \coordinate (C) at (1.8,2.4);
+
+        \draw[blue,thick] (B) rectangle +(-.25,.25);
+        \draw[gray,thick] (A) -- +(0,2.4);
+        \draw[black,thick] (A)--(B);
+        \draw[black,thick] (C)--(B)  node[right,midway] {\color{blue}8};
+        \draw[black,thick] (A) --(C) node[above , midway, xshift=-4] {\color{blue}10};
+
+        \draw[red,thick] (A)++(0,0.4) arc(90:{atan(4/3)}:0.4) node[above right,midway, xshift=-4] {$\theta$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside></statement></exercise>
 </exercisegroup> 
 
 <exercisegroup>
@@ -565,15 +1809,89 @@
             <li>What is the slope of the line through the origin and point <m>P</m>?</li>
             <li>What is the tangent of the angle <m>\theta</m>?</li>
             <li>On the same grid, sketch an angle whose tangent is <m>\dfrac{8}{5}.</m></li> 
-        </ol></p><image source="images/hp2-2-67.png"><description>grid</description></image></sidebyside></statement>
+        </ol></p><!--<image source="images/hp2-2-67.png"><description>grid</description></image>-->
+    <image xml:id="hp2-2-67">
+        <description>grid</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}[scale=.35]
+
+        \draw[step=1cm,cyan,very thin] (-2,-2) grid (15,10);
+        \draw[thick,->] (-2,0) -- (15.6,0) node[anchor=west] {$x$};
+        \draw[thick,->] (0,-2) -- (0,10.6) node[anchor=south] {$y$};
+        `
+        \foreach \x in {5,10}
+            \draw[black,ultra thick] (\x cm,8pt) -- (\x cm,-8pt);
+        \foreach \y in {5}
+            \draw[black,ultra thick] (8pt,\y cm) -- (-8pt,\y cm);
+
+        \coordinate (P) at (12,8);
+        \coordinate (O) at (0,0);
+        \coordinate (C) at (12,0);
+
+        \draw[black,thick] (O)--(P)--(C) --cycle;
+
+        \filldraw[black] (P) circle (5pt) node[anchor=west, xshift=5,yshift=0,fill=white] {$P$};
+
+        \draw[red, thick] (O)++(2.5,0) arc(0:{atan(2/3)}:2.5) node[right, midway, xshift=2, yshift=1, fill=white] {$\theta$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside></statement>
         <answer><p><ol label="a"> 
             <li><m>\dfrac{2}{3}</m> </li>
             <li><m>\dfrac{2}{3}</m> </li>
-            <li><sidebyside width="40%"><image source="images/hp2-2-67ans.png"><description>grid</description></image></sidebyside></li>
+            <li><sidebyside width="40%"><!--<image source="images/hp2-2-67ans.png"><description>grid</description></image>-->
+    <image xml:id="hp2-2-67ans">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}[scale=.27]
+
+        \draw[step=1cm,cyan,very thin] (-2,-2) grid (15,10);
+        \draw[thick,->] (-2,0) -- (15.6,0) node[anchor=west] {$x$};
+        \draw[thick,->] (0,-2) -- (0,10.6) node[anchor=south] {$y$};
+        `
+        \foreach \x in {5,10}
+            \draw[black,ultra thick] (\x cm,8pt) -- (\x cm,-8pt);
+        \foreach \y in {5}
+            \draw[black,ultra thick] (8pt,\y cm) -- (-8pt,\y cm);
+
+        \coordinate (P) at (12,8);
+        \coordinate (O) at (0,0);
+        \coordinate (C) at (12,0);
+
+        \draw[black,thick] (O)--(P)--(C) --cycle;
+
+        \filldraw[black] (P) circle (.3cm) node[anchor=west, xshift=5,yshift=0,fill=white, inner sep=0pt] {$P$};
+
+        \draw[red, thick] (O)++(2.5,0) arc(0:{atan(2/3)}:2.5) node[right, midway, xshift=2, yshift=1, fill=white, inner sep=0pt] {$\theta$};
+
+        \coordinate (Q) at (5,8);
+        \filldraw[magenta] (Q) circle (.3cm) node[anchor=south west, xshift=5,yshift=0,fill=white, inner sep=0pt] {$(5,8)$};
+        \draw[magenta,ultra thick] (O) -- (Q);
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+            </sidebyside></li>
         </ol></p></answer></exercise> 
 
 <exercise number="68">
-        <statement><sidebyside widths="60% 40%" valigns="middle middle"><p><ol label="a"> 
+        <statement><sidebyside widths="60% 37%" valigns="middle middle"><p><ol label="a"> 
             <li><p>Use your calculator to complete the table. Rounded your answers to hundredths.</p>
         <sidebyside><tabular top="major" halign="left" right="minor" left="minor" bottom="minor">
                 <row>
@@ -594,7 +1912,32 @@
                     <cell><m>~~~</m></cell></row>
                 </tabular></sidebyside></li>
             <li>Use the values of tan <m>\theta</m> to sketch all the angles listed in the table. Locate the vertex of each angle at the origin, and the initial side along the positive <m>x</m>-axis.</li>   
-        </ol></p><image source="images/hp2-2-68.png"><description>grid</description></image></sidebyside></statement></exercise>                 
+        </ol></p><!--<image source="images/hp2-2-68.png"><description>grid</description></image>-->
+    <image xml:id="hp2-2-68">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}[scale=.4]
+
+        \draw[step=1cm,cyan,very thin] (0,0) grid (10,10);
+        \draw[thick,->] (-.2,0) -- (10.9,0) node[anchor=west] {$x$};
+        \draw[thick,->] (0,-.2) -- (0,10.9) node[anchor=south] {$y$};
+        `
+        \foreach \x in {2,4,...,10}
+            \draw[black,thick] (\x cm,8pt) -- (\x cm,-8pt)  node[anchor=north] {$\x$};
+        \foreach \y in {2,4,...,10}
+            \draw[black,thick] (8pt,\y cm) -- (-8pt,\y cm) node[anchor=east] {$\y$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside></statement></exercise>                 
 
 </exercises>                 
 

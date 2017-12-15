@@ -1,16 +1,100 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!-- <mathbook><book> -->
 
-<section xml:id="nonlinear-models"   xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="Side-and-Angle-Relationships"   xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>The Trigonometric Ratios</title>
 
 <subsection><title>Side and Angle Relationships</title> 
 <p> From geometry we know that the sum of the angles in a triangle is 180°.  Are there any relationships between the angles of a triangle and its sides?</p> <p> First of all, you have probably observed that the longest side in a triangle is always opposite the largest angle, and the shortest side is opposite the smallest angle, as illustrated below.</p>
 
-<sidebyside widths="40% 30%"><image source="images/2-1-trianglesides.png"><description>triangle sides</description></image><image source="images/2-1-triangleangles.png"><description>triangle angles</description></image></sidebyside>
+<sidebyside widths="35% 27%">
+    <!--<image source="images/2-1-trianglesides.png"><description>triangle sides</description></image>-->
+   <image xml:id="fig-2-1-trianglesides">
+        <description>triangle sides</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [scale=.9]
+            \coordinate(A) at (0,0);
+            \coordinate (B) at (6,0 );
+            \coordinate (C) at (4,1.46);
 
-<note><sidebyside widths="50% 40%"><p>It is usual to label the angles of a triangle with capital letters, and the side opposite each angle with the corresponding lower-case letter, as shown at right.  We will follow this practice unless indicated otherwise.</p><image source="images/2-1-trinot.png
-    "><description>triangle notation</description></image></sidebyside></note>
+            \draw[black,thick] (A)--(B) node [below,midway] {\color{blue}$c$};
+            \draw[black,thick] (C)--(B) node [above right,midway] {\color{blue}$b$};
+            \draw[black,thick] (A)--(C) node [above left,midway] {\color{blue}$a$};
+            \draw[red,thick] (.9,0) arc (0:20:0.9) node[ right , midway, xshift=4, yshift=2] {$20\degree$};
+            \draw[red,thick] (5.6,0) arc (180:{180-atan(1.46/2)}:0.4) node[ left , midway, xshift=-1, yshift=3] {$40\degree$};
+            \draw[red,thick] (3.72,1.36) arc (200:320:0.3) node[ below , midway, yshift=0] {$120\degree$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+    <!--<image source="images/2-1-triangleangles.png"><description>triangle angles</description></image>-->
+   <image xml:id="fig-2-1-triangleangles">
+        <description>triangle angles</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [scale=.25,rotate=30]
+
+            \coordinate(A) at (0,0);
+            \coordinate (B) at (2,13.86 );
+            \coordinate (C) at (10,0);
+
+            \draw[black,thick] (A)--(B) node [left,midway] {\color{blue}$14$};
+            \draw[black,thick] (C)--(B) node [above right,midway] {\color{blue}$16$};
+            \draw[black,thick] (A)--(C) node [below right,midway] {\color{blue}$10$};
+
+            \node at (A) [anchor=north east] {$A$};
+            \node at (B) [anchor= east] {$B$};
+            \node at (C) [anchor=west] {$C$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+    </sidebyside>
+
+<note><sidebyside widths="50% 28%" margins="8% 8%"><p>It is usual to label the angles of a triangle with capital letters, and the side opposite each angle with the corresponding lower-case letter, as shown at right.  We will follow this practice unless indicated otherwise.</p><!--<image source="images/2-1-trinot.png"><description>triangle notation</description></image>-->
+    <image xml:id="fig-2-1-trinot">
+        <description>triangle notation</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [rotate=15]
+
+        \coordinate(A) at (0,0);
+        \coordinate (B) at (3,1.6 );
+        \coordinate (C) at (4,0);
+
+        \draw[black,thick] (A)--(B) node [above left,midway] {\color{blue}$c$};
+        \draw[black,thick] (C)--(B) node [above right,midway] {\color{blue}$a$};
+        \draw[black,thick] (A)--(C) node [below right,midway] {\color{blue}$b$};
+
+        \node at (A) [anchor=north east] {$A$};
+        \node at (B) [anchor= south] {$B$};
+        \node at (C) [anchor=west] {$C$};
+
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+
+</sidebyside></note>
 
 <example><statement>
     <p>In <m>\triangle FGH, \angle F=48\degree,</m> and <m>\angle G</m> is obtuse.  Side <m>f</m> is 6 feet long.  What can you conclude about the other sides?</p>
@@ -27,13 +111,62 @@
 <p>It is also true that the sum of the lengths of any two sides of a triangle must be greater than the third side, or else the two sides will not meet to form a triangle. This fact is called the triangle inequality.</p>  
 
 <assemblage><title>Triangle Inequality</title>
-<sidebyside widths="50% 35%"><p>In any triangle, we must have that <me>p+q \gt r</me> where <m>p, q, \text{and}~ r</m> are the lengths of the sides of the triangle.</p> <image source="images/2-1-triineq.png"><description>triangle</description></image></sidebyside>          
+<sidebyside widths="50% 30%" margins="8% 8%"><p>In any triangle, we must have that <me>p+q \gt r</me> where <m>p, q, \text{and}~ r</m> are the lengths of the sides of the triangle.</p> <!--<image source="images/2-1-triineq.png"><description>triangle</description></image>-->
+    <image xml:id="fig-2-1-triineq">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [rotate=-20]
+
+        \coordinate(A) at (0,0);
+        \coordinate (B) at (5,0 );
+        \coordinate (C) at (2,2);
+
+        \draw[black,thick] (A)--(B) node [below left,midway] {\color{blue}$r$};
+        \draw[black,thick] (C)--(B) node [above right,midway] {\color{blue}$q$};
+        \draw[black,thick] (A)--(C) node [above left,midway] {\color{blue}$p$};
+
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+</sidebyside>          
 </assemblage>
 
 <p>We cannot use the triangle inequality to find the <em>exact</em> lengths of the sides of a triangle, but we can find largest and smallest possible values for the length. </p>
 
 <example><statement>
-    <sidebyside widths="50% 35%"><p>Two sides of a triangle have lengths 7 inches and 10 inches, as shown at right.  What can you say about the length of the third side?</p> <image source="images/exam2-1-2.png"><description>triangle</description></image></sidebyside></statement>
+    <sidebyside widths="50% 35%"><p>Two sides of a triangle have lengths 7 inches and 10 inches, as shown at right.  What can you say about the length of the third side?</p> <!--<image source="images/exam2-1-2.png"><description>triangle</description></image>-->
+    <image xml:id="exam2-1-2">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [rotate=35]
+
+        \coordinate(A) at (0,0);
+        \coordinate (B) at (4.,0 );
+        \coordinate (C) at (-.8,2.7);
+
+        \draw[black,thick] (A)--(B) node [below right,midway] {\color{blue}$10$};
+        \draw[black,thick] (C)--(B) node [above right,midway] {\color{blue}$x$};
+        \draw[black,thick] (A)--(C) node [below left,midway] {\color{blue}$7$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+    </sidebyside></statement>
 <solution><p>We let  represent the length of the third side of the triangle.  By looking at each side in turn, we can apply the triangle inequalitythree different ways, to get <me>7 \lt x+10, ~~~ 10 \lt x+7, ~~~ \text{and} ~~~ x \lt 10+7</me>  We solve each of these inequalities to find <me>-3 \lt x, ~~~ 3 \lt x, ~~~ \text{and} ~~~ x \lt 17</me>  We already know that <m>x \gt -3</m> because <m>x</m> must be positive, but the other two inequalities do give us new information. The third side must be greater than 3 inches but less than 17 inches long.</p></solution>
 </example>
 
@@ -47,13 +180,15 @@
 <p>In Chapter 1 we used the Pythagorean theorem to derive the distance formula.  We can also use the Pythagorean theorem to find one side of a right triangle if we know the other two sides.</p>
 
 <assemblage><title>Pythagorean Theorem</title>
-<sidebyside widths="60% 30%"><p>In a right triangle, if <m>c</m> stands for the length of the hypotenuse, and the lengths of the two legs are denoted by <m>a</m> and <m>b</m>, then <me> a^2 + b^2 = c^2</me></p> <image source="images/2-1pyththm.png"><description>right triangle</description></image></sidebyside>  
+<sidebyside widths="60% 25%" margins="2% 8%"><p>In a right triangle, if <m>c</m> stands for the length of the hypotenuse, and the lengths of the two legs are denoted by <m>a</m> and <m>b</m>, then <me> a^2 + b^2 = c^2</me></p> <!--<image source="images/2-1pyththm.png"><description>right triangle</description></image>-->
+<image source="images/pythagorean"><description>right triangle</description></image></sidebyside>  
 </assemblage>
 
 <example><statement>
     <p>A 25-foot ladder is placed against a wall so that its foot is 7 feet from the base of the wall. How far up the wall does the ladder reach?</p>
 </statement>a^2 + b^2
-<solution><sidebyside widths="60% 20%"><p>We make a sketch of the situation, as shown at right, and label any known dimensions. We'll call the unknown height <m>h</m>. The ladder forms the hypotenuse of a right triangle, so we can apply the Pythagorean theorem,substituting 25 for <m>c</m>, 7 for <m>b</m>, and <m>h</m> for <m>a</m>.</p><image source="images/exam2-1-3.png"><description>ladder</description></image></sidebyside> 
+<solution><sidebyside widths="60% 17%"><p>We make a sketch of the situation, as shown at right, and label any known dimensions. We'll call the unknown height <m>h</m>. The ladder forms the hypotenuse of a right triangle, so we can apply the Pythagorean theorem,substituting 25 for <m>c</m>, 7 for <m>b</m>, and <m>h</m> for <m>a</m>.</p><!--<image source="images/exam2-1-3.png"><description>ladder</description></image>-->
+<image source="images/ladder"><description>ladder</description></image></sidebyside> 
               <p>\begin{align*}
                 a^2 + b^2 \amp = c^2\\
                 h^2 + 7^2 \amp = 25^2\\ 
@@ -76,7 +211,37 @@ The height must be a positive number, so the solution <m>-24</m> does not make s
 <example><statement>
     <p>Delbert is paving a patio in his back yard, and would like to know if the corner at <m>C</m> is a right angle.</p>
     <sidebyside widths="60% 35%"><p> He measures 20 cm along one side from the corner, and 48 cm along the other side, placing pegs <m>P</m> and <m>Q</m> at each position, as shown at right.  The line joining those two pegs is 52 cm long.  Is the corner a right angle?</p>
-    <image source="images/exam2-1-4.png"><description>patio</description></image></sidebyside></statement>
+    <!--<image source="images/exam2-1-4.png"><description>patio</description></image>-->
+    <image xml:id="exam2-1-4">
+        <description>patio</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+
+        \coordinate(A) at (0,0);
+        \coordinate (B) at (4,0 );
+        \coordinate (C) at (0,1.7);
+
+        \draw[black,thick] (A)--(B) node [below,midway] {\color{blue}$48$ cm};
+        \draw[black,thick] (C)--(B) node [above right,midway, xshift=-3] {\color{blue}$52$ cm};
+        \draw[black,thick] (A)--(C) node [left,midway] {\color{blue}$20$ cm};
+        \draw[black,thick] (C) -- +(0,.7);
+        \draw[black,thick] (B) -- +(.7,0);
+
+        \filldraw[black] (A) circle (.2pt) node[anchor=north east] {$C$};
+        \filldraw[black] (B) circle (1.6pt) node[anchor=north west] {$Q$};
+        \filldraw[black] (C) circle (1.6pt) node[anchor=south east] {$P$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+    </sidebyside></statement>
 <solution><p>If  is a right triangle, then its sides must satisfy <m>p^2 + q^2 = c^2</m>. We find
         \begin{align*}
                 p^2 + q^2 \amp = 20^2 + 48^2 = 400 + 2304 = 2704\\
@@ -187,6 +352,9 @@ Yes, because <m>p^2 + q^2 = c^2</m>, the corner at <m>C</m> is a right angle.</p
 </ol></p>
 </subsubsection>
 </subsection>
+
+<!--<xi:include href="./summary-1-1.xml" /> -->
+<xi:include href="./hmwk-2-1.xml" />   
 
 </section> 
 <!-- </book>  </mathbook> -->
