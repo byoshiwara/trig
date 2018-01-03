@@ -4,9 +4,42 @@
 <section xml:id="Obtuse-Angles"   xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Obtuse Angles</title><introduction>
     <p>The town of Avery lies 48 miles due east of Baker, and Clio is 34 miles from Baker, in the direction <m>35\degree</m> west of north.  How far is it from Avery to Clio?</p>
-    <sidebyside widths="50% 45%" valigns="middle middle">      
+    <sidebyside widths="50% 40%" valigns="middle middle">      
     <p>We know how to solve right triangles using the trigonometric ratios.  But the triangle formed by the three towns is not a right triangle, because it includes an obtuse angle of <m>125\degree</m> at <m>B</m>, as shown in the figure. </p>
-    <image source="images/3-1-towns.png"><description>oblique triangle</description></image></sidebyside>
+    <!--<image source="images/3-1-towns.png"><description>oblique triangle</description></image>-->
+    <image xml:id="fig-3-1-towns">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+
+        \coordinate(A) at (3.2,0);
+        \coordinate (B) at (0,0 );
+        \coordinate (C) at (-1.3,1.857);
+
+        \filldraw[black] (A) circle (1.5pt) node[anchor=north] {$A$};
+        \filldraw[black] (B) circle (1.5pt) node[anchor=north east] {$B$};
+        \filldraw[black] (C) circle (1.5pt) node[anchor=east] {$C$};
+
+        \draw[black,thick] (A)--(B) node [below,midway] {\color{blue}48 mi};
+        \draw[black,thick] (C)--(B) node [left,midway] {\color{blue}34 mi};
+        \draw[black,thick] (A)--(C) node [above,midway] {\color{blue}?};
+
+        \draw[black,thick,->] (B) -- +(3.7,0) node[right] {East};
+        \draw[black,thick,->] (B) -- +(0,2.1) node[above] {North};
+
+        \draw[red,thick] (0,0.7) arc (90:{180-atan(1.857/1.3)}:0.7) node[ above, midway, xshift=-2] {\footnotesize$35\degree$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+    </sidebyside>
 
     <p>A triangle that is not a right triangle is called an <term>oblique</term> triangle. In this chapter we learn how to solve oblique triangles using the laws of sines and cosines.  But first we must be able to find the sine, cosine, and tangent ratios for obtuse angles.</p>
 </introduction> 
@@ -21,16 +54,90 @@
  <p>The length of the side adjacent to <m>\theta</m> is the <m>x</m>-coordinate of point <m>P</m>, and the length of the side opposite is the <m>y</m>-coordinate of <m>P</m>. The length of the hypotenuse is the distance from the origin to <m>P</m>, which we call <m>r</m>.  With this notation, our definitions of the trigonometric ratios are as follows.</p>
 
  <assemblage><title>Coordinate Definitions of the Trigonometric Ratios</title>
-<sidebyside widths="60% 40%" valigns="middle middle">      
+<sidebyside widths="40% 36%" margins="10% 14%" valigns="middle middle">      
     <p><ul>
         <li><m>\cos \theta = \dfrac{x}{r}</m></li>
         <li><m>\sin \theta = \dfrac{y}{r}</m></li>
         <li><m>\tan \theta = \dfrac{y}{x}</m></li>
     </ul></p>
-    <image source="images/3-1-stanpos.png"><description>standard position</description></image></sidebyside>
+    <!--<image source="images/3-1-stanpos.png"><description>standard position</description></image>-->
+    <image xml:id="fig-3-1-stanpos">
+        <description>standard position</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+
+        \coordinate(A) at (4.5,0);
+        \coordinate (B) at (4.5,2.5);
+        \coordinate (C) at (0,0);
+
+        \filldraw[black] (B) circle (1.5pt) node[anchor=south east, yshift=-2] {$P(x,y)$};
+        \draw[blue,thick] (A) rectangle +(-0.25,0.25);
+
+        \draw[gray,thick, dashed] (A)--(B) node [right,midway] {\color{blue}$y$};
+        \draw[black,ultra thick] (C)--(B) node [above,midway] {\color{blue}$r$};
+        \draw[black,thick] (B)--+(.45,.25);
+        \draw[gray,thick,dashed] (A)--(C) node [below,midway] {\color{blue}$x$};
+
+        \draw[black,thick,->] (A) -- (5,0);
+        \draw[black,thick] (-.5,0) -- (C);
+        \draw[black,thick,->] (0,-0.5) -- (0,2.8) ;
+
+        \draw[red,thick] (0.75,0) arc (0:{atan(2.5/4.5)}:0.75) node[ right, midway, yshift=2] {$\theta$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+    </sidebyside>
 </assemblage>
 
-<sidebyside widths="55% 40%" valigns="middle middle"><p> It doesn't matter which point <m>P</m> on the terminal side we use to calculate the trig ratios. If we choose some other point, say <m>P^{\prime}</m>, with coordinates <m>(x^{\prime}, y^{\prime})</m>, as shown at right, we will get the same values for the sine, cosine and tangent of <m>\theta</m>. The new triangle formed is similar to the first one, so the ratios of the sides of the new triangle are equal to the corresponding ratios in the first triangle.</p><image source="images/3-1-simtri.png"><description>similar triangles</description></image></sidebyside>  
+<sidebyside widths="55% 36%" valigns="middle middle"><p> It doesn't matter which point <m>P</m> on the terminal side we use to calculate the trig ratios. If we choose some other point, say <m>P^{\prime}</m>, with coordinates <m>(x^{\prime}, y^{\prime})</m>, as shown at right, we will get the same values for the sine, cosine and tangent of <m>\theta</m>. The new triangle formed is similar to the first one, so the ratios of the sides of the new triangle are equal to the corresponding ratios in the first triangle.</p><!--<image source="images/3-1-simtri.png"><description>similar triangles</description></image>-->
+    <image xml:id="fig-3-1-simtri">
+        <description>similar triangles</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+
+        \coordinate(A) at (1.7,0);
+        \coordinate (B) at (1.7,1.4);
+        \coordinate(Ap) at (3.4,0);
+        \coordinate (Bp) at (3.4,2.8);
+        \coordinate (O) at (0,0);
+
+        \filldraw[black] (O) circle (.2pt) node[anchor=north east, yshift=0] {$O)$};
+        \filldraw[black] (B) circle (1.5pt) node[anchor=south east, yshift=-2] {$P(x,y)$};
+        \filldraw[black] (Bp) circle (1.5pt) node[anchor=north west, yshift=-2] {$P'(x',y')$};
+        \filldraw[black] (A) circle (1.5pt) node[anchor=south west, yshift=-2] {$Q$};
+        \filldraw[black] (Ap) circle (1.5pt) node[anchor=south west, yshift=-2] {$Q'$};
+
+        \draw[gray,thick, dashed] (A)--(B) node [right,midway] {\color{blue}$y$};
+        \draw[gray,thick, dashed] (Ap)--(Bp) node [right,midway] {\color{blue}$y'$};
+        \draw[black,thick] (C)--++(3.4,2.8)--++(.34,.28);
+        \draw[gray,thick,dashed] (A)--(C) node [above,midway, xshift=5, yshift=-1] {\color{blue}$x$};
+        \draw[gray,thick,dashed] (Ap)--(C) node [below,midway, xshift=10] {\color{blue}$x'$};
+
+        \draw[black,thick,->] (-.5,0) -- (4,0);
+        \draw[black,thick] (-.5,0) -- (C);
+        \draw[black,thick,->] (0,-0.5) -- (0,3.1) ;
+
+        \draw[red,thick] (0.3,0) arc (0:{atan(2.8/3.4)}:0.3) node[ right, midway, yshift=2] {$\theta$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+</sidebyside>  
 
 <example><statement>
     <p>Find the values of cos <m>\theta</m>, sin <m>\theta</m>, and tan <m>\theta</m> if the point <m>(12, 5)</m> is on the terminal side of <m>\theta</m>.</p></statement> 
@@ -41,13 +148,46 @@
                  \amp = \sqrt{25+144} = \sqrt{169} = 13\\                
                 \end{align*}
      The trig ratios are</p>
-     <sidebyside widths="55% 40%" valigns="middle middle">
+     <sidebyside widths="55% 36%" valigns="middle middle">
         <p>\begin{align*}
             \cos \theta \amp = \dfrac{x}{r} = \dfrac{12}{13} \\
         \sin \theta \amp = \dfrac{y}{r} = \dfrac{5}{13} \\
         \tan \theta \amp = \dfrac{y}{x} = \dfrac{5}{12} \\
         \end{align*}</p>
-        <image source="images/exam3-1-1.png"><description>angle</description></image></sidebyside></solution></example>
+        <!--<image source="images/exam3-1-1.png"><description>angle</description></image>-->
+    <image xml:id="exam3-1-1">
+        <description>angle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+
+        \coordinate(A) at (3.6,0);
+        \coordinate (B) at (3.6,1.5);
+        \coordinate (O) at (0,0);
+
+        \filldraw[black] (B) circle (1.5pt) node[anchor=south east, xshift=3, yshift=-2] {$(12,5)$};
+        \draw[blue,thick] (A) rectangle +(-0.25,0.25);
+        \draw[gray,thick, dashed] (A)--(B) node [right,midway] {\color{blue}$y$};
+        \draw[black, ultra thick] (C)--(B) node[above,midway] {\color{blue}$r$};
+        \draw[black,thick] (B) --++(.36,.15);
+        \draw[black,thick] (A)--(C) node [below,midway] {\color{blue}$12$};
+
+        \draw[black,thick,->] (-.5,0) -- (4,0);
+        \draw[black,thick] (-.5,0) -- (C);
+        \draw[black,thick,->] (0,-0.5) -- (0,2) ;
+
+        \draw[red,thick] (0.9,0) arc (0:{atan(1.5/3.6)}:0.9) node[ right, midway, yshift=1] {$\theta$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside></solution></example>
 
 <note><p>In the previous example, note that we get the same results by using the triangle definitions of the trig ratios. We create a right triangle by dropping a vertical line from <m>P</m> to the <m>x</m>-axis, as shown in the figure. The legs of the right triangle have lengths 12 and 5, and the hypotenuse has length 13.</p></note>
 
@@ -62,13 +202,48 @@
 <subsection><title>Trigonometric Ratios for Obtuse Angles</title>
 <p>Our new definitions for the trig ratios work just as well for obtuse angles, even though <m>\theta</m> is not technically “inside” a triangle, because we use the coordinates of <m>P</m> instead of the sides of a triangle to compute the ratios.</p>
 <p>  Notice first of all that because <m>x</m>-coordinates are negative in the second quadrant, the cosine and tangent ratios are both negative for obtuse angles. For example, in the figure below the point <m>(-4, 3)</m> lies on the terminal side of the angle <m>\theta</m>. We see that <me>r = \sqrt{(-4)^2 + 3^2} = 5</me> so</p>
-<sidebyside widths="55% 45%" valigns="middle middle"><p>
+<sidebyside widths="55% 33%" valigns="middle middle"><p>
         \begin{align*}
             \cos \theta \amp = \dfrac{x}{r} = \dfrac{-4}{5} \\
         \sin \theta \amp = \dfrac{y}{r} = \dfrac{3}{5} \\
         \tan \theta \amp = \dfrac{y}{x} = \dfrac{3}{-4} = \dfrac{-3}{4} \\
         \end{align*}</p>
-        <image source="images/3-1-obtang.png"><description>obtuse angle</description></image></sidebyside>
+        <!--<image source="images/3-1-obtang.png"><description>obtuse angle</description></image>-->
+    <image xml:id="fig-3-1-obtang">
+        <description>obtuse angle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+
+        \coordinate(A) at (-3.6,0);
+        \coordinate (B) at (-3.6,2.7);
+        \coordinate (O) at (0,0);
+
+        \filldraw[black] (B) circle (1.5pt) node[anchor=south west, yshift=-6] {$P(-4,3)$};
+        \draw[blue,thick] (A) rectangle +(0.25,0.25);
+        \draw[gray,thick, dashed] (A)--(B) node [left,midway] {\color{blue}$y$};
+        \draw[gray,thick, dashed] (A)--(O);
+        \draw[black,thick,->] (A) -- +(-.5,0);
+        \draw[black, ultra thick] (C)--(B) node[above,midway] {\color{blue}$r$};
+        \draw[black,thick,->] (B) --+(-.36,.27);
+        \draw[black,thick] (A)--(C) node [below,midway] {\color{blue}$12$};
+
+        \draw[black,thick,->] (O) -- (1,0);
+        \draw[black,thick] (-.5,0) -- (C);
+        \draw[black,thick,->] (0,-0.5) -- (0,3) ;
+
+        \draw[red,thick, ->] (0.4,0) arc (0:{180-atan(3/4)}:0.4) node[above right, midway, yshift=-1] {$\theta$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside>
 
  <example><statement>
     <p>Find the values of cos <m>\theta</m> and tan <m>\theta</m> if <m>\theta</m> is an obtuse angle with <m>\sin \theta = \dfrac{1}{3}</m>.</p></statement> 
@@ -81,7 +256,40 @@
                  x \amp = -\sqrt{8} \\                
                 \end{align*}
      Remember that <m>x</m> is negative in the second quadrant! Thus</p>
-     <image source="images/exam3-1-2.png"><description>obtuse angle</description></image></sidebyside>        
+     <!--<image source="images/exam3-1-2.png"><description>obtuse angle</description></image>-->
+    <image xml:id="exam3-1-2">
+        <description>obtuse angle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+
+        \coordinate(A) at (-2.83,0);
+        \coordinate (B) at (-2.83,1);
+        \coordinate (O) at (0,0);
+
+        \filldraw[black] (B) circle (1.5pt) node[anchor=south west, yshift=-6] {$(x,1)$};
+        \draw[blue,thick] (A) rectangle +(0.25,0.25);
+        \draw[gray,thick, dashed] (A)--(B) node [left,midway] {\color{blue}$1$};
+        \draw[gray,thick, dashed] (A)--(O);
+        \draw[black, ultra thick] (C)--(B) node[above,midway] {\color{blue}$3$};
+        \draw[black,thick] (B) --+(-.28,.1);
+        \draw[black,thick] (A)--(C) node [below,midway] {\color{blue}$12$};
+
+        \draw[black,thick,->] (A)++(-.4,0) -- (1,0);
+        \draw[black,thick,->] (0,-0.5) -- (0,1.5) ;
+
+        \draw[red,thick, ->] (0.4,0) arc (0:{180-atan(1/2.83)}:0.4) node[above right, midway, yshift=-1] {$\theta$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+    </sidebyside>        
             <me>\cos \theta = \dfrac{x}{r} = \dfrac{-\sqrt{8}}{3}~~~~~ \text{and}~~~~~\tan \theta = \dfrac{y}{x} = \dfrac{-1}{\sqrt{8}}</me> 
     </solution></example> 
 
@@ -105,7 +313,45 @@
          \end{align*}
          <p>We see that  <m>\sin 130\degree = \sin 50\degree</m> and  <m>\cos 130\degree = -\cos 50\degree</m>.</p> 
      <sidebyside widths="50% 40%" valigns="middle middle"> <p>This result should not be surprising when we look at both angles in standard position, as shown at right.  The angles <m>50\degree</m> and <m>130\degree</m> are supplementary.  The right triangles formed by choosing the points <m>(x,y)</m> and <m>(-x,y)</m> on their terminal sides are congruent triangles.</p>  
-     <image source="images/exam3-1-3.png"><description>supp angles</description></image></sidebyside>
+     <!--<image source="images/exam3-1-3.png"><description>supp angles</description></image>-->
+    <image xml:id="exam3-1-3">
+        <description>supplementary angles</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+
+        \coordinate(A) at (1.8,0);
+        \coordinate (B) at (1.8,2.145);
+        \coordinate(Ap) at (-1.8,0);
+        \coordinate (Bp) at (-1.8,2.145);
+        \coordinate (O) at (0,0);
+
+        \filldraw[black] (B) circle (1.5pt) node[anchor=south] {$(x,y)$};
+        \draw[blue,thick] (A) rectangle +(-0.25,0.25);
+        \draw[gray,thick, dashed] (A)--(B);
+        \draw[black, ultra thick] (C)--(B) node[above,midway] {\color{blue}$r$};
+
+        \filldraw[black] (Bp) circle (1.5pt) node[anchor=south] {$(-x,y)$};
+        \draw[blue,thick] (Ap) rectangle +(0.25,0.25);
+        \draw[gray,thick, dashed] (Ap)--(Bp);
+        \draw[black, ultra thick] (C)--(Bp) node[above,midway] {\color{blue}$r$};
+
+        \draw[black,thick,->] (-2,0) -- (2.2,0);
+        \draw[black,thick,->] (0,-0.5) -- (0,2.5) ;
+
+        \draw[red!80!white,thick] (0.7,0) arc (0:50:0.7) node[below left, midway, xshift=2, yshift=4] {\footnotesize$\theta$};
+        \draw[red,thick] (1,0) arc (0:130:1) node[midway, xshift=-12, yshift=1, fill=white] {\footnotesize$130\degree$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+    </sidebyside>
     <p>Consequently, the trigonometric ratios for <m>50\degree</m> and for <m>130\degree</m> are equal, except that the cosine of <m>130\degree</m> is negative.</p></solution></example>  
 
  <exercise><statement>
@@ -183,13 +429,52 @@
 <p> The examples above illustrate the following equations.  These three equations are called <term>identities</term>, which means that they are true for all values of the variable <m>\theta</m>.</p>
 
 <assemblage><title>Trigonometric Ratios for Supplementary Angles</title>
-<sidebyside widths="60% 40%" valigns="middle middle">      
+<sidebyside widths="50% 36%" margins="7% 7%" valigns="middle middle">      
     <p><ul>
         <li><m>\cos(180\degree - \theta) = -\cos \theta</m></li>
         <li><m>\sin(180\degree - \theta) = \sin \theta</m></li>
         <li><m>\tan(180\degree - \theta) = -\tan \theta </m></li>
     </ul></p>
-    <image source="images/3-1-supang.png"><description>standard position</description></image></sidebyside>
+    <!--<image source="images/3-1-supang.png"><description>standard position</description></image>-->
+    <image xml:id="fig-3-1-supang">
+        <description>supplementary angles in standard position</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+
+        \coordinate(A) at (2,0);
+        \coordinate (B) at (2,1.2);
+        \coordinate(Ap) at (-2,0);
+        \coordinate (Bp) at (-2,1.2);
+        \coordinate (O) at (0,0);
+
+        \filldraw[black] (B) circle (1.5pt) node[anchor=south] {$P(x,y)$};
+        \draw[blue,thick] (A) rectangle +(-0.25,0.25);
+        \draw[gray,thick, dashed] (A)--(B);
+        \draw[black, ultra thick] (C)--(B) node[above,midway] {\color{blue}$r$};
+
+        \filldraw[black] (Bp) circle (1.5pt) node[anchor=south] {$P'(-x,y)$};
+        \draw[blue,thick] (Ap) rectangle +(0.25,0.25);
+        \draw[gray,thick, dashed] (Ap)--(Bp);
+        \draw[black, ultra thick] (C)--(Bp) node[above,midway] {\color{blue}$r$};
+
+        \draw[black,thick,->] (-2.5,0) -- (2.5,0);
+        \draw[black,thick,->] (0,.8) -- (0,2.2) ;
+        \draw[black,thick] (0,-0.5) -- (0,0.45) ;
+
+        \draw[red!80!white,thick,->] (1,0) arc (0:{atan(1.2/2)}:1) node[right, midway, xshift=0, yshift=1] {\footnotesize$\theta$};
+        \draw[red,thick,->] (.4,0) arc (0:{180-atan(1.2/2)}:.4) node[midway, xshift=-4, yshift=5] {\footnotesize$180\degree-\theta$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+    </sidebyside>
 </assemblage>
 
 <p> Because of these relationships, there are always two (supplementary) angles between <m>0 \degree</m> and <m>180 \degree</m> that have the same sine. Your calculator will only tell you one of them, so you have to be able to find the other one on your own!  Fortunately, this is not difficult.</p>
@@ -198,7 +483,49 @@
     <p>Find two different angles <m>\theta</m>, rounded to the nearest <m>0.1 \degree</m>, that satisfy <m>\sin \theta = 0.25</m>.</p></statement> 
         
 <solution><p>To find an angle with <m>\sin \theta = 0.25</m>, we calculate <m>\theta = \sin^{-1}(0.25)</m>. With the calculator in degree mode, we press <me> \text{2nd   SIN}~~~ 0.25~ ) ~~~\text{ENTER }</me> to find that one angle is <m>\theta \approx 14.5 \degree</m>.  We draw this acute angle in standard position in the first quadrant, and sketch in a right triangle as shown below. There must also be an obtuse angle whose sine is <m>0.25</m>.  To see the second angle, we draw a congruent triangle in the second quadrant as shown.</p>
-<sidebyside width="65%" > <image source="images/exam3-1-4.png"><description>supp angles</description></image></sidebyside>        
+<sidebyside width="65%" > <!--<image source="images/exam3-1-4.png"><description>supp angles</description></image>-->
+    <image xml:id="exam3-1-4">
+        <description>supplementary angle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+
+        \coordinate(A) at (3.9,0);
+        \coordinate (B) at (3.9,1);
+        \coordinate(Ap) at (-3.9,0);
+        \coordinate (Bp) at (-3.9,1);
+        \coordinate (O) at (0,0);
+
+        \filldraw[black] (B) circle (1.5pt);
+        \draw[blue,thick] (A) rectangle +(-0.25,0.25);
+        \draw[gray,thick, dashed] (A)--(B) node[right,midway] {\color{blue}$y$};
+        \draw[black, ultra thick] (C)--(B) node[above,midway] {\color{blue}$r$};
+        \draw[black,thick] (B)--++(.39,.1);
+
+        \filldraw[black] (Bp) circle (1.5pt) ;
+        \draw[blue,thick] (Ap) rectangle +(0.25,0.25);
+        \draw[gray,thick, dashed] (Ap)--(Bp) node[left,midway] {\color{blue}$y$};
+        \draw[black, ultra thick] (C)--(Bp) node[above,midway] {\color{blue}$r$};
+        \draw[black,thick] (Bp)--++(-.39,.1);
+
+        \draw[black,thick,->] (-4.2,0) -- (4.5,0);
+        \draw[black,thick,->] (0,-0.5) -- (0,1.5) ;
+
+        \draw[red,thick] (1,0) arc (0:{atan(1/3.9)}:1) node[right, midway, xshift=5, yshift=1] {\footnotesize$14.5\degree$};
+        \draw[red,thick] (-1,0) arc (180:{180-atan(1/3.9)}:1) node[left, midway, xshift=-5, yshift=1] {\footnotesize$14.5\degree$};
+        \draw[red,thick] (.6,0) arc (0:{180-atan(1/3.9)}:.6) ;
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+    
+</sidebyside>        
  <p>The supplement of <m>14.5 \degree</m>, namely <m>\theta = 180\degree - 14.5 \degree = 165.5\degree</m>, is the obtuse angle we need. Notice that <m>\dfrac{y}{r} = 0.25</m> for both triangles, so <m>\sin \theta = 0.25</m> for both angles.</p></solution></example> 
 
  <exercise><statement>
@@ -208,7 +535,40 @@
 <p> Because there are two angles with the same sine, it is easier to find an obtuse angle if we know its cosine instead of its sine. </p> 
     
 <example><statement>
-    <sidebyside widths="60% 30%" > <p>Find the angle shown at right.</p><image source="images/exam3-1-5.png"><description>obtuse angle</description></image></sidebyside></statement> 
+    <sidebyside widths="47% 30%" margins="10% 10%" valigns="middle middle"> <p>Find the angle shown at right.</p><!--<image source="images/exam3-1-5.png"><description>obtuse angle</description></image>-->
+    <image xml:id="exam3-1-5">
+        <description>obtuse angle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+
+        \coordinate(A) at (-1.5,0);
+        \coordinate (B) at (-1.5,2);
+        \coordinate (O) at (0,0);
+
+        \filldraw[black] (B) circle (1.5pt)node[anchor=east] {\color{blue}$(-3,4)$};;
+        \draw[blue,thick] (A) rectangle +(0.25,0.25);
+        \draw[gray,thick, dashed] (A)--(B) node[left,midway] {\color{blue}$4$};
+        \draw[gray,thick, dashed] (A)--(O) node[below,midway] {\color{blue}$3$};
+        \draw[black, ultra thick] (C)--(B) node[above right,midway] {\color{blue}$r$};
+        \draw[black,thick,->] (B)--++(-.3,.4);
+
+        \draw[black,ultra thick,->] (O) -- (1.5,0);
+        \draw[black,thick] (-2.5,0) -- (O);
+        \draw[black,thick,->] (0,-0.5) -- (0,2.5) ;
+
+        \draw[red,thick] (.5,0) arc (0:{180-atan(4/3)}:.5) node[above right, midway, xshift=0, yshift=0] {$\theta$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+    </sidebyside></statement> 
         
 <solution><p>Using <m>x=-3</m> and <m>y=4</m>, we find <me>r=\sqrt{3^2 + 4^2} = \sqrt{25} = 5</me> so <m>\cos \theta = \dfrac{x}{r} = \dfrac{-3}{5}</m>, and <m>\theta = \cos^{-1}(\dfrac{-3}{5}).</m> We can enter 
     <me> \text{2nd   COS}~~~ -3/5~ ) ~~~\text{ENTER }</me> 
@@ -219,7 +579,49 @@ to see that <m>\theta \approx 126.9 \degree</m>.</p></solution></example>
 the calculator returns an angle of <m>\theta \approx -53.1 \degree</m>.  It is true that <m>\tan (-53.1 \degree) = \dfrac{-4}{3}</m>, but this is not the obtuse angle we want.</p>
  <sidebyside widths="60% 40%" valigns="middle middle"> <p>We also know that <m>\sin \theta = \dfrac{4}{5}</m>, and if we press 
     <me>\text{2nd   SIN}~~~ 4/5~ ) ~~~\text{ENTER }</me> 
-we get <m>\theta \approx 53.1 \degree</m>. This is the acute angle whose terminal side passes through the point <m>(3,4)</m>, as shown in the figure at right.  The angle we want is its supplement, <m>\theta \approx 180\degree - 53.1\degree = 126.9\degree</m>.</p><image source="images/3-1-caut.png"><description>angles</description></image></sidebyside></warning> 
+we get <m>\theta \approx 53.1 \degree</m>. This is the acute angle whose terminal side passes through the point <m>(3,4)</m>, as shown in the figure at right.  The angle we want is its supplement, <m>\theta \approx 180\degree - 53.1\degree = 126.9\degree</m>.</p><!--<image source="images/3-1-caut.png"><description>angles</description></image>-->
+    <image xml:id="fig-3-1-caut">
+        <description>supplementary angles</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+
+        \coordinate(A) at (-1.5,0);
+        \coordinate (B) at (-1.5,2);
+        \coordinate(Ap) at (1.5,0);
+        \coordinate (Bp) at (1.5,2);
+        \coordinate (O) at (0,0);
+
+        \filldraw[black] (B) circle (1.5pt) node[anchor=east] {\color{blue}$(-3,4)$};
+        \draw[blue,thick] (A) rectangle +(0.25,0.25);
+        \draw[gray,thick, dashed] (A)--(B) node[left,midway] {\color{blue}$4$};
+        \draw[gray,thick, dashed] (A)--(O) node[below,midway] {\color{blue}$3$};
+        \draw[black, ultra thick] (C)--(B) node[above right,midway, xshift=-3] {\color{blue}$r$};
+        \draw[black,thick,->] (B)--++(-.3,.4);
+
+        \filldraw[black] (Bp) circle (1.5pt)node[anchor=west] {\color{blue}$(-3,4)$};
+        \draw[blue,thick] (Ap) rectangle +(-0.25,0.25);
+        \draw[gray,thick, dashed] (Ap)--(Bp) node[right,midway] {\color{blue}$4$};
+        \draw[gray,thick, dashed] (Ap)--(O) node[below,midway] {\color{blue}$3$};
+        \draw[black, ultra thick] (C)--(Bp) node[above left,midway, xshift=3] {\color{blue}$r$};
+        \draw[black,thick,->] (Bp)--++(.3,.4);
+
+        \draw[black,ultra thick,->] (O) -- (2,0);
+        \draw[black,thick] (-2.5,0) -- (O);
+        \draw[black,thick,->] (0,-0.5) -- (0,2.5) ;
+
+        \draw[red,thick] (.5,0) arc (0:{atan(4/3)}:.5) node[above right, midway, xshift=-2, yshift=-3] {\footnotesize$53.1\degree$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+</sidebyside></warning> 
 
 <exercise><statement>
     <p><ol label="a">
@@ -229,19 +631,105 @@ we get <m>\theta \approx 53.1 \degree</m>. This is the acute angle whose termina
 </subsection>
 
 <subsection><title>Supplements of the Special Angles</title>
-<sidebyside widths="50% 50%" valigns="middle middle"> <p>In Chapter 2 we learned that the angles <m>30\degree, 45\degree</m> and <m>60\degree</m> are useful because we can find exact values for their trigonometric ratios. The same is true for the supplements of these angles in the second quadrant, shown at right.</p><image source="images/3-1-specang.png"><description>angles</description></image></sidebyside>
+<sidebyside widths="50% 47%" valigns="middle middle"> <p>In Chapter 2 we learned that the angles <m>30\degree, 45\degree</m> and <m>60\degree</m> are useful because we can find exact values for their trigonometric ratios. The same is true for the supplements of these angles in the second quadrant, shown at right.</p><!--<image source="images/3-1-specang.png"><description>angles</description></image>-->
+    <image xml:id="fig-3-1-specang">
+        <description>supplements of special angles</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+
+        \coordinate(A) at (3.12,1.8);
+        \coordinate (B) at (2.546, 2.546);
+        \coordinate(C) at (1.8,3.12);
+        \coordinate (D) at (-1.8,3.12);
+        \coordinate (E) at (-2.546,2.546);
+        \coordinate(F) at (-3.12,1.8);
+        \coordinate (O) at (0,0);
+
+        \draw[blue,thick] (3.12,0) rectangle +(-0.25,0.25);
+        \draw[blue,thick] (2.546,0) rectangle +(-0.25,0.25);
+        \draw[blue,thick] (1.8,0) rectangle +(-0.25,0.25);
+        \draw[blue,thick] (-3.12,0) rectangle +(0.25,0.25);
+        \draw[blue,thick] (-2.546,0) rectangle +(0.25,0.25);
+        \draw[blue,thick] (-1.8,0) rectangle +(0.25,0.25);
+
+        \draw[black,thick] (O)--(A) node[above right] {\color{blue}$30\degree$};
+        \draw[gray,thick] (A) -- +(0,-1.8);
+        \draw[black,thick] (O)--(B) node[above right, xshift=-3, yshift=-3] {\color{blue}$45\degree$};
+        \draw[gray,thick] (B) -- +(0,-2.546);
+        \draw[black,thick] (O)--(C) node[above right, xshift=-3, yshift=-3] {\color{blue}$60\degree$};
+        \draw[gray,thick] (C) -- +(0,-3.12);
+
+        \draw[black,ultra thick,->] (-3.5,0) -- (3.5,0);
+        \draw[black,thick,->] (0,-0.5) -- (0,3.5) ;
+
+        \draw[black,thick] (O)--(F) node[above left] {\color{blue}$150\degree$};
+        \draw[gray,thick] (F) -- +(0,-1.8);
+        \draw[black,thick] (O)--(E) node[above left, xshift=5, yshift=-3] {\color{blue}$135\degree$};
+        \draw[gray,thick] (E) -- +(0,-2.546);
+        \draw[black,thick] (O)--(D) node[above left, xshift=5, yshift=-3] {\color{blue}$120\degree$};
+        \draw[gray,thick] (D) -- +(0,-3.12);
+
+        \draw[black,ultra thick,->] (-3.5,0) -- (3.5,0);
+        \draw[black,thick,->] (0,-0.5) -- (0,3.5) ;
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+</sidebyside>
 
 <example><statement>
     <p>Find exact values for the trigonometric ratios of <m>135 \degree</m>.</p></statement> 
         
 <solution><p>We sketch an angle of <m>\theta = 135\degree</m> in standard position, as shown below. The terminal side is in the second quadrant and makes an acute angle of <m>45\degree</m> with the negative <m>x</m>-axis, and passes through the point <m>(-1,1)</m>. Thus,  <m>~r=\sqrt{(-1)^2 +1^2} = \sqrt{2}~</m>,  and we calculate</p>
-<sidebyside widths="50% 45%" ><p>
+<sidebyside widths="50% 40%" ><p>
     \begin{align*}
                \cos 135\degree \amp = \dfrac{x}{r} = \dfrac{-1}{\sqrt{2}} \\
                \sin 135\degree \amp = \dfrac{y}{r} = \dfrac{1}{\sqrt{2}}\\ 
                \tan 135\degree \amp = \dfrac{y}{x} = \dfrac{1}{-1} = -1\\              
          \end{align*}</p> 
-    <image source="images/exam3-1-6.png"><description>obtuse angles</description></image></sidebyside></solution></example> 
+    <!--<image source="images/exam3-1-6.png"><description>obtuse angles</description></image>-->
+    <image xml:id="exam3-1-6">
+        <description>obtuse angle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+
+        \coordinate (A) at (2.5,0);
+        \coordinate (B) at (-2.5,2.5);
+        \coordinate (C) at (-2.5,0);
+        \coordinate (O) at (0,0);
+
+        \draw[blue,thick] (C) rectangle +(0.25,0.25);
+
+        \draw[black,ultra thick] (O)--(A);
+        \draw[black,ultra thick] (O)--(B) node[above, midway, xshift=2] {\color{blue}$\sqrt{2}$};
+        \draw[black,thick] (B) -- +(-.2,.2);
+        \draw[gray,thick] (B) -- (C);
+        \filldraw[black] (B) circle (2pt) node[anchor=south west, yshift=-2] {\color{blue}$(-1,1)$};
+
+        \draw[black,thick] (-3,0) -- (O) ;
+        \draw[black,thick,->] (0,-0.5) -- (0,3) ;
+
+        \draw[red,thick] (0.6,0) arc(0:135:.6) node[above right,midway, yshift=-2] {\color{blue}$135\degree$};
+        \draw[red,thick] (-0.4,0) arc(180:135:.4) node[left,midway,yshift=2] {\color{blue}$45\degree$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+    </sidebyside></solution></example> 
 
 <exercise><statement>
     <p>Find exact values for the trigonometric ratios of <m>120\degree</m> and <m>150\degree</m>.
@@ -251,9 +739,37 @@ we get <m>\theta \approx 53.1 \degree</m>. This is the acute angle whose termina
 
 <example><statement>
     <p>Find exact values for the trigonometric ratios of <m>90\degree</m>.</p></statement>       
-<solution><sidebyside widths="50% 35%" valigns="middle middle"><p>The terminal side of a <m>90\degree</m> angle in standard position is the positive <m>y</m>-axis. If we take the point <m>P(0,1)</m> on the terminal side as shown at right, then <m>x=0</m> and <m>y=1</m>. Although we don't have a triangle, we can still calculate a value for <m>r</m>, the distance from the origin to <m>P</m>.
+<solution><sidebyside widths="50% 32%" valigns="middle middle"><p>The terminal side of a <m>90\degree</m> angle in standard position is the positive <m>y</m>-axis. If we take the point <m>P(0,1)</m> on the terminal side as shown at right, then <m>x=0</m> and <m>y=1</m>. Although we don't have a triangle, we can still calculate a value for <m>r</m>, the distance from the origin to <m>P</m>.
 <me>r = \sqrt{0^2 + 1^2} = 1</me></p> 
-    <image source="images/exam3-1-7.png"><description>obtuse angles</description></image></sidebyside>    
+    <!--<image source="images/exam3-1-7.png"><description>obtuse angles</description></image>-->
+    <image xml:id="exam3-1-7">
+        <description>right angle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+
+        \coordinate (A) at (3,0);
+        \coordinate (B) at (0,3);
+        \coordinate (O) at (0,0);
+
+        \draw[blue,thick] (O) rectangle +(0.25,0.25);
+
+        \draw[black,ultra thick] (B)--(O)--(A);
+        \filldraw[black] (0,2.5) circle (2pt) node[anchor=south west, yshift=-2] {\color{blue}$(0,1)$};
+
+        \draw[black,thick] (-1.2,0) -- (O) ;
+        \draw[black,thick] (0,-0.5) -- (O) ;
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+    </sidebyside>    
 <p>Our coordinate definitions for the trig ratios give us
     <me>\cos 90\degree = \dfrac{x}{r} = \dfrac{0}{1}~~~~~ \text{and}~~~~~\sin 90\degree = \dfrac{y}{r} = \dfrac{1}{1}</me> 
 so <m>\cos 90\degree = 0</m> and <m>\sin 90\degree = 1</m>.  Also, <m>\tan 90\degree = \dfrac{y}{x} = \dfrac{1}{0}</m>, so <m>\tan 90\degree</m> is undefined.</p></solution></example>
@@ -267,13 +783,115 @@ so <m>\cos 90\degree = 0</m> and <m>\sin 90\degree = 1</m>.  Also, <m>\tan 90\de
 <p> The figure below shows part of the map for a new housing development, Pacific Shores. You are interested in the corner lot, number 86, and you would like to know the area of the lot in square feet. The sales representative for Pacific Shores provides you with the dimensions of the lot, but you don't know a formula for the area of an irregularly shaped quadrilateral.</p>
 <sidebyside width="65%" > <image source="images/3-1-houses.png"><description>house lots</description></image></sidebyside>        
 
-<sidebyside widths="60% 40%" valigns="middle middle"><p>It occurs to you that you can divide the quadrilateral into two triangles, and find the area of each. Now, you know a formula for the area of a triangle in terms of its base and height, namely, <me>A = \dfrac{1}{2}bh</me>, but unfortunately, you don't know the height of either triangle.  </p><image source="images/3-1-lot86.png"><description>lot 86</description></image></sidebyside> 
+<sidebyside widths="60% 36%" valigns="middle middle"><p>It occurs to you that you can divide the quadrilateral into two triangles, and find the area of each. Now, you know a formula for the area of a triangle in terms of its base and height, namely, <me>A = \dfrac{1}{2}bh</me>, but unfortunately, you don't know the height of either triangle.  </p><!--<image source="images/3-1-lot86.png"><description>lot 86</description></image>-->
+    <image xml:id="fig-3-1-lot86">
+        <description>Lot 86</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [rotate=2]
+
+        \coordinate (A) at (3.525,0);
+        \coordinate (B) at (2.464,3.88);
+        \coordinate (C) at (-.2621,3);
+        \coordinate (O) at (0,0);
+
+        \draw[black,thick] (O)--(A) node[below,midway] {\color{blue}141 ft};
+        \draw[black,thick] (B)--(A) node[right,midway] {\color{blue}161 ft};
+        \draw[black,thick] (B)--(C) node[above left,midway, xshift=6] {\color{blue}114.8 ft};
+        \draw[black,thick] (O)--(C) node[left,midway] {\color{blue}120.3 ft};
+        \draw[black,thick] (A)--(C);
+
+        \draw[red,thick] (0.3,0) arc(0:95:.3) node[above right, midway, xshift=-2, yshift=-2] {$95\degree$};
+        \draw[red,thick] (B)++(.075,-.291) arc(-74.7:-160.1:.3) node[below, midway, xshift=-6, yshift=0] {$86.1\degree$};
+
+        \node[text width=1 cm] at (2.5,0.9)  {\Huge\color{gray}86};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+</sidebyside> 
 
 <p>However, you can easily measure the angles at the corners of the lot using the plot map and a protractor. You can check the values on the pot map for lot 86 shown above.</p>
 
 <p> Using trigonometry, we can find the area of a triangle if we know two of its sides, say <m>a</m> and <m>b</m>, and the included angle, <m>\theta</m>. The figure below shows three possibilities, depending on whether the angle <m>\theta</m> is acute, obtuse, or <m>90-\degree</m>.</p>
 
-<sidebyside width="95%" > <image source="images/3-1-3areas.png"><description>house lots</description></image></sidebyside>  
+<sidebyside width="87%" > <!--<image source="images/3-1-3areas.png"><description>house lots</description></image>-->
+    <image xml:id="fig-3-1-3areas">
+        <description>three triangles</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \coordinate (A) at (3.6,0);
+        \coordinate (B) at (3,2.5);
+        \coordinate (C) at (3,0);
+        \coordinate (O) at (0,0);
+
+        \node[anchor=south,text width=1cm] at (B) {\color{blue}$(x,y)$};
+
+        \draw[blue,thick] (C) rectangle +(-0.25,0.25);
+        \draw[black,ultra thick] (O)--(A) node[below,midway] {\color{blue}$b$};
+        \draw[black,ultra thick] (B)--(A);
+        \draw[black,ultra thick] (B)--(O) node[above left,midway] {\color{blue}$a$};
+        \draw[gray,thick,dashed] (B)--(C) node[left,midway] {\color{blue}$h$};
+
+        \draw[red,thick] (O)++(0.4,0) arc(0:{atan(2.5/3)}:.4) node[right, midway, xshift=0, yshift=2] {$\theta$};
+
+        \draw[black,thick,->] (O)+(-.5,0) -- +(4,0);
+        \draw[black,thick,->] (O)+(0,-.5) -- +(0,3);
+
+        % second triangle
+        \coordinate (A) at (8,0);
+        \coordinate (B) at (5,2.5);
+        \coordinate (C) at (5,0);
+        \coordinate (O) at (6,0);
+
+        \node[anchor=south,text width=1cm] at (B) {\color{blue}$(x,y)$};
+
+        \draw[blue,thick] (C) rectangle +(0.25,0.25);
+        \draw[black,ultra thick] (O)--(A) node[below,midway] {\color{blue}$b$};
+        \draw[black,ultra thick] (B)--(A);
+        \draw[black,ultra thick] (B)--(O) node[left,midway, xshift=4,yshift=-5] {\color{blue}$a$};
+        \draw[gray,thick,dashed] (B)--(C) node[left,midway] {\color{blue}$h$};
+
+        \draw[red,thick] (O)++(0.4,0) arc(0:{180-atan(2.5)}:.4) node[right, midway, xshift=0, yshift=2] {$\theta$};
+
+        \draw[black,thick,->] (O)++(-1.3,0) -- +(3.8,0);
+        \draw[black,thick,->] (O)+(0,-.5) -- +(0,3);
+
+        % third triangle
+        \coordinate (A) at (11.7,0);
+        \coordinate (B) at (9.5,2.5);
+        \coordinate (C) at (9.5,0);
+        \coordinate (O) at (9.5,0);
+
+        \node[anchor=east,text width=1cm, xshift=2] at (B) {\color{blue}$(x,y)$};
+
+        \draw[black,ultra thick] (O)--(A) node[below,midway] {\color{blue}$b$};
+        \draw[black,ultra thick] (B)--(A);
+        \draw[black,ultra thick] (B)--(O) node[left,midway, xshift=2,yshift=-5] {\color{blue}$h=a$};
+
+        \draw[red,thick] (O)++(0.4,0) arc(0:90:.4) node[right, midway, xshift=0, yshift=2] {$\theta$};
+
+        \draw[black,thick,->] (O)+(-.5,0) -- +(2.8,0);
+        \draw[black,thick,->] (O)+(0,-.5) -- +(0,3);
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+</sidebyside>  
 
 <p> In each case, <m>b</m> is the base of the triangle, and its altitude is <m>h</m>.  Our task is to find an expression for <m>h</m> in terms of the quantities we know: <m>a</m>, <m>b</m>, and <m>\theta</m>. You should check that in all three triangles <me>\sin \theta = \dfrac{h}{a}</me>  Solving for <m>h</m> gives us <m>h = a\sin \theta</m>.  Finally, we substitute this expression for <m>h</m> into our old formula for the area to get 
 <me>A = \dfrac{1}{2}b~\blert{h} = \dfrac{1}{2}b~ \blert{a\sin \theta}</me> </p> 
@@ -281,7 +899,33 @@ so <m>\cos 90\degree = 0</m> and <m>\sin 90\degree = 1</m>.  Also, <m>\tan 90\de
 <assemblage><title>Area of a Triangle</title>
 <p>If a triangle has sides of length <m>a</m> and <m>b</m>, and the angle between those two sides is <m>\theta</m>, then the area of the triangle is given by</p>
 <sidebyside widths="60% 30%" valigns="middle middle"><p><me>A =  \dfrac{1}{2} ab \sin \theta</me></p>
-<image source="images/3-1areatri.png"><description>triangle</description></image></sidebyside>
+<!--<image source="images/3-1areatri.png"><description>triangle</description></image>-->
+    <image xml:id="fig-3-1areatri">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [rotate=20]
+
+        \coordinate (A) at (2.8,0);
+        \coordinate (B) at (-.4,1.7);
+        \coordinate (O) at (0,0);
+
+        \draw[black,thick] (O)--(A) node[below,midway] {\color{blue}$b$};
+        \draw[black,thick] (B)--(A);
+        \draw[black,thick] (B)--(O) node[left,midway] {\color{blue}$a$};
+
+        \draw[red,thick] (O)++(0.4,0) arc(0:{180-atan(1.7/.4)}:.4) node[above, midway, xshift=0, yshift=0] {$\theta$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+</sidebyside>
 </assemblage>
 
 <example><statement>
@@ -300,7 +944,33 @@ so <m>\cos 90\degree = 0</m> and <m>\sin 90\degree = 1</m>.  Also, <m>\tan 90\de
     <me>\text{Total area} = \text{First Area} + \text{Second Area}\approx 17668.88</me>
 Lot 86 has an area of approximately 17,669 square feet.</p></solution></example>
 
-<warning><sidebyside widths="65% 35%" valigns="middle middle"><p>The formula <m>A= \dfrac{1}{2}ab\sin \theta</m> does <em>not</em> mean that we always use the sides labeled <m>a</m> and <m>b</m> to find the area of a triangle.  In this formula, the variables <m>a</m> and <m>b</m> represent the lengths of the sides that <em>include</em> the known angle. For example, the area of the triangle at right is given by <m>A= \dfrac{1}{2}(5c)\sin \phi</m>.</p><image source="images/3-1-caut2.png"><description>triangle</description></image></sidebyside></warning>
+<warning><sidebyside widths="65% 29%" valigns="middle middle"><p>The formula <m>A= \dfrac{1}{2}ab\sin \theta</m> does <em>not</em> mean that we always use the sides labeled <m>a</m> and <m>b</m> to find the area of a triangle.  In this formula, the variables <m>a</m> and <m>b</m> represent the lengths of the sides that <em>include</em> the known angle. For example, the area of the triangle at right is given by <m>A= \dfrac{1}{2}(5c)\sin \phi</m>.</p><!--<image source="images/3-1-caut2.png"><description>triangle</description></image>-->
+    <image xml:id="fig-3-1-caut2">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [rotate=20]
+
+        \coordinate (A) at (2.8,0);
+        \coordinate (B) at (-.4,1.7);
+        \coordinate (O) at (0,0);
+
+        \draw[black,thick] (O)--(A) node[below,midway] {\color{blue}$c$};
+        \draw[black,thick] (B)--(A) node[above,midway] {\color{blue}$b$};
+        \draw[black,thick] (B)--(O) node[left,midway,yshift=-2] {\color{blue}$5$};
+
+        \draw[red,thick] (O)++(0.4,0) arc(0:{180-atan(1.7/.4)}:.4) node[above, midway, xshift=0, yshift=0] {$\phi$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+</sidebyside></warning>
 
 <exercise><statement>
     <p>A triangle has sides of length 6 and 7, and the angle between those sides is <m>150\degree</m>. Find the area of the triangle.</p></statement></exercise> 
@@ -310,10 +980,119 @@ Lot 86 has an area of approximately 17,669 square feet.</p></solution></example>
 <exercises>
  <exercisegroup cols="2">
     <introduction><p>Find the area of the triangle.</p></introduction>
-        <exercise number="1"><statement><sidebyside width="50%"><image source="images/ar3-1-1.png"><description>triangle</description></image></sidebyside></statement></exercise>
-        <exercise number="2"><statement><sidebyside width="50%"><image source="images/ar3-1-2.png"><description>triangle</description></image></sidebyside></statement></exercise>
-        <exercise number="3"><statement><sidebyside width="50%"><image source="images/ar3-1-3.png"><description>triangle</description></image></sidebyside></statement></exercise>
-        <exercise number="4"><statement><sidebyside width="60%"><image source="images/ar3-1-4.png"><description>triangle</description></image></sidebyside></statement></exercise>
+        <exercise number="1"><statement><sidebyside width="50%"><!--<image source="images/ar3-1-1.png"><description>triangle</description></image>-->
+    <image xml:id="ar3-1-1">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+
+        \coordinate (A) at (2,0);
+        \coordinate (B) at (0,1.5);
+        \coordinate (O) at (0,0);
+
+        \draw[black,thick, ->] (O)+(-.2,0)--+(2.5,0);
+        \draw[black,thick] (B)--(A) ;
+        \draw[black,thick,->] (O)+(0,-.2)--+(0,2) ;
+
+        \draw[black] (A)+(0,.1)--+(0,-.1) node[below] {8};
+        \draw[black] (B)+(.1,0)--+(-.1,0) node[left] {6};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside></statement></exercise>
+        <exercise number="2"><statement><sidebyside width="45%"><!--<image source="images/ar3-1-2.png"><description>triangle</description></image>-->
+    <image xml:id="ar3-1-2">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+
+        \coordinate (A) at (2,0);
+        \coordinate (B) at (0.5,1.5);
+        \coordinate (O) at (0,0);
+
+        \draw[black,thick, ->] (O)+(-.2,0)--+(2.5,0);
+        \draw[black,thick] (O)--(B)--(A) ;
+        \draw[black,thick,->] (O)+(0,-.2)--+(0,2) ;
+
+        \draw[black] (A)+(0,.1)--+(0,-.1) node[below] {8};
+        \filldraw[black] (B) circle (.2pt) node[anchor=south, xshift=3, yshift=-2] {$(2,6)$};
+
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside></statement></exercise>
+        <exercise number="3"><statement><sidebyside width="45%"><!--<image source="images/ar3-1-3.png"><description>triangle</description></image>-->
+    <image xml:id="ar3-1-3">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+
+        \coordinate (A) at (2,0);
+        \coordinate (B) at (1,1.5);
+        \coordinate (O) at (0,0);
+
+        \draw[black,thick, ->] (O)+(-.2,0)--+(2.5,0);
+        \draw[black,thick] (O)--(B)--(A) ;
+        \draw[black,thick,->] (O)+(0,-.2)--+(0,2) ;
+
+        \draw[black] (A)+(0,.1)--+(0,-.1) node[below] {8};
+        \filldraw[black] (B) circle (.2pt) node[anchor=south, xshift=3, yshift=-2] {$(4,6)$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside></statement></exercise>
+        <exercise number="4"><statement><sidebyside width="60%"><!--<image source="images/ar3-1-4.png"><description>triangle</description></image>-->
+    <image xml:id="ar3-1-4">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+
+        \coordinate (A) at (2,0);
+        \coordinate (B) at (3,1.5);
+        \coordinate (O) at (0,0);
+
+        \draw[black,thick, ->] (O)+(-.2,0)--+(3.5,0);
+        \draw[black,thick] (O)--(B)--(A) ;
+        \draw[black,thick,->] (O)+(0,-.2)--+(0,2) ;
+
+        \draw[black] (A)+(0,.1)--+(0,-.1) node[below] {8};
+        \filldraw[black] (B) circle (.2pt) node[anchor=west, xshift=0, yshift=0] {$(12,6)$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside></statement></exercise>
  </exercisegroup>
 
 <exercisegroup cols="4">
@@ -333,7 +1112,36 @@ Lot 86 has an area of approximately 17,669 square feet.</p></solution></example>
         <li><m>r^2 = 24^2 + 10^2 = 676</m>, so <m>r = \sqrt{676} = 26.</m> Then <m>\cos \theta = \dfrac{x}{r} = \dfrac{24}{26} =\dfrac{12}{13},~~\sin\theta = \dfrac{y}{r} = \dfrac{10}{26} =\dfrac{5}{13},</m> and <m>\tan\theta = \dfrac{y}{x} = \dfrac{10}{24} =\dfrac{5}{12}</m>.</li>
     </ol></p></li>
     <li><p><ol label="a">
-            <li><sidebyside width="25%"><image source="images/exer3-1-2ans.png"><description>point</description></image></sidebyside></li>
+            <li><sidebyside width="25%"><!--<image source="images/exer3-1-2ans.png"><description>point</description></image>-->
+    <image xml:id="exer3-1-2ans">
+        <description>point</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+
+        \coordinate (A) at (-.8,0);
+        \coordinate (B) at (-.8,1.5);
+        \coordinate (O) at (0,0);
+
+        \draw[blue,thick] (A) rectangle +(0.25,0.25);
+        \draw[black,thick, ->] (O)+(-1.2,0)--+(1,0);
+        \draw[black,thick] (O)--(B)  node[right,midway, xshift=-4, yshift=3] {\footnotesize\color{blue}17};
+        \draw[black,thick] (B)--(A);
+        \draw[black,thick,->] (O)+(0,-.2)--+(0,2) ;
+
+        \filldraw[black] (B) circle (2pt) node[anchor=south , xshift=-4, yshift=-1] {$(-8,15)$};
+        \draw[red,thick] (O)+(0.3,0) arc(0:{180-atan(1.5/.8)}:.3) node[above,midway, xshift=2] {$\theta$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+            </sidebyside></li>
             <li><m>\sin\theta = \dfrac{15}{17},~\tan\theta = \dfrac{-15}{8}</m></li>
         </ol></p></li>
     <li><sidebyside>
@@ -465,7 +1273,39 @@ Lot 86 has an area of approximately 17,669 square feet.</p></solution></example>
         <li><m>\sin \theta = \dfrac{y}{r}</m></li>
         <li><m>\tan \theta = \dfrac{y}{x}</m></li>
     </ul></p>
-    <image source="images/3-1-stanpos.png"><description>standard position</description></image></sidebyside>
+    <!--<image source="images/3-1-stanpos.png"><description>standard position</description></image>-->
+    <image xml:id="fig-coord-def-trig-ratios">
+        <description>supplementary angles in standard position</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+
+        \coordinate(A) at (3,0);
+        \coordinate (B) at (3,2);
+        \coordinate (C) at (0,0);
+
+        \filldraw[black] (B) circle (.2pt) node[anchor=south, xshift=-2, yshift=-2] {$P(x,y)$};
+        \draw[blue,thick] (A) rectangle +(-0.25,0.25);
+
+        \draw[black,ultra thick] (A)--(B) node [right,midway] {\color{blue}$y$};
+        \draw[black,ultra thick] (C)--(B) node [above,midway] {\color{blue}$r$};
+        \draw[black,ultra thick] (A)--(C) node [below,midway] {\color{blue}$x$};
+
+        \draw[black,thick,->] (A) -- ++(0.7,0);
+        \draw[black,thick] (-.5,0) -- (C);
+        \draw[black,thick,->] (C)++(0,-0.5) -- +(0,3) ;
+
+        \draw[red,thick] (0.75,0) arc (0:{atan(2/3)}:0.75) node[ right, midway, yshift=2] {$\theta$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>    </sidebyside>
     </assemblage></li>
     <li><assemblage><title>Trigonometric Ratios for Supplementary Angles</title>
     <sidebyside widths="60% 40%" valigns="middle middle">      
@@ -474,13 +1314,13 @@ Lot 86 has an area of approximately 17,669 square feet.</p></solution></example>
         <li><m>\sin(180\degree - \theta) = \sin \theta</m></li>
         <li><m>\tan(180\degree - \theta) = -\tan \theta </m></li>
     </ul></p>
-    <image source="images/3-1-supang.png"><description>standard position</description></image></sidebyside>
+    <!--<image source="images/3-1-supang.png">--><image source="images/fig-3-1-supang"><description>standard position</description></image></sidebyside>
     </assemblage></li>
     <li>There are always two (supplementary) angles between <m>0\degree</m> and <m>180\degree</m> that have the same sine.  Your calculator will only tell you one of them.</li>
     <li><assemblage><title>Area of a Triangle</title>
     <p>If a triangle has sides of length <m>a</m> and <m>b</m>, and the angle between those two sides is <m>\theta</m>, then the area of the triangle is given by</p>
     <sidebyside widths="60% 30%" valigns="middle middle"><p><me>A =  \dfrac{1}{2} ab \sin \theta</me></p>
-    <image source="images/3-1areatri.png"><description>triangle</description></image></sidebyside>
+    <!--<image source="images/3-1areatri.png">--><image source="images/fig-3-1areatri"><description>triangle</description></image></sidebyside>
     </assemblage></li>
 </ol></p>
 </subsubsection>
@@ -488,14 +1328,155 @@ Lot 86 has an area of approximately 17,669 square feet.</p></solution></example>
 <subsubsection><title>Study Questions</title>
 <p><ol label="1">
     <li><p>Delbert says that <m>\sin \theta = \dfrac{4}{7}</m> in the figure. Is he correct? Why or why not?</p>
-    <sidebyside width="30%"> <image source="images/sq3-1-1.png"><description>triangle</description></image></sidebyside></li>
+    <sidebyside width="30%"> <!--<image source="images/sq3-1-1.png"><description>triangle</description></image>-->
+    <image xml:id="sq3-1-1">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+
+        \coordinate(A) at (2.5,0);
+        \coordinate (B) at (-1, 1.4);
+        \coordinate (C) at (0,0);
+
+        \draw[black,thick] (A)--(B) node [above right,midway] {\color{blue}$7$};
+        \draw[black,thick] (C)--(B) node [below left,midway] {\color{blue}$4$};
+        \draw[black,thick] (A)--(C);
+
+        \draw[red,thick] (A)++(-0.9,0) arc (180:{180-atan(1.4/3.5)}:0.9) node[left, midway, yshift=1] {$\theta$};
+
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+    </sidebyside></li>
     <li><p>Give the lengths of the legs of each right triangle.</p>
-        <sidebyside width="80%"> <image source="images/sq3-1-2.png"><description>triangle</description></image></sidebyside></li>
+        <sidebyside widths="7% 15% 7% 20%" margins="10% 20%"> <!--<image source="images/sq3-1-2.png"><description>triangle</description></image>-->
+        <p>a.</p>
+    <image xml:id="sq3-1-2a">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+
+        \coordinate(A) at (0.5,0);
+        \coordinate (B) at (0.5,2);
+        \coordinate (C) at (0,0);
+
+        \draw[blue,thick] (A) rectangle +(-0.2,0.2);
+        \draw[black,thick,->] (C)+(-.5,0) -- +(1.5,0);
+        \draw[black,thick,->] (C)+(0,-.5) -- +(0,2.2);
+
+        \draw[black,thick] (A)--(B) --(C);
+
+        \filldraw[black] (B) circle (2pt) node[anchor=west] {$(2,8)$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+    <p>b.</p>
+    <image xml:id="sq3-1-2b">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+
+        \coordinate(A) at (-1.5,0);
+        \coordinate (B) at (-1.5,.6);
+        \coordinate (C) at (0,0);
+
+        \draw[blue,thick] (A) rectangle +(0.2,0.2);
+        \draw[black,thick,->] (A)+(-.5,0) -- +(2,0);
+        \draw[black,thick,->] (C)+(0,-.5) -- +(0,1.5);
+
+        \draw[black,thick] (A)--(B) --(C);
+
+        \filldraw[black] (B) circle (2pt) node[anchor=south] {$(-5,2)$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside></li>
     <li><p>Explain why the length of the horizontal leg of the right triangle is <m>-x</m> .</p> 
-        <sidebyside width="30%"> <image source="images/sq3-1-3.png"><description>triangle</description></image></sidebyside></li>
+        <sidebyside width="25%"> <!--<image source="images/sq3-1-3.png"><description>triangle</description></image>-->
+    <image xml:id="sq3-1-3">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+
+        \coordinate(A) at (-1.5,0);
+        \coordinate (B) at (-1.5,1.8);
+        \coordinate (C) at (0,0);
+
+        \filldraw[black] (B) circle (2pt) node[anchor=south, yshift=-2] {$P(x,y)$};
+        \draw[blue,thick] (A) rectangle +(0.25,0.25);
+
+        \draw[black,thick] (A)--(B)--(C) --(A);
+
+        \draw[black,thick,->] (C) -- +(1.5,0);
+        \draw[black,thick] (A)+(-.5,0) -- (A);
+        \draw[black,thick,->] (O)++(0,-0.5) -- +(0,2.8) ;
+
+        \draw[red,thick,->] (C)++(0.4,0) arc (0:{180-atan(6/5)}:0.4) node[ right, midway, yshift=4] {$\theta$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside></li>
     <li>Why are the sines of supplementary angles equal, but the cosines are not? What about the tangents of supplementary angles?</li>
     <li> Use your calculator to evaluate <m>\sin 118\degree</m>, then evaluate <m>\sin^{-1} \text{ANS}</m> .  Explain the result.</li>
-    <li><sidebyside widths="60% 25%" valigns="top middle"> <p>Write an expression for the area of the triangle.</p><image source="images/sq3-1-6.png"><description>triangle</description></image></sidebyside></li>
+    <li><sidebyside widths="60% 20%" margins="10% 10%" valigns="top middle"> <p>Write an expression for the area of the triangle.</p><!--<image source="images/sq3-1-6.png"><description>triangle</description></image>-->
+    <image xml:id="sq3-1-6">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [rotate=5]
+
+        \coordinate(A) at (2.5,0);
+        \coordinate (B) at (1,.8);
+        \coordinate (C) at (0,0);
+
+        \draw[black,thick] (A)--(B) node[above right,midway, xshift=-3] {\color{blue}8};
+        \draw[black,thick] (B)--(C) node[above left,midway] {\color{blue}$a$};
+        \draw[black,thick] (C) --(A) node[below,midway] {\color{blue}$b$};
+
+        \draw[red,thick] (A)++(-0.7,0) arc (180:{180-atan(.8/1.5)}:0.7) node[ left, midway, yshift=0] {\small$\theta$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+    </sidebyside></li>
 </ol></p>
  </subsubsection>
 
@@ -510,8 +1491,7 @@ Lot 86 has an area of approximately 17,669 square feet.</p></solution></example>
 </ol></p></subsubsection>
  </subsection>       
 
-<!--<xi:include href="./summary-3-1.xml" />  summary  -->
-<!--<xi:include href="./section-3-1-exercises.xml" />  exercises  -->
+<xi:include href="./hmwk-3-1.xml" />  
 
 
 </section> 

@@ -25,7 +25,11 @@
         -->
         <latex-image-preamble>
             \usepackage[T1]{fontenc}
-            \usepackage{tikz}
+        \usepackage{tikz}
+        \usetikzlibrary{calc}
+        \usetikzlibrary{arrows.meta}
+        \usetikzlibrary{patterns}
+            
        </latex-image-preamble>
 <!--    <macros>
         \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
@@ -85,23 +89,10 @@
             start of test code
             -->
 
-
-
-
-
-
-<exercise><statement>
-    <p>In the figure, <m>\alpha</m>, <m>\beta</m>, and <m>\gamma</m> denote the measures of the angles in degrees.</p>
-    <sidebyside widths="50% 40%"><p>
-            <ol label="a">
-            <li> Find the measure of angle <m>\alpha</m>.</li>
-            <li> Find the measure of angle <m>\beta</m>.</li>
-            <li> Find the measure of angle <m>\gamma</m>.</li>
-            <li> What do you notice about the measures of the angles?</li>
-        </ol></p>
-<!--    <image source="images/exer1-1-10.png"><description>straight angles with 50 degrees</description></image>-->
-    <image xml:id="exer1-1-10">
-        <description>straight angles with 50 degrees</description>
+     <exercise number="57">
+        <statement><sidebyside widths="55% 30%" margins="5% 5%" valigns="middle middle"><p>In the figure, the circle centered at <m>O</m> circumscribes <m>\triangle XYZ</m>. Suppose that <m>\theta = \angle X</m> is an acute angle, and the side opposite <m>\theta</m>, <m>\overline{YZ}</m>, has length <m>s</m>. Notice that <m>\triangle OYZ</m> is isosceles, because two of its sides are radii of the circle. </p><!--<image source="images/hp3-sum-57.png"><description>statue</description></image>-->
+    <image xml:id="hp3-sum-57">
+        <description>circumscribed triangle</description>
         <latex-image-code>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
@@ -111,39 +102,46 @@
           input/.style    = {coordinate}, % Input
           output/.style   = {coordinate} % Output
         }
-        \begin{tikzpicture}[auto, thick, node distance=2cm]
-            \coordinate (O) at (0,0);
-            \coordinate (A) at (-2,0);
-            \coordinate (B) at (2,0);
-            \coordinate(C) at (-1.157,-1.3789);
-            \coordinate (D) at (1.157,1.3789);
-            \filldraw[black] (O) circle (.2pt) node[anchor=south east]{$\alpha$};
-            \filldraw[black] (O) circle (.2pt) node[anchor=north east, xshift=-10]{$\beta$};
-            \filldraw[black] (O) circle (.2pt) node[anchor=north west, yshift=0]{$\gamma$};
-            \filldraw[black] (O) circle (.2pt) node[anchor=south west, xshift=9]{$50\degree$};
-            \draw[black] (A) --  (B);
-            \draw[black] (C) --  (D) ;
+        \begin{tikzpicture} [scale=.1]
+
+        \coordinate (O) at (0,0);
+        \coordinate (X) at (-24,7);
+        \coordinate (Y) at (15,20);
+        \coordinate (Z) at (24,7);
+        \coordinate (W) at ($(Y)!.5!(Z)$);
+
+        \draw[gray!50!white, thick] (O) circle (25cm);
+
+        \filldraw[black] (O) circle (.5pt) node[anchor=north east] {$O$};
+        \filldraw[black] (X) circle (.5pt) node[anchor=east] {$X$};
+        \filldraw[black] (Y) circle (.5pt) node[anchor=south west] {$Y$};
+        \filldraw[black] (Z) circle (.5pt) node[anchor=west] {$Z$};
+        \filldraw[black] (W) circle (.5pt) node[anchor=north, xshift=-2, yshift=-3] {\small $W$};
+
+        \draw[blue,thick] (W)++(-1.95,-1.35)-- ++(-1.35,1.95)-- ++(1.95,1.35);
+
+        \draw[black,thick] (O)--(W);
+        \draw[black,thick] (O)--(Y) node [above left,midway, xshift=2, yshift=-2] {\color{blue}$r$};
+        \draw[black,thick] (O)--(Z) node [below right,midway] {\color{blue}$r$};
+
+        \draw[red,thick] (X)++(12cm,0) arc(0:{atan(1/3}:12cm) node[right, midway] {$\theta$};
+        \draw[magenta, ultra thick] (X)--(Y)--(Z)--(X);
         \end{tikzpicture}]]>
     </latex-image-code>
     </image>
-
-</sidebyside>
-</statement>
-<answer><p><m>\alpha=130\degree, ~\beta=50\degree, ~\gamma=130\degree.</m> The non-adjacent angles are equal.</p></answer></exercise>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        </sidebyside><p><ol label="a">
+            <li>If <m>W</m> is the midpoint of <m>\overline{YZ}</m>, explain why <m>\angle WOY = \theta</m>.</li>
+            <li> Write <m>\sin \theta</m> in terms of <m>s</m> and the radius <m>r</m>. (Hint: Use the right triangle <m>WOY</m> and the fact that <m>WY = \dfrac{1}{2}s</m>.)</li>
+            <li>Use your equation from (b) to write <m>r</m> in terms of <m>\sin \theta</m> and <m>s</m>.</li>
+            <li>Use your equation from (c) to write the diameter <m>d</m> in terms of <m>\sin \theta</m> and <m>s</m>.</li> 
+            </ol></p></statement>
+        <answer><p><ol label = "a">
+            <li><m>OW</m> bisects the central angle at <m>O</m>, and the inscribed angle <m>\theta</m> is half the central angle at <m>O</m>.</li>
+            <li><m>\sin \theta = \dfrac{s}{2r}</m></li>
+            <li><m>r = \dfrac{s}{2 \sin \theta}</m></li>
+            <li><m>d = \dfrac{s}{\sin \theta}</m></li>
+        </ol></p></answer>
+        </exercise> 
 
 
 

@@ -6,13 +6,94 @@
 <p>
 We have learned to use the trigonometric ratios to solve right triangles. But the trig ratios are only valid for the sides of right triangles. Can we find unknown sides or angles in an oblique triangle?</p> 
 
-<sidebyside width="70%" > <image source="images/3-2-intro.png"><description>triangles</description></image></sidebyside> 
+<sidebyside width="100%" > <!--<image source="images/3-2-intro.png"><description>triangles</description></image>-->
+    <image xml:id="fig-3-2-intro">
+        <description>triangles</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+    \begin{tikzpicture} 
+    \coordinate (C) at (0,0);
+    \coordinate (A) at (2,0);
+    \coordinate (B) at (0,1.5);
+
+    \draw[blue, thick] (C) rectangle +(.25,.25);
+    \draw[black] (A) node[anchor=north west] {$A$};
+    \draw[black] (B) node[anchor=south east, yshift=-3] {$B$};
+    \draw[black] (C) node[anchor=north east] {$C$};
+
+    \draw[black, thick] (C)--(B) node[left,midway] {\color{blue}?};
+    \draw[black, thick] (A)--(B) node[above right,midway] {\color{blue}$c$};
+    \draw[black, thick] (A)--(C) ;
+
+    \draw[red,thick] (A)++(-.5,0) arc(180:{180-atan(1.5/2)}:.5);
+
+    \node[text width=9cm] at (1,-1.){\small\color{blue}We can find $a$ if we know $A$ and $c$ (and $C=90\degree$).};
+
+    %second triangle
+    \coordinate (C) at (7,0);
+    \coordinate (A) at (10,0);
+    \coordinate (B) at (7.5,1.5);
+
+    \draw[black] (A) node[anchor=north west] {$A$};
+    \draw[black] (B) node[anchor=south east, yshift=-3] {$B$};
+    \draw[black] (C) node[anchor=north east] {$C$};
+
+    \draw[black, thick] (C)--(B) node[left,midway] {\color{blue}?};
+    \draw[black, thick] (A)--(B) node[above right,midway] {\color{blue}$c$};
+    \draw[black, thick] (A)--(C) ;
+
+    \draw[red,thick] (A)++(-.5,0) arc(180:{180-atan(1.5/2.5)}:.5);
+
+    \node[text width=9cm] at (10,-1.){\small\color{blue}Can find $a$ if we know $A$ and $c$ and $C$?};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+</sidebyside> 
 
 <p>In this section and the next we find relationships among the sides and angles of oblique triangles. These relationships are called the Law of Sines and the Law of Cosines. To derive these new rules, we use what we already know about right triangles.</p> 
 
 <note><p>Reducing a new problem to an earlier one is a frequently used technique in mathematics.</p></note>
 
-<sidebyside widths="50% 45%"><p>Consider the oblique triangle at right.  By drawing in the altitude <m>h</m> of the triangle, we create two right triangles, <m>\triangle BCD</m> and <m>\triangle ABD</m>, as shown in the figure. Now we can write expressions in terms of <m>h</m> for <m>\sin A</m> and for <m>\sin C</m>.</p> <image source="images/3-2-tworight.png"><description>triangles</description></image></sidebyside>
+<sidebyside widths="50% 45%"><p>Consider the oblique triangle at right.  By drawing in the altitude <m>h</m> of the triangle, we create two right triangles, <m>\triangle BCD</m> and <m>\triangle ABD</m>, as shown in the figure. Now we can write expressions in terms of <m>h</m> for <m>\sin A</m> and for <m>\sin C</m>.</p> <!--<image source="images/3-2-tworight.png"><description>triangles</description></image>-->
+    <image xml:id="fig-3-2-tworight">
+        <description>triangles</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+    \begin{tikzpicture} 
+    \coordinate (C) at (0,0);
+    \coordinate (A) at (6.5,0);
+    \coordinate (B) at (2.5,2.5);
+    \coordinate (D) at (2.5,0);
+
+    \draw[blue, thick] (D) rectangle +(-.25,.25);
+    \draw[blue, thick] (D) rectangle +(.25,.25);
+    \draw[black] (A) node[anchor= west] {$A$};
+    \draw[black] (B) node[anchor=south west, yshift=-3] {$B$};
+    \draw[black] (C) node[anchor=east] {$C$};
+    \draw[black] (D) node[anchor=north] {$D$};
+
+    \draw[black, thick] (C)--(B) node[above left,midway] {\color{blue}$a$};
+    \draw[black, thick] (A)--(B) node[above right,midway] {\color{blue}$c$};
+    \draw[black, thick] (A)--(C) ;
+    \draw[gray, thick, dashed] (D)--(B) node[right,midway] {\color{blue}$h$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+</sidebyside>
 
 <p>Looking at <m>\triangle BCD</m>, we see that <m>\dfrac{h}{a} = \sin C.</m></p>
 <p>  Looking at <m>\triangle ABD</m>, we see that <m>\dfrac{h}{c} = \sin A.</m> </p>
@@ -32,7 +113,34 @@ We have learned to use the trigonometric ratios to solve right triangles. But th
 
 <assemblage><title>Law of Sines</title>
 <p>If the angles of a triangle are <m>A, B</m>, and <m>C</m>, and the opposite sides are respectively <m>a, b,</m> and <m>c</m>, then</p>
-<sidebyside widths="60% 30%"><p><me>\dfrac {\sin A}{a} = \dfrac {\sin B}{b} = \dfrac {\sin C}{c}</me></p> <image source="images/3-2-sineslaw.png"><description>triangle</description></image></sidebyside>
+<sidebyside widths="50% 30%" margins="8% 8%"><p><me>\dfrac {\sin A}{a} = \dfrac {\sin B}{b} = \dfrac {\sin C}{c}</me></p> <!--<image source="images/3-2-sineslaw.png"><description>triangle</description></image>-->
+    <image xml:id="fig-3-2-sineslaw">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+    \begin{tikzpicture} [rotate=10]
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (1.3,1.5);
+    \coordinate (C) at (3.2,0);
+
+    \draw[black] (A) node[anchor= east] {$A$};
+    \draw[black] (B) node[anchor=south, xshift=-3] {$B$};
+    \draw[black] (C) node[anchor=west] {$C$};
+
+    \draw[black, thick] (C)--(B) node[above right,midway] {\color{blue}$a$};
+    \draw[black, thick] (A)--(B) node[above left,midway] {\color{blue}$c$};
+    \draw[black, thick] (A)--(C) node[below,midway] {\color{blue}$b$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+</sidebyside>
 <p>or equivalently, <me>\dfrac {a}{\sin A} = \dfrac {b}{\sin B} = \dfrac {c}{\sin C}</me></p>         
 </assemblage>
 </introduction>
@@ -42,7 +150,40 @@ We have learned to use the trigonometric ratios to solve right triangles. But th
 
 <example><statement>
     <p>Two observers onshore sight a ship at an unknown distance from the shore. The observers are 400 yards apart at points <m>A</m> and <m>B</m>, and they each measure the angle from the shoreline to the ship, as shown below.  How far is the ship from the observer at <m>A</m>?
- </p> <sidebyside width="80%"><image source="images/exam3-2-1.png"><description>triangle</description></image></sidebyside></statement>
+ </p> <sidebyside width="80%"><!--<image source="images/exam3-2-1.png"><description>triangle</description></image>-->
+    <image xml:id="exam3-2-1">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+    \begin{tikzpicture} 
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (0.284,2.383);
+    \coordinate (C) at (11,0);
+
+    \draw[black] (A) node[anchor= east] {$A$};
+    \draw[black] (B) node[anchor=east] {$B$};
+    \draw[black] (C) node[anchor=south] {$C$};
+
+    \draw[black, thick] (C)--(B);
+    \draw[black, thick] (A)--(B) node[above left,midway] {\color{blue}400 yd};
+    \draw[black, thick] (A)--(C) node[below,midway] {\color{blue}$d$};
+
+    \draw[red, thick] (C)++(-2,0) arc(180:{180-atan(2.4/11)}:2) node[left,midway] {\small$\theta$};
+    \draw[red, thick] (A)++(.3,0) arc(0:83.2:.3) node[above right,midway] {\small$83.2\degree$};
+    \draw[red, thick] (B)++(-.035,-.3) arc(-96.7:-17.3:.3) node[below right,midway] {\small$79.4\degree$};
+
+    \filldraw[black] (C)++(0,-.1)--++(0,-.2) -- ++(.8,0) -- ++(.2,.2) -- ++(-.3,0) --++(0,.1) -- ++ (-.25,0) -- ++(0,.3) -- ++(-.1,0) -- ++(0,-.3) -- ++(-.2,0) -- ++(0,-.1) --cycle;
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+ </sidebyside></statement>
 <solution>
     <p>First note that <m>\triangle ABC</m> is not a right triangle, so we cannot use the trig ratios directly to find the sides of this triangle.</p><p>  The unknown distance <m>d</m> is the side opposite <m>\angle B = 79.4\degree</m>.  In order to use the Law of Sines, we must know another angle and the side opposite that angle.  We do:  we know that side <m>c = 400</m>, and we can compute the angle at the ship, <m>\angle C</m>.</p>
     <me>\angle C = 180\degree - (79.4\degree + 83.2\degree) = 17.4\degree</me>
@@ -57,7 +198,37 @@ We have learned to use the trigonometric ratios to solve right triangles. But th
 </solution></example>
 
 <exercise><statement>
-    <sidebyside widths="50% 45%"><p>Delbert and Francine are 40 feet apart on one side of a river. They make angle measurements to a pine tree on the opposite shore as shown at right. What is the distance  from Francine to the pine tree?</p> <image source="images/exer3-2-1.png"><description>triangle</description></image></sidebyside>
+    <sidebyside widths="50% 40%"><p>Delbert and Francine are 40 feet apart on one side of a river. They make angle measurements to a pine tree on the opposite shore as shown at right. What is the distance  from Francine to the pine tree?</p> <!--<image source="images/exer3-2-1.png"><description>triangle</description></image>-->
+    <image xml:id="exer3-2-1">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+    \begin{tikzpicture} 
+    \coordinate (C) at (0,0);
+    \coordinate (B) at (0,1.5);
+    \coordinate (A) at (-4.25,0.673);
+
+    \draw[black] (A) node[anchor= east] {$P$};
+    \draw[black] (B) node[anchor=west] {$D$};
+    \draw[black] (C) node[anchor=north west] {$F$};
+
+    \draw[black, thick] (C)--(B) node[right,midway] {\color{blue} 40 ft};
+    \draw[black, thick] (A)--(B);
+    \draw[black, thick] (A)--(C) node[below,midway] {\color{blue}$d$};
+
+    \draw[red, thick] (C)++(-.3,0) arc(180:99:.3) node[above left,midway, xshift=5, yshift=-3] {\small$81\degree$};
+    \draw[red, thick] (B)++(0,-.3) arc(-90:-169:.3) node[below left,midway,xshift=3] {\small$79\degree$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+    </sidebyside>
 </statement></exercise>
 </subsection>
 
@@ -65,12 +236,42 @@ We have learned to use the trigonometric ratios to solve right triangles. But th
 <p>In order to apply the Law of Sines to find a side, we must know one angle of the triangle and its opposite side (either <m>a</m> and <m>A</m>, or <m>b</m> and <m>B</m>, or <m>c</m> and <m>C</m>), and one other angle. Then we can find the side opposite that angle.</p>
 
 <example><statement>
-    <sidebyside widths="55% 40%"><p>In the triangle shown at right, <m>A = 37\degree, B = 54\degree</m>, and <m>a = 11</m>.
+    <sidebyside widths="50% 40%" margins="5% 5%"><p>In the triangle shown at right, <m>A = 37\degree, B = 54\degree</m>, and <m>a = 11</m>.
     <ol label = "a">
         <li>Find <m>b</m>.</li>
         <li>Solve the triangle.</li>
     </ol></p>
- <image source="images/exam3-2-2.png"><description>triangle</description></image></sidebyside></statement>
+ <!--<image source="images/exam3-2-2.png"><description>triangle</description></image>-->
+    <image xml:id="exam3-2-2">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+    \begin{tikzpicture} 
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (4.55,3.43);
+    \coordinate (C) at (4.7,0);
+
+    \draw[black] (A) node[anchor= east] {$A$};
+    \draw[black] (B) node[anchor=west] {$B$};
+    \draw[black] (C) node[anchor=north west] {$C$};
+
+    \draw[black, thick] (C)--(B) node[right,midway] {\color{blue} $a=11$};
+    \draw[black, thick] (A)--(B) node[above left,midway] {\color{blue} $c$};
+    \draw[black, thick] (A)--(C) node[below,midway] {\color{blue}$b$};
+
+    \draw[red, thick] (A)++(.6,0) arc(0:37:.6) node[right,midway] {\small$37\degree$};
+    \draw[red, thick] (B)++(0.05,-.4) arc(-89:-143:.4) node[below left,midway,xshift=7] {\small$54\degree$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+</sidebyside></statement>
 <solution><p><ol label = "a">
         <li><p>We use the Law of Sines with <m>a</m> and angle <m>A</m> to find <m>b</m>.</p>
         <p>\begin{align*}
@@ -90,7 +291,34 @@ We have learned to use the trigonometric ratios to solve right triangles. But th
     </ol></p></solution></example>
 
 <exercise><statement>
-    <sidebyside widths="50% 20%"><p>In the triangle at right, <m>A = 65\degree, C = 42\degree</m>, and <m>c = 16</m>.  Solve the triangle.  (Hint:  Which side will you find first?)</p> <image source="images/exer3-2-2.png"><description>triangle</description></image></sidebyside>
+    <sidebyside widths="50% 25%" margins="10% 10%"><p>In the triangle at right, <m>A = 65\degree, C = 42\degree</m>, and <m>c = 16</m>.  Solve the triangle.  (Hint:  Which side will you find first?)</p> <!--<image source="images/exer3-2-2.png"><description>triangle</description></image>-->
+    <image xml:id="exer3-2-2">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+    \begin{tikzpicture} 
+    \coordinate (B) at (0,0);
+    \coordinate (A) at (0.6,1.8);
+    \coordinate (C) at (3.,0);
+
+    \draw[black] (A) node[anchor= south] {$A$};
+    \draw[black] (B) node[anchor=east, xshift=-3] {$B$};
+    \draw[black] (C) node[anchor=west] {$C$};
+
+    \draw[black, thick] (C)--(B) node[below,midway] {\color{blue}$a$};
+    \draw[black, thick] (A)--(B) node[above left,midway] {\color{blue}$c$};
+    \draw[black, thick] (A)--(C) node[above right,midway] {\color{blue}$b$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+    </sidebyside>
 </statement></exercise>
 </subsection>
 
@@ -99,7 +327,34 @@ We have learned to use the trigonometric ratios to solve right triangles. But th
 
 <example><statement>
     <sidebyside widths="55% 25%"><p>In the triangle shown at right, <m>B = 55\degree, a = 5</m>, and <m>b = 11</m>. Solve the triangle.</p>
- <image source="images/exam3-2-3.png"><description>triangle</description></image></sidebyside></statement>
+ <!--<image source="images/exam3-2-3.png"><description>triangle</description></image>-->
+    <image xml:id="exam3-2-3">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+    \begin{tikzpicture} 
+    \coordinate (C) at (0,0);
+    \coordinate (A) at (2.2,0);
+    \coordinate (B) at (-.226,.974);
+
+    \draw[black] (A) node[anchor= west] {$A$};
+    \draw[black] (B) node[anchor=east, xshift=0] {$B$};
+    \draw[black] (C) node[anchor=north east] {$C$};
+
+    \draw[black, thick] (C)--(B) node[left,midway, yshift=-2] {\color{blue}$a$};
+    \draw[black, thick] (A)--(B) node[above,midway] {\color{blue}$c$};
+    \draw[black, thick] (A)--(C) node[below,midway] {\color{blue}$b$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+</sidebyside></statement>
 <solution><p>We must find the three remaining parts of the triangle, <m>A, C</m>, and <m>c</m>. First, we use the Law of Sines to find <m>\sin A</m>.</p>
         <p>\begin{align*}
                 \dfrac{\sin A}{a} \amp = \dfrac{\sin B}{b} \amp\amp \text{Substitute the known values.}\\
@@ -127,9 +382,52 @@ We have learned to use the trigonometric ratios to solve right triangles. But th
     </ol></p></statement></exercise>
 
 <warning><p>In the last example we used the value of <m>\sin A</m> to find angle <m>A</m>.  But there are two angles that satisfy <m>\sin A = 0.3723</m>, one acute (<m>21.9\degree</m>) and one obtuse (<m>168.1\degree</m>). How did we know which one to choose?</p>
-<sidebyside width="50%"><image source="images/3-2-caut.png"><description>angles</description></image></sidebyside>  
+<sidebyside width="50%"><!--<image source="images/3-2-caut.png"><description>angles</description></image>-->
+    <image xml:id="fig-3-2-caut">
+        <description>angles</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+    \begin{tikzpicture}  [scale=1.1]
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (2.78,0);
+    \coordinate (B) at (2.78,1.118);
+    \coordinate (C) at (-2.78,0);
+    \coordinate (D) at (-2.78,1.118);
+
+
+    \draw[blue, thick] (A) rectangle +(-.25,.25);
+    \draw[blue, thick] (C) rectangle +(.25,.25);
+    \draw[gray, thick, dashed] (A)--(B);
+    \draw[gray, thick, dashed] (C)--(D);
+    \draw[black,thick,->] (C)++(-.5,0) -- (3.25,0) ;
+    \draw[black,thick,->] (O)++(0,-.1) -- +(0,2.5);
+    \draw[black, ultra thick] (.1,1.118) -- (-.1, 1.118) node[left] {$y$};
+
+    \draw[black,  thick] (O)--(3.24,1.305);
+    \draw[black,  thick] (O)--(-3.24,1.305);
+    \draw[black,  thick] (O)--(B) node[above,midway, xshift=5, yshift=2] {\color{blue}$r$};
+    \draw[black, thick] (O)--(D)  node[above, midway, xshift=-5, yshift=2] {\color{blue}$r$};
+
+    \draw[red,thick, ->] (O)++(.7,0) arc(0:158.1:.7) node[above,midway,xshift=-25, yshift=-1 , fill=white, inner sep=0pt] {\footnotesize$158.1\degree$};
+    \draw[red,thick, ->] (O)++(1,0) arc(0:21.9:1) node[right,midway,yshift=0 ] {\footnotesize$21.9\degree$};
+
+    \filldraw[red] (B) circle (2pt);
+    \filldraw[red] (D) circle (2pt);
+
+    \node[text width=3cm] at (-1,1.7){\color{black}$\frac{y}{r}\approx 0.3723$};
+    \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+</sidebyside>  
 <p>In this case, the obtuse angle is too big to fit in the triangle, because angle <m>B = 55\degree</m>.  Sometimes both angles will produce (different) triangles, and sometimes only the acute angle will work.  You should always check whether both angles provide solutions.</p> 
- </warning> 
+ </warning>
 
  <note><p>Because there can be more than one solution for a triangle in which we know two sides and an angle opposite one of them, this situation is called the <term>ambiguous case</term> for the Law of Sines. (See Homework Problems 33-42 for more about the ambiguous case.)</p></note>
 
@@ -151,7 +449,59 @@ We have learned to use the trigonometric ratios to solve right triangles. But th
           <li>  In the first case, angle <m>C = 180\degree - (14.4\degree + 138.5\degree) = 27.1\degree</m>, and we have the triangle shown in figure (a).</li>  
           <li>In the second case, <m>C = 180\degree - (14.4\degree + 41.5\degree) = 124.1\degree</m>, which gives us the triangle shown in figure (b).</li>
       </ul></p>
-      <sidebyside width="90%"><image source="images/exam3-2-4.png"><description>triangles</description></image></sidebyside>
+      <sidebyside width="100%"><!--<image source="images/exam3-2-4.png"><description>triangles</description></image>-->
+    <image xml:id="exam3-2-4">
+        <description>triangles</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+    \begin{tikzpicture} 
+    \coordinate (B) at (0,0);
+    \coordinate (A) at (3.73,.957);
+    \coordinate (C) at (5.6,0);
+
+    \draw[black] (A) node[anchor=south east] {$A$};
+    \draw[black] (B) node[anchor=east] {$B$};
+    \draw[black] (C) node[anchor=north west] {$C$};
+
+    \draw[black, thick] (C)--(B) node[below,midway] {8};
+    \draw[black, thick] (A)--(B) node[above left,midway, xshift=8] {\color{red}$5.5$};
+    \draw[black, thick] (A)--(C) node[above right,midway] {3};
+
+    \draw[black,thick] (B)++(1.2,0) arc(0:14.4:1.2) node[right, midway, yshift=1] {\footnotesize$14.4\degree$};
+    \draw[red,thick] (C)++(-.6,0) arc(180:152.9:.6) node[left, midway, yshift=1] {\footnotesize$27.1\degree$};
+    \draw[red,thick] (A)++(-.291,-0.075) arc(194.4:332.9:.3) node[below, midway, yshift=0] {\footnotesize$138.5\degree$};
+
+    \node[text width=1cm] at (3,-1.){a.};
+
+    %second triangle
+    \coordinate (B) at (7,0);
+    \coordinate (A) at (13.77,1.74);
+    \coordinate (C) at (12.6,0);
+
+    \draw[black] (A) node[anchor=west] {$A$};
+    \draw[black] (B) node[anchor=east] {$B$};
+    \draw[black] (C) node[anchor=north west] {$C$};
+
+    \draw[black, thick] (C)--(B) node[below,midway] {8};
+    \draw[black, thick] (A)--(B) node[above left,midway, xshift=8] {\color{red}$5.5$};
+    \draw[black, thick] (A)--(C) node[below right,midway] {3};
+
+    \draw[black,thick] (B)++(1.2,0) arc(0:14.4:1.2) node[right, midway, yshift=1] {\footnotesize$14.4\degree$};
+    \draw[red,thick] (C)++(-.3,0) arc(180:55.9:.3) node[left, midway, yshift=1] {\footnotesize$124.1\degree$};
+    \draw[red,thick] (A)++(-.291,-0.075) arc(194.4:235.9:.3) node[below left, midway, yshift=0] {\footnotesize$41.5\degree$};
+
+    \node[text width=1cm] at (11,-1.){b.};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+      </sidebyside>
   </solution></example> 
 
   <exercise><statement>
@@ -167,10 +517,79 @@ We have learned to use the trigonometric ratios to solve right triangles. But th
 
 <example><statement>
     <p>Richard wants to measure the height of a castle controlled by hostile forces. When he is as close as he can get to the castle, the angle of elevation to the top of the wall is <m>18.5\degree</m>. He then retreats 20 yards and measures the angle of elevation again; this time it is <m>15.9\degree</m>. How tall is the castle?</p>
-<sidebyside width="80%"><image source="images/exam3-2-5.png"><description>castle</description></image></sidebyside></statement>
+<sidebyside width="80%"><!--<image source="images/exam3-2-5.png"><description>castle</description></image>-->
+    <image xml:id="exam3-2-5">
+        <description>castle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+    \begin{tikzpicture} 
+
+    \filldraw[gray!30!white] (0,0) -- ++(0,4.5) -- ++(-.5,0) -- ++(0,-.5) -- ++(-.5,0) -- ++(0,.5) -- ++(-.5,0) -- ++(0,-.5) -- ++(-.5,0) -- ++(0,.5) -- ++(-.5,0) -- ++(0,-4.5)--cycle;
+
+    \filldraw[black] (-1.55,2.5) -- ++(.6,0) -- ++(0,.6) arc(0:180:.3) -- cycle;
+
+    \coordinate (D) at (0,0);
+    \coordinate (A) at (0,4.5);
+    \coordinate (B) at (6,0);
+    \coordinate (C) at (10,0);
+
+    \draw[black] (A) node[anchor=south] {$A$};
+    \draw[black] (B) node[anchor=north] {$B$};
+    \draw[black] (C) node[anchor=north] {$C$};
+    \draw[black] (D) node[anchor=north] {$D$};
+
+    \draw[black, thick] (C)--(B) node[below,midway] {\color{blue}20 yd};
+    \draw[black, thick] (A)--(B)--(D);
+    \draw[black, thick] (A)--(C) node[above right,midway] {\color{blue}$r$};
+    \draw[black, thick] (A)--(D) node[right,midway] {\color{blue}$h$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+</sidebyside></statement>
 
 <solution><p>Notice that <m>h</m> is one side of the right triangle <m>ADC</m>. If we can find its hypotenuse, labeled <m>r</m> in the figure, we can use the sine ratio to find <m>h</m>. To find <m>r</m>, we consider a second triangle, <m>ABC</m>, as shown below.</p>
-<sidebyside width="60%"><image source="images/exam3-2-5soln.png"><description>castle</description></image></sidebyside>
+<sidebyside width="60%"><!--<image source="images/exam3-2-5soln.png"><description>castle</description></image>-->
+    <image xml:id="exam3-2-5soln">
+        <description>castle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+    \begin{tikzpicture} 
+
+    \coordinate (D) at (0,0);
+    \coordinate (A) at (0,4.5);
+    \coordinate (B) at (6,0);
+    \coordinate (C) at (10,0);
+
+    \draw[black] (A) node[anchor=south] {$A$};
+    \draw[black] (B) node[anchor=north] {$B$};
+    \draw[black] (C) node[anchor=north] {$C$};
+    \draw[black] (D) node[anchor=north] {$D$};
+
+    \draw[red, thick] (B)++(-.7,0) arc(180:{180-atan(4.5/6)}:.7) node[left, midway, yshift=1] {$18.5\degree$};
+    \draw[red, thick] (C)++(-.9,0) arc(180:{180-atan(4.5/10)}:.9) node[left, midway, yshift=1] {$15.9\degree$};
+
+    \draw[black, thick] (C)--(B) node[below,midway] {\color{blue}20 yd};
+    \draw[black, thick] (A)--(B)--(D);
+    \draw[black, thick] (A)--(C) node[above right,midway] {\color{blue}$r$};
+    \draw[black, thick] (A)--(D) node[right,midway] {\color{blue}$h$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+</sidebyside>
 <p>In this triangle, we know side <m>BC = 20</m> and would like to find side <m>AC = r</m>.  We can use the Law of Sines to find <m>r</m>, but first we must calculate the other angles of the triangle.</p>
 <p>Now, the angle opposite <m>r, ~\angle ABC</m>, is the complement of <m>18.5\degree</m>, so
 <me>\angle ABC = 180\degree - 18.5\degree = 161.5\degree</me>
@@ -196,14 +615,81 @@ Now we can apply the Law of Sines to find <m>r</m>. We have</p>
 <subsection><title>Measuring Astronomical Distances</title>      
 <p> If you look at a nearby object and alternately close your left and right eyes, the object seems to jump in position. This apparent change occurs because your eyes are viewing the object from two different positions spaced several centimeters apart. If the object at point <m>O</m> is straight ahead of one eye, it appears to be at some angle <m>p</m> away from the line of sight of the other eye. The angle <m>p</m> is called the <term>parallax</term> of the object.</p>
 <p> Use the figure below to see that <m>p</m> is also the angle between the directions to your two eyes when viewed from point <m>O</m>.  (What fact from geometry justifies this statement?)</p>
-<sidebyside width="55%"><image source="images/3-2-parallax.png"><description>parallax</description></image></sidebyside>
+<sidebyside width="55%"><!--<image source="images/3-2-parallax.png"><description>parallax</description></image>-->
+    <image xml:id="fig-3-2-parallax">
+        <description>parallax</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+    \begin{tikzpicture} 
+
+    \coordinate (A) at (0,0);
+    \coordinate (O) at (5.5,1.5);
+    \coordinate (B) at (0,1.5);
+    \coordinate (C) at (5.5,0);
+
+    \draw[red, thick] (A)++(1.5,0) arc(0:{atan(1.5/5.5)}:1.5) node[right, midway] {$p$};
+    \draw[red, thick] (O)++(-1.5,0) arc(180:{180+atan(1.5/5.5)}:1.5) node[left, midway, yshift=-2] {$p$};
+
+    \filldraw[black] (O) circle (1.5pt) node[anchor=south] {$O$};
+
+    \draw[black, thick] (B)-- +(7.7,0) ;
+    \draw[black, thick] (A)-- +(7.7,0);
+    \draw[black, thick,->] (O)--+(1.5,0);
+    \draw[black, thick,->] (C)--+(1.5,0);
+    \draw[black, thick] (A) -- (O) --+(2.2,.6);
+
+    \draw[black] (-.26,0) circle (.2);
+    \filldraw[black] (-.16,0) circle (.1);
+    \draw[black] (-.26,1.5) circle (.2);
+    \filldraw[black] (-.16,1.5) circle (.1);
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+</sidebyside>
 <p>Astronomers use parallax to determine the distance from earth to stars and other celestial objects. Two observers on Earth at a known distance apart both measure the direction to the star. The difference in angle between those two directions is the parallax.</p>
 
 <example><statement>
     <p>Astronomers 1000 kilometers apart observe an asteroid with a parallax of <m>0.001\degree</m>.  How far is the asteroid from Earth?</p>
 </statement>
 <solution><p>We let <m>x</m> represent the distance to the asteroid.  The asteroid and the two observers make an isosceles triangle with base 1000 km and equal sides of length <m>x</m>, as shown below.</p>
-<sidebyside width="50%"><image source="images/exam3-2-6.png"><description>castle</description></image></sidebyside>
+<sidebyside width="60%"><!--<image source="images/exam3-2-6.png"><description>castle</description></image>-->
+    <image xml:id="exam3-2-6">
+        <description>parallax</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+    \begin{tikzpicture} 
+
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (-7.5,.5);
+    \coordinate (B) at (-7.5,-.5);
+
+    \filldraw[black] (A) node[anchor=south east] {$A$};
+    \filldraw[black] (B) node[anchor=north east] {$B$};
+    \filldraw[black] (O) node[anchor=west] {$O$};
+
+    \draw[red, thick] (O)++(-2.49,-.166) arc({180+atan(1/15)}:{180-atan(1/15)}:2.5) node[left, midway, xshift=-2] {\footnotesize$0.001\degree$};
+
+    \draw[black, thick] (B)-- (O) node[below,midway] {\color{blue}$x$};
+    \draw[black, thick] (A)-- (O) node[above,midway] {\color{blue}$x$};
+    \draw[black, thick] (B)-- (A) node[left,midway] {\color{blue}$1000$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+</sidebyside>
 <p>The base angles of the triangle are both <m>\dfrac{180\degree - 0.001\degree}{2} = 89.999\degree</m>. By the Law of Sines,</p>
 <p>\begin{align*}
                 \dfrac{x}{\sin 89.999\degree} \amp = \dfrac{1000}{\sin 0.001\degree} \amp\amp \text{Solve for }x.\\
@@ -234,7 +720,43 @@ Now we can apply the Law of Sines to find <m>r</m>. We have</p>
     <p>The star Wolf 359 has a parallax of <m>0.85^{\prime \prime}</m> when observed from opposites sides of Earth's orbit. How far away is the star?</p>
 </statement>
 <solution><p>In the figure below, the star Wolf 359 is located at point <m>O</m>. Our Sun is located at point <m>C</m>, halfway between the two observation points at <m>A</m> and <m>B</m>.  Thus, the distance between the observation points is twice the distance from the Earth to the Sun, or 2 AU.</p>
-<sidebyside width="50%"><image source="images/exam3-2-7.png"><description>triangle</description></image></sidebyside>
+<sidebyside width="60%"><!--<image source="images/exam3-2-7.png"><description>triangle</description></image>-->
+    <image xml:id="exam3-2-7">
+        <description>triangles</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+    \begin{tikzpicture} 
+
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (-7.5,1.5);
+    \coordinate (B) at (-7.5,-1.5);
+    \coordinate (C) at (-7.5,0);
+
+    \filldraw[black] (A) node[anchor=south] {$A$};
+    \filldraw[black] (B) node[anchor=north] {$B$};
+    \filldraw[black] (O) node[anchor=west] {$O$};
+    \filldraw[black] (C) circle(1.8pt) node[anchor=north west] {$C$};
+
+    \draw[black, thick] (C)-- (O) node[above,midway] {\color{blue}$x$};
+    \draw[black, thick] (A)-- (O) -- (B) --cycle;
+
+    \draw[gray, thick] (A)++(-.1,0) -- +(-.5,0);
+    \draw[gray, thick] (B)++(-.1,0) -- +(-.5,0);
+    \draw[gray, thick] (A)++(-.3,0) -- +(0,-1);
+    \draw[gray, thick] (B)++(-.3,0) -- +(0,1);
+
+    \node[label={[rotate=90, color=blue]center:2 AU}] at (-7.8,0){};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+</sidebyside>
 <p>The altitude from <m>O</m> to side <m>\overline{AB}</m> forms a right triangle <m>ACO</m> and bisects the angle at <m>O</m>. Thus   
 <me>\angle AOC = \dfrac{1}{2}(0.85^{\prime \prime}) = 0.425^{\prime \prime}</me> 
 We use the definition of tangent to find</p>
@@ -273,8 +795,72 @@ We use the definition of tangent to find</p>
     </ol></p></li>
     <li><p><ol label = "a">
         <li><m>B = 52.4\degree</m> or <m>B = 127.6\degree</m></li>
-        <li><sidebyside widths="50% 30%" valigns = "middle middle"><p><m>A = 97.9\degree,~a = 10</m></p><image source="images/exer3-2-4ans.png"><description>triangle</description></image></sidebyside>
-        <sidebyside widths="50% 40%" valigns = "middle middle"><p>or <m>A = 22.7\degree,~a = 3.9</m></p><image source="images/exer3-2-4anstoo.png"><description>triangle</description></image></sidebyside></li>
+        <li><sidebyside widths="50% 23%"  margins="7% 15%" valigns = "middle middle"><p><m>A = 97.9\degree,~a = 10</m></p><!--<image source="images/exer3-2-4ans.png"><description>triangle</description></image>-->
+    <image xml:id="exer3-2-4ans">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+    \begin{tikzpicture} 
+
+    \coordinate (C) at (0,0);
+    \coordinate (A) at (2.4,0);
+    \coordinate (B) at (2.61,1.49);
+
+    \draw[black] (A) node[anchor=north west, yshift=3] {$A$};
+    \draw[black] (B) node[anchor=south west, yshift=-3] {$B$};
+    \draw[black] (C) node[anchor=east] {$C$};
+
+    \draw[black, thick] (C)--(B) node[above left,midway] {\color{blue}10};
+    \draw[black, thick] (A)--(B) node[right,midway] {\color{blue}5};
+    \draw[black, thick] (A)--(C) node[below,midway] {\color{blue}8};
+
+    \draw[red, thick] (A)++(-.2,0) arc(180:82.1:.2) node[above,midway, xshift=-7, yshift=-2] {\footnotesize$97.9\degree$};
+    \draw[red, thick] (C)++(.5,0) arc(0:29.7:.5) node[right,midway, yshift=1] {\footnotesize$29.7\degree$};
+    \draw[red, thick] (B)++(-.261,-.149) arc(209.7:264.1:.3) node[below left,midway, xshift=6, yshift=-3] {\footnotesize$54.4\degree$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+        </sidebyside>
+        <sidebyside widths="50% 30%" margins="7% 10%" valigns = "middle middle"><p>or <m>A = 22.7\degree,~a = 3.9</m></p><!--<image source="images/exer3-2-4anstoo.png"><description>triangle</description></image>-->
+    <image xml:id="exer3-2-4anstoo">
+        <description>triangle</description>
+        <latex-image-code>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+    \begin{tikzpicture} [scale=1.4]
+
+    \coordinate (C) at (0,0);
+    \coordinate (A) at (2.4,0);
+    \coordinate (B) at (1.12,.638);
+
+    \draw[black] (A) node[anchor=north west, yshift=3] {$A$};
+    \draw[black] (B) node[anchor=south] {$B$};
+    \draw[black] (C) node[anchor=east] {$C$};
+
+    \draw[black, thick] (C)--(B) node[above left,midway] {\color{blue}3.9};
+    \draw[black, thick] (A)--(B) node[above right,midway] {\color{blue}5};
+    \draw[black, thick] (A)--(C) node[below,midway] {\color{blue}8};
+
+    \draw[red, thick] (A)++(-.25,0) arc(180:157.3:.25) node[left,midway, xshift=-2, yshift=2] {\footnotesize$22.7\degree$};
+    \draw[red, thick] (C)++(.25,0) arc(0:29.7:.25) node[right,midway, yshift=1] {\footnotesize$29.7\degree$};
+    \draw[red, thick] (B)++(-.1305,-.0745) arc(209.7:337.3:.15) node[below,midway, xshift=0, yshift=2] {\footnotesize$127.6\degree$};
+        \end{tikzpicture}]]>
+    </latex-image-code>
+    </image>
+      </sidebyside></li>
     </ol></p></li>
     <li><m>AB = 120.79</m>, the castle is about 38.33 yards tall.</li>
     <li>About 91,673,247 km</li>
@@ -308,7 +894,7 @@ We use the definition of tangent to find</p>
 <p><ol label="1">
     <li><assemblage><title>Law of Sines</title>
 <p>If the angles of a triangle are <m>A, B</m>, and <m>C</m>, and the opposite sides are respectively <m>a, b,</m> and <m>c</m>, then</p>
-<sidebyside widths="60% 30%"><p><me>\dfrac {\sin A}{a} = \dfrac {\sin B}{b} = \dfrac {\sin C}{c}</me></p> <image source="images/3-2-sineslaw.png"><description>triangle</description></image></sidebyside>
+<sidebyside widths="60% 30%"><p><me>\dfrac {\sin A}{a} = \dfrac {\sin B}{b} = \dfrac {\sin C}{c}</me></p> <image source="images/fig-3-2-sineslaw"><description>triangle</description></image></sidebyside>
 <p>or equivalently, <me>\dfrac {a}{\sin A} = \dfrac {b}{\sin B} = \dfrac {c}{\sin C}</me></p>         
 </assemblage></li>
 <li> We can use the Law of Sines to find an unknown side in an oblique triangle. We must know the angle opposite the unknown side, and another side-angle pair.</li>
@@ -342,9 +928,9 @@ We use the definition of tangent to find</p>
     <li>Solve problems involving the ambiguous case    #33-46</li>
 </ol></p></subsubsection>
 
-</subsection>
-<!--<xi:include href="./summary-3-2.xml" /> 
-<xi:include href="./section-3-2-exercises.xml" /> --> <!-- exercises  -->
+</subsection>      
+
+<xi:include href="./hmwk-3-2.xml" />  
 
 </section> 
 <!-- </book>  </mathbook> -->
