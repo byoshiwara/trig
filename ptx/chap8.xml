@@ -1,143 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!-- <mathbook><book> -->
 <chapter xml:id="chap8"  xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Linear Systems</title>
-<introduction>
-<sidebyside width="60%" margins="0% 40%"><image source="images/squirrel.jpg"><description>Squirrel eating: Adam Jones/Photo Researchers, Inc.</description></image></sidebyside>
-<p>
-    <term>Linear programming</term> is an application of linear systems developed in the 1940s to solve complex optimization problems during wartime operations. Today, linear programming is used in scheduling and allocation of resources, in shipping and telecommunications networks, and in the selection of stocks and bonds for portfolios. In 1980, the computer scientist Laszlo Lovasz said, <q>If one would take statistics about which mathematical problem is using up most of the computer time in the world, ... the answer would probably be linear programming.</q> 
-</p>
-<p>
-	George Dantzig (1914–2005) invented the simplex method for solving linear programming problems in 1947. His first application of the method was to determine an adequate diet of least cost. This problem involved 9 equations in 77 unknowns and took 120 days to solve using the desk calculators available at the time.</p>
-	<p> In this chapter, we use a graphing technique to solve problems in two unknowns. For example, the diet of the Columbian ground squirrel consists of two foods: grass and forb (a type of flowering weed). Small animals spend most of their time foraging for food, but they must also be alert for predators. Which foraging strategy favors survival: Should the squirrel try to satisfy its dietary requirements in minimum time, thus minimizing its exposure to predators and the elements, or should it try to maximize its intake of nutrients?
-</p>
-<sidebyside>
-<image source="images/fig-minimize-time-eating">
-  <description>
-    feasible set with different times
-  </description>
-</image>
-<image source="images/fig-maximize-energy">
-  <description>
-    feasible set with different energy consumed
-  </description>
-</image>
-</sidebyside>
-<p>
-	Using linear programming, Gary Belovsky of Notre Dame University identified the optimal amounts of forb and grass for each foraging strategy. We can compare those solutions to the squirrel's actual diet to see which strategy the squirrel favors.
-</p>
-
-<investigation><title>Interpolating Polynomials</title>
-<p>
-	In <xref provisional="chap6" text="type-global" />, we learned to fit a quadratic function through three points on its graph. A polynomial whose graph passes through a given set of points is called an <term>interpolating polynomial</term><idx>interpolating polynomial</idx>. Because polynomials are easy to evaluate and manipulate, they are often used to approximate more complicated functions and to describe the shapes of curves.
-</p>
-<p>
-	In this Investigation, we find interpolating polynomials of degrees <m>1</m>, <m>2</m>, and <m>3</m> to approximate the function <m>f(x) = \dfrac{12}{x}</m>.
-</p>
-<p>
-	<ol label="*1*">
-		<li><p>
-			<ol label="a">
-				<li><p>
-					Graph the function <m>f(x) = \dfrac{12}{x}</m> in the window
-					<md>
-						<mrow>
-							\text{Xmin} \amp = -2 \amp\amp \text{Xmax} = 7.4
-						</mrow>
-						<mrow>
-							\text{Ymin} \amp = -5 \amp\amp \text{Ymax} = 20
-						</mrow>
-					</md>
-				</p></li>
-				<li><p>
-					Complete the table of values.<p></p>
-					<tabular halign="center" top="major" left="minor" right="minor" bottom="minor">
-						<row>
-							<cell><m>x</m></cell>
-							<cell><m>1</m></cell>
-							<cell><m>2</m></cell>
-							<cell><m>3</m></cell>
-							<cell><m>4</m></cell>
-							<cell><m>5</m></cell>
-							<cell><m>6</m></cell>
-						</row>
-						<row>
-							<cell><m>f(x)</m></cell>
-							<cell><m>\hphantom{0000}</m></cell>
-							<cell><m>\hphantom{0000}</m></cell>
-							<cell><m>\hphantom{0000}</m></cell>
-							<cell><m>\hphantom{0000}</m></cell>
-							<cell><m>\hphantom{0000}</m></cell>
-							<cell><m>\hphantom{0000}</m></cell>
-						</row>
-					</tabular>
-				</p></li>
-			</ol>
-		</p></li>
-		<li><p>
-			First we will find a linear polynomial <m>P_1(x) = ax + b</m> that matches <m>f(x)</m> at <m>x = 1</m> and <m>x=6</m>. We must find constants <m>a</m> and <m>b</m> so that <m>P_1(1) = f(1)</m> and <m>P_1(6) = f(6)</m>.
-			<ol label="a">
-				<li><p>
-					The two conditions above translate into equations about <m>a</m> and <m>b</m>. The constants <m>a</m> and <m>b</m> must satisfy the system
-					<md>
-	                    <mrow>a \cdot 1 + b \amp = f (1)</mrow>
-	                    <mrow>a \cdot 6 + b \amp = f (6)</mrow>
-					</md>
-					Solve the system and find the polynomial <m>P_1(x)</m>.
-				</p></li>
-				<li><p>
-					Graph <m>P_1(x)</m> in the same window with <m>f(x)</m>.
-				</p></li>
-			</ol>
-		</p></li>
-		<li><p>
-			Next, we will find a quadratic polynomial <m>P_2(x) = ax^2 + bx + c</m> that matches <m>f(x)</m> at <m>x = 1</m>, <m>2.5</m>, and <m>6</m>.
-			<ol label="a">
-				<li><p>
-					Write and solve a system of equations for the constants <m>a</m>, <m>b</m>, and <m>c</m>.
-				</p></li>
-				<li><p>
-					Graph <m>P_2(x)</m> in the same window with <m>f(x)</m>.
-				</p></li>
-			</ol>
-		</p></li>
-		<li><p>
-			We can also find a cubic polynomial <m>P_3(x) = ax^3 + bx^2 + cx + d</m> that matches <m>f(x)</m> at <m>x = 1</m>, <m>3</m>, <m>4</m>, and <m>6</m>.
-			<ol label="a">
-				<li><p>
-					Write a system of equations for <m>a</m>, <m>b</m>, <m>c</m>, and <m>d</m>. We will see how to solve such a system later in this chapter. For now, we will use the calculator's cubic regression feature.
-				</p></li>
-				<li><p>
-					Enter the coordinates of <m>P_3(x)</m> evaluated at <m>x=1</m>, <m>3</m>, <m>4</m>, and <m>6</m> into <m>L_1</m> and <m>L_2</m> under the <em>STAT EDIT</em> menu. Then, from the <em>STAT CALC</em> menu, choose <em>6: CubicReg</em> and press <c>ENTER</c>.
-				</p></li>
-				<li><p>
-					Graph <m>P_3(x)</m> in the same window with <m>f(x)</m>.
-				</p></li>
-			</ol>
-		</p></li>
-		<li><p>
-			How well does each interpolating polynomial approximate the function <m>f(x)</m>? Graph the "error function," <m>E_n(x)</m>, for each polynomial on the interval <m>[-2, 7.4]</m>.
-			<md>
-				<mrow>E_1(x) \amp = f(x) - P_1(x)</mrow>
-				<mrow>E_2(x) \amp = f(x) - P_2(x)</mrow>
-				<mrow>E_3(x) \amp = f(x) - P_3(x)</mrow>
-			</md>
-			(You will have to choose a suitable <m>y</m>-window for each error function.) What is the maximum error on the interval <m>[-2, 7.4]</m> for each approximating polynomial?
-		</p></li>
-	</ol>
-</p>
-</investigation>
-
-
+<title>More Functions and Identities</title>
+<p></p><introduction>
+<sidebyside widths="60% 40%" valigns="middle middle"><p>
+<ul>
+	<li><m>\blert{\textbf{Sum and Difference Formulas}}</m></li>
+	<li><m>\blert{\textbf{Inverse Trigonometric Functions}}</m></li>
+	<li><m>\blert{\textbf{The Reciprocal Functions}}</m></li></ul></p>
+<image source="images/ch8-1.png"><description>graphs</description></image></sidebyside>
+<p>Mapmakers have always faced an unavoidable challenge: It is impossible to translate the surface of a sphere onto a flat map without some form of distortion. Over the years, a variety of map projections have been developed to suit different uses.</p>
+<sidebyside><image source="images/ch8-2.png"><description>maps</description></image></sidebyside>
+<p>The sixteenth century was an age of discovery, when explorers and merchants began sailing to distant and previously unknown lands. But at that time there was no reliable technology for navigation. Although more regions of the world were being mapped more accurately, a flat map by itself was not enough to help a sailor in the middle of the ocean.</p>   
+<sidebyside widths="45% 50%" valigns="middle middle"><p>In 1569, the Flemish cartographer Gerardus Mercator published a new map using what is known as a cylindrical projection. To imagine how a Mercator projection works, picture shining a light through a glass globe onto a piece of paper rolled into a cylinder and wrapped around the globe. The cylinder is tangent to the globe at its equator.</p>  
+<image source="images/ch8-3.png"><description>maps</description></image></sidebyside>
+<p>Notice how the latitude lines are farther apart the farther you get from the Equator. This projection distorts the size of objects as the latitude increases, so that Greenland and Antarctica appear much larger than they actually are.</p>
+<sidebyside width="60%"><image source="images/ch8-4.png"><description>maps</description></image></sidebyside>
+<p>But the Mercator projection map is ideally suited for navigation, because any straight line on the map is a line of constant true bearing. If a navigator measures the bearing on the map from his location to his destination, he can set his ship's compass for the same bearing and maintain that course.</p>
+<p>	However, the Mercator projection does not preserve distances. On a globe, circles of latitude (also known as parallels) get smaller as they move away from the Equator towards the poles. Thus, in the Mercator projection, when a globe is "unwrapped" on to a rectangular map, the parallels need to be stretched to the length of the Equator.  Mercator had to increase the scale of his map gradually as it moved away from the equator, so that the latitude lines appear equal in length to the equator.</p>  
+<p>	The horizontal scale factor at any latitude must be inversely proportional to lengths on that latitude. Because the radius of the circle of latitude <m>\theta</m> is <m>R \cos \theta</m>, the corresponding parallel on the map must be stretched by a factor of <m>\dfrac{1}{\cos \theta}</m>. And because the secant is the reciprocal of the cosine, the scale factor is proportional to the secant of the latitude.</p>
+<p>	A variety of "equal area" projections have been developed in modern times, but the Mercator projection is still widely used, in classrooms and atlases. For many people, it represents our image of the world.</p> 
+<sidebyside width="50%"><image source="images/ch8-5.png"><description>maps</description></image></sidebyside>
 </introduction>
 
 
-    <xi:include href="./section-8-1.xml" />     <!-- Systems of Linear Equations in Two Variables  -->
-    <xi:include href="./section-8-2.xml" />     <!-- Systems of Linear Equations in Three Variables  -->
-    <xi:include href="./section-8-3.xml" />     <!-- Solving Linear Systems Using Matrices  -->
-    <xi:include href="./section-8-4.xml" />     <!-- Linear Inequalities  -->
-    <xi:include href="./section-8-5.xml" />     <!-- Linear Programming  -->
-    <xi:include href="./chap8-summary.xml" />       <!-- Summary and Review-->
-    <xi:include href="./chap8-rev-projects.xml" />  <!-- projects  -->
+<!--    <xi:include href="./section-8-2.xml" />      Systems of Linear Equations in Three Variables  -->
+<!--    <xi:include href="./chap8-summary.xml" />       Summary and Review-->
+<!--    <xi:include href="./chap8-rev-projects.xml" />  projects  -->
 </chapter> 
 <!-- </book>  </mathbook> -->

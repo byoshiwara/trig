@@ -1,1426 +1,515 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!-- <mathbook><book> -->
 
-<section xml:id="Systems-of-Linear-Equations-in-Three-Variables"   xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Systems of Linear Equations in Three Variables</title>
-<introduction>
-<p>
-	Some problems involve three (or more) unknown quantities, and efficient techniques for solving linear systems in many variables are available. In this section, we solve systems of three linear equations in three variables.
-</p>
-</introduction>
-<subsection><title><m>3\times 3</m> Linear Systems</title>
-<p>
-	A solution to an equation in three variables, such as
-	<me>x + 2y - 3z = -4</me>
-	is an ordered triple of numbers that satisfies the equation. For example, <m>(0, -2, 0)</m> and <m>(-1, 0, 1)</m> are solutions to the equation above, but <m>(1, 1, 1)</m> is not. You can verify this by substituting the coordinates into the equation to see if a true statement results.
-	<md alignment="alignat">
-		<mrow>
-			\amp\text{For }(0,-2, 0):{}\amp 0   {}+{}\amp 2(-2) \amp{}-{}\amp 3(0) \amp = -4{}\amp\hphantom{blank} \text{True}\amp
-		</mrow>
-		<mrow>
-			\amp\text{For }(-1, 0, 1):{}\amp {-}1 {}+{}\amp 2(0)  \amp{}-{}\amp 3(1) \amp = -4{}\amp\hphantom{blank} \text{True}\amp
-		</mrow>
-		<mrow>
-			\amp\text{For }(1, 1, 1):{}\amp 1   {}+{}\amp 2(1)  \amp{}-{}\amp 3(1) \amp = -4{}\amp\hphantom{blank} \text{Not true}\amp 
-		</mrow>
-	</md>
-	As with the two-variable case, a single linear equation in three variables has infinitely many solutions.
-</p>
-<p>
-	An ordered triple <m>(x, y, z)</m> can be represented geometrically as a point in space using a three-dimensional Cartesian coordinate system (see <xref ref="fig-3D-point" text="type-global"/>). In this coordinate system, the graph of a linear equation in three variables is a plane, and the fact that there are infinitely many solutions to the equation tells us that that there are infinitely many points in the corresponding plane.
-</p>
-<figure xml:id="fig-3D-point"><caption></caption><image source="images/fig-3D-point"  width="50%"><description>point in 3D space</description></image> </figure>
-<p>
-	A solution to a <em>system</em> of three linear equations in three variables is an ordered triple that satisfies each equation in the system. That triple represents a point that must lie on all three graphs. <xref ref="fig-8-cases-for-3-planes" text="type-global"/> shows the different ways in which three planes may intersect in space.
-</p>
-<figure xml:id="fig-8-cases-for-3-planes"><caption></caption><image source="images/fig-8-cases-for-3-planes"  width="80%"><description>8 cases of how 3 planes can intersect</description></image> </figure>
-<p><ul>
-	<li>
-	In <xref ref="fig-8-cases-for-3-planes" text="type-global"/>a, the three planes intersect in a single point, so the corresponding system of three equations has a unique solution.</li>
-	<li> In <xref ref="fig-8-cases-for-3-planes">Figures</xref>b, c, and d, the intersection is either a line or an entire plane, so the corresponding system has infinitely many solutions. Such a system is called <term>dependent</term><idx>dependent</idx>.</li>
-	<li> In <xref ref="fig-8-cases-for-3-planes">Figures</xref>e, f, g, and h, the three planes have no common intersection, so the corresponding system has no solution. In this case, the system is said to be <term>inconsistent</term><idx>inconsistent</idx>.</li>
-</ul>
-</p>
-<p>
-	It is impractical to solve <m>3\times 3</m> systems by graphing. Even when technology for producing three-dimensional graphs is available, we cannot read coordinates on such graphs with any confidence. Thus, we will restrict our attention to algebraic methods of solving such systems.
-</p>
+<section xml:id="Inverse-Trigonometric-Functions"   xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Inverse Trigonometric Functions</title>
 
+<introduction><p>We have been using the calculator keys <m>SIN^{-1},~COS^{-1}</m>, and <m>TAN^{-1}</m> to find approximate values of <m>\theta</m> when we know either <m>\sin \theta,~ \cos \theta</m>, or <m>\tan \theta</m>.  For example, if we know that <m>\cos \theta = 0.3</m>, then  
+<me>\theta = \cos^{-1}(0.3) \approx 1.2661~ \text{radians}</me></p>
+<p>In other words, we use the <m>SIN^{-1},~COS^{-1}</m>, and <m>TAN^{-1}</m> keys to solve trigonometric equations, just as we use square roots to solve quadratic equations.  Using one of these keys performs the <term>inverse operation</term> for computing a sine, cosine or tangent, just as extracting square roots is the inverse of squaring a number.</p>
+<p>Many functions can be described as an operation or as a sequence of operations on the input value, and this leads us to the notion of an inverse function.</p></introduction>
 
+<subsection><title>Inverse of a Function</title>
+<p>Raising a number to the <m>n^{th}</m> power and taking <m>n^{th}</m> roots are an example of inverse operations.  For example, if we first cube a number and then take the cube root of the result, we return to the original number.</p>
+
+<sidebyside width="90%"><image source="images/8-2-1.png"><description>inverse</description></image></sidebyside>
+
+<p>We say that the two functions <m>f(x)=x^3</m> and <m>g(x)=\sqrt[3]{x}</m> are <term>inverse functions</term>.  Each of the functions undoes the results of the other function.  You can confirm this behavior by consulting the tables of values for the two functions.</p>  
+
+<p><sidebyside widths="40% 40%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
+                    <row bottom="minor">
+                        <cell><m>x</m></cell>
+                       	<cell><m>f(x)=x^3</m></cell></row>
+                    <row> 
+                        <cell><m>-2</m></cell>
+                        <cell><m>-8</m></cell></row>
+                    <row> 
+                        <cell><m>-1</m></cell>
+                        <cell><m>-1</m></cell></row>
+                    <row> 
+                        <cell><m>-\dfrac{1}{2}</m></cell>
+                        <cell><m>-\dfrac{1}{8}</m></cell></row>
+                    <row>
+                        <cell><m>0</m></cell>
+                        <cell><m>0</m></cell></row>  
+                    <row>
+                        <cell><m>\dfrac{1}{2}</m></cell>
+                        <cell><m>\dfrac{1}{8}</m></cell></row>
+                    <row> 
+                        <cell><m>1</m></cell>
+                        <cell><m>1</m></cell></row>     
+                    <row> 
+                        <cell><m>2</m></cell>
+                        <cell><m>8</m></cell></row>                       
+        </tabular>
+
+        <tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
+                    <row bottom="minor">
+                        <cell><m>x</m></cell>
+                       	<cell><m>g(x)=\sqrt[3]{x}</m></cell></row>
+                    <row> 
+                        <cell><m>-8</m></cell>
+                        <cell><m>-2</m></cell></row>
+                    <row> 
+                        <cell><m>-1</m></cell>
+                        <cell><m>-1</m></cell></row>
+                    <row> 
+                        <cell><m>-\dfrac{1}{8}</m></cell>
+                        <cell><m>-\dfrac{1}{2}</m></cell></row>
+                    <row>
+                        <cell><m>0</m></cell>
+                        <cell><m>0</m></cell></row>  
+                    <row>
+                        <cell><m>\dfrac{1}{8}</m></cell>
+                        <cell><m>\dfrac{1}{2}</m></cell></row>
+                    <row> 
+                        <cell><m>1</m></cell>
+                        <cell><m>1</m></cell></row>     
+                    <row> 
+                        <cell><m>8</m></cell>
+                        <cell><m>2</m></cell></row>                       
+        </tabular></sidebyside></p>
+
+<p>Observe that the table of values for <m>g(x)=\sqrt[3]{x}</m> can be obtained from the table for <m>f(x)=x^3</m> by interchanging the values of <m>x</m> and <m>y</m> in each ordered pair.  In fact, we can often find a formula for the inverse function by interchanging the input and output variables in the formula for the function, and then solving for the new output variable.</p>  
+<p>For our example, we start with the formula for the cubing function:
+	\begin{align*}
+		y \amp = x^3  \amp\amp  \blert{\text{Interchange <m>x</m> and <m>y</m>.}}\\
+		x \amp = y^3   \amp\amp \blert{\text{Solve for <m>y</m>.}}\\
+		y \amp = \sqrt[3]{x}    \amp\amp  \blert{\text{A formula for the inverse function.}}\\
+	\end{align*}
+We use the notation <m>\blert{f^{-1}(x)}</m> to denote the inverse function.  Thus, we have just shown that the inverse function for <m>f(x)=x^3</m> is <m>f^{-1}(x)=\sqrt[3]{x}</m>.</p>
+
+<warning><p> The notation <m>f^{-1}(x)</m> does <m>\alert{\text{not}}</m> mean <m>\dfrac{1}{f(x)}</m> !</p>
+<p>For example, if <m>f(x)=x^3</m>, we have <m>f^{-1}(x)=\sqrt[3]{x}</m>, but <m>\dfrac{1}{f(x)} = \dfrac{1}{x^3}</m>, and we know that <m>\sqrt[3]{x} \not= \dfrac{1}{x^3}</m>.</p>   
+<p>Although it is true that a negative exponent denotes a reciprocal, so that, for instance, <m>a^{-2} = \dfrac{1}{a^2}</m>, the <m>-1</m> in <m>f^{-1}(x)</m> is <em>not</em> an exponent; this is an entirely new use for the same symbol.</p></warning>
+
+<example><statement><p>Let <m>f(x)=\dfrac{1}{x-3}</m>. Find a formula for the inverse function.</p></statement>
+
+<solution><p>We interchange the variables in the formula for <m>f</m> (that is, in <m>y=\dfrac{1}{x-3}</m>) to get  
+<me>x = \dfrac{1}{y-3}</me>
+Now we solve for <m>y</m> in terms of <m>x</m> by taking the reciprocal of both sides.
+<me>y - 3 = \dfrac{1}{x}</me>
+so <m>y = \dfrac{1}{x} + 3</m>. The formula for the inverse function is <m>f^{-1}(x)=\dfrac{1}{x} + 3</m>.</p></solution></example> 
+<exercise><statement><p>Let <m>g(x)=2x-6</m>. Find a formula for the inverse function.</p></statement></exercise>
+
+<p>In the examples above, note that <m>f^{-1}(x) \not= \dfrac{1}{f(x)}</m>, and <m>g^{-1}(x) \not= \dfrac{1}{g(x)}</m>.</p>
 </subsection>
 
+<subsection><title>The Graph of the Inverse</title>
+<p>	If we graph the function <m>f(x)=x^3</m> and  its inverse <m>f^{-1}(x)=\sqrt[3]{x}</m> on the same set of axes, we see that the graphs are related in an interesting way, as shown below. The graphs are symmetric about the line <m>y=x</m>, which means that if we were to place a mirror along the line each graph would be the reflection of the other.  
 
+<sidebyside width="45%"><image source="images/8-2-2.png"><description>graph of inverse</description></image></sidebyside>
 
+This symmetry occurs because we interchanged the roles of  and  when we defined the inverse function.</p>
+<p>Note that, for this example, both graphs pass the vertical line test, so they are both graphs of functions.</p>
 
-<subsection><title>Back-Substitution</title>
-<p>
-	When we review our algebraic methods for <m>2\times 2</m> systems—substitution and linear combinations—we find features common to both. In both methods, we obtain an equation in one variable. Once we have solved for that variable, we substitute the value into an earlier equation to find the other variable.
-</p>
-<p>
-	One strategy for solving a <m>3\times 3</m> system extends this idea to include a third variable and a third equation. The following special case illustrates the substitution part of the procedure.
-</p>
+<example><statement><p><ol label="a">
+	<li>Graph the function <m>f(x)=\dfrac{1}{x-3}</m> and its inverse <m>f^{-1}(x)=\dfrac{1}{x} + 3</m> on the same grid, and sketch in the line <m>y=x</m> to illustrate the symmetry.</li>
+	<li>Find the domain and range of <m>f</m>, and the domain and range of <m>f^{-1}</m>.</li>
+</ol></p></statement>
+<solution> <p><ol label="a">
+	<li>The graph is shown below. Note that <m>f</m> has a vertical asymptote at <m>x=3</m>, and <m>f^{-1}</m> has a horizontal asymptote at <m>y=3</m>.
+<sidebyside width="40%"><image source="images/exam8-2-2.png"><description>graph of inverse</description></image></sidebyside>
+</li>
+<li><p>Note that <m>f</m> is undefined at <m>x=3</m>, and <m>f^{-1}</m> is undefined at <m>x=0</m>. Thus, the domain of <m>f</m> is all real numbers except 3, and the domain of <m>f^{-1}</m> is all real numbers except 0.</p>
+<p> We can find the range of each function by examining its graph: <ul>
+	<li><m>f</m> has a horizontal asymptote at <m>y=0</m>, so there is no point on the graph with <m>y=0</m>, and its range is all real numbers except 0.</li>
+	<li>Similarly, there is no point on the graph of <m>f^{-1}</m> with <m>y=3</m>, so its range is all real numbers except 3.</li></ul></p></li></ol></p></solution></example>
 
-<example xml:id="example-back-substitution">
-	<p>
-		Solve the system
-		<md alignment="alignat">
-		    <mrow> x +{}  2y \amp {}+{} \amp 3z \amp {}={} \amp 2</mrow>
-		    <mrow>          -2y  \amp {}-{} \amp  4z \amp {}={} \amp -2</mrow>
-		    <mrow>        \amp {}{} \amp 3z \amp {}={} \amp -3</mrow>
-		 </md>
-	</p>
-<solution>
-	<p>
-		The third equation involves only the variable <m>z</m>, so we solve that equation to find <m>z = -1</m>. Then we substitute <m>-1</m> for <m>z</m> in the second equation and solve for <m>y</m>.
-		<md>
-			<mrow>
-				-2y - 4(\alert{-1}) \amp = -2
-			</mrow>
-			<mrow>
-				-2y + 4 \amp= -2
-			</mrow>
-			<mrow>
-				-2y \amp = -6
-			</mrow>
-			<mrow>
-				y\amp=3
-			</mrow>
-		</md>
-		Finally, we substitute <m>-1</m> for <m>z</m> and <m>3</m> for <m>y</m> into the first equation to find <m>x</m>.
-		<md>
-			<mrow>
-				x + 2(\blert{3}) + 3(\alert{-1}) \amp= 2
-			</mrow>
-			<mrow>
-				x + 6 - 3 \amp = 2
-			</mrow>
-			<mrow>
-				x\amp=-1
-			</mrow>
-		</md>
-		The solution is the ordered triple <m>(-1, 3, -1)</m>. You should verify that this triple satisfies all three equations of the system.
-	</p>
-</solution></example>
+<exercise><statement><p><ol label="a">
+	<li>Graph <m>g(x)=2x-6</m> and its inverse function on the grid below, and sketch in the line <m>y=x</m> to show the symmetry.
+<sidebyside width="45%"><image source="images/8grid.png"><description>grid</description></image></sidebyside></li>
+<li>Find the domain and range of <m>g</m>, and the domain and range of <m>g^{-1}</m>.</li></ol></p></statement></exercise>
 
-<p>
-	The technique used in <xref ref="example-back-substitution" text="type-global"/> is called <term>back-substitution</term><idx>back-substitution</idx>. It works in the special case where one of the equations involves exactly one variable, and a second equation involves that same variable and just one other variable. A <m>3\times 3</m> linear system with these properties is said to be in <term>triangular form</term><idx>triangular form</idx>. If we can transform a system into triangular form, we can use back-substitution to complete the solution.
-</p>
+<p>From the examples above, we see that the domain of <m>f^{-1}</m> is the same as the range of <m>f</m>, and the range of <m>f^{-1}</m> is the same as the domain of <m>f</m>. This should seem reasonable, because we obtain the inverse function by interchanging the values of theinput and output variables.</p>
 
-<exercise><statement>
-	<p>
-		Use back-substitution to solve the system
-		<md alignment="alignat">
-		    <mrow> 2x +{}  2y \amp {}+{} \amp z \amp {}={} \amp 10</mrow>
-		    <mrow>          y  \amp {}-{} \amp  4z \amp {}={} \amp 9</mrow>
-		    <mrow>        \amp {}{} \amp 3z \amp {}={} \amp -6</mrow>
-		 </md>
-	</p>
-</statement>
-<answer><p><m>(5, 1, -2)</m></p></answer>
-</exercise>
-
+<assemblage><p>Domain <m>(f) = </m> Range <m>(f^{-1})</m>    and    Domain <m>(f^{-1}) = </m> Range <m>(f)</m></p></assemblage>
 </subsection>
 
+<subsection><title>Does Every Function Have an Inverse?</title>
+<p>	In the examples above, the inverse of the function turned out to be a function as well.  But this is not always the case. Consider the function <m>F(x)=x^2 - 4</m>. First we'll find a formula for the inverse. We interchange <m>x</m> and <m>y</m> to get
+<me>x = y^2 - 4</me> 	
+and solve for <m>y</m>:
+	\begin{align*}
+		y^2 \amp = x-4\\
+		y \amp = \pm \sqrt{x-4}\\
+	\end{align*}</p>
+<p>The graphs of <m>F</m> and its inverse are shown below. You can see that although <m>F</m> is a function, its inverse is not.</p>
+<p><sidebyside width="40%"><image source="images/8-2-3.png"><description>grid</description></image></sidebyside></p>
+<p>Is there some way to predict whether the inverse of a function will  be a function, too?  Yes!  In order for the inverse to be a function, its graph must pass the vertical line test. (Recall that if a graph passes the vertical line test, there is only one <m>y</m>-value for each value of <m>x</m>.)</p>
+<p>  Now, we obtain the inverse by interchanging <m>x</m> and <m>y</m> in the formula for a function, so the <em>inverse</em> will be a function only if the <em>original</em> function passes the <em>horizontal</em> line test. A function that passes the horizontal line test is called <term>one-to-one</term>.</p>
 
+<assemblage><title>Horizontal Line Test</title>
+<p>A function passes the <term>Horizontal Line Test</term> if every horizontal line intersects the graph at most once.  In that case, there is only one <m>x</m>-value for each <m>y</m>-value, and the function is called <term>one-to-one</term>.</p></assemblage>
 
+<warning><p>It is always the case that we can find the inverse of a function:  we just interchange the domain and range values.  However, the important question is whether the inverse is also a function.  If the inverse is a function, we say that “<m>f</m> has an <term>inverse function</term>.” All of this leads us to the following result.</p></warning>
 
-<subsection><title>Gaussian Reduction</title>
-<p>
-	We can use linear combinations to reduce a <m>3\times 3</m> system to triangular form and then use back-substitution to find the solutions. Our strategy will be to eliminate one of the variables from each of the three equations by considering them in pairs. This results in a <m>2\times 2</m> system that we can solve using elimination. As an example, consider the system
-	<md alignment="alignat">
-	    <mrow> x \amp {}+{} \amp 2y \amp {}-{} \amp 3z \amp {}={} \amp -4\amp\hphantom{blankblank} (1)</mrow>
-	    <mrow>2x \amp {}-{} \amp  y \amp {}+{} \amp  z \amp {}={} \amp  3\amp\hphantom{blankblank} (2)</mrow>
-	    <mrow>3x \amp {}+{} \amp 2y \amp {}+{} \amp  z \amp {}={} \amp 10\amp\hphantom{blankblank} (3)</mrow>
-	</md>
-<!--	<dl>
-		<li><title>Step 1: </title><p>
-			This system is already in standard form. We can choose any one of the three variables to eliminate first. For this example, we will eliminate <m>x</m>.
-		</p></li>
-		<li><title>Step 2:</title><p>
-			Choose two of the equations, say (1) and (2), and use a linear combination: We multiply Equation (1) by <m>-2</m> and add the result to Equation (2) to produce Equation (4).
-			<table><tabular halign="right">
-				<row>
-					<cell><m>-2x</m></cell>
-					<cell><m>-</m></cell>
-					<cell><m>4y</m></cell>
-					<cell><m>+</m></cell>
-					<cell><m>6z</m></cell>
-					<cell><m>=</m></cell>
-					<cell><m>8</m></cell>
-					<cell><m>\hphantom{blank}</m></cell>
-					<cell><m>-2\times (1)</m></cell>
-				</row>
-				<row>
-					<cell bottom="minor"><m>2x</m></cell>
-					<cell bottom="minor"><m>-</m></cell>
-					<cell bottom="minor"><m>y</m></cell>
-					<cell bottom="minor"><m>+</m></cell>
-					<cell bottom="minor"><m>z</m></cell>
-					<cell bottom="minor"><m>=</m></cell>
-					<cell bottom="minor"><m>3</m></cell>
-					<cell><m></m></cell>
-					<cell><m>(2)</m></cell>
-				</row>
-				<row>
-					<cell><m></m></cell>
-					<cell><m></m></cell>
-					<cell><m>-5y</m></cell>
-					<cell><m>+</m></cell>
-					<cell><m>7z</m></cell>
-					<cell><m>=</m></cell>
-					<cell><m>11</m></cell>
-					<cell><m></m></cell>
-					<cell><m>(4)</m></cell>
-				</row>
-			</tabular></table>
-		</p></li>
-		<li><title>Step 3:</title><p>
-			Now we have an equation involving only two variables. But we need two equations in two unknowns to find the solution. So we choose a different pair of equations, say (1) and (3), and eliminate <m>x</m> again. We multiply Equation (1) by <m>-3</m> and add the result to Equation (3) to obtain Equation (5).
-			<table><tabular halign="right">
-				<row>
-					<cell><m>-3x</m></cell>
-					<cell><m>-</m></cell>
-					<cell><m>6y</m></cell>
-					<cell><m>+</m></cell>
-					<cell><m>9z</m></cell>
-					<cell><m>=</m></cell>
-					<cell><m>12</m></cell>
-					<cell><m>\hphantom{blank}</m></cell>
-					<cell><m>-3\times (1)</m></cell>
-				</row>
-				<row>
-					<cell bottom="minor"><m>3x</m></cell>
-					<cell bottom="minor"><m>+</m></cell>
-					<cell bottom="minor"><m>2y</m></cell>
-					<cell bottom="minor"><m>+</m></cell>
-					<cell bottom="minor"><m>z</m></cell>
-					<cell bottom="minor"><m>=</m></cell>
-					<cell bottom="minor"><m>10</m></cell>
-					<cell><m></m></cell>
-					<cell><m>(3)</m></cell>
-				</row>
-				<row>
-					<cell><m></m></cell>
-					<cell><m></m></cell>
-					<cell><m>-4y</m></cell>
-					<cell><m>+</m></cell>
-					<cell><m>10z</m></cell>
-					<cell><m>=</m></cell>
-					<cell><m>22</m></cell>
-					<cell><m></m></cell>
-					<cell><m>(5)</m></cell>
-				</row>
-			</tabular></table>
-		</p></li>
-		<li><title>Step 4: </title><p>
-			We now form a <m>2\times 2</m> system with our new Equations (4) and (5).
-			<md alignment="alignat">
-				<mrow>
-					-5y\amp + \amp 7z \amp = 11 \hphantom{blankblank} (4)
-				</mrow>
-				<mrow>
-					-4y\amp + \amp 10z \amp = 22 \hphantom{blankblank} (5)
-				</mrow>
-			</md>
-			We eliminate either <m>y</m> or <m>z</m> to obtain an equation in a single variable. If we choose to eliminate <m>y</m>, we add <m>4</m> times Equation (4) to <m>-5</m> times Equation (5) to obtain Equation (6).
-			<table><tabular halign="right">
-				<row>
-					<cell><m>-20y</m></cell>
-					<cell><m>+</m></cell>
-					<cell><m>28z</m></cell>
-					<cell><m>=</m></cell>
-					<cell><m>44</m></cell>
-					<cell><m>\hphantom{blank}</m></cell>
-					<cell><m>4\times (4)</m></cell>
-				</row>
-				<row>
-					<cell bottom="minor"><m>20y</m></cell>
-					<cell bottom="minor"><m>-</m></cell>
-					<cell bottom="minor"><m>50z</m></cell>
-					<cell bottom="minor"><m>=</m></cell>
-					<cell bottom="minor"><m>-110</m></cell>
-					<cell><m></m></cell>
-					<cell><m>-5\times (5)</m></cell>
-				</row>
-				<row>
-					<cell><m></m></cell>
-					<cell><m></m></cell>
-					<cell><m>-22z</m></cell>
-					<cell><m>=</m></cell>
-					<cell><m>-66</m></cell>
-					<cell><m></m></cell>
-					<cell><m>(6)</m></cell>
-				</row>
-			</tabular></table>
-		</p></li>
-		<li><title>Step 5:</title><p>
-			Now we can start solving for the variables. To keep things organized, we form a triangular system: Choose one of the original equations (in three variables), one of the equations from our <m>2\times 2</m> system, and our final equation in one variable. We choose Equations (1), (4), and (6).
-		<md alignment="alignat">
-		    <mrow> x \amp {}+{} \amp 2y \amp {}-{} \amp 3z \amp {}={} \amp -4\amp\hphantom{blankblank} (1)</mrow>
-			<mrow>\amp \amp-4y \amp+\amp 10z \amp = \amp 22 \amp\hphantom{blankblank} (5)	</mrow>
-		    <mrow>\amp \amp     \amp\amp -22z \amp {}={} \amp -66\amp\hphantom{blankblank} (6)	</mrow>
-		 </md>
-		</p>
-		<p>
-			This new system is in triangular form, and it has the same solutions as the original system. We complete the solution by back-substitution. Solve Equation (6) to find <m>z=3</m>. Substituting <m>\alert{3}</m> for <m>z</m> in Equation (4), we find
-		<md>
-		 	<mrow>
-		 		-5y + 7(\alert{3}) \amp = 11
-		 	</mrow>
-		 	<mrow>
-		 		-5y + 21 \amp = 11
-		 	</mrow>
-		 	<mrow>
-		 		-5y \amp = -10
-		 	</mrow>
-		 	<mrow>
-		 		y \amp = 2
-		 	</mrow>
-		</md></p>
-		<p>
-		Finally, we substitute <m>\alert{3}</m> for <m>z</m> and <m>\blert{2}</m> for <m>y</m> into Equation (1) to find
-		<md>
-			<mrow>
-				x + 2(\blert{2}) - 3(\alert{3}) \amp = -4
-			</mrow>
-			<mrow>
-				x + 4 - 9 \amp = -4
-			</mrow>
-			<mrow>
-				x\amp =1
-			</mrow>
-		</md>
-		The solution to the system is the ordered triple <m>(1, 2, 3)</m>. You can verify that this triple satisfies all three of the original equations.
-		</p></li>
-	</dl> -->
-	<ol label="1">
-		<li><p>
-			This system is already in standard form. We can choose any one of the three variables to eliminate first. For this example, we will eliminate <m>x</m>.
-		</p></li>
-		<li><p>
-			Choose two of the equations, say (1) and (2), and use a linear combination: We multiply Equation (1) by <m>-2</m> and add the result to Equation (2) to produce Equation (4).
-			<sidebyside><tabular halign="right">
-				<row>
-					<cell><m>-2x</m></cell>
-					<cell><m>-</m></cell>
-					<cell><m>4y</m></cell>
-					<cell><m>+</m></cell>
-					<cell><m>6z</m></cell>
-					<cell><m>=</m></cell>
-					<cell><m>8</m></cell>
-					<cell><m>\hphantom{blank}</m></cell>
-					<cell><m>-2\times (1)</m></cell>
-				</row>
-				<row>
-					<cell bottom="minor"><m>2x</m></cell>
-					<cell bottom="minor"><m>-</m></cell>
-					<cell bottom="minor"><m>y</m></cell>
-					<cell bottom="minor"><m>+</m></cell>
-					<cell bottom="minor"><m>z</m></cell>
-					<cell bottom="minor"><m>=</m></cell>
-					<cell bottom="minor"><m>3</m></cell>
-					<cell><m></m></cell>
-					<cell><m>(2)</m></cell>
-				</row>
-				<row>
-					<cell><m></m></cell>
-					<cell><m></m></cell>
-					<cell><m>-5y</m></cell>
-					<cell><m>+</m></cell>
-					<cell><m>7z</m></cell>
-					<cell><m>=</m></cell>
-					<cell><m>11</m></cell>
-					<cell><m></m></cell>
-					<cell><m>(4)</m></cell>
-				</row>
-			</tabular></sidebyside>
-		</p></li>
-		<li><p>
-			Now we have an equation involving only two variables. But we need two equations in two unknowns to find the solution. So we choose a different pair of equations, say (1) and (3), and eliminate <m>x</m> again. We multiply Equation (1) by <m>-3</m> and add the result to Equation (3) to obtain Equation (5).
-			<sidebyside><tabular halign="right">
-				<row>
-					<cell><m>-3x</m></cell>
-					<cell><m>-</m></cell>
-					<cell><m>6y</m></cell>
-					<cell><m>+</m></cell>
-					<cell><m>9z</m></cell>
-					<cell><m>=</m></cell>
-					<cell><m>12</m></cell>
-					<cell><m>\hphantom{blank}</m></cell>
-					<cell><m>-3\times (1)</m></cell>
-				</row>
-				<row>
-					<cell bottom="minor"><m>3x</m></cell>
-					<cell bottom="minor"><m>+</m></cell>
-					<cell bottom="minor"><m>2y</m></cell>
-					<cell bottom="minor"><m>+</m></cell>
-					<cell bottom="minor"><m>z</m></cell>
-					<cell bottom="minor"><m>=</m></cell>
-					<cell bottom="minor"><m>10</m></cell>
-					<cell><m></m></cell>
-					<cell><m>(3)</m></cell>
-				</row>
-				<row>
-					<cell><m></m></cell>
-					<cell><m></m></cell>
-					<cell><m>-4y</m></cell>
-					<cell><m>+</m></cell>
-					<cell><m>10z</m></cell>
-					<cell><m>=</m></cell>
-					<cell><m>22</m></cell>
-					<cell><m></m></cell>
-					<cell><m>(5)</m></cell>
-				</row>
-			</tabular></sidebyside>
-		</p></li>
-		<li><p>
-			We now form a <m>2\times 2</m> system with our new Equations (4) and (5).
-			<md alignment="alignat">
-				<mrow>
-					-5y\amp + \amp 7z \amp = 11 \hphantom{blankblank} (4)
-				</mrow>
-				<mrow>
-					-4y\amp + \amp 10z \amp = 22 \hphantom{blankblank} (5)
-				</mrow>
-			</md>
-			We eliminate either <m>y</m> or <m>z</m> to obtain an equation in a single variable. If we choose to eliminate <m>y</m>, we add <m>4</m> times Equation (4) to <m>-5</m> times Equation (5) to obtain Equation (6).
-			<sidebyside><tabular halign="right">
-				<row>
-					<cell><m>-20y</m></cell>
-					<cell><m>+</m></cell>
-					<cell><m>28z</m></cell>
-					<cell><m>=</m></cell>
-					<cell><m>44</m></cell>
-					<cell><m>\hphantom{blank}</m></cell>
-					<cell><m>4\times (4)</m></cell>
-				</row>
-				<row>
-					<cell bottom="minor"><m>20y</m></cell>
-					<cell bottom="minor"><m>-</m></cell>
-					<cell bottom="minor"><m>50z</m></cell>
-					<cell bottom="minor"><m>=</m></cell>
-					<cell bottom="minor"><m>-110</m></cell>
-					<cell><m></m></cell>
-					<cell><m>-5\times (5)</m></cell>
-				</row>
-				<row>
-					<cell><m></m></cell>
-					<cell><m></m></cell>
-					<cell><m>-22z</m></cell>
-					<cell><m>=</m></cell>
-					<cell><m>-66</m></cell>
-					<cell><m></m></cell>
-					<cell><m>(6)</m></cell>
-				</row>
-			</tabular></sidebyside>
-		</p></li>
-		<li><p>
-			Now we can start solving for the variables. To keep things organized, we form a triangular system: Choose one of the original equations (in three variables), one of the equations from our <m>2\times 2</m> system, and our final equation in one variable. We choose Equations (1), (4), and (6).
-		<md alignment="alignat">
-		    <mrow> x \amp {}+{} \amp 2y \amp {}-{} \amp 3z \amp {}={} \amp -4\amp\hphantom{blankblank} (1)</mrow>
-			<mrow>\amp \amp-4y \amp+\amp 10z \amp = \amp 22 \amp\hphantom{blankblank} (5)	</mrow>
-		    <mrow>\amp \amp     \amp\amp -22z \amp {}={} \amp -66\amp\hphantom{blankblank} (6)	</mrow>
-		 </md>
-		</p>
-		<p>
-			This new system is in triangular form, and it has the same solutions as the original system. We complete the solution by back-substitution. Solve Equation (6) to find <m>z=3</m>. Substituting <m>\alert{3}</m> for <m>z</m> in Equation (4), we find
-		<md>
-		 	<mrow>
-		 		-5y + 7(\alert{3}) \amp = 11
-		 	</mrow>
-		 	<mrow>
-		 		-5y + 21 \amp = 11
-		 	</mrow>
-		 	<mrow>
-		 		-5y \amp = -10
-		 	</mrow>
-		 	<mrow>
-		 		y \amp = 2
-		 	</mrow>
-		</md></p>
-		<p>
-		Finally, we substitute <m>\alert{3}</m> for <m>z</m> and <m>\blert{2}</m> for <m>y</m> into Equation (1) to find
-		<md>
-			<mrow>
-				x + 2(\blert{2}) - 3(\alert{3}) \amp = -4
-			</mrow>
-			<mrow>
-				x + 4 - 9 \amp = -4
-			</mrow>
-			<mrow>
-				x\amp =1
-			</mrow>
-		</md>
-		The solution to the system is the ordered triple <m>(1, 2, 3)</m>. You can verify that this triple satisfies all three of the original equations.
-		</p></li>
-	</ol>
-</p>
-<p>
-	The method described above for putting a linear system into triangular form is called <term>Gaussian reduction</term><idx>Gaussian reduction</idx>, after the German mathematician Carl Gauss. We summarize our method for solving a <m>3\times 3</m> linear system as follows.
-</p>
+<assemblage><title>Inverse Function</title>
+<p>A function <m>f</m> has an <term>inverse function</term> if and only if <m>f</m> is one-to-one.</p></assemblage>
 
-<xi:include href="./assemblage-steps-for-solving-3-by-3.xml" />
+<example><statement><p><ol label="a">
+	<li>Which of the graphs below represent functions?</li>
+	<li>Which of the functions are one-to-one?</li>
+	<li>Which of these functions have inverse functions?</li>
+</ol></p>
+<sidebyside width="80%"><image source="images/exam8-2-3.png"><description>graphs</description></image></sidebyside></statement>
 
-<example>
-	<p>
-		Solve the system
-		<md alignment="alignat">
-		    <mrow>x\amp{}+{}\amp 2y \amp {}-{} \amp z \amp {}={} \amp -3\amp\hphantom{blankblank} (1)</mrow>
-		    <mrow>\frac{1}{3}x \amp {}-{} \amp  y \amp {}+{} \amp\frac{1}{3}  z \amp {}={} \amp 2\amp\hphantom{blankblank} (2)</mrow>
-		    <mrow>x \amp {}+{} \amp\frac{1}{2} y \amp {}+{} \amp  z \amp {}={} \amp\frac{5}{2} \amp\hphantom{blankblank} (3)</mrow>
-		</md>
-	</p>
-<solution>
-	<p>
-		Follow the steps outlined above.
-<!--		<dl>
-			<li><title>Step 1:</title><p>
-				We multiply each side of Equation (2) by <m>3</m>, and each side of Equation (3) by <m>2</m>, to obtain the equivalent system		
-				<md alignment="alignat">
-				    <mrow>x\amp{}+{}\amp 2y \amp {}-{} \amp z \amp {}={} \amp -3\amp\hphantom{blankblank} (1)</mrow>
-				    <mrow>x \amp {}-{} \amp 3 y \amp {}+{} \amp z \amp {}={} \amp 6\amp\hphantom{blankblank} (2\text{a})</mrow>
-				    <mrow>2x \amp {}+{} \amp y \amp {}+{} \amp  2z \amp {}={} \amp5 \amp\hphantom{blankblank} (3\text{a})</mrow>
-				</md>
-			</p></li>
-			<li><title>Step 2:</title><p>
-				We eliminate <m>z</m> from Equations (1) and (2a) by adding them together.
-			<table><tabular halign="right">
-				<row>
-					<cell><m>x</m></cell>
-					<cell><m>+</m></cell>
-					<cell><m>2y</m></cell>
-					<cell><m>-</m></cell>
-					<cell><m>z</m></cell>
-					<cell><m>=</m></cell>
-					<cell><m>-3</m></cell>
-					<cell><m>\hphantom{blank}</m></cell>
-					<cell><m>(1)</m></cell>
-				</row>
-				<row>
-					<cell bottom="minor"><m>x</m></cell>
-					<cell bottom="minor"><m>-</m></cell>
-					<cell bottom="minor"><m>3y</m></cell>
-					<cell bottom="minor"><m>+</m></cell>
-					<cell bottom="minor"><m>z</m></cell>
-					<cell bottom="minor"><m>=</m></cell>
-					<cell bottom="minor"><m>6</m></cell>
-					<cell><m></m></cell>
-					<cell><m>(2\text{a})</m></cell>
-				</row>
-				<row>
-					<cell><m>2x</m></cell>
-					<cell><m>-</m></cell>
-					<cell><m>y</m></cell>
-					<cell><m></m></cell>
-					<cell><m></m></cell>
-					<cell><m>=</m></cell>
-					<cell><m>3</m></cell>
-					<cell><m></m></cell>
-					<cell><m>(4)</m></cell>
-				</row>
-			</tabular></table>
-			</p></li>
-			<li><p>
-				We eliminate <m>z</m> from Equations (1) and (3a): We multiply Equation (1) by <m>2</m> and add the result to Equation (3a).
-			<table><tabular halign="right">
-				<row>
-					<cell><m>2x</m></cell>
-					<cell><m>+</m></cell>
-					<cell><m>4y</m></cell>
-					<cell><m>-</m></cell>
-					<cell><m>2z</m></cell>
-					<cell><m>=</m></cell>
-					<cell><m>-6</m></cell>
-					<cell><m>\hphantom{blank}</m></cell>
-					<cell><m>(1\text{a})</m></cell>
-				</row>
-				<row>
-					<cell bottom="minor"><m>2x</m></cell>
-					<cell bottom="minor"><m>+</m></cell>
-					<cell bottom="minor"><m>y</m></cell>
-					<cell bottom="minor"><m>+</m></cell>
-					<cell bottom="minor"><m>2z</m></cell>
-					<cell bottom="minor"><m>=</m></cell>
-					<cell bottom="minor"><m>5</m></cell>
-					<cell><m></m></cell>
-					<cell><m>(3\text{a})</m></cell>
-				</row>
-				<row>
-					<cell><m>4x</m></cell>
-					<cell><m>+</m></cell>
-					<cell><m>5y</m></cell>
-					<cell><m></m></cell>
-					<cell><m></m></cell>
-					<cell><m>=</m></cell>
-					<cell><m>-1</m></cell>
-					<cell><m></m></cell>
-					<cell><m>(5)</m></cell>
-				</row>
-			</tabular></table>
-			</p></li>
-			<li><title>Step 4:</title><p>
-				We form the <m>2\times 2</m> system consisting of Equations (4) and (5).
-				<md alignment="alignat">
-					<mrow>
-						2x\amp {}-{}\amp y\amp =\amp 3\amp\hphantom{blankblank} (4)
-					</mrow>
-					<mrow>
-						4x\amp {}+{}\amp 5y\amp =\amp -1\amp\hphantom{blankblank}  (5)
-					</mrow>
-				</md>
-			</p></li>
-			<li><title>Step 5:</title><p>
-				We form a triangular system using Equations (1), (4), and (6).
-				<md alignment="alignat">
-				    <mrow> x \amp {}+{} \amp 2y \amp {}-{} \amp z \amp {}={} \amp -3\amp\hphantom{blankblank} (1)</mrow>
-					<mrow>2x \amp{}-{}\amp y \amp \amp  \amp = \amp 3 \amp\hphantom{blankblank} (4)	</mrow>
-				    <mrow>\amp \amp 7y  \amp\amp  \amp {}={} \amp -7\amp\hphantom{blankblank} (6)	</mrow>
-				 </md>
-				 We use back-substitution to find the solution. You can verify that the ordered triple <m>(1, -1, 2)</m> satisfies all three of the original equations of the system.
-			</p></li>
-		</dl> -->
-		<ol label="1">
-			<li><p>
-				We multiply each side of Equation (2) by <m>3</m>, and each side of Equation (3) by <m>2</m>, to obtain the equivalent system		
-				<md alignment="alignat">
-				    <mrow>x\amp{}+{}\amp 2y \amp {}-{} \amp z \amp {}={} \amp -3\amp\hphantom{blankblank} (1)</mrow>
-				    <mrow>x \amp {}-{} \amp 3 y \amp {}+{} \amp z \amp {}={} \amp 6\amp\hphantom{blankblank} (2\text{a})</mrow>
-				    <mrow>2x \amp {}+{} \amp y \amp {}+{} \amp  2z \amp {}={} \amp5 \amp\hphantom{blankblank} (3\text{a})</mrow>
-				</md>
-			</p></li>
-			<li><p>
-				We eliminate <m>z</m> from Equations (1) and (2a) by adding them together.
-			<sidebyside><tabular halign="right">
-				<row>
-					<cell><m>x</m></cell>
-					<cell><m>+</m></cell>
-					<cell><m>2y</m></cell>
-					<cell><m>-</m></cell>
-					<cell><m>z</m></cell>
-					<cell><m>=</m></cell>
-					<cell><m>-3</m></cell>
-					<cell><m>\hphantom{blank}</m></cell>
-					<cell><m>(1)</m></cell>
-				</row>
-				<row>
-					<cell bottom="minor"><m>x</m></cell>
-					<cell bottom="minor"><m>-</m></cell>
-					<cell bottom="minor"><m>3y</m></cell>
-					<cell bottom="minor"><m>+</m></cell>
-					<cell bottom="minor"><m>z</m></cell>
-					<cell bottom="minor"><m>=</m></cell>
-					<cell bottom="minor"><m>6</m></cell>
-					<cell><m></m></cell>
-					<cell><m>(2\text{a})</m></cell>
-				</row>
-				<row>
-					<cell><m>2x</m></cell>
-					<cell><m>-</m></cell>
-					<cell><m>y</m></cell>
-					<cell><m></m></cell>
-					<cell><m></m></cell>
-					<cell><m>=</m></cell>
-					<cell><m>3</m></cell>
-					<cell><m></m></cell>
-					<cell><m>(4)</m></cell>
-				</row>
-			</tabular></sidebyside>
-			</p></li>
-			<li><p>
-				We eliminate <m>z</m> from Equations (1) and (3a): We multiply Equation (1) by <m>2</m> and add the result to Equation (3a).
-			<sidebyside><tabular halign="right">
-				<row>
-					<cell><m>2x</m></cell>
-					<cell><m>+</m></cell>
-					<cell><m>4y</m></cell>
-					<cell><m>-</m></cell>
-					<cell><m>2z</m></cell>
-					<cell><m>=</m></cell>
-					<cell><m>-6</m></cell>
-					<cell><m>\hphantom{blank}</m></cell>
-					<cell><m>(1\text{a})</m></cell>
-				</row>
-				<row>
-					<cell bottom="minor"><m>2x</m></cell>
-					<cell bottom="minor"><m>+</m></cell>
-					<cell bottom="minor"><m>y</m></cell>
-					<cell bottom="minor"><m>+</m></cell>
-					<cell bottom="minor"><m>2z</m></cell>
-					<cell bottom="minor"><m>=</m></cell>
-					<cell bottom="minor"><m>5</m></cell>
-					<cell><m></m></cell>
-					<cell><m>(3\text{a})</m></cell>
-				</row>
-				<row>
-					<cell><m>4x</m></cell>
-					<cell><m>+</m></cell>
-					<cell><m>5y</m></cell>
-					<cell><m></m></cell>
-					<cell><m></m></cell>
-					<cell><m>=</m></cell>
-					<cell><m>-1</m></cell>
-					<cell><m></m></cell>
-					<cell><m>(5)</m></cell>
-				</row>
-			</tabular></sidebyside>
-			</p></li>
-			<li><p>
-				We form the <m>2\times 2</m> system consisting of Equations (4) and (5).
-				<md alignment="alignat">
-					<mrow>
-						2x\amp {}-{}\amp y\amp =\amp 3\amp\hphantom{blankblank} (4)
-					</mrow>
-					<mrow>
-						4x\amp {}+{}\amp 5y\amp =\amp -1\amp\hphantom{blankblank}  (5)
-					</mrow>
-				</md>
-			</p></li>
-			<li><p>
-				We form a triangular system using Equations (1), (4), and (6).
-				<md alignment="alignat">
-				    <mrow> x \amp {}+{} \amp 2y \amp {}-{} \amp z \amp {}={} \amp -3\amp\hphantom{blankblank} (1)</mrow>
-					<mrow>2x \amp{}-{}\amp y \amp \amp  \amp = \amp 3 \amp\hphantom{blankblank} (4)	</mrow>
-				    <mrow>\amp \amp 7y  \amp\amp  \amp {}={} \amp -7\amp\hphantom{blankblank} (6)	</mrow>
-				 </md>
-				 We use back-substitution to find the solution. You can verify that the ordered triple <m>(1, -1, 2)</m> satisfies all three of the original equations of the system.
-			</p></li>
-		</ol>
-	</p>
-</solution></example>
+<solution><p><ol label="a">
+	<li>All three graphs pass the vertical line test, so all three represent functions.</li>
+	<li>Only the function represented by graph II passes the horizontal line test, so it is the only one-to-one function.</li>
+	<li>Only function II is one-to-one, so it is the only function that has an inverse function.</li>
+</ol></p></solution></example>
 
-<exercise><statement>
-	<p>
-		Use Gaussian reduction to solve the system
-		<md alignment="alignat">
-		    <mrow>x\amp{}-{}\amp 2y \amp {}+{} \amp z \amp {}={} \amp -1\amp\hphantom{blankblank} (1)</mrow>
-		    <mrow>\frac{2}{3}x \amp {}+{} \amp \frac{1}{3}y \amp {}-{} \amp z \amp {}={} \amp 1\amp\hphantom{blankblank} (2)</mrow>
-		    <mrow>3x \amp {}+{} \amp 3y \amp {}-{} \amp 2z \amp {}={} \amp 10 \amp\hphantom{blankblank} (3)</mrow>
-		</md>
-		Follow the steps suggested below:
-		<ol label="*1*">
-			<li><p>
-				Clear the fractions from Equation (2).
-			</p></li>
-			<li><p>
-				Eliminate <m>z</m> from Equations (1) and (2).
-			</p></li>
-			<li><p>
-				Eliminate <m>z</m> from Equations (1) and (3).
-			</p></li>
-			<li><p>
-				Eliminate <m>x</m> from your new <m>2\times 2</m> system.
-			</p></li>
-			<li><p>
-				Form a triangular system and solve by back-substitution.
-			</p></li>
-		</ol>
-	</p>
-</statement>
-<answer><p><m>(2, 2, 1)</m></p></answer>
-</exercise>
-
+<exercise><statement><p>Which of the functions below are one-to-one?</p>
+<sidebyside width="80%"><image source="images/exer8-2-3.png"><description>graphs</description></image></sidebyside></statement></exercise>
 </subsection>
 
+<subsection><title>Restricting the Domain: The Inverse Sine Function</title>
+<p>	Sometimes it is so important that the inverse be a function that we are willing to sacrifice part of the original function to achieve this result.  Look again at the graph of <m>F(x)=x^2 - 4</m>. If we use only nonnegative <m>x</m>-values for the domain, we create a new function,
+<me>f(x)=x^2 - 4,~~x \ge 0</me>
+shown below.
+<sidebyside width="35%"><image source="images/8-2-4.png"><description>graphs</description></image></sidebyside></p>
+<p>This new function is one-to-one, and its inverse, <m>f^{-1}(x) = \sqrt{x+4}</m>, is also a function. (We could also have used only negative <m>x</m>-values for the domain, or some smaller interval, just as long as the resulting function is one-to-one.)</p>
+<p>We say that we have <em>restricted the domain</em> of the original function, and we will use this technique to define inverse functions for the trigonometric functions.</p>
 
+<p>The sine function is not one-to-one; there are many angles that have the same sine value. In order to define its inverse function, we must restrict the domain of the sine to an interval on which the <m>y</m>-values do not repeat. But there are many candidates for such an interval; which one shall we choose?</p>  
+<p>	It turns out that the most useful interval is found by starting at <m>x=0</m> and moving as far as we can in either direction until the <m>y</m>-values begin to repeat. By doing so, we obtain the restricted domain <m>\dfrac{-\pi}{2} \le x \le \dfrac{\pi}{2}</m>, as shown below. This piece of the function includes all of the original range values, from <m>-1</m> to <m>1</m>.
+<sidebyside width="80%"><image source="images/8-2-5.png"><description>sine</description></image></sidebyside></p>
 
+<p>Because the sine function is one-to-one on this domain, its inverse is a function.</p>
+<p>The graph of the inverse sine function, <m>y=\sin^{-1}x</m>, is shown below. Its domain is the same as the range of the sine function, and its range is our restricted domain for sine, <m>\dfrac{-\pi}{2} \le y \le \dfrac{\pi}{2}</m>.
+<sidebyside width="50%"><image source="images/8-2-6.png"><description>inverse sine</description></image></sidebyside></p>
 
-<subsection><title>Inconsistent and Dependent Systems</title>
-<p>
-	The results in <xref ref="Systems-of-Linear-Equations-in-Two-Variables" text="type-global"/> for identifying dependent and inconsistent systems can be extended to <m>3\times 3</m> linear systems. If at any step in forming linear combinations we obtain an equation of the form
-	<me>
-		0x + 0y + 0z = k, \hphantom{blank}(k\ne 0)
-	</me>
-	then the system is inconsistent and has no solution. If we obtain an equation of the form
-	<me>
-		0x + 0y + 0z = 0
-	</me>
-	then the system is dependent and has infinitely many solutions.
-</p>
+<assemblage><p>
+	<me>y = \sin^{-1}x</me>
+	<me> \text{Domain:  } -1 \le x \le 1</me>
+	<me> \text{Range:  } \dfrac{-\pi}{2} \le y \le \dfrac{\pi}{2}</me></p></assemblage>
 
-<example>
-	<p>
-		Solve the system
-		<md alignment="alignat">
-			<mrow>
-				3x\amp {}+{}\amp y\amp {}-{}\amp 2z\amp =\amp 1\amp\hphantom{blank} \amp(1)
-			</mrow>
-			<mrow>
-				6x\amp {}+{}\amp 2y\amp {}-{}\amp 4z\amp =\amp 5\amp\hphantom{blank} \amp(2)
-			</mrow>
-			<mrow>
-				-2x\amp {}-{}\amp y\amp {}+{}\amp 3z\amp =\amp -1\amp\hphantom{blank} \amp(3)
-			</mrow>
-		</md>
-	</p>
-<solution>
-	<p>
-		To eliminate <m>y</m> from Equations (1) and (2), we multiply Equation (1) by <m>-2</m> and add the result to Equation (2).
-		<sidebyside><tabular halign="right">
-			<row>
-				<cell><m>-6x</m></cell>
-				<cell><m>-</m></cell>
-				<cell><m>2y</m></cell>
-				<cell><m>+</m></cell>
-				<cell><m>4z</m></cell>
-				<cell><m>=</m></cell>
-				<cell><m>-2</m></cell>
-			</row>
-			<row>
-				<cell bottom="minor"><m>6x</m></cell>
-				<cell bottom="minor"><m>+</m></cell>
-				<cell bottom="minor"><m>2y</m></cell>
-				<cell bottom="minor"><m>-</m></cell>
-				<cell bottom="minor"><m>4z</m></cell>
-				<cell><m>=</m></cell>
-				<cell bottom="minor"><m>5</m></cell>
-			</row>
-			<row>
-				<cell><m>0x</m></cell>
-				<cell><m>+</m></cell>
-				<cell><m>0y</m></cell>
-				<cell><m>+</m></cell>
-				<cell><m>0z</m></cell>
-				<cell><m>=</m></cell>
-				<cell><m>3</m></cell>
-			</row>
-		</tabular></sidebyside>
+<assemblage><title>Definition of the inverse sine function</title>
+<p><me>\sin^{-1}x=\theta~~~\text{if and only if}~~~~\sin \theta = x~~~\text{and}~~~\dfrac{-\pi}{2} \le \theta \le \dfrac{\pi}{2}</me></p></assemblage>
 
-<!--		<md alignment="alignat">
-			<mrow>
-				-6x\amp {}-{}\amp 2y\amp {}+{}\amp 4z\amp =\amp -2
-			</mrow>
-			<mrow>
-				{6x}\amp {{}+{}}\amp {2y}\amp {{}-{}}\amp {4z}\amp =\amp {5}
-			</mrow>
-			<mrule/>
-			<mrow>
-				0x\amp {}+{}\amp 0y\amp {}+{}\amp 0z\amp =\amp 3
-			</mrow>
-		</md> -->
-		Since the resulting equation has no solution, the system is <em>inconsistent</em>.
-	</p>
-</solution></example>
+<p>	In other words, <m>\sin^{-1}x</m> is the angle in radians, <em>between <m>\dfrac{-\pi}{2}</m> and <m>\dfrac{\pi}{2}</m></em>, whose sine is <m>x</m>. There are many angles with a given sine value <m>x</m>, but only one of these angles can be <m>\sin^{-1}x</m>. This is why the calculator's <m>SIN^{-1}</m> key only gives outputs between <m>\dfrac{-\pi}{2}</m> and <m>\dfrac{\pi}{2}</m>.  <ul>
+	<li>If <m>x=\sin \theta</m> is positive, the inverse sine function delivers a first quadrant angle, <m>0 \le \theta \le \dfrac{\pi}{2}</m>.</li>
+	<li> If <m>x=\sin \theta</m> is negative, the inverse sine function delivers a fourth quadrant angle, <m>\dfrac{-\pi}{2} \le \theta \le 0</m>.</li>
+</ul></p>
 
-<exercise><statement>
-	<p>
-		Decide whether the system is inconsistent, dependent, or consistent and independent.
-		<md alignment="alignat">
-			<mrow>
-				x\amp {}+{}\amp 3y\amp {}-{}\amp z\amp =\amp 4 
-			</mrow>
-			<mrow>
-				-2x\amp {}-{}\amp 6y\amp {}+{}\amp 2z\amp =\amp 1 
-			</mrow>
-			<mrow>
-				x\amp {}+{}\amp 2y\amp {}-{}\amp z\amp =\amp 3 
-			</mrow>
-		</md>
-	</p>
-</statement>
-<answer><p>Inconsistent</p></answer>
-</exercise>
+<example><statement><p>Simplify each expression without using a calculator.<ol label="a" cols="2">
+	<li><m>\sin^{-1}(\dfrac{-\sqrt{3}}{2})</m></li>
+	<li><m>\sin^{-1}(\sin \pi)</m></li>
+</ol></p></statement>
 
-<example>
-	<p>
-		Solve the system
-		<md alignment="alignat">
-			<mrow>
-				-x\amp {}+{}\amp 3y\amp {}-{}\amp z\amp =\amp -2\amp\hphantom{blank} \amp(1)
-			</mrow>
-			<mrow>
-				2x\amp {}+{}\amp y\amp {}-{}\amp 4z\amp =\amp 6\amp\hphantom{blank} \amp(2)
-			</mrow>
-			<mrow>
-				2x\amp {}-{}\amp 6y\amp {}+{}\amp 2z\amp =\amp 4\amp\hphantom{blank} \amp(3)
-			</mrow>
-		</md>
-	</p>
-<solution>
-	<p>
-		To eliminate <m>x</m> from Equations (1) and (3), we multiply Equation (1) by 2 and add Equation (3).
-		<sidebyside><tabular halign="right">
-			<row>
-				<cell><m>-2x</m></cell>
-				<cell><m>+</m></cell>
-				<cell><m>6y</m></cell>
-				<cell><m>-</m></cell>
-				<cell><m>2z</m></cell>
-				<cell><m>=</m></cell>
-				<cell><m>-4</m></cell>
-			</row>
-			<row>
-				<cell bottom="minor"><m>2x</m></cell>
-				<cell bottom="minor"><m>-</m></cell>
-				<cell bottom="minor"><m>6y</m></cell>
-				<cell bottom="minor"><m>+</m></cell>
-				<cell bottom="minor"><m>2z</m></cell>
-				<cell><m>=</m></cell>
-				<cell bottom="minor"><m>4</m></cell>
-			</row>
-			<row>
-				<cell><m>0x</m></cell>
-				<cell><m>+</m></cell>
-				<cell><m>0y</m></cell>
-				<cell><m>+</m></cell>
-				<cell><m>0z</m></cell>
-				<cell><m>=</m></cell>
-				<cell><m>0</m></cell>
-			</row>
-		</tabular></sidebyside>
-		Since the resulting equation vanishes, the system is dependent and has infinitely many solutions.
-	</p>
-</solution></example>
+<solution><p><ol label="a">
+	<li>We know that <m>\sin^{-1}(\dfrac{-\sqrt{3}}{2})</m> is an angle whose sine is <m>\dfrac{-\sqrt{3}}{2}</m>, and that <m>\dfrac{-\pi}{2} \le \theta \le \dfrac{\pi}{2}</m>.  Because <m>\sin \theta</m> is negative, we must find an angle in the fourth quadrant, and because <m>\sin \dfrac{\pi}{3}=\dfrac{\sqrt{3}}{2}</m>, the reference angle for <m>\theta</m> is <m>\dfrac{\pi}{3}</m>. Thus, the angle we want is <m>\theta=\dfrac{-\pi}{3}</m>, and<m>\sin^{-1}(\dfrac{-\sqrt{3}}{2})=\dfrac{-\pi}{3}</m>.</li>
+<li>First note that <m>\sin^{-1}(\sin \pi)\not= \pi</m> !  We start by simplifying the expression inside parentheses: <m>\alert{\sin \pi = 0}</m>, so <m>\sin^{-1}(\alert{\sin \pi})=\sin^{-1}\alert{0}</m>. We want an angle whose sine is 0, and which lies in the interval <m>\dfrac{-\pi}{2} \le \theta \le \dfrac{\pi}{2}</m>. This angle is 0, so <m>\sin^{-1}(\sin \pi)=0</m>. (It is also true that <m>\sin \pi = 0</m>, but is not in the interval <m>\dfrac{-\pi}{2} \le \theta \le \dfrac{\pi}{2}</m>.)</li>
+</ol></p></solution></example>
 
-<exercise><statement>
-	<p>
-		Decide whether the system is inconsistent, dependent, or consistent and independent.
-		<md>
-			<mrow>
-				a - c \amp = 2
-			</mrow>
-			<mrow>
-				2a + b \amp = 5
-			</mrow>
-			<mrow>
-				a + b + c = 3
-			</mrow>
-		</md>
-	</p>
-</statement>
-<answer><p>Dependent</p></answer></exercise>
-
-
+<exercise><statement><p>Simplify each expression without using a calculator.<ol label="a" cols="2">
+	<li><m>\sin^{-1}(\sin \dfrac{\pi}{3})</m></li>
+	<li><m>\sin^{-1}(\sin \dfrac{2\pi}{3})</m></li>
+</ol></p></statement></exercise>
 </subsection>
 
+<subsection><title>The Inverse Cosine and Inverse Tangent Functions</title>
+<p>	The cosine and tangent functions are also periodic, so, just as with the sine function, to define their inverse functions we must restrict their domains to intervals where they are one-to-one. The graph of cosine is shown below.
+<sidebyside width="80%"><image source="images/8-2-7.png"><description>cosine</description></image></sidebyside></p>
 
+<p>	Once again the choice of these intervals is arbitrary. If we start at <m>\theta=0</m> on the cosine graph, we can move in only one direction, either right or left, without encountering repeated <m>y</m>-values.</p>
+<p>	We choose to move in the positive direction, to obtain the interval <m>0 \le\theta\le \pi</m>, as shown above. On this domain, the inverse of cosine is a function. Its graph is shown below.
+<sidebyside width="50%"><image source="images/8-2-8.png"><description>inverse cosine</description></image></sidebyside></p>  
 
+<assemblage><p>
+	<me>y = \cos^{-1}x</me>
+	<me> \text{Domain:  } -1 \le x \le 1</me>
+	<me> \text{Range:  } 0 \le y \le \pi</me></p></assemblage>
 
-<subsection><title>Applications</title>
-<p>
-	Here are some problems that can be modeled by a system of three linear equations. When writing such systems, we must be careful to find three independent equations describing the conditions of the problem.
-</p>
+<assemblage><title>Definition of the inverse cosine function</title>
+<p><me>\cos^{-1}x=\theta~~~\text{if and only if}~~~~\cos \theta = x~~~\text{and}~~~0 \le \theta \le \pi</me></p></assemblage>
 
-<example>
-	<p>
-		One angle of a triangle measures 4° less than twice the second angle, and the third angle is 20° greater than the sum of the first two. Find the measure of each angle.
-	</p>
-<solution>
-	<p>
-<!--		<dl>
-			<li><title>Step 1: </title><p>
-				We represent the measure of each angle by a separate variable.
-				<md>
-					<mrow>
-						\amp\text{First angle: }\amp\amp x
-					</mrow>
-					<mrow>
-						\amp\text{Second angle: }\amp\amp y
-					</mrow>
-					<mrow>
-						\amp\text{Third angle:}\amp\amp z
-					</mrow>
-				</md>
-			</p></li>
-			<li><title>Step 2:</title><p>
-				We write the conditions stated in the problem as three equations.
-				<md>
-					<mrow>x = 2y - 4</mrow>
-					<mrow>z = x + y + 20</mrow>
-					<mrow>x + y + z = 180</mrow>
-				</md>
-				(The third equation states the fact that the sum of the angles of a triangle is 180°.)
-			</p></li>
-			<li><title>Step 3:</title><p>
-				We follow the steps for solving a <m>3\times 3</m> linear system.
-				<p>1. 		We write the three equations in standard form.
-						<md alignment="alignat">
-							<mrow>
-								x\amp {}-{}\amp 2y\amp {}{}\amp \amp =\amp -4\amp\hphantom{blank} \amp(1)
-							</mrow>
-							<mrow>
-								x\amp {}+{}\amp y\amp {}-{}\amp z\amp =\amp -20\amp\hphantom{blank} \amp(2)
-							</mrow>
-							<mrow>
-								x\amp {}+{}\amp y\amp {}+{}\amp z\amp =\amp 180\amp\hphantom{blank} \amp(3)
-							</mrow>
-						</md>		
-				</p>
-				<p>
-					2-3. Since Equation (1) has no <m>z</m>-term, it will be most efficient to eliminate the variable <m>z</m> from Equations (2) and (3). We add these two equations.
-		<table><tabular halign="right">
-			<row>
-				<cell><m>x</m></cell>
-				<cell><m>+</m></cell>
-				<cell><m>y</m></cell>
-				<cell><m>-</m></cell>
-				<cell><m>z</m></cell>
-				<cell><m>=</m></cell>
-				<cell><m>-20</m></cell>
-				<cell></cell>
-				<cell><m>(2)</m></cell>
-			</row>
-			<row>
-				<cell bottom="minor"><m>x</m></cell>
-				<cell bottom="minor"><m>+</m></cell>
-				<cell bottom="minor"><m>y</m></cell>
-				<cell bottom="minor"><m>+</m></cell>
-				<cell bottom="minor"><m>2z</m></cell>
-				<cell><m>=</m></cell>
-				<cell bottom="minor"><m>4</m></cell>
-				<cell></cell>
-				<cell><m>(3)</m></cell>
-			</row>
-			<row>
-				<cell><m>2x</m></cell>
-				<cell><m>+</m></cell>
-				<cell><m>2y</m></cell>
-				<cell><m></m></cell>
-				<cell><m></m></cell>
-				<cell><m>=</m></cell>
-				<cell><m>160</m></cell>
-				<cell></cell>
-				<cell><m>(4)</m></cell>
-			</row>
-		</tabular></table>
-				</p>
-				<p>
-					4. We form a <m>2\times 2</m> system from Equations (1) and (4). We add the two equations to eliminate the variable <m>y</m>, yielding
-		<table><tabular halign="right">
-			<row>
-				<cell><m>x</m></cell>
-				<cell><m>-</m></cell>
-				<cell><m>2y</m></cell>
-				<cell><m>=</m></cell>
-				<cell><m>-4</m></cell>
-				<cell></cell>
-				<cell><m>(1)</m></cell>
-			</row>
-			<row>
-				<cell bottom="minor"><m>2x</m></cell>
-				<cell bottom="minor"><m>+</m></cell>
-				<cell bottom="minor"><m>2y</m></cell>
-				<cell><m>=</m></cell>
-				<cell bottom="minor"><m>160</m></cell>
-				<cell></cell>
-				<cell><m>(4)</m></cell>
-			</row>
-			<row>
-				<cell><m>3x</m></cell>
-				<cell><m></m></cell>
-				<cell><m></m></cell>
-				<cell><m>=</m></cell>
-				<cell><m>156</m></cell>
-				<cell></cell>
-				<cell><m>(5)</m></cell>
-			</row>
-		</tabular></table>
-				</p>
-				<p>
-					5. We form a triangular system using Equations (3), (1), and (5). We use back-substitution to complete the solution.
-					<md alignment="alignat">
-						<mrow>
-							x\amp {}+{}\amp y\amp {}+{}\amp z\amp =\amp 180\hphantom{blankblank} \amp(2)
-						</mrow>
-						<mrow>
-							x\amp {}-{}\amp 2y\amp \amp\amp =\amp -4\hphantom{blankblank} \amp(1)
-						</mrow>
-						<mrow>
-							3x\amp\amp\amp\amp\amp = \amp156\hphantom{blankblank} \amp(5)
-						</mrow>
-					</md>
-					We divide both sides of Equation (5) by <m>3</m> to find <m>x = 52</m>. We substitute <m>52</m> for <m>x</m> in Equation (1) and solve for <m>y</m> to find
-					<md>
-						<mrow>
-							\alert{52} - 2y \amp = -4
-						</mrow>
-						<mrow>
-							y \amp= 28
-						</mrow>
-					</md>
-					We substitute <m>52</m> for <m>x</m> and <m>28</m> for <m>y</m> in Equation (3) to find
-					<md>
-						<mrow>
-							\alert{52} + \blert{28} + z \amp= 180
-						</mrow>
-						<mrow>
-							z\amp=100
-						</mrow>
-					</md>
-				</p>
-			</p></li>
-			<li><title>Step 4:</title><p>
-				The angles measure 52°, 28°, and 100°.
-			</p></li>
-		</dl>  -->
-		<ol label="1">
-			<li><p>
-				We represent the measure of each angle by a separate variable.
-				<md>
-					<mrow>
-						\amp\text{First angle: }\amp\amp x
-					</mrow>
-					<mrow>
-						\amp\text{Second angle: }\amp\amp y
-					</mrow>
-					<mrow>
-						\amp\text{Third angle:}\amp\amp z
-					</mrow>
-				</md>
-			</p></li>
-			<li><p>
-				We write the conditions stated in the problem as three equations.
-				<md>
-					<mrow>x = 2y - 4</mrow>
-					<mrow>z = x + y + 20</mrow>
-					<mrow>x + y + z = 180</mrow>
-				</md>
-				(The third equation states the fact that the sum of the angles of a triangle is 180°.)
-			</p></li>
-			<li><p>
-				We follow the steps for solving a <m>3\times 3</m> linear system.
-				<p>i. 		We write the three equations in standard form.
-						<md alignment="alignat">
-							<mrow>
-								x\amp {}-{}\amp 2y\amp {}{}\amp \amp =\amp -4\amp\hphantom{blank} \amp(1)
-							</mrow>
-							<mrow>
-								x\amp {}+{}\amp y\amp {}-{}\amp z\amp =\amp -20\amp\hphantom{blank} \amp(2)
-							</mrow>
-							<mrow>
-								x\amp {}+{}\amp y\amp {}+{}\amp z\amp =\amp 180\amp\hphantom{blank} \amp(3)
-							</mrow>
-						</md>		
-				</p>
-				<p>
-					ii-iii. Since Equation (1) has no <m>z</m>-term, it will be most efficient to eliminate the variable <m>z</m> from Equations (2) and (3). We add these two equations.
-		<sidebyside><tabular halign="right">
-			<row>
-				<cell><m>x</m></cell>
-				<cell><m>+</m></cell>
-				<cell><m>y</m></cell>
-				<cell><m>-</m></cell>
-				<cell><m>z</m></cell>
-				<cell><m>=</m></cell>
-				<cell><m>-20</m></cell>
-				<cell></cell>
-				<cell><m>(2)</m></cell>
-			</row>
-			<row>
-				<cell bottom="minor"><m>x</m></cell>
-				<cell bottom="minor"><m>+</m></cell>
-				<cell bottom="minor"><m>y</m></cell>
-				<cell bottom="minor"><m>+</m></cell>
-				<cell bottom="minor"><m>2z</m></cell>
-				<cell><m>=</m></cell>
-				<cell bottom="minor"><m>4</m></cell>
-				<cell></cell>
-				<cell><m>(3)</m></cell>
-			</row>
-			<row>
-				<cell><m>2x</m></cell>
-				<cell><m>+</m></cell>
-				<cell><m>2y</m></cell>
-				<cell><m></m></cell>
-				<cell><m></m></cell>
-				<cell><m>=</m></cell>
-				<cell><m>160</m></cell>
-				<cell></cell>
-				<cell><m>(4)</m></cell>
-			</row>
-		</tabular></sidebyside>
-				</p>
-				<p>
-					iv. We form a <m>2\times 2</m> system from Equations (1) and (4). We add the two equations to eliminate the variable <m>y</m>, yielding
-		<sidebyside><tabular halign="right">
-			<row>
-				<cell><m>x</m></cell>
-				<cell><m>-</m></cell>
-				<cell><m>2y</m></cell>
-				<cell><m>=</m></cell>
-				<cell><m>-4</m></cell>
-				<cell></cell>
-				<cell><m>(1)</m></cell>
-			</row>
-			<row>
-				<cell bottom="minor"><m>2x</m></cell>
-				<cell bottom="minor"><m>+</m></cell>
-				<cell bottom="minor"><m>2y</m></cell>
-				<cell><m>=</m></cell>
-				<cell bottom="minor"><m>160</m></cell>
-				<cell></cell>
-				<cell><m>(4)</m></cell>
-			</row>
-			<row>
-				<cell><m>3x</m></cell>
-				<cell><m></m></cell>
-				<cell><m></m></cell>
-				<cell><m>=</m></cell>
-				<cell><m>156</m></cell>
-				<cell></cell>
-				<cell><m>(5)</m></cell>
-			</row>
-		</tabular></sidebyside>
-				</p>
-				<p>
-					v. We form a triangular system using Equations (3), (1), and (5). We use back-substitution to complete the solution.
-					<md alignment="alignat">
-						<mrow>
-							x\amp {}+{}\amp y\amp {}+{}\amp z\amp =\amp 180\hphantom{blankblank} \amp(2)
-						</mrow>
-						<mrow>
-							x\amp {}-{}\amp 2y\amp \amp\amp =\amp -4\hphantom{blankblank} \amp(1)
-						</mrow>
-						<mrow>
-							3x\amp\amp\amp\amp\amp = \amp156\hphantom{blankblank} \amp(5)
-						</mrow>
-					</md>
-					We divide both sides of Equation (5) by <m>3</m> to find <m>x = 52</m>. We substitute <m>52</m> for <m>x</m> in Equation (1) and solve for <m>y</m> to find
-					<md>
-						<mrow>
-							\alert{52} - 2y \amp = -4
-						</mrow>
-						<mrow>
-							y \amp= 28
-						</mrow>
-					</md>
-					We substitute <m>52</m> for <m>x</m> and <m>28</m> for <m>y</m> in Equation (3) to find
-					<md>
-						<mrow>
-							\alert{52} + \blert{28} + z \amp= 180
-						</mrow>
-						<mrow>
-							z\amp=100
-						</mrow>
-					</md>
-				</p>
-			</p></li>
-			<li><p>
-				The angles measure 52°, 28°, and 100°.
-			</p></li>
-		</ol>
-	</p>
-</solution></example>
+<p>	The inverse cosine function delivers angles in the first and second quadrants. (Compare to the inverse sine, whose outputs are angles in the first or fourth quadrants.)</p>
 
-<exercise><statement>
-	<p>
-		A manufacturer of office supplies makes three types of file cabinet: two-drawer, four-drawer, and horizontal. The manufacturing process is divided into three phases: assembly, painting, and finishing. 
-		<ul>
-			<li>A two-drawer cabinet requires 3 hours to assemble, 1 hour to paint, and 1 hour to finish.</li>
-			<li> The four-drawer model takes 5 hours to assemble, 90 minutes to paint, and 2 hours to finish.</li>
-			<li> The horizontal cabinet takes 4 hours to assemble, 1 hour to paint, and 3 hours to finish.</li>
-			</ul> 
-			The manufacturer employs enough workers for 500 hours of assembly time, 150 hours of painting, and 230 hours of finishing per week. How many of each type of file cabinet should he make in order to use all the hours available?
-<!--		<dl>
-			<li><title>Step 1:</title><p>
-				Represent the number of each model of file cabinet by a different variable.
-				<table><tabular halign="left">
-					<row>
-						<cell>Number of two-drawer cabinets:</cell>
-						<cell><m>x</m></cell>
-					</row>
-					<row>
-						<cell>Number of four-drawer cabinets:</cell>
-						<cell><m>y</m></cell>
-					</row>
-					<row>
-						<cell>Number of horizontal cabinets:</cell>
-						<cell><m>z</m></cell>
-					</row>
-				</tabular></table>
-			</p></li>
-			<li><title>Step 2:</title><p>
-				Organize the information into a table. (Convert all times to hours.)
-				<table><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
-			        <row bottom="minor">
-			            <cell><m></m></cell>
-			            <cell>2-Drawer</cell>
-			            <cell>4-Drawer</cell>
-			            <cell>Horizontal</cell>
-			            <cell>Total available</cell>
-			        </row>
-			        <row>
-			            <cell>Assembly</cell>
-			            <cell><m></m></cell>
-			            <cell><m></m></cell>
-			            <cell><m></m></cell>
-			            <cell><m></m></cell>
-			        </row>
-			        <row>
-			            <cell>Painting</cell>
-			            <cell><m></m></cell>
-			            <cell><m></m></cell>
-			            <cell><m></m></cell>
-			            <cell><m></m></cell>
-			        </row>
-			        <row>
-			            <cell>Finishing</cell>
-			            <cell><m></m></cell>
-			            <cell><m></m></cell>
-			            <cell><m></m></cell>
-			            <cell><m></m></cell>
-			        </row>
-			    </tabular></table>
-				Write three equations describing the time constraints in each of the three manufacturing phases. For example, the assembly phase requires <m>3x</m> hours for the two-drawer cabinets, <m>5y</m> hours for the four-drawer cabinets, and <m>4z</m> hours for the horizontal cabinets, and the sum of these times should be the time available, <m>500</m> hours.
-				<table><tabular>
-					<row>
-						<cell>
-							Assembly time:
-						</cell>
-						<cell><fillin characters="25" /></cell>
-						<cell><m>(1)</m></cell>
-					</row>
-					<row>
-						<cell>
-							Painting time:
-						</cell>
-						<cell><fillin characters="25" /></cell>
-						<cell><m>(2)</m></cell>
-					</row>
-						<row>
-						<cell>
-							Finishing time:
-						</cell>
-						<cell><fillin characters="25" /></cell>
-						<cell><m>(3)</m></cell>
-					</row>
-			</tabular></table>
-			</p></li>
-			<li><title>Step 3:</title><p>
-				Solve the system. Follow the steps suggested below.
-				<ol label="*1*">
-					<li><p>
-						Clear the fractions from the second equation.
-					</p></li>
-					<li><p>
-						Subtract Equation (1) from <m>3</m> times Equation (3) to obtain a new Equation (4).
-					</p></li>
-					<li><p>
-						Subtract Equation (2) from twice Equation (3) to obtain a new Equation (5).
-					</p></li>
-					<li><p>
-						Equations (4) and (5) form a <m>2\times 2</m> system in <m>y</m> and <m>z</m>. Subtract Equation (5) from Equation (4) to obtain a new Equation (6).
-					</p></li>
-					<li><p>
-						Form a triangular system with Equations (3), (4), and (6). Use back-substitution to complete the solution.
-					</p></li>
-				</ol>
-			</p></li>
-			<li><title>Step 4:</title><p>
-				You should have found the following solution: The manufacturer should make <m>60</m> two-drawer cabinets, <m>40</m> four-drawer cabinets, and <m>30</m> horizontal cabinets.
-			</p></li>
-		</dl> -->
-		<ol label="1">
-			<li><p>
-				Represent the number of each model of file cabinet by a different variable.
-				<sidebyside><tabular halign="left">
-					<row>
-						<cell>Number of two-drawer cabinets:</cell>
-						<cell><m>x</m></cell>
-					</row>
-					<row>
-						<cell>Number of four-drawer cabinets:</cell>
-						<cell><m>y</m></cell>
-					</row>
-					<row>
-						<cell>Number of horizontal cabinets:</cell>
-						<cell><m>z</m></cell>
-					</row>
-				</tabular></sidebyside>
-			</p></li>
-			<li><p>
-				Organize the information into a table. (Convert all times to hours.)
-				<sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
-			        <row bottom="minor">
-			            <cell><m></m></cell>
-			            <cell>2-Drawer</cell>
-			            <cell>4-Drawer</cell>
-			            <cell>Horizontal</cell>
-			            <cell>Total available</cell>
-			        </row>
-			        <row>
-			            <cell>Assembly</cell>
-			            <cell><m></m></cell>
-			            <cell><m></m></cell>
-			            <cell><m></m></cell>
-			            <cell><m></m></cell>
-			        </row>
-			        <row>
-			            <cell>Painting</cell>
-			            <cell><m></m></cell>
-			            <cell><m></m></cell>
-			            <cell><m></m></cell>
-			            <cell><m></m></cell>
-			        </row>
-			        <row>
-			            <cell>Finishing</cell>
-			            <cell><m></m></cell>
-			            <cell><m></m></cell>
-			            <cell><m></m></cell>
-			            <cell><m></m></cell>
-			        </row>
-			    </tabular></sidebyside>
-				Write three equations describing the time constraints in each of the three manufacturing phases. For example, the assembly phase requires <m>3x</m> hours for the two-drawer cabinets, <m>5y</m> hours for the four-drawer cabinets, and <m>4z</m> hours for the horizontal cabinets, and the sum of these times should be the time available, <m>500</m> hours.
-				<sidebyside><tabular>
-					<row>
-						<cell>
-							Assembly time:
-						</cell>
-						<cell><fillin characters="25" /></cell>
-						<cell><m>(1)</m></cell>
-					</row>
-					<row>
-						<cell>
-							Painting time:
-						</cell>
-						<cell><fillin characters="25" /></cell>
-						<cell><m>(2)</m></cell>
-					</row>
-						<row>
-						<cell>
-							Finishing time:
-						</cell>
-						<cell><fillin characters="25" /></cell>
-						<cell><m>(3)</m></cell>
-					</row>
-			</tabular></sidebyside>
-			</p></li>
-			<li><p>
-				Solve the system. Follow the steps suggested below.
-				<ol label="i">
-					<li><p>
-						Clear the fractions from the second equation.
-					</p></li>
-					<li><p>
-						Subtract Equation (1) from <m>3</m> times Equation (3) to obtain a new Equation (4).
-					</p></li>
-					<li><p>
-						Subtract Equation (2) from twice Equation (3) to obtain a new Equation (5).
-					</p></li>
-					<li><p>
-						Equations (4) and (5) form a <m>2\times 2</m> system in <m>y</m> and <m>z</m>. Subtract Equation (5) from Equation (4) to obtain a new Equation (6).
-					</p></li>
-					<li><p>
-						Form a triangular system with Equations (3), (4), and (6). Use back-substitution to complete the solution.
-					</p></li>
-				</ol>
-			</p></li>
-			<li><p>
-				You should have found the following solution: The manufacturer should make <m>60</m> two-drawer cabinets, <m>40</m> four-drawer cabinets, and <m>30</m> horizontal cabinets.
-			</p></li>
-		</ol>
-	</p>
-</statement>
-<answer><p><m>
-	\begin{alignedat}{5}
-    3x\amp{}+{}\amp 5y\amp{}+{}\amp 4z\amp{}={}500\\
-	x \amp{}+{}\amp 1.5y\amp{}+{}\amp z\amp{}={}150\\
-	x \amp{}+{}\amp 2y\amp {}+{}\amp 3z\amp{}={}230
-	\end{alignedat}
-</m></p><p><m>x = 60, ~y = 40, ~z = 30</m></p></answer>
-</exercise>
+<example><statement><p>Simplify each expression without using a calculator.<ol label="a" cols="2">
+	<li><m>\cos^{-1}(\dfrac{-\sqrt{3}}{2})</m></li>
+	<li><m>\cos^{-1}(\cos \dfrac{7\pi}{4})</m></li>
+</ol></p></statement>
 
+<solution><p><ol label="a">
+	<li>The expression<m>\cos^{-1}(\dfrac{-\sqrt{3}}{2})</m> represents an angle in the second quadrant whose cosine is <m>\dfrac{-\sqrt{3}}{2}</m>.  Because <m>\cos \dfrac{\pi}{6}=\dfrac{\sqrt{3}}{2}</m>, the reference angle for <m>\theta</m> is <m>\dfrac{\pi}{6}</m>. The angle in the second quadrant with this reference angle is <m>\theta=\dfrac{5\pi}{6}</m>, so <m>\cos^{-1}(\dfrac{-\sqrt{3}}{2})=\dfrac{5\pi}{6}</m>.</li>
+<li>Because <m>\cos \dfrac{7\pi}{4}</m> is positive, the angle <m>\cos^{-1}(\cos \dfrac{7\pi}{4})</m> is a first quadrant angle whose cosine is the same as <m>\cos \dfrac{7\pi}{4}</m>.  This angle is <m>\dfrac{\pi}{4}</m>, so <m>\cos^{-1}(\cos \dfrac{7\pi}{4})=\dfrac{\pi}{4}</m>.</li>
+</ol></p></solution></example>
 
+<exercise><statement><p>Simplify <m>\cos^{-1}(-1)</m> without using a calculator.</p></statement></exercise>
+
+<p>	Finally, consider the graph of the tangent function. To choose a convenient interval on which the tangent is one-to-one, we start at <m>x=0</m> and move as far as we can in either direction along the <m>x</m>-axis. In this way we obtain one cycle of the graph, on the interval <m>\dfrac{-\pi}{2} \lt \theta \lt \dfrac{\pi}{2}</m>, as shown below.
+ <sidebyside width="45%"><image source="images/8-2-9.png"><description>tangent</description></image></sidebyside></p>
+
+<p>The range of the tangent on that interval includes all real numbers. Consequently, the domain of the inverse tangent function includes all real numbers, and its range is the interval <m>\dfrac{-\pi}{2} \lt y \lt \dfrac{\pi}{2}</m>.</p>
+<p>	The graph of the inverse tangent function is shown below. Its outputs are angles in the first and fourth quadrants.
+<sidebyside width="55%"><image source="images/8-2-10.png"><description>inverse tangent</description></image></sidebyside></p>
+
+<assemblage><p>
+	<me>y = \tan^{-1}x</me>
+	<me> \text{Domain:  } -\infty \lt x \lt \infty</me>
+	<me> \text{Range:  } \dfrac{-\pi}{2} \lt y \lt \dfrac{\pi}{2}</me></p></assemblage>
+
+<assemblage><title>Definition of the inverse tangent function</title>
+<p><me>\tan^{-1}x=\theta~~~\text{if and only if}~~~~\tan \theta = x~~~\text{and}~~~\dfrac{-\pi}{2} \lt \theta \lt \dfrac{\pi}{2}</me></p></assemblage>
+
+<example><statement><p>Simplify each expression without using a calculator.<ol label="a" cols="2">
+	<li><m>\tan^{-1}(-\sqrt{3})</m></li>
+	<li><m>\tan^{-1}(\tan \dfrac{7\pi}{4})</m></li>
+</ol></p></statement>
+
+<solution><p><ol label="a"> 
+	<li>The expression <m>\tan^{-1}(-\sqrt{3})</m> represents an angle between <m>\dfrac{-\pi}{2}</m> and <m>\dfrac{\pi}{2}</m> whose tangent is <m>-\sqrt{3}</m>.  Now, <m>\tan \dfrac{\pi}{3}=\sqrt{3}</m>, and  <m>\tan(-\theta) = -\tan\theta</m>,  so <m>\tan =\dfrac{-\pi}{3}-\sqrt{3}</m>. Thus, <m>\tan^{-1}(-\sqrt{3})=\dfrac{-\pi}{3}</m>.</li>
+	<li>Because <m>\dfrac{7\pi}{4})</m> is in the fourth quadrant, <m>\tan \dfrac{7\pi}{4})</m> is negative. The angle <m>\tan^{-1}(\tan \dfrac{7\pi}{4})</m> is also in the fourth quadrant, but it must be between <m>\dfrac{-\pi}{2}</m> and 0. The angle <m>\dfrac{-\pi}{4}</m> is coterminal with <m>\dfrac{7\pi}{4})</m>, so <m>\tan^{-1}(\tan \dfrac{7\pi}{4})=\dfrac{-\pi}{4}</m></li>
+</ol></p></solution></example>
+
+<exercise><statement><p>Simplify <m>\tan^{-1}(-1)</m> without using a calculator.</p></statement></exercise>
+
+<warning><p>In the examples above, perhaps you noticed that <m>\sin(\sin^{-1}x) = x</m> for any value of <m>x</m> in the domain of the inverse sine.  In other words, if we find the inverse sine of a number between <m>-1</m> and <m>1</m>, and then take the sine of the resulting angle, we get the original number back again.  The same is true for the cosine and tangent, so that  
+<m>\cos(\cos^{-1}x) = x</m> and  <m>\tan(\tan^{-1}x) = x</m>.</p>
+<p>	However, if we apply the functions in the opposite order, we may not get back the original number. For example,
+	<me>\sin^{-1}(\sin \dfrac{3\pi}{4})= \sin^{-1}(\dfrac{-1}{\sqrt{2}})=\dfrac{\pi}{4}</me>
+This inequality occurs because the inverse sine function returns just one of the many angles whose sine is <m>\dfrac{-1}{\sqrt{2}}</m>, and that angle may not be the angle we started with.</p></warning>
+
+<p>We summarize the content of the Caution above as follows.</p>
+
+<assemblage><title>Inverse Trigonometric Functions</title><p>
+<me>\sin(\sin^{-1}x) = x~~~~\text{for}~ -1 \le x \le 1</me>
+<me>\cos(\cos^{-1}x) = x~~~~\text{for}~ -1 \le x \le 1</me>
+<me>\tan(\tan^{-1}x) = x~~~~\text{for all}~x</me></p>
+<p>However,
+	<me>\sin^{-1}(\sin x)~~\text{may not be equal to}~x</me>
+	<me>\cos^{-1}(\cos x)~~\text{may not be equal to}~x</me>
+	<me>\tan^{-1}(\tan x)~~\text{may not be equal to}~x</me></p></assemblage>
 </subsection>
-<xi:include href="./summary-8-2.xml" /> <!-- summary  -->
-<xi:include href="./section-8-2-exercises.xml" /> <!-- exercises  -->
+
+<subsection><title>Modeling with Inverse Functions</title>
+<p>	The inverse trig functions are used to model situations in which an angle is described in terms of one of its trigonometric ratios.</p>
+
+<example><statement><p>The bottom of a 3-meter tall tapestry on a chateau wall is at your eye level. The angle <m>\theta</m> subtended vertically by the tapestry changes as you approach the wall.</p><p><ol label="a">  
+<li>Express your distance from the wall, <m>d</m>, as a function of <m>\theta</m>.</li>
+<li>Express <m>\theta</m> as a function of <m>d</m>.</li></ol></p></statement>
+
+<solution><p><ol label="a">
+	<li><p>We draw a sketch of the triangle formed by the tapestry and the lines of sight to its bottom and top, as shown at right.  From the triangle we see that <m>\tan \theta = \dfrac{3}{d}</m>, so <m>d=\dfrac{3}{\tan \theta}</m>.
+	<sidebyside width="20%"><image source="images/exam8-2-7.png"><description>triangle</description></image></sidebyside></p></li>
+	<li>Because <m>\tan \theta = \dfrac{3}{d}</m>, <m>\theta = \tan^{-1}\dfrac{3}{d}</m>.</li></ol></p></solution></example>
+
+<exercise><statement><p>The tapestry from the previous example includes a 2-meter tall unicorn with its feet at the bottom of the tapestry.</p><p><ol label="a">
+<li>Express <m>\alpha</m>, the angle subtended vertically by the unicorn, as a function of <m>d</m>, your distance to the tapestry.</li>
+<li><p>Express <m>\beta</m>, the angle subtended by the portion of the tapestry above the unicorn, as a function of <m>d</m>.  (See the figure below).
+<sidebyside width="20%"><image source="images/exer8-2-7.png"><description>triangle</description></image></sidebyside></p></li>
+</ol></p></statement></exercise>
+</subsection>
+
+<subsection><title>Alternate Notations</title>
+<p>	The inverse sine function, <m>\sin^{-1}x</m>, is also called the <term>arcsine</term> function and denoted by <term>arcsin <m>x</m></term>. (This terminology reminds us that the output of the inverse sine function is an angle, or the arc on a unit circle determined by that angle, as shown below.)
+<sidebyside width="35%"><image source="images/8-2-11.png"><description>circle</description></image></sidebyside>  
+Similarly, the inverse cosine function is sometimes denoted by <term>arccos <m>x</m></term>, and the inverse tangent function by  <term>arctan <m>x</m></term>.  Some computer programs use the notation <term>asin <m>x</m></term>, <term>accos <m>x</m></term>, and <term>atan <m>x</m></term>.</p>
+
+<example><statement><p>Simplify each expression.<ol label="a" cols="2">
+	<li><m>\cos(\arccos \dfrac{1}{3})</m></li>
+	<li><m>\arcsin(\sin \dfrac{3\pi}{2})</m></li>
+</ol></p></statement>
+
+<solution><p><ol label="a">
+	<li>Keep in mind that <m>\arccos \dfrac{1}{3}</m> is an angle.  We'll call it <m>\theta</m>, so that <m>\theta = \arccos \dfrac{1}{3}</m>, and hence <m>\cos \theta = \dfrac{1}{3}</m>. Then substituting <m>\theta</m> for <m>\arccos \dfrac{1}{3}</m> in the original expression gives us 
+	<me>\cos(\arccos \dfrac{1}{3}) = \cos \theta = \dfrac{1}{3}</me></li>
+	<li>We start inside the parentheses:  <m>\sin \dfrac{3\pi}{2} = -1</m>. So <m>\arcsin(\sin \dfrac{3\pi}{2}) = \arcsin(-1)</m>.
+	Now <m>\arcsin(-1)</m> is the angle between <m>\dfrac{-\pi}{2}</m> and 0 whose sine is <m>-1</m>, and that angle is <m>\dfrac{-\pi}{2}</m>. Thus, <m>\arcsin(\sin \dfrac{3\pi}{2}) = \dfrac{-\pi}{2}</m></li>
+	</ol></p></solution></example>
+
+<exercise><statement><p>Simplify each expression.<ol label="a" cols="2">
+	<li><m>\tan(\arctan \dfrac{-5}{2})</m></li>
+	<li><m>\arctan(\tan \dfrac{-5\pi}{6})</m></li>
+</ol></p></statement></exercise>
+</subsection>	
+
+<subsection><title>Simplifying Expressions</title>
+<p>	The key to simplifying expressions involving inverse trigonometric functions is to remember that the inverse sine, cosine, or tangent of a number can be treated as an angle.  If we assign a name such as <m>\theta</m> or <m>\phi</m> to the inverse trig value, it can often clarify the computations.</p>
+
+<example><statement><p>Evaluate <m>\sin(\cos^{-1} \dfrac{3}{5})</m>.</p></statement>
+
+<solution><p>Let <m>\theta</m> represent the angle <m>\cos^{-1} \dfrac{3}{5}</m>, so that <m>\theta = \cos^{-1} \dfrac{3}{5}</m>, and consequently <m>\cos \theta = \dfrac{3}{5}</m>. Then sin <m>\sin(\cos^{-1} \dfrac{3}{5})</m> simplifies to <m>\sin \theta</m>, and we know that <m>\cos \theta = \dfrac{3}{5}</m>. If we know one of the trigonometric ratios of an angle, we can find all the others, either by using a diagram or by using identities.  In this case we'll use the Pythagorean identity, <m>\sin^2 \theta + \cos^2 \theta = 1</m>. We have
+<me>\sin^2 \theta + (\dfrac{3}{5})^2 \theta = 1</me> 
+and solving for <m>\sin \theta</m> gives us <m>\sin \theta = \dfrac{\pm 4}{5}</m>. But <m>\theta = \cos^{-1} \dfrac{3}{5}</m> is a first quadrant angle, so its sine is positive.  Thus, <m>\sin(\cos^{-1} \dfrac{3}{5}) = \dfrac{4}{5}</m>.</p></solution></example>
+
+<exercise><statement><p>Evaluate <m>\cos(\tan^{-1} \dfrac{2}{3})</m>.</p></statement></exercise>
+
+<p>	We can verify the results of the previous example using a calculator, but the same technique can be applied to simplify similar expressions involving variables.</p>
+
+<example><statement><p>Simplify <m>\tan(\sin^{-1} x)</m>, assuming that <m>0 \le x \le 1</m>.</p></statement>
+
+<solution><p>Let <m>\theta = \sin^{-1}x</m>, so that <m>\sin \theta = x</m>, and the expression <m>\tan(\sin^{-1} x) = \tan \theta</m>.  Now we use identities to write <m>\tan \theta</m> in terms of <m>x</m>.  First, from the Pythagorean identity we know that <m>\cos \theta = \sqrt{1-\sin^2\theta} = \sqrt{1-x^2}</m>, and then
+<me>\tan \theta = \dfrac{\sin \theta}{\cos \theta} = \dfrac{x}{\sqrt{1-x^2}}</me></p></solution></example>
+
+<exercise><statement><p>Simplify <m>\sin(\tan^{-1} z)</m>, assuming that <m>z \ge 0</m>.</p></statement></exercise>
+</subsection>
+
+ <subsection><title>Algebra Refresher</title>
+
+<exercises>
+<exercisegroup cols="3"><introduction><p><ol label="a">
+	<li>Find a formula for the inverse function.</li>
+	<li>State the domain and range of the inverse function.</li>
+	<li>Graph the function and its inverse on the same grid.</li></ol></p></introduction>
+
+	<exercise number="1"><statement><m>f(x) = \dfrac{1}{2}x-4</m></statement></exercise> 
+
+	<exercise number="2"><statement><m>f(x) = 3x+6</m></statement></exercise>
+
+	<exercise number="3"><statement><m>f(x) = 2+\dfrac{1}{x}</m></statement></exercise>
+
+	<exercise number="4"><statement><m>f(x) = \dfrac{1}{x+5}</m></statement></exercise>
+
+	<exercise number="5"><statement><m>f(x) = \sqrt{x+2}</m></statement></exercise>
+
+	<exercise number="6"><statement><m>f(x) = 3+\sqrt[3]{x}</m></statement></exercise>
+</exercisegroup></exercises>
+
+<subsubsection><title>Answers to 8.2 Exercises</title>
+<p><ol label="1">
+	<li><m>g^{-1}(x)=\dfrac{1}{2}x+3</m></li>
+	<li><p><ol label="a">
+		<li><sidebyside width="35%"><image source="images/exer8-2-2ans.png"><description>graph</description></image></sidebyside></li>
+		<li>The domain and range of <m>g</m> and of <m>g^{-1}</m> each include all real numbers.</li></ol></p></li>
+	<li>I and III</li>
+	<li><p><ol label="a">
+		<li><m>\dfrac{\pi}{3}</m></li>
+		<li><m>\dfrac{\pi}{3}</m></li></ol></p></li>
+	<li><m>\pi</m></li>
+	<li><m>\dfrac{-\pi}{4}</m></li>
+	<li><p><ol label="a">
+		<li><m>\alpha=\tan^{-1}(\dfrac{2}{d})</m></li>
+		<li><m>\beta=\tan^{-1}(\dfrac{3}{d})-\tan^{-1}(\dfrac{2}{d})</m></li></ol></p></li>
+	<li><p><ol label="a">
+		<li><m>\dfrac{-5}{2}</m></li>
+		<li><m>\dfrac{\pi}{6}</m></li></ol></p></li>
+	<li><m>\dfrac{3}{\sqrt{13}}</m></li>
+	<li><m>\dfrac{z}{\sqrt{1+z^2}}</m></li>
+</ol></p></subsubsection>
+
+<subsubsection><title>Algebra Refresher Answers</title>
+<p><ol label="1">
+	<li><p><ol label="a" >
+		<li><m>f^{-1}(x)=2x+8</m></li>
+		<li>Dom: <m>(-\infty, \infty)</m>
+			Rge: <m>(-\infty, \infty)</m></li>
+			<li><sidebyside width="35%"><image source="images/ar8-2-1ans.png"><description>graph</description></image></sidebyside></li>
+	</ol></p></li>
+	<li><p><ol label="a">
+		<li><m>g^{-1}(x)=\dfrac{1}{3}x-2</m></li>
+		<li>Dom: <m>(-\infty, \infty)</m>
+			Rge: <m>(-\infty, \infty)</m></li>
+			<li><sidebyside width="35%"><image source="images/ar8-2-2ans.png"><description>graph</description></image></sidebyside></li></ol></p></li>
+	<li><p><ol label="a">
+		<li><m>F^{-1}(x)=\dfrac{1}{x-2}</m></li>
+		<li>Dom: <m>x \not=0</m>
+			Rge: <m>y \not=2</m></li>
+			<li><sidebyside width="35%"><image source="images/ar8-2-3ans.png"><description>graph</description></image></sidebyside></li></ol></p></li>
+	<li><p><ol label="a">
+		<li><m>G^{-1}(x)=\dfrac{1}{x}-5</m></li>
+		<li>Dom: <m>x \not=-5</m>
+			Rge: <m>y \not=0</m></li>
+			<li><sidebyside width="35%"><image source="images/ar8-2-4ans.png"><description>graph</description></image></sidebyside></li></ol></p></li>
+	<li><p><ol label="a">
+		<li><m>h^{-1}(x)=x^2-2</m></li>
+		<li>Dom: <m>x \ge 0</m>
+			Rge: <m>y \ge -2</m></li>
+			<li><sidebyside width="35%"><image source="images/ar8-2-5ans.png"><description>graph</description></image></sidebyside></li></ol></p></li>
+	<li><p><ol label="a">
+		<li><m>H^{-1}(x)=(x-3)^3</m></li>
+		<li>Dom: <m>(-\infty, \infty)</m>
+			Rge: <m>(-\infty, \infty)</m></li>
+			<li><sidebyside width="35%"><image source="images/ar8-2-6ans.png"><description>graph</description></image></sidebyside></li></ol></p></li>
+	</ol></p></subsubsection>
+</subsection>
+
+<subsection><title>Section 8.2 Summary</title>	
+
+<subsubsection><title>Vocabulary</title>
+<p><ul cols = "3">
+    <li>Inverse function</li>
+    <li>One-to-one</li>
+    <li>Subtend</li>
+</ul></p>
+</subsubsection>
+
+<subsubsection><title>Concepts</title>
+<p><ol label="1">
+	<li>Using one of the calculator keys <m>SIN^{-1},~  COS^{-1}</m>, or <m>TAN^{-1}</m> performs the inverse operation for computing a sine, cosine or tangent.</li>
+	<li>Two functions are called inverse functions if each "undoes" the results of the other function.</li>
+	<li>If <m>y=f(x)</m> is a function, we can often find a formula for the inverse function by interchanging <m>x</m> and <m>y</m> in the formula for the function, and then solving for <m>y</m>.</li> 
+	<li>The graphs of <m>y=f(x)</m> and <m>y=f^{-1}(x)</m> are symmetric about the line <m>y=x</m>.</li>  
+	<li>The domain of <m>f^{-1}</m> is the same as the range of <m>f</m>, and the range of <m>f^{-1}</m> is the same as the domain of <m>f</m>.</li>
+	<li><assemblage><title>Horizontal Line Test</title>
+<p>A function passes the <term>Horizontal Line Test</term> if every horizontal line intersects the graph at most once.  In that case, there is only one <m>x</m>-value for each <m>y</m>-value, and the function is called <term>one-to-one</term>.</p></assemblage></li>
+	<li>A function <m>f</m> has an inverse function if and only if <m>f</m> is one-to-one.</li>
+	<li><assemblage><title>Definitions of the inverse trig functions</title>
+<p><me>\sin^{-1}x=\theta~~~\text{if and only if}~~~~\sin \theta = x~~~\text{and}~~~\dfrac{-\pi}{2} \le \theta \le \dfrac{\pi}{2}</me>
+<me>\cos^{-1}x=\theta~~~\text{if and only if}~~~~\cos \theta = x~~~\text{and}~~~0 \le \theta \le \pi</me>
+<me>\tan^{-1}x=\theta~~~\text{if and only if}~~~~\tan \theta = x~~~\text{and}~~~\dfrac{-\pi}{2} \lt \theta \lt \dfrac{\pi}{2}</me>
+</p></assemblage></li>
+<li><assemblage><title>Inverse Trigonometric Functions</title><p>
+<me>\sin(\sin^{-1}x) = x~~~~\text{for}~ -1 \le x \le 1</me>
+<me>\cos(\cos^{-1}x) = x~~~~\text{for}~ -1 \le x \le 1</me>
+<me>\tan(\tan^{-1}x) = x~~~~\text{for all}~x</me></p>
+<p>However,
+	<me>\sin^{-1}(\sin x)~~\text{may not be equal to}~x</me>
+	<me>\cos^{-1}(\cos x)~~\text{may not be equal to}~x</me>
+	<me>\tan^{-1}(\tan x)~~\text{may not be equal to}~x</me></p></assemblage></li>
+<li>The inverse sine function is also called the arcsine function and denoted by <m>\arcsin (x)</m>.  Similarly, the inverse cosine function is sometimes denoted by <m>\arccos (x)</m>, and the inverse tangent function by <m>\arctan (x)</m>.</li>
+<li>When simplifying expressions involving inverse trigonometric functions, it can often clarify the computations if we assign a name such as <m>\theta</m> or <m>\phi</m> to the inverse trig value.</li></ol></p>
+</subsubsection>
+
+<subsubsection><title>Study Questions</title>
+<p><ol label="1">
+<li>Here is a table of values defining a function <m>f</m>.  Make a table of values for <m>f^{-1}</m>.
+<sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
+                    <row bottom="minor">
+                        <cell><m>x</m></cell>
+                        <cell><m>-3</m></cell>
+                        <cell><m>-2</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>4</m></cell></row>
+                    <row> 
+                        <cell><m>f(x)</m></cell>
+                        <cell><m>6</m></cell>
+                        <cell><m>3</m></cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>-1</m></cell></row>
+                    </tabular></sidebyside></li>
+	<li>What does it mean for a function to be one-to-one?  Give an example.</li>
+	<li>Why do we restrict the domains of the trig functions when we define their inverse functions?</li>
+	<li><p>Which of the following expressions is undefined?  Why?</p><p><ol label="a" cols="3">
+		<li><m>\cos^{-1}(0)</m></li>	
+		<li><m>\arctan(-2)</m></li>
+		<li><m>\arcsin(-2)</m></li></ol></p></li>
+	<li><p><ol label="a">
+		<li>Write <m>x</m> as a function of <m>\theta</m>.</li>
+		<li>Write <m>\theta</m> as a function of <m>x</m>.</li></ol></p>
+		<sidebyside width="25%"><image source="images/sq8-2-5.png"><description>triangle</description></image></sidebyside></li>
+	<li><p><ol label="a">
+		<li>Write <m>x</m> as a function of <m>\theta</m>.</li>
+		<li>Write <m>\theta</m> as a function of <m>x</m>.</li></ol>
+	</p><sidebyside width="25%"><image source="images/sq8-2-6.png"><description>triangle</description></image></sidebyside></li>
+</ol></p></subsubsection>
+
+<subsubsection><title>Skills</title>
+<p><ol label="1">
+<li>Decide whether a function has an inverse function    #1-8</li>
+<li>Evaluate the inverse trig functions    #9-20</li>
+<li>Model problems with inverse trig functions    #21-24</li>
+<li>Solve formulas    #25-30</li>
+<li>Simplify expressions involving the inverse trig functions    #31-42, 51-68</li>
+<li>Graph the inverse trig functions    #43-50, 69 and 70</li>
+</ol></p>
+</subsubsection>
+</subsection>
+<!--<xi:include href="./summary-8-1.xml" /> summary  -->
+<!--<xi:include href="./section-8-1-exercises.xml" /> exercises  -->
 </section> 
 <!-- </book>  </mathbook> -->

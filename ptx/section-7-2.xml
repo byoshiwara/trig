@@ -1,473 +1,543 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!-- <mathbook><book> -->
 
-<section xml:id="Graphing-Polynomial-Functions"   xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Graphing Polynomial Functions</title>
-<introduction>
-<p>
-	In <xref ref="Polynomial-Functions" text="type-global"/>, we considered applications of polynomial functions. Although most applications use only a portion of the graph of a particular polynomial, we can learn a lot about these functions by taking a more global view of their behavior.
-</p>
-</introduction>
-<subsection><title>Classifying Polynomials by Degree</title>
-<p>
-	The graph of a polynomial function depends first of all on its degree. We have already studied the graphs of polynomials of degrees <m>0</m>, <m>1</m>, and <m>2</m>.</p> 
-	<p>
-		<ul>
-			<li>A polynomial of degree <m>0</m> is a constant, and its graph is a horizontal line. An example of such a polynomial function is <m>f(x) = 3</m> (see <xref ref="fig-deg-0-and-1-polynomials" text="type-global"/>a).</li>
-			<li> A polynomial of degree <m>1</m> is a linear function, and its graph is a straight line. The function <m>f(x) = 2x - 3</m> is an example of a polynomial of degree <m>1</m>. (See <xref ref="fig-deg-0-and-1-polynomials" text="type-global"/>b.)</li>
-		</ul></p>
-	<figure xml:id="fig-deg-0-and-1-polynomials"><caption></caption><image source="images/fig-deg-0-and-1-polynomials"  width="70%"><description>horizontal line and line of nonzero slope</description></image></figure>
-
-<p>
-	Quadratic functions, such as <m>f(x) = -2x^2 + 6x + 8</m>, are polynomials of degree <m>2</m>. The graph of every quadratic function is a parabola, with the same basic shape as the standard parabola, <m>y = x^2</m>. (See <xref ref="fig-two-parabolas2" text="type-global"/>.) It has one turning point, where the graph changes from increasing to decreasing or vice versa. The turning point of a parabola is the same as its vertex.
-	<figure xml:id="fig-two-parabolas2"><caption></caption><image source="images/fig-two-parabolas2"  width="70%"><description>basic parabola and parabola opening down</description></image></figure>
-</p>
-
-</subsection>
+<section xml:id="The-General-Sinusoidal-Function"   xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>The General Sinusoidal Function</title>
 
 
+<subsection><title>Horizontal Shifts</title>
 
+<introduction><p>In the previous section we considered transformations of sinusoidal graphs, including vertical shifts, which change the midline of the graph, vertical stretches and compressions, which change its amplitude, and horizontal stretches and compressions, which occur when we change the period of the graph.</p><p>  In this section we consider one more transformation, shifting the graph horizontally.  The figure below shows four different transformations of the graph of <m>y=\sin x</m>.
+</p></introduction>
 
-<subsection><title>Cubic Polynomials</title>
+<sidebyside widths="45% 45%"><image source="images/7-2-sina.png"><description>sine</description></image><image source="images/7-2-sinb.png"><description>sine</description></image></sidebyside>
+ <sidebyside widths="45% 45%"><image source="images/7-2-sinc.png"><description>sine</description></image><image source="images/7-2-sind.png"><description>sine</description></image></sidebyside>
 
-<p>
-	Do the graphs of all <term>cubic</term><idx>cubic</idx>, or third-degree, polynomials have a basic shape in common? We can graph a few examples and find out. Unlike the basic parabola, the graph of <m>y = x^3</m> is always increasing. At the origin, however, it changes from concave down to concave up. A point where the graph changes concavity is called an <term>inflection point</term><idx>inflection point</idx>.
-</p>
+<example><statement><p>Graph <m>f(x)=\sin x</m> and <m>g(x)= \sin (x - \dfrac{\pi}{4})</m> in the ZTrig window. How is the graph of <m>g</m> different from the graph of <m>f</m>?</p></statement>
 
-<example xml:id="example-two-cubics">
-	<p>
-		Graph the cubic polynomial <m>P(x) = x^3 - 4x</m> and compare its graph with that of the basic cubic, <m>y = x^3</m>.
-	</p>
-<solution>
-	<p>
-		The graph of the basic cubic is shown in <xref ref="fig-two-cubics" text="type-global"/>a. To help us understand the graph of the polynomial <m>P(x) = x^3 - 4x</m>, we will evaluate the function to make a table of values. We can do this by hand or use the Table feature on the graphing calculator.
-		<figure xml:id="fig-two-cubics"><caption></caption><image source="images/fig-two-cubics"  width="80%"><description>graphs of basic cubic and cubic with two turning points</description></image></figure>
-		<sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
-	        <row bottom="minor">
-	            <cell><m>x</m></cell>
-	            <cell><m>-3</m></cell>
-	            <cell><m>-2</m></cell>
-	            <cell><m>-1</m></cell>
-	            <cell><m>0</m></cell>
-	            <cell><m>1</m></cell>
-	            <cell><m>2</m></cell>
-	            <cell><m>3</m></cell>
-	        </row>
-	        <row>
-	            <cell><m>P(x)</m></cell>
-	            <cell><m>-15</m></cell>
-	            <cell><m>0</m></cell>
-	            <cell><m>3</m></cell>
-	            <cell><m>0</m></cell>
-	            <cell><m>-3</m></cell>
-	            <cell><m>0</m></cell>
-	            <cell><m>15</m></cell>
-	        </row>
-	    </tabular></sidebyside>
-		The graph of <m>P(x) = x^3 - 4x</m> is shown in <xref ref="fig-two-cubics" text="type-global"/>b. It is not exactly the same shape as the basic cubic—it has two turning points—but it is similar, especially at the edges of the graphs.
-	</p>
-</solution></example>
+<solution><p>The graphs are shown below. The graph of <m>g(x)= \sin (x - \dfrac{\pi}{4})</m> has the same amplitude, midline, and period as the graph of <m>f(x)=\sin x</m>, but the graph of <m>g</m> is shifted to the right by <m>\dfrac{\pi}{4}</m> units, compared to the graph of <m>f</m>.</p> 
+<sidebyside widths="70%"><image source="images/exam7-2-1.png"><description>sine</description></image></sidebyside>   
+<p>We can see why this shift occurs by studying a table of values for the two functions.
+	<sidebyside>
+                <tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                  
+                    <row bottom="minor">
+                        <cell><m>x</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>\dfrac{\pi}{4}</m></cell>
+                        <cell><m>\dfrac{\pi}{2}</m></cell>
+                        <cell><m>\dfrac{3\pi}{4}</m></cell>
+                        <cell><m>\pi</m></cell>
+                        <cell><m>\dfrac{5\pi}{4}</m></cell>
+                        <cell><m>\dfrac{3\pi}{2}</m></cell>
+                        <cell><m>\dfrac{7\pi}{4}</m></cell>
+                        <cell><m>2\pi</m></cell></row>
+                    <row> 
+                        <cell><m>f(x)</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>\dfrac{\sqrt{2}}{2}</m></cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>\dfrac{\sqrt{2}}{2}</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>\dfrac{-\sqrt{2}}{2}</m></cell>
+                        <cell><m>-1</m></cell>
+                        <cell><m>\dfrac{-\sqrt{2}}{2}</m></cell>
+                        <cell><m>0</m></cell></row>
+                    <row> 
+                        <cell><m>g(x)</m></cell>
+                        <cell><m>\dfrac{-\sqrt{2}}{2}</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>\dfrac{\sqrt{2}}{2}</m></cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>\dfrac{\sqrt{2}}{2}</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>\dfrac{-\sqrt{2}}{2}</m></cell>
+                        <cell><m>-1</m></cell>
+                    	<cell><m>\dfrac{-\sqrt{2}}{2}</m></cell></row>                                        
+                </tabular></sidebyside></p>  
+	<p>Notice that in the table, <m>g</m> has the same function values as <m>f</m>, but each one is shifted <m>\dfrac{\pi}{4}</m> units to the right. The same thing happens in the graph: each <m>y</m>-value appears <m>\dfrac{\pi}{4}</m> units farther to the right on <m>g</m> than it does on <m>f</m>.</p></solution></example>
 
-<p>
-	Despite the differences in the central portions of the two graphs, they exhibit similar <em>long-term</em> behavior. 
-	<ul>
-		<li>For very large and very small values of <m>x</m>, both graphs look like the power function <m>y = x^3</m>.</li>
-		<li> The <m>y</m>-values increase from <m>-\infty</m> toward zero in the third quadrant, and they increase from zero toward <m>+\infty</m> in the first quadrant. Or we might say that the graphs start at the lower left and extend to the upper right.</li>
-		</ul> 
-	All cubic polynomials display this behavior when their lead coefficients (the coefficient of the <m>x^3</m> term) are positive.
-</p>
-<p>
-	<ul>
-		<li>Both of the graphs in <xref ref="example-two-cubics"/> are smooth curves without any breaks or holes. This smoothness is a feature of the graphs of all polynomial functions.</li>
-		<li> The domain of any polynomial function is the entire set of real numbers.</li>
-	</ul>
-</p>
+<exercise><statement><p>Graph <m>f(x)=\cos x</m> and <m>g(x)= \cos (x + \dfrac{\pi}{4})</m> in the ZTrig window. How is the graph of <m>g</m> different from the graph of <m>f</m>?</p></statement></exercise>
 
-<exercise><statement>
-	<p>
-		<ol label="a">
-			<li><p>
-				Complete the table of values below for <m>C(x) = -x^3 - 2x^2 + 4x + 4</m>.
-				<p></p>
-				<sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
-			        <row bottom="minor">
-			            <cell><m>x</m></cell>
-			            <cell><m>-4</m></cell>
-			            <cell><m>-3</m></cell>
-			            <cell><m>-2</m></cell>
-			            <cell><m>-1</m></cell>
-			            <cell><m>0</m></cell>
-			            <cell><m>1</m></cell>
-			            <cell><m>2</m></cell>
-			            <cell><m>3</m></cell>
-			            <cell><m>4</m></cell>
-			        </row>
-			        <row>
-			            <cell><m>y</m></cell>
-			            <cell><m>\hphantom{000}</m></cell>
-			            <cell><m>\hphantom{000}</m></cell>
-			            <cell><m>\hphantom{000}</m></cell>
-			            <cell><m>\hphantom{000}</m></cell>
-			            <cell><m>\hphantom{000}</m></cell>
-			            <cell><m>\hphantom{000}</m></cell>
-			            <cell><m>\hphantom{000}</m></cell>
-			            <cell><m>\hphantom{000}</m></cell>
-			            <cell><m>\hphantom{000}</m></cell>
-			        </row>
-			    </tabular></sidebyside>
-			</p></li>
-			<li><p>
-				Graph <m>y = C(x)</m> in the standard window. Compare the graph to the graphs in <xref ref="example-two-cubics" text="type-global"/>: What similarities do you notice? What differences?
-			</p></li>
-		</ol>
-	</p>
-</statement>
-<answer><p><ol>
-	<li><p>
-		<tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
-	        <row bottom="minor">
-	            <cell><m>x</m></cell>
-	            <cell><m>-4</m></cell>
-	            <cell><m>-3</m></cell>
-	            <cell><m>-2</m></cell>
-	            <cell><m>-1</m></cell>
-	            <cell><m>0</m></cell>
-	            <cell><m>1</m></cell>
-	            <cell><m>2</m></cell>
-	            <cell><m>3</m></cell>
-	            <cell><m>4</m></cell>
-	        </row>
-	        <row>
-	            <cell><m>y</m></cell>
-	            <cell><m>20</m></cell>
-	            <cell><m>1</m></cell>
-	            <cell><m>-4</m></cell>
-	            <cell><m>-1</m></cell>
-	            <cell><m>4</m></cell>
-	            <cell><m>5</m></cell>
-	            <cell><m>-4</m></cell>
-	            <cell><m>-29</m></cell>
-	            <cell><m>-76</m></cell>
-	        </row>
-	    </tabular>
-	</p></li>
-	<li><p><image source="images/fig-in-ex-ans-7-2-1.jpg"  width="35%"><description>cubic</description></image> Both graphs have three <m>x</m>-intercepts, but the function in  <xref ref="example-two-cubics" text="type-global"/> has long-term behavior like <m>y = x^3</m>, and this function has long-term behavior like <m>y = -x^3</m>. </p></li>
-</ol></p></answer>
-</exercise>
+<p>The examples above illustrate the following principle.</p>
 
-</subsection>
+<assemblage><title>Horizontal Shifts</title>
+<p>The graphs of
+	<me>y = \sin (x-h)~~~~ \text{and}~~~~ t = \cos (x-h)</me>
+   are <em>shifted horizontally</em> compared to the graphs of <m>y = \sin x</m> and <m>y = \cos x</m>.</p> 
+<p><ul>
+	<li>If <m>h \gt 0</m>, the graph is shifted to the right.</li>
+	<li>If <m>h \lt 0</m>, the graph is shifted to the left.</li></ul></p>
+</assemblage>
 
+<p>We can use a table of values to sketch graphs that involve horizontal shifts.</p>	
 
+<example><statement><p>Make a table of values and sketch a graph of <m>y=-2\cos (x+\dfrac{\pi}{3})</m>. </p></statement>
 
-
-<subsection><title>Quartic Polynomials</title>
-<p>
-	Now let’s compare the long-term behavior of two <term>quartic</term><idx>quartic</idx>, or fourth-degree, polynomials.
-</p>
-
-<example xml:id="example-two-quartics">
-	<p>
-		Graph the polynomials <m>f(x) = x^4 - 10x^2 + 9</m> and <m>g(x) = x^4 + 2x^3</m>, and compare.
-	</p>
-<solution>
-	<p>
-		For each function we make a table of values.</p><p>
-		<sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
-	        <row bottom="minor">
-	            <cell><m>x</m></cell>
-	            <cell><m>-4</m></cell>
-	            <cell><m>-3</m></cell>
-	            <cell><m>-2</m></cell>
-	            <cell><m>-1</m></cell>
-	            <cell><m>0</m></cell>
-	            <cell><m>1</m></cell>
-	            <cell><m>2</m></cell>
-	            <cell><m>3</m></cell>
-	            <cell><m>4</m></cell>
-	        </row>
-	        <row>
-	            <cell><m>f(x)</m></cell>
-	            <cell><m>105</m></cell>
-	            <cell><m>0</m></cell>
-	            <cell><m>-15</m></cell>
-	            <cell><m>0</m></cell>
-	            <cell><m>9</m></cell>
-	            <cell><m>0</m></cell>
-	            <cell><m>-15</m></cell>
-	            <cell><m>0</m></cell>
-	            <cell><m>105</m></cell>
-	        </row>
-	        <row>
-	            <cell><m>G(x)</m></cell>
-	            <cell><m>128</m></cell>
-	            <cell><m>27</m></cell>
-	            <cell><m>0</m></cell>
-	            <cell><m>-1</m></cell>
-	            <cell><m>0</m></cell>
-	            <cell><m>3</m></cell>
-	            <cell><m>32</m></cell>
-	            <cell><m>135</m></cell>
-	            <cell><m>384</m></cell>
-	        </row>
-	    </tabular></sidebyside>
-		The graphs are shown in <xref ref="fig-two-quartics" text="type-global"/>. All the essential features of the graphs are shown in these viewing windows. The graphs continue forever in the directions indicated, without any additional twists or turns. You can see that the graph of <m>f</m> has three turning points, and the graph of <m>g</m> has one turning point.
-		<figure xml:id="fig-two-quartics"><caption></caption><image source="images/fig-two-quartics"  width="80%"><description>graphs of two quartic polynomials</description></image></figure>
-	</p>
-	<p>
-		As in <xref ref="example-two-cubics" text="type-global"/>, both graphs have similar long-term behavior. The <m>y</m>-values decrease from <m>-\infty</m> toward zero as <m>x</m> increases from <m>-\infty</m>, and the <m>y</m>-values increase toward <m>+\infty</m> as <m>x</m> increases to <m>+\infty</m>. This long-term behavior is similar to that of the power function <m>y = x^4</m>. Its graph also starts at the upper left and extends to the upper right.
-	</p>
-</solution></example>
+<solution><p>First notice that we can write the equation as
+	<me>y=-2\cos [x-(\dfrac{-\pi}{3})]</me>
+ so that <m>h = -\dfrac{\pi}{3}</m>, and we expect the graph to be shifted <m>\dfrac{\pi}{3}</m> units to the left compared to the graph of <m>y = \cos x</m>.</p>
+<p>We choose convenient values for the inputs of the cosine function, namely <m>x+\dfrac{\pi}{3}</m>.
+<sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
+                    <row bottom="minor">
+                        <cell><m>x</m></cell>
+                        <cell><m>x+\dfrac{\pi}{3}</m></cell>
+                        <cell><m>\cos(x+\dfrac{\pi}{3}) </m></cell>
+                        <cell><m>y = \cos(x+\dfrac{\pi}{3})</m></cell></row>
+                    <row> 
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\alert{0}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row> 
+                    <row> 
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\alert{\dfrac{\pi}{2}}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row>
+                    <row> 
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\alert{\pi}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row>
+                    <row> 
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\alert{\dfrac{3\pi}{2}}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row>
+                    <row> 
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\alert{2\pi}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row>                
+    </tabular></sidebyside></p>
+    <p>From those values, we work backwards to <m>x</m> and forwards to <m>y</m>. (To obtain the values of <m>x</m>, we subtract <m>\dfrac{\pi}{3}</m>from the values of <m>x+\dfrac{\pi}{3}</m>.)</p>
+    <p><sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
+                    <row bottom="minor">
+                        <cell><m>x</m></cell>
+                        <cell><m>x+\dfrac{\pi}{3}</m></cell>
+                        <cell><m>\cos(x+\dfrac{\pi}{3}) </m></cell>
+                        <cell><m>y = \cos(x+\dfrac{\pi}{3})</m></cell></row>
+                    <row> 
+                        <cell><m>\dfrac{-\pi}{3}</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>-2</m></cell></row> 
+                    <row> 
+                        <cell><m>\dfrac{\pi}{6}</m></cell>
+                        <cell><m>\dfrac{\pi}{2}</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>0</m></cell></row>
+                    <row> 
+                        <cell><m>\dfrac{2\pi}{3}</m></cell>
+                        <cell><m>\pi</m></cell>
+                        <cell><m>-1</m></cell>
+                        <cell><m>2</m></cell></row>
+                    <row> 
+                        <cell><m>\dfrac{7\pi}{6}</m></cell>
+                        <cell><m>\dfrac{3\pi}{2}</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>0</m></cell></row>
+                    <row> 
+                        <cell><m>\dfrac{5\pi}{3}</m></cell>
+                        <cell><m>2\pi</m></cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>-2</m></cell></row>                
+    </tabular></sidebyside></p>
+    <p>To make the graph, we'll scale the -axis in multiples of <m>\dfrac{\pi}{6}</m>. We plot the guide points <m>(x,y)</m> from the table, and sketch a sinusoidal graph through the points. One cycle of the graph is shown below. As we expected,the graph is shifted <m>\dfrac{\pi}{3}</m> units to the left compared to the graph of <m>y = \cos x</m>.
+<sidebyside width="70%"><image source="images/exam7-2-2.png"><description>sines</description></image></sidebyside></p>
+</solution></example> 
 
 <exercise><statement>
-	<p>
-		<ol label="a">
-			<li><p>
-				Complete the following table of values for <m>Q(x) = -x^4 - x^3 - 6x^2 + 2</m>.
-				<p></p>
-				<sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
-			        <row bottom="minor">
-			            <cell><m>x</m></cell>
-			            <cell><m>-4</m></cell>
-			            <cell><m>-3</m></cell>
-			            <cell><m>-2</m></cell>
-			            <cell><m>-1</m></cell>
-			            <cell><m>0</m></cell>
-			            <cell><m>1</m></cell>
-			            <cell><m>2</m></cell>
-			            <cell><m>3</m></cell>
-			            <cell><m>4</m></cell>
-			        </row>
-			        <row>
-			            <cell><m>y</m></cell>
-			            <cell><m>\hphantom{000}</m></cell>
-			            <cell><m>\hphantom{000}</m></cell>
-			            <cell><m>\hphantom{000}</m></cell>
-			            <cell><m>\hphantom{000}</m></cell>
-			            <cell><m>\hphantom{000}</m></cell>
-			            <cell><m>\hphantom{000}</m></cell>
-			            <cell><m>\hphantom{000}</m></cell>
-			            <cell><m>\hphantom{000}</m></cell>
-			            <cell><m>\hphantom{000}</m></cell>
-			        </row>
-			    </tabular></sidebyside>
-			</p></li>
-			<li><p>
-				Graph <m>y = Q(x)</m> in the window
-				\begin{align}
-				\text{Xmin} \amp = -5 \amp\amp \text{Xmax} = 5\\
-				\text{Ymin} \amp = -15 \amp\amp \text{Ymax} = 10
-				\end{align}
-				Compare the graph to the graphs in <xref ref="example-two-quartics" text="type-global"/>: What similarities do you notice? What differences?
-			</p></li>
-		</ol>
-	</p>
-</statement>
-<answer><p><ol>
-	<li><p>
-		<tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
-	        <row bottom="minor">
-	            <cell><m>x</m></cell>
-	            <cell><m>-4</m></cell>
-	            <cell><m>-3</m></cell>
-	            <cell><m>-2</m></cell>
-	            <cell><m>-1</m></cell>
-	            <cell><m>0</m></cell>
-	            <cell><m>1</m></cell>
-	            <cell><m>2</m></cell>
-	            <cell><m>3</m></cell>
-	            <cell><m>4</m></cell>
-	        </row>
-	        <row>
-	            <cell><m>y</m></cell>
-	            <cell><m>-286</m></cell>
-	            <cell><m>-106</m></cell>
-	            <cell><m>-30</m></cell>
-	            <cell><m>-4</m></cell>
-	            <cell><m>2</m></cell>
-	            <cell><m>-6</m></cell>
-	            <cell><m>-48</m></cell>
-	            <cell><m>-160</m></cell>
-	            <cell><m>-414</m></cell>
-	        </row>
-	    </tabular>
-	</p></li>
-	<li><p><image source="images/fig-in-ex-ans-7-2-2.jpg"  width="35%"><description>cubic</description></image> The graphs all have long-term behavior like a fourth degree power function, <m>y = ax^4</m>. The long-term behavior of the graphs in <xref ref="example-two-quartics" text="type-global"/> is the same as that of <m>y = x^4</m>, but the graph here has long-term behavior like <m>y = -x^4</m>. </p></li>
-</ol></p></answer>
-</exercise>
+<p>Complete the table and sketch a graph of <m>y = -2+\sin(x - \dfrac{\pi}{6})</m> on the grid below.  (Do you expect the graph to be shifted to the left or to the right, compared to the graph of <m>y = \sin x</m>?)
+<sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
+                    <row bottom="minor">
+                        <cell><m>x</m></cell>
+                        <cell><m>x-\dfrac{\pi}{6}</m></cell>
+                        <cell><m>\sin(x-\dfrac{\pi}{6}) </m></cell>
+                        <cell><m>y = -2+\sin(x-\dfrac{\pi}{6})</m></cell></row>
+                    <row> 
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row> 
+                    <row> 
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\dfrac{\pi}{2}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row>
+                    <row> 
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\pi</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row>
+                    <row> 
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\dfrac{3\pi}{2}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row>
+                    <row> 
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>2\pi</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row>                
+    </tabular></sidebyside>
+    <sidebyside width="60%"><image source="images/exer7-2-2.png"><description>grid</description></image></sidebyside>
+</p></statement></exercise>
+</subsection>
 
-<p>
-	In <xref ref="example-two-cubics">Examples</xref> and <xref ref="example-two-quartics" text="global"/>, we have seen polynomials of degree 3, whose graphs have a characteristic shape, illustrated in <xref ref="fig-cubic-and-quartic" text="type-global"/>a, and polynomials of degree 4, whose graphs are illustrated by <xref ref="fig-cubic-and-quartic" text="type-global"/>b. In the exercises, you will consider more graphs to help you verify the following observations.
-</p>
+<subsection><title>Combining Transformations</title>
+<p>	The order in which we apply transformations to a function makes a difference in the graph. We'll compare the graphs of the two functions 
+	<me>f(x) = \sin [2(x - \dfrac{\pi}{3})]~~~~  \text{and}  ~~~~ g(x)= \sin (2x - \dfrac{\pi}{3})</me>
+Graph the two functions in the ZTrig window, along with <m>y = \sin 2x</m>, as shown below. Each graph involves a horizontal shift relative to <m>y = \sin 2x</m>, but the graph of <m>f</m> is shifted <m>\dfrac{\pi}{3}</m> units to the right, while the graph of <m>g</m> is shifted only <m>\dfrac{\pi}{6}</m> units to the right. This difference occurs because of the order of the transformations.</p>
+<sidebyside widths="50% 50%"><image source="images/7-2-cta.png"><description>sines</description></image><image source="images/7-2-ctb.png"><description>sines</description></image></sidebyside>
 
-<assemblage><title>Long-Term Behavior of Polynomial Functions</title>
-<p>
-	<ol label="*1*">
-		<li><p>
-			A polynomial of odd degree (with positive lead coefficient) has negative <m>y</m>-values for large negative <m>x</m> and positive <m>y</m>-values for large positive <m>x</m>.
-		</p></li>
-		<li><p>
-			A polynomial of even degree (with positive lead coefficient) has positive <m>y</m>-values for both large positive and large negative <m>x</m>.
-		</p></li>
-	</ol>
-	<figure xml:id="fig-cubic-and-quartic"><caption></caption><image source="images/fig-cubic-and-quartic"  width="60%"><description>graphs of a cubic and a quartic</description></image></figure>
-</p></assemblage>
+<p>We transform the graph of <m>y = \sin x</m> into the graph of <m>f</m> in two steps:</p>
 
-<note><p>
-	Another way to describe the long-term behavior of a polynomial graph is to note that for large values of <m>\abs{x}</m>, the shape is similar to a power function of the same degree. It is the presence of the lower-degree terms in the polynomial that are responsible for any extra wiggles or turning points in the graph.
-</p></note>
+<p>Step 1: First we replace <m>x</m> by <m>2x</m> to get <m>y = \sin 2x</m>, which compresses the graph horizontally by a factor of 2.  (See figure (a) below.)</p>
+<p>Step 2:	Then we replace <m>x</m> by <m>x - \dfrac{\pi}{3}</m> to get <m>f(x) = \sin [2(x - \dfrac{\pi}{3})]</m>, which shifts the graph <m>\dfrac{\pi}{3}</m> units to the right.  (See figure (b).)</p>
+<sidebyside widths="50% 50%"><image source="images/7-2-ctc.png"><description>sines</description></image><image source="images/7-2-ctd.png"><description>sines</description></image></sidebyside>
 
+<p>To transform the graph of <m>y = \sin x</m> into the graph of <m>g</m>, we perform the two steps in the opposite order:</p>
+
+<p>Step 1:	We replace <m>x</m> by <m>x - \dfrac{\pi}{3}</m> which shifts the graph <m>\dfrac{\pi}{3}</m> units to the right. (See figure (a).)</p>
+<p>	Step 2: Then we replace <m>x</m> by <m>2x</m> to get <m>g(x)= \sin (2x - \dfrac{\pi}{3})</m> which compresses the 
+graph horizontally by a factor of 2, including the horizontal shift.  This reduces the horizontal shift from <m>\dfrac{\pi}{3}</m> to <m>\dfrac{\pi}{6}</m>. (See figure (b.)</p>
+<sidebyside widths="50% 50%"><image source="images/7-2-cte.png"><description>sines</description></image><image source="images/7-2-ctf.png"><description>sines</description></image></sidebyside>
+
+<p>	It is easier to analyze the transformations in the function <m>f</m>, because we can read the horizontal shift from the formula. 
+<me>f(x) = \sin 2(x - \dfrac{\pi}{3})</me>                       
+where <m>2</m> is the compression factor and <m>\dfrac{\pi}{3}</m> is the horizontal shift.</p>    
+<p>We can write the formula for <m>g(x)</m> in the same easy-to-analyze form by factoring the input for the sine function:
+<me> g(x) = \sin (2x - \dfrac{\pi}{3}) = \sin 2(x - \dfrac{\pi}{6})</me></p> 
+	
+<p>In general, if we write the formula for a sinusoidal function in <term>standard form</term>, we can read all the transformations from the constants in the formula.</p>
+
+<assemblage><title>Standard Form for Sinusoidal Functions</title>
+<p>The graphs of the functions 
+	<me>y = A\sin B(x-h) + k~~~~ \text {and}~~~~ y = A\cos B(x-h) + k</me>
+are transformations of the sine and cosine graphs.</p>
+<p><ol label = "1">
+	<li>The amplitude is <m>\abs{A}</m>.</li>
+	<li>The midline is <m>y = k</m>.</li>
+	<li>The period is <m>\dfrac{2\pi}{\abs{B}},~~B \not= 0</m>.</li>
+	<li>The horizontal shift is <m>h</m> units to the right if <m>h</m> is positive, and <m>h</m> 
+		 units to the left if <m>h</m> is negative.</li>
+		</ol></p></assemblage>
+
+<example><statement><p><ol label="a">
+	<li>State the midline, amplitude, period, and horizontal shift for the function
+	<me>f(x) = 4\cos (3x+\pi) - 2</me></li>
+	<li>Sketch a graph of the function for <m>-\pi \le x \le \pi</m>.</li>
+	</ol></p></statement> 
+
+<solution><p><ol label="a">
+	<li>First, we write the input for the cosine function in factored form:
+		<me>f(x) = 4\cos 3(x+\dfrac{\pi}{3}) - 2</me>
+		Comparing the formula for <m>f</m> with the standard form, we see that <m>A=4</m>, <m>B=3,~h = \dfrac{-\pi}{3}</m>, and  <m>k = 2</m>. Thus, the midline is <m>y = -2</m>, the amplitude is <m>4</m>, the period is <m>\dfrac{2\pi}{3}</m>, and the horizontal shift is<m>\dfrac{\pi}{3}</m> units to the left.</li>
+	<li>Use a table of values to locate the guidepoints for the graph.  Begin by choosing convenient values for the input, <m>3x+\pi</m>.  Then work backwards to find values for <m>x</m> and forwards to find values for <m>f(x)</m>.
+
+	<sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
+                    <row bottom="minor">
+                        <cell><m>x</m></cell>
+                        <cell><m>3x</m></cell>
+                        <cell><m>3x+\pi</m></cell>
+                        <cell><m>\cos(3x+\pi) </m></cell>
+                        <cell><m>4\cos 3(x+\dfrac{\pi}{3})-2</m></cell></row>
+                    <row> 
+                        <cell><m>\dfrac{-\pi}{3}</m></cell>
+                        <cell><m>-\pi</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>2</m></cell></row> 
+                    <row> 
+                        <cell><m>\dfrac{-\pi}{6}</m></cell>
+                        <cell><m>\dfrac{-\pi}{2}</m></cell>
+                        <cell><m>\dfrac{\pi}{2}</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>-2</m></cell></row>
+                    <row> 
+                        <cell><m>0</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>\pi</m></cell>
+                        <cell><m>-1</m></cell>
+                        <cell><m>-6</m></cell></row>
+                    <row> 
+                        <cell><m>\dfrac{\pi}{6}</m></cell>
+                        <cell><m>\dfrac{\pi}{2}</m></cell>
+                        <cell><m>\dfrac{3\pi}{2}</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>-2</m></cell></row>
+                    <row> 
+                        <cell><m>\dfrac{\pi}{3}</m></cell>
+                        <cell><m>\pi</m></cell>
+                        <cell><m>2\pi</m></cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>2</m></cell></row>                
+    </tabular></sidebyside>
+Finally, plot the guidepoints and connect them with a sinusoidal curve.  The graph is shown below. 	 
+<sidebyside width="75%"><image source="images/exam7-2-3.png"><description>sine</description></image></sidebyside></li></ol>
+</p></solution></example> 
+
+<exercise><statement><p><ol label="a">
+<li>State the midline, amplitude, period, and horizontal shift of the graph of
+	<me>g(x) = 150 - 25\cos (4x-\dfrac{\pi}{2})</me></li>
+<li>Make a table of values and sketch a graph of the function.
+	<sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
+                    <row bottom="minor">
+                        <cell><m>x</m></cell>
+                        <cell><m>4x</m></cell>
+                        <cell><m>4x-\dfrac{\pi}{2}</m></cell>
+                        <cell><m>\cos(4x-\dfrac{\pi}{2}) </m></cell>
+                        <cell><m>150 - 25\cos(4x-\dfrac{\pi}{2})</m></cell></row>
+                    <row> 
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row> 
+                    <row> 
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\dfrac{\pi}{2}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row>
+                    <row> 
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\pi</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row>
+                    <row> 
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\dfrac{3\pi}{2}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row>
+                    <row> 
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>2\pi</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row>                
+    </tabular></sidebyside></li></ol></p></statement></exercise>
+</subsection>
+
+<subsection><title>Modeling with Sinusoidal Functions</title>
+<p>	In Section 7.1 we found formulas for sinusoidal functions that start on the midline, or at their maximum or minimum value.  We use horizontal transformations to write formulas for functions that start at other points on the cycle.</p>
+
+<example><statement><p>Find a formula for the sinusoidal function whose graph is shown below.</p>
+<sidebyside width="60%"><image source="images/exam7-2-4.png"><description>sine</description></image></sidebyside></statement>
+
+<solution><p>The midline of the graph is <m>y=0</m>,  and its amplitude is <m>4</m>. It has the shape of a cosine, but its maximum value occurs at <m>t=\dfrac{\pi}{6}</m> instead of at <m>t=0</m>; so the graph is shifted <m>\dfrac{\pi}{6}</m> units to the right, compared to the graph of cos <m>y=\cos t</m>.</p>  
+<p>The graph completes one cycle between <m>t=\dfrac{\pi}{6}</m> and <m>t=\dfrac{13\pi}{6}</m>, so its period is <m>2\pi</m>.  Thus, we use the standard form <m>y = A\cos B(x-h) + k</m> with <m>A=4,~B=1,~h=\dfrac{\pi}{6}</m>, and <m>k=0</m>, giving us  
+<me>y = 4\cos (x-\dfrac{\pi}{6})</me>
+as our formula for the function.</p></solution></example>
+
+<note><p>In Example 4, our solution is not the only sinusoidal function that fits the given graph.  For example, if we regard the graph as a sine function shifted <m>\dfrac{\pi}{3}</m> units to the left, we would use the formula <m>y = 4\sin (x+\dfrac{\pi}{3})</m>. You can check that the two functions have identical graphs.  Usually it is a good idea to choose a formula with a small horizontal shift.</p></note>
+
+<exercise><statement><p>Find a formula for the sinusoidal function whose graph is shown below.</p>
+<sidebyside width="60%"><image source="images/exer7-2-4.png"><description>sine</description></image></sidebyside>
+</statement></exercise>
+
+<p>	Many natural phenomena can be modeled with sinusoidal functions.</p>
+
+<example><statement><p>Sunspots are dark regions on the Sun first observed by Galileo in 1610.  The number of sunspots is not constant, but varies with a period of approximately 11 years, called the solar cycle.  Solar activity is directly related to this cycle, and can cause disturbances in the earth's upper atmosphere.  Planning for satellite orbits and space missions requires knowledge of solar activity levels years in advance.</p>  
+<p>The figure below shows sunspot data for the last solar cycle, from July, 1985 through June, 1996, and a sinusoidal function that models the data.</p>
+<sidebyside width="70%"><image source="images/exam7-2-5.png"><description>sine</description></image></sidebyside>
+<p><ol label="a">
+<li>The period of the solar cycle shown is actually 10.8 years. Use this information and the graph to write a formula for the model.</li>
+<li>Improve the fit of the model by adjusting its horizontal shift.</li></ol></p></statement>
+
+<solution><p><ol label="a">
+	<li>The graph has the shape of <m>y=-\cos x</m>. It appears to have midline <m>y=75</m> and amplitude <m>75</m>, so <m>k=75</m>   and <m>A=-75</m>  To find <m>B</m>, we compute
+		<me>B=\dfrac{2\pi}{\text{period}}=\dfrac{2\pi}{10.8}=0.58</me>
+	Thus, a formula for the model is <m>y=75-75\cos[0.58(x-h)]</m>.</li>
+<li>Fitting a curve by eye is a subjective process, but it looks like we can get a better fit by shifting the curve slightly to 	the left. By trying several values for <m>h</m> in 
+	<me>y=75-75\cos[0.58(x-h)]</me>,
+	we might settle on <m>h=0.3</m>, which results in the curve shown below.
+ <sidebyside width="70%"><image source="images/exam7-2-5ans.png"><description>sine</description></image></sidebyside></li></ol></p></solution></example>
+
+<exercise><statement><p>The figure below shows the sunspot data for the current solar cycle, which began in July 1996, and a curve of best fit calculated by NASA.  This curve is not sinusoidal, but has a similar shape.</p>
+<sidebyside width="60%"><image source="images/exer7-2-5.png"><description>sine</description></image></sidebyside>
+<p><ol label="a">
+	<li>The minimum sunspot number occurred in October 1996. Use the graph to estimate the period, midline, and amplitude of a sinusoidal function that approximates the data.</li>
+	<li>Write a function that approximates the data.</li>
+	<li>Use your function to predict the sunspot number in January, 2005.</li>
+</ol></p></statement></exercise>
 </subsection>
 
 
+<subsection><title>Algebra Refresher</title>
 
-<subsection><title><m>x</m>-Intercepts and the Factor Theorem</title>
-<p>
-	In <xref ref="chap6" text="type-global"/>, we saw that the x-intercepts of a quadratic polynomial, <m>f(x) = ax^2 + bx + c</m>, occur at values of <m>x</m> for which <m>f(x) = 0</m>, that is, at the real-valued solutions of the equation <m>ax^2 + bx + c = 0</m>. The same holds true for polynomials of higher degree.
-</p>
-<p>
-	Solutions of the equation <m>P(x) = 0</m> are called <term>zeros</term> of the polynomial <m>P</m>. In <xref ref="example-two-cubics" text="type-global"/>, we graphed the cubic polynomial <m>P(x) = x^3 - 4x</m>. Its <m>x</m>-intercepts are the solutions of the equation <m>x^3 - 4x = 0</m>, which we can solve by factoring the polynomial <m>P(x)</m>.
-	<md>
-		<mrow>
-			x^3 - 4x \amp= 0
-		</mrow>
-		<mrow>
-			x(x - 2)(x + 2) \amp= 0
-		</mrow>
-	</md>
-	The zeros of <m>P</m> are <m>0</m>, <m>2</m>, and <m>-2</m>. Each zero of <m>P</m> corresponds to a factor of <m>P(x)</m>. This result suggests the following theorem, which holds for any polynomial <m>P</m>.
-</p>
+<exercises>
+<exercisegroup cols="2"><introduction><p><ol label="a">
+<li>Write a formula for <m>g(x)</m>.</li>
+<li>Graph <m>f(x)</m> and <m>g(x)</m> on the same axes.</li></ol></p></introduction>
 
-<xi:include href="./assemblage-factor-theorem.xml" />
+<exercise number="1"><statement><m>f(x)=x^2,~g(x)=f(x-2)</m></statement></exercise>
 
-<p>
-	The factor theorem follows from the division algorithm for polynomials. We will consider both of these results in more detail in the Homework problems.
-</p>
-<p>
-	Because a polynomial function of degree <m>n</m> can have at most <m>n</m> linear factors of the form <m>(x - a)</m>, it follows that <m>P</m> can have at most <m>n</m> distinct zeros.</p> 
-	<p>Another way of saying this is that if <m>P(x)</m> is a polynomial of <m>n</m>th degree, the equation <m>P(x) = 0</m> can have at most <m>n</m> distinct solutions, some of which may be complex numbers. (We consider complex numbers in <xref ref="Complex-Numbers" text="type-global"/>.)</p> 
-	<p>Because only real-valued solutions appear on the graph as <m>x</m>-intercepts, we have the following corollary to the factor theorem.
-</p>
+<exercise number="2"><statement><m>f(x)=\sqrt{x},~g(x)=f(x+4)</m></statement></exercise>
 
-<assemblage><title><m>x</m>-Intercepts of Polynomials</title>
-<p>
-	A polynomial of degree <m>n</m> can have at most <m>n</m> <m>x</m>-intercepts.
-</p></assemblage>
+<exercise number="3"><statement><m>f(x)=\dfrac{1}{x},~g(x)=f(x+1)</m></statement></exercise>
 
-<p>
-	If some of the zeros of <m>P</m> are complex numbers, they will not appear on the graph, so a polynomial of degree <m>n</m> <em>may have fewer</em> than <m>n</m> <m>x</m>-intercepts.
-</p>
+<exercise number="4"><statement><m>f(x)=\dfrac{1}{x^2},~g(x)=f(x-1)</m></statement></exercise>
+	
+<exercise number="5"><statement><m>f(x)=\abs{x},~g(x)=f(x-3)</m></statement></exercise>
 
-<example xml:id="example-cubic-and-quartic">
-	<p>
-		Find the real-valued zeros of each of the following polynomials, and list the <m>x</m>-intercepts of its graph.
-		<ol label="a">
-			<li><m>
-				f(x) = x^3 + 6x^2 + 9x
-			</m></li>
-			<li><m>
-				g(x) = x^4 - 3x^2 - 4
-			</m></li>
-		</ol>
-	</p>
-<solution>
-	<p>
-		<ol label="a">
-			<li><p>
-				Factor the polynomial to obtain
-				<md>
-					<mrow>
-						f(x) \amp= x(x^2 + 6x + 9)
-					</mrow>
-					<mrow>
-						\amp= x(x + 3)(x + 3)
-					</mrow>
-				</md>
-				By the factor theorem, the zeros of <m>f</m> are <m>0</m>, <m>-3</m>, and <m>-3</m>. (We say that <m>f</m> has a zero <em>of multiplicity two</em> at <m>-3</m>.) Because all of these are real numbers, all will appear as <m>x</m>-intercepts on the graph. Thus, the <m>x</m>-intercepts occur at <m>(0, 0)</m> and at <m>(-3, 0)</m>.
-			</p></li>
-			<li><p>
-				Factor the polynomial to obtain
-				<md>
-					<mrow>
-						g(x) \amp= (x^2 - 4)(x^2 + 1)
-					</mrow>
-					<mrow>
-						\amp= (x - 2)(x + 2)(x^2 + 1)
-					</mrow>
-				</md>
-				Because <m>x^2 + 1</m> cannot be factored in real numbers, the graph has only two <m>x</m>-intercepts, at <m>(-2, 0)</m> and <m>(2, 0)</m>. The graphs of both polynomials are shown in <xref ref="fig-cubic-with-2-zeros-and-quartic-with-2-zeros" text="type-global"/>.
-				<figure xml:id="fig-cubic-with-2-zeros-and-quartic-with-2-zeros"><caption></caption><image source="images/fig-cubic-with-2-zeros-and-quartic-with-2-zeros"  width="80%"><description>a cubic with two zeros and a quartic with two zeros</description></image></figure>
-			</p></li>
-		</ol>
-	</p>
-</solution>
-</example>
+<exercise number="6"><statement><m>f(x)=2^x,~g(x)=f(x+3)</m></statement></exercise>
+</exercisegroup></exercises>
 
-<exercise><statement><ol label="a">
-	<li><p>Find the real-valued zeros of <m>P(x) = -x^4 + x^3 + 2x^2</m> by factoring.</p></li>
-	<li><p>Sketch a rough graph of <m>y = P(x)</m> by hand.</p></li>
-</ol></statement>
-<answer><p><ol label="a" cols="2">
-	<li><p><m>-1, 0, 2</m></p></li>
-	<li><p><image source="images/fig-in-ex-ans-7-2-3"  width="70%"><description>quartic</description></image> </p></li>
-</ol></p></answer>
-</exercise>
+<subsubsection><title>Answers to 7.1 Exercises</title>
+<p><ol label="1">
+	<li>The graph of <m>g</m> is shifted <m>\dfrac{\pi}{4}</m> units to the left of <m>f</m>.
+</li>
+<li><sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
+                    <row bottom="minor">
+                        <cell><m>x</m></cell>
+                        <cell><m>x-\dfrac{\pi}{6}</m></cell>
+                        <cell><m>\sin(x-\dfrac{\pi}{6}) </m></cell>
+                        <cell><m>y = -2+\sin(x-\dfrac{\pi}{6})</m></cell></row>
+                    <row> 
+                        <cell><m>\dfrac{\pi}{6}</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>-2</m></cell></row> 
+                    <row> 
+                        <cell><m>\dfrac{2\pi}{3}</m></cell>
+                        <cell><m>\dfrac{\pi}{2}</m></cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>-1</m></cell></row>
+                    <row> 
+                        <cell><m>\dfrac{7\pi}{6}</m></cell>
+                        <cell><m>\pi</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>-2</m></cell></row>
+                    <row> 
+                        <cell><m>\dfrac{5\pi}{3}</m></cell>
+                        <cell><m>\dfrac{3\pi}{2}</m></cell>
+                        <cell><m>-1</m></cell>
+                        <cell><m>-3</m></cell></row>
+                    <row> 
+                        <cell><m>\dfrac{13\pi}{6}</m></cell>
+                        <cell><m>2\pi</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>-2</m></cell></row>                
+    </tabular></sidebyside>
+    <sidebyside width="50%"><image source="images/exer7-2-2ans.png"><description>grid</description></image></sidebyside></li> 
+<li><ol label="a">
+	<li>midline: <m>y=150</m>, amplitude: <m>25</m>,  period: <m>\dfrac{\pi}{2}</m>,  horizontal shift: <m>\dfrac{\pi}{8}</m>  to the right</li>
+	<li><p><sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
+                    <row bottom="minor">
+                        <cell><m>x</m></cell>
+                        <cell><m>4x</m></cell>
+                        <cell><m>4x-\dfrac{\pi}{2}</m></cell>
+                    	<cell><m>\cos(4x-\dfrac{\pi}{2})</m></cell>
+                    	<cell><m>150-25\cos(4x-\dfrac{\pi}{2})</m></cell></row>
+                    <row> 
+                        <cell><m>\dfrac{\pi}{8}</m></cell>
+                        <cell><m>\dfrac{\pi}{2}</m></cell>
+                        <cell><m>0</m></cell>
+                    	<cell><m>1</m></cell>
+                    	<cell><m>125</m></cell></row> 
+                    <row> 
+                        <cell><m>\dfrac{\pi}{4}</m></cell>
+                        <cell><m>\pi</m></cell>
+                        <cell><m>\dfrac{\pi}{2}</m></cell>
+                    	<cell><m>0</m></cell>
+                    	<cell><m>150</m></cell></row>
+                    <row> 
+                        <cell><m>\dfrac{3\pi}{8}</m></cell>
+                        <cell><m>\dfrac{3\pi}{2}</m></cell>
+                        <cell><m>\pi</m></cell>
+                    	<cell><m>-1</m></cell>
+                    	<cell><m>175</m></cell></row>
+                    <row> 
+                        <cell><m>\dfrac{\pi}{2}</m></cell>
+                        <cell><m>2\pi</m></cell>
+                        <cell><m>\dfrac{3\pi}{2}</m></cell>
+                    	<cell><m>0</m></cell>
+                    	<cell><m>150</m></cell></row>
+                    <row> 
+                        <cell><m>\dfrac{5\pi}{8}</m></cell>
+                        <cell><m>\dfrac{5\pi}{2}</m></cell>
+                        <cell><m>2\pi</m></cell>
+                    	<cell><m>1</m></cell>
+                    	<cell><m>125</m></cell></row>				 
+	</tabular></sidebyside>
+	<sidebyside width="60%"><image source="images/exer7-2-3ans.png"><description>sinusoidal function</description></image></sidebyside></p></li></ol></li>
+	<li><m>y = 6\sin (x - \dfrac{\pi}{4}</m></li>
+	<li><ol label="a">
+		<li>Period: 10 years, midline: <m>y=61.5</m>, amplitude: 53</li>  	
+		<li><m>y=61.5-53\cos (x-0.25)</m></li>
+		<li>37</li>
+	</ol></li></ol></p></subsubsection>	
 
+<subsubsection><title>Algebra Refresher Answers</title>
+<p><ol label="1" cols="3">
+<li><m>g(x)=(x-2)^2</m><sidebyside width="80%"><image source="images/ar7-2-1ans.png"><description>graph</description></image></sidebyside></li>
+
+<li><m>g(x)=\sqrt{x+4}</m><sidebyside width="80%"><image source="images/ar7-2-2ans.png"><description>graph</description></image></sidebyside></li>
+
+<li><m>g(x)=\dfrac{1}{x+1}</m><sidebyside width="80%"><image source="images/ar7-2-3ans.png"><description>graph</description></image></sidebyside></li>
+
+<li><m>g(x)=\dfrac{1}{(x-1)^2}</m><sidebyside width="80%"><image source="images/ar7-2-4ans.png"><description>graph</description></image></sidebyside></li>
+
+<li><m>g(x)=\abs{x-3}</m><sidebyside width="80%"><image source="images/ar7-2-5ans.png"><description>graph</description></image></sidebyside></li>
+
+<li><m>g(x)=2^{x+3}</m><sidebyside width="80%"><image source="images/ar7-2-6ans.png"><description>graph</description></image></sidebyside></li>
+</ol></p></subsubsection>
 </subsection>
 
+<subsection><title>Section 7.1 Summary</title>
 
+<subsubsection><title>Concepts</title>
+<p><ol label="1">
+	<li><assemblage><title>Horizontal Shifts</title>
+<p>The graphs of
+	<me>y = \sin (x-h)~~~~ \text{and}~~~~ t = \cos (x-h)</me>
+   are <em>shifted horizontally</em> compared to the graphs of <m>y = \sin x</m> and <m>y = \cos x</m>.</p> 
+<p><ul>
+	<li>If <m>h \gt 0</m>, the graph is shifted to the right.</li>
+	<li>If <m>h \lt 0</m>, the graph is shifted to the left.</li></ul></p>
+</assemblage></li>
+	<li>The order in which we apply transformations to a function makes a difference in the graph.</li>
+	<li><assemblage><title>Standard Form for Sinusoidal Functions</title>
+<p>The graphs of the functions 
+	<me>y = A\sin B(x-h) + k~~~~ \text {and}~~~~ y = A\cos B(x-h) + k</me>
+are transformations of the sine and cosine graphs.</p>
+<p><ol label = "1">
+	<li>The amplitude is <m>\abs{A}</m>.</li>
+	<li>The midline is <m>y = k</m>.</li>
+	<li>The period is <m>\dfrac{2\pi}{\abs{B}},~~B \not= 0</m>.</li>
+	<li>The horizontal shift is <m>h</m> units to the right if <m>h</m> is positive, and <m>h</m> 
+		 units to the left if <m>h</m> is negative.</li>
+		</ol></p></assemblage></li></ol></p>
+</subsubsection>
 
-<subsection><title>Zeros of Multiplicity Two or Three</title>
-<p>
-	The appearance of the graph near an <m>x</m>-intercept is determined by the multiplicity of the zero there. For example, both real zeros of the polynomial <m>g(x) = x^4 - 3x^2 - 4</m> in <xref ref="example-cubic-and-quartic" text="type-global"/>b are of multiplicity one, and the graph crosses the <m>x</m>-axis at each intercept.</p> 
-	<p>However, the polynomial <m>f(x) = x^3 + 6x^2 + 9x</m> in <xref ref="example-cubic-and-quartic" text="type-global"/>a has a zero of multiplicity two at <m>x = -3</m>. The graph of <m>f</m> just touches the <m>x</m>-axis and then reverses direction without crossing the axis.
-</p>
-<p>
-	To understand what happens in general, compare the graphs of the three polynomials in <xref ref="fig-linear-quadratic-and-cubic-with-1-zero" text="type-global"/>.
-	<figure xml:id="fig-linear-quadratic-and-cubic-with-1-zero"><caption></caption><image source="images/fig-linear-quadratic-and-cubic-with-1-zero"><description>plots of a linear, quadratic, and cubic, each with a single zero</description></image></figure>
-	<ol label="*a*">
-		<li><p>
-			In <xref ref="fig-linear-quadratic-and-cubic-with-1-zero" text="type-global"/>a, <m>L(x) = x - 2</m> has a zero <em>of multiplicity one</em> at <m>x = 2</m>, and its graph crosses the <m>x</m>-axis there.
-		</p></li>
-		<li><p>
-			In <xref ref="fig-linear-quadratic-and-cubic-with-1-zero" text="type-global"/>b, <m>Q(x) = (x - 2)^2</m> has a zero <em>of multiplicity two</em> at <m>x = 2</m>, and its graph touches the <m>x</m>-axis there but changes direction without crossing.
-		</p></li>
-		<li><p>
-			In <xref ref="fig-linear-quadratic-and-cubic-with-1-zero" text="type-global"/>c, <m>C(x) = (x - 2)^3</m> has a zero <em>of multiplicity three</em> at <m>x = 2</m>. In this case, the graph makes an S-shaped curve at the intercept, like the graph of <m>y = x^3</m>.
-		</p></li>
-	</ol>
-</p>
-<p>
-	Near its <m>x</m>-intercepts, the graph of a polynomial takes one of the characteristic shapes illustrated in <xref ref="fig-linear-quadratic-and-cubic-with-1-zero" text="type-global"/>.</p> 
-	<note><p>Although we will not consider zeros of multiplicity greater than three, they correspond to similar behavior in the graph: At a zero of odd multiplicity, the graph has an inflection point at the intercept; its graph makes an S-shaped curve. At a zero of even multiplicity, the graph has a turning point; it changes direction without crossing the <m>x</m>-axis.</p></note>
+<subsubsection><title>Study Questions</title>
+<p><ol label="1">
+	<li>Which of the following functions are the same?  Explain your answer.
+		<me>f(x)=\cos (2x-\dfrac{\pi}{3}), ~~ g(x)=(\cos 2x)-\dfrac{\pi}{3}, ~~ h(x)=\cos 2x - \cos \dfrac{\pi}{3}</me></li> 
+	<li>Which of the following functions are the same?  Explain your answer.
+		<me>f(x)=\sin (2x-\dfrac{\pi}{3}), ~~ g(x)=\sin [2(x-\dfrac{\pi}{6})], ~~ h(x)=2\sin [x - \dfrac{\pi}{6})]</me>
+		Calculate the horizontal shift.</li>
+	<li><m>y=-2\sin (3x-\dfrac{\pi}{4})</m></li>
+	<li><m>y=6\cos (2x+\dfrac{3\pi}{4})</m></li>
+	<li><m>y=12\cos (\dfrac{t}{3}+0.8)</m></li>
+	<li><m>y=-5\sin (\dfrac{t}{4}-0.6)</m></li>
+</ol></p></subsubsection>
 
-
-<example>
-	<p>
-		Graph the polynomial
-		<me>
-			f(x) = (x + 2)^3(x - 1)(x - 3)^2
-		</me>
-	</p>
-<solution>
-	<p>
-		The polynomial has degree six, an even number, so its graph starts at the upper left and extends to the upper right. Its <m>y</m>-intercept is 
-		<me>f(0) = (2)^3(-1)(-3)^2 = -72</me> 
-		<m>f</m> has a zero of multiplicity three at <m>x = -2</m>, a zero of multiplicity one at <m>x = 1</m>, and a zero of multiplicity two at <m>x = 3</m>. The graph has an S-shaped curve at <m>x = -2</m>, crosses the <m>x</m>-axis at <m>x = 1</m>, touches the <m>x</m>-axis at <m>x = 3</m>, and then changes direction, as shown in <xref ref="fig-sixth-degree-polynomial" text="type-global"/>.
-		<figure xml:id="fig-sixth-degree-polynomial"><caption></caption><image source="images/fig-sixth-degree-polynomial"  width="40%"><description>graph of sixth degree polynomial with zero of multiplicity 3, another of  multiplicity two. and a zero of multiplicity 1</description></image></figure>
-	</p>
-</solution></example>
-
-<exercise><statement>
-	<p>
-		Sketch a rough graph of <m>f(x) = (x + 3)(x - 1)^2</m> by hand. Label the <m>x</m>- and <m>y</m>-intercepts.
-	</p>
-</statement>
-<answer><p><image source="images/fig-in-ex-ans-7-2-4"  width="35%"><description>cubic</description></image> </p></answer>
-</exercise>
-
-
+<subsubsection><title>Skills</title>
+<p><ol label="1">
+	<li>Graph trigonometric functions using a table of values    #1-6, 11-16</li>
+	<li>Find a formula for a transformation of a trigonometric function    #7-10, 17-26</li>
+	<li>Solve trigonometric equations graphically    #1-6, 11-16</li>
+	<li>Model periodic phenomena with trigonometric functions    #27-30</li>
+	<li>Fit a circular function to data    #31-34</li>
+</ol></p></subsubsection>
 </subsection>
-<xi:include href="./summary-7-2.xml" /> <!-- summary  -->
-<xi:include href="./section-7-2-exercises.xml" /> <!-- exercises  -->
+	
+
+<!--<xi:include href="./summary-7-1.xml" />--> <!-- summary  -->
+<!--<xi:include href="./section-7-1-exercises.xml" />--> <!-- exercises  -->
 </section> 
 <!-- </book>  </mathbook> -->
