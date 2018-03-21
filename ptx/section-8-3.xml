@@ -1,1053 +1,411 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!-- <mathbook><book> -->
 
-<section xml:id="Solving-Linear-Systems-Using-Matrices"   xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Solving Linear Systems Using Matrices</title>
-<introduction>
-<p>
-	In this section, we consider a mathematical tool called a <term>matrix</term><idx>matrix</idx> (plural: matrices) that has wide application in mathematics, business, science, and engineering. A matrix is a rectangular array of numbers or <term>entries</term><idx>entries</idx>. These entries are ordinarily displayed in rows and columns, and the entire matrix is enclosed in brackets or parentheses. Thus,
-	<me>
-		\begin{bmatrix}1\amp 2\amp 3 \\ 4 \amp5 \amp6 \\ 7 \amp8\amp 9
-		\end{bmatrix},
-		\begin{bmatrix}2\amp -1\amp 3 \\4\amp 0\amp 2
-		\end{bmatrix}, \text{ and }
-		\begin{bmatrix} 4\\5\\6
-		\end{bmatrix}
-	</me>
-	are matrices. A matrix of <term>order</term><idx>order</idx>, or <term>dimension</term><idx>dimension</idx>, <m>n\times m</m> (read "<m>n</m> by <m>m</m>") has <m>n</m> (horizontal) rows and <m>m</m> (vertical) columns.</p>
-	<p> The matrices above are <m>3\times 3</m>, <m>2\times 3</m>, and <m>3\times 1</m>, respectively. The first matrix—in which the number of rows is equal to the number of columns—is an example of a <term>square matrix</term><idx>square matrix</idx>.
-</p>
-</introduction>
-<subsection><title>Coefficient Matrix and Augmented Matrix of a System</title>
-<p>
-	We will use matrices to solve systems of linear equations. For a system of linear equations of the form
-	<md>
-		<mrow>
-			a_1 x + b_1 y + c_1 z \amp= d_1
-		</mrow>
-		<mrow>
-			a_2 x + b_2 y + c_2 z \amp= d_2
-		</mrow>
-		<mrow>
-			a_3 x + b_3 y + c_3 z \amp= d_3
-		</mrow>
-	</md>
-	the matrices 
-	<me>
-		\begin{bmatrix}
-			a_1\amp b_1\amp c_1 \\ a_2 \amp b_2 \amp c_2 \\ a_3 \amp b_3\amp c_3
-		\end{bmatrix} \text{ and }
-		\left[ \begin{array}{@{}ccc|c@{}}
-			a_1\amp b_1\amp c_1 \amp d_1\\ a_2 \amp b_2 \amp c_2  \amp d_2\\ a_3 \amp b_3\amp c_3  \amp d_3
-		\end{array}\right]
-	</me>
-	are called the <term>coefficient matrix</term><idx>coefficient matrix</idx> and the <term>augmented matrix</term><idx>augmented matrix</idx>, respectively. Each row of the augmented matrix represents one of the equations of the system. For example, the augmented matrix of the system
-	<sidebyside valigns="middle middle middle" widths="45% 10% 45%">
-	<paragraphs>
-		<p>
-			<md alignment="alignat">
-				<mrow>
-					3x\amp {}-{}\amp 4y\amp {}+{}\amp z\amp =\amp 2
-				</mrow>
-				<mrow>
-					-x\amp {}+{}\amp 2y\amp \amp  \amp =\amp -1
-				</mrow>
-					<mrow>
-					2x\amp {}-{}\amp y\amp {}-{}\amp 3z\amp =\amp 4
-				</mrow>
-		</md>
-		</p>
-	</paragraphs>
-	<paragraphs><p>is</p></paragraphs>
-	<paragraphs>
-		<p>
-			<me>
-						\left[ \begin{array}{@{}ccc|c@{}}
-			3\amp -4\amp 1 \amp 2\\ -1 \amp 2 \amp  0 \amp -1\\ 2 \amp -1\amp 3  \amp 4
-		\end{array}\right]
+<section xml:id="The-Reciprocal-Functions"   xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>The Reciprocal Functions</title>
 
-			</me>
-		</p>
-	</paragraphs></sidebyside>
-	and the augmented matrix of the system
-	<sidebyside valigns="middle middle middle" widths="45% 10% 45%">
-	<paragraphs>
-		<p>
-			<md alignment="alignat">
-				<mrow>
-					x\amp {}-{}\amp 3y\amp {}+{}\amp 2z\amp = {}\amp 5
-				</mrow>
-				<mrow>
-					\amp {}{}\amp 2y\amp {}-{}\amp z \amp = \amp 4
-				</mrow>
-					<mrow>
-					\amp {}{}\amp \amp {}{}\amp 4z\amp = \amp 8
-				</mrow>
-		</md>
-		</p>
-	</paragraphs>
-	<paragraphs><p>is</p></paragraphs>
-	<paragraphs>
-		<p>
-			<me>
-				\left[ \begin{array}{@{}ccc|c@{}}
-				1\amp -3\amp 2 \amp 5\\ 0 \amp 2 \amp -1  \amp 4\\ 0 \amp 0\amp 4 \amp 8
-				\end{array}\right]
-			</me>
-		</p>
-	</paragraphs></sidebyside>
-	The augmented matrix of this last system, which has all zero entries in the lower left corner (below the diagonal), is said to be in <term>upper triangular form</term><idx>upper triangular form</idx>. As we saw in <xref ref="Systems-of-Linear-Equations-in-Three-Variables" text="type-global"/>, it is easy to find the solution of such a system by back-substitution.
+<subsection><title>Three More Functions</title>
+<p>The three basic trigonometric functions occur so often as the denominator of a fraction that it is convenient to give names to their reciprocals.  We define three new trigonometric functions as follows.
 </p>
 
+<assemblage><title>Three More Functions</title>
+<p>If <m>\theta</m> is an angle in standard position, and <m>P(x,y)</m> is a point on the 
+terminal side, then we define the following functions.</p>
+<sidebyside widths="60% 30%"><p>
+         <me>\text{The}~~ \textbf{secant}:~~~~~~      \sec \theta = \dfrac{r}{x}</me>
+         <me>\text{The}~~ \textbf{cosecant}:~~~~      \csc \theta = \dfrac{r}{y}</me>
+         <me>\text{The}~~ \textbf{cotangent}:~~~      \cot \theta =  \dfrac{x}{y}</me></p>                
+<p><image source="images/8-3-1.png"><description>angle</description></image></p></sidebyside></assemblage>
 
-</subsection>
+<p>We can find exact values for all six trig functions at a given angle if we know the value of any one of them.</p>
 
+<example><statement><p>If <m>\sec \theta = 3</m>, and <m>-\dfrac{\pi}{2} \le \theta \le 0</m>, find exact values for the other five trig functions.
+</p></statement>
 
+<solution><p>Because <m>-\dfrac{\pi}{2} \le \theta \le 0</m>, we draw a reference triangle in the fourth quadrant, as shown below.  
+<sidebyside width="25%"><image source="images/exam8-3-1.png"><description>angle</description></image></sidebyside>
+Because <m>\sec \theta = 3 = \dfrac{3}{1}</m>, we label the horizontal leg with <m>x=1</m> and the hypotenuse with <m>r=3</m>.  
+From the Pythagorean theorem, we find <m>y=-\sqrt{8}=-2\sqrt{2}</m>.  We can now compute the values of the six trigonometric ratios.
+	\begin{align*}
+	\cos \theta \amp =\dfrac{x}{r}=\dfrac{1}{3} \amp \amp \sec \theta =\dfrac{r}{x}=\dfrac{3}{1}=3\\
+	\sin \theta \amp =\dfrac{y}{r}=\dfrac{-2\sqrt{2}}{3} \amp \amp \csc \theta =\dfrac{r}{y}=\dfrac{3}{-2\sqrt{2}}=\dfrac{-3\sqrt{2}}{4}\\
+	\tan \theta \amp =\dfrac{y}{x}=\dfrac{-2\sqrt{2}}{1}=-2\sqrt{2} \amp \amp \cot \theta =\dfrac{x}{y}=\dfrac{1}{-2\sqrt{2}}=\dfrac{-\sqrt{2}}{4}\\
+	\end{align*}
+</p></solution></example> 
 
+<exercise><statement><p>If <m>\csc \theta =4</m>, and <m>90\degree \le \theta \le 180\degree</m>, find exact values for the other five trig functions.</p></statement></exercise>
 
-<subsection><title>Elementary Row Operations</title>
+<p>	By comparing the definitions of secant, cosecant, and cotangent to the three basic trigonometric functions, we find the following relationships.</p>
+
+<assemblage><title>Reciprocal Trigonometric Functions</title>
 <p>
-	The method of elimination depends on two properties of linear systems that allow us to change one system into an equivalent one, that is, one that has the same solutions as the original system.
-</p>
-
-<assemblage><title>Properties of Linear Systems</title>
-<p>
-	<ol>
-		<li><p>
-			Multiplying a linear equation by a (nonzero) constant does not change its solutions. That is, any solution of the equation
-			<me>ax + by = c</me>
-			is also a solution of the equation
-			<me>kax + kby = kc</me>
-		</p></li>
-		<li><p>
-			Adding (or subtracting) two linear equations does not change their common solutions. That is, any solution of the system
-			<md>
-				<mrow>
-					a_1 x + b_1 y \amp = c_1
-				</mrow>
-				<mrow>
-					a_2 x + b_2 y \amp = c_2
-				</mrow>
-			</md>
-			is also a solution of the equation
-			<me>
-				(a_1 + a_2)x + (b_1 + b_2)y = c_1 + c_2
-			</me>
-
-		</p></li>
-	</ol>
-</p>
+         <me>\text{The}~~ \textbf{secant} ~\text{function}:~~~~~~      \sec \theta = \dfrac{1}{\cos \theta}</me>
+         <me>\text{The}~~ \textbf{cosecant}~\text{function}:~~~~      \csc \theta = \dfrac{1}{\sin \theta}</me>
+         <me>\text{The}~~ \textbf{cotangent}~\text{function}:~~~      \cot \theta =  \dfrac{1}{\tan \theta}</me></p>            
 </assemblage>
-<p>
-	These properties apply to linear systems of any size. Thus, we can perform the following operations on the equations of a system:
-	<ol>
-		<li><p>
-			Multiply both sides of an equation by a nonzero real number.
-		</p></li>
-		<li><p>
-			Add a constant multiple of one equation to another equation.</p>
-			<p>We can also perform the following operation without changing the solution of the system:
-		</p></li>
-		<li><p>
-			Interchange two equations.
-		</p></li>
-	</ol>
-	Because each equation of the system corresponds to a row in the augmented matrix, the three operations above correspond to three elementary row operations for the augmented matrix. We can perform one or more of these operations on a matrix without changing the solution of the system it represents.
-</p>
 
-<xi:include href="./assemblage-elementary-row-operations.xml" />
+<p>Calculators do not have keys for the secant, cosecant, and cotangent functions; instead, we calculate their values as reciprocals.</p> 
 
-<example><p>
-	<ol label="a">
-		<li><p>
-			<m>A=
-				\left[ \begin{array}{@{}ccc|c@{}}
-				1 \amp 3 \amp -1 \amp -1\\ 
-				2 \amp 1 \amp 4  \amp 5 \\ 
-				6 \amp 2 \amp -1 \amp -12
-				\end{array}\right]				
-			</m>
-			and
-			<m>
-				B=
-				\left[ \begin{array}{@{}ccc|c@{}}
-				1 \amp 3 \amp -1 \amp -1\\ 
-				6 \amp 3 \amp 12  \amp 15 \\ 
-				6 \amp 2 \amp -1 \amp -12
-				\end{array}\right]				
-			</m>
-			represent equivalent systems because we can multiply each entry in the second row of <m>A</m> by <m>3</m> to obtain <m>B</m>.
-		</p></li>
-		<li><p>
-			<m>A=
-				\left[ \begin{array}{@{}ccc|c@{}}
-				3 \amp -1 \amp 2 \amp 7 \\ 
-				2 \amp 1  \amp 4 \amp -5 \\ 
-				3 \amp 1  \amp 9 \amp -16
-				\end{array}\right]				
-			</m>
-			and
-			<m>
-				B=
-				\left[ \begin{array}{@{}ccc|c@{}}
-				3 \amp 1  \amp 9 \amp -16 \\ 
-				2 \amp 1  \amp 4 \amp -5 \\ 
-				3 \amp -1 \amp 2 \amp 7
-				\end{array}\right]				
-			</m>
-			represent equivalent systems because we can interchange the first and third rows of <m>A</m> to obtain <m>B</m>.
-		</p></li>
-		<li><p>
-			<m>A=
-				\left[ \begin{array}{@{}ccc|c@{}}
-				1 \amp 2  \amp 1 \amp -3 \\ 
-				2 \amp 0  \amp -1\amp 7 \\ 
-				3 \amp 1  \amp 2 \amp 10
-				\end{array}\right]				
-			</m>
-			and
-			<m>
-				B=
-				\left[ \begin{array}{@{}ccc|c@{}}
-				1 \amp 2  \amp 1 \amp -3 \\ 
-				0 \amp -4  \amp -3\amp 13 \\ 
-				3 \amp 1  \amp 2 \amp 10
-				\end{array}\right]				
-			</m>
-			represent equivalent systems becausewe can add <m>-2</m> times each entry of the first row of <m>A</m> to the corresponding entry of the second row of <m>A</m> to obtain <m>B</m>.
-		</p></li>
-	</ol>
-</p></example>
+<example><statement><p>Use a calculator to approximate <m>\sec 47\degree</m> to three decimal places.</p></statement>
 
-<exercise><statement>
-	<p>
-		Subtract <m>4</m> times row 2 from row 3.
-		<me>
-			\left[ \begin{array}{@{}ccc|c@{}}
-				3 \amp 2  \amp -5 \amp -3 \\ 
-				2 \amp -3 \amp 2  \amp 6 \\ 
-				8 \amp -4 \amp 2 \amp 12
-			\end{array}\right]				
-		</me>
-	</p>
-</statement>
-<answer><p><m>
-	\left[ \begin{array}{@{}ccc|c@{}}
-		3 \amp 2  \amp -5 \amp -3 \\ 
-		2 \amp -3 \amp 2  \amp 6 \\ 
-		0 \amp 8 \amp -6 \amp -12
-	\end{array}\right]				
-</m></p></answer>
-</exercise>
+<solution><p>With the calculator in degree mode, enter 
+	<me> 1~~\div ~~\text{COS}~~ 47 ~~) ~~\text{ENTER}</me>
+to obtain <m>\sec 47\degree \approx 1.466</m>.  Or we can calculate <m>\cos 47\degree</m> first, and then use the reciprocal key:
+	<me> \text{COS}~~ 47~~)~~\text{ENTER}~~ x^{-1}~~\text{ENTER}</me></p></solution></example>
 
-<example><p>
-	Use row operations to form an equivalent matrix with the given elements:
-	<me>
-		\left[ \begin{array}{@{}cc|c@{}}
-			1 \amp -4  \amp -5  \\ 
-			3 \amp 6 \amp 3\\ 
-		\end{array}\right]				
-		\longrightarrow
-		\left[ \begin{array}{@{}cc|c@{}}
-			1 \amp -4  \amp -5  \\ 
-			0 \amp \text{?} \amp \text{?} \\ 
-		\end{array}\right]				
-	</me>
-</p>
-<solution>
-	<p>
-	To obtain <m>0</m> as the first entry in the second row, we can multiply the first row by <m>-3</m> and add the result to the second row. That is, we add <m>-3(\text{row }1)</m> to <m>\text{row }2</m>:
-	<me>
-		\left[ \begin{array}{@{}cc|c@{}}
-			1 \amp -4  \amp -5  \\ 
-			3 \amp 6 \amp 3\\ 
-		\end{array}\right]				
-		\xrightarrow[-3(\text{row } 1) + \text{row }2]{}
+<exercise><statement><p>Use a calculator to approximate <m>\csc 132\degree</m> to three decimal places.</p></statement></exercise>
 
-		\left[ \begin{array}{@{}cc|c@{}}
-			1 \amp -4  \amp -5  \\ 
-			0 \amp 18 \amp 18 \\ 
-		\end{array}\right]				
-	</me>
-	</p>
-</solution></example>
+<p>Of course, we can also evaluate the reciprocal trig functions for angles in radians, or for real numbers.  Thus for example,
+	<me>\csc 3.5 = \dfrac{1}{\sin 3.5}= -2.8508~~~~\text{and}~~~~\cot(-4) = \dfrac{1}{\tan(-4)} = -0.8637</me>  
+In particular, the exact values for the reciprocal trig functions of the special angles are easily obtained.</p>
 
-<exercise><p>
-	Use row operations to form an equivalent matrix with the given elements:
-	<me>
-		\left[ \begin{array}{@{}cc|c@{}}
-			-1 \amp -3  \amp 7  \\ 
-			-2 \amp 4 \amp -6\\ 
-		\end{array}\right]				
-		\longrightarrow
-		\left[ \begin{array}{@{}cc|c@{}}
-			-1 \amp -3  \amp 7  \\ 
-			0 \amp \text{?} \amp \text{?} \\ 
-		\end{array}\right]	
-	</me>
-</p>(
-<answer><p><m>2(\text{row }1)+\text{row }2:
-	\left[ \begin{array}{@{}cc|c@{}}
-		-1 \amp -3  \amp 7  \\ 
-		0 \amp -2 \amp 8 \\ 
-	\end{array}\right]	
- </m></p></answer>
-</exercise>
+<sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
+                    <row>
+                        <cell colspan="4" halign="center"> Exact Values for the Special Angles </cell></row>
+                    <row bottom="minor">
+                        <cell><m>\theta</m></cell>
+                        <cell><m>\sec \theta</m></cell>
+                        <cell><m>\sec \theta</m></cell>
+                        <cell><m>\cot \theta</m></cell></row>
+                    <row> 
+                        <cell><m>0</m></cell>
+                        <cell><m>1</m></cell>
+                        <cell>undefined</cell>
+                        <cell>undefined</cell></row>
+                    <row> 
+                        <cell><m>\dfrac{\pi}{6}</m></cell>
+                        <cell><m>\dfrac{2\sqrt{3}}{3}</m></cell>
+                        <cell><m>2</m></cell>
+                        <cell><m>\sqrt{3}</m></cell></row>
+                    <row> 
+                        <cell><m>\dfrac{\pi}{4}</m></cell>
+                        <cell><m>\sqrt{2}</m></cell>
+                        <cell><m>\sqrt{2}</m></cell>
+                        <cell><m>1</m></cell></row>
+                    <row>
+                        <cell><m>\dfrac{\pi}{3}</m></cell>
+                        <cell><m>2</m></cell>
+                        <cell><m>\dfrac{2\sqrt{3}}{3}</m></cell>
+                        <cell><m>\dfrac{1}{\sqrt{3}}</m></cell></row>
+                    <row>
+                        <cell><m>\dfrac{\pi}{2}</m></cell>
+                        <cell>undefined</cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>0</m></cell></row>                        
+                </tabular></sidebyside> 
 
-<example>
-	<p>
-		Use row operations on the first matrix to form an equivalent matrix in upper triangular form.
-	<me>
-		\left[ \begin{array}{@{}ccc|c@{}}
-			1 \amp -3  \amp 1  \amp -4 \\ 
-			3 \amp -1  \amp -1 \amp 8\\ 
-			2 \amp -2  \amp 3  \amp -1\\ 
-		\end{array}\right]				
-		\longrightarrow
-		\left[ \begin{array}{@{}ccc|c@{}}
-			1 \amp -3  \amp 1  \amp -4 \\ 
-			0 \amp \text{?} \amp \text{?} \amp \text{?} \\ 
-			0 \amp 0 \amp \text{?} \amp \text{?} \\ 
-		\end{array}\right]	
-	</me>
-	</p>
-<solution>
-	<p>
-		We perform the transformation in two steps. First, we obtain zeros in the lower two entries of the first column. We get these zeros by adding suitable multiples of the first row to the second and third rows:
-	<me>
-		\left[ \begin{array}{@{}ccc|c@{}}
-			1 \amp -3  \amp 1  \amp -4 \\ 
-			3 \amp -1  \amp -1 \amp 8\\ 
-			2 \amp -2  \amp 3  \amp -1\\ 
-		\end{array}\right]				
-		\xrightarrow[-2(\text{row } 1) + \text{row }3]{-3(\text{row } 1) + \text{row }2}
-		\left[ \begin{array}{@{}ccc|c@{}}
-			1 \amp -3  \amp 1  \amp -4 \\ 
-			0 \amp 8   \amp -4 \amp 20 \\ 
-			0 \amp 4   \amp 1  \amp 7 \\ 
-		\end{array}\right]	
-	</me>
-	Next we obtain a zero as the second entry of the third row by adding a suitable multiple of the second row. For this matrix, we add <m>-12(\text{row }2)</m> to <m>\text{row }3</m>:
-	<me>
-		\left[ \begin{array}{@{}ccc|c@{}}
-			1 \amp -3  \amp 1  \amp -4 \\ 
-			0 \amp 8   \amp -4 \amp 20 \\ 
-			0 \amp 4   \amp 1  \amp 7 \\ 
-		\end{array}\right]				
-		\xrightarrow[\frac{-1}{2}(\text{row } 2) + \text{row }3]{}
-		\left[ \begin{array}{@{}ccc|c@{}}
-			1 \amp -3  \amp 1  \amp -4 \\ 
-			0 \amp 8   \amp -4 \amp 20 \\ 
-			0 \amp 0   \amp 3  \amp -3 \\ 
-		\end{array}\right]	
-	</me>
-	The last matrix is in upper triangular form.
-	</p>
-</solution></example>
+<warning><p>The reciprocal functions are not the same as the inverse trig functions!</p>  
+<p>For example, <m>\sec 0.8</m> is not equal to <m>\cos^{-1}(0.8)</m>.  Remember that <m>\cos^{-1}(0.8)</m> is an angle, namely the angle whose cosine is 0.8, while <m>\sec 0.8</m> is the reciprocal of the cosine of 0.8 radians, or <m>\dfrac{1}{\cos 0.8}</m>. You can check on your calculator that 
+<me>\cos^{-1}(0.8)=0.6435~\text{radians},~~~~\text{and}~~~~\sec 0.8=1.4353</me></p></warning> 
 
-<exercise><statement>
-	<p>
-		Use the suggested row operations to form an equivalent matrix in upper triangular form. 
-	<me>
-		\left[ \begin{array}{@{}ccc|c@{}}
-			1 \amp -2  \amp 4  \amp 3 \\ 
-			5 \amp -7  \amp 8  \amp 6\\ 
-			-2\amp 6   \amp -7 \amp 6\\ 
-		\end{array}\right]				
-		\longrightarrow
-		\left[ \begin{array}{@{}ccc|c@{}}
-			1 \amp -2  \amp 4  \amp 3 \\ 
-			0 \amp \text{?} \amp \text{?} \amp \text{?} \\ 
-			0 \amp 0 \amp \text{?} \amp \text{?} \\ 
-		\end{array}\right]	
-	</me>
-	<ol label="*1*">
-		<li><p>
-			Add <m>-5 (\text{row }1)</m> to <m>(\text{row }2)</m>.
-		</p></li>
-		<li><p>
-			Add <m>2 (\text{row }1)</m> to <m>(\text{row }3)</m>.
-		</p></li>
-		<li><p>
-			Multiply <m>(\text{row }2)</m> by <m>\dfrac{1}{3}</m>.
-		</p></li>
-		<li><p>
-			Add <m>-2 (\text{row }2)</m> to <m>(\text{row }3)</m>.
-		</p></li>
-	</ol>
-	</p>
-</statement>
-<answer><p><m>
-	\left[ \begin{array}{@{}ccc|c@{}}
-		1 \amp -2  \amp 4  \amp 3 \\ 
-		0 \amp 1 \amp -4 \amp -3 \\ 
-		0 \amp 0 \amp 9 \amp 18 \\ 
-	\end{array}\right]	
-</m></p></answer>
-</exercise>
+<p>Each of the reciprocal functions is undefined when its denominator is equal to zero.  For example, the secant is undefined when <m>\cos \theta = 0</m>, or when <m>\theta</m> is an odd multiple of <m>90\degree</m>.</p> 
 
+<example><statement><p>For which angles is the cosecant undefined?</p></statement>
+<solution><p>The cosecant is undefined when its denominator, <m>\sin \theta</m>, equals zero, and <m>\sin \theta = 0</m> when <m>\theta</m> is a multiple of <m>180\degree</m>. In radians, <m>\csc \theta</m> is undefined if <m>\theta</m> is a multiple of <m>\pi</m>.</p></solution></example>
 
+<exercise><p>For what angles is the cotangent undefined? Give your answers in degrees and in radians.</p></exercise>
+
+<note><p>Although <m>\tan \dfrac{\pi}{2}</m> is undefined, <m>\cot \dfrac{\pi}{2}=0</m>.</p></note>
 </subsection>
 
+<subsection><title>Application to Right Triangles</title>
+<p>	In Chapter 2 we defined three trigonometric ratios for an acute angle; namely, sine, cosine, and tangent. When we take the reciprocals of those ratios, we obtain expressions for the secant, cosecant, and cotangent.</p>
 
+<assemblage><title>Reciprocal Trigonometric Ratios</title>
+<p>If <m>\theta</m> is one of the acute angles in a right triangle,</p>
+<sidebyside widths="60% 36%" valigns="middle middle"><p>
+    \begin{align*}
+                \sec \theta \amp = \dfrac{\text{hypotenuse}}{\text{adjacent}} \\
+                \csc \theta \amp = \dfrac{\text{hypotenuse}}{\text{opposite}} \\
+                \cot \theta \amp =  \dfrac{\text{adjacent}}{\text{opposite}}  \\                 
+                \end{align*}
+</p> <image source="images/fig-2-2trigratios"><description>triangle</description></image></sidebyside></assemblage>
 
+<p>Although we can express any relationship between the sides of a right triangle using sine, cosine, and tangent, sometimes it is more convenient to use one of the reciprocal functions.</p>
 
-<subsection><title>Matrix Reduction</title>
-<p>
-	We use elementary row operations to apply Gaussian reduction to the augmented matrix of a linear system. This matrix method can be used to solve linear systems of any size and is well suited for implementation by a computer program. The method has three steps.
-</p>
+<example><statement><p>The length, <m>L</m>, of the shadow cast by a flagpole on a sunny day depends on the height, <m>h</m>, of the flagpole and the angle, <m>\theta</m>, that the sun's rays make with ground.
+<sidebyside width="40%"><image source="images/exam8-3-4.png"><description>triangle</description></image></sidebyside>
+<ol label="a">
+<li>Write an expression for the length, <m>L</m>, of the shadow cast by a flagpole of height <m>h</m> when the sun makes an angle of <m>\theta</m> from the ground.</li>
+<li>Find the length (to the nearest 0.01 meter) of the shadow cast by a 3-meter flagpole when the sun makes an angle of <m>20\degree</m> from the ground.</li></ol></p></statement>
 
-<xi:include href="./assemblage-solving-system-by-matrix-reduction.xml" />
+<solution><p><ol label="a">
+<li>From the figure, we see that <m>\dfrac{L}{h}=\cot \theta</m>, or <m>L=h\cot \theta</m>.</li>  
+<li>Substiting <m>\alert{3}</m> for <m>h</m> and <m>\alert{20\degree}</m> for <m>\theta</m>, we find 
+<me>L = \alert{3} \cot \alert{20\degree} = 3(2.7475)=8.24</me>
+The shadow is about 8.24 meters long.</li></ol></p></solution></example>
 
-<example>
-	<p>
-		Use matrix reduction to solve the system.
-		<md alignment="alignat">
-			<mrow>
-				x\amp {}-{}\amp 2y\amp  = {}\amp -5
-			</mrow>
-			<mrow>
-				2x\amp {}+{}\amp 3y\amp  = \amp 11
-			</mrow>
-		</md>
-	</p>
-<solution>
-	<p>
-		The augmented matrix is 
-		<me>
-			\left[ \begin{array}{@{}cc|c@{}}
-				1 \amp -2  \amp -5  \\ 
-				2 \amp 3 \amp 11\\ 
-			\end{array}\right]			
-		</me>
-		We use row operations to obtain <m>0</m> in the first entry of the second row.
-		<me>
-			\left[ \begin{array}{@{}cc|c@{}}
-				1 \amp -2  \amp -5  \\ 
-				2 \amp 3 \amp 11\\ 
-			\end{array}\right]				
-			\xrightarrow[-2(\text{row } 1) + \text{row }2]{}
-			\left[ \begin{array}{@{}cc|c@{}}
-				1 \amp -2  \amp -5  \\ 
-				0 \amp 7   \amp 21 \\ 
-			\end{array}\right]				
-		</me>
-		The last matrix is upper triangular and corresponds to the system
-		<md alignment="alignat">
-			<mrow>
-				x\amp {}-{}\amp 2y\amp  = {}\amp -5\hphantom{blankblank}\amp(1)
-			</mrow>
-			<mrow>
-				\amp {}{}\amp 7y\amp  = \amp 21\hphantom{blankblank}\amp(2)
-			</mrow>
-		</md>
-		Now we use back-substitution to solve the system. From Equation (2), <m>y=3</m>. Substitute <m>3</m> for <m>y</m> in Equation (1) to find
-		<md>
-			<mrow>
-				x - 2(\alert{3}) \amp = -5
-			</mrow>
-			<mrow>
-				x \amp = 1
-			</mrow>
-		</md>
-		The solution is the ordered pair <m>(1, 3)</m>.
-	</p>
-</solution></example>
-
-<exercise><statement>
-	<p>
-		Use matrix reduction to solve the system
-		<md alignment="alignat">
-			<mrow>
-				4x\amp {}+{}\amp 4y\amp  = {}\amp 3
-			</mrow>
-			<mrow>
-				3x\amp {}+{}\amp 8y\amp  = \amp 1
-			</mrow>
-		</md>
-		Follow the suggested steps:
-		<ol label="*1*">
-			<li><p>
-				Write the augmented matrix for the system.
-			</p></li>
-			<li><p>
-				Add <m>-3(\text{row }1)</m> to <m>(\text{row }2)</m>.
-			</p></li>
-			<li><p>
-				Solve the resulting system by back-substitution.
-			</p></li>
-		</ol>
-	</p>
-</statement>
-<answer><p><m>(-5, 2)</m></p></answer>
-</exercise>
-
-
-
+<exercise><p>The area <m>A</m> of a regular polygon with <m>n</m> sides having perimeter <m>L</m> satisfies
+<me>A = \dfrac{L^2}{4n}\cot\dfrac{\pi}{n} </me>
+Refer to the figure below showing <m>n=6</m> to prove this formula in the following steps.
+<sidebyside width="25%"><image source="images/exer8-3-4.png"><description>hexagon</description></image></sidebyside>
+<ol label="a">
+<li>Find an expression for the angle <m>\theta</m> in terms of <m>n</m>.</li>
+<li>Find an expression for the base of the triangle shown.</li>
+<li>Find an expression for the height of the triangle.</li>
+<li>Write an expression for the area of the triangle, and then for the area of the entire polygon.</li></ol></p></exercise>
 </subsection>
 
+<subsection><title>Graphs of the Reciprocal Functions</title>
+<p>	We can obtain graphs of the reciprocal trig functions by plotting points, as we did for the sine, cosine and tangent functions. However, it is more enlightening to construct these graphs as the reciprocals of the three basic functions. </p>
 
+<example><statement><p>Use the graph of <m>y=\cos x</m> to construct a graph of <m>f(x)=\sec x</m>.</p></statement>
 
+<solution><p>Consider the graph of <m>y=\cos x</m> shown at left below.</p>
+<p>  When <m>x=\dfrac{-\pi}{2},~\dfrac{\pi}{2}</m> and <m>\dfrac{3\pi}{2},~ \cos x=0</m>, so <m>\sec x</m> is undefined at these <m>x</m>-values, and we insert vertical asymptotes at those <m>x</m>-values to start our graph of <m>y=\sec x</m>, as shown at right below.</p>
+<sidebyside widths="45% 45%"><image source="images/exam8-3-5a.png"><description>graphs</description></image><image source="images/exam8-3-5b.png"><description>graphs</description></image></sidebyside>
+<p>To find some points on the graph, we look at points on the graph of <m>y=\cos x</m>. At each <m>x</m>-value, the <m>y</m>-coordinate of the point on the graph of <m>y=\sec x</m> is the reciprocal of <m>\cos x</m>.</p>  
+<p>For example, at <m>x=0</m> and <m>x=2\pi</m>, we have <m>\cos x = 1</m>, so <m>\sec x = \frac{1}{1} = 1</m>. Thus, we plot the points <m>(0,1)</m> and <m>(2\pi,1)</m> on the graph of <m>f(x)=\sec x</m>.  Similarly, at <m>x=-\pi</m> and <m>x=\pi</m>, <m>\cos x = -1</m>, so the value of <m>\sec x</m> is <m>\frac{1}{-1} = -1</m>, and we plot the points <m>(-\pi,-1)</m> and <m>(\pi,-1)</m> on the graph of <m>f(x)=\sec x</m>.</p>
+<p>Finally, we notice that the values of <m>\cos x</m> are decreasing toward <m>0</m> as <m>x</m> increases from <m>0</m> to <m>\dfrac{\pi}{2}</m>, so the graph of <m>f(x)=\sec x</m> increases toward <m>\infty</m> on the same interval.</p>  
+<p>By similar arguments, we fill in the graph of <m>f(x)=\sec x</m> between each of the vertical asymptotes, to produce the graph below.</p>
+<sidebyside width="55%"><image source="images/exam8-3-5ans.png"><description>graphs</description></image></sidebyside></solution></example>
 
-<subsection><title>Reducing a <m>3\times 3</m> Matrix</title>
-<p>
-	Although there are many ways to reduce an augmented <m>3\times 3</m> matrix to upper triangular form, the following two-step procedure may help you organize the row operations.
-</p>
+<exercise><statement><p>Use the graph of <m>y=\tan x</m> to sketch a graph of <m>g(x)=\cot x</m>.</p></statement></exercise>
 
-<xi:include href="./assemblage-strategy-for-matrix-reduction.xml" />
+<p>	The graphs of the three new functions are shown below, with <m>x</m> in radians. Note that the secant function is undefined at odd multiples of <m>\dfrac{\pi}{2}</m>, the values at which <m>\cos x=0</m>. The cosecant is undefined where <m>\sin x=0</m>, namely at multiples of <m>\pi</m>.  The cotangent is also undefined at multiples of <m>\pi</m>, because <m>\tan x=0</m>  at those values.</p>
+<sidebyside width="100%"><image source="images/8-3-2.png"><description>graphs</description></image></sidebyside>
 
-<p>
-	If you cannot obtain nonzero entries on the diagonal, then the system does not have a unique solution; the system is either inconsistent or dependent. See Homework problems 45–48.
-</p>
+<example><statement><p>State the domain and range of the secant function.</p></statement>
 
-<example xml:id="example-matrix-3x3-system">
-	<p>
-		Use matrix reduction to solve the system.
-		<md alignment="alignat">
-			<mrow>
-				2x\amp {}-{}\amp 4y\amp {}{}\amp \amp =\amp 6
-			</mrow>
-			<mrow>
-				3x\amp {}-{}\amp 4y\amp {}+{}\amp z \amp =\amp 8
-			</mrow>
-				<mrow>
-				2x\amp {}{}\amp \amp {}-{}\amp 3z\amp =\amp -11
-			</mrow>
-		</md>
-	</p>
-<solution>
-	<p>
-		The augmented matrix is
-		<me>
-			\left[ \begin{array}{@{}ccc|c@{}}
-				2 \amp -4\amp 0  \amp 6  \\ 
-				3 \amp -4\amp 1  \amp 8  \\ 
-				2 \amp  0\amp -3 \amp -11
-			\end{array}\right]		
-		</me>
-		We obtain <m>1</m> as the first entry of the first row by multiplying each entry in the first row by <m>\dfrac{1}{2}</m>. This will make it easier to obtain zeros in the first entries of the second and third rows.
-		<sidebyside valigns="middle middle ">
-			<paragraphs>
-				<p>
-					<me>
-						\left[ \begin{array}{@{}ccc|c@{}}
-							2 \amp -4\amp 0  \amp 6  \\ 
-							3 \amp -4\amp 1  \amp 8  \\ 
-							2 \amp  0\amp -3 \amp -11
-						\end{array}\right]		
-					</me>
-				</p>
-			</paragraphs>
-			<paragraphs>
-				<p>
-					<md alignment="alignat">
-						<mrow>
-							2x\amp {}-{}\amp 4y\amp {}+{}\amp0z \amp =\amp 6
-						</mrow>
-						<mrow>
-							3x\amp {}-{}\amp 4y\amp {}+{}\amp z \amp =\amp 8
-						</mrow>
-							<mrow>
-							2x\amp {}+{}\amp 0y\amp {}-{}\amp 3z\amp =\amp -11
-						</mrow>
-					</md>
-				</p>
-			</paragraphs>
-		</sidebyside>
-<me>\stackrel{\displaystyle{\frac{1}{2}}(\text{row }1)}{\big\downarrow}</me>
-		<sidebyside valigns="middle  middle">
-			<paragraphs>
-				<p>
-					<me>
-						\left[ \begin{array}{@{}ccc|c@{}}
-							1 \amp -2\amp 0  \amp 3  \\ 
-							3 \amp -4\amp 1  \amp 8  \\ 
-							2 \amp  0\amp -3 \amp -11
-						\end{array}\right]		
-					</me>
-				</p>
-			</paragraphs>
-			<paragraphs>
-				<p>
-					<md alignment="alignat">
-						<mrow>
-							x\amp {}-{}\amp 2y\amp {}+{}\amp 0z \amp =\amp 3
-						</mrow>
-						<mrow>
-							3x\amp {}-{}\amp 4y\amp {}+{}\amp z \amp =\amp 8
-						</mrow>
-							<mrow>
-							2x\amp {}+{}\amp 0y\amp {}-{}\amp 3z\amp =\amp -11
-						</mrow>
-					</md>
-				</p>
-		</paragraphs>
-	</sidebyside>
-	Next, we obtain zeros in the first entries of the second and third rows by adding suitable multiples of the first row:
-<me>-3(\text{row }1) + 2~~{\Bigg\downarrow}~~3(\text{row }1) + 3 </me>
-		<sidebyside valigns="middle  middle">
-			<paragraphs>
-				<p>
-					<me>
-						\left[ \begin{array}{@{}ccc|c@{}}
-							1 \amp -2\amp 0  \amp 3  \\ 
-							0 \amp 2 \amp 1  \amp -1  \\ 
-							0 \amp  4\amp -3 \amp -17
-						\end{array}\right]		
-					</me>
-				</p>
-			</paragraphs>
-			<paragraphs>
-				<p>
-					<md alignment="alignat">
-						<mrow>
-							x\amp {}-{}\amp 2y\amp {}+{}\amp 0z \amp =\amp 3
-						</mrow>
-						<mrow>
-							0x\amp {}+{}\amp 2y\amp {}+{}\amp z \amp =\amp -1
-						</mrow>
-							<mrow>
-							0x\amp {}+{}\amp 4y\amp {}-{}\amp 3z\amp =\amp -17
-						</mrow>
-					</md>
-				</p>
-		</paragraphs>
-	</sidebyside>
-	Finally, we obtain a zero in the second entry of the third row by adding <m>-2(\text{row }2)</m> to <m>\text{row }3</m>:
+<solution><p>Because the cosine is defined for all real numbers, the domain of the secant includes all real numbers except for values where the cosine is zero. These values are the odd multiples of <m>\dfrac{\pi}{2}</m>, that is, <m>\dfrac{\pi}{2},~\dfrac{3\pi}{2},~\dfrac{5\pi}{2},~ \ldots</m>, and their opposites.</p>  
+<p>	Because the range of the cosine consists of all <m>y</m>-values with <m>-1 \le y \le 1</m>, the range of the secant includes the reciprocals of those values, namely <m>y \ge 1</m> and <m>y \le -1</m>.</p></solution></example> 
 
-	<me>-2(\text{row }2) + 3~~{\Bigg\downarrow}~~\hphantom{3(\text{row }1) + 3} </me>
-		<sidebyside valigns="middle  middle">
-			<paragraphs>
-				<p>
-					<me>
-						\left[ \begin{array}{@{}ccc|c@{}}
-							1 \amp -2\amp 0  \amp 3  \\ 
-							0 \amp 2 \amp 1  \amp -1  \\ 
-							0 \amp 0 \amp -5 \amp -15
-						\end{array}\right]		
-					</me>
-				</p>
-			</paragraphs>
-			<paragraphs>
-				<p>
-					<md alignment="alignat">
-						<mrow>
-							x\amp {}-{}\amp 2y\amp {}+{}\amp 0z \amp =\amp 3
-						</mrow>
-						<mrow>
-							0x\amp {}+{}\amp 2y\amp {}+{}\amp z \amp =\amp -1
-						</mrow>
-							<mrow>
-							0x\amp {}+{}\amp 0y\amp {}-{}\amp 5z\amp =\amp -15
-						</mrow>
-					</md>
-				</p>
-		</paragraphs>
-	</sidebyside>
-	The system is now in upper triangular form, and we use back-substitution to find the solution. We solve the last equation to get <m>z=3</m> and substitute <m>3</m> for <m>z</m> in the second equation to find <m>y=-2</m>. Finally, we substitute <m>3</m> for <m>z</m> and <m>-2</m> for <m>y</m> in the first equation to find <m>x=-1</m>. The solution is the ordered triple <m>(-1,-2, 3)</m>.
-</p>
-</solution></example>
-
-<exercise><statement>
-	<p>
-		Use matrix reduction to solve the system
-		<md>
-			<mrow>
-				x + 3z \amp = -11
-			</mrow>
-			<mrow>
-				2x + y + z \amp = 1
-			</mrow>
-			<mrow>
-				-3x - 2y = 3
-			</mrow>
-		</md>
-		Follow the suggested steps:
-		<ol label="*1*">
-			<li><p>
-				Write the augmented matrix for the system.
-			</p></li>
-			<li><p>
-				Add <m>-2</m>(row 1) to (row 2).
-			</p></li>
-			<li><p>
-				Add <m>3</m>(row 1) to (row 3).
-			</p></li>
-			<li><p>
-				Add <m>2</m>(row 2) to (row 3).
-			</p></li>
-			<li><p>
-				Solve the resulting system by back-substitution.
-			</p></li>
-		</ol>
-	</p>
-</statement>
-<answer><p><m>(37, -57, -16)</m></p></answer>
-</exercise>
-
-<p>
-	It is a good idea to make the first entry in the first row equal to <m>1</m>, as we did in <xref ref="example-matrix-3x3-system" text="type-global"/>, to simplify the calculations that follow. However, if that entry is zero we can interchange two rows. For example, to reduce the matrix
-	<me>
-		\left[ \begin{array}{@{}ccc|c@{}}
-			0 \amp 1 \amp 2  \amp 3  \\ 
-			1 \amp 2 \amp 3  \amp 4  \\ 
-			2 \amp 5 \amp 1 \amp 4
-		\end{array}\right]		
-	</me>
-	we begin by interchanging the first and second rows to obtain
-	<me>
-		\left[ \begin{array}{@{}ccc|c@{}}
-			1 \amp 2 \amp 3  \amp 4  \\ 
-			0 \amp 1 \amp 2  \amp 3  \\ 
-			2 \amp 5 \amp 1 \amp 4
-		\end{array}\right]		
-	</me>
-	We then follow the two-step procedure described above to find
-	<me>
-		\xrightarrow[-2(\text{row } 1) + \text{row }3]{}
-
-		\left[ \begin{array}{@{}ccc|c@{}}
-			1 \amp 2 \amp 3  \amp 4  \\ 
-			0 \amp 1 \amp 2  \amp 3  \\ 
-			0 \amp 1 \amp -5 \amp -4
-		\end{array}\right]		
-		\xrightarrow[-(\text{row } 2) + \text{row }3]{}
-		\left[ \begin{array}{@{}ccc|c@{}}
-			1 \amp 2 \amp 3  \amp 4  \\ 
-			0 \amp 1 \amp 2  \amp 3  \\ 
-			0 \amp 0 \amp -7 \amp -7
-		\end{array}\right]		
-	</me>
-</p>
-
-
+<exercise><statement><p>State the domain and range of the cosecant and cotangent functions.</p></statement></exercise>
 </subsection>
 
+<subsection><title>Solving Equations</title>
+<p>	From the graph of the secant function, we can see that the equation <m>\sec \theta =k</m> has two solutions between <m>0</m> and <m>2\pi</m> if <m>k \ge 1</m> or <m>k \le -1</m>, but no solution for <m>-1 \lt k \lt 1</m>. The same is true of the cosecant function:  the equation <m>\csc \theta = k</m> has no solution for <m>-1 \lt k \lt 1</m>.</p>
 
+<example><statement><p>Solve <m>\csc \theta = \dfrac{2\sqrt{3}}{3}</m> for <m>\theta</m> between <m>0</m> and <m>2\pi</m>.</p></statement>
 
+<solution><p>We take the reciprocal of each side of the equation to obtain
+<me>\sin \theta = \dfrac{3}{2\sqrt{3}} = \dfrac{\sqrt{3}}{2}</me>
+Because <m>\dfrac{\sqrt{3}}{2}</m> is one of the special values, we recognize that one of the solutions is <m>\theta =\dfrac{\pi}{3}</m>. The sine and the cosecant are also positive in the second quadrant, so the second solution is <m>\pi - \dfrac{\pi}{3} = \dfrac{2\pi}{3}</m>.</p></solution></example>
 
-<subsection><title>Solving Larger Systems</title>
-<p>
-	Systems of linear equations in business and economics may involve hundreds of linear equations and hundreds of variables. The study of airflow for aircraft design can involve systems of millions of linear equations and variables. These large systems are solved using matrix methods.
-</p>
-
-<example xml:id="example-matrix-4x4-system">
-	<p>
-		Write the augmented matrix for the system
-		<md alignment="alignat">
-			<mrow>
-				-w\amp {}+{} \amp x \amp {}-{}\amp y\amp {}+{}\amp z \amp =\amp 7
-			</mrow>
-			<mrow>
-				2w\amp {}-{}\amp 2x\amp {}-{}\amp 4y\amp {}-{}\amp 5z \amp =\amp -17
-			</mrow>
-			<mrow>
-				-3w\amp {}+{}\amp 9x\amp {}+{}\amp 3y\amp {}+{}\amp 6z\amp =\amp 30
-			</mrow>
-			<mrow>
-				4w\amp {}+{}\amp 8x\amp {}-{}\amp 2y\amp {}+{}\amp 5z\amp =\amp 17
-			</mrow>
-		</md>
-		Use matrix reduction and back-substitution to solve the system.
-	</p>
-<solution>
-	<p>
-		The augmented matrix is
-		<me>
-		\left[ \begin{array}{@{}cccc|c@{}}
-			-1 \amp 1  \amp -1 \amp 1  \amp 7  \\ 
-			2  \amp -2 \amp -4 \amp -5 \amp -17  \\ 
-			-3 \amp 9  \amp 3  \amp 6  \amp 30 \\
-			4  \amp 8  \amp -2 \amp 5  \amp 17 
-		\end{array}\right]			
-		</me>
-		We use row operations to put the matrix in upper triangular form. First, we add multiples of the first row to the rows below it to get <m>0</m>s in the first column.
-		<sidebyside valigns="middle  middle middle" widths="40% 40% 20%">
-				<tabular halign="right">
-					<row>
-						<cell><m>~~</m></cell>
-					</row>
-					<row>
-						<cell><m>2(\text{row }1) + \text{row }2</m></cell>
-					</row>
-					<row>
-						<cell><m>-3(\text{row }1) + \text{row }3</m></cell>
-					</row>
-					<row>
-						<cell><m>4(\text{row }1) + \text{row }4</m></cell>
-					</row>
-				</tabular>
-			<paragraphs>
-				<p>
-					<me>
-						\left[ \begin{array}{@{}cccc|c@{}}
-							-1 \amp 1  \amp -1 \amp 1  \amp 7  \\ 
-							0  \amp 0  \amp -6 \amp -3 \amp -3  \\ 
-							0  \amp 6  \amp 6  \amp 3  \amp 9 \\
-							0  \amp 12 \amp -6 \amp 9  \amp 45 
-						\end{array}\right]		
-					</me>
-				</p>
-			</paragraphs>
-			<paragraphs><p></p></paragraphs>
-	</sidebyside>
-	The second row has <m>0</m> as its second entry, so we interchange the second and third rows to put a nonzero entry in the second column.
-	<me>
-		\left[ \begin{array}{@{}cccc|c@{}}
-			-1 \amp 1  \amp -1 \amp 1  \amp 7  \\ 
-			0  \amp 6  \amp 6  \amp 3  \amp 9 \\
-			0  \amp 0  \amp -6 \amp -3 \amp -3  \\ 
-			0  \amp 12 \amp -6 \amp 9  \amp 45 
-		\end{array}\right]		
-	</me>
-	Now we want <m>0</m>s in the last two rows of the second column. The third row already has <m>0</m> in the second column, so we only need to add a multiple of the second row to the fourth row.
-	<sidebyside valigns="middle  middle middle" widths="40% 40% 20%">
-			<tabular halign="right">
-				<row>
-					<cell><m>~~</m></cell>
-				</row>
-				<row>
-					<cell><m>~~</m></cell>
-				</row>
-				<row>
-					<cell><m>~~</m></cell>
-				</row>
-				<row>
-					<cell><m>-2(\text{row }2) + \text{row }4</m></cell>
-				</row>
-			</tabular>
-		<paragraphs>
-			<p>
-				<me>
-					\left[ \begin{array}{@{}cccc|c@{}}
-						-1 \amp 1  \amp -1 \amp 1  \amp 7  \\ 
-						0  \amp 6  \amp 6  \amp 3  \amp 9 \\
-						0  \amp 0  \amp -6 \amp -3 \amp -3  \\ 
-						0  \amp 0  \amp -18\amp 3  \amp 27 
-					\end{array}\right]		
-				</me>
-			</p>
-		</paragraphs>
-		<paragraphs><p></p></paragraphs>
-	</sidebyside>
-	Finally, we add a multiple of the third row to the fourth row to get 0 in the third column.
--	<sidebyside valigns="middle  middle middle" widths="40% 40% 20%">
-			<tabular halign="right">
-				<row>
-					<cell><m>~~</m></cell>
-				</row>
-				<row>
-					<cell><m>~~</m></cell>
-				</row>
-				<row>
-					<cell><m>~~</m></cell>
-				</row>
-				<row>
-					<cell><m>-3(\text{row }3) + \text{row }4</m></cell>
-				</row>
-			</tabular>
-		<paragraphs>
-			<p>
-				<me>
-					\left[ \begin{array}{@{}cccc|c@{}}
-						-1 \amp 1  \amp -1 \amp 1  \amp 7  \\ 
-						0  \amp 6  \amp 6  \amp 3  \amp 9 \\
-						0  \amp 0  \amp -6 \amp -3 \amp -3  \\ 
-						0  \amp 0  \amp 0  \amp 12  \amp 36 
-					\end{array}\right]		
-				</me>
-			</p>
-		</paragraphs>
-		<paragraphs><p></p></paragraphs>
-	</sidebyside>
-	This triangular matrix corresponds to the system
-	<md alignment="alignat">
-		<mrow>
-			-w\amp {}+{} \amp x \amp {}-{}\amp y\amp {}+{}\amp z \amp =\amp 7
-		</mrow>
-		<mrow>
-			  \amp {} {}\amp 6x\amp {}+{}\amp 6y\amp {}+{}\amp 3z \amp =\amp 9
-		</mrow>
-		<mrow>
-			 \amp {}{}\amp  \amp {} {}\amp 6y\amp {}+{}\amp 3z\amp =\amp -3
-		</mrow>
-		<mrow>
-			 \amp {} {}\amp   \amp {} {}\amp  \amp {} {}\amp 12z\amp =\amp 36
-		</mrow>
-	</md>
-	which we solve by back-substitution. From the last equation, we find <m>z=3</m>, and by substituting <m>3</m> for <m>z</m> in the third equation, we find <m>y=-1</m>. Next, we substitute <m>-1</m> for <m>y</m> and <m>3</m> for <m>z</m> in the second equation to find <m>x=1</m>, and finally, we substitute <m>x=1</m>, <m>y=-1</m>, <m>z=3</m> into the first equation to find <m>w=-2</m>.</p>
-	<p> The solution is the ordered four-tuple <m>(-2, 1, -1, 3)</m>. We can verify that these values satisfy all four equations of the original system.
-	</p>
-</solution></example>
-
-<p>
-	Our strategy for reducing <m>3\times 4</m> augmented matrices can be generalized for larger matrices, as demonstrated in <xref ref="example-matrix-4x4-system" text="type-global"/>. Starting with the first row, we work our way along the diagonal, using row operations to obtain nonzero entries on the diagonal and zeros below the diagonal entry.
-</p>
-
-<exercise><statement>
-	<p>
-		Use matrix reduction to solve the system
-		<md alignment="alignat">
-			<mrow>
-				w\amp {}+{} \amp x \amp {}+{}\amp y\amp {}+{}\amp z \amp =\amp -1
-			</mrow>
-			<mrow>
-				-w\amp {}+{}\amp x\amp {}-{}\amp y\amp {}+{}\amp z \amp =\amp 3
-			</mrow>
-			<mrow>
-				-2w\amp {}+{}\amp 10x\amp {}+{}\amp 4y\amp {}+{}\amp 7z\amp =\amp 23
-			</mrow>
-			<mrow>
-				3w\amp {}+{}\amp 9x\amp {}-{}\amp 3y\amp {}+{}\amp 6z\amp =\amp 0
-			</mrow>
-		</md>
-	</p>
-</statement>
-<answer><p><m>(-3, 2, 1, -1)</m></p></answer>
-</exercise>
-
-<technology><title><!--<image source="images/icon-GC.jpg"  width="8%"><description>Graphing Calculator</description></image>-->Reduced Row Echelon Form</title>
-<p>
-	The triangular matrix we obtain by row reduction is an example of <term>row echelon form</term><idx>row echelon form</idx>. In a row echelon matrix,
-	<ol>
-	<li> The first nonzero entry in any row is farther to the right than the first nonzero entry in the rows above it.</li>
-	<li> The entries directly below the first nonzero entry in any row are all zeros.</li>
-	<li> Any row consisting entirely of zeros is below all rows with any nonzero entry.</li>
-	</ol>
-	 If we divide each row by its leading nonzero entry, so that the leading entry is <m>1</m>, and if we use row reduction to obtain <m>0</m>s above the leading <m>1</m> as well as below it, the resulting matrix is said to be in <term>reduced row echelon form</term><idx>reduced row echelon form</idx>. This form is especially convenient because we do not have to use backsubstitution to finish solving the system; we can read off the solutions directly from the matrix.</p>
-	 <p> For example, you can check that the matrix
-	<me>
-		\left[ \begin{array}{@{}cccc|c@{}}
-			1 \amp 0  \amp 0 \amp 0 \amp -2  \\ 
-			0 \amp 1  \amp 0 \amp 0 \amp 3 \\
-			0 \amp 0  \amp 1 \amp 0 \amp -3  \\ 
-			0 \amp 0  \amp 0 \amp 1 \amp 4 
-		\end{array}\right]		
-	</me>
-	corresponds to the system
-	<md alignment="alignat">
-		<mrow>
-			a\amp {}+{} \amp 0b \amp {}+{}\amp 0c\amp {}+{}\amp 0d \amp =\amp -2
-		</mrow>
-		<mrow>
-			0a\amp {}+{}\amp b\amp {}+{}\amp 0c\amp {}+{}\amp 0d \amp =\amp 3
-		</mrow>
-		<mrow>
-			0a\amp {}+{}\amp 0b\amp {}+{}\amp c\amp {}+{}\amp 0d\amp =\amp -3
-		</mrow>
-		<mrow>
-			0a\amp {}+{}\amp 0b\amp {}+{}\amp 0c\amp {}+{}\amp d\amp =\amp 4
-		</mrow>
-	</md>
-		From this system, it is easy to read the solutions <m>a=-2</m>, <m>b=3</m>, <m>c=-3</m>, and <m>d=4</m>.
-</p>
-<p>
-	TI-84 and TI-83 calculators have a command for finding the reduced row echelon form of a matrix.
-</p>
-
-<example>
-	<p>
-		Solve the system
-	<md alignment="alignat">
-		<mrow>
-			a\amp {}+{} \amp 2b \amp {}+{}\amp 4c\amp {}+{}\amp 8d \amp =\amp 12
-		</mrow>
-		<mrow>
-			-2a\amp {}+{}\amp 2b\amp {}-{}\amp 2c\amp {}+{}\amp 2d \amp =\amp 1
-		</mrow>
-		<mrow>
-			6a\amp {}+{}\amp 6b\amp {}+{}\amp 6c\amp {}+{}\amp 6d\amp =\amp 19
-		</mrow>
-		<mrow>
-			4a\amp {}+{}\amp 20b\amp {}-{}\amp 8c\amp {}+{}\amp 14d\amp =\amp 41
-		</mrow>
-	</md>
-	by finding the reduced row echelon form of the augmented matrix.
-	</p>
-<solution>
-	<p>
-		The augmented matrix is
-	<me>
-		\left[ \begin{array}{@{}cccc|c@{}}
-			1 \amp 2  \amp 4 \amp 8 \amp 12  \\ 
-			-2\amp 2  \amp -2\amp 2 \amp 1 \\
-			6 \amp 6  \amp 6 \amp 6 \amp 19  \\ 
-			4 \amp 20 \amp -8\amp 14\amp 41
-		\end{array}\right]		
-	</me>
-	We enter this matrix into the calculator as follows: First access the <em>MATRIX</em> menu by pressing <c>2nd</c> <m>\boxed{x^{-1}}</m> on a TI-84 or<c>MATRX</c>  on a TI-83. You will see the menu shown in <xref ref="fig-GC-matrix-editing" text="type-global"/>a. We will use matrix [A], which is already selected, and we presss <c>→</c><c>→</c> <c>ENTER</c> to <em>EDIT</em> (or enter) the matrix, shown in <xref ref="fig-GC-matrix-editing" text="type-global"/>b.
-	</p>
-	<figure xml:id="fig-GC-matrix-editing"><caption></caption><image source="images/fig-GC-matrix-editing.jpg"  width="60%"><description>GC windows to edit or create a matrix</description></image> </figure>
-	<p>
-		We want to enter a <m>4\times 5</m> matrix, so we press <m>4</m><c>ENTER</c><m>5</m><c>ENTER</c>, and we see the display in <xref ref="fig-GC-matrix-editing2" text="type-global"/>a. Now type in the first row of the matrix, pressing <c>ENTER</c> after each entry. The calculator automatically moves to the second row. Continue filling in the rest of the augmented matrix, as shown in <xref ref="fig-GC-matrix-editing2" text="type-global"/>b.
-	</p>
-	<figure xml:id="fig-GC-matrix-editing2"><caption></caption><image source="images/fig-GC-matrix-editing2.jpg"  width="60%"><description>GC windows of matrices being edited</description></image> </figure>
-	<p>
-		To make sure you have entered the values correctly, press <c>2nd</c><c>MODE</c> to quit to the home screen, then open the matrix menu again. Press <m>1</m><c>ENTER</c> to retrieve matrix [A]; the calculator display should look like <xref ref="fig-GC-matrix-viewing" text="type-global"/>a. To check the rest of the matrix, press the right arrow key until you see the last column, as in <xref ref="fig-GC-matrix-viewing" text="type-global"/>b.
-	</p>
-	<figure xml:id="fig-GC-matrix-viewing"><caption></caption><image source="images/fig-GC-matrix-viewing.jpg"  width="60%"><description>GC windows scrolling to see a matrix</description></image> </figure>
-	<p>
-		We are now ready to compute the reduced row echelon form of the matrix. Access the matrix menu again, but this time press the right arrow once to highlight <em>MATH</em> (<xref ref="fig-GC-matrix-transform" text="type-global"/>a). Scroll down until the rref( command is highlighted, as shown in <xref ref="fig-GC-matrix-transform" text="type-global"/>b, and press <c>ENTER</c>.
-	</p>
-	<figure xml:id="fig-GC-matrix-transform"><caption></caption><image source="images/fig-GC-matrix-transform.jpg"  width="60%"><description>GC windows to manipulate a matrix</description></image> </figure>
-	<p>
-		Finally, enter matrix [A] after the rref( command by pressing <c>2nd</c> <m>\boxed{x^{-1}}</m> <m>1</m><c>)</c> <c>ENTER</c> or <m>MATRX</m> <m>1</m><c>)</c> <c>ENTER</c>. The display should now look like <xref ref="fig-GC-rref" text="type-global"/>a). The last column of the matrix gives decimal approximations for the solutions.
-	</p>
-	<figure xml:id="fig-GC-rref"><caption></caption><image source="images/fig-GC-rref.jpg"  width="60%"><description>GC windows showing rref</description></image> </figure>
-	<p>
-		The calculator can also display the rational form of the solutions: Press <c>MATH</c> <c>ENTER</c> <c>ENTER</c> to see <xref ref="fig-GC-rref" text="type-global"/>b. The reduced row echelon form of the augmented matrix is thus
-		<me>
-			\left[ \begin{array}{@{}cccc|c@{}}
-				1 \amp 0  \amp 0 \amp 0 \amp 2  \\ 
-				0 \amp 1  \amp 0 \amp 0 \amp 1/3 \\
-				0 \amp 0  \amp 1 \amp 0 \amp -2/3  \\ 
-				0 \amp 0  \amp 0 \amp 1 \amp 3/2 
-			\end{array}\right]		
-		</me>and the solution is the ordered four-tuple <m>(2, \dfrac{1}{3}, \dfrac{-2}{3}, \dfrac{3}{2})</m>. You can verify that these values satisfy each of the original four equations.
-	</p>
-</solution></example>
-</technology>
-
-<exercise><statement>
-	<ol label="a">
-		<li><p>
-			Find the row reduced echelon form of the augmented matrix for the system
-			<md alignment="alignat">
-				<mrow>
-					-a\amp {}+{} \amp b \amp {}-{}\amp c\amp {}+{}\amp d \amp =\amp 8
-				</mrow>
-				<mrow>
-					a\amp {}+{}\amp b\amp {}+{}\amp c\amp {}+{}\amp d \amp =\amp 2
-				</mrow>
-				<mrow>
-					8a\amp {}+{}\amp 4b\amp {}+{}\amp 2c\amp {}+{}\amp d\amp =\amp 5
-				</mrow>
-				<mrow>
-					27a\amp {}+{}\amp 9b\amp {}+{}\amp 3c\amp {}+{}\amp d\amp =\amp 4
-				</mrow>
-			</md>
-		</p></li>
-		<li><p>
-			What third degree polynomial has a graph that passes through the points <m>(-1, 8)</m>, <m>(1, 2)</m>, <m>(2, 5)</m>, and <m>(3, 4)</m>?
-		</p></li>
-	</ol>
-</statement>
-<answer><p><ol label="a">
-	<li><p><m>
-		\left[ \begin{array}{@{}cccc|c@{}}
-			1 \amp 0  \amp 0 \amp 0 \amp -1  \\ 
-			0 \amp 1  \amp 0 \amp 0 \amp 4 \\
-			0 \amp 0  \amp 1 \amp 0 \amp -2  \\ 
-			0 \amp 0  \amp 0 \amp 1 \amp 1 
-		\end{array}\right]		
-	</m></p></li>
-	<li><p><m>f (x) = -x^3 + 4x^2 - 2x + 1</m></p></li>
-</ol></p></answer>
-</exercise>
-
-
+<exercise><statement><p>Solve <m>\sec \theta = -1.6</m>  for <m>\theta</m> between <m>0</m> and <m>2\pi</m>.</p></statement></exercise>
 </subsection>
-<xi:include href="./summary-8-3.xml" /> <!-- summary  -->
-<xi:include href="./section-8-3-exercises.xml" /> <!-- exercises  -->
+
+<subsection><title>Using Identities</title>
+<p>	All six of the trigonometric ratios are related.  If we know one of the ratios, we can use identities to find any of the others.</p>
+
+<example><statement><p>If <m>\sec \theta = 3</m>, and <m>-\dfrac{\pi}{2} \le \theta \le 0</m>, find an exact value for <m>\csc \theta</m>.</p></statement>
+
+<solution><p>Because <m>\sec \theta = \dfrac{1}{\cos \theta}</m>, we see that <m>\dfrac{1}{\cos \theta}=3</m>, or <m>\cos \theta = \dfrac{1}{3}</m>. We use the Pythagorean identity to find the sine.
+	\begin{align*}
+	\cos^2 \theta + \sin^2 \theta \amp = 1 \amp \amp \blert{\text{Substitute}~ \frac{1}{3} \text{for}~\cos \theta.}\\
+	(\dfrac{1}{3})^2 + \sin^2 \theta \amp = 1 \amp \amp \blert{\text{Subtract}~ (\frac{1}{3})^2=\frac{1}{9}~ \text{from both sides.}}\\
+	\sin^2 \theta \amp = 1 - \dfrac{1}{9}=\dfrac{8}{9}\\
+	\end{align*}
+Because <m>\theta</m> lies in the fourth quadrant, where the sine function is negative, we choose the negative square root for <m>\sin \theta</m>.  Once we know <m>\sin \theta</m>, we calculate its reciprocal to find <m>\csc\theta</m>.
+<me>\sin \theta = -\sqrt{\dfrac{8}{9}} = \dfrac{-2\sqrt{2}}{3},~~~\text{and}~~~\csc\theta = \dfrac{1}{\sin \theta} = \dfrac{-3}{2\sqrt{2}} = \dfrac{-3\sqrt{2}}{4}</me></p></solution></example>
+
+<exercise><statement><p>If <m>\csc \theta = \dfrac{-\sqrt{13}}{3}</m>, and <m>\pi \le \theta \le \dfrac{3\pi}{2}</m>, find an exact value for <m>\sec \theta</m>.</p></statement></exercise>
+
+<p>	Identities are especially useful if the trig ratios are algebraic expressions, rather than numerical values. In the next example, we use the cotangent identity.</p>
+
+<assemblage><title>Cotangent Identity</title>
+<p><me>\cot \theta = \dfrac{1}{\tan \theta} = \dfrac{\cos \theta}{\sin \theta},~~~~\sin \theta \not=0</me></p></assemblage>
+
+<example><statement><p>If <m>\csc x=w</m> and <m>0 \lt x \lt \dfrac{\pi}{2}</m>, find an expression for <m>\cot x</m>.</p></statement>
+
+<solution><p>Because the sine is the reciprocal of the cosecant, we have <m>\sin x = \dfrac{1}{\csc x} = \dfrac{1}{w}</m>.  We substitute <m>\alert{\dfrac{1}{w}}</m> for <m>\sin x</m> in the Pythagorean identity to find
+<me>\cos x = \pm \sqrt{1 - \sin^2 x} = \pm \sqrt{1 - (\alert{\dfrac{1}{w}})^2}</me>
+We choose the positive root because cosine is positive in the first quadrant, and simplify to get
+<me>\cos x = \sqrt{1 - \dfrac{1}{w^2}} = \sqrt{\dfrac{w^2-1}{w^2}} = \dfrac{\sqrt{w^2 - 1}}{\abs{w}}</me>
+We can replace <m>\abs{w}</m> by <m>w</m> in this last expression because <m>w \gt 0</m>.  (Do you see why <m>w \gt 0</m>?)  Finally, because the cotangent is the reciprocal of the tangent, we have
+<me>\cot x = \dfrac{\cos x}{\sin x} = \dfrac{\dfrac{w^2-1}{w}}{\dfrac{1}{w}}=\sqrt{w^2 - 1}</me></p></solution></example>
+
+<exercise><statement><p>If <m>\sec t = \dfrac{2}{a}</m> and <m>\dfrac{3\pi}{2} \lt t \lt 2\pi</m>, find expressions for <m>\csc t</m> and <m>\cot t</m>.</p></statement></exercise>
+
+<p>	We can often simplify trigonometric expressions by first converting all the trig ratios to sines and cosines.</p>
+
+<example><statement><p>Simplify  <m>\sec \theta - \tan \theta \sin \theta</m>.</p></statement>
+
+<solution><p>We replace <m>\sec \theta</m> by <m>\dfrac{1}{\cos \theta}</m> and <m>\tan \theta</m> by <m>\dfrac{\sin \theta}{\cos \theta}</m> to get
+	\begin{align*}
+		\dfrac{1}{\cos \theta} - \dfrac{\sin \theta}{\cos \theta} \cdot \sin \theta \amp = \dfrac{1}{\cos \theta} - \dfrac{\sin^2 \theta}{\cos \theta}\\
+		\amp = \dfrac{1 - \sin^2 \theta}{\cos \theta} = \dfrac{\cos^2 \theta}{\cos \theta} = \cos \theta\\
+		\end{align*}</p></solution></example>
+
+<p>	In the previous example, you can verify that <m>\sec \theta - \tan \theta \sin \theta = \cos \theta</m> by graphing the functions <m>Y_1=\sec \theta - \tan \theta \sin \theta</m> and <m>Y_2=\cos \theta</m> in the ZTrig window to see that they are the same.</p>
+		
+<exercise><statement><p>Show that <m>\sin^2 x(1+\cot^2 x) = 1</m>.</p></statement></exercise>
+
+<p>	There are two alternate versions of the Pythagorean identity which involve the reciprocal trig functions. These identities are useful when we know the value of <m>\tan \theta</m> or <m>\cot \theta</m> and want to find the other trig values.</p>
+
+<assemblage><title>Two More Pythagorean Identities</title>
+<p><me>1 + \tan^2 \theta = \sec^2\theta~~~~~~~~~~1 + \cot^2\theta = \csc^2 \theta</me></p></assemblage>
+
+<p>	You should memorize these identities, but they are easy to derive from the original Pythagorean identity, <m>\sin^2 \theta + \cos^2 \theta = 1</m>. We will prove them in the Homework problems.</p>
+
+<example><statement><p>If <m>\tan \alpha = \dfrac{3}{5}</m> and <m>\alpha</m> lies in the third quadrant, find exact values for 
+<m>\sec \alpha</m> and <m>\cos \alpha</m>.</p></statement>
+
+<solution><p>We cannot find the sine and cosine of an angle directly from the value of the tangent; in particular, it is not true that <m>\sin \alpha = 3</m> and <m>\cos \alpha = 5</m>!  (Do you see why?) Instead, we begin with the Pythagorean identity for the tangent.
+	\begin{align*}
+		\sec^2 \alpha \amp = 1 + \tan^2 \alpha = 1 + (\dfrac{3}{5})^2\\
+		\amp = \dfrac{25}{25} + \dfrac{9}{25} = \dfrac{34}{25}\\
+		\sec \alpha \amp = \pm \sqrt{\dfrac{34}{25}} = \dfrac{\pm \sqrt{34}}{5}\\
+		\end{align*}
+Because <m>\alpha</m> is in the third quadrant, both its sine and cosine are negative. Therefore the reciprocals of cosine and sine, namely secant and cosecant, must also be negative, and hence <m>\sec \alpha = \dfrac{-\sqrt{34}}{5}</m>. The cosine of <m>\alpha</m> is the reciprocal of the secant, so <m>\cos \alpha = \dfrac{-5}{\sqrt{34}}</m>.</p></solution></example>
+
+<exercise><statement><p>If <m>\cot \phi = \dfrac{-3}{\sqrt{2}}</m> and <m>\phi</m> lies in the second quadrant, find exact values for <m>\csc \phi</m> and <m>\sin \phi</m>.</p></statement></exercise>		
+</subsection>
+
+<subsection><activity><title>Reciprocal Ratios</title><p></p>
+<p>Part 1</p>
+<p>The figure shows a unit circle centered at <m>O</m>.  The line through <m>AC</m> is tangent to the circle at <m>A</m>. (Recall that a tangent to a circle is perpendicular to the radius that meets it.)</p>
+<sidebyside width="40%"><image source="images/8-3-act1.png"><description>circle</description></image></sidebyside>
+<p><ol label="1">
+	<li>What is the radius of the circle?</li>
+	<li>Find line segments whose lengths are <m>\cos \theta</m> and <m>\sin \theta</m>.</li>
+	<li>Explain why <m>\triangle OAC</m> is similar to <m>\triangle OBD</m>.</li>
+	<li>Find a line segment in <m>\triangle OAC</m> whose length is <m>\tan \theta</m>. Explain why your choice is correct.</li>
+	<li>Find a line segment in <m>\triangle OAC</m> whose length is <m>\sec \theta</m>. Explain why your choice is correct.</li>
+	<li>Find a line segment in <m>\triangle OAC</m> whose length is <m>\csc \theta</m>. Explain why your choice is correct.</li>
+</ol></p><p></p>
+<p>Part 2</p>
+<p>Here is another unit circle, with tangent <m>BD</m>.</p>
+<sidebyside width="35%"><image source="images/8-3-act2.png"><description>circle</description></image></sidebyside>
+<p><ol label="1">
+	<li>What is the measure of the angles <m>\angle OCD</m> and <m>\angle OCB</m>?</li>
+	<li>Explain why <m>\triangle OCB</m> is similar to <m>\triangle OAC</m>.</li>
+	<li>Find a line segment in <m>\triangle OCB</m> whose length is <m>\tan \theta</m>. Explain why your choice is correct.</li>
+	<li>Find a line segment in <m>\triangle OCB</m> whose length is <m>\sec \theta</m>. Explain why your choice is correct.</li>
+	<li>Explain why <m>\triangle OCB</m> is similar to <m>\triangle DCO</m>.</li>
+	<li>Find a line segment in <m>\triangle DCO</m> whose length is <m>\csc \theta</m>. Explain why your choice is correct.</li>
+</ol></p></activity>
+</subsection>
+
+ <subsection><title>Algebra Refresher</title>
+
+<exercises>
+	<exercise number="1"><statement><p>Solve <m>\abs{2x-6}=4</m></p></statement></exercise> 
+
+	<exercise number="2"><statement><p>Solve <m>\abs{1-3x}=10</m></p></statement></exercise>
+
+	<exercise number="3"><statement><p>Simplify <m>\sqrt{(x-4)^2}</m></p></statement></exercise>
+
+	<exercise number="4"><statement><p>Simplify <m>\sqrt{(1-x)^2}</m></p></statement></exercise>
+
+	<exercise number="5"><statement><p>For what values of <m>x</m> is <m>\abs{x+2}=x+2</m></p> ?</statement></exercise>
+
+	<exercise number="6"><statement><p>For what values of <m>x</m> is <m>\abs{x-3}=x-3</m></p> ?</statement></exercise>
+
+	<exercise number="7"><statement><p>Graph the function <m>f(x)=\dfrac{x}{\abs{x}}</m>.</p></statement></exercise>
+
+	<exercise number="8"><statement><p>Explain the difference between the graphs of <m>f(x)=(\sqrt{x})^2</m> and <m>g(x)=\sqrt{x^2}</m>.</p></statement></exercise>
+</exercises>
+
+<subsubsection><title>Answers to 8.3 Exercises</title>
+<p><ol label="1">
+	<li><m>\cos \theta = \dfrac{-\sqrt{15}}{4},~\sin \theta = \dfrac{1}{4},~\tan \theta = \dfrac{-1}{\sqrt{15}},~\sec \theta = \dfrac{-4}{\sqrt{15}},~\cot \theta = -\sqrt{15}</m></li>
+	<li><m>1.346</m></li>
+	<li>Multiples of <m>180\degree</m>, or multiples of <m>\pi</m>. </li>
+	<li><p><ol label="a">
+		<li><m>\theta = \dfrac{\pi}{n}</m></li>
+		<li><m>b = \dfrac{L}{n}</m></li>
+		<li><m>h=\dfrac{L}{2n}\cot \dfrac{\pi}{n}</m></li>
+		<li><m>A_T=\dfrac{L^2}{4n^2}\cot \dfrac{\pi}{n},~~A_P=\dfrac{L^2}{4n}\cot \dfrac{\pi}{n}</m></li>
+	</ol></p></li>
+	<li><sidebyside width="50%"><image source="images/exer8-3-5ans.png"><description>graphs</description></image></sidebyside></li>
+	<li>Domain of cosecant: all real numbers except integer multiples of <m>\pi</m>;  Range of cosecant: <m>(-\infty,-1] \cup [1, \infty)</m>; Domain of cotangent:  all real numbers except integer multiples of <m>\pi</m>; Range of cotangent: all real numbers</li>
+	<li><m>\theta = 2.25,~ 4.04</m></li>
+	<li><m>\sec \theta = \dfrac{-\sqrt{13}}{2},~ \cot \theta = \dfrac{2}{3}</m></li>
+	<li><m>\csc t = \dfrac{-2}{\sqrt{1-a^2}},~ \cot t = \dfrac{-a}{\sqrt{1-a^2}}</m></li>
+	<li><m>\sin^2x (1+\cot^2 x) = \sin^2 x(1 + \dfrac{\cos^2 x}{\sin^2 x})=\sin^2 x + \cos^2 x = 1</m></li>
+	<li><m>\csc \phi = \sqrt{\dfrac{11}{2}},~ \sin \phi = \sqrt{\dfrac{2}{11}}</m></li>
+</ol></p></subsubsection>
+
+<subsubsection><title>Algebra Refresher Answers</title>
+<p><ol label="1" cols="2">
+	<li><m>x = 1,~5</m></li>
+	<li><m>x = -3,~\dfrac{11}{3}</m></li>
+	<li><m>\abs{x-4}</m></li>
+	<li><m>\abs{1-x}</m></li>
+	<li><m>x\ge -2</m></li>
+	<li><m>x \lt 3</m></li>
+	<li><sidebyside width="30%"><image source="images/ar8-3-7ans.png"><description>graphs</description></image></sidebyside></li>
+	<li>The domain of <m>f</m> is <m>[0, \infty)</m>, and the domain of <m>g</m> is <m>(-\infty, \infty)</m>.</li>
+	</ol></p></subsubsection>
+</subsection>
+
+<subsection><title>Section 8.3 Summary</title>	
+
+<subsubsection><title>Vocabulary</title>
+<p><ul cols = "4">
+    <li>Reciprocal</li>
+    <li>Secant</li>
+    <li>Cosecant</li>
+    <li>Cotangent</li>
+</ul></p>
+</subsubsection>
+
+<subsubsection><title>Concepts</title>
+<p><ol label="1">
+	<li><assemblage><title>Three More Functions</title>
+<p>If <m>\theta</m> is an angle in standard position, and <m>P(x,y)</m> is a point on the 
+terminal side, then we define the following functions.</p>
+<sidebyside widths="60% 30%"><p>
+         <me>\text{The}~~ \textbf{secant}:~~~~~~      \sec \theta = \dfrac{r}{x}</me>
+         <me>\text{The}~~ \textbf{cosecant}:~~~~      \csc \theta = \dfrac{r}{y}</me>
+         <me>\text{The}~~ \textbf{cotangent}:~~~      \cot \theta =  \dfrac{x}{y}</me></p>                
+<p><image source="images/8-3-1.png"><description>angle</description></image></p></sidebyside></assemblage></li>
+
+	<li><assemblage><title>Reciprocal Trigonometric Ratios</title>
+<p>If <m>\theta</m> is one of the acute angles in a right triangle,</p>
+<sidebyside widths="60% 36%" valigns="middle middle"><p>
+    \begin{align*}
+                \sec \theta \amp = \dfrac{\text{hypotenuse}}{\text{adjacent}} \\
+                \csc \theta \amp = \dfrac{\text{hypotenuse}}{\text{opposite}} \\
+                \cot \theta \amp =  \dfrac{\text{adjacent}}{\text{opposite}}  \\                 
+                \end{align*}
+</p> <image source="images/fig-2-2trigratios"><description>triangle</description></image></sidebyside></assemblage></li>
+
+	<li><assemblage><title>Reciprocal Trigonometric Functions</title>
+<p>
+         <me>\text{The}~~ \textbf{secant} ~\text{function}:~~~~~~      \sec \theta = \dfrac{1}{\cos \theta}</me>
+         <me>\text{The}~~ \textbf{cosecant}~\text{function}:~~~~      \csc \theta = \dfrac{1}{\sin \theta}</me>
+         <me>\text{The}~~ \textbf{cotangent}~\text{function}:~~~      \cot \theta =  \dfrac{1}{\tan \theta}</me></p>            
+</assemblage></li> 
+
+	<li>We can obtain graphs of the secant, cosecant, and cotangent functions as the reciprocals of the three basic functions.</li>
+	<li>We can solve equations of the form <m>\sec \theta = k</m>, <m>\csc \theta = k</m>, and <m>\cot \theta = k</m> by taking the reciprocal of both sides.</li>
+	<li>If we know one of the trigonometric ratios for an angle, we can use identities to find any of the others.</li>
+
+	<li><assemblage><title>Cotangent Identity</title>
+<p><me>\cot \theta = \dfrac{1}{\tan \theta} = \dfrac{\cos \theta}{\sin \theta},~~~~\sin \theta \not=0</me></p></assemblage></li>
+
+	<li><assemblage><title>Two More Pythagorean Identities</title>
+<p><me>1 + \tan^2 \theta = \sec^2\theta~~~~~~~~~~1 + \cot^2\theta = \csc^2 \theta</me></p></assemblage></li>
+
+<li>We can often simplify trigonometric expressions by first converting all the trig ratios to sines and cosines.</li>
+</ol></p>
+</subsubsection>
+
+<subsubsection><title>Study Questions</title>
+<p><ol label="1">
+<li>Delbert says that <m>\sec x</m> is just another way of writing <m>\cos^{-1} x</m>, because <m>\cos^{-1} x = \dfrac{1}{\cos x}</m>. Is he correct?  Explain your reasoning.</li>
+<li>Each of the following functions is related to the sine function in a different way. Explain how.
+	<me>\cos x,~~\csc x,~~\text{and} ~~\sin^{-1} x</me></li>
+<li>Using Study Question #2 as an example, name three functions related to the tangent function, and explain how they are related.</li>
+<li>Why do the graphs of <m>y=\csc x</m> and <m>y = \cot x</m>  have vertical asymptotes at the same <m>x</m>-values?</li>
+</ol></p></subsubsection>
+
+<subsubsection><title>Skills</title>
+<p><ol label="1">
+<li>Evaluate the reciprocal trig functions for angles in degrees or radians    #1-20</li>
+<li>Find values or expressions for the six trig ratios    #21-28</li>
+<li>Evaluate the reciprocal trig functions in applications    #29-32</li>
+<li>Given one trig ratio, find the others    #33-46, 71-80</li>
+<li>Evaluate expressions exactly    #47-52</li>
+<li>Graph the secant, cosecant, and cotangent functions    #53-58</li>
+<li>Identify graphs of the reciprocal trig functions    #59-64</li>
+<li>Solve equations in secant, cosecant, and cotangent    #65-70</li>
+<li>Use identities to simplify or evaluate expressions    #81-94</li></ol></p>
+</subsubsection>
+</subsection>
+<!--<xi:include href="./summary-8-1.xml" /> summary  -->
+<!--<xi:include href="./section-8-1-exercises.xml" /> exercises  -->
 </section> 
 <!-- </book>  </mathbook> -->

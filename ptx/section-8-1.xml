@@ -1,1228 +1,404 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!-- <mathbook><book> -->
 
-<section xml:id="Systems-of-Linear-Equations-in-Two-Variables"   xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Systems of Linear Equations in Two Variables</title>
+<section xml:id="Sum-and-Difference-Formulas"   xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Sum and Difference Formulas</title>
 <introduction>
-<p>
-	Systems of linear equations are some of the most useful and widely used mathematical tools for solving problems. Systems involving hundreds of variables and equations are not uncommon in applications such as scheduling airline flights or routing telephone calls.
-</p>
+<p>In Chapter 5 we studied identities that relate the three trigonometric functions sine, cosine, and tangent.</p>
+
+<assemblage><p>
+	\begin{align*}
+	\amp \text{Pythagorean identity}  \amp\amp      \sin^2 \theta + \cos^2 \theta = 1\\ 
+	\amp \text{Tangent identity}      \amp\amp       \tan \theta = \dfrac{\sin \theta}{\cos \theta}\\
+	\end{align*}</p>
+</assemblage>
+
+<p>If we know one of the three trig values for an angle, we can find the other two by using these identities.  Identities are useful for changing from one form to another when solving equations, and for finding exact values for trigonometric functions.</p>  
+<p>	Are there identities relating the trig ratios of different angles?  For example, if we know the sine of <m>27\degree</m>, can we find the sine of <m>2(27\degree)=54\degree</m> without using a calculator?  Or, if we know <m>\cos \alpha</m> and <m>\cos \beta</m>, can we calculate <m>\cos (\alpha + \beta)</m>?</p>  
 </introduction>
-<subsection><title>Solving Systems by Graphing</title>
-<p>
-	A biologist wants to know the average weights of two species of birds in a wildlife preserve. She sets up a feeder whose platform is actually a scale and mounts a camera to monitor the feeder. She waits until the feeder is occupied only by members of the two species she is studying, robins and thrushes. Then she takes a picture, which records the number of each species on the scale and the total weight registered.
-</p>
-<p>
-	From her two best pictures, she obtains the following information. The total weight of three thrushes and six robins is <m>48</m> ounces, and the total weight of five thrushes and two robins is <m>32</m> ounces. Using these data, the biologist estimates the average weight of a thrush and of a robin. She begins by assigning variables to the two unknown quantities:
-	<md>
-		<mrow>
-			\amp\text{Average weight of a thrush:} ~~t			
-		</mrow>
-		<mrow>
-			\amp\text{Average weight of a robin:} ~~r			
-		</mrow>
-	</md>
-</p>
-<p>
-	Because there are two variables, the biologist must write two equations about the weights of the birds. In each of the two photos,
-	<me>
-		(\text{weight of thrushes}) + (\text{weight of robins}) = \text{total weight}
-	</me>
-	Thus,
-	<md alignment="alignat">
-        <mrow>3t \amp {}+{} \amp  6r  {}\amp={} \amp 48</mrow>
-        <mrow>5t \amp {}+{} \amp 2r  {}\amp={} \amp 32</mrow>
-	</md>
-</p>
-<sidebyside widths="55% 35%">
-<p valign="middle">
-	Thus,
-	<md alignment="alignat">
-        <mrow>3t \amp {}+{} \amp  6r  {}\amp={} \amp 48</mrow>
-        <mrow>5t \amp {}+{} \amp 2r  {}\amp={} \amp 32</mrow>
-	</md>
-	This pair of equations is an example of a <term>linear system</term><idx>linear system</idx> <term>of two equations in two unknowns</term> (or a <m>2\times 2</m> linear system, for short). A <term>solution</term><idx>solution</idx> to the system is an ordered pair of numbers, <m>(t, r)</m>, that satisfies both equations in the system.
-</p>
-<figure  valign="middle" xml:id="fig-2x2-linear-system"><caption></caption><image source="images/fig-2x2-linear-system" ><description>graph of two linear equations</description></image> </figure>
-</sidebyside>
-<p>
-	Recall that every point on the graph of an equation represents a solution to that equation. A solution to <em>both</em> equations corresponds to a point on both graphs. Therefore, a solution to the system is a point where the two graphs intersect.</p>
-	<p> From <xref ref="fig-2x2-linear-system" text="type-global"/>, it appears that the intersection point is <m>(4, 6)</m>, so we expect that the values <m>t=\alert{4}</m> and <m>r=\blert{6}</m> form the solution to the system. We can check by verifying that these values satisfy <em>both</em> equations in the system.
-	<md>
-		<mrow>
-			3(\alert{4}) + 6(\blert{6})\amp\stackrel{?}{=}48 \amp\amp\text{True}
-		</mrow>
-		<mrow>
-			5(\alert{4}) + 2(\blert{6})\amp\stackrel{?}{=}32 \amp\amp\text{True}
-		</mrow>
-	</md>
-	Both equations are true, so we conclude that the average weight of a thrush is <m>4</m> ounces, and the average weight of a robin is <m>6</m> ounces.
-</p>
-<p>
-	We can obtain graphs for the equations in a system quickly and easily using a calculator.
-</p>
-<example xml:id="example-GC-2x2-system">
-	<p>
-		Use your calculator to solve the system by graphing.
-		<md>
-			<mrow>
-				y \amp = 1.7x + 0.4
-			</mrow>
-			<mrow>
-				y \amp = 4.1x + 5.2
-			</mrow>
-		</md>
-	</p>
-<solution>
-	<p>
-		We set the graphing window to
-		<md>
-			<mrow>
-				\text{Xmin} \amp = -9.4 \amp\amp \text{Xmax} = 9.4
-			</mrow>
-			<mrow>
-				\text{Ymin} \amp = -10 \amp\amp \text{Ymax} = 10
-			</mrow>
-		</md>
-		and enter the two equations. We can see in <xref ref="fig-GC-2x2-system" text="type-global"/> that the two lines intersect in the third quadrant. We use the <c>TRACE</c> key to find the coordinates of the intersection point, <m>(-2,-3)</m>. The solution to the system is <m>x = -2</m>, <m>y=-3</m>.
-		<figure xml:id="fig-GC-2x2-system"><caption></caption><image source="images/fig-GC-2x2-system"  width="40%"><description>GC display of 2 lines intersecting in 3rd quadrant</description></image> </figure>
-	</p>
-</solution></example>
 
-<note><p>
-	The values we obtain from a calculator may be only approximations, so it is a good idea to check the solution algebraically. In <xref ref="example-GC-2x2-system" text="type-global"/>, we find that both equations are true when we substitute <m>x = \alert{-2}</m> and <m>y=\blert{-3}</m>.
-	<md>
-		<mrow>
-			\blert{-3}\amp = 1.7(\alert{-2})+0.4\amp\amp\text{True}
-		</mrow>
-		<mrow>
-			\blert{-3}\amp = 4.2(\alert{-2})+5.2\amp\amp\text{True}
-		</mrow>
-	</md>
-</p></note>
+<subsection><title>The Sum of Angles Identities</title>
+<p>	All of the identities that relate the trig ratios of different angles are derived from the sum and difference formulas.  Let's see why we need these formulas.</p>
+<p>	Is it true that
+	<me>\cos (\alpha + \beta)~~~~\text{and}~~~~\cos \alpha + \cos \beta</me>
+are equal for any values of <m>\alpha</m> and <m>\beta</m> ?  We can test this hypothesis by evaluating both expressions for some specific values of <m>\alpha</m> and <m>\beta</m>, say <m>\alpha=45\degree</m> and <m>\beta=30\degree</m>, as shown below.</p>
 
-<exercise><statement>
-	<p>
-		<ol label="a">
-			<li><p>
-				Solve the system of equations
-				<md>
-					<mrow>
-						y \amp = -0.7x + 6.9
-					</mrow>
-					<mrow>
-						y \amp =1.2x - 6.4
-					</mrow>
-				</md>
-				by graphing. Use the window
-				<md>
-					<mrow>
-						\text{Xmin} \amp = -9.4 \amp\amp \text{Xmax} = 9.4
-					</mrow>
-					<mrow>
-						\text{Ymin} \amp = -10 \amp\amp \text{Ymax} = 10
-					</mrow>
-				</md>
-			</p></li>
-		</ol>
-	</p>
-</statement>
-<answer><p><m>(7, 2)</m></p></answer>
-</exercise>
+<sidebyside width="70%"><image source="images/8-1-1.png"><description>circles</description></image></sidebyside>
 
-<technology><title><!--<image source="images/icon-GC.jpg"  width="8%"><description>Graphing Calculator</description></image>-->Using the Intersect Feature to Solve a System</title>
-<p>
-	Because the <c>TRACE</c> feature does not show every point on a graph, we may not find the exact solution to a system by tracing the graphs.  In the next Example we demonstrate the <em>intersect</em> feature of the calculator.
-</p>
+<p>	From the figure, you should be able to see that <m>\cos 75\degree</m> is in fact smaller than either <m>\cos 45\degree</m> or <m>\cos 30\degree</m>, so it cannot be true that <m>\cos 75\degree</m> is equal to <m>\cos 45\degree + \cos 30\degree</m>.</p>
 
-<example>
-	<p>
-		Solve the system
-		<md>
-			<mrow>
-				3x - 2.8y \amp= 21.06
-			</mrow>
-			<mrow>
-				2x + 1.2y \amp= 5.3
-			</mrow>
-		</md>
-	</p>
-<solution>
-	<p>
-		We can graph this system in the standard window by solving each equation for <m>y</m>. We enter
-		<md>
-			<mrow>
-				Y_1\amp = (21.06 - 3X)/-2.8
-			</mrow>
-			<mrow>
-				Y_2\amp  = (5.3 - 2X)/1.2
-			</mrow>
-		</md>
-		and then press <c>ZOOM</c> <m>6</m>. (Do not forget the parentheses around the numerator of each expression.)</p> 
-		<p> We Trace along the first line to find the intersection point. It appears to be at <m>x=4.468051</m>, <m>y =-2.734195</m>, as shown in <xref ref="fig-GC-2x2-system2" text="type-global"/>a. However, if we press the up or down arrow to read the coordinates off the second line, we see that for the same <m>x</m>-coordinate we obtain a different <m>y</m>-coordinate, as in <xref ref="fig-GC-2x2-system2" text="type-global"/>b.</p> 
-		<p>The different <m>y</m>-coordinates indicate that we have not found an intersection point, although we are close. The <em>intersect</em> feature can give us a better estimate, <m>x = 4.36</m>, <m>y = -2.85</m>.
-		<figure xml:id="fig-GC-2x2-system2"><caption></caption><image source="images/fig-GC-2x2-system2"  width="80%"><description>GC display of 2 lines intersecting in 4th quadrant</description></image> </figure>
-		We can substitute these values into the original system to check that they satisfy both equations.
-		<md>
-			<mrow>
-				3(\alert{4.36}) - 2.8(\blert{-2.85}) \amp = 21.06
-			</mrow>
-			<mrow>
-				2(\alert{4.36}) + 1.2(\blert{-2.85}) \amp = 5.3
-			</mrow>
-		</md>
-	</p>
-</solution></example></technology>
+<example><statement><p>Verify that <m>\cos (45\degree + 30\degree)</m> is not equal to <m>\cos 45\degree + \cos 30\degree</m>.</p></statement>
+<solution><p>Use your calculator to evaluate each expression.
+	\begin{align*}
+		\cos (45\degree + 30\degree) \amp = \cos 75\degree = 0.2588\\
+		\text{but}  \cos 45\degree + \cos 30\degree \amp = 0.7071 + 0.8660 = 1.5731\\
+		\end{align*}
+The two expressions are not equal.</p></solution></example>
 
-<exercise><statement>
-	<p>
-		Solve the system of equations
-		<md>
-			<mrow>
-				y = 47x - 1930
-			</mrow>
-			<mrow>
-				y + 19x = 710
-			</mrow>
-		</md>
-		by graphing. Use the <em>intersect</em> feature in the window
-		<md>
-			<mrow>
-				\text{Xmin} \amp = 0 \amp\amp \text{Xmax} = 94
-			</mrow>
-			<mrow>
-				\text{Ymin} \amp = -2000 \amp\amp \text{Ymax} = 1000
-			</mrow>
-		</md>
-	</p>
-</statement>
-<answer><p><m>(40,-50)</m></p></answer>
-</exercise>
+<exercise><statement><p>Show that <m>\sin(60\degree + 30\degree)</m> is not equal to <m>\sin 60\degree + \sin 30\degree</m>.</p></statement></exercise>
 
-<p>
-	In previous algebra courses, you learned two algebraic techniques for solving <m>2\times 2</m> linear systems: <term>substitution</term> and <term>elimination</term>. See Algebra Skills Refresher <xref ref="appendix-Linear-Systems-in-Two-Variables"/> if you would like to review these techniques.
-</p>
-<example>
-	<p>
-		Rani kayaks downstream for <m>45</m> minutes and travels a distance of <m>6000</m> meters. On the return journey upstream, she covers only <m>4800</m> meters in <m>45</m> minutes. How fast is the current in the river, and how fast would Rani kayak in still water? (Give your answers in meters per minute.)
-	</p>
-<solution>
-	<p>
-<!--		<dl>
-			<li><title>Step 1: </title><p>
-				<tabular>
-					<row>
-						<cell>Rani's speed in still water:</cell>
-						<cell><m>r</m></cell>
-					</row>
-					<row>
-						<cell>Speed of the current:</cell>
-						<cell><m>s</m></cell>
-					</row>
-				</tabular>
-			</p></li>
-			<li><title>Step 2:</title><p>
-				We must write two equations using the variables <m>r</m> and <m>s</m>. First, we organize the information into a table. When Rani travels downstream, the current in the river helps her, so her effective speed is <m>r+s</m>. When she travels upstream she is fighting the current, so her speed is actually <m>r-s</m>.
-				<tabular top="minor" left="minor" right="minor" bottom="minor"><col /><col halign="center"/><col halign="center"/><col halign="center"/>
-					<row>
-						<cell></cell>
-						<cell>Rate</cell>
-						<cell>Time</cell>
-						<cell>Distance</cell>
-					</row>
-					<row>
-						<cell>Downstream</cell>
-						<cell><m>r+s</m></cell>
-						<cell><m>45</m></cell>
-						<cell><m>6000</m></cell>
-					</row>
-					<row>
-						<cell>Upstream</cell>
-						<cell><m>r-s</m></cell>
-						<cell><m>45</m></cell>
-						<cell><m>4800</m></cell>
-					</row>
-				</tabular></p>
-				<p>
-				Using the formula <m>\text{rate} \times \text{time} = \text{distance}</m>, we write one equation describing Rani's journey downstream, and a second equation for the journey upstream.
-				<md>
-					<mrow>
-						(r + s) \cdot 45 \amp = 6000
-					</mrow>
-					<mrow>
-						(r - s) \cdot 45 \amp = 4800
-					</mrow>
-				</md>
-				We apply the distributive law to write each equation in standard form.
-				<md>
-					<mrow>
-						45r + 45s \amp = 6000 \amp\amp(1)
-					</mrow>
-					<mrow>
-						45r - 45s \amp = 4800 \amp\amp(2)
-					</mrow>
-				</md>
-			</p></li>
-			<li><title>Step 3:</title><p>
-				To solve the system, we eliminate the variable <m>s</m> by adding the two equations vertically.
-				<table><tabular halign="right">
-					<row>
-						<cell><m>45r</m></cell>
-						<cell><m>+</m></cell>
-						<cell><m>45s</m></cell>
-						<cell><m>=</m></cell>
-						<cell><m>-6000</m></cell>
-					</row>
-					<row>
-						<cell bottom="minor"><m>+45r</m></cell>
-						<cell bottom="minor"><m>-</m></cell>
-						<cell bottom="minor"><m>45s</m></cell>
-						<cell bottom="minor"><m>=</m></cell>
-						<cell bottom="minor"><m>4800</m></cell>
-					</row>
-					<row>
-						<cell><m>90r</m></cell>
-						<cell><m></m></cell>
-						<cell><m></m></cell>
-						<cell><m>=</m></cell>
-						<cell><m>10,800</m></cell>
-					</row>
-				</tabular></table>
-				We now have an equation in one variable only, which we can solve for <m>r</m>.
-				<md>
-					<mrow>
-						90r \amp = 10,800\amp\amp\text{Divide both sides by 90.}
-					</mrow>
-					<mrow>
-						r \amp = 120
-					</mrow>
-				</md>
-				To solve for <m>s</m> we substitute <m>r = 120</m> into any previous equation involving both <m>r</m> and <m>s</m>. We will use Equation (1).
-				<md>
-					<mrow>
-						45(120) + 45s\amp = 6000 \amp\amp\text{Simplify the left side.}
-					</mrow>
-					<mrow>
-						5400 + 45s \amp = 6000 \amp\amp\text{Subtract 5400 from both sides.}
-					</mrow>
-					<mrow>
-						45s \amp = 600 \amp\amp\text{Divide both sides by 45; reduce.}
-					</mrow>
-					<mrow>
-						s\amp = \frac{40}{3}
-					</mrow>
-				</md>
-			</p></li>
-			<li><title>Step 4: </title><p>
-				The speed of the current is <m>\frac{40}{3}</m>, or <m>13\frac{1}{3} </m> meters per minute, and Rani's speed in still water is <m>120</m> meters per minute.
-			</p></li>
-		</dl>
-	-->
-		<ol label="1">
-			<li><paragraphs><p>First, we choose variables for the two unknown quantities.
-				<p></p>
-				<tabular>
-					<row>
-						<cell>Rani's speed in still water:</cell>
-						<cell><m>r</m></cell>
-					</row>
-					<row>
-						<cell>Speed of the current:</cell>
-						<cell><m>s</m></cell>
-					</row>
-				</tabular>
-			</p></paragraphs></li>
-			<li><paragraphs><p>
-				We must write two equations using the variables <m>r</m> and <m>s</m>.</p>
-				<p></p>
-				<p> First, we organize the information into a table. When Rani travels downstream, the current in the river helps her, so her effective speed is <m>r+s</m>. When she travels upstream she is fighting the current, so her speed is actually <m>r-s</m>.</p>
-				<p></p><p>
-				<sidebyside><tabular top="minor" left="minor" right="minor" bottom="minor"><col /><col halign="center"/><col halign="center"/><col halign="center"/>
-					<row>
-						<cell></cell>
-						<cell>Rate</cell>
-						<cell>Time</cell>
-						<cell>Distance</cell>
-					</row>
-					<row>
-						<cell>Downstream</cell>
-						<cell><m>r+s</m></cell>
-						<cell><m>45</m></cell>
-						<cell><m>6000</m></cell>
-					</row>
-					<row>
-						<cell>Upstream</cell>
-						<cell><m>r-s</m></cell>
-						<cell><m>45</m></cell>
-						<cell><m>4800</m></cell>
-					</row>
-				</tabular></sidebyside></p>
-				<p>
-				Using the formula <m>\text{rate} \times \text{time} = \text{distance}</m>, we write one equation describing Rani's journey downstream, and a second equation for the journey upstream.
-				<md>
-					<mrow>
-						(r + s) \cdot 45 \amp = 6000
-					</mrow>
-					<mrow>
-						(r - s) \cdot 45 \amp = 4800
-					</mrow>
-				</md>
-				We apply the distributive law to write each equation in standard form.
-				<md>
-					<mrow>
-						45r + 45s \amp = 6000 \amp\amp(1)
-					</mrow>
-					<mrow>
-						45r - 45s \amp = 4800 \amp\amp(2)
-					</mrow>
-				</md>
-			</p></paragraphs></li>
-			<li><paragraphs>
-				<p>To solve the system, we eliminate the variable <m>s</m> by adding the two equations vertically.</p>
-				<p><sidebyside><tabular halign="right">
-					<row>
-						<cell><m>45r</m></cell>
-						<cell><m>+</m></cell>
-						<cell><m>45s</m></cell>
-						<cell><m>=</m></cell>
-						<cell><m>-6000</m></cell>
-					</row>
-					<row>
-						<cell bottom="minor"><m>+45r</m></cell>
-						<cell bottom="minor"><m>-</m></cell>
-						<cell bottom="minor"><m>45s</m></cell>
-						<cell bottom="minor"><m>=</m></cell>
-						<cell bottom="minor"><m>4800</m></cell>
-					</row>
-					<row>
-						<cell><m>90r</m></cell>
-						<cell><m></m></cell>
-						<cell><m></m></cell>
-						<cell><m>=</m></cell>
-						<cell><m>10,800</m></cell>
-					</row>
-				</tabular></sidebyside></p>
-				<p>We now have an equation in one variable only, which we can solve for <m>r</m>.
-				<md>
-					<mrow>
-						90r \amp = 10,800\amp\amp\text{Divide both sides by 90.}
-					</mrow>
-					<mrow>
-						r \amp = 120
-					</mrow>
-				</md></p>
-				<p>To solve for <m>s</m> we substitute <m>r = 120</m> into any previous equation involving both <m>r</m> and <m>s</m>. We will use Equation (1).
-				<md>
-					<mrow>
-						45(120) + 45s\amp = 6000 \amp\amp\text{Simplify the left side.}
-					</mrow>
-					<mrow>
-						5400 + 45s \amp = 6000 \amp\amp\text{Subtract 5400 from both sides.}
-					</mrow>
-					<mrow>
-						45s \amp = 600 \amp\amp\text{Divide both sides by 45; reduce.}
-					</mrow>
-					<mrow>
-						s\amp = \frac{40}{3}
-					</mrow>
-				</md>
-			</p></paragraphs> </li>
-			<li><p>
-				The speed of the current is <m>\dfrac{40}{3}</m>, or <m>13\dfrac{1}{3} </m> meters per minute, and Rani's speed in still water is <m>120</m> meters per minute.
-			</p></li>
-		</ol>
-	</p>
-</solution></example>
+<warning><p>  Because the values of the expressions in Example 1 and in Exercise 1 are different, it is not true that <m>\cos (\alpha + \beta)</m> is equal to <m>\cos \alpha + \cos \beta</m> for all angles <m>\alpha</m> and <m>\beta</m>, or that <m>\sin (\alpha + \beta)</m> is equal to <m>\sin \alpha + \sin \beta</m>.</p>  
+<p>It turns out that there is a relationship between the trig ratios for <m>\alpha + \beta</m>  and the trig ratios of <m>\alpha</m> and <m>\beta</m>, but it is a little more complicated.</p></warning> 
 
-<exercise><statement>
-	<p>
-		It took Leon <m>7</m> hours to fly the same distance that Marlene drove in <m>21</m> hours. Leon flies <m>120</m> miles per hour faster than Marlene drives. At what speed did each travel?</p>
-		<p>
-		<ol>
-			<li>
-				Choose variables for the unknown quantities, and fill in the table.
-				<tabular top="minor" left="minor" right="minor" bottom="minor"><col /><col halign="center"/><col halign="center"/><col halign="center"/>
-					<row>
-						<cell></cell>
-						<cell>Rate</cell>
-						<cell>Time</cell>
-						<cell>Distance</cell>
-					</row>
-					<row>
-						<cell>Leon</cell>
-						<cell><m></m></cell>
-						<cell><m></m></cell>
-						<cell><m></m></cell>
-					</row>
-					<row>
-						<cell>Marlene</cell>
-						<cell><m></m></cell>
-						<cell><m></m></cell>
-						<cell><m></m></cell>
-					</row>
-				</tabular>
-			</li><p></p>
-			<li><p>
-				Write one equation about the Leon's and Marlene's speeds.
-			</p></li>
-			<li><p>
-				Write a second equation about distances.
-			</p></li>
-			<li><p>
-				Solve the system and answer the question in the problem.
-			</p></li>
-		</ol>
-	</p>
-</statement>
-<answer><p><ol label="a">
-	<li><p>
-		<tabular top="minor" left="minor" right="minor" bottom="minor"><col /><col halign="center"/><col halign="center"/><col halign="center"/>
-			<row>
-				<cell></cell>
-				<cell>Rate</cell>
-				<cell>Time</cell>
-				<cell>Distance</cell>
-			</row>
-			<row>
-				<cell>Leon</cell>
-				<cell><m>x</m></cell>
-				<cell><m>7</m></cell>
-				<cell><m>7x</m></cell>
-			</row>
-			<row>
-				<cell>Marlene</cell>
-				<cell><m>y</m></cell>
-				<cell><m>21</m></cell>
-				<cell><m>21y</m></cell>
-			</row>
-		</tabular>
-	</p></li>
-	<li><p><m>x=y+ 120</m> or <m>x - y =120</m></p></li>
-	<li><p><m>7x = 21y</m></p></li>
-	<li><p><m>(180, 60)</m>. Leon flies at <m>180</m> mph; Marlene drives at <m>60</m> mph.</p></li>
-</ol></p></answer>
-</exercise>
+<assemblage><title>Sum of Angles Identities</title><p>
+<me>\cos (\alpha + \beta) = \cos \alpha \cos \beta - \sin \alpha \sin \beta</me>
+<me>\sin (\alpha + \beta) = \sin \alpha \cos \beta + \cos \alpha \sin \beta</me></p>
+</assemblage>
 
-</subsection>
+<p>	Notice that to find the sine or cosine of <m>\alpha + \beta</m> we must know (or be able to find) both trig ratios for both  and <m>\alpha</m> and <m>\beta</m>.</p>  
+<p>	The sum and difference formulas can be used to find exact values for trig ratios of various angles.</p>
 
+<example><statement><p>Find an exact value for <m>\cos 105\degree</m>.</p></statement>
 
+<solution><p>We can write <m>105\degree</m> as the sum of two special angles: <m>105\degree = 60\degree + 45\degree</m>.  Now apply the addition formula for cosine.
+\begin{align*}
+		\cos (60\degree + 45\degree) \amp = \cos 60\degree \cos 45\degree - \sin 60\degree \sin 45\degree\\
+		\amp = \dfrac{1}{2} \dfrac{\sqrt{2}}{2}-\dfrac{\sqrt{3}}{2} \dfrac{\sqrt{2}}{2} = \dfrac{\sqrt{2}-\sqrt{6}}{4}\\
+	\end{align*}
+Thus, <m>\cos 105\degree = \dfrac{\sqrt{2}-\sqrt{6}}{4}</m>. You can check that your calculator gives the same decimal approximation of about <m>-0.2588</m> for both <m>\cos 105\degree</m> and <m>\dfrac{\sqrt{2}-\sqrt{6}}{4}</m>.</p></solution></example>
 
-<subsection><title>Inconsistent and Dependent Systems</title>
-<p>
-	Because two straight lines do not always intersect at a single point, a <m>2\times 2</m> system of linear equations does not always have a unique solution. In fact, there are three possibilities, as illustrated in <xref ref="fig-3-cases-2x2-systems" text="type-global"/>.
-	<figure xml:id="fig-3-cases-2x2-systems"><caption></caption><image source="images/fig-3-cases-2x2-systems"  width="80%"><description>3 cases for 3x3 linear system, namely two coincident lines, two parallel lines, or two lines intersecting in a single point</description></image> </figure>
-	<ol label="*a*">
-		<li><p>
-			The graphs may be the same line, as shown in <xref ref="fig-3-cases-2x2-systems" text="type-global"/>a.
-		</p></li>
-		<li><p>
-			The graphs may be parallel but distinct lines, as shown in <xref ref="fig-3-cases-2x2-systems" text="type-global"/>b.
-		</p></li>
-		<li><p>
-			The graphs may intersect in one and only one point, as shown in <xref ref="fig-3-cases-2x2-systems" text="type-global"/>c.
-		</p></li>
-	</ol>
-</p>
+<exercise><statement><p>Find an exact value for <m>\sin 75\degree</m>.</p></statement></exercise>
 
-<example xml:id="example-inconsistent-system">
-	<p>
-		Solve the system
-		<md>
-			<mrow>
-				y = -x + 5
-			</mrow>
-			<mrow>
-				2x + 2y = 3
-			</mrow>
-		</md>
-	</p>
-<solution>
-	<p>
-		We use the calculator to graph both equations on the same axes, as shown in <xref ref="fig-GC-parallel-lines" text="type-global"/>. First, we rewrite the second equation in slope-intercept form by solving for <m>y</m>.
-		<md>
-			<mrow>
-				2x + 2y \amp = 3\amp\amp\text{Substract } 2x \text{ from both sides.}
-			</mrow>
-			<mrow>
-				2y \amp = -2x + 3\amp\amp\text{Divide both sides by 2.}
-			</mrow>
-			<mrow>
-				y \amp = -x + 1.5
-			</mrow>
-		</md>
-		Next, we enter the equations as
-		<md>
-			<mrow>
-				Y_1 \amp= -X + 5
-			</mrow>
-			<mrow>
-				Y_2 \amp = -X + 1.5
-			</mrow>
-		</md>
-		<figure xml:id="fig-GC-parallel-lines"><caption></caption><image source="images/fig-GC-parallel-lines"  width="40%"><description>GC parallel lines</description></image> </figure>
-		The lines do not intersect within the viewing window; they appear to be parallel. If we look again at the equations of the lines, we recognize that both have slope <m>-1</m> but different <m>y</m>-intercepts, so they are parallel. Because parallel lines never meet, there is no solution to the system.
-	</p>
-</solution></example>
+<p>Of course, the sum formulas hold for angles in radians as well as degrees.</p>
 
-<p>
-	A system with no solutions, such as the system in <xref ref="example-inconsistent-system" text="type-global"/>, is called <term>inconsistent</term><idx>inconsistent</idx>. A <m>2\times 2</m> system of linear equations is inconsistent when the two equations correspond to parallel lines. This situation occurs when the lines have the same slope but different <m>y</m>-intercepts.
-</p>
+<example><statement><p>Suppose that <m>\sin \theta = 0.6</m> and <m>\cos \theta = -0.8</m>. Find an exact value for <m>\sin(\theta + \dfrac{2\pi}{3})</m>.</p></statement>
 
-<exercise><statement>
-	<p>
-		Without graphing, show that the following system is inconsistent:
-		<md>
-			<mrow>
-				3y = \frac{3}{2}x - 1
-			</mrow>
-			<mrow>
-				2x - 4y = 3
-			</mrow>
-		</md>
-	</p>
-</statement>
-<answer><p>Both lines have slope <m>\frac{1}{2}</m>.</p></answer>
-</exercise>
+<solution><p>Recall that <m>\sin \dfrac{2\pi}{3} = \dfrac{\sqrt{3}}{2}</m> and <m>\cos \dfrac{2\pi}{3} = \dfrac{-1}{2}</m>.  Substituting these values into the sum formula for sine, we find
+	\begin{align*}
+	\sin(\theta + \dfrac{2\pi}{3}) \amp = \sin \theta \cos \dfrac{2\pi}{3} +\cos \theta	\sin \dfrac{2\pi}{3}\\
+	\amp = 0.6 (\dfrac{-1}{2}) +(-0.8)(\dfrac{\sqrt{3}}{2})\\
+	\amp = \dfrac{3}{5} \cdot \dfrac{-1}{2} + \dfrac{-4}{5} \cdot \dfrac{\sqrt{3}}{2} = \dfrac{-3-4\sqrt{3}}{10}\\
+	\end{align*}
+</p></solution></example>
 
-<p>
-	A linear system with infinitely many solutions is called <term>dependent</term><idx>dependent</idx>. A <m>2\times 2</m> system is dependent when the two equations actually describe the same line. This situation occurs when the two lines have the same slope <em>and</em> the same <m>y</m>-intercept.
-</p>
-
-<example>
-	<p>
-		Solve the system
-		<md>
-			<mrow>
-				x = \frac{2}{3}y + 3
-			</mrow>
-			<mrow>
-				3x - 2y = 9
-			</mrow>
-		</md>
-	</p>
-<solution>
-	<p>
-		We begin by putting each equation in slope-intercept form.
-		<md>
-			<mrow>
-				x \amp = \frac{2}{3}y + 3\amp\amp\text{Subtract 3.}				
-			</mrow>
-			<mrow>
-				x -3\amp = \frac{2}{3}y \amp\amp\text{Multiply by }	\frac{3}{2}.							
-			</mrow>
-			<mrow>
-				\frac{3}{2}x-\frac{9}{2}\amp = y
-			</mrow>
-		</md>
-		For the second equation,
-		<md>
-			<mrow>
-				3x - 2y \amp = 9  \amp\amp\text{Subtract }	3x.
-			</mrow>
-			<mrow>
-				-2y \amp = -3x + 9  \amp\amp\text{Divide by } -2.
-			</mrow>
-			<mrow>
-				y \amp = \frac{3}{2}x - \frac{9}{2}
-			</mrow>
-		</md>
-		The two equations are actually different forms of the same equation. Because they are equivalent, they share the same line as a graph, as shown in <xref ref="fig-coincident-lines" text="type-global"/>. Every point on the first line is also a point on the second line, so every solution to the first equation is also a solution of the second equation. Thus, the system has infinitely many solutions.
-		<figure xml:id="fig-coincident-lines"><caption></caption><image source="images/fig-coincident-lines"  width="30%"><description>one line with two equations</description></image> </figure>
-	</p>
-</solution></example>
-
-<p>
-	Here is a summary of the three cases for a <m>2\times 2</m> system of linear equations.
-</p>
-
-<assemblage><title>Solutions of <m>2\times 2</m> Linear Systems</title>
-<p>
-	<ol label="*1*">
-		<li><p>
-			<term>Dependent system</term><idx>dependent system</idx>. All the solutions of one equation are also solutions to the second equation and hence are solutions of the system. The graphs of the two equations are the same line. A dependent system has infinitely many solutions.
-		</p></li>
-		<li><p>
-			<term>Inconsistent system</term><idx>inconsistent system</idx>. The graphs of the equations are parallel lines and hence do not intersect. An inconsistent system has no solutions.
-		</p></li>
-		<li><p>
-			<term>Consistent and independent system</term><idx>consistent and independent system</idx>. The graphs of the two lines intersect in exactly one point. The system has exactly one solution.
-		</p></li>
-	</ol>
-</p></assemblage>
-
-<exercise><statement>
-<p>
-	<ol label="a">
-		<li><p>
-			Graph the system
-			<md>
-				<mrow>
-					y = -3x + 6
-				</mrow>
-				<mrow>
-					6x + 2y = 15
-				</mrow>
-			</md>
-			by hand, using either the intercept method or the slope-intercept method. (See Sections 1.1 and 1.4 to review these methods.)
-		</p></li>
-		<li><p>
-			Identify the system as dependent, inconsistent, or consistent and independent.
-		</p></li>
+<activity><title>Negative Angles</title>
+<p></p>
+<p>I Using Reference Triangles</p><p><ol label="1">
+<li><ol label="a">
+	<li>Suppose that <m>\theta</m> is a first-quadrant angle.  In which quadrant would you find <m>-\theta</m>?</li>
+	<li>Sketch an example for <m>\theta</m>, <m>-\theta</m>, and the reference triangle for each.</li>
+	<li>How is <m>\sin (-\theta)</m> related to <m>\sin \theta</m>?  What about <m>\cos (-\theta)</m> and <m>\tan (-\theta)</m>?</li></ol></li>
+<li>Repeat part (1) for the case where  is a second-quadrant angle.</li>
 </ol></p>
-</statement>
-<answer><p><ol label="a" cols="2">
-	<li><p><image source="images/fig-in-ex-ans-8-1-5"  width="80%"><description>parallel lines</description></image> </p></li>
-	<li><p>Inconsistent</p></li>
-</ol></p></answer>
-</exercise>
 
-<p>
-	It is not always easy to tell from the equations themselves whether there is one solution, no solution, or infinitely many solutions. However, the method of elimination will reveal which of the three cases applies.
-</p>
+<p>II Using Graphs</p><p><ol label="1">
+<li><ol label="a">
+	<li><p>Look at the graph of <m>f(\theta) = \sin \theta</m>, and choose three positive values of <m>\theta</m>. Draw dots on the graph that show their function values.</p>
+<sidebyside width="100%"><image source="images/8-1-2.png"><description>graph</description></image></sidebyside></li>
+	<li>Find the negatives of your three values of <m>\theta</m> from part (a), and draw dots to show their function values.</li>
+	<li>How do the values of <m>\sin (-\theta)</m> compare to the values of <m>\sin \theta</m>?</li></ol></li>
+<li><p>Repeat part (1) for the graph of <m>f(\theta) = \cos \theta</m>.</p>
+<sidebyside width="100%"><image source="images/8-1-3.png"><description>graph</description></image></sidebyside></li>
+<li><p>Repeat part (1) for the graph of <m>f(\theta) = \tan \theta</m>.</p>
+<sidebyside width="100%"><image source="images/8-1-4.png"><description>graph</description></image></sidebyside></li>
+</ol></p>
 
-<example xml:id="example-inconsistent-system2"><p>Solve the system 
-	<md>
-		<mrow>2x \amp= 2 - 3y</mrow>
-		<mrow>6y \amp= 7 - 4x</mrow>
-</md></p> 
-<solution><p>First, we rewrite the system in standard form as
-    <md>
-        <mrow>2x + 3y \amp= 2 \amp\amp (1)</mrow>
-        <mrow>4x + 6y \amp = 7 \amp\amp (2)</mrow>
-    </md>
-    We multiply Equation (1) by <m>-2</m> and add the result to Equation (2) to obtain
+<p>III	Negative Angle Identities</p>
+	<p>State your conclusions from parts I and II as identities:</p>
 
-<sidebyside><tabular halign="right">
-    <row>
-    	<cell><m>-4x</m></cell>
-    	<cell><m>-</m></cell>
-    	<cell><m>6y</m></cell>
-    	<cell><m>=</m></cell>
-    	<cell><m>-4</m></cell>
-    </row>
-    <row>
-    	<cell bottom="minor"><m>4x</m></cell>
-    	<cell bottom="minor"><m>+</m></cell>
-    	<cell bottom="minor"><m>6y</m></cell>
-    	<cell bottom="minor"><m>=</m></cell>
-    	<cell bottom="minor"><m>7</m></cell>             </row>
-	<row>
-		<cell><m>0x</m></cell>
-		<cell><m>+</m></cell>
-		<cell><m>0y</m></cell>
-		<cell><m>=</m></cell>
-		<cell><m>3</m></cell>
-	</row>
-</tabular></sidebyside>
-This equation has no solutions. The system is inconsistent. (Notice that both
-lines have slope <m>\dfrac{-2}{3}</m>, but they have different
-<m>y</m>-intercepts, so their graphs are parallel.)     </p>
+			<me>\sin (-\theta) = </me>
+			<me>\cos (-\theta) = </me>  
+			<me>\tan (-\theta) = </me> 
+</activity>
+
+<exercise><statement><p>Suppose that <m>\sin \theta = \dfrac{-5}{13}</m> and <m>\cos \theta = \dfrac{12}{13}</m>. Find an exact value for <m>\cos(\dfrac{\pi}{4} + \theta)</m>.</p></statement></exercise>
+</subsection>
+
+<subsection><title>The Difference of Angles Identities</title>
+<p>The difference formulas for sine and cosine can be derived easily from the sum formulas, using the identities for negative angles.  Note that the difference formulas are identical to the corresponding sum formulas, except for the signs.</p>
+
+<assemblage><title>Difference of Angles Identities</title><p>
+<me>\cos (\alpha - \beta) = \cos \alpha \cos \beta + \sin \alpha \sin \beta</me>
+<me>\sin (\alpha - \beta) = \sin \alpha \cos \beta - \cos \alpha \sin \beta</me></p>
+</assemblage>
+
+<example><statement><p>Use the fact that <m>\dfrac{\pi}{12} = \dfrac{\pi}{4} - \dfrac{\pi}{6}</m> to evaluate <m>\cos \dfrac{\pi}{12}</m> exactly.</p></statement>
+
+<solution><p>Remember that <m>\cos \dfrac{\pi}{4} = \dfrac{\sqrt{2}}{2},~~\cos\dfrac{\pi}{6} =\dfrac{\sqrt{3}}{2},~~\sin\dfrac{\pi}{4} = \dfrac{\sqrt{2}}{2}</m>, and <m>\sin \dfrac{\pi}{6} = \dfrac{1}{2}</m>. Substituting all these values into the difference formula for cosine, we obtain the following.
+	\begin{align*}
+	\cos\dfrac{\pi}{12} \amp = \cos (\dfrac{\pi}{4} - \dfrac{\pi}{6})\\
+	\amp = \cos \dfrac{\pi}{4} \cos \dfrac{\pi}{6} + \sin \dfrac{\pi}{4} \sin \dfrac{\pi}{6}\\
+	\amp = \dfrac{\sqrt{2}}{2} \cdot \dfrac{\sqrt{3}}{2} +\dfrac{\sqrt{2}}{2} \cdot \dfrac{1}{2}\\
+	\amp = \dfrac{\sqrt{6}+\sqrt{2}}{4}\\
+	\end{align*}
+You can check that your calculator gives the same decimal approximation of about 0.9659 for both <m>\cos \dfrac{\pi}{12}</m> and <m>\dfrac{\sqrt{6}+\sqrt{2}}{4}</m>.</p></solution></example>
+
+<exercise><statement><p>Evaluate <m>\sin \dfrac{\pi}{12}</m> exactly.</p></statement></exercise>
+</subsection>
+
+<subsection><title>Sum and Difference Identities for Tangent</title>
+<p>There are also sum and difference formulas for the tangent.</p>
+
+<assemblage><title>Sum and Difference Identities for Tangent</title><p>
+<me>\tan (\alpha + \beta) = \dfrac{\tan \alpha + \tan \beta}{1 - \tan \alpha \tan \beta}</me>
+<me>\tan (\alpha - \beta) = \dfrac{\tan \alpha - \tan \beta}{1 + \tan \alpha \tan \beta}</me></p>
+</assemblage> 
+
+<example><statement><p>Find an exact value for <m>\tan 75\degree</m>.</p></statement>
+
+<solution><p>We observe that <m>75\degree = 45\degree + 30\degree</m>, so <m>\tan 75\degree = \tan (45\degree + 30\degree)</m>.  We can apply the sum formula for tangent.
+	\begin{align*}
+	\tan(45\degree + 30\degree) \amp = \dfrac{\tan 45\degree + \tan 30\degree}{1 - \tan 45\degree \tan 30\degree}\\
+	\amp = \dfrac{1+\dfrac{1}{\sqrt{3}}}{1-1(\dfrac{1}{\sqrt{3}})} \cdot \blert{\dfrac{\sqrt{3}}{\sqrt{3}}} =\dfrac{\sqrt{3}+1}{\sqrt{3}-1} \\
+	\end{align*}
+	</p></solution></example> 
+
+<exercise><statement><p>Evaluate <m>\tan \dfrac{\pi}{12}</m> exactly.</p></statement></exercise>
+</subsection>
+
+<subsection><title>Double Angle Identities</title>
+<p>	There are a number of other very useful identities that can be derived from the sum and difference formulas.  In particular, if we set <m>\alpha = \beta = \theta</m> in the addition formulas, we obtain the double angle formulas.  These identities are used frequently and should be memorized!</p>
+
+<assemblage><title>Double Angle Identities</title><p>
+<me>\cos 2\theta = \cos^2 \theta - \sin^2 \theta</me>
+<me>\sin 2\theta = 2\sin \theta \cos \theta</me>
+<me>\tan 2\theta = \dfrac {2\tan \theta}{1-\tan^2 \theta}</me></p>
+</assemblage> 
+
+<p>You can also justify the identities to yourself by graphing both sides of the formula to see that the graphs are identical.</p>
+
+<warning><p>The first thing we can learn from the double angle formulas is that <m>\sin 2\theta</m> is not equal to <m>2\sin \theta</m>! You can check this very easily by choosing a value for <m>\theta</m>, say <m>45\degree</m>. Then
+	\begin{align*}
+	\sin 2\theta \amp = \sin (90\degree) =1\\
+	\text{but}~~~ 2\sin \theta\amp = 2\sin (45\degree) = 2(\dfrac{\sqrt{2}}{2}) = \sqrt{2}\\
+	\end{align*}
+and <m>\sqrt{2} \not= 1</m>.  Similarly, <m>\cos 2\theta \not= 2\cos \theta</m> and <m>\tan 2\theta \not= 2\tan \theta</m></p></warning>
+
+<example><statement><p>Find <m>\sin 2\theta</m> for the angle <m>\theta</m> shown.
+<sidebyside width="20%"><image source="images/exam8-1-6.png"><description>triangle</description></image></sidebyside></p></statement>
+
+<solution><p>We start by using the Pythagorean Theorem to find the hypotenuse of the triangle.
+<me>c^2 = 2^2 + 3^2 = 13</me>
+so <m>c = \sqrt{13}</m>. Thus, <m>\cos \theta = \dfrac{3}{\sqrt{13}}</m> and <m>\sin \theta = \dfrac{2}{\sqrt{13}}</m>. Now we can use these values in the double angle identity to find <m>\sin 2\theta</m>.     
+	\begin{align*}
+	\sin 2\theta \amp = 2\sin \theta \cos \theta\\
+	\amp = 2(\dfrac{2}{\sqrt{13}})(\dfrac{3}{\sqrt{13}}) = \dfrac{12}{13}\\
+	\end{align*}
+	</p></solution></example>
+
+<exercise><statement><p>Find <m>\cos 2\theta</m> and <m>\tan 2\theta</m> for the angle <m>\theta</m> shown in the previous example.</p></statement></exercise>
+
+<p>We can work with algebraic expressions instead of numerical values for the trig ratios.</p>
+
+<example><statement><p>Use the figure below to express <m>\cos 2\phi</m> in terms of <m>a</m>.</p>	
+<sidebyside width="15%"><image source="images/exam8-1-7.png"><description>triangle</description></image></sidebyside></statement>
+
+<solution><p>We use the Pythagorean Theorem to find an expression for the third side of the triangle.
+	\begin{align*}
+	a^2 + b^2 \amp = 3^2 \amp\amp  \blert{\text{Solve for}~~b.} \\
+	b \amp = \sqrt{9 - a^2}\\
+	\end{align*}
+Now we can write expressions for the sine and cosine of <m>\phi</m>.
+<me>\cos \phi = \dfrac{a}{3} ~~~~\text{and}~~~~\sin \phi = \dfrac{\sqrt{9 - a^2}}{3}</me>
+Finally, we substitute these expressions into the double angle identity.
+\begin{align*}
+	\cos 2\phi \amp = \cos^2 \phi - \sin^2 \phi \\
+	 \amp = (\dfrac{a}{3})^2 - (\dfrac{\sqrt{9 - a^2}}{3})^2\\
+	 \amp = \dfrac{a^2}{9} - \dfrac{9 - a^2}{9} = \dfrac{a^2-9}{9}\\
+	\end{align*}</p>
 </solution></example>
 
-<p>
-	We generalize the results from <xref ref="example-inconsistent-system2" text="type-global"/> as follows.
-</p>
+<exercise><statement><p>For the triangle in the previous example, find expressions for <m>\sin 2\phi</m> and <m>\tan 2\phi</m>.</p></statement></exercise>
 
-<xi:include href="./assemblage-inconsistent-and-dependent-systems.xml" />
+<p>By using the Pythagorean identity, we can write the double angle formula for cosine in two alternate forms.</p>
 
-<p>
-	<xref ref="exercise-dependent-system" text="type-global"/> illustrates a dependent system.
-</p>
+<p>\begin{align*}
+	\cos 2\theta \amp = \cos^2 \theta - \sin^2 \theta \\
+	 \amp = \cos^2 \theta - (1-\cos^2 \theta)\\
+	 \amp = 2\cos^2 \theta -1\\
+	\end{align*}
 
-<exercise xml:id="exercise-dependent-system"><statement>
-	<p>
-		<ol label="a">
-			<li><p>
-				Use the method of elimination to solve the system
-				<md>
-					<mrow>
-						3x - 4 \amp = y
-					</mrow>
-					<mrow>
-						2y + 8 \amp = 6x
-					</mrow>
-				</md>
-			</p></li>
-			<li><p>
-				Verify that both equations have the same graph.
-			</p></li>
-		</ol>
-	</p>
-</statement>
-<answer><p><ol label="a">
-	<li><p>Elimination results in <m>0x + 0y = 0</m>.</p></li>
-	<li><p>Both equations have slope-intercept form <m>y = 3x - 4</m>.</p></li>
-</ol></p></answer>
-</exercise>
+\begin{align*}
+	\cos 2\theta \amp = \cos^2 \theta - \sin^2 \theta \\
+	 \amp = (1-\sin^2 \theta) - \sin^2 \theta\\
+	 \amp = 1-2\sin^2 \theta \\
+	\end{align*}</p>
+
+<p>Thus, we have three forms for the double angle formula for cosine, and we can use whichever form is most convenient for a particular problem.</p>
+
+<assemblage><title>Double Angle Identities for Cosine</title>
+<p>\begin{align*}
+	\cos 2\theta \amp = \cos^2 \theta - \sin^2 \theta \\
+	 \amp = 2\cos^2 \theta -1\\
+	 \amp = 1-2\sin^2 \theta\\
+	\end{align*}</p>
+</assemblage>
+	
+<example><statement><p>Find an expression for <m>\cos 2\beta</m> if you know that <m>\cos \beta = \dfrac{x}{4}</m>.</p></statement>
+
+<solution><p>We use the identity <m>\cos 2\theta = 2\cos^2 \theta -1</m></p> 
+	<p>\begin{align*}
+	\cos 2\beta \amp = 2\cos^2 \beta -1\\
+	 \amp = 2(\dfrac{x}{4})^2 - 1 = \dfrac{2x^2}{16} - 1\\
+	 \amp = \dfrac{2x^2 - 16}{16} = \dfrac{x^2 - 8}{8}\\
+	\end{align*}</p>
+</solution></example>
+
+<exercise><statement><p>Find an expression for <m>\cos 2\alpha</m> if you know that <m>\sin \alpha = \dfrac{6}{w}</m>.</p></statement></exercise>
+</subsection>
+
+<subsection><title>Solving Equations</title>
+<p>If a trigonometric equation involves more than one angle, we use identities to rewrite the equation in terms of a single angle.</p>
+
+<example><statement><p>Solve <m>\sin 2x - \cos x</m>, for <m>0 \le x \le 2\pi</m>.</p></statement> 
+
+<solution><p>We first use the double angle formula to write <m>\sin 2x</m> in terms of trig functions of <m>x</m> alone.</p>
+	<p>\begin{align*}
+	\sin 2x -\cos x \amp = 0\\
+	 2\sin x \cos x -\cos x \amp = 0\\
+	\end{align*}</p>
+<p>Once we have all the trig functions in terms of a single angle, we try to write the equation in terms of a single trig function.  In this case, we can factor the left side to separate the trig functions.</p>
+	<p>\begin{align*}
+	 2\sin x \cos x -\cos x \amp = 0\\
+	 \cos x (2\sin x - 1) \amp = 0  \amp\amp \blert{\text{Set each factor equal to zero.}}\\
+\cos x = 0 ~~~~~ 2\sin x - 1 \amp = 0 \amp\amp \blert{\text{Solve each equation.}}\\
+				\sin x \amp = \dfrac{1}{2} \\
+x = \dfrac{\pi}{2},~\dfrac{3\pi}{2} ~~~~~~~~~~~~~ x\amp = \dfrac{\pi}{6},~\dfrac{5\pi}{6}\\				
+	\end{align*}</p>
+<p>There are four solutions, <m>x = \dfrac{\pi}{2},~\dfrac{3\pi}{2},~\dfrac{\pi}{6},</m> and <m>\dfrac{5\pi}{6}</m>.</p></solution></example>
+
+<exercise><statement><p>Solve <m>\cos 2t = \cos t</m>, for <m>0 \le x \le 2\pi</m>.</p></statement></exercise>
+
+<activity><title>Identities</title>
+<p></p>
+<p>I  Sum of Angles Identities</p>
+<p><ol label="1">
+<li>Is it true that <m>\cos (\theta + \phi) = \cos \theta + \cos \phi</m>?  Try it for <m>\theta = 60\degree</m> and <m>\phi = 45\degree</m>.</li>
+<li><p><ol label="a">
+	<li>Recall the distributive law, <m>a(b+c) = ab + ac</m>,  where the parentheses denote multiplication.  Is the same law true when the parentheses denote a function?  In other words, is it true that <m>f(a+b) = f(a) + f(b)</m>?</li>  
+	<li>In the expression <m>\sin (\theta + \phi)</m>, do the parentheses denote multiplication or the application of a function?  Does the distributive law apply to <m>\sin (\theta + \phi)</m>?  Do you think that <m>\sin (\theta + \phi) = \sin \theta + \sin \phi</m> is an identity?</li></ol></p></li>
+<li><p><ol label="a">
+	<li>Look at the Sum of Angles Identities in this section.  Make some observations that will help you memorize these formulas.</li>
+	<li>Do you think you would have to memorize these formulas if the equation  <m>\sin (\theta + \phi) = \sin \theta + \sin \phi</m> were an identity?</li></ol></p></li></ol></p>
+
+<p>II  Difference of Angles Identities, Tangent Identities</p>
+<p><ol label="1">
+<li><p><ol label="a">
+	<li>Yikes!  More formulas.  Compare the Difference of Angles Identities with the Sum of Angles Identities.  If you have memorized the Sum formulas, how can you also memorize the Difference formulas?</li>
+	<li>Comment on the sign patterns in the Sum and Difference Identities for Tangent.</li></ol></p></li>
+<li><p><ol label="a">	
+	<li>Now let's use the formulas backwards:  look at the expression below:
+<me>\dfrac{\tan 285\degree - \tan 75\degree}{1 + \tan 285\degree \tan 75\degree}</me>
+	Does it remind you of the left side of one of the six new identities?  Use that identity to simplify the expression.</li>
+	<li>Do the same thing for this expression:  
+	<me>\sin 4t \cos 0.7 - \cos 4t \sin 0.7</me></li></ol></p></li></ol></p>
+
+<p>III  Double Angle Identities</p>
+<p><ol label="1">
+<li><p><ol label="a">
+	<li>Is it true that <m>\sin 2\theta = 2\sin \theta</m>?  Choose a value for <m>\theta</m> and try it. Sketch <m>\theta</m> and <m>2\theta</m> on a unit circle and show the sine of each.</li>
+	<li>Is it true that <m>\cos 2\theta = 2\cos \theta</m>?  Repeat part (a) for cosine.</li></ol></p></li>
+<li><p><ol label="a">
+	<li>Substitute <m>\alpha = \theta</m> and <m>\beta = \theta</m> into the sum of angles formulas for sine, cosine, and tangent to derive the double angle formulas.</li> 
+	<li>Choose one of the three forms of the Double Angle Identity for Cosine.  Use the Pythagorean Identity to convert from that form to each of the other two forms.</li></ol></p></li></ol></p>
+</activity>
 
 </subsection>
 
+<subsection><title>Algebra Refresher</title>
 
+<exercises>
+<exercisegroup cols="3"><introduction><p><ol label="a">
+	<li>Compute <m>f(2),~ f(3)</m>, and <m>f(2+3)</m>.</li>
+	<li>For which of the following functions is it true that <m>f(a+b) = f(a) + f(b)</m> whenever the function values are defined?
+	</li></ol></p></introduction>
 
-<subsection><title>Applications</title>
-<p>
-	Many practical problems involve two or more unknown quantities.
-</p>
+	<exercise number="1"><statement><m>f(x) = 3x+2</m></statement></exercise> 
 
-<example>
-	<p>
-		A cup of rolled oats provides 11 grams of protein. A cup of rolled wheat flakes provides 8.5 grams of protein. Francine wants to combine oats and wheat to make a cereal with 10 grams of protein per cup. How much of each grain will she need in one cup of her mixture?
-	</p>
-<solution>
-	<p>
-		<!--
-		<dl>
-			<li><title>Step 1:</title>
-			<p>
-				<tabular>
-					<row>
-						<cell>
-							Fraction of a cup of oats needed:
-						</cell>
-						<cell><m>x</m></cell>
-					</row>
-					<row>
-						<cell>
-							Fraction of a cup of wheat needed:
-						</cell>
-						<cell><m>y</m></cell>
-					</row>
-				</tabular>
-			</p></li>
-			<li><title>Step 2:</title><p>
-				Because we have two variables, we must find two equations that describe the problem. It may be helpful to organize the information into a table.
-				<tabular top="minor" bottom="minor" left="minor" right="minor"><col /><col halign="center"/><col halign="center"/><col halign="center"/><col halign="center"/>
-					<row>
-						<cell></cell>
-						<cell>Cups</cell>
-						<cell><line>Grams of protein</line><line>per cup</line></cell>
-						<cell>Grams of protein</cell>
-					</row>
-					<row>
-						<cell>Oats</cell>
-						<cell><m>x</m></cell>
-						<cell><m>11</m></cell>
-						<cell><m>11x</m></cell>
-					</row>
-					<row>
-						<cell>Wheat</cell>
-						<cell><m>y</m></cell>
-						<cell><m>8.5</m></cell>
-						<cell><m>8.5y</m></cell>
-					</row>
-					<row>
-						<cell>Mixture</cell>
-						<cell><m>1</m></cell>
-						<cell><mdash/></cell>
-						<cell><m>10</m></cell>
-					</row>
-				</tabular>
-				The wheat and oats together will make one cup of mixture, so the first equation is 
-				<me>
-					x + y = 1
-				</me>
-				The <m>10</m> grams of protein must come form the protein in the oats plus the protein in the wheat. This gives us a second equation:
-				<me>
-					11x + 8.5y = 10
-				</me>
-				We now have a system of equations.
-			</p></li>
-			<li><title>Step 3: </title><p>
-				We will solve the system by graphing. First, solve each equation for <m>y</m> in terms of <m>x</m> to get
-				<md>
-					<mrow>
-						y \amp= -x + 1
-					</mrow>
-					<mrow>
-						y \amp = (10 - 11x)/8.5
-					</mrow>
-				</md>
-				Although we could simplify the second equation, the calculator can graph both equations as they are. We know that <m>x</m> and <m>y</m> represent fractions of one cup, so we set the window (as shown in <xref ref="fig-GC-2x2-system3" text="type-global"/>) with 
-				<md>
-					<mrow>
-						\text{Xmin} \amp = 0 \amp\amp \text{Xmax} = 0.94
-					</mrow>
-					<mrow>
-						\text{Ymin} \amp = 0 \amp\amp \text{Ymax} = 1
-					</mrow>
-				</md>
-				<figure xml:id="fig-GC-2x2-system3"><caption></caption><image source="images/fig-GC-2x2-system3"  width="50%"><description>GC graph of 2x2 system</description></image> </figure>
-				The lines intersect at <m>(0.6, 0.4)</m>, which we can verify by substituting these values into the original two equations of our system.
-			</p></li>
-			<li><title>Step 4:</title><p>
-				Francine needs <m>0.6</m> cup of oats and <m>0.4</m> cup of wheat.
-			</p></li>
-		</dl>
-	-->
-		<ol label="1">
-			<li><p>
-				<tabular>
-					<row>
-						<cell>
-							Fraction of a cup of oats needed:
-						</cell>
-						<cell><m>x</m></cell>
-					</row>
-					<row>
-						<cell>
-							Fraction of a cup of wheat needed:
-						</cell>
-						<cell><m>y</m></cell>
-					</row>
-				</tabular>
-			</p></li>
-			<li><p>
-				Because we have two variables, we must find two equations that describe the problem. It may be helpful to organize the information into a table.</p><p>
-				<tabular top="minor" bottom="minor" left="minor" right="minor"><col /><col halign="center"/><col halign="center"/><col halign="center"/><col halign="center"/>
-					<row>
-						<cell></cell>
-						<cell>Cups</cell>
-						<cell><line>Grams of protein</line><line>per cup</line></cell>
-						<cell>Grams of protein</cell>
-					</row>
-					<row>
-						<cell>Oats</cell>
-						<cell><m>x</m></cell>
-						<cell><m>11</m></cell>
-						<cell><m>11x</m></cell>
-					</row>
-					<row>
-						<cell>Wheat</cell>
-						<cell><m>y</m></cell>
-						<cell><m>8.5</m></cell>
-						<cell><m>8.5y</m></cell>
-					</row>
-					<row>
-						<cell>Mixture</cell>
-						<cell><m>1</m></cell>
-						<cell><mdash/></cell>
-						<cell><m>10</m></cell>
-					</row>
-				</tabular></p><p>
-				The wheat and oats together will make one cup of mixture, so the first equation is 
-				<me>
-					x + y = 1
-				</me>
-				The <m>10</m> grams of protein must come form the protein in the oats plus the protein in the wheat. This gives us a second equation:
-				<me>
-					11x + 8.5y = 10
-				</me>
-				We now have a system of equations.
-			</p></li>
-			<li><p>
-				We will solve the system by graphing. First, solve each equation for <m>y</m> in terms of <m>x</m> to get
-				<md>
-					<mrow>
-						y \amp= -x + 1
-					</mrow>
-					<mrow>
-						y \amp = (10 - 11x)/8.5
-					</mrow>
-				</md>
-				Although we could simplify the second equation, the calculator can graph both equations as they are. We know that <m>x</m> and <m>y</m> represent fractions of one cup, so we set the window (as shown in <xref ref="fig-GC-2x2-system3" text="type-global"/>) with 
-				<md>
-					<mrow>
-						\text{Xmin} \amp = 0 \amp\amp \text{Xmax} = 0.94
-					</mrow>
-					<mrow>
-						\text{Ymin} \amp = 0 \amp\amp \text{Ymax} = 1
-					</mrow>
-				</md>
-				<figure xml:id="fig-GC-2x2-system3"><caption></caption><image source="images/fig-GC-2x2-system3"  width="40%"><description>GC graph of 2x2 system</description></image> </figure></p><p>
-				The lines intersect at <m>(0.6, 0.4)</m>, which we can verify by substituting these values into the original two equations of our system.
-			</p></li>
-			<li><p>
-				Francine needs <m>0.6</m> cup of oats and <m>0.4</m> cup of wheat.
-			</p></li>
-		</ol>
-	</p>
-</solution></example>
+	<exercise number="2"><statement><m>f(x) = x^2</m></statement></exercise>
 
-<exercise><statement>
-	<p>
-		Etienne plans to open a coffee house, and he has <m>\$7520</m> to spend on furniture. A table costs <m>\$460</m>, and a chair costs <m>\$120</m>. Etienne will buy four chairs for each table. How many tables can he buy?
-		<ol label="a">
-			<li><p>
-				Let <m>x</m> represent the number of tables Etienne should buy, and let <m>y</m> represent the number of chairs. Write an equation about the cost of the furniture.
-			</p></li>
-			<li><p>
-				Write a second equation about the number of tables and chairs.
-			</p></li>
-			<li><p>
-				Graph both equations, solve the system, and answer the question in the problem. (Find the intercepts of the graphs to help you choose a window.)
-			</p></li>
-		</ol>
-	</p>
-</statement>
-<answer><p><ol label="a">
-	<li><p><m>460x + 120y = 7520</m></p></li>
-	<li><p><m>y=4x</m></p></li>
-	<li><p><m>x = 8, y = 32</m>. Etienne should buy <m>8</m> tables and <m>4</m> chairs.</p></li>
-</ol></p></answer>
-</exercise>
+	<exercise number="3"><statement><m>f(x) = \sqrt{x}</m></statement></exercise>
 
-<p>
-	Being unable to read exact coordinates from a graph is not always a disadvantage. In many situations, fractional values of the unknowns are not acceptable.
-</p>
+	<exercise number="4"><statement><m>f(x) = \dfrac{1}{x}</m></statement></exercise>
 
-<example>
-	<p>
-		The mathematics department has <m>\$40,000</m> to set up a new computer lab. The department will need one printer for every four terminals it purchases. If a printer costs <m>\$560</m> and a terminal costs <m>\$1520</m>, how many of each should the department buy?
-	</p>
-<solution>
-	<p>
-<!--		<dl>
-			<li><title>Step 1:</title><p>
-				<tabular>
-					<row>
-						<cell>Number of printers:</cell>
-						<cell><m>p</m></cell>
-					</row>
-					<row>
-						<cell>Number of terminals</cell>
-						<cell><m>t</m></cell>
-					</row>
-				</tabular>
-			</p></li>
-			<li><title>Step 2:</title><p>
-				Since the math department needs four times as many terminals as printers,
-				<me>t=4p</me>
-				The total cost of the printers will be <m>560p</m> dollars, and the total cost of the terminals will be <m>1520t</m> dollars, so we have
-				<me>560p + 1520t = 40,000</me>
-			</p></li>
-			<li><title>Step 3:</title><p>
-				We solve the second equation for <m>t</m> to get
-				<me>t=(40,000 - 560p)/1520</me>
-				Now we graph the equations
-				<md>
-					<mrow>
-						Y_1 \amp =4X
-					</mrow>
-					<mrow>
-						Y_2 \amp =(40000 - 560X)/1520
-					</mrow>
-				</md>
-				on the same set of axes. The second graph is not visible in the standard graphing window, but with a little experimentation we can find an appropriate window setting. The WINDOW values used for Figure 8.8 are
-				<md>
-					<mrow>
-						\text{Xmin} \amp = 0 \amp\amp \text{Xmax} = 9.4
-					</mrow>
-					<mrow>
-						\text{Ymin} \amp = 0 \amp\amp \text{Ymax} = 30
-					</mrow>
-				</md>
-				The lines intersect at approximately <m>(6, 24)</m>. These values satisfy the first equation, but not the second.
-				<md>
-					<mrow>
-						560(\alert{6})+1520(\blert{24})\amp\stackrel{?}{=}40,000 
-					</mrow>
-					<mrow>
-						39,840 \amp\ne 40,000
-					</mrow>
-				</md>
-			</p></li>
-			<li><title>Step 4:</title><p>
-				The exact solution to the system is <m>\left(\frac{500}{83},\frac{2000}{83}\right)</m>. But this solution is not of practical use, since the math department cannot purchase fractions of printers or terminals. The department can purchase <m>6</m> printers and <m>24</m> terminals (with some money left over).
-			</p></li>
-		</dl> -->
-		<ol label="1">
-			<li><p>
-				<tabular>
-					<row>
-						<cell>Number of printers:</cell>
-						<cell><m>p</m></cell>
-					</row>
-					<row>
-						<cell>Number of terminals</cell>
-						<cell><m>t</m></cell>
-					</row>
-				</tabular>
-			</p></li>
-			<li><p>
-				Since the math department needs four times as many terminals as printers,
-				<me>t=4p</me>
-				The total cost of the printers will be <m>560p</m> dollars, and the total cost of the terminals will be <m>1520t</m> dollars, so we have
-				<me>560p + 1520t = 40,000</me>
-			</p></li>
-			<li><p>
-				We solve the second equation for <m>t</m> to get
-				<me>t=(40,000 - 560p)/1520</me>
-				Now we graph the equations
-				<md>
-					<mrow>
-						Y_1 \amp =4X
-					</mrow>
-					<mrow>
-						Y_2 \amp =(40000 - 560X)/1520
-					</mrow>
-				</md>
-				on the same set of axes. The second graph is not visible in the standard graphing window, but with a little experimentation we can find an appropriate window setting. The WINDOW values used for <xref ref="fig-GC-computer-lab" text="type-global"/> are
-				<md>
-					<mrow>
-						\text{Xmin} \amp = 0 \amp\amp \text{Xmax} = 9.4
-					</mrow>
-					<mrow>
-						\text{Ymin} \amp = 0 \amp\amp \text{Ymax} = 30
-					</mrow>
-				</md>
-				The lines intersect at approximately <m>(6, 24)</m>. These values satisfy the first equation, but not the second.
-				<md>
-					<mrow>
-						560(\alert{6})+1520(\blert{24})\amp\stackrel{?}{=}40,000 
-					</mrow>
-					<mrow>
-						39,840 \amp\ne 40,000
-					</mrow>
-				</md>
-				<figure  valign="middle" xml:id="fig-GC-computer-lab"><caption></caption><image source="images/fig-GC-computer-lab.png"  width="45%"><description>GC graph of supply and demand of wool fabric</description></image> </figure>			
-			</p></li>
-			<li><p>
-				The exact solution to the system is <m>\left(\dfrac{500}{83},\dfrac{2000}{83}\right)</m>. But this solution is not of practical use, since the math department cannot purchase fractions of printers or terminals. The department can purchase <m>6</m> printers and <m>24</m> terminals (with some money left over).
-			</p></li>
-		</ol>
-	</p>
-</solution></example>
+	<exercise number="5"><statement><m>f(x) = \abs{x}</m></statement></exercise>
 
-<exercise><statement>
-	<p>
-		The manager for Books for Cooks plans to spend <m>\$300</m> stocking a new diet cookbook. The paperback version costs her <m>\$5</m>, and the hardback costs <m>\$10</m>. She finds that she will sell three times as many paperbacks as hardbacks. How many of each should she buy?
-		<ol label="a">
-			<li><p>
-				Let <m>x</m> represent the number of hardbacks and <m>y</m> the number of paperbacks she should buy. Write an equation about the cost of the books.
-			</p></li>
-			<li><p>
-				Write a second equation about the number of each type of book.
-			</p></li>
-			<li><p>
-				Graph both equations and solve the system. (Find the intercepts of the graphs to help you choose a window.) Answer the question in the problem.
-			</p></li>
-		</ol>
-	</p>
-</statement>
-<answer><p><ol label="a">
-	<li><p><m>10x + 5y = 300</m></p></li>
-	<li><p><m>y=3x</m></p></li>
-	<li><p><m>x = 12, ~y = 36</m>. The manager should buy <m>12</m> hardbacks and <m>36</m> paperbacks.</p></li>
-</ol></p></answer>
-</exercise>
+	<exercise number="6"><statement><m>f(x) = 2^x</m></statement></exercise>
+</exercisegroup></exercises>
 
+<subsubsection><title>Answers to 8.1 Exercises</title>
+<p><ol label="1">
+	<li><m>\sin(60\degree + 30\degree)=1</m>, but <m>\sin 60\degree + \sin 30\degree = \dfrac{\sqrt{3}}{2} + \dfrac{1}{2}</m></li>
+	<li><m>\dfrac{\sqrt{6}+\sqrt{2}}{4}</m></li>
+	<li><m>\dfrac{17}{13\sqrt{2}} = \dfrac{17\sqrt{2}}{26}</m></li>
+	<li><m>\dfrac{\sqrt{3}-1}{2\sqrt{2}} = \dfrac{\sqrt{6}-\sqrt{2}}{4}</m></li>
+	<li><m>\dfrac{\sqrt{3}-1}{\sqrt{3}+1}</m></li>
+	<li><m>\cos 2\theta = \dfrac{5}{13},~~\tan 2\theta = \dfrac{12}{5}</m></li>
+	<li><m>\sin 2\phi = \dfrac{2a\sqrt{9-a^2}}{9},~~\tan 2\phi = \dfrac{2a\sqrt{9-a^2}}{2a^2 - 9}</m></li>
+	<li><m>\dfrac{w^2 - 76}{w^2}</m></li>
+	<li><m>t = 0,~ \dfrac{2\pi}{3},~\dfrac{4\pi}{3}</m></li>
+</ol></p></subsubsection>
+
+<subsubsection><title>Algebra Refresher Answers</title>
+<p><ol label="1" cols="2">
+	<li><p><ol label="a" >
+		<li>8, 11, 17</li>
+		<li>Not true</li></ol></p></li>
+	<li><p><ol label="a">
+		<li>4, 9, 25</li>
+		<li>Not true</li></ol></p></li>
+	<li><p><ol label="a">
+		<li><m>\sqrt{2},~\sqrt{3},~\sqrt{5}</m></li>
+		<li>Not true</li></ol></p></li>
+	<li><p><ol label="a">
+		<li><m>\dfrac{1}{2},~\dfrac{1}{3},~\dfrac{1}{5}</m></li>
+		<li>Not true</li></ol></p></li>
+	<li><p><ol label="a">
+		<li>2, 3, 5</li>
+		<li>Not true</li></ol></p></li>
+	<li><p><ol label="a">
+		<li>4, 8, 32</li>
+		<li>Not true</li></ol></p></li>
+	</ol></p></subsubsection>
 </subsection>
 
+<subsection><title>Section 8.1 Summary</title>	
 
+<subsubsection><title>Concepts</title>
+<p><ol label="1">
+	<li>Identities are useful for changing from one form to another when solving equations, for simplifying expressions, and for finding exact values for trigonometric functions.</li>
+	<li>it is not true in general that <m>\cos (\alpha + \beta)</m> is equal to <m>\cos \alpha + \cos \beta</m> for all angles <m>\alpha</m> and <m>\beta</m>, or that <m>\sin (\alpha + \beta)</m> is equal to <m>\sin \alpha + \sin \beta</m>.</li>
+	<li><assemblage><title>Negative Angle Identities</title><p>
+	<me>\cos (-\theta) = \cos \theta</me> 
+	<me>\sin (-\theta) = -\sin \theta</me>
+	<me>\tan (-\theta) = -\tan \theta</me></p></assemblage></li>
+	<li><assemblage><title>Sum and Difference of Angles Identities</title><p>
+<me>\cos (\alpha + \beta) = \cos \alpha \cos \beta - \sin \alpha \sin \beta</me>
+<me>\sin (\alpha + \beta) = \sin \alpha \cos \beta + \cos \alpha \sin \beta</me>
+<me>\tan (\alpha + \beta) = \dfrac{\tan \alpha + \tan \beta}{1 - \tan \alpha \tan \beta}</me></p>
+<p></p><p>
+<me>\cos (\alpha - \beta) = \cos \alpha \cos \beta + \sin \alpha \sin \beta</me>
+<me>\sin (\alpha - \beta) = \sin \alpha \cos \beta - \cos \alpha \sin \beta</me>
+<me>\tan (\alpha - \beta) = \dfrac{\tan \alpha - \tan \beta}{1 + \tan \alpha \tan \beta}</me></p>
+</assemblage></li>
+<li><assemblage><title>Double Angle Identities</title>
+<p>\begin{align*}
+	\cos 2\theta \amp = \cos^2 \theta - \sin^2 \theta \amp\amp \sin 2\theta = 2\sin \theta \cos \theta\\
+	 \amp = 2\cos^2 \theta -1 \amp\amp \tan 2\theta = \dfrac {2\tan \theta}{1-\tan^2 \theta}\\
+	 \amp = 1-2\sin^2 \theta\\
+	\end{align*}</p></assemblage></li></ol></p>
+</subsubsection>
 
-<subsection><title>An Application from Economics</title>
-<p>
-	The owner of a retail business must try to balance the demand for his product from consumers with the supply he can obtain from manufacturers. Supply and demand both vary with the price of the product: Consumers usually buy fewer items if the price increases, but manufacturers will be willing to supply more units of the product if its price increases.
-</p>
-<p>
-	The <term>demand function</term><idx>demand function</idx> gives the number of units of the product that consumers will buy in terms of the price per unit. The <term>supply function</term><idx>supply function</idx> gives the number of units that the producer will supply in terms of the price per unit. The price at which the supply and demand are equal is called the <term>equilibrium price</term><idx>equilibrium price</idx>. This is the price at which the consumer and the producer agree to do business.
-</p>
+<subsubsection><title>Study Questions</title>
+<p><ol label="1">
+<li>Explain why <m>f(a+b) - f(a) + f(b)</m> is not a valid application of the distributive law.</li>
+<li>Delbert says that <m>\sin(\theta + \dfrac{\pi}{6}) = \dfrac{1}{2} + \sin \theta</m>. Is he correct? Explain.</li>
+<li>Francine says that  <m>\tan(\theta + \dfrac{\pi}{4})= \dfrac{1+\tan \theta}{1 - \tan \theta}</m>. Is she correct? Explain.</li>
+<li>Provide an example to show that doubling an angle does not double its sine or cosine.</li>
+</ol></p></subsubsection>
 
-<example>
-	<p>
-		A woolens mill can produce <m>400x</m> yards of fine suit fabric if it can charge <m>x</m> dollars per yard. The mill's clients in the garment industry will buy <m>6000 - 100x</m> yards of wool fabric at a price of <m>x</m> dollars per yard. Find the equilibrium price and the amount of fabric that will change hands at that price.
-	</p>
-<solution>
-	<p>
-<!--		<dl>
-			<li><title>Step 1:</title><p>
-				<tabular>
-					<row>
-						<cell>
-							Price per yard:
-						</cell>
-						<cell><m>x</m></cell>
-					</row>
-					<row>
-						<cell>Number of yards:</cell>
-						<cell><m>y</m></cell>
-					</row>
-				</tabular>
-			</p></li>
-			<li><title>Step 2:</title><p>
-				The supply equation tells us how many yards of fabric the mill will produce for a price of <m>x</m> dollars per yard.
-				<me>y=400x</me>
-				The demand equation tells us how many yards of fabric the garment industry will buy at a price of <m>x</m> dollars per yard.
-				<me>y = 6000 - 100x</me>
-			</p></li>
-			<li><title>Step 3:</title><p>
-				We graph the two equations on the same set of axes, as shown in Figure 8.9. We set the window values to
-				<md>
-					<mrow>
-						\text{Xmin} \amp = 0 \amp\amp \text{Xmax} = 94
-					</mrow>
-					<mrow>
-						\text{Ymin} \amp = 0 \amp\amp \text{Ymax} = 6200
-					</mrow>
-				</md>
-				and use the <c>TRACE</c> or the <em>intersect</em> command to locate the solution. The graphs intersect at the point <m>(12, 4800)</m>.
-			</p></li>
-			<li><title>Step 4:</title><p>
-				The equilibrium price is <m>\$12</m> per yard, and the mill will sell <m>4800</m> yards of fabric at that price.
-			</p></li>
-		</dl> -->
-		<ol label="1">
-			<li><p>
-				<tabular>
-					<row>
-						<cell>
-							Price per yard:
-						</cell>
-						<cell><m>x</m></cell>
-					</row>
-					<row>
-						<cell>Number of yards:</cell>
-						<cell><m>y</m></cell>
-					</row>
-				</tabular>
-			</p></li>
-			<li><p>
-				The supply equation tells us how many yards of fabric the mill will produce for a price of <m>x</m> dollars per yard.
-				<me>y=400x</me>
-				The demand equation tells us how many yards of fabric the garment industry will buy at a price of <m>x</m> dollars per yard.
-				<me>y = 6000 - 100x</me>
-			</p></li>
-			<li><p>
-				We graph the two equations on the same set of axes, as shown in <xref ref="fig-GC-equilibrium" text="type-global"/>. We set the window values to
-				<md>
-					<mrow>
-						\text{Xmin} \amp = 0 \amp\amp \text{Xmax} = 94
-					</mrow>
-					<mrow>
-						\text{Ymin} \amp = 0 \amp\amp \text{Ymax} = 6200
-					</mrow>
-				</md>
-				and use the <c>TRACE</c> or the <term>intersect</term> command to locate the solution. The graphs intersect at the point <m>(12, 4800)</m>.
-				<figure  valign="middle" xml:id="fig-GC-equilibrium"><caption></caption><image source="images/fig-GC-equilibrium.png"  width="45%"><description>GC graph of supply and demand of wool fabric</description></image> </figure>			
-			</p></li>
-			<li><p>
-				The equilibrium price is <m>\$12</m> per yard, and the mill will sell <m>4800</m> yards of fabric at that price.
-			</p></li>
-		</ol>
-	</p>
-</solution></example>
-
-<exercise><statement>
-	<p>
-		Sanaz can afford to produce <m>35x</m> pairs of hand-painted sunglasses if she can sell them at <m>x</m> dollars per pair, and the market will buy <m>1700 - 15x</m> at <m>x</m> dollars a pair.
-		<ol label="a">
-			<li><p>
-				Write the supply and demand equations for the sunglasses.
-			</p></li>
-			<li><p>
-				Find the equilibrium price and the number of sunglasses Sanaz will produce and sell at that price.
-			</p></li>
-		</ol>
-	</p>
-</statement>
-<answer><p><ol label="a">
-	<li><p><m>S = 35x, ~D = 1700 - 15x</m></p></li>
-	<li><p><m>\$34</m>, <m>~1190</m> sunglasses</p></li>
-</ol></p></answer>
-</exercise>
-
+<subsubsection><title>Skills</title>
+<p><ol label="1">
+<li>Find trig values for the negative of an angle    #1-6</li>
+<li>Verify or disprove possible formulas    #7-12, 31-42, 73-76, 79-88</li>
+<li>Find exact values for trigonometric functions    #13-24, 55-62</li>
+<li>Simplify or expand expressions    #25-30, 43-54</li>
+<li>Solve equations    #63-72</li>
+<li>Prove standard identities    #77-78, 89-91</li>
+</ol></p>
+</subsubsection>
 </subsection>
-<xi:include href="./summary-8-1.xml" /> <!-- summary  -->
-<xi:include href="./section-8-1-exercises.xml" /> <!-- exercises  -->
+<!--<xi:include href="./summary-8-1.xml" /> summary  -->
+<!--<xi:include href="./section-8-1-exercises.xml" /> exercises  -->
 </section> 
 <!-- </book>  </mathbook> -->

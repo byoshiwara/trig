@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- <mathbook><book> -->
+
+<section xml:id="The-Dot-Product"   xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>The Dot Product</title>
+
+<subsection><title>Components</title>
+
+<p> We have seen that it can be useful to resolve a vector into horizontal and vertical components.  We can also break a vector into components that point in other directions.</p>
+<p>  Imagine the following experiment:  Delbert holds a ball at shoulder height and then drops it, so that it falls to the ground. Francine holds a ball at shoulder height on an inclined ramp, then releases it so that it rolls downhill. Which ball will reach the ground first?</p>  
+<p> Although gravity causes both balls to speed up, the free-falling ball will reach the ground first. The force of gravity pulls straight down, the same direction as the motion of the free-falling ball, but the rolling ball must move at an angle to the pull of gravity, along the surface of the ramp. Only part of the gravitational force accelerates the rolling ball, and the rest of the force is counteracted by the surface of the ramp. What fraction of the gravitational force causes the ball to roll?</p> 
+
+<sidebyside width = "90%"><image source="images/fig9-3-1.png"><description>ramp</description></image></sidebyside>
+
+<p> In figure (a), the gravitational force <m>{\bf{F}}</m> is resolved into the sum of two vectors, <m>{\bf{F}}={\bf{u}}+{\bf{v}}</m>, where <m>{\bf{v}}</m> points down the ramp, and <m>{\bf{u}}</m> is perpendicular to the ramp.  The magnitude of <m>{\bf{v}}</m> is called the component of <m>{\bf{F}}</m> in the direction of motion, and is denoted by <m>\text{comp}_{\bf{v}}{\bf{F}}</m>. This is the portion of the gravitational force that moves the ball. From figure (b), we see that <m>\text{comp}_{\bf{v}}{\bf{F}} = \|{\bf{F}}\| \cos \theta</m>, where <m>\theta</m> is the angle between <m>{\bf{F}}</m> and <m>{\bf{v}}</m>.</p> 
+
+<assemblage><title>Component of a Vector</title>
+<p>The component of a vector <m>{\bf{F}}</m> in the direction of vector <m>{\bf{v}}</m> is
+<me>\text{comp}_{\bf{v}}{\bf{F}} = \|{\bf{F}}\| \cos \theta</me> 
+where <m>\theta</m> is the angle between <m>{\bf{F}}</m> and <m>{\bf{v}}</m>.</p></assemblage>
+
+<p>With a little geometry, you can verify that in this example the angle <m>\theta</m> is the complement of the angle of inclination of the ramp, <m>\alpha</m>. (Think of similar triangles.) Now suppose that we increase the angle of inclination.  As <m>\alpha</m> increases, <m>\theta</m> decreases, <m>\cos \theta</m> increases, and hence <m>\text{comp}_{\bf{v}}{\bf{F}}</m> increases. This result agrees with our experience:  as the ramp gets steeper, the ball rolls faster.</p>
+
+<example><statement><p>Delbert uses a sheet of plywood as a ramp for his wheelbarrow. The ramp is inclined at an angle of 
+<m>15\degree</m> to the horizontal. The plywood can support a maximum weight of 200 pounds.  What weight will the ramp support?</p></statement>
+
+<solution><p>The component of the weight perpendicular to the ramp cannot be more than 200 pounds. If the weight of the wheelbarrow is <m>{\bf{w}}</m>, and <m>{\bf{v}}</m> is a vector perpendicular to the ramp, as shown below, then the angle between <m>{\bf{v}}</m> and <m>{\bf{w}}</m> is <m>15\degree</m>, by similar triangles. Thus, the component of <m>{\bf{w}}</m> in the direction of <m>{\bf{w}}</m> is</p>
+<sidebyside widths="60% 40%"><p>
+    \begin{align*}
+    \text{comp}_{\bf{v}}{\bf{w}} = \|{\bf{w}}\| \cos 15\degree \amp = 200\\
+        \|{\bf{w}}\| (0.9659) \amp = 200\\
+            \|{\bf{w}}\| \amp = 207.06
+      \end{align*}</p>      
+<image source="images/exam9-3-1.png"><description>ramp</description></image></sidebyside>
+<p>The ramp can support no more than about 207 pounds.</p></solution></example>
+
+<exercise><statement><sidebyside widths="60% 15%"><p>Delbert pushes a lawn mower whose handle makes a <m>40\degree</m> angle with the horizontal. If he applies a force of 30 pounds in the direction of the handle, what is the component of the force in the horizontal direction?</p>
+<image source="images/exer9-3-1.png"><description>ramp</description></image></sidebyside></statement></exercise> 
+</subsection>
+
+<subsection><title>Coordinate Form for Components</title>
+<p>In the examples above, we computed the component of a force <m>{\bf{F}}</m> in the direction of a vector <m>{\bf{v}}</m> by knowing the angle between <m>{\bf{F}}</m> and <m>{\bf{v}}</m>. If the vectors are given in coordinate form (that is, <m>{\bf{v}} = a{\bf{i}} + b{\bf{j}}</m>), we may not know the angle between them. Can we compute the component of a vector <m>{\bf{w}}</m> in the direction of <m>{\bf{v}}</m>, in terms of the coordinates of <m>{\bf{v}}</m> and<m>{\bf{w}}</m>?</p>
+ 
+<p>Suppose <m>{\bf{v}} = a{\bf{i}} + b{\bf{j}}</m> and <m>{\bf{w}} = c{\bf{i}} + d{\bf{j}}</m>, as shown below.  We will need to compute the cosine of <m>\theta</m> in terms of <m>a,~ b,~ c,~</m> and <m>d</m>.</p>
+
+<sidebyside widths="60% 30%"><p>First verify that
+  \begin{align*}
+      \cos \alpha \amp = \dfrac{a}{\|{\bf{v}}\|}~~~\text{and}~~~\sin \alpha = \dfrac{b}{\|{\bf{v}}\|}\\ 
+      \cos \beta \amp = \dfrac{c}{\|{\bf{w}}\|}~~~\text{and}~~~\sin \beta = \dfrac{d}{\|{\bf{w}}\|}\\
+\end{align*}</p>
+<image source="images/fig9-3-2.png"><description>ramp</description></image></sidebyside>
+
+<p>Because <m>\theta = \beta = \alpha</m>, we use the subtraction formula for cosine.
+\begin{align*}
+  \cos \theta \amp = \cos \alpha \cos \beta + \sin \alpha \sin \beta\\
+        \amp = \dfrac{a}{\|{\bf{v}}\|} \dfrac{c}{\|{\bf{w}}\|} + \dfrac{b}{\|{\bf{v}}\|} \dfrac{d}{\|{\bf{w}}\|}\\
+        \amp = \dfrac{1}{\|{\bf{v}}\| \|{\bf{w}}\|} (ac+bd)\\
+\end{align*}
+And finally,
+<me>\text{comp}_{\bf{v}}{\bf{w}} = \|{\bf{w}}\| \cos \theta = \dfrac{ac+bd}{\|{\bf{v}}\|}</me></p> 
+
+<p>Now we have a fromula for the component of a vector <m>{\bf{w}}</m> in the direction of a vector <m>{\bf{v}}</m>.</p>
+
+<assemblage><title>Component of a Vector in Coordinate Form</title>
+<p>If  <m>{\bf{v}} = a{\bf{i}} + b{\bf{j}}</m> and <m>{\bf{w}} = c{\bf{i}} + d{\bf{j}}</m>, then the component of <m>{\bf{w}}</m> in the direction of <m>{\bf{w}}</m> is given by
+<me>\text{comp}_{\bf{v}}{\bf{w}} =\dfrac{ac+bd}{\|{\bf{v}}\|}</me></p></assemblage>
+
+<warning><p>Recall that the "component" of a vector is a scalar.  If a vector <m>{\bf{w}}</m> is resolved into two component vectors, <m>{\bf{w}} = {\bf{u}} + {\bf{v}}</m>, its components are the <em>lengths</em> of the vectors <m>{\bf{u}}</m> and <m>{\bf{v}}</m>. The vectors <m>{\bf{u}}</m> and <m>{\bf{v}}</m> themselves are called the <term>vector components</term> of <m>{\bf{w}}</m>.</p></warning>
+
+<example><statement><p><ol label="a">
+  <li>Compute the component of <m>{\bf{w}} = 6{\bf{i}} + 2{\bf{j}}</m> in the direction of <m>{\bf{v}} = 4{\bf{i}} + 3{\bf{j}}</m>.</li> 
+<li>Find the vector component of <m>{\bf{w}}</m> in the direction of <m>{\bf{v}}</m>.</li>
+<li>Find the vector component of <m>{\bf{w}}</m> perpendicular to <m>{\bf{v}}</m>.</li></ol></p></statement>
+
+<solution><p><ol label="a">
+  <li><p>We use the formula derived above.
+      <me>\text{comp}_{\bf{v}}{\bf{w}} =\dfrac{ac+bd}{\|{\bf{v}}\|} = \dfrac{4(6)+3(2)}{\sqrt{4^2+3^2}} = \dfrac{30}{5} = 6</me>
+      Remember that the component of <m>{\bf{w}}</m> in the direction of <m>{\bf{v}}</m> is a scalar; it is the length of the projection of <m>{\bf{w}}</m> onto <m>{\bf{v}}</m>.</p></li>
+  <li><sidebyside widths="50% 40%" valigns="middle middle"><p>We would like to find a vector <m>{\bf{q}}</m> of length 6 in the direction of <m>{\bf{v}}</m>, as shown at right. Because <m>\|{\bf{v}}\| = 5</m>, we scale the components of <m>{\bf{v}}</m> by <m>\dfrac{6}{5}</m> to get
+  <me>{\bf{q}} = \dfrac{6}{5} (4{\bf{i}} + 3{\bf{j}}) = \dfrac{24}{5}{\bf{i}} + \dfrac{18}{5}{\bf{j}}</me></p>   
+  <image source="images/exam9-3-2.png"><description>vectors</description></image></sidebyside></li>
+  <li><p>Because <m>{\bf{w}} ={\bf{p}} + {\bf{q}}</m>, where <m>{\bf{p}}</m> is perpendicular to <m>{\bf{q}}</m>, we have
+  <me>{\bf{p}} ={\bf{w}} - {\bf{q}} = (6{\bf{i}} + 2{\bf{j}}) - (\dfrac{24}{5}{\bf{i}} + \dfrac{18}{5}{\bf{j}}) = \dfrac{6}{5}{\bf{i}} - \dfrac{8}{5}{\bf{j}}</me></p></li></ol></p></solution></example>
+
+<exercise><statement><p>Write the vector<m>{\bf{w}} = 6{\bf{i}} + 2{\bf{j}}</m> as the sum of two components, one parallel to <m>{\bf{v}} = {\bf{i}} + {\bf{j}}</m> and the other perpendicular to <m>{\bf{v}}</m>.</p></statement></exercise>
+</subsection>
+
+<subsection><title>The Dot Product</title>
+<p> The expression <m>ac+bd</m>, which we encountered above as part of the formula for <m>\text{comp}_{\bf{v}}{\bf{w}}</m>, is quite useful and is given a name; it is called the <term>dot product</term> of the vectors <m>{\bf{v}} = a{\bf{i}} + b{\bf{j}}</m> and <m>{\bf{w}} = c{\bf{i}} + d{\bf{j}}</m>. It is easy to remember the formula for the dot product if we think of adding the product of the <m>{\bf{i}}</m>-components and the product of the <m>{\bf{j}}</m>-components of the two vectors.</p>
+
+<assemblage><title>Dot Product</title>
+<p>The <term>dot product</term> of two vectors <m>{\bf{v}} = v_1{\bf{i}} + v_2 {\bf{j}}</m> and <m>{\bf{w}} = w_1{\bf{i}} + w_2 {\bf{j}}</m> is the scalar
+<me>{\bf{v}} \cdot {\bf{w}} = v_1v_2+w_1w_2</me></p></assemblage>
+
+<note><p>From the formula above, you can see that the dot product is commutative.  That is,
+  <me>{\bf{v}} \cdot {\bf{w}} = {\bf{w}} \cdot {\bf{v}}</me> 
+You can check that this is true in the following example.</p></note>
+
+<example><statement><p>Compute the dot product of <m>{\bf{v}} = 5{\bf{i}} - 3{\bf{j}}</m> and <m>{\bf{w}} = 4{\bf{i}} + {\bf{j}}</m>.</p></statement>
+
+<solution><p>We apply the formula above to find
+  <me>{\bf{v}} \cdot {\bf{w}} = 5(4)+(-3)(1) = 17</me></p></solution></example>
+
+  <p>In the examples above, you can see that the dot product of two vectors is a scalar. For this reason, the dot product is also called the <term>scalar product</term>.</p>
+
+<exercise><statement><p>Compute the dot product of <m>{\bf{v}} = 6{\bf{i}} + 2{\bf{j}}</m> and <m>{\bf{w}} = -2{\bf{i}} + 3{\bf{j}}</m>.</p></statement></exercise>
+
+<p>We can now write the formula for <m>\text{comp}_{\bf{v}}{\bf{w}}</m> using the dot product. 
+  <me>\text{comp}_{\bf{v}}{\bf{w}} = \|{\bf{w}}\| \cos \theta = \dfrac{ac+bd}{\|{\bf{v}}\|} = \dfrac{{\bf{v}} \cdot {\bf{w}}}{\|{\bf{v}}\|}</me>
+  We have derived an alternate formula for a component of a vector.</p>
+
+<assemblage><title>Component of a Vector</title>
+<p>The component of <m>{\bf{w}}</m> in the direction of <m>{\bf{w}}</m> is the scalar 
+<me>\text{comp}_{\bf{v}}{\bf{w}} = \dfrac{{\bf{v}} \cdot {\bf{w}}}{\|{\bf{v}}\|}</me></p></assemblage>
+
+<example><statement><p>Compute the component of <m>{\bf{v}} = 5{\bf{i}} - 3{\bf{j}}</m> in the direction of <m>{\bf{w}} = 4{\bf{i}} + {\bf{j}}</m>.</p></statement>
+
+<solution><p>Using the formula above, we have <m>\text{comp}_{\bf{w}}{\bf{v}} = \dfrac{{\bf{v}} \cdot {\bf{w}}}{\|{\bf{w}}\|}</m>. We first compute <m>{\bf{v}} \cdot {\bf{w}}</m> and <m>\|{\bf{w}}\|</m>. 
+<me>{\bf{v}} \cdot {\bf{w}} = 5(4) + (-3)(1) = 17~~\text{and}~~\|{\bf{w}}\| = \sqrt{4^2+1^2}=\sqrt{17}</me>
+Thus,</p>
+<sidebyside widths="60% 25%"><p>
+<me>\text{comp}_{\bf{w}}{\bf{v}} = \dfrac{{\bf{v}} \cdot {\bf{w}}}{\|{\bf{w}}\|} = \dfrac{17}{\sqrt{17}} = \sqrt{17}</me>  
+The length of the projection of <m>{\bf{v}}</m> in the direction of <m>{\bf{w}}</m> is <m>\sqrt{17}</m> units, as shown at right.</p><image source="images/exam9-3-4.png"><description>vectors</description></image></sidebyside></solution></example>
+
+<exercise><statement><p>Compute the component of <m>{\bf{u}} = 2{\bf{i}} + 3{\bf{j}}</m> in the direction of <m>{\bf{v}} = 6{\bf{i}} + 5{\bf{j}}</m>.</p></statement></exercise>
+</subsection>
+
+<subsection><title>Geometric Meaning of the Dot Product</title>
+<p> An even more important relationship, which gives geometric meaning to the dot product, follows from the formula for a component. We now have two ways to compute the component of <m>{\bf{w}}</m> in the direction of <m>{\bf{v}}</m>:
+<me>\text{comp}_{\bf{v}}{\bf{w}} = \|{\bf{w}}\| \cos \theta~~~~~~\text{and}~~~~~~\text{comp}_{\bf{v}}{\bf{w}} = \dfrac{{\bf{v}} \cdot {\bf{w}}}{\|{\bf{v}}\|}</me>
+Equating these two expressions, we find
+<me>\|{\bf{w}}\| \cos \theta = \dfrac{{\bf{v}} \cdot {\bf{w}}}{\|{\bf{v}}\|}</me>     
+or <m>\|{\bf{v}}\|\|{\bf{w}}\| \cos \theta = {\bf{v}} \cdot {\bf{w}}</m>. This is a geometric formula for the dot product.</p>
+
+<assemblage><title>Geometric Form for the Dot Product</title>
+<p>The <term>dot product</term> of two vectors <m>{\bf{v}}</m> and <m>{\bf{w}}</m> is the scalar
+<me>{\bf{v}} \cdot {\bf{w}} = \|{\bf{v}}\|\|{\bf{w}}\| \cos \theta</me> 
+where <m>\theta</m> is the angle between the vectors.</p></assemblage>
+
+<p> The dot product is a way of multiplying two vectors that depends on the angle between them. <ul>
+ <li>If <m>\theta = 0\degree</m>, so that <m>{\bf{v}}</m> and <m>{\bf{w}}</m> point in the same direction, then <m>\cos \theta = 1</m> and <m>{\bf{v}} \cdot {\bf{w}}</m> is just the product of their lengths, <m>\|{\bf{v}}\|\|{\bf{w}}\|</m>.</li>
+ <li>If <m>{\bf{v}}</m> and <m>{\bf{w}}</m> are perpendicular, then <m>\cos \theta = 0</m>, so <m>{\bf{v}} \cdot {\bf{w}} = 0</m>.  (Two vectors <m>{\bf{v}}</m> and <m>{\bf{w}}</m> are said to be <term>orthogonal</term> if their dot product is zero.)</li>
+ <li>If <m>\theta</m> is between <m>0\degree</m> and <m>90\degree</m>, the dot product multiplies the length of <m>{\bf{v}}</m> times the component of <m>{\bf{w}}</m> in the direction of <m>{\bf{v}}</m>.</li></ul></p>
+
+<sidebyside width="80%"><image source="images/fig9-3-3.png"><description>vectors</description></image></sidebyside>
+
+<example><statement><p>Show that the vectors <m>{\bf{v}} = 2{\bf{i}}+6{\bf{j}}</m> and <m>{\bf{w}} = -9{\bf{i}}+3{\bf{j}}</m> are orthogonal.</p></statement>
+
+<solution><p>We compute the dot product of the vectors.
+ <me>{\bf{v}} \cdot {\bf{w}} = 2(-9)+6(3) = 0</me>
+Thus, <m>\|{\bf{v}}\|\|{\bf{w}}\| \cos \theta = 0</m>, so <m>{\bf{v}}</m> and <m>{\bf{w}}</m> are orthogonal. Because neither <m>\|{\bf{v}}\| = 0</m> or <m>\|{\bf{w}}\| = 0</m>, it must be the case that <m>\cos \theta = 0</m>, so <m>\theta = 90\degree</m> or <m>270\degree</m>. </p></solution></example>
+
+<exercise><statement><p><ol label="a">
+  <li>Show that the vectors <m>{\bf{v}} = a{\bf{i}}+b{\bf{j}}</m> and <m>{\bf{w}} = -b{\bf{i}}+a{\bf{j}}</m> are orthogonal.</li>
+<li>Find a vector <m>{\bf{w}}</m> perpendicular to <m>{\bf{v}} = -3{\bf{i}}-5{\bf{j}}</m>.</li></ol></p></statement></exercise>
+
+<p>Using the dot product, we can find the angle between two vectors.</p>
+
+<assemblage><title>Angle Between Two Vectors</title>
+  <p>The angle <m>\theta</m> between two vectors <m>{\bf{v}}</m> and <m>{\bf{w}}</m> is given by 
+      <me>\cos \theta = \dfrac{{\bf{v}} \cdot {\bf{w}}}{\|{\bf{v}}\| \|{\bf{w}}\|}</me> </p></assemblage>
+  
+<example><statement><p>Find the angle between the vectors <m>{\bf{u}} = -3{\bf{i}}+2{\bf{j}}</m> and <m>{\bf{v}} = 5{\bf{i}}+3{\bf{j}}</m>.</p></statement>
+
+<solution><p>We first compute <m>{\bf{u}} \cdot {\bf{v}}</m> and the magnitude of each vector.</p>
+<sidebyside widths="60% 35%"><p>
+\begin{align*} 
+      {\bf{u}} \cdot {\bf{v}} \amp = -3(5)+2(3)=-9\\
+      \|{\bf{u}}\| \amp = \sqrt{(-3)^2 + 2^2} = \sqrt{13}\\
+      \|{\bf{v}}\| \amp = \sqrt{5^2 + 3^2} = \sqrt{34}\\
+\end{align*}</p>
+<image source="images/exam9-3-6.png"><description>vectors</description></image></sidebyside>
+<p>Then we apply the formula for <m>\cos \theta</m>.
+  \begin{align*} 
+      \cos \theta \amp = \dfrac{{\bf{v}} \cdot {\bf{w}}}{\|{\bf{v}}\| \|{\bf{w}}\|} = \dfrac{-9}{\sqrt{13}\sqrt{34}} = -0.4281\\
+      \theta \amp = \cos^{-1}(-0.4281) = 115.35\degree\\
+\end{align*}
+The angle between the vectors is <m>115.35\degree</m>.</p></solution></example>
+
+<exercise><statement><p>Find the angle between the vectors <m>{\bf{u}} = 4{\bf{i}}-6{\bf{j}}</m> and <m>{\bf{v}} = 2{\bf{i}}+8{\bf{j}}</m>.</p></statement></exercise>
+</subsection>
+
+<subsection><title>Skills Refresher</title>
+<exercises>
+
+<exercise number="1"><statement><sidebyside widths="60% 35%"> <p><ol label="a">
+  <li>Find the height <m>h</m> of the triangle.</li>   
+  <li>How far is the foot of the altitude from the vertex of the <m>18\degree</m> angle?</li></ol></p>
+    <image source="images/sr9-3-1.png"><description>triangle</description></image></sidebyside></statement></exercise>
+
+<exercise number="2"><statement><sidebyside widths="60% 35%"> <p><ol label="a">
+  <li>Find the height <m>h</m> of the triangle.</li>   
+  <li>Find the length of the third side of the triangle.</li></ol></p>
+    <image source="images/sr9-3-2.png"><description>triangle</description></image></sidebyside></statement></exercise>
+
+<exercise number="3"><statement><sidebyside widths="60% 20%"> <p><ol label="a">
+  <li>How far north is the tower from the airport?  How far east?</li>
+  <li>What is the distance from <m>A</m> to <m>P</m>?</li></ol></p>
+<image source="images/sr9-3-3.png"><description>triangle</description></image></sidebyside></statement></exercise>
+
+<exercise number="4"><statement><sidebyside widths="60% 35%"> <p><ol label="a">
+  <li>Find the distance from <m>A</m> to <m>C</m>.</li>
+  <li>How far north is point <m>C</m> from point <m>B</m>?</li></ol></p>
+<image source="images/sr9-3-4.png"><description>triangle</description></image></sidebyside></statement></exercise>
+</exercises>
+
+<subsubsection><title>Answers to 9.3 Exercises</title>
+<p><ol label="1">
+    <li>23 pounds</li>
+    <li><m>{\bf{w}} = (4{\bf{i}}+4{\bf{j}}) + (2{\bf{i}}-2{\bf{j}})</m></li>
+    <li><m>-6</m></li>
+    <li><m>\dfrac{27}{\sqrt{61}}</m></li>
+    <li><p><ol label="a">
+        <li><m>{\bf{u}} \cdot {\bf{v}} = -ab + ab = 0</m></li>
+        <li><m>5{\bf{i}}-3{\bf{j}}</m></li></ol></p></li>
+    <li><m>132.27\degree</m></li></ol></p>
+</subsubsection>
+
+<subsubsection><title>Skills Refresher Answers</title>
+<p><ol label="1">
+    <li><p><ol label="a">
+        <li><m>1.55</m></li>
+        <li><m>4.76</m></li></ol></p></li>
+    <li><p><ol label="a">
+        <li><m>19.57</m></li>
+        <li><m>81.83</m></li></ol></p></li>
+    <li><p><ol label="a">
+        <li>36.92 mi, 15.63 mi</li>
+        <li>16.08 mi</li></ol></p></li>
+    <li><p><ol label="a">      
+        <li><m>21.87</m></li>
+        <li><m>5.95</m></li></ol></p></li>  
+</ol></p>
+</subsubsection>
+</subsection>
+
+<subsection><title>Section 9.3 Summary</title>
+<subsubsection><title>Vocabulary</title>
+<p><ul cols="3">
+    <li>Dot product</li>
+    <li>Scalar product</li>  
+    <li>Orthogonal</li> 
+</ul></p>
+</subsubsection>
+
+<subsubsection><title>Concepts</title>
+<p><ol label="1">
+  <li><assemblage><title>Dot Product (Coordinate Formula)</title>
+    <p>The <term>dot product</term> of two vectors <m>{\bf{v}} = v_1{\bf{i}} + v_2 {\bf{j}}</m> and <m>{\bf{w}} = w_1{\bf{i}} + w_2 {\bf{j}}</m> is the scalar
+    <me>{\bf{v}} \cdot {\bf{w}} = v_1v_2+w_1w_2</me></p></assemblage></li>
+  <li>The dot product is a way of multiplying two vectors that depends on the angle between them. </li>
+  <li><assemblage><title>Dot Product (Geometric Formula)</title>
+    <p>The <term>dot product</term> of two vectors <m>{\bf{v}}</m> and <m>{\bf{w}}</m> is the scalar
+    <me>{\bf{v}} \cdot {\bf{w}} = \|{\bf{v}}\|\|{\bf{w}}\| \cos \theta</me> 
+    where <m>\theta</m> is the angle between the vectors.</p></assemblage></li>
+  <li> The component of a vector <m>{\bf{w}}</m> in the direction of vector <m>{\bf{v}}</m> is the length of the vector projection of <m>{\bf{w}}</m> onto <m>{\bf{w}}</m>.</li>
+<li><assemblage><title>Component of a Vector</title>
+    <p>The component of <m>{\bf{w}}</m> in the direction of <m>{\bf{w}}</m> is the scalar 
+    <me>\text{comp}_{\bf{v}}{\bf{w}} = \dfrac{{\bf{v}} \cdot {\bf{w}}}{\|{\bf{v}}\|}</me></p></assemblage></li>
+<li><assemblage><title>Angle Between Two Vectors</title>
+    <p>The angle <m>\theta</m> between two vectors <m>{\bf{v}}</m> and <m>{\bf{w}}</m> is given by 
+      <me>\cos \theta = \dfrac{{\bf{v}} \cdot {\bf{w}}}{\|{\bf{v}}\| \|{\bf{w}}\|}</me> </p></assemblage></li>
+<li>Two vectors <m>{\bf{v}}</m> and <m>{\bf{w}}</m> are orthogonal if <m>{\bf{v}} \cdot {\bf{w}} = 0</m></li>      
+</ol></p></subsubsection>
+
+<subsubsection><title> Study Questions</title>
+<p><ol label="1">
+  <li>If <m>{\bf{u}}</m> and <m>{\bf{v}}</m> have the same direction, what is <m>\text{comp}_{\bf{u}}{\bf{v}}</m>?</li>
+  <li>If <m>{\bf{u}}</m> is perpendicular to <m>{\bf{v}}</m>, what is <m>\text{comp}_{\bf{u}}{\bf{v}}</m>?</li>
+  <li>What is the angle between <m>{\bf{u}}</m> and <m>{\bf{v}}</m> that makes their dot product as large as possible?</li>
+  <li>What does the dot product of two unit vectors tell you?</li></ol></p>
+</subsubsection>
+
+<subsubsection><title>Skills</title>
+<p><ol label="1">
+<li>Find the component of <m>{\bf{w}}</m> in the direction of <m>{\bf{v}}</m>    #1-6, 37-40</li>
+<li>Compute the dot product    #11-22, 27-36</li>
+<li>Find the angle between two vectors    #23-26</li>
+<li>Resolve a vector into components in given directions    #7-10, 41-42</li></ol></p>
+</subsubsection>
+</subsection>
+
+<!--<xi:include href="./summary-4-1.xml" /> summary  -->
+<!--<xi:include href="./section-4-1-exercises.xml" />  exercises  -->
+</section> 
+<!-- </book>  </mathbook> -->

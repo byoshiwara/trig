@@ -1,146 +1,67 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!-- <mathbook><book> -->
 <chapter xml:id="chap6"  xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Quadratic Functions</title>
-<introduction>
-<sidebyside width="60%" margins="0% 40%"><image source="images/water-arcs"><description>water fountains, Justin Pumfrey/Getty Images</description></image></sidebyside>
-<p>
-    The models we have explored so far, namely, linear, exponential, logarithmic, and power, are <term>monotonic</term> functions, that is, always increasing or always decreasing on their domains. (Remember that we used power functions as models in the first quadrant only.) In this chapter, we investigate problems where the output variable may change from increasing to decreasing, or vice versa. The simplest sort of function that models this behavior is a quadratic function, one that involves the square of the variable.
-</p>
-<p>
-    Around 1600, Galileo began to study the motion of falling objects. He used a ball rolling down an inclined plane or ramp to slow down the motion. 
-</p>
-<sidebyside width="66%"><image source="images/fig-inclined-plane"><description>position of rolling ball marked on incline plane</description></image></sidebyside>
+<title>Radians</title>
 
-<sidebyside widths="55% 30%"><p>
-    Galileo had no accurate way to measure time; clocks had not been invented yet. So he used water running into a jar to mark equal time intervals.
-     After many trials, Galileo found that the ball traveled <m>1</m> unit of distance down the plane in the first time interval, <m>3</m> units in the second time interval, <m>5</m> units in the third time interval, and so on, as shown in the figure, with the distances increasing through odd units of distance as time went on. 
-</p>
+<p></p><introduction>
+<sidebyside widths="60% 40%" valigns="middle middle"><p>
+<ul>
+    <li><m>\blert{\textbf{Arclength and Radians}}</m></li>
+    <li><m>\blert{\textbf{Circular Functions}}</m></li>
+    <li><m>\blert{\textbf{Graphs of the Circular Functions}}</m></li></ul></p>
+<image source="images/ch6-1.png"><description>design</description></image></sidebyside>
 
-<p><table xml:id="table-inclined-plane"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
-        <row bottom="major">
-            <cell>Time</cell>
-            <cell><line>Distance</line><line>traveled</line></cell>
-            <cell><line>Total</line><line>distance</line></cell>
-        </row>
-        <row>
-            <cell><m>1</m></cell>
-            <cell><m>1</m></cell>
-            <cell><m>1</m></cell>
-        </row>
-        <row>
-            <cell><m>2</m></cell>
-            <cell><m>3</m></cell>
-            <cell><m>5</m></cell>
-        </row>
-        <row>
-            <cell><m>3</m></cell>
-            <cell><m>5</m></cell>
-            <cell><m>9</m></cell>
-        </row>
-        <row>
-            <cell><m>4</m></cell>
-            <cell><m>7</m></cell>
-            <cell><m>16</m></cell>
-        </row>
-        <row>
-            <cell><m>5</m></cell>
-            <cell><m>9</m></cell>
-            <cell><m>25</m></cell>
-        </row>
-    </tabular><caption></caption></table></p>
-</sidebyside>
+<p>Have you ever wonderd why we divide the circle into 360 degrees?  Nobody really knows the answer, but it may well have started around 600 BCE with the Babylonians.</p>
 
-<sidebyside widths="50% 20%">
-    
-     <p>As you can see in <xref ref="table-inclined-plane" text="type-global"/>, the total distance traveled by the ball is proportional to the square of the time elapsed, <m>s = kt^2</m>. Galileo found that this relationship held no matter how steep he made the ramp. Plotting the height of the ball as a function of time, we obtain a portion of the graph of a quadratic function.</p>
-<p><image source="images/fig-inclined-plane-graph"><description>graph of ball rolling down inclined plane</description></image></p>
-</sidebyside>
+ <sidebyside widths="60% 30%"><paragraphs>
+<p>The Babylonians lived between the Tigris and Euphrates rivers in present day Turkey and Syria.  They kept written records using a stylus to press cuneiform, or wedge-shaped, symbols into wet clay tablets, which were then baked in the sun. Thousands of these tablets have survived and give us detailed information about the mathematical practices of the time.</p>
 
-<p></p>
+ <p>The Babylonians used a base 60 number system because the number 60 has many factors. They did not invent decimal fractions, so they found it difficult to deal with remainders when doing division.  But 60 can be divided evenly by 2, 3, 4, 5, and 6, which made calculations with common fractions much easier.</p> 
+</paragraphs>
+<image source="images/ch6-2.png"><description>tablet</description></image></sidebyside>
 
-<investigation xml:id="investigation-height-of-baseball"><title>Height of a Baseball</title><statement>
-    <p>
-        Suppose a baseball player pops up, that is, hits the baseball straight up into the air. The height, <m>h</m>, of the baseball <m>t</m> seconds after it leaves the bat can be calculated using a formula from physics. This formula takes into account the initial speed of the ball (<m>64</m> feet per second) and its height when it was hit (<m>4</m> feet). The formula for the height of the ball (in feet) is
-        <me>h = -16t^2 + 64t + 4</me>
-    </p>
-    <ol>
-        <li><p>
-            Evaluate the formula to complete the table of values for the height of the baseball.</p><p>
-            <tabular top="minor" halign="center" right="minor" left="minor" bottom="minor">
-                <col left="major" right="major"/>
-        <row bottom="minor">
-            <cell><m>t</m></cell>
-            <cell><m>0</m></cell>
-            <cell><m>1</m></cell>
-            <cell><m>2</m></cell>
-            <cell><m>3</m></cell>
-            <cell><m>4</m></cell>
-        </row>
-        <row>
-            <cell><m>h</m></cell>
-            <cell><m>\hphantom{blank}</m></cell>
-            <cell><m>\hphantom{blank}</m></cell>
-            <cell><m>\hphantom{blank}</m></cell>
-            <cell><m>\hphantom{blank}</m></cell>
-            <cell><m>\hphantom{blank}</m></cell>
-         </row>
-    </tabular></p>
-        </li>
-        <li><p>
-            Graph the height of the baseball as a function of time. Plot data points from your table, then connect the points with a smooth curve.</p><p>
-            <sidebyside width="30%"><image source="images/fig-grid-for-popup"><description>blank grid</description></image></sidebyside></p>
-        </li>
-        <li>
-            What are the coordinates of the highest point on the graph? When does the baseball reach its maximum height, and what is that height?
-        </li>
-        <li>
-            Use the formula to find the height of the baseball after <m>\dfrac{1}{2}</m> second.
-        </li>
-        <li>
-            Check that your answer to part (4) corresponds to a point on your graph. Approximate from your graph another time at which the baseball is at the same height as your answer to part (4).
-        </li>
-        <li>
-            Use your graph to find two times when the baseball is at a height of <m>64</m> feet.
-        </li>
-        <li>
-            Use your graph to approximate two times when the baseball is at a height of <m>20</m> feet. Then use the formula to find the actual heights at those times.
-        </li>
-        <li>
-            Suppose the catcher catches the baseball at a height of <m>4</m> feet, before it strikes the ground. At what time was the ball caught?
-        </li>
-        <li>
-            Use your calculator to make a table of values for the equation <m>h = -16t^2 + 64t + 4</m>
-            with TblStart = <m>0</m> and <m>\Delta</m>Tbl <m>= 0.5</m>.
-        </li>
-        <li>
-            Use your calculator to graph the equation for the height of the ball, with window settings
-            \begin{align}
-            \text{Xmin} \amp = 0, \amp\amp \text{Xmax} = 4.5, \amp\amp \text{Yscl} = 5\\
-            \text{Ymin} \amp = 0, \amp\amp \text{Ymax} = 70, \amp\amp \text{Yscl} = 5
-            \end{align}
-        </li>
-        <li>
-            Use the <em>intersect</em> command to verify your answer part (7): Estimate two times when the baseball is at a height of <m>20</m> feet.
-        </li>
-        <li>
-            Use the <em>intersect</em> command to verify your answer to part (8): At what time was the ball caught if it was caught at a height of <m>4</m> feet?
-        </li>
-    </ol>
-</statement></investigation>
+<p>We still see traces of their base 60 system in our own day:  there are 60 seconds in a minute, and 60 minutes in an hour.</p>
 
+<sidebyside widths="60% 30%">
+<p>In geometry, Babylonian mathematicians used the corner of an equilateral triangle as their basic unit of angular measure, and naturally divided that angle into 60 smaller angles.  Now, if the corners of six equilateral triangles are placed together they form a complete circle, and that is why there are six times 60, or 360 degrees of arc in a circle.</p>
+ <image source="images/ch6-3.png"><description>circle</description></image></sidebyside>
+
+ <p> During the reign of Nebuchadnezzar, using the tools and technology available to them, Babylonian astronomers calculated that a complete year numbered 360 days.  This made dividing the circle into 360 degrees even more useful.</p>
+
+<p>So the number 360 is not fundamental to the nature of a circle.  If ancient civilizations had defined the full circle to be some other number of degrees, we'd probably be using that number today.</p>
+
+<p>But why do we need another, different way to measure angles?  In this chapter we'll study <term>radian measure</term>, which at first may seem awkward and unnatural.  As a hint, consider that although 360 is not fundamental to circles, the number <m>\alert{\pi}</m> is.</p>
+
+<sidebyside width="50%"><image source="images/ch6-4.png"><description>angles</description></image></sidebyside>
+
+<p>Radians connect the measure of an angle with the arclength it cuts out on a circle. </p>
+
+<sidebyside widths="50% 45%"><image source="images/ch6-5.png"><description>rolling</description></image>
+<paragraphs>
+<p>Imagine a circle of radius 1unit rolling along a straight line. The circumference of a circle is <m>2\pi</m> times the length of its radius, so when the circle has turned through one complete revolution, it has traveled a distance of <m>2\pi</m> units.  When the circle has turned through half a revolution, it has taveled a distance of <m>\pi</m> units.</p>  
+<p>In radian measure, the angle through which the circle has turned is equal to the distance the circle has traveled, or the length of the arc that has unrolled on the line.</p>
+ <p>The idea of radian measure was developed by Roger Cotes, an English mathematician who worked closely with Isaac Newton.  He described the radian in everything but name, and recognized its naturalness as a unit of angular measure.</p> 
+</paragraphs>
+</sidebyside> 
+
+<p>The term <term>radian</term> first appeared in print on June 5, 1873, on an exam written by James Thomson, the brother of Lord Kelvin, at Queen's College in Belfast.</p> 
+<p>In calculus and most other branches of mathematics beyond practical geometry, angles are nearly always measured in radians. Because radians arise naturally when dealing with circles, important relationships are expressed more concisely in radians.   
+In particular, results involving trigonometric functions are simpler when the variables are expressed in radians.</p>
+
+
+
+   
 
 </introduction>
 
 
-    <xi:include href="./section-6-1.xml" />  <!-- Factors and x-intercepts  -->
-    <xi:include href="./section-6-2.xml" />  <!-- Solving Quadratic Equations  -->
-    <xi:include href="./section-6-3.xml" />  <!-- Graphing Parabolas  -->
-    <xi:include href="./section-6-4.xml" />  <!-- Problem Solving  -->
-    <xi:include href="./section-6-5.xml" />  <!-- Quadratic Inequalities  -->
-    <xi:include href="./section-6-6.xml" />  <!-- Curve Fitting  -->
-    <xi:include href="./chap6-summary.xml" />       <!-- Summary and Review-->
-    <xi:include href="./chap6-rev-projects.xml" />  <!-- projects  -->
+    <!-- <xi:include href="./section-6-1.xml" />    -->
+    <!-- <xi:include href="./section-6-2.xml" />    -->
+    <!-- <xi:include href="./section-6-3.xml" />   -->
+    
+    
+    <!-- <xi:include href="./chap6-summary.xml" />      Summary and Review-->
+    
 
 </chapter> 
 <!-- </book>  </mathbook> -->
