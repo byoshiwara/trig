@@ -72,12 +72,128 @@
 <exercisegroup cols="2"><introduction><p>For Problems 7<ndash/>12, calculate the degree measure of the unknown angle, and sketch the angle in standard position.
 </p></introduction>
 
-    <exercise number="7"><statement><sidebyside width="65%"><image source="images/hp4-1-7.png"><description>dial</description></image></sidebyside></statement>
+    <exercise number="7"><statement><sidebyside width="65%"><!--<image source="images/hp4-1-7.png"><description>dial</description></image>-->
+ <image xml:id="hp4-1-7">
+        <description>dial</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \coordinate (O) at (0,0);
+        \coordinate (A) at (135:3);
+        \coordinate (B) at (105:3);
+        \coordinate (C) at (75:3);
+        \coordinate (D) at (135:.8);
+        \coordinate (E) at (105:.8);
+        \coordinate (F) at (75:.8);
+        \coordinate (G) at (45:3);
+        \coordinate (H) at (45:.8);
+
+        \draw[gray, thick] (-3,0) --  (3,0) node[below, midway, color=black] {an electrical meter dial} ;
+        \draw[gray!70!white, thick] (A) --(135:3.2);
+        \draw[gray!70!white, thick] (E) --(105:3.2) node[above] {\color{black} 1}  ;
+        \draw[gray!70!white, thick] (O) --(75:3.2) node[above] {\color{black} 10}  ;
+        \draw[gray!70!white, thick] (O) --(45:3.2) node[above] {\color{black} 100}  ;
+
+
+        \draw[black,thick] (A) -- (D);
+        \draw[black,thick] (G) -- (H);
+        \draw[black,thick] (A) arc (135:45:3);
+        \draw[black,thick] (D) arc (135:45:.8);
+
+
+        \draw[blue, ultra thick, ->] (O)--(135:2.3);
+        \draw[blue, ultra thick, ->] (O)--(75:2.3);
+        \draw[red, thick, ->] (135:.6) arc (135:75:.6);
+
+        \draw[gray!70!white, thick,<->] (180:1) arc (180:135:1) node[ left, midway, xshift=0, yshift=0]{\footnotesize\color{black}$45\degree$} ;
+        \draw[gray!70!white, thick,<->] (1,0) arc (0:45:1) node[ right, midway, xshift=0, yshift=0]{\footnotesize\color{black}$ 45\degree$} ;
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></statement>
         <answer><m>60\degree</m></answer></exercise>
 
-    <exercise number="8"><statement><sidebyside width="60%"><image source="images/hp4-1-8.png"><description>speedometer</description></image></sidebyside></statement></exercise>
+    <exercise number="8"><statement><sidebyside width="60%"><!--<image source="images/hp4-1-8.png"><description>speedometer</description></image>-->
+    <image xml:id="hp4-1-8">
+        <description>speedometer</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+        \coordinate(O) at (0,0);
+        \draw [black,thick] (O) -- (230:1.5) arc (230:-50:1.5) -- (O);
 
-    <exercise number="9"><statement><sidebyside width="55%"><image source="images/hp4-1-9.png"><description>sundial</description></image></sidebyside></statement><answer><m>60\degree</m></answer></exercise>
+        \foreach \angle [evaluate=\angle as \xi using int( 115 - \angle /2)] in {230,210,...,-50}
+        {
+          \draw[line width=1pt] (\angle:1.5cm) -- (\angle:1.7cm);
+          \node[font=\small] at (\angle:2cm) {\textsf{\xi}};
+        }
+
+        \draw[blue,thick,<->] (230:.7) arc(230:110:.7);
+
+        \draw [thick, gray!70!white, <->] (230:.5) arc (230:310:.5) node[below, midway, xshift=1, yshift=-1, color=black]{$\footnotesize 80\degree$};
+
+        \draw[red,ultra thick,->] (O) -- (110:1.48cm);
+
+        \node[text width=2.7cm] at (0,-2.1)  {a speedometer};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></statement></exercise>
+
+    <exercise number="9"><statement><sidebyside width="55%"><!--<image source="images/hp4-1-9.png"><description>sundial</description></image>-->
+    <image xml:id="hp4-1-9">
+        <description>sundial</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+        \coordinate(O) at (0,0);
+        \draw [gray!60!white,thick] (-1.5,0) -- (1.5,0);
+        \draw [black, thick] (O) circle (1.5);
+
+        \foreach \angle [count=\xi][evaluate=\xi as \xj using int( \xi+5)] in {180,165,...,90}
+        {
+          \draw[line width=1pt] (\angle:1.5cm) -- (\angle:1.55cm);
+          \node[font=\small] at (\angle:1.7cm) {\textsf{\xj}};
+        }
+        \foreach \angle [count=\xi] in {75,60,...,0}
+        {
+          \draw[line width=1pt] (\angle:1.5cm) -- (\angle:1.55cm);
+          \node[font=\small] at (\angle:1.7cm) {\textsf{\xi}};
+        }
+
+        \draw[blue,thick,->] (90:.7) arc(90:-210:.7);
+
+        \draw[red,ultra thick,->] (O) -- (90:1.48cm);
+        \draw[red,ultra thick,->] (O) -- (150:1.48cm);
+
+        \node[text width=1.8cm] at (0,-2.)  {a sundial};
+
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></statement><answer><m>60\degree</m></answer></exercise>
         
     <exercise number="10"><statement><sidebyside width="50%"><image source="images/hp4-1-10.png"><description>revolving door</description></image></sidebyside></statement></exercise> 
 
