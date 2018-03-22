@@ -195,7 +195,36 @@
     </image>
     </sidebyside></statement><answer><m>60\degree</m></answer></exercise>
         
-    <exercise number="10"><statement><sidebyside width="50%"><image source="images/hp4-1-10.png"><description>revolving door</description></image></sidebyside></statement></exercise> 
+    <exercise number="10"><statement><sidebyside width="50%"><!--<image source="images/hp4-1-10.png"><description>revolving door</description></image>-->
+    <image xml:id="hp4-1-10">
+        <description>revolving door</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+        \coordinate(O) at (0,0);
+
+        \draw [black, thick] (O) circle (1.5);
+
+
+        \draw[blue,thick,->] (210:.7) arc(210:90:.7);
+
+        \draw[black, thick] (O) -- (90:1.5);
+        \draw[black, thick] (O) -- (210:1.5);
+        \draw[black, thick] (O) -- (-30:1.5);
+
+        \node[text width=3cm] at (0,-2.)  {a revolving door};
+
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></statement></exercise> 
 
     <exercise number="11"><statement><sidebyside width="55%"><image source="images/hp4-1-11.png"><description>pendulum</description></image></sidebyside></statement>
         <answer><m>14\degree</m></answer></exercise>
