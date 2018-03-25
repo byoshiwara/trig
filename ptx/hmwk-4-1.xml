@@ -226,10 +226,74 @@
     </image>
     </sidebyside></statement></exercise> 
 
-    <exercise number="11"><statement><sidebyside width="55%"><image source="images/hp4-1-11.png"><description>pendulum</description></image></sidebyside></statement>
+    <exercise number="11"><statement><sidebyside width="55%"><!--<image source="images/hp4-1-11.png"><description>pendulum</description></image>-->
+    <image xml:id="hp4-1-11">
+        <description>pendulum</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+        \coordinate(O) at (0,0);
+        \coordinate(A) at (263:3cm);
+        \coordinate(B) at (277:3cm);
+        \draw[gray!70!white, thick] (O) -- +(-1.5,0);
+        \draw[gray!70!white, thick, <->] (-0.6,0) arc (180: 263: .6) node[below left, midway, text=black] {$\footnotesize 83\degree$};
+        \draw[gray, thick] (O) -- (A);
+        \draw[gray, thick] (O) -- (B);
+
+        \draw [red, thick, ->] (263:1.7cm) arc (263:277:1.7);
+        \draw [red, thick] (263:3cm) arc (263:277:3);
+        \filldraw[teal] (A) circle(2pt);
+        \filldraw[teal] (B) circle(2pt);
+
+
+        \node[text width=4.cm] at (0,-3.4)  {a swinging pendulum};
+
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></statement>
         <answer><m>14\degree</m></answer></exercise>
         
-    <exercise number="12"><statement><sidebyside width="55%"><image source="images/hp4-1-12.png"><description>Ferris wheel</description></image></sidebyside></statement></exercise>
+    <exercise number="12"><statement><sidebyside width="55%"><!--<image source="images/hp4-1-12.png"><description>Ferris wheel</description></image>-->
+    <image xml:id="hp4-1-12">
+        <description>Ferris wheel</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+        \coordinate(O) at (0,0);
+        \draw [black,thick] (O) circle (1.5cm) -- (O);
+
+        \foreach \angle in {0,22.5,...,337.5}
+        {
+          \draw[green, thick] (O) -- (\angle: 1.5cm);
+          \filldraw[cyan] (\angle:1.5cm)++(-.1,0) rectangle +(.2,-.2);
+        }
+
+        \draw[red,ultra thick] (O) -- (157.5:1.5cm);
+          \filldraw[cyan] (157.5:1.5cm)++(-.1,0) rectangle +(.2,-.2);
+        \draw[red,ultra thick] (O) -- (-90:1.5cm);
+
+        \draw[blue,thick,->] (-90:.7) arc(-90:157.5:.7);
+
+        \node[text width=2.6cm] at (0,-2.1)  {a Ferris wheel};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></statement></exercise>
 </exercisegroup>
 
 <exercisegroup cols="3"><introduction><p>For Problems 13<ndash/>18, find two angles, one positive and one negative, that are coterminal with the given angle.
