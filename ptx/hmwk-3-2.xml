@@ -887,7 +887,38 @@ Tikz Shell in ptx
 
 <exercisegroup><introduction><p>Problems 33<ndash/>38 consider the ambiguous case of the Law of Sines, when two sides and an angle opposite one of them are known.</p></introduction>
 
-     <exercise number="33"><statement><sidebyside widths="55% 35%" valigns="middle middle"><p>In the right triangle <m>ABC</m> shown, <m>\angle A = 30\degree,~\angle C = 90\degree</m>, and <m>c = 3</m> inches.</p><p><image source="images/hp3-2-33.png"><description>triangle</description></image></p></sidebyside>
+     <exercise number="33"><statement><sidebyside widths="55% 32%" valigns="middle middle"><p>In the right triangle <m>ABC</m> shown, <m>\angle A = 30\degree,~\angle C = 90\degree</m>, and <m>c = 3</m> inches.</p><!--<image source="images/hp3-2-33.png"><description>triangle</description></image>-->
+     <image xml:id="hp3-2-33">
+        <description>triangle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (30:3);
+        \coordinate (C) at($ 3*cos(30)*(1,0) $);
+        \coordinate (D) at (4,0);
+
+        \filldraw[black] (A) circle (.5pt) node[anchor = north east] {$A$};
+        \filldraw[black] (B) circle (.5pt) node[anchor = south] {$B$};
+        \filldraw[black] (C) circle (.5pt) node[anchor = north] {$C$};
+        \draw[blue, thick] (C) rectangle +(-.25, .25);
+
+        \draw[black, thick] (B)--(A) node[above left,midway, yshift=0] {\color{blue} 3};
+        \draw[black,  thick] (C)--(B) node[right,midway, yshift=0] {\color{blue}$a$};
+        \draw[black,  thick] (D)--(A) ;
+
+        \draw[red,thick] (O)++(.5,0) arc(0:30:.5) node[right,midway, yshift=2] {\footnotesize$30\degree$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
     <p><ol label="a">
         <li>Use the definition of <m>\sin A</m> to solve for <m>a</m> (the length of side <m>\overline{BC}</m>).</li>  
         <li>Can you draw a triangle <m>ABC</m> with <m>A = 30\degree</m> and <m>c = 3</m> if <m>a \lt \dfrac{3}{2}</m>? Why or why not?</li>

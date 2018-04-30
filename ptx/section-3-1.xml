@@ -209,7 +209,31 @@
     <p><me>\sin \theta = \dfrac{y}{r}~~~~~~~~\cos \theta = \dfrac{x}{r}~~~~~~~~\tan \theta = \dfrac{y}{x}</me></p>
     </assemblage>
 
-<sidebyside width="80%"><image source="images/act3-1.png"><description>grid</description></image></sidebyside>
+<sidebyside width="70%"><!--<image source="images/act3-1.png"><description>grid</description></image>-->
+    <image xml:id="act3-1">
+        <description>grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}[scale=.5]
+
+        \draw[step=1cm,cyan,very thin] (-10,-3) grid (10,7);
+        \draw[thick,->] (-10,0) -- (10.8,0) node[anchor=west] {$x$};
+        \draw[thick,->] (0,-3) -- (0,7.8) node[anchor=south] {$y$};
+        \foreach \x in {-10, -5,5,10}
+            \draw[ultra thick] (\x cm,0)+(0,.25) -- +(0,-.25) node[below, yshift=-1,fill=white, inner sep=1pt] {\x};
+
+            \draw[ultra thick] (0,5 cm)+(.25,0) -- +(-.25,0) node[left,fill=white, inner sep=1pt] {5};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
 <p><ol label="1">
     <li>Draw an angle <m>\theta</m> in standard position with the point <m>P(6,4)</m> on its terminal side.</li>
@@ -300,7 +324,7 @@
           input/.style    = {coordinate}, % Input
           output/.style   = {coordinate} % Output
         }
-        \begin{tikzpicture} 
+        \begin{tikzpicture}  [xscale=1.2] 
 
         \coordinate(A) at (-2.83,0);
         \coordinate (B) at (-2.83,1);
@@ -312,7 +336,7 @@
         \draw[gray,thick, dashed] (A)--(O);
         \draw[black, ultra thick] (C)--(B) node[above,midway] {\color{blue}$3$};
         \draw[black,thick] (B) --+(-.28,.1);
-        \draw[black,thick] (A)--(C) node [below,midway] {\color{blue}$12$};
+        \draw[black,thick] (A)--(C);
 
         \draw[black,thick,->] (A)++(-.4,0) -- (1,0);
         \draw[black,thick,->] (0,-0.5) -- (0,1.5) ;
@@ -378,7 +402,7 @@
         \draw[black,thick,->] (-2,0) -- (2.2,0);
         \draw[black,thick,->] (0,-0.5) -- (0,2.5) ;
 
-        \draw[red!80!white,thick] (0.7,0) arc (0:50:0.7) node[below left, midway, xshift=2, yshift=4] {\footnotesize$\theta$};
+        \draw[red!80!white,thick] (0.8,0) arc (0:50:0.8) node[below left, midway, xshift=4, yshift=2] {\scriptsize$50\degree$};
         \draw[red,thick] (1,0) arc (0:130:1) node[midway, xshift=-12, yshift=1, fill=white] {\footnotesize$130\degree$};
         \end{tikzpicture}]]>
     </latex-image>
@@ -1299,7 +1323,11 @@ Lot 86 has an area of approximately 17,669 square feet.</p></solution></example>
 <p><ol label="1">
     <li>We put an angle  in <term>standard position</term> by placing its vertex at the origin and the <term>initial side</term> on the positive <m>x</m>-axis.</li>
     <li><assemblage><title>Coordinate Definitions of the Trigonometric Ratios</title>
+<<<<<<< Updated upstream
     <sidebyside widths="30% 60%" margins="5% 5%" valigns="middle middle">      
+=======
+    <sidebyside widths="30% 60%" valigns="middle middle">      
+>>>>>>> Stashed changes
     <p><ul>
         <li><m>\cos \theta = \dfrac{x}{r}</m></li>
         <li><m>\sin \theta = \dfrac{y}{r}</m></li>

@@ -1,5 +1,5 @@
 <!--  This file is part of the book                  -->
-<!--   Modeling, Functions, and Graphs   -->
+<!--   Trigonometry   -->
 <!--                                                 -->
 <!--  Copyright (C) 2016 Katherine Yoshiwara            -->
 <!--
@@ -7,7 +7,7 @@
 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 <!--
- Assumes current file is in mfg/xsl and that the mathbook repository is adjacent 
+ Assumes current file is in trig/xsl and that the mathbook repository is adjacent 
 -->
 <xsl:import href="../../mathbook/xsl/mathbook-latex.xsl"/>
 <!--

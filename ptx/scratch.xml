@@ -2,7 +2,7 @@
 
 <mathbook>
     <docinfo>
-        <brandlogo url="https://byoshiwara.github.io/MFG-online/" source="images/coverthumbnail.png" /> 
+        <brandlogo url="https://byoshiwara.github.io/trig/" source="images/cover.png" /> 
         <latex-preamble>
             <package>cancel</package>
 <!--            <package>{xcolor}</package>
@@ -59,7 +59,7 @@
 
                <!-- There can be several authors here -->
                 <author>
-                    <personname>Nemo</personname>
+                    <personname>Kathy Yoshiwara</personname>
                     <!-- department here is one line, so unstructured -->
                     <department>Department of Retirement</department>
                     <!-- institution uses two lines, so structured as such -->
@@ -89,9 +89,10 @@
             -->
 
 
-    <exercise number="10"><statement><sidebyside width="50%"><!--<image source="images/hp4-1-10.png"><description>revolving door</description></image>-->
-    <image xml:id="hp4-1-10">
-        <description>revolving door</description>
+<exercise><statement>
+<sidebyside widths="50% 25%" valigns="middle middle"><p>The volume control on an amplifier is a dial with ten settings, as shown at right. Through how many degrees would you rotate the dial to increase the volume level from 0 to 7?</p><!--<image source="images/exer4-1-1.png"><description>dial</description></image>-->
+    <image xml:id="exer4-1-1">
+        <description>dial</description>
         <latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
@@ -101,25 +102,28 @@
           input/.style    = {coordinate}, % Input
           output/.style   = {coordinate} % Output
         }
-        \begin{tikzpicture}
+        \begin{tikzpicture} 
         \coordinate(O) at (0,0);
+        \filldraw [fill=gray!10!white] (O) circle [radius=2cm];
+        \filldraw [black] (O) circle [radius=.075cm];
+        \foreach    [evaluate={\xmod=int(mod(\xi+1,10));}]
+         \angle [count=\xi] in {54,18,...,-270}
+        {
+          \draw[line width=1pt] (\angle:1.9cm) -- (\angle:2cm);
+          \node[font=\large] at (\angle:1.65cm) {\textsf{\xmod}};
+        }
+        \draw[black,ultra thick,->] (O) -- (90:1.3cm);
+        \draw[gray!70!white,ultra thick,->] (0,0) -- (196:1.3cm);
 
-        \draw [black, thick] (O) circle (1.5);
-
-
-        \draw[blue,thick,->] (210:.7) arc(210:90:.7);
-
-        \draw[black, thick] (O) -- (90:1.5);
-        \draw[black, thick] (O) -- (210:1.5);
-        \draw[black, thick] (O) -- (-30:1.5);
-
-        \node[text width=3cm] at (0,-2.)  {a revolving door};
+        \draw [thick, color=red, <->, domain=pi/2:-9*pi/10, samples=200, smooth]
+          plot (xy polar cs:angle=\x r, radius={.45});
 
         \end{tikzpicture}]]>
     </latex-image>
     </image>
-    </sidebyside></statement></exercise> 
-
+</sidebyside></statement></exercise>
+    
+    
 
 
 
