@@ -89,10 +89,9 @@
             -->
 
 
-<exercise><statement>
-<sidebyside widths="50% 25%" valigns="middle middle"><p>The volume control on an amplifier is a dial with ten settings, as shown at right. Through how many degrees would you rotate the dial to increase the volume level from 0 to 7?</p><!--<image source="images/exer4-1-1.png"><description>dial</description></image>-->
-    <image xml:id="exer4-1-1">
-        <description>dial</description>
+<sidebyside width="45%"><!--<image source="images/hp4-2-69ans.png"><description>graph</description></image>-->
+    <image xml:id="hp4-2-69ans">
+        <description>tangent graph</description>
         <latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
@@ -102,28 +101,23 @@
           input/.style    = {coordinate}, % Input
           output/.style   = {coordinate} % Output
         }
-        \begin{tikzpicture} 
-        \coordinate(O) at (0,0);
-        \filldraw [fill=gray!10!white] (O) circle [radius=2cm];
-        \filldraw [black] (O) circle [radius=.075cm];
-        \foreach    [evaluate={\xmod=int(mod(\xi+1,10));}]
-         \angle [count=\xi] in {54,18,...,-270}
-        {
-          \draw[line width=1pt] (\angle:1.9cm) -- (\angle:2cm);
-          \node[font=\large] at (\angle:1.65cm) {\textsf{\xmod}};
-        }
-        \draw[black,ultra thick,->] (O) -- (90:1.3cm);
-        \draw[gray!70!white,ultra thick,->] (0,0) -- (196:1.3cm);
+        \begin{tikzpicture} [xscale=.6, yscale=.3]
+        \draw[cyan] (0,-10) grid (12,10);
 
-        \draw [thick, color=red, <->, domain=pi/2:-9*pi/10, samples=200, smooth]
-          plot (xy polar cs:angle=\x r, radius={.45});
+        \draw[->] (-.1,0) -- (12.5,0) node[right] {$\alpha$};
+        \draw[->] (0,-10.1) -- (0,10.5) node[anchor=south]{$m$};
+        \foreach \x [evaluate=\x as \xi using int( 15* \x )] in {2, 4, ..., 12} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
 
+        \foreach \y   in {-10, -5, 5, 10} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\y};
+
+        \draw[domain={0:atan(10)/15},smooth,variable=\x,red,very thick] plot ({\x},{tan(15*\x)});
+
+        \draw[domain={atan(-10)/15+12:12},smooth,variable=\x,red,very thick] plot ({\x},{tan(15*\x)});
         \end{tikzpicture}]]>
     </latex-image>
     </image>
-</sidebyside></statement></exercise>
-    
-    
+            </sidebyside>
+
 
 
 

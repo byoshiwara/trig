@@ -795,7 +795,7 @@ Francine is about 25.4 miles south of the airport.</p></solution></example>
         \foreach \y [evaluate=\y as \yi using int(10* \y )] in {.401, .801,..., 4.01}
         \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=0,yshift=0, fill=white, inner sep=1pt] {\scriptsize$ \yi $};
 
-        \draw[domain=0:2*pi,smooth,variable=\x,red,very thick] plot ({\x},{2-2*cos(deg(\x))});
+        \draw[domain=0:2*pi,smooth,variable=\x,red,very thick] plot ({\x},{1.8-1.8*cos(deg(\x))});
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -896,13 +896,99 @@ Francine is about 25.4 miles south of the airport.</p></solution></example>
                         <cell><m>0</m></cell></row>
                         </tabular></sidebyside></p>
 
-  <image source="images/exam4-2-5.png"><description>graph</description></image></sidebyside></solution></example> 
+  <!--<image source="images/exam4-2-5.png"><description>graph</description></image>-->
+    <image xml:id="exam4-2-5">
+        <description>semicircle graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+        \draw[cyan] (-4,0) grid (4,4);
+
+        \draw[->] (-4.2,0) -- (4.3,0) node[right] {$x$};
+        \draw[->] (0,-.2) -- (0,4.3) node[above] {$y$};
+
+        \foreach \x  in {-4, -3, ..., -1, 1,2,...,4}
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \x $};
+
+        \foreach \y  in {1,2, 3, 4}
+        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\y};
+
+        \draw[red, ultra thick] (3,0) arc (0:180:3);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></solution></example> 
 
 <p>Of course, we don't always use <m>x</m> and <m>y</m> for the input and output variables.  In the previous example, we could write <m>w = f(t) = \sqrt{9 - t^2}</m> for the function, so that <m>t</m> is the input and <m>w</m> is the output. The table of values and the graph are the same; only the names of the variables have changed.</p>
 
 <warning><p>When we discuss trigonometric functions, there are several variables involved.  Our definitions of the trig ratios involve four variables: <m>x</m>, <m>y</m>, <m>r</m>, and <m>\theta</m>, as illustrated below.</p>
 
-<sidebyside width="75%"><image source="images/4-2-caut1.png"><description>angles</description></image></sidebyside>
+<sidebyside widths="35% 25%" margins="15% 15%"><!--<image source="images/4-2-caut1.png"><description>angles</description></image>-->
+    <image xml:id="fig-4-2-caut1">
+        <description>angles</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+        \coordinate(O) at (0,0);
+        \coordinate(P) at (220:2cm);
+        \coordinate(Pp) at (220:2.7cm);
+        \coordinate(Q) at ($ 2*cos(220)*(1,0)$);
+
+        \draw[blue, thick] (Q) rectangle +(.25, -.25);
+
+        \draw[->] (-2.2,0) -- (2.3,0) node[right] {$x$};
+        \draw[->] (0,-1.7) -- (0,1.3) node[above] {$y$};
+
+        \draw[blue, thick] (O) -- (P) node[below right, midway, yshift = 3] {$r$};
+        \draw[gray!80!white, thick, ->] (P) -- (Pp);
+        \draw[gray!80!white, thick] (Q)--(P);
+        \filldraw[black] (P) circle (1.5pt) node[anchor=north, xshift=14, yshift=-2] {$P(x,y)$};
+
+        \draw[red, thick, ->] (.4,0) arc (0:220:.4) node[above right, midway, xshift=6, yshift=-4]{$\theta$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+<image xml:id="fig-4-2-caut2b">
+        <description>graphs</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+        \coordinate(O) at (0,0);
+        \coordinate(P) at (115:1.4cm);
+
+        \draw[gray!60!white, thick] (O) circle (1.4cm);
+
+        \draw[->] (-1.5,0) -- (1.7,0) node[right] {$x$};
+        \draw[->] (0,-1.5) -- (0,1.7) node[above] {$y$};
+
+        \draw[blue, thick] (O) -- (P) node[below left, midway, xshift=2, yshift = 3] {\footnotesize $r=1$};
+        \filldraw[blue] (P) circle (1.5pt) node[anchor=south, xshift=-6] {$P(x,y)$};
+
+        \draw[red, thick, ->] (.4,0) arc (0:115:.4) node[above right, midway, xshift=0, yshift=-4]{$\theta$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image></sidebyside>
 
  <p>If the value of <m>r</m> is fixed for a given situation, such as the Ferris wheel or the bicycle wheel discussed above, then <m>x</m> and <m>y</m> are both functions of <m>\theta</m>. This means that the values of <m>x</m> and <m>y</m> depend only on the value of the angle <m>\theta</m>.  If <m>r = 1</m>, we have
  \begin{align*}
@@ -910,7 +996,59 @@ Francine is about 25.4 miles south of the airport.</p></solution></example>
                 y \amp = g(\theta) = \sin \theta\\              
                 \end{align*} 
 The graphs of these functions are shown below. Note particularly that the horizontal axis displays values of the input variable, and the vertical axis displays the output variable. </p>
-<sidebyside width="80%"><image source="images/4-2-caut2.png"><description>graphs</description></image></sidebyside>
+<sidebyside widths="40% 40%"><!--<image source="images/4-2-caut2.png"><description>graphs</description></image>-->
+    <image xml:id="fig-4-2-caut2cos">
+        <description>cosine graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+        \draw[cyan] (-1,-2) grid (5,2);
+
+        \draw[->] (-1.1,0) -- (5.2,0) node[right] {$\theta$};
+        \draw[->] (0,-2.1) -- (0,2.3) node[above] {$x$};
+        \foreach \x [evaluate=\x as \xi using int( 90* \x )] in {-1,1,2,...,5}
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+
+        \foreach \y   in {-1,1} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\y};
+
+        \draw[domain=-1:5,smooth,variable=\x,red,very thick] plot ({\x},{cos(pi/2*deg(\x))});
+
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    <image xml:id="fig-4-2-caut2sin">
+        <description>sine graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+        \draw[cyan] (-1,-2) grid (5,2);
+
+        \draw[->] (-1.1,0) -- (5.2,0) node[right] {$\theta$};
+        \draw[->] (0,-2.1) -- (0,2.3) node[above] {$y$};
+        \foreach \x [evaluate=\x as \xi using int( 90* \x )] in {-1,1,2,...,5}
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+
+        \foreach \y   in {-1,1} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\y};
+
+        \draw[domain=-1:5,smooth,variable=\x,red,very thick] plot ({\x},{sin(pi/2*deg(\x))});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 <p>If we use different variables for the input and output, the functions and their graphs are the same, but the axes should be labeled with the appropriate variables.</p></warning>
                      
 <exercise><statement><p>Sketch a graph of each function, and label the axes.</p>
@@ -925,7 +1063,7 @@ The graphs of these functions are shown below. Note particularly that the horizo
 
 <subsection><title>The Tangent Function</title>
 <sidebyside widths="70% 20%" valigns="middle middle"><p>The tangent function is periodic, but its graph is not similar to the graphs of sine and cosine. Recall that the tangent of an angle in standard position is defined by <me>\tan \theta = \dfrac{y}{x}</me> Study the figure at right to see that as <m>\theta</m> increases from <m>0\degree</m> to <m>90\degree</m>, <m>y</m> increases while <m>x</m> remains constant, so the value of <m>\tan \theta</m> increases.</p> 
-<image source="images/4-2-tan.png"><description>graphs</description></image></sidebyside>
+<image source="images/hp2-2-53"><description>graphs</description></image></sidebyside>
 
 <example><statement><p>Sketch a graph of <m>f(\theta) = \tan \theta</m> for <m>0\degree \le \theta \le 180\degree</m>.</p></statement>
 
@@ -949,14 +1087,77 @@ The graphs of these functions are shown below. Note particularly that the horizo
                         <cell><m>11.43</m></cell></row>
                     </tabular></sidebyside>
 
-<sidebyside widths="50% 30%" valigns="middle middle"><p>As <m>\theta</m> gets closer to <m>90\degree</m>, <m>\tan \theta</m> increases very rapidly. Recall that <m>\tan 90\degree</m> is undefined, so there is no point on the graph at <m>\theta = 90\degree</m>. The graph of <m>f(\theta) = \tan \theta</m> in the first quadrant is shown at right.</p>
-<image source="images/exam4-2-6a.png"><description>graph</description></image></sidebyside>
+<sidebyside widths="50% 35%" valigns="middle middle"><p>As <m>\theta</m> gets closer to <m>90\degree</m>, <m>\tan \theta</m> increases very rapidly. Recall that <m>\tan 90\degree</m> is undefined, so there is no point on the graph at <m>\theta = 90\degree</m>. The graph of <m>f(\theta) = \tan \theta</m> in the first quadrant is shown at right.</p>
+<!--<image source="images/exam4-2-6a.png"><description>graph</description></image>-->
+    <image xml:id="exam4-2-6a">
+        <description>graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [scale=0.7]
+        \draw[cyan] (0,-3) grid (6,5);
+
+        \draw[->] (-.1,0) -- (6.2,0) node[right] {$\theta$};
+        \draw[->] (0,-3.1) -- (0,5.3);
+        \foreach \x [evaluate=\x as \xi using int( 30* \x )] in {1,2,...,6}
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+
+        \foreach \y [evaluate=\y as \yi using int( 2* \y )]   in {-2,-1,1,2,...,5} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+
+        \draw[domain={0:atan(5)/30},smooth,variable=\x,red,very thick] plot ({\x},{tan(30*\x)});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
 <sidebyside widths="50% 40%"><p> In the second quadrant, the tangent is negative. The reference angle for each angle in the second quadrant is its supplement, so <me>\tan \theta =-\tan (180\degree - \theta)</me> </p>
-<image source="images/exam4-2-6b.png"><description>graphs</description></image></sidebyside> 
+<!--<image source="images/exam4-2-6b.png"><description>graphs</description></image>-->
+    <image xml:id="exam4-2-6b">
+        <description>supplementary angles</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+        \coordinate(A) at (2,0);
+        \coordinate (B) at ($ (2,0)++2*tan(50)*(0,1)  $);
+        \coordinate(Ap) at (-2,0);
+        \coordinate (Bp) at ($ (-2,0)++2*tan(50)*(0,1)  $);
+        \coordinate (O) at (0,0);
+
+        \filldraw[black] (B) circle (1.5pt) node[anchor=south] {$(x,y)$};
+        \draw[blue,thick] (A) rectangle +(-0.25,0.25);
+        \draw[gray,thick, dashed] (A)--(B);
+        \draw[black, ultra thick] (O)--(B) node[above,midway] {\color{blue}$r$};
+
+        \filldraw[black] (Bp) circle (1.5pt) node[anchor=south] {$(-x,y)$};
+        \draw[blue,thick] (Ap) rectangle +(0.25,0.25);
+        \draw[gray,thick, dashed] (Ap)--(Bp);
+        \draw[black, ultra thick] (O)--(Bp) node[above,midway, xshift=1] {\color{blue}$r$};
+
+        \draw[black,thick,->] (-2.5,0) -- (2.5,0);
+        \draw[black,thick,->] (0,-.2) -- (0,2.2) ;
+
+        \draw[red!80!white,thick,->] (1,0) arc (0:50:1) node[right, midway, xshift=0, yshift=1] {\footnotesize$50\degree$};
+        \draw[red,thick,->] (.4,0) arc (0:130:.4) node[above, midway, xshift=-4, yshift=3,fill=white, inner sep=1pt] {\footnotesize$130\degree$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside> 
 <p>as shown at right. For example, you can verify that <me>\tan 130\degree = -\tan (180\degree - 130\degree) = -\tan 50\degree = -1.19</me></p>
 
-<sidebyside widths="60% 30%" valigns="middle middle"><p>In particular, for values of <m>\theta</m> close to <m>90\degree</m>, the values of <m>\tan \theta</m> are large negative numbers. We plot several points and sketch the graph in the second quadrant.
+<sidebyside widths="60% 35%" valigns="middle middle"><p>In particular, for values of <m>\theta</m> close to <m>90\degree</m>, the values of <m>\tan \theta</m> are large negative numbers. We plot several points and sketch the graph in the second quadrant.
 <sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
                     <row bottom="minor">
                         <cell><m>\theta</m></cell>
@@ -964,7 +1165,7 @@ The graphs of these functions are shown below. Note particularly that the horizo
                         <cell><m>110\degree</m></cell>
                         <cell><m>120\degree</m></cell>
                         <cell><m>150\degree</m></cell>
-                        <cell><m>1850\degree</m></cell></row>
+                        <cell><m>180\degree</m></cell></row>
                     <row>
                         <cell><m>\tan \theta</m></cell> 
                         <cell><m>-5.67</m></cell>
@@ -974,12 +1175,114 @@ The graphs of these functions are shown below. Note particularly that the horizo
                         <cell><m>0</m></cell></row>
                     </tabular></sidebyside>
 
-</p><image source="images/exam4-2-6c.png"><description>graph</description></image></sidebyside>
+</p><!--<image source="images/exam4-2-6c.png"><description>graph</description></image>-->
+    <image xml:id="exam4-2-6c">
+        <description>tangent graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}  [scale=0.7]
+        \draw[cyan] (0,-5) grid (6,5);
+
+        \draw[->] (-.1,0) -- (6.2,0) node[right] {$\theta$};
+        \draw[->] (0,-5.1) -- (0,5.3);
+        \foreach \x [evaluate=\x as \xi using int( 30* \x )] in {1,2,...,6}
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+
+        \foreach \y [evaluate=\y as \yi using int( 2* \y )]   in {-5,-4,...,-1,1,2,...,5} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+
+        \draw[domain={0:atan(5)/30},smooth,variable=\x,red,very thick] plot ({\x},{tan(30*\x)});
+
+        \draw[domain={atan(-5)/30+6:6},smooth,variable=\x,red,very thick] plot ({\x},{tan(30*\x)});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 <p>In the figure above, note that the graph has a break at <m>\theta = 90\degree</m>, because  <m>\tan 90\degree</m> is undefined.</p></solution></example>
 
 
 <p>Now let's consider the graph of <m>f(\theta) = \tan \theta</m> in the third and fourth quadrants. The tangent is positive in the third quadrant, and negative in the fourth quadrant. In fact, from the figure below you can see that the angles <m>\theta</m> and <m>180\degree + \theta</m> are vertical angles.</p>
-<sidebyside width="60%"><image source="images/exam4-2-6d.png"><description>graph</description></image></sidebyside>
+<sidebyside widths="30% 27%" margins="15% 15%" valigns="middle middle"><!--<image source="images/exam4-2-6d.png"><description>graph</description></image>-->
+    <image xml:id="exam4-2-6d">
+        <description>angles differing by 180 degrees</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+        \coordinate (O) at (0,0);
+        \coordinate (B) at (1,0);
+        \coordinate (A) at (1,2);
+        \coordinate (Bp) at (-1,0);
+        \coordinate (Ap) at (-1,-2);
+
+        \draw[blue, thick] (B) rectangle +(-.2,.2);
+        \draw[blue, thick] (Bp) rectangle +(.2,-.2);
+
+        \draw[gray!80!white, dashed] (A)--(B);
+        \draw[gray!80!white, dashed] (Ap)--(Bp);
+
+        \draw[->] (-2,0) -- (2.2,0);
+        \draw[->] (0,-2) -- (0,2);
+
+        \draw[gray, ultra thick] (A) -- (Ap);
+        \filldraw[black] (A) circle (1.5pt) node[anchor=west] {$(x,y)$};
+        \filldraw[black] (Ap) circle (1.5pt) node[anchor=east] {$(-x,-y)$};
+
+        \draw[red, thick, ->] (0.3,0) arc(0:{atan(2)+180}:.3) node[below  left, midway, xshift=2, yshift=10] {\footnotesize $180\degree + \theta$};
+        \draw[red, thick, ->] (0.6,0) arc(0:{atan(2)}:.6) node[above  right, midway, xshift=-2, yshift=-2] {\footnotesize $\theta$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    <image xml:id="exam4-2-6d2">
+        <description>angles differing by 180 deg</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+        \coordinate (O) at (0,0);
+        \coordinate (B) at (1.6,0);
+        \coordinate (A) at (1.6,-1);
+        \coordinate (Bp) at (-1.6,0);
+        \coordinate (Ap) at (-1.6,1);
+
+        \draw[blue, thick] (B) rectangle +(-.2,-.2);
+        \draw[blue, thick] (Bp) rectangle +(.2,.2);
+
+        \draw[gray!80!white, dashed] (A)--(B);
+        \draw[gray!80!white, dashed] (Ap)--(Bp);
+
+        \draw[->] (-2,0) -- (2.2,0);
+        \draw[->] (0,-1.5) -- (0,1.5);
+
+        \draw[gray, ultra thick] (A) -- (Ap);
+        \filldraw[black] (A) circle (1.5pt) node[anchor=north] {$(-x,-y)$};
+        \filldraw[black] (Ap) circle (1.5pt) node[anchor=south] {$(x,y)$};
+
+        \draw[red, thick, ->] (0.3,0) arc(0:{360-atan(1/1.6)}:.3) node[below left, midway, xshift=3, yshift=-5] {\footnotesize $180\degree + \theta$};
+        \draw[red, thick, ->] (0.6,0) arc(0:{180-atan(1/1.6)}:.6) node[above, midway, xshift=7, yshift=-5] {\footnotesize $\theta$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+
+</sidebyside>
 
 <p>Because <m>\theta</m> and <m>180\degree + \theta</m> have the same reference angle, they have the same tangent.  For example,
 \begin{align*}
@@ -988,7 +1291,39 @@ The graphs of these functions are shown below. Note particularly that the horizo
                 \tan 250\degree \amp = \tan 70\degree              
                 \end{align*}
 Thus, the graph of <m>\tan \theta</m> in the third quadrant is the same as its graph in the first quadrant. Similarly, the graph of the tangent function in the fourth quadrant is the same as its graph in the second quadrant. The completed graph is shown below.</p>
-<sidebyside width="60%"><image source="images/exam4-2-6e.png"><description>graph</description></image></sidebyside>
+<sidebyside width="60%"><!--<image source="images/exam4-2-6e.png"><description>graph</description></image>-->
+    <image xml:id="exam4-2-6e">
+        <description>tangent graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [scale=.7]
+        \draw[cyan] (-4,-4) grid (8,4);
+
+        \draw[->] (-.1,0) -- (8.2,0) node[right] {$\theta$};
+        \draw[->] (0,-4.1) -- (0,4.3);
+        \foreach \x [evaluate=\x as \xi using int( 45* \x )] in {-4, -2, 2, 4,6,8} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+
+        \foreach \y [evaluate=\y as \yi using int( 2* \y )]   in {-4,-3,...,-1,1,2,...,4} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+
+        \draw[domain={atan(-4)/45:atan(4)/45},smooth,variable=\x,red,very thick] plot ({\x},{tan(45*\x)});
+
+        \draw[domain={atan(-4)/45+4:4+atan(4)/45},smooth,variable=\x,red,very thick] plot ({\x},{tan(45*\x)});
+
+        \draw[domain={-4:atan(4)/45-4},smooth,variable=\x,red,very thick] plot ({\x},{tan(45*\x)});
+
+        \draw[domain={atan(-4)/45+8:8},smooth,variable=\x,red,very thick] plot ({\x},{tan(45*\x)});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+
+</sidebyside>
 
 <exercise><statement>
 <p><ol label="a">
@@ -1000,8 +1335,36 @@ Thus, the graph of <m>\tan \theta</m> in the third quadrant is the same as its g
 </subsection>
 
 <subsection><title>Angle of Inclination</title>
-<p> The figure at right shows a graph of the line <me>y = \frac{3}{4}x - 3</me> The angle <m>\alpha</m> measured in the positive direction from the positive <m>x</m>-axis to the line is called the <term>angle of inclination</term> of the line.</p> 
+<sidebyside widths="50% 50%"><p> The figure at right shows a  line in the<m>xy</m>-plane. The angle <m>\alpha</m> measured in the positive direction from the positive <m>x</m>-axis to the line is called the <term>angle of inclination</term> of the line.</p> 
+    <image xml:id="fig-angle-inclination">
+        <description>angle of inclination</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+        \coordinate (O) at (0,0);
+        \coordinate (x) at (3.5,0);
+        \coordinate (y) at (0,2);
+        \coordinate (A) at (3,1.8);
+        \coordinate (B) at (1.,0);
+        \coordinate (C) at (2.5,0);
+        \coordinate (D) at (-1,-1.8);
 
+        \draw[black,  thick, ->] (-1.5,0) --  (x) node[right] {$x$} ;
+        \draw[black,  thick, ->] (0,-2) --  (y) node[above] {$y$}  ;
+        \draw[black,  thick, <->] (D) --  (A)  ;
+        \draw[red, thick] (1.9,0) arc (0:{atan(0.9)}:.9) node [left, midway,xshift=0,yshift=-3] {$\alpha$};
+
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 <note><p>Recall that the <term>slope</term> of a line is given by the ratio <m>\dfrac {\text{change in}~ y}{\text{change in}~x}</m> as we move from one point to another on the line. So, if we create a right triangle by dropping a perpendicular segment from the line to the <m>x</m>-axis, the ratio of sides <m>\dfrac {\text{opposite}}{\text{adjacent}}</m> gives the slope of the line.</p> </note>
 
 <assemblage><title>Angle of Inclination</title>
@@ -1015,10 +1378,67 @@ Thus, the graph of <m>\tan \theta</m> in the third quadrant is the same as its g
                 \tan \alpha \amp = \dfrac{3}{4}\\
                 \alpha \amp = \tan^{-1} (\dfrac{3}{4}) = 36.9\degree\\              
                 \end{align*} 
-The angle of inclination is <m>36.9\degree</m>.</p><image source="images/exam4-2-7.png"><description>graph</description></image></sidebyside></solution></example>
+The angle of inclination is <m>36.9\degree</m>.</p><!--<image source="images/exam4-2-7.png"><description>graph</description></image>-->
+    <image xml:id="exam4-2-7">
+        <description>graph y = 3/4 x - 3</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [scale = 0.5]
+        \draw[cyan] (-1,-3) grid (8,5);
+
+        \coordinate (A) at (-1, -9/4);
+        \coordinate (B) at (8, 4.5);
+
+        \draw[black,  thick, ->] (-1.1,0) --  (8.5,0) node[right] {$x$} ;
+        \draw[black,  thick, ->] (0,-3.1) --  (0,5.5) node[above] {$y$}  ;
+        \draw[red,  thick] (B) --  (A)  ;
+
+        \foreach \x [evaluate=\x as \xi using int( 2* \x )] in {2, 4, 6, 8} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+
+        \foreach \y [evaluate=\y as \yi using int( 2* \y )]   in {-3, -1, 2, 4} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></solution></example>
 
 <exercise><statement><sidebyside widths="50% 35%">
-<p>Find the angle of inclination of the line <me>y = \dfrac{-6}{5}x + 2</me> shown at right.</p><image source="images/exer4-2-7.png"><description>graph</description></image></sidebyside></statement></exercise>
+<p>Find the angle of inclination of the line <me>y = \dfrac{-6}{5}x + 2</me> shown at right.</p><!--<image source="images/exer4-2-7.png"><description>graph</description></image>-->
+    <image xml:id="exer4-2-7">
+        <description>graph y= -6/5 x +2</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [yscale=.8]
+        \draw[cyan] (-1,-1) grid (3,3);
+
+        \coordinate (A) at (-5/6, 3);
+        \coordinate (B) at (2.5,-1);
+
+        \draw[black,  thick, ->] (-1.1,0) --  (3.3,0) node[right] {$x$} ;
+        \draw[black,  thick, ->] (0,-1.1) --  (0,3.3) node[above] {$y$}  ;
+        \draw[red,  thick] (B) --  (A)  ;
+
+        \foreach \x [evaluate=\x as \xi using int( 1* \x )] in {1,2,3} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+
+        \foreach \y [evaluate=\y as \yi using int( 1* \y )]   in {1,2,3} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement></exercise>
 </subsection>
 
 <subsection><title>Algebra Refresher</title>
@@ -1031,7 +1451,7 @@ The angle of inclination is <m>36.9\degree</m>.</p><image source="images/exam4-2
 <exercise number="3"><statement><m>p(t) = t^2 - 4</m></statement></exercise>
 <exercise number="4"><statement><m>q(t) = 9 - t^2</m></statement></exercise>
 <exercise number="5"><statement><m>F(x) = 2 - \sqrt{z}</m></statement></exercise>
-<exercise number="6"><statement><m>G(z) = \sqrt{z - 4}</m></statement></exercise>
+<exercise number="6"><statement><m>G(z) = \sqrt{4 - z}</m></statement></exercise>
 </exercisegroup></exercises>
 
 <subsubsection><title>Answers to 4.2 Exercises</title>
@@ -1123,11 +1543,97 @@ The angle of inclination is <m>36.9\degree</m>.</p><image source="images/exam4-2
                         <cell><m>0.17</m></cell>
                         <cell><m>0</m></cell></row>
                         </tabular></sidebyside>
-    <sidebyside width="40%"><image source="images/exer4-2-4ans.png"><description>graph</description></image></sidebyside></li>
+    <sidebyside width="40%"><!--<image source="images/exer4-2-4ans.png"><description>graph</description></image>-->
+        <image xml:id="exer4-2-4ans">
+        <description>graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [xscale=1.6, yscale=1.2]
+        \draw[cyan,xstep=0.3333, ystep=0.4]
+        (-2.01,-2) grid (6,2);
+
+        \draw[->] (-2.2,0) -- (6.3,0) node[right] {$\theta$};
+        \draw[->] (0,-2.2) -- (0,2.3) node[above] {$y$};
+
+        \foreach \x [evaluate=\x as \xi using int( 90* \x )] in {1,2,...,6}
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+        \foreach \x [evaluate=\x as \xi using int( 90* \x )] in {-2,-1}
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+
+        \foreach \y  [evaluate=\y as \yi using int(  \y /2 )] in {-2,2}
+        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+
+        \draw[domain=-2:6,smooth,variable=\x,red,very thick] plot ({\x},{2* cos(deg(\x*pi/2))});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+
+    </sidebyside></li>
     <li>Period: <m>360\degree</m>, amplitude: 1,  midline: <m>y = 0</m>.  The cosine graph starts <m>(\theta = 0\degree)</m> at its high point, while the sine graph starts <m>(\theta = 0\degree)</m> at its midline.</li></ol></p></li>
 <li><p><ol label="a">
-    <li><sidebyside width="40%"><image source="images/exer4-2-5ansa.png"><description>graph</description></image></sidebyside></li>
-    <li><sidebyside width="40%"><image source="images/exer4-2-5ansb.png"><description>graph</description></image></sidebyside></li>
+    <li><sidebyside width="40%"><!--<image source="images/exer4-2-5ansa.png"><description>graph</description></image>-->
+    <image xml:id="exer4-2-5ansa">
+        <description>sine graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+        \draw[cyan] (-1,-2) grid (5,2);
+
+        \draw[->] (-1.1,0) -- (5.2,0) node[right] {$\phi$};
+        \draw[->] (0,-2.1) -- (0,2.3) node[above] {$d$};
+        \foreach \x [evaluate=\x as \xi using int( 90* \x )] in {-1,1,2,...,5}
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+
+        \foreach \y   in {-1,1} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\y};
+
+        \draw[domain=-1:5,smooth,variable=\x,red,very thick] plot ({\x},{sin(pi/2*deg(\x))});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+
+    </sidebyside></li>
+    <li><sidebyside width="40%"><!--<image source="images/exer4-2-5ansb.png"><description>graph</description></image>-->
+    <image xml:id="exer4-2-5ansb">
+        <description>cosine graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+        \draw[cyan] (-1,-2) grid (5,2);
+
+        \draw[->] (-1.1,0) -- (5.2,0) node[right] {$\beta$};
+        \draw[->] (0,-2.1) -- (0,2.3) node[above] {$t$};
+        \foreach \x [evaluate=\x as \xi using int( 90* \x )] in {-1,1,2,...,5}
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+
+        \foreach \y   in {-1,1} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\y};
+
+        \draw[domain=-1:5,smooth,variable=\x,red,very thick] plot ({\x},{cos(pi/2*deg(\x))});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+
+    </sidebyside></li>
 </ol></p></li>
 <li><p><ol label="a">
     <li><m>180\degree</m></li>
@@ -1141,27 +1647,187 @@ The angle of inclination is <m>36.9\degree</m>.</p><image source="images/exam4-2
 <subsubsection><title>Algebra Refresher Answers</title>
 <p><ol label="1">
     <li><p><ol label="a">
-        <li><sidebyside width="30%"><image source="images/ar4-2-1.png"><description>graph</description></image></sidebyside></li>
+        <li><sidebyside width="30%"><!--<image source="images/ar4-2-1.png"><description>graph</description></image>-->
+    <image xml:id="ar4-2-1">
+        <description>graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [scale=.4]
+        \draw[cyan, xstep=2, ystep=2] (-2,-8) grid (10,4);
+
+        \draw[black, thick, ->] (-2.1,0) -- (10.5,0) node[right] {$x$} ;
+        \draw[black, thick, ->] (0,-8.1) -- (0,4.5) node[above] {$y$}  ;
+
+        \foreach \x [evaluate=\x as \xi using int( 1* \x )] in {4, 8} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+
+        \foreach \y [evaluate=\y as \yi using int( 1* \y )] in {-4, 4} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+
+        \draw[domain=-2:10,smooth,variable=\x,red,very thick] plot ({\x},{-6+ 2/3 *\x)});
+         \end{tikzpicture}
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside></li>
         <li><m>(0,-6), ~ (9,0)</m></li>
     </ol></p></li>
     <li><p><ol label="a">
-        <li><sidebyside width="30%"><image source="images/ar4-2-2.png"><description>graph</description></image></sidebyside></li>
+        <li><sidebyside width="30%"><!--<image source="images/ar4-2-2.png"><description>graph</description></image>-->
+    <image xml:id="ar4-2-2">
+        <description>graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [scale=.4]
+        \draw[cyan, xstep=2, ystep=2] (-4,-6) grid (8,6);
+
+        \draw[black, thick, ->] (-4.1,0) -- (8.5,0) node[right] {$x$} ;
+        \draw[black, thick, ->] (0,-6.1) -- (0,6.5) node[above] {$y$}  ;
+
+        \foreach \x [evaluate=\x as \xi using int( 1* \x )] in {-4, 4, 8} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+
+        \foreach \y [evaluate=\y as \yi using int( 1* \y )] in {-4, 4} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+
+        \draw[domain={-4/3}:{20/3},smooth,variable=\x,red,very thick] plot ({\x},{4 - 3/2 *\x)});
+         \end{tikzpicture}
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+       </sidebyside></li>
         <li><m>(0,4), ~ (\dfrac{8}{3},0)</m></li>
     </ol></p></li>
     <li><p><ol label="a">
-        <li><sidebyside width="30%"><image source="images/ar4-2-3.png"><description>graph</description></image></sidebyside></li>
+        <li><sidebyside width="30%"><!--<image source="images/ar4-2-3.png"><description>graph</description></image>-->
+    <image xml:id="ar4-2-3">
+        <description>parabola</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [scale=.4]
+        \draw[cyan, xstep=2, ystep=2] (-6,-6) grid (6,6);
+
+        \draw[black, thick, ->] (-6.1,0) -- (6.5,0) node[right] {$t$} ;
+        \draw[black, thick, ->] (0,-6.1) -- (0,6.5) node[above] {$y$}  ;
+
+        \foreach \x [evaluate=\x as \xi using int( 1* \x )] in {-4, 4} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+
+        \foreach \y [evaluate=\y as \yi using int( 1* \y )] in {-4, 4} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+
+        \draw[domain={-sqrt(10)}:{sqrt(10)},smooth,variable=\x,red,very thick] plot ({\x},{(\x)^2 -4});
+         \end{tikzpicture}
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside></li>
         <li><m>(0,-4), ~ (-2,0), ~ (2,0), ~ \text{Min:}~-4</m></li>
     </ol></p></li>
     <li><p><ol label="a">
-        <li><sidebyside width="30%"><image source="images/ar4-2-4.png"><description>graph</description></image></sidebyside></li>
+        <li><sidebyside width="30%"><!--<image source="images/ar4-2-4.png"><description>graph</description></image>-->
+    <image xml:id="ar4-2-4">
+        <description>parabola</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [scale=.4]
+        \draw[cyan, xstep=2, ystep=2] (-6,-2) grid (6,10);
+
+        \draw[black, thick, ->] (-6.1,0) -- (6.5,0) node[right] {$t$} ;
+        \draw[black, thick, ->] (0,-2.1) -- (0,10.5) node[above] {$y$}  ;
+
+        \foreach \x [evaluate=\x as \xi using int( 1* \x )] in {-4, 4} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+
+        \foreach \y [evaluate=\y as \yi using int( 1* \y )] in {4, 8} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+
+        \draw[domain={-sqrt(11)}:{sqrt(11)},smooth,variable=\x,red,very thick] plot ({\x},{9 - (\x)^2 });
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside></li>
         <li><m>(0,9), ~ (-3,0), ~ (3,0), ~ \text{Max:}~9</m></li>
     </ol></p></li>
     <li><p><ol label="a">
-        <li><sidebyside width="30%"><image source="images/ar4-2-5.png"><description>graph</description></image></sidebyside></li>
+        <li><sidebyside width="30%"><!--<image source="images/ar4-2-5.png"><description>graph</description></image>-->
+    <image xml:id="ar4-2-5">
+        <description>graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [xscale=.4, yscale = .8]
+        \draw[cyan, xstep=2, ystep=1] (-2,-2) grid (10,4);
+
+        \draw[black, thick, ->] (-2.1,0) -- (10.5,0) node[right] {$z$} ;
+        \draw[black, thick, ->] (0,-2.1) -- (0,4.3) node[above] {$y$}  ;
+
+        \foreach \x [evaluate=\x as \xi using int( 1* \x )] in {4, 8} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+
+        \foreach \y [evaluate=\y as \yi using int( 1* \y )] in {-2, 2, 4} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+
+        \draw[domain={0:10},smooth,variable=\x,red,very thick] plot ({\x},{2 - sqrt(\x) });
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+
+        </sidebyside></li>
         <li><m>(0,2), ~ (4,0), ~ \text{Max:}~2</m></li>
     </ol></p></li>
     <li><p><ol label="a">
-        <li><sidebyside width="30%"><image source="images/ar4-2-6.png"><description>graph</description></image></sidebyside></li>
+        <li><sidebyside width="30%"><!--<image source="images/ar4-2-6.png"><description>graph</description></image>-->
+    <image xml:id="ar4-2-6">
+        <description>graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [xscale=.4, yscale = .8]
+        \draw[cyan, xstep=2, ystep=1] (-6,-2) grid (6,4);
+
+        \draw[black, thick, ->] (-6.1,0) -- (6.5,0) node[right] {$z$} ;
+        \draw[black, thick, ->] (0,-2.1) -- (0,4.3) node[above] {$y$}  ;
+
+        \foreach \x [evaluate=\x as \xi using int( 1* \x )] in {-4, 4} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+
+        \foreach \y [evaluate=\y as \yi using int( 1* \y )] in {-2, 2, 4} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+
+        \draw[domain={-6:4},smooth,variable=\x,red,very thick] plot ({\x},{sqrt(4-\x) });
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside></li>
         <li><m>(0,2), ~ (4,0),  ~ \text{Min:}~0</m></li>
     </ol></p></li>
 </ol></p></subsubsection>
@@ -1202,14 +1868,84 @@ The angle of inclination is <m>36.9\degree</m>.</p><image source="images/exam4-2
 
 <subsubsection><title>Study Questions</title>
 <p><ol label="1">
-    <li><sidebyside widths="50% 30%"><p>Use the figure to help you fill in the blanks.</p><image source="images/sq4-2-1.png"><description>circle</description></image></sidebyside>        
+    <li><sidebyside widths="50% 30%"><p>Use the figure to help you fill in the blanks.</p><!--<image source="images/sq4-2-1.png"><description>circle</description></image>-->
+    <image xml:id="sq4-2-1">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+        \coordinate (O) at (0,0);
+        \coordinate (A) at (25:1.5);
+        \coordinate (Ap) at ($ 1.5*cos(25)*(1,0) $);
+        \coordinate (B) at (60:1.5);
+        \coordinate (Bp) at ($ 1.5*cos(60)*(1,0) $);
+        \coordinate (C) at (75:1.5);
+        \coordinate (Cp) at ($ 1.5*cos(75)*(1,0) $);
+
+        \draw[black, thick, ->] (-1.7,0) -- (2,0) ;
+        \draw[black, thick, ->] (0,-1.7) -- (0,2) ;
+
+        \draw[red, thick, ->] (15:1.8) arc(15:65:1.8) node[left,yshift=2]{$\theta$};
+
+        \draw[gray!80!white, thick] (O) circle (1.5cm);
+        \draw[blue, thick] (O)--(A)--(Ap);
+        \draw[blue, thick] (O)--(B)--(Bp);
+        \draw[blue, thick] (O)--(C)--(Cp);
+
+        \node[text width=1cm, text=blue,fill=white, inner sep=0pt] at (1.5,-.5)  {$r=1$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>        
     <p><ol label="a">
         <li><p>As <m>\theta</m> increases from <m>0\degree</m> to <m>90\degree</m>, <m>f(\theta) = \sin \theta</m> <fillin characters="6"/> from <fillin characters="4"/> to <fillin characters="4"/> .</p></li>
         <li><p>As <m>\theta</m> increases from <m>90\degree</m> to <m>180\degree</m>, <m>f(\theta) = \sin \theta</m> <fillin characters="6"/> from <fillin characters="4"/> to <fillin characters="4"/> .</p></li>
         <li><p>As <m>\theta</m> increases from <m>180\degree</m> to <m>270\degree</m>, <m>f(\theta) = \sin \theta</m> <fillin characters="6"/> from <fillin characters="4"/> to <fillin characters="4"/> .</p></li>
         <li><p>As <m>\theta</m> increases from <m>270\degree</m> to <m>360\degree</m>, <m>f(\theta) = \sin \theta</m> <fillin characters="6"/> from <fillin characters="4"/> to <fillin characters="4"/> .</p></li>
     </ol></p></li>
-    <li><sidebyside widths="50% 30%"><p>Use the figure to help you fill in the blanks.</p><image source="images/sq4-2-2.png"><description>circle</description></image></sidebyside>        
+    <li><sidebyside widths="50% 30%"><p>Use the figure to help you fill in the blanks.</p><!--<image source="images/sq4-2-2.png"><description>circle</description></image>-->
+    <image xml:id="sq4-2-2">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+        \coordinate (O) at (0,0);
+        \coordinate (A) at (25:1.5);
+        \coordinate (Ap) at ($ 1.5*sin(25)*(0,1) $);
+        \coordinate (B) at (60:1.5);
+        \coordinate (Bp) at ($ 1.5*sin(60)*(0,1) $);
+        \coordinate (C) at (75:1.5);
+        \coordinate (Cp) at ($ 1.5*sin(75)*(0,1) $);
+
+        \draw[black, thick, ->] (-1.7,0) -- (2,0) ;
+        \draw[black, thick, ->] (0,-1.7) -- (0,2) ;
+
+        \draw[red, thick, ->] (15:1.8) arc(15:65:1.8) node[left,yshift=2]{$\theta$};
+
+        \draw[gray!80!white, thick] (O) circle (1.5cm);
+        \draw[blue, thick] (O)--(A)--(Ap);
+        \draw[blue, thick] (O)--(B)--(Bp);
+        \draw[blue, thick] (O)--(C)--(Cp);
+
+        \node[text width=1cm, text=blue,fill=white, inner sep=0pt] at (1.5,-.5)  {$r=1$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>        
     <p><ol label="a">
         <li><p>As <m>\theta</m> increases from <m>0\degree</m> to <m>90\degree</m>, <m>f(\theta) = \cos \theta</m> <fillin characters="6"/> from <fillin characters="4"/> to <fillin characters="4"/> .</p></li>
         <li><p>As <m>\theta</m> increases from <m>90\degree</m> to <m>180\degree</m>, <m>f(\theta) = \cos \theta</m> <fillin characters="6"/> from <fillin characters="4"/> to <fillin characters="4"/> .</p></li>
