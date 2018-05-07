@@ -1515,7 +1515,36 @@ The angle of inclination is <m>36.9\degree</m>.</p><!--<image source="images/exa
                         <cell><m>100</m></cell></row>
                         </tabular></sidebyside>
 
-<sidebyside width="30%"><image source="images/exer4-2-3ans.png"><description>graph</description></image></sidebyside></li>
+<sidebyside width="30%"><!--<image source="images/exer4-2-3ans.png"><description>graph</description></image>-->
+    <image xml:id="exer4-2-3ans">
+        <description>triangle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [scale=1.2]
+        \draw[cyan,xstep=0.5,ystep=0.4]
+        (0,0) grid (6,4);
+
+        \draw[->] (-.3,0) -- (6.3,0) node[right] {$\theta$};
+        \draw[->] (0,-.3) -- (0,4.3) node[above] {$h$};
+
+        \foreach \x [evaluate=\x as \xi using int( 60* \x )] in {1,2,...,6}
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+
+        \foreach \y  [evaluate=\y as \yi using int( 60* \y )] in {2,4}
+        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+
+        \draw[domain=0:6,smooth,variable=\x,red,very thick] plot ({\x},{2+2*sin(pi/3*deg(\x))});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></li>
 <li><p><ol label="a">
     <li><sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                  
                     <row bottom="minor">
