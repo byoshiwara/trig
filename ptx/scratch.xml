@@ -91,13 +91,38 @@
 
 
 
-   <exercise number="63"><statement><p>Each situation describes a periodic function.  Match each situation with the appropriate graph.</p>
-   <p><ol label="a">
-    <li>When the heart contracts, blood pressure in the arteries rises rapidly to a peak (systolic blood pressure) and then falls off quickly to a minimum (diastolic blood pressure).  Blood pressure is a function of time.</li>
-    <li>After an injection is given to a patient, the amount of the drug present in his bloodstream decreases over time.  The patient receives injections at regular intervals to restore the drug level to the prescribed level.  The amount of the drug present is a function of time.</li>
-    <li>The monorail shuttle train between the north and south terminals at Gatwick Airport departs from the south terminal every 12 minutes.  The distance from the train to the south terminal is a function of time.</li>
-    <li>Delbert gets a haircut every two weeks.  The length of his hair is a function of time.</li>
-    </ol></p><sidebyside width="100%"><!--<image source="images/hp4-3-63.png">--><image source="images/fig-chap2-proj-ex-1-3.svg"><description>graph</description></image></sidebyside></statement></exercise>
+    <sidebyside width="50%"><!--<image source="images/hp4-sum-63ans.png"><description>graph</description></image>-->
+    <image xml:id="hp4-sum-63ans">
+        <description>cosine and tangent graphs</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [xscale=.8, yscale=.55]
+        \draw[cyan ] (-6,-5) grid (6,5);
+        \draw[black, thick, ->] (-6,0)--(6.4,0) node[right]{$\theta$};
+        \draw[black, thick, ->] (0,-5)--(0,5.5) node[above]{$y$};
+
+        \foreach \x  [evaluate =\x as \xi using int( \x * 30 )] in {-6, -3, 3, 6}
+         \draw[black] (\x, 0.15)--++(0, -.3) node[below, fill=white, inner sep=1pt, yshift=-1]{\footnotesize $\xi\degree$};
+        \foreach \y [evaluate=\y as \yi using int(1*\y)] in {-4, -2, 2, 4}
+         \draw[black] (0.08,\y)--++(-.16,0) node[left, fill=white, inner sep=1pt]{\footnotesize \yi};
+
+        \draw[domain={-6:atan(5)/30 - 6},smooth,variable=\x,red, very thick] plot ({\x},{ tan(30*\x) ) });
+        \draw[domain={atan(-5)/30:atan(5)/30},smooth,variable=\x,red, very thick] plot ({\x},{ tan(30*\x) ) });
+        \draw[domain={atan(-5)/30+6:6},smooth,variable=\x,red, very thick] plot ({\x},{ tan(30*\x) ) });
+
+        \draw[samples=65,domain=-6:6,smooth,variable=\x,blue, very thick] plot ({\x},{ cos(30*\x) ) });
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside>
+
 
 
 
