@@ -91,9 +91,11 @@
 
 
 
-    <sidebyside width="50%"><!--<image source="images/hp4-sum-63ans.png"><description>graph</description></image>-->
-    <image xml:id="hp4-sum-63ans">
-        <description>cosine and tangent graphs</description>
+<p> One way to see that <m>\sqrt{x^2}</m> and <m>x</m> are not equivalent is to compare the graphs of <m>Y_1 = \sqrt{x^2}</m> and <m>Y_2 = x</m>, shown below.  You can see that <m>\sqrt{x^2}</m> and <m>x</m> do not have the same value for <m>x \lt 0</m>.</p>
+
+<sidebyside width="60%"><!--<image source="images/5-3-abs.png"><description>graph</description></image>-->
+    <image xml:id="fig-5-3-abs">
+        <description>two graphs</description>
         <latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
@@ -103,25 +105,26 @@
           input/.style    = {coordinate}, % Input
           output/.style   = {coordinate} % Output
         }
-        \begin{tikzpicture} [xscale=.8, yscale=.55]
-        \draw[cyan ] (-6,-5) grid (6,5);
-        \draw[black, thick, ->] (-6,0)--(6.4,0) node[right]{$\theta$};
-        \draw[black, thick, ->] (0,-5)--(0,5.5) node[above]{$y$};
+        \begin{tikzpicture} [scale=.5]
+        \coordinate (O) at (0,0);
+        \coordinate (B) at ($ (O)+(0,-4) $);
+        \draw[black, thick] (O)++(-4.7,0)--++(9.4,0);
+        \draw[black, thick] (O)++(0,-3.1)--++(0,6.2);
+        \draw[blue, thick] (O)++(-3.1,3.1)--(O)--++(3.1,3.1);
+        \node[text width = 1.8cm] at (B) {\color{blue}$Y_1=\sqrt{x^2}$};
 
-        \foreach \x  [evaluate =\x as \xi using int( \x * 30 )] in {-6, -3, 3, 6}
-         \draw[black] (\x, 0.15)--++(0, -.3) node[below, fill=white, inner sep=1pt, yshift=-1]{\footnotesize $\xi\degree$};
-        \foreach \y [evaluate=\y as \yi using int(1*\y)] in {-4, -2, 2, 4}
-         \draw[black] (0.08,\y)--++(-.16,0) node[left, fill=white, inner sep=1pt]{\footnotesize \yi};
-
-        \draw[domain={-6:atan(5)/30 - 6},smooth,variable=\x,red, very thick] plot ({\x},{ tan(30*\x) ) });
-        \draw[domain={atan(-5)/30:atan(5)/30},smooth,variable=\x,red, very thick] plot ({\x},{ tan(30*\x) ) });
-        \draw[domain={atan(-5)/30+6:6},smooth,variable=\x,red, very thick] plot ({\x},{ tan(30*\x) ) });
-
-        \draw[samples=65,domain=-6:6,smooth,variable=\x,blue, very thick] plot ({\x},{ cos(30*\x) ) });
+        \coordinate (O) at (11,0);
+        \coordinate (B) at ($ (O)+(0,-4) $);
+        \draw[black, thick] (O)++(-4.7,0)--++(9.4,0);
+        \draw[black, thick] (O)++(0,-3.1)--++(0,6.2);
+        \draw[blue, thick] (O)++(-3.1,-3.1)--(O)--++(3.1,3.1);
+        \node[text width = 1.4cm] at (B) {\color{blue}$Y_2=x$};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
-        </sidebyside>
+</sidebyside> 
+ 
+ <p>Thus, to check to whether an equation is an identity, we can compare graphs of <m>Y_1 = </m> (left side of the equation) and <m>Y_2 = </m> (right side of the equation).   If the two graphs are identical, the equation is an identity.  If the two graphs are not the same, the equation is not an identity.</p> 
 
 
 

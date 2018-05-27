@@ -1,0 +1,36 @@
+\documentclass[crop,tikz,convert={outext=.svg,command=\unexpanded{pdf2svg \infile\space\outfile}},multi=false]{standalone}[2012/04/13]
+%\usetikzlibrary{...}% tikz package already loaded by 'tikz' option
+        \newcommand\degree[0]{^{\circ}}
+\makeatletter
+\begin{document}
+\begin{tikzpicture}
+
+\filldraw[black] (0,0) circle (2pt) node[anchor=west]{};
+\draw[blue, thick] (0,0)rectangle (.25,.25);
+\draw [very thick, -> ] (0,0) -- (2,0);
+\draw[very thick, black!50!blue,->] (0,0) -- (0,2);
+\draw[red, thick, ->] (0.6,0) arc (0:90:.6) node [above right, midway] {$90 \degree$ };
+
+
+\filldraw[black] (5,0) circle (2pt) node[anchor=west]{};
+%\draw[blue, thick] (5,0)rectangle (5.25,.25);
+\draw [very thick, -> ] (5,0) -- (7,0);
+\draw[very thick,black!50!blue, ->] (5,0) -- (3,0);
+\draw[red, thick, ->] (5.5,0) arc (0:180:.5) node [above , midway] {$180 \degree$ };
+
+
+\filldraw[black] (8,0) circle (2pt) node[anchor=west]{};
+\draw[blue, thick] (8,0)rectangle (8.25,-.25);
+\draw [very thick, -> ] (8,0) -- (10,0);
+\draw[very thick,black!50!blue, ->] (8,0) -- (8,-2);
+\draw[red, thick, ->] (8.4,0) arc (0:270:.4) node [above left, midway] {$270 \degree$ };
+
+
+\filldraw[black] (11,0) circle (2pt) node[anchor=west]{};
+%\draw[blue, thick] (5,0)rectangle (5.25,.25);
+\draw [very thick, -> ] (11,0) -- (13,0);
+\draw[very thick,black!50!blue, ->] (11,0) -- (13.2,0);
+\draw[red, thick, ->] (11.4,0) arc (0:360:.4) node [below right] {$360 \degree$ };
+
+\end{tikzpicture}
+\end{document}

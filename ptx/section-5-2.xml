@@ -35,9 +35,67 @@ The first equation is true, the second is false, and the third equation is true 
 
 <example><statement><p>Use a graph to solve the equation  <m>x^3 - 2x^2 - 5x = -6</m>.</p></statement>
 
-<solution><p>We graph the expressions on either side of the equation, that is, we graph <m>y = x^3 - 2x^2 - 5x</m> and <m>y = -6</m>  on the same grid, as shown below.</p> <sidebyside widths="50% 40%"> <p> We are looking for any values of <m>x</m> where the two <m>y</m>-values are equal, and these occur at the intersection points of the two graphs.  At those points, the <m>x</m>-values are <m>x = -2,~ x = 1</m> and <m>x = 3</m>, and these are the solutions of the equation.  You can check that all three values make the equation true.</p><image source="images/exam5-2-2.png"><description>graph</description></image></sidebyside></solution></example>
+<solution><p>We graph the expressions on either side of the equation, that is, we graph <m>y = x^3 - 2x^2 - 5x</m> and <m>y = -6</m>  on the same grid, as shown below.</p> <sidebyside widths="50% 40%"> <p> We are looking for any values of <m>x</m> where the two <m>y</m>-values are equal, and these occur at the intersection points of the two graphs.  At those points, the <m>x</m>-values are <m>x = -2,~ x = 1</m> and <m>x = 3</m>, and these are the solutions of the equation.  You can check that all three values make the equation true.</p><!--<image source="images/exam5-2-2.png"><description>graph</description></image>-->
+    <image xml:id="exam5-2-2">
+        <description>cubic graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [xscale=.5, yscale=.5]
+        \draw[cyan, ] (-5,-7) grid (5,3);
+        \draw[black, thick, ->] (-5,0) -- (5.4, 0) node[right]{\footnotesize$x$};
+        \draw[black, thick, ->] (0, -7) -- (0,3.4) node[above]{\footnotesize$y$};
 
-<exercise><statement><p>Use a graph to show that the equation <m>x^2 - 2x + 4 = 0</m>  has no real-valued solutions.</p></statement></exercise>
+        \foreach \x in {-4, -2, 2, 4}
+         \draw[black] (\x,0.1)--++(0,-0.2) node[below, fill=white, yshift=-1, inner sep = 1pt] {\footnotesize \x};
+        \foreach \y [evaluate=\y as \yi using int(2*\y)] in {-6, -4, -2, 2}
+         \draw[black] (0.2,\y)--++(-0.4,0) node[left, fill=white, xshift=-1, inner sep = 1pt] {\footnotesize\yi};
+
+        \draw[domain=-2.44:3.756,smooth,variable=\x,red,very thick] plot ({\x},{(\x^3 -2*(\x)^2-5*\x)/2});
+        \draw[blue,very thick] (-5,-3)--++(10,0);
+
+        \filldraw[black] (-2,-3) circle (2.9pt);
+        \filldraw[black] (1,-3) circle (2.9pt);
+        \filldraw[black] (3,-3) circle (2.9pt);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></solution></example>
+
+<exercise><statement><p>Use a graph to show that the equation <m>x^2 - 2x + 4 = 0</m>  has no real-valued solutions.</p></statement><answer><p>The graph does not cross the line <m>y = 0</m>.</p>
+        <sidebyside width="30%"><!--<image source="images/exer5-2-2ans.png"><description>graph</description></image>-->
+    <image xml:id="exer5-2-2ans">
+        <description>parabola</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [xscale=.5, yscale=.4]
+
+        \draw[cyan] (-3,-2) grid (5,8);
+        \draw[black, thick, ->] (-3,0)--(5.5,0) node[right]{$x$};
+        \draw[black, thick, ->] (0,-2)--(0,8.5) node[above]{$y$};
+        \foreach \x in {-2, 2, 4} 
+         \draw[black] (\x,.08)--++(0,-.16) node[below, yshift=-1, fill=white, inner sep=1pt] {\small \x};
+        \foreach \y in {-2, 2, 4, 8} 
+         \draw[black] (.08, \y)--++(-.16,0) node[left, xshift=-1, fill=white, inner sep=1pt] {\small \y};
+
+        \draw[domain=-1.235:3.236,smooth,variable=\x,red, thick] plot ({\x},{(\x)^2 - 2*\x + 4 });
+       \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside></answer></exercise>
 </introduction>
 
 <subsection><title>Trigonometric Equations</title>
@@ -47,7 +105,40 @@ The first equation is true, the second is false, and the third equation is true 
 
 <p>The figure below shows a graph of the height function and a horizontal line at <m>h = 240</m>.</p>
 
-<sidebyside width="70%"><image source="images/5-2-ferris.png"><description>graph</description></image></sidebyside>
+<sidebyside width="70%"><!--<image source="images/5-2-ferris.png"><description>graph</description></image>-->
+    <image xml:id="fig-5-2-ferris">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [xscale=.5, yscale=.5]
+        \draw[cyan, ] (0,0) grid (18,12);
+        \draw[black, thick, ->] (0,0) -- (18.8, 0) node[right]{\footnotesize$t$};
+        \draw[black, thick, ->] (0, 0) -- (0,12.6) node[above]{\footnotesize$h$};
+
+        \foreach \x [evaluate=\x as \xi using int(30*\x)] in {2, 4, ..., 18}
+         \draw[black] (\x,0.1)--++(0,-0.2) node[below, fill=white, yshift=-1, inner sep = 1pt] {\footnotesize \xi};
+        \foreach \y [evaluate=\y as \yi using int(25*\y)] in {2, 4, ..., 12}
+         \draw[black] (0.2,\y)--++(-0.4,0) node[left, fill=white, xshift=-1, inner sep = 1pt] {\footnotesize\yi};
+
+        \draw[domain=0:18,smooth,variable=\x,red,ultra thick] plot ({\x},{ 139/25 - 5* cos(30 * 2 * \x /3 });
+        \draw[blue,ultra thick] (0,240/25)--++(18,0);
+
+        \draw[gray!80!white, thick, dashed] (215/30, 0) -- ++(0,240/25);
+        \draw[gray!80!white, thick, dashed] (325/30, 0) -- ++(0,240/25);
+
+        \filldraw[black] (215/30, 240/25) circle (2.6pt);
+        \filldraw[black] (325/30, 240/25) circle (2.6pt);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
 <p>From the graph, we see that <m>h = 240</m> at approximately 215 seconds and 325 seconds into the ride.  Your height is more than 240 feet between those two times, or for about 110 seconds.</p>
 </subsection>
@@ -67,7 +158,38 @@ We have solved equations like this one before:  we use the inverse cosine to sol
 <me>\theta = \cos^{-1}(-0.808) = 143.9\degree</me> To find the second solution, we need the third-quadrant angle whose cosine is <m>-0.808</m>. </p>
 <sidebyside widths="50% 40%"><p> Now, the reference angle for <m>143.9\degree</m> is  <me>180\degree - 143.9\degree = 36.1\degree</me>  and the angle in the third quadrant with the same reference angle is  
 <me>180\degree + 36.1\degree = 216.1\degree</me>  (See the figure at right.)  Thus, the other solution is <m>216.1\degree</m>.</p>
-<image source="images/5-2-eqn.png"><description>graph</description></image></sidebyside>
+<!--<image source="images/5-2-eqn.png"><description>graph</description></image>-->
+    <image xml:id="fig-5-2-eqn">
+        <description>angles</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \draw[black,thick,->] (-2.8,0)--++(5,0);
+        \draw[black,thick,->] (0,-2.2)--++(0,4.4);
+
+        \coordinate (O) at (0,0);
+        \coordinate (A) at (143.9:3.3);
+        \coordinate (B) at (216.1:3.3);
+
+        \draw[black,thick] (O)--(A) node[anchor=south east, xshift=3, yshift=-3]{\color{red}\footnotesize$143.9\degree$};
+        \draw[black,thick] (O)--(B) node[anchor=north east, xshift=3]{\color{red}\footnotesize$216.1\degree$};
+
+        \draw[blue, thick, <->] (180:.9) arc (180:143.9:0.9) node[left, midway, yshift=2] {\scriptsize$36.1\degree$};
+        \draw[blue, thick, <->] (180:.9) arc (180:216.1:0.9) node[left, midway, yshift=-2] {\scriptsize$36.1\degree$};
+        \draw[red, thick, ->] (0:.4) arc (0:216.1:0.4);
+        \draw[red, thick, ->] (0:.6) arc (0:143.9:0.6);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
 <p> To solve simple equations involving a single trigonometric ratio (either <m>\sin \theta, \cos \theta,</m> or <m>\tan \theta</m>), we can follow the steps below.</p>
 
@@ -90,13 +212,79 @@ We have solved equations like this one before:  we use the inverse cosine to sol
                  8 \sin \theta \amp = 4  \amp \amp \blert{\text{Divide both sides by 8.}}\\
                  \sin \theta \amp = \dfrac{4}{8} = \dfrac{1}{2}\\                             
                 \end{align*}</p>
-    <sidebyside widths="45% 45%"><p>We recognize that <m>\sin \theta = \dfrac{1}{2}</m> for one of the special angles, namely <m>\theta = 30\degree</m>, and also for the obtuse angle <m>\theta = 150\degree</m>, as shown at right.</p><image source="images/exam5-2-3.png"><description>graph</description></image></sidebyside>  
+    <sidebyside widths="45% 45%"><p>We recognize that <m>\sin \theta = \dfrac{1}{2}</m> for one of the special angles, namely <m>\theta = 30\degree</m>, and also for the obtuse angle <m>\theta = 150\degree</m>, as shown at right.</p><!--<image source="images/exam5-2-3.png"><description>graph</description></image>-->
+    <image xml:id="exam5-2-3">
+        <description>angles</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \draw[black,thick,->] (-2.8,0)--++(5.6,0);
+        \draw[black,thick,->] (0,-.7)--++(0,2.4);
+
+        \coordinate (O) at (0,0);
+        \coordinate (A) at (30:3);
+        \coordinate (B) at (150:3);
+        \coordinate (C) at ($ sqrt(3)*(1,0)$);
+        \coordinate (D) at ($ -sqrt(3)*(1,0)$);
+
+        \draw[black,thick] (B)--(O)--(A) ;
+
+        \draw[red, thick] (180:.6) arc (180:150:0.6) node[left, midway, yshift=2] {\scriptsize$30\degree$};
+        \draw[red, thick] (0:.6) arc (0:30:0.6) node[right, midway, yshift=2] {\scriptsize$30\degree$};
+        \draw[blue,thick] (C) rectangle ++(-.25,.25);
+        \draw[blue,thick] (D) rectangle ++(.25,.25);
+        \draw[gray, thick] (C)--++(0,1) node[right, midway]{\footnotesize\color{blue}1};
+        \draw[gray, thick] (D)--++(0,1) node[left, midway]{\footnotesize\color{blue}1};
+
+        \node[text width=.3cm] at (.8,-.3)    {\color{blue}\footnotesize$\sqrt{3}$};
+        \node[text width=.3cm] at (-.8,-.3)    {\color{blue}\footnotesize$\sqrt{3}$};
+        \node[text width=.2cm] at (-.8,.8)    {\color{blue}\footnotesize 2};
+        \node[text width=.2cm] at (.8,.8)    {\color{blue}\footnotesize 2};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>  
     <p>Note that <m>\theta = 150\degree</m> is the second-quadrant angle with reference angle<m>\theta = 30\degree</m>. Because the sine is negative in the third and fourth quadrants, there are no other solutions between <m>0\degree</m> and <m>360\degree</m>.  The solutions we want are <m>\theta = 30\degree</m> and <m>\theta = 150\degree</m>.</p></solution></example>
 
 <warning><p>To solve the equation in the previous example, it is not enough to find the solution <m>\theta = 30\degree</m>;  we must find <em>all</em> the solutions between <m>0\degree</m> and <m>360\degree</m>. To find the solutions in other quadrants, we use reference angles.</p></warning>
 
 <note><p> In the previous example, we found two solutions of the equation <m>8 \sin \theta - 1 = 3</m>.  The equation actually has infinitely many solutions, as you can see in the figure below, which shows a graph of <m>y = 8 \sin \theta - 1</m>  and the horizontal line <m>y = 3</m>.  The line intersects the sine graph infinitely many times, twice in each cycle.</p> 
-<sidebyside width="60%"><image source="images/5-2-infsoln.png"><description>graph</description></image></sidebyside> 
+<sidebyside width="60%"><!--<image source="images/5-2-infsoln.png"><description>graph</description></image>-->
+    <image xml:id="fig-5-2-infsoln">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [xscale=.6, yscale=.25]
+        \draw[cyan, ] (-5,-9) grid (9,9);
+        \draw[black, thick, ->] (-5,0) -- (9.8, 0) node[right]{\footnotesize$t$};
+        \draw[black, thick, ->] (0, -9) -- (0,9.6) node[above]{\footnotesize$h$};
+
+        \foreach \x [evaluate=\x as \xi using int(90*\x)] in {-4,-2, 2,4,6,8}
+         \draw[black] (\x,0.1)--++(0,-0.2) node[below, fill=white, yshift=-2, inner sep = 1pt] {\scriptsize \xi};
+        \foreach \y [evaluate=\y as \yi using int(1*\y)] in {-8, -4, 4, 8}
+         \draw[black] (0.2,\y)--++(-0.4,0) node[left, fill=white, xshift=-1, inner sep = 1pt] {\scriptsize\yi};
+
+        \draw[samples=65,domain=-5:9,smooth,variable=\x,red,ultra thick] plot ({\x},{ -1 + 8* sin(90* \x  });
+        \draw[blue,ultra thick] (-5,3)--++(14,0);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside> 
 <p>Each intersection represents a solution of the equation.  Thus, all of the angles coterminal with <m>30\degree</m> and <m>150\degree</m> are also solutions.  We can easily find these solutions by adding integer multiples of <m>360\degree</m> to <m>30\degree</m> or <m>150\degree</m>.  This is why, when solving a trigonometric equation, we usually list only the solutions in one cycle, typically those between <m>0\degree</m> and <m>360\degree</m>.</p></note>
 
 <exercise><statement><p>Solve the equation <m>~~5 \tan \theta + 7 = 2</m>, for <m>0\degree \le\theta\le 360\degree</m>.</p></statement></exercise>
@@ -111,10 +299,45 @@ We have solved equations like this one before:  we use the inverse cosine to sol
                  3 \tan \beta \amp = -9 \\
                  \tan \beta \amp = -3\\                             
                 \end{align*}</p>
-    <sidebyside widths="65% 20%"><p>There are two angles with tangent -3, one in the second quadrant and one in the fourth quadrant.  The calculator finds the solution
+    <sidebyside widths="65% 25%" valigns="middle middle"><p>There are two angles with tangent -3, one in the second quadrant and one in the fourth quadrant.  The calculator finds the solution
         <me>\tan^{-1}(-3) = -71.565\degree</me>
     This angle is in the fourth quadrant, but it is not between <m>0\degree</m> and <m>360\degree</m>. The angle we want in is coterminal with <m>-71.565\degree</m>, so we add <m>360\degree</m> to get the first solution:
-        <me>B = \tan^{-1}(-3) + 360\degree = 288.435\degree</me></p><image source="images/exam5-2-4.png"><description>graph</description></image></sidebyside>
+        <me>B = \tan^{-1}(-3) + 360\degree = 288.435\degree</me></p><!--<image source="images/exam5-2-4.png"><description>graph</description></image>-->
+    <image xml:id="exam5-2-4">
+        <description>angles</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \draw[black,thick,->] (-1.6,0)--++(3.2,0);
+        \draw[black,thick,->] (0,-1.9)--++(0,3.8);
+
+        \coordinate (O) at (0,0);
+        \coordinate (A) at ({180-atan(3)}:2.);
+        \coordinate (B) at ({-atan(3)}:2.);
+
+        \draw[black,thick] (B)--(O)--(A) ;
+
+        \draw[blue,thick] (.5,0) rectangle ++(-.2,-.2);
+        \draw[blue,thick] (-.5,0) rectangle ++(.2,.2);
+        \draw[gray, thick] (.5,0)--++(0,-1.5) node[right, midway]{\footnotesize\color{blue} 3};
+        \draw[gray, thick] (-.5,0)--++(0,1.5) node[left, midway]{\footnotesize\color{blue} 3};
+
+        \node[text width=.1cm] at (.25,.2) {\color{blue}\footnotesize 1};
+        \node[text width=.1cm] at (-.25,-.2) {\color{blue}\footnotesize 1};
+        \node[text width=.1cm] at (-.16,1.1) {\color{blue}\footnotesize $r$};
+        \node[text width=.1cm] at (.16,-1.1){\color{blue}\footnotesize $r$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside>
     <p>The other solution is in the second quadrant, as shown in the figure.  This angle is <m>180\degree</m> less than the fourth quadrant solution:
         <me>B = \tan^{-1}(-3) + 180\degree = 108.435\degree </me></p></solution></example>
 
@@ -144,11 +367,73 @@ We have solved equations like this one before:  we use the inverse cosine to sol
 
 <solution><p>Graph the equation <m>~~y = 3\tan B + 1</m> and the horizontal line <m>y = -8</m> on the same axes, as shown below.</p>
 
- <sidebyside width="45%"><image source="images/exam5-2-6.png"><description>graph</description></image></sidebyside>
+ <sidebyside width="50%"><!--<image source="images/exam5-2-6.png"><description>graph</description></image>-->
+    <image xml:id="exam5-2-6">
+        <description>tangent graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [xscale=.85, yscale=.28]
+
+        \draw[cyan, ystep=2] (0,-12) grid (8,8);
+        \draw[black,thick,->] (0,0)--(8.4,0) node[right]{\small$B$};
+        \draw[black,thick,->] (0,-12)--(0,8.8) node[above]{\small$y$};
+
+        \foreach \x [evaluate=\x as \xi using int(45*\x)] in {2, 4, 6, 8}
+         \draw[black] (\x,0.1)--++(0,-0.2) node[below, fill=white, xshift=-3, yshift=-2, inner sep = 1pt] {\scriptsize \xi};
+        \foreach \y [evaluate=\y as \yi using int(1*\y)] in {-12, -8, -4, 4, 8}
+         \draw[black] (0.2,\y)--++(-0.4,0) node[left, fill=white, xshift=-1, inner sep = 1pt] {\scriptsize\yi};
+         
+        \draw[domain={0:atan(7)/45},smooth,variable=\x,red,ultra thick] plot ({\x},{ 1+tan(45* \x)  });
+        \draw[domain={4-atan(13)/45:4+atan(7)/45},smooth,variable=\x,red,ultra thick] plot ({\x},{ 1+tan(45* \x)  });
+        \draw[domain={8-atan(13)/45:8},smooth,variable=\x,red,ultra thick] plot ({\x},{ 1+tan(45* \x)  });
+
+        \draw[blue,ultra thick] (0,-8)--(8,-8);
+        \coordinate (A) at ($ atan(-9)/45*(1,0)+(4,0) $);
+        \draw[gray, dashed] (A) --++(0,-8);
+        \coordinate (B) at ($ atan(-9)/45*(1,0)+(8,0) $);
+        \draw[gray, dashed] (B) --++(0,-8);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+ </sidebyside>
 
  <p>It is difficult to read the graph with much accuracy, but you can use the intersect feature on your calculator to verify that the graph of <m>y = 3\tan B + 1</m> has <m>y</m>-value <m>-8</m> when <m>B</m> is about <m>108.4\degree</m> or <m>288.4\degree</m>.</p></solution></example>
 
- <exercise><statement><p>Use a graph to verify your solutions to <m>~~4 \cos C - 6 = -3</m>.</p></statement></exercise>
+ <exercise><statement><p>Use a graph to verify your solutions to <m>~~4 \cos C - 6 = -3</m>.</p></statement><answer><sidebyside width="40%"><!--<image source="images/exer5-2-6ans.png"><description>graph</description></image>-->
+    <image xml:id="exer5-2-6ans">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [xscale=.5, yscale=.2]
+
+        \draw[cyan, ystep=2] (0,-12) grid (8,2);
+        \draw[black, thick, ->] (0,0)--(8.5,0) node[right]{\footnotesize$C$};
+        \draw[black, thick, ->] (0,-12)--(0,2.9) node[above]{\footnotesize$y$};
+        \foreach \x [evaluate=\x as \xi using int(45*\x)] in {2, 4, 6, 8} 
+         \draw[black] (\x,.08)--++(0,-.16) node[below, yshift=-1, fill=white, inner sep=1pt] {\scriptsize \xi};
+        \foreach \y in {-12, -8, -4,2} 
+         \draw[black] (.08, \y)--++(-.16,0) node[left, xshift=-1, fill=white, inner sep=1pt] {\scriptsize \y};
+
+        \draw[domain=0:8,smooth,variable=\x,red, thick] plot ({\x},{4*cos(45*\x) - 6 });
+        \draw[blue, very thick] (0,-3)--++(8,0);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+ </sidebyside></answer></exercise>
 </subsection>
 
  <subsection><title>Equations with Squares of Trig Ratios</title>
@@ -173,7 +458,42 @@ We have solved equations like this one before:  we use the inverse cosine to sol
     Next, we solve for <m>\tan \theta</m>  by extracting roots.
     <me>\tan \theta = \pm \sqrt{3}</me>
 There are two angles between <m>0\degree</m> and <m>360\degree</m> with tangent <m>\sqrt{3}</m> and two angles with tangent <m>-\sqrt{3}</m>, making four solutions to this equation. We know that <m>\tan 60\degree = \sqrt{3}</m>,  so one of the solutions is <m>60\degree</m>. </p>
-<sidebyside widths="60% 25%"><p> The tangent function is also positive in the third quadrant, and the angle in the third quadrant with reference angle <m>60\degree</m> is <m>180\degree + 60\degree = 240\degree</m>. The angles in the second and fourth quadrants with reference angle <m>60\degree</m> have tangent <m>-\sqrt{3}</m>.  These angles are  </p><image source="images/exam5-2-7.png"><description>graph</description></image></sidebyside>  
+<sidebyside widths="60% 22%" valigns="middle middle"><p> The tangent function is also positive in the third quadrant, and the angle in the third quadrant with reference angle <m>60\degree</m> is <m>180\degree + 60\degree = 240\degree</m>. The angles in the second and fourth quadrants with reference angle <m>60\degree</m> have tangent <m>-\sqrt{3}</m>.  These angles are  </p><!--<image source="images/exam5-2-7.png"><description>graph</description></image>-->
+    <image xml:id="exam5-2-7">
+        <description>angles</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \draw[black,thick,->] (-1.6,0)--++(3.2,0);
+        \draw[black,thick,->] (0,-1.9)--++(0,3.8);
+
+        \coordinate (O) at (0,0);
+        \coordinate (A) at (60:2.);
+        \coordinate (B) at (120:2.);
+        \coordinate (C) at (240:2.);
+        \coordinate (D) at (300:2.);
+
+        \draw[black,thick] (O)--(A) node[above right, xshift=-4, yshift=-2]{\footnotesize \color{red}$60\degree$};
+        \draw[black,thick] (O)--(B) node[above left, xshift=4, yshift=-2]{\footnotesize \color{red}$120\degree$};
+        \draw[black,thick] (O)--(C) node[below left, xshift=4, yshift=2]{\footnotesize \color{red}$240\degree$};
+        \draw[black,thick] (O)--(D) node[below right, xshift=-4, yshift=2]{\footnotesize \color{red}$300\degree$};
+
+        \draw[red,thick, <->] (.5,0) arc (0:60:.5) node[right, midway, yshift=1] {\footnotesize $60\degree$};
+        \draw[red,thick, <->] (-.5,0) arc (180:120:.5) node[left, midway, yshift=1] {\footnotesize $60\degree$};
+        \draw[red,thick, <->] (-.5,0) arc (180:240:.5) node[left, midway, yshift=-3] {\footnotesize $60\degree$};
+        \draw[red,thick, <->] (.5,0) arc (0:-60:.5) node[right, midway, yshift=-3] {\footnotesize $60\degree$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>  
 <p>  <me>180\degree - 60\degree = 120\degree ~~ \text{and} ~~ 360\degree - 60\degree = 300\degree</me>  
 The four solutions are shown at right.</p></solution></example>
 
@@ -206,10 +526,49 @@ Also, <m>\cos \theta = 1</m>  when <m>\theta = 0\degree</m>.  Thus, the original
 </subsection>
 
 <subsection><title>Snell's Law</title>
-<sidebyside widths="60% 20%"><p>When you view an object through a liquid, such as a spoon in a glass of water, or a fish in an aquarium, the object looks distorted or bent.  This distortion is caused by refraction of light.  Light rays bend when they pass from one medium to another, for instance from water to glass or from glass to air.</p><image source="images/5-2-refrac.png"><description>graph</description></image></sidebyside> 
+<sidebyside widths="60% 20%"><p>When you view an object through a liquid, such as a spoon in a glass of water, or a fish in an aquarium, the object looks distorted or bent.  This distortion is caused by refraction of light.  Light rays bend when they pass from one medium to another, for instance from water to glass or from glass to air.</p><image source="images/5-2-refrac.png"><description>spoon in glass of water</description></image></sidebyside> 
 <p> A light ray enters the boundary between the two media at a certain angle, called the <em>angle of incidence</em>, but leaves the boundary at a different angle, the <em>angle of refraction</em>.  Both angles are acute angles measured from the <em>normal</em> line perpendicular to the boundary, as shown below.</p> 
-<sidebyside widths="58% 40%"><p> The change of angle is caused by the fact that light travels at different speeds in different media.  The relationship between the angle of incidence and the angle of refraction is given by Snell's Law:
-    <me>\dfrac{\sin \theta_1}{\sin \theta_2} = \dfrac{v_1}{v_2}</me></p><image source="images/5-2-snell.png"><description>graph</description></image></sidebyside>
+<sidebyside widths="58% 30%"><p> The change of angle is caused by the fact that light travels at different speeds in different media.  The relationship between the angle of incidence and the angle of refraction is given by Snell's Law:
+    <me>\dfrac{\sin \theta_1}{\sin \theta_2} = \dfrac{v_1}{v_2}</me></p><!--<image source="images/5-2-snell.png"><description>graph</description></image>-->
+    <image xml:id="fig-5-2-snell">
+        <description>water-glass interface</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+
+        \coordinate (O) at (0,0);
+        \coordinate (A) at (-2.5,-1.5);
+        \coordinate (B) at (-2.5,2);
+        \coordinate (C) at (0,2);
+        \coordinate (D) at (0,-1.5);
+        \coordinate (E) at (-2.5,1.7);
+        \coordinate (F) at (2.5,-1);
+
+
+        \draw[draw=cyan!80!white, fill=cyan!80!white, opacity=.6] (A)--(B)--(C)--(D);
+        \draw[blue, thick] (O) rectangle ++(-.25, -.25);
+        \draw[black, thick] (-2.5,0)--(2.5,0);
+        \draw[black, very thick] (0,-1.5)--(0,2);
+        \draw[red, thick] (E)--(O)--(F);
+        \draw[red, thick] (-.5,0) arc (180:{180-atan(1.7/2.5)}:.5) node[left, midway, yshift=2] {\small $\theta_1$};
+        \draw[red, thick] (1.1,0) arc (0:{-atan(1/2.5)}:1.1) node[right, midway, yshift=-2] {\small $\theta_2$};
+
+        \node [text width=1cm, fill=white, inner sep=1pt] at (-.9,1.4) {\small water};
+        \node [text width=1cm, fill=white, inner sep=1pt] at (1,-1.1) {\small glass};
+        \coordinate (N) at (2.4,.4);
+        \draw[black] (N)--++(-.2,0) node[left]{\footnotesize normal line};
+        \draw[black, ->] (N)--++(-.2,-.39)  ;
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 <p>where <m>\theta_1</m> is the angle in the medium where light travels at speed <m>v_1</m>, and <m>\theta_2</m> is the angle where light travels at speed  <m>v_2</m>.  The ratio of the speeds is called the <em>index of refraction</em>.</p>
 
 <example><statement><p>The index of refraction from water to glass is 1.1.  If light passes from water to glass with a <m>23\degree</m> angle of incidence, what is the angle of refraction?</p></statement>
@@ -261,11 +620,11 @@ Because <m>\sin \theta = 0.3552,~~ \theta = \sin^{-1}(0.3552) = 20.8\degree.</m>
 <p><ol label="1">
     <li><m>x = 3</m></li>
     <li><p>The graph does not cross the line <m>y = 0</m>.</p>
-        <sidebyside width="30%"><image source="images/exer5-2-2ans.png"><description>graph</description></image></sidebyside></li>
+        <sidebyside width="30%"><image source="images/exer5-2-2ans"><description>graph</description></image></sidebyside></li>
     <li><m>\theta = 135\degree~ \text{and}~ \theta = 315\degree</m></li>
     <li><m>C = 41.410\degree~ \text{or}~ C = 318.590\degree</m></li>
     <li>No solution</li>
-    <li><sidebyside width="40%"><image source="images/exer5-2-6ans.png"><description>graph</description></image></sidebyside></li>
+    <li><sidebyside width="40%"><image source="images/exer5-2-6ans"><description>graph</description></image></sidebyside></li>
      <li><m>\theta = 45\degree,~\theta = 135\degree,~\theta = 225\degree,~\text{or}~\theta = 315\degree</m></li>
      <li><m>\theta = 42\degree,~\theta = 138\degree,~\theta = 199\degree,~\text{or}~\theta = 341\degree</m></li>
      <li><m>16.315\degree</m></li>  
