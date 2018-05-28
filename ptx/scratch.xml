@@ -91,11 +91,18 @@
 
 
 
-<p> One way to see that <m>\sqrt{x^2}</m> and <m>x</m> are not equivalent is to compare the graphs of <m>Y_1 = \sqrt{x^2}</m> and <m>Y_2 = x</m>, shown below.  You can see that <m>\sqrt{x^2}</m> and <m>x</m> do not have the same value for <m>x \lt 0</m>.</p>
+ <example><statement><p>Solve <m>~~\cos B + \sqrt{3} \sin B = 0~~</m> for <m>0\degree \le B \le 360\degree</m>.</p></statement>
 
-<sidebyside width="60%"><!--<image source="images/5-3-abs.png"><description>graph</description></image>-->
-    <image xml:id="fig-5-3-abs">
-        <description>two graphs</description>
+ <solution><p>We first try to write the equation in terms of a single trig function.          
+     \begin{align*}
+                 \sqrt{3} \sin B \amp = -\cos B  \amp \amp \blert{\text{Divide both sides by } \cos B \text{ and } \sqrt{3}.}\\
+                  \dfrac {\sin B} {\cos B} \amp = \dfrac{-1} {\sqrt{3}} \amp \amp \blert{\text{Apply the tangent identity.}}\\
+                 \tan B \amp = \dfrac{-1} {\sqrt{3}}\\                             
+                \end{align*}</p>
+                
+<sidebyside widths="55% 32%" valigns="middle middle"><p>Because <m>\tan 30\degree = \dfrac{-1}{\sqrt{3}}</m>, we see that <m>B</m> has a reference angle of <m>30\degree</m>. And because the tangent is negative in the second and fourth quadrants, we have <m>B = 150\degree</m> or <m>B = 330\degree</m>, as shown in the figure.</p><!--<image source="images/exam5-3-9.png"><description>angle</description></image>-->
+    <image xml:id="exam5-3-9">
+        <description>angle</description>
         <latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
@@ -105,26 +112,31 @@
           input/.style    = {coordinate}, % Input
           output/.style   = {coordinate} % Output
         }
-        \begin{tikzpicture} [scale=.5]
+        \begin{tikzpicture} 
         \coordinate (O) at (0,0);
-        \coordinate (B) at ($ (O)+(0,-4) $);
-        \draw[black, thick] (O)++(-4.7,0)--++(9.4,0);
-        \draw[black, thick] (O)++(0,-3.1)--++(0,6.2);
-        \draw[blue, thick] (O)++(-3.1,3.1)--(O)--++(3.1,3.1);
-        \node[text width = 1.8cm] at (B) {\color{blue}$Y_1=\sqrt{x^2}$};
+        \coordinate (A) at ($ sqrt(3)*(1,0)  $);
+        \coordinate (B) at ($ sqrt(3)*(-1,0)  $);
+        \coordinate (Ap) at (-30:2.2);
+        \coordinate (Bp) at (150:2.2);
 
-        \coordinate (O) at (11,0);
-        \coordinate (B) at ($ (O)+(0,-4) $);
-        \draw[black, thick] (O)++(-4.7,0)--++(9.4,0);
-        \draw[black, thick] (O)++(0,-3.1)--++(0,6.2);
-        \draw[blue, thick] (O)++(-3.1,-3.1)--(O)--++(3.1,3.1);
-        \node[text width = 1.4cm] at (B) {\color{blue}$Y_2=x$};
+        \draw[black, thick, ->] (-2,0) -- (2,0);
+        \draw[black, thick, ->] (0,-1.3) -- (0,1.3);
+        \draw[blue, very thick] (Ap)--(Bp);
+
+        \draw[blue, thick] (A) rectangle ++(-.25,-.25);
+        \draw[blue, thick] (B) rectangle ++(.25,.25);
+        \draw[gray, thick] (A)--++(0,-1) node[right, midway] {\small \color{blue} 1};
+        \draw[gray,thick] (B)--++(0,1) node[left, midway] {\small \color{blue} 1};
+
+        \draw[red, thick] (-.5,0) arc (180:150:.5) node[left, midway, yshift=2 ] {\scriptsize $30\degree$};
+        \draw[red, thick] (.5,0) arc (0:-30:.5) node[right, midway, yshift=-2 ] {\scriptsize $30\degree$};
+
+        \node[text width=.7cm] at (.9,.3) {\color{blue}\footnotesize$\sqrt{3}$};
+        \node[text width=.7cm] at (-.8,-.3) {\color{blue}\footnotesize$\sqrt{3}$};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
-</sidebyside> 
- 
- <p>Thus, to check to whether an equation is an identity, we can compare graphs of <m>Y_1 = </m> (left side of the equation) and <m>Y_2 = </m> (right side of the equation).   If the two graphs are identical, the equation is an identity.  If the two graphs are not the same, the equation is not an identity.</p> 
+</sidebyside></solution></example> 
 
 
 
