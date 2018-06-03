@@ -16,114 +16,9 @@
 \begin{document}
 \maketitle
 
-\section{Chap 5 Equations and Identities}
+\section{Chap 6 Radians}
 
-\subsection{5.3 Trigonometric Identities}
 
-fig-5-3-abs $y=\sqrt{x^2}$ and $y=x$
-\begin{tikzpicture} [scale=.5]
-\coordinate (O) at (0,0);
-\coordinate (B) at ($ (O)+(0,-4) $);
-\draw[black, thick] (O)++(-4.7,0)--++(9.4,0);
-\draw[black, thick] (O)++(0,-3.1)--++(0,6.2);
-\draw[blue, thick] (O)++(-3.1,3.1)--(O)--++(3.1,3.1);
-\node[text width = 1.8cm] at (B) {\color{blue}$Y_1=\sqrt{x^2}$};
-
-\coordinate (O) at (11,0);
-\coordinate (B) at ($ (O)+(0,-4) $);
-\draw[black, thick] (O)++(-4.7,0)--++(9.4,0);
-\draw[black, thick] (O)++(0,-3.1)--++(0,6.2);
-\draw[blue, thick] (O)++(-3.1,-3.1)--(O)--++(3.1,3.1);
-\node[text width = 1.4cm] at (B) {\color{blue}$Y_2=x$};
-\end{tikzpicture}
-\newline
-
-fig-5-3-abs v2 $y=\sqrt{x^2}$ and $y=x$
-\begin{tikzpicture} [scale=.25]
-
-\draw[gray!60] (-10,-6) grid (10,6);
-\coordinate (O) at (0,0);
-\coordinate (B) at ($ (O)+(0,-7.2) $);
-\draw[black, thick] (O)++(-10,0)--++(20,0);
-\draw[black, thick] (O)++(0,-6)--++(0,12);
-\draw[red, thick] (O)++(-6,6)--(O)--++(6,6);
-\node[text width = 1.8cm] at (B) {\color{red}$Y_1=\sqrt{x^2}$};
-
-\draw[gray!60] (12,-6) grid (32,6);
-\coordinate (O) at (22,0);
-\coordinate (B) at ($ (O)+(0,-7.2) $);
-\draw[black, thick] (O)++(-10,0)--++(20,0);
-\draw[black, thick] (O)++(0,-6)--++(0,12);
-\draw[blue, thick] (O)++(-6,-6)--(O)--++(6,6);
-\node[text width = 1.4cm] at (B) {\color{blue}$Y_2=x$};
-\end{tikzpicture}
-\newline
-
-exam5-3-3a don't use
-\begin{tikzpicture} [xscale=.25, yscale=.5]
-
-\coordinate (O) at (0,0);
-\coordinate (B) at ($ (O)+(0,-7.2) $);
-\draw[black, thick] (O)++(-12,0)--++(24,0);
-\draw[black, thick] (O)++(0,-4)--(0,4);
-\draw[samples=65,domain=-12:12,smooth,variable=\x,red,very thick] plot ({\x},{sin( 2*30*\x )});
-\draw[domain=-12:12,smooth,variable=\x,blue,very thick] plot ({\x},{ 2*sin( 30*\x )});
-\draw[gray, <-] (-7.5,-1.2)--++(0,-1.) node[below] {\small\color{black}$Y_1= \sin 2x$};
-\draw[gray, <-] (3,2.2)--++(0,1.) node[above right, xshift=-8, yshift=-3] {\small\color{black}$Y_2= 2 \sin x$};
-
-\coordinate (O) at (28,0);
-\coordinate (B) at ($ (O)+(0,-7.2) $);
-\draw[black, thick] (O)++(-12,0)--++(24,0);
-\draw[black, thick] (O)++(0,-4)--++(0,8);
-\draw[samples=65,domain=16:40,smooth,variable=\x,red,very thick] plot ({\x},{sin( 2*30*(\x-28) )});
-\draw[domain=16:40,smooth,variable=\x,blue,very thick] plot ({\x},{ 2*sin( 30*(\x-28) )});
-\end{tikzpicture}
-\newline
-
-exam5-3-7
-\begin{tikzpicture} [scale=.15]
-
-\coordinate (O) at (0,0);
-\coordinate (A) at (-24,7);
-\coordinate (B) at (-24,0);
-\draw[black, thick, ->] (-29,0) -- (7,0);
-\draw[black, thick, ->] (0,-2) -- (0,12);
-\draw[blue, very thick] (O)--(A) node [above, midway] {\small 25};
-\draw[blue, very thick] (A)--+(-4.8, 1.4);
-
-\draw[blue, thick] (B) rectangle ++(2,2);
-\draw[gray] (A)--(B) node[left, midway] {\small \color{blue} 7};
-\filldraw[black] (A) circle (.4cm) node[anchor=south west]{\small $(x,7)$};
-\draw[red, thick, ->] (2.5,0) arc (0:{180-atan(7/24)}:2.5) node[above, midway, xshift=5, yshift=-2] {\small $\theta$};
-
-\end{tikzpicture}
-\newline
-
-exam5-3-9
-\begin{tikzpicture} 
-\coordinate (O) at (0,0);
-\coordinate (A) at ($ sqrt(3)*(1,0)  $);
-\coordinate (B) at ($ sqrt(3)*(-1,0)  $);
-\coordinate (Ap) at (-30:2.2);
-\coordinate (Bp) at (150:2.2);
-
-\draw[black, thick, ->] (-2,0) -- (2,0);
-\draw[black, thick, ->] (0,-1.3) -- (0,1.3);
-\draw[blue, very thick] (Ap)--(Bp);
-
-\draw[blue, thick] (A) rectangle ++(-.25,-.25);
-\draw[blue, thick] (B) rectangle ++(.25,.25);
-\draw[gray, thick] (A)--++(0,-1) node[right, midway] {\small \color{blue} 1};
-\draw[gray,thick] (B)--++(0,1) node[left, midway] {\small \color{blue} 1};
-
-\draw[red, thick] (-.5,0) arc (180:150:.5) node[left, midway, yshift=2 ] {\scriptsize $30\degree$};
-\draw[red, thick] (.5,0) arc (0:-30:.5) node[right, midway, yshift=-2 ] {\scriptsize $30\degree$};
-
-\node[text width=.7cm] at (.9,.3) {\color{blue}\footnotesize$\sqrt{3}$};
-\node[text width=.7cm] at (-.8,-.3) {\color{blue}\footnotesize$\sqrt{3}$};
-
-\end{tikzpicture}
-\newline
 
 ch6-4
 
@@ -396,6 +291,299 @@ ch6-5
 \draw[draw=none, fill=orange!50!yellow] (O)--(P)--(Q)--(R)--cycle;
 
 \draw[black, thick] (O)+(-1.5,0)--+(7.2,0);
+
+\end{tikzpicture}
+\newline
+\subsection{6.1 Arclengths and Radians}
+
+fig-6-1-intro
+\begin{tikzpicture}
+
+\coordinate (O) at (0,0);
+\draw[blue,thick] (O) circle (1.5cm);
+\coordinate (A) at (0:1.5);
+\coordinate (B) at (90:1.5);
+\coordinate (C) at (180:1.5);
+\coordinate (D) at (270:1.5);
+
+\draw[black,thick] (-1.7,0)--(1.7,0);
+\draw[black,thick] (0,-1.7)--(0,1.7);
+
+\filldraw[red] (A) circle (2.pt) node[anchor=west, align=left, yshift=-.2cm,scale=.8] {$\theta=0\degree$ \\ $p=0$ \\ $t=0$};
+\filldraw[red] (B) circle (2.pt) node[anchor=south west, align=left,scale=.8] {$\theta=90\degree$ \\ $p=25$ \\ $t=2$};
+\filldraw[red] (C) circle (2.pt) node[anchor=east, align=left, yshift=-.2cm,scale=.8] {$\theta=180\degree$ \\ $p=50$ \\ $t=4$};
+\filldraw[red] (D) circle (2.pt) node[anchor=north west, align=left, yshift=-2, scale=.8] {$\theta=270\degree$ \\ $p=75$ \\ $t=6$};
+
+\end{tikzpicture}
+\newline
+
+fig-6-1-arca
+\begin{tikzpicture}
+
+\coordinate (O) at (0,0);
+\draw[gray!90!white,thick] (O) circle (1.5cm);
+\coordinate (A) at (0:1.5);
+\coordinate (B) at (45:1.5);
+
+\draw[black,thick] (-1.7,0)--(1.7,0);
+\draw[black,thick] (0,-1.7)--(0,1.7);
+\draw[gray, thick] (O)--(B);
+
+\filldraw[red] (A) circle (2.pt) node[anchor=north west, yshift=0,scale=.8] {$A$};
+\filldraw[red] (B) circle (2.pt) node[anchor=south, xshift=2,scale=.8] {$B$};
+
+\draw[red,thick,->](0.4,0) arc(0:45:.4) node[right, midway, yshift=3]{\scriptsize $\frac{1}{8}$ rev};
+\draw[blue, ultra thick](1.5,0) arc(0:45:1.5) node[right, midway, color=black]{\footnotesize$s=\frac{\pi}{4}r$ (or $\frac{1}{8}$ circumference)};
+
+\end{tikzpicture}
+\newline
+
+fig-6-1-arcb
+\begin{tikzpicture}
+
+\coordinate (O) at (0,0);
+\draw[gray!90!white,thick] (O) circle (1.5cm);
+\coordinate (A) at (0:1.5);
+\coordinate (C) at (270:1.5);
+
+\draw[black,thick] (-1.7,0)--(1.7,0);
+\draw[black,thick] (0,-1.7)--(0,1.7);
+\draw[gray, thick] (O)--(C);
+
+\filldraw[red] (A) circle (2.pt) node[anchor=north west, yshift=0,scale=.8] {$A$};
+\filldraw[red] (C) circle (2.pt) node[anchor=north east, scale=.8] {$C$};
+
+\draw[red,thick,->](0.3,0) arc(0:270:.3) node[above left, midway, xshift=2, yshift=-5]{\scriptsize $\frac{3}{4}$ rev};
+\draw[blue, ultra thick](1.5,0) arc(0:270:1.5) node[left, midway, xshift=-.5cm, yshift=-1.1cm, align=right, scale=.8, text=black]{$s=\frac{3\pi}{4}r$ \\ (or $\frac{3}{4}$ circumference)};
+
+\end{tikzpicture}
+\newline
+
+
+fig-6-1-arcc
+\begin{tikzpicture}
+
+\coordinate (O) at (0,0);
+\draw[gray,thick] (O) circle (1.5cm);
+\coordinate (A) at (0:1.5);
+\coordinate (B) at (90:1.5);
+\coordinate (C) at (180:1.5);
+\coordinate (D) at (270:1.5);
+
+\draw[black,thick] (-1.7,0)--(1.7,0);
+\draw[black,thick] (0,-1.7)--(0,1.7);
+
+\filldraw[red] (A) circle (2.pt) node[anchor=south west, yshift=0,scale=.8, text=blue] {$s=0$};
+\filldraw[red] (B) circle (2.pt) node[anchor=south west, align=left,scale=.8, text=blue] {$s=157$};
+\filldraw[red] (C) circle (2.pt) node[anchor=east, align=left, yshift=-.2cm,scale=.8, text=blue] {$s=314$};
+\filldraw[red] (D) circle (2.pt) node[anchor=north west, align=left, yshift=-2, scale=.8, text=blue] {$s=471$};
+\node[text width=1.1cm,  text=blue] at (.7,.15){\scriptsize $r=100$};
+
+\end{tikzpicture}
+\newline
+
+exam6-1-1
+\begin{tikzpicture}
+
+\coordinate (O) at (0,0);
+\draw[gray!90!white,thick] (O) circle (1.5cm);
+\coordinate (A) at (0:1.5);
+\coordinate (B) at (120:1.5);
+
+\draw[black,thick] (-1.7,0)--(1.7,0);
+\draw[black,thick] (0,-1.7)--(0,1.7);
+\draw[gray, thick] (O)--(B);
+
+\filldraw[blue] (A) circle (2.pt);
+\filldraw[blue] (B) circle (2.pt);
+
+\draw[red,thick,->](0.3,0) arc(0:120:.3) node[above right, midway, xshift=2, yshift=-5]{\scriptsize $120\degree$};
+\draw[blue, ultra thick](1.5,0) arc(0:120:1.5) node[above right, midway, xshift=.3cm, yshift=-.4cm, scale=.8]{$s=8\pi$ cm};
+\node[text width=1.4cm, text=blue, fill=white, inner sep=1pt] at (.9,-.45){\scriptsize $r=12$ cm};
+
+\end{tikzpicture}
+\newline
+
+
+fig-6-1-rad
+
+\begin{tikzpicture}
+
+\coordinate (O) at (0,0);
+\draw[gray!90!white,thick] (O) circle (1.5cm);
+\coordinate (A) at (0:1.5);
+\coordinate (B) at (90:1.5);
+
+\draw[black,thick] (-1.7,0)--(1.7,0);
+\draw[black,thick] (0,-1.7)--(0,1.7);
+\draw[gray, thick] (O)--(B);
+
+\draw[red,thick,->](0.4,0) arc(0:90:.4) ;
+\draw[blue, ultra thick,->](1.5,0) arc(0:90:1.5) node[above left, xshift=2, yshift=-2]{$\frac{\pi}{2}$};
+\node[text width=1cm, text=blue] at (0,-2.75){\small $\theta = \frac{\pi}{2}$};
+
+%second circle
+\coordinate (O) at (4,0);
+\draw[gray!90!white,thick] (O) circle (1.5cm);
+\coordinate (A) at ($ (O)+(1.5,0) $);
+\coordinate (B) at ($ (O)+(-1.5,0) $);
+
+\draw[black,thick] (O)++(-1.7,0)--++(3.47,0);
+\draw[black,thick] (O)++(0,-1.7)--++(0,3.4);
+\draw[gray, thick] (O)--(B);
+
+\draw[red,thick,->](4.4,0) arc(0:180:.4) ;
+\draw[blue, ultra thick,->](5.5,0) arc(0:180:1.5) node[above left, xshift=0, yshift=0]{$\small\pi$};
+\node[text width=1cm, text=blue] at (4,-2.75){\small $\theta = \pi$};
+
+%third circle
+\coordinate (O) at (8,0);
+\draw[gray!90!white,thick] (O) circle (1.5cm);
+\coordinate (A) at ($ (O)+(1.5,0) $);
+\coordinate (B) at ($ (O)+(0, -1.5) $);
+
+\draw[black,thick] (O)++(-1.7,0)--++(3.47,0);
+\draw[black,thick] (O)++(0,-1.7)--++(0,3.4);
+\draw[gray, thick] (O)--(B);
+
+\draw[red,thick,->](8.4,0) arc(0:270:.4) ;
+\draw[blue, ultra thick,->](9.5,0) arc(0:270:1.5) node[below left, xshift=0, yshift=0]{$\frac{3\pi}{2}$};
+\node[text width=1.3cm, text=blue] at (8,-2.75){\small $\theta = \frac{3\pi}{2}$};
+
+%fourth circle
+\coordinate (O) at (12,0);
+\draw[gray!90!white,thick] (O) circle (1.5cm);
+\coordinate (A) at ($ (O)+(1.5,0) $);
+\coordinate (B) at ($ (O)+(0, -1.5) $);
+
+\draw[black,thick] (O)++(-1.7,0)--++(3.47,0);
+\draw[black,thick] (O)++(0,-1.7)--++(0,3.4);
+\draw[gray, thick] (O)--(B);
+
+\draw[red,thick,->](12.4,0) arc(0:360:.4) ;
+\draw[blue, ultra thick,->](13.5,0) arc(0:360:1.5) node[below right, xshift=0, yshift=-2]{\small $2\pi$};
+\node[text width=1.3cm, text=blue] at (12,-2.75){$\small \theta = 2\pi$};
+
+\end{tikzpicture}
+\newline
+
+
+fig-6-1-decrad
+
+\begin{tikzpicture}
+
+\coordinate (O) at (0,0);
+\draw[gray!90!white,thick] (O) circle (1.5cm);
+\coordinate (A) at (0:1.5);
+\coordinate (B) at (90:1.5);
+\coordinate (C) at (180:1.5);
+\coordinate (D) at (270:1.5);
+
+\draw[black,thick] (-1.7,0)--(1.7,0);
+\draw[black,thick] (0,-1.7)--(0,1.7);
+\draw[red, fill=red] (A) circle (1.5pt) node[anchor=south west] {0};
+\draw[red, fill=red] (A) circle (1.5pt) node[anchor=north west] {$2\pi \approx 6.28$};
+\draw[red, fill=red] (B) circle (1.5pt) node[anchor=south west] {$\frac{\pi}{2}\approx 1.57$};
+\draw[red, fill=red] (C) circle (1.5pt) node[anchor=south east] {$\pi\approx 3.14$};
+\draw[red, fill=red] (D) circle (1.5pt) node[anchor=north, yshift=-3] {$\frac{3\pi}{2}\approx 4.71$};
+
+\end{tikzpicture}
+\newline
+
+
+fig-6-1-onerad
+
+\begin{tikzpicture}
+
+\coordinate (O) at (0,0);
+\draw[gray!90!white,thick] (O) circle (1.5cm);
+\coordinate (A) at (0:1.5);
+\coordinate (B) at ($({deg(1)}:1.5) $);
+
+\draw[black,thick] (-1.7,0)--(1.7,0);
+\draw[black,thick] (0,-1.7)--(0,1.7);
+\draw[blue,thick] (O)--(B);
+\draw[red, fill=red] (A) circle (1.5pt);
+\draw[red, thick, ->] (0.4,0) arc ((0:{deg(1)}:0.4) ;
+\draw[red, fill=red] (B) circle (1.5pt);
+\draw[red, ultra thick] (A) arc ((0:{deg(1)}:1.5) node[right, midway] {1 rad$\approx 57.3\degree$};
+
+\end{tikzpicture}
+\newline
+
+
+fig6-1-radpro protractor
+
+\begin{tikzpicture}
+
+\coordinate (O) at (0,0);
+\draw[gray!60!white, thick] (-6.1,0) --(6.1,0);
+\draw[gray!60!white, thick] (0,-6.1) --(0, 6.1);
+
+\draw[red, thick] (O) circle (3.5cm);
+\draw[red, thick] (O) circle (6cm);
+
+\foreach \i in {0.1, 0.2, ..., 6.2}
+ \draw[black,thick] ({deg(\i)}:6)--({deg(\i)}:5.7);
+\foreach \i in {1, 2, ..., 6}{
+ \draw[black,thick] ({deg(\i)}:6)--({deg(\i)}:5);
+ \node[text width=.3cm] at ({deg(\i}:4.7) {\i}; };
+\foreach \i in {0.5,1.5, 2.5, ..., 5.5} {
+ \draw[black,thick] ({deg(\i)}:6)--({deg(\i)}:5.3);
+ \node[text width=.25cm, scale=.9] at ({deg(\i}:4.9) {\i}; };
+
+\end{tikzpicture}
+\newline
+
+
+fig-6-1-arclength
+
+\begin{tikzpicture}
+
+\coordinate (O) at (0,0);
+\draw[gray!90!white,thick] (O) circle (1.cm);
+\draw[gray!90!white,thick] (O) circle (2cm);
+\draw[gray!90!white,thick] (O) circle (4cm);
+\coordinate (A) at (0:1.);
+\coordinate (B) at ($({deg(1)}:4.5) $);
+\coordinate (Ab) at ($(0:2) $);
+\coordinate (Ac) at ($(0:4) $);
+
+\draw[black,thick] (-4.2,0)--(4.2,0);
+\draw[black,thick] (0,-4.2)--(0,4.2);
+\draw[blue,thick] (O)--(B) node[anchor=south west, xshift=-1, yshift=-2, text=red]{1 rad};
+\draw[red, fill=red] (A) circle (1.5pt) node[anchor=north west, scale=.9, text=black]{1};
+\draw[red, fill=red] ($({deg(1)}:1) $) circle (1.5pt);
+\draw[red, ultra thick] (A) arc ((0:{deg(1)}:1) node[right, midway, scale=.8, text=blue] {$s=1$};
+
+\draw[red, fill=red] (Ab) circle (1.5pt) node[anchor=north west, scale=.9, text=black]{2};
+\draw[red, fill=red] ($({deg(1)}:2) $) circle (1.5pt);
+\draw[red, ultra thick] (Ab) arc ((0:{deg(1)}:2) node[right, midway, text=blue] {$s=2$};
+
+\draw[red, fill=red] (Ac) circle (1.5pt) node[anchor=north west, scale=.9, text=black]{4};
+\draw[red, fill=red] ($({deg(1)}:4) $) circle (1.5pt);
+\draw[red, ultra thick] (Ac) arc ((0:{deg(1)}:4) node[right, midway, text=blue] {$s=4$};
+
+\end{tikzpicture}
+\newline
+
+
+exam6-1-5
+
+\begin{tikzpicture}
+
+\coordinate (O) at (0,0);
+\draw[gray, thick] (O) circle (1.5cm);
+
+\coordinate (A) at (26:1.5);
+\coordinate (B) at (40:1.5);
+
+\draw[blue, thick] (A)--(O);
+\draw[blue, thick] (O) --(B) node[above left, midway] {\scriptsize 3960 mi};
+
+\draw[red, ultra thick] (A) arc(26:40:1.5) node[above right, midway, xshift=-2, yshift=-4, text=blue] {\scriptsize 500 mi};
+
+\node[text width=.2 cm] at (32:1) {\color{red}\scriptsize$\theta$};
 
 \end{tikzpicture}
 \newline

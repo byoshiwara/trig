@@ -91,180 +91,42 @@
 
 
 
-<p>Radians connect the measure of an angle with the arclength it cuts out on a circle. </p>
+<sidebyside widths="55% 35%" valigns="middle middle"><p>We think of the distance 500 miles as an arclength on the surface of the Earth, as shown at right. Substituting <m>s = 500</m> and <m>r = 3960</m> into the arclength formula gives 
+      \begin{align*}
+      500 \amp = 3960 \theta\\
+      \theta \amp = \dfrac{500}{3960} = 0.1263~ \text{radians}\\
+      \end{align*}
+</p><!--<image source="images/exam6-1-5.png"><description>circle</description></image>-->
+    <image xml:id="exam6-1-5"> 
+        <description>circle</description> 
+        <latex-image> 
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml --> 
+        <![CDATA[\tikzset{% 
+          block/.style    = {draw, thick, rectangle, minimum height = 3em, 
+            minimum width = 3em}, 
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder 
+          input/.style    = {coordinate}, % Input 
+          output/.style   = {coordinate} % Output 
+        } 
+    \begin{tikzpicture}
 
-<sidebyside widths="50% 45%"><!--<image source="images/ch6-5.png"><description>rolling</description></image>-->
-    <image xml:id="ch6-5">
-        <description>rolling circle</description>
-        <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} 
-        \coordinate (O) at (0,0);
-        \coordinate (A) at (0,1);
-        \coordinate (B) at ($ (A) + cos(0)*(1,0) + sin(0)*(0,1) $);
-        \coordinate (C) at ($ (A) + cos(45)*(1,0) + sin(45)*(0,1) $);
-        \coordinate (D) at ($ (A) + cos(90)*(1,0) + sin(90)*(0,1) $);
-        \coordinate (E) at ($ (A) + cos(135)*(1,0) + sin(135)*(0,1) $);
-        \coordinate (F) at ($ (A) + cos(180)*(1,0) + sin(180)*(0,1) $);
-        \coordinate (G) at ($ (A) + cos(225)*(1,0) + sin(225)*(0,1) $);
-        \coordinate (H) at ($ (A) + cos(270)*(1,0) + sin(270)*(0,1) $);
-        \coordinate (I) at ($ (A) + cos(315)*(1,0) + sin(315)*(0,1) $);
-        \foreach \x in {0, 1, ..., 7}
-         \draw[cyan, thick] ($ (O)+(\x,-.5) $)--++(0,2.6) node[anchor=south]{\footnotesize\color{black} \x};
+    \coordinate (O) at (0,0);
+    \draw[gray, thick] (O) circle (1.5cm);
 
-        \draw[orange!50!yellow, very thick] (A) circle (1cm);
-        \draw[orange!50!yellow, very thick] (B) -- (F);
-        \draw[orange!50!yellow, very thick] (C) -- (G);
-        \draw[orange!50!yellow, very thick] (D) -- (H);
-        \draw[orange!50!yellow, very thick] (E) -- (I);
-        \filldraw[black] (A) circle (2.2pt);
-        \coordinate (P) at ($ (H) + .15*cos(65)*(1,0)+.15*sin(70)*(0,1) $);
-        \coordinate (Q) at at ($ (P) + .15*cos(65)*(-1,0)+ .15* sin(65)*(0,1) $);
-        \coordinate (R) at at ($ (Q) + .15* cos(65)*(-1,0)+.15* sin(65)*(0,-1) $);
-        \draw[draw=none, fill=red] (H)--(P)--(Q)--(R)--cycle;
+    \coordinate (A) at (26:1.5);
+    \coordinate (B) at (40:1.5);
 
-        \coordinate (P) at ($ (H) + .15*cos(65)*(1,0)+.15*sin(65)*(0,-1) $);
-        \coordinate (Q) at at ($ (P) + .15*cos(65)*(-1,0)+ .15* sin(65)*(0,-1) $);
-        \coordinate (R) at at ($ (Q) + .15* cos(65)*(-1,0)+ .15* sin(65)*(0,1) $);
-        \draw[draw=none, fill=red] (H)--(P)--(Q)--(R)--cycle;
-        \draw[black, thick] (O)+(-1.5,0)--+(7.2,0);
+    \draw[blue, thick] (A)--(O);
+    \draw[blue, thick] (O) --(B) node[above left, midway] {\scriptsize 3960 mi};
 
-        %second fig
-        \coordinate (O) at (0,-4);
-        \coordinate (A) at ($ 100*pi/180*(1,0)+(0,-3) $);
-        \coordinate (B) at ($ (A) + cos(-100)*(1,0) + sin(-100)*(0,1) $);
-        \coordinate (C) at ($ (A) + cos(-55)*(1,0) + sin(-55)*(0,1) $);
-        \coordinate (D) at ($ (A) + cos(-10)*(1,0) + sin(-10)*(0,1) $);
-        \coordinate (E) at ($ (A) + cos(35)*(1,0) + sin(35)*(0,1) $);
-        \coordinate (F) at ($ (A) + cos(80)*(1,0) + sin(80)*(0,1) $);
-        \coordinate (G) at ($ (A) + cos(125)*(1,0) + sin(125)*(0,1) $);
-        \coordinate (H) at ($ (A) + cos(170)*(1,0) + sin(170)*(0,1) $);
-        \coordinate (I) at ($ (A) + cos(215)*(1,0) + sin(215)*(0,1) $);
-        \foreach \x in {0, 1, ..., 7}
-         \draw[cyan, thick] ($ (O)+(\x,-.5) $)--++(0,2.6) node[anchor=south]{\footnotesize\color{black} \x};
+    \draw[red, ultra thick] (A) arc(26:40:1.5) node[above right, midway, xshift=-2, yshift=-4, text=blue] {\scriptsize 500 mi};
 
-        \draw[orange!50!yellow, very thick] (A) circle (1cm);
-        \draw[orange!50!yellow, very thick] (B) -- (F);
-        \draw[orange!50!yellow, very thick] (C) -- (G);
-        \draw[orange!50!yellow, very thick] (D) -- (H);
-        \draw[orange!50!yellow, very thick] (E) -- (I);
-        \filldraw[black] (A) circle (2.2pt);
-        \coordinate (T) at ($ (A) + (0,-1) $);
-        \coordinate (P) at ($ (H) + .15*cos(-35)*(1,0)+.15* sin(-35)*(0,1) $);
-        \coordinate (Q) at at ($ (P) + .15*cos(15)*(1,0)+ .15* sin(15)*(0,1) $);
-        \coordinate (R) at at ($ (Q) + .15* cos(-35)*(-1,0)+.15* sin(-35)*(0,-1) $);
-        \draw[draw=none, fill=red] (H)--(P)--(Q)--(R)--cycle;
-        %red diamond on axis
-        \coordinate (P) at ($ (T) + .15*cos(65)*(1,0)+.15*sin(65)*(0,-1) $);
-        \coordinate (Q) at at ($ (P) + .15*cos(65)*(-1,0)+ .15* sin(65)*(0,-1) $);
-        \coordinate (R) at at ($ (Q) + .15* cos(65)*(-1,0)+ .15* sin(65)*(0,1) $);
-        \draw[draw=none, fill=red] (T)--(P)--(Q)--(R)--cycle;
-        %yellow diamond on axis
-        \coordinate (P) at ($ (O) + .15*cos(65)*(1,0)+.15*sin(65)*(0,-1) $);
-        \coordinate (Q) at at ($ (P) + .15*cos(65)*(-1,0)+ .15* sin(65)*(0,-1) $);
-        \coordinate (R) at at ($ (Q) + .15* cos(65)*(-1,0)+ .15* sin(65)*(0,1) $);
-        \draw[draw=none, fill=orange!50!yellow] (O)--(P)--(Q)--(R)--cycle;
+    \node[text width=.2 cm] at (32:1) {\color{red}\scriptsize$\theta$};
+        \end{tikzpicture}]]> 
+    </latex-image> 
+    </image> 
+</sidebyside>
 
-        \draw[black, thick] (O)+(-1.5,0)--+(7.2,0);
-
-        %fourth fig
-        \coordinate (O) at (0,-12);
-        \coordinate (A) at ($ 2* pi*(1,0)+(0,-11) $);
-        \coordinate (B) at ($ (A) + cos(0)*(1,0) + sin(0)*(0,1) $);
-        \coordinate (C) at ($ (A) + cos(45)*(1,0) + sin(45)*(0,1) $);
-        \coordinate (D) at ($ (A) + cos(90)*(1,0) + sin(90)*(0,1) $);
-        \coordinate (E) at ($ (A) + cos(135)*(1,0) + sin(135)*(0,1) $);
-        \coordinate (F) at ($ (A) + cos(180)*(1,0) + sin(180)*(0,1) $);
-        \coordinate (G) at ($ (A) + cos(225)*(1,0) + sin(225)*(0,1) $);
-        \coordinate (H) at ($ (A) + cos(270)*(1,0) + sin(270)*(0,1) $);
-        \coordinate (I) at ($ (A) + cos(315)*(1,0) + sin(315)*(0,1) $);
-        \foreach \x in {0, 1, ..., 7}
-         \draw[cyan, thick] ($ (O)+(\x,-.5) $)--++(0,2.6) node[anchor=south]{\footnotesize\color{black} \x};
-
-        \draw[red] ($ (O)+(2*pi,-.5) $)--++(0,2.57) node[anchor=south, yshift=-3]{\scriptsize $2\pi$};
-        \draw[red] ($ (O)+(pi,-.5) $)--++(0,2.57) node[anchor=south, yshift=-3]{\scriptsize $\pi$};
-
-        \draw[orange!50!yellow, very thick] (A) circle (1cm);
-        \draw[orange!50!yellow, very thick] (B) -- (F);
-        \draw[orange!50!yellow, very thick] (C) -- (G);
-        \draw[orange!50!yellow, very thick] (D) -- (H);
-        \draw[orange!50!yellow, very thick] (E) -- (I);
-        \filldraw[black] (A) circle (2.2pt);
-        \coordinate (T) at ($ (A) + (0,-1) $);
-        \coordinate (P) at ($ (H) + .15*cos(65)*(1,0)+.15*sin(70)*(0,1) $);
-        \coordinate (Q) at at ($ (P) + .15*cos(65)*(-1,0)+ .15* sin(65)*(0,1) $);
-        \coordinate (R) at at ($ (Q) + .15* cos(65)*(-1,0)+.15* sin(65)*(0,-1) $);
-        \draw[draw=none, fill=red] (H)--(P)--(Q)--(R)--cycle;
-
-        %red diamond on axis
-        \coordinate (P) at ($ (T) + .15*cos(65)*(1,0)+.15*sin(65)*(0,-1) $);
-        \coordinate (Q) at at ($ (P) + .15*cos(65)*(-1,0)+ .15* sin(65)*(0,-1) $);
-        \coordinate (R) at at ($ (Q) + .15* cos(65)*(-1,0)+ .15* sin(65)*(0,1) $);
-        \draw[draw=none, fill=red] (T)--(P)--(Q)--(R)--cycle;
-        %yellow diamond on axis
-        \coordinate (P) at ($ (O) + .15*cos(65)*(1,0)+.15*sin(65)*(0,-1) $);
-        \coordinate (Q) at at ($ (P) + .15*cos(65)*(-1,0)+ .15* sin(65)*(0,-1) $);
-        \coordinate (R) at at ($ (Q) + .15* cos(65)*(-1,0)+ .15* sin(65)*(0,1) $);
-        \draw[draw=none, fill=orange!50!yellow] (O)--(P)--(Q)--(R)--cycle;
-
-        \draw[black, thick] (O)+(-1.5,0)--+(7.2,0);
-
-        %third fig
-        \coordinate (O) at (0,-8);
-        \coordinate (A) at ($ pi*(1,0)+(0,-7) $);
-        \coordinate (B) at ($ (A) + cos(-180)*(1,0) + sin(-180)*(0,1) $);
-        \coordinate (C) at ($ (A) + cos(-135)*(1,0) + sin(-135)*(0,1) $);
-        \coordinate (D) at ($ (A) + cos(-90)*(1,0) + sin(-90)*(0,1) $);
-        \coordinate (E) at ($ (A) + cos(-45)*(1,0) + sin(-45)*(0,1) $);
-        \coordinate (F) at ($ (A) + cos(0)*(1,0) + sin(0)*(0,1) $);
-        \coordinate (G) at ($ (A) + cos(45)*(1,0) + sin(45)*(0,1) $);
-        \coordinate (H) at ($ (A) + cos(90)*(1,0) + sin(90)*(0,1) $);
-        \coordinate (I) at ($ (A) + cos(135)*(1,0) + sin(135)*(0,1) $);
-        \foreach \x in {0, 1, ..., 7}
-         \draw[cyan, thick] ($ (O)+(\x,-.5) $)--++(0,2.6) node[anchor=south]{\footnotesize\color{black} \x};
-
-        \draw[red] ($ (O)+(pi,-.5) $)--++(0,2.57) node[anchor=south, yshift=-3]{\scriptsize $\pi$};
-
-        \draw[orange!50!yellow, very thick] (A) circle (1cm);
-        \draw[orange!50!yellow, very thick] (B) -- (F);
-        \draw[orange!50!yellow, very thick] (C) -- (G);
-        \draw[orange!50!yellow, very thick] (D) -- (H);
-        \draw[orange!50!yellow, very thick] (E) -- (I);
-        \filldraw[black] (A) circle (2.2pt);
-        \coordinate (T) at ($ (A) + (0,-1) $);
-        \coordinate (P) at ($ (H) + .15*cos(65)*(1,0)+.15* sin(65)*(0,-1) $);
-        \coordinate (Q) at at ($ (P) + .15*cos(65)*(-1,0)+ .15* sin(65)*(0,-1) $);
-        \coordinate (R) at at ($ (Q) + .15* cos(65)*(-1,0)+ .15* sin(65)*(0,1) $);
-        \draw[draw=none, fill=red] (H)--(P)--(Q)--(R)--cycle;
-        %red diamond on axis
-        \coordinate (P) at ($ (T) + .15*cos(65)*(1,0)+.15*sin(65)*(0,-1) $);
-        \coordinate (Q) at at ($ (P) + .15*cos(65)*(-1,0)+ .15* sin(65)*(0,-1) $);
-        \coordinate (R) at at ($ (Q) + .15* cos(65)*(-1,0)+ .15* sin(65)*(0,1) $);
-        \draw[draw=none, fill=red] (T)--(P)--(Q)--(R)--cycle;
-        %yellow diamond on axis
-        \coordinate (P) at ($ (O) + .15*cos(65)*(1,0)+.15*sin(65)*(0,-1) $);
-        \coordinate (Q) at at ($ (P) + .15*cos(65)*(-1,0)+ .15* sin(65)*(0,-1) $);
-        \coordinate (R) at at ($ (Q) + .15* cos(65)*(-1,0)+ .15* sin(65)*(0,1) $);
-        \draw[draw=none, fill=orange!50!yellow] (O)--(P)--(Q)--(R)--cycle;
-
-        \draw[black, thick] (O)+(-1.5,0)--+(7.2,0);
-        \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-
-<paragraphs>
-<p>Imagine a circle of radius 1unit rolling along a straight line. The circumference of a circle is <m>2\pi</m> times the length of its radius, so when the circle has turned through one complete revolution, it has traveled a distance of <m>2\pi</m> units.  When the circle has turned through half a revolution, it has taveled a distance of <m>\pi</m> units.</p>  
-<p>In radian measure, the angle through which the circle has turned is equal to the distance the circle has traveled, or the length of the arc that has unrolled on the line.</p>
- <p>The idea of radian measure was developed by Roger Cotes, an English mathematician who worked closely with Isaac Newton.  He described the radian in everything but name, and recognized its naturalness as a unit of angular measure.</p> 
-</paragraphs>
-</sidebyside> 
 
 
 
