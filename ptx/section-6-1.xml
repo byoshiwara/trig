@@ -359,7 +359,39 @@ We'll call the quantity in parentheses, (fraction of one revolution <m>\times 2\
 
 <solution><p>Look at the figure above. The second quadrant includes angles between <m>\dfrac{\pi}{2}</m> and <m>\pi</m>, or 1.57 and 3.14 radians, so 2 radians lies in the second quadrant. An angle of 5 radians is between 4.71 and 6.28, or between <m>\dfrac{3\pi}{2}</m> and <m>2\pi</m> radians, so it lies in the fourth quadrant.</p></solution></example>
 
-<exercise><statement><p>Draw a circle centered at the origin and sketch (in standard position) angles of approximately 3 radians, 4 radians, and 6 radians.</p></statement></exercise>         
+<exercise><statement><p>Draw a circle centered at the origin and sketch (in standard position) angles of approximately 3 radians, 4 radians, and 6 radians.</p></statement><answer><sidebyside width="25%" margins="0 50%">
+    <image xml:id="exer6-1-3ans">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+    \begin{tikzpicture}
+
+    \coordinate (O) at (0,0);
+    \draw[black, thick] (-1.7,0)--(1.7,0);
+    \draw[black, thick] (0,-1.7)--(0,1.7);
+    \draw[gray, thick] (O) circle (1.5cm);
+
+    \coordinate (A) at ({deg(3)}:1.5);
+    \coordinate (B) at ({deg(4)}:1.5);
+    \coordinate (C) at ({deg(6)}:1.5);
+
+    \draw[blue, thick] (A)--(O);
+    \draw[red, thick, ->] (.7,0) arc (0:{deg(3)}:.7) node[above, xshift=-3, yshift=1, scale=.9]{3};
+    \draw[blue, thick] (B)--(O);
+    \draw[red, thick, ->] (.5,0) arc (0:{deg(4)}:.5) node[left, xshift=-3, yshift=1, scale=.9]{4};
+    \draw[blue, thick] (C)--(O);
+    \draw[red, thick, ->] (.3,0) arc (0:{deg(6)}:.3) node[below, yshift=-3, scale=.9]{6};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer></exercise>         
 </subsection>
 
 <subsection><title>Converting Between Degrees and Radians</title>
@@ -603,7 +635,7 @@ Your latitude has changed by about <m>7.23\degree</m>.</p></solution></example>
 <p><ol label="1">
     <li><m>261.8</m> ft</li>
     <li>Half a revolution, <m>180\degree</m></li>
-    <li><sidebyside width="25%" margins="0% 50%"><image source="images/exer6-1-3ans.png"><description>circle</description></image></sidebyside></li>
+    <li><sidebyside width="25%" margins="0% 50%"><image source="images/exer6-1-3ans"><description>circle</description></image></sidebyside></li>
     <li>a. <m>\dfrac{\pi}{3} \approx 1.047</m>  b. <m>135\degree</m></li>
     <li><m>9.55</m> ft</li>
     <li><m>3.67</m> ft</li>
@@ -667,7 +699,7 @@ Your latitude has changed by about <m>7.23\degree</m>.</p></solution></example>
                         <cell><m>360\degree</m></cell>
                         <cell><m>2\pi</m></cell>
                         <cell><m>6.28</m></cell></row>                
-                </tabular><image source="images/6-1-decrad.png"><description>circle</description></image></sidebyside></li>
+                </tabular><image source="images/fig-6-1-decrad"><description>circle</description></image></sidebyside></li>
      <li><p>We multiply by the appropriate conversion factor to convert between degrees and radians.</p>
       <assemblage><title>Unit Conversion for Angles</title>
       <p><me>\dfrac{180\degree}{\pi~\text{radians}} = 1</me></p></assemblage>
