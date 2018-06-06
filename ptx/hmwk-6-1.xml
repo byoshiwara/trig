@@ -32,7 +32,28 @@
                         <cell><m>\hphantom{0000}</m></cell>
                         <cell><m>\hphantom{0000}</m></cell>
                         <cell><m>\hphantom{0000}</m></cell></row>                       
-                </tabular><image source="images/hp6-1-1.png"><description>circle</description></image></sidebyside>
+                </tabular><!--<image source="images/hp6-1-1.png"><description>circle</description></image>-->
+    <image xml:id="hp6-1-1">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \coordinate (O) at (0,0);
+        \draw[black, thick] (-1.7,0)--(1.7,0);
+        \draw[black, thick] (0,-1.7)--(0,1.7);
+        \draw[red, thick] (O) circle (1.5cm);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+            </sidebyside>
     <p><ol label="a">
     <li>Convert each angle to degrees.</li>
     <li>Sketch each angle on a circle like this one, and label in radians.</li>
@@ -60,7 +81,37 @@
                         <cell><m>270\degree</m></cell>
                         <cell><m>315\degree</m></cell>
                         <cell><m>360\degree</m></cell></row>                       
-                </tabular><image source="images/hp6-1-1ans.png"><description>circle</description></image></sidebyside></answer></exercise>
+                </tabular><!--<image source="images/hp6-1-1ans.png"><description>circle</description></image>-->
+    <image xml:id="hp6-1-1ans">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \coordinate (O) at (0,0);
+        \draw[black, thick] (-1.7,0)--(1.7,0);
+        \draw[black, thick] (0,-1.7)--(0,1.7);
+        \draw[red, thick] (O) circle (1.5cm);
+
+        \draw[blue,ultra thick] (O)--(0:1.5) node[anchor=west, xshift=3, text=black]{0 or $2\pi$};
+        \draw[blue,ultra thick] (O)--(45:1.5) node[anchor=south west, yshift=-.4cm, text=black]{$\displaystyle{\frac{\pi}{4}}$};
+        \draw[blue,ultra thick] (O)--(90:1.5) node[anchor=south , yshift=.1cm, text=black]{$\displaystyle{\frac{\pi}{2}}$};
+        \draw[blue,ultra thick] (O)--(135:1.5) node[anchor=south east, yshift=-.4cm, text=black]{$\displaystyle{\frac{3\pi}{4}}$};
+        \draw[blue,ultra thick] (O)--(180:1.5) node[anchor=east, xshift=-3, text=black]{$\pi$};
+        \draw[blue,ultra thick] (O)--(225:1.5) node[anchor=north east, yshift=.4cm, text=black]{$\displaystyle{\frac{5\pi}{4}}$};
+        \draw[blue,ultra thick] (O)--(270:1.5) node[anchor=north , yshift=-.1cm, text=black]{$\displaystyle{\frac{3\pi}{2}}$};
+        \draw[blue,ultra thick] (O)--(315:1.5) node[anchor=north west, yshift=.3cm, text=black]{$\displaystyle{\frac{7\pi}{4}}$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+            </sidebyside></answer></exercise>
 
     <exercise number="2"><statement><sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
                     <row bottom="minor">
@@ -98,7 +149,7 @@
     <sidebyside widths="60% 20%" valigns="middle middle"><p><ol label="a">
     <li>Convert each angle to degrees.</li>
     <li>Sketch each angle on a circle like this one, and label in radians.</li>
-    </ol></p><image source="images/hp6-1-1.png"><description>circle</description></image></sidebyside></statement></exercise>
+    </ol></p><image source="images/hp6-1-1"><description>circle</description></image></sidebyside></statement></exercise>
 
 <exercisegroup><introduction><p>For Problems 3<ndash/>6, express each fraction of one complete rotation in degrees and in radians.</p></introduction>
 
@@ -108,7 +159,31 @@
             <li><m>\dfrac{2}{3}</m></li>
             <li><m>\dfrac{4}{3}</m></li>
             <li><m>\dfrac{5}{3}</m></li>
-        </ol></p><image source="images/hp6-1-3.png"><description>circle</description></image></sidebyside></statement>
+        </ol></p><!--<image source="images/hp6-1-3.png"><description>circle</description></image>-->
+    <image xml:id="hp6-1-3">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \coordinate (O) at (0,0);
+        \draw[gray, thick] (-1.7,0)--(1.7,0);
+        \draw[gray, thick] (0,-1.7)--(0,1.7);
+        \draw[red, thick] (O) circle (1.5cm);
+
+        \foreach \i in {0, 1, 2}
+         \draw[blue,ultra thick] (O)--({\i*120}:1.5);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></statement>
         <answer><p><ol label="a" cols="2">
             <li><m>120\degree = \dfrac{2\pi}{3} \text{radians}</m></li>
             <li><m>240\degree = \dfrac{4\pi}{3} \text{radians}</m></li>
@@ -122,7 +197,31 @@
             <li><m>\dfrac{2}{5}</m></li>
             <li><m>\dfrac{3}{5}</m></li>
             <li><m>\dfrac{4}{5}</m></li>
-        </ol></p><image source="images/hp6-1-4.png"><description>circle</description></image></sidebyside></statement></exercise>   
+        </ol></p><!--<image source="images/hp6-1-4.png"><description>circle</description></image>-->
+    <image xml:id="hp6-1-4">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \coordinate (O) at (0,0);
+        \draw[gray, thick] (-1.7,0)--(1.7,0);
+        \draw[gray, thick] (0,-1.7)--(0,1.7);
+        \draw[red, thick] (O) circle (1.5cm);
+
+        \foreach \i in {0, 1, ..., 4}
+         \draw[blue,ultra thick] (O)--({\i*72}:1.5);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></statement></exercise>   
 
     <exercise number="5"><statement><sidebyside widths="80% 20%" valigns="middle middle">
         <p><ol label="a" cols="4">
@@ -130,7 +229,31 @@
             <li><m>\dfrac{3}{8}</m></li>
             <li><m>\dfrac{5}{8}</m></li>
             <li><m>\dfrac{7}{8}</m></li>
-        </ol></p><image source="images/hp6-1-5.png"><description>circle</description></image></sidebyside></statement>
+        </ol></p><!--<image source="images/hp6-1-5.png"><description>circle</description></image>-->
+    <image xml:id="hp6-1-5">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \coordinate (O) at (0,0);
+        \draw[gray, thick] (-1.7,0)--(1.7,0);
+        \draw[gray, thick] (0,-1.7)--(0,1.7);
+        \draw[red, thick] (O) circle (1.5cm);
+
+        \foreach \i in {0, 1, ..., 7}
+         \draw[blue,ultra thick] (O)--({\i*45}:1.5);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></statement>
         <answer><p><ol label="a" cols="2">
             <li><m>45\degree = \dfrac{\pi}{4} \text{radians}</m></li>
             <li><m>135\degree = \dfrac{3\pi}{4} \text{radians}</m></li>
@@ -144,15 +267,109 @@
             <li><m>\dfrac{1}{6}</m></li>
             <li><m>\dfrac{5}{12}</m></li>
             <li><m>\dfrac{5}{6}</m></li>
-        </ol></p><image source="images/hp6-1-6.png"><description>circle</description></image></sidebyside></statement></exercise> 
+        </ol></p><!--<image source="images/hp6-1-6.png"><description>circle</description></image>-->
+    <image xml:id="hp6-1-6">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \coordinate (O) at (0,0);
+        \draw[gray, thick] (-1.7,0)--(1.7,0);
+        \draw[gray, thick] (0,-1.7)--(0,1.7);
+        \draw[red, thick] (O) circle (1.5cm);
+
+        \foreach \i in {0, 1, ..., 11}
+         \draw[blue,ultra thick] (O)--({\i*30}:1.5);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></statement></exercise> 
     </exercisegroup>  
     
 <exercisegroup cols="2"><introduction><p>For Problems 7<ndash/>8, label each angle in standard position with radian measure.</p></introduction>            
 
-    <exercise number="7"><statement><p>Rotate counter-clockwise from 0.</p><sidebyside width="60%"><image source="images/hp6-1-7.png"><description>circle</description></image></sidebyside></statement>
-        <answer><sidebyside width="40%"><image source="images/hp6-1-7ans.png"><description>circle</description></image></sidebyside></answer></exercise>
+    <exercise number="7"><statement><p>Rotate counter-clockwise from 0.</p><sidebyside width="60%"><!--<image source="images/hp6-1-7.png"><description>circle</description></image>-->
+    <image xml:id="hp6-1-7">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
 
-    <exercise number="8"><statement><p>Rotate clockwise from 0.</p><sidebyside width="60%"><image source="images/hp6-1-7.png"><description>circle</description></image></sidebyside></statement></exercise>
+        \coordinate (O) at (0,0);
+        \draw[gray, thick] (-1.7,0)--(1.7,0);
+        \draw[gray, thick] (0,-1.7)--(0,1.7);
+        \draw[red, thick] (O) circle (1.5cm);
+
+        \foreach \i in {0, 30,45,60,90,120,135,150,180, 210, 225, 240, 270, 300, 315, 330}
+         \draw[blue,ultra thick] (O)--(\i:1.5);
+
+        \node[text width=.2cm] at (0:1.9) {0};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></statement>
+        <answer><sidebyside width="40%"><!--<image source="images/hp6-1-7ans.png"><description>circle</description></image>-->
+    <image xml:id="hp6-1-7ans">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \coordinate (O) at (0,0);
+        \draw[gray, thick] (-2.5,0)--(2.5,0);
+        \draw[gray, thick] (0,-2.5)--(0,2.5);
+        \draw[red, thick] (O) circle (2.3cm);
+
+        \foreach \i in {0,15, ..., 345}
+         \draw[black] (\i:2.2)--(\i:2.4);
+
+        \foreach \i in {0, 30,45,60,90,120,135,150,180, 210, 225, 240, 270, 300, 315, 330}
+         \draw[blue,ultra thick] (O)--(\i:2.3);
+
+        \node[text width=.2cm, scale=.8] at (0:2.7) {0};
+        \node[text width=.2cm, scale=.8] at (30:2.7) {$\displaystyle{\frac{\pi}{6}}$};
+        \node[text width=.2cm, scale=.8] at (45:2.7) {$\displaystyle{\frac{\pi}{4}}$};
+        \node[text width=.2cm, scale=.8] at (60:2.7) {$\displaystyle{\frac{\pi}{6}}$};
+        \node[text width=.2cm, scale=.8] at (90:2.9) {$\displaystyle{\frac{\pi}{2}}$};
+        \node[text width=.2cm, scale=.8] at (120:2.9) {$\displaystyle{\frac{2\pi}{3}}$};
+        \node[text width=.2cm, scale=.8] at (135:2.9) {$\displaystyle{\frac{3\pi}{4}}$};
+        \node[text width=.2cm, scale=.8] at (150:2.9) {$\displaystyle{\frac{5\pi}{6}}$};
+        \node[text width=.2cm, scale=.9] at (180:2.7) {$\pi$};
+        \node[text width=.2cm, scale=.8] at (210:2.9) {$\displaystyle{\frac{7\pi}{6}}$};
+        \node[text width=.2cm, scale=.8] at (225:2.9) {$\displaystyle{\frac{5\pi}{4}}$};
+        \node[text width=.2cm, scale=.8] at (240:2.9) {$\displaystyle{\frac{4\pi}{3}}$};
+        \node[text width=.3cm, scale=.8] at (270:2.9) {$\displaystyle{\frac{3\pi}{2}}$};
+        \node[text width=.35cm, scale=.8] at (300:2.9) {$\displaystyle{\frac{5\pi}{3}}$};
+        \node[text width=.35cm, scale=.8] at (315:2.9) {$\displaystyle{\frac{7\pi}{4}}$};
+        \node[text width=.4cm, scale=.8] at (330:2.9) {$\displaystyle{\frac{11\pi}{6}}$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside></answer></exercise>
+
+    <exercise number="8"><statement><p>Rotate clockwise from 0.</p><sidebyside width="60%"><image source="images/hp6-1-7"><description>circle</description></image></sidebyside></statement></exercise>
 </exercisegroup>
 
 <exercisegroup><introduction><p>For Problems 9<ndash/>10, give a decimal approximation to hundredths for each angle in radians.</p></introduction>
@@ -179,9 +396,70 @@
    </exercisegroup>     
 
     <exercise number="11"><statement><p>Locate and label each angle from Problem 9 on the unit circle below left. (The circle is marked off in tenths of a radian.)</p></statement>
-    <answer><sidebyside width="35%"><image source="images/hp6-1-11ans.png"><description>circle</description></image></sidebyside></answer></exercise>
+    <answer><sidebyside width="35%"><!--<image source="images/hp6-1-11ans.png"><description>circle</description></image>-->
+    <image xml:id="hp6-1-11ans">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
 
-    <sidebyside widths="40% 40%"><image source="images/hp6-1-11.png"><description>circle</description></image><image source="images/hp6-1-11.png"><description>circle</description></image></sidebyside>    
+        \coordinate (O) at (0,0);
+        \draw[gray!60!white, thick] (-2.1,0) --(2.1,0);
+        \draw[gray!60!white, thick] (0,-2.1) --(0, 2.1);
+
+        \draw[red, thick] (O) circle (2cm);
+
+        \foreach \i in {0.1, 0.2, ..., 6.2}
+         \draw[black,thick] ({deg(\i)}:1.9)--({deg(\i)}:2.1);
+        \foreach \i in {1, 2, ..., 6}{
+         \draw[black,thick] ({deg(\i)}:1.8)--({deg(\i)}:2.1);
+         \node[text width=.3cm, scale=.9] at ({deg(\i}:2.3) {\i}; };
+
+        \filldraw[blue] (30:2) circle (.1cm) node[above right, xshift=.1cm, yshift=-.3cm, scale=.8]  {$\displaystyle{\frac{\pi}{6}}$};
+        \filldraw[blue] (150:2) circle (.1cm) node[above left, xshift=-.1cm, yshift=-.3cm, scale=.8]  {$\displaystyle{\frac{5\pi}{6}}$};
+        \filldraw[blue] (210:2) circle (.1cm) node[below left, xshift=-.1cm, yshift=.3cm, scale=.8]  {$\displaystyle{\frac{7\pi}{6}}$};
+        \filldraw[blue] (330:2) circle (.1cm) node[below right, xshift=.1cm, yshift=.1cm, scale=.8]  {$\displaystyle{\frac{11\pi}{6}}$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></answer></exercise>
+
+    <sidebyside widths="40% 40%"><!--<image source="images/hp6-1-11.png"><description>circle</description></image>-->
+    <image xml:id="hp6-1-11">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \coordinate (O) at (0,0);
+        \draw[gray!60!white, thick] (-2.1,0) --(2.1,0);
+        \draw[gray!60!white, thick] (0,-2.1) --(0, 2.1);
+
+        \draw[red, thick] (O) circle (2cm);
+
+        \foreach \i in {0.1, 0.2, ..., 6.2}
+         \draw[black,thick] ({deg(\i)}:1.9)--({deg(\i)}:2.1);
+        \foreach \i in {1, 2, ..., 6}{
+         \draw[black,thick] ({deg(\i)}:1.8)--({deg(\i)}:2.1);
+         \node[text width=.3cm, scale=.9] at ({deg(\i}:2.3) {\i}; };
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image><image source="images/hp6-1-11"><description>circle</description></image>
+    </sidebyside>    
         
     <exercise number="12"><statement><p>Locate and label each angle from Problem 9 on the unit circle above right. (The circle is marked off in tenths of a radian.)</p></statement></exercise>
 
@@ -472,9 +750,58 @@
                 </tabular></li>
         <li>Graph <m>\theta</m> against <m>s</m>. What is the slope of the graph?</li>
         <li>If you double the angle , what happens to the arclength? What happens if you triple <m>\theta</m> ?</li>
-        </ol></p><image source="images/hp6-1-53.png"><description>grid</description></image></sidebyside></statement>
+        </ol></p><!--<image source="images/hp6-1-53.png"><description>grid</description></image>-->
+    <image xml:id="hp6-1-53">
+        <description>grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [yscale=.55]
+
+        \draw[cyan] (0,0) grid (6,14);
+
+        \foreach \x in {2, 4, 6}
+         \draw[black] (\x,.3) -- ++(0,-.6) node[below, scale=.8]{\x};
+
+        \foreach \y [evaluate=\y as \yi using int(2*\y)] in {2, 4, ..., 14} 
+         \draw[black] (.08,\y)--++(-.16,0) node[left]{\yi};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></statement>
     <answer><p><ol label="a">
-        <li><sidebyside width="25%"><image source="images/hp6-1-53ansa.png"><description>circle</description></image></sidebyside></li>
+        <li><sidebyside width="25%"><!--<image source="images/hp6-1-53ansa.png"><description>circle</description></image>-->
+    <image xml:id="hp6-1-53ansa">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \coordinate (O) at (0,0);
+        \draw[blue, thick] (O) --(1.5,0) node[above, midway]{4};
+
+        \draw[red, thick] (O) circle (1.5cm);
+
+        \foreach \i in {1, 2, ..., 6}{
+         \filldraw[blue] ({deg(\i}:1.5) circle (.1cm);
+         \node[text width=.3cm, scale=.9] at ({deg(\i}:1.8) {\i}; };
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside></li>
         <li><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
                     <row bottom="minor">
                         <cell><m>\theta</m></cell>
@@ -493,7 +820,35 @@
                         <cell><m>20</m></cell>
                         <cell><m>24</m></cell>></row>                       
                 </tabular></li>
-        <li><sidebyside width="25%"><image source="images/hp6-1-53ansc.png"><description>circle</description></image></sidebyside><m>m = 4</m></li>
+        <li><sidebyside width="25%"><!--<image source="images/hp6-1-53ansc.png"><description>circle</description></image>-->
+    <image xml:id="hp6-1-53ansc">
+        <description>linear graph of arclength vs angle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [yscale=.55]
+
+        \draw[cyan] (0,0) grid (6,14);
+        \draw[black, thick,->] (0,0)-- (6.3,0) node[right, scale=.9]{$\theta$};
+        \draw[black, thick, ->] (0,0) --(0,14.4) node[above, scale=.9]{$s$};
+
+        \foreach \x in {2, 4, 6}
+         \draw[black] (\x,.3) -- ++(0,-.6) node[below, scale=.8]{\x};
+
+        \foreach \y [evaluate=\y as \yi using int(2*\y)] in {2, 4, ..., 14} 
+         \draw[black] (.08,\y)--++(-.16,0) node[left]{\yi};
+
+        \draw[red, very thick] (0,0) -- (6,14);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside><m>m = 4</m></li>
         <li>Arclength doubles; arclength triples</li>
     </ol></p></answer></exercise>
 

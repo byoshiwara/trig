@@ -91,42 +91,60 @@
 
 
 
-<sidebyside widths="55% 35%" valigns="middle middle"><p>We think of the distance 500 miles as an arclength on the surface of the Earth, as shown at right. Substituting <m>s = 500</m> and <m>r = 3960</m> into the arclength formula gives 
-      \begin{align*}
-      500 \amp = 3960 \theta\\
-      \theta \amp = \dfrac{500}{3960} = 0.1263~ \text{radians}\\
-      \end{align*}
-</p><!--<image source="images/exam6-1-5.png"><description>circle</description></image>-->
-    <image xml:id="exam6-1-5"> 
-        <description>circle</description> 
-        <latex-image> 
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml --> 
-        <![CDATA[\tikzset{% 
-          block/.style    = {draw, thick, rectangle, minimum height = 3em, 
-            minimum width = 3em}, 
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder 
-          input/.style    = {coordinate}, % Input 
-          output/.style   = {coordinate} % Output 
-        } 
-    \begin{tikzpicture}
+<sidebyside width="25%"><!--<image source="images/hp6-1-53ansa.png"><description>circle</description></image>-->
+    <image xml:id="hp6-1-53ansa">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
 
-    \coordinate (O) at (0,0);
-    \draw[gray, thick] (O) circle (1.5cm);
+        \coordinate (O) at (0,0);
+        \draw[blue, thick] (O) --(1.5,0) node[above, midway]{4};
 
-    \coordinate (A) at (26:1.5);
-    \coordinate (B) at (40:1.5);
+        \draw[red, thick] (O) circle (1.5cm);
 
-    \draw[blue, thick] (A)--(O);
-    \draw[blue, thick] (O) --(B) node[above left, midway] {\scriptsize 3960 mi};
+        \foreach \i in {1, 2, ..., 6}{
+         \filldraw[blue] ({deg(\i}:1.5) circle (.1cm);
+         \node[text width=.3cm, scale=.9] at ({deg(\i}:1.8) {\i}; };
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside><sidebyside width="25%"><!--<image source="images/hp6-1-53ansc.png"><description>circle</description></image>-->
+    <image xml:id="hp6-1-53ansc">
+        <description>linear graph of arclength vs angle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [yscale=.55]
 
-    \draw[red, ultra thick] (A) arc(26:40:1.5) node[above right, midway, xshift=-2, yshift=-4, text=blue] {\scriptsize 500 mi};
+        \draw[cyan] (0,0) grid (6,14);
+        \draw[black, thick,->] (0,0)-- (6.3,0) node[right, scale=.9]{$\theta$};
+        \draw[black, thick, ->] (0,0) --(0,14.4) node[above, scale=.9]{$s$};
 
-    \node[text width=.2 cm] at (32:1) {\color{red}\scriptsize$\theta$};
-        \end{tikzpicture}]]> 
-    </latex-image> 
-    </image> 
-</sidebyside>
+        \foreach \x in {2, 4, 6}
+         \draw[black] (\x,.3) -- ++(0,-.6) node[below, scale=.8]{\x};
 
+        \foreach \y [evaluate=\y as \yi using int(2*\y)] in {2, 4, ..., 14} 
+         \draw[black] (.08,\y)--++(-.16,0) node[left]{\yi};
+
+        \draw[red, very thick] (0,0) -- (6,14);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside>
 
 
 
