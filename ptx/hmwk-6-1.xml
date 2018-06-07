@@ -765,12 +765,14 @@
         \begin{tikzpicture} [yscale=.55]
 
         \draw[cyan] (0,0) grid (6,14);
+        \draw[black, thick,->] (0,0)-- (6.3,0) node[right, scale=.9]{$\theta$};
+        \draw[black, thick, ->] (0,0) --(0,14.4) node[above, scale=.9]{$s$};
 
         \foreach \x in {2, 4, 6}
-         \draw[black] (\x,.3) -- ++(0,-.6) node[below, scale=.8]{\x};
+         \draw[black] (\x,.3) -- ++(0,-.6) node[below, scale=.9]{\x};
 
         \foreach \y [evaluate=\y as \yi using int(2*\y)] in {2, 4, ..., 14} 
-         \draw[black] (.08,\y)--++(-.16,0) node[left]{\yi};
+         \draw[black] (.08,\y)--++(-.16,0) node[left, scale=.9]{\yi};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -874,7 +876,33 @@
                 </tabular></li>
         <li>Graph <m>s</m> against <m>r</m>. What is the slope of the graph?</li>
         <li>If you double the radus <m>r</m>, what happens to the arclength? What happens if you triple <m>r</m>?</li>
-        </ol></p><image source="images/hp6-1-54.png"><description>grid</description></image></sidebyside></statement></exercise>
+        </ol></p><!--<image source="images/hp6-1-54.png"><description>grid</description></image>-->
+    <image xml:id="hp6-1-54">
+        <description>grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [yscale=.55]
+
+        \draw[cyan] (0,0) grid (6,14);
+        \draw[black, thick,->] (0,0)-- (6.3,0) node[right, scale=.9]{$r$};
+        \draw[black, thick, ->] (0,0) --(0,14.4) node[above, scale=.9]{$s$};
+
+        \foreach \x in {2, 4, 6}
+         \draw[black] (\x,.3) -- ++(0,-.6) node[below, scale=.9]{\x};
+
+        \foreach \y [evaluate=\y as \yi using int(\y)] in {2, 4, ..., 14} 
+         \draw[black] (.08,\y)--++(-.16,0) node[left, scale=.9]{\yi};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></statement></exercise>
 
     <exercise number="55"><statement><p>The angular velocity, <m>\omega</m>, of a rotating object is given in radians per unit time.  Thus, an object that rotates through <m>\theta</m> radians in time <m>t</m> has angular velocity given by <m>\omega = \dfrac{\theta}{t}</m>. Find the angular velocity of the following objects.</p>
     <p><ol label="a">
@@ -901,7 +929,58 @@
 </ol></p></answer></exercise>
 
     <exercise number="58"><statement><p>Use your result from Problem 57a to write each statement as a mathematical formula.</p>
-    <sidebyside widths="20% 20%"><image source="images/hp6-1-58a.png"><description>circle</description></image><image source="images/hp6-1-58b.png"><description>circle</description></image></sidebyside>
+    <sidebyside widths="20% 20%"><!--<image source="images/hp6-1-58a.png"><description>circle</description></image><image source="images/hp6-1-58b.png"><description>circle</description></image>-->
+    <image xml:id="hp6-1-58a">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \coordinate (O) at (0,0);
+        \coordinate (A) at (1.5,0);
+        \coordinate (B) at (140:1.5);
+        \draw[gray, thick] (O) circle (1.5cm);
+        \draw[blue, thick] (B)--(O);
+        \draw[blue, thick] (O)--(A) node[below, midway] {$r$};
+        \draw[red, ultra thick] (A) arc (0:140:1.5) node[above right, midway, text=blue]{$s$};
+        \draw[red] (0.25,0) arc(0:140:0.25) node[above right, midway, yshift=-3] {$\theta$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    <image xml:id="hp6-1-58b">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \coordinate (O) at (0,0);
+        \coordinate (A) at (1.5,0);
+        \coordinate (B) at (140:1.5);
+        \filldraw[cyan!40] (B)--(O)--(A) arc(0:140:1.5) ;
+        \draw[gray, thick] (O) circle (1.5cm);
+        \draw[blue, thick] (B)--(O);
+        \draw[blue, thick] (O)--(A) node[below, midway] {$r$};
+        \draw[red, ultra thick] (A) arc (0:140:1.5) ;
+        \draw[red] (0.25,0) arc(0:140:0.25) node[above right, midway, yshift=-3] {$\theta$};
+        \draw[black, thick, <-] (60:1.1)--(1.1,1.3) node[above right, xshift=-2, yshift=-5]{$A$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside>
     <p><ol label="a">
     <li>The length of the arc, <m>s</m>, is equal to:   
     <me>\text{(the fraction of a revolution)} \times \text{(circumference of the circle)}</me></li>         
@@ -912,10 +991,62 @@
 
 <exercisegroup cols = "2"><introduction><p>For Problems 59<ndash/>60, Use the formula for the area of a sector from Problem 58.</p></introduction>
     
-    <exercise number="59"><statement><sidebyside width="50%"><image source="images/hp6-1-59.png"><description>circle</description></image></sidebyside></statement>
+    <exercise number="59"><statement><sidebyside width="50%"><!--<image source="images/hp6-1-59.png"><description>circle</description></image>-->
+    <image xml:id="hp6-1-59">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \coordinate (O) at (0,0);
+        \coordinate (A) at (1.5,0);
+        \coordinate (B) at (155:1.5);
+        \filldraw[cyan!40] (B)--(O)--(A) arc(0:155:1.5) ;
+        \draw[gray, thick] (O) circle (1.5cm);
+        \draw[blue, thick] (B)--(O);
+        \draw[blue, thick] (O)--(A) node[below, midway] {5 cm};
+        \draw[red, ultra thick] (A) arc (0:155:1.5) ;
+        \draw[red] (0.2,0) arc(0:155:0.2) node[above, midway, yshift=-3] {$2.6$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></statement>
     <answer><m>32.5~\text{cm}^2</m></answer></exercise>
 
-    <exercise number="60"><statement><sidebyside width="50%"><image source="images/hp6-1-60.png"><description>circle</description></image></sidebyside></statement></exercise>
+    <exercise number="60"><statement><sidebyside width="50%"><!--<image source="images/hp6-1-60.png"><description>circle</description></image>-->
+    <image xml:id="hp6-1-60">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \coordinate (O) at (0,0);
+        \coordinate (A) at (1.5,0);
+        \coordinate (B) at ({deg(4.5)}:1.5);
+        \filldraw[cyan!40] (B)--(O)--(A) arc(0:{deg(4.5)}:1.5) ;
+        \draw[gray, thick] (O) circle (1.5cm);
+        \draw[blue, thick] (B)--(O);
+        \draw[blue, thick] (O)--(A) node[below, midway] {18};
+        \draw[red, ultra thick] (A) arc (0:{deg(4.5)}:1.5) ;
+        \draw[red] (0.2,0) arc(0:{deg(4.5)}:0.2) node[above left, midway, yshift=-3] {$4.5$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></statement></exercise>
 </exercisegroup>
 
 </exercises>
