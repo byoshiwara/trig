@@ -90,64 +90,40 @@
 
 
 
-
-    <exercise number="59"><statement><sidebyside width="50%"><!--<image source="images/hp6-1-59.png"><description>circle</description></image>-->
-    <image xml:id="hp6-1-59">
-        <description>circle</description>
+<exercise number="77"><statement><sidebyside widths="55% 40%" valigns="middle middle"><p>Use similar triangles to show that the coordinates of a point <m>P</m> determined by angle <m>\theta</m> on a circle of radius <m>r</m> are <m>x = r \cos \theta,~ y = r\sin \theta</m>. (See the figure at right.)</p><!--<image source="images/hp6-2-77.png"><description>circle</description></image>-->
+    <image xml:id="hp6-2-77">
+        <description>circles</description>
         <latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
         }
-        \begin{tikzpicture}
-
+        \begin{tikzpicture}  
         \coordinate (O) at (0,0);
-        \coordinate (A) at (1.5,0);
-        \coordinate (B) at (155:1.5);
-        \filldraw[cyan!40] (B)--(O)--(A) arc(0:155:1.5) ;
+        \coordinate (P) at (35:1);
+        \coordinate (Q) at ($ cos(35)*(1,0) $);
+        \coordinate (R) at (35:1.5);
+        \coordinate (S) at ($ 1.5*cos(35)*(1,0) $);
+        \draw[gray, thick] (O) circle (1cm);
         \draw[gray, thick] (O) circle (1.5cm);
-        \draw[blue, thick] (B)--(O);
-        \draw[blue, thick] (O)--(A) node[below, midway] {5 cm};
-        \draw[red, ultra thick] (A) arc (0:155:1.5) ;
-        \draw[red] (0.2,0) arc(0:155:0.2) node[above, midway, yshift=-3] {$2.6$};
+        \draw[gray!90, thick] (Q) rectangle ++(-.15,.15);
+        \draw[gray!90, thick] (S) rectangle ++(.15,.15);
+        \draw[gray, thick] (P)--(Q);
+        \draw[gray, thick] (R)--(S);
+
+        \draw[black, thick, ->] (-1.7,0)-- (2.9,0) ;
+        \draw[black, thick, ->] (0,-1.6)--(0,1.9) ;
+
+        \draw[red, thick] (.3,0) arc(0:35:.3) node[right, midway, xshift=2, yshift=1, scale=.7]{$\theta$};
+        \draw[blue,thick](O)--(R);
+        \node[text width=.2cm, above, yshift=2, scale=.8] at (35:.5) {$1$};
+        \filldraw[black] (R) circle (.04cm) node[above right, xshift=3, scale=.8]{$P$};
+        \node[text width=2.1cm, scale=.8] at (2.,-1.2) {$x^2+y^2=r^2$};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
-    </sidebyside></statement>
-    <answer><m>32.5~\text{cm}^2</m></answer></exercise>
-
-    <exercise number="60"><statement><sidebyside width="50%"><!--<image source="images/hp6-1-60.png"><description>circle</description></image>-->
-    <image xml:id="hp6-1-60">
-        <description>circle</description>
-        <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
-
-        \coordinate (O) at (0,0);
-        \coordinate (A) at (1.5,0);
-        \coordinate (B) at ({deg(4.5)}:1.5);
-        \filldraw[cyan!40] (B)--(O)--(A) arc(0:{deg(4.5)}:1.5) ;
-        \draw[gray, thick] (O) circle (1.5cm);
-        \draw[blue, thick] (B)--(O);
-        \draw[blue, thick] (O)--(A) node[below, midway] {18};
-        \draw[red, ultra thick] (A) arc (0:{deg(4.5)}:1.5) ;
-        \draw[red] (0.2,0) arc(0:{deg(4.5)}:0.2) node[above left, midway, yshift=-3] {$4.5$};
-        \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-    </sidebyside></statement></exercise>
-
+</sidebyside></statement>
+<answer><p>The two right triangles shown are similar, so their sides are proportional. The hypotenuse of the large triangle is <m>r</m> times the hypotenuse of the small triangle, so the two legs of the large triangle must be <m>r</m> times the legs of the small triangle. Thus, because the coordinates of the vertex on the unit circle are <m>(\cos \theta, \sin \theta)</m>, the coordinates of <m>P</m> must be <m>(r\cos \theta, r\sin \theta)</m>.
+</p></answer></exercise>
 
 
 

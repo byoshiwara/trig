@@ -11,7 +11,32 @@
 
 <exercisegroup cols="2"><introduction><p>For Problems 1<ndash/>4, each point on the unit circle is the terminal point of an angle in standard position. Give exact values for the radian measure, <m>t</m>, of the angle, and the coordinates <m>(x,y)</m> of the point.</p></introduction>
 
- <exercise number="1"><statement><sidebyside width="60%"><image source="images/hp6-2-1.png"><description>circle</description></image></sidebyside>
+ <exercise number="1"><statement><sidebyside width="60%"><!--<image source="images/hp6-2-1.png"><description>circle</description></image>-->
+     <image xml:id="hp6-2-1">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} 
+        \draw[black, thick, ->] (-1.3,0)--(1.3,0);
+        \draw[black, thick, ->] (0,-1.3)--(0,1.3);
+
+        \draw[gray,thick] (0,0) circle (1cm);
+
+        \foreach \i in {45, 135, 225, 315} {
+         \draw[black, thick] (\i:1) -- (0,0);
+         \filldraw[black] (\i:1) circle (0.05cm);
+        };
+
+        \node [text width=.2cm, scale=0.8] at (45:1.3) {$a$};
+        \node [text width=.2cm, scale=0.8] at (135:1.3) {$b$};
+        \node [text width=.2cm, scale=0.8] at (225:1.3) {$c$};
+        \node [text width=.2cm, scale=0.8] at (315:1.3) {$d$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+ </sidebyside>
     <tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
                     <row bottom="minor">
                         <cell><m>\hphantom{0000}</m></cell>
@@ -65,7 +90,31 @@
                         <cell><m>\dfrac{-1}{\sqrt{2}}</m></cell></row>                               
                 </tabular></answer></exercise>
 
-    <exercise number="2"><statement><sidebyside width="60%"><image source="images/hp6-2-2.png"><description>circle</description></image></sidebyside>
+    <exercise number="2"><statement><sidebyside width="60%"><!--<image source="images/hp6-2-2.png"><description>circle</description></image>-->
+    <image xml:id="hp6-2-2">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} 
+        \draw[black, thick, ->] (-1.3,0)--(1.3,0);
+        \draw[black, thick, ->] (0,-1.3)--(0,1.3);
+
+        \draw[gray,thick] (0,0) circle (1cm);
+
+        \foreach \i in {45, 135, 225, 315} {
+         \draw[gray!80, thick, dashed] (\i:1) -- (0,0);
+        };
+
+        \filldraw[black] (1,0) circle (0.05cm) node [anchor=south west, yshift=3, scale=0.8]  {$a$};
+        \filldraw[black] (0,1) circle (0.05cm) node [anchor=south east, xshift=-3,  scale=0.8]  {$b$};
+        \filldraw[black] (-1,0) circle (0.05cm) node [anchor=north east, xshift=-2, yshift=-2, scale=0.8]  {$c$};
+        \filldraw[black] (0,-1) circle (0.05cm) node [anchor=north west, xshift=2, yshift=-2, scale=0.8]  {$d$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside>
     <tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
                     <row bottom="minor">
                         <cell><m>\hphantom{0000}</m></cell>
@@ -93,7 +142,31 @@
                         <cell><m>\hphantom{0000}</m></cell></row>                               
                 </tabular></statement></exercise>
 
-    <exercise number="3"><statement><sidebyside width="60%"><image source="images/hp6-2-3.png"><description>circle</description></image></sidebyside>
+    <exercise number="3"><statement><sidebyside width="60%"><!--<image source="images/hp6-2-3.png"><description>circle</description></image>-->
+    <image xml:id="hp6-2-3">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} 
+        \draw[black, thick, ->] (-1.3,0)--(1.3,0);
+        \draw[black, thick, ->] (0,-1.3)--(0,1.3);
+
+        \draw[gray,thick] (0,0) circle (1cm);
+
+        \foreach \i in {30, 60, 120, 150, 210, 240, 300, 330} {
+         \draw[gray!80, thick, dashed] (\i:1) -- (0,0);
+        };
+
+        \filldraw[black] (60:1) circle (0.05cm) node [anchor=south west, xshift=2, yshift=2, scale=0.8]  {$a$};
+        \filldraw[black] (120:1) circle (0.05cm) node [anchor=south east, xshift=-2, yshift=2, scale=0.8]  {$b$};
+        \filldraw[black] (240:1) circle (0.05cm) node [anchor=north east, xshift=-2, yshift=-2, scale=0.8]  {$c$};
+        \filldraw[black] (300:1) circle (0.05cm) node [anchor=north west, scale=0.8]  {$d$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside>
     <tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
                     <row bottom="minor">
                         <cell><m>\hphantom{0000}</m></cell>
@@ -147,7 +220,31 @@
                         <cell><m>\dfrac{-\sqrt{3}}{2}</m></cell></row>                               
                 </tabular></answer></exercise>
         
-    <exercise number="4"><statement><sidebyside width="60%"><image source="images/hp6-2-4.png"><description>circle</description></image></sidebyside>
+    <exercise number="4"><statement><sidebyside width="60%"><!--<image source="images/hp6-2-4.png"><description>circle</description></image>-->
+    <image xml:id="hp6-2-4">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} 
+        \draw[black, thick, ->] (-1.3,0)--(1.3,0);
+        \draw[black, thick, ->] (0,-1.3)--(0,1.3);
+
+        \draw[gray,thick] (0,0) circle (1cm);
+
+        \foreach \i in {30, 60, 120, 150, 210, 240, 300, 330} {
+         \draw[gray!80, thick, dashed] (\i:1) -- (0,0);
+        };
+
+        \filldraw[black] (30:1) circle (0.05cm) node [anchor=south west, xshift=2, yshift=1, scale=0.8]  {$a$};
+        \filldraw[black] (150:1) circle (0.05cm) node [anchor=south east, xshift=-2, yshift=1, scale=0.8]  {$b$};
+        \filldraw[black] (210:1) circle (0.05cm) node [anchor=north east, xshift=-2, yshift=-1, scale=0.8]  {$c$};
+        \filldraw[black] (330:1) circle (0.05cm) node [anchor=north west, scale=0.8]  {$d$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside>
     <tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
                     <row bottom="minor">
                         <cell><m>\hphantom{0000}</m></cell>
@@ -177,7 +274,7 @@
 </exercisegroup>
 
 <exercisegroup><introduction><p>For Problems 5<ndash/>8, use the unit circle to estimate the sine, cosine, and tangent of each arc of given length.</p>
-<sidebyside widths="50%"><image source="images/exam6-2-5.png"><description>circle</description></image></sidebyside></introduction>  
+<sidebyside widths="50%"><image source="images/exam6-2-5"><description>circle</description></image></sidebyside></introduction>  
     <exercise number="5"><statement>
         <p><ol label="a" cols="3">
             <li><m>0.4</m></li>
@@ -217,7 +314,7 @@
         </ol></p></statement></exercise> 
     </exercisegroup>  
     
-<exercisegroup cols="2"><introduction><p>For Problems 9<ndash/>14, use the unit circle to estimate two numbers with the given trig value.</p><sidebyside width="50%"><image source="images/exam6-2-5.png"><description>circle</description></image></sidebyside></introduction>            
+<exercisegroup cols="2"><introduction><p>For Problems 9<ndash/>14, use the unit circle to estimate two numbers with the given trig value.</p><sidebyside width="50%"><image source="images/exam6-2-5"><description>circle</description></image></sidebyside></introduction>            
 
     <exercise number="9"><statement><m>\cos t = 0.3</m></statement>
     <answer><m>t \approx 1.27</m> or <m>t \approx 5</m></answer></exercise>
@@ -271,7 +368,7 @@
     <exercise number="26"><statement><m>\cos 4.9</m></statement></exercise>
  </exercisegroup> 
 
- <exercisegroup><introduction><p>For Problems 27<ndash/>30, place the trig values in order from smallest to largest. Use the figure to help you, but try not to use a calculator!</p><sidebyside widths="50%"><image source="images/exam6-2-5.png"><description>circle</description></image></sidebyside></introduction>
+ <exercisegroup><introduction><p>For Problems 27<ndash/>30, place the trig values in order from smallest to largest. Use the figure to help you, but try not to use a calculator!</p><sidebyside widths="50%"><image source="images/exam6-2-5"><description>circle</description></image></sidebyside></introduction>
 
     <exercise number="27"><statement><m>\sin 0.5,~ \sin 1.5,~ \sin 2.5,~ \sin 3.5</m></statement>
         <answer><m>\sin 3.5,~ \sin 0.5,~ \sin 2.5,~ \sin 1.5</m></answer></exercise>
@@ -336,9 +433,90 @@
     <li><m>\dfrac{\pi}{3}</m></li>
     </ol></p></statement>
     <answer><p><ol label="a">
-    <li><m>\dfrac{5\pi}{6},~\dfrac{7\pi}{6},~\dfrac{11\pi}{6}</m><sidebyside width="30%"><image source="images/hp6-2-45ansa.png"><description>circle</description></image></sidebyside></li>
-    <li><m>\dfrac{3\pi}{4},~\dfrac{5\pi}{4},~\dfrac{7\pi}{4}</m><sidebyside width="30%"><image source="images/hp6-2-45ansb.png"><description>circle</description></image></sidebyside></li>
-    <li><m>\dfrac{2\pi}{3},~\dfrac{4\pi}{3},~\dfrac{5\pi}{3}</m><sidebyside width="30%"><image source="images/hp6-2-45ansc.png"><description>circle</description></image></sidebyside></li>
+    <li><m>\dfrac{5\pi}{6},~\dfrac{7\pi}{6},~\dfrac{11\pi}{6}</m><sidebyside width="30%"><!--<image source="images/hp6-2-45ansa.png"><description>circle</description></image>-->
+    <image xml:id="hp6-2-45ansa">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=1.5] 
+        \coordinate (O) at (0,0);
+        \draw[black, thick, ->] (-1.3,0)--(1.3,0);
+        \draw[black, thick, ->] (0,-1.3)--(0,1.3);
+
+        \draw[gray,thick] (O) circle (1cm);
+
+        \draw[black,thick] (O) -- (150:1);
+        \draw[black,thick] (O) -- (210:1);
+        \draw[black,thick] (O) -- (330:1);
+
+        \draw[red, thick, ->] (.2,0) arc(0:330:.2);
+        \draw[red, thick, ->] (.35,0) arc(0:210:.35);
+        \draw[red, thick, ->] (.5,0) arc(0:150:.5);
+
+        \node[text width = .15cm, anchor=north west, xshift=1, yshift=-2, scale=.8] at (1,0) {$1$};
+        \node[text width = .15cm, anchor=south east, xshift=-3, yshift=1, scale=.8] at (0,1) {$1$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></li>
+    <li><m>\dfrac{3\pi}{4},~\dfrac{5\pi}{4},~\dfrac{7\pi}{4}</m><sidebyside width="30%"><!--<image source="images/hp6-2-45ansb.png"><description>circle</description></image>-->
+    <image xml:id="hp6-2-45ansb">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=1.5] 
+        \coordinate (O) at (0,0);
+        \draw[black, thick, ->] (-1.3,0)--(1.3,0);
+        \draw[black, thick, ->] (0,-1.3)--(0,1.3);
+
+        \draw[gray,thick] (O) circle (1cm);
+
+        \draw[black,thick] (O) -- (135:1);
+        \draw[black,thick] (O) -- (225:1);
+        \draw[black,thick] (O) -- (315:1);
+
+        \draw[red, thick, ->] (.2,0) arc(0:315:.2);
+        \draw[red, thick, ->] (.35,0) arc(0:225:.35);
+        \draw[red, thick, ->] (.5,0) arc(0:135:.5);
+
+        \node[text width = .15cm, anchor=north west, xshift=2, yshift=-3, scale=.8] at (1,0) {$1$};
+        \node[text width = .15cm, anchor=south east, xshift=-2, yshift=2, xshift=-3, scale=.8] at (0,1) {$1$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></li>
+    <li><m>\dfrac{2\pi}{3},~\dfrac{4\pi}{3},~\dfrac{5\pi}{3}</m><sidebyside width="30%"><!--<image source="images/hp6-2-45ansc.png"><description>circle</description></image>-->
+    <image xml:id="hp6-2-45ansc">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=1.5] 
+        \coordinate (O) at (0,0);
+        \draw[black, thick, ->] (-1.3,0)--(1.3,0);
+        \draw[black, thick, ->] (0,-1.3)--(0,1.3);
+
+        \draw[gray,thick] (O) circle (1cm);
+
+        \draw[black,thick] (O) -- (120:1);
+        \draw[black,thick] (O) -- (240:1);
+        \draw[black,thick] (O) -- (330:1);
+
+        \draw[red, thick, ->] (.2,0) arc(0:330:.2);
+        \draw[red, thick, ->] (.35,0) arc(0:240:.35);
+        \draw[red, thick, ->] (.5,0) arc(0:120:.5);
+
+        \node[text width = .15cm, anchor=north west, xshift=2, yshift=-3, scale=.8] at (1,0) {$1$};
+        \node[text width = .15cm, anchor=south east, xshift=-3, yshift=2, scale=.8] at (0,1) {$1$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></li>
     </ol></p></answer></exercise>
 
     <exercise number="46"><statement><p>Complete the table.</p>
@@ -496,7 +674,27 @@
     <li>State your answers to part (a) using trigonometric functions.</li>
 </ol></p></statement>
 <answer><p><ol label="a">
-    <li><sidebyside width="30%"><image source="images/hp6-2-67ans.png"><description>circle</description></image></sidebyside><p>Intersections: <m>(\dfrac{1}{\sqrt{2}},\dfrac{1}{\sqrt{2}})</m> and <m>(\dfrac{-1}{\sqrt{2}},\dfrac{-1}{\sqrt{2}})</m></p></li>
+    <li><sidebyside width="30%"><!--<image source="images/hp6-2-67ans.png"><description>circle</description></image>-->
+    <image xml:id="hp6-2-67ans">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=1.5] 
+        \coordinate (O) at (0,0);
+        \draw[black, thick, ->] (-1.3,0)--(1.3,0);
+        \draw[black, thick, ->] (0,-1.3)--(0,1.3);
+
+        \draw[gray,thick] (O) circle (1cm);
+        \draw[blue,thick] (-1.2,-1.2) --(1.05,1.05) node[above right, xshift=-1, yshift=-2, scale=.9]{$y=x$};
+
+        \filldraw[black] (45:1) circle (.03cm) node[anchor=west, xshift=.25cm] {$(\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}})$};
+        \filldraw[black] (225:1) circle (.03cm) node[anchor=north, xshift=.25cm, yshift=-.5cm] {$(\frac{-1}{\sqrt{2}},\frac{-1}{\sqrt{2}})$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside><p>Intersections: <m>(\dfrac{1}{\sqrt{2}},\dfrac{1}{\sqrt{2}})</m> and <m>(\dfrac{-1}{\sqrt{2}},\dfrac{-1}{\sqrt{2}})</m></p></li>
     <li><m>(\cos\dfrac{\pi}{4},\sin\dfrac{\pi}{4})</m> and <m>(\cos\dfrac{5\pi}{4},\sin\dfrac{5\pi}{4})</m></li>
     </ol></p></answer></exercise>
 
@@ -508,16 +706,57 @@
 <exercise number="69"><statement><sidebyside widths="60% 35%"><p><ol label="a">
     <li>Sketch a line that passes through the origin and the point <m>(8,3)</m>.  What is the slope of the line?</li>
     <li>What is the angle of inclination of the line in radians, measured from the positive <m>x</m>-axis?</li>
-</ol></p><image source="images/hp6-2-69.png"><description>grid</description></image></sidebyside></statement>
+</ol></p><!--<image source="images/hp6-2-69.png"><description>grid</description></image>-->
+    <image xml:id="hp6-2-69">
+        <description>grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=0.35] 
+        \draw[cyan] (-2,-2) grid (10,10);
+        \draw[black, thick, ->] (-2,0)--(10.8,0) node[right, scale=.9]{$x$};
+        \draw[black, thick, ->] (0,-2)--(0,10.8) node[above, scale=.9]{$y$};
+
+        \foreach \i in {-2,5,10} {
+         \draw[black,thick] (\i,0.2)--++(0,-.4) node[below, scale=.8, fill=white, inner sep=2]{$\i$};
+         \draw[black,thick] (.2, \i)--++(-.4,0) node[left, scale=.8, fill=white, inner sep=2]{$\i$};
+        }
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement>
 <answer><p><ol label="a">
-    <li><sidebyside width="30%"><image source="images/hp6-2-69ans.png"><description>graph</description></image></sidebyside><m>m = \dfrac{3}{8}</m></li>
+    <li><sidebyside width="30%"><!--<image source="images/hp6-2-69ans.png"><description>graph</description></image>-->
+    <image xml:id="hp6-2-69ans">
+        <description>graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=0.35] 
+        \draw[cyan] (-2,-2) grid (10,10);
+        \draw[black, thick, ->] (-2,0)--(10.8,0) node[right, scale=.9]{$x$};
+        \draw[black, thick, ->] (0,-2)--(0,10.8) node[above, scale=.9]{$y$};
+
+        \foreach \i in {-2,5,10} {
+         \draw[black,thick] (\i,0.2)--++(0,-.4) node[below, scale=.8, fill=white, inner sep=2]{$\i$};
+         \draw[black,thick] (.2, \i)--++(-.4,0) node[left, scale=.8, fill=white, inner sep=2]{$\i$};
+        }
+        \coordinate (A) at (8,3);
+        \draw[red, thick] (-2,-.75)--(10,3.75);
+        \filldraw[black] (A) circle (.2cm);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside><m>m = \dfrac{3}{8}</m></li>
     <li><m>\tan^{-1}(\dfrac{3}{8})\approx 0.3588</m></li>
     </ol></p></answer></exercise>
 
 <exercise number="70"><statement><sidebyside widths="60% 35%"><p><ol label="a">
     <li>Sketch a line that passes through the origin and the point <m>(3,8)</m>.  What is the slope of the line?</li>
     <li>What is the angle of inclination of the line in radians, measured from the positive <m>x</m>-axis?</li>
-</ol></p><image source="images/hp6-2-69.png"><description>grid</description></image></sidebyside></statement></exercise> 
+</ol></p><image source="images/hp6-2-69"><description>grid</description></image></sidebyside></statement></exercise> 
 
 <exercisegroup cols="2"><introduction><p>For Problems 71<ndash/>74, find an equation for the line with the given angle of inclination, passing through the given point. (See Section 4.3 to review angle of inclination.)</p></introduction>
 
@@ -532,15 +771,106 @@
     <exercise number="74"><statement><m>\alpha = 0.6,~ (-2,-3)</m></statement></exercise>
 </exercisegroup>
 
-<exercise number="75"><statement><sidebyside widths="55% 35%" valigns="middle middle"><p>Use similar triangles to show that the coordinates of point <m>P</m> on the unit circle shown at right are <m>(\cos t, \sin t)</m>.</p><image source="images/hp6-2-75.png"><description>circle</description></image></sidebyside></statement>
+<exercise number="75"><statement><sidebyside widths="55% 35%" valigns="middle middle"><p>Use similar triangles to show that the coordinates of point <m>P</m> on the unit circle shown at right are <m>(\cos t, \sin t)</m>.</p><!--<image source="images/hp6-2-75.png"><description>circle</description></image>-->
+    <image xml:id="hp6-2-75">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=1.2] 
+        \coordinate (O) at (0,0);
+        \coordinate (P) at (30:1);
+        \coordinate (Q) at ($ cos(30)*(1,0) $);
+        \coordinate (R) at (30:3);
+        \coordinate (S) at ($ 3*cos(30)*(1,0) $);
+        \draw[gray, thick] (O) circle (1cm);
+        \draw[gray!90, thick] (Q) rectangle ++(-.15,.15);
+        \draw[gray!90, thick] (S) rectangle ++(-.15,.15);
+        \draw[gray, thick] (P)--(Q);
+        \draw[gray, thick] (R)--(S);
+
+        \draw[black, thick] (-1.1,0)-- (S) ;
+        \draw[black, thick] (0,-1.1)--(0,1.2) ;
+
+        \draw[red, ultra thick] (1,0) arc(0:30:1) node[right, midway, text=black, scale=.8]{$t$};
+        \draw[blue,thick](O)--(R);
+        \filldraw[black] (P) circle (.04cm) node[above, scale=.8]{$P$};
+        \node[text width=.2cm, above, scale=.8] at (30:.5) {$1$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement>
 <answer><p>Any point <m>(x,y)</m> on the terminal side of <m>\theta</m> satisfies <m>\cos \theta = \dfrac{x}{r},~ \sin \theta = \dfrac{y}{r}</m>. For the point <m>P</m> where <m>r = 1,~\cos \theta = x,~\sin \theta = y</m>. The arc of length <m>t</m> is spanned by an angle <m>\theta</m> in standard position. Because arclength is <m>r\theta</m> and <m>r = 1,~ t = \theta,</m> so <m>x = \cos t,~ y = \sin t</m>.
 </p></answer></exercise>
 
-<exercise number="76"><statement><sidebyside widths="60% 25%" valigns="middle middle"><p>Use similar triangles to show that <m>ST = \tan t</m>.</p><image source="images/hp6-2-76.png"><description>circle</description></image></sidebyside></statement></exercise>
+<exercise number="76"><statement><sidebyside widths="60% 25%" valigns="middle middle"><p>Use similar triangles to show that <m>ST = \tan t</m>.</p><!--<image source="images/hp6-2-76.png"><description>circle</description></image>-->
+    <image xml:id="hp6-2-76">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=1.2] 
+        \coordinate (O) at (0,0);
+        \coordinate (P) at (50:1);
+        \coordinate (Q) at ($ cos(50)*(1,0) $);
+        \coordinate (R) at ($ tan(50) *(0,1)+(1,0) $);
+        \coordinate (S) at (1,0);
+        \draw[gray, thick] (O) circle (1cm);
+        \draw[gray!90, thick] (Q) rectangle ++(-.15,.15);
+        \draw[gray!90, thick] (S) rectangle ++(.15,.15);
+        \draw[gray, thick] (P)--(Q);
+        \draw[gray, thick] (R)--(S);
+
+        \draw[black, thick] (-1.1,0)-- (1.3,0) ;
+        \draw[black, thick] (0,-1.1)--(0,1.5) ;
+
+        \draw[red, ultra thick] (1,0) arc(0:50:1) node[below left, midway, text=black, scale=.8]{$t$};
+        \draw[blue,thick](O)--(50:2.3);
+        \filldraw[black] (P) circle (.04cm);
+        \node[text width=.2cm, above, scale=.8] at (50:.5) {$1$};
+        \filldraw[black] (R) circle (.04cm) node[above left, scale=.8]{$T$};
+        \filldraw[black] (S) circle (.04cm) node[below right, scale=.8]{$S$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement></exercise>
 
 <exercisegroup><introduction><p>Use the results of Problem 77 for for Problems 78<ndash/>80.</p></introduction>
 
-<exercise number="77"><statement><sidebyside widths="55% 40%" valigns="middle middle"><p>Use similar triangles to show that the coordinates of a point <m>P</m> determined by angle <m>\theta</m> on a circle of radius <m>r</m> are <m>x = r \cos \theta,~ y = r\sin \theta</m>. (See the figure at right.)</p><image source="images/hp6-2-77.png"><description>circle</description></image></sidebyside></statement>
+<exercise number="77"><statement><sidebyside widths="55% 40%" valigns="middle middle"><p>Use similar triangles to show that the coordinates of a point <m>P</m> determined by angle <m>\theta</m> on a circle of radius <m>r</m> are <m>x = r \cos \theta,~ y = r\sin \theta</m>. (See the figure at right.)</p><!--<image source="images/hp6-2-77.png"><description>circle</description></image>-->
+    <image xml:id="hp6-2-77">
+        <description>circles</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture}  
+        \coordinate (O) at (0,0);
+        \coordinate (P) at (35:1);
+        \coordinate (Q) at ($ cos(35)*(1,0) $);
+        \coordinate (R) at (35:1.5);
+        \coordinate (S) at ($ 1.5*cos(35)*(1,0) $);
+        \draw[gray, thick] (O) circle (1cm);
+        \draw[gray, thick] (O) circle (1.5cm);
+        \draw[gray!90, thick] (Q) rectangle ++(-.15,.15);
+        \draw[gray!90, thick] (S) rectangle ++(.15,.15);
+        \draw[gray, thick] (P)--(Q);
+        \draw[gray, thick] (R)--(S);
+
+        \draw[black, thick, ->] (-1.7,0)-- (2.9,0) ;
+        \draw[black, thick, ->] (0,-1.6)--(0,1.9) ;
+
+        \draw[red, thick] (.3,0) arc(0:35:.3) node[right, midway, xshift=2, yshift=1, scale=.7]{$\theta$};
+        \draw[blue,thick](O)--(R);
+        \node[text width=.2cm, above, yshift=2, scale=.8] at (35:.5) {$1$};
+        \filldraw[black] (R) circle (.04cm) node[above right, xshift=3, scale=.8]{$P$};
+        \node[text width=2.1cm, scale=.8] at (2.,-1.2) {$x^2+y^2=r^2$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement>
 <answer><p>The two right triangles shown are similar, so their sides are proportional. The hypotenuse of the large triangle is <m>r</m> times the hypotenuse of the small triangle, so the two legs of the large triangle must be <m>r</m> times the legs of the small triangle. Thus, because the coordinates of the vertex on the unit circle are <m>(\cos \theta, \sin \theta)</m>, the coordinates of <m>P</m> must be <m>(r\cos \theta, r\sin \theta)</m>.
 </p></answer></exercise>
 
