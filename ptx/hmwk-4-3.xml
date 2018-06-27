@@ -460,7 +460,7 @@
                         <cell><m>\hphantom{000}</m></cell>
                         <cell><m>\hphantom{000}</m></cell></row>
                         </tabular></sidebyside>
-    <sidebyside width="60%"><image source="images/hp4-3-4"><description>grid</description></image></sidebyside></statement></exercise> 
+    <sidebyside width="60%"><image source="images/hp4-3-3b"><description>grid</description></image></sidebyside></statement></exercise> 
 
     <exercise number="5"><statement><p><ol label="a">
         <li>Refer to Problem 3.  Suppose you know where Delbert is on the square at some given time.  Can you predict where he will be after he has walked another 40 units?</li>  
@@ -573,7 +573,24 @@
 
     <exercise number="16"><statement><p><m>y = -2 + \cos \theta</m></p><sidebyside width="100%"><image source="images/hp4-3-13"><description>grid</description></image></sidebyside></statement></exercise>
 
-    <exercise number="17"><statement><p><m>y = \cos 3\theta</m></p><sidebyside width="100%"><image source="images/hp4-3-17"><description>grid</description></image></sidebyside></statement>
+    <exercise number="17"><statement><p><m>y = \cos 3\theta</m></p><sidebyside width="100%">    <image xml:id="hp4-3-17">
+        <description>grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=.5]
+        \draw[cyan] (0,-2) grid[ystep = 1/2] (12,2);
+        \draw[black, thick, ->] (0,0)--(12.5,0) node[right]{$\theta$};
+        \draw[black, thick, ->] (0,-2)--(0,2.2) node[above]{$y$};
+
+        \foreach \x [evaluate=\x as \xi using int( 30* \x )] in { 2, 4, ..., 12} \draw[black] ($ \x *(1,0) +(0,.04) $) --++(0,-.08) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+
+        \foreach \y   in { -2,-1,1, 2} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\y};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement>
         <answer><sidebyside width="50%"><!--<image source="images/hp4-3-17ans.png"><description>graph</description></image>-->
     <image xml:id="hp4-3-17ans">
         <description>graph of cos 3 theta</description>
@@ -586,14 +603,14 @@
           input/.style    = {coordinate}, % Input
           output/.style   = {coordinate} % Output
         }
-        \begin{tikzpicture} [scale=.5]
-        \draw[cyan] (0,-4) grid (12,4);
+        \begin{tikzpicture} [xscale=.5]
+        \draw[cyan] (0,-2) grid[ystep = 1/2] (12,2);
         \draw[black, thick, ->] (0,0)--(12.5,0) node[right]{$\theta$};
-        \draw[black, thick, ->] (0,-4)--(0,4.5) node[above]{$y$};
+        \draw[black, thick, ->] (0,-2)--(0,2.2) node[above]{$y$};
 
-        \foreach \x [evaluate=\x as \xi using int( 30* \x )] in { 2, 4, ..., 12} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+        \foreach \x [evaluate=\x as \xi using int( 30* \x )] in { 2, 4, ..., 12} \draw[black] ($ \x *(1,0) +(0,.04) $) --++(0,-.08) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
 
-        \foreach \y   in { -4, -2, 2, 4} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\y};
+        \foreach \y   in { -2,-1,1, 2} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\y};
 
         \draw[domain={0:12},smooth,variable=\x,red,very thick] plot ({\x},{cos(90*\x)});
         \end{tikzpicture}]]>
