@@ -60,7 +60,28 @@
                         <cell><m>\hphantom{0000}</m></cell></row>
         </tabular></sidebyside></li>
     <li>Sketch the graphs of and  on the same axes.
-        <sidebyside width="90%"><image source="images/hp7-2-1.png"><description>grid</description></image></sidebyside></li>
+        <sidebyside width="75%"><!--<image source="images/hp7-2-1.png"><description>grid</description></image>-->
+    <image xml:id="hp7-2-1">
+        <description>grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture}
+        \draw[cyan] (-7*pi/6,-3/2) grid[xstep=pi/6, ystep=1/2] (7*pi/6,3/2);
+        \draw[black,thick,->] (-7*pi/6,0)--(3.9,0) node[right, scale=.9]{$x$};
+        \draw[black,thick,->] (0,-1.5)--(0,1.7) node[above, scale=.9]{$y$};
+        \foreach \y in {-1,1} \draw(.1,\y)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[black,thick] (-pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$-\pi$};
+        \draw[black,thick] (pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$\pi$};
+        \draw[black,thick] (-2*pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{-2\pi}{3}$};
+        \draw[black,thick] (-pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{-\pi}{3}$};
+        \draw[black,thick] (pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{\pi}{3}$};
+        \draw[black,thick] (2*pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{2\pi}{3}$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside></li>
     <li>What is the horizontal shift from <m>f</m> to <m>g</m>?</li>
     <li>Find all values of <m>x</m> for which <m>\sin (x-\dfrac{\pi}{3})=1</m>, for <m>-\pi \le x \le \pi</m>.</li>
     <li>Find all values of <m>x</m> for which <m>\sin (x-\dfrac{\pi}{3})=0</m>, for <m>-\pi \le x \le \pi</m>.</li>
@@ -113,7 +134,30 @@
                         <cell><m>1</m></cell>
                         <cell><m>\dfrac{\sqrt{3}}{2}</m></cell></row>
         </tabular></sidebyside></li>
-        <li><sidebyside width="50%"><image source="images/hp7-2-1ans.png"><description>graph</description></image></sidebyside></li>
+        <li><sidebyside width="50%"><!--<image source="images/hp7-2-1ans.png"><description>graph</description></image>-->
+    <image xml:id="hp7-2-1ans">
+        <description>sine and translated sine</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture}
+        \draw[cyan] (-7*pi/6,-3/2) grid[xstep=pi/6, ystep=1/2] (7*pi/6,3/2);
+        \draw[black,thick,->] (-7*pi/6,0)--(3.9,0) node[right, scale=.9]{$x$};
+        \draw[black,thick,->] (0,-1.5)--(0,1.7) node[above, scale=.9]{$y$};
+        \foreach \y in {-1,1} \draw(.1,\y)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[black,thick] (-pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$-\pi$};
+        \draw[black,thick] (pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$\pi$};
+        \draw[black,thick] (-2*pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{-2\pi}{3}$};
+        \draw[black,thick] (-pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{-\pi}{3}$};
+        \draw[black,thick] (pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{\pi}{3}$};
+        \draw[black,thick] (2*pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{2\pi}{3}$};
+        \draw[samples=65,domain={-7*pi/6}:{7*pi/6}, smooth, blue, thick] plot(\x, {sin(deg(\x)}) node[right] {$f$};
+        \draw[samples=65,domain={-7*pi/6}:{7*pi/6}, smooth, red, thick] plot(\x, {sin(deg(\x - pi/3)}) node[right] {$g$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside></li>
         <li><m>\dfrac{\pi}{3}</m> to the right</li>
         <li><m>\dfrac{5\pi}{6}</m></li>
         <li><m>\dfrac{-2\pi}{3},~\dfrac{\pi}{3}</m></li>
@@ -170,7 +214,7 @@
                         <cell><m>\hphantom{0000}</m></cell></row>
         </tabular></sidebyside></li>
     <li>Sketch the graphs of and  on the same axes.
-        <sidebyside width="90%"><image source="images/hp7-2-1.png"><description>grid</description></image></sidebyside></li>
+        <sidebyside width="75%"><image source="images/hp7-2-1"><description>grid</description></image></sidebyside></li>
     <li>What is the horizontal shift from <m>f</m> to <m>g</m>?</li>
     <li>Find all values of <m>x</m> for which <m>\cos (x+\dfrac{\pi}{3})=1</m>, for <m>-\pi \le x \le \pi</m>.</li>
     <li>Find all values of <m>x</m> for which <m>\cos (x+\dfrac{\pi}{3})=0</m>, for <m>-\pi \le x \le \pi</m>.</li>
@@ -215,7 +259,26 @@
                         <cell><m>\hphantom{0000}</m></cell></row>
         </tabular></sidebyside></li>
     <li>Sketch the graphs of and  on the same axes.
-        <sidebyside width="50%"><image source="images/hp7-2-3.png"><description>grid</description></image></sidebyside></li>
+        <sidebyside width="50%"><!--<image source="images/hp7-2-3.png"><description>grid</description></image>-->
+    <image xml:id="hp7-2-3">
+        <description>grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=.6, yscale=.8]
+        \draw[cyan] (-5*pi/4,-3) grid[xstep=pi/4, ystep=1/2] (5*pi/4,3);
+        \draw[black,thick,->] (-5*pi/4,0)--(4.2,0) node[right, scale=.9]{$x$};
+        \draw[black,thick,->] (0,-3)--(0,3.3) node[above, scale=.9]{$y$};
+        \foreach \y in {-1,1,-2,2,-3,3} \draw(.1,\y)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[black,thick] (-pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$-\pi$};
+        \draw[black,thick] (pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$\pi$};
+        \draw[black,thick] (-pi/2,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{-\pi}{2}$};
+        \draw[black,thick] (pi/2,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{\pi}{2}$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside></li>
     <li>What is the horizontal shift from <m>f</m> to <m>g</m>?</li>
     <li>Solve <m>\tan (x+\dfrac{\pi}{4})=1</m>, for <m>-\pi \le x \le \pi</m>.</li>
     <li>Solve <m>\tan (x+\dfrac{\pi}{4})=0</m>, for <m>-\pi \le x \le \pi</m>.</li>
@@ -256,7 +319,32 @@
                         <cell><m>0</m></cell>
                         <cell><m>1</m></cell></row>
         </tabular></sidebyside></li>
-        <li><sidebyside width="35%"><image source="images/hp7-2-3ans.png"><description>graph</description></image></sidebyside></li>
+        <li><sidebyside width="35%"><!--<image source="images/hp7-2-3ans.png"><description>graph</description></image>-->
+    <image xml:id="hp7-2-3ans">
+        <description>translated tangent function</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=.6, yscale=.8]
+        \draw[cyan] (-5*pi/4,-3) grid[xstep=pi/4, ystep=1/2] (5*pi/4,3);
+        \draw[black,thick,->] (-5*pi/4,0)--(4.2,0) node[right, scale=.9]{$x$};
+        \draw[black,thick,->] (0,-3)--(0,3.3) node[above, scale=.9]{$y$};
+        \foreach \y in {-1,1,-2,2,-3,3} \draw(.1,\y)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[black,thick] (-pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$-\pi$};
+        \draw[black,thick] (pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$\pi$};
+        \draw[black,thick] (-pi/2,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{-\pi}{2}$};
+        \draw[black,thick] (pi/2,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{\pi}{2}$};
+        \draw[samples=65,domain={atan(3)*pi/180}:{-atan(3)*pi/180}, smooth, blue, thick] plot(\x, {tan(deg(\x)}) node[below] {$f$};
+        \draw[samples=65,domain={-5*pi/4}:{atan(3)*pi/180-pi}, smooth, blue, thick] plot(\x, {tan(deg(\x)}) ;
+        \draw[samples=65,domain={5*pi/4}:{-atan(3)*pi/180+pi}, smooth, blue, thick] plot(\x, {tan(deg(\x)}) ;
+        \draw[samples=65,domain={atan(3)*pi/180}:{-atan(3)*pi/180}, smooth, red, thick] plot(\x-pi/4, {tan(deg(\x )}) node[below] {$g$};
+        \draw[samples=65,domain={-5*pi/4}:{atan(3)*pi/180-pi-pi/4}, smooth, red, thick] plot(\x, {tan(deg(\x+pi/4)}) ;
+        \draw[samples=65,domain={-atan(3)*pi/180+pi-pi/4}:{atan(3)*pi/180+3*pi/4}, smooth, red, thick] plot(\x, {tan(deg(\x+pi/4)}) ;
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside></li>
         <li><m>\dfrac{\pi}{4}</m> to the left</li>
         <li><m>-\pi,~ 0,~ \pi</m></li>
         <li><m>\dfrac{-\pi}{4},~\dfrac{-3\pi}{4}</m></li>
@@ -301,7 +389,7 @@
                         <cell><m>\hphantom{0000}</m></cell></row>
         </tabular></sidebyside></li>
     <li>Sketch the graphs of and  on the same axes.
-        <sidebyside width="50%"><image source="images/hp7-2-3.png"><description>grid</description></image></sidebyside></li>
+        <sidebyside width="50%"><image source="images/hp7-2-3"><description>grid</description></image></sidebyside></li>
     <li>What is the horizontal shift from <m>f</m> to <m>g</m>?</li>
     <li>Solve <m>\tan (x-\dfrac{\pi}{2})=1</m>, for <m>-\pi \le x \le \pi</m>.</li>
     <li>Solve <m>\tan (x-\dfrac{\pi}{2})=0</m>, for <m>-\pi \le x \le \pi</m>.</li>
@@ -354,7 +442,32 @@
                         <cell><m>\hphantom{0000}</m></cell></row>                
     </tabular></sidebyside></li>
     <li>Sketch the graph.
-        <sidebyside width="100%"><image source="images/hp7-2-5.png"><description>grid</description></image></sidebyside></li>
+        <sidebyside width="100%"><!--<image source="images/hp7-2-5.png"><description>grid</description></image>-->
+    <image xml:id="hp7-2-5">
+        <description>grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture}
+        \draw[cyan] (-7*pi/6,-5/2) grid[xstep=pi/6, ystep=1/2] (13*pi/6,5/2);
+        \draw[black,thick,->] (-7*pi/6,0)--(6.9,0) node[right, scale=.9]{$x$};
+        \draw[black,thick,->] (0,-2.5)--(0,2.7) node[above, scale=.9]{$y$};
+        \foreach \y in {-1,1,-2,2} \draw(.1,\y)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[black,thick] (-pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$-\pi$};
+        \draw[black,thick] (pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$\pi$};
+        \draw[black,thick] (-2*pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{-2\pi}{3}$};
+        \draw[black,thick] (-pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{-\pi}{3}$};
+        \draw[black,thick] (pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{\pi}{3}$};
+        \draw[black,thick] (2*pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{2\pi}{3}$};
+        \draw[black,thick] (4*pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{4\pi}{3}$};
+        \draw[black,thick] (5*pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{5\pi}{3}$};
+        \draw[black,thick] (2*pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{2\pi}{3}$};
+        \draw[black,thick] (2*pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$2\pi$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside></li>
     <li>Solve <m>-2\cos(x+\dfrac{\pi}{6})=1</m>, for <m>0 \le x \le 2\pi</m></li>  
     <li>Solve <m>-2\cos(x+\dfrac{\pi}{6})=0</m>, for <m>0 \le x \le 2\pi</m></li>
     </ol></p></statement>  
@@ -402,7 +515,33 @@
                         <cell><m>1</m></cell>
                         <cell><m>-2</m></cell></row>                
     </tabular></sidebyside></li>
-    <li> <sidebyside width="50%"><image source="images/hp7-2-5ans.png"><description>graph</description></image></sidebyside></li>
+    <li> <sidebyside width="50%"><!--<image source="images/hp7-2-5ans.png"><description>graph</description></image>-->
+    <image xml:id="hp7-2-5ans">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture}
+    \draw[cyan] (-7*pi/6,-5/2) grid[xstep=pi/6, ystep=1/2] (13*pi/6,5/2);
+    \draw[black,thick,->] (-7*pi/6,0)--(6.9,0) node[right, scale=.9]{$x$};
+    \draw[black,thick,->] (0,-2.5)--(0,2.7) node[above, scale=.9]{$y$};
+    \foreach \y in {-1,1,-2,2} \draw(.1,\y)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+    \draw[black,thick] (-pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$-\pi$};
+    \draw[black,thick] (pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$\pi$};
+    \draw[black,thick] (-2*pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{-2\pi}{3}$};
+    \draw[black,thick] (-pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{-\pi}{3}$};
+    \draw[black,thick] (pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{\pi}{3}$};
+    \draw[black,thick] (2*pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{2\pi}{3}$};
+    \draw[black,thick] (4*pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{4\pi}{3}$};
+    \draw[black,thick] (5*pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{5\pi}{3}$};
+    \draw[black,thick] (2*pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{2\pi}{3}$};
+    \draw[black,thick] (2*pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$2\pi$};
+    \draw[samples=65,domain={-7*pi/6}:{13*pi/6}, smooth, red, thick] plot(\x, {-2*cos(deg(\x+pi/6)}) ;
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></li>
     <li><m>\dfrac{\pi}{2},~ \dfrac{7\pi}{6}</m></li>
     <li><m>\dfrac{\pi}{3},~ \dfrac{4\pi}{3}</m></li>
 </ol></p></answer></exercise>
@@ -454,13 +593,62 @@
                         <cell><m>\hphantom{0000}</m></cell></row>                
     </tabular></sidebyside></li>
     <li>Sketch the graph.
-        <sidebyside width="100%"><image source="images/hp7-2-6.png"><description>grid</description></image></sidebyside></li>
+        <sidebyside width="100%"><!--<image source="images/hp7-2-6.png"><description>grid</description></image>-->
+    <image xml:id="hp7-2-6">
+        <description>grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [yscale=.3]
+        \draw[cyan] (-pi,-6) grid[xstep=pi/6, ystep=1] (8*pi/3,6);
+        \draw[black,thick,->] (-pi,0)--(8.9,0) node[right, scale=.9]{$x$};
+        \draw[black,thick,->] (0,-6)--(0,6.7) node[above, scale=.9]{$y$};
+        \foreach \y in {-6,-3,3,6} \draw(.1,\y)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[black,thick] (-pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$-\pi$};
+        \draw[black,thick] (pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$\pi$};
+        \draw[black,thick] (-2*pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{-2\pi}{3}$};
+        \draw[black,thick] (-pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{-\pi}{3}$};
+        \draw[black,thick] (pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{\pi}{3}$};
+        \draw[black,thick] (2*pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{2\pi}{3}$};
+        \draw[black,thick] (4*pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{4\pi}{3}$};
+        \draw[black,thick] (5*pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{5\pi}{3}$};
+        \draw[black,thick] (2*pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{2\pi}{3}$};
+        \draw[black,thick] (2*pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$2\pi$};
+        \draw[black,thick] (7*pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{7\pi}{3}$};
+        \draw[black,thick] (8*pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{8\pi}{3}$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside></li>
     <li>Solve <m>-6\sin(x-\dfrac{2\pi}{3})=1</m>, for <m>0 \le x \le 2\pi</m></li>  
     <li>Solve <m>-6\sin(x-\dfrac{2\pi}{3})=0</m>, for <m>0 \le x \le 2\pi</m></li>
     </ol></p></statement></exercise>
 
 <exercise number="7"><statement><p>The figure shows the graph of <m>y = f(x)</m>.</p>
-<sidebyside width="80%"><image source="images/hp7-2-7.png"><description>grid</description></image></sidebyside>
+<sidebyside width="80%"><!--<image source="images/hp7-2-7.png"><description>grid</description></image>-->
+    <image xml:id="hp7-2-7">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture}
+        \draw[cyan] (-3*pi/2,-3/2) grid[xstep=pi/4, ystep=1/2] (3*pi/2,3/2);
+        \draw[black,thick,->] (-3*pi/2,0)--(4.9,0) node[right, scale=.9] {$x$};
+        \draw[black,thick,->] (0,-3/2)--(0,1.7) node[above, scale=.9] {$y$};
+        \foreach \y in {-1,1} \draw[black,thick] (.1,\y)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[black,thick] (-3*pi/2,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{-3\pi}{2}$};
+        \draw[black,thick] (-pi/2,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{-\pi}{2}$};
+        \draw[black,thick] (pi/2,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{\pi}{2}$};
+        \draw[black,thick] (3*pi/2,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{3\pi}{2}$};
+        \draw[black,thick] (-pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$-\pi$};
+        \draw[black,thick] (pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$\pi$};
+        \draw[samples=65, domain=-3*pi/2:3*pi/2, variable=\x,smooth, red, thick] plot (\x,{cos(deg(\x-pi/4))});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 <p><ol label="a">
     <li>Find a formula for <m>f(x)</m> as a shift of the sine function.</li>
     <li>Find a formula for <m>f(x)</m> as a shift of the cosine function.</li>
@@ -471,14 +659,64 @@
     </ol></p></answer></exercise>
 
 <exercise number="8"><statement><p>The figure shows the graph of <m>y = f(x)</m>.</p>
-<sidebyside width="80%"><image source="images/hp7-2-8.png"><description>grid</description></image></sidebyside>
+<sidebyside width="80%"><!--<image source="images/hp7-2-8.png"><description>grid</description></image>-->
+    <image xml:id="hp7-2-8">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture}
+        \draw[cyan] (-3*pi/2,-3/2) grid[xstep=pi/6, ystep=1/2] (3*pi/2,3/2);
+        \draw[black,thick,->] (-3*pi/2,0)--(4.9,0) node[right, scale=.9] {$x$};
+        \draw[black,thick,->] (0,-3/2)--(0,1.7) node[above, scale=.9] {$y$};
+        \foreach \y in {-1,1} \draw[black,thick] (.1,\y)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[black,thick] (-4*pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{-4\pi}{3}$};
+        \draw[black,thick] (-2*pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{-2\pi}{3}$};
+        \draw[black,thick] (-pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{-\pi}{3}$};
+        \draw[black,thick] (pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{\pi}{3}$};
+        \draw[black,thick] (2*pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{2\pi}{3}$};
+        \draw[black,thick] (4*pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{4\pi}{3}$};
+        \draw[black,thick] (-pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$-\pi$};
+        \draw[black,thick] (pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$\pi$};
+        \draw[samples=65, domain=-3*pi/2:3*pi/2, variable=\x,smooth, red, thick] plot (\x,{cos(deg(\x-pi/3))});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 <p><ol label="a">
     <li>Find a formula for <m>f(x)</m> as a shift of the sine function.</li>
     <li>Find a formula for <m>f(x)</m> as a shift of the cosine function.</li>
     </ol></p></statement></exercise>
 
 <exercise number="9"><statement><p>The figure shows the graph of <m>y = f(x)</m>.</p>
-<sidebyside width="60%"><image source="images/hp7-2-9.png"><description>grid</description></image></sidebyside>
+<sidebyside width="60%"><!--<image source="images/hp7-2-9.png"><description>grid</description></image>-->
+    <image xml:id="hp7-2-9">
+        <description>translated tangent function</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture}
+        \draw[cyan] (-7*pi/6,-5/2) grid[xstep=pi/6, ystep=1/2] (7*pi/6,5/2);
+        \draw[black,thick,->] (-7*pi/6,0)--(3.8,0) node[right, scale=.9] {$x$};
+        \draw[black,thick,->] (0,-5/2)--(0,2.7) node[above, scale=.9] {$y$};
+        \foreach \y in {-1,1} \draw[black,thick] (.1,\y)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[black,thick] (-2*pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{-2\pi}{3}$};
+        \draw[black,thick] (-pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{-\pi}{3}$};
+        \draw[black,thick] (pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{\pi}{3}$};
+        \draw[black,thick] (2*pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{2\pi}{3}$};
+        \draw[black,thick] (-pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$-\pi$};
+        \draw[black,thick] (pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$\pi$};
+        \draw[blue,thick,dashed] (-pi/6,-5/2)--++(0,5);
+        \draw[blue,thick,dashed] (5*pi/6,-5/2)--++(0,5);
+        \draw[samples=65, domain={-atan(5/2)*pi/180}:{atan(5/2)*pi/180}, variable=\x,smooth, red, thick] plot (\x+pi/3,{tan(deg(\x))});
+        \draw[samples=65, domain={-atan(5/2)*pi/180}:{atan(5/2)*pi/180}, variable=\x,smooth, red, thick] plot (\x-2*pi/3,{tan(deg(\x))});
+        \draw[samples=65, domain={-atan(5/2)*pi/180+4*pi/3}:7*pi/6, variable=\x,smooth, red, thick] plot (\x,{tan(deg(\x-pi/3))});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 <p><ol label="a">
     <li>Find a formula for <m>f(x)</m> as a shift of the tnagent function.</li>
     <li>Find another formula for <m>f(x)</m> as a different shift of the cosine function.</li>
@@ -489,7 +727,33 @@
     </ol></p></answer></exercise>
 
 <exercise number="10"><statement><p>The figure shows the graph of <m>y = f(x)</m>.</p>
-<sidebyside width="60%"><image source="images/hp7-2-10.png"><description>grid</description></image></sidebyside>
+<sidebyside width="60%"><!--<image source="images/hp7-2-10.png"><description>grid</description></image>-->
+    <image xml:id="hp7-2-10">
+        <description>translated tangent function</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture}
+        \draw[cyan] (-7*pi/6,-5/2) grid[xstep=pi/6, ystep=1/2] (7*pi/6,5/2);
+        \draw[black,thick,->] (-7*pi/6,0)--(3.8,0) node[right, scale=.9] {$x$};
+        \draw[black,thick,->] (0,-5/2)--(0,2.7) node[above, scale=.9] {$y$};
+        \foreach \y in {-1,1} \draw[black,thick] (.1,\y)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[black,thick] (-2*pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{-2\pi}{3}$};
+        \draw[black,thick] (-pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{-\pi}{3}$};
+        \draw[black,thick] (pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{\pi}{3}$};
+        \draw[black,thick] (2*pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{2\pi}{3}$};
+        \draw[black,thick] (-pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$-\pi$};
+        \draw[black,thick] (pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$\pi$};
+        \draw[blue,thick,dashed] (-2*pi/3,-5/2)--++(0,5);
+        \draw[blue,thick,dashed] (pi/3,-5/2)--++(0,5);
+        \draw[samples=65, domain={-atan(5/2)*pi/180}:{atan(5/2)*pi/180}, variable=\x,smooth, red, thick] plot (\x-pi/6,{tan(deg(\x))});
+        \draw[samples=65, domain={-atan(5/2)*pi/180+5*pi/6}:7*pi/6, variable=\x,smooth, red, thick] plot (\x,{tan(deg(\x+pi/6))});
+        \draw[samples=65, domain={-7*pi/6}:{atan(5/2)*pi/180-7*pi/6}, variable=\x,smooth, red, thick] plot (\x,{tan(deg(\x+pi/6))});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 <p><ol label="a">
     <li>Find a formula for <m>f(x)</m> as a shift of the tnagent function.</li>
     <li>Find another formula for <m>f(x)</m> as a different shift of the cosine function.</li>
@@ -532,7 +796,27 @@
                         <cell><m>\hphantom{0000}</m></cell></row>                
     </tabular></sidebyside></li>
     <li>Sketch the graph.
-        <sidebyside width="100%"><image source="images/hp7-2-11.png"><description>grid</description></image></sidebyside></li>
+        <sidebyside width="80%"><!--<image source="images/hp7-2-11.png"><description>grid</description></image>-->
+    <image xml:id="hp7-2-11">
+        <description>grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=1.2]
+        \draw[cyan] (0,-3/2) grid[xstep=pi/6, ystep=1/2] (2*pi,3/2);
+        \draw[black,thick,->] (0,0)--(6.5,0) node[right, scale=.9] {$x$};
+        \draw[black,thick,->] (0,-3/2)--(0,1.7) node[above, scale=.9] {$y$};
+        \foreach \y in {-1,1} \draw[black,thick] (.1,\y)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[black,thick] (pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{\pi}{3}$};
+        \draw[black,thick] (2*pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{2\pi}{3}$};
+        \draw[black,thick] (4*pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{4\pi}{3}$};
+        \draw[black,thick] (5*pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{5\pi}{3}$};
+        \draw[black,thick] (pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$\pi$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside></li>
     <li>Solve <m>\cos(2x-\dfrac{\pi}{3})=1</m>, for <m>0 \le x \le 2\pi</m></li>  
     <li>Solve <m>\cos(2x-\dfrac{\pi}{3})=0</m>, for <m>0 \le x \le 2\pi</m></li>
     </ol></p></statement> 
@@ -569,7 +853,28 @@
                         <cell><m>\dfrac{7\pi}{3}</m></cell>
                         <cell><m>2\pi</m></cell>
                         <cell><m>1</m></cell></row></tabular></sidebyside></li>
-        <li><sidebyside width="50%"><image source="images/hp7-2-11ans.png"><description>graph</description></image></sidebyside></li>
+        <li><sidebyside width="50%"><!--<image source="images/hp7-2-11ans.png"><description>graph</description></image>-->
+    <image xml:id="hp7-2-11ans">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture}
+        \draw[cyan] (0,-3/2) grid[xstep=pi/6, ystep=1/2] (2*pi,3/2);
+        \draw[black,thick,->] (0,0)--(6.5,0) node[right, scale=.9] {$x$};
+        \draw[black,thick,->] (0,-3/2)--(0,1.7) node[above, scale=.9] {$y$};
+        \foreach \y in {-1,1} \draw[black,thick] (.1,\y)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[black,thick] (pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{\pi}{3}$};
+        \draw[black,thick] (2*pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{2\pi}{3}$};
+        \draw[black,thick] (4*pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{4\pi}{3}$};
+        \draw[black,thick] (5*pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{5\pi}{3}$};
+        \draw[black,thick] (pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$\pi$};
+        \draw[samples=65, domain=0:2*pi, variable=\x,smooth, red, thick] plot (\x,{cos(deg(2*\x-pi/3))});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside></li>
         <li><m>\dfrac{\pi}{6},~ \dfrac{7\pi}{6}</m></li>
         <li><m>\dfrac{5\pi}{12},~ \dfrac{11\pi}{12},~ \dfrac{13\pi}{6},~ \dfrac{23\pi}{12}</m></li>
         </ol></p></answer></exercise>
@@ -611,7 +916,7 @@
                         <cell><m>\hphantom{0000}</m></cell></row>                
     </tabular></sidebyside></li>
     <li>Sketch the graph.
-        <sidebyside width="100%"><image source="images/hp7-2-11.png"><description>grid</description></image></sidebyside></li>
+        <sidebyside width="80%"><image source="images/hp7-2-11"><description>grid</description></image></sidebyside></li>
     <li>Solve <m>\sin(3x+\dfrac{\pi}{2})=1</m>, for <m>0 \le x \le 2\pi</m></li>  
     <li>Solve <m>\sin(3x+\dfrac{\pi}{2})=0</m>, for <m>0 \le x \le 2\pi</m></li>
     </ol></p></statement> </exercise>
@@ -653,7 +958,23 @@
                         <cell><m>\hphantom{0000}</m></cell></row>                
     </tabular></sidebyside></li>
     <li>Sketch the graph.
-        <sidebyside width="100%"><image source="images/hp7-2-13.png"><description>grid</description></image></sidebyside></li>
+        <sidebyside width="100%"><!--<image source="images/hp7-2-13.png"><description>grid</description></image>-->
+    <image xml:id="hp7-2-13">
+        <description>grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=2.5]
+        \draw[cyan] (-13/6,-3/2) grid[xstep=1/6, ystep=1/2] (13/6,3/2);
+        \draw[black,thick,->] (-13/6,0)--(2.3,0) node[right, scale=.9] {$x$};
+        \draw[black,thick,->] (0,-3/2)--(0,1.7) node[above, scale=.9] {$y$};
+        \foreach \x in {-2, -1.5,-1,-0.5,0.5,1,1.5,2} \draw[black,thick] (\x,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {\x};
+        \foreach \y in {-1,1} \draw[black,thick] (.1,\y)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside></li>
     <li>Solve <m>\sin(\pi x+\dfrac{\pi}{3})=1</m>, for <m>-2 \le x \le 2</m></li>  
     <li>Solve <m>\sin(\pi x+\dfrac{\pi}{3})=0</m>, for <m>-2 \le x \le 2</m></li>
     </ol></p></statement> 
@@ -691,7 +1012,24 @@
                         <cell><m>2\pi</m></cell>
                         <cell><m>0</m></cell></row>                
     </tabular></sidebyside></li>
-    <li><sidebyside width="50%"><image source="images/hp7-2-13ans.png"><description>graph</description></image></sidebyside></li>
+    <li><sidebyside width="50%"><!--<image source="images/hp7-2-13ans.png"><description>graph</description></image>-->
+    <image xml:id="hp7-2-13ans">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=2.5]
+        \draw[cyan] (-13/6,-3/2) grid[xstep=1/6, ystep=1/2] (13/6,3/2);
+        \draw[black,thick,->] (-13/6,0)--(2.3,0) node[right, scale=.9] {$x$};
+        \draw[black,thick,->] (0,-3/2)--(0,1.7) node[above, scale=.9] {$y$};
+        \foreach \x in {-2, -1.5,-1,-0.5,0.5,1,1.5,2} \draw[black,thick] (\x,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {\x};
+        \foreach \y in {-1,1} \draw[black,thick] (.1,\y)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[samples=65, domain=-13/6:13/6, variable=\x,smooth, red, thick] plot (\x,{sin(deg(pi*\x+pi/3))});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></li>
     <li><m>\dfrac{-11}{6},~ \dfrac{1}{6}</m></li>
     <li><m>\dfrac{-4}{3},~ \dfrac{-1}{3},~ \dfrac{2}{3},~ \dfrac{5}{3}</m></li>
 </ol></p></answer></exercise>
@@ -734,7 +1072,7 @@
                         <cell><m>\hphantom{0000}</m></cell></row>                
     </tabular></sidebyside></li>
     <li>Sketch the graph.
-        <sidebyside width="100%"><image source="images/hp7-2-13.png"><description>grid</description></image></sidebyside></li>
+        <sidebyside width="100%"><image source="images/hp7-2-13"><description>grid</description></image></sidebyside></li>
     <li>Solve <m>\cos(\pi x-\dfrac{\pi}{3})=1</m>, for <m>-2 \le x \le 2</m></li>  
     <li>Solve <m>\cos(\pi x-\dfrac{\pi}{3})=0</m>, for <m>-2 \le x \le 2</m></li>
     </ol></p></statement></exercise>
@@ -782,7 +1120,35 @@
                         <cell><m>\hphantom{0000}</m></cell></row>                
     </tabular></sidebyside></li>
     <li>Sketch the graph.
-        <sidebyside width="100%"><image source="images/hp7-2-15.png"><description>grid</description></image></sidebyside></li>
+        <sidebyside width="100%"><!--<image source="images/hp7-2-15.png"><description>grid</description></image>-->
+    <image xml:id="hp7-2-15">
+        <description>grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=.8, yscale=.5]
+        \draw[cyan] (-pi/6,-1) grid[xstep=pi/6, ystep=1] (25*pi/6,7);
+        \draw[black,thick,->] (-pi/6,0)--(13.3,0) node[right, scale=.9] {$x$};
+        \draw[black,thick,->] (0,-1)--(0,7.3) node[above, scale=.9] {$y$};
+
+        \foreach \y in {2,4,6} \draw[black,thick] (.1,\y)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[black,thick] (pi/3,.1)--++(0,-.2) node[below,yshift=-2, fill=white, inner sep=1] {$\frac{\pi}{3}$};
+        \draw[black,thick] (2*pi/3,.1)--++(0,-.2) node[below,yshift=-2, fill=white, inner sep=1] {$\frac{2\pi}{3}$};
+        \draw[black,thick] (4*pi/3,.1)--++(0,-.2) node[below,yshift=-2, fill=white, inner sep=1] {$\frac{4\pi}{3}$};
+        \draw[black,thick] (5*pi/3,.1)--++(0,-.2) node[below,yshift=-2, fill=white, inner sep=1] {$\frac{5\pi}{3}$};
+        \draw[black,thick] (7*pi/3,.1)--++(0,-.2) node[below,yshift=-2, fill=white, inner sep=1] {$\frac{7\pi}{3}$};
+        \draw[black,thick] (8*pi/3,.1)--++(0,-.2) node[below,yshift=-2, fill=white, inner sep=1] {$\frac{8\pi}{3}$};
+        \draw[black,thick] (10*pi/3,.1)--++(0,-.2) node[below,yshift=-2, fill=white, inner sep=1] {$\frac{10\pi}{3}$};
+        \draw[black,thick] (11*pi/3,.1)--++(0,-.2) node[below,yshift=-2, fill=white, inner sep=1] {$\frac{11\pi}{3}$};
+        \draw[black,thick] (pi,.1)--++(0,-.2) node[below,yshift=-4, fill=white, inner sep=1, scale=.8] {$\pi$};
+        \draw[black,thick] (2*pi,.1)--++(0,-.2) node[below,yshift=-4, fill=white, inner sep=1, scale=.8] {$2\pi$};
+        \draw[black,thick] (3*pi,.1)--++(0,-.2) node[below,yshift=-4, fill=white, inner sep=1, scale=.8] {$3\pi$};
+        \draw[black,thick] (4*pi,.1)--++(0,-.2) node[below,yshift=-4, fill=white, inner sep=1, scale=.8] {$4\pi$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside></li>
     <li>Solve for <m>0 \le x \le 2\pi</m>:
         <me>3\sin(\dfrac{x}{2}-\dfrac{\pi}{6})+4=1</me></li>  
     <li>Solve for <m>0 \le x \le 2\pi</m>:
@@ -828,7 +1194,35 @@
                         <cell><m>0</m></cell>
                         <cell><m>4</m></cell></row>                
     </tabular></sidebyside></li>
-    <li><sidebyside width="50%"><image source="images/hp7-2-15ans.png"><description>graph</description></image></sidebyside></li>
+    <li><sidebyside width="50%"><!--<image source="images/hp7-2-15ans.png"><description>graph</description></image>-->
+    <image xml:id="hp7-2-15ans">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=.8, yscale=.5]
+        \draw[cyan] (-pi/6,-1) grid[xstep=pi/6, ystep=1] (25*pi/6,7);
+        \draw[black,thick,->] (-pi/6,0)--(13.3,0) node[right, scale=.9] {$x$};
+        \draw[black,thick,->] (0,-1)--(0,7.3) node[above, scale=.9] {$y$};
+        \foreach \y in {2,4,6} \draw[black,thick] (.1,\y)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[black,thick] (pi/3,.1)--++(0,-.2) node[below,yshift=-2, fill=white, inner sep=1] {$\frac{\pi}{3}$};
+        \draw[black,thick] (2*pi/3,.1)--++(0,-.2) node[below,yshift=-2, fill=white, inner sep=1] {$\frac{2\pi}{3}$};
+        \draw[black,thick] (4*pi/3,.1)--++(0,-.2) node[below,yshift=-2, fill=white, inner sep=1] {$\frac{4\pi}{3}$};
+        \draw[black,thick] (5*pi/3,.1)--++(0,-.2) node[below,yshift=-2, fill=white, inner sep=1] {$\frac{5\pi}{3}$};
+        \draw[black,thick] (7*pi/3,.1)--++(0,-.2) node[below,yshift=-2, fill=white, inner sep=1] {$\frac{7\pi}{3}$};
+        \draw[black,thick] (8*pi/3,.1)--++(0,-.2) node[below,yshift=-2, fill=white, inner sep=1] {$\frac{8\pi}{3}$};
+        \draw[black,thick] (10*pi/3,.1)--++(0,-.2) node[below,yshift=-2, fill=white, inner sep=1] {$\frac{10\pi}{3}$};
+        \draw[black,thick] (11*pi/3,.1)--++(0,-.2) node[below,yshift=-2, fill=white, inner sep=1] {$\frac{11\pi}{3}$};
+        \draw[black,thick] (pi,.1)--++(0,-.2) node[below,yshift=-4, fill=white, inner sep=1] {$\pi$};
+        \draw[black,thick] (2*pi,.1)--++(0,-.2) node[below,yshift=-4, fill=white, inner sep=1] {$2\pi$};
+        \draw[black,thick] (3*pi,.1)--++(0,-.2) node[below,yshift=-4, fill=white, inner sep=1] {$3\pi$};
+        \draw[black,thick] (4*pi,.1)--++(0,-.2) node[below,yshift=-4, fill=white, inner sep=1] {$4\pi$};
+        \draw[samples=65, domain=-pi/6:25*pi/6, variable=\x,smooth, red, thick] plot (\x,{3*sin(deg(\x/2 - pi/6))+4});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></li>
     <li>no solution for <m>0 \le x \le 2\pi</m></li>
     <li><m>\dfrac{\pi}{3}</m></li>
 </ol></p></answer></exercise>
@@ -876,7 +1270,36 @@
                         <cell><m>\hphantom{0000}</m></cell></row>                
     </tabular></sidebyside></li>
     <li>Sketch the graph.
-        <sidebyside width="100%"><image source="images/hp7-2-16.png"><description>grid</description></image></sidebyside></li>
+        <sidebyside width="100%"><!--<image source="images/hp7-2-16.png"><description>grid</description></image>-->
+    <image xml:id="hp7-2-16">
+        <description>grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=.5, yscale=.6]
+        \draw[cyan] (-pi/4,-3) grid[xstep=pi/4, ystep=1] (13*pi/2,2);
+        \draw[black,thick,->] (-pi/4,0)--(20.9,0) node[right, scale=.9] {$x$};
+        \draw[black,thick,->] (0,-3)--(0,2.3) node[above, scale=.9] {$y$};
+
+        \foreach \y in {-2,-1,1} \draw[black,thick] (.1,\y)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[black,thick] (pi/2,.1)--++(0,-.2) node[below,yshift=-2, fill=white, inner sep=1] {$\frac{\pi}{2}$};
+        \draw[black,thick] (3*pi/2,.1)--++(0,-.2) node[below,yshift=-2, fill=white, inner sep=1] {$\frac{3\pi}{2}$};
+        \draw[black,thick] (5*pi/2,.1)--++(0,-.2) node[below,yshift=-2, fill=white, inner sep=1] {$\frac{5\pi}{2}$};
+        \draw[black,thick] (7*pi/2,.1)--++(0,-.2) node[below,yshift=-2, fill=white, inner sep=1] {$\frac{7\pi}{2}$};
+        \draw[black,thick] (9*pi/2,.1)--++(0,-.2) node[below,yshift=-2, fill=white, inner sep=1] {$\frac{9\pi}{2}$};
+        \draw[black,thick] (11*pi/2,.1)--++(0,-.2) node[below,yshift=-2, fill=white, inner sep=1] {$\frac{11\pi}{2}$};
+        \draw[black,thick] (13*pi/2,.1)--++(0,-.2) node[below,yshift=-2, fill=white, inner sep=1] {$\frac{13\pi}{2}$};
+        \draw[black,thick] (pi,.1)--++(0,-.2) node[below,yshift=-4, fill=white, inner sep=1, scale=.8] {$\pi$};
+        \draw[black,thick] (2*pi,.1)--++(0,-.2) node[below,yshift=-4, fill=white, inner sep=1, scale=.8] {$2\pi$};
+        \draw[black,thick] (3*pi,.1)--++(0,-.2) node[below,yshift=-4, fill=white, inner sep=1, scale=.8] {$3\pi$};
+        \draw[black,thick] (4*pi,.1)--++(0,-.2) node[below,yshift=-4, fill=white, inner sep=1, scale=.8] {$4\pi$};
+        \draw[black,thick] (5*pi,.1)--++(0,-.2) node[below,yshift=-4, fill=white, inner sep=1, scale=.8] {$5\pi$};
+        \draw[black,thick] (6*pi,.1)--++(0,-.2) node[below,yshift=-4, fill=white, inner sep=1, scale=.8] {$6\pi$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside></li>
     <li>Solve for <m>0 \le x \le 2\pi</m>:
         <me>2\cos(\dfrac{x}{3}-\dfrac{\pi}{4})-1=1</me></li>  
     <li>Solve for <m>0 \le x \le 2\pi</m>:
@@ -886,45 +1309,199 @@
 <exercise number="17"><statement><p>Find a formula for a sinusoidal function that has an amplitude of 2, a period of 3, and is shifted 4 units to the left and 5 units upwards compared with the sine function. Sketch the graph for <m>0 \le x \le 3</m>.</p>
 </statement>
         <answer><p><m>y=2\sin(\dfrac{2\pi}{3}(x+4))+5</m>
-        <sidebyside width="40%"><image source="images/hp7-2-17ans.png"><description>graph</description></image></sidebyside></p>
+        <sidebyside width="40%"><!--<image source="images/hp7-2-17ans.png"><description>graph</description></image>-->
+    <image xml:id="hp7-2-17ans">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [yscale=.5]
+        \draw[cyan] (-4,0) grid[xstep=1/2, ystep=1] (2,7);
+        \draw[black,thick,->] (-4,0)--(2.3,0) node[right, scale=.9] {$x$};
+        \draw[black,thick,->] (0,-.2)--(0,7.4) node[above, scale=.9] {$y$};
+        \foreach \x in {-4,-2,2,-3,-1,1} \draw[black,thick] (\x,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {\x};
+        \foreach \y in {2,4,6} \draw[black,thick] (.1,\y)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[samples=65, domain=-4:2, variable=\x,smooth, red, thick] plot (\x,{2*sin(deg(2*pi/3*(\x+4)))+5});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside></p>
     </answer></exercise>
 
 <exercise number="18"><statement><p>Find a formula for a sinusoidal function that has an amplitude of 3, a period of 24, and is shifted 2 units to the right and 4 units upwards compared with the cosine function. Sketch the graph for <m>0 \le x \le 24</m>.</p></statement></exercise>
 
 <exercise number="19"><statement><p>Find a formula for a sinusoidal function that has an amplitude of 5, a period of 360, its midline at <m>y=12</m>, and passes through <m>(0,7)</m>.  Sketch the graph for <m>0 \le x \le 360</m>.</p></statement>
         <answer><p><m>y=-5\cos(\dfrac{\pi x}{180})+12</m>
-        <sidebyside width="40%"><image source="images/hp7-2-19ans.png"><description>graph</description></image></sidebyside></p></answer></exercise>
+        <sidebyside width="40%"><!--<image source="images/hp7-2-19ans.png"><description>graph</description></image>-->
+    <image xml:id="hp7-2-19ans">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=.015, yscale=.15]
+        \draw[cyan] (0,0) grid[xstep=30, ystep=2] (360,20);
+        \draw[black,thick,->] (0,0)--(375,0) node[right, scale=.9] {$x$};
+        \draw[black,thick,->] (0,-.5)--(0,20.9) node[above, scale=.9] {$y$};
+        \foreach \x in {90,180,270,360} \draw[black,thick] (\x,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {\x};
+        \foreach \y in {10,20} \draw[black,thick] (1,\y)--++(-2,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[samples=65, domain=0:360, variable=\x,smooth, red, thick] plot (\x,{-5*cos(\x)+12});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside></p></answer></exercise>
         
 <exercise number="20"><statement><p>Find a formula for a sinusoidal function that has an amplitude of 50, a period of 30, its midline at <m>y=50</m>, and passes through <m>(0,100)</m>.  Sketch the graph for <m>0 \le x \le 30</m>.</p></statement></exercise> 
- <exercisegroup cols="2"><introduction><p>For Problems 21-26, find a formula for the circular function whose graph is shown.    
+
+ <exercisegroup cols="2"><introduction><p>For Problems 21<ndash/>26, find a formula for the circular function whose graph is shown.    
 </p><p><ol label="a"> 
     <li>Write the function in the form <m>f(x)=A\sin (B(x-h))</m>.</li>
     <li>Write the function in the form <m>f(x)=A\cos (B(x-h))</m></li>
     </ol></p></introduction>
 
-    <exercise number="21"><statement><sidebyside width="90%"><image source="images/hp7-2-21.png"><description>graph</description></image></sidebyside></statement>
+    <exercise number="21"><statement><sidebyside width="90%"><!--<image source="images/hp7-2-21.png"><description>graph</description></image>-->
+    <image xml:id="hp7-2-21">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=.8,yscale=.4]
+        \draw[cyan] (-pi/6,-3) grid[xstep=pi/6] (2*pi,3);
+        \draw[black,thick,->] (-pi/6,0)--(6.6,0) node[right, scale=.9] {$x$};
+        \draw[black,thick,->] (0,-3)--(0,3.4) node[above, scale=.9] {$y$};
+        \foreach \y in {-2,2} \draw[black,thick] (.1,\y)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.9] {\y};
+        \draw[black,thick] (pi/3,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1, scale=.9] {$\frac{\pi}{3}$};
+        \draw[black,thick] (2*pi/3,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1, scale=.9] {$\frac{2\pi}{3}$};
+        \draw[black,thick] (pi,.1)--++(0,-.2) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$\pi$};
+        \draw[black,thick] (4*pi/3,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1, scale=.9] {$\frac{4\pi}{3}$};
+        \draw[black,thick] (5*pi/3,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1, scale=.9] {$\frac{5\pi}{3}$};
+        \draw[black,thick] (2*pi,.1)--++(0,-.2) node[below, yshift=-3, fill=white, inner sep=1, scale=.8] {$2\pi$};
+        \draw[samples=65, domain=-pi/6:2*pi, variable=\x,smooth, red, thick] plot (\x,{3*cos( deg(\x+pi/6) )});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></statement>
         <answer><p><ol label="a">
         <li><m>f(x)=3\sin (x+\dfrac{2\pi}{3})</m></li>
         <li><m>f(x)=3\cos (x+\dfrac{\pi}{6})</m></li>
     </ol></p></answer></exercise>
 
-    <exercise number="22"><statement><sidebyside width="90%"><image source="images/hp7-2-22.png"><description>graph</description></image></sidebyside></statement></exercise>
+    <exercise number="22"><statement><sidebyside width="90%"><!--<image source="images/hp7-2-22.png"><description>graph</description></image>-->
+    <image xml:id="hp7-2-22">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=.75,yscale=.3]
+        \draw[cyan] (-pi/4,-4) grid[xstep=pi/4] (9*pi/4,4);
+        \draw[black,thick,->] (-pi/4,0)--(7.3,0) node[right, scale=.9] {$x$};
+        \draw[black,thick,->] (0,-4)--(0,4.5) node[above, scale=.9] {$y$};
+        \foreach \y in {-2,2,-4,4} \draw[black,thick] (.1,\y)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.9] {\y};
+        \draw[black,thick] (pi/2,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1, scale=.9] {$\frac{\pi}{2}$};
+        \draw[black,thick] (3*pi/2,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1, scale=.9] {$\frac{3\pi}{2}$};
+        \draw[black,thick] (pi,.1)--++(0,-.2) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$\pi$};
+        \draw[black,thick] (2*pi,.1)--++(0,-.2) node[below, yshift=-3, fill=white, inner sep=1, scale=.8] {$2\pi$};
+        \draw[samples=65, domain=-pi/4:9*pi/4, variable=\x,smooth, red, thick] plot (\x,{4*sin( deg(\x-pi/4) )});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></statement></exercise>
 
-    <exercise number="23"><statement><sidebyside width="90%"><image source="images/hp7-2-23.png"><description>graph</description></image></sidebyside></statement>
+    <exercise number="23"><statement><sidebyside width="90%"><!--<image source="images/hp7-2-23.png"><description>graph</description></image>-->
+    <image xml:id="hp7-2-23">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=.75,yscale=.6]
+        \draw[cyan] (-pi/4,-2) grid[xstep=pi/4] (9*pi/4,2);
+        \draw[black,thick,->] (-pi/4,0)--(7.3,0) node[right, scale=.9] {$x$};
+        \draw[black,thick,->] (0,-2)--(0,2.3) node[above, scale=.9] {$y$};
+        \foreach \y in {-2,2} \draw[black,thick] (.1,\y)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.9] {\y};
+        \draw[black,thick] (pi/2,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1, scale=.9] {$\frac{\pi}{2}$};
+        \draw[black,thick] (3*pi/2,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1, scale=.9] {$\frac{3\pi}{2}$};
+        \draw[black,thick] (pi,.1)--++(0,-.2) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$\pi$};
+        \draw[black,thick] (2*pi,.1)--++(0,-.2) node[below, yshift=-3, fill=white, inner sep=1, scale=.8] {$2\pi$};
+        \draw[samples=65, domain=-pi/4:9*pi/4, variable=\x,smooth, red, thick] plot (\x,{-2*cos( deg(2*\x) )});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></statement>
         <answer><p><ol label="a">
         <li><m>f(x)=2\sin (2(x-\dfrac{\pi}{4}))</m></li>
         <li><m>f(x)=-2\cos (2x)</m></li>
     </ol></p></answer></exercise>
 
-    <exercise number="24"><statement><sidebyside width="90%"><image source="images/hp7-2-24.png"><description>graph</description></image></sidebyside></statement></exercise>
+    <exercise number="24"><statement><sidebyside width="90%"><!--<image source="images/hp7-2-24.png"><description>graph</description></image>-->
+    <image xml:id="hp7-2-24">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=.78,yscale=.4]
+        \draw[cyan] (-pi/3,-3) grid[xstep=pi/6] (2*pi,3);
+        \draw[black,thick,->] (-pi/3,0)--(6.6,0) node[right, scale=.9] {$x$};
+        \draw[black,thick,->] (0,-3)--(0,3.4) node[above, scale=.9] {$y$};
+        \foreach \y in {-2,2} \draw[black,thick] (.1,\y)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.9] {\y};
+        \draw[black,thick] (pi/3,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1, scale=.9] {$\frac{\pi}{3}$};
+        \draw[black,thick] (2*pi/3,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1, scale=.9] {$\frac{2\pi}{3}$};
+        \draw[black,thick] (pi,.1)--++(0,-.2) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$\pi$};
+        \draw[black,thick] (4*pi/3,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1, scale=.9] {$\frac{4\pi}{3}$};
+        \draw[black,thick] (5*pi/3,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1, scale=.9] {$\frac{5\pi}{3}$};
+        \draw[black,thick] (2*pi,.1)--++(0,-.2) node[below, yshift=-3, fill=white, inner sep=1, scale=.8] {$2\pi$};
+        \draw[samples=65, domain=-pi/3:2*pi, variable=\x,smooth, red, thick] plot (\x,{-3*cos( deg(3*\x) )});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></statement></exercise>
 
-    <exercise number="25"><statement><sidebyside width="90%"><image source="images/hp7-2-25.png"><description>graph</description></image></sidebyside></statement>
+    <exercise number="25"><statement><sidebyside width="90%"><!--<image source="images/hp7-2-25.png"><description>graph</description></image>-->
+    <image xml:id="hp7-2-25">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=.18,yscale=.3]
+        \draw[cyan] (-2*pi/3,-4) grid[xstep=2*pi/3] (28*pi/3,4);
+        \draw[black,thick,->] (-2*pi/3,0)--(30.3,0) node[right, scale=.9] {$x$};
+        \draw[black,thick,->] (0,-4)--(0,4.5) node[above, scale=.9] {$y$};
+        \foreach \y in {-2,2,-4,4} \draw[black,thick] (.1,\y)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.9] {\y};
+        \foreach \x [evaluate=\x as \xi using (pi*\x)] in {2,4,6,8} \draw[black,thick] (\xi,.1)--++(0,-.2) node[below, yshift=-3, fill=white, inner sep=1, scale=.8] {$\x\pi$};
+        \draw[samples=65, domain=-2*pi/3:28*pi/3, variable=\x,smooth, red, thick] plot (\x,{-4*cos( deg(\x/4 -pi/12) )});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></statement>
         <answer><p><ol label="a">
-        <li><m>f(x)=4\sin (\dfrac{1}{4}(x-\dfrac{13\pi}{6}))</m></li>
-        <li><m>f(x)=-4\cos (\dfrac{1}{4}(x-\dfrac{\pi}{6}))</m></li>
+        <li><m>f(x)=4\sin \left[\dfrac{1}{4}\left(x-\dfrac{7\pi}{3}\right)\right]</m></li>
+        <li><m>f(x)=-4\cos \left[\dfrac{1}{4}\left(x-\dfrac{\pi}{3}\right)\right]</m></li>
     </ol></p></answer></exercise>
 
-    <exercise number="26"><statement><sidebyside width="90%"><image source="images/hp7-2-26.png"><description>graph</description></image></sidebyside></statement></exercise>
+    <exercise number="26"><statement><sidebyside width="90%"><!--<image source="images/hp7-2-26.png"><description>graph</description></image>-->
+    <image xml:id="hp7-2-26">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=.4,yscale=.6]
+        \draw[cyan] (-pi/3,-2) grid[xstep=pi/3] (4*pi,2);
+        \draw[black,thick,->] (-pi/3,0)--(13.1,0) node[right, scale=.9] {$x$};
+        \draw[black,thick,->] (0,-2)--(0,2.3) node[above, scale=.9] {$y$};
+        \foreach \y in {-2,2} \draw[black,thick] (.1,\y)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.9] {\y};
+        \draw[black,thick] (pi,.1)--++(0,-.2) node[below, yshift=-3, fill=white, inner sep=1, scale=.8] {$\pi$};
+        \foreach \x [evaluate=\x as \xi using (pi*\x)] in {2,3,4} \draw[black,thick] (\xi,.1)--++(0,-.2) node[below, yshift=-3, fill=white, inner sep=1, scale=.8] {$\x\pi$};
+        \draw[samples=65, domain=-pi/3:4*pi, variable=\x,smooth, red, thick] plot (\x,{-2*sin( deg(1/2*(\x+pi/6)) )});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></statement></exercise>
 </exercisegroup>
 
 <exercise number="27"><statement><p>The average daily high temperature in Fairbanks, Alaska can be approximated by a sinusoidal function with a period of 12 months. The low temperature of <m>-1.6\degree</m> occurs in January, and the high temperature of <m>72.3\degree</m> in July.</p><p><ol label="a">
@@ -935,7 +1512,30 @@
 <answer><p><ol label="a">
     <li>midline <m>T=35.35</m>, period 12, amplitude 36.95</li>
     <li><m>T(m)=-36.95 \cos (\dfrac{\pi}{6} m)+35.35</m></li>
-    <li><sidebyside width="40%"><image source="images/hp7-2-27ans.png"><description>graph</description></image></sidebyside></li>
+    <li><sidebyside width="40%"><!--<image source="images/hp7-2-27ans.png"><description>graph</description></image>-->
+    <image xml:id="hp7-2-27ans">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=.2, yscale=.03]
+        \draw[cyan] (0,0) grid[xstep=2, ystep=10] (24,70);
+        \draw[black,thick,->,>=stealth'] (0,0)--(25.5,0) node[right, scale=.8] {$m$};
+        \draw[black,thick,->,>=stealth'] (0,-5)--(0,80) node[above, scale=.8] {$T$};
+        \foreach \x in {4,8,...,24} \draw[black,thick] (\x,3)--++(0,-6) node[below, yshift=-2, scale=.8] {\x};
+        \foreach \y in {20,40,60} \draw[black,thick] (.2,\y)--++(-.4,0) node[left, scale=.8] {\y};
+        \draw[samples=65, domain=0:24, variable=\x,smooth, red, thick] plot (\x,{ -36.95 *cos( 30*\x) +35.35 });
+        \node[scale=.9] at (12,75) {high};
+        \node[scale=.9, fill=white, inner sep=1] at (12,30) {low};
+        \draw[blue, ->,>=stealth'] (10,75) --  (6.8,73);
+        \draw[blue, ->,>=stealth'] (14,75) -- (17,73);
+        \path (10,28) edge [out=240, in=280,->,>=stealth', blue]  (0.3,-4);
+        \path (14,28) edge [out=-60, in=-100,->,>=stealth', blue]  (23.7,-4);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></li>
      </ol></p></answer></exercise>
     
 
@@ -956,7 +1556,31 @@
 </ol></p></statement>
 <answer> <p><ol label="a">
 <li>midline <m>h=1.4</m>, period <m>\dfrac{2 \pi}{0.51} \approx{12.32}</m>, amplitude 1.4</li>
-<li><sidebyside width="40%"><image source="images/hp7-2-29ans.png"><description>graph</description></image></sidebyside></li>
+<li><sidebyside width="40%"><!--<image source="images/hp7-2-29ans.png"><description>graph</description></image>-->
+    <image xml:id="hp7-2-29ans">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=.2, yscale=.8]
+        \draw[cyan] (0,0) grid[xstep=2, ystep=1/2] (24,3);
+        \draw[black,thick,->,>=stealth'] (0,0)--(26,0) node[right, scale=.8] {$t$};
+        \draw[black,thick,->,>=stealth'] (0,-.1)--(0,3.3) node[above, scale=.8] {$h$};
+        \foreach \x in {4,8,...,24} \draw[black,thick] (\x,.1)--++(0,-.2) node[below, yshift=-2, scale=.8] {\x};
+        \foreach \y in {1,2,3} \draw[black,thick] (.2,\y)--++(-.4,0) node[left, scale=.8] {\y};
+        \draw[samples=65, domain=0:24.7, variable=\x,smooth, red, thick] plot (\x,{ 1.4-1.4 *cos( deg(0.51*\x) ) });
+        \node[scale=.9, fill=white, inner sep=1] at (12.32,2.9) {high};
+        \node[scale=.9, fill=white, inner sep=1] at (12.32,1.5) {low};
+        \draw[blue, ->,>=stealth'] (10.32,2.9) --  (6.8,2.8);
+        \draw[blue, ->,>=stealth'] (14,2.9) -- (17,2.8);
+        \path (10.32,1.4) edge [out=200, in=355,->,>=stealth', blue]  (0.3,-.1);
+        \path (14,1.4) edge [out=-20, in=-175,->,>=stealth', blue]  (24.3,-.1);
+        \draw[blue,  ->,>=stealth'] (12.32,1.2) --  ++(0.,-1.1);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></li>
 <li>high 11:10 am, low 5:19 pm</li>
 </ol></p></answer></exercise>
 
@@ -967,7 +1591,7 @@
     <li>When does the toy reach its maximum height the second time?</li>
 </ol></p></statement></exercise>
 
-<exercisegroup><introduction><p>In Problems 31-34,</p><p><ol label="a">
+<exercisegroup><introduction><p>In Problems 31<ndash/>34,</p><p><ol label="a">
     <li> Estimate the amplitude, period, and midline of a circular function that fits the data.</li>
    <li>Write a formula for the function.</li>
 </ol></p></introduction>
