@@ -7,63 +7,178 @@
 <exercises xml:id="chap7-rev-problems"  xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Review Problems</title>
 
-<exercisegroup cols="2"><introduction><p>For Problems 1-4, state the amplitude, period, and midline of the graph.</p>
+<exercisegroup cols="2"><introduction><p>For Problems 1<ndash/>4, state the amplitude, period, and midline of the graph.</p>
 </introduction>
 
 <exercise number="1">
     <statement><p><m>y=4-2\sin 3x</m></p></statement>
-    <answer><p><m>2x^3 - 11x^2 + 19x - 10 </m></p></answer>
+    <answer><p>amp: <m>2</m>, period: <m>\frac{2\pi}{3} </m>; mid: <m>y=4</m> </p></answer>
 </exercise>
 
 <exercise number="2"><statement><p><m>y=1+5\cos \dfrac{x}{2}</m></p></statement></exercise>
 
 <exercise number="3"><statement><p><m>y=2.5\cos \pi x - 2</m></p></statement>
-<answer><p><m>t^3 + 3t^2 - 5t - 4</m></p></answer>
+<answer><p>amp: <m>2.5</m>, period: <m>2</m>; mid: <m>y=-2</m></p></answer>
 </exercise>
 
 <exercise number="4"><statement><p><m>y=0.8\sin \dfrac{\pi x}{6} + 0.3</m></p></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 5-8, use transformations to sketch graphs of the functions.</p>
+<exercisegroup cols="2"><introduction><p>For Problems 5<ndash/>8, use transformations to sketch graphs of the functions.</p>
 </introduction>
 
 <exercise number="5"><statement><p><m>f(t)=2+3\cos t</m></p></statement>
-<answer><p><m>31x^2</m></p></answer>
+<answer><sidebyside width="80%" margins="0 20%">
+    <image xml:id="hp7-sum-5ans">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.4]
+        \draw[cyan] (-2*pi,-1) grid[xstep=pi/2] (2*pi,5);
+        \draw[black,thick,->,>=stealth'] (-2*pi,0)--(6.9,0) node[right, scale=.9] {$t$};
+        \draw[black,thick,->,>=stealth'] (0,-1.2)--(0,5.8) node[above, scale=.9] {$y$};
+        \draw[black,thick] (-2*pi,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$-2\pi$};
+        \draw[black,thick] (-pi,.15)--++(0,-.3) node[below, yshift=-1, fill=white, inner sep=1, scale=.8] {$-\pi$};
+        \draw[black,thick] (2*pi,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$2\pi$};
+        \draw[black,thick] (pi,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$\pi$};
+        \foreach \y in {-1,1,2,...,5} \draw[black,thick] (.15,\y)--++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[samples=65,domain=-2*pi:2*pi, variable=\t, smooth, red, thick] plot (\t,{2+3*cos(deg(\t))});
+
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer>
 </exercise>
 
 <exercise number="6"><statement><p><m>g(t)=-4-2\sin t</m></p></statement>
 </exercise>
 
 <exercise number="7"><statement><p><m>h(w)=-4\sin \pi w</m></p></statement>
-<answer><p><m>-13x^3</m></p></answer>
+<answer><sidebyside width="80%" margins="0 20%">
+    <image xml:id="hp7-sum-7ans">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=.85, yscale=.35]
+        \draw[cyan] (0,-4) grid[xstep=1] (6,4);
+        \draw[black,thick,->,>=stealth'] (0,0)--(6.4,0) node[right, scale=.9] {$w$};
+        \draw[black,thick,->,>=stealth'] (0,-4.2)--(0,4.8) node[above, scale=.9] {$y$};
+        \foreach \x in {2,4,6} \draw[black,thick] (\x,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {\x};
+        \foreach \y in {-4,-2,2,4} \draw[black,thick] (.15,\y)--++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[samples=65,domain=-0:6, variable=\t, smooth, red, thick] plot (\t,{-4*sin(deg(pi*\t))});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer>
 </exercise>
 
 <exercise number="8"><statement><p><m>q(w)=3-\cos \dfrac{w}{2}</m></p></statement>
 </exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 9-12, write an equation for the graph using sine or cosine.</p>
+<exercisegroup cols="2"><introduction><p>For Problems 9<ndash/>12, write an equation for the graph using sine or cosine.</p>
 </introduction>
 
-<exercise number="9"><statement><sidebyside width="80%"><image source="images/hp7-sum-9.png"><description>sine</description></image></sidebyside></statement>
-<answer><p><m>(2x-3z)(4x^2+6xz+9z^2) </m></p></answer>
+<exercise number="9"><statement><sidebyside width="80%"><!--<image source="images/hp7-sum-9.png"><description>sine</description></image>-->
+    <image xml:id="hp7-sum-9">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.4]
+        \draw[cyan] (-2*pi,-1) grid[xstep=pi/2] (2*pi,5);
+        \draw[black,thick,->,>=stealth'] (-2*pi,0)--(6.9,0) node[right, scale=.9] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-1.2)--(0,5.8) node[above, scale=.9] {$y$};
+        \draw[black,thick] (-2*pi,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$-2\pi$};
+        \draw[black,thick] (-pi,.15)--++(0,-.3) node[below, yshift=-1, fill=white, inner sep=1, scale=.8] {$-\pi$};
+        \draw[black,thick] (2*pi,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$2\pi$};
+        \draw[black,thick] (pi,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$\pi$};
+        \foreach \y in {-1,1,2,...,5} \draw[black,thick] (.15,\y)--++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[samples=65,domain=-2*pi:2*pi, variable=\t, smooth, red, thick] plot (\t,{3+2*sin(deg(\t))});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement>
+<answer><p><m>y=3+2\sin x </m></p></answer>
 </exercise>
 
-<exercise number="10"><statement><sidebyside width="80%"><image source="images/hp7-sum-10.png"><description>sine</description></image></sidebyside></statement>
+<exercise number="10"><statement><sidebyside width="80%"><!--<image source="images/hp7-sum-10.png"><description>sine</description></image>-->
+    <image xml:id="hp7-sum-10">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.4]
+        \draw[cyan] (-2*pi,-5) grid[xstep=pi/2] (2*pi,1);
+        \draw[black,thick,->,>=stealth'] (-2*pi,0)--(6.9,0) node[right, scale=.9] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-5)--(0,1.8) node[above, scale=.9] {$y$};
+        \draw[black,thick] (-2*pi,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$-2\pi$};
+        \draw[black,thick] (-pi,.15)--++(0,-.3) node[below, yshift=-1, fill=white, inner sep=1, scale=.8] {$-\pi$};
+        \draw[black,thick] (2*pi,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$2\pi$};
+        \draw[black,thick] (pi,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$\pi$};
+        \foreach \y in {-5,-4,...,-1,1} \draw[black,thick] (.15,\y)--++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[samples=65,domain=-2*pi:2*pi, variable=\t, smooth, red, thick] plot (\t,{-2+3*cos(deg(\t))});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement>
 </exercise>
 
-<exercise number="11"><statement><sidebyside width="80%"><image source="images/hp7-sum-11.png"><description>sine</description></image></sidebyside></statement>
-<answer><p><m>(y + 3x)(y^2 - 3xy + 9x^2) </m></p></answer>
+<exercise number="11"><statement><sidebyside width="80%"><!--<image source="images/hp7-sum-11.png"><description>sine</description></image>-->
+    <image xml:id="hp7-sum-11">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=.1,yscale=.3]
+        \draw[cyan] (-8*pi,-1) grid[xstep=pi] (8*pi,7);
+        \draw[black,thick,->,>=stealth'] (-8*pi,0)--(27.3,0) node[right, scale=.9] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-1)--(0,7.8) node[above, scale=.9] {$y$};
+        \foreach \x [evaluate=\x as \xi using (pi*\x)]  in {-8,-6,-4,-2,2,4,6,8}  \draw[black,thick] (\xi,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$\x \pi$};
+        \foreach \y in {2,4,6} \draw[black,thick] (.15,\y)--++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[samples=65,domain=-8*pi:8*pi, variable=\t, smooth, red, thick] plot (\t,{4-3*sin(deg(\t)/4)});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement>
+<answer><p><m>y=4-3\sin \frac{x}{4} </m></p></answer>
 </exercise>
 
-<exercise number="12"><statement><sidebyside width="80%"><image source="images/hp7-sum-12.png"><description>sine</description></image></sidebyside></statement>
+<exercise number="12"><statement><sidebyside width="80%"><!--<image source="images/hp7-sum-12.png"><description>sine</description></image>-->
+    <image xml:id="hp7-sum-12">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=1.6,yscale=.3]
+        \draw[cyan] (-pi/2,-2) grid[xstep=pi/8] (pi/2,6);
+        \draw[black,thick,->,>=stealth'] (-pi/2,0)--(1.75,0) node[right, scale=.9] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-2)--(0,7.) node[above, scale=.9] {$y$};
+        \draw[black,thick] (-pi/2,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{-\pi}{2}$};
+        \draw[black,thick] (-pi/4,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{-\pi}{4}$};
+        \draw[black,thick] (pi/4,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{\pi}{4}$};
+        \draw[black,thick] (pi/2,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{\pi}{2}$};
+        \foreach \y in {-2,2,4,6} \draw[black,thick] (.05,\y)--++(-.1,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[samples=65,domain=-pi/2:pi/2, variable=\t, smooth, red, thick] plot (\t,{2-4*cos(deg(\t)*4)});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement>
 </exercise>
 </exercisegroup>
 
-<exercisegroup><introduction><p>For Problems 13-16, complete the table of values and sketch a graph of the function.
+<exercisegroup><introduction><p>For Problems 13<ndash/>16, complete the table of values and sketch a graph of the function.
 </p></introduction>
 
-<exercise number="13"><statement><p><m>y=\sin(\dfrac{x}{2}+\dfrac{\pi}{6})</m></p>
+<exercise number="13"><statement><p><m>y=\sin\left(\dfrac{x}{2}+\dfrac{\pi}{6}\right)</m></p>
 <p><ol label="a">
     <li>What are the period and the horizontal shift?  (Hint: Factor out <m>\dfrac{1}{2}</m> from <m>\dfrac{x}{2}+\dfrac{\pi}{6}</m>.)</li>
     <li><p>Fill in the table of values.</p>
@@ -72,7 +187,7 @@
                         <cell><m>x</m></cell>
                         <cell><m>\dfrac{x}{2}</m></cell>
                         <cell><m>\dfrac{x}{2}+\dfrac{\pi}{6} </m></cell>
-                        <cell><m>\sin(\dfrac{x}{2}+\dfrac{\pi}{6})</m></cell></row>
+                        <cell><m>\sin\left(\dfrac{x}{2}+\dfrac{\pi}{6}\right)</m></cell></row>
                     <row> 
                         <cell><m>\hphantom{0000}</m></cell>
                         <cell><m>\hphantom{0000}</m></cell>
@@ -109,14 +224,103 @@
                         <cell><m>\dfrac{2\pi}{3}</m></cell>
                         <cell><m>\hphantom{0000}</m></cell></row>                                           
     </tabular></sidebyside></li>
-    <li><p>Sketch the graph.</p><sidebyside width="100%"><image source="images/hp7-sum-13.png"><description>sine</description></image></sidebyside></li>
-    <li>Solve <me>\sin(\dfrac{x}{2}+\dfrac{\pi}{6})=1,~~ \text{for}~~ \dfrac{-2\pi}{3} \le x \le \dfrac{2\pi}{3}</me></li>
-    <li>Solve <me>\sin(\dfrac{x}{2}+\dfrac{\pi}{6})=0,~~ \text{for}~~ \dfrac{-2\pi}{3} \le x \le \dfrac{2\pi}{3}</me></li>
+    <li><p>Sketch the graph.</p><sidebyside width="100%"><!--<image source="images/hp7-sum-13.png"><description>sine</description></image>-->
+    <image xml:id="hp7-sum-13">
+        <description>grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=1.8]
+        \draw[cyan] (-2*pi/3,-1) grid[xstep=pi/6, ystep=1/2] (pi,1);
+        \draw[black,thick,->,>=stealth'] (-2*pi/3,0)--(3.3,0) node[right, scale=.9] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-1)--(0,1.2) node[above, scale=.9] {$y$};
+        \draw[black,thick] (-2*pi/3,.05)--++(0,-.1) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{-2\pi}{3}$};
+        \draw[black,thick] (-pi/3,.05)--++(0,-.1) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{-\pi}{3}$};
+        \draw[black,thick] (pi/3,.05)--++(0,-.1) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{\pi}{3}$};
+        \draw[black,thick] (2*pi/3,.05)--++(0,-.1) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{2\pi}{3}$};
+        \draw[black,thick] (pi,.05)--++(0,-.1) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$\pi$};
+        \foreach \y in {-1,1} \draw[black,thick] (.05,\y)--++(-.1,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></li>
+    <li>Solve <me>\sin\left(\dfrac{x}{2}+\dfrac{\pi}{6}\right)=1,~~ \text{for}~~ \dfrac{-2\pi}{3} \le x \le \dfrac{2\pi}{3}</me></li>
+    <li>Solve <me>\sin\left(\dfrac{x}{2}+\dfrac{\pi}{6}\right)=0,~~ \text{for}~~ \dfrac{-2\pi}{3} \le x \le \dfrac{2\pi}{3}</me></li>
 </ol></p></statement>
-<answer><p><m>v^3 - 30v^2 + 300v - 1000</m></p></answer>
+<answer><p><ol label="a">
+    <li><p>period: <m>4\pi</m>, shift: <m>\frac{\pi}{3}</m> left</p></li>
+    <li><p>Fill in the table of values.</p>
+<sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
+                    <row bottom="minor">
+                        <cell><m>x</m></cell>
+                        <cell><m>\dfrac{x}{2}</m></cell>
+                        <cell><m>\dfrac{x}{2}+\dfrac{\pi}{6} </m></cell>
+                        <cell><m>\sin\left(\dfrac{x}{2}+\dfrac{\pi}{6}\right)</m></cell></row>
+                    <row> 
+                        <cell><m>\dfrac{-2\pi}{3}</m></cell>
+                        <cell><m>\dfrac{\pi}{3}</m></cell>
+                        <cell><m>\dfrac{-\pi}{6}</m></cell>
+                        <cell><m>\dfrac{-1}{2}</m></cell></row> 
+                    <row> 
+                        <cell><m>\dfrac{-\pi}{3}</m></cell>
+                        <cell><m>\dfrac{-\pi}{6}</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>0</m></cell></row>
+                    <row> 
+                        <cell><m>0</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>\dfrac{\pi}{6}</m></cell>
+                        <cell><m>\dfrac{1}{2}</m></cell></row>
+                    <row> 
+                        <cell><m>\dfrac{\pi}{6}</m></cell>
+                        <cell><m>\dfrac{\pi}{12}</m></cell>
+                        <cell><m>\dfrac{\pi}{4}</m></cell>
+                        <cell><m>\dfrac{1}{\sqrt{2}}</m></cell></row>
+                    <row> 
+                        <cell><m>\dfrac{\pi}{3}</m></cell>
+                        <cell><m>\dfrac{\pi}{6}</m></cell>
+                        <cell><m>\dfrac{\pi}{3}</m></cell>
+                        <cell><m>\dfrac{\sqrt{3}}{2}</m></cell></row> 
+                    <row> 
+                        <cell><m>\dfrac{2\pi}{3}</m></cell>
+                        <cell><m>\dfrac{\pi}{3}</m></cell>
+                        <cell><m>\dfrac{\pi}{2}</m></cell>
+                        <cell><m>1</m></cell></row>
+                    <row> 
+                        <cell><m>\pi</m></cell>
+                        <cell><m>\dfrac{\pi}{2}</m></cell>
+                        <cell><m>\dfrac{2\pi}{3}</m></cell>
+                        <cell><m>\dfrac{\sqrt{3}}{2}</m></cell></row>                                           
+    </tabular></sidebyside></li>
+    <li><p>Sketch the graph.</p><sidebyside width="100%">
+    <image xml:id="hp7-sum-13ans">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=1.8]
+        \draw[cyan] (-2*pi/3,-1) grid[xstep=pi/6, ystep=1/2] (pi,1);
+        \draw[black,thick,->,>=stealth'] (-2*pi/3,0)--(3.3,0) node[right, scale=.9] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-1)--(0,1.2) node[above, scale=.9] {$y$};
+        \draw[black,thick] (-2*pi/3,.05)--++(0,-.1) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{-2\pi}{3}$};
+        \draw[black,thick] (-pi/3,.05)--++(0,-.1) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{-\pi}{3}$};
+        \draw[black,thick] (pi/3,.05)--++(0,-.1) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{\pi}{3}$};
+        \draw[black,thick] (2*pi/3,.05)--++(0,-.1) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{2\pi}{3}$};
+        \draw[black,thick] (pi,.05)--++(0,-.1) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$\pi$};
+        \foreach \y in {-1,1} \draw[black,thick] (.05,\y)--++(-.1,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[samples=65,domain=-2*pi/3:pi, variable=\t, smooth, red, thick] plot (\t,{sin(deg(\t/2 + pi/6) )});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></li>
+    <li><p><m>\dfrac{2\pi}{3} </m></p></li>
+    <li><p><m>\dfrac{-\pi}{3} </m></p></li>
+</ol></p></answer>
 </exercise>
 
-<exercise number="14"><statement><p><m>f(x)=2\cos(3x-\dfrac{\pi}{2})+5</m></p>
+<exercise number="14"><statement><p><m>f(x)=2\cos\left(3x-\dfrac{\pi}{2}\right)+5</m></p>
 <p><ol label="a">
     <li>What are the midline, period, horizontal shift, and amplitude?</li>
     <li><p>Fill in the table of values.</p>
@@ -125,8 +329,8 @@
                         <cell><m>x</m></cell>
                         <cell><m>3x</m></cell>
                         <cell><m>3x-\dfrac{\pi}{2} </m></cell>
-                        <cell><m>\cos(3x-\dfrac{\pi}{2})</m></cell>
-                        <cell><m>2\cos(3x-\dfrac{\pi}{2})+5</m></cell></row>
+                        <cell><m>\cos\left(3x-\dfrac{\pi}{2}\right)</m></cell>
+                        <cell><m>2\cos\left(3x-\dfrac{\pi}{2}\right)+5</m></cell></row>
                     <row> 
                         <cell><m>\hphantom{0000}</m></cell>
                         <cell><m>\hphantom{0000}</m></cell>
@@ -158,12 +362,32 @@
                         <cell><m>\hphantom{0000}</m></cell>
                         <cell><m>\hphantom{0000}</m></cell></row>                                            
     </tabular></sidebyside></li>
-    <li><p>Sketch the graph.</p><sidebyside width="90%"><image source="images/hp7-sum-14.png"><description>sine</description></image></sidebyside></li>
-    <li>Solve <me>2\cos(3x-\dfrac{\pi}{2})+5=7,~~ \text{for}~~ 0 \le x \le 2\pi</me></li>
-    <li>Solve <me>2\cos(3x-\dfrac{\pi}{2})+5=5,~~ \text{for}~~ 0 \le x \le 2\pi</me></li>
+    <li><p>Sketch the graph.</p><sidebyside width="90%"><!--<image source="images/hp7-sum-14.png"><description>sine</description></image>-->
+    <image xml:id="hp7-sum-14">
+        <description>grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=3.7, yscale=.4]
+        \draw[cyan] (0,0) grid[xstep=pi/18] (5*pi/6,7);
+        \draw[black,thick,->,>=stealth'] (0,0)--(2.7,0) node[right, scale=.9] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,0)--(0,7.5) node[above, scale=.9] {$y$};
+        \draw[black,thick] (pi/6,.2)--++(0,-.4) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{\pi}{6}$};
+        \draw[black,thick] (pi/3,.2)--++(0,-.4) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{\pi}{3}$};
+        \draw[black,thick] (pi/2,.2)--++(0,-.4) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{\pi}{2}$};
+        \draw[black,thick] (2*pi/3,.2)--++(0,-.4) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{2\pi}{3}$};
+        \draw[black,thick] (5*pi/6,.2)--++(0,-.4) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{5\pi}{6}$};
+        \foreach \y in {2,4,6} \draw[black,thick] (.03,\y)--++(-.06,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></li>
+    <li>Solve <me>2\cos\left(3x-\dfrac{\pi}{2}\right)+5=7,~~ \text{for}~~ 0 \le x \le 2\pi</me></li>
+    <li>Solve <me>2\cos\left(3x-\dfrac{\pi}{2}\right)+5=5,~~ \text{for}~~ 0 \le x \le 2\pi</me></li>
 </ol></p></statement></exercise>
 
-<exercise number="15"><statement><p><m>y=20-5\cos(\dfrac{\pi}{30}x)</m></p>
+<exercise number="15"><statement><p><m>y=20-5\cos\left(\dfrac{\pi}{30}x\right)</m></p>
 <p><ol label="a">
     <li>What are the midline, period, horizontal shift, and amplitude?</li>
     <li><p>Fill in the table of values.</p>
@@ -171,8 +395,8 @@
                     <row bottom="minor">
                         <cell><m>x</m></cell>
                         <cell><m>\dfrac{\pi}{30}x </m></cell>
-                        <cell><m>\cos(\dfrac{\pi}{30}x)</m></cell>
-                        <cell><m>20-5\cos(\dfrac{\pi}{30}x)</m></cell></row>
+                        <cell><m>\cos\left(\dfrac{\pi}{30}x\right)</m></cell>
+                        <cell><m>20-5\cos\left(\dfrac{\pi}{30}x\right)</m></cell></row>
                     <row> 
                         <cell><m>\hphantom{0000}</m></cell>
                         <cell><m>\dfrac{-\pi}{6}</m></cell>
@@ -204,14 +428,86 @@
                         <cell><m>\hphantom{0000}</m></cell>
                         <cell><m>\hphantom{0000}</m></cell></row>       
     </tabular></sidebyside></li>
-    <li><p>Sketch the graph.</p><sidebyside width="100%"><image source="images/hp7-sum-15.png"><description>sine</description></image></sidebyside></li>
-    <li>Solve <me>20-5\cos(\dfrac{\pi}{30}x)=25,~~ \text{for}~~ 0 \le x \le 60</me></li>
-    <li>Solve <me>20-5\cos(\dfrac{\pi}{30}x)=20,~~ \text{for}~~ 0 \le x \le 60</me></li>
+    <li><p>Sketch the graph.</p><sidebyside width="100%"><!--<image source="images/hp7-sum-15.png"><description>sine</description></image>-->
+    <image xml:id="hp7-sum-15">
+        <description>grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=0.1]
+        \draw[cyan] (-60,0) grid[step=5] (60,30);
+        \draw[black,thick,->,>=stealth'] (-60,0)--(63,0) node[right, scale=.9] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-3)--(0,33) node[above, scale=.9] {$y$};
+        \foreach \x in {-60,-50,...,-10,10,20,...,60} \draw[black,thick] (\x,.8)--++(0,-1.6) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {\x};
+        \foreach \y in {5,10,...,30} \draw[black,thick] (.8,\y)--++(-1.6,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></li>
+    <li>Solve <me>20-5\cos\left(\dfrac{\pi}{30}x\right)=25,~~ \text{for}~~ 0 \le x \le 60</me></li>
+    <li>Solve <me>20-5\cos\left(\dfrac{\pi}{30}x\right)=20,~~ \text{for}~~ 0 \le x \le 60</me></li>
 </ol></p></statement>
-<answer><p><ol>
-    <li><p><m>\dfrac{1}{6}n^3-\dfrac{1}{2}n^2+\dfrac{1}{3}n </m></p></li>
-    <li><p><m>220</m></p></li>
-    <li><p><m>20</m></p></li>
+<answer><p><ol label="a">
+    <li><p>mid: <m>y=20</m>, period: 0, amp: 5</p></li>
+    <li><p>Fill in the table of values.</p>
+<sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
+                    <row bottom="minor">
+                        <cell><m>x</m></cell>
+                        <cell><m>\dfrac{\pi}{30}x </m></cell>
+                        <cell><m>\cos\left(\dfrac{\pi}{30}x\right)</m></cell>
+                        <cell><m>20-5\cos\left(\dfrac{\pi}{30}x\right)</m></cell></row>
+                    <row> 
+                        <cell><m>-5</m></cell>
+                        <cell><m>\dfrac{-\pi}{6}</m></cell>
+                        <cell><m>\dfrac{\sqrt{3}}{2}</m></cell>
+                        <cell><m>20-\dfrac{\sqrt{3}}{2}</m></cell></row> 
+                    <row> 
+                        <cell><m>0</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>15</m></cell></row>
+                    <row> 
+                        <cell><m>5</m></cell>
+                        <cell><m>\dfrac{\pi}{6}</m></cell>
+                        <cell><m>\dfrac{\sqrt{3}}{2}</m></cell>
+                        <cell><m>20-\dfrac{\sqrt{3}}{2}</m></cell></row>
+                    <row> 
+                        <cell><m>10</m></cell>
+                        <cell><m>\dfrac{\pi}{3}</m></cell>
+                        <cell><m>\dfrac{1}{2}</m></cell>
+                        <cell><m>17.5</m></cell></row>
+                    <row> 
+                        <cell><m>15</m></cell>
+                        <cell><m>\dfrac{\pi}{2}</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>20</m></cell></row>
+                                                             <row> 
+                        <cell><m>50</m></cell>
+                        <cell><m>\pi</m></cell>
+                        <cell><m>-1</m></cell>
+                        <cell><m>25</m></cell></row>       
+    </tabular></sidebyside></li>
+    <li><p>Sketch the graph.</p><sidebyside width="100%"><!--<image source="images/hp7-sum-15.png"><description>sine</description></image>-->
+    <image xml:id="hp7-sum-15ans">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=0.1]
+        \draw[cyan] (-60,0) grid[step=5] (60,30);
+        \draw[black,thick,->,>=stealth'] (-60,0)--(63,0) node[right, scale=.9] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-3)--(0,33) node[above, scale=.9] {$y$};
+        \foreach \x in {-60,-50,...,-10,10,20,...,60} \draw[black,thick] (\x,.8)--++(0,-1.6) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {\x};
+        \foreach \y in {5,10,...,30} \draw[black,thick] (.8,\y)--++(-1.6,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[samples=65,domain=-60:60, variable=\t, smooth, red, thick] plot (\t,{20-5*cos(deg(pi*\t/30) )});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></li>
+    <li><p>30</p></li>
+    <li><p>15, 45</p></li>
 </ol></p></answer></exercise>
 
 <exercise number="16"><statement><p><m>y=50-50\cos(2\pi x)</m></p>
@@ -255,24 +551,88 @@
                         <cell><m>\hphantom{0000}</m></cell>
                         <cell><m>\hphantom{0000}</m></cell></row>       
     </tabular></sidebyside></li>
-    <li><p>Sketch the graph.</p><sidebyside width="100%"><image source="images/hp7-sum-16.png"><description>sine</description></image></sidebyside></li>
+    <li><p>Sketch the graph.</p><sidebyside width="100%"><!--<image source="images/hp7-sum-16.png"><description>sine</description></image>-->
+    <image xml:id="hp7-sum-16">
+        <description>grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=4.8, yscale=0.024]
+        \draw[cyan] (-5/4,0) grid[xstep=1/4, ystep=10] (5/4,100);
+        \draw[black,thick,->,>=stealth'] (-1.25,0)--(1.34,0) node[right, scale=.9] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-3)--(0,110) node[above, scale=.9] {$y$};
+        \foreach \x in {-1,-0.5, 0.5,1} \draw[black,thick] (\x,3)--++(0,-6) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {\x};
+        \foreach \y in {20,40,...,100} \draw[black,thick] (.02,\y)--++(-.04,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></li>
     <li>Solve <me>50-50\cos(2\pi x)=50,~~ \text{for}~~ -1 \le x \le 1</me></li>
     <li>Solve <me>50-50\cos(2\pi x)=0,~~ \text{for}~~ -1 \le x \le 1</me></li>
 </ol></p></statement></exercise>
 </exercisegroup>
 
-<exercisegroup><introduction><p>For Problems 17-18, label the scales on the axes for the graph.</p></introduction>
+<exercisegroup><introduction><p>For Problems 17<ndash/>18, label the scales on the axes for the graph.</p></introduction>
 
-<exercise number="17"><statement><p><m>y=\dfrac{1}{4}\sin(\dfrac{x}{6})+\dfrac{1}{2}</m></p>
-<sidebyside width="50%"><image source="images/hp7-sum-17.png"><description>sine</description></image></sidebyside></statement>
-<answer><p><ol cols="2">
-    <li><p><image source="images/fig-ans-chap7-rev-17.jpg"   width="80%"><description>cubic</description></image> </p></li>
-    <li><p><m>[-968, 972]</m></p></li>
-</ol></p></answer>
+<exercise number="17"><statement><p><m>y=\dfrac{1}{4}\sin\left(\dfrac{x}{6}\right)+\dfrac{1}{2}</m></p>
+<sidebyside width="50%"><!--<image source="images/hp7-sum-17.png"><description>sine</description></image>-->
+    <image xml:id="hp7-sum-17">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=.2, yscale=3]
+        \draw[cyan] (-6*pi,0) grid[xstep=pi, ystep=1/4] (6*pi,1);
+        \draw[black,thick,->,>=stealth'] (-6*pi,0)--(19.5,0) node[right, scale=.9] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,0)--(0,1.1) node[above, scale=.9] {$y$};
+        \foreach \x [evaluate=\x as \xi using (pi*\x)] in {-6,-4,-2,2,4,6}  \draw[black,thick] (\xi,.03)--++(0,-.06) ;
+        \foreach \y in {0.5,1} \draw[black,thick] (.6,\y)--++(-1.2,0);
+        \draw[samples=65,domain=-6*pi:6*pi,variable=\x, smooth, red, thick] plot (\x,{ 1/4*sin(deg(\x/6) ) +1/2 });
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement>
+<answer><sidebyside width="50%">
+    <image xml:id="hp7-sum-17ans">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=.2, yscale=3]
+        \draw[cyan] (-6*pi,0) grid[xstep=pi, ystep=1/4] (6*pi,1);
+        \draw[black,thick,->,>=stealth'] (-6*pi,0)--(19.5,0) node[right, scale=.9] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,0)--(0,1.1) node[above, scale=.9] {$y$};
+        \foreach \x [evaluate=\x as \xi using (pi*\x)] in {-6,-4,-2,2,4,6}  \draw[black,thick] (\xi,.03)--++(0,-.06) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {\x$\pi$};
+        \foreach \y in {0.5,1} \draw[black,thick] (.6,\y)--++(-1.2,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[samples=65,domain=-6*pi:6*pi,variable=\x, smooth, red, thick] plot (\x,{ 1/4*sin(deg(\x/6) ) +1/2 });
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer>
 </exercise>
 
-<exercise number="18"><statement><p><m>y=\dfrac{3}{2}\sin(\dfrac{x}{2})-2</m></p>
-<sidebyside width="50%"><image source="images/hp7-sum-18.png"><description>sine</description></image></sidebyside></statement></exercise>
+<exercise number="18"><statement><p><m>y=\dfrac{3}{2}\cos\left(\dfrac{x}{2}\right)-2</m></p>
+<sidebyside width="50%"><!--<image source="images/hp7-sum-18.png"><description>sine</description></image>-->
+    <image xml:id="hp7-sum-18">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=.7, yscale=3/2]
+        \draw[cyan] (-2*pi,-4) grid[xstep=pi/2, ystep=1/2] (2*pi,0);
+        \draw[black,thick,->,>=stealth'] (-2*pi,0)--(6.65,0) node[right, scale=.9] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-4)--(0,0.2) node[above, scale=.9] {$y$};
+        \foreach \x [evaluate=\x as \xi using (pi/2*\x)] in {-4,-2,2,4}  \draw[black,thick] (\xi,.04)--++(0,-.08) ;
+        \foreach \y in {-4,-3,-2,-1} \draw[black,thick] (.08,\y)--++(-.16,0);
+        \draw[samples=65,domain=-2*pi:2*pi,variable=\x, smooth, red, thick] plot (\x,{ 3/2*cos(deg(\x/2) ) -2 });
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement></exercise>
 </exercisegroup>
 
 <exercisegroup cols="2"><introduction><p>
@@ -286,9 +646,26 @@
     <li><m>y=-5\cos (2x-0.5)+3</m></li>
     <li><m>-5\cos (2x-0.5)+3=-1</m></li>
 </ol></p></statement>
-<answer><p><ol cols="2">
-    <li><p><m>2, -1</m></p></li>
-    <li><p><image source="images/fig-ans-chap7-rev-19"  width="80%"><description>cubic</description></image> </p></li>
+<answer><p><ol label="a">
+    <li><sidebyside width="80%" margins="0 20%">
+    <image xml:id="hp7-sum-19ans">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=.8, yscale=.25]
+        \draw[black,thick] (0,-3) --++(2*pi,0) --++(0,13)--++(-2*pi,0) --++(0,-13);
+        \draw[black,thick] (0,0)--(2*pi,0);
+        \draw[black,thick] (0,-3)--(0,10);
+        \foreach \x [evaluate=\x as \xi using (\x*pi /6)] in {1,2,...,12}  \draw[black,thick] (\xi,.2)--++(0,-.2) ;
+        \foreach \y in {-3,-2,...,10} \draw[black,thick] (.08,\y)--++(-.08,0);
+        \draw[samples=65,domain=0:2*pi,variable=\x, smooth, red, thick] plot (\x,{ -5*cos(deg(2*\x -0.5) ) +3 });
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></li>
+    <li><p>0.57, 3.07, 3.71</p></li>
 </ol></p></answer></exercise>
 
 <exercise number="20"><statement><p><ol label="a">
@@ -297,20 +674,17 @@
 </ol></p></statement></exercise>
 </exercisegroup>
 
-<exercisegroup><introduction><p>For Problems 21-22, write a formula for the function.</p></introduction>
+<exercisegroup><introduction><p>For Problems 21<ndash/>22, write a formula for the function.</p></introduction>
 
 <exercise number="21"><statement><p>The average high temperature in Phoenix, Arizona is minimum in January at 66<m>\degree</m> and maximum in July at 105<m>\degree</m>.  Write a sinusoidal function that models the average high temperature in Phoenix.</p>
 </statement>
-<answer><p><ol cols="2">
-    <li><p><m>0,1, -3</m></p></li>
-    <li><p><image source="images/fig-ans-chap7-rev-21"  width="80%"><description>quartic</description></image> </p></li>
-</ol></p></answer>
+<answer><p><m>y=85.5-19.5\cos\frac{\pi}{6}t </m></p></answer>
 </exercise>
 
 <exercise number="22"><statement><p>The average monthly rainfall in Hawaii reaches a maximum of 3.4 inches in December and a minimum of 0.4 inches in June.  Write a sinusoidal function that models the monthly rainfall in Hawaii.</p></statement>
 </exercise></exercisegroup>
 
-<exercisegroup><introduction><p>For Problems 23-24,</p><p><ol label="a"> 
+<exercisegroup><introduction><p>For Problems 23<ndash/>24,</p><p><ol label="a"> 
     <li>Estimate the amplitude, period, and midline of a circular function that fits the data.</li>
     <li>Write a formula for the function.</li></ol></p></introduction>
 
@@ -337,9 +711,9 @@
                         <cell><m>12.1</m></cell>
                         <cell><m>12.7</m></cell></row>
     </tabular></sidebyside></p></statement>
-<answer><p><ol cols="2">
-    <li><p><m>0,1, -1</m></p></li>
-    <li><p><image source="images/fig-ans-chap7-rev-23"  width="80%"><description>quintic</description></image> </p></li>
+<answer><p><ol label="a">
+    <li><p>amp: 3, period: 12, midline: <m>y=15</m></p></li>
+    <li><p><m>y=15-3\cos\frac{\pi}{6}t </m></p></li>
 </ol></p></answer>
 </exercise>
 
@@ -369,66 +743,57 @@
     </tabular></sidebyside></p></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 25-28, give exact values for the solutions between <m>0</m> and <m>2\pi</m>.</p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 25<ndash/>28, give exact values for the solutions between <m>0</m> and <m>2\pi</m>.</p></introduction>
 
 <exercise number="25"><statement><p><m>10\sin 2\theta = -5</m></p></statement>
-<answer><p><ol cols="2">
-    <li><p><m>-1, 1</m></p></li>
-    <li><p><image source="images/fig-ans-chap7-rev-25"  width="80%"><description>cubic</description></image> </p></li>
-</ol></p></answer></exercise>
+<answer><p><m>\frac{7\pi}{12}</m>, <m>\frac{11\pi}{12}</m>, <m>\frac{19\pi}{12}</m>, <m>\frac{23\pi}{12}</m> </p></answer></exercise>
 
 <exercise number="26"><statement><p><m>\sqrt{2}\cos 3\phi = 1</m></p></statement></exercise>
 
 <exercise number="27"><statement><p><m>12\tan 4\beta = 0</m></p></statement>
-<answer><p><ol cols="2">
-    <li><p><m>-1, 1, \pm\sqrt{6} </m></p></li>
-    <li><p><image source="images/fig-ans-chap7-rev-27"  width="80%"><description>quartic</description></image> </p></li>
-</ol></p></answer></exercise>
+<answer><p><m>0</m>, <m>\frac{\pi}{4}</m>, <m>\frac{\pi}{2}</m>, <m>\frac{3\pi}{4}</m>, <m>\pi</m>, <m>\frac{5\pi}{4}</m>, <m>\frac{7\pi}{4}</m>, <m>2\pi</m> </p></answer></exercise>
 
 <exercise number="28"><statement><p><m>2\sqrt{3}\tan 2\alpha = -6</m></p></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 29-32, find all solutions between <m>0</m> and <m>2\pi</m>.  Round your answers to three decimal places.</p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 29<ndash/>32, find all solutions between <m>0</m> and <m>2\pi</m>.  Round your answers to three decimal places.</p></introduction>
 
 <exercise number="29"><statement><p><m>5\tan 3x+2 = 3</m></p></statement>
-<answer><p><m>x(x + 2)(x - 3)</m></p></answer></exercise>
+<answer><p>0.066, 1.113, 2.160, 3.207, 4.255, 5.302</p></answer></exercise>
 
 <exercise number="30"><statement><p><m>-8\sin 2t - 4 = 3</m></p></statement></exercise>
 
 <exercise number="31"><statement><p><m>2.8 - 3.6\cos 2s = 5.2</m></p></statement>
-<answer><p><m>x^3(x + 2)(x - 2)</m></p></answer></exercise>
+<answer><p>1.150, 1.991, 4.292, 5.133</p></answer></exercise>
 
 <exercise number="32"><statement><p><m>6.7 \tan 3u + 1.2 = 28</m></p></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 33-36, use a substitution to find exact values for all solutions between 
+<exercisegroup cols="2"><introduction><p>For Problems 33<ndash/>36, use a substitution to find exact values for all solutions between 
 <m>0</m> and <m>2\pi</m>.</p></introduction>
 
-<exercise number="33"><statement><p><m>2\cos(2\phi - \dfrac{\pi}{4})=\sqrt{3}</m></p></statement>
-<answer><p><m>x^2(x + 4)(x - 4)</m></p></answer></exercise>
+<exercise number="33"><statement><p><m>2\cos\left(2\phi - \dfrac{\pi}{4}\right)=\sqrt{3}</m></p></statement>
+<answer><p><m>\frac{\pi}{24} </m>, <m>\frac{5\pi}{24} </m>, <m>\frac{25\pi}{24} </m>, <m>\frac{29\pi}{24} </m></p></answer></exercise>
 
 <exercise number="34"><statement><p><m>3\sin (3z+\pi) + 2 = -1</m></p></statement></exercise>
 
-<exercise number="35"><statement><p><m>-4\sin(\dfrac{t}{2}+\dfrac{\pi}{8})=\sqrt{8}</m></p></statement>
-<answer><p><ol cols="2">
-    <li><p><m>P(-2) = 0</m></p></li>
-    <li><p><m>\dfrac{3\pm\sqrt{13}}{2} </m></p></li>
-</ol></p></answer></exercise>
+<exercise number="35"><statement><p><m>-4\sin\left(\dfrac{t}{2}+\dfrac{\pi}{8}\right)=\sqrt{8}</m></p></statement>
+<answer><p>No solution</p></answer></exercise>
 
-<exercise number="36"><statement><p><m>7\cos(\dfrac{w}{2}-\dfrac{\pi}{3})=-3.5</m></p></statement></exercise>
+<exercise number="36"><statement><p><m>7\cos\left(\dfrac{w}{2}-\dfrac{\pi}{3}\right)=-3.5</m></p></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 37-40, use a substitution to find all solutions between <m>0</m> and <m>2\pi</m>. Round your answers to hundredths.</p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 37<ndash/>40, use a substitution to find all solutions between <m>0</m> and <m>2\pi</m>. Round your answers to hundredths.</p></introduction>
 
 <exercise number="37"><statement><p><m>0.4\tan(3x+0.2)=1.6</m></p></statement>
-<answer><p><m>-2 \pm i \sqrt{6}</m></p></answer></exercise>
+<answer><p>0.375, 1.422, 2.470, 3.517, 4.564, 5.611</p></answer></exercise>
 
-<exercise number="38"><statement><p><m>15\tan(1.4s-2)=20</m></p></statement></exercise>
+<exercise number="38"><statement><p><m>15\tan\left(1.4s-2\right)=20</m></p></statement></exercise>
 
-<exercise number="39"><statement><p><m>8\sin(\dfrac{\pi t}{6}-\dfrac{\pi}{12}) = 6</m></p></statement>
-<answer><p><m>1 \pm \dfrac{\sqrt{6}}{3} i </m></p></answer></exercise>
+<exercise number="39"><statement><p><m>8\sin\left(\dfrac{\pi t}{6}-\dfrac{\pi}{12}\right) = 6</m></p></statement>
+<answer><p>2.120, 4.880</p></answer></exercise>
 
-<exercise number="40"><statement><p><m>12\cos(\dfrac{\pi t}{2}-\dfrac{3\pi}{5}) = 5</m></p></statement></exercise>
+<exercise number="40"><statement><p><m>12\cos\left(\dfrac{\pi t}{2}-\dfrac{3\pi}{5}\right) = 5</m></p></statement></exercise>
 </exercisegroup>
 
 </exercises> 
