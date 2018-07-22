@@ -23,7 +23,62 @@
 	<me>\cos (\alpha + \beta)~~~~\text{and}~~~~\cos \alpha + \cos \beta</me>
 are equal for any values of <m>\alpha</m> and <m>\beta</m> ?  We can test this hypothesis by evaluating both expressions for some specific values of <m>\alpha</m> and <m>\beta</m>, say <m>\alpha=45\degree</m> and <m>\beta=30\degree</m>, as shown below.</p>
 
-<sidebyside width="70%"><image source="images/8-1-1.png"><description>circles</description></image></sidebyside>
+<sidebyside width="75%"><!--<image source="images/8-1-1.png"><description>circles</description></image>-->
+    <image xml:id="fig-8-1-1">
+        <description>3 circles</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture}
+        \coordinate (O) at (0,0);
+        \draw[black,->,>=stealth'] (-1.1,0)--++(2.5,0) node[below left, xshift=-3, scale=.7] {1};
+        \draw[black,->,>=stealth'] (0,-1.1)--++(0,2.50) node[below left, yshift=-2, scale=.7] {1};
+        \draw[gray,thick] (O) circle(1cm);
+        \coordinate (P) at (75:1cm);
+        \coordinate (Q) at ($ cos(75)*(1,0) $);
+        \draw[gray] (Q) rectangle ++(-.15,.15);
+        \draw[green,thick] (P)--(O);
+        \draw[gray!70!,thick,dashed] (P)--(Q);
+        \draw[blue, ultra thick] (O)--(Q);
+        \node[scale=.8] at (-.55,-1.5) {Is};
+        \node[scale=.8, text=blue] at (.3,-1.5) {$\cos 75\degree$};
+        \node[scale=.8] at (1.5,-1.5) {$=$};
+        \draw[red,thick,->] (0.5,0) arc(0:75:0.5) node[right, midway, scale=.7] {$75\degree$};
+
+        %second circle
+        \coordinate (O) at (3,0);
+        \draw[black,->,>=stealth'] ($ 3*(1,0)+(-1.1,0) $)--++(2.5,0) node[below left, xshift=-3, scale=.7] {1};
+        \draw[black,->,>=stealth'] ($ 3*(1,0)+(0,-1.1) $)--++(0,2.50) node[below left, yshift=-2, scale=.7] {1};
+        \draw[gray,thick] (O) circle(1cm);
+        \coordinate (P) at ($ 3*(1,0)+(45:1cm) $);
+        \coordinate (Q) at ($ 3*(1,0)+ cos(45)*(1,0) $);
+        \draw[gray] (Q) rectangle ++(-.15,.15);
+        \draw[green,thick] (P)--(O);
+        \draw[gray!70!,thick,dashed] (P)--(Q);
+        \draw[blue, ultra thick] (O)--(Q);
+        \node[scale=.8, text=blue] at ($ 3*(1,0)+(0,-1.5) $) {$\cos 45\degree$};
+        \node[scale=.8] at ($ 3*(1,0)+(1.5,-1.5) $) {$+$};
+        \draw[red,thick,->] ($ 3*(1,0)+(0.45,0) $) arc(0:45:0.45) node[above, xshift=-1, yshift=2 , inner sep=0,  scale=.7] {$45\degree$};
+
+        %third circle
+        \coordinate (O) at (6,0);
+        \draw[black,->,>=stealth'] ($ 6*(1,0)+(-1.1,0) $)--++(2.5,0) node[below left, xshift=-3, scale=.7] {1};
+        \draw[black,->,>=stealth'] ($ 6*(1,0)+(0,-1.1) $)--++(0,2.50) node[below left, yshift=-2, scale=.7] {1};
+        \draw[gray,thick] (O) circle(1cm);
+        \coordinate (P) at ($ 6*(1,0)+(30:1cm) $);
+        \coordinate (Q) at ($ 6*(1,0)+ cos(30)*(1,0) $);
+        \draw[gray] (Q) rectangle ++(-.15,.15);
+        \draw[green,thick] (P)--(O);
+        \draw[gray!70!,thick,dashed] (P)--(Q);
+        \draw[blue, ultra thick] (O)--(Q);
+        \node[scale=.8, text=blue] at ($ 6*(1,0)+(0,-1.5) $) {$\cos 30\degree$};
+        \node[scale=.8] at ($ 6*(1,0)+(1.5,-1.5) $) {?};
+        \draw[red,thick,->] ($ 6*(1,0)+(0.45,0) $) arc(0:30:0.45) node[above, xshift=0, yshift=2 , inner sep=0,  scale=.7] {$30\degree$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
 <p>	From the figure, you should be able to see that <m>\cos 75\degree</m> is in fact smaller than either <m>\cos 45\degree</m> or <m>\cos 30\degree</m>, so it cannot be true that <m>\cos 75\degree</m> is equal to <m>\cos 45\degree + \cos 30\degree</m>.</p>
 
@@ -35,7 +90,7 @@ are equal for any values of <m>\alpha</m> and <m>\beta</m> ?  We can test this h
 		\end{align*}
 The two expressions are not equal.</p></solution></example>
 
-<exercise><statement><p>Show that <m>\sin(60\degree + 30\degree)</m> is not equal to <m>\sin 60\degree + \sin 30\degree</m>.</p></statement></exercise>
+<exercise><statement><p>Show that <m>\sin(60\degree + 30\degree)</m> is not equal to <m>\sin 60\degree + \sin 30\degree</m>.</p></statement><answer><p><m>\sin(60\degree + 30\degree)=1</m>, but <m>\sin 60\degree + \sin 30\degree = \dfrac{\sqrt{3}}{2} + \dfrac{1}{2}</m></p></answer></exercise>
 
 <warning><p>  Because the values of the expressions in Example 1 and in Exercise 1 are different, it is not true that <m>\cos (\alpha + \beta)</m> is equal to <m>\cos \alpha + \cos \beta</m> for all angles <m>\alpha</m> and <m>\beta</m>, or that <m>\sin (\alpha + \beta)</m> is equal to <m>\sin \alpha + \sin \beta</m>.</p>  
 <p>It turns out that there is a relationship between the trig ratios for <m>\alpha + \beta</m>  and the trig ratios of <m>\alpha</m> and <m>\beta</m>, but it is a little more complicated.</p></warning> 
@@ -57,7 +112,7 @@ The two expressions are not equal.</p></solution></example>
 	\end{align*}
 Thus, <m>\cos 105\degree = \dfrac{\sqrt{2}-\sqrt{6}}{4}</m>. You can check that your calculator gives the same decimal approximation of about <m>-0.2588</m> for both <m>\cos 105\degree</m> and <m>\dfrac{\sqrt{2}-\sqrt{6}}{4}</m>.</p></solution></example>
 
-<exercise><statement><p>Find an exact value for <m>\sin 75\degree</m>.</p></statement></exercise>
+<exercise><statement><p>Find an exact value for <m>\sin 75\degree</m>.</p></statement><answer><p><m>\dfrac{\sqrt{6}+\sqrt{2}}{4}</m></p></answer></exercise>
 
 <p>Of course, the sum formulas hold for angles in radians as well as degrees.</p>
 
@@ -84,13 +139,142 @@ Thus, <m>\cos 105\degree = \dfrac{\sqrt{2}-\sqrt{6}}{4}</m>. You can check that 
 <p>II Using Graphs</p><p><ol label="1">
 <li><ol label="a">
 	<li><p>Look at the graph of <m>f(\theta) = \sin \theta</m>, and choose three positive values of <m>\theta</m>. Draw dots on the graph that show their function values.</p>
-<sidebyside width="100%"><image source="images/8-1-2.png"><description>graph</description></image></sidebyside></li>
+<sidebyside width="100%"><!--<image source="images/8-1-2.png"><description>graph</description></image>-->
+    <image xml:id="fig-8-1-2">
+        <description>sine graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+		\begin{tikzpicture}
+		\draw[cyan,xstep=pi/12,ystep=0.18]
+		(-2*pi,-1.8) grid (2*pi,1.8);
+
+		\draw[->] (-6.3,0) -- (6.5,0) node[right] {$\theta$};
+		\draw[->] (0,-1.8) -- (0,2.2) node[above] {$f(\theta)=\sin(\theta)$};
+
+		\foreach \x in {-24,-23,...,24}
+		\draw[black] ($ pi*\x /12*(1,0) +(0,.08) $) --++(0,-.16);
+		\foreach \y in {-0.9, 0.9}
+		\draw[black] (.08,\y ) --++(-.16,0);
+		\foreach \y in {-1,1}
+		\draw[black, thick] (.12,1.8*\y ) --++(-.24,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\y};
+
+		\draw[black, thick] (-2*pi,.2) --++(0,-.4) node[anchor=north, xshift=-2,yshift=-3, fill=white, inner sep=1pt] {$-2\pi$};
+		\draw[black, thick] (2*pi,.2) --++(0,-.4) node[anchor=north, xshift=2,yshift=-3, fill=white, inner sep=1pt] {$2\pi$};
+
+		\draw[black] (pi,.2) --++(0,-.4) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\pi$};
+
+		\draw[black] (pi,.2) --++(0,-.4) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\pi$};
+		\draw[black] (-pi,.2) --++(0,-.4) node[anchor=north, xshift=-2,yshift=-3, fill=white, inner sep=1pt] {$-\pi$};
+		\draw[black] (-pi/2,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{-\pi}{2}$};
+		\draw[black] (pi/2,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{\pi}{2}$};
+		\draw[black] (3*pi/2,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{3\pi}{2}$};
+		\draw[black] (-3*pi/2,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{-3\pi}{2}$};
+
+		\draw[black] (pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-4, fill=white, inner sep=1pt] {$\frac{\pi}{4}$};
+
+		\draw[black] (3*pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{3\pi}{4}$};
+
+		\draw[domain=-2*pi:2*pi,smooth,variable=\x,red,very thick] plot ({\x},{1.8*sin(deg(\x))});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></li>
 	<li>Find the negatives of your three values of <m>\theta</m> from part (a), and draw dots to show their function values.</li>
 	<li>How do the values of <m>\sin (-\theta)</m> compare to the values of <m>\sin \theta</m>?</li></ol></li>
 <li><p>Repeat part (1) for the graph of <m>f(\theta) = \cos \theta</m>.</p>
-<sidebyside width="100%"><image source="images/8-1-3.png"><description>graph</description></image></sidebyside></li>
+<sidebyside width="100%"><!--<image source="images/8-1-3.png"><description>graph</description></image>-->
+    <image xml:id="fig-8-1-3">
+        <description>cosine graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+		\begin{tikzpicture} 
+		\draw[cyan,xstep=pi/12,ystep=0.18]
+		(-2*pi,-1.8) grid (2*pi,1.8);
+
+		\draw[->] (-6.3,0) -- (6.5,0) node[right] {$\theta$};
+		\draw[->] (0,-1.8) -- (0,2.2) node[above] {$f(\theta)=\cos(\theta)$};
+
+		\foreach \x in {-24,-23,...,24}
+		\draw[black] ($ pi*\x /12*(1,0) +(0,.08) $) --++(0,-.16);
+		\foreach \y in {-0.9, 0.9}
+		\draw[black] (.08,\y ) --++(-.16,0);
+		\foreach \y in {-1,1}
+		\draw[black, thick] (.12,1.8*\y ) --++(-.24,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\y};
+
+		\draw[black, thick] (-2*pi,.2) --++(0,-.4) node[anchor=north, xshift=-2,yshift=-3, fill=white, inner sep=1pt] {$-2\pi$};
+		\draw[black, thick] (2*pi,.2) --++(0,-.4) node[anchor=north, xshift=2,yshift=-3, fill=white, inner sep=1pt] {$2\pi$};
+
+		\draw[black] (pi,.2) --++(0,-.4) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\pi$};
+
+		\draw[black] (pi,.2) --++(0,-.4) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\pi$};
+		\draw[black] (-pi,.2) --++(0,-.4) node[anchor=north, xshift=-2,yshift=-3, fill=white, inner sep=1pt] {$-\pi$};
+		\draw[black] (-pi/2,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{-\pi}{2}$};
+		\draw[black] (pi/2,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{\pi}{2}$};
+		\draw[black] (3*pi/2,.15) --++(0,-.3) node[anchor=north,xshift=3, yshift=-3, fill=white, inner sep=1pt] {$\frac{3\pi}{2}$};
+		\draw[black] (-3*pi/2,.15) --++(0,-.3) node[anchor=north,xshift=-3, yshift=-3, fill=white, inner sep=1pt] {$\frac{-3\pi}{2}$};
+
+		\draw[black] (pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-4, fill=white, inner sep=1pt] {$\frac{\pi}{4}$};
+
+		\draw[black] (3*pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{3\pi}{4}$};
+
+		\draw[black] (5*pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{5\pi}{4}$};
+
+		\draw[domain=-2*pi:2*pi,smooth,variable=\x,red,very thick] plot ({\x},{1.8*cos(deg(\x))});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></li>
 <li><p>Repeat part (1) for the graph of <m>f(\theta) = \tan \theta</m>.</p>
-<sidebyside width="100%"><image source="images/8-1-4.png"><description>graph</description></image></sidebyside></li>
+<sidebyside width="100%"><!--<image source="images/8-1-4.png"><description>graph</description></image>-->
+    <image xml:id="fig-8-1-4">
+        <description>tangent graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+		\begin{tikzpicture} [yscale=.5]
+		\draw[cyan,xstep=pi/12,ystep=0.5]
+		(-2*pi,-5) grid (2*pi,5);
+
+		\draw[->] (-6.3,0) -- (6.5,0) node[right] {$\theta$};
+		\draw[->] (0,-5) -- (0,5.5) node[above] {$f(\theta)=\tan(\theta)$};
+
+		\foreach \x in {-24,-23,...,24}
+		\draw[black] ($ pi*\x /12*(1,0) +(0,.08) $) --++(0,-.16);
+		\foreach \y in {-5,-4,...,-1,1,2,...,5}
+		\draw[black, thick] (.10,\y ) --++(-.2,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\y};
+
+		\draw[black, thick] (-2*pi,.2) --++(0,-.4) node[anchor=north, xshift=-2,yshift=-3, fill=white, inner sep=1pt] {$-2\pi$};
+		\draw[black, thick] (2*pi,.2) --++(0,-.4) node[anchor=north, xshift=2,yshift=-3, fill=white, inner sep=1pt] {$2\pi$};
+
+		\draw[black] (pi,.2) --++(0,-.4) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\pi$};
+
+		\draw[black] (pi,.2) --++(0,-.4) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\pi$};
+		\draw[black] (-pi,.2) --++(0,-.4) node[anchor=north, xshift=-2,yshift=-3, fill=white, inner sep=1pt] {$-\pi$};
+		\draw[black] (-pi/2,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{-\pi}{2}$};
+		\draw[black] (pi/2,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{\pi}{2}$};
+		\draw[black] (3*pi/2,.15) --++(0,-.3) node[anchor=north,xshift=3, yshift=-3, fill=white, inner sep=1pt] {$\frac{3\pi}{2}$};
+		\draw[black] (-3*pi/2,.15) --++(0,-.3) node[anchor=north,xshift=-3, yshift=-3, fill=white, inner sep=1pt] {$\frac{-3\pi}{2}$};
+
+		\draw[black] (pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-4, fill=white, inner sep=1pt] {$\frac{\pi}{4}$};
+
+		\draw[black] (3*pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{3\pi}{4}$};
+
+		\draw[black] (5*pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{5\pi}{4}$};
+
+		\foreach \i in {-1, 0, 1}
+			\draw[domain={\i*pi-atan(5)*pi/180}:{\i*pi+atan(5)*pi/180}, smooth, variable=\x,red,very thick] plot ({\x},{tan(deg(\x))}) ;
+
+		\draw[domain={-2*pi:atan(5)*pi/180-2*pi}, smooth, variable=\x,red,very thick] plot ({\x},{tan(deg(\x))}) ;
+		\draw[domain={2*pi-atan(5)*pi/180:2*pi}, smooth, variable=\x,red,very thick] plot ({\x},{tan(deg(\x))}) ;
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></li>
 </ol></p>
 
 <p>III	Negative Angle Identities</p>
@@ -101,7 +285,7 @@ Thus, <m>\cos 105\degree = \dfrac{\sqrt{2}-\sqrt{6}}{4}</m>. You can check that 
 			<me>\tan (-\theta) = </me> 
 </activity>
 
-<exercise><statement><p>Suppose that <m>\sin \theta = \dfrac{-5}{13}</m> and <m>\cos \theta = \dfrac{12}{13}</m>. Find an exact value for <m>\cos(\dfrac{\pi}{4} + \theta)</m>.</p></statement></exercise>
+<exercise><statement><p>Suppose that <m>\sin \theta = \dfrac{-5}{13}</m> and <m>\cos \theta = \dfrac{12}{13}</m>. Find an exact value for <m>\cos\left(\dfrac{\pi}{4} + \theta\right)</m>.</p></statement><answer><p><m>\dfrac{17}{13\sqrt{2}} = \dfrac{17\sqrt{2}}{26}</m></p></answer></exercise>
 </subsection>
 
 <subsection><title>The Difference of Angles Identities</title>
@@ -123,7 +307,7 @@ Thus, <m>\cos 105\degree = \dfrac{\sqrt{2}-\sqrt{6}}{4}</m>. You can check that 
 	\end{align*}
 You can check that your calculator gives the same decimal approximation of about 0.9659 for both <m>\cos \dfrac{\pi}{12}</m> and <m>\dfrac{\sqrt{6}+\sqrt{2}}{4}</m>.</p></solution></example>
 
-<exercise><statement><p>Evaluate <m>\sin \dfrac{\pi}{12}</m> exactly.</p></statement></exercise>
+<exercise><statement><p>Evaluate <m>\sin \dfrac{\pi}{12}</m> exactly.</p></statement><answer><p><m>\dfrac{\sqrt{3}-1}{2\sqrt{2}} = \dfrac{\sqrt{6}-\sqrt{2}}{4}</m></p></answer></exercise>
 </subsection>
 
 <subsection><title>Sum and Difference Identities for Tangent</title>
@@ -143,7 +327,7 @@ You can check that your calculator gives the same decimal approximation of about
 	\end{align*}
 	</p></solution></example> 
 
-<exercise><statement><p>Evaluate <m>\tan \dfrac{\pi}{12}</m> exactly.</p></statement></exercise>
+<exercise><statement><p>Evaluate <m>\tan \dfrac{\pi}{12}</m> exactly.</p></statement><answer><p><m>\dfrac{\sqrt{3}-1}{\sqrt{3}+1}</m></p></answer></exercise>
 </subsection>
 
 <subsection><title>Double Angle Identities</title>
@@ -165,7 +349,26 @@ You can check that your calculator gives the same decimal approximation of about
 and <m>\sqrt{2} \not= 1</m>.  Similarly, <m>\cos 2\theta \not= 2\cos \theta</m> and <m>\tan 2\theta \not= 2\tan \theta</m></p></warning>
 
 <example><statement><p>Find <m>\sin 2\theta</m> for the angle <m>\theta</m> shown.
-<sidebyside width="20%"><image source="images/exam8-1-6.png"><description>triangle</description></image></sidebyside></p></statement>
+<sidebyside width="25%"><!--<image source="images/exam8-1-6.png"><description>triangle</description></image>-->
+    <image xml:id="exam8-1-6">
+        <description>triangle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+		\begin{tikzpicture} 
+		\coordinate (O) at (0,0);
+		\coordinate (A) at (3,0);
+		\coordinate (B) at (3,2);
+		\draw[blue,thick] (A) rectangle ++(-.25, .25);
+		\draw[black,thick] (O)--(A) node[below, midway, scale=.9, text=blue] {3};
+		\draw[black,thick] (A)--(B) node[right, midway, scale=.9, text=blue] {2};
+		\draw[black,thick] (B)--(O);
+		\draw[red,thick] (0.5,0) arc(0:{atan(2/3)}:.5) node[right, yshift=1, midway, scale=.9] {$\theta$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></p></statement>
 
 <solution><p>We start by using the Pythagorean Theorem to find the hypotenuse of the triangle.
 <me>c^2 = 2^2 + 3^2 = 13</me>
@@ -176,12 +379,31 @@ so <m>c = \sqrt{13}</m>. Thus, <m>\cos \theta = \dfrac{3}{\sqrt{13}}</m> and <m>
 	\end{align*}
 	</p></solution></example>
 
-<exercise><statement><p>Find <m>\cos 2\theta</m> and <m>\tan 2\theta</m> for the angle <m>\theta</m> shown in the previous example.</p></statement></exercise>
+<exercise><statement><p>Find <m>\cos 2\theta</m> and <m>\tan 2\theta</m> for the angle <m>\theta</m> shown in the previous example.</p></statement><answer><p><m>\cos 2\theta = \dfrac{5}{13},~~\tan 2\theta = \dfrac{12}{5}</m></p></answer></exercise>
 
 <p>We can work with algebraic expressions instead of numerical values for the trig ratios.</p>
 
 <example><statement><p>Use the figure below to express <m>\cos 2\phi</m> in terms of <m>a</m>.</p>	
-<sidebyside width="15%"><image source="images/exam8-1-7.png"><description>triangle</description></image></sidebyside></statement>
+<sidebyside width="18%"><!--<image source="images/exam8-1-7.png"><description>triangle</description></image>-->
+    <image xml:id="exam8-1-7">
+        <description>triangle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+		\begin{tikzpicture} 
+		\coordinate (O) at (0,0);
+		\coordinate (A) at (2.4,0);
+		\coordinate (B) at (0,-2);
+		\draw[blue,thick] (O) rectangle ++(.25, -.25);
+		\draw[black,thick] (O)--(A) node[above, midway, scale=.9, text=blue] {$a$};
+		\draw[black,thick] (A)--(B) node[below right, midway, scale=.9, text=blue] {3};
+		\draw[black,thick] (B)--(O);
+		\draw[red,thick] (1.9,0) arc(180:{180+atan(5/6)}:.5) node[left, yshift=-1, midway, scale=.9] {$\phi$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement>
 
 <solution><p>We use the Pythagorean Theorem to find an expression for the third side of the triangle.
 	\begin{align*}
@@ -198,7 +420,7 @@ Finally, we substitute these expressions into the double angle identity.
 	\end{align*}</p>
 </solution></example>
 
-<exercise><statement><p>For the triangle in the previous example, find expressions for <m>\sin 2\phi</m> and <m>\tan 2\phi</m>.</p></statement></exercise>
+<exercise><statement><p>For the triangle in the previous example, find expressions for <m>\sin 2\phi</m> and <m>\tan 2\phi</m>.</p></statement><answer><p><m>\sin 2\phi = \dfrac{2a\sqrt{9-a^2}}{9},~~\tan 2\phi = \dfrac{2a\sqrt{9-a^2}}{2a^2 - 9}</m></p></answer></exercise>
 
 <p>By using the Pythagorean identity, we can write the double angle formula for cosine in two alternate forms.</p>
 
@@ -234,7 +456,7 @@ Finally, we substitute these expressions into the double angle identity.
 	\end{align*}</p>
 </solution></example>
 
-<exercise><statement><p>Find an expression for <m>\cos 2\alpha</m> if you know that <m>\sin \alpha = \dfrac{6}{w}</m>.</p></statement></exercise>
+<exercise><statement><p>Find an expression for <m>\cos 2\alpha</m> if you know that <m>\sin \alpha = \dfrac{6}{w}</m>.</p></statement><answer><p><m>\dfrac{w^2 - 76}{w^2}</m></p></answer></exercise>
 </subsection>
 
 <subsection><title>Solving Equations</title>
@@ -257,7 +479,7 @@ x = \dfrac{\pi}{2},~\dfrac{3\pi}{2} ~~~~~~~~~~~~~ x\amp = \dfrac{\pi}{6},~\dfrac
 	\end{align*}</p>
 <p>There are four solutions, <m>x = \dfrac{\pi}{2},~\dfrac{3\pi}{2},~\dfrac{\pi}{6},</m> and <m>\dfrac{5\pi}{6}</m>.</p></solution></example>
 
-<exercise><statement><p>Solve <m>\cos 2t = \cos t</m>, for <m>0 \le x \le 2\pi</m>.</p></statement></exercise>
+<exercise><statement><p>Solve <m>\cos 2t = \cos t</m>, for <m>0 \le x \le 2\pi</m>.</p></statement><answer><p><m>t = 0,~ \dfrac{2\pi}{3},~\dfrac{4\pi}{3}</m></p></answer></exercise>
 
 <activity><title>Identities</title>
 <p></p>

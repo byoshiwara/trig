@@ -14,7 +14,34 @@
     <li>Choose a point on the terminal side of <m>\alpha</m>, and show that the negative angle identities 
     hold for <m>\alpha</m>.</li>
 </ol></p></statement>
-<answer><m>\dfrac{3\pi}{8},~ \dfrac{7\pi}{8},~ \dfrac{11\pi}{8},~ \dfrac{15\pi}{8}</m></answer></exercise>
+<answer><sidebyside width="25%" margins="0 75%">
+    <image xml:id="hp8-1-1">
+        <description>angles</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=1.2]
+        \draw[black,thick,->,>=stealth'] (-2.2,0)--(1.2,0) node[right,scale=.9] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-1.5)--(0,1.5) node[above,scale=.9] {$y$};
+        \coordinate (O) at (0,0);
+        \def\al{150};
+        \coordinate (P) at (\al:2);
+        \coordinate (Pp) at (-\al:2);
+        \coordinate (R) at (\al:2.5);
+        \coordinate (Rp) at (-\al:2.5);
+        \draw[blue,thick,->,>=stealth'] (O)--(R);
+        \draw[blue,thick,->,>=stealth'] (O)--(Rp);
+        \filldraw[black] (P) circle (2pt) node[above right, xshift=-2, scale=.9] {$P(x_1,y_1)$};
+        \filldraw[black] (Pp) circle (2pt) node[below right, xshift=-2, scale=.9] {$P'(x_2,y_2)$};
+        \draw[red,thick,->] (0.5,0) arc(0:{\al}:0.5) node[above right, midway, scale=.9] {$\alpha$};
+        \draw[red,thick,->] (0.35,0) arc(0:{-\al}:0.35) node[below right, midway, scale=.9] {$-\alpha$};
+        \node[scale=.9] at (-0.8,0.7) {$r_1$};
+        \node[scale=.9] at (-0.8,-0.75) {$r_2$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside><p><m>x_2=x_1</m>, <m>y_2=-y_1</m>, and <m>r_2=r_1</m>. Thus, <m>\cos(-\alpha)=\dfrac{x_2}{r_2} =\dfrac{x_1}{r_1}=\cos\alpha </m>, <m>\sin(-\alpha)=\dfrac{y_2}{r_2} =\dfrac{-y_1}{r_1}=-\sin\alpha </m>, and <m>\tan(-\alpha)=\dfrac{y_2}{x_2} =\dfrac{-y_1}{x_1}=-\tan\alpha </m>. </p></answer></exercise>
 
 <exercise number="2"><statement><p><ol label="a">
     <li>Sketch an angle <m>\beta</m> in standard position, with <m>\pi \lt \beta \lt \dfrac{3\pi}{2}</m>. Also sketch the angle <m>-\beta</m>.</li>
@@ -24,33 +51,76 @@
 </exercise>
 
 <exercise number="3"><statement><p>Given that <m>\sin \dfrac{7\pi}{12} = \dfrac{\sqrt{2} + \sqrt{6}}{4}</m>, find <m>\sin \dfrac{-7\pi}{12}</m>.  Sketch both angles.</p></statement>
-<answer><m>0,~ \dfrac{\pi}{2},~ \pi,~ \dfrac{3\pi}{2},~ 2\pi</m></answer></exercise>
+<answer><sidebyside widths="50% 20%" margins="0% 30%">
+    <p><m>\dfrac{-(\sqrt{2} + \sqrt{6})}{4}</m></p>
+    <image xml:id="hp8-1-3ans">
+        <description>angles</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=1.2]
+        \draw[black,thick,->,>=stealth'] (-1.2,0)--(1.2,0) node[right,scale=.9] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-2)--(0,2) node[above,scale=.9] {$y$};
+        \coordinate (O) at (0,0);
+        \def\al{105};
+        \coordinate (R) at (\al:2.);
+        \coordinate (Rp) at (-\al:2.);
+        \draw[blue,thick,->,>=stealth'] (O)--(R);
+        \draw[blue,thick,->,>=stealth'] (O)--(Rp);
+        \draw[red,thick,->] (0.5,0) arc(0:{\al}:0.5) node[above right, xshift=-4, midway] {$\frac{7\pi}{12}$};
+        \draw[red,thick,->] (0.35,0) arc(0:{-\al}:0.35) node[below right, xshift=2, scale=.9] {$\frac{-7\pi}{12}$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer></exercise>
 
 <exercise number="4"><statement><p>Given that <m>\cos \dfrac{7\pi}{12} = \dfrac{\sqrt{2} - \sqrt{6}}{4}</m>, find <m>\cos \dfrac{-7\pi}{12}</m>.  Sketch both angles.</p></statement></exercise>
 
 <exercise number="5"><statement><p>If <m>\cos(2x-0.3)=0.24</m> and <m>\sin(2x-0.3) \lt 0</m>, find <m>\cos(0.3-2x)</m> and  
 <m>\sin(0.3-2x)</m>.</p></statement>
-<answer><m>\dfrac{2\pi}{9},~ \dfrac{4\pi}{9},~ \dfrac{8\pi}{9},~ \dfrac{10\pi}{9}~ \dfrac{14\pi}{9},~ \dfrac{16\pi}{9}</m></answer></exercise>
+<answer><p><m>\cos(0.3-2x)=0.24</m>, <m>\sin(0.3-2x)=0.97</m></p></answer></exercise>
 
 <exercise number="6"><statement><p>If <m>\sin(1.5-\phi)=-0.28</m> and <m>\cos(1.5-\phi) \gt 0</m>, find <m>\sin(1.5-\phi)</m> and  
 <m>\cos(1.5-\phi)</m>.</p></statement></exercise>
 
 <exercise number="7"><statement><p>Show that <m>\cos(45\degree+45\degree)</m> is not equal to <m>\cos 45\degree + \cos 45\degree</m>.</p></statement>
-    <answer><m>\dfrac{\pi}{12},~ \dfrac{5\pi}{12},~ \dfrac{13\pi}{12},~ \dfrac{17\pi}{12}</m></answer></exercise>
+    <answer><p><m>\cos(45\degree + 45\degree)=\cos(90\degree)=0</m>, but <m>\cos 45\degree +\cos 45\degree = \frac{1}{\sqrt{2}}+\frac{1}{\sqrt{2}}=\sqrt{2} </m></p></answer></exercise>
 
 <exercise number="8"><statement><p>Show that <m>\tan(60\degree-30\degree)</m> is not equal to <m>\tan 60\degree - \tan 30\degree</m>.</p></statement></exercise>
 
 <exercise number="9"><statement><p>Use your calculator to verify that <m>\tan (87\degree-29\degree)</m> is not equal to <m>\tan 87\degree - \tan 29\degree</m>.</p></statement>
-    <answer><m>\dfrac{\pi}{18},~ \dfrac{7\pi}{18},~ \dfrac{13\pi}{18},~ \dfrac{19\pi}{18}~ \dfrac{25\pi}{18},~ \dfrac{31\pi}{18}</m></answer></exercise>
+    <answer><p><m>\tan(87\degree -29\degree)\approx 1.600</m>, but <m>\tan 87\degree =\tan 29\degree \approx 18.527 </m></p></answer></exercise>
 
 <exercise number="10"><statement><p>Use your calculator to verify that <m>\cos (52\degree+64\degree)</m> is not equal to <m>\cos 52\degree + \cos 64\degree</m>.</p></statement></exercise>
 
 <exercise number="11"><statement><p>Use graphs to show that <m>\sin(x-\dfrac{\pi}{6})</m> is not equivalent to <m>\sin x - \sin\dfrac{\pi}{6}</m></p>.</statement> 
-    <answer><m>0.491,~ 2.651,~ 3.632,~ 5.792</m></answer></exercise>
+    <answer><sidebyside widths="50% 50%" valigns="middle middle">
+    <image xml:id="hp8-1-11ans">
+        <description>two sinusoidal graphs</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture}
+        \draw[cyan] (-pi,-3/2) grid[xstep=pi/6,ystep=1/2] (pi,3/2);
+        \draw[black,thick,->,>=stealth'] (-pi,0)--(3.3,0) node[right,scale=.9] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-3/2)--(0,1.7) node[above,scale=.9] {$y$};
+        \draw[black,thick] (-pi,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1] {$-\pi$};
+        \draw[black,thick] (pi,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1] {$\pi$};
+        \foreach \y in {-1,1} \draw[black,thick] (.1,\y)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1] {$\y$};
+        \draw[samples=65,domain=pi:-pi, variable=\x, smooth, thick, red] plot(\x, {sin( deg(\x-pi/6) )}) node[above, xshift=.2cm,fill=white, inner sep=1, scale=.9] {$\sin\left(x-\frac{\pi}{6}\right)$} ;
+        \draw[samples=65,domain=-pi:pi, variable=\x, smooth, thick, blue] plot(\x, {sin( deg(\x) )-1/2}) node[below, xshift=-.2cm, yshift=-2
+        ,fill=white, inner sep=1, scale=.9] {$\sin\ x-\sin \frac{\pi}{6}$} ;
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    <p>The curves are different.</p>
+    </sidebyside></answer></exercise>
         
 <exercise number="12"><statement><p>Use graphs to show that <m>\tan(x+\dfrac{\pi}{4})</m> is not equivalent to <m>\tan x + \tan\dfrac{\pi}{4}</m></p>.</statement> </exercise>
 
-<exercisegroup><introduction><p>For Problems 13-24, find exact values for the trig ratios. (Do not use a calculator!)</p></introduction>
+<exercisegroup><introduction><p>For Problems 13<ndash/>24, find exact values for the trig ratios. (Do not use a calculator!)</p></introduction>
         
 <exercise number="13"><statement><p>Suppose <m>\cos \alpha = \dfrac{3}{5},~ \sin \alpha = \dfrac{4}{5},~ \cos \beta = \dfrac{5}{13}</m>, and <m>\sin \beta = \dfrac{-12}{13}</m>. Evaluate the following.</p>
 <p><ol label="a" cols="3">
@@ -58,7 +128,11 @@
     <li><m>\sin(\alpha + \beta)</m></li>
     <li><m>\tan(\alpha + \beta)</m></li>
 </ol></p></statement> 
-    <answer><m>0.540,~ 1.325,~ 2.110,~ 2.896,~ 3.681,~ 4.467,~ 5.252,~ 6.037</m></answer></exercise>
+    <answer><p><ol label="a" cols="3">
+    <li><m>\dfrac{63}{65} </m></li>
+    <li><m>\dfrac{-16}{65} </m></li>
+    <li><m>\dfrac{-16}{63} </m></li>
+</ol></p></answer></exercise>
 
 <exercise number="14"><statement><p>Suppose <m>\cos \alpha = \dfrac{-2}{3},~ \sin \alpha = \dfrac{\sqrt{5}}{3},~ \cos \beta = \dfrac{\sqrt{3}}{2}</m>, and <m>\sin \beta = \dfrac{-1}{2}</m>. Evaluate the following.</p>
 <p><ol label="a" cols="3">
@@ -72,7 +146,10 @@
     <li><m>\tan(s+t)</m></li>
     <li><m>\tan(s-t)</m></li>
 </ol></p></statement>
-    <answer><m>1.114,~ 2.027,~ 3.209,~ 4.122,~ 5.303,~ 6.216</m></answer></exercise>
+    <answer><p><ol label="a" cols="2">
+    <li><m>\dfrac{44}{117} </m></li>
+    <li><m>\dfrac{4}{3} </m></li>
+</ol></p></answer></exercise>
 
 <exercise number="16"><statement><p>If <m>\tan x = -3</m> and <m>\tan y = -5</m>, find exact values for:</p>
 <p><ol label="a" cols="2">
@@ -85,7 +162,10 @@
     <li><m>\cos(\theta + \phi)</m></li>
     <li><m>\tan(\theta - \phi)</m></li>
 </ol></p></statement>
-        <answer><m>0.702,~ 2.440,~ 3.843,~ 5.582</m></answer></exercise>
+        <answer><p><ol label="a" cols="2">
+    <li><m>\dfrac{36}{85} </m></li>
+    <li><m>\dfrac{-13}{84} </m></li>
+</ol></p></answer></exercise>
 
 <exercise number="18"><statement><p>Suppose <m>\cos \theta = \dfrac{15}{17}</m>, where <m>\theta</m> is in quadrant IV, and <m>\sin \phi = \dfrac{3}{5}</m>, where <m>\phi</m> is in quadrant II.  Evaluate the following.</p>
 <p><ol label="a" cols="2">
@@ -100,7 +180,38 @@
     <li><m>\tan(\alpha + \beta)</m></li>
     <li>Sketch the angles <m>\alpha, \beta</m> and <m>\alpha + \beta</m>.</li>
 </ol></p></statement>
-        <answer><m>0,~ 1,~ 2,~ 3,~ 4,~ 5,~ 6</m></answer></exercise>
+        <answer><p><ol label="a" cols="3">
+    <li><m>\dfrac{-16}{65} </m></li>
+    <li><m>\dfrac{63}{65} </m></li>
+    <li><m>\dfrac{-16}{63} </m></li>
+    <li><sidebyside width="100%">
+    <image xml:id="hp8-1-19ans">
+        <description>angles</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=1.5]
+        \coordinate (O) at (0,0);
+        \def\as{180-asin(12/13)};
+        \coordinate (A) at ({\as}:1);
+        \def\ac{360-acos(-3/5)};
+        \coordinate (B) at ({\ac}:1);
+        \def\sa{\as+\ac});
+        \coordinate(C) at ({\sa}:1);
+        \draw[black,thick,->,>=stealth'] (-1,0)--(1,0) node[right,scale=.9]{$x$};
+        \draw[black,thick,->,>=stealth'] (0,-1)--(0,1) node[above,scale=.9]{$y$};
+        \draw[blue,thick,->,>=stealth'] (O)--(A);
+        \draw[red,thick,->] (0.5, 0) arc(0:{\as}:0.5) node[above right, xshift=-8, midway, scale=.9] {$\alpha$};
+        \draw[blue,thick,->,>=stealth'] (O)--(B);
+        \draw[red,thick,->] (0.4, 0) arc(0:{\ac}:0.4) node[left, xshift=-4,  scale=.9] {$\beta$};
+        \draw[blue,thick,->,>=stealth'] (O)--(C);
+        \draw[red,thick,->] (0.3, 0) arc(0:{\sa}:0.3) node[below, xshift=3, yshift=-6,  scale=.9] {$\alpha+\beta$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></li>
+</ol></p></answer></exercise>
         
 <exercise number="20"><statement><p>If <m>\cos \alpha = \dfrac{3}{8},~ \dfrac{3\pi}{2} \lt\alpha \lt 2\pi</m>, and <m>\sin \beta = \dfrac{-1}{4},~ \pi \lt \beta \lt \dfrac{3\pi}{2}</m>, find exact values for:</p>
 <p><ol label="a" cols="3">
@@ -111,111 +222,173 @@
 </ol></p></statement></exercise>
  
 <exercise number="21"><statement><p>Find the exact values of <m>\cos 15\degree</m> and <m>\tan 15\degree</m>.</p></statement>
-        <answer><m>\dfrac{\pi}{6},~ \dfrac{2\pi}{3},~ \dfrac{7\pi}{6},~ \dfrac{5\pi}{3}</m></answer></exercise>
+        <answer><p><m>\cos 15\degree=\frac{\sqrt{6}+\sqrt{2}}{4} </m>, <m>\tan 15\degree = 2-\sqrt{3}</m></p></answer></exercise>
 
 <exercise number="22"><statement><p>Find the exact values of <m>\sin 165\degree</m> and <m>\tan 165\degree</m>.</p></statement></exercise>
 
 <exercise number="23"><statement><p>If <m>\sin \theta = 0.2</m> and <m>\cos \theta \gt 0</m>, find <m>\sin (\theta + \dfrac{\pi}{3})</m>.</p></statement>
-        <answer><m>\dfrac{5\pi}{12},~ \dfrac{7\pi}{12},~ \dfrac{13\pi}{12},~ \dfrac{5\pi}{4},~ \dfrac{7\pi}{4},~ \dfrac{23\pi}{12}</m></answer></exercise>
+        <answer><p><m>\dfrac{6\sqrt{2}+1}{10}</m></p></answer></exercise>
 
 <exercise number="24"><statement><p>If <m>\cos \theta = 0.6</m> and <m>\sin \theta \lt 0</m>, find <m>\cos (\theta + \dfrac{3\pi}{4})</m>.</p></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="3"><introduction><p>For Problems 25-30, use the sum and difference formulas to expand each expression.
+<exercisegroup cols="3"><introduction><p>For Problems 25<ndash/>30, use the sum and difference formulas to expand each expression.
 </p></introduction>
 
 <exercise number="25"><statement><m>\sin (\theta - 270\degree)</m></statement>
-        <answer><m>\dfrac{3\pi}{2}</m></answer></exercise>
+        <answer><p><m>\cos \theta</m></p></answer></exercise>
 
 <exercise number="26"><statement><m>\cos(270\degree + \theta)</m></statement></exercise>
 
 <exercise number="27"><statement><m>\cos(t + \dfrac{\pi}{6})</m></statement>
-<answer><m>\dfrac{7}{6},~ \dfrac{11}{6},~ \dfrac{19}{6},~ \dfrac{23}{6},~ \dfrac{31}{6},~ \dfrac{35}{6}</m></answer></exercise>
+<answer><p><m>\frac{\sqrt{3}}{2}\cos t -\frac{1}{2}\sin t </m></p></answer></exercise>
  
 <exercise number="28"><statement><m>\sin (t - \dfrac{2\pi}{3})</m></statement></exercise>
 
  <exercise number="29"><statement><m>\tan(\beta - \dfrac{\pi}{6})</m></statement>
-<answer><m>1.14,~ 1.62,~ 3.23,~ 3.72,~ 5.24,~ 5.81</m></answer></exercise>
+<answer><p><m>\frac{\sqrt{3}\tan\beta -1}{\sqrt{3}+\tan\beta} </m></p></answer></exercise>
  
 <exercise number="30"><statement><m>\tan (\phi + \dfrac{\pi}{4})</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 31-34, use the unit circle to estimate trig values. Then verify with your calculator.</p>
+<exercisegroup cols="2"><introduction><p>For Problems 31<ndash/>34, use the unit circle to estimate trig values. Then verify with your calculator.</p>
 
-<p><sidebyside width="50%"><image source="images/hp8-1.png"><description>unitcircle</description></image></sidebyside></p></introduction>
+<sidebyside width="50%"><!--<image source="images/hp8-1.png"><description>unitcircle</description></image>-->
+    <image xml:id="hp8-1">
+        <description>unit circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale = .35] 
+        \draw[cyan] (-10,-10) grid (10,10);
+        \draw[black,thick,->,>=stealth'] (-10,0)--(11,0);
+        \draw[black,thick,->,>=stealth'] (0,-10)--(0,11);
+        \coordinate (O) at (0,0);
+
+        \draw[red,thick] (O) circle (10cm);
+        \foreach \theta  in {0,10,...,360}
+        \draw[black] (\theta: 9.8)--(\theta:10.2)  ;
+
+        \draw[black,  thick] (5,0.2) --++(0,-0.4) node[below, yshift=-2, inner sep=1] {0.5};
+        \draw[black,  thick] (-5,0.2) --++(0,-0.4) node[below, yshift=-2, inner sep=1] {0.5};
+        \draw[black,  thick] (0.2,5) --++(-0.4,0) node[left, xshift=-2, inner sep=1] {0.5};
+        \draw[black,  thick] (0.2,-5) --++(-0.4,0) node[left, xshift=-2, inner sep=1] {-0.5};
+
+        \foreach \theta  in {30, 60, 120, 150, 210, 240, 300, 330}
+        {
+        \draw[black] (\theta: 9.6)--(\theta:10.4) ;
+        \node[text width=0.5cm, color=red,fill=white, inner sep=1pt] at (\theta:11.3) {\small $\theta\degree$};
+        };
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></introduction>
 
 <exercise number="31"><statement><p>Does <m>\sin(2\cdot 90\degree) = 2\sin 80\degree</m>?</p></statement>
-<answer><m>0.44,~ 1.44,~ 2.44,~ 3.44,~ 4.44,~ 5.44</m></answer></exercise>
+<answer><p>No</p></answer></exercise>
  
 <exercise number="32"><statement><p>Does <m>\cos(2\cdot 25\degree) = 2\cos 25\degree</m>?</p></statement></exercise>
 
 <exercise number="33"><statement><p>Does <m>\tan(2\cdot 70\degree) = 2\tan 70\degree</m>?</p></statement>
-<answer><m>0.01,~ 3.39,~ 6.01</m></answer></exercise>
+<answer><p>No</p></answer></exercise>
  
 <exercise number="34"><statement><p>Does <m>\tan(2\cdot 100\degree) = 2\tan 100\degree</m>?</p></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 35-38, verify that each statement is true.</p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 35<ndash/>38, verify that each statement is true.</p></introduction>
 
 <exercise number="35"><statement><m>\sin 90\degree = 2\sin 45\degree \cos 45\degree</m></statement>
-<answer><m>0.564,~ 1.182,~ 2.658,~ 3.276,~ 4.752,~ 5.371</m></answer></exercise>
+<answer><p><m>1=2\left(\frac{1}{\sqrt{2}} \right)\left(\frac{1}{\sqrt{2}} \right) </m></p></answer></exercise>
  
 <exercise number="36"><statement><m>\sin 60\degree = 2\sin 30\degree \cos 30\degree</m></statement></exercise>
 
 <exercise number="37"><statement><m>\cos 60\degree = \cos^2 30\degree - \sin^2 30\degree</m></statement>
-<answer><m>0.423,~ 2.977,~ 4.423</m></answer></exercise>
+<answer><p><m>\frac{1}{2} =\left(\frac{\sqrt{3}}{2} \right)^2 - \left(\frac{1}{2} \right)^2 </m></p></answer></exercise>
  
 <exercise number="38"><statement><m>\tan 60\degree = \dfrac{2\tan 30\degree}{1 - \tan^2 30\degree}</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup><introduction><p>In Problems 39-42, is the statement true or false? Explain your answer.</p></introduction>
+<exercisegroup><introduction><p>In Problems 39<ndash/>42, is the statement true or false? Explain your answer.</p></introduction>
 
 <exercise number="39"><statement><p>If <m>\cos \alpha = 0.32</m>, then <m>\cos 2\alpha = 2(0.32) = 0.64</m>.</p></statement>
-<answer><m>1.165,~ 4.165</m></answer></exercise>
+<answer><p>False, but <m>\cos 2\alpha=2(0.32)^2-1 </m></p></answer></exercise>
  
 <exercise number="40"><statement><p>If <m>\cos 2\beta = 0.86</m>, then <m>\cos \beta = 0.43</m>, so <m>\beta = \cos^{-1}(0.43)</m>.</p></statement></exercise>
 
-<exercise number="41"><statement><p>If <m>\sin 2\theta = h</m>, then <m>\sin \theta = \dfrac{h}{2}</m>, so <m>\theta = \sin^{-1}(\dfrac{h}{2})</m>.</p></statement>
-<answer><m>2.251</m></answer></exercise>
+<exercise number="41"><statement><p>If <m>\sin 2\theta = h</m>, then <m>\sin \theta = \dfrac{h}{2}</m>, so <m>\theta = \sin^{-1}\left(\dfrac{h}{2}\right)</m>.</p></statement>
+<answer><p>False, but <m>2\theta = \sin^{-1}(h) </m></p></answer></exercise>
  
 <exercise number="42"><statement><p>If <m>\cos \phi = r</m>, then <m>\cos 2\phi = 2r</m>.</p></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="3"><introduction><p>For Problems 43-54, use the double angle identities to simplify the expression.</p></introduction>
+<exercisegroup cols="3"><introduction><p>For Problems 43<ndash/>54, use the double angle identities to simplify the expression.</p></introduction>
 
 <exercise number="43"><statement><m>2\sin 34\degree \cos 34\degree</m></statement>
-<answer> </answer></exercise>
+<answer><m>\sin 68\degree</m></answer></exercise>
 
 <exercise number="44"><statement><m>\cos^2 \dfrac{\pi}{10} - \sin^2 \dfrac{\pi}{10}</m></statement></exercise>
 
 <exercise number="45"><statement><m>1 - 2\sin^2 \dfrac{\pi}{16}</m></statement>
-    <answer></answer></exercise>
+    <answer><p><m>\cos\frac{\pi}{8} </m></p></answer></exercise>
         
 <exercise number="46"><statement><m>2\cos^2 18\degree - 1</m></statement></exercise>
 
 <exercise number="47"><statement><m>\cos^2 3\theta - \sin^2 3\theta</m></statement>
-<answer><m>\dfrac{7}{6},~ \dfrac{11}{6},~ \dfrac{19}{6},~ \dfrac{23}{6},~ \dfrac{31}{6},~ \dfrac{35}{6}</m></answer></exercise>
+<answer><p><m>\cos 6\theta</m></p></answer></exercise>
  
 <exercise number="48"><statement><m>2\sin 2\alpha \cos 2\alpha</m></statement></exercise>
 
  <exercise number="49"><statement><m>2\sin 5t \cos 5t</m></statement>
-<answer><m>1.14,~ 1.62,~ 3.23,~ 3.72,~ 5.24,~ 5.81</m></answer></exercise>
+<answer><p><m>\sin 10t</m></p></answer></exercise>
  
 <exercise number="50"><statement><m>\cos^2 4w - \sin^2 4w</m></statement></exercise>
 
 <exercise number="51"><statement><m>\dfrac{2\tan 64\degree}{1- \tan^2 64\degree}</m></statement>
-<answer><m>\dfrac{7}{6},~ \dfrac{11}{6},~ \dfrac{19}{6},~ \dfrac{23}{6},~ \dfrac{31}{6},~ \dfrac{35}{6}</m></answer></exercise>
+<answer><p><m>\tan 128\degree</m></p></answer></exercise>
  
 <exercise number="52"><statement><m>\dfrac{2\tan \dfrac{\pi}{3}}{1- \tan^2 \dfrac{\pi}{3}}</m></statement></exercise>
 
  <exercise number="53"><statement><m>2\cos^2 2\beta - 1</m></statement>
-<answer><m>1.14,~ 1.62,~ 3.23,~ 3.72,~ 5.24,~ 5.81</m></answer></exercise>
+<answer><p><m>\cos 4\beta</m></p></answer></exercise>
  
 <exercise number="54"><statement><m>1 - 2\sin^2 6s</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 55-58, use the figures to find the trigonometric ratios.</p>
-<sidebyside width="60%"><image source="images/hp8-1-55.png"><description>triangles</description></image></sidebyside>
+<exercisegroup cols="2"><introduction><p>For Problems 55<ndash/>58, use the figures to find the trigonometric ratios.</p>
+<sidebyside width="60%"><!--<image source="images/hp8-1-55.png"><description>triangles</description></image>-->
+    <image xml:id="hp8-1-55">
+        <description>triangles</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.6]
+        \coordinate (C) at (0,0);
+        \coordinate (A) at (5,0);
+        \coordinate (B) at ($ sqrt(11)*(0,1) $);
+        \draw[blue,thick] (C) rectangle ++(.3,.3);
+        \draw[black,thick] (C)--(A) node[below, midway, text=blue] {5};
+        \draw[black,thick] (B)--(A) node[above, midway, text=blue] {6};
+        \draw[black,thick] (C)--(B);
+        \draw[red,thick] ($ sqrt(11)*(0,1) + (0,-0.7) $) arc(-90:{-acos(5/6)}:0.7) node[below, xshift=2, midway] {$\alpha$};
+        \draw[red,thick] (3.9,0) arc(180:{180-acos(5/6)}:1.1) node[left, midway] {$\beta$};
+
+        %second triangle
+        \def\sh{13};
+        \coordinate (F) at (\sh,0);
+        \coordinate (D) at ($ \sh*(1,0)+ (-4,0) $);
+        \coordinate (E) at ($ \sh*(1,0)+ (0,3) $);
+        \draw[blue,thick] (F) rectangle ++(-.3,.3);
+        \draw[black,thick] (F)--(D) node[below, midway, text=blue] {$w$};
+        \draw[black,thick] (E)--(D);
+        \draw[black,thick] (F)--(E) node[right, midway, text=blue] {1};
+        \draw[red,thick] ($ \sh*(1,0) + (0,2.3) $) arc(270:{180+atan(3/4)}:0.7) node[below, xshift=-2, midway] {$t$};
+        \draw[red,thick] ($ \sh*(1,0) +(-3.2,0) $) arc(0:{atan(3/4)}:0.8) node[right, midway] {$s$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 </introduction>
 
 <exercise number="55"><statement><p><ol label="a" cols="2">
@@ -226,7 +399,14 @@
     <li><m>\cos 2\alpha</m></li>
     <li><m>\tan 2\alpha</m></li>
 </ol></p></statement>
-<answer></answer></exercise>
+<answer><p><ol label="a" cols="2">
+    <li><m>\dfrac{5}{6} </m></li>
+    <li><m>\dfrac{\sqrt{11}}{6} </m></li>
+    <li><m>\dfrac{5}{\sqrt{11}} </m></li>
+    <li><m>\dfrac{5\sqrt{11}}{18} </m></li>
+    <li><m>\dfrac{-7}{18} </m></li>
+    <li><m>\dfrac{-5\sqrt{11}}{7} </m></li>
+</ol></p></answer></exercise>
 
 <exercise number="56"><statement><p><ol label="a" cols="2">
     <li><m>\sin \beta</m></li>
@@ -245,7 +425,14 @@
     <li><m>\cos s</m></li>
     <li><m>\tan s</m></li>
 </ol></p></statement>
-<answer></answer></exercise>
+<answer><p><ol label="a" cols="2">
+    <li><m>\dfrac{1}{w^2+1} </m></li>
+    <li><m>\dfrac{w}{w^2+1} </m></li>
+    <li><m>\dfrac{1}{w} </m></li>
+    <li><m>\dfrac{2w}{w^2+1} </m></li>
+    <li><m>\dfrac{w^2 -1}{w^2+1} </m></li>
+    <li><m>\dfrac{2w}{w^2-1} </m></li>
+</ol></p></answer></exercise>
 
 <exercise number="58"><statement><p><ol label="a" cols="2">
     <li><m>\sin t</m></li>
@@ -265,7 +452,36 @@
     <li><m>\tan 2\theta</m></li>
     <li>Sketch the angles <m>\theta</m> and <m>2\theta</m>.</li>
 </ol></p></statement>
-<answer></answer></exercise>
+<answer><p>
+<ol label="a" cols="2">
+    <li><m>\dfrac{-5}{13} </m></li>
+    <li><m>\dfrac{-120}{169} </m></li>
+    <li><m>\dfrac{119}{169} </m></li>
+    <li><m>\dfrac{-120}{119} </m></li>
+    <li><sidebyside>
+    <image xml:id="hp8-1-59ans">
+        <description>angles</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=1.5]
+        \coordinate (O) at (0,0);
+        \def\th{360-acos(12/13)};
+        \coordinate (A) at ({\th}:1.7);
+        \def\an{720-2*acos(12/13)};
+        \coordinate (B) at ({\an}:1.5);
+        \draw[black,thick,->,>=stealth'] (-1,0)--(1.6,0) node[right,scale=.9]{$x$};
+        \draw[black,thick,->,>=stealth'] (0,-1.1)--(0,1) node[above,scale=.9]{$y$};
+        \draw[blue,thick,->,>=stealth'] (O)--(A);
+        \draw[blue,thick,->] (0.8, 0) arc(0:{\th}:0.8) node[above, xshift=1, yshift=-1, scale=.9] {$\theta$};
+        \draw[red,thick,->,>=stealth'] (O)--(B);
+        \draw [domain=0:{4*pi - 2*acos(12/13)*pi/180 },variable=\t,smooth,samples=75,->, below, red, thick] plot ({\t r}: {.15+\t^(1.8) /400 }) node[below, yshift=-2, scale=.9] {$2\theta$};;
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></li>
+</ol></p></answer></exercise>
 
 <exercise number="60"><statement><p>Suppose <m>\sin \phi = \dfrac{5}{6}</m> and <m>\dfrac{\pi}{2} \lt \phi \lt \pi</m>. Compute exact values for:
 <ol label="a" cols="2">
@@ -282,7 +498,12 @@
     <li><m>\cos 2u</m></li>
     <li><m>\sin 2u</m></li>
 </ol></p></statement>
-<answer></answer></exercise>
+<answer><p>
+<ol label="a" cols="3">
+    <li><p><m>\dfrac{8}{15} </m></p></li>
+    <li><p><m>\dfrac{-15}{17} </m></p></li>
+    <li><p><m>\dfrac{-8}{17} </m></p></li>
+</ol></p></answer></exercise>
 
 <exercise number="62"><statement><p>If <m>\tan v = \dfrac{2}{3}</m> and <m>180\degree \lt u \lt 270\degree</m>, find exact values for:
 <ol label="a" cols="3">
@@ -291,34 +512,54 @@
     <li><m>\sin 2v</m></li>
 </ol></p></statement></exercise>
 
-<exercisegroup cols="2"><introduction><p>For Problems 63-72, 
+<exercisegroup cols="2"><introduction><p>For Problems 63<ndash/>72, 
     <ol label="a">
         <li>Use identities to rewrite the equation in terms of a single angle.</li>
         <li>Solve.  Give exact solutions between <m>0</m> and <m>2\pi</m>.</li>
     </ol></p></introduction>
 
 <exercise number="63"><statement><m>\sin 2\theta + \sqrt{2} \cos \theta = 0</m></statement>    
-<answer></answer></exercise>
+<answer><p>
+    <ol label="a">
+        <li><p><m>2\sin\theta \,\cos\theta +\sqrt{2}\cos\theta=0 </m></p></li>
+        <li><p><m>\dfrac{\pi}{2} </m>, <m>\dfrac{5\pi}{4} </m>, <m>\dfrac{3\pi}{2} </m>, <m>\dfrac{7\pi}{4} </m> </p></li>
+    </ol></p></answer></exercise>
 
 <exercise number="64"><statement><m>\sin 2\alpha \sin \alpha =\cos \alpha</m></statement></exercise>
 
 <exercise number="65"><statement><m>\cos 2t -5\cos t + 3 = 0</m></statement>    
-<answer></answer></exercise>
+<answer><p>
+    <ol label="a">
+        <li><p><m>2\cos^2 t -5\cos t +2=0 </m></p></li>
+        <li><p><m>\dfrac{\pi}{3} </m>, <m>\dfrac{5\pi}{3} </m> </p></li>
+    </ol></p></answer></exercise>
 
 <exercise number="66"><statement><m>\cos 2x + 3\sin x = 2</m></statement></exercise>
 
 <exercise number="67"><statement><m>\tan 2\beta + 2\sin \beta = 0</m></statement>    
-<answer></answer></exercise>
+<answer><p>
+    <ol label="a">
+        <li><p><m>\frac{2\tan\beta}{1-\tan^2\beta}+2\sin\beta=0 </m></p></li>
+        <li><p><m>0,\ \dfrac{\pi}{3}, \,\pi,\, \dfrac{5\pi}{3} </m> </p></li>
+    </ol></p></answer></exercise>
 
 <exercise number="68"><statement><m>\tan 2z - 2\cos z = 0</m></statement></exercise>
 
-<exercise number="69"><statement><m>3\cos \phi -\sin(\dfrac{\pi}{2} - \phi) = \sqrt{3}</m></statement>    
-<answer></answer></exercise>
+<exercise number="69"><statement><m>3\cos \phi - \sin \left(\dfrac{\pi}{2} - \phi\right) = \sqrt{3}</m></statement>    
+<answer><p>
+    <ol label="a">
+        <li><p><m>2\cos\phi - \cos \phi=\sqrt{3} </m></p></li>
+        <li><p><m> \dfrac{\pi}{6}, \, \dfrac{11\pi}{6} </m> </p></li>
+    </ol></p></answer></exercise>
 
 <exercise number="70"><statement><m>\sin w + \cos(\dfrac{\pi}{2} - w) = 1</m></statement></exercise>
 
-<exercise number="71"><statement><m>\sin 2\phi \cos \phi + \cos 2\phi \sin \phi = 1 = 0</m></statement>    
-<answer></answer></exercise>
+<exercise number="71"><statement><m>\sin 2\phi \cos \phi + \cos 2\phi \sin \phi = 1 </m></statement>    
+<answer><p>
+    <ol label="a">
+        <li><p><m>\sin 3\phi =1</m></p></li>
+        <li><p><m> \dfrac{\pi}{6}, \, \dfrac{5\pi}{6}, \, \dfrac{3\pi}{2} </m> </p></li>
+    </ol></p></answer></exercise>
 
 <exercise number="72"><statement><m>\cos \theta \cos 3\theta + \sin \theta \sin 3\theta = \dfrac{\sqrt{2}}{2}</m></statement></exercise>
 </exercisegroup>
@@ -328,7 +569,11 @@
         <li><m>\cos (\theta + 90\degree)</m></li>
         <li><m>\sin (\theta + 90\degree)</m></li>
     </ol></p></statement>
-<answer></answer></exercise>
+<answer><p>
+    <ol label="a">
+        <li><m>\cos (\theta + 90\degree)=-\sin\theta </m></li>
+        <li><m>\sin (\theta + 90\degree)=\cos\theta</m></li>
+    </ol></p></answer></exercise>
 
 <exercise number="74"><statement><p>Use the sum of angles formulas for sine and cosine to derive a formula for each expression.  Then use graphs to verify your formula.
     <ol label="a" cols="2">
@@ -338,10 +583,14 @@
 
 <exercise number="75"><statement><p>Use the difference of angles formulas for sine and cosine to prove that:
     <ol label="a" cols="2">
-        <li><m>\cos (\dfrac{\pi}{2} -\theta) = \sin \theta</m></li>
-        <li><m>\sin (\dfrac{\pi}{2} -\theta) = \cos \theta</m></li>
+        <li><m>\cos \left(\dfrac{\pi}{2} -\theta\right) = \sin \theta</m></li>
+        <li><m>\sin \left(\dfrac{\pi}{2} -\theta\right) = \cos \theta</m></li>
     </ol></p></statement>
-<answer></answer></exercise>
+<answer><p>
+    <ol label="a">
+        <li><m>\cos \left(\dfrac{\pi}{2} -\theta\right) = \cos\frac{\pi}{2} \cos\theta + \sin \frac{\pi}{2}\sin\theta = \sin \theta</m></li>
+        <li><m>\sin \left(\dfrac{\pi}{2} -\theta\right) = \sin\frac{\pi}{2} \cos\theta - \cos \frac{\pi}{2}\sin\theta= \cos \theta</m></li>
+    </ol></p></answer></exercise>
 
 <exercise number="76"><statement><p>Use the difference of angles formulas for sine and cosine to derive formulas for:
     <ol label="a" cols="2">
@@ -350,38 +599,44 @@
     </ol></p></statement></exercise> 
 
 <exercise number="77"><statement><p>Prove the double angle identity <m>\sin 2\theta = 2\sin \theta \cos\theta</m>. (Hint:  Start with the sum of angles formula for sine and replace both <m>\alpha</m> and <m>\beta</m> by <m>\theta</m>.)</p></statement>
-<answer></answer></exercise>
+<answer><m>\sin2\theta =\sin(\theta + \theta) = \sin\theta\cos\theta + \sin\theta\cos\theta  = 2\sin\theta\cos\theta </m></answer></exercise>
 
 <exercise number="78"><statement><p>Prove the double angle identity <m>\cos 2\theta = \cos^2 \theta - \sin^2 \theta</m>. (Hint:  Start with the sum of angles formula for sine and replace both <m>\alpha</m> and <m>\beta</m> by <m>\theta</m>.)</p></statement></exercise>
 
-<exercisegroup cols="2"><introduction><p>For Problems 79-88, 
+<exercisegroup cols="2"><introduction><p>For Problems 79<ndash/>88, 
     <ol label="a">
         <li>Use graphs to decide if the equation is an identity.</li>  
         <li>If the equation is not an identity, find a value of the variable that makes the equation false.</li>
     </ol></p></introduction>
 
-<exercise number="79"><statement><m>\sin (\dfrac{\pi}{2} + \beta) = 1 + \sin \beta</m></statement>    
-<answer></answer></exercise>
+<exercise number="79"><statement><m>\sin \left(\dfrac{\pi}{2} + \beta\right) = 1 + \sin \beta</m></statement>    
+<answer><p><ol label="a">
+    <li><p>Not an identity.</p></li>
+    <li><p><m>\beta=\pi</m> (many answers possible)</p></li>
+</ol></p></answer></exercise>
 
-<exercise number="80"><statement><m>\cos (\dfrac{\pi}{3} - \beta) =\cos (\beta - \dfrac{\pi}{3})</m></statement></exercise>
+<exercise number="80"><statement><m>\cos \left(\dfrac{\pi}{3} - \beta\right) =\cos \left(\beta - \dfrac{\pi}{3}\right)</m></statement></exercise>
 
 <exercise number="81"><statement><m>\sin(A+180\degree) = -\sin A</m></statement>    
-<answer></answer></exercise>
+<answer><p>Identity</p></answer></exercise>
 
 <exercise number="82"><statement><m>\tan \theta + \tan(-\theta) = 0</m></statement></exercise>
 
 <exercise number="83"><statement><m>\cos 4\theta = 4\cos \theta</m></statement>    
-<answer></answer></exercise>
+<answer><p><ol label="a">
+    <li><p>Not an identity.</p></li>
+    <li><p><m>\theta=0</m> (many answers possible)</p></li>
+</ol></p></answer></exercise>
 
-<exercise number="84"><statement><m>\cos(\phi + \dfrac{\pi}{3})= \dfrac{1}{2} + \cos \phi</m></statement></exercise>
+<exercise number="84"><statement><m>\cos\left(\phi + \dfrac{\pi}{3}\right)= \dfrac{1}{2} + \cos \phi</m></statement></exercise>
 
-<exercise number="85"><statement><m>\sin(x + \dfrac{\pi}{4}) = \dfrac{\sqrt{2}}{2}(\sin x + \cos x)</m></statement>    
-<answer></answer></exercise>
+<exercise number="85"><statement><m>\sin\left(x + \dfrac{\pi}{4}\right) = \dfrac{\sqrt{2}}{2}(\sin x + \cos x)</m></statement>    
+<answer><p>Identity</p></answer></exercise>
 
-<exercise number="86"><statement><m>2\cos(x - \dfrac{\pi}{6}) = \sin x + \sqrt{3}\cos x</m></statement></exercise>
+<exercise number="86"><statement><m>2\cos\left(x - \dfrac{\pi}{6}\right) = \sin x + \sqrt{3}\cos x</m></statement></exercise>
 
-<exercise number="87"><statement><m>\sin(x - \dfrac{\pi}{3}) + \cos (x + \dfrac{\pi}{6})= 0</m></statement>    
-<answer></answer></exercise>
+<exercise number="87"><statement><m>\sin\left(x - \dfrac{\pi}{3}\right) + \cos \left(x + \dfrac{\pi}{6}\right)= 0</m></statement>    
+<answer><p>Identity</p></answer></exercise>
 
 <exercise number="88"><statement><m>\cos 2x = (\cos x + \sin x)(\cos x - \sin x) </m></statement></exercise>
 </exercisegroup>
@@ -390,7 +645,39 @@
 </p></introduction>
 
 <exercise number="89"><statement><p>The figure below shows a right triangle inscribed in a rectangle.</p>
-<sidebyside width="50%"><image source="images/hp8-1-89.png"><description>rectangle</description></image></sidebyside>
+<sidebyside width="50%"><!--<image source="images/hp8-1-89.png"><description>rectangle</description></image>-->
+    <image xml:id="hp8-1-89">
+        <description>triangle inscribed in rectangle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=1.3]
+        \coordinate (O) at (0,0);
+        \coordinate (A) at (4.5,0);
+        \coordinate (B) at (4.5,2.5);
+        \coordinate (C) at (0,2.5);
+        \coordinate (P) at (0,1.1);
+        \coordinate (Q) at (1,2.5);
+        \draw[black,thick] (O)--(A) node[below,midway, text=blue] {$s_2$};
+        \draw[black,thick] (B)--(A) node[right,midway, text=blue] {$s_5$};
+        \draw[black,thick] (B)--(Q) node[above,midway, text=blue] {$s_6$};
+        \draw[black,thick] (C)--(Q) node[above,midway, text=blue] {$s_4$};
+        \draw[black,thick] (C)--(P) node[left,midway, text=blue] {$s_3$};
+        \draw[black,thick] (O)--(P) node[left,midway, text=blue] {$s_1$};
+        \draw[green!50!black,thick] (A)--(P) node[below left, xshift=-8, yshift=3,midway, text=blue, scale=.9] {$1$};
+        \draw[green!50!black,thick] (A)--(Q) node[above right, xshift=-5, yshift=1,midway, text=blue, scale=.9] {$l_2$};
+        \draw[green!50!black,thick] (P)--(Q) node[below right, xshift=-2, yshift=1,midway, text=blue, scale=.9] {$l_1$};
+        \draw[blue,thick] (Q)++(.175,-.125)--++(-.125,-.175)--++(-.175,.125);
+
+        \draw[red,thick] (Q)++(-.4,0) arc(180:{180+atan(7/5)}:.4) node[left, xshift=2, yshift=-3, midway, scale=.8] {$\theta_1$};
+        \draw[red,thick] (P)++(0,-.3) arc(270:{270+atan(45/11)}:.3) node[below right, xshift=-2, midway, scale=.8] {$\theta_2$};
+        \draw[red,thick] (A)++({180-atan(11/45}:0.8) arc({180-atan(11/45)}:{90+atan(7/5)}:.8) node[above left, xshift=-1, yshift=-2, midway, scale=.8] {$\alpha$};
+        \draw[red,thick] (A)++(0,.6) arc(90:{90+atan(7/5)}:.6) node[above , xshift=-1, yshift=-2, midway, scale=.8] {$\beta$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 <p><ol label="a">
     <li>Label the legs <m>l_1</m> and <m>l_2</m> of the right triangle with their lengths.</li>
     <li>Explain why <m>\theta_1 = \beta</m> and <m>\theta_2 = \alpha +\beta</m>. Label the diagram with these angles.</li>
@@ -399,10 +686,89 @@
     <li>Label the legs <m>s_5</m> and <m>s_6</m> of the top right triangle with their lengths.</li>
     <li>Use the fact that the opposite sides of a rectangle are equal to state the addition formulas for sine and cosine.</li>
 </ol></p></statement>    
-<answer></answer></exercise>
+<answer><sidebyside width="70%">
+    <image xml:id="hp8-1-89ans">
+        <description>triangle inscribed in rectangle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture}
+        \coordinate (O) at (0,0);
+        \coordinate (A) at (4.5,0);
+        \coordinate (B) at (4.5,2.5);
+        \coordinate (C) at (0,2.5);
+        \coordinate (P) at (0,1.1);
+        \coordinate (Q) at (1,2.5);
+        \draw[black,thick] (O)--(A) node[below,midway, text=blue] {$s_2=\sin(\alpha+\beta) $};
+        \draw[black,thick] (B)--(A) node[right, yshift=5,midway, text=blue] {$s_5=\cos\alpha\cos\beta$};
+        \draw[black,thick] (B)--(Q) node[above,midway, xshift=.5cm, text=blue] {$s_6=\cos\alpha\sin\beta$};
+        \draw[black,thick] (C)--(Q) node[above,midway, xshift=-.5cm, text=blue] {$s_4=\sin\alpha\cos\beta$};
+        \draw[black,thick] (C)--(P) node[left,midway, text=blue] {$s_3=\sin\alpha\sin\beta$};
+        \draw[black,thick] (O)--(P) node[left,midway, text=blue] {$s_1=\cos(\alpha+\beta)$};
+        \draw[green!50!black,thick] (A)--(P) node[below left, xshift=-8, yshift=3,midway, text=blue, scale=.9] {$1$};
+        \draw[green!50!black,thick] (A)--(Q) node[above right, xshift=-5, yshift=1,midway, text=blue, scale=.9] {$l_2=\cos\alpha$};
+        \draw[green!50!black,thick] (P)--(Q) node[below right, xshift=-2, yshift=1,midway, text=blue, scale=.9] {$l_1=\sin\alpha$};
+        \draw[blue,thick] (Q)++(.175,-.125)--++(-.125,-.175)--++(-.175,.125);
+
+        \draw[red,thick] (Q)++(-.35,0) arc(180:{180+atan(7/5)}:.35);
+        \draw[red,thick] (Q)++(-.4,0) arc(180:{180+atan(7/5)}:.4) node[left, xshift=2, yshift=-3, midway, scale=.8] {$\theta_1$};
+        \draw[purple,thick] (P)++(0,-.38) arc(270:{270+atan(45/11)}:.38) ;
+        \draw[purple,thick] (P)++(0,-.44) arc(270:{270+atan(45/11)}:.44) ;
+        \draw[purple,thick] (P)++(0,-.5) arc(270:{270+atan(45/11)}:.5) node[below right, xshift=-2, midway, scale=.8] {$\theta_2$};
+        \draw[magenta,thick] (A)++({180-atan(11/45}:0.8) arc({180-atan(11/45)}:{90+atan(7/5)}:.8) node[above left, xshift=-1, yshift=-2, midway, scale=.8] {$\alpha$};
+        \draw[red,thick] (A)++(0,.35) arc(90:{90+atan(7/5)}:.35);
+        \draw[red,thick] (A)++(0,.4) arc(90:{90+atan(7/5)}:.4) node[above , xshift=-1, yshift=-2, midway, scale=.8] {$\beta$};
+        \draw[violet,thick] (Q)++(0.5,0) arc(0:{-atan(5/7)}:.5) node[right , xshift=-1, yshift=-2, midway, scale=.9] {$\phi$};
+        \draw[purple,thick]  (A)++(0,1.2) arc(90:{90+atan(45/11)}:1.2);
+        \draw[purple,thick]  (A)++(0,1.26) arc(90:{90+atan(45/11)}:1.26);
+        \draw[purple,thick]  (A)++(0,1.32) arc(90:{90+atan(45/11)}:1.32);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside><p><ol label="a">
+    <li><p><m>l_1=\sin\alpha, \, l_2=\cos\alpha </m></p></li>
+    <li><p><m>\theta_1</m> and <m>\beta</m> are both complements of <m>\phi</m>; <m>\theta_2</m> and <m>\alpha+\beta</m>  are both alternate interior angles</p></li>
+    <li><p><m>s_1=\cos(\alpha+\beta) </m>, <m>s_2=\sin(\alpha+\beta) </m> </p></li>
+    <li><p><m>s_3=\sin\alpha\sin\beta </m>, <m>s_4=\sin\alpha\cos\beta </m> </p></li>
+    <li><p><m>s_5=\cos\alpha\cos\beta </m>, <m>s_6=\cos\alpha\sin\beta </m> </p></li>
+    <li><p><m>\sin(\alpha+\beta) = \sin\alpha\cos\beta +\cos\alpha\sin\beta </m>, <m>\cos(\alpha+\beta) = \cos\alpha\cos\beta +\sin\alpha\sin\beta  </m> </p></li>
+</ol></p></answer></exercise>
 
 <exercise number="90"><statement><p>The figure below shows a right triangle inscribed in a rectangle.</p>
-<sidebyside width="50%"><image source="images/hp8-1-90.png"><description>rectangle</description></image></sidebyside>
+<sidebyside width="50%"><!--<image source="images/hp8-1-90.png"><description>rectangle</description></image>-->
+    <image xml:id="hp8-1-90">
+        <description>triangle inscribed in rectangle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=1.3]
+        \coordinate (O) at (0,0);
+        \coordinate (A) at (4.5,0);
+        \coordinate (B) at (4.5,2.5);
+        \coordinate (C) at (0,2.5);
+        \coordinate (P) at (0,1.1);
+        \coordinate (Q) at (1,2.5);
+        \draw[black,thick] (O)--(A) node[below,midway, text=blue] {$s_2$};
+        \draw[black,thick] (B)--(A) node[right,midway, text=blue] {$s_5$};
+        \draw[black,thick] (B)--(Q) node[above,midway, text=blue] {$s_6$};
+        \draw[black,thick] (C)--(Q) node[above,midway, text=blue] {$s_4$};
+        \draw[black,thick] (C)--(P) node[left,midway, text=blue] {$s_3$};
+        \draw[black,thick] (O)--(P) node[left,midway, text=blue] {$s_1$};
+        \draw[green!50!black,thick] (A)--(P) node[below left, xshift=-8, yshift=3,midway, text=blue, scale=.9] {$1$};
+        \draw[green!50!black,thick] (A)--(Q) node[above right, xshift=-5, yshift=1,midway, text=blue, scale=.9] {$l_2$};
+        \draw[green!50!black,thick] (P)--(Q) node[below right, xshift=-2, yshift=1,midway, text=blue, scale=.9] {$l_1$};
+        \draw[blue,thick] (Q)++(.175,-.125)--++(-.125,-.175)--++(-.175,.125);
+
+        \draw[red,thick] (P)++(0,.5) arc(90:{90-atan(5/7)}:.5) node[above, xshift=2, yshift=-1, midway, scale=.8] {$\theta_1$};
+        \draw[red,thick] (A)++({180-atan(11/45}:2) arc({180-atan(11/45)}:{90+atan(7/5)}:2) node[above left, xshift=1, yshift=-3, midway, scale=.8] {$\theta_2$};
+        \draw[red,thick] (A)++(-1.5,0) arc({180}:{90+atan(7/5)}:1.5) node[left, xshift=2, yshift=2, midway, scale=.8] {$\alpha$};
+        \draw[red,thick] (A)++(-.8,0) arc(180:{90+atan(7/5)}:.8) node[above left, xshift=1, yshift=-2, midway, scale=.8] {$\beta$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 <p><ol label="a">
     <li>Label the legs <m>l_1</m> and <m>l_2</m> of the right triangle with their lengths.</li>
     <li>Explain why <m>\theta_1 = \beta</m> and <m>\theta_2 = \alpha -\beta</m>. Label the diagram with these angles.</li>
@@ -415,12 +781,52 @@
 
 <exercise number="91"><statement><p>Follow the steps to prove the difference of angles formula for cosine,
     <me>\cos(\alpha - \beta) = \cos\alpha \cos\beta + \sin\alpha \sin\beta</me>
-    <sidebyside width="50%"><image source="images/hp8-1-91.png"><description>circle</description></image></sidebyside>  
+    <sidebyside width="50%"><!--<image source="images/hp8-1-91.png"><description>circle</description></image>-->
+    <image xml:id="hp8-1-91">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=2];
+        \coordinate (O) at (0,0);
+        \coordinate (B) at (40:1);
+        \coordinate (A) at (110:1);
+        \node[below right] at (1,0) {1};
+        \node[above left, xshift=1] at (0,1) {1};
+        \draw[black,thick,->,>=stealth'] (-1.2,0)--(1.5,0) node[right] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-1.2)--(0,1.4) node[above]{$y$};
+        \draw[gray,thick] (O) circle (1cm);
+        \draw[green!50!black, thick] (A)--(O)--(B);
+        \draw[gray,thick,dashed] (A)--(B);
+        \filldraw[black] (A) circle (.04cm) node[above left]{$A(\cos\alpha , \sin\alpha )$};
+        \filldraw[black] (B) circle (.04cm) node[above right]{$B(\cos\beta , \sin\beta )$};
+
+        \draw[red,thick,->] (0.25,0) arc(0:110:0.25) node[above, midway, xshift=-2, yshift=3,fill=white, inner sep=1, scale=0.8] {$\alpha$};
+        \draw[red,thick,->] (0.4,0) arc(0:40:0.4) node[right, xshift=2, midway,fill=white, inner sep=1, scale=0.8] {$\beta$};
+        \draw[red,thick,->] (40:0.5) arc(40:110:0.5) node[above right, xshift=-5, yshift=2, midway,fill=white, inner sep=0, scale=0.8] {$\alpha-\beta$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside>  
 <ol label="a">
 <li>Write an expression for <m>(AB)^2</m>, the square of the distance between the points <m>A</m> and <m>B</m>, using the Law of Cosines for <m>\triangle AOB</m>.</li>
 <li>Write another expression for <m>(AB)^2</m> using the distance formula and the coordinates of <m>A</m> and <m>B</m>.</li>
 <li>Equate the two expressions for <m>(AB)^2</m> you obtained in (a) and (b).  Simplify the equation to obtain <m>\cos(\alpha - \beta) = \cos\alpha \cos\beta + \sin\alpha \sin\beta</m>.</li>
-</ol></p></statement></exercise>
+</ol></p></statement><answer><p><ol label="a">
+    <li><p><m>(AB)^2=2-2\cos(\alpha-\beta)</m></p></li>
+    <li><p><m>(AB)^2=(\cos\alpha-\cos\beta)^2 + (\sin\alpha - \sin\beta)^2 </m></p></li>
+    <li><p><m>
+        \begin{aligned}
+        2-2\cos(\alpha-\beta)\amp = (\cos\alpha-\cos\beta)^2 + (\sin\alpha - \sin\beta)^2 \\
+        2-2\cos(\alpha-\beta)\amp = \cos^2 -2\cos\alpha\cos\beta + \cos^2 \beta + \,\\
+        \amp\hphantom{000000000} +\sin^2 \alpha - 2\sin\alpha\sin\beta + \sin^2\beta \\
+        2-2\cos(\alpha-\beta)\amp = 1+1 - 2(\cos\alpha \cos\beta - \sin\alpha\sin\beta) \\
+        -2\cos(\alpha-\beta)\amp = -2(\cos\alpha \cos\beta - \sin\alpha\sin\beta) \\
+        \cos(\alpha-\beta)\amp = \cos\alpha \cos\beta - \sin\alpha\sin\beta) 
+        \end{aligned}
+    </m></p></li>
+</ol></p></answer></exercise>
 
 
 
