@@ -9,76 +9,194 @@
 <exercises xml:id="hmwk-8-2-exercises"  xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Homework 8-2</title>
 
-<exercisegroup cols="2"><introduction><p>In Problems 1-4, which functions have an inverse function?  Explain your answer.</p></introduction>  
-<exercise number="1"><statement><p><sidebyside width="70%"><image source="images/hp8-2-1.png"><description>graph</description></image></sidebyside></p></statement>
-<answer><m>\dfrac{3\pi}{8},~ \dfrac{7\pi}{8},~ \dfrac{11\pi}{8},~ \dfrac{15\pi}{8}</m></answer></exercise>
+<exercisegroup cols="2"><introduction><p>In Problems 1<ndash/>4, which functions have an inverse function?  Explain your answer.</p></introduction>  
+<exercise number="1"><statement><p><sidebyside width="70%"><!--<image source="images/hp8-2-1.png"><description>graph</description></image>-->
+    <image xml:id="hp8-2-1">
+        <description>graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture}
+        \draw [cyan] (0,0) grid (6,6);
+        \draw[black,thick,->,>=stealth'] (0,0)--(6.3,0) node[right]{$x$};
+        \draw[black,thick,->,>=stealth'] (0,0)--(0,6.3) node[above]{$y$};
+        \draw[samples=65,domain=0:6, variable=\x, smooth, red, thick] plot (\x, {sin(5*deg(\x))/2 + \x});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></p></statement>
+<answer><p>No inverse: Some horizontal lines intersect the curve in more than one point.</p></answer></exercise>
 
-<exercise number="2"><statement><p><sidebyside width="70%"><image source="images/hp8-2-2.png"><description>graph</description></image></sidebyside></p></statement>
+<exercise number="2"><statement><p><sidebyside width="70%"><!--<image source="images/hp8-2-2.png"><description>graph</description></image>-->
+    <image xml:id="hp8-2-2">
+        <description>transformed reciprocal function</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture}
+        \draw [cyan] (0,0) grid (8,8);
+        \draw[black,thick,->,>=stealth'] (0,0)--(8.4,0) node[right]{$x$};
+        \draw[black,thick,->,>=stealth'] (0,0)--(0,8.4) node[above]{$y$};
+        \draw[samples=65,domain=0:8, variable=\x, smooth, red, thick] plot (\x, { 8-12/(\x+2) });
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></p></statement>
 </exercise>
 
-<exercise number="3"><statement><p><sidebyside width="70%"><image source="images/hp8-2-3.png"><description>graph</description></image></sidebyside></p></statement>
-<answer><m>0,~ \dfrac{\pi}{2},~ \pi,~ \dfrac{3\pi}{2},~ 2\pi</m></answer></exercise>
+<exercise number="3"><statement><p><sidebyside width="70%"><!--<image source="images/hp8-2-3.png"><description>graph</description></image>-->
+    <image xml:id="hp8-2-3">
+        <description>graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture}
+        \draw [cyan] (-2,0) grid (6,8);
+        \draw[black,thick,->,>=stealth'] (-2,0)--(6.4,0) node[right]{$x$};
+        \draw[black,thick,->,>=stealth'] (0,0)--(0,8.4) node[above]{$y$};
+        \draw[samples=65,domain=-.778:4.396, variable=\x, smooth, red, thick] plot (\x, { .2*(\x-1.7)^3+3.2 +\x/5});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></p></statement>
+<answer><p>Inverse exists: The function is 1-1.</p></answer></exercise>
 
-<exercise number="4"><statement><p><sidebyside width="70%"><image source="images/hp8-2-4.png"><description>graph</description></image></sidebyside></p></statement></exercise>
+<exercise number="4"><statement><p><sidebyside width="70%"><!--<image source="images/hp8-2-4.png"><description>graph</description></hp8-2-4>-->
+    <image xml:id="hp8-2-4">
+        <description>quartic graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture}
+        \draw [cyan] (-4,0) grid (4,8);
+        \draw[black,thick,->,>=stealth'] (-4,0)--(4.4,0) node[right]{$x$};
+        \draw[black,thick,->,>=stealth'] (0,0)--(0,8.4) node[above]{$y$};
+        \draw[samples=65,domain=-2.891:2.891, variable=\x, smooth, red, thick] plot (\x, { (\x)^2*((\x)^2-8)/3+7 });
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></p></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 5-8, graph the function and decide if it has an inverse function.</p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 5<ndash/>8, graph the function and decide if it has an inverse function.</p></introduction>
 
 <exercise number="5"><statement><m>f(x)=\sin 2x - \cos x</m> </statement>
-<answer><m>\dfrac{2\pi}{9},~ \dfrac{4\pi}{9},~ \dfrac{8\pi}{9},~ \dfrac{10\pi}{9}~ \dfrac{14\pi}{9},~ \dfrac{16\pi}{9}</m></answer></exercise>
+<answer><sidebyside widths="40% 50%" valigns="middle middle">
+    <image xml:id="hp8-2-5ans">
+        <description>graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture}
+        \draw [cyan] (-pi,-2) grid[xstep=pi/4, ystep=1/2] (pi,2);
+        \draw[black,thick,->,>=stealth'] (-pi,0)--(3.4,0) node[right]{$x$};
+        \draw[black,thick,->,>=stealth'] (0,-2)--(0,2.3) node[above]{$y$};
+        \foreach \y in {-1,1} \draw[black,thick] (.15,\y)--++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.9] {$\y$};
+        \draw[black,thick] (-pi,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1, scale=.9] {$-\pi$};
+        \draw[black,thick] (-pi/2,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{-\pi}{2} $};
+        \draw[black,thick] (pi/2,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{\pi}{2} $};
+        \draw[black,thick] (pi,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1, scale=.9] {$\pi$};
+        \draw[samples=65,domain=-pi:pi, variable=\x, smooth, red, thick] plot (\x, { sin(deg(2*\x)) - cos(deg(\x)) });
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    <p>No inverse</p>
+</sidebyside></answer></exercise>
 
 <exercise number="6"><statement><m>g(x)=4e^{-(x/4)^2}</m> </statement></exercise>
 
-<exercise number="7"><statement><m>G(x)=\sqrt{25-x^2}</m> </statement>
-    <answer><m>\dfrac{\pi}{12},~ \dfrac{5\pi}{12},~ \dfrac{13\pi}{12},~ \dfrac{17\pi}{12}</m></answer></exercise>
+<exercise number="7"><statement><m>G(x)=\sqrt{25-x^2}</m> </statement><answer><sidebyside widths="40% 50%" valigns="middle middle">
+    <image xml:id="hp8-2-7ans">
+        <description>simicircle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.5]
+        \draw [cyan] (-5,0) grid[step=1/2] (5,5);
+        \draw[black,thick,->,>=stealth'] (-5,0)--(5.8,0) node[right]{$x$};
+        \draw[black,thick,->,>=stealth'] (0,-.3)--(0,5.8) node[above]{$y$};
+        \draw[black,thick] (.15,5)--++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.9] {$5$};
+        \foreach \x in {-5,5} \draw[black,thick] (\x,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1, scale=.9] {$\x$};
+        \draw[red, thick] (5,0) arc (0:180:5);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    <p>No inverse</p>
+</sidebyside></answer></exercise>
 
 <exercise number="8"><statement><m>F(x)=\ln(x^3+8)</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 9-14, use a calculator to evaluate. Round your answers to the nearest tenth of a degree.</p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 9<ndash/>14, use a calculator to evaluate. Round your answers to the nearest tenth of a degree.</p></introduction>
 
 <exercise number="9"><statement><m>\sin^{-1}(0.2838)</m></statement>
-    <answer><m>\dfrac{\pi}{18},~ \dfrac{7\pi}{18},~ \dfrac{13\pi}{18},~ \dfrac{19\pi}{18}~ \dfrac{25\pi}{18},~ \dfrac{31\pi}{18}</m></answer></exercise>
+    <answer><m>16.5\degree</m></answer></exercise>
 
 <exercise number="10"><statement><m>\tan^{-1}(4.8972)</m></statement></exercise>
 
 <exercise number="11"><statement><m>\cos^{-1}(0.6894)</m></statement> 
-    <answer><m>0.491,~ 2.651,~ 3.632,~ 5.792</m></answer></exercise>
+    <answer><m>46.4\degree</m></answer></exercise>
         
 <exercise number="12"><statement><m>\arccos(-0.8134)</m></statement> </exercise>
 
 <exercise number="13"><statement><m>\arctan(-1.2765)</m></statement> 
-    <answer><m>0.491,~ 2.651,~ 3.632,~ 5.792</m></answer></exercise>
+    <answer><m>=51.9\degree</m></answer></exercise>
         
 <exercise number="14"><statement><m>\arcsin(-07493)</m></statement> </exercise>
 </exercisegroup>
 
-<exercisegroup cols="3"><introduction><p>For Problems 15-20, give exact values in radians.</p></introduction>
+<exercisegroup cols="3"><introduction><p>For Problems 15<ndash/>20, give exact values in radians.</p></introduction>
         
 <exercise number="15"><statement><m>\cos^{-1} \dfrac{-1}{\sqrt{2}}</m></statement>
-    <answer><m>1.114,~ 2.027,~ 3.209,~ 4.122,~ 5.303,~ 6.216</m></answer></exercise>
+    <answer><m>\dfrac{3\pi}{4} </m></answer></exercise>
 
 <exercise number="16"><statement><m>\tan^{-1}(-1)</m></statement></exercise>
 
 <exercise number="17"><statement><m>\sin^{-1}\dfrac{-1}{2}</m></statement>
-        <answer><m>0.702,~ 2.440,~ 3.843,~ 5.582</m></answer></exercise>
+        <answer><m>\dfrac{-\pi}{6}</m></answer></exercise>
 
 <exercise number="18"><statement><m>\arccos\dfrac{\sqrt{3}}{2}</m></statement></exercise>
 
 <exercise number="19"><statement><m>\arctan \dfrac{1}{\sqrt{3}}</m></statement>
-        <answer><m>0,~ 1,~ 2,~ 3,~ 4,~ 5,~ 6</m></answer></exercise>
+        <answer><m>\dfrac{\pi}{6}</m></answer></exercise>
         
 <exercise number="20"><statement><m>\arcsin (-1)</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup><introduction><p>For Problems 21-26, sketch a figure to help you model each problem.</p></introduction>
+<exercisegroup><introduction><p>For Problems 21<ndash/>26, sketch a figure to help you model each problem.</p></introduction>
  
 <exercise number="21"><statement><p>Delbert is watching the launch of a satellite at Cape Canaveral. The viewing area is 500 yards from the launch site. The angle of elevation, <m>\theta</m>, of Delbert's line of sight increases as the booster rocket rises.
 <ol label="a">
 <li>Write a formula for the height, <m>h</m>, of the rocket as a function of <m>\theta</m>.</li>
 <li>Write a formula for <m>\theta</m> as a function of <m>h</m>.</li>
 <li>Evaluate the formula in part (b) for <m>h=1000</m>, and interpret the result.</li></ol></p></statement>
-        <answer><m>\dfrac{\pi}{6},~ \dfrac{2\pi}{3},~ \dfrac{7\pi}{6},~ \dfrac{5\pi}{3}</m></answer></exercise>
+<answer><sidebyside width="18%" margins="10% 50%">
+    <image xml:id="hp8-2-21ans">
+        <description>triangle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} 
+        \draw[blue] (2,0) rectangle ++(-.25,.25);
+        \draw[black,thick] (0,0) -- (2,0) node[below, midway, xshift=2, text=blue] {500 yd};
+        \draw[gray,thick] (2,0) --++(0,3) node[right, midway, text=blue] {$h$};
+        \draw[gray,thick] (0,0)--(2,3);
+        \draw[red,thick] (0.3,0) arc(0:atan(3/2):0.3) node[right, midway, yshift=1] {$\theta$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
+<p><ol label="a">
+<li><p><m>h=500 \tan\theta</m></p></li>
+<li><p><m>\theta=\tan^{-1}\left(\dfrac{h}{500} \right) </m></p></li>
+<li><p><m>\theta=\tan^{-1}(2) </m>, so the angle of elevation is <m>\tan^{-1} 2\approx 63.4\degree </m> when the rocket is 1000 yd high.</p></li></ol></p></answer></exercise>
 
 <exercise number="22"><statement><p>Francine's house lies under the flight path from the city airport, and commercial airliners pass overhead at an altitude of 15,000 feet.  As Francine watches an airplane recede, its angle of elevation, <m>\theta</m>, decreases.<ol label="a">
 <li>Write a formula for the horizontal distance, <m>d</m>, to the airplane as a function of <m>\theta</m>.</li>
@@ -89,7 +207,27 @@
 <li>Write a formula for your distance, <m>d</m>, from the billboard as a function of <m>\theta</m>.</li>
 <li>Write a formula for <m>\theta</m> as a function of <m>d</m>.</li> 
 <li>Evaluate the formula in part (b) for <m>d=200</m>, and interpret the result.</li></ol></p></statement>
-        <answer><m>\dfrac{5\pi}{12},~ \dfrac{7\pi}{12},~ \dfrac{13\pi}{12},~ \dfrac{5\pi}{4},~ \dfrac{7\pi}{4},~ \dfrac{23\pi}{12}</m></answer></exercise>
+<answer><sidebyside width="18%" margins="10% 50%">
+    <image xml:id="hp8-2-23ans">
+        <description>triangle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} 
+        \draw[blue] (0,0) rectangle ++(.25,-.25);
+        \draw[black,thick] (0,0) -- (2,0) node[above, midway, xshift=2, text=blue] {50 ft};
+        \draw[gray,thick] (0,0) --++(0,-3.5) node[left, midway, text=blue] {$d$};
+        \draw[gray,thick] (0,-3.5)--(2,0);
+        \draw[red,thick] (-90:3.) arc(90:atan(3.5/2):0.5) node[above, midway, xshift=2] {$\theta$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
+<p><ol label="a">
+<li><p><m>d=\dfrac{50}{\tan\theta}</m></p></li>
+<li><p><m>\theta=\tan^{-1}\left(\dfrac{50}{d} \right) </m></p></li>
+<li><p><m>\theta=\tan^{-1}(0.25) </m>;  the bilboard subtends an angle of <m>\tan^{-1}(0.25) \approx 14\degree </m> at a distance of 200 ft.</p></li></ol></p></answer></exercise>
 
 <exercise number="24"><statement><p>Emma is walking along the bank of a straight river toward a 20-meter long bridge over the river. Let <m>\theta</m> be the angle subtended horizontally by Emma's view of the bridge.<ol label="a"> 
 <li>Write a formula for Emma's distance from the bridge, <m>d</m>, as a function of <m>\theta</m>.</li>
@@ -101,7 +239,29 @@
 <li>Write a formula for <m>\alpha</m>, the angle subtended from Martin's eye level to the bottom of the painting, when he stands <m>x</m> meters from the wall.</li>
 <li>Write a formula for <m>\beta</m>, the angle subtended by the painting, in terms of <m>x</m>.</li>  
 <li>Evaluate the formula in part (b) for <m>x=5</m>, and interpret the result.</li></ol></p></statement>
-        <answer><m>\dfrac{3\pi}{2}</m></answer></exercise>
+<answer><sidebyside width="25%" margins="10% 65%">
+    <image xml:id="hp8-2-25ans">
+        <description>triangles</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.8]
+        \draw[blue] (5,0) rectangle ++(-.25,.25);
+        \draw[black,thick] (0,0) -- (5,0) node[below, midway, xshift=2, text=blue] {$x$};
+        \draw[gray,thick] (5,0) --++(0,1) node[right, midway, text=blue] {1 m};
+        \draw[red, ultra thick] (5,1) --++(0,4) node[right, midway, text=blue] {4 m};
+        \draw[gray,thick] (5,1)--(0,0)--(5,5);
+        \draw[red,thick] (2,0) arc(0:atan(1/5):2) node[right, midway] {$\alpha$};
+        \draw[red,thick] ({atan(1/5)}:1) arc({atan(1/5)}:45:1) node[above right, midway, yshift=-2] {$\beta$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
+<p><ol label="a">
+<li><p><m>\alpha=\tan^{-1}\left(\dfrac{1}{x}\right) </m></p></li>
+<li><p><m>\beta=\tan^{-1}\left(\dfrac{5}{x} \right) - \tan^{-1}\left(\dfrac{1}{x}\right)  </m></p></li>
+<li><p><m>\beta=45\degree - \tan^{-1}\left(\dfrac{1}{5}\right) </m>, so the painting subtends an angle of <m>45\degree - \tan^{-1}\left(\dfrac{1}{5}\right) \approx 33.7\degree </m> when Martin is 5 meters from the wall.</p></li></ol></p></answer></exercise>
 
 <exercise number="26"><statement><p>A 5-foot mirror is positioned so that its bottom is 1.5 feet below Jane's eye level.<ol label="a"> 
 <li>Write a formula for <m>\alpha</m>, the angle subtended by the section of mirror below Jane's eye level, when she stands <m>x</m> feet from the mirror.</li>
@@ -109,63 +269,63 @@
 <li>Evaluate the formula in part (b) for <m>x=10</m>, and interpret the result.</li></ol></p></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 27-32, solve the formula for the given variable.</p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 27<ndash/>32, solve the formula for the given variable.</p></introduction>
 
 <exercise number="27"><statement><m>V=V_0 \sin(2\pi\omega t+\phi)</m>, for <m>t</m></statement>
-<answer><m>\dfrac{7}{6},~ \dfrac{11}{6},~ \dfrac{19}{6},~ \dfrac{23}{6},~ \dfrac{31}{6},~ \dfrac{35}{6}</m></answer></exercise>
+<answer><m>t=\dfrac{1}{2\pi\omega}\left( \sin^{-1}\dfrac{V}{V_0}-\phi \right) </m></answer></exercise>
  
 <exercise number="28"><statement><m>R=\dfrac{1}{32} v_0^2\sin (2\theta)</m>, for <m>\theta</m></statement></exercise>
 
- <exercise number="29"><statement><m>\dfrac{a}{\sin A}= \dfrac{b}{\sin B}</m>, for <m>A</m></statement>
-<answer><m>1.14,~ 1.62,~ 3.23,~ 3.72,~ 5.24,~ 5.81</m></answer></exercise>
+<exercise number="29"><statement><m>\dfrac{a}{\sin A}= \dfrac{b}{\sin B}</m>, for <m>A</m></statement>
+<answer><m>A=\sin^{-1}\left(\dfrac{a\sin B}{b} \right) </m></answer></exercise>
  
 <exercise number="30"><statement><m>c^2=a^2 + b^2 - 2ab\cos C</m>, for <m>C</m></statement></exercise>
 
 <exercise number="31"><statement><m>P=\dfrac{k}{R^4\cos \theta}</m> for <m>\theta</m></statement>
-<answer><m>0.44,~ 1.44,~ 2.44,~ 3.44,~ 4.44,~ 5.44</m></answer></exercise>
+<answer><m>\theta= \pm \cos^{-1}\left(\dfrac{k}{PR^4} \right) </m></answer></exercise>
  
 <exercise number="32"><statement><m>\dfrac{r}{z}=\dfrac{1}{\tan (\alpha + \beta)}</m>, for <m>\alpha</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="3"><introduction><p>For Problems 33-38, find exact values without using a calculator.</p></introduction>
+<exercisegroup cols="3"><introduction><p>For Problems 33<ndash/>38, find exact values without using a calculator.</p></introduction>
 
-<exercise number="33"><statement><m>\tan(\sin^{-1}(\dfrac{2}{3}))</m></statement>
-<answer><m>0.01,~ 3.39,~ 6.01</m></answer></exercise>
+<exercise number="33"><statement><m>\tan\left(\sin^{-1}\left(\dfrac{2}{3}\right)\right)</m></statement>
+<answer><p><m>\dfrac{2}{\sqrt{5}} </m></p></answer></exercise>
  
-<exercise number="34"><statement><m>\tan(\cos^{-1}(\dfrac{3}{4}))</m></statement></exercise>
+<exercise number="34"><statement><m>\tan\left(\cos^{-1}\left(\dfrac{3}{4}\right)\right)</m></statement></exercise>
 
-<exercise number="35"><statement><m>\cos[\tan^{-1}(-2)]</m></statement>
-<answer><m>0.564,~ 1.182,~ 2.658,~ 3.276,~ 4.752,~ 5.371</m></answer></exercise>
+<exercise number="35"><statement><m>\cos\left[\tan^{-1}(-2)\right]</m></statement>
+<answer><p><m>\dfrac{1}{\sqrt{5}} </m></p></answer></exercise>
  
-<exercise number="36"><statement><m>\sin [\tan^{-1}(\dfrac{-3}{\sqrt{5}})]</m></statement></exercise>
+<exercise number="36"><statement><m>\sin \left[\tan^{-1}\left(\dfrac{-3}{\sqrt{5}}\right)\right]</m></statement></exercise>
 
-<exercise number="37"><statement><m>\sin[\cos^{-1}(\dfrac{-2\sqrt{6}}{7})]</m></statement>
-<answer><m>0.423,~ 2.977,~ 4.423</m></answer></exercise>
+<exercise number="37"><statement><m>\sin\left[\cos^{-1}\left(\dfrac{-2\sqrt{6}}{7}\right)\right]</m></statement>
+<answer><p><m>\dfrac{5}{7} </m></p></answer></exercise>
  
-<exercise number="38"><statement><m>\cos[\sin^{-1}(\dfrac{-2}{7})]</m></statement></exercise>
+<exercise number="38"><statement><m>\cos\left[\sin^{-1}\left(\dfrac{-2}{7}\right)\right]</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="3"><introduction><p>For Problems 39-44, simplify the expression.</p></introduction>
+<exercisegroup cols="3"><introduction><p>For Problems 39<ndash/>44, simplify the expression.</p></introduction>
 
 <exercise number="39"><statement><m>\tan(\cos^{-1}x)</m></statement>
-<answer><m>1.165,~ 4.165</m></answer></exercise>
+<answer><p><m>\dfrac{\sqrt{1-x^2}}{x} </m></p></answer></exercise>
  
 <exercise number="40"><statement><m>\cos(\tan^{-1}a)</m></statement></exercise>
 
 <exercise number="41"><statement><m>\cos(\sin^{-1}h)</m></statement>
-<answer><m>2.251</m></answer></exercise>
+<answer><p><m>\sqrt{1-h^2} </m></p></answer></exercise>
  
 <exercise number="42"><statement><m>\sin(\cos^{-1}v)</m></statement></exercise>
 
 <exercise number="43"><statement><m>\sin(\tan^{-1}2t)</m></statement>
-<answer> </answer></exercise>
+<answer><p><m>\dfrac{2t}{\sqrt{4t^2+1}} </m></p> </answer></exercise>
 
 <exercise number="44"><statement><m>\tan(\sin^{-1}3b)</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="3"><introduction><p>For Problems 45-47, complete the table of values and sketch the function.</p></introduction>
+<exercisegroup cols="3"><introduction><p>For Problems 45<ndash/>47, complete the table of values and sketch the function.</p></introduction>
 
-<exercise number="45"><statement><p><sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
+<exercise number="45"><statement><sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
                     <row bottom="minor">
                         <cell><m>x</m></cell>
                         <cell><m>-1</m></cell>
@@ -188,9 +348,66 @@
                         <cell><m>\hphantom{0000}</m></cell>
                         <cell><m>\hphantom{0000}</m></cell>
                         <cell><m>\hphantom{0000}</m></cell></row>
-                    </tabular></sidebyside></p>
-    <p><sidebyside width="50%"><image source="images/hp8-2-45.png"><description>grid</description></image></sidebyside></p></statement>       
-    <answer></answer></exercise>
+                    </tabular></sidebyside>
+    <sidebyside width="40%"><!--<image source="images/hp8-2-45.png"><description>grid</description></image>-->
+    <image xml:id="hp8-2-45">
+        <description>grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=1.1]
+        \draw[cyan] (-2,-pi) grid[xstep=1/2, ystep=pi/6] (2,pi);
+        \draw[black,thick,->,>=stealth'] (0,-pi)--(0,3.35) node[above, scale=.8]{$y$};
+        \draw[black,thick,->,>=stealth'] (-2,0)--(2.3,0) node[right, scale=.8]{$x$};
+        \foreach \x in {-2,-1,1,2} \draw[black,thick](\x,.1)--++(0,-.2) node[below, fill=white, inner sep=1, yshift=-2, scale=.8]{\x};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></statement>       
+    <answer><sidebyside widths="75% 25%" valigns="middle middle">
+<tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
+                    <row bottom="minor">
+                        <cell><m>x</m></cell>
+                        <cell><m>-1</m></cell>
+                        <cell><m>\frac{-\sqrt{3}}{2}</m></cell>
+                        <cell><m>\frac{-\sqrt{2}}{2}</m></cell>
+                        <cell><m>\frac{-1}{2}</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>\frac{1}{2}</m></cell>
+                        <cell><m>\frac{\sqrt{2}}{2}</m></cell>
+                        <cell><m>\frac{\sqrt{3}}{2}</m></cell>
+                        <cell><m>1</m></cell></row>
+                    <row> 
+                        <cell><m>\cos^{-1}x</m></cell>
+                        <cell><m>\pi</m></cell>
+                        <cell><m>\frac{5\pi}{6} </m></cell>
+                        <cell><m>\frac{3\pi}{4} </m></cell>
+                        <cell><m>\frac{2\pi}{3} </m></cell>
+                        <cell><m>\frac{\pi}{2} </m></cell>
+                        <cell><m>\frac{\pi}{3} </m></cell>
+                        <cell><m>\frac{\pi}{4} </m></cell>
+                        <cell><m>\frac{\pi}{6} </m></cell>
+                        <cell><m>0 </m></cell></row>
+                    </tabular>        
+    <image xml:id="hp8-2-45ans">
+        <description>arccosine</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.9]
+        \draw[cyan] (-2,0) grid[xstep=1/2, ystep=pi/6] (2,pi);
+        \draw[black,thick,->,>=stealth'] (0,-.2)--(0,3.35) node[above, scale=.8]{$y$};
+        \draw[black,thick] (.1,pi)--++(-.2,0) node [left, xshift=-2, fill=white, inner sep=1, scale=.8] {$\pi$};
+        \draw[black,thick] (.1,pi/2)--++(-.2,0) node [left, xshift=-2, fill=white, inner sep=1] {$\frac{\pi}{2}$};
+        \draw[black,thick,->,>=stealth'] (-2,0)--(2.3,0) node[right, scale=.8]{$x$};
+        \foreach \x in {-2,-1,1,2} \draw[black,thick](\x,.1)--++(0,-.2) node[below, fill=white, inner sep=1, yshift=-2, scale=.8]{\x};
+        \draw[samples=65, variable=\x,domain=0:pi, smooth, red, thick] plot ({cos(deg(\x))},\x);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></answer></exercise>
         
 <exercise number="46"><statement><p><sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
                     <row bottom="minor">
@@ -216,7 +433,7 @@
                         <cell><m>\hphantom{0000}</m></cell>
                         <cell><m>\hphantom{0000}</m></cell></row>
                     </tabular></sidebyside></p>
-    <p><sidebyside width="50%"><image source="images/hp8-2-45.png"><description>grid</description></image></sidebyside></p></statement></exercise>
+    <p><sidebyside width="40%"><image source="images/hp8-2-45"><description>grid</description></image></sidebyside></p></statement></exercise>
 
 <exercise number="47"><statement><p><sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
                     <row bottom="minor">
@@ -238,8 +455,62 @@
                         <cell><m>\hphantom{0000}</m></cell>
                         <cell><m>\hphantom{0000}</m></cell></row>
                     </tabular></sidebyside></p>
-    <p><sidebyside width="80%"><image source="images/hp8-2-47.png"><description>grid</description></image></sidebyside></p></statement>
-<answer><m>\dfrac{7}{6},~ \dfrac{11}{6},~ \dfrac{19}{6},~ \dfrac{23}{6},~ \dfrac{31}{6},~ \dfrac{35}{6}</m></answer></exercise>
+    <p><sidebyside width="50%"><!--<image source="images/hp8-2-47.png"><description>grid</description></image>-->
+    <image xml:id="hp8-2-47">
+        <description>grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture}
+        \draw[cyan] (-4,-pi) grid[xstep=1/2, ystep=pi/6] (4,pi);
+        \draw[black,thick,->,>=stealth'] (0,-pi)--(0,3.35) node[above]{$y$};
+        \draw[black,thick,->,>=stealth'] (-4,0)--(4.3,0) node[right]{$x$};
+        \foreach \x in {-2,2,-4,4} \draw[black,thick](\x,.1)--++(0,-.2) node[below, fill=white, inner sep=1, yshift=-2]{$\x$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></p></statement>
+<answer><sidebyside widths="60% 40%" valigns="middle middle">
+<tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
+                    <row bottom="minor">
+                        <cell><m>x</m></cell>
+                        <cell><m>-\sqrt{3}</m></cell>
+                        <cell><m>-1</m></cell>
+                        <cell><m>\frac{-1}{\sqrt{3}}</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>\frac{1}{\sqrt{3}}</m></cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>\sqrt{3}</m></cell></row>
+                    <row> 
+                        <cell><m>\cos^{-1}x</m></cell>
+                        <cell><m>\frac{-\pi}{2} </m></cell>
+                        <cell><m>\frac{-\pi}{3} </m></cell>
+                        <cell><m>\frac{-\pi}{6} </m></cell>
+                        <cell><m>0 </m></cell>
+                        <cell><m>\frac{\pi}{6} </m></cell>
+                        <cell><m>\frac{\pi}{4} </m></cell>
+                        <cell><m>\frac{\pi}{3} </m></cell>
+                    </row>
+                    </tabular>        
+    <image xml:id="hp8-2-47ans">
+        <description>arctangent</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture}
+        \draw[cyan] (-4,-pi/2) grid[xstep=1/2, ystep=pi/6] (4,pi/2);
+        \draw[black,thick,->,>=stealth'] (0,-pi/2)--(0,1.8) node[above]{$y$};
+        \draw[black,thick,->,>=stealth'] (-4,0)--(4.3,0) node[right]{$x$};
+        \foreach \x in {-2,2,-4,4} \draw[black,thick](\x,.1)--++(0,-.2) node[below, fill=white, inner sep=1, yshift=-2]{$\x$};
+        \draw[black,thick] (.1,pi/2)--++(-.2,0) node [left, xshift=-2, fill=white, inner sep=1] {$\frac{\pi}{2}$};
+        \draw[black,thick] (.1,-pi/2)--++(-.2,0) node [left, xshift=-2, fill=white, inner sep=1] {$\frac{-\pi}{2}$};
+        \draw[samples=65, variable=\x,domain=-4:4, smooth, red, thick] plot (\x,{atan(\x)*pi/180});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></answer></exercise>
  </exercisegroup>
 
 <exercise number="48"><statement><p>Use a graphing calculator to answer each of the following questions. Then explain the results.
@@ -248,12 +519,35 @@
     <li>Does <m>\sin^{-1}x=\dfrac{1}{\sin x}</m>?</li>
     <li>Does <m>\tan^{-1}x=\dfrac{1}{\tan x}</m>?</li></ol></p></statement></exercise>
 
- <exercise number="49"><statement><p><ol label="a">
+<exercise number="49"><statement><p><ol label="a">
     <li>Sketch a graph of <m>y=\cos^{-1}x</m>, and label the scales on the axes.</li>
     <li>Use transformations to sketch graphs of <m>y=2\cos^{-1}x</m> and <m>y=\cos^{-1}(2x)</m>.</li>
     <li>Does <m>2\cos^{-1}x=\cos^{-1}(2x)</m>?</li></ol></p>
 </statement>
-<answer><m>1.14,~ 1.62,~ 3.23,~ 3.72,~ 5.24,~ 5.81</m></answer></exercise>
+<answer><sidebyside widths="10% 35% 55%" valigns="middle middle middle">
+    <p>a<ndash/>b.</p>
+    <image xml:id="hp8-2-49ans">
+        <description>transformations of arccos</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=1.2,yscale=.65]
+        \draw[cyan] (-1,0) grid[xstep=1/2, ystep=pi/3] (1,2*pi);
+        \draw[black,thick,->,>=stealth'] (0,-.2)--(0,6.4) node[above, xscale=.8]{$y$};
+        \draw[black,thick,->,>=stealth'] (-1,0)--(1.2,0) node[right, xscale=.8]{$x$};
+        \foreach \x in {-1,1} \draw[black,thick](\x,.2)--++(0,-.4) node[below, fill=white, inner sep=1, yshift=-2, xscale=.8]{$\x$};
+        \draw[black,thick] (.1,pi)--++(-.2,0) node [left, xshift=-2, fill=white, inner sep=1, xscale=.8] {$\pi$};
+        \draw[black,thick] (.1,2*pi)--++(-.2,0) node [left, xshift=-2, fill=white, inner sep=1, xscale=.8] {$2\pi$};
+        \draw[samples=65, variable=\x,domain=1:-1, smooth, red, thick] plot (\x,{acos(\x)*pi/180}) node[left, text=red, scale=.8] {$y=\cos^{-1}x$} ;
+        \draw[samples=65, variable=\x,domain=-1/2:1/2, smooth, green, thick] plot (\x,{acos(2*\x)*pi/180});
+        \draw[gray,<-,>=stealth'] (.45,-.1)--++(-.2,-.3)  node[below, xshift=-4, yshift=2, text=green!80!black, scale=.8] {$y=\cos^{-1}2x$}; 
+        \draw[samples=65, variable=\x,domain=1:-1, smooth, blue, thick] plot (\x,{2*acos(\x)*pi/180}) node[left, text=blue, scale=.9] {$y=2\cos^{-1}x$} ;
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+     <p>c. No</p>
+</sidebyside></answer></exercise>
  
 <exercise number="50"><statement><p><ol label="a">
     <li>Sketch a graph of <m>y=\sin^{-1}x</m>, and label the scales on the axes.</li>
@@ -264,64 +558,74 @@
     <li>Sketch a graph of <m>y=\tan^{-1}x</m>, and label the scales on the axes.</li>
     <li>Use your calculator to graph <m>y=\dfrac{\sin^{-1}x}{\cos^{-1}x}</m> on a suitable domain.</li>
     <li>Does <m>\tan^{-1}x=\dfrac{\sin^{-1}x}{\cos^{-1}x}</m>?</li></ol></p></statement>
-<answer><m>\dfrac{7}{6},~ \dfrac{11}{6},~ \dfrac{19}{6},~ \dfrac{23}{6},~ \dfrac{31}{6},~ \dfrac{35}{6}</m></answer></exercise>
+<answer><sidebyside widths="5% 40% 55%" valigns="middle middle middle">
+    <p>a.</p>
+    <image source="images/hp8-2-47ans"><description>arctangent</description></image>
+     <p>c. No</p>
+</sidebyside></answer></exercise>
  
 <exercise number="52"><statement><p><ol label="a">
     <li>Use your calculator to sketch <m>y=\sqrt[3]{x}</m> and <m>\tan^{-1}x</m> on <m>[-10, 10]</m>.</li>
     <li>Describe the similarities and differences in the two graphs.</li></ol></p></statement></exercise>
 
-<exercisegroup cols="3"><introduction><p>Use the identities from Section 8.1 to help you find exact values for the expressions in Problems 53-58.</p></introduction>
+<exercisegroup cols="3"><introduction><p>Use the identities from Section 8.1 to help you find exact values for the expressions in Problems 53<ndash/>58.</p></introduction>
 
  <exercise number="53"><statement><m>\sin (2\tan^{-1}4)</m></statement>
-<answer><m>1.14,~ 1.62,~ 3.23,~ 3.72,~ 5.24,~ 5.81</m></answer></exercise>
+<answer><p><m>\dfrac{8}{17} </m></p></answer></exercise>
  
-<exercise number="54"><statement><m>\cos[(2\sin^{-1}(\dfrac{5}{13})]</m></statement></exercise>
+<exercise number="54"><statement><m>\cos\left(2\sin^{-1}\left(\dfrac{5}{13}\right)\right)</m></statement></exercise>
 
-<exercise number="55"><statement><m>\tan[(2\cos^{-1}(\dfrac{3}{4})]</m></statement>
-<answer></answer></exercise>
+<exercise number="55"><statement><m>\tan\left(2\cos^{-1}\left(\dfrac{3}{4}\right)\right)</m></statement>
+<answer><p><m>\dfrac{16}{65} </m></p></answer></exercise>
 
-<exercise number="56"><statement><m>\sin[(2\cos^{-1}(\dfrac{-4}{5})]</m></statement></exercise>
+<exercise number="56"><statement><m>\sin\left(2\cos^{-1}\left((\dfrac{-4}{5}\right)\right)</m></statement></exercise>
 
-<exercise number="57"><statement><m>\tan[(2\sin^{-1}(\dfrac{1}{3})]</m></statement>
-<answer></answer></exercise>
+<exercise number="57"><statement><m>\tan\left(2\sin^{-1}\left(\dfrac{1}{3}\right)\right)</m></statement>
+<answer><p><m>\dfrac{4\sqrt{2} }{7} </m></p></answer></exercise>
 
-<exercise number="58"><statement><m>\cos[(2\tan^{-1}(\dfrac{3}{2})]</m></statement></exercise>
+<exercise number="58"><statement><m>\cos\left(2\tan^{-1}\left(\dfrac{3}{2}\right)\right)</m></statement></exercise>
 </exercisegroup>
 
-<exercise number="59"><statement><p>Let <m>\alpha= \cos^{-1}(\dfrac{-4}{5}),~\beta=\sin^{-1}(\dfrac{5}{13})</m>. Find exact values for the following.<ol label="a" cols="4">
+<exercise number="59"><statement><p>Let <m>\alpha= \cos^{-1}\left(\dfrac{-4}{5}\right),~\beta=\sin^{-1}\left(\dfrac{5}{13}\right)</m>. Find exact values for the following.<ol label="a" cols="4">
     <li><m>\cos (\alpha+\beta)</m></li>
      <li><m>\sin (\alpha+\beta)</m></li>
      <li><m>\cos (\alpha-\beta)</m></li>
      <li><m>\sin (\alpha-\beta)</m></li></ol></p></statement>
-<answer></answer></exercise>
+<answer><p><ol label="a" cols="4">
+    <li><m>\dfrac{-63}{65} </m></li>
+     <li><m>\dfrac{16}{65} </m></li>
+     <li><m>\dfrac{-33}{65} </m></li>
+     <li><m>\dfrac{56}{65} </m></li></ol></p></answer></exercise>
 
-<exercise number="60"><statement><p>Let <m>\alpha= \sin^{-1}(\dfrac{-15}{17}),~\beta=\tan^{-1}(\dfrac{4}{3})</m>. Find exact values for the following.<ol label="a" cols="4">
+<exercise number="60"><statement><p>Let <m>\alpha= \sin^{-1}\left(\dfrac{-15}{17}\right),~\beta=\tan^{-1}\left(\dfrac{4}{3}\right)</m>. Find exact values for the following.<ol label="a" cols="4">
     <li><m>\cos (\alpha+\beta)</m></li>
      <li><m>\sin (\alpha+\beta)</m></li>
      <li><m>\cos (\alpha-\beta)</m></li>
      <li><m>\sin (\alpha-\beta)</m></li></ol></p></statement></exercise>
 
-<exercise number="61"><statement><p>Find an exact value for <m>\sin[tan^{-1}(\dfrac{3}{4})-\sin^{-1}\dfrac{-4}{5})]</m>.</p></statement>
-<answer></answer></exercise>
+<exercise number="61"><statement><p>Find an exact value for <m>\sin\left(\tan^{-1}\left(\dfrac{3}{4}\right)-\sin^{-1}\left(\dfrac{-4}{5}\right)\right)</m>.</p></statement>
+<answer><p><m>1</m></p></answer></exercise>
 
-<exercise number="62"><statement><p>Find an exact value for <m>\cos[tan^{-1}(\dfrac{5}{12})+\sin^{-1}\dfrac{-3}{5})]</m>.</p></statement></exercise>
+<exercise number="62"><statement><p>Find an exact value for <m>\cos\left(\tan^{-1}\left(\dfrac{5}{12}\right)+\sin^{-1}\left(\dfrac{-3}{5}\right)\right)</m>.</p></statement></exercise>
 
 <exercise number="63"><statement><p>Express in terms of <m>x</m> without trigonometric functions.<ol label="a" cols="2">
 <li><m>\sin(2\tan^{-1}x)</m></li>
 <li><m>\cos(2\sin^{-1}x)</m></li></ol></p></statement>   
-<answer></answer></exercise>
+<answer><p><ol label="a" cols="2">
+<li><m>\dfrac{2x}{x^2+1} </m></li>
+<li><m>1-x^2</m></li></ol></p></answer></exercise>
 
 <exercise number="64"><statement><p>Express in terms of <m>w</m> without trigonometric functions.<ol label="a" cols="2">
 <li><m>\sin(2\cos^{-1}w)</m></li>
 <li><m>\cos(2\tan^{-1}w)</m></li></ol></p></statement></exercise>
 
 <exercise number="65"><statement><p>If <m>x=5\sin \theta,~0\degree \lt \theta \lt 90\degree</m>, express <m>\sin 2\theta</m> and <m>\cos 2\theta</m> in terms of <m>x</m>.</p></statement>    
-<answer></answer></exercise>
+<answer><p><m>\sin 2\theta= \dfrac{2x\sqrt{25-x^2}}{25} </m>, <m>\cos 2\theta= \dfrac{25-2x^2}{25} </m></p></answer></exercise>
 
 <exercise number="66"><statement><p>If <m>x-1=2\cos \theta,~0\degree \lt \theta \lt 90\degree</m>, express <m>\sin 2\theta</m> and <m>\cos 2\theta</m> in terms of <m>x</m>.</p></statement></exercise>
 
 <exercise number="67"><statement><p>If <m>x=3\tan \theta</m>, write <m>\theta +\dfrac{1}{4}\sin 2\theta</m> in terms of <m>x</m>.</p></statement>    
-<answer></answer></exercise>
+<answer><m>\arctan\dfrac{x}{3}+\dfrac{3x}{2(x^2+9)} </m></answer></exercise>
 
 <exercise number="68"><statement><p>If <m>x=5\cos \theta</m>, write <m>\dfrac{\theta}{2}-\cos 2\theta</m> in terms of <m>x</m>.</p></statement></exercise>
 
@@ -330,7 +634,12 @@
     <li>Is <m>\sin (\arcsin x)=x</m> for all <m>x</m> where it is defined? If not, for what values of <m>x</m> is the equation false?</li>
     <li>For what values of <m>x</m> is the function <m>g(x)=\arcsin(\sin x)</m> defined?</li>
     <li>Is <m>\arcsin (\sin x)=x</m> for all <m>x</m> where it is defined?  If not, for what values of <m>x</m> is the equation false?</li></ol></p></statement>    
-<answer></answer></exercise>
+<answer><p><ol label="a">
+    <li><p><m>-1\le x\le 1</m></p></li>
+    <li><p>Yes.</p></li>
+    <li><p>All</p></li>
+    <li><p><m>x\lt \frac{-\pi}{2} </m> or <m>x\gt\frac{\pi}{2} </m></p></li>
+    </ol></p></answer></exercise>
 
 <exercise number="70"><statement><p><ol label="a">
     <li>For what values of <m>x</m> is the function <m>f(x)=\cos (\arccos x)</m> defined?</li>
@@ -341,25 +650,75 @@
 <exercise number="71"><statement><p>Use your calculator to graph <m>y=\sin^{-1}x+\cos^{-1}x</m>.<ol label="a">
 <li>State the domain and range of the graph.</li>
 <li>Explain why the graph looks as it does.</li></ol></p></statement>    
-<answer></answer></exercise>
+<answer><ol label="a">
+    <li><p>Domain: <m>-1\le x \le 1</m>, range: <m>\{\frac{\pi}{2}\} </m></p></li>
+</ol></answer></exercise>
 
 <exercise number="72"><statement><p>Use your calculator to graph <m>y=\tan^{-1}x+\tan^{-1}(\dfrac{1}{x})</m>.<ol label="a">
 <li>State the domain and range of the graph.</li>
 <li>Explain why the graph looks as it does.</li></ol></p></statement></exercise>
 
-<exercisegroup><introduction><p>In Problems 73–74, we find a formula for the area under part of a semicircle.</p></introduction>
+<exercisegroup><introduction><p>In Problems 73<ndash/>74, we find a formula for the area under part of a semicircle.</p></introduction>
 
 <exercise number="73"><statement><p>Use the figure of a unit circle to answer the following.
-<sidebyside width="30%"><image source="images/hp8-2-73.png"><description>circle</description></image></sidebyside>
+<sidebyside width="30%"><!--<image source="images/hp8-2-73.png"><description>circle</description></image>-->
+    <image xml:id="hp8-2-73">
+        <description>unit circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=1.5]
+        \def\th{55};
+        \coordinate (A) at ({\th}:1);
+        \coordinate (B) at ($ cos(\th) *(1,0) $);
+        \draw[blue] (B) rectangle ++(-.15,.15);
+        \filldraw[cyan!50!white] (0,0)--(A) arc({\th}:90:1)--(0,0);
+        \draw[black,thick,->,>=stealth'] (-1.2,0)--(1.3,0) node[below left, xshift = -2, scale=.9] {1};
+        \draw[black,thick,->,>=stealth'] (0,-1.2)--(0,1.3) node[below left, scale=.9] {1};
+        \draw[black,thick] (0,0) circle (1cm);
+        \draw[red,thick] ({\th}:0.3) arc({\th}:90:0.3) node[above right,scale=.9] {$\theta$};
+        \draw[gray,thick] (A)--(B) node[below, text=black, scale=.9] {$t$};
+        \draw[gray,thick] (A)--(0,0);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
     <ol label="a">
     <li>Write an expression for the area of the shaded sector in terms of <m>\theta</m>.</li>
     <li>How are <m>\theta</m> and <m>t</m> related in the figure?  (Hint:  Write an expression for <m>\sin \theta</m>.)</li>
     <li>Combine your answers to (a) and (b) to write an expression for the area of the sector in terms of <m>t</m>.</li>
     </ol></p></statement>
-<answer></answer></exercise>
+<answer><p><ol label="a">
+    <li><p><m>\dfrac{\theta}{2} </m></p></li>
+    <li><p><m>t=\sin\theta</m></p></li>
+    <li><p><m>\frac{1}{2}\arcsin t </m></p></li>
+</ol></p></answer></exercise>
 
 <exercise number="74"><statement><p>Use the figure of a unit circle to answer the following.
-<sidebyside width="30%"><image source="images/hp8-2-74.png"><description>circle</description></image></sidebyside>
+<sidebyside width="30%"><!--<image source="images/hp8-2-74.png"><description>circle</description></image>-->
+    <image xml:id="hp8-2-74">
+        <description>unit circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=1.5]
+        \def\th{55};
+        \coordinate (A) at ({\th}:1);
+        \coordinate (B) at ($ cos(\th) *(1,0) $);
+        \filldraw[cyan!50!white] (0,0)--(A)--(B) --(0,0);
+        \draw[blue] (B) rectangle ++(-.15,.15);
+        \draw[black,thick,->,>=stealth'] (-1.2,0)--(1.3,0) node[below left, xshift = -2, scale=.9] {1};
+        \draw[black,thick,->,>=stealth'] (0,-1.2)--(0,1.3) node[below left, scale=.9] {1};
+        \draw[black,thick] (0,0) circle (1cm);
+        \draw[red,thick] ({\th}:0.3) arc({\th}:90:0.3) node[above right,scale=.9] {$\theta$};
+        \draw[gray,thick] (A)--(B) node[below, text=black, scale=.9] {$t$};
+        \draw[gray,thick] (A)--(0,0);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
     <ol label="a">
     <li>Write an expression for the height of the shaded triangle in terms of <m>t</m>. (Hint:  Use the Pythagorean theorem.)</li>
     <li>Write an expression for the area of the triangle in terms of <m>t</m>.</li>
