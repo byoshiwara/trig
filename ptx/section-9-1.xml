@@ -14,12 +14,67 @@
   <li>The wind is blowing due west at 50 kilometers per hour.</li></ol></p></statement>
 
 <solution><p><ol label="a">
-  <li><p>We draw an arrow making an angle of <m>30\degree</m> from east. The length of the arrow is 3 units, representing 3 miles.  See figure (a) below.</p>
-  <sidebyside width="90%"><image source="images/exam9-1-1.png"><description>vectors</description></image></sidebyside></li>
+  <li><p>We draw an arrow making an angle of <m>30\degree</m> from east. The length of the arrow is 3 units, representing 3 miles.  See figure (a) below.</p><!--
+  <sidebyside width="90%"><image source="images/exam9-1-1.png"><description>vectors</description></image></sidebyside>-->
+  <sidebyside widths= "30% 55%" valigns="bottom bottom" margins="0% 0%">
+    <image xml:id="exam9-1-1a">
+        <description>position vector</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale=1.2]
+    \coordinate (O) at (0,0);
+    \coordinate (P) at (30:3);
+    \draw[black,thick,->,>=stealth'] (-.2,0)--(3,0) node[right]{$E$};
+    \draw[black,thick,->,>=stealth'] (0,-.2)--(0,2.1) node[above]{$N$};
+    \filldraw[black] (P) circle (.03cm) node[yshift=.4cm]  {campsite};
+    \draw[red,thick,->,>=stealth'] (O)--(P) node[above left, midway, text=blue]{3 mi};
+    \draw[red,->] (0.5,0) arc(0:30:.5) node[right, yshift=2,midway] {$30\degree$};
+    \node at (1.5,-.5) {a.};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    <image xml:id="exam9-1-1b">
+        <description>velocity vector</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale=.12]
+    \coordinate (O) at (0,0);
+    \coordinate (P) at (180:50);
+    \draw[black,thick,->,>=stealth'] (0,0)--(10,0) node[right]{$E$};
+    \draw[black,thick,->,>=stealth'] (0,-2)--(0,20) node[above]{$N$};
+    \filldraw[black] (P) circle (.03cm) node[left]  {$W$};
+    \draw[red,thick,->,>=stealth'] (O)--(P) node[above , midway, text=blue]{50 km/hr};
+    \draw[red,->] (3,0) arc(0:180:3) node[above right, yshift=-2,midway] {$180\degree$};
+    \node at (-20,-5) {b.};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+  </sidebyside></li>
   <li>We draw an arrow pointing due west, that is, making an angle of <m>180\degree</m> from east. The length of the arrow represents the speed of the wind, 50 kilometers per hour. See figure (b) above.</li></ol></p>
   </solution></example>
 
-<exercise><statement><p>Draw an arrow to represent the velocity of an airplane travelling southeast at a speed of 300 miles per hour.</p></statement></exercise> 
+<exercise><statement><p>Draw an arrow to represent the velocity of an airplane travelling southeast at a speed of 300 miles per hour.</p></statement><answer><sidebyside width="50%"><!--<image source="images/exer9-1-1ans.png"><description>vectors</description></image>-->
+    <image xml:id="exer9-1-1ans">
+        <description>velocity vector</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale=1.5]
+    \coordinate (O) at (0,0);
+    \coordinate (P) at (-45:2.8);
+    \draw[black,thick,->,>=stealth'] (-.4,0)--(2,0) node[right]{$E$};
+    \draw[black,thick,->,>=stealth'] (0,-2)--(0,.5) node[above]{$N$};
+    \draw[red,thick,->,>=stealth'] (O)--(P) node[right, midway, text=blue]{300 mph};
+    \draw[red,<->] (0.5,0) arc(0:-45:.5) node[right, yshift=-2,midway] {$45\degree$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer></exercise> 
 </introduction> 
 
 <subsection><title>Notation for Vectors</title>
@@ -30,35 +85,198 @@
   <warning><p>Note that the magnitude of a vector is a scalar quantity.  Thus, <m>\bf{v}</m> denotes a vector, but <m>\|{\bf{v}}\|</m> denotes a scalar.</p></warning>
 <p></p>
 
-  <sidebyside widths="70% 25%" ><p> Two vectors may have the same length, but point in different directions.  The figure at right shows two vectors, <m>\bf{u}</m> and <m>\bf{v}</m>, that have the same magnitude but different directions.  For this example, <m>\|{\bf{u}}\|=\|{\bf{v}}\|</m>, but <m>\bf{u} \not=\bf{v}</m>.  Two vectors are equal if and only if they have the same length and the same direction, but they can start at different locations.  The fact that we can move vectors from one location to another is a useful property.  </p><image source="images/fig9-1-1.png"><description>vectors</description></image></sidebyside>
+  <sidebyside widths="70% 25%" ><p> Two vectors may have the same length, but point in different directions.  The figure at right shows two vectors, <m>\bf{u}</m> and <m>\bf{v}</m>, that have the same magnitude but different directions.  For this example, <m>\|{\bf{u}}\|=\|{\bf{v}}\|</m>, but <m>\bf{u} \not=\bf{v}</m>.  Two vectors are equal if and only if they have the same length and the same direction, but they can start at different locations.  The fact that we can move vectors from one location to another is a useful property.  </p><!--<image source="images/fig9-1-1.png"><description>vectors</description></image>-->
+    <image xml:id="fig9-1-1">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale=.7]
+    \draw[cyan] (0,0) grid (7,7);
+    \draw[red,line width=1.mm, ->] (6,5)--(1,5) node[above,midway] {\textbf{u}};
+    \draw[red,line width=1.mm, ->] (6,1)--(2,4) node[above right,midway] {\textbf{v}};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
 <example><statement><p>Which of the vectors shown below are equal?</p>
-<sidebyside width="40%"><image source="images/exam9-1-2.png"><description>vectors</description></image></sidebyside></statement>
+<sidebyside width="40%"><!--<image source="images/exam9-1-2.png"><description>vectors</description></image>-->
+    <image xml:id="exam9-1-2">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale=.7]
+    \draw[cyan] (0,0) grid (12,8);
+    \draw[red,line width=1.mm, ->] (2,5)--++(0,2) node[left,midway, text=black] {\textbf{a}};
+    \draw[red,line width=1.mm, ->] (5,7)--++(-2,-3) node[above left,midway, text=black] {\textbf{b}};
+    \draw[red,line width=1.mm, <-] (7,7)--++(-2,-3) node[above left, yshift=-2,midway, text=black] {\textbf{c}};
+    \draw[red,line width=1.mm, ->] (8,6)--++(2,0) node[above,midway, text=black] {\textbf{d}};
+    \draw[red,line width=1.mm, ->] (8,5)--++(3,0) node[below,midway, text=black] {\textbf{e}};
+    \draw[red,line width=1.mm, ->] (10,2)--++(-3,2) node[below left,midway, text=black] {\textbf{f}};
+    \draw[red,line width=1.mm, ->] (2,1)--++(2,3) node[above left,midway, text=black] {\textbf{g}};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement>
 
 <solution><p>Only vectors <m>\bf{c}</m> and <m>\bf{g}</m> are equal.  Vectors <m>\bf{b}</m>, <m>\bf{c}</m>, and <m>\bf{f}</m> are all the same length but have different directions. Vectors <m>\bf{a}</m> and <m>\bf{d}</m> also have equal lengths but different directions. Vectors <m>\bf{d}</m> and <m>\bf{e}</m> have the same direction but different lengths.</p></solution></example>
 
-<exercise><statement><sidebyside widths="60% 25%"><p>Sketch a vector <m>\bf{w}</m> that is equal to the vector <m>\bf{v}</m> shown at right, but that starts at the point <m>(-4,2)</m>.</p>
-<image source="images/exer9-1-2.png"><description>vectors</description></image></sidebyside></statement></exercise>
+<exercise><statement><sidebyside widths="60% 35%" valigns="middle middle"><p>Sketch a vector <m>\bf{w}</m> that is equal to the vector <m>\bf{v}</m> shown at right, but that starts at the point <m>(-4,2)</m>.</p>
+<!--<image source="images/exer9-1-2.png"><description>vectors</description></image>-->
+    <image xml:id="exer9-1-2">
+        <description>vector</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale=.6]
+    \draw[cyan] (-5,-5) grid (5,5);
+    \draw[black,thick,->,>=stealth'] (-5,0)--(5.6,0) node[right] {$x$};
+    \draw[black,thick,->,>=stealth'] (0,-5)--(0,5.6) node[above] {$y$};
+    \draw[red,line width=1.mm, ->] (0,0)--++(3,1) node[above left,midway,yshift=2, fill=white, inner sep=1, text=black] {\textbf{v}};
+    \foreach \x in {-5,5} {
+     \draw[black,thick] (\x,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1] {$\x$};
+     \draw[black,thick] (.15,\x)--++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1] {$\x$};
+    };
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement><answer><sidebyside width="60%"><!--<image source="images/exer9-1-2ans.png"><description>vectors</description></image>-->
+    <image xml:id="exer9-1-2ans">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale=.6]
+    \draw[cyan] (-5,-5) grid (5,5);
+    \draw[black,thick,->,>=stealth'] (-5,0)--(5.6,0) node[right] {$x$};
+    \draw[black,thick,->,>=stealth'] (0,-5)--(0,5.6) node[above] {$y$};
+    \draw[red,line width=1.mm, ->] (0,0)--++(3,1) node[above left,midway,yshift=2, fill=white, inner sep=1, text=black] {\textbf{v}};
+    \foreach \x in {-5,5} {
+     \draw[black,thick] (\x,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1] {$\x$};
+     \draw[black,thick] (.15,\x)--++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1] {$\x$};
+    };
+    \draw[red,line width=1.mm, ->] (-4,2)--++(3,1) node[above left,midway,yshift=2, fill=white, inner sep=1, text=black] {\textbf{w}};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer></exercise>
 </subsection>
 
 <subsection><title>Scalar Multiplication of Vectors</title>
 <p> We can multiply a vector by a scalar. The figure below shows the vector <m>\bf{w}</m> and the vector <m>\bf{v} = 3\bf{w}</m>.  Multiplying by a positive scalar changes the length of a vector but not its direction.</p> 
-<sidebyside width="40%"><image source="images/fig9-1-2.png"><description>vectors</description></image></sidebyside>
+<sidebyside width="40%"><!--<image source="images/fig9-1-2.png"><description>vectors</description></image>-->
+    <image xml:id="fig9-1-2">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.4]
+        \draw[cyan] (-7,-4) grid (7,4);
+        \draw[red, very thick, ->,>=stealth'] (6,-3)--(-6,3) node[below left, midway, text=black]{\textbf{v}};
+        \draw[red, very thick, ->,>=stealth'] (3,1)--(-1,3) node[below left, midway, text=black]{\textbf{w}};
+        \draw[red, very thick, ->,>=stealth'] (4,3)--(6,2) node[below left, midway, xshift=2, yshift=2,  text=black]{\textbf{u}};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
 <p>Thus, the vector <m>\bf{v}</m> is 3 times as long as the vector <m>\bf{w}</m>. If we multiply a vector by a negative scalar, we alter its length and reverse its direction; that is, we change the direction by <m>180\degree</m>. For example, the vector <m>\bf{u} = -\frac{1}{2}\bf{w}</m>.  It is half the length of <m>\bf{w}</m>, and points in the opposite direction.</p>
 <p>In general, if <m>k</m> is a real number, then <m>k\bf{v}</m> represents the vector with magnitude <m>k</m> times the magnitude of <m>\bf{v}</m>. It points in the same direction as <m>\bf{v}</m> when <m>k \gt 0</m> and in the opposite direction from <m>\bf{v}</m> when <m>k \lt 0</m>. Real numbers are called scalars because they “scale” vectors in this way, and multiplying a scalar times a vector is called <term>scalar multiplication</term>.</p>  
 
 <example><statement><p>For the vector <m>\bf{v}</m> shown in figure (a) below, draw the vectors <m>\frac{2}{3}\bf{v}</m> and <m>-\sqrt{3}\bf{v}</m>.</p>
-<sidebyside width="70%"><image source="images/exam9-1-3.png"><description>vectors</description></image></sidebyside></statement>
+<sidebyside width="70%"><!--<image source="images/exam9-1-3.png"><description>vectors</description></image>-->
+    <image xml:id="exam9-1-3">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.45]
+        \draw[cyan] (-5,-5) grid (5,5);
+        \draw[red, very thick, ->,>=stealth'] (2,-1)--++(-5,2) node[above right, yshift=2, fill=white, inner sep=1] {\textbf{v}};
+        \node at (0,-6.5) {a.};
+
+        \def\xs{14};
+        \draw[cyan] ($ \xs*(1,0) + (-5,-5)$) grid ($ \xs*(1,0) + (5,5)$);
+        \draw[red, very thick, ->,>=stealth'] ($ \xs*(1,0) + (2,-1)$)--++(-5,2) node[above right, yshift=2, fill=white, inner sep=1] {\textbf{v}};
+        \draw[blue, very thick, ->,>=stealth'] ($ \xs*(1,0) + (2,1)$)--++(-10/3,4/3) node[above right, yshift=2, fill=white, inner sep=1] {$\frac{2}{3}$\textbf{v}};
+        \draw[blue, very thick, ->,>=stealth'] ($ \xs*(1,0) + (-4,-1)$)--++ ($ -sqrt(3)*(-5,0) + -sqrt(3)*(0,2) $) node[above, yshift=9, fill=white, inner sep=1] {$-\sqrt{3}$\textbf{v}};
+
+        \node at ($ \xs*(1,0) + (0,-6.5)$) {b.};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement>
 
 <solution><p>The vector <m>\frac{2}{3}\bf{v}</m> points in the same direction as <m>\bf{v}</m>, but is only two-thirds as long as the vector <m>\bf{v}</m>. Because <m>\bf{v}</m> has a slope of <m>\dfrac{-2}{5}</m>, so does any nonzero multiple of <m>\bf{v}</m>.  The vector <m>-\sqrt{3}\bf{v}</m> points in the direction opposite to <m>\bf{v}</m> and is <m>\sqrt{3} \approx 1.7</m> times as long as <m>\bf{v}</m>.  Both vectors are shown in figure (b).</p></solution></example>
 
 <exercise><statement><sidebyside widths="60% 25%"><p>For the vector <m>\bf{w}</m> shown at right, draw the vectors <m>-0.6\bf{w}</m> and  <m>\sqrt{2}\bf{w}</m>.</p>
-<image source="images/exer9-1-3.png"><description>vectors</description></image></sidebyside></statement></exercise>
+<!--<image source="images/exer9-1-3.png"><description>vectors</description></image>-->
+    <image xml:id="exer9-1-3">
+        <description>vector</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.5]
+        \draw[cyan] (-5,-5) grid (5,5);
+        \draw[red, very thick, ->,>=stealth'] (-4,1)--++(2,2) node[above left, xshift=2, fill=white, inner sep=1]{\textbf{w}};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement><answer><sidebyside width="25%" margins="0% 75%">
+    <image xml:id="exer9-1-3ans">
+        <description>triangle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.5]
+        \draw[cyan] (-5,-5) grid (5,5);
+        \draw[red, very thick, ->,>=stealth'] (-4,1)--++(2,2) node[above left, xshift=2, fill=white, inner sep=1]{\textbf{w}};
+        \draw[blue, very thick, ->,>=stealth'] (2,3)--++(-1.2,-1.2) node[below left, yshift=-2, fill=white, inner sep=1]{$-0.6$\textbf{w}};
+        \draw[blue, very thick, ->,>=stealth'] (0,-3)--++($ sqrt(2)*(2,2) $) node[above right, xshift=2, fill=white, inner sep=1]{$\sqrt{2}$\textbf{w}};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer></exercise>
 </subsection>
 
 <subsection><title>Addition of Vectors</title>
-<sidebyside widths="60% 40%"><p>A <term>displacement vector</term> represents the change in position from one point to another.  For example, suppose you leave home and travel 6 miles east and then 8 miles north. These two displacements are represented by the vectors <m>\bf{u}</m> and <m>\bf{v}</m> shown at right.  When we follow one displacement vector by a second one, the net displacement is a new vector, <m>\bf{w}</m>, starting at the base of the first vector and ending at the head of the second vector.</p><image source="images/fig9-1-3.png"><description>vectors</description></image></sidebyside>   
+<sidebyside widths="60% 40%"><p>A <term>displacement vector</term> represents the change in position from one point to another.  For example, suppose you leave home and travel 6 miles east and then 8 miles north. These two displacements are represented by the vectors <m>\bf{u}</m> and <m>\bf{v}</m> shown at right.  When we follow one displacement vector by a second one, the net displacement is a new vector, <m>\bf{w}</m>, starting at the base of the first vector and ending at the head of the second vector.</p><!--<image source="images/fig9-1-3.png"><description>vectors</description></image>-->
+    <image xml:id="fig9-1-3">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.7]
+        \coordinate (O) at (0,0);
+        \coordinate (A) at (6,0);
+        \coordinate (B) at (6,8);
+        \draw[black, thick, ->,>=stealth'] (O)--(A) node[below left, xshift=-6, yshift=-2]{\textbf{u}};
+        \draw[black, thick, ->,>=stealth'] (A)--(B) node[right, yshift=-8]{\textbf{v}};
+        \draw[red, ultra thick, ->,>=stealth'] (O)--(B) node[above left, xshift=-5, yshift=-5]{\textbf{w}};
+        \draw[blue] (1,0) arc(0:{atan(4/3)}:1) node[right, yshift=1, midway] {$\theta$};
+        \draw[black,thick,->,>=stealth'] (-1,6)--++(2,0) node[right]{E};
+        \draw[black,thick,->,>=stealth'] (0,5)--++(0,2) node[above]{N};
+        \draw[lightgray] ($ (B) +(0.3,0)$) --++(2,0);
+        \draw[lightgray] ($ (A) +(0.3,0)$) --++(2,0);
+        \draw[lightgray, <->,>=stealth'] ($ (B) +(1.3,0)$) --($ (A) +(1.3,0)$) node[midway, text=blue, fill=white, inner sep=2] {8 mi};
+        \draw[lightgray] (0, -.3) --++(0,-2);
+        \draw[lightgray] ($ (A) +(0, -.3)$) --++(0,-2);
+        \draw[lightgray, <->,>=stealth'] (0,-1.3) --++(6,0) node[midway, text=blue, fill=white, inner sep=2] {6 mi};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>   
 
 <p> In this example, notice that <m>\bf{w}</m> forms the hypotenuse of a right triangle, so we can calculate its magnitude and direction.
 \begin{align*}
@@ -72,17 +290,135 @@
   When we follow one vector by a second vector as described above, we are adding the two vectors. The sum is called the <term>resultant vector</term>.</p>  
 
 <example><statement><p>For each pair of vectors, draw the resultant vector <m>\bf{w} = \bf{u}+\bf{v}</m>. </p>
-<sidebyside width="80%"><image source="images/exam9-1-4.png"><description>vectors</description></image></sidebyside></statement>
+<sidebyside width="80%"><!--<image source="images/exam9-1-4.png"><description>vectors</description></image>-->
+    <image xml:id="exam9-1-4">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.6]
+        \coordinate (O) at (0,0);
+        \draw[cyan] (O) grid ++(5,6);
+        \draw[red,very thick,->,>=stealth'] ($ (O)+(4,5) $)--++(-3,-2) node[above, yshift=7, fill=white, inner sep=1] {\textbf{u}};
+        \draw[blue,very thick,->,>=stealth'] ($ (O)+(3,3) $)--++(1,-2) node[above right, yshift=3, fill=white, inner sep=1] {\textbf{v}};
+        \node at (2.5,-.8) {a.};
 
+        \coordinate (O) at (5.999,0);
+        \draw[cyan] (O) grid ++(6.001,5);
+        \draw[red,very thick,->,>=stealth'] ($ (O)+(1,2) $)--++(4,2) node[above left, yshift=2, fill=white, inner sep=1] {\textbf{u}};
+        \draw[blue,very thick,->,>=stealth'] ($ (O)+(2,1) $)--++(2,1) node[below, xshift=-2, yshift=-7, fill=white, inner sep=1] {\textbf{v}};
+        \node at ($ (O)+(3,-.8)$) {b.};
+
+
+        \coordinate (O) at (12.999,0);
+        \draw[cyan] (O) grid ++(10,9);
+        \draw[red,very thick,->,>=stealth'] ($ (O)+(2,8) $)--++(7,-7) node[above , yshift=7, fill=white, inner sep=1] {\textbf{u}};
+        \draw[blue,very thick,->,>=stealth'] ($ (O)+(6,2) $)--++(-5,5) node[below,  yshift=-7, fill=white, inner sep=1] {\textbf{v}};
+        \node at ($ (O)+(5,-.8)$) {c.};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement>
 <solution><p>We draw a copy of the vector <m>\bf{v}</m> so that its base (or starting point) is placed on the head (or ending point) of <m>\bf{u}</m>, and then we draw vector <m>\bf{w}</m> from the base of <m>\bf{u}</m> to the head of <m>\bf{v}</m>.</p>
-<sidebyside width="80%"><image source="images/exam9-1-4ans.png"><description>vectors</description></image></sidebyside></solution></example>
+<sidebyside width="80%"><!--<image source="images/exam9-1-4ans.png"><description>vectors</description></image>-->
+    <image xml:id="exam9-1-4ans">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.5]
+        \coordinate (O) at (0,0);
+        \draw[cyan] (O) grid ++(5,6);
+        \draw[red,thick,->,>=stealth'] ($ (O)+(4,5) $)--++(-3,-2) node[above, yshift=7, fill=white, inner sep=1] {\textbf{u}};
+        \draw[blue,thick,->,>=stealth'] ($ (O)+(1,3) $)--++(1,-2) node[above left, xshift=-7, yshift=3, fill=white, inner sep=1] {\textbf{v}};
+        \draw[black,very thick,->,>=stealth'] ($ (O)+(4,5) $)--++(-2,-4) node[ right, midway, xshift=3, yshift=-2, fill=white, inner sep=1] {\textbf{w}};
+        \node at (2.5,-.8) {a.};
 
-<exercise><statement><sidebyside widths="50% 30%"><p>Draw the resultant vector <m>\bf{w} = \bf{u}+\bf{v}</m>.</p>
-<image source="images/exer9-1-4.png"><description>vectors</description></image></sidebyside></statement></exercise>
+        \coordinate (O) at (5.999,0);
+        \draw[cyan] (O) grid ++(9.001,8);
+        \draw[lightgray,line width=1mm,->,>=stealth'] ($ (O)+(1,4) $)--++(6,3) node[above right, xshift=2, yshift=0, fill=white, inner sep=1, text=black] {\textbf{w}};
+        \draw[red, thick,->,>=stealth'] ($ (O)+(1,4) $)--++(4,2) node[above left, yshift=2, fill=white, inner sep=1] {\textbf{u}};
+        \draw[blue,very thick,->,>=stealth'] ($ (O)+(5,6) $)--++(2,1) node[below, midway, xshift=0, yshift=-7, fill=white, inner sep=1] {\textbf{v}};
+        \draw[black,very thick,->,>=stealth'] ($ (O)+(1,1) $)--++(6,3) node[above right, xshift=2, yshift=0, fill=white, inner sep=1] {\textbf{w}};
+        \node at ($ (O)+(4.5,-.8)$) {b.};
+
+
+        \coordinate (O) at (15.999,0);
+        \draw[cyan] (O) grid ++(10,9);
+        \draw[lightgray,line width=1.5mm,->,>=stealth'] ($ (O)+(2,8) $)--++(2,-2) node[above right, xshift=2, yshift=5, fill=white, inner sep=1, text=black] {\textbf{w}};
+        \draw[red,line width=.7mm,->,>=stealth'] ($ (O)+(2,8) $)--++(7,-7) node[above , yshift=7, fill=white, inner sep=1] {\textbf{u}};
+        \draw[blue,thick,->,>=stealth'] ($ (O)+(9,1) $)--++(-5,5) node[below,  yshift=-7, fill=white, inner sep=1] {\textbf{v}};
+        \draw[black,very thick,->,>=stealth'] ($ (O)+(1,4) $)--++(2,-2) node[above right, xshift=2, yshift=0, fill=white, inner sep=1] {\textbf{w}};
+        \node at ($ (O)+(5,-.8)$) {c.};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></solution></example>
+
+<exercise><statement><sidebyside widths="50% 35%" margins="0% 10%"><p>Draw the resultant vector <m>\bf{w} = \bf{u}+\bf{v}</m>.</p>
+<!--<image source="images/exer9-1-4.png"><description>vectors</description></image>-->
+    <image xml:id="exer9-1-4">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.6]
+        \draw[cyan] (0,0) grid (10,7);
+        \draw[red,thick,->,>=stealth'] (1,1) --++(2,3) node[above left, midway, fill=white, inner sep=1] {\textbf{u}};
+        \draw[green!70!black,thick,->,>=stealth'] (1,6)--++(5,-2) node[above right, midway, fill=white, inner sep=1] {\textbf{v}};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement><answer><sidebyside width="35%">
+    <image xml:id="exer9-1-4ans">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.6]
+        \draw[cyan] (0,0) grid (10,7);
+        \draw[red,thick,->,>=stealth'] (1,1) --++(2,3) node[above left, midway, fill=white, inner sep=1] {\textbf{u}};
+        \draw[green!70!black,thick,->,>=stealth'] (3,4)--++(5,-2) node[above right, midway, fill=white, inner sep=1] {\textbf{v}};
+        \draw[black,very thick,->,>=stealth'] (1,1) --++(7,1) node[below right, midway, yshift=-2, fill=white, inner sep=1] {\textbf{w}};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer></exercise>
+
 
 <p> When the resultant vector forms the third side of a triangle, we can use the laws of sines and cosines to calculate its length and direction.</p>
 
-<example><statement><sidebyside widths="50% 40%"><p>You are camping in a state park. In the morning, you start off from your campground at point <m>C</m> and hike 4 miles southwest to point <m>B</m>. After taking a break, you continue hiking, and this time you cover 3 miles in the direction <m>30\degree</m> east of north, and arrive at point <m>A</m>, as shown at right.  What is your position relative to the campground?</p><image source="images/exam9-1-5.png"><description>vectors</description></image></sidebyside></statement>
+<example><statement><sidebyside widths="50% 40%"><p>You are camping in a state park. In the morning, you start off from your campground at point <m>C</m> and hike 4 miles southwest to point <m>B</m>. After taking a break, you continue hiking, and this time you cover 3 miles in the direction <m>30\degree</m> east of north, and arrive at point <m>A</m>, as shown at right.  What is your position relative to the campground?</p><!--<image source="images/exam9-1-5.png"><description>vectors</description></image>-->
+    <image xml:id="exam9-1-5">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=1.5]
+        \coordinate (B) at (0,0);
+        \coordinate (A) at (60:3);
+        \coordinate (C) at (45:4);
+        \coordinate (N) at (90:1.3);
+        \draw[black,thick,->,>=stealth'] (B)--(N) node[above]{N};
+        \draw[black,thick,->,>=stealth'] (C)--++(-2,0) node[left]{W};
+        \draw[gray,thick] (B)--(A) node[above left, xshift=4, yshift=8, midway, text=blue] {3 mi};
+        \draw[gray,thick] (B)--(C) node[below right, midway, midway, text=blue] {4 mi};
+        \draw[green, very thick,->,>=stealth'] (A)--(C);
+        \draw[red,->,>=stealth'] (C)++(165:1.2) arc(165:180:1.2) node[below, yshift=1.75, scale=.75]{$\theta$};
+        \draw[red,<-,>=stealth'] (C)++(189.8:1.2) arc(189.8:204.8:1.2);
+        \draw[red,<->,>=stealth'] (B)++(90:.6) arc(90:60:.6) node[above, midway, xshift=3, yshift=1, scale=.8] {$30\degree$};
+        \filldraw[black] (B) circle (.04cm) node[left] {$B$};
+        \filldraw[black] (A) circle (.04cm) node[left] {$A$};
+        \filldraw[black] (C) circle (.04cm) node[right] {$C$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement>
 
 <solution><p>The resultant vector, <m>\bf{w}</m>, forms the side opposite a <m>15\degree</m> angle.  We use the law of cosines to compute its length.
   \begin{align*}
@@ -99,13 +435,31 @@ Thus, <m>\|{\bf{w}}\|= 1.348</m>, so you are 1.348 miles from the campground. To
 
   Thus, the angle labeled <m>\theta</m> in the figure is <m>45\degree - 35.2\degree = 9.9\degree</m>, so at point <m>A</m> you are 1.348 miles from camp in the direction <m>9.8\degree</m> south of west.</p></solution></example> 
 
-<exercise><statement><p>Delbert has gone sailing with friends. After leaving the marina, they sail for 5 miles on a bearing of <m>160\degree</m> and stop at Gull Island for lunch. (Recall that bearings are measured clockwise from north.) After lunch, they have sailed for 3 miles on a bearing of <m>25\degree</m> when they get a phone call to return home. What bearing is the most direct route back to the marina, and how far is it?</p></statement></exercise> 
-
+<exercise><statement><p>Delbert has gone sailing with friends. After leaving the marina, they sail for 5 miles on a bearing of <m>160\degree</m> and stop at Gull Island for lunch. (Recall that bearings are measured clockwise from north.) After lunch, they have sailed for 3 miles on a bearing of <m>25\degree</m> when they get a phone call to return home. What bearing is the most direct route back to the marina, and how far is it?</p></statement><answer><p><m>56.4\degree</m> W of N, 3.58 mi</p></answer></exercise> 
 <p>It doesn't matter which order we choose to add two vectors. As with the ordinary addition of scalars, the addition of vectors is commutative, so that <m>\bf{u} + \bf{v} = \bf{v} + \bf{u}</m>. To see this, first draw <m>\bf{u}</m> and <m>\bf{v}</m> starting at the same point.</p>  
-
-<sidebyside widths="30% 60%"><image source="images/fig9-1-4.png"><description>vectors</description></image><p><ul>
+<sidebyside widths="30% 60%" valigns="middle middle" margins="0% 5%"><!--<image source="images/fig9-1-4.png"><description>vectors</description></image>-->
+    <image xml:id="fig9-1-4">
+        <description>vector parallelogram rule</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=1.2]
+        \coordinate (O) at (0,0);
+        \coordinate (A) at (70:2);
+        \coordinate (B) at (20:3);
+        \coordinate (C) at ($ (A)+(B) $);
+        \draw[green,  thick,->,>=stealth'] (O)--++(A) node[left, midway] {\textbf{u}};
+        \draw[green,  thick,->,>=stealth'] (B)--++(A) node[right, midway] {\textbf{u}};
+        \draw[blue,  thick,->,>=stealth'] (O)--++(B) node[below, midway] {\textbf{v}};
+        \draw[blue,  thick,->,>=stealth'] (A)--++(B) node[above, midway] {\textbf{v}};
+        \draw[red,  thick,->,>=stealth'] (O)--++($ (A)+(B)$) node[above, midway, xshift=-6, scale=.8] {$\textbf{u}+\textbf{v}$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+<p><ul>
 <li>To represent <m>\bf{u} + \bf{v}</m>, we place the base of <m>\bf{v}</m> at the head of <m>\bf{u}</m>, and draw the resultant vector <m>\bf{u} + \bf{v}</m> as shown at left.</li> 
-<li>To represent <m>\bf{v} + \bf{u}</m>, we place the base of <m>\bf{u}</m> at the head of <m>\bf{v}</m>, and the resultant vector <m>\bf{v} + \bf{u}</m> is the same as the vector <m>\bf{u} + \bf{v}</m>.</li></ul></p></sidebyside>  
+<li>To represent <m>\bf{v} + \bf{u}</m>, we place the base of <m>\bf{u}</m> at the head of <m>\bf{v}</m>, and the resultant vector <m>\bf{v} + \bf{u}</m> is the same as the vector <m>\bf{u} + \bf{v}</m>.</li></ul></p></sidebyside>    
 
 <p>Because the vector sum forms the diagonal of a parallelogram in this picture, the rule for adding vectors is sometimes called the <term>parallelogram rule</term>.</p> 
 
@@ -126,7 +480,39 @@ Thus, <m>\|{\bf{w}}\|= 1.348</m>, so you are 1.348 miles from the campground. To
 <p>Physicists and mathematicians use the word <term>velocity</term> to mean not simply speed but the combination of speed and direction of motion. The interesting thing about velocities is that they add like vectors;  if an object's motion consists of two simultaneous components, the resulting displacement is the same as if the motions had occurred one after the other.</p>  
 <p>For example, imagine a beetle walking across a moving conveyor belt, as shown in figure (a) below.  The conveyor belt is moving at a speed of 4 inches per second, and the beetle walks at right angles to the motion of the belt at 2 inches per second.  After 1 second, the beetle has traveled from his starting point at <m>P</m> to point <m>Q</m>, distance of <m>\sqrt{2^2 + 4^2} = \sqrt{20}</m>, or about 4.47 inches. His actual velocity relative to the ground is 4.47 inches per second at an angle of <m>\theta = \tan^{-1}(\frac{2}{4}) = 26.6\degree</m> from the direction of the conveyor belt.</p>
 
-<sidebyside width="90%"><image source="images/fig9-1-5.png"><description>beetles</description></image></sidebyside>
+<sidebyside width="90%"><!--<image source="images/fig9-1-5.png"><description>beetles</description></image>-->
+    <image xml:id="fig9-1-5">
+        <description>beetle on conveyor belt</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture}
+        \coordinate (O) at (0,0);
+        \coordinate (A) at (0,2);
+        \coordinate (B) at (4,0);
+        \filldraw[lightgray!50] (-2,0) rectangle ++(6.4,3.5);
+        \draw[blue,thick] (O)--(A);
+        \draw[blue,thick] (A) --++(B);
+        \draw[green!60!black,thick] (O)--($ (A)+(B) $);
+        \draw[red, ->] (0:.8) arc(0:{atan(1/2)}:0.8) node[right, midway, yshift=0, scale=.8] {$26.2\degree$};
+        \draw[black,thick,->,>=stealth'] ($(O)+(-1.8,0)$)--++(0,2) node[right,midway, scale=.8] {2 in/sec};
+        \draw[black,thick,->,>=stealth'] ($(O)+(0,2.5)$)--++(4,0) node[above,midway, scale=.8] {4 in/sec};
+
+        \coordinate (O) at (7.5,0);
+        \coordinate (A) at ($(O)+(0,2)$);
+        \coordinate (B) at ($(O)+(4,0)$);
+        \filldraw[lightgray!50] ($ (O)+(-2,0)$) rectangle ++(6.4,3.5);
+        \draw[blue,thick] (O)--(A);
+        \draw[blue,thick] (A) --++(4,0);
+        \draw[green!60!black,thick] (O)--($ (A)+(4,0) $) node[below right, midway, text=blue] {4.47in};
+        \draw[red, ->] ($(O)+(0:.8)$) arc(0:{atan(1/2)}:0.8) node[right, midway, yshift=0, scale=.8] {$26.2\degree$};
+        \draw[black,thick,->,>=stealth'] ($(O)+(-1.8,0)$)--++(0,2) node[right,midway, scale=.8] {2 in};
+        \draw[black,thick,->,>=stealth'] ($(O)+(0,2.5)$)--++(4,0) node[above,midway, scale=.8] {4 in};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
 <p> Notice that if the two motions were performed in succession instead of simultaneously, as shown in figure (b), the resulting displacement would be the same. In other words, if the beetle had walked across the belt for 1 second before it started moving, and then ridden the belt for 1 second without walking, he would still end up at point <m>Q</m>.</p> 
 <p>Thus, velocity is a vector quantity, and we can calculate the result of two simultaneous motions by using the parallelogram rule. We treat the two motions as if they had occurred one after the other, by starting one vector at the endpoint of the other. (Remember we can move a vector from one location to another, as long as we preserve its length and direction.)</p>
@@ -136,7 +522,48 @@ Thus, <m>\|{\bf{w}}\|= 1.348</m>, so you are 1.348 miles from the campground. To
 <solution><p>We represent the ship's velocity by a vector <m>\bf{v}</m> and the velocity of the water current by vector <m>\bf{w}</m>, as shown in figure (a). The actual motion of the ship is the sum of these two vectors, and we can calculate the sum just as if the two motions had occurred separately, one after the other.</p>
 <p>So we will add <m>\bf{w}</m> to <m>\bf{v}</m> by placing the base of <m>\bf{w}</m> at the head of <m>\bf{v}</m>, as shown in figure (b). The resultant vector, <m>\bf{u}</m>, represents the actual motion of the ship.</p>
 
-<sidebyside width="90%"><image source="images/exam9-1-6ans.png"><description>vectors</description></image></sidebyside>  
+<sidebyside width="90%"><!--<image source="images/exam9-1-6ans.png"><description>vectors</description></image>-->
+    <image xml:id="exam9-1-6ans">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.33]
+        \coordinate (O) at (0,0);
+        \draw[gray,->,>=stealth'] (0,-5) --++(0,10) node[above, text=black]{N};
+        \draw[gray,->,>=stealth'] (-5,0) --++(10,0) node[right, text=black]{E};
+        \draw[green!70!black,thick,->,>=stealth'] (O) --++(170:15) node[above]{\textbf{v}};
+        \node[above, text=blue] at (170:7.5) {15};
+        \draw[green!70!black,thick,->,>=stealth'] (O) --++(-70:6) node[right]{\textbf{w}};
+        \node[above right, yshift=-3, text=blue] at (-70:3.5) {6};
+        \draw[red,->,>=stealth'] (0,2) arc(90:-70:2) node[below right, xshift=-5, yshift=-7, midway]{$160\degree$};
+        \draw[red,->,>=stealth'] (0,1.5) arc(90:-190:1.5) node[left, xshift=0, yshift=-10]{$280\degree$};
+        \node at (-7,-6.5) {a.};
+
+        %second diagram
+        \def\delx{27};
+        \coordinate (O) at (\delx,0);
+        \draw[gray,->,>=stealth'] ($ (O)+(0,-5)$) --++(0,10) node[above, text=black]{N};
+        \draw[gray,->,>=stealth'] ($ (O)+(-5,0)$) --++(8,0) node[right, text=black]{E};
+        \coordinate (P) at ($ (O) +(170:15)$);
+        \draw[lightgray] (P)--++(7.5,0);
+        \draw[lightgray] (P)--++(0,-7.5);
+        \draw[green!70!black,thick,->,>=stealth'] (O) --(P) node[above]{\textbf{v}};
+        \node[above, text=blue] at (170:7.5) {15};
+        \draw[green!70!black,thick,->,>=stealth'] ($(O)+(170:15) $) --++(-70:6) node[above , yshift=8]{\textbf{w}};
+        \draw[blue!70!black,thick,->,>=stealth'] (O) --++($(-70:6)+(170:15) $)node[below right, xshift=8]{\textbf{u}};
+        \draw[red,<-,>=stealth'] ($ (P)+(0,-2.5)$) arc(-90:-115:2.5) node[left, xshift=4,yshift=3] {$20\degree$};
+        \draw[red,<-,>=stealth'] ($ (P)+(-70:2.5)$) arc(-65:-45:2.5);
+        \draw[red,<->,>=stealth'] ($ (P)+(6.5,0)$) arc(0:-10:6.5) node[right, midway, yshift=-1] {$\alpha$};
+        \draw[red,<-,>=stealth'] ($ (O)+(-4.,0)$) arc(180:190:4.);
+        \draw[red,<-,>=stealth'] ($ (O)+(170:4.)$) arc(170:160:4.) node[above, xshift=2] {$10\degree$};
+        \draw[red,<->,>=stealth'] ($ (O)+(170:6.5)$) arc(170:193.5:6.5) node[left, midway] {$\gamma$};
+        \node at ($(O)+(-7,-6.5)$) {b.};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>   
 
 <p> We first calculate the angle <m>\beta</m> between the two vectors <m>\bf{v}</m> and <m>\bf{w}</m>.  Because <m>\alpha = 10\degree</m>, we have <m>20\degree + \beta = 90\degree</m>, so <m>\beta = 60\degree</m>. Now we can use the law of cosines to find <m>\|{\bf{u}}\|</m>.
     \begin{align*}
@@ -167,7 +594,31 @@ The direction of the ship is <m>\gamma - 10\degree = 13.4\degree</m> south of du
     \|{\bf{v}}\| \amp = 17.25\\
     \end{align*}
     So Barbara should travel at about 17.25 miles per hour.</p>
-<image source="images/exam9-1-7ans.png"><description>vectors</description></image></sidebyside>
+<!--<image source="images/exam9-1-7ans.png"><description>vectors</description></image>-->
+    <image xml:id="exam9-1-7ans">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.4]
+        \coordinate (D) at (0,0);
+        \coordinate (C) at (45:3);
+        \coordinate (B) at ($ (C) + (15,0) $);
+        \draw[gray,dashed,->,>=stealth'] (D)--++(0,2.8) node[above, text=black]{N};
+        \draw[black,->,>=stealth'] (B)--++(0,2.5) node[above]{N};
+        \draw[blue,thick, ->,>=stealth'] (D) -- (C) node[right, yshift=-2, midway] {3};
+        \draw[blue,thick,->,>=stealth'] (C)--(B) node[above,midway, xshift=-5] {15};
+        \draw[blue,thick,->,>=stealth'] (B)--(D) node[below,midway, xshift=-5, yshift=-3] {\textbf{v}};
+        \draw[red] (0,1.2) arc(90:45:1.2) node[above right, xshift=-5, midway, scale=.8]{$45\degree$};
+        \draw[red] ($ (B) + (-6.5,0) $) arc(180:188.1:6.5) node[left, midway, yshift=0, midway, scale=.8]{$\theta$};
+        \node[below left] at (D) {$D$};
+        \node[above] at (C) {$C$};
+        \node[below] at (B) {$B$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 <p>To find her heading, we use the law of sines to calculate the angle <m>\theta</m>.   
     \begin{align*}
       \dfrac{\sin \theta}{3} \amp = \dfrac{\sin 45\degree}{15}\\
@@ -176,14 +627,33 @@ The direction of the ship is <m>\gamma - 10\degree = 13.4\degree</m> south of du
   \end{align*}
 Barbara should head her boat about <m>8.1\degree</m> south of west, or at a bearing of <m>261.9\degree</m>.</p></solution></example>
 
-<exercise><statement><p>Ahab would like to sail at 20 kilometers per hour due west towards a whale reported at that position.  However, a steady ocean current is moving <m>52\degree</m> east of north at 8 kilometers per hour.  At what speed and heading should Ahab sail?</p></statement></exercise>
+<exercise><statement><p>Ahab would like to sail at 20 kilometers per hour due west towards a whale reported at that position.  However, a steady ocean current is moving <m>52\degree</m> east of north at 8 kilometers per hour.  At what speed and heading should Ahab sail?</p></statement><answer><p>26.76 kph <m>10.6\degree</m> S of W</p></answer></exercise>
 </subsection>
 
 <subsection><title>Components of a Vector</title>
 <p> We have seen that we can add two vectors to get a third or resultant vector.  We can also break down a vector into two or more component vectors. For many applications, it is useful to break a vector into horizontal and vertical components.</p>
 
-<sidebyside widths="50% 50%"><p>For example, the beetle on the conveyor belt moved at 4.47 inches per second in the direction <m>26.6\degree</m>.  If we set up coordinate axes as shown at right, the vector <m>\bf{v}</m> representing his velocity is the sum of the beetle's motion in the <m>x</m>-direction, <m>\bf{v_x}</m>, at 4 inches per second, and his motion in the <m>y</m>-direction, <m>\bf{v_y}</m>, at 2 inches per second.</p> 
-<image source="images/fig9-1-6.png"><description>vectors</description></image></sidebyside>
+<sidebyside widths="50% 50%" valigns="middle middle"><p>For example, the beetle on the conveyor belt moved at 4.47 inches per second in the direction <m>26.6\degree</m>.  If we set up coordinate axes as shown at right, the vector <m>\bf{v}</m> representing his velocity is the sum of the beetle's motion in the <m>x</m>-direction, <m>\bf{v_x}</m>, at 4 inches per second, and his motion in the <m>y</m>-direction, <m>\bf{v_y}</m>, at 2 inches per second.</p> 
+<!--<image source="images/fig9-1-6.png"><description>vectors</description></image>-->
+    <image xml:id="fig9-1-6">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} 
+        \coordinate (O) at (0,0);
+        \coordinate (x) at (4,0);
+        \coordinate (v) at (4,2);
+        \draw[black,->,>=stealth'] (0,-1)--(0,2.3) node[above]{$y$};
+        \draw[black,->,>=stealth'] (-1,0)--(5,0) node[right]{$x$};
+        \draw[green!80!black,thick, ->,>=stealth'] (O) -- (x) node[below,midway, yshift=-2] {$\textbf{v}_x=4$  in/sec};
+        \draw[red,thick,->,>=stealth'] (x)--(v) node[right,midway]  {$\textbf{v}_y=2$ in/sec};
+        \draw[blue,thick,->,>=stealth'] (O)--(v) node[above,midway, xshift=-5, yshift=-3] {\textbf{v}};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
 <p>We can break down any vector into its <m>x</m>- and <m>y</m>-components, and the sum of those components is equal to the original vector. In other words, <m>\bf{v} = \bf{v_x} + \bf{v_y}</m>.</p> 
 <p> The horizontal and vertical vectors <m>\bf{v_x}</m> and <m>\bf{v_y}</m> are called the <term>vector components</term> of <m>\bf{v}</m>. If we designate the direction of <m>\bf{v}</m> by an angle <m>\theta</m> measured counter-clockwise from the positive <m>x</m>-axis, then the scalar quantities given by
@@ -192,7 +662,72 @@ Barbara should head her boat about <m>8.1\degree</m> south of west, or at a bear
 are called simply the <term>components</term> of the vector <m>\bf{v}</m>.</p>
 
 <p>Note that the components <m>v_x</m> and <m>v_y</m> of a vector are scalars; they are not vectors themselves. They can be either positive or negative (or zero), as shown below.</p>
-<sidebyside width="70%"><image source="images/fig9-1-7.png"><description>vectors</description></image></sidebyside>
+<sidebyside width="70%"><!--<image source="images/fig9-1-7.png"><description>vectors</description></image>-->
+    <image xml:id="fig9-1-7">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture}
+        \coordinate(O) at (0,0);
+        \coordinate(x) at ($ (O) + (1,0) $);
+        \coordinate(y) at ($ (O) + (0,1) $);
+        \coordinate(v) at ($ (O) + (1,1) $);
+        \draw[lightgray,dashed] (y)--(v)--(x);
+        \draw[black, ->,>=stealth'] (O)++(-0.2,0)--++(1.6,0) node[right]{$x$};
+        \draw[black, ->,>=stealth'] (O)++(0,-0.2)--++(0,1.6) node[above]{$y$};
+        \draw[blue,thick,->,>=stealth'] (O)--(v) node[above right]{\textbf{v}};
+        \draw[red, very thick,->,>=stealth'] (O)--(x);
+        \draw[red, very thick,->,>=stealth'] (O)--(y);
+        \node at ($ (O) + (.6,-.7) $) {$v_x > 0$};
+        \node at ($ (O) + (.6,-1.2) $) {$v_y > 0$};
+
+        % second quadrant
+        \coordinate(O) at (4,0);
+        \coordinate(x) at ($ (O) + (-1,0) $);
+        \coordinate(y) at ($ (O) + (0,1) $);
+        \coordinate(v) at ($ (O) + (-1,1) $);
+        \draw[lightgray,dashed] (y)--(v)--(x);
+        \draw[black, ->,>=stealth'] (O)++(-1.2,0)--++(1.6,0) node[right]{$x$};
+        \draw[black, ->,>=stealth'] (O)++(0,-0.2)--++(0,1.6) node[above]{$y$};
+        \draw[blue,thick,->,>=stealth'] (O)--(v) node[above left]{\textbf{v}};
+        \draw[red, very thick,->,>=stealth'] (O)--(x);
+        \draw[red, very thick,->,>=stealth'] (O)--(y);
+        \node at ($ (O) + (-.2,-.7) $) {$v_x < 0$};
+        \node at ($ (O) + (-.2,-1.2) $) {$v_y > 0$};
+
+        % third quadrant
+        \coordinate(O) at (7,1);
+        \coordinate(x) at ($ (O) + (-1,0) $);
+        \coordinate(y) at ($ (O) + (0,-1) $);
+        \coordinate(v) at ($ (O) + (-1,-1) $);
+        \draw[lightgray,dashed] (y)--(v)--(x);
+        \draw[black, ->,>=stealth'] (O)++(-1.2,0)--++(1.6,0) node[right]{$x$};
+        \draw[black, ->,>=stealth'] (O)++(0,-1.2)--++(0,1.6) node[above]{$y$};
+        \draw[blue,thick,->,>=stealth'] (O)--(v) node[below left]{\textbf{v}};
+        \draw[red, very thick,->,>=stealth'] (O)--(x);
+        \draw[red, very thick,->,>=stealth'] (O)--(y);
+        \node at ($ (O) + (-.2,-1.7) $) {$v_x < 0$};
+        \node at ($ (O) + (-.2,-2.2) $) {$v_y < 0$};
+
+        % third quadrant
+        \coordinate(O) at (9,1);
+        \coordinate(x) at ($ (O) + (1,0) $);
+        \coordinate(y) at ($ (O) + (0,-1) $);
+        \coordinate(v) at ($ (O) + (1,-1) $);
+        \draw[lightgray,dashed] (y)--(v)--(x);
+        \draw[black, ->,>=stealth'] (O)++(-.2,0)--++(1.6,0) node[right]{$x$};
+        \draw[black, ->,>=stealth'] (O)++(0,-1.2)--++(0,1.6) node[above]{$y$};
+        \draw[blue,thick,->,>=stealth'] (O)--(v) node[below right]{\textbf{v}};
+        \draw[red, very thick,->,>=stealth'] (O)--(x);
+        \draw[red, very thick,->,>=stealth'] (O)--(y);
+        \node at ($ (O) + (.6,-1.7) $) {$v_x > 0$};
+        \node at ($ (O) + (.6,-2.2) $) {$v_y < 0$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
 <example><statement><p>A plane flies at 300 miles per hour in the direction <m>30\degree</m> north of west. Find the <m>x</m>- and <m>y</m>-components of its velocity.</p></statement>
 
@@ -201,9 +736,34 @@ are called simply the <term>components</term> of the vector <m>\bf{v}</m>.</p>
     v_x \amp = 300\cos 150\degree = -259.81\\
     v_y \amp = 300 \sin 150\degree = 150\\
     \end{align*}</p>
-<image source="images/exam9-1-8ans.png"><description>vectors</description></image></sidebyside></solution></example>
+<!--<image source="images/exam9-1-8ans.png"><description>vectors</description></image>-->
+    <image xml:id="exam9-1-8ans">
+        <description>vectorrs</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=1.2]
+        \coordinate (O) at (0,0);
+        \coordinate (x) at ($ 3*cos(150)*(1,0)$);
+        \coordinate (y) at ($ 3*sin(150)*(0,1)$);
+        \coordinate (v) at (150:3);
+        \draw[black,->,>=stealth'] (0,-.3)--(0,2) node[above]{$y$};
+        \draw[black,->,>=stealth'] (-3,0)--(.8,0) node[right]{$x$};
+        \draw[green!80!black,thick, ->,>=stealth'] (O) -- (x) ;
+        \draw[green!80!black,thick] (x) -- ++(0,-0.1) node[below] {$v_x$};
+        \draw[blue,thick,->,>=stealth'] (x)--(v);
+        \draw[red,thick,->,>=stealth'] (O)--(v) node[above right,midway, text=black] {300};
+        \node[above right, yshift=-2, text=red] at (v) {\textbf{v}};
+        \draw[lightgray] (.3,0) arc(0:150:0.3) node[above right, midway, yshift=-3, text=black, scale=.9]{$150\degree$};
+        \draw[lightgray] (-.6,0) arc(180:150:0.6) node[left, midway, yshift=1, text=black, scale=.9]{$30\degree$};
+        \draw[blue] (y)--++(-0.1,0) node[left]{$v_y$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></solution></example>
 
-<exercise><statement><p>The wind is blowing 50 kilometers per hour in a direction <m>10\degree</m> south of due west.  Find the <m>x</m>- and <m>y</m>-components of its velocity.</p></statement></exercise>
+<exercise><statement><p>The wind is blowing 50 kilometers per hour in a direction <m>10\degree</m> south of due west.  Find the <m>x</m>- and <m>y</m>-components of its velocity.</p></statement><answer><p><m>v_x \approx -49.2</m> kph, <m>v_y \approx -8.7</m> kph</p></answer></exercise>
 </subsection>
 
 <subsection><title>Using Components</title>
@@ -220,7 +780,45 @@ are called simply the <term>components</term> of the vector <m>\bf{v}</m>.</p>
     u_y \amp = 40 \sin 10\degree = 6.95\\
     \end{align*}
 We find the components of the resultant, <m>\bf{w}</m>, by adding the components of <m>\bf{u}</m> and <m>\bf{v}</m>, as shown at right. That is,</p>
-<image source="images/exam9-1-9ans.png"><description>vectors</description></image></sidebyside>
+<!--<image source="images/exam9-1-9ans.png"><description>vectors</description></image>-->
+    <image xml:id="exam9-1-9ans">
+        <description>velocity vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=1.2]
+        \coordinate (O) at (0,0);
+        \coordinate (x) at ($ 3*cos(150)*(1,0)$);
+        \coordinate (y) at ($ 3*sin(150)*(0,1)$);
+        \coordinate (v) at (150:3);
+        \coordinate (u) at (-10:0.4);
+        \coordinate (wx) at ($ 3*cos(150)*(1,0) + .4*cos(-10)*(1,0) $);
+        \coordinate (wy) at ($ 3*sin(150)*(0,1) + .4*sin(-10)*(0,1) $);
+        \draw[black,->,>=stealth'] (0,-.3)--(0,2) node[above]{$y$};
+        \draw[black,->,>=stealth'] (-3,0)--(1.3,0) node[right]{$x$};
+        \draw[red,thick,->,>=stealth'] (O)--(v) node[below left,midway, yshift=2, text=black, scale=.9] {300};
+        \node[below left, yshift=2, text=red] at (v) {\textbf{v}};
+        \draw[lightgray] (O)--($ 3.5*(u) $);
+        \draw[blue,thick,->,>=stealth'] (O)--++(u) node[below]{\textbf{u}};
+        \draw[blue,thick,->,>=stealth'] (v)--++(u) node[above]{\textbf{u}};
+
+        \draw[lightgray, ->] (.2,0) arc(0:150:0.2) node[above, midway, yshift=1, text=black, scale=.8, fill=white, inner sep=1]{$150\degree$};
+        \draw[lightgray] (-.6,0) arc(180:150:0.6) node[left, midway, yshift=1, text=black, scale=.8]{$30\degree$};
+        \draw[green!80!black,thick,->,>=stealth'] (O)--($ (v)+(u) $) node[right, xshift=2]{\textbf{w}};
+
+        \draw[gray, <-] (1,0) arc(0:15:1);
+        \draw[gray, <-] (-10:1) arc(-10:-20:1) node[below, yshift=1, text=black, scale=.7]{$10\degree$};
+        \draw[lightgray, ->] (.7,0) arc(0:145:0.7) node[above, midway, yshift=1, text=green!80!black, fill=white, inner sep=1, scale=.9]{$\theta$};
+
+        \draw[red] (y)--++(0.1,0) node[right, yshift=1, scale=.9]{$v_y$};
+        \draw[red] (x) -- ++(0,-0.1) node[below, scale=.9] {$v_x$};
+        \draw[green!80!black] (wy)--++(-0.1,0) node[left, yshift=-3, scale=.9]{$w_y$};
+        \draw[green!80!black] (wx) -- ++(0,-0.1) node[below, xshift=3, scale=.9] {$w_x$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
 <p>\begin{align*}
     w_x \amp = u_x + v_x = 39.30-259.81=-220.51\\
@@ -241,7 +839,7 @@ The plane flies in the direction <m>145\degree</m>, or <m>35\degree</m> north of
 
 <warning><p>In the previous example, the airplane's heading is not <m>tan^{-1}(-0.7254) = -36\degree</m>. Remember that there are always two angles with a given tangent. We can refer to a sketch of the vector or to the signs of its components to decide which of those two angles is appropriate.</p></warning>
 
-<exercise><statement><p>A plane is flying in a wind blowing 50 kilometers per hour in a direction <m>10\degree</m> south of due west. The plane has an airspeed of 200 kph and heading <m>142\degree</m>  What is the ground speed and actual direction of the plane?</p></statement></exercise>
+<exercise><statement><p>A plane is flying in a wind blowing 50 kilometers per hour in a direction <m>10\degree</m> south of due west. The plane has an airspeed of 200 kph and heading <m>142\degree</m>  What is the ground speed and actual direction of the plane?</p></statement><answer><p>groundspeed 182 kph, <m>66\degree</m> S of E</p></answer></exercise>
 </subsection>
 
 <subsection><title>Skills Refresher</title>
@@ -265,10 +863,10 @@ The plane flies in the direction <m>145\degree</m>, or <m>35\degree</m> north of
 
 <subsubsection><title>Answers to 9.1 Exercises</title>
 <p><ol label="1" cols="2">
-    <li><sidebyside width="50%"><image source="images/exer9-1-1ans.png"><description>vectors</description></image></sidebyside></li>
-    <li><sidebyside width="60%"><image source="images/exer9-1-2ans.png"><description>vectors</description></image></sidebyside></li>
-    <li><sidebyside width="50%"><image source="images/exer9-1-3ans.png"><description>vectors</description></image></sidebyside></li>
-    <li><sidebyside width="60%"><image source="images/exer9-1-4ans.png"><description>vectors</description></image></sidebyside></li>
+    <li><sidebyside width="50%"><image source="images/exer9-1-1ans"><description>vectors</description></image></sidebyside></li>
+    <li><sidebyside width="60%"><image source="images/exer9-1-2ans"><description>vectors</description></image></sidebyside></li>
+    <li><sidebyside width="50%"><image source="images/exer9-1-3ans"><description>vectors</description></image></sidebyside></li>
+    <li><sidebyside width="60%"><image source="images/exer9-1-4ans"><description>vectors</description></image></sidebyside></li>
     <li><p><m>56.4\degree</m> W of N, 3.58 mi</p></li>
     <li><p>124.4 mph, <m>21.1\degree</m></p></li>
     <li><p>26.76 kph <m>10.6\degree</m> S of W</p></li>
