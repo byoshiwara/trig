@@ -3,20 +3,62 @@
 <exercises xml:id="chap9-rev-problems"  xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Review Problems</title>
 
-<exercisegroup><introduction><p>For Problems 1-4, sketch an arrow to represent the vector. Find its components in the directions north and east.</p></introduction>
+<exercisegroup><introduction><p>For Problems 1<ndash/>4, sketch an arrow to represent the vector. Find its components in the directions north and east.</p></introduction>
 
 <exercise number="1"><statement><p>A hawk is flying at a speed of 20 mph in the direction <m>65\degree</m> west of north.</p></statement>
-<answer><sidebyside width="20%"><image source="images/hp9-rev-1ans.png"><description>vectors</description></image></sidebyside><p><m>v_N=8.45</m> mph, <m>v_E=-18.13</m> mph</p>  </answer></exercise>
+<answer><sidebyside width="30%" margins="0% 70%"><!--<image source="images/hp9-rev-1ans.png"><description>vectors</description></image>-->
+    <image xml:id="hp9-rev-1ans">
+        <description>vector</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale =.2]
+        \draw[cyan] (-20,-2) grid[step=2] (2,10);
+        \draw[thick,->, >=stealth'] (-20,0) -- (2.4,0) node[anchor=west] {$E$};
+        \draw[thick,->, >=stealth'] (0,-2) -- (0,10.9) node[anchor=south] {$N$};
+        \foreach \x in {10} {
+            \draw (-\x,6pt) -- (-\x,-6pt) node[anchor=north, fill=white, inner sep=1, yshift=-2] {$-\x$};
+            \draw (6pt,\x ) -- (-6pt,\x ) node[anchor=east, fill=white, inner sep=1, xshift=-2] {$-\x$};}
+        \coordinate (O) at (0,0);
+        \coordinate (v) at (155:20);
+
+        \draw[red, thick, ->,>=stealth'] (O) --(v) ;
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside><p><m>v_N=8.45</m> mph, <m>v_E=-18.13</m> mph</p>  </answer></exercise>
 
 <exercise number="2"><statement><p>The island is located 36 miles from port on a bearing of <m>160\degree</m>.</p></statement></exercise>
 
 <exercise number="3"><statement><p>The tractor pulls with a force of 1200 pounds in the direction <m>20\degree</m> west of south.</p></statement>
-<answer><sidebyside width="20%"><image source="images/hp9-rev-3ans.png"><description>vectors</description></image></sidebyside><p><m>v_N=-1127.63</m> lbs, <m>v_E=-410.42</m> lbs</p></answer></exercise>
+<answer><sidebyside width="30%" margins="0% 70%"><!--<image source="images/hp9-rev-3ans.png"><description>vectors</description></image>-->
+    <image xml:id="hp9-rev-3ans">
+        <description>vector</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale =.4]
+        \draw[cyan] (-12,-12) grid[step=2] (0,0);
+        \draw[thick,->, >=stealth'] (-12,0) -- (1.,0) node[anchor=west] {$E$};
+        \draw[thick,->, >=stealth'] (0,-12) -- (0,1.) node[anchor=south] {$N$};
+        \foreach \x in {10} {
+            \draw (-\x,6pt) -- (-\x,-6pt) node[anchor=north, fill=white, inner sep=1, yshift=-2] {$-1000$};
+            \draw (6pt,-\x ) -- (-6pt,-\x ) node[anchor=east, fill=white, inner sep=1, xshift=-2] {$-1000$};}
+        \coordinate (O) at (0,0);
+        \coordinate (v) at (250:12);
+
+        \draw[red, thick, ->,>=stealth'] (O) --(v) ;
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside><p><m>v_N=-1127.63</m> lbs, <m>v_E=-410.42</m> lbs</p></answer></exercise>
 
 <exercise number="4"><statement><p>The current runs southeast at a speed of 4 mph.</p></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 5-6, find the magnitude and direction of the vector.</p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 5<ndash/>6, find the magnitude and direction of the vector.</p></introduction>
 
 <exercise number="5"><statement><m>A_x = -6,~ A_y = -9</m></statement>
 <answer><m>\|{\bf{A}}\|=10.9,~\theta = 236.3\degree</m></answer></exercise>
@@ -24,7 +66,7 @@
 <exercise number="6"><statement><m>w_x = 15.2,~ w_y = -8.6</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 7-8, find the coordinate form of the vector.</p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 7<ndash/>8, find the coordinate form of the vector.</p></introduction>
 
 <exercise number="7"><statement><m>\|{\bf{v}}\| = 2,~ \theta = 300\degree</m></statement>
 <answer><m>{\bf{i}}-\sqrt{3}{\bf{j}}</m></answer></exercise>
@@ -32,14 +74,36 @@
 <exercise number="8"><statement><m>\|{\bf{v}}\| = 10,~  \theta = 225\degree</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup><introduction><p>For Problems 9-12,<ol label="a">
+<exercisegroup><introduction><p>For Problems 9<ndash/>12,<ol label="a">
     <li>sketch the displacement vector and give its coordinate form,</li>
     <li>find the magnitude and direction of the vector.</li>
 </ol></p></introduction>
 
 <exercise number="9"><statement><p>The displacement vector from <m>(-8,-4)</m> to <m>(7,-1)</m></p></statement>
 <answer><p><ol label="a">
-    <li><sidebyside width="25%"><image source="images/hp9-rev-9ans.png"><description>vectors</description></image></sidebyside><m>15{\bf{i}}+3{\bf{j}}</m></li>
+    <li><sidebyside widths="30% 15%" margins="0% 50%" valigns="middle middle"><!--<image source="images/hp9-rev-9ans.png"><description>vectors</description></image>-->
+    <image xml:id="hp9-rev-9ans">
+        <description>vector</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale =.2]
+        \draw[cyan] (-12,-10) grid[step=2] (10,2);
+        \draw[thick,->, >=stealth'] (-12,0) -- (10.7,0) node[anchor=west] {$x$};
+        \draw[thick,->, >=stealth'] (0,-10) -- (0,2.7) node[anchor=south] {$y$};
+        \foreach \x in {10} {
+            \draw (\x,6pt) -- (\x,-6pt) node[anchor=north, fill=white, inner sep=1, yshift=-2] {$\x$};
+            \draw (-\x,6pt) -- (-\x,-6pt) node[anchor=north, fill=white, inner sep=1, yshift=-2] {$-\x$};
+            \draw (6pt,-\x ) -- (-6pt,-\x ) node[anchor=east, fill=white, inner sep=1, xshift=-2] {$-\x$};}
+        \coordinate (O) at (-8,-4);
+        \coordinate (v) at (7,-1);
+
+        \draw[red, thick, ->,>=stealth'] (O) --(v) ;
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    <p><m>15{\bf{i}}+3{\bf{j}}</m></p></sidebyside></li>
     <li><m>\|{\bf{v}}\|=15.3,~\theta = 11.3\degree</m></li>
 </ol></p></answer></exercise>
 
@@ -47,21 +111,67 @@
 
 <exercise number="11"><statement><p>This morning we began hiking from our camp 4 miles east and 2 miles south of the lodge, and this evening we are 6 miles east and 8 miles south of the lodge.</p></statement>
 <answer><p><ol label="a">
-    <li><sidebyside width="20%"><image source="images/hp9-rev-11ans.png"><description>vectors</description></image></sidebyside><m>2{\bf{i}}-6{\bf{j}}</m></li>
+    <li><sidebyside widths="30% 15%" margins="0% 50%" valigns="middle middle"><!--<image source="images/hp9-rev-9ans.png"><description>vectors</description></image>-->
+    <image xml:id="hp9-rev-9ans">
+        <description>vector</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale =.3]
+        \draw[cyan] (-2,-10) grid (7,1);
+        \draw[thick,->, >=stealth'] (-2,0) -- (7.3,0) node[anchor=west] {$x$};
+        \draw[thick,->, >=stealth'] (0,-10) -- (0,1.3) node[anchor=south] {$y$};
+        \foreach \x in {5} {
+            \draw (\x,6pt) -- (\x,-6pt) node[anchor=north, fill=white, inner sep=1, yshift=-2] {$\x$};
+            \draw (6pt,-\x ) -- (-6pt,-\x ) node[anchor=east, fill=white, inner sep=1, xshift=-2] {$-\x$};}
+            \draw (6pt,-10) -- (-6pt,-10) node[anchor=north, fill=white, inner sep=1, yshift=-2] {$-10$};
+        \coordinate (O) at (4,-2);
+        \coordinate (v) at (6,-8);
+
+        \draw[red, thick, ->,>=stealth'] (O) --(v) ;
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    <p><m>2{\bf{i}}-6{\bf{j}}</m></p></sidebyside></li>
     <li><m>\|{\bf{v}}\|=6.3~\text{mi},~\theta = 288.4\degree</m></li>
 </ol></p></answer></exercise>
 
 <exercise number="12"><statement><p>The tunnel should start 100 meters east and 400 meters north of the survey point, and should end 500 meters west and 150 meters north of the survey point.</p></statement></exercise>
 </exercisegroup>
 
-<exercisegroup><introduction><p>For Problems 13-16,<ol label="a">
+<exercisegroup><introduction><p>For Problems 13<ndash/>16,<ol label="a">
     <li>sketch the given vectors,</li>
     <li>calculate the magnitude and direction of the resultant vector.</li>
 </ol></p></introduction>
 
 <exercise number="13"><statement><p>A fire crew is located 2 kilometers due west of the fire station. The station reports a new hot spot 6 kilometers away in the direction <m>50\degree</m> east of north. How far is the hot spot from the fire crew, and in what direction? </p></statement>
 <answer><p><ol label="a">
-    <li><sidebyside width="25%"><image source="images/hp9-rev-13ans.png"><description>vectors</description></image></sidebyside></li>
+    <li><sidebyside width="25%" margins="0% 75%"><!--<image source="images/hp9-rev-13ans.png"><description>vectors</description></image>-->
+    <image xml:id="hp9-rev-13ans">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale =.5]
+        \draw[cyan] (-3,0) grid (5,6);
+        \draw[->, >=stealth'] (-3,0) -- (5.3,0) node[anchor=west] {$x$};
+        \draw[->, >=stealth'] (0,0) -- (0,6.3) node[anchor=south] {$y$};
+        \foreach \x in {5} {
+            \draw (\x,6pt) -- (\x,-6pt) node[anchor=north, fill=white, inner sep=1, yshift=-2] {$\x$};
+            \draw (6pt,\x ) -- (-6pt,\x ) node[anchor=east, fill=white, inner sep=1, xshift=-2] {$\x$};}
+        \coordinate (O) at (0,0);
+        \coordinate (u) at (-2,0);
+        \coordinate (v) at (40:6);
+
+        \draw[blue, very thick, ->,>=stealth'] (O) --(u) ;
+        \draw[blue, thick, ->,>=stealth'] (O) --(v) ;
+        \draw[red, very thick, ->,>=stealth'] (u) --(v) ;
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></li>
     <li><m>7.64~\text{km},~\theta = 30.31\degree</m></li>
 </ol></p></answer></exercise>
 
@@ -69,14 +179,39 @@
 
 <exercise number="15"><statement><p>Red Rock is located at <m>4.2{\bf{i}}+2.8{\bf{j}}</m> from the town of Dry Gulch, measured in miles, and Skull Point is located at <m>-3.5{\bf{i}}+6.3{\bf{j}}</m> from Dry Gulch. How far is it from Red Rock to Skull Point, and in what direction?</p></statement>
 <answer><p><ol label="a">
-    <li><sidebyside width="25%"><image source="images/hp9-rev-15ans.png"><description>vectors</description></image></sidebyside></li>
+    <li><sidebyside width="25%"><!--<image source="images/hp9-rev-15ans.png"><description>vectors</description></image>-->
+    <image xml:id="hp9-rev-15ans">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale =.5]
+        \draw[cyan] (-4,0) grid (5,8);
+        \draw[->, >=stealth'] (-4,0) -- (5.4,0) node[anchor=west] {$x$};
+        \draw[->, >=stealth'] (0,0) -- (0,8.4) node[anchor=south] {$y$};
+        \foreach \x in {4,-4} {
+            \draw (\x,6pt) -- (\x,-6pt) node[anchor=north, fill=white, inner sep=1, yshift=-2] {$\x$};}
+        \foreach \x in {4,8} {
+            \draw (6pt,\x ) -- (-6pt,\x ) node[anchor=east, fill=white, inner sep=1, xshift=-2] {$\x$};}
+        \coordinate (O) at (0,0);
+        \coordinate (u) at (4.2,2.8);
+        \coordinate (v) at (-3.5,6.3);
+
+        \draw[blue, very thick, ->,>=stealth'] (O) --(u) ;
+        \draw[blue, thick, ->,>=stealth'] (O) --(v) ;
+        \draw[red, very thick, ->,>=stealth'] (u) --(v) ;
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></li>
     <li><m>8.46~\text{mi},~\theta = 3155.6\degree</m></li>
 </ol></p></answer></exercise>
 
 <exercise number="16"><statement><p>A coast guard cutter is located 7 miles south and 5 miles west of port when it gets a distress call from a sailboat that reports its location as 1 mile north and 5 miles east of port. How far is it from the cutter to the sailboat, and in what direcion?</p></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 17-18, <ol label="a">
+<exercisegroup cols="2"><introduction><p>For Problems 17<ndash/>18, <ol label="a">
     <li>find the horizontal and vertical components of the forces,</li>
     <li>use the components to calculate the resultant force.</li>
 </ol></p></introduction>
@@ -91,7 +226,7 @@
 <exercise number="18"><statement><p><sidebyside width="70%"><image source="images/hp9-rev-18.png"><description>vectors</description></image></sidebyside> </p></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 19-22, find the vector, where
+<exercisegroup cols="2"><introduction><p>For Problems 19<ndash/>22, find the vector, where
 <me>{\bf{u}} = 4{\bf{i}}+2{\bf{j}},~~~{\bf{v}} = -3{\bf{i}}-{\bf{j}},~~~{\bf{w}} = 2{\bf{i}}-3{\bf{j}}</me>
 </p></introduction>
 
@@ -106,7 +241,7 @@
 <exercise number="22"><statement><p><m>2{\bf{u}} - 3{\bf{w}} - {\bf{v}}</m></p></statement></exercise>
 </exercisegroup>
 
-<exercisegroup><introduction><p>For Problems 23-26, find the vector described.</p></introduction>
+<exercisegroup><introduction><p>For Problems 23<ndash/>26, find the vector described.</p></introduction>
 
 <exercise number="23"><statement><p>The unit vector in the same direction as <m>2{\bf{i}}+3{\bf{j}}</m>.</p></statement>
 <answer><m>\dfrac{2}{\sqrt{13}}{\bf{i}}+\dfrac{3}{\sqrt{13}}{\bf{j}}</m></answer></exercise>
@@ -119,7 +254,7 @@
 <exercise number="26"><statement><p>The vector of magnitude 6 in the same direction as <m>-3{\bf{i}}+2{\bf{j}}</m></p></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 27-28, find the component of <m>{\bf{w}}</m> in the direction of <m>{\bf{v}}</m>.</p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 27<ndash/>28, find the component of <m>{\bf{w}}</m> in the direction of <m>{\bf{v}}</m>.</p></introduction>
 
 <exercise number="27"><statement><m>{\bf{v}} = -6{\bf{i}}-{\bf{j}},~~ {\bf{w}} = 4{\bf{i}}-3{\bf{j}}</m></statement>
 <answer><m>-3.45</m></answer></exercise>
@@ -127,7 +262,7 @@
 <exercise number="28"><statement><m>{\bf{v}} = -2{\bf{i}}+{\bf{j}},~~ {\bf{w}} = {\bf{i}}-2{\bf{j}}</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 29-30, compute the dot product <m>{\bf{u}} \cdot {\bf{v}}</m>.</p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 29<ndash/>30, compute the dot product <m>{\bf{u}} \cdot {\bf{v}}</m>.</p></introduction>
 
 <exercise number="29"><statement><m>{\bf{u}}= 3.8{\bf{i}}+4.8{\bf{j}},~~ {\bf{v}} = -9.2{\bf{i}}+5.6{\bf{j}}</m></statement>
 <answer><m>-8.08</m></answer></exercise>
@@ -135,7 +270,7 @@
 <exercise number="30"><statement><m>{\bf{u}}= -27{\bf{i}}+35{\bf{j}},~~ {\bf{v}} = -16{\bf{i}}-24{\bf{j}}</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 31-32, find the angle bertween the vectors.</p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 31<ndash/>32, find the angle bertween the vectors.</p></introduction>
 
 <exercise number="31"><statement><m>{\bf{v}} = -4{\bf{i}}-3{\bf{j}},~~ {\bf{w}} = 4{\bf{i}}-3{\bf{j}}</m></statement>
 <answer><m>106.26\degree</m></answer></exercise>

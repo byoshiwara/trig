@@ -342,36 +342,26 @@
                             </row>
                     </tabular> </sidebyside></li>
             <li><p>Plot the points and graph the equation.</p><sidebyside width="40%"><!--<image source="images/8grid.png"><description>8x8 grid</description></image>-->
-                    <image xml:id="eight-grid">
+    <image xml:id="eight-grid">
         <description>8x8 grid</description>
         <latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
         }
         \begin{tikzpicture} [scale =0.3]
 
-            \draw[step=1cm,cyan,very thin] (-8,-8) grid (8,8);
-            \draw[thick,->] (-8,0) -- (8.6,0) node[anchor=west] {$x$};
-            \draw[thick,->] (0,-8) -- (0,8.6) node[anchor=south] {$y$};
-            `
-            \foreach \x in {-8,-4,4,8}
-                \draw (\x cm,6pt) -- (\x cm,-6pt) node[anchor=north] {$\x$};
-            \foreach \y in {-8,-4,4,8}
-                \draw (6pt,\y cm) -- (-6pt,\y cm) node[anchor=east] {$\y$};
-            \foreach \x in {-8,...,8}
-                \draw (\x cm,4pt) -- (\x cm,-4pt) ;
-            \foreach \y in {-8,...,8}
-                \draw (4pt,\y cm) -- (-4pt,\y cm) ;
-            \foreach \y in {-8,...,8}
-                \draw (4pt,\y cm) -- (-4pt,\y cm) ;
-
+        \draw[step=1cm,cyan,very thin] (-8,-8) grid (8,8);
+        \draw[thick,->, >=stealth'] (-8,0) -- (8.8,0) node[anchor=west] {$x$};
+        \draw[thick,->, >=stealth'] (0,-8) -- (0,8.8) node[anchor=south] {$y$};
+        `
+        \foreach \x in {-8,-4,4,8}
+            \draw (\x cm,6pt) -- (\x cm,-6pt) node[anchor=north, fill=white, inner sep=1, yshift=-2] {$\x$};
+        \foreach \y in {-8,-4,4,8}
+            \draw (6pt,\y cm) -- (-6pt,\y cm) node[anchor=east, fill=white, inner sep=1, xshift=-2] {$\y$};
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></li>
+    </latex-image>
+    </image>
+</sidebyside></li>
         </ol></p></statement>
         <answer><p><ol label="a">
                 <li><sidebyside> <tabular top="major" halign="center" right="minor" left="minor" bottom="minor">

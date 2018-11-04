@@ -9,7 +9,7 @@
 <exercises xml:id="hmwk-9-3-exercises"  xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Homework 9-3</title>
 
-<exercisegroup cols="2"><introduction><p>For Problems 1-6, find the component of <m>{\bf{w}}</m> in the direction of <m>{\bf{v}}</m>.</p>
+<exercisegroup cols="2"><introduction><p>For Problems 1<ndash/>6, find the component of <m>{\bf{w}}</m> in the direction of <m>{\bf{v}}</m>.</p>
 </introduction>
 
 <exercise number="1"><statement><m>{\bf{w}} = 5{\bf{i}}+9{\bf{j}},~~{\bf{v}} = 3{\bf{i}}+2{\bf{j}}</m></statement>
@@ -29,24 +29,84 @@
 <exercise number="6"><statement><m>{\bf{w}} = -2{\bf{i}}-3{\bf{j}},~~{\bf{v}} = {\bf{i}}-2{\bf{j}}</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 7-10,<ol label="a">
+<exercisegroup cols="2"><introduction><p>For Problems 7<ndash/>10,<ol label="a">
     <li>Resolve <m>{\bf{w}}</m> into two components, one parallel to <m>{\bf{v}}</m> and the other orthogonal to <m>{\bf{v}}</m>.</li>
     <li>Sketch both vectors and the vector components.</li></ol></p></introduction>    
 
-<exercise number="7"><statement><m>{\bf{w}} = 8{\bf{i}}_4{\bf{j}},~~{\bf{v}} = 2{\bf{i}}+3{\bf{j}}</m>
-<sidebyside width="70%"><image source="images/hp9-3-7.png"><description>vectors</description></image></sidebyside></statement>
+<exercise number="7"><statement><m>{\bf{w}} = 8{\bf{i}}+4{\bf{j}},~~{\bf{v}} = 2{\bf{i}}+3{\bf{j}}</m>
+<sidebyside width="70%"><image source="images/eight-grid"><description>grid</description></image></sidebyside></statement>
 <answer><p><ol label="a">
 <li><m>{\bf{w}} = (\dfrac{56}{13}{\bf{i}}+\dfrac{84}{13}{\bf{j}}) + (\dfrac{48}{13}{\bf{i}}-\dfrac{32}{13}{\bf{j}})</m></li>
-<li><sidebyside width="30%"><image source="images/hp9-3-7ans.png"><description>vectors</description></image></sidebyside></li></ol></p></answer></exercise>
+<li><sidebyside width="55%" margins="0% 45%"><!--<image source="images/hp9-3-7ans.png"><description>vectors</description></image>-->
+    <image xml:id="hp9-3-7ans">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale =0.3]
 
-<exercise number="8"><statement><m>{\bf{w}} = -3{\bf{i}}+7{\bf{j}},~~{\bf{v}} = 4{\bf{i}}+2{\bf{j}}</m><sidebyside width="70%"><image source="images/hp9-3-7.png"><description>vectors</description></image></sidebyside></statement></exercise>
+        \draw[cyan,very thin] (-1,-1) grid (8,8);
+        \draw[thick,->, >=stealth'] (-1,0) -- (8.8,0) node[anchor=west] {$x$};
+        \draw[thick,->, >=stealth'] (0,-1) -- (0,8.8) node[anchor=south] {$y$};
 
-<exercise number="9"><statement><m>{\bf{w}} = 6{\bf{i}}-2{\bf{j}},~~{\bf{v}} = {\bf{i}}-{\bf{j}}</m><sidebyside width="70%"><image source="images/hp9-3-7.png"><description>vectors</description></image></sidebyside></statement>
+        \coordinate (O) at (0,0);
+        \coordinate (w) at (8,4);
+        \coordinate (v) at (2,3);
+        \coordinate (wv) at ($ 28/13*(v)$);
+        \coordinate (wp) at ($ (w) - (wv)  $);
+
+        \foreach \x in {5} {
+            \draw (\x cm,6pt) -- (\x cm,-6pt) node[anchor=north, fill=white, inner sep=1, yshift=-2] {$\x$};
+            \draw (6pt,\x cm) -- (-6pt,\x cm) node[anchor=east, fill=white, inner sep=1, xshift=-2] {$\x$};}
+
+        \draw[blue, ultra thick, ->,>=stealth'] (O) --(v);
+        \draw[blue, thick, ->,>=stealth'] (O) --(w);
+        \draw[red, thick, ->,>=stealth'] (O) --(wv);
+        \draw[red, thick, ->,>=stealth'] (wv) --++(wp);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></li></ol></p></answer></exercise>
+
+<exercise number="8"><statement><m>{\bf{w}} = -3{\bf{i}}+7{\bf{j}},~~{\bf{v}} = 4{\bf{i}}+2{\bf{j}}</m><sidebyside width="70%"><image source="images/eight-grid"><description>grid</description></image></sidebyside></statement></exercise>
+
+<exercise number="9"><statement><m>{\bf{w}} = 6{\bf{i}}-2{\bf{j}},~~{\bf{v}} = {\bf{i}}-{\bf{j}}</m><sidebyside width="70%"><image source="images/eight-grid"><description>grid</description></image></sidebyside></statement>
     <answer><p><ol label="a">
 <li><m>{\bf{w}} = (4{\bf{i}}-4{\bf{j}}) + (2{\bf{i}}+2{\bf{j}})</m></li>
-<li><sidebyside width="30%"><image source="images/hp9-3-9ans.png"><description>vectors</description></image></sidebyside></li></ol></p></answer></exercise>
+<li><sidebyside width="60%" margins="0% 40%"><!--<image source="images/hp9-3-9ans.png"><description>vectors</description></image>-->
+    <image xml:id="hp9-3-9ans">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale =0.3]
 
-<exercise number="10"><statement><m>{\bf{w}} = -5{\bf{i}}+3{\bf{j}},~~{\bf{v}} = -{\bf{i}}-3{\bf{j}}</m><sidebyside width="70%"><image source="images/hp9-3-7.png"><description>vectors</description></image></sidebyside></statement></exercise>
+        \draw[cyan,very thin] (-1,-6) grid (6,1);
+        \draw[thick,->, >=stealth'] (-1,0) -- (6.8,0) node[anchor=west] {$x$};
+        \draw[thick,->, >=stealth'] (0,-6) -- (0,1.8) node[anchor=south] {$y$};
+
+        \coordinate (O) at (0,0);
+        \coordinate (w) at (6,-2);
+        \coordinate (v) at (1,-1);
+        \coordinate (wv) at ($ 4*(v)$);
+        \coordinate (wp) at ($ (w) - (wv)  $);
+
+        \foreach \x in {5} {
+            \draw (\x cm,6pt) -- (\x cm,-6pt) node[anchor=north, fill=white, inner sep=1, yshift=-2] {$\x$};
+            \draw (6pt,-\x cm) -- (-6pt,-\x cm) node[anchor=east, fill=white, inner sep=1, xshift=-2] {$-\x$};}
+
+        \draw[blue, ultra thick, ->,>=stealth'] (O) --(v);
+        \draw[blue, thick, ->,>=stealth'] (O) --(w);
+        \draw[red, thick, ->,>=stealth'] (O) --(wv);
+        \draw[red, thick, ->,>=stealth'] (wv) --++(wp);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></li></ol></p></answer></exercise>
+
+<exercise number="10"><statement><m>{\bf{w}} = -5{\bf{i}}+3{\bf{j}},~~{\bf{v}} = -{\bf{i}}-3{\bf{j}}</m><sidebyside width="70%"><image source="images/eight-grid"><description>grid</description></image></sidebyside></statement></exercise>
 </exercisegroup>
 
 <exercisegroup cols="2"><introduction><p>For Problems 11-18, compute the dot product <m>{\bf{u}} \cdot {\bf{v}}</m>.</p></introduction>
@@ -66,10 +126,57 @@
 
 <exercise number="16"><statement><p><m>{\bf{u}}</m> has magnitude <m>\sqrt{7}</m> and direction <m>112\degree</m>, and <m>{\bf{u}}</m> has magnitude <m>\sqrt{14}</m> and direction <m>157\degree</m>.</p></statement></exercise>
      
-<exercise number="17"><statement><sidebyside width="65%"><image source="images/hp9-3-17.png"><description>vectors</description></image></sidebyside></statement>
+<exercise number="17"><statement><sidebyside width="75%"><!--<image source="images/hp9-3-17.png"><description>vectors</description></image>-->
+    <image xml:id="hp9-3-17">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale =0.04]
+
+        \draw[thick,->, >=stealth'] (-10,0) -- (98,0) node[anchor=west] {$x$};
+        \draw[thick,->, >=stealth'] (0,-10) -- (0,68) node[anchor=south] {$y$};
+
+        \coordinate (O) at (0,0);
+        \coordinate (w) at (17:95);
+        \coordinate (v) at (110:64);
+
+        \draw[red, thick, ->,>=stealth'] (O) --(v) node[left, midway, xshift=-5, yshift=3, scale=.9, text=blue]{64};
+        \draw[red, thick, ->,>=stealth'] (O) --++(w) node[above, midway, xshift=-2, scale=.9, text=blue]{95};
+        
+        \draw[gray,thick,->] (0:20) arc (0:17:20) node[right, xshift=5, yshift=1, midway, text=black, scale=.8]{$17\degree$};
+        \draw[gray,thick,->] (0:10) arc (0:110:10) node[above, xshift=5, midway, text=black, scale=.8]{$110\degree$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement>
         <answer><m>-318.2</m></answer></exercise>
 
-<exercise number="18"><statement><sidebyside width="60%"><image source="images/hp9-3-18.png"><description>vectors</description></image></sidebyside></statement></exercise>
+<exercise number="18"><statement><sidebyside width="60%"><!--<image source="images/hp9-3-18.png"><description>vectors</description></image>-->
+    <image xml:id="hp9-3-18">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale =0.12]
+
+        \draw[gray,->, >=stealth'] (0,0) -- (0,28);
+
+        \coordinate (O) at (0,0);
+        \coordinate (w) at (115:24);
+        \coordinate (v) at (48:33);
+
+        \draw[red, thick, ->,>=stealth'] (O) --(w) node[left, midway, xshift=-5, yshift=3, scale=.9, text=blue]{24};
+        \draw[red, thick, ->,>=stealth'] (O) --++(v) node[right, midway, xshift=2, scale=.9, text=blue]{33};
+        v
+        \draw[gray,thick,<->] (90:10) arc (90:115:10) node[above, yshift=2, midway, text=black, scale=.8]{$25\degree$};
+        \draw[gray,thick,<->] (90:7) arc (90:48:7) node[above, xshift=3, midway, text=black, scale=.8]{$42\degree$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement></exercise>
 </exercisegroup>
 
 <exercisegroup cols="2"><introduction><p>For Problems 19-22, decide whether the pair of vectors is orthogonal.</p></introduction>
@@ -162,7 +269,7 @@
     <li>Sketch the vectors <m>{\bf{u}},~{\bf{v}}</m> and <m>{\bf{w}}</m>, and show the components of <m>{\bf{w}}</m>.</li>
 </ol></p></statement></exercise>
 
-<exercisegroup><introduction><p>For Problems 43-48, let <m>{\bf{u}} = a{\bf{i}}+b{\bf{j}}</m> and <m>{\bf{v}} = c{\bf{i}}+d{\bf{j}}</m>.</p></introduction>
+<exercisegroup><introduction><p>For Problems 43<ndash/>48, let <m>{\bf{u}} = a{\bf{i}}+b{\bf{j}}</m> and <m>{\bf{v}} = c{\bf{i}}+d{\bf{j}}</m>.</p></introduction>
 
 <exercise number="43"><statement><p>Show that <m>{\bf{v}} \cdot {\bf{v}} = \|{\bf{v}}\|^2</m>.</p></statement>
 <answer><m>{\bf{v}} \cdot {\bf{v}} = c^2 + d^2</m></answer></exercise>
@@ -203,7 +310,29 @@
 <exercise number="53"><statement><p><ol label="a">
     <li>Use the dot product to show that <m>\|{\bf{u}}-{\bf{v}}\|^2 = \|{\bf{u}}\|^2+\|{\bf{v}}\|^2 - 2\|{\bf{u}}\|\|{\bf{v}}\|\cos \theta</m>.</li>
     <li><p>Use the figure below to explain why part (a) proves the law of cosines.</p>
-    <sidebyside width="30%"><image source="images/hp9-3-53.png"><description>vectors</description></image></sidebyside></li></ol></p></statement>
+    <sidebyside width="30%"><!--<image source="images/hp9-3-53.png"><description>vectors</description></image>-->
+    <image xml:id="hp9-3-53">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale =1.1]
+
+        \coordinate (O) at (0,0);
+        \coordinate (u) at (80:2);
+        \coordinate (v) at (15:3);
+        \coordinate (d) at ($ (u) - (v) $);
+
+        \draw[blue, thick, ->,>=stealth'] (O) --(u) node[left, midway, yshift=5, yshift=3, scale=.8, text=blue]{\textbf{u}};
+        \draw[blue, thick, ->,>=stealth'] (O) --++(v) node[right, midway, xshift=15, yshift=-2, scale=.8, text=blue]{\textbf{v}};
+        \draw[red, thick, ->,>=stealth'] (v) --++(d) node[right, xshift=15, yshift=-3, scale=.8, text=red]{\textbf{u - v}};
+
+        \draw[gray,thick,<->] (15:.5) arc (15:80:.5) node[above right, midway, text=black, scale=.8]{$\theta$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></li></ol></p></statement>
 <answer><p><ol label="a">
     <li><m>\|{\bf{u}}-{\bf{v}}\|^2 = {\bf{u}} \cdot {\bf{u}} - 2{\bf{u}} \cdot {\bf{v}} +{\bf{v}} \cdot {\bf{v}}=
         \|{\bf{u}}\|^2+\|{\bf{v}}\|^2 - 2\|{\bf{u}}\|\|{\bf{v}}\|\cos \theta</m></li>
@@ -214,6 +343,30 @@
     <li>If <m>{\bf{u}}</m> is a unit vector, and the angle between <m>{\bf{u}}</m> and <m>{\bf{i}}</m> is <m>\alpha</m>, show that <m>{\bf{u}} = \cos \alpha {\bf{i}} + \sin \alpha {\bf{j}}</m>.</li>
     <li><p>Suppose <m>{\bf{u}}</m> and <m>{\bf{v}}</m> are unit vectors, as shown in the figure below. Use the dot product <m>{\bf{u}} \cdot {\bf{v}}</m> to prove that
     <me>\cos (\beta - \alpha) = \cos \beta \cos \alpha + \sin \beta \sin \alpha</me></p>
-    <sidebyside width="30%"><image source="images/hp9-3-54.png"><description>vectors</description></image></sidebyside></li></ol></p></statement></exercise>
+    <sidebyside width="30%"><!--<image source="images/hp9-3-54.png"><description>vectors</description></image>-->
+    <image xml:id="hp9-3-54">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale =1.3]
+    \draw[thick,->, >=stealth'] (-0.3,0) -- (2.2,0) node[anchor=west] {$x$};
+    \draw[thick,->, >=stealth'] (0,-0.3) -- (0,2.2) node[anchor=south] {$y$};
+    \def\a{22};
+    \def\b{75};
+    \coordinate (O) at (0,0);
+    \coordinate (u) at (\a:2.2);
+    \coordinate (v) at (\b:1.6);
+
+    \draw[blue, thick, ->,>=stealth'] (O) --(u) node[above right, yshift=-4, scale=.9, text=blue]{\textbf{u}};
+    \draw[blue, thick, ->,>=stealth'] (O) --++(v) node[above right, xshift=-3, yshift=-3, scale=.9, text=blue]{\textbf{v}};
+
+    \draw[gray,thick,->] (0:1) arc (0:\a:1) node[right, midway, text=red, scale=.9]{$\alpha$};
+    \draw[gray,thick,->] (0:0.6) arc (0:\b:.6) node[above, midway, xshift=2, text=red, scale=.9]{$\beta$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></li></ol></p></statement></exercise>
 
 </exercises>
