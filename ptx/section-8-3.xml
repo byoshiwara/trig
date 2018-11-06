@@ -15,7 +15,7 @@ terminal side, then we define the following functions.</p>
          <me>\text{The}~~ \textbf{secant}:~~~~~~      \sec \theta = \dfrac{r}{x}</me>
          <me>\text{The}~~ \textbf{cosecant}:~~~~      \csc \theta = \dfrac{r}{y}</me>
          <me>\text{The}~~ \textbf{cotangent}:~~~      \cot \theta =  \dfrac{x}{y}</me></p>                
-<p><image source="images/8-3-1.png"><description>angle</description></image></p></sidebyside></assemblage>
+<p><image source="images/fig-4-2-caut1"><description>angle</description></image></p></sidebyside></assemblage>
 
 <p>We can find exact values for all six trig functions at a given angle if we know the value of any one of them.</p>
 
@@ -23,7 +23,25 @@ terminal side, then we define the following functions.</p>
 </p></statement>
 
 <solution><p>Because <m>-\dfrac{\pi}{2} \le \theta \le 0</m>, we draw a reference triangle in the fourth quadrant, as shown below.  
-<sidebyside width="25%"><image source="images/exam8-3-1.png"><description>angle</description></image></sidebyside>
+<sidebyside width="22%"><!--<image source="images/exam8-3-1.png"><description>angle</description></image>-->
+    <image xml:id="exam8-3-1">
+        <description>angle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=1.2]
+        \draw[blue,thick] (1,0) rectangle ++(-.2,-.2);
+        \draw[black,thick,->,>=stealth'] (-.6,0)--(1.5,0) node[right] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-2.9)--(0,.6) node[right] {$y$};
+        \coordinate (P) at ({-acos(1/3)}:3);
+        \draw[black,thick] (0,0)--(P) node[below left, midway, text=blue] {$3$};
+        \draw[black,thick] (1,0)--(P);
+        \filldraw[red] (P) circle (.05cm) node[right, text=black] {$(1,y)$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 Because <m>\sec \theta = 3 = \dfrac{3}{1}</m>, we label the horizontal leg with <m>x=1</m> and the hypotenuse with <m>r=3</m>.  
 From the Pythagorean theorem, we find <m>y=-\sqrt{8}=-2\sqrt{2}</m>.  We can now compute the values of the six trigonometric ratios.
 	\begin{align*}
@@ -33,7 +51,7 @@ From the Pythagorean theorem, we find <m>y=-\sqrt{8}=-2\sqrt{2}</m>.  We can now
 	\end{align*}
 </p></solution></example> 
 
-<exercise><statement><p>If <m>\csc \theta =4</m>, and <m>90\degree \le \theta \le 180\degree</m>, find exact values for the other five trig functions.</p></statement></exercise>
+<exercise><statement><p>If <m>\csc \theta =4</m>, and <m>90\degree \le \theta \le 180\degree</m>, find exact values for the other five trig functions.</p></statement><answer><p><m>\cos \theta = \dfrac{-\sqrt{15}}{4},~\sin \theta = \dfrac{1}{4},~\tan \theta = \dfrac{-1}{\sqrt{15}},~\sec \theta = \dfrac{-4}{\sqrt{15}},~\cot \theta = -\sqrt{15}</m></p></answer></exercise>
 
 <p>	By comparing the definitions of secant, cosecant, and cotangent to the three basic trigonometric functions, we find the following relationships.</p>
 
@@ -53,7 +71,7 @@ From the Pythagorean theorem, we find <m>y=-\sqrt{8}=-2\sqrt{2}</m>.  We can now
 to obtain <m>\sec 47\degree \approx 1.466</m>.  Or we can calculate <m>\cos 47\degree</m> first, and then use the reciprocal key:
 	<me> \text{COS}~~ 47~~)~~\text{ENTER}~~ x^{-1}~~\text{ENTER}</me></p></solution></example>
 
-<exercise><statement><p>Use a calculator to approximate <m>\csc 132\degree</m> to three decimal places.</p></statement></exercise>
+<exercise><statement><p>Use a calculator to approximate <m>\csc 132\degree</m> to three decimal places.</p></statement><answer><p><m>1.346</m></p></answer></exercise>
 
 <p>Of course, we can also evaluate the reciprocal trig functions for angles in radians, or for real numbers.  Thus for example,
 	<me>\csc 3.5 = \dfrac{1}{\sin 3.5}= -2.8508~~~~\text{and}~~~~\cot(-4) = \dfrac{1}{\tan(-4)} = -0.8637</me>  
@@ -103,7 +121,7 @@ In particular, the exact values for the reciprocal trig functions of the special
 <example><statement><p>For which angles is the cosecant undefined?</p></statement>
 <solution><p>The cosecant is undefined when its denominator, <m>\sin \theta</m>, equals zero, and <m>\sin \theta = 0</m> when <m>\theta</m> is a multiple of <m>180\degree</m>. In radians, <m>\csc \theta</m> is undefined if <m>\theta</m> is a multiple of <m>\pi</m>.</p></solution></example>
 
-<exercise><p>For what angles is the cotangent undefined? Give your answers in degrees and in radians.</p></exercise>
+<exercise><statement><p>For what angles is the cotangent undefined? Give your answers in degrees and in radians.</p></statement><answer><p>Multiples of <m>180\degree</m>, or multiples of <m>\pi</m>.</p></answer></exercise>
 
 <note><p>Although <m>\tan \dfrac{\pi}{2}</m> is undefined, <m>\cot \dfrac{\pi}{2}=0</m>.</p></note>
 </subsection>
@@ -124,7 +142,32 @@ In particular, the exact values for the reciprocal trig functions of the special
 <p>Although we can express any relationship between the sides of a right triangle using sine, cosine, and tangent, sometimes it is more convenient to use one of the reciprocal functions.</p>
 
 <example><statement><p>The length, <m>L</m>, of the shadow cast by a flagpole on a sunny day depends on the height, <m>h</m>, of the flagpole and the angle, <m>\theta</m>, that the sun's rays make with ground.
-<sidebyside width="40%"><image source="images/exam8-3-4.png"><description>triangle</description></image></sidebyside>
+<sidebyside width="40%"><!--<image source="images/exam8-3-4.png"><description>triangle</description></image>-->
+    <image xml:id="exam8-3-4">
+        <description>flagpole and shadow</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=1.4]
+        \def\th{25};
+        \def\ra{2.5};
+        \coordinate(O) at (0,0);
+        \coordinate (A) at ($ \ra*cos(\th)*(1,0) $);
+        \coordinate (B) at ($ ({\th}:{\ra}) $);
+        \coordinate (C) at ($ ({\th}:{1.7*\ra}) $);
+        \draw[blue] (A) rectangle ++(-.2,.2);
+        \filldraw[lime] (B) -- ++(.4,-.15) --++(-.4,-.15)--++(0,.3);
+        \draw[lightgray] (-.5,0)--(4,0);
+        \draw[yellow, thick, dashed] (O)--(C);
+        \draw[black,ultra thick] (O)--(A) node[below, midway, text=blue] {$L$};
+        \draw[gray, ultra thick] (A)--(B) node[right, midway, text=blue] {$h$};
+        \filldraw[yellow] (C) circle (.25cm);
+        \draw[red] (0.7,0) arc(0:{\th}:0.7) node[right, midway, yshift=1, scale=.9] {$\theta$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 <ol label="a">
 <li>Write an expression for the length, <m>L</m>, of the shadow cast by a flagpole of height <m>h</m> when the sun makes an angle of <m>\theta</m> from the ground.</li>
 <li>Find the length (to the nearest 0.01 meter) of the shadow cast by a 3-meter flagpole when the sun makes an angle of <m>20\degree</m> from the ground.</li></ol></p></statement>
@@ -135,15 +178,47 @@ In particular, the exact values for the reciprocal trig functions of the special
 <me>L = \alert{3} \cot \alert{20\degree} = 3(2.7475)=8.24</me>
 The shadow is about 8.24 meters long.</li></ol></p></solution></example>
 
-<exercise><p>The area <m>A</m> of a regular polygon with <m>n</m> sides having perimeter <m>L</m> satisfies
+<exercise><statement><p>The area <m>A</m> of a regular polygon with <m>n</m> sides having perimeter <m>L</m> satisfies
 <me>A = \dfrac{L^2}{4n}\cot\dfrac{\pi}{n} </me>
 Refer to the figure below showing <m>n=6</m> to prove this formula in the following steps.
-<sidebyside width="25%"><image source="images/exer8-3-4.png"><description>hexagon</description></image></sidebyside>
+<sidebyside width="25%"><!--<image source="images/exer8-3-4.png"><description>hexagon</description></image>-->
+    <image xml:id="exer8-3-4">
+        <description>hexagon</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=1.6]
+        \def\th{60};
+        \coordinate(O) at (0,0);
+        \coordinate (A) at (1,0);
+        \coordinate (B) at ({\th}:1);
+        \coordinate (C) at ({2*\th}:1);
+        \coordinate (D) at ({3*\th}:1);
+        \coordinate (E) at ({4*\th}:1);
+        \coordinate (F) at ({5*\th}:1);
+        \draw[black,thick] (A)--(B)--(C)--(D)--(E)--(F)--(A);
+        \draw[lightgray,thick,dashed] (A)--(O)--(B);
+        \draw[lightgray,thick,dashed] (C)--(O)--(D);
+        \draw[red] (0,-.4) arc(-90:-60:.4) node[below, xshift=1, midway, scale=.8] {$\theta$};
+        \draw[gray,thick] (F)--(O)--(E);
+        \coordinate (P) at ($ cos(\th /2) *(0,-1) $);
+        \draw[blue] (P) rectangle ++(-.13,.13);
+        \draw[blue,thick, dashed] (O)--(P) node[left, yshift=-2,midway, scale=.8] {$h$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 <ol label="a">
 <li>Find an expression for the angle <m>\theta</m> in terms of <m>n</m>.</li>
 <li>Find an expression for the base of the triangle shown.</li>
 <li>Find an expression for the height of the triangle.</li>
-<li>Write an expression for the area of the triangle, and then for the area of the entire polygon.</li></ol></p></exercise>
+<li>Write an expression for the area of the triangle, and then for the area of the entire polygon.</li></ol></p></statement><answer><p><ol label="a">
+        <li><m>\theta = \dfrac{\pi}{n}</m></li>
+        <li><m>b = \dfrac{L}{n}</m></li>
+        <li><m>h=\dfrac{L}{2n}\cot \dfrac{\pi}{n}</m></li>
+        <li><m>A_T=\dfrac{L^2}{4n^2}\cot \dfrac{\pi}{n},~~A_P=\dfrac{L^2}{4n}\cot \dfrac{\pi}{n}</m></li>
+    </ol></p></answer></exercise>
 </subsection>
 
 <subsection><title>Graphs of the Reciprocal Functions</title>
@@ -153,24 +228,204 @@ Refer to the figure below showing <m>n=6</m> to prove this formula in the follow
 
 <solution><p>Consider the graph of <m>y=\cos x</m> shown at left below.</p>
 <p>  When <m>x=\dfrac{-\pi}{2},~\dfrac{\pi}{2}</m> and <m>\dfrac{3\pi}{2},~ \cos x=0</m>, so <m>\sec x</m> is undefined at these <m>x</m>-values, and we insert vertical asymptotes at those <m>x</m>-values to start our graph of <m>y=\sec x</m>, as shown at right below.</p>
-<sidebyside widths="45% 45%"><image source="images/exam8-3-5a.png"><description>graphs</description></image><image source="images/exam8-3-5b.png"><description>graphs</description></image></sidebyside>
+<sidebyside widths="45% 45%"><!--<image source="images/exam8-3-5a.png"><description>graphs</description></image><image source="images/exam8-3-5b.png"><description>graphs</description></image>-->
+    <image xml:id="exam8-3-5a">
+        <description>cosine</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=.45, yscale=.675]
+        \draw[cyan] (-3*pi,-3) grid[xstep=pi/2] (3*pi,3);
+        \draw[black,thick,->,>=stealth'] (-3*pi,0)--(10,0) node[right] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-3)--(0,3.5) node[above] {$y$};
+        \foreach \y in {-2,-1,1,2} \draw[black,thick] (.1,\y)--++(-.2,0) node [left, xshift=-2, fill=white, inner sep=1, scale=.8] {$\y$};
+        \foreach \x [evaluate=\x as \xp using (pi*\x)] in {2,3} {
+          \draw[black,thick] (\xp,0.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$\x \pi$};
+          \draw[black,thick] (-\xp,0.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$-\x \pi$};
+        };
+        \draw[black,thick] (-pi,0.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$-\pi$};
+        \draw[black,thick] (pi,0.15)--++(0,-.3) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$\pi$};
+        \draw[samples=65, domain=-3*pi:3*pi, variable=\x, smooth, red, thick] plot (\x, {cos(deg(\x))});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    <image xml:id="exam8-3-5b">
+        <description>grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=.45, yscale=.675]
+        \draw[cyan] (-3*pi,-3) grid[xstep=pi/2] (3*pi,3);
+        \draw[black,thick,->,>=stealth'] (-3*pi,0)--(10,0) node[right] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-3)--(0,3.5) node[above] {$y$};
+        \foreach \y in {-2,-1,1,2} \draw[black,thick] (.1,\y)--++(-.2,0) node [left, xshift=-2, fill=white, inner sep=1, scale=.8] {$\y$};
+        \foreach \x [evaluate=\x as \xp using (pi*\x)] in {2,3} {
+          \draw[black,thick] (\xp,0.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$\x \pi$};
+          \draw[black,thick] (-\xp,0.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$-\x \pi$};
+        };
+        \draw[black,thick] (-pi,0.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$-\pi$};
+        \draw[black,thick] (pi,0.15)--++(0,-.3) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$\pi$};
+        \foreach \x [evaluate=\x as \xp using (pi*\x/2)] in {1,3,5} {
+          \draw[magenta,ultra thick,dashed] (\xp,-3)--++(0,6);
+          \draw[magenta,ultra thick,dashed] (-\xp,-3)--++(0,6);
+        };
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 <p>To find some points on the graph, we look at points on the graph of <m>y=\cos x</m>. At each <m>x</m>-value, the <m>y</m>-coordinate of the point on the graph of <m>y=\sec x</m> is the reciprocal of <m>\cos x</m>.</p>  
 <p>For example, at <m>x=0</m> and <m>x=2\pi</m>, we have <m>\cos x = 1</m>, so <m>\sec x = \frac{1}{1} = 1</m>. Thus, we plot the points <m>(0,1)</m> and <m>(2\pi,1)</m> on the graph of <m>f(x)=\sec x</m>.  Similarly, at <m>x=-\pi</m> and <m>x=\pi</m>, <m>\cos x = -1</m>, so the value of <m>\sec x</m> is <m>\frac{1}{-1} = -1</m>, and we plot the points <m>(-\pi,-1)</m> and <m>(\pi,-1)</m> on the graph of <m>f(x)=\sec x</m>.</p>
 <p>Finally, we notice that the values of <m>\cos x</m> are decreasing toward <m>0</m> as <m>x</m> increases from <m>0</m> to <m>\dfrac{\pi}{2}</m>, so the graph of <m>f(x)=\sec x</m> increases toward <m>\infty</m> on the same interval.</p>  
 <p>By similar arguments, we fill in the graph of <m>f(x)=\sec x</m> between each of the vertical asymptotes, to produce the graph below.</p>
-<sidebyside width="55%"><image source="images/exam8-3-5ans.png"><description>graphs</description></image></sidebyside></solution></example>
+<sidebyside width="55%"><!--<image source="images/exam8-3-5ans.png"><description>graphs</description></image>-->
+    <image xml:id="exam8-3-5ans">
+        <description>cosine and secant</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=.45, yscale=.675]
+        \draw[cyan] (-3*pi,-3) grid[xstep=pi/2] (3*pi,3);
+        \draw[black,thick,->,>=stealth'] (-3*pi,0)--(10,0) node[right] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-3)--(0,3.5) node[above] {$y$};
+        \foreach \y in {-2,-1,1,2} \draw[black,thick] (.1,\y)--++(-.2,0) node [left, xshift=-2, fill=white, inner sep=1, scale=.8] {$\y$};
+        \foreach \x [evaluate=\x as \xp using (pi*\x)] in {2,3} {
+          \draw[black,thick] (\xp,0.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$\x \pi$};
+          \draw[black,thick] (-\xp,0.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$-\x \pi$};
+        };
+        \draw[black,thick] (-pi,0.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$-\pi$};
+        \draw[black,thick] (pi,0.15)--++(0,-.3) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$\pi$};
+        \draw[samples=65, domain=-3*pi:3*pi, variable=\x, smooth, blue, thick] plot (\x, {cos(deg(\x))});
+        \draw[samples=65, domain={-acos(1/3)*pi/180}:{acos(1/3)*pi/180}, variable=\x, smooth, red, thick] plot ({\x-2*pi}, {sec(deg(\x))});
+        \draw[samples=65, domain={-acos(1/3)*pi/180}:{acos(1/3)*pi/180}, variable=\x, smooth, red, thick] plot (\x, {sec(deg(\x))});
+        \draw[samples=65, domain={-acos(1/3)*pi/180}:{acos(1/3)*pi/180}, variable=\x, smooth, red, thick] plot ({\x+2*pi}, {sec(deg(\x))});
+        \draw[samples=65, domain={-acos(1/3)*pi/180}:{acos(1/3)*pi/180}, variable=\x, smooth, red, thick] plot ({\x-pi}, {-sec(deg(\x))});
+        \draw[samples=65, domain={-acos(1/3)*pi/180}:{acos(1/3)*pi/180}, variable=\x, smooth, red, thick] plot ({\x+pi}, {-sec(deg(\x))});
 
-<exercise><statement><p>Use the graph of <m>y=\tan x</m> to sketch a graph of <m>g(x)=\cot x</m>.</p></statement></exercise>
+        \draw[samples=65, domain=0:{acos(1/3)*pi/180}, variable=\x, smooth, red, thick] plot ({\x-3*pi}, {-sec(deg(\x))});
+        \draw[samples=65, domain={-acos(1/3)*pi/180}:{0}, variable=\x, smooth, red, thick] plot ({\x+3*pi}, {-sec(deg(\x))});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></solution></example>
+
+<exercise><statement><p>Use the graph of <m>y=\tan x</m> to sketch a graph of <m>g(x)=\cot x</m>.</p></statement><answer><sidebyside width="60%"><!--<image source="images/exer8-3-5ans.png"><description>graphs</description></image>-->
+    <image xml:id="exer8-3-5ans">
+        <description>tan and cotan</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=.45, yscale=.675]
+        \draw[cyan] (-3*pi,-3) grid[xstep=pi/2] (3*pi,3);
+        \draw[black,thick,->,>=stealth'] (-3*pi,0)--(10,0) node[right] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-3)--(0,3.5) node[above] {$y$};
+        \foreach \y in {-2,-1,1,2} \draw[black,thick] (.1,\y)--++(-.2,0) node [left, xshift=-2, fill=white, inner sep=1, scale=.8] {$\y$};
+        \foreach \x [evaluate=\x as \xp using (pi*\x)] in {2,3} {
+          \draw[black,thick] (\xp,0.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$\x \pi$};
+          \draw[black,thick] (-\xp,0.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$-\x \pi$};
+        };
+        \draw[black,thick] (-pi,0.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$-\pi$};
+        \draw[black,thick] (pi,0.15)--++(0,-.3) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$\pi$};
+
+        \draw[samples=65, domain={0}:{atan(3)*pi/180}, variable=\x, smooth, blue, thick] plot ({\x-3*pi}, {tan(deg(\x))});
+        \draw[samples=65, domain={-atan(3)*pi/180}:{atan(3)*pi/180}, variable=\x, smooth, blue, thick] plot ({\x-2*pi}, {tan(deg(\x))});
+        \draw[samples=65, domain={-atan(3)*pi/180}:{atan(3)*pi/180}, variable=\x, smooth, blue, thick] plot (\x, {tan(deg(\x))});
+        \draw[samples=65, domain={-atan(3)*pi/180}:{atan(3)*pi/180}, variable=\x, smooth, blue, thick] plot ({\x+2*pi}, {tan(deg(\x))});
+        \draw[samples=65, domain={-atan(3)*pi/180}:{atan(3)*pi/180}, variable=\x, smooth, blue, thick] plot ({\x-pi}, {tan(deg(\x))});
+        \draw[samples=65, domain={-atan(3)*pi/180}:{atan(3)*pi/180}, variable=\x, smooth, blue, thick] plot ({\x+pi}, {tan(deg(\x))});
+        \draw[samples=65, domain={-atan(3)*pi/180}:{0}, variable=\x, smooth, blue, thick] plot ({\x+3*pi}, {tan(deg(\x))});
+
+        \draw[samples=65, domain={-atan(3)*pi/180}:{atan(3)*pi/180}, variable=\x, smooth, red, thick] plot ({\x-5/2*pi}, {-tan(deg(\x))});
+        \draw[samples=65, domain={-atan(3)*pi/180}:{atan(3)*pi/180}, variable=\x, smooth, red, thick] plot ({\x-pi/2}, {-tan(deg(\x))});
+        \draw[samples=65, domain={-atan(3)*pi/180}:{atan(3)*pi/180}, variable=\x, smooth, red, thick] plot ({\x+3/2*pi}, {-tan(deg(\x))});
+        \draw[samples=65, domain={-atan(3)*pi/180}:{atan(3)*pi/180}, variable=\x, smooth, red, thick] plot ({\x-3/2*pi}, {-tan(deg(\x))});
+        \draw[samples=65, domain={-atan(3)*pi/180}:{atan(3)*pi/180}, variable=\x, smooth, red, thick] plot ({\x+1/2*pi}, {-tan(deg(\x))});
+        \draw[samples=65, domain={-atan(3)*pi/180}:{atan(3)*pi/180}, variable=\x, smooth, red, thick] plot ({\x+5/2*pi}, {-tan(deg(\x))});
+        \draw[blue,<-,>=stealth'] (-8,3.1)--++(1,.3) node[ right, scale=.9] {$y=\tan x$};
+        \draw[red,<-,>=stealth'] (3.6,3.1)--++(1,.3) node[ right, scale=.9] {$y=\cot x$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer></exercise>
 
 <p>	The graphs of the three new functions are shown below, with <m>x</m> in radians. Note that the secant function is undefined at odd multiples of <m>\dfrac{\pi}{2}</m>, the values at which <m>\cos x=0</m>. The cosecant is undefined where <m>\sin x=0</m>, namely at multiples of <m>\pi</m>.  The cotangent is also undefined at multiples of <m>\pi</m>, because <m>\tan x=0</m>  at those values.</p>
-<sidebyside width="100%"><image source="images/8-3-2.png"><description>graphs</description></image></sidebyside>
+<sidebyside width="100%"><!--<image source="images/8-3-2.png"><description>graphs</description></image>-->
+    <image xml:id="fig-8-3-2">
+        <description>reciprocal trig functions</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=.25, yscale=.35]
+        \draw[cyan] (-2*pi,-4) grid[xstep=pi/2] (2*pi,4);
+        \draw[black,thick,->,>=stealth'] (-2*pi,0)--(6.7,0) node[right] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-4)--(0,4.5) node[above] {$y$};
+        \foreach \y in {-2,-1,1,2, -3,3} \draw[black,thick] (.1,\y)--++(-.2,0) node [left, xshift=-2, fill=white, inner sep=1, scale=.8] {$\y$};
+        \foreach \x [evaluate=\x as \xp using (pi*\x)] in {2} {
+          \draw[black,thick] (\xp,0.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$\x \pi$};
+          \draw[black,thick] (-\xp,0.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$-\x \pi$};
+        };
+        \draw[black,thick] (-pi,0.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$-\pi$};
+        \draw[black,thick] (pi,0.15)--++(0,-.3) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$\pi$};
+        \draw[samples=65, domain={0}:{acos(1/4)*pi/180}, variable=\x, smooth, red, thick] plot ({\x-2*pi}, {sec(deg(\x))});
+        \draw[samples=65, domain={-acos(1/4)*pi/180}:{acos(1/4)*pi/180}, variable=\x, smooth, red, thick] plot (\x, {sec(deg(\x))});
+        \draw[samples=65, domain={-acos(1/4)*pi/180}:{0}, variable=\x, smooth, red, thick] plot ({\x+2*pi}, {sec(deg(\x))});
+        \draw[samples=65, domain={-acos(1/4)*pi/180}:{acos(1/4)*pi/180}, variable=\x, smooth, red, thick] plot ({\x-pi}, {-sec(deg(\x))});
+        \draw[samples=65, domain={-acos(1/4)*pi/180}:{acos(1/4)*pi/180}, variable=\x, smooth, red, thick] plot ({\x+pi}, {-sec(deg(\x))});
+        \node[text=blue] at (0,-5.) {$y=\sec x$};
+
+        %second graph: cosecant
+        \def\de{11/2*pi}
+        \draw[cyan] (10.9,-4) grid[xstep=pi/2] ($ \de*(1,0)+(2*pi,4) $);
+        \draw[black,thick,->,>=stealth'] ($ \de*(1,0)+(-2*pi,0)$)--($ \de*(1,0)+(6.7,0)$) node[right] {$x$};
+        \draw[black,thick,->,>=stealth'] ($ \de*(1,0)+(0,-4)$)--($ \de*(1,0)+(0,4.5)$) node[above] {$y$};
+        \foreach \y in {-2,-1,1,2, -3,3} \draw[black,thick] ($ \de*(1,0)+(.1,\y)$)--++(-.2,0) node [left, xshift=-2, fill=white, inner sep=1, scale=.8] {$\y$};
+        \foreach \x [evaluate=\x as \xp using (pi*\x)] in {2} {
+          \draw[black,thick] ($ \de*(1,0)+(\xp,0.15)$)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$\x \pi$};
+          \draw[black,thick] ($ \de*(1,0)+(-\xp,0.15)$)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$-\x \pi$};
+        };
+        \draw[black,thick] ($ \de*(1,0)+(-pi,0.15)$)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$-\pi$};
+        \draw[black,thick] ($ \de*(1,0)+(pi,0.15)$)--++(0,-.3) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$\pi$};
+
+        \draw[samples=65, domain={-acos(1/4)*pi/180}:{acos(1/4)*pi/180}, variable=\x, smooth, red, thick] plot (\x+\de-3*pi/2, {sec(deg(\x))});
+        \draw[samples=65, domain={-acos(1/4)*pi/180}:{acos(1/4)*pi/180}, variable=\x, smooth, red, thick] plot (\x+\de+pi/2, {sec(deg(\x))});
+        \draw[samples=65, domain={-acos(1/4)*pi/180}:{acos(1/4)*pi/180}, variable=\x, smooth, red, thick] plot ({\x-pi+\de+pi/2}, {-sec(deg(\x))});
+        \draw[samples=65, domain={-acos(1/4)*pi/180}:{acos(1/4)*pi/180}, variable=\x, smooth, red, thick] plot ({\x+3*pi/2+\de}, {-sec(deg(\x))});
+        \node[text=blue] at ($ \de*(1,0)+(0,-5.)$) {$y=\csc x$};
+
+
+        %third graph: cotangent
+        \def\de{11*pi}
+        \draw[cyan] (28.2,-4) grid[xstep=pi/2] ($ \de*(1,0)+(2*pi,4) $);
+        \draw[black,thick,->,>=stealth'] ($ \de*(1,0)+(-2*pi,0)$)--($ \de*(1,0)+(6.7,0)$) node[right] {$x$};
+        \draw[black,thick,->,>=stealth'] ($ \de*(1,0)+(0,-4)$)--($ \de*(1,0)+(0,4.5)$) node[above] {$y$};
+        \foreach \y in {-2,-1,1,2, -3,3} \draw[black,thick] ($ \de*(1,0)+(.1,\y)$)--++(-.2,0) node [left, xshift=-2, fill=white, inner sep=1, scale=.8] {$\y$};
+        \foreach \x [evaluate=\x as \xp using (pi*\x)] in {2} {
+          \draw[black,thick] ($ \de*(1,0)+(\xp,0.15)$)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$\x \pi$};
+          \draw[black,thick] ($ \de*(1,0)+(-\xp,0.15)$)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$-\x \pi$};
+        };
+        \draw[black,thick] ($ \de*(1,0)+(-pi,0.15)$)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$-\pi$};
+        \draw[black,thick] ($ \de*(1,0)+(pi,0.15)$)--++(0,-.3) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$\pi$};
+
+        \draw[samples=65, domain={-atan(4)*pi/180}:{atan(4)*pi/180}, variable=\x, smooth, red, thick] plot (\x+\de-3*pi/2, {-tan(deg(\x))});
+        \draw[samples=65, domain={-atan(4)*pi/180}:{atan(4)*pi/180}, variable=\x, smooth, red, thick] plot (\x+\de+pi/2, {-tan(deg(\x))});
+        \draw[samples=65, domain={-atan(4)*pi/180}:{atan(4)*pi/180}, variable=\x, smooth, red, thick] plot ({\x-pi+\de+pi/2}, {-tan(deg(\x))});
+        \draw[samples=65, domain={-atan(4)*pi/180}:{atan(4)*pi/180}, variable=\x, smooth, red, thick] plot ({\x+3*pi/2+\de}, {-tan(deg(\x))});
+        \node[text=blue] at ($ \de*(1,0)+(0,-5.)$) {$y=\cot x$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
 <example><statement><p>State the domain and range of the secant function.</p></statement>
 
 <solution><p>Because the cosine is defined for all real numbers, the domain of the secant includes all real numbers except for values where the cosine is zero. These values are the odd multiples of <m>\dfrac{\pi}{2}</m>, that is, <m>\dfrac{\pi}{2},~\dfrac{3\pi}{2},~\dfrac{5\pi}{2},~ \ldots</m>, and their opposites.</p>  
 <p>	Because the range of the cosine consists of all <m>y</m>-values with <m>-1 \le y \le 1</m>, the range of the secant includes the reciprocals of those values, namely <m>y \ge 1</m> and <m>y \le -1</m>.</p></solution></example> 
 
-<exercise><statement><p>State the domain and range of the cosecant and cotangent functions.</p></statement></exercise>
+<exercise><statement><p>State the domain and range of the cosecant and cotangent functions.</p></statement><answer><p>Domain of cosecant: all real numbers except integer multiples of <m>\pi</m>;  Range of cosecant: <m>(-\infty,-1] \cup [1, \infty)</m>; Domain of cotangent:  all real numbers except integer multiples of <m>\pi</m>; Range of cotangent: all real numbers</p></answer></exercise>
 </subsection>
 
 <subsection><title>Solving Equations</title>
@@ -182,7 +437,7 @@ Refer to the figure below showing <m>n=6</m> to prove this formula in the follow
 <me>\sin \theta = \dfrac{3}{2\sqrt{3}} = \dfrac{\sqrt{3}}{2}</me>
 Because <m>\dfrac{\sqrt{3}}{2}</m> is one of the special values, we recognize that one of the solutions is <m>\theta =\dfrac{\pi}{3}</m>. The sine and the cosecant are also positive in the second quadrant, so the second solution is <m>\pi - \dfrac{\pi}{3} = \dfrac{2\pi}{3}</m>.</p></solution></example>
 
-<exercise><statement><p>Solve <m>\sec \theta = -1.6</m>  for <m>\theta</m> between <m>0</m> and <m>2\pi</m>.</p></statement></exercise>
+<exercise><statement><p>Solve <m>\sec \theta = -1.6</m>  for <m>\theta</m> between <m>0</m> and <m>2\pi</m>.</p></statement><answer><p><m>\theta=2.25, \, 4.04</m></p></answer></exercise>
 </subsection>
 
 <subsection><title>Using Identities</title>
@@ -199,7 +454,7 @@ Because <m>\dfrac{\sqrt{3}}{2}</m> is one of the special values, we recognize th
 Because <m>\theta</m> lies in the fourth quadrant, where the sine function is negative, we choose the negative square root for <m>\sin \theta</m>.  Once we know <m>\sin \theta</m>, we calculate its reciprocal to find <m>\csc\theta</m>.
 <me>\sin \theta = -\sqrt{\dfrac{8}{9}} = \dfrac{-2\sqrt{2}}{3},~~~\text{and}~~~\csc\theta = \dfrac{1}{\sin \theta} = \dfrac{-3}{2\sqrt{2}} = \dfrac{-3\sqrt{2}}{4}</me></p></solution></example>
 
-<exercise><statement><p>If <m>\csc \theta = \dfrac{-\sqrt{13}}{3}</m>, and <m>\pi \le \theta \le \dfrac{3\pi}{2}</m>, find an exact value for <m>\sec \theta</m>.</p></statement></exercise>
+<exercise><statement><p>If <m>\csc \theta = \dfrac{-\sqrt{13}}{3}</m>, and <m>\pi \le \theta \le \dfrac{3\pi}{2}</m>, find an exact value for <m>\sec \theta</m>.</p></statement><answer><p><m>\sec\theta = \dfrac{-\sqrt{13}}{2} </m></p></answer></exercise>
 
 <p>	Identities are especially useful if the trig ratios are algebraic expressions, rather than numerical values. In the next example, we use the cotangent identity.</p>
 
@@ -215,7 +470,7 @@ We choose the positive root because cosine is positive in the first quadrant, an
 We can replace <m>\abs{w}</m> by <m>w</m> in this last expression because <m>w \gt 0</m>.  (Do you see why <m>w \gt 0</m>?)  Finally, because the cotangent is the reciprocal of the tangent, we have
 <me>\cot x = \dfrac{\cos x}{\sin x} = \dfrac{\dfrac{w^2-1}{w}}{\dfrac{1}{w}}=\sqrt{w^2 - 1}</me></p></solution></example>
 
-<exercise><statement><p>If <m>\sec t = \dfrac{2}{a}</m> and <m>\dfrac{3\pi}{2} \lt t \lt 2\pi</m>, find expressions for <m>\csc t</m> and <m>\cot t</m>.</p></statement></exercise>
+<exercise><statement><p>If <m>\sec t = \dfrac{2}{a}</m> and <m>\dfrac{3\pi}{2} \lt t \lt 2\pi</m>, find expressions for <m>\csc t</m> and <m>\cot t</m>.</p></statement><answer><p><m>\csc t = \dfrac{-2}{\sqrt{1-a^2}}</m>, <m>~ \cot t = \dfrac{-a}{\sqrt{1-a^2}}</m></p></answer></exercise>
 
 <p>	We can often simplify trigonometric expressions by first converting all the trig ratios to sines and cosines.</p>
 
@@ -229,7 +484,7 @@ We can replace <m>\abs{w}</m> by <m>w</m> in this last expression because <m>w \
 
 <p>	In the previous example, you can verify that <m>\sec \theta - \tan \theta \sin \theta = \cos \theta</m> by graphing the functions <m>Y_1=\sec \theta - \tan \theta \sin \theta</m> and <m>Y_2=\cos \theta</m> in the ZTrig window to see that they are the same.</p>
 		
-<exercise><statement><p>Show that <m>\sin^2 x(1+\cot^2 x) = 1</m>.</p></statement></exercise>
+<exercise><statement><p>Show that <m>\sin^2 x(1+\cot^2 x) = 1</m>.</p></statement><answer><p><m>\sin^2x (1+\cot^2 x) = \sin^2 x\left(1 + \dfrac{\cos^2 x}{\sin^2 x}\right)=\sin^2 x + \cos^2 x = 1</m></p></answer></exercise>
 
 <p>	There are two alternate versions of the Pythagorean identity which involve the reciprocal trig functions. These identities are useful when we know the value of <m>\tan \theta</m> or <m>\cot \theta</m> and want to find the other trig values.</p>
 
@@ -249,13 +504,48 @@ We can replace <m>\abs{w}</m> by <m>w</m> in this last expression because <m>w \
 		\end{align*}
 Because <m>\alpha</m> is in the third quadrant, both its sine and cosine are negative. Therefore the reciprocals of cosine and sine, namely secant and cosecant, must also be negative, and hence <m>\sec \alpha = \dfrac{-\sqrt{34}}{5}</m>. The cosine of <m>\alpha</m> is the reciprocal of the secant, so <m>\cos \alpha = \dfrac{-5}{\sqrt{34}}</m>.</p></solution></example>
 
-<exercise><statement><p>If <m>\cot \phi = \dfrac{-3}{\sqrt{2}}</m> and <m>\phi</m> lies in the second quadrant, find exact values for <m>\csc \phi</m> and <m>\sin \phi</m>.</p></statement></exercise>		
+<exercise><statement><p>If <m>\cot \phi = \dfrac{-3}{\sqrt{2}}</m> and <m>\phi</m> lies in the second quadrant, find exact values for <m>\csc \phi</m> and <m>\sin \phi</m>.</p></statement><answer><p><m>\csc \phi = \sqrt{\dfrac{11}{2}}</m>, <m>~ \sin \phi = \sqrt{\dfrac{2}{11}}</m></p></answer></exercise>		
 </subsection>
 
 <subsection><activity><title>Reciprocal Ratios</title><p></p>
 <p>Part 1</p>
 <p>The figure shows a unit circle centered at <m>O</m>.  The line through <m>AC</m> is tangent to the circle at <m>A</m>. (Recall that a tangent to a circle is perpendicular to the radius that meets it.)</p>
-<sidebyside width="40%"><image source="images/8-3-act1.png"><description>circle</description></image></sidebyside>
+<sidebyside width="40%"><!--<image source="images/8-3-act1.png"><description>circle</description></image>-->
+    <image xml:id="fig-8-3-act1">
+        <description>unit circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=2]
+        \coordinate (O) at (0,0);
+        \coordinate (A) at (1,0);
+        \def\th{40};
+        \coordinate (B) at ($ cos(\th)*(1,0)$);
+        \coordinate (C) at ($ tan(\th)*(0,1)+(1,0)$);
+        \coordinate (D) at ({\th}:1);
+        \coordinate (E) at ({-\th}:1);
+
+        \def\dx{1.3}
+        \draw[black,thick,->,>=stealth'] (-\dx,0)--(1.4,0);
+        \draw[black,thick,->,>=stealth'] (0,-\dx)--(0,1.4);
+        \draw[red!80!white,thick] (O) circle (1cm);
+
+        \draw[blue,thick] (D)--(E);
+        \draw[blue,thick,<->,>=stealth'] ({\th}:1.8)--({180+\th}:1.6);
+        \draw[blue,thick,<->,>=stealth'] (1,\dx)--(1,-\dx);
+
+        \filldraw[black] (O) circle (.04cm) node[below right, scale=.8]{O};
+        \filldraw[black] (A) circle (.04cm) node[above right, scale=.8]{A};
+        \filldraw[black] (B) circle (.04cm) node[above left, scale=.8]{B};
+        \filldraw[black] (C) circle (.04cm) node[below right, scale=.8]{C};
+        \filldraw[black] (D) circle (.04cm) node[above, yshift=1, scale=.8]{D};
+        \filldraw[black] (E) circle (.04cm);
+        \draw[red] (0.18,0) arc(0:{\th}:0.18) node[right, midway, yshift=2, text=red, scale=.8] {$\theta$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 <p><ol label="1">
 	<li>What is the radius of the circle?</li>
 	<li>Find line segments whose lengths are <m>\cos \theta</m> and <m>\sin \theta</m>.</li>
@@ -266,7 +556,39 @@ Because <m>\alpha</m> is in the third quadrant, both its sine and cosine are neg
 </ol></p><p></p>
 <p>Part 2</p>
 <p>Here is another unit circle, with tangent <m>BD</m>.</p>
-<sidebyside width="35%"><image source="images/8-3-act2.png"><description>circle</description></image></sidebyside>
+<sidebyside width="35%"><!--<image source="images/8-3-act2.png"><description>circle</description></image>-->
+    <image xml:id="fig-8-3-act2">
+        <description>unit circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=2]
+        \coordinate (O) at (0,0);
+        \def\th{40};
+        \coordinate (A) at ($ cos(\th)*(1,0)$);
+        \coordinate (B) at ($ 1/cos(\th)*(1,0)$);
+        \coordinate (C) at ({\th}:1);
+        \coordinate (D) at ($ 1/sin(\th)*(0,1)$);
+
+        \def\dx{1.3}
+        \draw[black,thick,->,>=stealth'] (-\dx,0)--(1.6,0);
+        \draw[black,thick,->,>=stealth'] (0,-\dx)--(0,1.8);
+        \draw[red!80!white,thick] (O) circle (1cm);
+
+        \draw[blue,thick] (D)--(B);
+        \draw[blue,thick] (O)--(C)--(A);
+
+        \filldraw[black] (O) circle (.04cm) node[below left, scale=.8]{O};
+        \filldraw[black] (A) circle (.04cm) node[below left, scale=.8]{A};
+        \filldraw[black] (B) circle (.04cm) node[below, yshift=-2, scale=.8]{B};
+        \filldraw[black] (C) circle (.04cm) node[above right, scale=.8]{C};
+        \filldraw[black] (D) circle (.04cm) node[left, xshift=-1, scale=.8]{D};
+        \draw[red] (0.18,0) arc(0:{\th}:0.18) node[right, midway, yshift=2, text=red, scale=.8] {$\theta$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 <p><ol label="1">
 	<li>What is the measure of the angles <m>\angle OCD</m> and <m>\angle OCB</m>?</li>
 	<li>Explain why <m>\triangle OCB</m> is similar to <m>\triangle OAC</m>.</li>
@@ -280,21 +602,41 @@ Because <m>\alpha</m> is in the third quadrant, both its sine and cosine are neg
  <subsection><title>Algebra Refresher</title>
 
 <exercises>
-	<exercise number="1"><statement><p>Solve <m>\abs{2x-6}=4</m></p></statement></exercise> 
+	<exercise number="1"><statement><p>Solve <m>\abs{2x-6}=4</m></p></statement><answer><p><m>x=1, \, 5</m></p></answer></exercise> 
 
-	<exercise number="2"><statement><p>Solve <m>\abs{1-3x}=10</m></p></statement></exercise>
+	<exercise number="2"><statement><p>Solve <m>\abs{1-3x}=10</m></p></statement><answer><p><m>x=-3, \, \dfrac{11}{3} </m></p></answer></exercise>
 
-	<exercise number="3"><statement><p>Simplify <m>\sqrt{(x-4)^2}</m></p></statement></exercise>
+	<exercise number="3"><statement><p>Simplify <m>\sqrt{(x-4)^2}</m></p></statement><answer><p><m>\abs{x-4}</m></p></answer></exercise>
 
-	<exercise number="4"><statement><p>Simplify <m>\sqrt{(1-x)^2}</m></p></statement></exercise>
+	<exercise number="4"><statement><p>Simplify <m>\sqrt{(1-x)^2}</m></p></statement><answer><p><m>\abs{1-x}</m></p></answer></exercise>
 
-	<exercise number="5"><statement><p>For what values of <m>x</m> is <m>\abs{x+2}=x+2</m></p> ?</statement></exercise>
+	<exercise number="5"><statement><p>For what values of <m>x</m> is <m>\abs{x+2}=x+2</m></p> ?</statement><answer><p><m>x\ge -2</m></p></answer></exercise>
 
-	<exercise number="6"><statement><p>For what values of <m>x</m> is <m>\abs{x-3}=x-3</m></p> ?</statement></exercise>
+	<exercise number="6"><statement><p>For what values of <m>x</m> is <m>\abs{x-3}=x-3</m></p> ?</statement><answer><p><m>x\lt 3</m></p></answer></exercise>
 
-	<exercise number="7"><statement><p>Graph the function <m>f(x)=\dfrac{x}{\abs{x}}</m>.</p></statement></exercise>
+	<exercise number="7"><statement><p>Graph the function <m>f(x)=\dfrac{x}{\abs{x}}</m>.</p></statement><answer><sidebyside width="30%" margins="0 70%"><!--<image source="images/ar8-3-7ans.png"><description>graphs</description></image>-->
+    <image xml:id="ar8-3-7ans">
+        <description>graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [yscale=2]
+        \draw[cyan] (-4,-2) grid [ystep=1/2] (4,2);
+        \draw[black,thick,->,>=stealth'] (-4,0)--(4.3,0) node[right] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-2)--(0,2.15) node[above] {$y$};
+        \foreach \x in {-2,2,-4,4} \draw[black,thick] (\x,.06)--++(0,-.12) node[below, yshift=-2, fill=white, inner sep =1, scale=.8] {$\x$};
+        \foreach \y in {-1,1} \draw[black,thick] (.12,\y)--++(-.24,0) node[below left, yshift=-2, fill=white, inner sep =1, scale=.8] {$\y$};
+        \draw[red, ultra thick] (0,1)--(4,1);
+        \draw[red, ultra thick] (0,-1)--(-4,-1);
+        \draw[red, thick, fill=white] (0,1) ellipse (.12cm and .06 cm);
+        \draw[red, thick, fill=white] (0,-1) ellipse (.12cm and .06 cm);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></answer></exercise>
 
-	<exercise number="8"><statement><p>Explain the difference between the graphs of <m>f(x)=(\sqrt{x})^2</m> and <m>g(x)=\sqrt{x^2}</m>.</p></statement></exercise>
+	<exercise number="8"><statement><p>Explain the difference between the graphs of <m>f(x)=(\sqrt{x})^2</m> and <m>g(x)=\sqrt{x^2}</m>.</p></statement><answer><p>The domain of <m>f</m> is <m>[0, \infty)</m>, and the domain of <m>g</m> is <m>(-\infty, \infty)</m>.</p></answer></exercise>
 </exercises>
 
 <subsubsection><title>Answers to 8.3 Exercises</title>
@@ -308,7 +650,7 @@ Because <m>\alpha</m> is in the third quadrant, both its sine and cosine are neg
 		<li><m>h=\dfrac{L}{2n}\cot \dfrac{\pi}{n}</m></li>
 		<li><m>A_T=\dfrac{L^2}{4n^2}\cot \dfrac{\pi}{n},~~A_P=\dfrac{L^2}{4n}\cot \dfrac{\pi}{n}</m></li>
 	</ol></p></li>
-	<li><sidebyside width="50%"><image source="images/exer8-3-5ans.png"><description>graphs</description></image></sidebyside></li>
+	<li><sidebyside width="50%"><image source="images/exer8-3-5ans"><description>graphs</description></image></sidebyside></li>
 	<li>Domain of cosecant: all real numbers except integer multiples of <m>\pi</m>;  Range of cosecant: <m>(-\infty,-1] \cup [1, \infty)</m>; Domain of cotangent:  all real numbers except integer multiples of <m>\pi</m>; Range of cotangent: all real numbers</li>
 	<li><m>\theta = 2.25,~ 4.04</m></li>
 	<li><m>\sec \theta = \dfrac{-\sqrt{13}}{2},~ \cot \theta = \dfrac{2}{3}</m></li>
@@ -325,7 +667,8 @@ Because <m>\alpha</m> is in the third quadrant, both its sine and cosine are neg
 	<li><m>\abs{1-x}</m></li>
 	<li><m>x\ge -2</m></li>
 	<li><m>x \lt 3</m></li>
-	<li><sidebyside width="30%"><image source="images/ar8-3-7ans.png"><description>graphs</description></image></sidebyside></li>
+	<li><sidebyside width="30%"><image source="images/ar8-3-7ans"><description>graphs</description></image>
+    </sidebyside></li>
 	<li>The domain of <m>f</m> is <m>[0, \infty)</m>, and the domain of <m>g</m> is <m>(-\infty, \infty)</m>.</li>
 	</ol></p></subsubsection>
 </subsection>
@@ -346,11 +689,11 @@ Because <m>\alpha</m> is in the third quadrant, both its sine and cosine are neg
 	<li><assemblage><title>Three More Functions</title>
 <p>If <m>\theta</m> is an angle in standard position, and <m>P(x,y)</m> is a point on the 
 terminal side, then we define the following functions.</p>
-<sidebyside widths="60% 30%"><p>
+<sidebyside widths="60% 30%" valigns="middle middle"><p>
          <me>\text{The}~~ \textbf{secant}:~~~~~~      \sec \theta = \dfrac{r}{x}</me>
          <me>\text{The}~~ \textbf{cosecant}:~~~~      \csc \theta = \dfrac{r}{y}</me>
          <me>\text{The}~~ \textbf{cotangent}:~~~      \cot \theta =  \dfrac{x}{y}</me></p>                
-<p><image source="images/8-3-1.png"><description>angle</description></image></p></sidebyside></assemblage></li>
+<image source="images/fig-4-2-caut1"><description>angle</description></image></sidebyside></assemblage></li>
 
 	<li><assemblage><title>Reciprocal Trigonometric Ratios</title>
 <p>If <m>\theta</m> is one of the acute angles in a right triangle,</p>

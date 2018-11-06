@@ -21,22 +21,93 @@
 </p></statement>
 
 <solution><p>With your calculator set in radian mode, graph the three functions in the ZTrig window (press ZOOM 7). The graphs are shown below.</p> 
-<sidebyside width="60%"><image source="images/exam7-1-1.png"><description>sines</description></image></sidebyside>                 
+<sidebyside width="60%"><!--<image source="images/exam7-1-1.png"><description>sines</description></image>-->
+    <image xml:id="exam7-1-1">
+        <description>sines</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=1/2]
+        \draw[cyan] (-2*pi,-3) grid[xstep=pi/4, ystep=1] (2*pi,3);
+        \draw[black,thick,->](-2*pi,0)--(6.6,0) node[right]{$x$};
+        \draw[black,thick,->](0,-3)--(0,3.5) node[above]{$y$};
+        \foreach \y in {-3,-2,-1,1,2,3} \draw[black,thick] (0.08,\y)--++(-.16,0) node[left, scale=.8]{\y};
+        \draw[black,thick] (pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$ \pi$};
+        \draw[black,thick] (2*pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$ 2\pi$};
+        \draw[black,thick] (-pi,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$ -\pi$};
+        \draw[black,thick] (-2*pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$ -2\pi$};
+        \draw[samples=65, domain=-2*pi:2*pi, variable=\x, smooth,red, very thick] plot(\x,{sin(deg(\x))});
+        \draw[samples=65, domain=-2*pi:2*pi, variable=\x, smooth, blue, very thick] plot(\x,{2*sin(deg(\x))});
+        \draw[samples=65, domain=-2*pi:2*pi, variable=\x, smooth, green!70!black, very thick] plot(\x,{0.5*sin(deg(\x))});
+        \draw[red, <-] (1.9,1.1)--(3.3,1.8) node[above right, xshift=2, yshift=-4, fill=white, inner sep=1, scale=.8] {$y=\sin x$};
+        \draw[blue, <-] (-4.5,2.1)--(-4.1,2.3) node[above right, xshift=2, yshift=-4, fill=white, inner sep=1, scale=.8] {$y=2\sin x$};
+        \draw[green!70!black, <-] (1.5,0.4)--(1.3,-1.8) node[below, xshift=.3cm, yshift=-4, fill=white, inner sep=1, scale=.8] {$y=0.5\sin x$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>                 
 <p>All three graphs have the same period (<m>2\pi</m>) and midline (<m>y=0</m>), but the graph of <m>f</m> has amplitude 2, and the graph of <m>g</m> has amplitude 0.5.</p></solution></example>
 
 <p>	The amplitude of <m>y=A\sin t</m>  is given by <m>\abs A</m>, and the same is true of <m>y=A\cos t</m>.  In the next exercise, remember that the amplitude is always a nonnegative number.</p>
 
-<exercise><statement><p>Compare the graphs of <m>f(x)=3\cos x</m> and <m>g(x)=-3\cos x</m> with the graph of <m>y=\cos x</m>.</p></statement></exercise>
+<exercise><statement><p>Compare the graphs of <m>f(x)=3\cos x</m> and <m>g(x)=-3\cos x</m> with the graph of <m>y=\cos x</m>.</p></statement><answer><p>
+    Both graphs have amplitude 3. The graph of <m>g(x)=-3\cos x</m> is reflected about the <m>x</m>-axis.
+</p></answer></exercise>
 
 <p>Next, we'll consider changes in the period of the graph.</p>
 
 <example><statement><p>Compare the graphs of <m>f(x)=\cos 2x</m> and <m>g(x)=\cos \dfrac{1}{3}x</m> with the graph of <m>y=\cos x</m>.</p></statement>
 
 <solution><p>With your calculator set in radian mode, graph <m>f(x)=\cos 2x</m> and <m>y=\cos x</m> in the same window, as shown below.</p>
-<sidebyside width="65%"><image source="images/exam7-1-2.png"><description>sines</description></image></sidebyside>
+<sidebyside width="65%"><!--<image source="images/exam7-1-2.png"><description>sines</description></image>-->
+    <image xml:id="exam7-1-2">
+        <description>cosines</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=1/2]
+        \draw[cyan] (-2*pi,-2) grid[xstep=pi/4, ystep=1] (2*pi,2);
+        \draw[black,thick,->](-2*pi,0)--(6.6,0) node[right]{$x$};
+        \draw[black,thick,->](0,-2)--(0,2.5) node[above]{$y$};
+        \foreach \y in {-2,-1,1,2} \draw[black,thick] (0.08,\y)--++(-.16,0) node[left, scale=.8]{\y};
+        \draw[black,thick] (pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$ \pi$};
+        \draw[black,thick] (2*pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$ 2\pi$};
+        \draw[black,thick] (-pi,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$ -\pi$};
+        \draw[black,thick] (-2*pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$ -2\pi$};
+        \draw[samples=65, domain=-2*pi:2*pi, variable=\x, smooth,red, very thick] plot(\x,{cos(deg(\x))});
+        \draw[samples=65, domain=-2*pi:2*pi, variable=\x, smooth, blue, very thick] plot(\x,{cos(deg(2*\x))});
+        \draw[red, <-] (-5.5,0.9)--++(0.3,0.4) node[above right, fill=white, inner sep=1, scale=.8] {$y=\cos x$};
+        \draw[blue, <-] (3.3,1.1)--++(0.3,0.4) node[above right, fill=white, inner sep=1, scale=.8] {$y=\cos 2x$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>    
+</sidebyside>
 <p>Both graphs have the same amplitude (<m>1</m>) and midline (<m>y=0</m>), but the graph of <m>f</m> completes two cycles from <m>0</m> to <m>2\pi</m> instead of one. The period of <m>f(x)=\cos \alert{2}x</m> is <m>\dfrac{2\pi}{\alert{2}}=\pi</m>.</p>
 <p>Now graph <m>g(x)=\cos \dfrac{1}{3}x</m> and <m>y=\cos x</m> in the same window.  Set  Xmin <m>=0</m> and  Xmax <m>=6\pi</m>.
-<sidebyside width="65%"><image source="images/exam7-1-2also.png"><description>sines</description></image></sidebyside>
+<sidebyside width="65%"><!--<image source="images/exam7-1-2also.png"><description>sines</description></image>-->
+    <image xml:id="exam7-1-2also">
+        <description>sines</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=.33,yscale=.45]
+        \draw[cyan] (0,-2) grid[xstep=3*pi/8, ystep=1] (6*pi,2);
+        \draw[black,thick,->](0,0)--(19.3,0) node[right]{$x$};
+        \draw[black,thick,->](0,-2)--(0,2.5) node[above]{$y$};
+        \foreach \y in {-2,-1,1,2} \draw[black,thick] (0.08,\y)--++(-.16,0) node[left, scale=.8]{\y};
+        \draw[black,thick] (3*pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$ 3\pi$};
+        \draw[black,thick] (6*pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$ 6\pi$};
+        \draw[samples=65, domain=0:6*pi, variable=\x, smooth,red, very thick] plot(\x,{cos(deg(\x))});
+        \draw[samples=65, domain=0:6*pi, variable=\x, smooth, blue, very thick] plot(\x,{cos(deg(\x/3))});
+        \draw[red, <-] (6.5,1.1)--++(0.3,0.4) node[above right, fill=white, inner sep=1, scale=.8] {$y=\cos x$};
+        \draw[blue, <-] (10.4,-1.1)--++(0.3,-0.4) node[below right, yshift=2, fill=white, inner sep=1, scale=.8] {$y=\cos \frac{1}{3}x$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 The graph of <m>g(x)=\cos \alert{\dfrac{1}{3}}x</m> completes one cycle between <m>0</m> and <m>6\pi</m>. Its period is <m>\dfrac{2\pi}{\alert{\dfrac{1}{3}}}=6\pi</m>.</p></solution></example> 
 
 <p>The period of <m>y=\cos Bt</m> is given by <m>\dfrac{2\pi}{\abs B}</m>, and the same is true of <m>y=\sin Bt</m>.</p>
@@ -45,17 +116,45 @@ The graph of <m>g(x)=\cos \alert{\dfrac{1}{3}}x</m> completes one cycle between 
 <p><ol label="a">
 	<li> Compare the graph of <m>f(x)=\sin 3x</m> with the graph of <m>y=\sin x</m>. Use the window  Xmin <m>=0</m>, Xmax <m>=2\pi</m>, Ymin <m>=-2</m>, Ymax <m>=2</m>. </li>
 	<li>Compare the graph of <m>g(x)=\sin \dfrac{1}{4}x</m> with the graph of <m>y=\sin x</m>. Use the window Xmin <m>=0</m>, Xmax <m>=8\pi</m>, Ymin <m>=-2</m>, Ymax <m>=2</m>.</li>
-</ol></p></statement></exercise>
+</ol></p></statement>answer
+<p><ol label="a">
+    <li>The graph of <m>f</m> completes 3 cycles from <m>0</m> to <m>2\pi</m>. Its period is <m>\dfrac{2\pi}{3}</m>.</li>
+    <li>The graph of <m>g</m> completes one cycle from <m>0</m> to <m>8\pi</m>. Its period is <m>8\pi</m>.</li></ol></p></exercise>
 
 <p>Next we'll consider changes in midline.</p>
 
 <example><statement><p>Compare the graph of <m>f(x)=2+\sin x</m> with the graph of <m>y=\sin x</m>.</p></statement>Graph both functions in the ZTrig window.  The graphs are shown below.
 
 <solution><p>Graph both functions in the ZTrig window. The graphs are shown below. 
-<sidebyside width="65%"><image source="images/exam7-1-3.png"><description>sines</description></image></sidebyside>
+<sidebyside width="65%"><!--<image source="images/exam7-1-3.png"><description>sines</description></image>-->
+    <image xml:id="exam7-1-3">
+        <description>sines</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=1/2]
+        \draw[cyan] (-2*pi,-3) grid[xstep=pi/4, ystep=1] (2*pi,3);
+        \draw[black,thick,->](-2*pi,0)--(6.6,0) node[right]{$x$};
+        \draw[black,thick,->](0,-3)--(0,3.5) node[above]{$y$};
+        \foreach \y in {-3,-2,-1,1,2,3} \draw[black,thick] (0.08,\y)--++(-.16,0) node[left, scale=.8]{\y};
+        \draw[black,thick] (pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$ \pi$};
+        \draw[black,thick] (2*pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$ 2\pi$};
+        \draw[black,thick] (-pi,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$ -\pi$};
+        \draw[black,thick] (-2*pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$ -2\pi$};
+        \draw[samples=65, domain=-2*pi:2*pi, variable=\x, smooth,red, very thick] plot(\x,{sin(deg(\x))});
+        \draw[samples=65, domain=-2*pi:2*pi, variable=\x, smooth, blue, very thick] plot(\x,{2+sin(deg(\x))});
+        \draw[red, <-] (4,-1.1)--++(-0.9,-0.5) node[below left, xshift=2, yshift=4, fill=white, inner sep=1, scale=.8] {$y=\sin x$};
+        \draw[blue, <-] (3.2,2.2)--++(0.6,0.2) node[above right, xshift=2, yshift=-4, fill=white, inner sep=1, scale=.8] {$y=2+\sin x$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 Each point on the graph of <m>f(x)=2+\sin x</m> has <m>y</m>-coordinate 2 units higher than the corresponding point on the graph of <m>y=\sin x</m>. Thus, the graph of <m>f(x)=2+\sin x</m> is shifted vertically by 2 units relative to the graph of <m>y=\sin x</m>. In particular, the midline of <m>f(x)=\alert{2}+\sin x</m> is the line <m>y=\alert{2}</m>.</p></solution></example> 
 
-<exercise><statement><p>Compare the graph of <m>g(x)=-3+\cos x</m> with the graph of <m>y=\cos x</m>.</p></statement></exercise>
+<exercise><statement><p>Compare the graph of <m>g(x)=-3+\cos x</m> with the graph of <m>y=\cos x</m>.</p></statement><answer>
+    <p>The graph of <m>g</m> is shifted down 3 units. Its midline is <m>y=-3</m>.</p>
+</answer></exercise>
 
 <p>Here is a summary of our findings.</p>
 
@@ -164,50 +263,143 @@ By adjusting the amplitude, period, and midline of the sine or cosine graph, we 
                     	<cell><m>\blert{5}</m></cell></row>				 
 	</tabular></sidebyside></p>
 <p>Notice from the table that the graph completes one cycle from <m>t=0</m> to <m>t=\dfrac{\pi}{2}</m>, which confirms that the period is <m>\dfrac{\pi}{2}</m>. Finally, we plot the points <m>(t,y)</m> from the table, and use them as "guidepoints" to sketch a sinusoidal graph, as shown below.
-<sidebyside width="50%"><image source="images/exam7-1-4.png"><description>cosine</description></image></sidebyside></p></li>
+<sidebyside width="50%"><!--<image source="images/exam7-1-4.png"><description>cosine</description></image>-->
+    <image xml:id="exam7-1-4">
+        <description>transformation of cosine</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=2.5, yscale=.3]
+        \draw[cyan] (0,-2) grid[xstep=pi/12, ystep=1] (pi/2,6);
+        \draw[black,thick,->](-0.05,0)--(1.7,0) node[right, scale=.9]{$t$};
+        \draw[black,thick,->](0,-2)--(0,6.5) node[above, scale=.9]{$y$};
+        \foreach \y in {-2, 2, 4, 6} \draw[black,thick] (0.04,\y)--++(-.08,0) node[left, scale=.8]{\y};
+        \draw[black,thick] (pi/4,.07)--++(0,-.14) node[below, fill=white, inner sep=1, scale=.6] {$ \pi/4$};
+        \draw[black,thick] (pi/2,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1, scale=.7] {$ \pi/2$};
+        \draw[samples=65, domain=0:pi/2, variable=\x, smooth, red, very thick] plot(\x,{2+3*cos(deg(4*\x))});
+        \node[text=red, fill=white, inner sep=1, scale=.8] at (.8,5) {$y=2+3\sin 4t$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></p></li>
 </ol></p></solution></example>
 
 <exercise><statement><p><ol label="a">
-	<li>State the amplitude, period, and midline of the graph of <m>y=4-2\sin \dfrac{t}{3}</m>.</li> 
- 	<li><p>Complete the table and sketch a graph of <m>y=4-2\sin \dfrac{t}{3}</m>.</p>
+    <li>State the amplitude, period, and midline of the graph of <m>y=4-2\sin \dfrac{t}{3}</m>.</li> 
+    <li><p>Complete the table and sketch a graph of <m>y=4-2\sin \dfrac{t}{3}</m>.</p>
 <p><sidebyside widths="50% 40%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
                     <row bottom="minor">
                         <cell><m>t</m></cell>
                         <cell><m>\dfrac{t}{3}</m></cell>
                         <cell><m>\sin \dfrac{t}{3}</m></cell>
-                    	<cell><m>-2\sin \dfrac{t}{3}</m></cell>
-                    	<cell><m>y=4-2\sin \dfrac{t}{3}</m></cell></row>
+                        <cell><m>-2\sin \dfrac{t}{3}</m></cell>
+                        <cell><m>y=4-2\sin \dfrac{t}{3}</m></cell></row>
                     <row> 
                         <cell><m>\hphantom{0000}</m></cell>
                         <cell><m>\alert{0}</m></cell>
                         <cell><m>\hphantom{0000}</m></cell>
-                    	<cell><m>\hphantom{0000}</m></cell>
-                    	<cell><m>\hphantom{0000}</m></cell></row> 
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row> 
                     <row> 
                         <cell><m>\hphantom{0000}</m></cell>
                         <cell><m>\alert{\dfrac{\pi}{2}}</m></cell>
                         <cell><m>\hphantom{0000}</m></cell>
-                    	<cell><m>\hphantom{0000}</m></cell>
-                    	<cell><m>\hphantom{0000}</m></cell></row>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row>
                     <row> 
                         <cell><m>\hphantom{0000}</m></cell>
                         <cell><m>\alert{\pi}</m></cell>
                         <cell><m>\hphantom{0000}</m></cell>
-                    	<cell><m>\hphantom{0000}</m></cell>
-                    	<cell><m>\hphantom{0000}</m></cell></row>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row>
                     <row> 
                         <cell><m>\hphantom{0000}</m></cell>
                         <cell><m>\alert{\dfrac{3\pi}{2}}</m></cell>
                         <cell><m>\hphantom{0000}</m></cell>
-                    	<cell><m>\hphantom{0000}</m></cell>
-                    	<cell><m>\hphantom{0000}</m></cell></row>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row>
                     <row> 
                         <cell><m>\hphantom{0000}</m></cell>
                         <cell><m>\alert{2\pi}</m></cell>
                         <cell><m>\hphantom{0000}</m></cell>
-                    	<cell><m>\hphantom{0000}</m></cell>
-                    	<cell><m>\hphantom{0000}</m></cell></row>				 
-	</tabular><image source="images/exer7-1-4.png"><description>grid</description></image></sidebyside></p></li></ol></p></statement></exercise>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row>                
+    </tabular><!--<image source="images/exer7-1-4.png"><description>grid</description></image>-->
+    <image xml:id="exer7-1-4">
+        <description>grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=.6, yscale=.4]
+        \draw[cyan] (0,0) grid (8,8);
+        \draw[black,thick,->] (0,0)--(8.2,0) node[right, scale=0.9] {$t$};
+        \draw[black,thick,->] (0,0)--(0,8.4) node[above, scale=0.9] {$y$};
+        \foreach \y in {2,4,6,8} \draw[black,thick] (.1,\y)--++(-.2,0) node[left, scale=.9] {\y};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></p></li></ol></p></statement><answer><p>
+    <ol label="a">
+    <li>Amplitude: 2, period: <m>6\pi</m>, midline: <m>y=4</m>.</li>
+    <li><p><sidebyside widths="58% 38%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
+                    <row bottom="minor">
+                        <cell><m>t</m></cell>
+                        <cell><m>\frac{t}{3}</m></cell>
+                        <cell><m>\sin \frac{t}{3}</m></cell>
+                        <cell><m>-2\sin \frac{t}{3}</m></cell>
+                        <cell><m>y=4-2\sin \frac{t}{3}</m></cell></row>
+                    <row> 
+                        <cell><m>0</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>4</m></cell></row> 
+                    <row> 
+                        <cell><m>\frac{3\pi}{2}</m></cell>
+                        <cell><m>\frac{\pi}{2}</m></cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>-2</m></cell>
+                        <cell><m>2</m></cell></row>
+                    <row> 
+                        <cell><m>3\pi</m></cell>
+                        <cell><m>\pi</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>4</m></cell></row>
+                    <row> 
+                        <cell><m>\frac{9\pi}{2}</m></cell>
+                        <cell><m>\frac{3\pi}{2}</m></cell>
+                        <cell><m>-1</m></cell>
+                        <cell><m>2</m></cell>
+                        <cell><m>6</m></cell></row>
+                    <row> 
+                        <cell><m>6\pi</m></cell>
+                        <cell><m>2\pi</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>4</m></cell></row>              
+    </tabular><!--<image source="images/exer7-1-4ans.png"><description>sinusoidal function</description></image>-->
+    <image xml:id="exer7-1-4ans">
+        <description>sinuusoidal function</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=.6, yscale=.4]
+        \draw[cyan] (0,0) grid (8,8);
+        \draw[black,thick,->] (0,0)--(8.4,0) node[right, scale=0.9] {$t$};
+        \draw[black,thick,->] (0,0)--(0,8.4) node[above, scale=0.9] {$y$};
+        \foreach \y in {2,4,6,8} \draw[black,thick] (.1,\y)--++(-.2,0) node[left, scale=.9] {\y};
+        \draw[black, thick] (4,.15)--++(0,-.3) node[below, scale=.9]{$3\pi$};
+        \draw[black, thick] (8,.15)--++(0,-.3) node[below, scale=.9]{$6\pi$};
+        \draw[samples=65, domain=0:8, smooth, variable=\x, red, very thick] plot({\x},{4-2*sin(\x*45)});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></p></li></ol>
+</p></answer></exercise>
 </subsection>
 
 <subsection><title>Modeling with Sinusoidal Functions</title>
@@ -220,12 +412,105 @@ By adjusting the amplitude, period, and midline of the sine or cosine graph, we 
 	<li>The midline of the graph is <m>y=\dfrac{70+110}{2}=90</m>, and the amplitude is <m>110-90=20</m>, so <m>A=20</m> and <m>k=90</m>.</li>
 	<li>The graph repeats 60 times per minute, so the period is <m>\dfrac{1}{60}</m> minute, and <m>B=\dfrac{2\pi}{\dfrac{1}{60}}=120\pi</m>.</li></ul>
 Thus, <me>y=90+20\sin 120 \pi t</me> The graph of the function is shown below.
-<sidebyside width="60%"><image source="images/exam7-1-5.png"><description>cosine</description></image></sidebyside></p></solution></example>
+<sidebyside width="60%"><!--<image source="images/exam7-1-5.png"><description>cosine</description></image>-->
+    <image xml:id="exam7-1-5">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=120, yscale=1/25]
+        \draw[cyan] (0,64) grid[xstep=1/240, ystep=10] (1/20,120);
+        \draw[black,thick,->] (0,60)--++(.052,0) node[right, scale=0.8] {$t$};
+        \draw[black,thick,->] (0,68)--(0,124) node[above, scale=0.8] {$y$};
+        \foreach \y in {70,80,90,...,110} \draw[black,thick] (.001,\y)--++(-.002,0) node[left, scale=.8] {\y};
+        \foreach \x in {1/60, 1/30, 1/20} \draw[black,thick] (\x,62)--++(0,-4) node[below, scale=.8] {\x};
+        \draw[black] (0,65)++(0,1.8)--++(-.0009, -1.2)--++(.0018,-1.2)--++(-.0018,-1.2)--++(.0009,-.6) -- ++(0, -1.4);
+
+        \draw[samples=64, domain=0:1/20, smooth, variable=\x, red, very thick] plot({\x},{90+20*sin(\x*60*360)});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></p></solution></example>
 
 <note><p>In Example 5, we could have chosen either a sine or a cosine function to model blood pressure; both describe the periodic behavior described. However, if we are given, or would like to specify, the starting point for a sinusoidal function, one choice can be more suitable than the other. Consider the functions graphed below.</p></note>
 
- <sidebyside widths="40% 40%"><image source="images/fig7-1a.png"><description>sine</description></image><image source="images/fig7-1b.png"><description>sine</description></image></sidebyside>
- <sidebyside widths="40% 40%"><image source="images/fig7-1c.png"><description>sine</description></image><image source="images/fig7-1d.png"><description>sine</description></image></sidebyside>
+ <sidebyside widths="40% 40%"><!--<image source="images/fig7-1a.png"><description>sine</description></image><image source="images/fig7-1b.png"><description>sine</description></image>-->
+    <image xml:id="fig7-1a">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=.7, yscale=.4]
+        \draw[cyan] (0,-3) grid[xstep=pi/6] (2*pi,3);
+        \draw[black,thick,->] (0,0)--(6.7,0) node[right, scale=0.9] {$x$};
+        \draw[black,thick,->] (0,-3)--(0,3.4) node[above, scale=0.9] {$y$};
+        \foreach \y in {-3,3} \draw[black,thick] (.1,\y)--++(-.2,0) node[left, scale=.9] {\y};
+        \draw[black, thick] (pi,.15)--++(0,-.3) node[below, xshift=3, scale=.9]{$\pi$};
+        \draw[black, thick] (2*pi,.15)--++(0,-.3) node[below, xshift=5, scale=.9]{$2\pi$};
+        \draw[samples=65, domain=0:2*pi, smooth, variable=\x, red, very thick] plot({\x},{3*sin(deg(\x*2))});
+        \node[scale=.8] at(pi,-4.5) {a.  $\color{blue}y=3\sin 2x$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    <image xml:id="fig7-1b">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=.7, yscale=.4]
+        \draw[cyan] (0,-3) grid[xstep=pi/6] (2*pi,3);
+        \draw[black,thick,->] (0,0)--(6.7,0) node[right, scale=0.9] {$x$};
+        \draw[black,thick,->] (0,-3)--(0,3.4) node[above, scale=0.9] {$y$};
+        \foreach \y in {-3,3} \draw[black,thick] (.1,\y)--++(-.2,0) node[left, scale=.9] {\y};
+        \draw[black, thick] (pi,.15)--++(0,-.3) node[below, xshift=3, scale=.9]{$\pi$};
+        \draw[black, thick] (2*pi,.15)--++(0,-.3) node[below, xshift=5, scale=.9]{$2\pi$};
+        \draw[samples=65, domain=0:2*pi, smooth, variable=\x, red, very thick] plot({\x},{-3*sin(deg(\x*2))});
+        \node[scale=.8] at(pi,-4.5) {b.  $\color{blue}y=-3\sin 2x$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+ </sidebyside>
+ <sidebyside widths="40% 40%"><!--<image source="images/fig7-1c.png"><description>sine</description></image><image source="images/fig7-1d.png"><description>sine</description></image>-->
+    <image xml:id="fig7-1c">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=.7, yscale=.4]
+        \draw[cyan] (0,-3) grid[xstep=pi/6] (2*pi,3);
+        \draw[black,thick,->] (0,0)--(6.7,0) node[right, scale=0.9] {$x$};
+        \draw[black,thick,->] (0,-3)--(0,3.4) node[above, scale=0.9] {$y$};
+        \foreach \y in {-3,3} \draw[black,thick] (.1,\y)--++(-.2,0) node[left, scale=.9] {\y};
+        \draw[black, thick] (pi,.15)--++(0,-.3) node[below, xshift=3, scale=.9]{$\pi$};
+        \draw[black, thick] (2*pi,.15)--++(0,-.3) node[below, xshift=5, scale=.9]{$2\pi$};
+        \draw[samples=65, domain=0:2*pi, smooth, variable=\x, red, very thick] plot({\x},{3*cos(deg(\x*2))});
+        \node[scale=.8] at(pi,-4.5) {c.  $\color{blue}y=3\cos 2x$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    <image xml:id="fig7-1d">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=.7, yscale=.4]
+        \draw[cyan] (0,-3) grid[xstep=pi/6] (2*pi,3);
+        \draw[black,thick,->] (0,0)--(6.7,0) node[right, scale=0.9] {$x$};
+        \draw[black,thick,->] (0,-3)--(0,3.4) node[above, scale=0.9] {$y$};
+        \foreach \y in {-3,3} \draw[black,thick] (.1,\y)--++(-.2,0) node[left, scale=.9] {\y};
+        \draw[black, thick] (pi,.15)--++(0,-.3) node[below, xshift=3, scale=.9]{$\pi$};
+        \draw[black, thick] (2*pi,.15)--++(0,-.3) node[below, xshift=5, scale=.9]{$2\pi$};
+        \draw[samples=65, domain=0:2*pi, smooth, variable=\x, red, very thick] plot({\x},{-3*cos(deg(\x*2))});
+        \node[scale=.8] at(pi,-4.5) {d.  $\color{blue}y=-3\cos 2x$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+ </sidebyside>
  
 <p>	All four functions have the same amplitude and period, but they start at different points on the cycle.<ul>  
 	<li>The graphs in (a) and (b) start on the midline, so they are best modeled by sine functions.</li>  
@@ -240,60 +525,136 @@ Thus, <me>y=90+20\sin 120 \pi t</me> The graph of the function is shown below.
 <ol label="a">
 	<li>Write a sinusoidal function for the voltage level.</li>  
 	<li>What is the frequency of the signal, in cycles per second?</li>
-</ol></p><sidebyside width="50%"><image source="images/exer7-1-5.png"><description>sinusoidal function</description></image></sidebyside></statement></exercise>
+</ol></p><sidebyside width="50%"><!--<image source="images/exer7-1-5.png"><description>sinusoidal function</description></image>-->
+    <image xml:id="exer7-1-5">
+        <description>sinusoidal function</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=40, yscale=1/30]
+        \draw[cyan] (0,-40) grid[xstep=0.01, ystep=10] (0.1,40);
+        \draw[black,thick,->] (0,0)--(0.105,0) node[right, scale=0.9] {$t$};
+        \draw[black,thick,->] (0,-40)--(0,44) node[above, scale=0.9] {$y$};
+        \foreach \y in {-40,-20, 20,,40} \draw[black,thick] (.001,\y)--++(-.002,0) node[left, scale=.7] {\y};
+        \draw[black, thick] (0.05,2.1)--++(0,-4.2) node[below, yshift=-5, fill=white, inner sep=1, scale=.6]{$0.05$};
+        \draw[black, thick] (0.1,2.1)--++(0,-4.2) node[below, xshift=1, yshift=-3, fill=white, inner sep=1, scale=.6]{$0.1$};
+
+        \draw[samples=65, domain=0:0.1, smooth, variable=\x, red, very thick] plot({\x},{-35*cos(deg(100*pi*\x))});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement><answer><p>
+    <ol label="a">
+        <li><m>y=-35\cos 100\pi t</m></li>
+        <li>50 cycles per second</li>
+    </ol>
+</p></answer></exercise>
 </subsection>
 
 <subsection><title>The Tangent Function</title>
 <p>	The transformations of shifting and stretching can be applied to the tangent function as well.  The graph of <m>y=\tan x</m> does not have an amplitude, but we can see any vertical stretch by comparing the function values at the guidepoints.</p>
 
 <example><statement><p><ol>
-	<li>Graph <m>y=1+3\tan 2x</m>.</li> 
-	<li>Describe the transformations of the graph, compared to <m>y=\tan x</m>.</li></ol></p></statement>
+    <li>Graph <m>y=1+3\tan 2x</m>.</li> 
+    <li>Describe the transformations of the graph, compared to <m>y=\tan x</m>.</li></ol></p></statement>
 
 <solution><p><ol label="a">
-	<li><p>Recall that the period of the tangent function is <m>\pi</m>.  We make a table of values for one cycle of the function, choosing multiples of <m>\dfrac{\pi}{4}</m> as the inputs for the tangent function.  Then we plot the guidepoints, and sketch a tangent function through them. The graph is shown below.</p>
-	<p><sidebyside widths="50% 50%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
+    <li><p>Recall that the period of the tangent function is <m>\pi</m>.  We make a table of values for one cycle of the function, choosing multiples of <m>\dfrac{\pi}{4}</m> as the inputs for the tangent function.  Then we plot the guidepoints, and sketch a tangent function through them. The graph is shown below.</p>
+    <p><sidebyside widths="50% 50%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
                     <row bottom="minor">
                         <cell><m>x</m></cell>
                         <cell><m>2x</m></cell>
                         <cell><m>\tan 2x</m></cell>
-                    	<cell><m>1+3\tsn 2x</m></cell></row>
+                        <cell><m>1+3\tan 2x</m></cell></row>
                     <row> 
                         <cell><m>0</m></cell>
                         <cell><m>\alert{0}</m></cell>
-                    	<cell><m>0</m></cell>
-                    	<cell><m>1</m></cell></row> 
+                        <cell><m>0</m></cell>
+                        <cell><m>1</m></cell></row> 
                     <row> 
                         <cell><m>\dfrac{\pi}{8}</m></cell>
                         <cell><m>\alert{\dfrac{\pi}{4}}</m></cell>
                         <cell><m>1</m></cell>
-                    	<cell><m>4</m></cell></row>
+                        <cell><m>4</m></cell></row>
                     <row> 
                         <cell><m>\dfrac{\pi}{4}</m></cell>
                         <cell><m>\alert{\dfrac{\pi}{2}}</m></cell>
                         <cell><m>---</m></cell>
-                    	<cell><m>---</m></cell></row>
+                        <cell><m>---</m></cell></row>
                     <row> 
                         <cell><m>\dfrac{3\pi}{8}</m></cell>
                         <cell><m>\alert{\dfrac{3\pi}{4}}</m></cell>
                         <cell><m>-1</m></cell>
-                    	<cell><m>-2</m></cell></row>
+                        <cell><m>-2</m></cell></row>
                     <row> 
                         <cell><m>\dfrac{\pi}{2}</m></cell>
                         <cell><m>\alert{\pi}</m></cell>
                         <cell><m>0</m></cell>
-                    	<cell><m>1</m></cell></row>				 
-	</tabular><image source="images/exam7-1-6.png"><description>tangent</description></image></sidebyside></p></li>
-	<li>Writing the formula as
-	<me>y=A\tan Bx+k=3\tan 2x+1</me>
-	we see that the graph is stretched vertically by a factor of <m>A=3</m>.  The midline is <m>y=1</m>, so the graph is shifted up by 1 unit. Finally, the coefficient <m>B=2</m> compresses the graph horizontally by a factor of 2, so the period of the graph is <m>\dfrac{\pi}{2}</m>, and there are four cycles between <m>0</m> and <m>2\pi</m>.</li></ol></p></solution></example>
+                        <cell><m>1</m></cell></row>              
+    </tabular><!--<image source="images/exam7-1-6.png"><description>tangent</description></image>-->
+    <image xml:id="exam7-1-6">
+        <description>transformed tangent graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=1.5, yscale=.3]
+        \draw[cyan] (0,-6) grid[xstep=pi/16] (pi,6);
+        \draw[black,thick,->] (0,0)--(3.3,0) node[right, scale=0.9] {$x$};
+        \draw[black,thick,->] (0,-6)--(0,6.4) node[above, scale=0.9] {$y$};
+        \foreach \y in {-6,-4,-2,2,4,6} \draw[black,thick] (.04,\y)--++(-.08,0) node[left, scale=.7] {\y};
+        \draw[black, thick] (pi/2,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1, scale=.9]{$ \frac{\pi}{2} $};
+        \draw[black, thick] (pi,.1)--++(0,-.2) node[below, xshift=1, yshift=-3, fill=white, inner sep=1, scale=.8]{$\pi$};
+        \draw[gray!50!black,thick,dashed] (pi/4,-6)--++(0,12);
+        \draw[gray!50!black,thick,dashed] (3*pi/4,-6)--++(0,12);
+        \draw[gray!50!black,thick,dashed] (0,1)--++(pi,0);
+        \draw[domain=0:{atan(5/3)/2*pi/180}, smooth, variable=\x, red, thick] plot({\x},{1+3*tan(deg(2*\x))});
+        \draw[domain={-atan(7/3)/2*pi/180}:{atan(5/3)/2*pi/180}, smooth, variable=\x, red, thick] plot({\x+pi/2},{1+3*tan(deg(2*\x))});
+        \draw[domain={-atan(7/3)/2*pi/180}:{0}, smooth, variable=\x, red, thick] plot({\x+pi},{1+3*tan(deg(2*\x))});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></p></li>
+    <li><p>Writing the formula as 
+    <me>y=A\tan Bx+k=3\tan 2x+1</me> 
+    we see that the graph is stretched vertically by a factor of <m>A=3</m>.  The midline is <m>y=1</m>, so the graph is shifted up by 1 unit. Finally, the coefficient <m>B=2</m> compresses the graph horizontally by a factor of 2, so the period of the graph is <m>\dfrac{\pi}{2}</m>, and there are four cycles between <m>0</m> and <m>2\pi</m></p></li></ol></p></solution></example>
 
 	<exercise><statement><p><ol label="a">
 		<li>Identify the midline and period of the tangent graph shown below.</li>
 		<li>Find an equation of the form 
 			<me>y=A\tan Bx + k</me>   
 			for the graph.</li></ol></p>
-	<sidebyside width="40%"><image source="images/exer7-1-6.png"><description>tangent function</description></image></sidebyside></statement></exercise>  
+	<sidebyside width="40%"><!--<image source="images/exer7-1-6.png"><description>tangent function</description></image>-->
+    <image xml:id="exer7-1-6">
+        <description>transformed tangent graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=1, yscale=.35]
+        \draw[cyan] (0,-6) grid[xstep=1/2] (4,4);
+        \draw[black,thick,->] (0,0)--(4.3,0) node[right, scale=0.9] {$x$};
+        \draw[black,thick,->] (0,-6)--(0,4.4) node[above, scale=0.9] {$y$};
+        \foreach \y in {-6,-3,3} \draw[black,thick] (.08,\y)--++(-.16,0) node[left, scale=.7] {\y};
+        \foreach \x in {1,2,3,4} \draw[black,thick] (\x,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.7] {\x};
+        \draw[gray!50!black,thick,dashed] (1/2,-6)--++(0,10);
+        \draw[gray!50!black,thick,dashed] (3/2,-6)--++(0,10);
+        \draw[gray!50!black,thick,dashed] (5/2,-6)--++(0,10);
+        \draw[gray!50!black,thick,dashed] (7/2,-6)--++(0,10);
+        \draw[domain=0:{atan(7/2)/180}, smooth, variable=\x, red, thick] plot({\x},{-3+2*tan(180*\x)});
+        \draw[domain={1-atan(3/2)/180}:{1+atan(7/2)/180}, smooth, variable=\x, red, thick] plot({\x},{-3+2*tan(180*\x)});
+        \draw[domain={2-atan(3/2)/180}:{2+atan(7/2)/180}, smooth, variable=\x, red, thick] plot({\x},{-3+2*tan(180*\x)});
+        \draw[domain={3-atan(3/2)/180}:{3+atan(7/2)/180}, smooth, variable=\x, red, thick] plot({\x},{-3+2*tan(180*\x)});
+        \draw[domain={4-atan(3/2)/180}:{4}, smooth, variable=\x, red, thick] plot({\x},{-3+2*tan(180*\x)});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></statement><answer><p>
+     <ol label="a">
+        <li>Midline: <m>y=-2</m>, period <m>=2</m></li>
+        <li><m>y=-3+2\tan \pi x</m></li></ol>
+    </p></answer></exercise>  
 </subsection>
 
 <subsection><title>Algebra Refresher</title>
@@ -376,7 +737,7 @@ Thus, <me>y=90+20\sin 120 \pi t</me> The graph of the function is shown below.
 <li><ol label="a">
 	<li>The graph of <m>f</m> completes 3 cycles from <m>0</m> to <m>2\pi</m>. Its period is <m>\dfrac{2\pi}{3}</m>.</li>
 	<li>The graph of <m>g</m> completes one cycle from <m>0</m> to <m>8\pi</m>. Its period is <m>8\pi</m>.</li></ol></li> 
-<li>The graph of  is shifted down 3 units. Its midline is <m>y=-3</m>.</li>
+<li>The graph of <m>g</m> is shifted down 3 units. Its midline is <m>y=-3</m>.</li>
 <li><ol label="a">
 	<li>Amplitude: 2, period: <m>6\pi</m>, midline: <m>y=4</m>.</li>
 	<li><p><sidebyside widths="50% 40%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
@@ -416,7 +777,7 @@ Thus, <me>y=90+20\sin 120 \pi t</me> The graph of the function is shown below.
                         <cell><m>0</m></cell>
                     	<cell><m>0</m></cell>
                     	<cell><m>4</m></cell></row>				 
-	</tabular><image source="images/exer7-1-4ans.png"><description>sinusoidal function</description></image></sidebyside></p></li></ol></li>
+	</tabular><image source="images/exer7-1-4ans"><description>sinusoidal function</description></image></sidebyside></p></li></ol></li>
 	<li><ol label="a">
 		<li><m>y=-35\cos 100\pi t</m></li>
 		<li>50 cycles per second</li>

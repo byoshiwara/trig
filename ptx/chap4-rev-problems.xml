@@ -106,7 +106,26 @@
                         <cell><m>\hphantom{000}</m></cell></row>
                         </tabular></sidebyside></li>
              <li><p>Choose appropriate scales for the axes and graph the function for <m>-360\degree \le \theta \le 360\degree</m>.
-             </p><sidebyside width="90%"><image source="images/hp4-sum-7.png"><description>grid</description></image></sidebyside></li>
+             </p><sidebyside width="90%"><!--<image source="images/hp4-sum-7.png"><description>grid</description></image>-->
+    <image xml:id="hp4-sum-7">
+        <description>grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [scale=.5]
+        \draw[cyan] (-12, -6) grid (12,6);
+        \draw[black, thick, ->] (-12,0)--(12.5,0) node[right]{$\theta$};
+        \draw[black, thick, ->] (0,-6)--(0,6.5) node[above]{$\tilde{\theta}$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+             </sidebyside></li>
          </ol></p></statement>
         <answer><p><ol label="a">
             <li>  <sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                  
@@ -139,7 +158,33 @@
                         <cell><m>30</m></cell>
                          <cell><m>0</m></cell></row>
                         </tabular></sidebyside></li>  
-            <li> <sidebyside width="70%"><image source="images/hp4-sum-7ans.png"><description>graph</description></image></sidebyside></li> 
+            <li> <sidebyside width="70%"><!--<image source="images/hp4-sum-7ans.png"><description>graph</description></image>-->
+    <image xml:id="hp4-sum-7ans">
+        <description>graph of referance angle vs angle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [scale=.5]
+        \draw[cyan] (-12, 0) grid (12,6);
+        \draw[black, thick, ->] (-12,0)--(12.5,0) node[right]{$\theta$};
+        \draw[black, thick, ->] (0,0)--(0,6.5) node[above]{$\tilde{\theta}$};
+
+        \foreach \x [evaluate=\x as \xi using int(30*\x)] in {-12, -9, -6, -3, 3, 6, 9, 12}
+         \draw[black, thick] (\x, 0.15)--++(0, -.3) node[below]{\footnotesize \xi};
+        \foreach \y [evaluate=\y as \yi using int(30*\y)] in {3, 6}
+         \draw[black, thick] (0.15,\y)--++(-.3,0) node[left]{\footnotesize \yi};
+         
+        \draw[red, ultra thick] (-12, 0) --++(3,3)--++(3,-3) --++(3,3) --++(3,-3) --++(3,3) --++(3,-3) --++(3,3) --++(3,-3);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+            </sidebyside></li> 
         </ol></p></answer></exercise>
 
     <exercise number="8">
@@ -256,14 +301,66 @@
 
         <exercise number="35">
         <statement><p>Amplitude 7, midline <m>y = 4</m>, period 2, <m>y</m>-intercept 4</p></statement>
-        <answer><p><m>y = 4 + 7 \sin (180\theta)</m></p><sidebyside width="30%"><image source="images/hp4-sum-35ans.png"><description>graph</description></image></sidebyside></answer></exercise>
+        <answer><p><m>y = 4 + 7 \sin (180\theta)</m></p><sidebyside width="30%"><!--<image source="images/hp4-sum-35ans.png"><description>graph</description></image>-->
+    <image xml:id="hp4-sum-35ans">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [xscale=2, yscale=.22]
+        \draw[cyan, xstep=.5, ystep=4] (0, -4) grid (2,12);
+        \draw[black, thick, ->] (-0.1,0)--(2.2,0) node[right]{$\theta$};
+        \draw[black, thick, ->] (0,-4)--(0,12.8) node[above]{$y$};
+
+        \foreach \x in {1,2}
+         \draw[black] (\x, 0.15)--++(0, -.3) node[below]{\footnotesize \x};
+        \foreach \y  in {-4, 4, 8, 12}
+         \draw[black] (0.08,\y)--++(-.16,0) node[left]{\footnotesize \y};
+         
+        \draw[domain=0:2,smooth,variable=\x,red,very thick] plot ({\x},{4+ 7*sin(180*\x)});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside></answer></exercise>
 
         <exercise number="36">
         <statement><p>Amplitude 100, midline <m>y = 50</m>, period 12, <m>y</m>-intercept 100</p></statement></exercise> 
 
         <exercise number="37">
         <statement><p>Maximum point at <m>(90\degree, 24)</m> and minimum point at <m>(270\degree, 10)</m></p></statement>
-        <answer><p><m>y = 17 + 7 \sin \theta</m></p><sidebyside width="30%"><image source="images/hp4-sum-37ans.png"><description>graph</description></image></sidebyside></answer></exercise>
+        <answer><p><m>y = 17 + 7 \sin \theta</m></p><sidebyside width="30%"><!--<image source="images/hp4-sum-37ans.png"><description>graph</description></image>-->
+    <image xml:id="hp4-sum-37an">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [xscale=2, yscale=.16]
+        \draw[cyan, xstep=.5, ystep=4] (0, 0) grid (2,24);
+        \draw[black, thick, ->] (-0.1,0)--(2.2,0) node[right]{$\theta$};
+        \draw[black, thick, ->] (0,0)--(0,24.8) node[above]{$y$};
+
+        \foreach \x  [evaluate =\x as \xi using int(180*\x)] in {.5, 1, 1.5, 2}
+         \draw[black] (\x, 0.15)--++(0, -.3) node[below]{\footnotesize \xi};
+        \foreach \y  in {4, 8, ..., 24}
+         \draw[black] (0.08,\y)--++(-.16,0) node[left]{\footnotesize \y};
+         
+        \draw[domain=0:2,smooth,variable=\x,red,very thick] plot ({\x},{17+ 7*sin(180*\x)});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside></answer></exercise>
 
         <exercise number="38">
         <statement><p>Horizontal intercept at <m>180\degree</m>, maximum points at <m>(0\degree, 5)</m> and <m>(360\degree, 5)</m></p></statement>
@@ -292,18 +389,150 @@
     <exercisegroup><introduction><p>For Problems 43<ndash/>46, write an equation for the given graph, and give the exact coordinates of the labeled points.</p></introduction>
 
     <exercise number="43">
-        <statement><sidebyside width="75%"><image source="images/hp4-sum-43.png"><description>graph</description></image></sidebyside></statement>
+        <statement><sidebyside width="75%"><!--<image source="images/hp4-sum-43.png"><description>graph</description></image>-->
+    <image xml:id="hp4-sum-43">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [xscale=.5, yscale=.6]
+        \draw[cyan, ystep=.5] (-13,-2) grid (13,2);
+        \draw[black, thick, ->] (-13,0)--(13.2,0) node[right]{$\theta$};
+        \draw[black, thick, ->] (0,-2)--(0,2.4) node[above]{$y$};
+
+        \foreach \x  [evaluate =\x as \xi using int(90*\x)] in {-12, -6, -2, 2, 6, 12}
+         \draw[black] (\x, 0.15)--++(0, -.3) node[below, fill=white, inner sep=1pt]{\scriptsize $\xi\degree$};
+        \foreach \y  in {-2, -1, 1, 2}
+         \draw[black] (0.08,\y)--++(-.16,0) node[left, fill=white, inner sep=1pt]{\footnotesize \y};
+         
+        \draw[domain=-13:13,smooth,variable=\x,red,very thick] plot ({\x},{1.5*cos(90*\x/3)});
+
+        \coordinate (M) at ($ 1.5*cos(30)*(0,1) + (-1,0)$);
+        \filldraw[blue] (M) ellipse (3pt and 2.5pt) node[anchor=south east, xshift=-2, yshift=2, fill=white, inner sep=1pt] {\small $M$};
+
+        \coordinate (N) at ($ 1.5*cos(60)*(0,1) + (2,0)$);
+
+        \filldraw[blue] (N) ellipse (3pt and 2.5pt) node[anchor=south west, xshift=2, yshift=1, fill=white, inner sep=1pt] {\small $N$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside></statement>
         <answer><m>y = 1.5 \cos (\dfrac{\theta}{3}),~  M(-90\degree, \dfrac{3\sqrt{3}}{4}), N(180\degree, \dfrac{3}{4})</m></answer></exercise>
 
     <exercise number="44">
-        <statement><sidebyside width="70%"><image source="images/hp4-sum-44.png"><description>graph</description></image></sidebyside></statement></exercise> 
+        <statement><sidebyside width="70%"><!--<image source="images/hp4-sum-44.png"><description>graph</description></image>-->
+    <image xml:id="hp4-sum-44">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [xscale=.7, yscale=.6]
+        \draw[cyan, ystep=.5] (-9,-2) grid (9,2);
+        \draw[black, thick, ->] (-9,0)--(9.2,0) node[right]{$\theta$};
+        \draw[black, thick, ->] (0,-2)--(0,2.4) node[above]{$y$};
+
+        \foreach \x  [evaluate =\x as \xi using int(25*\x)] in {-6, -2, 2, 6}
+         \draw[black] (\x, 0.15)--++(0, -.3) node[below, fill=white, inner sep=1pt]{\scriptsize $\xi\degree$};
+        \foreach \y  in {-2, -1, 1, 2}
+         \draw[black] (0.08,\y)--++(-.16,0) node[left, fill=white, inner sep=1pt]{\footnotesize \y};
+         
+        \draw[domain=-9:9,smooth,variable=\x,red,very thick] plot ({\x},{2*sin(25*\x *9/5)});
+
+        \coordinate (P) at ($ 2*sin(-45)*(0,1) + (-1,0)$);
+        \filldraw[blue] (P) ellipse (3pt and 3.5pt) node[anchor=south east, xshift=-2, yshift=2, fill=white, inner sep=1pt] {\small $P$};
+
+        \coordinate (Q) at ($ 10/3*(1,0) + (0,1) $);
+
+        \filldraw[blue] (Q) ellipse (3pt and 3.5pt) node[anchor=south west, xshift=2, yshift=1, fill=white, inner sep=1pt] {\small $Q$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside></statement></exercise> 
 
      <exercise number="45">
-        <statement><sidebyside width="75%"><image source="images/hp4-sum-45.png"><description>graph</description></image></sidebyside></statement>
+        <statement><sidebyside width="75%"><!--<image source="images/hp4-sum-45.png"><description>graph</description></image>-->
+    <image xml:id="hp4-sum-45">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [xscale=1, yscale=.4]
+        \draw[cyan] (-6.5,0) grid (6.5,6);
+        \draw[black, thick, ->] (-6.5,0)--(6.8,0) node[right]{$\theta$};
+        \draw[black, thick, ->] (0,0)--(0,6.2) node[above]{$y$};
+
+        \foreach \x  [evaluate =\x as \xi using int(30*\x)] in {-6, -3, 3, 6}
+         \draw[black] (\x, 0.15)--++(0, -.3) node[below, fill=white, inner sep=1pt]{\scriptsize $\xi\degree$};
+        \foreach \y  in {2, 4, 6}
+         \draw[black] (0.08,\y)--++(-.16,0) node[left, fill=white, inner sep=1pt]{\footnotesize \y};
+         
+        \draw[domain=-6.5:6.5,smooth,variable=\x,red,very thick] plot ({\x},{3+3*sin(30*\x *2)});
+
+        \coordinate (A) at (1.5,6);
+        \filldraw[blue] (A) ellipse (2pt and 5pt) node[anchor=south ,  yshift=2, fill=white, inner sep=1pt] {\small $A$};
+
+        \coordinate (B) at ($ 3*sin(240)*(0,1) + (4,3) $);
+
+        \filldraw[blue] (B) ellipse (2pt and 5pt) node[anchor=south west, xshift=2, yshift=1, fill=white, inner sep=1pt] {\small $B$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside></statement>
         <answer><m>y = 3 + 3 \sin 2\theta,~  A(-45\degree, 6), B(120\degree, 3 - \dfrac{3\sqrt{3}}{2})</m></answer></exercise>
 
     <exercise number="46">
-        <statement><sidebyside width="70%"><image source="images/hp4-sum-46.png"><description>graph</description></image></sidebyside></statement></exercise>
+        <statement><sidebyside width="70%"><!--<image source="images/hp4-sum-46.png"><description>graph</description></image>-->
+    <image xml:id="hp4-sum-46">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [xscale=1.3, yscale=.5]
+        \draw[cyan, xstep=.5] (-1,0) grid (8.5,5);
+        \draw[black, thick, ->] (-1,0)--(8.9,0) node[right]{$\theta$};
+        \draw[black, thick, ->] (0,0)--(0,5.8) node[above]{$y$};
+
+        \foreach \x  [evaluate =\x as \xi using int(10*\x)] in {2, 4, 6, 8}
+         \draw[black] (\x, 0.15)--++(0, -.3) node[below, fill=white, inner sep=1pt]{\scriptsize $\xi\degree$};
+        \foreach \y [evaluate=\y as \yi using int(4*\y)] in {2, 4}
+         \draw[black] (0.08,\y)--++(-.16,0) node[left, fill=white, inner sep=1pt]{\footnotesize \yi};
+         
+        \draw[domain=-1:8.5,smooth,variable=\x,red,very thick] plot ({\x},{3+2*cos(10*\x *9)});
+
+        \coordinate (C) at (2/3,4);
+        \filldraw[blue] (C) ellipse (2pt and 5pt) node[anchor=south west, xshift=2, yshift=2, fill=white, inner sep=1pt] {\small $C$};
+
+        \coordinate (D) at ($ 2*cos(315)*(0,1) + (3.5,3) $);
+
+        \filldraw[blue] (D) ellipse (2pt and 5pt) node[anchor=south east, xshift=-2, yshift=1, fill=white, inner sep=1pt] {\small $D$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside></statement></exercise>
      </exercisegroup>
      
      <exercise number="47">
@@ -313,7 +542,42 @@
         <li>What is the period of <m>d(t)</m>?</li>
     </ol></p></statement>
         <answer><p><ol label = "a">
-            <li><sidebyside width="60%"><image source="images/hp4-sum-47ans.png"><description>graph</description></image></sidebyside></li>
+            <li><sidebyside width="60%"><!--<image source="images/hp4-sum-47ans.png"><description>graph</description></image>-->
+    <image xml:id="hp4-sum-47ans">
+        <description>periodic graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [xscale=2, yscale=2.2]
+        \draw[cyan, ystep=.2] (-.3,0) grid (4.2,1.2);
+        \draw[black, thick, ->] (-.3,0)--(4.3,0) node[right]{$t$ (hr)};
+        \draw[black, thick, ->] (0,0)--(0,1.3) node[above]{$y$};
+
+        \foreach \x  [evaluate =\x as \xi using int(12*\x)] in {2,4}
+         \draw[black] (\x, 0.15)--++(0, -.3) node[below, fill=white, inner sep=1pt]{\scriptsize \xi};
+        \foreach \y [evaluate=\y as \yi using int(50*\y)] in {1}
+         \draw[black] (0.08,\y)--++(-.16,0) node[left, fill=white, inner sep=1pt]{\footnotesize \yi};
+         
+        \draw[domain=-.3:0,smooth,variable=\x,red,ultra thick] plot ({\x},{ 1.2/6^((\x+2) /2))});
+        \draw[red,ultra thick] (0,1.2)--++(0,-1);
+
+        \draw[domain=0:2,smooth,variable=\x,red,ultra thick] plot ({\x},{ 1.2/6^(\x /2))});
+        \draw[red,ultra thick] (2,1.2)--++(0,-1);
+
+        \draw[domain=2:4,smooth,variable=\x,red,ultra thick] plot ({\x},{ 1.2/6^((\x-2) /2))});
+        \draw[red,ultra thick] (4,1.2)--++(0,-1);
+
+        \draw[domain=4:4.2,smooth,variable=\x,red,ultra thick] plot ({\x},{ 1.2/6^((\x-4) /2))});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+            </sidebyside></li>
             <li>24 hours</li>
         </ol></p></answer></exercise> 
 
@@ -326,11 +590,37 @@
 
     <exercise number="49"><statement><p>Henry is watching Billie ride a carousel.  He stands 2 meters from the carousel, which has a diameter of 10 meters.  He notices that she passes by him three times each minute.</p>
     <p><ol label="a">
-            <li>Sketch a graph of <m>f(t)</m>, the distance between Henry and Billie at time Show at least two complete circuits.</li>
+            <li>Sketch a graph of <m>f(t)</m>, the distance between Henry and Billie at time <m>t</m>. Show at least two complete circuits.</li>
             <li>What is the period of <m>f(t)</m>?</li>
             </ol></p></statement>
     <answer><p><ol label = "a">
-            <li><sidebyside width="60%"><image source="images/hp4-sum-49ans.png"><description>graph</description></image></sidebyside></li>
+            <li><sidebyside width="60%"><!--<image source="images/hp4-sum-49ans.png"><description>graph</description></image>-->
+    <image xml:id="hp4-sum-49ans">
+        <description>periodic graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [xscale=1.5]
+        \draw[cyan, ystep=.5] (0,0) grid (6,3.2);
+        \draw[black, thick, ->] (0,0)--(6.2,0) node[right]{$t$ (min)};
+        \draw[black, thick, ->] (0,0)--(0,3.3) node[above]{$y$};
+
+        \foreach \x  [evaluate =\x as \xi using ( \x /6 )] in {3,6}
+         \draw[black] (\x, 0.15)--++(0, -.3) node[below, fill=white, inner sep=1pt]{\scriptsize \xi};
+        \foreach \y [evaluate=\y as \yi using int(4*\y)] in {1, 2, 3}
+         \draw[black] (0.08,\y)--++(-.16,0) node[left, fill=white, inner sep=1pt]{\footnotesize \yi};
+         
+        \draw[samples=65,domain=-0:6,smooth,variable=\x,red,ultra thick] plot ({\x},{ sqrt( (1.25*cos(180*\x) + 1.75)^2 + (1.25*sin(180*\x))^2   ) });
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+            </sidebyside></li>
             <li>20 sec</li>
         </ol></p></answer></exercise>
 
@@ -350,7 +640,33 @@
 
     <exercise number="51"><statement><m>y = 4 + 2 \cos \theta</m></statement>
     <answer><p><ol label = "a">
-            <li><sidebyside width="30%"><image source="images/hp4-sum-51ans.png"><description>graph</description></image></sidebyside></li>
+            <li><sidebyside width="35%"><!--<image source="images/hp4-sum-51ans.png"><description>graph</description></image>-->
+    <image xml:id="hp4-sum-51ans">
+        <description>y = 4 + 2 cos theta</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [xscale=1.3, yscale=.6]
+        \draw[cyan] (0,0) grid (4,6);
+        \draw[black, thick, ->] (0,0)--(4.4,0) node[right]{$\theta$};
+        \draw[black, thick, ->] (0,0)--(0,6.5) node[above]{$y$};
+
+        \foreach \x  [evaluate =\x as \xi using int( \x * 90 )] in {1, 2, 3, 4}
+         \draw[black] (\x, 0.15)--++(0, -.3) node[below, fill=white, inner sep=1pt, yshift=-1]{\footnotesize $\xi\degree$};
+        \foreach \y [evaluate=\y as \yi using int(1*\y)] in {2, 4, 6}
+         \draw[black] (0.08,\y)--++(-.16,0) node[left, fill=white, inner sep=1pt]{\footnotesize \yi};
+         
+        \draw[samples=65,domain=-0:4,smooth,variable=\x,red, very thick] plot ({\x},{ 4 + 2*cos(90*\x) ) });
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+            </sidebyside></li>
             <li>amp: 2, period: <m>360\degree</m>, midline: <m>y = 4</m></li>
         </ol></p></answer></exercise>
 
@@ -358,7 +674,33 @@
 
     <exercise number="53"><statement><m>y = 1.5 + 3.5 \sin 2\theta</m></statement>
     <answer><p><ol label = "a">
-            <li><sidebyside width="30%"><image source="images/hp4-sum-53ans.png"><description>graph</description></image></sidebyside></li>
+            <li><sidebyside width="30%"><!--<image source="images/hp4-sum-53ans.png"><description>graph</description></image>-->
+    <image xml:id="hp4-sum-53ans">
+        <description>y = 1.5 + 3.5 sin (2 theta)</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [xscale=1.2, yscale=.5]
+        \draw[cyan, ystep=2] (0,-2) grid (4,6);
+        \draw[black, thick, ->] (0,0)--(4.4,0) node[right]{$\theta$};
+        \draw[black, thick, ->] (0,-2)--(0,6.5) node[above]{$y$};
+
+        \foreach \x  [evaluate =\x as \xi using int( \x * 45 )] in {1, 2, 3, 4}
+         \draw[black] (\x, 0.15)--++(0, -.3) node[below, fill=white, inner sep=1pt, yshift=-1]{\footnotesize $\xi\degree$};
+        \foreach \y [evaluate=\y as \yi using int(1*\y)] in {-2, 2, 4, 6}
+         \draw[black] (0.08,\y)--++(-.16,0) node[left, fill=white, inner sep=1pt]{\footnotesize \yi};
+         
+        \draw[samples=65,domain=-0:4,smooth,variable=\x,red, very thick] plot ({\x},{ 1.5 + 3.5*sin(90*\x) ) });
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+            </sidebyside></li>
             <li>amp: 3.5, period: <m>180\degree</m>, midline: <m>y = 1.5</m></li>
         </ol></p></answer></exercise>
 
@@ -393,7 +735,37 @@
 
      <exercise number="63">
         <statement><p>Sketch the graphs of <m>y = \tan \theta</m> and <m>y = \cos \theta</m> on the same grid for <m>-180\degree \lt \theta \lt 180\degree</m>.  How are the <m>\theta</m>-intercepts of the graph of <m>y = \cos \theta</m> related to the graph of <m>y = \tan \theta</m> ?</p></statement>
-        <answer><p><sidebyside width="50%"><image source="images/hp4-sum-63ans.png"><description>graph</description></image></sidebyside></p>The <m>\theta</m>-intercepts of <m>\cos \theta</m> occur at the vertical asymptotes of <m>\tan \theta</m>.</answer></exercise> 
+        <answer><sidebyside width="50%"><!--<image source="images/hp4-sum-63ans.png"><description>graph</description></image>-->
+    <image xml:id="hp4-sum-63ans">
+        <description>cosine and tangent graphs</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [xscale=.8, yscale=.55]
+        \draw[cyan ] (-6,-5) grid (6,5);
+        \draw[black, thick, ->] (-6,0)--(6.4,0) node[right]{$\theta$};
+        \draw[black, thick, ->] (0,-5)--(0,5.5) node[above]{$y$};
+
+        \foreach \x  [evaluate =\x as \xi using int( \x * 30 )] in {-6, -3, 3, 6}
+         \draw[black] (\x, 0.15)--++(0, -.3) node[below, fill=white, inner sep=1pt, yshift=-1]{\footnotesize $\xi\degree$};
+        \foreach \y [evaluate=\y as \yi using int(1*\y)] in {-4, -2, 2, 4}
+         \draw[black] (0.08,\y)--++(-.16,0) node[left, fill=white, inner sep=1pt]{\footnotesize \yi};
+
+        \draw[domain={-6:atan(5)/30 - 6},smooth,variable=\x,red, very thick] plot ({\x},{ tan(30*\x) ) });
+        \draw[domain={atan(-5)/30:atan(5)/30},smooth,variable=\x,red, very thick] plot ({\x},{ tan(30*\x) ) });
+        \draw[domain={atan(-5)/30+6:6},smooth,variable=\x,red, very thick] plot ({\x},{ tan(30*\x) ) });
+
+        \draw[samples=65,domain=-6:6,smooth,variable=\x,blue, very thick] plot ({\x},{ cos(30*\x) ) });
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside><p>The <m>\theta</m>-intercepts of <m>\cos \theta</m> occur at the vertical asymptotes of <m>\tan \theta</m>.</p></answer></exercise> 
 
     <exercise number="64">
         <statement><p>Sketch the graphs of <m>y = \tan \theta</m> and <m>y = \sin \theta</m> on the same grid for <m>-180\degree \lt \theta \lt 180\degree</m>.  How are the <m>\theta</m>-intercepts of the graph of <m>y = \sin \theta</m> related to the graph of <m>y = \tan \theta</m> ?</p></statement></exercise> 

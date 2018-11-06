@@ -3,12 +3,49 @@
 <chapter xml:id="chap8"  xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>More Functions and Identities</title>
 <introduction>
-<sidebyside widths="60% 40%" valigns="middle middle"><p>
+<sidebyside widths="50% 50%" valigns="middle middle"><p>
 <ul>
 	<li><m>\blert{\textbf{Sum and Difference Formulas}}</m></li>
 	<li><m>\blert{\textbf{Inverse Trigonometric Functions}}</m></li>
 	<li><m>\blert{\textbf{The Reciprocal Functions}}</m></li></ul></p>
-<image source="images/ch8-1.png"><description>graphs</description></image></sidebyside>
+<!--<image source="images/ch8-1.png"><description>graphs</description></image>-->
+    <image xml:id="ch8-1">
+        <description>graph of six trig functions</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+		\begin{tikzpicture} 
+		\draw[gray!20!white] (-3*pi/2,-3) grid[xstep=pi/4, ystep=1] (3*pi/2,3);
+		\draw[gray!30!white, ->,>=stealth'] (-3*pi/2,0) -- (5.,0);
+		\draw[gray!30!white, ->,>=stealth'] (0,-3) -- (0,3.2);
+		\draw[samples=65, domain=-3*pi/2:3*pi/2, variable=\x,smooth, blue, thick] plot (\x,{ sin( deg(\x) });
+		\def\as{asin(1/3)*pi/180};
+		\draw[samples=65, domain={\as}:{pi-\as}, variable=\x,smooth, blue, thick, densely dotted] plot (\x,{ cosec( deg(\x) });
+		\draw[samples=65, domain={-3/2*pi}:{-pi-\as}, variable=\x,smooth, blue, thick, densely dotted] plot (\x,{ cosec( deg(\x) });
+		\draw[samples=65, domain={-pi+\as}:{-\as}, variable=\x,smooth, blue, thick, densely dotted] plot (\x,{ cosec( deg(\x) });
+		\draw[samples=65, domain={\as}:{pi-\as}, variable=\x,smooth, blue, thick, densely dotted] plot (\x,{ cosec( deg(\x) });
+		\draw[samples=65, domain={pi+\as}:{3/2*pi}, variable=\x,smooth, blue, thick, densely dotted] plot (\x,{ cosec( deg(\x) });
+
+		\def\ac{acos(1/3)*pi/180};
+		\draw[samples=65, domain=-3*pi/2:3*pi/2, variable=\x,smooth, green!70!black, thick] plot (\x,{ cos( deg(\x) });
+		\draw[samples=65, domain={-\ac}:{\ac}, variable=\x,smooth, green!70!black, thick, dashdotted] plot (\x,{ sec( deg(\x) });
+		\draw[samples=65, domain={-pi-\ac}:{-pi+\ac}, variable=\x,smooth, green!70!black, thick, dashdotted] plot (\x,{ sec( deg(\x) });
+		\draw[samples=65, domain={pi-\ac}:{pi+\ac}, variable=\x,smooth, green!70!black, thick, dashdotted] plot (\x,{ sec( deg(\x) });
+
+		\def\at{atan(3)*pi/180};
+		\def\att{atan(1/3)*pi/180};
+		\draw[samples=65, domain={-\at}:{\at}, variable=\x,smooth,red, thick] plot (\x,{ tan( deg(\x) });
+		\draw[samples=65, domain={pi-\at}:{pi+\at}, variable=\x,smooth,red, thick] plot (\x,{ tan( deg(\x) });
+		\draw[samples=65, domain={-pi-\at}:{-pi+\at}, variable=\x,smooth,red, thick] plot (\x,{ tan( deg(\x) });
+		\draw[samples=65, domain={\att}:{pi-\att}, variable=\x,smooth,red, thick, dashed] plot (\x,{ cot( deg(\x) });
+		\draw[samples=65, domain={-pi+\att}:{-\att}, variable=\x,smooth,red, thick, dashed] plot (\x,{ cot( deg(\x) });
+		\draw[samples=65, domain={-3/2*pi}:{-pi-\att}, variable=\x,smooth,red, thick, dashed] plot (\x,{ cot( deg(\x) });
+		\draw[samples=65, domain={pi+\att}:{3/2*pi}, variable=\x,smooth,red, thick, dashed] plot (\x,{ cot( deg(\x) });
+       \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 <p>Mapmakers have always faced an unavoidable challenge: It is impossible to translate the surface of a sphere onto a flat map without some form of distortion. Over the years, a variety of map projections have been developed to suit different uses.</p>
 <sidebyside><image source="images/ch8-2.png"><description>maps</description></image></sidebyside>
 <p>The sixteenth century was an age of discovery, when explorers and merchants began sailing to distant and previously unknown lands. But at that time there was no reliable technology for navigation. Although more regions of the world were being mapped more accurately, a flat map by itself was not enough to help a sailor in the middle of the ocean.</p>   

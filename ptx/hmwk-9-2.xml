@@ -9,7 +9,7 @@
 <exercises xml:id="hmwk-9-2-exercises"  xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Homework 9-2</title>
 
-<exercisegroup cols="2"><introduction><p>For Problems 1-4, give the coordinate form of each vector shown in the figure. Use the coordinate form to find the following.</p>
+<exercisegroup cols="2"><introduction><p>For Problems 1<ndash/>4, give the coordinate form of each vector shown in the figure. Use the coordinate form to find the following.</p>
 <sidebyside width="40%"><image source="images/hp9-2-1.png"><description>vectors</description></image></sidebyside>
 </introduction>
 
@@ -64,21 +64,85 @@
         <li><m>\|{\bf{w}}\|+\|{\bf{z}}\| = \|{\bf{w}}+{\bf{z}}\|</m></li>
         <li><m>\|{\bf{w}}\|+\|{\bf{z}}\| \ge \|{\bf{w}}+{\bf{z}}\|</m></li></ol></p></li></ol></p></statement></exercise>
 
-<exercisegroup><introduction><p>For Problems 7-10,<ol label="a">
+<exercisegroup><introduction><p>For Problems 7<ndash/>10,<ol label="a">
     <li>Sketch the vector and give its coordinate form.</li>
     <li>Find the magnitude and direction of the vector.</li></ol></p>
-<sidebyside width="40%"><image source="images/hp9-2-7.png"><description>vectors</description></image></sidebyside></introduction>    
+<sidebyside width="40%"><!--<image source="images/hp9-2-7.png"><description>vectors</description></image>-->
+    <image xml:id="hp9-2-7">
+        <description>grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=0.25]
+
+        \draw[cyan] (-10,-10) grid (10,10);
+        \draw[black, thick,->,>=stealth'] (-10,0)--(10.9,0) node[right] {$x$};
+        \draw[black, thick,->,>=stealth'] (0,-10)--(0,10.9) node[above] {$y$};
+
+        \foreach \x in {-10,-5,5,10} {
+         \draw[black,thick] (\x,0.2)--++(0,-.4) node[below, yshift=-2, scale=.8, fill=white, inner sep=1]{$\x$};
+         \draw[black,thick] (0.2,\x)--++(-.4,0) node[left, xshift=-2, scale=.8, fill=white, inner sep=1]{$\x$};
+        }
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></introduction>    
 
 <exercise number="7"><statement><p>The displacement vector from <m>(1,-2)</m> to <m>(-4,6)</m>.</p></statement>
     <answer><p><ol label="a">
-        <li><sidebyside widths="20% 50%" valigns="middle middle"><image source="images/hp9-2-7ans.png"><description>vectors</description></image><p><m>-5{\bf{i}}+8{\bf{j}}</m></p></sidebyside></li>
+        <li><sidebyside widths="20% 50%" valigns="middle middle"><!--<image source="images/hp9-2-7ans.png"><description>vectors</description></image>-->
+    <image xml:id="hp9-2-7ans">
+        <description>vector</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=0.25]
+
+        \draw[cyan] (-5,-3) grid (2,7);
+        \draw[black, thick,->,>=stealth'] (-5,0)--(2.9,0) node[right] {$x$};
+        \draw[black, thick,->,>=stealth'] (0,-3)--(0,7.9) node[above] {$y$};
+
+        \foreach \x in {5} {
+         \draw[black,thick] (-\x,0.2)--++(0,-.4) node[below, yshift=-2, scale=.8, fill=white, inner sep=1]{$\x$};
+         \draw[black,thick] (0.2,\x)--++(-.4,0) node[left, xshift=-2, scale=.8, fill=white, inner sep=1]{$\x$};
+        }
+
+        \draw[red, thick,->,>=stealth'] (1,-2)--(-4,6);
+
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        <p><m>-5{\bf{i}}+8{\bf{j}}</m></p></sidebyside></li>
         <li><m>\|{\bf{v}}\| = \sqrt{89},~~\theta = 122\degree</m></li></ol></p></answer></exercise>
 
 <exercise number="8"><statement><p>The displacement vector from <m>(-5,2)</m> to <m>(4,7)</m>.</p></statement></exercise>
 
 <exercise number="9"><statement><p>The displacement vector from <m>(-2,9)</m> to <m>(-4,8)</m>.</p></statement>
     <answer><p><ol label="a">
-        <li><sidebyside widths="20% 50%" valigns="middle middle"><image source="images/hp9-2-9ans.png"><description>vectors</description></image><p><m>-2{\bf{i}}-{\bf{j}}</m></p></sidebyside></li>
+        <li><sidebyside widths="20% 50%" valigns="middle middle"><!--<image source="images/hp9-2-9ans.png"><description>vectors</description></image>-->
+    <image xml:id="hp9-2-9ans">
+        <description>vector</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=0.25]
+        \draw[cyan] (-5,-1) grid (2,10);
+        \draw[black, thick,->,>=stealth'] (-5,0)--(2.9,0) node[right] {$x$};
+        \draw[black, thick,->,>=stealth'] (0,-1)--(0,10.9) node[above] {$y$};
+
+        \foreach \x in {5} {
+         \draw[black,thick] (-\x,0.2)--++(0,-.4) node[below, yshift=-2, scale=.8, fill=white, inner sep=1]{$\x$};
+         \draw[black,thick] (0.2,\x)--++(-.4,0) node[left, xshift=-2, scale=.8, fill=white, inner sep=1]{$\x$};
+        }
+
+        \draw[red, thick,->,>=stealth'] (-2,9)--(-4,8);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        <p><m>-2{\bf{i}}-{\bf{j}}</m></p></sidebyside></li>
         <li><m>\|{\bf{v}}\| = \sqrt{5},~~\theta = 206.6\degree</m></li></ol></p></answer></exercise>
 
 <exercise number="10"><statement><p>The displacement vector from <m>(-6,2)</m> to <m>(3,0)</m>.</p></statement></exercise>
@@ -95,7 +159,7 @@
 <li>Calculate the displacement vector from the starting point to Francine in coordinate form. Let <m>{\bf{i}}</m> point right and <m>{\bf{j}}</m> point up.</li>
 <li>Find the magnitude and direction of the displacement vector.</li></ol></p></statement> </exercise>
 
-<exercisegroup cols="2"><introduction><p>For Problems 13-18, find the magnitude and directionof the vector.</p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 13<ndash/>18, find the magnitude and directionof the vector.</p></introduction>
 
 <exercise number="13"><statement><m>{\bf{v}} = -6{\bf{i}}+6{\bf{j}}</m></statement> 
     <answer><m>\|{\bf{v}}\| = 6\sqrt{2},~~\theta = 135\degree</m></answer></exercise>
@@ -113,7 +177,7 @@
 <exercise number="18"><statement><m>{\bf{s}} = 3.2{\bf{i}}-1.8{\bf{j}}</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 19-22, find the coordinate form of the vector.</p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 19<ndash/>22, find the coordinate form of the vector.</p></introduction>
 
 <exercise number="19"><statement><m>\|{\bf{v}}\|=6,~\theta = -45\degree</m></statement>
         <answer><m>{\bf{v}} = 3\sqrt{2}{\bf{i}}-3\sqrt{2}{\bf{j}}</m></answer></exercise>
@@ -126,20 +190,73 @@
 <exercise number="22"><statement><m>\|{\bf{v}}\|=23,~\theta = 200\degree</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 23-26, sketch each vector and its components. Use the coordinate form to find the resultant vector <m>{\bf{u}}+{\bf{v}}</m>, and sketch it.</p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 23<ndash/>26, sketch each vector and its components. Use the coordinate form to find the resultant vector <m>{\bf{u}}+{\bf{v}}</m>, and sketch it.</p></introduction>
 
 <exercise number="23"><statement><m>{\bf{u}} = -3{\bf{i}}+2{\bf{j}},~{\bf{v}} = 4{\bf{i}}-4{\bf{j}}</m></statement>
-    <answer><p><sidebyside width="15%"><image source="images/hp9-2-23ans.png"><description>vectors</description></image></sidebyside><m>{\bf{i}}-2{\bf{j}}</m></p></answer></exercise>
+    <answer><sidebyside widths="15% 18%" margins="0% 60%"><p><m>{\bf{i}}-2{\bf{j}}</m></p><!--<image source="images/hp9-2-23ans.png"><description>vectors</description></image>-->
+    <image xml:id="hp9-2-23ans">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=0.3]
+        \draw[cyan] (-4,-3) grid (2,3);
+        \draw[black, thick,->,>=stealth'] (-4,0)--(2.9,0) node[right] {$x$};
+        \draw[black, thick,->,>=stealth'] (0,-3)--(0,3.9) node[above] {$y$};
+
+        \foreach \x in {3} {
+         \draw[black,thick] (-\x,0.2)--++(0,-.4) node[below, yshift=-2, scale=.8, fill=white, inner sep=1]{$\x$};
+         \draw[black,thick] (0.2,\x)--++(-.4,0) node[left, xshift=-2, scale=.8, fill=white, inner sep=1]{$\x$};
+        }
+
+        \coordinate(u) at (-3,2);
+        \coordinate(v) at (4,-4);
+
+        \draw[lightgray,->,>=stealth'] (0,0)--(u);
+        \draw[lightgray,->,>=stealth'] (u)--++(v);
+        \draw[red, thick,->,>=stealth'] (0,0)--($ (u)+(v)$);
+
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></answer></exercise>
 
 <exercise number="24"><statement><m>{\bf{u}}= 5{\bf{i}}+{\bf{j}},~{\bf{v}} = 2{\bf{i}}-3{\bf{j}}</m></statement></exercise>
 
 <exercise number="25"><statement><m>{\bf{u}}= -5{\bf{i}}-2{\bf{j}},~{\bf{v}} = {\bf{i}}+6{\bf{j}}</m></statement>
-    <answer><p><sidebyside width="20%"><image source="images/hp9-2-25ans.png"><description>vectors</description></image></sidebyside><m>-4{\bf{i}}+4{\bf{j}}</m></p></answer></exercise>
+    <answer><sidebyside widths="15% 23%" margins="0% 60%"><p><m>-4{\bf{i}}+4{\bf{j}}</m></p><!--<image source="images/hp9-2-25ans.png"><description>vectors</description></image>-->
+    <image xml:id="hp9-2-25ans">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=0.35]
+        \draw[cyan] (-6,-3) grid (3,5);
+        \draw[black, thick,->,>=stealth'] (-6,0)--(3.9,0) node[right] {$x$};
+        \draw[black, thick,->,>=stealth'] (0,-3)--(0,5.9) node[above] {$y$};
+
+        \foreach \x in {3} {
+         \draw[black,thick] (-\x,0.2)--++(0,-.4) node[below, yshift=-2, scale=.8, fill=white, inner sep=1]{$\x$};
+         \draw[black,thick] (0.2,\x)--++(-.4,0) node[left, xshift=-2, scale=.8, fill=white, inner sep=1]{$\x$};
+        }
+
+        \coordinate(u) at (-5,-2);
+        \coordinate(v) at (1,6);
+
+        \draw[lightgray,->,>=stealth'] (0,0)--(u);
+        \draw[lightgray,->,>=stealth'] (u)--++(v);
+        \draw[red, thick,->,>=stealth'] (0,0)--($ (u)+(v)$);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></answer></exercise>
 
 <exercise number="26"><statement><m>{\bf{u}}=8{\bf{i}}-3{\bf{j}},~{\bf{v}}= -4{\bf{i}}-2{\bf{j}}</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 27-30, find the sum <m>{\bf{u}}+{\bf{v}}</m> of the given vectors.</p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 27<ndash/>30, find the sum <m>{\bf{u}}+{\bf{v}}</m> of the given vectors.</p></introduction>
 
 <exercise number="27"><statement><m>{\bf{u}}=13{\bf{i}}-8{\bf{j}},~{\bf{v}}= -1{\bf{i}}+11{\bf{j}}</m></statement>
 <answer><m>12{\bf{i}}+3{\bf{j}}</m></answer></exercise>
@@ -152,7 +269,7 @@
 <exercise number="30"><statement><m>{\bf{u}}=6{\bf{i}}-8{\bf{j}},~{\bf{v}}=23{\bf{i}}+42{\bf{j}}</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 31-38, find the coordinate form of the vector, where
+<exercisegroup cols="2"><introduction><p>For Problems 31<ndash/>38, find the coordinate form of the vector, where
 <me>{\bf{u}}=2{\bf{i}}+3{\bf{j}},~~{\bf{v}}=-5{\bf{i}}+4{\bf{j}},~~{\bf{w}}=-2{\bf{i}}-5{\bf{j}},~~{\bf{z}}=8{\bf{i}}-3{\bf{j}}</me></p></introduction>
 
 <exercise number="31"><statement><m>{\bf{u}}+{\bf{v}}</m></statement>
@@ -176,7 +293,7 @@
 <exercise number="38"><statement><m>{\bf{z}}-2({\bf{v}}+{\bf{w}})</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 39-42, find a unit vector {\bf{u}} in the same direction as the given vector.
+<exercisegroup cols="2"><introduction><p>For Problems 39<ndash/>42, find a unit vector <m>{\bf{u}}</m> in the same direction as the given vector.
 </p></introduction>
 
 <exercise number="39"><statement><m>{\bf{r}}=-12{\bf{i}}+5{\bf{j}}</m></statement>
@@ -190,7 +307,7 @@
 <exercise number="42"><statement><m>{\bf{w}}=-2{\bf{i}}-3{\bf{j}}</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 43-46, find a vector {\bf{v}} in the same direction as {\bf{w}}, but with the given length.</p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 43<ndash/>46, find a vector <m>{\bf{v}}</m> in the same direction as <m>{\bf{w}}</m>, but with the given length.</p></introduction>
 
 <exercise number="43"><statement><m>{\bf{w}}=8{\bf{i}}+15{\bf{j}},~ \|{\bf{v}}\|=51</m></statement>
 <answer><m>24{\bf{i}}+45{\bf{j}}</m></answer></exercise>
@@ -203,14 +320,42 @@
 <exercise number="46"><statement><m>{\bf{w}}={\bf{i}}-2{\bf{j}},~ \|{\bf{v}}\|=7</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup><introduction><p>For Problems 47-50,<ol label="a"> 
+<exercisegroup><introduction><p>For Problems 47<ndash/>50,<ol label="a"> 
     <li>Draw a diagram using arrows to represent the vectors.</li>
     <li>Convert each vector to coordinate form.</li>
     <li>Use the coordinate form to add or subtract the vectors.</li></ol></p></introduction>
 
 <exercise number="47"><statement><p>Find <m>{\bf{u}}+{\bf{v}}</m>, where <m>{\bf{u}}</m> has magnitude 2.6 and direction <m>\theta = 23\degree</m>, <m>{\bf{v}}</m> has magnitude 5.8 and direction <m>\theta = 223\degree</m>.</p></statement>
 <answer><p><ol label="a"> 
-    <li><sidebyside width="25%"><image source="images/hp9-2-47ans.png"><description>vectors</description></image></sidebyside></li>
+    <li><sidebyside width="25%" margins="0% 75%"><!--<image source="images/hp9-2-47ans.png"><description>vectors</description></image>-->
+    <image xml:id="hp9-2-47ans">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+            \begin{tikzpicture} [scale=0.35]
+            \draw[cyan] (-3,-3) grid (3,2);
+            \draw[black, thick,->,>=stealth'] (-3,0)--(3.9,0) node[right] {$x$};
+            \draw[black, thick,->,>=stealth'] (0,-3)--(0,2.9) node[above] {$y$};
+
+            \foreach \x in {2} {
+             \draw[black,thick] (\x,0.2)--++(0,-.4) node[below, yshift=-2, scale=.8, fill=white, inner sep=1]{$\x$};
+             \draw[black,thick] (0.2,\x)--++(-.4,0) node[left, xshift=-2, scale=.8, fill=white, inner sep=1]{$\x$};
+             \draw[black,thick] (-\x,0.2)--++(0,-.4) node[below, yshift=-2, scale=.8, fill=white, inner sep=1]{$-\x$};
+             \draw[black,thick] (0.2,-\x)--++(-.4,0) node[left, xshift=-2, scale=.8, fill=white, inner sep=1]{$-\x$};
+            }
+
+            \coordinate(u) at (23:2.6);
+            \coordinate(v) at (223:5.8);
+
+            \draw[blue,->,>=stealth'] (0,0)--(u);
+            \draw[blue,->,>=stealth'] (u)--++(v);
+            \draw[red, thick,->,>=stealth'] (0,0)--($ (u)+(v)$);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></li>
     <li><m>{\bf{u}}=2.393{\bf{i}}+1.016{\bf{j}},~~{\bf{v}}=-4.242{\bf{i}}-3.956{\bf{j}}</m></li>
     <li><m>-1.849{\bf{i}}-2.940{\bf{j}}</m></li></ol></p></answer></exercise>
 
@@ -218,40 +363,148 @@
 
 <exercise number="49"><statement><p>Find <m>{\bf{u}}-{\bf{v}}</m>, where <m>{\bf{u}}</m> has magnitude 35 and direction <m>\theta = 110\degree</m>, <m>{\bf{v}}</m> has magnitude 60 and direction <m>\theta = 165\degree</m>.</p></statement>
 <answer><p><ol label="a"> 
-    <li><sidebyside width="25%"><image source="images/hp9-2-49ans.png"><description>vectors</description></image></sidebyside></li>
+    <li><sidebyside width="25%" margins="0% 75%"><!--<image source="images/hp9-2-49ans.png"><description>vectors</description></image>-->
+    <image xml:id="hp9-2-49ans">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=0.035]
+        \draw[cyan] (-30,-20) grid[step=10] (50,60);
+        \draw[black, thick,->,>=stealth'] (-30,0)--(59,0) node[right] {$x$};
+        \draw[black, thick,->,>=stealth'] (0,-20)--(0,69) node[above] {$y$};
+
+         \draw[black,thick] (40,02)--++(0,-4) node[below, yshift=-2, scale=.8, fill=white, inner sep=1]{$40$};
+
+        \foreach \x in {20} {
+         \draw[black,thick] (\x,02)--++(0,-4) node[below, yshift=-2, scale=.8, fill=white, inner sep=1]{$\x$};
+         \draw[black,thick] (-\x,02)--++(0,-4) node[below, yshift=-2, scale=.8, fill=white, inner sep=1]{$-\x$};
+         \draw[black,thick] (2,-\x)--++(-4,0) node[left, yshift=-2, scale=.8, fill=white, inner sep=1]{$-\x$};
+        }
+
+        \coordinate(u) at (110:35);
+        \coordinate(v) at (165:60);
+
+        \draw[green!80!black,->,>=stealth'] (0,0)--(u) node[left,midway, xshift=-2, fill=white, inner sep=1]{\textbf{u}};
+        %\draw[blue,->,>=stealth'] (u)--++(v);
+        \draw[blue,->,>=stealth'] (40,30)--++(v) node[left, fill=white, inner sep=1]{\textbf{v}};
+        \draw[cyan,->,>=stealth'] (u)--++($-1*(v)$);
+        \draw[red, thick,->,>=stealth'] (0,0)--($ (u)-(v)$);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></li>
     <li><m>{\bf{u}}=-11.97{\bf{i}}+32.889{\bf{j}},~~{\bf{v}}=-57.955{\bf{i}}+15.529{\bf{j}}</m></li>
     <li><m>45.98{\bf{i}}+17.36{\bf{j}}</m></li></ol></p></answer></exercise>
 
 <exercise number="50"><statement><p>Find <m>{\bf{u}}-{\bf{v}}</m>, where <m>{\bf{u}}</m> has magnitude 12.4 and direction <m>\theta = 250\degree</m>, <m>{\bf{v}}</m> has magnitude 8.8 and direction <m>\theta = 315\degree</m>.</p></statement></exercise>
 </exercisegroup>
 
-<exercisegroup><introduction><p>For Problems 51-56,<ol label="a"> 
+<exercisegroup><introduction><p>For Problems 51<ndash/>56,<ol label="a"> 
     <li>Make a sketch using vectors to illustrate the problem.</li>
     <li>Use the coordinate form of the vectors to solve problem.</li></ol></p></introduction>
 
 <exercise number="51"><statement><p>The tornado displaced the trash bin to a spot 500 meters north and 800 meters east of its original position, and the flood later displaced the bin 2000 meters due south from there. How far and in what direction was the trash bin moved from it original position?</p></statement>
 <answer><p><ol label="a"> 
-    <li><sidebyside width="20%"><image source="images/hp9-2-51ans.png"><description>vectors</description></image></sidebyside></li>
+    <li><sidebyside width="22%" margins="0% 78%"><!--<image source="images/hp9-2-51ans.png"><description>vectors</description></image>-->
+    <image xml:id="hp9-2-51ans">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.16]
+        \draw[cyan] (-6,-16) grid[step=2] (10,6);
+        \draw[black, thick,->,>=stealth'] (-6,0)--(10.9,0) node[right] {$E$};
+        \draw[black, thick,->,>=stealth'] (0,-16)--(0,6.90) node[above] {$N$};
+
+        \draw[black,thick] (8,.40)--++(0,-.80) node[below, yshift=-2, scale=.8, fill=white, inner sep=1]{$800$};
+        \draw[black,thick] (.40,-8)--++(-.80,0) node[left, yshift=-2, scale=.8, fill=white, inner sep=1]{-$800$};
+
+        \coordinate(u) at (8,5);
+        \coordinate(v) at (0,-20);
+
+        \draw[green!80!black,->,>=stealth'] (0,0)--(u);
+        \draw[blue,->,>=stealth'] (u)--++(v);
+        \draw[red, thick,->,>=stealth'] (0,0)--($ (u)+(v)$);
+
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></li>
     <li>1700 m, <m>28.1\degree</m> east of south</li></ol></p></answer></exercise>
 
 <exercise number="52"><statement><p>A radio-controlled model plane pointed due west with an airspeed of 15 miles per hour, but there was a crosswind from the north at a speed of 8 miles per hour. How fast and in what direction is the plane moving relative to the ground?</p></statement></exercise>
 
 <exercise number="53"><statement><p>Nimish flies 10 km in a direction <m>175\degree</m> north from east, then turns and flies an additional 12 km due west.  How far and in what direction is Nimish's final position relative to his starting point?</p></statement>
 <answer><p><ol label="a"> 
-    <li><sidebyside width="25%"><image source="images/hp9-2-53ans.png"><description>vectors</description></image></sidebyside></li>
+    <li><sidebyside width="28%" margins="0% 72%"><!--<image source="images/hp9-2-53ans.png"><description>vectors</description></image>-->
+    <image xml:id="hp9-2-53ans">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.16]
+        \draw[cyan] (-25,-10) grid[step=5] (5,10);
+        \draw[black, thick,->,>=stealth'] (-25,0)--(5.9,0) node[right] {$E$};
+        \draw[black, thick,->,>=stealth'] (0,-10)--(0,10.90) node[above] {$N$};
+
+        \draw[black,thick] (-10,.40)--++(0,-.80) node[below, yshift=-2, scale=.8, fill=white, inner sep=1]{$-10$};
+        \draw[black,thick] (-20,.40)--++(0,-.80) node[below, yshift=-2, scale=.8, fill=white, inner sep=1]{$-20$};
+        \draw[black,thick] (.40,-5)--++(-.80,0) node[left, yshift=-2, scale=.8, fill=white, inner sep=1]{-$5$};
+        \draw[black,thick] (.40,5)--++(-.80,0) node[left, yshift=-2, scale=.8, fill=white, inner sep=1]{$5$};
+
+        \coordinate(u) at (175:10);
+        \coordinate(v) at (180:12);
+
+        \draw[green!80!black,->,>=stealth'] (0,0)--(u);
+        \draw[blue,->,>=stealth'] (u)--++(v);
+        \draw[red, thick,->,>=stealth'] (0,0)--($ (u)+(v)$);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></li>
     <li>21.98 km, <m>2.27\degree</m> north of west</li></ol></p></answer></exercise>
 
 <exercise number="54"><statement><p>Dena sails 500 yards due south, then turns and sails 350 yards in the direction <m>300\degree</m> from east. How far and in what direction is Dena's final position relative to her strarting point?</p></statement></exercise>
 
 <exercise number="55"><statement><p>After leaving the airport, Kelly flew 30 miles at a heading <m>30\degree</m> east of north, then 50 miles <m>70\degree</m> east of north, and finally 12 miles <m>20\degree</m> south of east. What is her current position relative to the airport?</p></statement>
 <answer><p><ol label="a"> 
-    <li><sidebyside width="25%"><image source="images/hp9-2-55ans.png"><description>vectors</description></image></sidebyside></li>
+    <li><sidebyside  width="30%" margins="0% 70%"><!--<image source="images/hp9-2-55ans.png"><description>vectors</description></image>-->
+    <image xml:id="hp9-2-55ans">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.06]
+        \draw[cyan] (-10,-10) grid[step=10] (80,50);
+        \draw[black, thick,->,>=stealth'] (-10,0)--(84,0) node[right] {$E$};
+        \draw[black, thick,->,>=stealth'] (0,-10)--(0,54) node[above] {$N$};
+
+        \draw[black,thick] (50,.40)--++(0,-.80) node[below, yshift=-2, scale=.8, fill=white, inner sep=1]{$50$};
+        \draw[black,thick] (.40,50)--++(-.80,0) node[left, yshift=-2, scale=.8, fill=white, inner sep=1]{$50$};
+
+        \coordinate(u) at (60:30);
+        \coordinate(v) at (20:50);
+        \coordinate(w) at (-20:12);
+
+        \draw[green!80!black,->,>=stealth'] (0,0)--(u);
+        \draw[blue,->,>=stealth'] (u)--++(v);
+        \draw[teal,->,>=stealth'] ($ (u)+(v)$)--++(w);
+        \draw[red, thick,->,>=stealth'] (0,0)--($ (u)+(v)+(w)$);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></li>
     <li>83 mi, <m>62\degree</m> east of north</li></ol></p></answer></exercise>
 
 <exercise number="56"><statement><p>On a whale-watching trip, the SS Dolphin sailed 15 miles from port on a bearing of <m>40\degree</m>, then 8 miles on a bearing of <m>320\degree</m>, and then 4 miles on a bearing of <m>250\degree</m>. What is her current position relative to port?</p></statement></exercise>
 </exercisegroup>
 
-<exercisegroup><introduction><p>For Problems 57-60,<ol label="a"> 
+<exercisegroup><introduction><p>For Problems 57<ndash/>60,<ol label="a"> 
     <li>Find the resultant force.</li>
     <li>Find the additional force needed for the system to be in equilibrium.</li></ol></p></introduction>
 
@@ -262,12 +515,68 @@
  
 <exercise number="58"><statement><m>{\bf{F_1}}=10{\bf{i}}+4{\bf{j}},~{\bf{F_2}}= -12{\bf{i}}-9{\bf{j}}, ~{\bf{F_3}}=-3{\bf{i}}+5{\bf{j}}</m></statement></exercise>
 
-<exercise number="59"><statement><sidebyside width="30%"><image source="images/hp9-2-59.png"><description>vectors</description></image></sidebyside></statement>
+<exercise number="59"><statement><sidebyside width="28%" margins="0% 72%"><!--<image source="images/hp9-2-59.png"><description>vectors</description></image>-->
+    <image xml:id="hp9-2-59">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.5]
+        \draw[cyan] (0,0) grid (10,13);
+
+        \coordinate(O) at (4,9);
+        \coordinate(f1) at (0,-8);
+        \coordinate(f2) at (-3,0);
+        \coordinate(f3) at (-1,3);
+        \coordinate(f4) at (5,2);
+
+        \draw[red, very thick,->,>=stealth'] (O)--++(f1) node[right, xshift=3, yshift=2, fill=white, inner sep = 2]{$\textbf{F}_1$};
+        \draw[red, very thick,->,>=stealth'] (O)--++(f2) node[below, yshift=-2, fill=white, inner sep = 2]{$\textbf{F}_2$};
+        \draw[red, very thick,->,>=stealth'] (O)--++(f3) node[right, xshift=2, fill=white, inner sep = 2]{$\textbf{F}_3$};
+        \draw[red, very thick,->,>=stealth'] (O)--++(f4) node[above left, xshift=-2, yshift=3, fill=white, inner sep = 2]{$\textbf{F}_4$};
+
+        \end{tikzpicture}
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement>
 <answer><p><ol label="a"> 
     <li><m>{\bf{i}}-3{\bf{j}}</m></li>
     <li><m>-{\bf{i}}+3{\bf{j}}</m></li></ol></p></answer></exercise>
  
-<exercise number="60"><statement><sidebyside width="40%"><image source="images/hp9-2-60.png"><description>vectors</description></image></sidebyside></statement></exercise>
+<exercise number="60"><statement><sidebyside width="40%" margins="0% 60%"><!--<image source="images/hp9-2-60.png"><description>vectors</description></image>-->
+    <image xml:id="hp9-2-60">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.5]
+        \draw[cyan] (0,0) grid (12,8);
+
+        \coordinate(O) at (6,4);
+        \coordinate(f1) at (-5,0);
+        \coordinate(f2) at (240:4);
+        \coordinate(f3) at (-30:5);
+        \coordinate(f4) at (45:3);
+
+        \draw[red, very thick,->,>=stealth'] (O)--++(f1) node[below , xshift=2, yshift=-5, fill=white, inner sep = 2]{$\textbf{F}_1$};
+        \draw[red, very thick,->,>=stealth'] (O)--++(f2) node[above left, xshift=-2, yshift=2, fill=white, inner sep = 2]{$\textbf{F}_2$};
+        \draw[red, very thick,->,>=stealth'] (O)--++(f3) node[above right, xshift=2, fill=white, inner sep = 2]{$\textbf{F}_3$};
+        \draw[red, very thick,->,>=stealth'] (O)--++(f4) node[above right, xshift=2, yshift=2, fill=white, inner sep = 2]{$\textbf{F}_4$};
+        \node[scale=.8, fill=white, inner sep =1] at (3.5,4.5) {200};
+        \node[scale=.8, fill=white, inner sep =1] at (5.7,2) {160};
+        \node[scale=.8, fill=white, inner sep =1] at (8.2,2) {200};
+        \node[scale=.8, fill=white, inner sep =1] at (6.5,5.4) {120};
+        \draw[gray] (5,4) arc(180:240:1) node[left, midway, xshift=-3, yshift=-2, text=black, fill=white, inner sep = 1, scale=.8]{$60\degree$};
+        \draw[gray,thick] (O)--++(2,0);
+        \draw[gray] (6.7,4) arc(0:45:.7) node[right, midway, xshift=2, yshift=2, text=black, fill=white, inner sep = 1, scale=.8]{$45\degree$};
+        \draw[gray] (7.4,4) arc(0:-30:1.4) node[right, midway, xshift=3, yshift=-3, text=black, fill=white, inner sep = 1, scale=.8]{$30\degree$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement></exercise>
 </exercisegroup>
 
 <exercise number="61"><statement><p><ol label="a">

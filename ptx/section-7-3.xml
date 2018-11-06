@@ -1,21 +1,143 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!-- <mathbook><book> -->
 
-<section xml:id="Solving-Equations"   xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="Solving-Equations-Chap7"   xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Solving Equations</title>
 
 <subsection>
-<p>	We have seen that an equation of the form <m>\sin \theta = k</m> (for <m>-1 \lt k \lt 1</m>) always has two solutions between <m>0</m> and <m>2\pi </m>.  For example, the figure below illustrates that <m>x=\dfrac{\pi}{6}</m> and <m>x=\dfrac{5\pi}{6}</m> are solutions of the equation <m>\sin x = 0.5</m>. These two solutions correspond to the two points on the unit circle where <m>y=0.5</m>.</p> 
+<p> We have seen that an equation of the form <m>\sin \theta = k</m> (for <m>-1 \lt k \lt 1</m>) always has two solutions between <m>0</m> and <m>2\pi </m>.  For example, the figure below illustrates that <m>x=\dfrac{\pi}{6}</m> and <m>x=\dfrac{5\pi}{6}</m> are solutions of the equation <m>\sin x = 0.5</m>. These two solutions correspond to the two points on the unit circle where <m>y=0.5</m>.</p> 
 
-<sidebyside widths="50% 25%"><image source="images/7-3-1.png"><description>sine</description></image><image source="images/7-3-2.png"><description>circle</description></image></sidebyside>
+<!--<sidebyside widths="50% 25%"><image source="images/7-3-1.png"><description>sine</description></image><image source="images/7-3-2.png"><description>circle</description></image></sidebyside>-->
+<sidebyside width="85%">
+    <image xml:id="fig-7-3-1">
+        <description>sine graph and unit circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} 
+        \draw[cyan] (0,-1) grid[xstep=pi/6, ystep=1/2] (2*pi,1);
+        \draw[black,thick,->,>=stealth'] (0,0)--(6.6,0) node[right, scale=.9] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-1.1)--(0,1.45) node[above, scale=.9] {$y$};
+        \draw[black,thick] (pi/2,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{\pi}{2}$};
+        \draw[black,thick] (pi,.1)--++(0,-.2) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$\pi$};
+        \draw[black,thick] (3*pi/2,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{3\pi}{2}$};
+        \draw[black,thick] (2*pi,.1)--++(0,-.2) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$2\pi$};
+        \foreach \y in {-1, 0.5, 1} \draw[black,thick] (.1,\y)--++(-.2,0) node[left, scale=.8] {\y};
+        \draw[samples=65, domain=0:2*pi, variable=\x,smooth, red, thick] plot (\x,{ sin( deg(\x) });
+        \draw[gray!80!white, very thick, dashed] (0,0.5)--(2*pi,0.5);
+        \node[scale=.8, text=blue] at (pi,-1.5) {$y=\sin x$};
+        \filldraw[blue] (pi/6,1/2) circle (.08cm);
+        \filldraw[green] (5*pi/6,1/2) circle (.08cm);
 
-<p>	The calculator gives us only one of these solutions, but we can use reference angles to find the other solution. In fact, if we use a calculator to find one solution as <m>\theta_{1}=\sin^{-1}k</m>, then the other solution is <m>\theta_{2}=\pi - \theta_{1}</m>. You can see this by considering the symmetry of the sine graph, or of the unit circle, as shown below.</p>
+        %unit circle
+        \coordinate (O) at (9,0);
+        \coordinate (A) at ($ cos(30)*(1,0)+(9,1/2) $);
+        \coordinate (B) at ($ cos(150)*(1,0)+(9,1/2) $);
+        \draw[black,thick,->, >=stealth'] (O)++(-1.1,0)--++(2.5,0); 
+        \draw[black,thick,->, >=stealth'] (O)++(0,-1.1)--++(0,2.55); 
+        \draw[red,thick] (O) circle(1cm);
+        \draw[gray,thick] (O) --(A);
+        \draw[gray,thick] (O) --(B);
+        \draw[gray!70!white,thick,->] (9.4,0) arc(0:30:.4);
+        \draw[gray!70!white,thick,->] (9.25,0) arc(0:150:.25);
+        \node[scale=.8, text=blue] at (9,-1.5) {The unit circle};
+        \node[scale=.8] at (10.1,-.2) {1};
+        \node[scale=.8] at (8.85,1.13) {1};
+        \filldraw[blue] (A) circle (.08cm);
+        \filldraw[green] (B) circle (.08cm);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
-<sidebyside width="80%"><image source="images/7-3-3.png"><description>sine</description></image></sidebyside>
+<p> The calculator gives us only one of these solutions, but we can use reference angles to find the other solution. In fact, if we use a calculator to find one solution as <m>\theta_{1}=\sin^{-1}k</m>, then the other solution is <m>\theta_{2}=\pi - \theta_{1}</m>. You can see this by considering the symmetry of the sine graph, or of the unit circle, as shown below.</p>
+
+<sidebyside width="85%"><!--<image source="images/7-3-3.png"><description>sine</description></image>-->
+    <image xml:id="fig-7-3-3">
+        <description>sine graph and unit circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+		\begin{tikzpicture} 
+		\draw[black,thick,->,>=stealth'] (0,0)--(6.6,0) node[right, scale=.9] {$\theta$};
+		\draw[black,thick,->,>=stealth'] (0,-1.1)--(0,1.45);
+		\draw[gray,thick, dashed] (.7,{.6})--++(0,-.7) node[below, yshift=-2, fill=white, inner sep=1, scale=.9, text=blue] {$\theta_1$};
+		\draw[black,thick] (pi,.1)--++(0,-.2) ;
+		\draw[gray,thick, dashed] ({pi-.7},.6)--++(0,-.7) node[below, yshift=-2, fill=white, inner sep=1, scale=.9, text=green!60!black] {$\pi - \theta_1$};
+		\draw[black,thick] (2*pi,.1)--++(0,-.2);
+		\draw[black,thick] ($ (.1, 0) + sin(deg(.7)*(0,1) $)--++(-.2,0) node[left, scale=.8, text=red] {$k$};
+		\draw[samples=65, domain=0:2*pi, variable=\x,smooth, red, thick] plot (\x,{ sin( deg(\x) });
+		\draw[gray!80!white, thick, dashed] ($ sin(deg(.7)*(0,1) $)--++(2*pi,0);
+		\node[scale=.8, text=blue] at (5.2,-1.5) {Solutions of $\sin \theta=k, \quad k > 0$};
+		\filldraw[blue] ($ (.7, 0) + sin(deg(.7)*(0,1) $) circle (.08cm);
+		\filldraw[green] ($ ({pi-.7}, 0) + sin(deg(.7)*(0,1) $) circle (.08cm);
+
+		%unit circle
+		\coordinate (O) at (9,0);
+		\coordinate (A) at ($ cos(deg(.7))*(1,0)+(9,{sin(deg(.7))}) $);
+		\coordinate (B) at ($ cos(deg(.7))*(-1,0)+(9,{sin(deg(.7))}) $);
+		\draw[black,thick,->, >=stealth'] (O)++(-1.1,0)--++(2.5,0); 
+		\draw[black,thick,->, >=stealth'] (O)++(0,-1.1)--++(0,2.55); 
+		\draw[gray!80!white, thick, dashed] ($ sin(deg(.7)*(0,1) + (7.9,0) $)--++(2.3,0) node[right,text=black, scale=.9] {$y=k$};
+		\draw[red,thick] (O) circle(1cm);
+		\draw[gray,thick] (O) --(A);
+		\draw[gray,thick] (O) --(B);
+		\draw[gray!70!white,thick,->] (9.4,0) arc(0:{deg(.7)}:.4);
+		\draw[gray!70!white,thick,->] (9.25,0) arc(0:{deg(pi-.7)}:.25);
+		\filldraw[blue] (A) circle (.08cm);
+		\filldraw[green] (B) circle (.08cm);
+		\node[anchor=south west, scale=.8,text=blue] at (A) {$\theta_1$};
+		\node[anchor=south east, scale=.8, text=green!80!black] at (B) {$\pi - \theta_1$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
 <p>	This relationship between the two solutions still holds if <m>k</m> is negative, because the calculator returns a negative angle for <m>\theta_{1}=\sin^{-1}k</m>.  See the figure below.</p>
 
-<sidebyside width="80%"><image source="images/7-3-4.png"><description>sine</description></image></sidebyside>
+<sidebyside width="100%"><!--<image source="images/7-3-4.png"><description>sine</description></image>-->
+    <image xml:id="fig-7-3-4">
+        <description>sine graph and unit circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+\begin{tikzpicture} 
+\draw[black,thick,->,>=stealth'] (-pi/2,0)--(6.6,0) node[right, scale=.9] {$\theta$};
+\draw[black,thick,->,>=stealth'] (0,-1.1)--(0,1.45);
+\draw[gray,thick, dashed] (-.5,-{.5})--++(0,.6) node[above,  fill=white, inner sep=1, scale=.9, text=blue] {$\theta_1$};
+\draw[black,thick] (pi,.1)--++(0,-.2) ;
+\draw[gray,thick, dashed] ({pi+.5},-.5)--++(0,.6) node[above,  fill=white, inner sep=1, scale=.9, text=green!60!black] {$\pi - \theta_1$};
+\draw[black,thick] (2*pi,.1)--++(0,-.2);
+\draw[samples=65, domain=-pi/2:2*pi, variable=\x,smooth, red, thick] plot (\x,{ sin( deg(\x) });
+\draw[gray!80!white, thick, dashed] ($ (-pi/2,0)+ sin(deg(.5)*(0,-1) $)--++(5*pi/2,0);
+\node[scale=.8, text=blue] at (5.2,-1.5) {Solutions of $\sin \theta=k, \quad k < 0$};
+\filldraw[blue] ($ (-.5, 0) + sin(deg(.5)*(0,-1) $) circle (.08cm);
+\filldraw[green] ($ ({pi+.5}, 0) + sin(deg(.5)*(0,-1) $) circle (.08cm);
+\node[fill=white, inner sep=2, text=red, scale=.8] at ($ (.2, 0) + sin(deg(.5)*(0,-1) $) {$k$};
+
+%unit circle
+\coordinate (O) at (9,0);
+\coordinate (A) at ($ cos(deg(.5))*(1,0)+(9,{-sin(deg(.5))}) $);
+\coordinate (B) at ($ cos(deg(.5))*(-1,0)+(9,{-sin(deg(.5))}) $);
+\draw[black,thick,->, >=stealth'] (O)++(-1.1,0)--++(2.5,0); 
+\draw[black,thick,->, >=stealth'] (O)++(0,-1.1)--++(0,2.55); 
+\draw[gray!80!white, thick, dashed] ($ sin(deg(.5)*(0,-1) + (7.9,0) $)--++(2.3,0) node[right,text=black, scale=.9] {$y=k$};
+\draw[red,thick] (O) circle(1cm);
+\draw[gray,thick] (O) --(A);
+\draw[gray,thick] (O) --(B);
+\draw[gray!70!white,thick,->] (9.4,0) arc(0:{-deg(.5)}:.4);
+\draw[gray!70!white,thick,->] (9.25,0) arc(0:{deg(pi+.5)}:.25);
+\filldraw[blue] (A) circle (.08cm);
+\filldraw[green] (B) circle (.08cm);
+\node[anchor=north west, scale=.8,text=blue] at (A) {$\theta_1$};
+\node[anchor=north east, scale=.8, text=green!80!black] at (B) {$\pi - \theta_1$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
 <note><p>Why is <m>\pi - \theta</m> greater than <m>\theta</m> in the figure above?  Think about negative numbers: if <m>\theta</m> is a negative number, then <m>\pi - \theta</m> is greater than <m>\theta</m>.  For example, if <m>\theta=\dfrac{-\pi}{4}</m>,  then
 <me>\pi - \theta=\pi - \dfrac{-\pi}{4}=\pi + \dfrac{\pi}{4}=\dfrac{5\pi}{4}</me></p></note>
@@ -64,17 +186,135 @@
 
 <p>	A similar method applies to equations of the form <m>\cos \theta = k</m>.  The two solutions between <m>0</m> and <m>2\pi</m> are <m>\theta_{1}=\cos^{-1}(k)</m> and <m>\theta_{2}=2\pi -\cos^{-1}(k)</m>.  Once again, you can see this by considering the symmetry of the cosine graph, or of the unit circle, as shown belo</p>
 
-<sidebyside width="70%"><image source="images/7-3-5.png"><description>cosine</description></image></sidebyside>
+<sidebyside width="85%"><!--<image source="images/7-3-5.png"><description>cosine</description></image>-->
+    <image xml:id="fig-7-3-5">
+        <description>cosine graph and unit circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+		\begin{tikzpicture} 
+		\draw[black,thick,->,>=stealth'] (0,0)--(6.6,0) node[right, scale=.9] {$\theta$};
+		\draw[black,thick,->,>=stealth'] (0,-1.1)--(0,1.45);
+		\draw[gray,thick, dashed] (1.1,{.4})--++(0,-.5) node[below, yshift=-2, fill=white, inner sep=1, scale=.9, text=blue] {$\theta_1$};
+		\draw[black,thick] (pi,.1)--++(0,-.2) ;
+		\draw[gray,thick, dashed] ({2*pi-1.1},.4)--++(0,-.5) node[below, yshift=-2, fill=white, inner sep=1, scale=.9, text=green!60!black] {2$\pi - \theta_1$};
+		\draw[black,thick] (2*pi,.1)--++(0,-.2);
+		\draw[black,thick] ($ (.1, 0) + cos(deg(1.1)*(0,1) $)--++(-.2,0) node[left, scale=.8, text=red] {$k$};
+		\draw[samples=65, domain=0:2*pi, variable=\x,smooth, red, thick] plot (\x,{ cos( deg(\x) });
+		\draw[gray!80!white, thick, dashed] ($ cos(deg(1.1)*(0,1) $)--++(2*pi,0);
+		\node[scale=.8, text=blue] at (5.2,-1.5) {Solutions of $\cos \theta=k, \quad k > 0$};
+		\filldraw[blue] ($ (1.1, 0) + cos(deg(1.1)*(0,1) $) circle (.08cm);
+		\filldraw[green] ($ ({2*pi-1.1}, 0) + cos(deg(1.1)*(0,1) $) circle (.08cm);
+
+		%unit circle
+		\coordinate (O) at (9,0);
+		\coordinate (A) at ($ cos(deg(1.1))*(1,0)+(9,{sin(deg(1.1))}) $);
+		\coordinate (B) at ($ cos(deg(1.1))*(1,0)+(9,{-sin(deg(1.1))}) $);
+		\draw[black,thick,->, >=stealth'] (O)++(-1.1,0)--++(2.5,0); 
+		\draw[black,thick,->, >=stealth'] (O)++(0,-1.1)--++(0,2.55); 
+		\draw[gray!80!white, thick, dashed] ($ cos(deg(1.1)*(1,0) + (9,-0.2) +  sin(deg(-1.1)*(0,1)$)--++(0,2.6) node[above, yshift=-.1cm,text=black, scale=.9] {$x=k$};
+		\draw[red,thick] (O) circle(1cm);
+		\draw[gray,thick] (O) --(A);
+		\draw[gray,thick] (O) --(B);
+		\draw[gray!70!white,thick,->] (9.35,0) arc(0:{deg(1.1)}:.35);
+		\draw[gray!70!white,thick,->] (9.2,0) arc(0:{360-deg(1.1)}:.2);
+		\filldraw[blue] (A) circle (.08cm);
+		\filldraw[green] (B) circle (.08cm);
+		\node[anchor=south west, scale=.8,text=blue] at (A) {$\theta_1$};
+		\node[anchor=north west, scale=.8, text=green!80!black] at (B) {$2\pi - \theta_1$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
 <p>The relationship between the two solutions still holds if <m>k</m> is negative. See the figure below.</p>
 
-<sidebyside width="70%"><image source="images/7-3-6.png"><description>cosine</description></image></sidebyside>
+<sidebyside width="85%"><!--<image source="images/7-3-6.png"><description>cosine</description></image>-->
+    <image xml:id="fig-7-3-6">
+        <description>cosine graph and unit circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} 
+        \draw[black,thick,->,>=stealth'] (0,0)--(6.6,0) node[right, scale=.9] {$\theta$};
+        \draw[black,thick,->,>=stealth'] (0,-1.1)--(0,1.45);
+        \draw[gray,thick, dashed] (2,{-.4})--++(0,.5) node[above, yshift=0, fill=white, inner sep=1, scale=.9, text=blue] {$\theta_1$};
+        \draw[black,thick] (pi,.1)--++(0,-.2) ;
+        \draw[gray,thick, dashed] ({2*pi-2},-.4)--++(0,.5) node[above, yshift=0, fill=white, inner sep=1, scale=.9, text=green!60!black] {2$\pi - \theta_1$};
+        \draw[black,thick] (2*pi,.1)--++(0,-.2);
+        \draw[black,thick] ($ (.1, 0) + cos(deg(2)*(0,1) $)--++(-.2,0) node[left, scale=.8, text=red] {$k$};
+        \draw[samples=65, domain=0:2*pi, variable=\x,smooth, red, thick] plot (\x,{ cos( deg(\x) });
+        \draw[gray!80!white, thick, dashed] ($ cos(deg(2)*(0,1) $)--++(2*pi,0);
+        \node[scale=.8, text=blue] at (5,-1.5) {Solutions of $\cos \theta=k, \quad k < 0$};
+        \filldraw[blue] ($ (2, 0) + cos(deg(2)*(0,1) $) circle (.08cm);
+        \filldraw[green] ($ ({2*pi-2}, 0) + cos(deg(2)*(0,1) $) circle (.08cm);
 
-<exercise><statement><p>Solve  <m>\cos \theta = -0.36</m> for <m>0 \le \theta \lt 2\pi</m>.</p></statement></exercise>
+        %unit circle
+        \coordinate (O) at (9,0);
+        \coordinate (A) at ($ cos(deg(2))*(1,0)+(9,{sin(deg(2))}) $);
+        \coordinate (B) at ($ cos(deg(2))*(1,0)+(9,{-sin(deg(2))}) $);
+        \draw[black,thick,->, >=stealth'] (O)++(-1.1,0)--++(2.5,0); 
+        \draw[black,thick,->, >=stealth'] (O)++(0,-1.1)--++(0,2.55); 
+        \draw[gray!80!white, thick, dashed] ($ cos(deg(2)*(1,0) + (9,-0.2) +  sin(deg(-1.1)*(0,1)$)--++(0,2.6) node[above, yshift=-.1cm,text=black, scale=.9] {$x=k$};
+        \draw[red,thick] (O) circle(1cm);
+        \draw[gray,thick] (O) --(A);
+        \draw[gray,thick] (O) --(B);
+        \draw[gray!70!white,thick,->] (9.35,0) arc(0:{deg(2)}:.35);
+        \draw[gray!70!white,thick,->] (9.2,0) arc(0:{360-deg(2)}:.2);
+        \filldraw[blue] (A) circle (.08cm);
+        \filldraw[green] (B) circle (.08cm);
+        \node[anchor=south east, scale=.8,text=blue] at (A) {$\theta_1$};
+        \node[anchor=north east, xshift=.8cm yshift=-2, scale=.8, text=green!80!black] at (B) {$2\pi - \theta_1$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
+
+<exercise><statement><p>Solve  <m>\cos \theta = -0.36</m> for <m>0 \le \theta \lt 2\pi</m>.</p></statement><answer><p>1.9391, 4,3441</p></answer></exercise>
 
 <p>	Equations of the form <m>\tan \theta = k</m> are generally easier to solve, because there is only one solution in each cycle of the graph.  Each solution differs from the previous one by <m>\pi</m>, as shown below. </p>
 
-<sidebyside width="80%"><image source="images/7-3-7.png"><description>tangent</description></image></sidebyside>
+<sidebyside width="90%"><!--<image source="images/7-3-7.png"><description>tangent</description></image>-->
+    <image xml:id="fig-7-3-7">
+        <description>tangent function and slope</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+		\begin{tikzpicture} 
+		\def\k{0.9};
+		\def\tank{tan(deg(\k))};
+		\draw[black,thick,->,>=stealth'] (0,0)--(6.6,0) node[right, scale=.9] {$\theta$};
+		\draw[black,thick,->,>=stealth'] (0,-2)--(0,2);
+		\draw[blue,thick, dashed] (\k,1.3)--++(0,-1.5) node[below, yshift=0, fill=white, inner sep=1, scale=.9, text=blue] {$\theta_1$};
+		\draw[black,thick] (pi,.1)--++(0,-.2) ;
+		\draw[green,thick, dashed] ({pi+\k},1.3)--++(0,-1.5) node[below, yshift=0, fill=white, inner sep=1, scale=.9, text=green!60!black] {$\pi + \theta_1$};
+		\draw[black,thick] (2*pi,.1)--++(0,-.2);
+		\draw[black,thick] ($ (.1, 0) + \tank*(0,1) $)--++(-.2,0) node[left, scale=.8, text=red] {$k$};
+		\draw[samples=65, domain=0:{atan(2)*pi/180}, variable=\x,smooth, red, thick] plot (\x,{ tan( deg(\x) });
+		\draw[samples=65, domain={-atan(2)*pi/180+pi}:{atan(2)*pi/180+pi}, variable=\x,smooth, red, thick] plot (\x,{ tan( deg(\x) });
+		\draw[samples=65, domain={-atan(2)*pi/180+2*pi}:{2*pi}, variable=\x,smooth, red, thick] plot (\x,{ tan( deg(\x) });
+		\draw[gray!80!white, thick, dashed] ($ \tank*(0,1) $)--++(2*pi,0);
+		\node[scale=.8, text=blue] at (5.2,-2.5) {Solutions of $\tan \theta=k, $};
+		\filldraw[blue] ($ (0.9, 0) + \tank *(0,1) $) circle (.08cm);
+		\filldraw[green] ($ ({pi+0.9}, 0) + \tank*(0,1) $) circle (.08cm);
+
+		%slope on second axis
+		\coordinate (O) at (10,0);
+		\coordinate (A) at ($ 2/ \tank *(1,0)+(10,2) $);
+		\coordinate (B) at ($ -2/ \tank *(1,0)+(10,-2) $);
+		\draw[black,thick,->, >=stealth'] (O)++(-2,0)--++(4,0); 
+		\draw[black,thick,->, >=stealth'] (O)++(0,-2)--++(0,4); 
+		\draw[gray!80!white, thick, dashed](B)--(A) node[below right, xshift=-.2cm, yshift=-.1cm,text=black, scale=.8] {slope $=k$};
+		%\draw[green,thick, dashed] (O) --(B);
+		\draw[blue,thick,->] (10.45,0) arc(0:{deg(\k)}:.45) node[right, midway, scale=.8]  {$\theta_1$};
+		\draw[green,thick,->] (10.3,0) arc(0:{180+deg(\k)}:.3) node[above left, yshift=-2, midway, scale=.8, text=green!60!black]  {$\pi+\theta_1$};;
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
 <p>For example, to solve the equation <m>\tan \theta = -2.4</m> for <m>0 \le \theta \lt 2\pi</m>, we first calculate
 <me>\tan^{-1}(-2.4)=-1.1760</me>
@@ -105,7 +345,63 @@ Because this angle is not between <m>0</m> and <m>2\pi</m>, we add <m>\pi</m> to
 <me>\sin nx = k~~ \text{?}</me>
 For example, how many solutions are there for the equation <m>\sin 2x=0.5</m>? The figure below shows that this equation has four solutions between <m>0</m> and <m>2\pi</m>. The graph of <m>y=\sin 2x</m> completes two cycles between <m>0</m> and <m>2\pi</m>, and each cycle produces two solutions, for a total of four.</p>
 
-<sidebyside width="100%"><image source="images/7-3-8.png"><description>sine</description></image></sidebyside>
+<sidebyside width="100%"><!--<image source="images/7-3-8.png"><description>sine</description></image>-->
+    <image xml:id="fig-7-3-8">
+        <description>sin 2x graph and unit circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+		\begin{tikzpicture} 
+		\draw[black,thick,->,>=stealth'] (0,0)--(6.6,0) node[right, scale=.9] {$x$};
+		\draw[black,thick,->,>=stealth'] (0,-1.1)--(0,1.45) node[above, scale=.9] {$y$};
+		\foreach \y in {-1, 0.5, 1} \draw[black,thick] (.1,\y)--++(-.2,0) node[left, scale=.8] {\y};
+		\draw[blue,thick, dashed] (pi/12,0.5)--++(0,-.6) node[below,scale=.9]{$x_1$};
+		\draw[green,thick, dashed, text=green!60!black] ({5*pi/12},0.5)--++(0,-.6)  node[below,scale=.9]{$x_2$};
+		\draw[blue,thick, dashed] (13*pi/12,0.5)--++(0,-.6) node[below,scale=.9]{$x_3$};
+		\draw[green,thick, dashed, text=green!60!black] ({17*pi/12},0.5)--++(0,-.6)  node[below,scale=.9]{$x_4$};
+		\draw[black,thick] (pi,.1)--++(0,-.2) ;
+		\draw[black,thick] (2*pi,.1)--++(0,-.2);
+		\draw[samples=65, domain=0:2*pi, variable=\x,smooth, red, thick] plot (\x,{ sin( deg(2*\x) });
+		\draw[gray!80!white, thick, dashed] (0,0.5)--++(2*pi,0);
+		\node[scale=.8, text=blue] at (3.2,-1.5) {$y=\sin 2x$};
+		\filldraw[blue] (pi/12, 0.5) circle (.08cm);
+		\filldraw[green] (5*pi/12,0.5) circle (.08cm);
+		\filldraw[blue] (13*pi/12, 0.5) circle (.08cm);
+		\filldraw[green] (17*pi/12,0.5) circle (.08cm);
+
+		%unit circle
+		\def\del{9.7};
+		\coordinate (O) at (\del,0);
+		\coordinate (A) at ($ sqrt(3)*(1/2,0)+(\del,0.5) $);
+		\coordinate (B) at ($ -sqrt(3)*(1/2,0)+(\del,0.5) $);
+		\coordinate (x1) at ($ cos(15)*(1,0)+(\del,0) + sin(15)*(0,1)$);
+		\coordinate (x3) at ($ cos(15)*(-1,0)+(\del,0) + sin(15)*(0,-1)$);
+		\draw[blue] (x1)--(x3);
+		\coordinate (x2) at ($ cos(75)*(1,0)+(\del,0) + sin(75)*(0,1)$);
+		\coordinate (x4) at ($ cos(75)*(-1,0)+(\del,0) + sin(75)*(0,-1)$);
+		\draw[green] (x2)--(x4);
+		\draw[black,thick,->, >=stealth'] (O)++(-1.1,0)--++(2.5,0); 
+		\draw[black,thick,->, >=stealth'] (O)++(0,-1.1)--++(0,2.55); 
+		\draw[gray!80!white, thick, dashed] ($ \del*(1,0)+(0,0.5) + (-1.,0) $)--++(2.,0) ;
+		\draw[red,thick] (O) circle(1cm);
+		\draw[gray,thick] (O) --(A);
+		\draw[gray,thick] (O) --(B);
+		\draw[gray!70!white,thick,->] ($ \del*(1,0) +(.5,0)$) arc(0:30:.5);
+		\draw[gray!70!white,thick,->] ($ \del*(1,0) +(.25,0)$) arc(0:150:.25);
+		\filldraw[blue] (x1) circle (.08cm) node[right, xshift=2, scale=.9] {$x_1=\frac{\pi}{12}$};
+		\filldraw[blue] (x3) circle (.08cm) node[left, scale=.9] {$x_3=\frac{13\pi}{12}$};
+		\filldraw[green] (x2) circle (.08cm) node[above right, text=green!60!black, scale=.9] {$x_2=\frac{5\pi}{12}$};
+		\filldraw[green] (x4) circle (.08cm) node[below left, xshift=2, text=green!60!black, scale=.9] {$x_4=\frac{17\pi}{12}$};
+		\filldraw[red] (A) circle (.08cm);
+		\filldraw[red] (B) circle (.08cm);
+		\node[anchor=south west, scale=.8,text=blue] at (A) {$2x_1\, \& \, 2x_3$};
+		\node[anchor=south east, scale=.8, text=green!60!black] at (B) {$2x_2\, \& \, 2x_4$};
+		\node[fill=white, inner sep=0, scale=.7] at ($ (\del,0) + (-.2,0.5) $) {$0.5$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
 <example><statement><p>Find all solutions of <m>\sin 2x=0.5</m> between <m>0</m> and <m>2\pi</m>.</p></statement>
 
@@ -117,9 +413,35 @@ For example, how many solutions are there for the equation <m>\sin 2x=0.5</m>? T
 Note that the solutions in the second cycle are still less than <m>2\pi</m>, so they must be included in the set of all solutions between <m>0</m> and <m>2\pi</m>.  The four solutions are <m>\dfrac{\pi}{12},~\dfrac{5\pi}{12},~\dfrac{13\pi}{12}</m> and <m>\dfrac{17\pi}{12}</m>.</p></solution></example> 
 
 <exercise><statement><p><ol label="a">
-	<li>Sketch a graph of <m>y=\cos 2x</m> for  <m>0 \le \theta \le 2\pi</m>.</li>
-	<li>Find exact values for all solutions of <m>\cos 2x=\dfrac{-\sqrt{2}}{2}</m>  between <m>0</m> and <m>2\pi</m>.</li>
- </ol></p></statement></exercise>
+    <li>Sketch a graph of <m>y=\cos 2x</m> for  <m>0 \le \theta \le 2\pi</m>.</li>
+    <li>Find exact values for all solutions of <m>\cos 2x=\dfrac{-\sqrt{2}}{2}</m>  between <m>0</m> and <m>2\pi</m>.</li>
+ </ol></p></statement><answer><p><ol label="a">
+    <li><sidebyside width="35%" margins="0 65%"><!--<image source="images/ar7-3-2ans.png"><description>sine</description></image>-->
+    <image xml:id="exer7-3-2ans">
+        <description>sin 2x</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture}
+        \draw[cyan] (0,-1) grid[xstep=pi/4, ystep=1/2] (2*pi,1);
+        \draw[black,thick,->,>=stealth'] (0,0) -- (6.5,0) node[right,scale=.9] {$x$};
+        \draw[black,thick] (2*pi,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1, scale=.9] {$2\pi$};
+        \draw[black,thick,->,>=stealth'] (0,-1) -- (0,1.3) node[above,scale=.9] {$y$};
+        \foreach \y in {-1,1} \draw[black,thick] (.1,\y)--++(-.2,0) node[left, xshift=2, yshift=-2, scale=.9]{\y};
+        \draw[samples=65,domain=0:2*pi, variable=\x, smooth, red, thick] plot(\x,{cos(deg(2*\x))});
+        \coordinate (C) at ($ 1/sqrt(2)*(0, -1) $);
+        \coordinate (D) at ($ 1/sqrt(2)*(0, -1)+(2*pi,0) $);
+        \draw[green, thick, dashed] (D)--(C) node[left, scale=.7, text=black] {$-\sqrt{2}/\sqrt{2}$};
+        \filldraw[blue] ($ 1/sqrt(2)*(0,-1)+(3*pi/8,0) $) circle (.07cm);
+        \filldraw[blue] ($ 1/sqrt(2)*(0,-1)+(5*pi/8,0) $) circle (.07cm);
+        \filldraw[blue] ($ 1/sqrt(2)*(0,-1)+(11*pi/8,0) $) circle (.07cm);
+        \filldraw[blue] ($ 1/sqrt(2)*(0,-1)+(13*pi/8,0) $) circle (.07cm);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></li>
+    <li><m>\dfrac{3\pi}{8},~\dfrac{5\pi}{8},~\dfrac{11\pi}{8},~\dfrac{13\pi}{8}</m></li></ol></p></answer></exercise>
 
 <p>	As we observed earlier, equations involving the tangent function are easier to solve, because there is only one solution in each cycle of the graph. Once we have found one solution, we can find all the others by adding multiples of the period.</p>
 
@@ -127,7 +449,34 @@ Note that the solutions in the second cycle are still less than <m>2\pi</m>, so 
 
 <solution><p>We expect to find four solutions between <m>0</m> and <m>2\pi</m>. The first angle <m>2t</m> between <m>0</m> and <m>2\pi</m> whose tangent is 1 is <m>2t=\dfrac{3\pi}{4}</m>, so the first solution is <m>t_{1}=\dfrac{3\pi}{8}</m>.  Now, the period of the graph of <m>y=\tan 2t</m> is <m>\dfrac{\pi}{2}</m>, as shown below.</p>
 
-<sidebyside width="40%"><image source="images/exam7-3-3.png"><description>tangent</description></image></sidebyside>
+<sidebyside width="40%"><!--<image source="images/exam7-3-3.png"><description>tangent</description></image>-->
+    <image xml:id="exam7-3-3">
+        <description>tan 2 t</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+		\begin{tikzpicture}
+		\draw[cyan] (0,-3) grid[xstep=pi/4] (2*pi,3);
+		\draw[black,thick,->,>=stealth'] (0,0) -- (6.5,0) node[right,scale=.9] {$t$};
+		\draw[black,thick] (pi,.1)--++(0,-.2) node[below, yshift=-4, fill=white, inner sep=1, scale=.9] {$\pi$};
+		\draw[black,thick] (2*pi,.1)--++(0,-.2) node[below, yshift=-4, fill=white, inner sep=1, scale=.9] {$2\pi$};
+		\draw[black,thick,->,>=stealth'] (0,-3) -- (0,3.3) node[above,scale=.9] {$y$};
+		\foreach \y in {-2,2,-1} \draw[black,thick] (.1,\y)--++(-.2,0) node[left, scale=.9]{\y};
+		\draw[domain=0:{atan(3)*pi/360}, variable=\x, smooth, red, thick] plot(\x,{tan(deg(2*\x))});
+		\draw[domain={pi/2-atan(3)*pi/360}:{pi/2+atan(3)*pi/360}, variable=\x, smooth, red, thick] plot(\x,{tan(deg(2*\x))});
+		\draw[domain={pi-atan(3)*pi/360}:{pi+atan(3)*pi/360}, variable=\x, smooth, red, thick] plot(\x,{tan(deg(2*\x))});
+		\draw[domain={3*pi/2-atan(3)*pi/360}:{3*pi/2+atan(3)*pi/360}, variable=\x, smooth, red, thick] plot(\x,{tan(deg(2*\x))});
+		\draw[domain={2*pi-atan(3)*pi/360}:2*pi, variable=\x, smooth, red, thick] plot(\x,{tan(deg(2*\x))});
+		\draw[green, thick, dashed] (2*pi,-1)--++(-2*pi,0);
+		\filldraw[blue] (3*pi/8,-1) circle (.07cm);
+		\filldraw[blue] (7*pi/8,-1) circle (.07cm);
+		\filldraw[blue] (11*pi/8,-1) circle (.07cm);
+		\filldraw[blue] (15*pi/8,-1) circle (.07cm);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
 <p>There is one solution in each cycle, so we add multiples of <m>\dfrac{\pi}{2}</m> to <m>t_{1}</m> to find the other solutions. 
 	\begin{align*}
@@ -138,11 +487,50 @@ Note that the solutions in the second cycle are still less than <m>2\pi</m>, so 
 The four solutions are <m>\dfrac{3\pi}{8},~ \dfrac{7\pi}{8},~ \dfrac{11\pi}{8}</m> and <m>\dfrac{15\pi}{8}</m>.</p>
 </solution></example> 
 
-<exercise><statement><p>Find all solutions of <m>\tan 2x=\sqrt{3}</m>  between <m>0</m> and <m>2\pi</m>.</p></statement></exercise>
+<exercise><statement><p>Find all solutions of <m>\tan 2x=\sqrt{3}</m>  between <m>0</m> and <m>2\pi</m>.</p></statement><answer><p><m>\dfrac{\pi}{6},~\dfrac{2\pi}{3},~\dfrac{7\pi}{6},~\dfrac{5\pi}{3}</m></p></answer></exercise>
 
 <p>	The larger the value of <m>n</m>, the more cycles the graph completes between <m>0</m> and <m>2\pi</m>, and the more solutions we find.  Thus, for <m>-1 \lt k \lt 1</m>, there are six solutions of <m>\sin 3x=k</m>  between <m>0</m> and <m>2\pi</m>, eight solutions of <m>\sin 4x=k</m>,  and so on.  (See the figure below.)</p>
 
-<sidebyside width="90%"><image source="images/7-3-9.png"><description>sine</description></image></sidebyside>
+<sidebyside width="90%"><!--<image source="images/7-3-9.png"><description>sine</description></image>-->
+    <image xml:id="fig-7-3-9">
+        <description>sin 3x and sin 4x</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+		\begin{tikzpicture}
+		\draw[cyan] (0,-2) grid[xstep=pi/6, ystep=1/2] (2*pi,2);
+		\draw[black,thick,->,>=stealth'] (0,0) -- (6.5,0) node[right,scale=.9] {$x$};
+		\draw[black,thick,->,>=stealth'] (0,-2) -- (0,2.3) node[above,scale=.9] {$y$};
+		\draw[black,thick] (pi,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1, scale=.9] {$\pi$};
+		\draw[black,thick] (2*pi,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1, scale=.9] {$2\pi$};
+		\foreach \y in {-1,1} \draw[black,thick] (.1,\y)--++(-.2,0) node[left, xshift=2, yshift=-2, scale=.9]{\y};
+		\draw[samples=65,domain=0:2*pi, variable=\x, smooth, red, thick] plot(\x,{sin(deg(3*\x))});
+		\def\k{.6};
+		\node[text=blue] at (pi,-2.5) {$y=\sin 3x$};
+		\coordinate (C) at (0,\k) ;
+		\coordinate (D) at (2*pi,\k) ;
+		\draw[green,thick,dashed] (D)--(C) node[left,scale=.8, text=green!60!black] {$k$};
+
+		%second grid
+		\def\del{8*pi/3};
+		\coordinate (O) at ($ \del*(1,0) $);
+		\draw[cyan] ($ \del*(1,0) +(0,-2) $) grid[xstep=pi/6, ystep=1/2] ($ \del*(1,0) +(2*pi,2) $);
+		\draw[black,thick,->,>=stealth'] (O) --++ (6.5,0) node[right,scale=.9] {$x$};
+		\draw[black,thick,->,>=stealth'] ($ \del*(1,0) +(0,-2)$) --++ (0,4.3) node[above,scale=.9] {$y$};
+		\draw[black,thick] ($ \del*(1,0) +(pi,.1)$)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1, scale=.9] {$\pi$};
+		\draw[black,thick] ($ \del*(1,0) +(2*pi,.1)$)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1, scale=.9] {$2\pi$};
+		\foreach \y in {-1,1} \draw[black,thick] ($ \del*(1,0) +(.1,\y)$)--++(-.2,0) node[left, xshift=2, yshift=-2, scale=.9]{\y};
+		\draw[samples=65,domain=0:2*pi, variable=\x, smooth, red, thick] plot({\x+\del},{sin(deg(4*\x))});
+		\def\k{.6};
+		\node[text=blue] at ($ \del*(1,0) +(pi,-2.5)$) {$y=\sin 4x$};
+		\coordinate (C) at ($ \del*(1,0)+(0,\k) $);
+		\coordinate (D) at ($ \del*(1,0)+(2*pi,\k)$) ;
+		\draw[green,thick,dashed] (D)--(C) node[left,scale=.8, text=green!60!black] {$k$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 </subsection>
 
 <subsection><title>Using a Calculator for Multiple Solutions</title>
@@ -168,7 +556,7 @@ Finally, because the period of the function <m>f(x)=\cos 2x</m> is <m>\pi</m>, w
 	\end{align*}
 To two decimal places, the four solutions are  0.66, 2.48, 3.80, and 5.62</p> </solution></example>
 
-<exercise><statement><p>Solve  <m>5-2\sin 3x = 3.7</m>  for <m>0 \le x \le 2\pi</m>.</p></statement></exercise>
+<exercise><statement><p>Solve  <m>5-2\sin 3x = 3.7</m>  for <m>0 \le x \le 2\pi</m>.</p></statement><answer><p>0.24, 1.86, 2.33, 2,95, 4.43, 6.06</p></answer></exercise>
 </subsection>
 
 <subsection><title>Using a Substitution</title>
@@ -192,7 +580,7 @@ Finally, because the period of the function <m>f(x)=\sin (2x+1.5)</m> is <m>\pi<
 	\end{align*}
 Rounded to hundredths, the four solutions are  0.97, 2.24, 4.11, and 5.38.</p></solution></example>
 
-<exercise><statement><p>Use a substitution to solve  <m>4\cos (3x-0.5) = -3.2</m>  for  <m>0 \le x \le 2\pi</m>.</p></statement></exercise>
+<exercise><statement><p>Use a substitution to solve  <m>4\cos (3x-0.5) = -3.2</m>  for  <m>0 \le x \le 2\pi</m>.</p></statement><answer><p>1.00, 1.43, 3.09, 3.52, 5.19, 5.62</p></answer></exercise>
 
 <p>Here is our strategy for solving trigonometric equations by using a substitution.</p>
 
@@ -238,7 +626,34 @@ We stop here, because the next solution is greater than <m>2\pi</m>. Rounded to 
 
 <exercise><statement><p><ol label="a">
 <li>Graph <m>y=2-4\tan 3(x+0.2)</m>  from <m>x=0</m> to <m>x=2\pi</m>.</li>
-<li>Find all solutions of <m>2-4\tan 3(x+0.2)=5</m> between <m>0</m> and <m>2\pi</m>. Round your answers to two decimal places.</li></ol></p></statement></exercise>
+<li>Find all solutions of <m>2-4\tan 3(x+0.2)=5</m> between <m>0</m> and <m>2\pi</m>. Round your answers to two decimal places.</li></ol></p></statement><answer><p><ol label="a">
+    <li><sidebyside width="45%" margins="0 55%"><!--<image source="images/ar7-3-6ans.png"><description>tangent</description></image>-->
+    <image xml:id="exer7-3-6ans">
+        <description>transformed tangent</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+\begin{tikzpicture} [yscale=.6]
+\draw[cyan] (0,-1) grid[xstep=pi/6] (2*pi,7);
+\draw[black,thick,->,>=stealth'] (-0.2,0) -- (6.5,0) node[right,scale=.9] {$t$};
+\draw[black,thick,->,>=stealth'] (0,-1) -- (0,7.3) node[above,scale=.9] {$y$};
+\draw[black,thick] (pi,.1)--++(0,-.2) node[below, yshift=-4, fill=white, inner sep=1, scale=.9] {$\pi$};
+\draw[black,thick] (2*pi,.1)--++(0,-.2) node[below, yshift=-4, fill=white, inner sep=1, scale=.9] {$2\pi$};
+\foreach \y in {-1,5,1,2,3,4,6,7} \draw[black,thick] (.1,\y)--++(-.2,0) node[left, scale=.9]{\y};
+\draw[domain={atan(-5/4)*pi/540-0.2+pi/3}:{atan(3/4)*pi/540-0.2+pi/3}, variable=\x, smooth, red, thick] plot({\x},{2-4*tan(deg(3*(\x+0.2) ))});
+\draw[domain={atan(-5/4)*pi/540-0.2+pi/3}:{atan(3/4)*pi/540-0.2+pi/3}, variable=\x, smooth, red, thick] plot({\x+pi/3},{2-4*tan(deg(3*(\x+0.2) ))});
+\draw[domain={atan(-5/4)*pi/540-0.2+pi/3}:{atan(3/4)*pi/540-0.2+pi/3}, variable=\x, smooth, red, thick] plot({\x+2*pi/3},{2-4*tan(deg(3*(\x+0.2) ))});
+\draw[domain={atan(-5/4)*pi/540-0.2+pi/3}:{atan(3/4)*pi/540-0.2+pi/3}, variable=\x, smooth, red, thick] plot({\x+pi},{2-4*tan(deg(3*(\x+0.2) ))});
+\draw[domain={atan(-5/4)*pi/540-0.2+pi/3}:{atan(3/4)*pi/540-0.2+pi/3}, variable=\x, smooth, red, thick] plot({\x+4*pi/3},{2-4*tan(deg(3*(\x+0.2) ))});
+\draw[domain=0:{atan(3/4)*pi/540-0.2}, variable=\x, smooth, red, thick] plot({\x},{2-4*tan(deg(3*(\x+0.2) ))});
+\draw[domain={atan(-5/4)*pi/540-0.2+pi/3}:{pi/3}, variable=\x, smooth, red, thick] plot({\x+5*pi/3},{2-4*tan(deg(3*(\x+0.2) ))});
+\draw[green, very thick, dashed] (0,5)--++(2*pi,0);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></li>
+    <li>0.63, 1.68, 2,73, 3.77, 4.82, 5.87</li></ol></p></answer></exercise>
 </subsection>
 
 <subsection><title>Applications</title>
@@ -255,7 +670,26 @@ We stop here, because the next solution is greater than <m>2\pi</m>. Rounded to 
 The amplitude is <m>A=\dfrac{16}{2} = 8</m>, and the midline is <m>k=8</m>. The period is <m>\dfrac{1}{1000}</m>, so <m>\dfrac{B}{1000} = 2\pi</m>, and <m>B=2000\pi</m>. Thus
 <me>h(t)=-8\sin (2000\pi t) + 8</me>
 The graph is shown below.</p>
-<sidebyside width="50%"><image source="images/exam7-3-7.png"><description>sine</description></image></sidebyside></li>
+<sidebyside width="50%"><!--<image source="images/exam7-3-7.png"><description>sine</description></image>-->
+    <image xml:id="exam7-3-7">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+		\begin{tikzpicture} [xscale=.4,yscale=.13]
+		\draw[cyan] (0,0) grid[ystep=4] (10,20);
+		\draw[black,thick,->,>=stealth'] (0,0)--(10.7,0) node[right, scale=.9] {$t$};
+		\draw[black,thick,->,>=stealth'] (0,0)--(0,21.9) node[above, scale=.9] {$y$};
+		\foreach \y in {4,8,12,16,20} \draw[black,thick] (.15,\y)--++(-.3,0) node[left,scale=.9] {\y};
+		\draw[black,thick] (5,.8)--++(0,-1.6) node[below] {$\frac{1}{2000}$};
+		\draw[black,thick] (10,.8)--++(0,-1.6) node[below] {$\frac{1}{1000}$};
+		\draw[samples=65,domain=0:10, variable=\t, smooth, red, thick] plot(\t, {8-8*sin( 36*\t )});
+		\draw[green,thick,dashed] (0,14)--++(10,0);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></li>
 <li>With <m>h(t)=14</m>, we have
 	\begin{align*}
 		-8\sin (2000\pi t) + 8 \amp = 14 \amp\amp  \blert{\text{Subtract 8 from both sides.}}\\
@@ -274,7 +708,9 @@ Thus, the first two times the piston is at a height of 14 centimeters are approx
 <exercise><statement><p>A lever on an oil well is pumping vertically at a rate of 10 cycles per minute. The distance between its lowest position at the ground and its highest position is 1.8 meters.</p>  
 <p><ol label="a">
 <li>Suppose the lever is at its midline position at <m>t=0</m> and moving downwards. Find a formula for the sinusoidal function <m>h(t)</m> that gives the lever's height.</li>   
-<li>Find the first two times that lever is 1 meter above its lowest position.</li></ol></p></statement></exercise>
+<li>Find the first two times that lever is 1 meter above its lowest position.</li></ol></p></statement><answer><p><ol label="a">
+	<li><m>h(t)=-0.9\sin (20\pi t)+0.9</m></li>
+	<li>0.0518 minutes and 0.9823 minutes</li></ol></p></answer></exercise>
 </subsection>
 
 <subsection><title>Algebra Refresher</title>
@@ -299,13 +735,13 @@ Thus, the first two times the piston is at a height of 14 centimeters are approx
 <p><ol label="1">
 <li>1.9391, 4,3441</li>
 <li><ol label="a">
-	<li><sidebyside width="25%"><image source="images/ar7-3-2ans.png"><description>sine</description></image></sidebyside></li>
+	<li><sidebyside width="35%" margins="0 65%"><image source="images/exer7-3-2ans"><description>sine</description></image></sidebyside></li>
 	<li><m>\dfrac{3\pi}{8},~\dfrac{5\pi}{8},~\dfrac{11\pi}{8},~\dfrac{13\pi}{8}</m></li></ol></li>
 <li><m>\dfrac{\pi}{6},~\dfrac{2\pi}{3},~\dfrac{7\pi}{6},~\dfrac{5\pi}{3}</m></li>
 <li>0.24, 1.86, 2.33, 2,95, 4.43, 6.06</li>
 <li>1.00, 1.43, 3.09, 3.52, 5.19, 5.62</li>
 <li><ol label="a">
-	<li><sidebyside width="40%"><image source="images/ar7-3-6ans.png"><description>tangent</description></image></sidebyside></li>
+	<li><sidebyside width="40%"><image source="images/exer7-3-6ans"><description>tangent</description></image></sidebyside></li>
 	<li>0.63, 1.68, 2,73, 3.77, 4.82, 5.87</li></ol></li>
 <li><ol label="a">
 	<li><m>h(t)=-0.9\sin (20\pi t)+0.9</m></li>

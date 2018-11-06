@@ -207,7 +207,33 @@
 </ol></p></statement></exercise>
 </exercisegroup>
 
-<exercisegroup><introduction><sidebyside widths="50% 25%" valigns="middle middle"><p>In Problems 23<ndash/>24, the circle has radius <m>r</m>, and <m>O</m> is the point <m>(r,0)</m>.</p><image source="images/hp6-sum-23.png"><description>circle</description></image></sidebyside></introduction>
+<exercisegroup><introduction><sidebyside widths="50% 25%" valigns="middle middle"><p>In Problems 23<ndash/>24, the circle has radius <m>r</m>, and <m>O</m> is the point <m>(r,0)</m>.</p><!--<image source="images/hp6-sum-23.png"><description>circle</description></image>-->
+    <image xml:id="hp6-sum-23">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=1.5]
+        \draw[black,thick] (0,0) circle (1cm);
+        \draw[gray,thick] (-1.1,0)--(1.1,0);
+        \draw[gray,thick] (0,-1.1)--(0,1.1);
+        \coordinate (P) at (65:1);
+        \coordinate (Q) at (115:1);
+        \coordinate (R) at (245:1);
+        \coordinate (S) at (295:1);
+        \filldraw[black] (P) circle (.05cm) node[above right, inner sep=2pt, scale=.9] {$P$};
+        \filldraw[black] (Q) circle (.05cm) node[above left, inner sep=2pt, scale=.9] {$Q$};
+        \filldraw[black] (R) circle (.05cm) node[below left, inner sep=2pt, scale=.9] {$R$};
+        \filldraw[black] (S) circle (.05cm) node[below right, inner sep=2pt, scale=.9] {$S$};
+        \draw[blue, thick,dashed] (P)--(R);
+        \draw[blue, thick,dashed] (Q)--(S);
+        \draw[red,->] (0.25,0) arc(0:65:0.25) node[right, midway]{$\alpha$};
+        \draw[red,->] (-0.25,0) arc(180:115:0.25) node[left, midway]{$\alpha$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></introduction>
     
     <exercise number="23"><statement><p>Find the coordinates of each point in terms of <m>\alpha</m>.</p><p><ol label="a" cols="4">
     <li><m>P</m></li>
@@ -316,9 +342,38 @@
     </exercisegroup>
 
     <exercise number="41"><statement><p><ol label="a">
-        <li>Prepare a Cartesian coordinate system with the <m>x</m>-axis scaled from 1 to 10 and the <m>y</m>-axis scaled from <m>-2</m> to <m>2</m>. Label multiples of <m>\dfrac{\pi}{4}</m> on the <m>x</m>-axis.</li>
+        <li>Prepare a Cartesian coordinate system with the <m>x</m>-axis scaled from 0 to 10 and the <m>y</m>-axis scaled from <m>-2</m> to <m>2</m>. Label multiples of <m>\dfrac{\pi}{4}</m> on the <m>x</m>-axis.</li>
         <li>Sketch an accurate graph of <m>y = \cos x</m> on the grid. Sketch an accurate graph of <m>y = \sin x</m> on the same grid.</li></ol></p></statement>
-        <answer><sidebyside width="40%"><image source="images/hp6-rev-41ans.png"><description>graph</description></image></sidebyside></answer></exercise>
+        <answer><sidebyside width="50%" margins="0 50%"><!--<image source="images/hp6-rev-41ans.png"><description>graph</description></image>-->
+    <image xml:id="hp6-rev-41ans">
+        <description>graph of cosine and sine</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.8]
+        \draw[cyan] (0,-2) grid[xstep=pi/4, ystep=1] (10,2);
+        \draw[black,thick,->](0,0)--(10.,0) node[right]{$x$};
+        \draw[black,thick,->](0,-2)--(0,2.3) node[above]{$y$};
+        \foreach \y in {-1,1} \draw[black,thick] (0.08,\y)--++(-.16,0) node[left, scale=.8]{\y};
+        \draw[black,thick] (pi/4,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$ \frac{\pi}{4}$};
+        \draw[black,thick] (pi/2,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$ \frac{\pi}{2}$};
+        \draw[black,thick] (3*pi/4,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$ \frac{3\pi}{4}$};
+        \draw[black,thick] (pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$ \pi$};
+        \draw[black,thick] (5*pi/4,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$ \frac{5\pi}{4}$};
+        \draw[black,thick] (3*pi/2,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$ \frac{3\pi}{2}$};
+        \draw[black,thick] (7*pi/4,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$ \frac{7\pi}{4}$};
+        \draw[black,thick] (2*pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$ 2\pi$};
+        \draw[black,thick] (9*pi/4,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$ \frac{9\pi}{4}$};
+        \draw[black,thick] (5*pi/2,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$ \frac{5\pi}{2}$};
+        \draw[black,thick] (11*pi/4,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$ \frac{11\pi}{4}$};
+        \draw[black,thick] (3*pi,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$ 3\pi$};
+        \draw[samples=65, domain=0:10, variable=\x, smooth,blue, very thick] plot(\x,{cos(deg(\x))});
+        \draw[samples=65, domain=0:10, variable=\x, smooth, red, very thick] plot(\x,{sin(deg(\x))});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside></answer></exercise>
 
     <exercise number="42"><statement><p><ol label="a">
         <li>Use your calculator to make a table of values for <m>Y_1 = \sin x,~ Y_2 = \cos x,</m> and <m>Y_s = \dfrac{Y_1}{Y_2}</m>, for <m>0 \le x \le 3,</m> and <m>\Delta x = 0.1</m>.</li>
@@ -334,8 +389,52 @@
     <li><m>5 + 3\cos 2s = 4.56</m></li>
 </ol></p></statement>
         <answer><p><ol label="a">
-    <li><sidebyside widths="30% 50%"><image source="images/hp6-rev-43ansa.png"><description>graph</description></image><p>mid: <m>y = 5</m>, amp: <m>3</m>, period: <m>\pi</m></p></sidebyside></li>
-    <li><sidebyside widths="30% 50%"><image source="images/hp6-rev-43ansb.png"><description>graph</description></image><p><m>0.86,~2.28,~4.00,~5.42</m></p></sidebyside></li>
+    <li><sidebyside widths="35% 50%"><!--<image source="images/hp6-rev-43ansa.png"><description>graph</description></image>-->
+    <image xml:id="hp6-rev-43ansa">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [yscale=.5]
+        \draw[cyan] (0,0) grid[xstep=1/2] (2*pi, 10);
+        \draw[black,thick,->] (0,0)--(6.5,0) node[right]{$s$};
+        \draw[black,thick,->] (0,0)--(0,10.5) ;
+        \foreach \x in {1,2, ...,6} \draw[black,thick] (\x,.2)--++(0,-.4) node[below]{\x};
+        \foreach \y in {2, 4, ...,10} \draw[black,thick] (0.1,\y)--++(-.2,0) node[left]{\y};
+        \draw[gray,thick] (pi/2,-.3)--++(0,.6) node[above, yshift=1, fill=white, inner sep=1, text=blue, scale=.9]{$\frac{\pi}{2}$};
+        \draw[gray,thick] (pi,-.3)--++(0,.6) node[above, yshift=1, fill=white, inner sep=1, text=blue, scale=.9]{$\pi$};
+        \draw[gray,thick] (2*pi,-.3)--++(0,.6) node[above, yshift=1, fill=white, inner sep=1, text=blue, scale=.9]{$2\pi$};
+        \draw[gray,thick] (3*pi/2,-.3)--++(0,.6) node[above, yshift=1, fill=white, inner sep=1, text=blue, scale=.9]{$\frac{3\pi}{2}$};
+        \draw[samples=65,domain=0:2*pi,smooth,variable=\x,red,very thick] plot ({\x},{5+3* cos( deg(2*\x) )});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    <p>mid: <m>y = 5</m>, amp: <m>3</m>, period: <m>\pi</m></p></sidebyside></li>
+    <li><sidebyside widths="35% 50%"><!--<image source="images/hp6-rev-43ansb.png"><description>graph</description></image>-->
+    <image xml:id="hp6-rev-43ansb">
+        <description>sinusoidal curve and horizontal line</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [yscale=.5]
+        \draw[cyan] (0,0) grid[xstep=1/2] (2*pi, 10);
+        \draw[black,thick,->] (0,0)--(6.5,0) node[right]{$s$};
+        \draw[black,thick,->] (0,0)--(0,10.5) ;
+        \foreach \x in {1,2, ...,6} \draw[black,thick] (\x,.2)--++(0,-.4) node[below, scale=.9]{\x};
+        \foreach \y in {2, 4, ...,10} \draw[black,thick] (0.1,\y)--++(-.2,0) node[left, scale=.9]{\y};
+        \draw[gray,thick] (pi/2,-.3)--++(0,.6) node[above, yshift=1, fill=white, inner sep=1, text=blue, scale=.9]{$\frac{\pi}{2}$};
+        \draw[gray,thick] (pi,-.3)--++(0,.6) node[above, yshift=1, fill=white, inner sep=1, text=blue, scale=.9]{$\pi$};
+        \draw[gray,thick] (2*pi,-.3)--++(0,.6) node[above, yshift=1, fill=white, inner sep=1, text=blue, scale=.9]{$2\pi$};
+        \draw[gray,thick] (3*pi/2,-.3)--++(0,.6) node[above, yshift=1, fill=white, inner sep=1, text=blue, scale=.9]{$\frac{3\pi}{2}$};
+        \draw[samples=65,domain=0:2*pi,smooth,variable=\x,red,very thick] plot ({\x},{5+3* cos( deg(2*\x) )});
+        \draw[gray,thick] (0,4.56)--++(-.15,0) node[left, text=blue, scale=0.75]{4.56};
+        \draw[blue,thick] (0,4.56) -- ++(2*pi,0);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    <p><m>0.86,~2.28,~4.00,~5.42</m></p></sidebyside></li>
 </ol></p></answer></exercise>
 
     <exercise number="44"><statement><p><ol label="a">
@@ -348,8 +447,52 @@
     <li><m> 10 + 4.8\sin (s - 1.5) = 12</m></li>
 </ol></p></statement>
         <answer><p><ol label="a">
-    <li><sidebyside widths="30% 50%"><image source="images/hp6-rev-45ansa.png"><description>graph</description></image><p>mid: <m>y = 10</m>, amp: <m>4.8</m>, period: <m>2\pi</m></p></sidebyside></li>
-    <li><sidebyside widths="30% 50%"><image source="images/hp6-rev-45ansb.png"><description>graph</description></image><p><m>1.93,~4.2</m></p></sidebyside></li>
+    <li><sidebyside widths="35% 50%"><!--<image source="images/hp6-rev-45ansa.png"><description>graph</description></image>-->
+    <image xml:id="hp6-rev-45ansa">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [yscale=.4]
+        \draw[cyan] (0,0) grid[xstep=1/2] (2*pi, 15);
+        \draw[black,thick,->] (0,0)--(6.5,0) node[right]{$s$};
+        \draw[black,thick,->] (0,0)--(0,15.5) ;
+        \foreach \x in {1,2, ...,6} \draw[black,thick] (\x,.2)--++(0,-.4) node[below]{\x};
+        \foreach \y in {5,10,15} \draw[black,thick] (0.1,\y)--++(-.2,0) node[left]{\y};
+        \draw[gray,thick] (pi/2,-.3)--++(0,.6) node[above, yshift=1, fill=white, inner sep=1, text=blue, scale=.9]{$\frac{\pi}{2}$};
+        \draw[gray,thick] (pi,-.3)--++(0,.6) node[above, yshift=1, fill=white, inner sep=1, text=blue, scale=.9]{$\pi$};
+        \draw[gray,thick] (2*pi,-.3)--++(0,.6) node[above, yshift=1, fill=white, inner sep=1, text=blue, scale=.9]{$2\pi$};
+        \draw[gray,thick] (3*pi/2,-.3)--++(0,.6) node[above, yshift=1, fill=white, inner sep=1, text=blue, scale=.9]{$\frac{3\pi}{2}$};
+        \draw[samples=65,domain=0:2*pi,smooth,variable=\x,red,very thick] plot ({\x},{10+4.8* sin( deg(\x-1.5) )});\end{tikzpicture}
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    <p>mid: <m>y = 10</m>, amp: <m>4.8</m>, period: <m>2\pi</m></p></sidebyside></li>
+    <li><sidebyside widths="35% 50%"><!--<image source="images/hp6-rev-45ansb.png"><description>graph</description></image>-->
+    <image xml:id="hp6-rev-45ansb">
+        <description>sinusoidal graph and horizontal line</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [yscale=.4]
+        \draw[cyan] (0,0) grid[xstep=1/2] (2*pi, 15);
+        \draw[black,thick,->] (0,0)--(6.5,0) node[right]{$s$};
+        \draw[black,thick,->] (0,0)--(0,15.5) ;
+        \foreach \x in {1,2, ...,6} \draw[black,thick] (\x,.2)--++(0,-.4) node[below, scale=.9]{\x};
+        \foreach \y in {5,10,15} \draw[black,thick] (0.1,\y)--++(-.2,0) node[left, scale=.9]{\y};
+        \draw[gray,thick] (pi/2,-.3)--++(0,.6) node[above, yshift=1, fill=white, inner sep=1, text=blue, scale=.9]{$\frac{\pi}{2}$};
+        \draw[gray,thick] (pi,-.3)--++(0,.6) node[above, yshift=1, fill=white, inner sep=1, text=blue, scale=.9]{$\pi$};
+        \draw[gray,thick] (2*pi,-.3)--++(0,.6) node[above, yshift=1, fill=white, inner sep=1, text=blue, scale=.9]{$2\pi$};
+        \draw[gray,thick] (3*pi/2,-.3)--++(0,.6) node[above, yshift=1, fill=white, inner sep=1, text=blue, scale=.9]{$\frac{3\pi}{2}$};
+        \draw[samples=65,domain=0:2*pi,smooth,variable=\x,red,very thick] plot ({\x},{10+4.8* sin( deg(\x-1.5) )});
+        \draw[gray,thick] (0,12)--++(-.15,0) node[left, text=blue, scale=0.75]{12};
+        \draw[blue,thick] (0,12) -- ++(2*pi,0);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    <p><m>1.93,~4.2</m></p></sidebyside></li>
 </ol></p></answer></exercise>
 
     <exercise number="46"><statement><p><ol label="a">
@@ -429,12 +572,49 @@
 <exercisegroup cols="2"><introduction><p>For Problems 63<ndash/>66, sketch the graph. State its domain and range.</p></introduction>
 
      <exercise number="63"><statement><m>g(x) = 2x^2 + 4</m></statement>
-        <answer><sidebyside widths="25% 50%"><image source="images/hp6-rev-63ans.png"><description>graph</description></image><p>Dom:  all real numbers, Rge: <m>y \ge 4</m></p></sidebyside></answer></exercise> 
+        <answer><sidebyside widths="25% 50%"><!--<image source="images/hp6-rev-63ans.png"><description>graph</description></image>-->
+    <image xml:id="hp6-rev-63ans">
+        <description>parabola</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=.8,yscale=1/4]
+        \draw[cyan] (-3,0) grid[ystep=4] (3,16);
+        \draw[black,thick,->] (-3,0)--(3.2,0) node[right, scale=.9]{$x$};
+        \draw[black,thick,->] (0,0)--(0,16.9) node[above, scale=.9]{$y$};
+        \foreach \x in {-3,-2,-1,1,2,3} \draw[black,thick] (\x,.1)--++(0,-.2) node[below, scale=.8] {\x};
+        \foreach \y in {4,8,12} \draw[black,thick] (.08,\y)--++(-.16,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[,domain=-sqrt(6):sqrt(6),smooth,variable=\x,red,very thick] plot ({\x},{2*(\x)^2+4 });
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        <p>Dom:  all real numbers, Rge: <m>y \ge 4</m></p></sidebyside></answer></exercise> 
 
     <exercise number="64"><statement><m>h(w) = 1 - \dfrac{1}{w^2}</m></statement></exercise> 
 
     <exercise number="65"><statement><m>F(s) = -\sqrt{16 - s^2}</m></statement>
-        <answer><sidebyside widths="25% 50%"><image source="images/hp6-rev-65ans.png"><description>graph</description></image><p>Dom:  <m>-4 \le x \le 4</m>, Rge: <m>-4 \le y \le 0</m></p></sidebyside></answer></exercise> 
+        <answer><sidebyside widths="25% 50%"><!--<image source="images/hp6-rev-65ans.png"><description>graph</description></image>-->
+    <image xml:id="hp6-rev-65ans">
+        <description>semicircle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.4]
+        \draw[cyan] (-5,-5) grid (5,1);
+        \draw[black,thick,->] (-5,0)--(5.4,0) node[right]{$s$};
+        \draw[black,thick,->] (0,-5)--(0,1.4) node[above]{$y$};
+        \foreach \i in {2,4} {
+         \draw[black,thick] (\i,0.2)--++(0,-.4) node[below, yshift=-2, fill=white, inner sep=1pt, scale=.8] {\i};
+         \draw[black,thick] (-\i,0.2)--++(0,-.4) node[below, yshift=-2, fill=white, inner sep=1pt, scale=.8] {-\i};
+         \draw[black,thick] (0.2,-\i)--++(-0.4,0) node[left, xshift=-2, fill=white, inner sep=1pt, scale=.8] {-\i};
+        };
+        \draw[red,very thick] (4,0) arc (0:-180:4);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        <p>Dom:  <m>-4 \le s \le 4</m>, Rge: <m>-4 \le y \le 0</m></p></sidebyside></answer></exercise> 
 
     <exercise number="66"><statement><m>G(t) = 4 + \sqrt{4 - t}</m></statement></exercise>
  </exercisegroup>            

@@ -10,7 +10,43 @@
 <p>  Imagine the following experiment:  Delbert holds a ball at shoulder height and then drops it, so that it falls to the ground. Francine holds a ball at shoulder height on an inclined ramp, then releases it so that it rolls downhill. Which ball will reach the ground first?</p>  
 <p> Although gravity causes both balls to speed up, the free-falling ball will reach the ground first. The force of gravity pulls straight down, the same direction as the motion of the free-falling ball, but the rolling ball must move at an angle to the pull of gravity, along the surface of the ramp. Only part of the gravitational force accelerates the rolling ball, and the rest of the force is counteracted by the surface of the ramp. What fraction of the gravitational force causes the ball to roll?</p> 
 
-<sidebyside width = "90%"><image source="images/fig9-3-1.png"><description>ramp</description></image></sidebyside>
+<sidebyside width = "90%"><!--<image source="images/fig9-3-1.png"><description>ramp</description></image>-->
+    <image xml:id="fig9-3-1">
+        <description>ramp</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale=.6]
+    \def\a{20};
+    \def\r{.6};
+    \def\w{4.5};
+    \coordinate (O) at ($ (\a:12) + ({\a +90}:\r) $);
+    \coordinate (F) at (-90:\w);
+
+    \draw[gray] (2,0) arc (0:\a:2) node[right, midway, yshift=1, text=black, scale=.9]{$\alpha$};
+    \draw[black, thick] (0,0)--++(15,0);
+    \draw[black,thick] (0,0)--++(\a:15)--($15*cos(\a)*(1,0)$);
+    \draw[black, fill=lightgray] (O) circle (\r);
+    \draw[black, very thick,->,>=stealth'] (O)--++(F) node[ right, midway, xshift=1,  yshift=1, scale=.9, fill=white, inner sep=1]{\textbf{F}};
+    \draw[red, very thick,->,>=stealth'] (O)--++($ \w*sin(\a)*({\a+180}:1)  $) node[ left, xshift=-1,  yshift=-1, scale=.9, fill=white, inner sep=1]{\textbf{v}};
+    \draw[blue, very thick,->,>=stealth'] ($ (O)+\w*sin(\a)*({\a+180}:1)  $)--++($ \w*cos(\a)*({\a-90}:1)  $) node[ left, midway, xshift=-2,  yshift=1, scale=.9, fill=white, inner sep=1]{\textbf{u}};
+    \node at (7.5,-1) {a.};
+
+    % second set
+    \coordinate (O) at ($ (10,0)+(\a:12) + ({\a +90}:\r) $);
+    \draw[gray] ($ (O) + (0,-.5)$) arc (-90:{\a-180}:.5) node[below left, midway, xshift=3, text=black, scale=.9, inner sep = 2]{$\theta$};
+
+
+    \draw[gray, thick] ($(O) + 3.2*sin(\a)*({\a+180}:1) $) --++ ($ 1.3*sin(\a)*({\a-90}:1) $)--++($ 1.3*sin(\a)*({\a+180}:1) $);
+    \draw[black, very thick,->,>=stealth'] (O)--++(F) node[ right, midway, xshift=1,  yshift=1, scale=.9, fill=white, inner sep=1]{\textbf{F}};
+    \draw[red, very thick,->,>=stealth'] (O)--++($ \w*sin(\a)*({\a+180}:1)  $) node[ left, xshift=-1,  yshift=-1, scale=.9, fill=white, inner sep=1]{\textbf{v}};
+    \draw[blue, very thick,->,>=stealth'] ($ (O)+\w*sin(\a)*({\a+180}:1)  $)--++($ \w*cos(\a)*({\a-90}:1)  $) node[ left, midway, xshift=-2,  yshift=1, scale=.9, fill=white, inner sep=1]{\textbf{u}};
+    \node at (20.5,-1) {b.};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
 <p> In figure (a), the gravitational force <m>{\bf{F}}</m> is resolved into the sum of two vectors, <m>{\bf{F}}={\bf{u}}+{\bf{v}}</m>, where <m>{\bf{v}}</m> points down the ramp, and <m>{\bf{u}}</m> is perpendicular to the ramp.  The magnitude of <m>{\bf{v}}</m> is called the component of <m>{\bf{F}}</m> in the direction of motion, and is denoted by <m>\text{comp}_{\bf{v}}{\bf{F}}</m>. This is the portion of the gravitational force that moves the ball. From figure (b), we see that <m>\text{comp}_{\bf{v}}{\bf{F}} = \|{\bf{F}}\| \cos \theta</m>, where <m>\theta</m> is the angle between <m>{\bf{F}}</m> and <m>{\bf{v}}</m>.</p> 
 
@@ -31,11 +67,59 @@ where <m>\theta</m> is the angle between <m>{\bf{F}}</m> and <m>{\bf{v}}</m>.</p
         \|{\bf{w}}\| (0.9659) \amp = 200\\
             \|{\bf{w}}\| \amp = 207.06
       \end{align*}</p>      
-<image source="images/exam9-3-1.png"><description>ramp</description></image></sidebyside>
+<!--<image source="images/exam9-3-1.png"><description>ramp</description></image>-->
+    <image xml:id="exam9-3-1">
+        <description>ramp</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale=1]
+    \def\a{15};
+    \def\r{.2};
+    \def\w{2};
+    \coordinate (O) at ($ (\a:4) + ({\a +90}:\r) $);
+    \coordinate (F) at (-90:\w);
+
+    \draw[gray] (1.5,0) arc (0:\a:1.5) node[right, midway, yshift=1, text=black, scale=.9]{$15 \degree$};
+    \draw[gray] (0,0)--++(2,0);
+    \draw[black,thick] (0,0)--++(\a:5.5);
+    \draw[black, fill=lightgray] (O) circle (\r);
+    \draw[red, very thick,->,>=stealth'] (O)--++(F) node[left, xshift=-3,  yshift=3, scale=.9, fill=white, inner sep=1]{\textbf{w}};
+    \draw[blue, very thick,->,>=stealth'] (O)--++($ \w*cos(\a)*({\a-90}:1)  $) node[right, xshift=1,  yshift=3, scale=.9]{\textbf{v}};
+    \draw[green, very thick,->,>=stealth'] ($ (O)+\w*cos(\a)*({\a-90}:1)  $)--++($ \w*sin(\a)*({\a+180}:1)  $);
+    \node[scale=.9] at (4.7,.5){200 lbs};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 <p>The ramp can support no more than about 207 pounds.</p></solution></example>
 
-<exercise><statement><sidebyside widths="60% 15%"><p>Delbert pushes a lawn mower whose handle makes a <m>40\degree</m> angle with the horizontal. If he applies a force of 30 pounds in the direction of the handle, what is the component of the force in the horizontal direction?</p>
-<image source="images/exer9-3-1.png"><description>ramp</description></image></sidebyside></statement></exercise> 
+<exercise><statement><sidebyside widths="60% 20%" margins="0% 10%"><p>Delbert pushes a lawn mower whose handle makes a <m>40\degree</m> angle with the horizontal. If he applies a force of 30 pounds in the direction of the handle, what is the component of the force in the horizontal direction?</p>
+<!--<image source="images/exer9-3-1.png"><description>ramp</description></image>-->
+    <image xml:id="exer9-3-1">
+        <description>lawn mower</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale=0.05]
+    \coordinate (O) at (0,0);
+    \def\w{30};
+    \def\a{40};
+    \coordinate (F) at (220:\w);
+    \coordinate (A) at (\a:70);
+
+    \draw[gray] (10,0) arc (0:\a:10) node[right, midway, xshift=1, yshift=2, text=black, scale=.9, inner sep=1]{$40 \degree$};
+    \draw[green] (0,0)--++(18,0);
+    \draw[black,thick] (0,0)--++(A);
+    \draw[blue, very thick,->,>=stealth'] (A)--++($30*cos(\a)*(-1,0)$) node[above, yshift=1, midway,scale=.9,inner sep=1 ]{?};
+    \draw[green, very thick,->,>=stealth'] ($(A)+30*cos(\a)*(-1,0) $)--++($30*sin(\a)*(0,-1)$) ;
+    \draw[red, very thick,->,>=stealth'] (A)--++(F) node[below right, midway, scale=.9,inner sep=1 ]{30 lb};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement></exercise> 
 </subsection>
 
 <subsection><title>Coordinate Form for Components</title>
@@ -43,12 +127,50 @@ where <m>\theta</m> is the angle between <m>{\bf{F}}</m> and <m>{\bf{v}}</m>.</p
  
 <p>Suppose <m>{\bf{v}} = a{\bf{i}} + b{\bf{j}}</m> and <m>{\bf{w}} = c{\bf{i}} + d{\bf{j}}</m>, as shown below.  We will need to compute the cosine of <m>\theta</m> in terms of <m>a,~ b,~ c,~</m> and <m>d</m>.</p>
 
-<sidebyside widths="60% 30%"><p>First verify that
+<sidebyside widths="60% 27%" margins="0% 5%"><p>First verify that
   \begin{align*}
       \cos \alpha \amp = \dfrac{a}{\|{\bf{v}}\|}~~~\text{and}~~~\sin \alpha = \dfrac{b}{\|{\bf{v}}\|}\\ 
       \cos \beta \amp = \dfrac{c}{\|{\bf{w}}\|}~~~\text{and}~~~\sin \beta = \dfrac{d}{\|{\bf{w}}\|}\\
 \end{align*}</p>
-<image source="images/fig9-3-2.png"><description>ramp</description></image></sidebyside>
+<!--<image source="images/fig9-3-2.png"><description>ramp</description></image>-->
+    <image xml:id="fig9-3-2">
+        <description>vectors and components</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale=1.1]
+    \coordinate (O) at (0,0);
+    \def\lv{3};
+    \def\lw{2.7};
+    \def\a{20};
+    \def\b{55};
+    \coordinate (v) at (\a:\lv);
+    \coordinate (vx) at ({\lv*cos(\a)},0);
+    \coordinate (vy) at (0,{\lv*sin(\a)});
+    \coordinate (w) at (\b:\lw);
+    \coordinate (wx) at ({\lw*cos(\b)},0);
+    \coordinate (wy) at (0,{\lw*sin(\b)});
+    \draw[black,thick,->,>=stealth'] (O)--(3.2,0);
+    \draw[black,thick,->,>=stealth'] (O)--(0,3);
+
+    \draw[blue, very thick,->,>=stealth'] (O)--++(w) node[above, yshift=1, scale=.9,inner sep=1 ]{\textbf{w}};
+    \draw[blue, thick] ($(wx)+(0,.1)$)--++(0,-.2) node[below, scale=.9,inner sep=1 ]{$c$};
+    \draw[blue, thick] ($(wy)+(.1,0)$)--++(-.2,0) node[left, scale=.9,inner sep=1 ]{$d$};
+    \draw[red, very thick,->,>=stealth'] (O)--++(v) node[below right, scale=.9,inner sep=1 ]{\textbf{v}};
+    \draw[red, thick] ($(vx)+(0,.1)$)--++(0,-.2) node[below, scale=.9,inner sep=1 ]{$a$};
+    \draw[red, thick] ($(vy)+(.1,0)$)--++(-.2,0) node[left, scale=.9,inner sep=1 ]{$b$};
+
+    \draw[gray] (0.35,0) arc(0:\b:0.35) node[right, midway, xshift=3, yshift=2, text=black, scale=.8, fill=white, inner sep=1]{$\beta$};
+    \draw[gray] (0.8,0) arc(0:\a:0.8) node[right, midway, xshift=3, text=black, scale=.8, fill=white, inner sep=1]{$\alpha$};
+    \draw[gray] (\a:1) arc(\a:\b:1) node[right, midway, xshift=3, yshift=1, text=black, scale=.8, fill=white, inner sep=1]{$\theta$};
+
+    \draw[gray] (w) -- ($ (w) + \lw*sin(\b-\a)*({\a-90}:1) $);
+    \draw[gray]  ($ (w) + \lw*sin(\b-\a)*({\a-90}:1)+({\a+90}:.25) $) --++(\a:.25)--++({\a-90}:.25);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
 <p>Because <m>\theta = \beta = \alpha</m>, we use the subtraction formula for cosine.
 \begin{align*}
@@ -76,9 +198,34 @@ And finally,
   <li><p>We use the formula derived above.
       <me>\text{comp}_{\bf{v}}{\bf{w}} =\dfrac{ac+bd}{\|{\bf{v}}\|} = \dfrac{4(6)+3(2)}{\sqrt{4^2+3^2}} = \dfrac{30}{5} = 6</me>
       Remember that the component of <m>{\bf{w}}</m> in the direction of <m>{\bf{v}}</m> is a scalar; it is the length of the projection of <m>{\bf{w}}</m> onto <m>{\bf{v}}</m>.</p></li>
-  <li><sidebyside widths="50% 40%" valigns="middle middle"><p>We would like to find a vector <m>{\bf{q}}</m> of length 6 in the direction of <m>{\bf{v}}</m>, as shown at right. Because <m>\|{\bf{v}}\| = 5</m>, we scale the components of <m>{\bf{v}}</m> by <m>\dfrac{6}{5}</m> to get
+  <li><sidebyside widths="50% 40%" valigns="middle middle" margins="0% 2%"><p>We would like to find a vector <m>{\bf{q}}</m> of length 6 in the direction of <m>{\bf{v}}</m>, as shown at right. Because <m>\|{\bf{v}}\| = 5</m>, we scale the components of <m>{\bf{v}}</m> by <m>\dfrac{6}{5}</m> to get
   <me>{\bf{q}} = \dfrac{6}{5} (4{\bf{i}} + 3{\bf{j}}) = \dfrac{24}{5}{\bf{i}} + \dfrac{18}{5}{\bf{j}}</me></p>   
-  <image source="images/exam9-3-2.png"><description>vectors</description></image></sidebyside></li>
+  <!--<image source="images/exam9-3-2.png"><description>vectors</description></image>-->
+    <image xml:id="exam9-3-2">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale=.5]
+    \draw[cyan] (0,0) grid (8,6);
+    \coordinate (O) at (1,1);
+    \coordinate (v) at (4,3);
+    \coordinate (w) at (6,2);
+    \coordinate (q) at (24/5,18/5);
+    \coordinate (p) at (6/5, -8/5);
+
+    \draw[lightgray] ($(O)+(q)+-.1*(p)$)--++($-.6*(p)$);
+    \draw[lightgray] ($(O)+-.1*(p)$)--++($-.6*(p)$);
+    \draw[lightgray,  thick,<->,>=stealth'] ($(O)-.4*(p)$)--++(q) node[midway,  scale=.9,fill=white, inner sep=2, scale=.9, text=black]{6};
+    \draw[green, ultra thick,->,>=stealth'] (O)--++(q) node[above right , yshift=-2, scale=.9,fill=white, inner sep=1, scale=.9, text=green!80!black]{\textbf{q}};
+    \draw[magenta,  thick,->,>=stealth'] ($(O)+(q)$)--++(p) node[above right , yshift=2, scale=.9,fill=white, inner sep=1, scale=.9, text=magenta]{\textbf{p}};
+    \draw[blue, thick,->,>=stealth'] (O)--++(v) node[below , yshift=-6, scale=.9,fill=white, inner sep=1, scale=.9]{\textbf{v}};
+    \draw[red, very thick,->,>=stealth'] (O)--++(w) node[below, yshift=-6, scale=.9, fill=white,inner sep=1 ]{\textbf{w}};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></li>
   <li><p>Because <m>{\bf{w}} ={\bf{p}} + {\bf{q}}</m>, where <m>{\bf{p}}</m> is perpendicular to <m>{\bf{q}}</m>, we have
   <me>{\bf{p}} ={\bf{w}} - {\bf{q}} = (6{\bf{i}} + 2{\bf{j}}) - (\dfrac{24}{5}{\bf{i}} + \dfrac{18}{5}{\bf{j}}) = \dfrac{6}{5}{\bf{i}} - \dfrac{8}{5}{\bf{j}}</me></p></li></ol></p></solution></example>
 
@@ -120,7 +267,30 @@ You can check that this is true in the following example.</p></note>
 Thus,</p>
 <sidebyside widths="60% 25%"><p>
 <me>\text{comp}_{\bf{w}}{\bf{v}} = \dfrac{{\bf{v}} \cdot {\bf{w}}}{\|{\bf{w}}\|} = \dfrac{17}{\sqrt{17}} = \sqrt{17}</me>  
-The length of the projection of <m>{\bf{v}}</m> in the direction of <m>{\bf{w}}</m> is <m>\sqrt{17}</m> units, as shown at right.</p><image source="images/exam9-3-4.png"><description>vectors</description></image></sidebyside></solution></example>
+The length of the projection of <m>{\bf{v}}</m> in the direction of <m>{\bf{w}}</m> is <m>\sqrt{17}</m> units, as shown at right.</p><!--<image source="images/exam9-3-4.png"><description>vectors</description></image>-->
+    <image xml:id="exam9-3-4">
+        <description>vectors on grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale=.5]
+    \draw[cyan] (0,0) grid (7,7);
+    \coordinate (O) at (1,4);
+    \coordinate (v) at (5,-3);
+    \coordinate (w) at (4,1);
+    \coordinate (q) at ($ (v) - (w)$);
+
+    \draw[lightgray] ($(O)+-.06*(q)$)--++($-.3*(q)$);
+    \draw[lightgray] ($(O)+(w)+-.06*(q)$)--++($-.3*(q)$);
+    \draw[lightgray,  thick,<->,>=stealth'] ($(O)-.2*(q)$)--++(w) node[midway,  scale=.9,fill=white, inner sep=2, scale=.9, text=black]{$\sqrt{17}$};
+    \draw[green, thick,->,>=stealth'] ($(O)+(w)$)--++(q);
+    \draw[blue, thick,->,>=stealth'] (O)--++(w) node[right , xshift=3, scale=.9,fill=white, inner sep=1, scale=.9]{\textbf{w}};
+    \draw[red, very thick,->,>=stealth'] (O)--++(v) node[below, yshift=-6, scale=.9, fill=white,inner sep=1 ]{\textbf{v}};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></solution></example>
 
 <exercise><statement><p>Compute the component of <m>{\bf{u}} = 2{\bf{i}} + 3{\bf{j}}</m> in the direction of <m>{\bf{v}} = 6{\bf{i}} + 5{\bf{j}}</m>.</p></statement></exercise>
 </subsection>
@@ -142,7 +312,46 @@ where <m>\theta</m> is the angle between the vectors.</p></assemblage>
  <li>If <m>{\bf{v}}</m> and <m>{\bf{w}}</m> are perpendicular, then <m>\cos \theta = 0</m>, so <m>{\bf{v}} \cdot {\bf{w}} = 0</m>.  (Two vectors <m>{\bf{v}}</m> and <m>{\bf{w}}</m> are said to be <term>orthogonal</term> if their dot product is zero.)</li>
  <li>If <m>\theta</m> is between <m>0\degree</m> and <m>90\degree</m>, the dot product multiplies the length of <m>{\bf{v}}</m> times the component of <m>{\bf{w}}</m> in the direction of <m>{\bf{v}}</m>.</li></ul></p>
 
-<sidebyside width="80%"><image source="images/fig9-3-3.png"><description>vectors</description></image></sidebyside>
+<sidebyside width="80%"><!--<image source="images/fig9-3-3.png"><description>vectors</description></image>-->
+    <image xml:id="fig9-3-3">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale=.6]
+    \coordinate (O) at (0,0);
+    \coordinate (v) at (3,0);
+    \coordinate (w) at (2,0);
+
+    \draw[blue, very thick,->,>=stealth'] (0,.75)--++(w) node[right , xshift=3, scale=.9, inner sep=1, scale=.9]{\textbf{w}};
+    \draw[red, very thick,->,>=stealth'] (O)--++(v) node[right, xshift=3, scale=.9, inner sep=1 ]{\textbf{v}};
+    \node[text=blue, scale=.9] at (2,-1.2) {$ \textbf{v}\cdot\textbf{w}= \Vert\textbf{v}\Vert   \,  \Vert\textbf{w} \Vert  $};
+
+    \coordinate (O) at (7,0);
+    \coordinate (v) at (3,0);
+    \coordinate (w) at (0,2);
+
+    \draw[blue, very thick,->,>=stealth'] (O)--++(w) node[above, yshift=3, scale=.9, inner sep=1, scale=.9]{\textbf{w}};
+    \draw[red, very thick,->,>=stealth'] (O)--++(v) node[right, xshift=3, scale=.9, inner sep=1 ]{\textbf{v}};
+    \node[text=blue, scale=.9] at ($(O)+(1.6,-1.2)$) {$ \textbf{v}\cdot\textbf{w}= 0 $};
+
+    \coordinate (O) at (14,0);
+    \coordinate (v) at (3,0);
+    \def\a{50};
+    \def\r{2.2}
+    \coordinate (w) at (\a:\r);
+    \coordinate (c) at ( {\r*cos(\a)},0);
+
+    \draw[blue, very thick,->,>=stealth'] (O)--++(w) node[above, yshift=3, scale=.9, inner sep=1, scale=.9]{\textbf{w}};
+    \draw[red, ultra thick,->,>=stealth'] (O)--++(v) node[right, xshift=3, scale=.9, inner sep=1 ]{\textbf{v}};
+    \draw[green, thick,->,>=stealth', opacity = .5] (O)--++(c);
+    \draw[gray, dashed] ($ (O)+(c)$) --($ (O) + (w) $);
+    \node[text=blue, scale=.9] at ($(O)+(2,-1.2)$) {$ \textbf{v}\cdot\textbf{w}= \Vert\textbf{v}\Vert \,\textsf{comp}_{\textbf{v}} \textbf{w} $};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
 <example><statement><p>Show that the vectors <m>{\bf{v}} = 2{\bf{i}}+6{\bf{j}}</m> and <m>{\bf{w}} = -9{\bf{i}}+3{\bf{j}}</m> are orthogonal.</p></statement>
 
@@ -169,7 +378,26 @@ Thus, <m>\|{\bf{v}}\|\|{\bf{w}}\| \cos \theta = 0</m>, so <m>{\bf{v}}</m> and <m
       \|{\bf{u}}\| \amp = \sqrt{(-3)^2 + 2^2} = \sqrt{13}\\
       \|{\bf{v}}\| \amp = \sqrt{5^2 + 3^2} = \sqrt{34}\\
 \end{align*}</p>
-<image source="images/exam9-3-6.png"><description>vectors</description></image></sidebyside>
+<!--<image source="images/exam9-3-6.png"><description>vectors</description></image>-->
+    <image xml:id="exam9-3-6">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale=.5]
+    \draw[cyan] (0,0) grid (10,5);
+    \coordinate (O) at (4,1);
+    \coordinate (v) at (5,3);
+    \coordinate (u) at (-3,2);
+
+    \draw[blue, very thick,->,>=stealth'] (O)--++(v) node[above right , xshift=3, scale=.9, inner sep=1, scale=.9]{\textbf{v}};
+    \draw[red, very thick,->,>=stealth'] (O)--++(u) node[above left, xshift=-3, scale=.9, inner sep=1 ]{\textbf{u}};
+    \draw[gray,thick] ($ (O) + ({atan(3/5)}:.6) $) arc({atan(3/5)}:{180-atan(2/3)}:.6) node[above, midway, text=black, fill=white, inner sep=1, scale=.9]{$\theta$}; 
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 <p>Then we apply the formula for <m>\cos \theta</m>.
   \begin{align*} 
       \cos \theta \amp = \dfrac{{\bf{v}} \cdot {\bf{w}}}{\|{\bf{v}}\| \|{\bf{w}}\|} = \dfrac{-9}{\sqrt{13}\sqrt{34}} = -0.4281\\
@@ -183,25 +411,121 @@ The angle between the vectors is <m>115.35\degree</m>.</p></solution></example>
 <subsection><title>Skills Refresher</title>
 <exercises>
 
-<exercise number="1"><statement><sidebyside widths="60% 35%"> <p><ol label="a">
+<exercise number="1"><statement><sidebyside widths="60% 35%" margins="0%" valigns="middle middle"> <p><ol label="a">
   <li>Find the height <m>h</m> of the triangle.</li>   
   <li>How far is the foot of the altitude from the vertex of the <m>18\degree</m> angle?</li></ol></p>
-    <image source="images/sr9-3-1.png"><description>triangle</description></image></sidebyside></statement></exercise>
+    <!--<image source="images/sr9-3-1.png"><description>triangle</description></image>-->
+    <image xml:id="sr9-3-1">
+        <description>triangle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale=.8]
+    \coordinate (C) at (0,0);
+    \coordinate (A) at (198:5);
+    \def\beta{asin(sin(18)/2*5)};
+    \def\alpha{180-18-\beta};
+    \coordinate (B) at ($ (A) + ({180-\beta}:2)  $);
 
-<exercise number="2"><statement><sidebyside widths="60% 35%"> <p><ol label="a">
+    \draw[black,  thick] (C)--(A) node[below right, midway, scale=.9,text=blue]{5};
+    \draw[black,  thick] (B)--(A) node[below left, midway, scale=.9, text=blue]{2};
+    \draw[black,  thick] (C)--(B) node[above, midway, scale=.9, text=blue]{$b$};
+    \draw[red,  thick] (-1.4,0) arc(180:198:1.4) node[left, midway, yshift=-2, scale=.8]{$18\degree$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+  </sidebyside></statement></exercise>
+
+<exercise number="2"><statement><sidebyside widths="60% 35%" margins="0%" valigns="middle middle"> <p><ol label="a">
   <li>Find the height <m>h</m> of the triangle.</li>   
   <li>Find the length of the third side of the triangle.</li></ol></p>
-    <image source="images/sr9-3-2.png"><description>triangle</description></image></sidebyside></statement></exercise>
+    <!--<image source="images/sr9-3-2.png"><description>triangle</description></image>-->
+    <image xml:id="sr9-3-2">
+        <description>triangle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale=.07]
+    \coordinate (C) at (0,0);
+    \coordinate (B) at (53,0);
+    \def\c{31};
+    \def\a{asin(sin(\c)/53*38)};
+    \def\b{180-\c-\a};
+    \coordinate (A) at ($ (B) + ({\b-180}:38)  $);
+
+    \draw[black,  thick] (C)--(A) ;
+    \draw[black,  thick] (B)--(A) node[right, midway, yshift=3, scale=.9, text=blue]{38};
+    \draw[black,  thick] (C)--(B) node[above, midway, scale=.9, text=blue]{53};
+    \draw[red,  thick] (15,0) arc(0:-\a:15) node[right, midway, yshift=-2, scale=.9]{$\alpha$};
+    \draw[red,  thick] ($ (A)+({\b}:10) $) arc({\b}:{\b+\c}:10) node[above left, midway, scale=.9]{$31\degree$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+  </sidebyside></statement></exercise>
 
 <exercise number="3"><statement><sidebyside widths="60% 20%"> <p><ol label="a">
   <li>How far north is the tower from the airport?  How far east?</li>
   <li>What is the distance from <m>A</m> to <m>P</m>?</li></ol></p>
-<image source="images/sr9-3-3.png"><description>triangle</description></image></sidebyside></statement></exercise>
+<!--<image source="images/sr9-3-3.png"><description>triangle</description></image>-->
+    <image xml:id="sr9-3-3">
+        <description>triangle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale=.15]
+    \coordinate (A) at (0,0);
+    \def\a{23};
+    \coordinate (T) at ({90-\a}:40);
+    \def\x{40*sin(\a};
+    \def\b{37};
+    \coordinate (P) at ($ (T) + ({270-\b}:{40*sin(\a)/sin(\b)}) $);
+
+    \draw[black,  thick] (A)--(T) node[right, midway, xshift=3, yshift=3, scale=.9, text=blue]{40 mi} ;
+    \draw[black,  thick] (A)--(P)--(T);
+    \draw[black,  thick] (P)--++(90:10);
+    \draw[red,  thick] (0,6) arc(90:{90-\a}:6) node[above, midway, xshift=3, yshift=5, scale=.8]{$\a\degree$};
+    \draw[red,  thick] ($ (P)+(90:5) $) arc(90:{90-\b}:5) node[above, midway, xshift=2, scale=.8]{$\b\degree$};
+    \filldraw[black] (A) circle (.5) node[left]{$A$};
+    \filldraw[black] (P) circle (.5) node[left]{$P$};
+    \filldraw[black] (T) circle (.5) node[below right]{$T$};
+    \node[scale=.9] at (6,0) {airport};
+    \node[scale=.9] at ($ (T)+(-5,0) $) {tower};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement></exercise>
 
 <exercise number="4"><statement><sidebyside widths="60% 35%"> <p><ol label="a">
   <li>Find the distance from <m>A</m> to <m>C</m>.</li>
   <li>How far north is point <m>C</m> from point <m>B</m>?</li></ol></p>
-<image source="images/sr9-3-4.png"><description>triangle</description></image></sidebyside></statement></exercise>
+<!--<image source="images/sr9-3-4.png"><description>triangle</description></image>-->
+    <image xml:id="sr9-3-4">
+        <description>triangle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale=.25]
+    \coordinate (A) at (-15,0);
+    \coordinate (B) at (0,0);
+    \coordinate (C) at (38:8);
+
+    \draw[black,  thick] (A)--(B) node[below, midway, scale=.9, text=blue]{15};
+    \draw[black,  thick] (A)--(C);
+    \draw[black,  thick] (B)--(C)node[below right, midway, scale=.9, text=blue]{8};
+    \draw[red,  thick] (0,1) arc(90:38:1) node[above, midway, xshift=4, yshift=2, scale=.8]{$52\degree$};
+    \draw[gray, ->, >=stealth'] (B) -- (0,7) node[above, scale=.9, text=black]{N};
+    \draw[gray, ->, >=stealth'] (B) -- (7,0) node[right, scale=.9, text=black]{E};
+    \filldraw[black] (A) circle (.1) node[left, scale=.9]{$A$};
+    \filldraw[black] (B) circle (.1) node[below, scale=.9]{$B$};
+    \filldraw[black] (C) circle (.1) node[above right, scale=.9]{$C$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement></exercise>
 </exercises>
 
 <subsubsection><title>Answers to 9.3 Exercises</title>

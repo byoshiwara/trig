@@ -1354,7 +1354,7 @@ These two angles are supplementary, so they have the same reference angle, as sh
     </latex-image>
     </image>
     <image xml:id="fig-4-1-eqnb">
-        <description>triangle</description>
+        <description>angles</description>
         <latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
@@ -1544,7 +1544,30 @@ We draw a reference triangle as shown at right.  Because the sides of a 30-60-90
 
 <activity><title>Unit Circles</title>
 
-<sidebyside width="70%"><image source="images/act4-2.png"><description>grid</description></image></sidebyside>
+<sidebyside width="70%"><!--<image source="images/act4-2.png"><description>grid</description></image>-->
+    <image xml:id="act4-2">
+        <description>grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture}[scale=.25]
+        \coordinate (O) at (0,0);
+        \draw[step=1cm,cyan,very thin] (-21,-21) grid (21,21);
+        \draw[thick,->] (-21,0) -- (21.8,0) node[anchor=west] {$x$};
+        \draw[thick,->] (0,-21) -- (0,21.8) node[anchor=south] {$y$};
+
+        \draw[red,thick] (O) circle (10);
+        \draw[blue,thick] (O) circle (20);
+
+        \node[text width=.2cm,fill=white,inner sep=1pt] at (10,-1)    {1};
+        \node[text width=.2cm,fill=white,inner sep=1pt] at (20,-1)    {2};
+        \node[text width=.2cm,fill=white,inner sep=1pt] at (-1,10)    {1};
+        \node[text width=.2cm,fill=white,inner sep=1pt] at (-1,20)    {2};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 <p><ol label="1">
 <li><p>Use a protractor to draw an angle <m>36\degree</m> in standard position.<ol label="a">  
     <li>Estimate the coordinates of the point <m>P</m> where the terminal side of the angle intersects 
@@ -1562,7 +1585,37 @@ We draw a reference triangle as shown at right.  Because the sides of a 30-60-90
     this new angle.</li>
 <li><p>What do you notice about the coordinates of the point located on the unit circle by an 
     angle and the values of the trig ratios of that angle?</p>
-<sidebyside width="100%"><image source="images/act4-3.png"><description>grid</description></image></sidebyside></li>
+<sidebyside width="100%"><!--<image source="images/act4-3.png"><description>grid</description></image>-->
+    <image xml:id="act4-3">
+        <description>grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture}[scale=.25]
+        \coordinate (O) at (0,0);
+        \draw[step=1cm,cyan,very thin] (-11,-11) grid (11,11);
+        \draw[thick,->] (-11,0) -- (11.8,0) node[anchor=west] {$x$};
+        \draw[thick,->] (0,-11) -- (0,11.8) node[anchor=south] {$y$};
+        \draw[red,thick] (O) circle (10);
+        \node[text width=.2cm,fill=white,inner sep=1pt, text=red] at (10,-1)    {1};
+        \node[text width=.2cm,fill=white,inner sep=1pt, text=red] at (-1,10)    {1};
+        \node[scale=.9] at (0,-12.5) {Use this grid for \#6 and \#7};
+
+        %second grid
+        \def\del{27};
+        \coordinate (O) at (\del,0);
+        \draw[step=1cm,cyan,very thin] ($ (\del,0)+(-11,-11)$) grid ($ (\del,0)+(11,11)$);
+        \draw[thick,->] ($ (\del,0)+(-11,0)$) --++(22.8,0) node[anchor=west] {$x$};
+        \draw[thick,->] ($ (\del,0)+(0,-11)$) --++(0,22.8) node[anchor=south] {$y$};
+        \draw[red,thick] (O) circle (10);
+        \node[text width=.2cm,fill=white,inner sep=1pt, text=red] at ($ (\del,0)+(10,-1) $)   {1};
+        \node[text width=.2cm,fill=white,inner sep=1pt, text=red] at ($ (\del,0)+(-1,10) $)   {1};
+        \node[scale=.9] at ($ (\del,0)+(0,-12.5)$) {Use this grid for \#8 and \#9};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></li>
 
 <li><p>Draw two different angles <m>\alpha</m> and <m>\beta</m> in standard position whose sine is <m>0.6</m>.
     <ol label="a">

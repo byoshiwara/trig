@@ -14,7 +14,7 @@
     </ul>  
  </p>
 <sidebyside width="90%">
-<!--	<image source="images/angles-in-degrees.png"><description>quadrantal angles</description></image>-->
+<!--    <image source="images/angles-in-degrees.png"><description>quadrantal angles</description></image>-->
     <image xml:id="angles-in-degrees">
         <description>quadrantal angles</description>
         <latex-image>
@@ -63,7 +63,7 @@
 <p> If you tear off the corners of any triangle and line them up, as shown below, they will always form a straight angle.
 </p>
 <sidebyside width="40%">
-<!--	<image source="images/tear-off-corners.png"><description>tear corners off triangle</description></image>-->    <image xml:id="tear-off-corners">
+<!--    <image source="images/tear-off-corners.png"><description>tear corners off triangle</description></image>-->    <image xml:id="tear-off-corners">
         <description>tear corners off triangle</description>
         <latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
@@ -388,70 +388,65 @@
     </ul></p> 
 
    <sidebyside width="100%">
-       <image source="images/angleterms.png"><description>types of angles</description></image> 
-<!--    <image xml:id="angleterms">
+       <!--<image source="images/angleterms.png"><description>types of angles</description></image> -->
+    <image xml:id="angleterms">
         <description>types of angles</description>
         <latex-image>
-        CDATA prevents certain LaTeX code from being interpreted as xml 
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
         }
-        \begin{tikzpicture}[auto, thick, node distance=2cm]
-            %supplementary
-            \coordinate (O) at (0,0);
-            \coordinate (A) at (-2,0);
-            \coordinate (B) at (2,0);
-            \coordinate(C) at (1.65,1);
+        \begin{tikzpicture}
+        %supplementary
+        \coordinate (O) at (0,0);
+        \coordinate (A) at (-2,0);
+        \coordinate (B) at (2,0);
+        \coordinate(C) at (1.65,1);
 
-            \filldraw[blue] (O) circle (.2pt) node[anchor=north]{supplementary angles};
+        \filldraw[blue] (O) circle (.2pt) node[anchor=north]{supplementary angles};
 
-            \draw[black, thick, <->] (A)(B); 
-            \draw[black, thick, ->] (O)(C); 
-            \draw[red, thick, ->] (.7,0) arc (0:30:.7);
-            \draw[red, thick, ->] (.41,.25) arc (30:180:.5);
+        \draw[black, thick, <->] (A)--(B); 
+        \draw[black, thick, ->] (O)--(C); 
+        \draw[red, thick, ->] (.7,0) arc (0:30:.7);
+        \draw[red, thick, ->] (.41,.25) arc (30:180:.5);
 
-            %complementary
-            \coordinate (O2) at (3.5,0);
-            \coordinate (A2) at (5.5,0);
-            \coordinate (B2) at (3.5,2);
-            \coordinate(C2) at (4.65,1.64);
+        %complementary
+        \coordinate (O2) at (3.5,0);
+        \coordinate (A2) at (5.5,0);
+        \coordinate (B2) at (3.5,2);
+        \coordinate(C2) at (4.65,1.64);
 
-            %\filldraw[blue] (O) circle (.2pt) node[anchor=north]{complementary angles};
+        %\filldraw[blue] (O) circle (.2pt) node[anchor=north]{complementary angles};
 
-            \draw[black, thick, ->] (O2)(A2)  node[below,midway ]{\color{blue}complementary angles}; 
-            \draw[black, thick, ->] (O2)(B2); 
-            \draw[black, thick, ->] (O2)(C2); 
-            \draw[red, thick, ->] (4.2,0) arc (0:55:.7);
-            \draw[red, thick, ->] (3.78,.41) arc (55:90:.5);
+        \draw[black, thick, ->] (O2)--(A2)  node[below,midway ]{\color{blue}complementary angles}; 
+        \draw[black, thick, ->] (O2)--(B2); 
+        \draw[black, thick, ->] (O2)--(C2); 
+        \draw[red, thick, ->] (4.2,0) arc (0:55:.7);
+        \draw[red, thick, ->] (3.78,.41) arc (55:90:.5);
 
-            %acute
-            \coordinate (O3) at (7,0);
-            \coordinate (A3) at (9,0);
-            \coordinate (B3) at (8,1.73);
+        %acute
+        \coordinate (O3) at (7,0);
+        \coordinate (A3) at (9,0);
+        \coordinate (B3) at (8,1.73);
 
-            %\filldraw[blue] (O) circle (.2pt) node[anchor=north]{complementary angles};
+        %\filldraw[blue] (O) circle (.2pt) node[anchor=north]{complementary angles};
 
-            \draw[black, thick, ->] (O3)(A3)  node[below,midway ]{\color{blue}acute angle}; 
-            \draw[black, thick, ->] (O3)(B3); 
-            \draw[red, thick, ->] (7.7,0) arc (0:60:.7);
+        \draw[black, thick, ->] (O3)--(A3)  node[below,midway ]{\color{blue}acute angle}; 
+        \draw[black, thick, ->] (O3)--(B3); 
+        \draw[red, thick, ->] (7.7,0) arc (0:60:.7);
 
-            %obtuse
-            \coordinate (O4) at (11.2,0);
-            \coordinate (A4) at (13.,0);
-            \coordinate (B4) at (9.67,1.29);
+        %obtuse
+        \coordinate (O4) at (11.2,0);
+        \coordinate (A4) at (13.,0);
+        \coordinate (B4) at (9.67,1.29);
 
-            \filldraw[blue] (O4) circle (.2pt) node[anchor=north]{obtuse angle};
+        \filldraw[blue] (O4) circle (.2pt) node[anchor=north]{obtuse angle};
 
-            \draw[black, thick, ->] (O4)(A4); 
-            \draw[black, thick, ->] (O4)(B4); 
-            \draw[red, thick, ->] (11.7,0) arc (0:140:.5);
-
+        \draw[black, thick, ->] (O4)--(A4); 
+        \draw[black, thick, ->] (O4)--(B4); 
+        \draw[red, thick, ->] (11.7,0) arc (0:140:.5);
         \end{tikzpicture}]]>
-        </latex-image>-->
+    </latex-image>
+    </image>
         </sidebyside> 
 
 <example><statement><sidebyside widths="60% 30%">
@@ -702,8 +697,7 @@ Finally, angles 3 and 6 are called <term>alternate interior angles</term>, and s
 <answer><p>Note that angles 2 and 6 are supplementary because they form a straight angle. Angle 1 equals angle 2 because they are alternate interior angles, and similarly angle 4 equals angle 5. Angle 5 equals angle 6 because they are corresponding angles. Thus, angle 4 equals angle 6, and angle 1 equals angle 2. So angles 4 and 1 are supplementary because 2 and 6 are.</p></answer></exercise>
 
 <note><p>In the Section 1.1 Summary, you will find a list of vocabulary words and a summary of the facts from geometry that we reviewed in this section.  You will also find a set of study questions to test your understanding, and a list of skills to practice in the homework problems.</p></note>
-<p></p>
-<p><sidebyside>
+<sidebyside>
                 <tabular top="major" halign="left" right="minor" left="minor" bottom="minor">
                     <row>
                         <cell colspan="3" halign="center"> Greek Alphabet </cell></row>
@@ -740,7 +734,7 @@ Finally, angles 3 and 6 are called <term>alternate interior angles</term>, and s
                         <cell><m>\psi~~~\text{psi}</m></cell>
                         <cell><m>\omega~~~\text{omega}</m></cell></row>                       
                 </tabular>
-            </sidebyside></p>
+            </sidebyside>
 </subsection>
 
 <subsection><title>Algebra Refresher</title>
@@ -749,19 +743,19 @@ Finally, angles 3 and 6 are called <term>alternate interior angles</term>, and s
 <exercisegroup cols="2">
         <introduction><p>Solve the equation.</p></introduction>
     <exercise number="1"><statement>
-        <p><m>x-8=19-2x</m></p></statement>
+        <p><m>x-8=19-2x</m></p></statement><answer><p><m>9</m></p></answer>
     </exercise>
 
     <exercise number="2"><statement>
-        <p><m>2x-9=12-x</m></p></statement>
+        <p><m>2x-9=12-x</m></p></statement><answer><p><m>2</m></p></answer>
     </exercise>
 
     <exercise number="3"><statement>
-        <p><m>13x+5=2x-28</m></p></statement>
+        <p><m>13x+5=2x-28</m></p></statement><answer><p><m>-3</m></p></answer>
     </exercise>
 
     <exercise number="4"><statement>
-        <p><m>4+9x=-7+x</m></p></statement>
+        <p><m>4+9x=-7+x</m></p></statement><answer><p><m>-2</m></p></answer>
     </exercise>
 </exercisegroup>
 
@@ -771,19 +765,23 @@ Finally, angles 3 and 6 are called <term>alternate interior angles</term>, and s
         <p>\begin{align*}
                 5x-2y\amp =-13 \amp \amp \\
                 2x+3y\amp =-9 \amp \amp \\ 
-                \end{align*}</p></statement>
+                \end{align*}</p></statement><answer><p><m>x=-3,y=-1</m></p></answer>
     </exercise>
 
 <exercise number="6"><statement>
         <p>\begin{align*}
                 4x+3y\amp =9 \amp \amp \\
                 3x+2y\amp =8 \amp \amp \\ 
-                \end{align*}</p></statement>
+                \end{align*}</p></statement><answer><p><m>x=6, y=-5</m></p></answer>
     </exercise>
 
 </exercisegroup>
 </exercises>
-
+</subsection>
+<solutions inline="hint solution answer" >
+    <title>Answers to Checkpoints</title>
+</solutions>
+<!--<subsection>
 <subsubsection><title>Answers to 1.1 Exercises</title>
 <p><ol label="1">
     <li>  <m>x=39\degree,  2x=78\degree, 2x-15=63\degree</m></li>
@@ -795,8 +793,9 @@ Finally, angles 3 and 6 are called <term>alternate interior angles</term>, and s
 </ol> </p>
 <p>7.  Note that angles 2 and 6 are supplementary because they form a straight angle.  Angle 1 equals angle 2 because they are alternate interior angles, and similarly angle 4 equals angle 5.  Angle 5 equals angle 6 because they are corresponding angles.  Thus, angle 4 equals angle 6, and angle 1 equals angle 2.  So angles 4 and 1 are supplementary because 2 and 6 are.</p> 
 </subsubsection>
+-->
 
-<subsubsection><title>Algebra Refresher Answers</title>
+<subsection><title>Algebra Refresher Answers</title>
 <p><ol label="1" cols="3">
     <li><m>9</m></li>
     <li><m>2</m></li>
@@ -806,13 +805,12 @@ Finally, angles 3 and 6 are called <term>alternate interior angles</term>, and s
     <li><m>x=6, y=-5</m></li>
 </ol></p> 
 
-</subsubsection>
 </subsection>
 
 
 <subsection><title>Section 1.1 Summary</title>
 <subsubsection><title>Vocabulary</title>
-<p><ul cols="3">
+<p><ul cols="2">
     <li>Right angle</li>
     <li>Straight angle</li>
     <li>Right triangle</li>
@@ -854,12 +852,12 @@ Finally, angles 3 and 6 are called <term>alternate interior angles</term>, and s
 
 <subsubsection><title>Skills</title> <p>Practice each skill in the Homework Problems listed.</p>
     <p><ol label="1">
-        <li> Sketch a triangle with given properties    #1-6</li>
-    <li> Find an unknown angle in a triangle    #7-12, 17-20</li>
-    <li> Find angles formed by parallel lines and a transversal    #13-16, 35-44</li>
-    <li> Find exterior angles of a triangle    #21-24</li>
-    <li> Find angles in isosceles, equilateral, and right triangles    #25-34</li>
-    <li> State reasons for conclusions    #45-48</li>
+        <li> Sketch a triangle with given properties    #1<ndash/>6</li>
+    <li> Find an unknown angle in a triangle    #7<ndash/>12, 17<ndash/>20</li>
+    <li> Find angles formed by parallel lines and a transversal    #13<ndash/>16, 35<ndash/>44</li>
+    <li> Find exterior angles of a triangle    #21<ndash/>24</li>
+    <li> Find angles in isosceles, equilateral, and right triangles    #25<ndash/>34</li>
+    <li> State reasons for conclusions    #45<ndash/>48</li>
 </ol></p>
 </subsubsection>
 </subsection>

@@ -12,15 +12,72 @@
 <solution><sidebyside widths="60% 40%"><p>The components of <m>\bf{w}</m> are given by
 <me>w_x = \|{\bf{w}}\| \cos \theta = 4\cos 29\degree = 3.50</me>
 <me>w_y = \|{\bf{w}}\| \sin \theta = 4\sin 29\degree = 1.94</me></p>
-<image source="images/exam9-2-1.png"><description>vectors</description></image></sidebyside>
+<!--<image source="images/exam9-2-1.png"><description>vectors</description></image>-->
+    <image xml:id="exam9-2-1">
+        <description>vectors on coordinate plane</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale=.95]
+    \draw[black,->,>=stealth'] (0,0)--(4.,0) node[right] {$x$};
+    \draw[black,->,>=stealth'] (0,0)--(0,2.4) node[above] {$y$};
+    \coordinate (w) at (29:4);
+    \coordinate (wx) at (3.5,0);
+    \coordinate (wy) at (0, 1.94);
+
+    \draw[gray] (3.5,.1)--++(0, -.2) node[below, text=black, scale=.7]{3.50};
+    \draw[gray] (.1, 1.94)--++(-.2, 0) node[left, text=black, scale=.7]{1.94};
+    \node[text width=.3cm, text=blue, scale=.8] at ($ .5*(w) + (-.1, .3) $) {4};
+
+    \draw[gray, thick] (0.9,0) arc (0:29:0.9) node[right, midway, text=black, scale=.8] {$29\degree$};
+    \draw[gray, thick, dashed] (wy)--(w)--(wx);
+    \draw[red, very thick,->,>=stealth'] (0,0)--++(w) node[above right, xshift=1,  yshift=1, scale=.9, fill=white, inner sep=1]{\textbf{w}};
+    \draw[green, thick,->,>=stealth'] (0,0)--++(wx) node[below, midway, xshift=3, yshift=-3, scale=.9, fill=white, inner sep=1]{$\textbf{w}_x$};
+    \draw[green, thick,->,>=stealth'] (0,0)--++(wy) node[left, midway, xshift=-3, yshift=3, scale=.9, fill=white, inner sep=1]{$\textbf{w}_y$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 <p>Then <m>\bf{w} =  + \bf{w_x} + \bf{w_y}</m>, where <m>\bf{w_x}</m> is a horizontal vector of magnitude 3.50, and <m>\bf{w_y}</m> is a vertical vector of magnitude 1.94. See the figure above.</p></solution></example>
 
-<exercise><statement><p>A vector <m>\bf{u}</m> has magnitude 2 and direction <m>\theta =116\degree</m>, where <m>\theta</m> is in standard position.  Express <m>\bf{u}</m> as the sum of a horizontal vector, <m>\bf{u_x}</m>, and a vertical vector, <m>\bf{u_y}</m>.</p></statement></exercise> 
+<exercise><statement><p>A vector <m>\bf{u}</m> has magnitude 2 and direction <m>\theta =116\degree</m>, where <m>\theta</m> is in standard position.  Express <m>\bf{u}</m> as the sum of a horizontal vector, <m>\bf{u_x}</m>, and a vertical vector, <m>\bf{u_y}</m>.</p></statement>
+<answer><p><m>{\bf{u}} = {\bf{u_x}}+{\bf{u_y}}</m>, where <m>\|{\bf{u_x}}\| = -1.943,~\|{\bf{u_y}}\| = 0.473</m></p></answer></exercise> 
 </introduction> 
 
 <subsection><title>Unit Vectors</title>
 <p> It is often useful to describe a vector by giving its horizontal and vertical components, instead of its magnitude and direction. To make the notation easier, we give names to the vectors of length 1 that point in the <m>x</m>- and <m>y</m>-directions. A vector of magnitude 1 is called a <term>unit vector</term>. We can have unit vectors in any direction, but the unit vector in the <m>x</m>-direction is denoted by <m>\bf{i}</m>, and the unit vector in the <m>y</m>-direction is called <m>\bf{j}</m>, as shown below.</p> 
-<sidebyside widths="60% 35%"><p>By taking scalar multiples of <m>\bf{i}</m> and <m>\bf{j}</m>, we can describe any vector that lies in the directions of the coordinate axes. For example, <m>4{\bf{i}}</m> represents the vector of magnitude 4 pointing in the <m>x</m>-direction, and <m>3{\bf{j}}</m> represents the vector of magnitude 3 pointing in the<m>y</m>-direction. And by adding multiples of <m>\bf{i}</m> and <m>\bf{j}</m>, we can represent any vector we like. The vector <m>{\bf{v}} = 4{\bf{i}} + 3{\bf{j}}</m> is shown at right.</p><image source="images/fig9-2-1.png"><description>vectors</description></image></sidebyside> 
+<sidebyside widths="60% 35%"><p>By taking scalar multiples of <m>\bf{i}</m> and <m>\bf{j}</m>, we can describe any vector that lies in the directions of the coordinate axes. For example, <m>4{\bf{i}}</m> represents the vector of magnitude 4 pointing in the <m>x</m>-direction, and <m>3{\bf{j}}</m> represents the vector of magnitude 3 pointing in the<m>y</m>-direction. And by adding multiples of <m>\bf{i}</m> and <m>\bf{j}</m>, we can represent any vector we like. The vector <m>{\bf{v}} = 4{\bf{i}} + 3{\bf{j}}</m> is shown at right.</p><!--<image source="images/fig9-2-1.png"><description>vectors</description></image>-->
+    <image xml:id="fig9-2-1">
+        <description>vectors on xy-plane</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale=.95]
+    \draw[black,->,>=stealth'] (0,0)--(4.4,0) node[right, scale=.9] {$x$};
+    \draw[black,->,>=stealth'] (0,0)--(0,3.4) node[above, scale=.9] {$y$};
+    \coordinate (O) at (0,0);
+    \coordinate (v) at (4,3);
+    \coordinate (wx) at (4,0);
+    \coordinate (wy) at (0, 3);
+    \coordinate (i) at (1,0);
+    \coordinate (j) at (0,1);
+
+    \draw[gray] (4,.1)--++(0, -.2) node[below, text=black, scale=.9]{4};
+    \draw[gray] (.1, 3)--++(-.2, 0) node[left, text=black, scale=.9]{3};
+    \draw[gray, thick, dashed] (0,3)--(v)--(4,0);
+    \filldraw[black] (v) circle (.1) node[above, yshift=3, scale=.9]{$(4,3)$};
+
+    \draw[red, very thick,->,>=stealth'] (O)--++(v) node[left, xshift=-16,  yshift=-8, scale=.9, fill=white, inner sep=1]{\textbf{v}};
+    \draw[green, thick,->,>=stealth'] (O)--++(4,0) node[above, xshift=-13, yshift=3, scale=.9, fill=white, inner sep=1]{$4\textbf{i}$};
+    \draw[green, thick,->,>=stealth'] (O)--++(0,3) node[right, xshift=3, yshift=-13, scale=.9, fill=white, inner sep=1]{$3\textbf{j}$};
+    \draw[blue, ultra thick,->,>=stealth'] (O)--++(i) node[below, yshift=-3, scale=.9, fill=white, inner sep=1]{$\textbf{i}$};
+    \draw[blue, ultra thick,->,>=stealth'] (O)--++(j) node[left, xshift=-3, scale=.9, fill=white, inner sep=1]{$\textbf{j}$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
 <p>Because the components of the vector are chosen to align with the coordinate system, we call this the <term>coordinate form</term> of the vector.</p>
 
@@ -32,11 +89,57 @@ is the vector whose horizontal component is <m>a</m> and whose vertical componen
 <p>The coordinate form of the vector <m>\bf{w}</m> in the previous example is <m>{\bf{w}} = 3.50{\bf{i}} + 1.94{\bf{j}}</m>.</p>
 
 <example><statement><sidebyside widths="40% 40%" valigns="middle middle"><p>State the coordinate form of the vector shown at right.</p>
-<image source="images/exam9-2-2.png"><description>vectors</description></image></sidebyside></statement>
+<!--<image source="images/exam9-2-2.png"><description>vectors</description></image>-->
+    <image xml:id="exam9-2-2">
+        <description>vectors on xy-plane</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale=.5]
+    \draw[cyan] (-6,-1) grid (6,7);
+    \draw[black,->,>=stealth'] (-6,0)--(6.4,0) node[right] {$x$};
+    \draw[black,->,>=stealth'] (0,-1)--(0,7.4) node[above] {$y$};
+    \foreach \x   in  {5} {
+     \draw[black, thick] (\x,0.15) --++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.9] {$\x$};
+     \draw[black, thick] (-\x,0.15) --++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.9] {$-\x$};
+     \draw[black, thick] (0.15,\x) --++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.9] {$\x$};
+    };
+    \coordinate (O) at (0,0);
+    \coordinate (v) at (-4,6);
+
+    \draw[red, very thick,->,>=stealth'] (O)--++(v) node[above left, scale=.9, fill=white, inner sep=1]{\textbf{v}};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement>
 
 <solution><p>From its base to its tip, the vector extends 4 units in the negative <m>{\bf{i}}</m> direction and 6 units in the <m>{\bf{j}}</m> direction. Thus, <m>{\bf{v}} = -4{\bf{i}} + 6{\bf{j}}</m>.</p></solution></example>
 
-<exercise><statement><sidebyside widths="40% 25%" valigns="middle middle"><p>State the coordinate form of the vector shown at right.</p><image source="images/exer9-2-2.png"><description>vectors</description></image></sidebyside></statement></exercise>
+<exercise><statement><sidebyside widths="40% 25%" valigns="middle middle"><p>State the coordinate form of the vector shown at right.</p><!--<image source="images/exer9-2-2.png"><description>vectors</description></image>-->
+    <image xml:id="exer9-2-2">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale=.5]
+    \draw[cyan] (-2,-6) grid (6,1);
+    \draw[black,->,>=stealth'] (-2,0)--(6.4,0) node[right] {$x$};
+    \draw[black,->,>=stealth'] (0,-6)--(0,1.4) node[above] {$y$};
+    \foreach \x   in  {5} {
+     \draw[black, thick] (\x,0.15) --++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.9] {$\x$};
+     \draw[black, thick] (0.15,-\x) --++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.9] {$-\x$};
+    };
+    \coordinate (O) at (0,0);
+    \coordinate (v) at (3,-5);
+
+    \draw[red, very thick,->,>=stealth'] (O)--++(v) node[right, xshift=3, scale=.9, fill=white, inner sep=1]{\textbf{w}};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement>
+<answer><p><m>{\bf{w}} = 3{\bf{i}} -5{\bf{j}}</m></p></answer></exercise>
 </subsection>
 
 <subsection><title>Converting Between Geometric and Coordinate Form</title>
@@ -62,12 +165,44 @@ and direction <m>\theta = \tan^{-1}(\dfrac{3}{4}) = 36.9\degree</m>. Thus, we ca
   so the coordinate form is <m>{\bf{w}} = \dfrac{-5}{\sqrt{2}}{\bf{i}}+ \dfrac{5}{\sqrt{2}}{\bf{j}}</m>.</li></ol></p></solution></example>
 
 <exercise><statement><p>Find the geometric form of the vector <m>{\bf{F}} = -6{\bf{i}}+8{\bf{j}}</m>.</p></statement>
+<answer><p>magnitude 10, direction <m>127\degree</m></p></answer>
 </exercise>
 </subsection>
 
 <subsection><title>Scalar Multiples of Vectors in Coordinate Form</title>
 <p>Scalar multiplication is easy to compute in coordinate form. This is really a consequence of the fact that the sides of similar triangles are proportional.</p> 
-<sidebyside widths="55% 45%"><p>The figure at right shows the vectors <m>{\bf{u}} = 3{\bf{i}}+2{\bf{j}}</m> and <m>{\bf{v}} = 2{\bf{u}}</m>. The vector <m>{\bf{v}}</m> is twice as long as <m>{\bf{u}}</m> and points in the same direction as <m>{\bf{u}}</m>. You can see that each component of <m>{\bf{v}}</m> is twice the corresponding component of <m>{\bf{u}}</m>, so that <m>{\bf{v}} = 6{\bf{i}}+4{\bf{j}}</m>.</p><image source="images/fig9-2-2.png"><description>vectors</description></image></sidebyside>
+<sidebyside widths="55% 42%" margins="0%"><p>The figure at right shows the vectors <m>{\bf{u}} = 3{\bf{i}}+2{\bf{j}}</m> and <m>{\bf{v}} = 2{\bf{u}}</m>. The vector <m>{\bf{v}}</m> is twice as long as <m>{\bf{u}}</m> and points in the same direction as <m>{\bf{u}}</m>. You can see that each component of <m>{\bf{v}}</m> is twice the corresponding component of <m>{\bf{u}}</m>, so that <m>{\bf{v}} = 6{\bf{i}}+4{\bf{j}}</m>.</p><!--<image source="images/fig9-2-2.png"><description>vectors</description></image>-->
+    <image xml:id="fig9-2-2">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale=.5]
+    \draw[cyan] (0,0) grid (12,6);
+
+    \coordinate (u) at (3,2);
+    \coordinate (v) at ($ 2*(u) $);
+    \coordinate (i) at (1,0);
+    \coordinate (j) at (0,1);
+
+    \foreach \x in {1, 2, 3, 5, 6, 7, 8, 9,10} {
+     \draw[lightgray, thick, ->,>=stealth'] (\x,1)--++(i);
+    };
+
+    \foreach \y in {1, 2} {
+     \draw[lightgray, thick, ->,>=stealth'] (4,\y)--++(j);
+    };
+    \foreach \y in {1,2,3,4} {
+     \draw[lightgray, thick, ->,>=stealth'] (11,\y)--++(j);
+    };
+
+    \draw[red, thick,->,>=stealth'] (1,1)--++(u) node[above, xshift=-6, yshift=3, scale=.9, fill=white, inner sep=1]{\textbf{u}};
+    \draw[blue, thick,->,>=stealth'] (5,1)--++(v) node[above, xshift=-6, yshift=3, scale=.9, fill=white, inner sep=1]{\textbf{v}};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
 <assemblage><title>Scalar Multiplication in Coordinate Form</title>
 <p>If <m>{\bf{v}} = a{\bf{i}} + b{\bf{j}}</m> and <m>k</m> is a scalar, then 
@@ -79,7 +214,8 @@ and direction <m>\theta = \tan^{-1}(\dfrac{3}{4}) = 36.9\degree</m>. Thus, we ca
 
 <solution><p>We multiply each component of <m>{\bf{v}}</m> by <m>-\dfrac{1}{2}</m> to get <m>{\bf{w}} = -2{\bf{i}} +\dfrac{7}{2}{\bf{j}}</m>.</p></solution></example>
 
-<exercise><statement><p>Find the coordinate form for the vector <m>{\bf{u}} = 3{\bf{v}}</m>, where <m>{\bf{v}} = -12{\bf{i}}+15{\bf{j}}</m>.</p></statement></exercise>
+<exercise><statement><p>Find the coordinate form for the vector <m>{\bf{u}} = 3{\bf{v}}</m>, where <m>{\bf{v}} = -12{\bf{i}}+15{\bf{j}}</m>.</p></statement>
+<answer><p><m>{\bf{u}} = -36{\bf{i}} +45{\bf{j}}</m></p></answer></exercise>
 
 <p>If we divide a non-zero vector <m>{\bf{v}}</m> by its own length, we create a unit vector that points in the same direction as <m>{\bf{v}}</m>.  (Dividing a vector by a scalar <m>k</m> is the same as multiplying the vector by <m>\dfrac{1}{k}</m>.)</p>
 
@@ -107,7 +243,8 @@ Next we multiply <m>{\bf{v}}</m> by the reciprocal of its length.  The unit vect
   <p>A unit vector <m>{\bf{u}}</m> in the direction of <m>{\bf{v}}</m> is given by <m>{\bf{u}} = \dfrac{1}{\|{\bf{v}}\|} {\bf{v}}.</m></p>
   <p>A vector <m>{\bf{w}}</m> of length <m>k</m> in the direction of <m>{\bf{v}}</m> is given by <m>{\bf{w}} = \dfrac{k}{\|{\bf{v}}\|} {\bf{v}}.</m></p></assemblage>
 
-<exercise><statement><p>Find a unit vector <m>{\bf{u}}</m> and a vector <m>{\bf{w}}</m> of length 10 pointing in the same direction as <m>{\bf{v}} = -{\bf{i}}+3{\bf{j}}</m>.</p></statement></exercise>
+<exercise><statement><p>Find a unit vector <m>{\bf{u}}</m> and a vector <m>{\bf{w}}</m> of length 10 pointing in the same direction as <m>{\bf{v}} = -{\bf{i}}+3{\bf{j}}</m>.</p></statement>
+<answer><p><m>{\bf{u}} = -\dfrac{1}{\sqrt{10}}{\bf{i}} +\dfrac{3}{\sqrt{10}}{\bf{j}},~ {\bf{w}} = -\sqrt{10}{\bf{i}} +3\sqrt{10}{\bf{j}}</m></p></answer></exercise>
 </subsection>
 
 <subsection><title>Adding Vectors in Coordinate Form</title>
@@ -123,7 +260,47 @@ But we arrive at the same endpoint by traveling
       1+5=6~ \text{units in the <m>x</m>-direction, then}\\
       2+3=5~ \text{units in the <m>y</m>-direction.}\\
 \end{align*}</p>
-<image source="images/fig9-2-3.png"><description>vectors</description></image></sidebyside>
+<image xml:id="fig9-2-3">
+        <description>triangle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.5]
+        \draw[cyan] (0,0) grid (8,7);
+
+        \coordinate (u) at (1,2);
+        \coordinate (v) at (5,3);
+        \coordinate (s) at ($ (u) + (v) $);
+
+        \draw[blue, thick,->,>=stealth'] (1,1)--++(u) node[above, xshift=-3, yshift=3, scale=.9, fill=white, inner sep=1]{\textbf{u}};
+        \draw[blue, thick,->,>=stealth'] (2,3)--++(v) node[above, xshift=-12, yshift=-3, scale=.9, fill=white, inner sep=1]{\textbf{v}};
+        \draw[red, very thick,->,>=stealth'] (1,1)--++(s) node[right, xshift=3, yshift=-5, scale=.9, fill=white, inner sep=1]{\textbf{u+v}};
+
+        %second grid
+        \coordinate (O) at (0,-8);
+
+        \draw[cyan] (O) grid ($ (O)+(8,7) $);
+
+        \coordinate (i) at (1,0);
+        \coordinate (j) at (0,1);
+
+         \draw[lightgray, thick, ->,>=stealth'] ($ (O)+(1,1) $)--++(i);
+        \foreach \x in { 2, 3, 4, 5, 6} {
+         \draw[lightgray, thick, ->,>=stealth']  ($ (O)+(\x,1)$)--++(i);
+         \draw[lightgray, thick, ->,>=stealth']  ($ (O)+(\x,3) $)--++(i);
+        };
+
+        \foreach \y in {1,2,3,4, 5} {
+         \draw[lightgray, thick, ->,>=stealth']  ($ (O)+(7,\y)$)--++(j);
+        };
+
+        \draw[blue, thick,->,>=stealth']  ($ (O)+(1,1)$)--++(u) node[above, xshift=-3, yshift=3, scale=.9, fill=white, inner sep=1]{\textbf{u}};
+        \draw[blue, thick,->,>=stealth']  ($ (O)+(2,3)$)--++(v) node[above, xshift=-12, yshift=-3, scale=.9, fill=white, inner sep=1]{\textbf{v}};
+        \draw[red, very thick,->,>=stealth']  ($ (O)+(1,1)$)--++(s) node[right, xshift=3, yshift=-5, scale=.9, fill=white, inner sep=1]{\textbf{u+v}};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image><!--<image source="images/fig9-2-3.png"><description>vectors</description></image>--></sidebyside>
 
 <p>The resultant vector has components that are just the sums of the components of the vectors <m>{\bf{u}}</m> and <m>{\bf{v}}</m>. To add two vectors in coordinate form, we add the corresponding components.</p> 
 
@@ -141,7 +318,39 @@ But we arrive at the same endpoint by traveling
       w_x \amp = 20\cos 190\degree = -19.696\\
       w_y \amp = 20\sin 190\degree = -3.473\\
 \end{align*}</p>
-<image source="images/exam9-2-6.png"><description>vectors</description></image></sidebyside>
+<!--<image source="images/exam9-2-6.png"><description>vectors</description></image>-->
+    <image xml:id="exam9-2-6">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale=.15]
+
+    \coordinate (O) at (0,0);
+    \coordinate (v) at (225:15);
+    \coordinate (w) at (190:20);
+    \coordinate (s) at ($ (u) + (v) $);
+    \def\u{4};
+
+    \coordinate (i) at (\u,0);
+    \coordinate (j) at (0,\u);
+
+    \draw[lightgray, thick, ->,>=stealth'] (O)--++(i);
+    \draw[lightgray, thick, ->,>=stealth'] (O)--++(j);
+    \draw[lightgray, thick, ->,>=stealth'] (v)--++(i);
+    \draw[lightgray, thick, ->,>=stealth'] (v)--++(j);
+
+    \draw[lightgray, thick, ->,>=stealth'] (1.5,0)arc (0:225: 1.5) node[above left, midway, yshift=-5, scale=0.8, text=black]{$225\degree$};
+    \draw[lightgray, thick, ->,>=stealth'] ($ (v)+(1.5,0)$) arc (0:190: 1.5) node[above left, midway, yshift=-5, scale=0.8, text=black]{$190\degree$};
+    \draw[lightgray, thick, ->,>=stealth'] ($ (v)+(0,2)$) arc (90:-170: 2) node[below right, midway, xshift=-5, scale=0.8, text=black]{$260\degree$};
+
+    \draw[red, thick,->,>=stealth'] (O)--++(v) node[below right, midway, xshift=3, scale=.9, fill=white, inner sep=1, text=blue]{15 mi};
+    \draw[red, thick,->,>=stealth'] (v)--++(w) node[below, midway , xshift=-2, yshift=-5, scale=.9, fill=white, inner sep=1, text=blue]{20 mi};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 <p>Thus,
   <me>{\bf{v}} = -10.607{\bf{i}}-10.607{\bf{j}}~~~~\text{and}~~~~{\bf{w}} = -19.696{\bf{i}}-3.473{\bf{j}}</me>
 We find the resultant vector, <m>{\bf{r}}</m>, by adding <m>{\bf{v}}</m> and <m>{\bf{w}}</m>.
@@ -151,7 +360,7 @@ We find the resultant vector, <m>{\bf{r}}</m>, by adding <m>{\bf{v}}</m> and <m>
 \end{align*}
 Kyle's position vector is <m>{\bf{r}}=30.303{\bf{i}}-14.08{\bf{j}}</m>, or about 30.3 miles west and 14.1 miles south of his starting position.</p></solution></example>
 
-<exercise><statement><p>Arianna's yacht heads <m>10\degree</m> west of north at a speed of 20 kilometers per hour relative to the water. However, the water is moving <m>70\degree</m> east of north at 4 kilometers per hour. What is Arianna's velocity relative to land?</p></statement></exercise>
+<exercise><statement><p>Arianna's yacht heads <m>10\degree</m> west of north at a speed of 20 kilometers per hour relative to the water. However, the water is moving <m>70\degree</m> east of north at 4 kilometers per hour. What is Arianna's velocity relative to land?</p></statement><answer><p>22.7 kph due north</p></answer></exercise>
 
 <p>The coordinate form is especially efficient if we want to add more than two vectors.</p>
 
@@ -185,14 +394,71 @@ Thus, the treasure is 17.3 km from the cottage, in the direction <m>54.7\degree<
 
 <exercise><statement><p>From your campsite you hike 1.6 km in the direction <m>175\degree</m>, then 0.8 km in the direction <m>65\degree</m>, and finally 1.2 km in the direction <m>350\degree</m>.<ol label="a">  
 <li>Draw a diagram for your hike, using vectors to represent each of the three segments. Use ae grid in which 1 square represents 0.1 km.</li>
-<li>Resolve each vector into components, and determine your location after your hike.</li></ol></p></statement></exercise>
+<li>Resolve each vector into components, and determine your location after your hike.</li></ol></p></statement><answer><p><ol label="a">
+      <li><sidebyside width="25%" valign = "middle" margins="0% 75%"><!--<image source="images/exer9-2-7ans.png"><description>vectors</description></image>-->
+    <image xml:id="exer9-2-7ans">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale=2]
+    \coordinate (O) at (0,0);
+    \coordinate (v) at (-85:1.6);
+    \coordinate (w) at (25:0.8);
+    \coordinate (x) at (100:1.2);
+    \coordinate (s) at ($ (u) + (v) $);
+    \def\u{0.5};
+
+    \coordinate (i) at (\u,0);
+    \coordinate (j) at (0,\u);
+
+    \draw[lightgray, thick, ->,>=stealth'] (O)--++($.7*(j)$);
+    \draw[lightgray, thick, <->,>=stealth'] (0,.15) arc (90:-85: 0.15) node[right, midway, yshift=-1, scale=0.8, text=black]{$175\degree$};
+    \draw[lightgray, thick, ->,>=stealth'] ($(v)+(w)$)--++(j);
+    \draw[lightgray, thick, <-,>=stealth'] ($(v)+(w)+(0,.3)$) arc (90:60: 0.3) node[right, xshift=-1, yshift=-1, scale=0.8, text=black]{$10\degree$};
+    \draw[lightgray, thick, <-,>=stealth'] ($(v)+(w)+0.25*(x)$) arc (95:125: 0.35) ;
+    \draw[lightgray, thick, ->,>=stealth'] (v)--++(j);
+    \draw[lightgray, thick, <->,>=stealth'] ($(v)+(0,.3)$) arc (90:25: 0.3) node[above right, midway, xshift=-2, yshift=-1, scale=0.8, text=black]{$65\degree$};
+
+    \draw[red, thick,->,>=stealth'] (O)--++(v) node[left, midway, xshift=-3, scale=.9, fill=white, inner sep=1, text=blue]{1.6 km};
+    \draw[red, thick,->,>=stealth'] (v)--++(w) node[below, midway, xshift=6, yshift=-5, scale=.9, fill=white, inner sep=1, text=blue]{0.8 km};
+    \draw[red, thick,->,>=stealth'] ($(v)+(w)$)--++(x) node[left, midway , xshift=-2, yshift=-5, scale=.9, fill=white, inner sep=1, text=blue]{1.2 km};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+      </sidebyside></li>
+      <li><m>-1.594{\bf{i}} +0.139{\bf{j}},~0.338{\bf{i}} +0.725{\bf{j}},~1.182{\bf{i}} -0.208{\bf{j}},~-0.074{\bf{i}} +0.656{\bf{j}}</m></li></ol></p></answer></exercise>
 </subsection>
 
 <subsection><title>Force</title>
 <p> When you push or pull on something, you are exerting a <term>force</term> on the object. For example, the weight of an object is actually a force, the result of gravity pulling the object towards the earth. A force has magnitude (measured in pounds) and direction, so force is a vector quantity. A force applied to an object causes the object to accelerate in the direction of the force.</p>  
  <p>When two or more forces act simultaneously on an object, the object moves as if it were acted on by the sum of the individual force vectors. The sum of all the forces acting on an object is called the <term>resultant force</term>.</p>
 
-<example><statement><sidebyside widths="60% 25%"><p>Abe and Bart are trying to move a refrigerator by pulling on it with forces of 150 pounds and 120 pounds respectively, as shown in figure (a).  What is the resulting force on the refrigerator, and in what direction will it move?</p><image source="images/exam9-2-8.png"><description>vectors</description></image></sidebyside></statement>
+<example><statement><sidebyside widths="60% 25%"><p>Abe and Bart are trying to move a refrigerator by pulling on it with forces of 150 pounds and 120 pounds respectively, as shown in figure (a).  What is the resulting force on the refrigerator, and in what direction will it move?</p><!--<image source="images/exam9-2-8.png"><description>vectors</description></image>-->
+    <image xml:id="exam9-2-8">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale=0.02]
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (20:150);
+    \coordinate (B) at (80:120);
+
+    \draw[lightgray, thick] (O)--++(140,0);
+    \draw[lightgray, thick, <->] (50,0) arc (0:20: 50) node[right, midway, scale=0.8, text=black]{$20\degree$};
+    \draw[lightgray, thick, <->] (25,0) arc (0:80: 25) node[right, xshift=3, xshift=2, scale=0.8, text=black]{$80\degree$};
+
+    \draw[blue, thick,->,>=stealth'] (O)--++(A) node[below, xshift=-3, yshift=-6, scale=.9, fill=white, inner sep=1, text=blue]{$A$};
+    \draw[blue, thick,->,>=stealth'] (O)--++(B) node[right, xshift=-6, yshift=-5, scale=.9, fill=white, inner sep=1, text=blue]{$B$};
+    \node[left, xshift=-3, scale=.9, text=blue] at ($ .5*(B) $) {120};
+    \node[left, yshift=6, scale=.9, text=blue] at ($ .8*(A) $) {150};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement>
 
 <solution><p>We write each force in its coordinate form.
   \begin{align*}
@@ -208,7 +474,35 @@ Thus, the treasure is 17.3 km from the cottage, in the direction <m>54.7\degree<
   <me>\|{\bf{r}}\|  = \sqrt{161.75^2 + 169.48^2} = 234.28</me>
 and the direction of the force is given by
 <me>\tan^{-1}(\dfrac{169.48}{161.75}) = 46.33\degree</me></p>
-<image source="images/exam9-2-8ans.png"><description>vectors</description></image></sidebyside>
+<!--<image source="images/exam9-2-8ans.png"><description>vectors</description></image>-->
+    <image xml:id="exam9-2-8ans">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale=0.02]
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (20:150);
+    \coordinate (B) at (80:120);
+    \coordinate (r) at ($ (A) + (B) $);
+    \coordinate (Ax) at ($ 150*cos(20)*(1,0)  $);
+    \coordinate (Ay) at ($ 150*sin(20)*(0,1)  $);
+    \coordinate (Bx) at ($ 120*cos(80)*(1,0)  $);
+    \coordinate (By) at ($ 120*sin(80)*(0,1)  $);
+
+    \draw[lightgray, thick, ->, >=stealth'] (O)--++(Ax) node[below, midway, scale=.9, text=black]{140.95\textbf{i}};
+    \draw[lightgray, thick, ->, >=stealth'] (Ax)--++(Ay) node[right, midway, yshift=-1, scale=.9, text=black]{51.3\textbf{j}};
+    \draw[lightgray, thick, ->, >=stealth'] (A)--++(Bx) node[right, scale=.9, text=black]{20.84\textbf{i}};
+    \draw[lightgray, thick, ->, >=stealth'] ($ (A) +(Bx)$)--++(By) node[right, midway, yshift=1, scale=.9, text=black]{118.18\textbf{j}};
+
+    \draw[blue, thick,->,>=stealth'] (O)--++(A);
+    \draw[blue, thick,->,>=stealth'] (A)--++(B) ;
+    \draw[red, thick,->,>=stealth'] (O)--++(r) node[above left, yshift=-2] {\textbf{r}};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 <p>The force exerted on the refrigerator is about 234 pounds, and it will move at an angle of <m>46\degree</m> from the horizontal segment shown in the figure.</p></solution></example>
 
 <exercise><statement><p>Two tugboats pull on a barge in the river with forces <m>{\bf{u}} = 20{\bf{i}} + 8{\bf{j}}</m> and <m>{\bf{v}} = 28{\bf{i}} -6{\bf{j}}</m>, measured in thousands of pounds. In what direction will the barge move, and what is the magnitude of the force propelling it? </p></statement></exercise>
@@ -255,7 +549,7 @@ So Carl must pull with 234.3 pounds in the direction <m>180\degree + 46.33\degre
     <li><m>{\bf{u}} = -\dfrac{1}{\sqrt{10}}{\bf{i}} +\dfrac{3}{\sqrt{10}}{\bf{j}},~ {\bf{w}} = -\sqrt{10}{\bf{i}} +3\sqrt{10}{\bf{j}}</m></li>
     <li><p>22.7 kph due north</p></li>
     <li><p><ol label="a">
-      <li><sidebyside width="25%" valign = "middle"><image source="images/exer9-2-7ans.png"><description>vectors</description></image></sidebyside></li>
+      <li><sidebyside width="25%" valign = "middle" margins="0% 75%"><image source="images/exer9-2-7ans"><description>vectors</description></image></sidebyside></li>
       <li><m>-1.594{\bf{i}} +0.139{\bf{j}},~0.338{\bf{i}} +0.725{\bf{j}},~1.182{\bf{i}} -0.208{\bf{j}},~-0.074{\bf{i}} +0.656{\bf{j}}</m></li></ol></p></li>
     <li><p><m>2.4\degree,~</m>48.04 thousand lbs</p></li>
     <li><m>{\bf{w}} = -6{\bf{i}} -6{\bf{j}}</m></li>
