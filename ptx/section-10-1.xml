@@ -8,7 +8,64 @@
 <p>The Cartesian coordinate system is also called the <term>rectangular coordinate system</term>, because it describes a location in the plane as the vertex of a rectangle. To construct a rectangular coordinate system, we begin with two perpendicular axes that intersect at the origin. The <m>x</m>- and <m>y</m>-coordinates of a point indicate the length and width of a rectangle with one vertex at the origin. The point <m>P(x,y)</m> sits at the opposite vertex of the rectangle, as shown in the figure below.</p>
 <p>In Chapter 9 we used vectors to specify a location by giving a distance and a direction. For example, we might say that the airport is located 5 miles southwest of the city center. This method of designating locations is so useful that we will construct a new coordinate system using the same tools: distance and direction.</p>
 
-<sidebyside widths = "35% 35%"><image source="images/fig10-1-1a.png"><description>Cartesian</description></image><image source="images/fig10-1-1b.png"><description>polar</description></image></sidebyside>
+<sidebyside widths = "28% 28%"><!--<image source="images/fig10-1-1a.png"><description>Cartesian</description></image>
+<image source="images/fig10-1-1b.png"><description>polar</description></image>-->
+    <image xml:id="fig10-1-1a">
+        <description>Cartesian</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture}
+    \coordinate (O) at (0,0);
+    \def\a{3};
+    \def\b{1};
+
+    \coordinate (P) at (\a,\b);
+    \coordinate (x) at (\a,0);
+    \coordinate (A) at ({\a+.5},0);
+    \coordinate (y) at (0,\b);
+
+    \draw[black,  thick, ->, >=stealth'] (O)++(-.3,0) --(A);
+    \draw[black,  thick, ->, >=stealth'] (O)++(0,-.3) -- (0,2.3) ;
+    \draw[gray, thick, dashed] (x) -- (P) -- (y);
+
+    \filldraw[red] (P) circle (1.7pt) node[anchor = south, xshift=2]{$P(x,y)$}; 
+
+    \node at (1.6,-.3) {$x$};
+    \node at (-.3, 0.5) {$y$};
+    \node at (1.6,-.8)     {\color{blue} Cartesian coordinates};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    <image xml:id="fig10-1-1b">
+        <description>polar</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture}
+    \coordinate (O) at (0,0);
+    \def\a{3};
+    \def\b{1};
+
+    \coordinate (P) at (\a,\b);
+    \coordinate (x) at (\a,0);
+    \coordinate (A) at ({\a+.5},0);
+    \coordinate (y) at (0,\b);
+
+    \draw[black,  thick, ->, >=stealth'] (O)++(-.3,0) --(A);
+    \draw[black,  thick] (O)++(0,-.3) -- (0,2.3) ;
+    \draw[blue,  thick] (O) --  ++(P) node[above left, midway,  ]{$r$}  ;
+
+    \draw[red, thick] (O)++(1,0) arc (0:{atan(\b /\a)}:1) node [right, midway,xshift=0,yshift=1] {$ \theta$};
+
+    \filldraw[red] ($ (O)+(P)$) circle (1.7pt) node[anchor = south, xshift=2]{$P(r, \theta)$}; 
+    \node at (1.6,-.8)     {\color{blue} Polar coordinates};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
  <p>In the <term>polar coordinate system</term> we start with the origin or <term>pole</term>, and a single ray from the pole, called the <term>polar axis</term>. We describe the location of a point <m>P</m> in the plane by measuring the distance, <m>\abs{r}</m>, from <m>P</m> to the pole, and the angle, <m>\theta</m>, that <m>\vec{OP}</m> makes with the polar axis (measured counterclockwise). The components of the ordered pair <m>(r, \theta)</m> are called the <term>polar coordinates</term> of the point <m>P</m>.</p>  
 
@@ -18,13 +75,69 @@
 <li><p><m>\theta</m>   is the <term>angle</term> measured counterclockwise from the polar 
      axis to the ray through <m>P</m> from the pole.</p></li></ul></p></assemblage> 
 
-<sidebyside widths = "65% 30%"><p>In our work with polar coordinates, we will always use radians for the angle <m>\theta</m>. For example, the point <m>P(2, \dfrac{\pi}{2})</m> is located 2 units from the pole at an angle of <m>\dfrac{\pi}{2}</m> radians, and <m>Q(3,4)</m> is located 3 units from the pole at an angle of 4 radians. The graphs of <m>P</m> and <m>Q</m> are shown at right.</p><image source="images/fig10-1-2.png"><description>polar</description></image></sidebyside>
+<sidebyside widths = "65% 30%"><p>In our work with polar coordinates, we will always use radians for the angle <m>\theta</m>. For example, the point <m>P(2, \dfrac{\pi}{2})</m> is located 2 units from the pole at an angle of <m>\dfrac{\pi}{2}</m> radians, and <m>Q(3,4)</m> is located 3 units from the pole at an angle of 4 radians. The graphs of <m>P</m> and <m>Q</m> are shown at right.</p><!--<image source="images/fig10-1-2.png"><description>polar</description></image>-->
+    <image xml:id="fig10-1-2">
+        <description>points in polar coordinates</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale=.7]
+
+    \coordinate (O) at (0,0);
+    \coordinate (x) at (4,0);
+    \coordinate (P) at (90:2);
+    \coordinate (Q) at ({deg(4)}:3);
+
+    \draw[green!80!black, thick, ->, >=stealth'] (O)--(x);
+    \draw[green!80!black, thick] (O)--(P) node[left, midway, text=blue]{2};
+    \draw[green!80!black, thick] (O)--(Q) node[below, midway, xshift=4, yshift=1, text=blue]{3};
+
+    \filldraw[black] (P) circle (1.7pt) node[anchor = west, xshift=2]{$P(2, \frac{\pi}{2})$}; 
+    \filldraw[black] (Q) circle (1.7pt) node[anchor = north, yshift=-2]{$Q(3,4)$}; 
+
+    \draw[red, ->, >=stealth'] (.5,0) arc(0:90:.5) node[right, midway, yshift=2] {$\frac{\pi}{2}$};
+
+    \draw[red, ->, >=stealth'] (.3,0) arc(0:{deg(4)}:.3) node[above left, yshift=1] {4};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
 <p> A piece of graph paper in rectangular coordinates consists of a grid of horizontal and vertical lines. These are the lines <m>x=k</m> and <m>y=k</m>, for evenly spaced values of <m>k</m>. Each vertical grid line consists of points that have the same <m>x</m>-coordinate, and each horizontal grid line is made up of points that have the same <m>y</m>-coordinate. The grid lines are bench marks to help us locate points with specific rectangular coordinates.</p>
 
 <p>A piece of graph paper in polar coordinates consists of a grid of concentric circles and radial lines, as shown below.  Each circle consists of points with the same <m>r</m>-coordinate; they are all the same distance from the pole. All points with the same <m>\theta</m>-coordinate lie on one of the radial lines. This grid helps us locate points with specific polar coordinates.</p>
 
-<sidebyside width= "80%"><image source="images/fig10-1-3.png"><description>grids</description></image></sidebyside>     
+<sidebyside width= "80%"><!--<image source="images/fig10-1-3.png"><description>grids</description></image>-->
+    <image xml:id="fig10-1-3">
+        <description>rectangular and polar grids</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale=.6]
+    \def\d{-15};
+    \draw[step=1cm,cyan,very thin] ({\d-5},-5) grid ({\d+5},5);
+    \draw[thick,->, >=stealth'] (-20,0) -- ++(10.8,0) node[anchor=west] {$x$};
+    \draw[thick,->, >=stealth'] (-15,-5) -- ++(0,10.8) node[anchor=south] {$y$};
+    \foreach \x in {-4,-2,2,4} {
+    \draw[black] ({\d+\x},.15) -- ++(0,-.3) node[below, yshift=-2, fill=white, inner sep=2]{$\x$};
+    \draw[black] ({\d+.15},\x) -- ++(-.3,0) node[left, xshift=-2, fill=white, inner sep=2]{$\x$};
+    }
+
+    %polar 
+    \coordinate(O) at (0,0);
+    \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+      \draw[cyan] (\angle:0) -- (\angle:5);
+    }
+    \foreach \r in {1,2,3,4,5} {
+    \draw[cyan] (O) circle (\r);
+    \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
+    }
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>   
 </introduction>
 
 <subsection><title>Plotting Points</title>
@@ -34,18 +147,87 @@
 <example><statement><p>Plot the points whose polar coordinates are given: <m>A(1, \dfrac{\pi}{2})</m> and <m>B(2, \dfrac{7\pi}{4})</m>.</p></statement>
 
 <solution><sidebyside widths="55% 30%"><p>To plot point <m>A</m>, we move 1 unit away from the pole in the direction <m>\dfrac{\pi}{2}</m>, as shown at right. To plot point <m>B</m>, we move 2 units away from the pole in the direction <m>\dfrac{7\pi}{4}</m>.</p>      
-<image source="images/exam10-1-1.png"><description>polar</description></image></sidebyside></solution></example>
+<!--<image source="images/exam10-1-1.png"><description>polar</description></image>-->
+    <image xml:id="exam10-1-1">
+        <description>polar points</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale=.6]
+    \coordinate(O) at (0,0);
+    \coordinate(A) at (90:1);
+    \coordinate(B) at (315:2);
+    \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+      \draw[cyan] (\angle:0) -- (\angle:4);
+    }
+    \draw[cyan] (O) circle (1);
+    \foreach \r in {2,3,4} {
+    \draw[cyan] (O) circle (\r);
+    \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+    }
+    \filldraw[black] (A) circle (1.8pt) node[anchor = west, xshift=2, fill=white, inner sep=2]{$A$}; 
+    \filldraw[black] (B) circle (1.8pt) node[anchor = south west, xshift=2, fill=white, inner sep=2]{$B$}; 
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></solution></example>
 
 <warning><p>  Note that even though the independent or input variable in polar coordinates is nearly always <m>\theta</m>, it is customary to list the dependent or output variable first: <m>(r, \theta)</m>.</p></warning> 
 
 <exercise><statement><sidebyside widths="50% 30%"><p>Give the polar coordinates of the points <m>S</m> and <m>T</m> shown at right, with <m>0 \le \theta \le 2\pi</m>.</p>
-<image source="images/exer10-1-1.png"><description>polar</description></image></sidebyside></statement></exercise> 
+<!--<image source="images/exer10-1-1.png"><description>polar</description></image>-->
+    <image xml:id="exer10-1-1">
+        <description>polar points</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale=.6]
+    \coordinate(O) at (0,0);
+    \coordinate(T) at (120:3);
+    \coordinate(S) at (180:2);
+    \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+      \draw[cyan] (\angle:0) -- (\angle:4);
+    }
+    \draw[cyan] (O) circle (1);
+    \foreach \r in {2,3,4} {
+    \draw[cyan] (O) circle (\r);
+    \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+    }
+    \filldraw[black] (T) circle (1.9pt) node[anchor = east, xshift=-2, yshift=2, fill=white, inner sep=2]{$T$}; 
+    \filldraw[black] (S) circle (1.9pt) node[anchor = north east, xshift=-2, yshift=-2, fill=white, inner sep=2]{$S$}; 
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement></exercise> 
 
 <p> Each point has infinitely many polar coordinates, because we can add multiples of <m>2\pi</m> to the value of <m>\theta</m>. For example, the point with polar coordinates <m>(1, \dfrac{\pi}{2})</m> also has polar coordinates <m>(1,
 \dfrac{5\pi}{2})</m> and <m>(1, \dfrac{-3\pi}{2})</m>. If we allow negative values of <m>r</m>, there are even more ways to write the coordinates of a point.</p>
 
-<sidebyside widths="60% 35%" valigns="middle middle"><p>Each angle designates a line through the pole, and each line has both a postive and a negative direction. On the line at <m>\theta = \dfrac{\pi}{4}</m>, for instance, the positive direction lies in the first quadrant, so that the point <m>(2, \dfrac{\pi}{4})</m> is designated by <m>P</m> in the figure at right. To plot the point <m>(-2, \dfrac{\pi}{4})</m>, we move in the opposite direction from the pole, arriving at point <m>Q</m>. Note that the point <m>Q</m> can also be designated by the coordinates <m>(2, \dfrac{5\pi}{4})</m>.</p>
-<image source="images/fig10-1-4.png"><description>polar</description></image></sidebyside>
+<sidebyside widths="60% 35%" valigns="middle middle" margins="0% 0%"><p>Each angle designates a line through the pole, and each line has both a postive and a negative direction. On the line at <m>\theta = \dfrac{\pi}{4}</m>, for instance, the positive direction lies in the first quadrant, so that the point <m>(2, \dfrac{\pi}{4})</m> is designated by <m>P</m> in the figure at right. To plot the point <m>(-2, \dfrac{\pi}{4})</m>, we move in the opposite direction from the pole, arriving at point <m>Q</m>. Note that the point <m>Q</m> can also be designated by the coordinates <m>(2, \dfrac{5\pi}{4})</m>.</p>
+<!--<image source="images/fig10-1-4.png"><description>polar</description></image>-->
+    <image xml:id="fig10-1-4">
+        <description>point on polar grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale=.6]
+    \coordinate(O) at (0,0);
+    \coordinate(Q) at (225:2);
+    \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+      \draw[cyan] (\angle:0) -- (\angle:4);
+    }
+    \foreach \r in {1,2,3,4} {
+    \draw[cyan] (O) circle (\r);
+    \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+    }
+    \filldraw[black] (Q) circle (2pt) node[anchor = north west, xshift=2, yshift=-2, fill=white, inner sep=2]{$S$}; 
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
 <assemblage><title>Non-Uniqueness of Polar Coordinates</title>
 <p><ol label="1">
@@ -65,7 +247,36 @@
 <subsection><title>Regions in the Plane</title>
 <p> In Cartesian coordinates, we use equations and inequalities to describe regions in the plane. For example, the shaded region in figure (a) is the graph of <m>y \le x+2</m>.  The pair of inequalities <m>x \ge -2,~ 1 \lt y \lt 3</m>   describes the region in figure (b). This region is particularly simple, in that its boundaries are portions of the coordinate grid lines <m>x=k</m> and <m>y=k</m>, where <m>k</m> is a constant.</p>
 
-<sidebyside width= "80%"><image source="images/fig10-1-5.png"><description>regions</description></image></sidebyside>
+<sidebyside width= "80%"><!--<image source="images/fig10-1-5.png"><description>regions</description></image>-->
+    <image xml:id="fig10-1-5">
+        <description>regions in the plane</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale=.4]
+    \draw[fill=yellow, yellow] (-5,-5)--(-5,-3)--(3,5)--(5,5)--(5,-5)--(-5,-5);
+
+    \draw[black, thick, ->, >=stealth'] (-5,0)--(5.5,0)node[right] {$x$};
+    \draw[black, thick, ->, >=stealth'] (0,-5)--(0,5.5)node[above] {$y$};
+
+    \draw[black, thick, <->, >=stealth'] (-5, -3)--(3,5)node[right, fill=white, inner sep=2, xshift=1] {$y=x+2$};
+    \node at (0,-6){a.};
+
+    %second grid
+    \coordinate(O) at (18,0);
+    \draw[fill=yellow, yellow] (O)++(-2,3)--++(7,0)--++(0,-2)--++(-7,0)--++(0,2);
+
+    \draw[black, thick, ->, >=stealth'] (O)++(-5,0)--++(10.5,0)node[right] {$x$};
+    \draw[black, thick, ->, >=stealth'] (O)++(0,-5)--++(0,10.5)node[above] {$y$};
+    \draw[lightgray, thick, dashed] (O)++(-5,1)--++(10,0 )node[right, text=black] {$y=1$};
+    \draw[lightgray, thick, dashed] (O)++(-5,3)--++(10,0 )node[right, text=black] {$y=3$};
+    \draw[lightgray, thick, <->, >=stealth'] (O)++(-2,-5)--++(0,10.5 ) node[left, text=black] {$x=-2$};
+    \node at ($(O)+(0,-6)$){b.};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
 <p> In the polar plane, the coordinate grid lines are circles centered at the pole, with equations <m>r=k</m>, and lines through the pole, with equations <m>\theta=k</m>.</p> 
 
@@ -76,7 +287,43 @@
 <solution><p><ol label="a">
   <li><p>The region consists of all points between 1 (inclusive) and 3 units from the pole. No restriction is given on <m>\theta</m>, so the region is the annular ring shown in figure (a).</p>
 
-<sidebyside width= "80%"><image source="images/exam10-1-3.png"><description>regions</description></image></sidebyside></li>
+<sidebyside width= "80%"><!--<image source="images/exam10-1-3.png"><description>regions</description></image>-->
+    <image xml:id="exam10-1-3">
+        <description>regions in polar coordinates</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale=.5]
+    \coordinate(O) at (0,0);
+    \path [draw=none,fill=yellow, fill opacity = 0.6,even odd rule] (O) circle (1) (O) circle (3);
+    \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+      \draw[cyan] (\angle:0) -- (\angle:5);
+    }
+    \foreach \r in {1,2,3,4,5} {
+    \draw[cyan] (O) circle (\r);
+    \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+    }
+    \node at (0,-6){a.};
+
+    %second grid
+    \coordinate(O) at (15,0);
+    \path [draw=none,fill=yellow, fill opacity = 0.6] (O)--++(30:2) arc(30:60:2) -- ++(240:2);
+    \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+      \draw[cyan] (O)++(\angle:0) -- ++(\angle:5);
+    }
+    \foreach \r in {1,2,3,4,5} {
+    \draw[cyan] (O) circle (\r);
+    \node[fill=white, inner sep = 2, text=black, scale=.9] at ($ (O)+(90:\r)$) {$\r$};
+    }
+    \draw[cyan, very thick,dashed] (O)--++(30:2);
+    \draw[cyan, very thick,dashed] (O)--++(60:2);
+    \draw[cyan, thick] (O)++(60:2) arc(60:30:2);
+    \node at ($(O)+(0,-6)$){b.};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></li>
 
   <li>The region includes all points up to 2 units from the pole, but only between the lines <m>\theta = \dfrac{\pi}{6}</m> and  <m>\theta = \dfrac{\pi}{3}</m>. These curves bound the pie-shaped wedge (circular sector) shown in figure (b).</li></ol></p></solution></example>
 
