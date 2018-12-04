@@ -200,7 +200,8 @@
         \end{tikzpicture}]]>
     </latex-image>
     </image>
-</sidebyside></statement></exercise> 
+</sidebyside></statement>
+<answer><p><m>S\left(2,\pi\right)</m>, <m>T\left(3,\dfrac{2\pi}{3}\right)</m></p></answer></exercise> 
 
 <p> Each point has infinitely many polar coordinates, because we can add multiples of <m>2\pi</m> to the value of <m>\theta</m>. For example, the point with polar coordinates <m>(1, \dfrac{\pi}{2})</m> also has polar coordinates <m>(1,
 \dfrac{5\pi}{2})</m> and <m>(1, \dfrac{-3\pi}{2})</m>. If we allow negative values of <m>r</m>, there are even more ways to write the coordinates of a point.</p>
@@ -240,8 +241,10 @@
 <solution><p>The point <m>S(2,\pi)</m> is also <m>(-2,\pi)</m> or <m>(-2,0)</m>. The point <m>T(3, \dfrac{2\pi}{3})</m> can also be designated by <m>(-3, \dfrac{2\pi}{3}+\pi)</m>, or <m>(-3, \dfrac{5\pi}{3})</m>.</p></solution></example>
 
 <exercise><statement><p>Give polar coordinates with positive <m>r</m>-values and <m>0 \le \theta \le 2\pi</m> for each point given in polar coordinates.<ol label="a" cols="2">
-<li><m>(-2.5, \dfrac{\pi}{6})</m></li>
-<li><m>(-0.7, 5)</m></li></ol></p></statement></exercise>
+<li><m>\left(-2.5, \dfrac{\pi}{6}\right)</m></li>
+<li><m>\left(-0.7, 5\right)</m></li></ol></p></statement><answer><p><ol label="a">
+        <li><m>\left(2.5,\dfrac{7\pi}{6}\right)</m></li>
+        <li><m>\left(0.7, 5-\pi\right)</m></li></ol></p></answer></exercise>
 </subsection>
 
 <subsection><title>Regions in the Plane</title>
@@ -304,6 +307,8 @@
     \draw[cyan] (O) circle (\r);
     \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
     }
+    \draw[cyan, very thick,dashed] (O) circle (3);
+
     \node at (0,-6){a.};
 
     %second grid
@@ -328,8 +333,46 @@
   <li>The region includes all points up to 2 units from the pole, but only between the lines <m>\theta = \dfrac{\pi}{6}</m> and  <m>\theta = \dfrac{\pi}{3}</m>. These curves bound the pie-shaped wedge (circular sector) shown in figure (b).</li></ol></p></solution></example>
 
 <exercise><statement><p>Write inequalities to describe each region shown below.</p>
-<sidebyside width= "70%"><image source="images/exer10-1-3.png"><description>regions</description></image></sidebyside>
-</statement></exercise>
+<sidebyside width= "70%"><!--<image source="images/exer10-1-3.png"><description>regions</description></image>-->
+    <image xml:id="exer10-1-3">
+        <description>regions</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.5]
+        \coordinate(O) at (0,0);
+        \path [draw=none,fill=yellow, fill opacity = 0.6] (135:2)--(135:{5.5*sqrt(2)}) -- (225:{5.5*sqrt(2)})--(225:2) arc(225:135:2);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[cyan] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[cyan] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[cyan, very thick,dashed] (135:2)--(135:{5.5*sqrt(2)});
+        \draw[cyan,  thick] (225:2)--(225:{5.5*sqrt(2)});
+        \draw[cyan,  thick] (225:2) arc(225:135:2);
+        \node at (0,-6){a.};
+
+        %second grid
+        \coordinate(O) at (15,0);
+        \path [draw=cyan,very thick, dashed,fill=yellow, fill opacity = 0.6] (O)++(0:2) --++(0:1) arc(0:180:3) --++(0:1) arc(180:0:2);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[cyan] (O)++(\angle:0) -- ++(\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[cyan] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at ($ (O)+(90:\r)$) {$\r$};
+        }
+        \node at ($(O)+(0,-6)$){b.};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
+</statement><answer><p><ol label="a">
+        <li><m>r \ge 2,~ \dfrac{3\pi}{4} \lt \theta \le \dfrac{5\pi}{4}</m></li>
+        <li><m>2 \lt r \lt 3</m>, <m>~ 0 \lt \theta \lt \pi</m></li></ol></p></answer></exercise>
 </subsection>
 
 <subsection><title>Converting Between Polar and Cartesian Coordinates</title>
@@ -338,7 +381,30 @@
 <sidebyside widths="60% 30%"><p>  If we know the polar coordinates , we can compute the Cartesian coordinates  and as the legs of a right triangle.
   <me>\dfrac{x}{r} = \cos \theta, ~~ \text{so} ~~ x = r\cos \theta</me>
   <me>\dfrac{y}{r} = \sin \theta, ~~ \text{so} ~~ y = r\sin \theta</me></p>
-  <image source="images/fig10-1-6.png"><description>polar</description></image></sidebyside>
+  <!--<image source="images/fig10-1-6.png"><description>polar</description></image>-->
+    <image xml:id="fig10-1-6">
+        <description>rectangular and polar coordinates</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale=1.3] 
+    \def\r{3.3};
+    \def\t{55};
+    \coordinate(O) at (0,0);
+    \coordinate(P) at (\t:\r);
+    \coordinate(x) at (0:{\r*cos(\t)});
+    \draw[gray,thick,->,>=stealth'] (-0.5,0)--(3,0);
+    \draw[gray,thick,->,>=stealth'] (0, -0.5)--(0,3);
+    \draw[black,thick] (O)--(P) node[above left, midway]{$r$};
+    \draw[lightgray,thick, dashed, text=black] (x)--(P) node[right, midway]{$y$};
+    \draw[red] (0:.5) arc(0:\t:0.5) node[right,midway, yshift=2,text=black] {$\theta$};
+    \filldraw[blue] (P) circle (1.5pt) node[above right, text=black]{$P$};
+    \draw [lightgray,decorate,decoration={brace,amplitude=5pt}] (x)++(0, -.1) -- (0,-.1) node [black, below,midway,yshift=-4pt] {$x$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
 <example><statement><p>Find the Cartesian coordinates of the point with polar coordinates <m>(\sqrt{2}, \dfrac{3\pi}{4})</m>.  </p></statement>
 
@@ -348,28 +414,65 @@
 and its <m>y</m>-coordinate is 
 <me>y = r\sin \theta = \sqrt{2} \sin(\dfrac{3\pi}{4}) = \sqrt{2} \cdot \dfrac{1}{\sqrt{2}} = 1</me> 
 Thus, the Cartesian coordinates are <m>(-1,1)</m>.</p>
-<image source="images/exam10-1-4.png"><description>polar</description></image></sidebyside></solution></example>
+<!--<image source="images/exam10-1-4.png"><description>polar</description></image>-->
+    <image xml:id="exam10-1-4">
+        <description>point</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture}  [scale=2.5]
+    \coordinate(O) at (0,0);
+    \coordinate(P) at (135:{sqrt(2)});
+    \draw[gray,thick,->,>=stealth'] (-1.2,0)--(1.,0) node[below, text=black]{$x$};
+    \draw[gray,thick,->,>=stealth'] (0, -0.5)--(0,1.2) node[right, text=black]{$y$};
+    \draw[black,thick] (O)--(P) node[below left, midway]{$\sqrt{2}$};
+    \draw[red, ->,>=stealth'] (0:.2) arc(0:135:0.2) node[right,midway, xshift=2, yshift=2,text=black] {$\frac{3\pi}{4}$};
+    \filldraw[blue] (P) circle (1.1pt) node[above right, text=black]{$(x,y)$};
+    \node[below left] at (O) {$O$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></solution></example>
 
-<exercise><statement><p>Find the Cartesian coordinates of the point with polar coordinates <m>(4, \dfrac{5\pi}{3})</m>.</p></statement></exercise>
+<exercise><statement><p>Find the Cartesian coordinates of the point with polar coordinates <m>\left(4, \dfrac{5\pi}{3}\right)</m>.</p></statement><answer><p><m>\left(2, -2\sqrt{3}\right)</m></p></answer></exercise>
 
 <p> If we know the Cartesian coordinates of a point, we can compute the polar coordinates as follows.
 <me>x^2 +y^2 = r^2,~~ \text{so} ~~ r = \sqrt{x^2 + y^2}</me>
 <me>\tan \theta = \dfrac{y}{x}</me>
 To find the angle <m>\theta</m>, it is not enough to compute <m>\tan^{-1}(\dfrac{y}{x})</m>; we must choose the angle in the same quadrant as the given point.</p>
 
-<example><statement><p>Find the polar coordinates of the point with Cartesian coordinates <m>(-\dfrac{1}{2},-\dfrac{\sqrt{3}}{2})</m>.</p></statement>
+<example><statement><p>Find the polar coordinates of the point with Cartesian coordinates <m>\left(-\dfrac{1}{2},-\dfrac{\sqrt{3}}{2}\right)</m>.</p></statement>
 
 <solution><p>We first compute the value of <m>r</m>.
-<me>r^2 = (x^2 +y^2 = (-\dfrac{1}{2})^2 + (-\dfrac{\sqrt{3}}{2})^2 = \dfrac{1}{4} + \dfrac{3}{4} = 1</me>
+<me>r^2 = x^2 +y^2 = \left(-\dfrac{1}{2}\right)^2 + \left(-\dfrac{\sqrt{3}}{2}\right)^2 = \dfrac{1}{4} + \dfrac{3}{4} = 1</me>
 Thus, <m>r = \sqrt{1} = 1</m>, as shown at right. To find , we compute</p>
 <sidebyside widths="60% 35%"><p><me>\tan \theta = \dfrac{y}{x} = \dfrac{-\dfrac{\sqrt{3}}{2}}{-\dfrac{1}{2}} = \sqrt{3}</me>
 There are infinitely many values of <m>\theta</m> that satisfy this equation, but our point lies in the third quadrant, so we take <m>\theta = \dfrac{4\pi}{3}</m>. </p> 
-<image source="images/exam10-1-5.png"><description>polar</description></image></sidebyside>
-<p>You can check that the polar coordinates <m>(1,\dfrac{4\pi}{3})</m> convert back to Cartesian coordinates <m>(-\dfrac{1}{2},-\dfrac{\sqrt{3}}{2})</m>.</p></solution></example>
+<!--<image source="images/exam10-1-5.png"><description>polar</description></image>-->
+    <image xml:id="exam10-1-5">
+        <description>polar</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture}  [scale=2.5]
+    \coordinate(O) at (0,0);
+    \coordinate(P) at (240:1);
+    \draw[gray,thick,->,>=stealth'] (-1,0)--(1.,0) node[below, text=black]{$x$};
+    \draw[gray,thick,->,>=stealth'] (0, -1.2)--(0,.8) node[left, text=black]{$y$};
+    \draw[black,thick] (O)--(P);
+    \filldraw[blue] (P) circle (1pt) node[below , text=black]{$(-\frac{1}{2},-\frac{\sqrt{3}}{2})$};
+    \node[below right] at (O) {$O$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
+<p>You can check that the polar coordinates <m>\left(1,\dfrac{4\pi}{3}\right)</m> convert back to Cartesian coordinates <m>\left(-\dfrac{1}{2},-\dfrac{\sqrt{3}}{2}\right)</m>.</p></solution></example>
 
 <warning><p>In Example 5, the angle <m>\theta</m> is not given by <m>\tan^{-1}(\sqrt{3}) = \dfrac{\pi}{3}</m>, because the given point lies in the third quadrant. Remember that there are always two angles between <m>0</m> and <m>2\pi</m> with a given tangent.</p></warning>
 
-<exercise><statement><p>Find polar coordinates for the points with Cartesian coordinates <m>(2,-5)</m>. Give decimal approximations rounded to hundredths.</p></statement></exercise>
+<exercise><statement><p>Find polar coordinates for the points with Cartesian coordinates <m>(2,-5)</m>. Give decimal approximations rounded to hundredths.</p></statement><answer><p><m>(5.39, 5.09)</m></p></answer></exercise>
 
 <assemblage><title>Conversion Equations</title>
 <p><ol label="1">
@@ -401,7 +504,7 @@ If we solve for <m>r</m> in terms of <m>\theta</m>, we find
         \end{align*}
 Neither of these equations is simpler than the Cartesian version, but that should not surprise us, because the original equation describes a line, and Cartesian coordinates are better suited to rectilinear graphs.</p></solution></example>
 
-<exercise><statement><p>Convert the equation <m>x^2 + y^2 = 4</m> to polar coordinates.</p></statement></exercise>
+<exercise><statement><p>Convert the equation <m>x^2 + y^2 = 4</m> to polar coordinates.</p></statement><answer><p><m>r=2</m></p></answer></exercise>
 
 <p>Perhaps you recognize the equation in the previous exercise as a circle. Note also that its polar equation has a simpler form than the familiar Cartesian version.</p>   
 <p>Converting equations from polar to Cartesian form is not as straightforward as the other direction (and is sometimes impossible).  Here are some strategies to try:<ul>
@@ -419,7 +522,7 @@ Neither of these equations is simpler than the Cartesian version, but that shoul
  <me>(x - \dfrac{3}{2})^2 + y^2 = \dfrac{9}{4}</me>
 The center of the circle is <m>(\dfrac{3}{2},0)</m>, and its radius is <m>\dfrac{3}{2}</m>.</p></solution></example>
 
-<exercise><statement><p>Convert the equation <m>r = \tan \theta</m> to Cartesian coordinates.</p></statement></exercise>
+<exercise><statement><p>Convert the equation <m>r = \tan \theta</m> to Cartesian coordinates.</p></statement><answer><p><m>y^2 = \dfrac{x^4}{1-x^2}</m></p></answer></exercise>
 </subsection>
 
 <subsection><title>Algebra Refresher</title>
@@ -441,10 +544,10 @@ Use completing the square to write each equation in standard form.</p></introduc
 
 <subsubsection><title>Answers to 10.1 Exercises</title>
 <p><ol label="1">
-    <li><m>P(1,\dfrac{\pi}{4}),~ Q(2,\dfrac{4\pi}{3}),~ R(3,\pi),~  S(2,\dfrac{7\pi}{4})</m></li>
+    <li><m>S\left(2,\pi\right)</m>, <m>~T\left(3,\dfrac{2\pi}{3}\right)</m></li>
     <li><p><ol label="a">
-        <li><m>(2.5,\dfrac{7\pi}{6})</m></li>
-        <li><m>(0.7, 5-\pi)</m></li></ol></p></li>
+        <li><m>\left(2.5,\dfrac{7\pi}{6}\right)</m></li>
+        <li><m>\left(0.7, 5-\pi\right)</m></li></ol></p></li>
     <li><p><ol label="a">
         <li><m>r \ge 2,~ \dfrac{3\pi}{4} \lt \theta \le \dfrac{5\pi}{4}</m></li>
         <li><m>r \lt 3,~ 0 \lt \theta \lt \pi</m></li></ol></p></li>

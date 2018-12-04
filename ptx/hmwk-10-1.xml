@@ -9,39 +9,169 @@
 <exercises xml:id="hmwk-10-1-exercises"  xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Homework 10-1</title>
 
-<exercisegroup cols="4"><introduction><p>For Problems 1-8, use the grid below to plot the points whose polar coordinates are given.</p>
-<sidebyside width="40%"><image source="images/hp10-1-1.png"><description>grid</description></image></sidebyside>
+<exercisegroup cols="4"><introduction><p>For Problems 1<ndash/>8, use the grid below to plot the points whose polar coordinates are given.</p>
+<sidebyside width="40%"><!--<image source="images/hp10-1-1.png"><description>grid</description></image>-->
+    <image xml:id="hp10-1-1">
+        <description>polar grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.5]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[cyan] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[cyan] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 </introduction>
 
 <exercise number="1"><statement><m>(2, \dfrac{2\pi}{3})</m></statement>
-<answer><sidebyside width="30%"><image source="images/hp10-1-1ans.png"><description>polar</description></image></sidebyside>
+<answer><sidebyside width="100%"><!--<image source="images/hp10-1-1ans.png"><description>polar</description></image>-->
+    <image xml:id="hp10-1-1ans">
+        <description>polar plot</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.5]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[cyan] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[cyan] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+
+        \filldraw[red] (120:2) circle (3pt) node[above left, xshift=3, yshift=2, text=black, fill=white, inner sep=1]{$(2,\frac{2\pi}{3})$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 </answer></exercise>
 
 <exercise number="2"><statement><m>(3, \dfrac{5\pi}{4})</m></statement>
 </exercise>
 
 <exercise number="3"><statement><m>(3, \dfrac{3\pi}{2})</m></statement>
-<answer><sidebyside width="30%"><image source="images/hp10-1-3ans.png"><description>polar</description></image></sidebyside>
+<answer><sidebyside width="100%"><!--<image source="images/hp10-1-3ans.png"><description>polar</description></image>-->
+    <image xml:id="hp10-1-3ans">
+        <description>polar plot</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.5]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[cyan] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[cyan] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+
+        \filldraw[red] (270:3) circle (3pt) node[ right, xshift=3, yshift=2, text=black, fill=white, inner sep=1]{$(3,\frac{3\pi}{2})$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 </answer></exercise>
 
 <exercise number="4"><statement><m>(4, \pi)</m></statement></exercise>
 
 <exercise number="5"><statement><m>(-4, \dfrac{\pi}{6})</m></statement>
-<answer><sidebyside width="30%"><image source="images/hp10-1-5ans.png"><description>polar</description></image></sidebyside>
+<answer><sidebyside width="100%"><!--<image source="images/hp10-1-5ans.png"><description>polar</description></image>-->
+    <image xml:id="hp10-1-5ans">
+        <description>polar plot</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.5]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[cyan] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[cyan] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+
+        \filldraw[red] (210:4) circle (3pt) node[ right, xshift=3, text=black, fill=white, inner sep=1]{$(-4,\frac{\pi}{6})$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 </answer></exercise>
 
 <exercise number="6"><statement><m>(-1, \dfrac{\pi}{2})</m></statement></exercise>
 
 <exercise number="7"><statement><m>(-1, \dfrac{7\pi}{4})</m></statement>
-<answer><sidebyside width="30%"><image source="images/hp10-1-7ans.png"><description>polar</description></image></sidebyside>
+<answer><sidebyside width="100%"><!--<image source="images/hp10-1-7ans.png"><description>polar</description></image>-->
+    <image xml:id="hp10-1-7ans">
+        <description>polar plot</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.5]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[cyan] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[cyan] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+
+        \filldraw[red] (135:1) circle (3pt) node[above left, yshift=3, text=black, fill=white, inner sep=1]{$(-1,\frac{7\pi}{4})$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 </answer></exercise>
 
 <exercise number="8"><statement><m>(-2, \dfrac{5\pi}{3})</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="4"><introduction><p>For Problems 9-16, give polar coordinates for each point shown below, with <m>r \ge 0</m> and <m>0 \le \theta \le 2\pi</m>.</p>    
+<exercisegroup cols="4"><introduction><p>For Problems 9<ndash/>16, give polar coordinates for each point shown below, with <m>r \ge 0</m> and <m>0 \le \theta \le 2\pi</m>.</p>    
 
-<sidebyside width="35%"><image source="images/hp10-1-9.png"><description>polar</description></image></sidebyside></introduction>
+<sidebyside width="35%"><!--<image source="images/hp10-1-9.png"><description>polar</description></image>-->
+    <image xml:id="hp10-1-9">
+        <description>polar grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.5]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[cyan] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[cyan] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \filldraw[red] (135:5) circle (3pt) node[above left, yshift=3, text=black, fill=white, inner sep=1]{$A$};
+        \filldraw[red] (0:2) circle (3pt) node[right, xshift=3, text=black, fill=white, inner sep=1]{$B$};
+        \filldraw[red] (180:1) circle (3pt) node[left, xshift=-3, text=black, fill=white, inner sep=1]{$C$};
+        \filldraw[red] (150:3) circle (3pt) node[above left, xshift=-3, text=black, fill=white, inner sep=1]{$D$};
+        \filldraw[red] (240:3) circle (3pt) node[below left, xshift=-3, text=black, fill=white, inner sep=1]{$E$};
+        \filldraw[red] (120:4) circle (3pt) node[above right, xshift=2, text=black, fill=white, inner sep=1]{$F$};
+        \filldraw[red] (15:2) circle (3pt) node[above right, xshift=2, text=black, fill=white, inner sep=1]{$G$};
+        \filldraw[red] (75:1) circle (3pt) node[above right, xshift=2, text=black, fill=white, inner sep=1]{$H$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></introduction>
 
 <exercise number="9"><statement><m>A</m></statement>
     <answer><m>(5, \dfrac{3\pi}{4})</m></answer></exercise>
@@ -64,7 +194,7 @@
 <exercise number="16"><statement><m>H</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="4"><introduction><p>For Problems 17-24, convert the polar coordinates to Cartesian coordinates.
+<exercisegroup cols="4"><introduction><p>For Problems 17<ndash/>24, convert the polar coordinates to Cartesian coordinates.
 </p></introduction>
      
 <exercise number="17"><statement><m>(6, \dfrac{2\pi}{3})</m></statement>
@@ -88,7 +218,7 @@
 <exercise number="24"><statement><m>(-3, 4.5)</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="4"><introduction><p>For Problems 25-32, convert the Cartesian coordinates to polar coordinates with <m>r \ge 0</m> and <m>0 \le \theta \le 2\pi</m>.  Give exact values for <m>r</m> and <m>\theta</m>.</p></introduction>
+<exercisegroup cols="4"><introduction><p>For Problems 25<ndash/>32, convert the Cartesian coordinates to polar coordinates with <m>r \ge 0</m> and <m>0 \le \theta \le 2\pi</m>.  Give exact values for <m>r</m> and <m>\theta</m>.</p></introduction>
 
 <exercise number="25"><statement><m>(7,7)</m></statement>
     <answer><m>(7\sqrt{2}, \dfrac{\pi}{4})</m></answer></exercise>
@@ -111,7 +241,7 @@
 <exercise number="32"><statement><m>(0, -5)</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="3"><introduction><p>In Problems 33-38, polar coordinates are given.<ol label="a">
+<exercisegroup cols="3"><introduction><p>In Problems 33<ndash/>38, polar coordinates are given.<ol label="a">
     <li>Convert to polar coordinates with <m>r \le 0,~ 0 \le \theta \lt 2\pi</m>.</li>
     <li>Convert to polar coordinates with <m>r \ge 0,~ -2\pi \lt \theta \le 0</m>.</li></ol>
 </p></introduction>
@@ -139,41 +269,216 @@
 <exercise number="38"><statement><m>(1.2, 1.2)</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 39-44, sketch the region described by the inequalities.
+<exercisegroup cols="2"><introduction><p>For Problems 39<ndash/>44, sketch the region described by the inequalities.
 </p></introduction>
 
 <exercise number="39"><statement><m>r \le 3</m></statement>
-<answer><sidebyside width="30%"><image source="images/hp10-1-39ans.png"><description>polar</description></image></sidebyside></answer></exercise>
+<answer><sidebyside width="60%"><!--<image source="images/hp10-1-39ans.png"><description>polar</description></image>-->
+    <image xml:id="hp10-1-39ans">
+        <description>polar plot</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.5]
+        \coordinate(O) at (0,0);
+        \draw [draw=none,fill=yellow, fill opacity = 0.6] (O) circle (3);
+        \draw[cyan, very thick] (O) circle (3);
+
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[cyan] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[cyan] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer></exercise>
  
 <exercise number="40"><statement><m>2 \le r \le 3</m></statement></exercise>
 
 <exercise number="41"><statement><m>\dfrac{\pi}{6} \le \theta \le \dfrac{\pi}{3}</m></statement>
-<answer><sidebyside width="30%"><image source="images/hp10-1-41ans.png"><description>polar</description></image></sidebyside></answer></exercise>
+<answer><sidebyside width="60%"><!--<image source="images/hp10-1-41ans.png"><description>polar</description></image>-->
+    <image xml:id="hp10-1-41ans">
+        <description>polar grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.5]
+        \coordinate(O) at (0,0);
+        \path [draw=none,fill=yellow, fill opacity = 0.6] (O)--(30:{11/sqrt(3)}) -- (5.5,5.5)--(60:{11/sqrt(3)}) (O);
+        \draw[cyan, thick] (60:{11/sqrt(3)})--(O)--(30:{11/sqrt(3)});
+        \path [draw=none,fill=yellow, fill opacity = 0.6] (O)--(210:{11/sqrt(3)}) -- (-5.5,-5.5)--(240:{11/sqrt(3)}) (O);
+        \draw[cyan, thick] (210:{11/sqrt(3)})--(O)--(240:{11/sqrt(3)});
+
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[cyan] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[cyan] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer></exercise>
  
 <exercise number="42"><statement><m>0 \le \theta \le \dfrac{\pi}{2}</m></statement></exercise>
 
 <exercise number="43"><statement><m>r \ge 4,~ \dfrac{\pi}{2} \le \theta \le \dfrac{3\pi}{4}</m></statement>
-<answer><sidebyside width="30%"><image source="images/hp10-1-43ans.png"><description>polar</description></image></sidebyside></answer></exercise>
+<answer><sidebyside width="60%"><!--<image source="images/hp10-1-43ans.png"><description>polar</description></image>-->
+    <image xml:id="hp10-1-43ans">
+        <description>polar grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.6]
+        \coordinate(O) at (0,0);
+        \path [draw=none,fill=yellow, fill opacity = 0.6] (90:4)--(90:5.7) -- (-5.7,5.7)--(135:4) arc (135:90:4);
+        \draw[cyan, thick] (90:5.7)--(90:4) arc(90:135:4)--(-5.7,5.7);
+
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[cyan] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[cyan] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer></exercise>
 
 <exercise number="44"><statement><m>2 \le r \le 3,~ \dfrac{5\pi}{3} \le \theta \le \dfrac{11\pi}{6}</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 45-50, write inequalities to describe the region.</p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 45<ndash/>50, write inequalities to describe the region.</p></introduction>
 
-<exercise number="45"><statement><p><sidebyside width="75%"><image source="images/hp10-1-45.png"><description>polar region</description></image></sidebyside></p></statement>
+<exercise number="45"><statement><p><sidebyside width="75%"><!--<image source="images/hp10-1-45.png"><description>polar region</description></image>-->
+    <image xml:id="hp10-1-45">
+        <description>polar region</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.5]
+        \coordinate(O) at (0,0);
+        \path [draw=none,fill=yellow, fill opacity = 0.6] (O)--(30:{11/sqrt(3)}) -- (5.5,5.5)--(60:{11/sqrt(3)}) (O);
+        \draw[cyan, thick] (60:{11/sqrt(3)})--(O)--(30:{11/sqrt(3)});
+
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[cyan] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[cyan] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></p></statement>
 <answer><m>r \ge 0,~ \dfrac{\pi}{6} \le \theta \le \dfrac{\pi}{3}</m></answer></exercise>
 
-<exercise number="46"><statement><p><sidebyside width="75%"><image source="images/hp10-1-46.png"><description>polar region</description></image></sidebyside></p> </statement></exercise>
+<exercise number="46"><statement><p><sidebyside width="75%"><image source="images/hp10-1-41ans"><description>polar region</description></image></sidebyside></p> </statement></exercise>
 
-<exercise number="47"><statement><p><sidebyside width="75%"><image source="images/hp10-1-47.png"><description>polar region</description></image></sidebyside></p></statement>
+<exercise number="47"><statement><p><sidebyside width="75%"><!--<image source="images/hp10-1-47.png"><description>polar region</description></image>-->
+    <image xml:id="hp10-1-47">
+        <description>polar region</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.5]
+        \coordinate(O) at (0,0);
+        \path [draw=none,fill=yellow, fill opacity = 0.6] (90:1)--(90:5.7) -- (-5.7,5.7)--(-5.5,0) --(-1,0) arc(180:90:1);
+        \draw[cyan, very thick] (0,5.7)--(0,1) arc(90:180:1)--(-5.7,0);
+
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[cyan] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[cyan] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></p></statement>
 <answer><m>r \ge 1,~ \dfrac{\pi}{2} \le \theta \le \pi</m></answer></exercise>
 
-<exercise number="48"><statement><p><sidebyside width="75%"><image source="images/hp10-1-48.png"><description>polar region</description></image></sidebyside></p></statement></exercise>
+<exercise number="48"><statement><p><sidebyside width="75%"><!--<image source="images/hp10-1-48.png"><description>polar region</description></image>-->
+    <image xml:id="hp10-1-48">
+        <description>polar region</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.5]
+        \coordinate(O) at (0,0);
+        \path [draw=cyan, very thick,fill=yellow, fill opacity = 0.6] (0:1)--(0:2)   arc(0:270:2) -- (0,-1) arc(270:0:1);
 
-<exercise number="49"><statement><p><sidebyside width="75%"><image source="images/hp10-1-49.png"><description>polar region</description></image></sidebyside></p></statement>
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[cyan] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[cyan] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></p></statement></exercise>
+
+<exercise number="49"><statement><p><sidebyside width="75%"><!--<image source="images/hp10-1-49.png"><description>polar region</description></image>-->
+    <image xml:id="hp10-1-49">
+        <description>polar region</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.5]
+        \coordinate(O) at (0,0);
+
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[cyan] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[cyan] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \path [draw=cyan, very thick,fill=yellow, fill opacity = 0.6] (O)--(135:1)   arc(135:180:1) -- (O)--(-45:1) arc(-45:0:1);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></p></statement>
 <answer><p><m>-1 \le r \le 1,~ \dfrac{3\pi}{4} \le \theta \le \pi</m></p></answer></exercise>
 
-<exercise number="50"><statement><p><sidebyside width="75%"><image source="images/hp10-1-50.png"><description>polar region</description></image></sidebyside></p></statement></exercise>
+<exercise number="50"><statement><p><sidebyside width="75%"><!--<image source="images/hp10-1-50.png"><description>polar region</description></image>-->
+    <image xml:id="hp10-1-50">
+        <description>polar region</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.5]
+        \coordinate(O) at (0,0);
+        \path [draw=cyan, very thick,fill=yellow, fill opacity = 0.6] (O)--(-45:2)   arc(-45:45:2) -- (O);
+
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[cyan] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[cyan] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></p></statement></exercise>
 </exercisegroup>
 
 <exercisegroup cols="2"><introduction><p>For Problems 51-64, convert the equation into Cartesian coordinates.</p></introduction>
