@@ -172,7 +172,35 @@
                     </tabular></sidebyside>
     <p>The graph of <m>r=2</m> begins at the right-most point (and proceeds counter-clockwise); the graph of <m>r=-2</m> begins at the left-most point.</p>
 
-    <sidebyside width="50%"><image source="images/hp10-2-5ans.png"><description>polar</description></image></sidebyside></answer></exercise>
+    <sidebyside width="50%"><!--<image source="images/hp10-2-5ans.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-5ans">
+        <description>polar points on circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.6]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:3);
+        }
+        \foreach \r in {1,2,3} {
+        \draw[gray] (O) circle (\r);
+        }
+        \node[fill=white, inner sep = 2, text=black, scale=.8] at (90:1) {$1$};
+
+        \filldraw[red] (0:2)circle (.075) node[right, text=black, fill=white, inner sep=1, xshift=2, scale=.8] {$(2,0)$ and $(-2,\pi)$};
+        \filldraw[red] (45:2)circle (.075) node[above right, text=black, fill=white, inner sep=1, xshift=1, scale=.8] {$(2,\frac{\pi}{4})$ and $(-2,\frac{5\pi}{4})$};
+        \filldraw[red] (90:2)circle (.075) node[above,align=center, text=black, fill=white, inner sep=1, yshift=2, scale=.8] {$(2,\frac{\pi}{2})$, \\ $\,(-2,\frac{3\pi}{2})$};
+        \filldraw[red] (135:2)circle (.075) node[above left, text=black, fill=white, inner sep=1, yshift=1, scale=.8] {$(2,\frac{3\pi}{4})$ and $(-2,\frac{7\pi}{4})$};
+        \filldraw[red] (180:2)circle (.075) node[left, text=black, fill=white, inner sep=1, xshift=-2, scale=.8] {$(2,\pi)$ and $(-2,0)$};
+        \filldraw[red] (225:2)circle (.075) node[below left, text=black, fill=white, inner sep=1, yshift=-1, scale=.8] {$(2,\frac{5\pi}{4})$ and $(-2,\frac{\pi}{4})$};
+        \filldraw[red] (270:2)circle (.075) node[below,align=center, yshift=0cm, text=black, fill=white, inner sep=1, yshift=-2, scale=.8] {$(2,\frac{3\pi}{2})$, \\ $(-2,\frac{\pi}{2})$};
+        \filldraw[red] (315:2)circle (.075) node[below right, text=black, fill=white, inner sep=1, xshift=1, scale=.8] {$(2,\frac{7\pi}{4})$ and $(-2,\frac{3\pi}{4})$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></answer></exercise>
 
 <exercise number="6"><statement><p>Graph each line, and label the points with their coordinates. How are the points on the two lines related?</p>
 
