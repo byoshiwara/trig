@@ -7,7 +7,41 @@
 <subsection><title>Graphing in Polar Coordinates</title>
 <p>When we plot points in Cartesian coordinates, we start at the origin and move a distance right or left given by the <m>x</m>-coordinate of the point, then move up or down according to the <m>y</m>-coordinate. When we sketch the graph of an equation or function, we think of drawing the graph from left to right, with the "height" of the graph at each <m>x</m>-value given by the function, as shown in figure (a).</p>
 
-<sidebyside width = "70%"><image source="images/fig10-2-1.png"><description>graphs</description></image></sidebyside>
+<sidebyside width = "70%"><!--<image source="images/fig10-2-1.png"><description>graphs</description></image>-->
+    <image xml:id="fig10-2-1">
+        <description>Cartesian and polar graphs</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=1.6]
+        \def\d{-9/2};
+        \coordinate(O) at (\d,-1);
+        \draw[thick,->, >=stealth'] (O)++(-0.1,0) -- ($(O)+(2,0)$);
+        \draw[thick,->, >=stealth'] (O)++(0, -0.1) -- ($(O)+(0,2)$);
+        \foreach \x in {0.5, 1, 1.5} {
+        \draw[blue, dashed] (O)++(\x,0) -- ++($ (0,1)+0.5*cos(90*\x)*(0,1)$);
+        }
+        \draw[domain=0:2,smooth,variable=\x,red,very thick] plot ({\x+\d},{0.5*cos(90*\x))});
+        \node[text=black, scale=.9] at (-3.5,-1.4) {a.};
+
+
+        %polar 
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 30, ..., 330}{
+          \draw[green] (\angle:0) -- (\angle:1);
+        }
+        \foreach \r in {0.25,.5,.75, 1}
+        \draw[green] (O) circle (\r);
+        \draw[domain=0:2,smooth,variable=\x,red,very thick] plot ({90*\x}:{0.5+0.5*cos(90*\x))});
+        \foreach \x in {0.25, 0.5, 0.75, 1} {
+        \draw[blue, dashed] (O) -- ({100*\x}:{0.5+0.5*cos(100*\x))});
+        }
+        \node[text=black, scale=.9] at (0,-1.4) {b.};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
   <p>In polar coordinates, however, the dependent variable, <m>r</m>, gives not a height but a distance from the pole in direction <m>\theta</m>, as shown in figure (b). When graphing an equation in polar coordinates, we think of sweeping around the pole in the counterclockwise direction, and at each angle <m>\theta</m> the <m>r</m>-value tells us how far the graph is from the pole. </p>
 
@@ -42,7 +76,49 @@
 
 <p>First we'll plot the points in the first quadrant.  Observe that as <m>\theta</m> increases from <m>0</m> to <m>\dfrac{\pi}{2}</m>, <m>r</m> increases from <m>0</m> to <m>2</m>.  Starting at the pole, we connect the points in order of increasing <m>\theta</m>.  Imagine a radial line sweeping around the graph through the first quadrant:  as the angle increases, the length of the segment increases, so that its tip traces out the graph shown in figure (a).</p>  
     
-<sidebyside width="70%"><image source="images/exam10-2-1.png"><description>polar graphs</description></image></sidebyside>
+<sidebyside width="70%"><!--<image source="images/exam10-2-1.png"><description>polar graphs</description></image>-->
+    <image xml:id="exam10-2-1">
+        <description>polar graphs</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=1.3]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[green] (\angle:0) -- (\angle:2);
+        }
+        \foreach \r in {0.5,1,...,2} {
+        \draw[green] (O) circle (\r);
+        }
+        \foreach \r in {0.5,1.5} {
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:3,smooth,variable=\x,red,very thick] plot ({30*\x}:{2*sin(30*\x))});
+        \foreach \x in {2,3,4,6} {
+        \draw[blue, thick, dashed] (O) -- ({15*\x}:{2*sin(15*\x))});
+        \filldraw[blue] ({15*\x}:{2*sin(15*\x))}) circle (0.05);
+        }
+
+        \node at (0,-2.5){a.};
+
+        %second grid
+        \coordinate(O) at (6,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[green] (O)++(\angle:0) -- ++(\angle:2);
+        }
+        \foreach \r in {0.5,1,...,2} {
+        \draw[green] (O) circle (\r);
+        }
+        \foreach \r in {0.5,1.5} {
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at ($(O)+(90:\r)$) {$\r$};
+        }
+        \draw[red,very thick] ($(O)+(0,1)$) circle (1cm) ;
+        \node at ($(O)+(0,-2.5)$){b.};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
 <p>Now continue plotting the points in the table as <m>\theta</m> increases from <m>\dfrac{\pi}{2}</m> to <m>\pi</m>. In the second quadrant, <m>r</m> decreases as <m>\theta</m> increases, as shown in figure (b). The graph we obtain is, in fact, a circle, which we will prove algebraically shortly. However, we have not yet plotted points for <m>\theta</m> between <m>0</m> and <m>2\pi</m>. Because <m>\sin \theta</m> is negative in the third and fourth quadrants, all the <m>r</m>-values for these angles are negative.</p>
 
@@ -85,7 +161,27 @@
       \end{align*}
 We have the equation of a circle with center <m>(0,1)</m> and radius <m>1</m>.</p>
 
-<exercise><statement><p>Graph the polar equation <m>r=4\cos\theta</m>.</p></statement></exercise>
+<exercise><statement><p>Graph the polar equation <m>r=4\cos\theta</m>.</p></statement><answer><sidebyside width="30%">
+    <image xml:id="exer10-2-1ans">
+        <description>polar graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=0.5]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:4);
+        }
+        \foreach \r in {1,2,3,4} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:6,smooth,variable=\x,red,very thick] plot ({30*\x}:{4*cos(30*\x))});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer></exercise>
 </subsection>
 
 <subsection><title>Using a Graphing Calculator</title>
@@ -102,7 +198,27 @@ We have the equation of a circle with center <m>(0,1)</m> and radius <m>1</m>.</
     \end{align*}
 We then press Zoom 5 to set a square window. The graph is shown below.</p>
 
-<sidebyside width="40%"><image source="images/exam10-2-2.png"><description>polar graphs</description></image></sidebyside>
+<sidebyside width="40%"><!--<image source="images/exam10-2-2.png"><description>polar graphs</description></image>-->
+    <image xml:id="exam10-2-2">
+        <description>polar graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=0.08]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[gray] (\angle:0) -- (\angle:40);
+        }
+        \foreach \r in {10,20,30,40} {
+        \draw[gray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:3,smooth, samples=257,variable=\x,red,very thick] plot ({deg(2*pi*\x)}:{4*pi*\x});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
 <p>Studying a table of values can help us understand the shape of the graph.
 
@@ -130,7 +246,27 @@ As <m>\theta</m> increases, <m>r</m> increases also, at a constant rate. We wind
     \text{Xmin}\amp=-45~~~~\text{Xmax}=45~~~~~~\text{Xstep}=10\\
     \text{Ymin}\amp=-35~~~~\text{Ymax}=35~~~~~~~~~~\text{Yscl}=10\\
     \end{align*}
-</p></statement></exercise>
+</p></statement><answer><sidebyside width="30%" valign="middle">
+    <image xml:id="exer10-2-2ans">
+        <description>polar graph spiral</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=0.08]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[gray] (\angle:0) -- (\angle:40);
+        }
+        \foreach \r in {10,20,30,40} {
+        \draw[gray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:6,smooth, samples=257,variable=\x,red,very thick] plot ({deg(2*pi*\x)}:{e^(0.2*pi*\x)});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer></exercise>
 
 <p> It is important to connect the points on the graph in order of increasing <m>\theta</m>.</p> 
 
@@ -144,7 +280,74 @@ As <m>\theta</m> increases, <m>r</m> increases also, at a constant rate. We wind
     \end{align*}
 Watch as your calculator produces the graph shown in figure (a).</p>
 
-<sidebyside width= "90%"><image source="images/exam10-2-3.png"><description>graphs</description></image></sidebyside>
+<!--<sidebyside width= "90%"><image source="images/exam10-2-3.png"><description>graphs</description></image></sidebyside>-->
+<sidebyside widths="27% 27% 27%">    
+    <image xml:id="exam10-2-3a">
+        <description>one loop</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=0.7]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[gray] (\angle:0) -- (\angle:3);
+        }
+        \foreach \r in {1,2,3} {
+        \draw[gray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[blue, very thick, dashed] (60:0) -- (60:3);
+        \draw[domain=0:4,smooth, samples=257,variable=\x,red,very thick] plot ({15*\x}:{2*sin(45*\x});
+        \node at (0,-4){a.};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    <image xml:id="exam10-2-3b">
+        <description>two loops</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=0.7]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[gray] (\angle:0) -- (\angle:3);
+        }
+        \foreach \r in {1,2,3} {
+        \draw[gray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[blue, very thick, dashed] (60:-3) -- (60:3);
+        \draw[blue, very thick, dashed] (120:-3) -- (120:3);
+        \draw[domain=0:8,smooth, samples=257,variable=\x,red,very thick] plot ({15*\x}:{2*sin(45*\x});
+        \node at (0,-4){b.};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    <image xml:id="exam10-2-3c">
+        <description>three loops</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=0.7]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[gray] (\angle:0) -- (\angle:3);
+        }
+        \foreach \r in {1,2,3} {
+        \draw[gray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[blue, very thick, dashed] (60:-3) -- (60:3);
+        \draw[blue, very thick, dashed] (120:-3) -- (120:3);
+        \draw[domain=0:12,smooth, samples=257,variable=\x,red,very thick] plot ({15*\x}:{2*sin(45*\x});
+        \node at (0,-4){c.};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
 <p>Observe that, as <m>\theta</m> increases from <m>0</m> to <m>\dfrac{\pi}{3}</m>, <m>r</m> first increases, reaching its maximum value of 2 at<m>\theta = \dfrac{\pi}{6}</m> and then decreases back to 0. You can verify the values in the table below, which shows the points at multiples of <m>\dfrac{\pi}{18}</m>. These points create the first loop of the graph.</p>
 
@@ -236,7 +439,46 @@ Watch as your calculator produces the graph shown in figure (a).</p>
                         <cell><m>\hphantom{000}</m></cell></row>
                     </tabular></sidebyside></p></li> 
 <li><p>Sketch the graph by hand on the grid below.</p>
-<sidebyside width= "40%"><image source="images/exer10-2-3.png"><description>grid</description></image></sidebyside></li></ol></p></statement></exercise>
+<sidebyside width= "40%"><!--<image source="images/exer10-2-3.png"><description>grid</description></image>-->
+    <image xml:id="exer10-2-3">
+        <description>polar grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.6]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[cyan] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[cyan] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></li></ol></p></statement><answer><sidebyside width="40%" valign="middle">
+    <image xml:id="exer10-2-3ans">
+        <description>polar graph: three petals</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.6]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[cyan] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[cyan] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:12,smooth, samples=257,variable=\x,red,very thick] plot ({15*\x}:{2*cos(45*\x});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer></exercise>
 </subsection>
 
 <subsection><title>Sketching Familiar Equations</title>
@@ -255,14 +497,54 @@ Watch as your calculator produces the graph shown in figure (a).</p>
 <p>Thus, one of the petal tips is located at <m>\theta = \dfrac{\pi}{4}</m>. Because the 4 petals are evenly spaced around the pole, the angle between the petals is <m>\dfrac{2\pi}{4} = \dfrac{\pi}{2}</m>, and the other petal tips occur at
 \begin{align*}
   \theta \amp = \dfrac{\pi}{4} + \dfrac{\pi}{2} = \dfrac{3\pi}{4}\\
-  \theta \amp = \dfrac{\pi}{4} + 2(\dfrac{\pi}{2}) = \dfrac{5\pi}{4}\\
-  \theta \amp = \dfrac{\pi}{4} + 3(\dfrac{\pi}{2}) = \dfrac{7\pi}{4}\\
+  \theta \amp = \dfrac{\pi}{4} + 2\left(\dfrac{\pi}{2}\right) = \dfrac{5\pi}{4}\\
+  \theta \amp = \dfrac{\pi}{4} + 3\left(\dfrac{\pi}{2}\right) = \dfrac{7\pi}{4}\\
 \end{align*}</p>
-<p>We plot the tips of the petals as guidepoints, at <m>(3, \dfrac{\pi}{4}),~ (3, \dfrac{3\pi}{4}),~ (3, \dfrac{5\pi}{4})</m>and <m>(3, \dfrac{7\pi}{4})</m>. Now we can sketch a rose with 4 petals of length 3, as shown below.</p>
+<p>We plot the tips of the petals as guidepoints, at <m>\left(3, \dfrac{\pi}{4}\right)</m>,<m>~ \left(3, \dfrac{3\pi}{4}\right)</m>, <m>~ \left(3, \dfrac{5\pi}{4}\right)</m>and <m>(3, \dfrac{7\pi}{4})</m>. Now we can sketch a rose with 4 petals of length 3, as shown below.</p>
 
- <sidebyside widths="40%"><image source="images/exam10-2-4.png"><description>rose</description></image></sidebyside></solution></example>
+ <sidebyside widths="35%"><!--<image source="images/exam10-2-4.png"><description>rose</description></image>-->
+    <image xml:id="exam10-2-4">
+        <description>rose</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.6]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[cyan] (\angle:0) -- (\angle:4);
+        }
+        \foreach \r in {1,2,3,4} {
+        \draw[cyan] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:24,smooth, samples=257,variable=\x,red,very thick] plot ({15*\x}:{3*sin(30*\x});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+ </sidebyside></solution></example>
 
-<exercise><statement><p>Graph the polar equation <m>r=4\cos 5\theta</m>.</p></statement></exercise>
+<exercise><statement><p>Graph the polar equation <m>r=4\cos 5\theta</m>.</p></statement><answer><sidebyside width="30%" valign="middle"><!--<image source="images/exer10-2-3ans"><description>graphs</description></image>-->
+    <image xml:id="exer10-2-4ans">
+        <description>rose</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.7]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[cyan] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[cyan] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:12,smooth, samples=257,variable=\x,red,very thick] plot ({15*\x}:{4*cos(75*\x});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer></exercise>
 
 <p> The <term>limaçons</term>, <m>r=a\pm\sin \theta</m> and <m>r=a\pm\cos \theta</m>, are another family of polar graphs.  In particular, the <term>cardioid</term> is a special case of a limaçon with <m>a=b</m>.</p>
 
@@ -290,15 +572,96 @@ Watch as your calculator produces the graph shown in figure (a).</p>
 
 <p>We plot the guidepoints and connect them in order with a smooth curve, as shown below. Note that this limaçon involving cosine is symmetric about the <m>x</m>-axis; limaçons involving sine are symmetric about the <m>y</m>-axis.</p>
 
-<sidebyside widths="40%"><image source="images/exam10-2-5.png"><description>limacon</description></image></sidebyside></solution></example>
+<sidebyside widths="40%"><!--<image source="images/exam10-2-5.png"><description>limacon</description></image>-->
+    <image xml:id="exam10-2-5">
+        <description>limacon</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.6]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[cyan] (\angle:0) -- (\angle:6);
+        }
+        \foreach \r in {1,2,3,4,5,6} {
+        \draw[cyan] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:24,smooth, samples=257,variable=\x,red,very thick] plot ({15*\x}:{3+2*cos(15*\x});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></solution></example>
 
-<exercise><statement><p>Graph the polar equation <m>r=1-3\sin \theta</m>.</p></statement></exercise>
+<exercise><statement><p>Graph the polar equation <m>r=1-3\sin \theta</m>.</p></statement><answer><sidebyside width="30%" valign="middle"><!--<image source="images/exer10-2-5ans.png"><description>graphs</description></image>-->
+    <image xml:id="exer10-2-5ans">
+        <description>limacon</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.6]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[cyan] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[cyan] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:24,smooth, samples=257,variable=\x,red,very thick] plot ({15*\x}:{1-3*sin(15*\x});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer></exercise>
 
 <p>You should also be able to identify a polar graph and write its equation.</p> 
 
 <example><statement><p>Give a polar equation for each of the graphs below.</p>
 
-<sidebyside widths="70%"><image source="images/exam10-2-6.png"><description>graphs</description></image></sidebyside></statement>
+<sidebyside widths="35% 35%"><!--<image source="images/exam10-2-6.png"><description>graphs</description></image>-->
+    <image xml:id="exam10-2-6a">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.6]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[cyan] (\angle:0) -- (\angle:4);
+        }
+        \foreach \r in {1,2,3,4} {
+        \draw[cyan] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:24,smooth, samples=257,variable=\x,red,very thick] plot ({15*\x}:{-4*cos(15*\x});
+        \node at (0,-5) {a.};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    <image xml:id="exam10-2-6b">
+        <description>cardioid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.8]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[cyan] (\angle:0) -- (\angle:3);
+        }
+        \foreach \r in {0.5,1,1.5,2,2.5,3} {
+        \draw[cyan] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:24,smooth, samples=257,variable=\x,red,very thick] plot ({15*\x}:{1+cos(15*\x});
+        \node at (0,-3.75) {b.};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement>
 
 <solution><p><ol label="a">
 <li>The graph is a circle centered at <m>(-2,0)</m> and with radius 2, so we choose the equation <m>r=2a\cos \theta</m>, with <m>a=-2</m>. Thus, <m>r=-4\cos \theta</m>.</li>
@@ -310,7 +673,49 @@ Watch as your calculator produces the graph shown in figure (a).</p>
 Thus, <m>a=1</m> and we choose the equation <m>r=1+\cos \theta</m>.</p></li></ol></p></solution></example>
 
 <exercise><statement><p>Give a polar equation for each of the graphs below.</p>
-<sidebyside widths="70%"><image source="images/exer10-2-6.png"><description>graphs</description></image></sidebyside></statement></exercise>
+<sidebyside widths="30% 30%"><!--<image source="images/exer10-2-6.png"><description>graphs</description></image>-->
+    <image xml:id="exer10-2-6a">
+        <description>lemniscate</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.8]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[cyan] (\angle:0) -- (\angle:2.5);
+        }
+        \foreach \r in {0.5,1,1.5,2,2.5} {
+        \draw[cyan] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.8] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:6,smooth, samples=65,variable=\x,red,very thick] plot ({15*\x}:{sqrt(4*sin(30*\x)});
+        \draw[domain=0:6,smooth, samples=65,variable=\x,red,very thick] plot ({15*\x}:{-sqrt(4*sin(30*\x)});
+        \node at (0,-3) {a.};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    <image xml:id="exer10-2-6b">
+        <description>cardioid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.8]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[cyan] (\angle:0) -- (\angle:2.5);
+        }
+        \foreach \r in {0.5,1,1.5,2,2.5} {
+        \draw[cyan] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.8] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:24,smooth, samples=65,variable=\x,red,very thick] plot ({15*\x}:{1-sin(15*\x});
+        \node at (0,-3) {b.};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement><answer><p><ol label="a"><li><p><m>r^2=4\sin 2\theta</m></p></li><li><p><m>r=1-\sin \theta</m></p></li></ol></p></answer></exercise>
 </subsection>
 
 <subsection><title>Finding Intersection Points</title>
@@ -327,7 +732,35 @@ Thus, <m>a=1</m> and we choose the equation <m>r=1+\cos \theta</m>.</p></li></ol
 <li>For <m>x=-1,</m> we find <m>y=(-1)^2=1.</m></li></ul></p>
 <p>Thus, the intersection points are <m>(2,4)</m> and <m>(-1,1)</m>, as shown below.</p>
 
-<sidebyside widths="30%"><image source="images/fig10-2-2.png"><description>graphs</description></image></sidebyside>
+<sidebyside widths="30%"><!--<image source="images/fig10-2-2.png"><description>graphs</description></image>-->
+    <image xml:id="fig10-2-2">
+        <description>line intersecting parabola</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.6]
+        \coordinate(O) at (0,0);
+        \draw[gray] (-4,-2) grid (4,8);
+        \draw[thick,black,->,>=stealth'] (-4,0)--(4.8,0) node[right]{$x$};
+        \draw[thick,black,->,>=stealth'] (0,-2)--(0,8.8) node[above]{$y$};
+        \foreach \x  in {2,4}{
+          \draw[black] (\x, .2) -- ++(0,-.4) node[below, yshift=-1, fill=white, inner sep=1]{$\x$};
+          \draw[black] (-\x, .2) -- ++(0,-.4) node[below, yshift=-1, fill=white, inner sep=1]{$-\x$};
+        }
+        \foreach \y  in {2,4,6,8}{
+          \draw[black] (.2,\y) -- ++(-.4,0) node[left, xshift=-1, fill=white, inner sep=1]{$\y$};
+        }
+        \draw[black] (.2,-2) -- ++(-.4,0) node[left, xshift=-1, fill=white, inner sep=1]{$-2$};
+
+        \draw[red,very thick] (-4,-2)--(4,6);
+        \draw[domain=-sqrt(8):sqrt(8),smooth, samples=65,variable=\x,blue,very thick] plot (\x, {(\x)^2});
+        \filldraw[black] (2,4) circle (.1);
+        \filldraw[black] (-1,1) circle (.1);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
 <p> To find the intersection points of the polar graphs <m>r=f(\theta)</m> and <m>r=g(\theta)</m> we solve the equation <m>f(\theta) = g(\theta)</m>.</p>
 
@@ -342,11 +775,32 @@ Thus, <m>a=1</m> and we choose the equation <m>r=1+\cos \theta</m>.</p></li></ol
     \theta\amp = \dfrac{\pi}{4},~\dfrac{5\pi}{4}\\
 \end{align*}</p>
 <p>We evaluate either expression for <m>t</m> to find the other coordinate of the intersection point.
-<me>\text{when}~~~~\theta = \dfrac{\pi}{4},~~~~r = 2 + 2\sin \dfrac{\pi}{4} = 2 + (\dfrac{1}{\sqrt{2}}) = 2 + \sqrt{2}</me>
-<me>\text{when}~~~~\theta = \dfrac{5\pi}{4},~~~~r = 2 + 2\sin \dfrac{5\pi}{4} = 2 + (\dfrac{-1}{\sqrt{2}}) = 2 - \sqrt{2}</me>
-Thus, two of the intersection points are <m>(2 + \sqrt{2}, \dfrac{\pi}{4})</m> and <m>(2 - \sqrt{2}, \dfrac{5\pi}{4})</m> , as illustrated below.</p>
+<me>\text{when}~~~~\theta = \dfrac{\pi}{4},~~~~r = 2 + 2\sin \dfrac{\pi}{4} = 2 + \left(\dfrac{1}{\sqrt{2}}\right) = 2 + \sqrt{2}</me>
+<me>\text{when}~~~~\theta = \dfrac{5\pi}{4},~~~~r = 2 + 2\sin \dfrac{5\pi}{4} = 2 + \left(\dfrac{-1}{\sqrt{2}}\right) = 2 - \sqrt{2}</me>
+Thus, two of the intersection points are <m>\left(2 + \sqrt{2}, \dfrac{\pi}{4}\right)</m> and <m>\left(2 - \sqrt{2}, \dfrac{5\pi}{4}\right)</m> , as illustrated below.</p>
 
-<sidebyside widths="40%"><image source="images/exam10-2-7.png"><description>graphs</description></image></sidebyside>
+<sidebyside widths="40%"><!--<image source="images/exam10-2-7.png"><description>graphs</description></image>-->
+    <image xml:id="exam10-2-7">
+        <description>cardioids</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.6]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[gray] (\angle:0) -- (\angle:4);
+        }
+        \foreach \r in {1,2,3,4} {
+        \draw[gray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.8] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:24,smooth, samples=65,variable=\x,red,very thick] plot ({15*\x}:{2+2*sin(15*\x});
+        \draw[domain=0:24,smooth, samples=65,variable=\x,blue,very thick] plot ({15*\x}:{2+2*cos(15*\x});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
 <p>However, you can see in the figure that the graphs also appear to intersect at the pole. To verify that the pole indeed lies on both graphs, we can solve for <m>\theta</m> in each equation when <m>r=0</m>.
 \begin{align*}
@@ -354,11 +808,11 @@ Thus, two of the intersection points are <m>(2 + \sqrt{2}, \dfrac{\pi}{4})</m> a
     -1 \amp =\sin \theta \amp \amp  -1 = \cos \theta   \\
     \theta \amp = \dfrac{3\pi}{2}  \amp \amp \theta =\pi\\
 \end{align*}</p>
-<p>Both points, <m>(0,\dfrac{3\pi}{2})</m> and <m>(0,\pi)</m>, represent the pole. Thus, the graphs intersect at three points: <m>(2 + \sqrt{2}, \dfrac{\pi}{4})</m>, <m>(2 - \sqrt{2}, \dfrac{5\pi}{4})</m>, and the pole.</p></solution></example>
+<p>Both points, <m>\left(0,\dfrac{3\pi}{2}\right)</m> and <m>(0,\pi)</m>, represent the pole. Thus, the graphs intersect at three points: <m>\left(2 + \sqrt{2}, \dfrac{\pi}{4}\right)</m>, <m>\left(2 - \sqrt{2}, \dfrac{5\pi}{4}\right)</m>, and the pole.</p></solution></example>
 
 <warning><p>Solving the system of equations <m>r=f(\theta)</m> and <m>r=g(\theta)</m> will not always reveal an intersection at the pole, because <m>r</m> may be equal to zero for different values of <m>\theta</m> in the two equations. Consequently, we should always check separately whether the pole is a point on both graphs.</p></warning>  
 
-<exercise><statement><p>Find all intersection points of the graphs of <m>r=1</m> and <m>r=2\cos\theta</m>.</p></statement></exercise>
+<exercise><statement><p>Find all intersection points of the graphs of <m>r=1</m> and <m>r=2\cos\theta</m>.</p></statement><answer><p><m>\left(1, \dfrac{\pi}{3}\right)</m>,<m>~\left(1, \dfrac{5\pi}{3}\right)</m></p></answer></exercise>
 </subsection>
 
 <subsection><title>Skills Refresher</title>
@@ -387,14 +841,13 @@ Thus, two of the intersection points are <m>(2 + \sqrt{2}, \dfrac{\pi}{4})</m> a
 
 <subsubsection><title>Answers to 10.2 Exercises</title>
 <p><ol label="1" cols="2">
-    <li><sidebyside width="45%" valign="middle"><image source="images/exer10-2-1ans.png"><description>graphs</description></image></sidebyside></li>
-    <li><sidebyside width="45%" valign="middle"><image source="images/exer10-2-2ans.png"><description>graphs</description></image></sidebyside></li>
-    <li><sidebyside width="45%" valign="middle"><image source="images/exer10-2-3ans.png"><description>graphs</description></image></sidebyside></li>
-    <li><sidebyside width="45%" valign="middle"><image source="images/exer10-2-4ans.png"><description>graphs</description></image></sidebyside></li>
-    <li><sidebyside width="45%" valign="middle"><image source="images/exer10-2-5ans.png"><description>graphs</description></image></sidebyside></li>
-    <li><m>r^2=4\sin \theta</m></li>
-    <li><m>r=1-\sin \theta</m></li>
-    <li><m>(1, \dfrac{\pi}{3}),~(1, \dfrac{5\pi}{3})</m></li></ol></p>
+    <li><sidebyside width="45%" valign="middle"><image source="images/exer10-2-1ans"><description>graphs</description></image></sidebyside></li>
+    <li><sidebyside width="45%" valign="middle"><image source="images/exer10-2-2ans"><description>graphs</description></image></sidebyside></li>
+    <li><sidebyside width="45%" valign="middle"><image source="images/exer10-2-3ans"><description>graphs</description></image></sidebyside></li>
+    <li><sidebyside width="45%" valign="middle"><image source="images/exer10-2-4ans"><description>graphs</description></image></sidebyside></li>
+    <li><sidebyside width="45%" valign="middle"><image source="images/exer10-2-5ans"><description>graphs</description></image></sidebyside></li>
+    <li><p><ol label="a"><li><p><m>r^2=4\sin 2\theta</m></p></li><li><p><m>r=1-\sin \theta</m></p></li></ol></p></li>
+    <li><m>\left(1, \dfrac{\pi}{3}\right)</m>,<m>~\left(1, \dfrac{5\pi}{3}\right)</m></li></ol></p>
 </subsubsection>
 
 <subsubsection><title>Skills Refresher Answers</title>
@@ -417,23 +870,86 @@ Thus, two of the intersection points are <m>(2 + \sqrt{2}, \dfrac{\pi}{4})</m> a
 <sidebyside widths="60% 25%"><stack><p><term><m>\theta = k~~</m></term> (<m>k</m> a constant)</p>
 <p>A <term>line</term> through the pole.</p> 
  <p><m>k</m> gives the angle of inclination of the line (in radians).</p></stack> 
-<image source="images/cat10-2-1.png"><description>graph</description></image></sidebyside>
+<!--<image source="images/cat10-2-1.png"><description>graph</description></image>-->
+    <image xml:id="cat10-2-1">
+        <description>line</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} 
+        \draw[black, ->,>=stealth'] (-2,0)--(2,0);
+        \draw[gray] (0,-2)--(0,2);
+        \def\theta{65};
+        \draw[red,thick] (\theta:{2/sin(\theta)}) --({180+\theta}:{2/sin(\theta)});
+        \draw[lightgray, ->, >=stealth'] (.5,0) arc(0:\theta:0.5) node[above right, yshift=-4, midway, text=red] {$k$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
 <sidebyside widths="60% 20%"><stack><p><term><m>r = k~~</m></term> (<m>k</m> a constant)</p>
 <p>A <term>circle</term> centered at the pole.</p> 
  <p><m>k</m> is the radius of the circle.</p></stack> 
-<image source="images/cat10-2-2.png"><description>graph</description></image></sidebyside>
+<!--<image source="images/cat10-2-2.png"><description>graph</description></image>-->
+    <image xml:id="cat10-2-2">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} 
+        \draw[black, ->,>=stealth'] (-2,0)--(2,0);
+        \draw[gray] (0,-2)--(0,2);
+        \def\k{1.5};
+        \draw[blue,thick] (0,0) --(65:\k) node[below right, xshift=-2, yshift=5, midway,text=blue] {$k$};
+        \draw[red, thick] (0,0) circle (\k);
+        \end{tikzpicture}
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 </subsubsection>
 
 <subsubsection><title>Circles</title>
 
 <sidebyside widths="50% 30%"><stack><p><term><m>r=2a\sin \theta</m></term> </p>
 <p>A <term>circle</term> with center <m>(0,a)</m> on the <m>y</m>-axis, and radius <m>\abs{a}</m>.</p></stack> 
-<image source="images/cat10-2-3.png"><description>graph</description></image></sidebyside>
+<!--<image source="images/cat10-2-3.png"><description>graph</description></image>-->
+    <image xml:id="cat10-2-3">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} 
+        \draw[black, ->,>=stealth'] (-2,0)--(2,0);
+        \draw[gray] (0,-1)--(0,3);
+        \draw[red, thick] (0,1.2) circle (1.2);
+        \filldraw[black] (0,1.2) circle (0.08) node[right, xshift=1] {$(0,a)$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
 <sidebyside widths="50% 30%"><stack><p><term><m>r=2a\cos \theta</m></term> </p>
 <p>A <term>circle</term> with center <m>(a,0)</m> on the <m>x</m>-axis, and radius <m>\abs{a}</m>.</p></stack> 
-<image source="images/cat10-2-4.png"><description>graph</description></image></sidebyside>
+<!--<image source="images/cat10-2-4.png"><description>graph</description></image>-->
+    <image xml:id="at10-2-4">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} 
+        \draw[black, ->,>=stealth'] (-1,0)--(3,0);
+        \draw[gray] (0,-2)--(0,2);
+        \draw[red, thick] (1.2,0) circle (1.2);
+        \filldraw[black] (1.2,0) circle (0.08) node[below, yshift=-1] {$(a,0)$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 </subsubsection>
 
 <subsubsection><title>Roses</title>
@@ -441,33 +957,163 @@ Thus, two of the intersection points are <m>(2 + \sqrt{2}, \dfrac{\pi}{4})</m> a
 <sidebyside widths="50% 30%"><stack><p><term><m>r=a\sin n\theta</m></term> </p>
 <p>A <term>rose</term> with petal length <m>a</m>.</p> 
 <p><m>n</m> petals if <m>n</m> is odd;</p> <p> <m>2n</m> petals if <m>n</m> is even.</p></stack> 
-<image source="images/cat10-2-5.png"><description>graph</description></image></sidebyside>
+<!--<image source="images/cat10-2-5.png"><description>rose</description></image>-->
+    <image xml:id="cat10-2-5">
+        <description>rose</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} 
+        \draw[black, ->,>=stealth'] (-2,0)--(2,0);
+        \draw[gray] (0,-2)--(0,2);
+        \draw[domain=0:12,smooth, samples=65,variable=\x,red,very thick] plot ({15*\x}:{1.5*sin(45*\x});
+        \draw[gray, dashed] (-2,{2/sqrt(3)})--(0,0)--(2,{2/sqrt(3)});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
 <sidebyside widths="50% 30%"><stack><p><term><m>r=a\cos n\theta</m></term> </p>
 <p>A <term>rose</term> with petal length <m>a</m>.</p> 
 <p><m>n</m> petals if <m>n</m> is odd;</p>  <p><m>2n</m> petals if <m>n</m> is even.</p></stack> 
-<image source="images/cat10-2-6.png"><description>graph</description></image></sidebyside>
+<!--<image source="images/cat10-2-6.png"><description>graph</description></image>-->
+    <image xml:id="cat10-2-6">
+        <description>rose</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} 
+        \draw[black, ->,>=stealth'] (-2,0)--(2,0);
+        \draw[gray] (0,-2)--(0,2);
+        \draw[domain=0:12,smooth, samples=65,variable=\x,red,very thick] plot ({15*\x}:{1.5*cos(45*\x});
+        \draw[gray, dashed] ({-2/sqrt(3)}, -2)--(0,0)--({-2/sqrt(3)}, 2);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 </subsubsection>
 
 <subsubsection><title>Limaçons</title>
 <p><term><m>r=a\pm b\sin \theta</m></term></p>
 <p><term><m>r=a\pm b\cos \theta</m></term></p>
-<sidebyside widths="30% 30% 30%">
-  <p>If <m>a \gt b</m>, with a dent. <image source="images/cat10-2-7.png"><description>graph</description></image></p>
-  <p>If <m>a \lt b</m>, with a loop. <image source="images/cat10-2-8.png"><description>graph</description></image></p>
-  <p>If <m>a \gt b</m>, a <term>cardioid</term>. <image source="images/cat10-2-9.png"><description>graph</description></image></p></sidebyside>
+<sidebyside widths="30% 30% 30%"><stack>
+  <p>If <m>a \gt b</m>, with a dent.</p> <!--<image source="images/cat10-2-7.png"><description>graph</description></image>-->
+    <image xml:id="cat10-2-7">
+        <description>limacon with dent</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} 
+        \draw[black, ->,>=stealth'] (-2,0)--(2,0);
+        \draw[gray] (0,-2)--(0,2);
+        \draw[domain=0:24,smooth, samples=65,variable=\x,red,very thick] plot ({15*\x}:{1 + .75*cos(15*\x});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</stack><stack>
+  <p>If <m>a \lt b</m>, with a loop.</p> <!--<image source="images/cat10-2-8.png"><description>graph</description></image>-->
+    <image xml:id="cat10-2-8">
+        <description>limacon with loop</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} 
+        \draw[black, ->,>=stealth'] (-2,0)--(2,0);
+        \draw[gray] (0,-2)--(0,2);
+        \draw[domain=0:24,smooth, samples=65,variable=\x,red,very thick] plot ({15*\x}:{.5 + 1*sin(15*\x});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</stack><stack>
+  <p>If <m>a \gt b</m>, a <term>cardioid</term>.</p> <!--<image source="images/cat10-2-9.png"><description>graph</description></image>-->
+    <image xml:id="cat10-2-9">
+        <description>cardioid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} 
+        \draw[black, ->,>=stealth'] (-2,0)--(2,0);
+        \draw[gray] (0,-1)--(0,3);
+        \draw[domain=0:24,smooth, samples=65,variable=\x,red,very thick] plot ({15*\x}:{1 + 1*sin(15*\x});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</stack></sidebyside>
 </subsubsection>
 
 <subsubsection><title>Lemniscates</title>
-<sidebyside widths="35% 35%">
-  <p><term><m>r^2=a^2 \cos 2\theta</m></term><image source="images/cat10-2-10.png"><description>graph</description></image></p>
-  <p><term><m>r^2=a^2 \sin 2\theta</m></term><image source="images/cat10-2-11.png"><description>graph</description></image></p></sidebyside>
+<sidebyside widths="35% 35%"><stack>
+  <p><term><m>r^2=a^2 \cos 2\theta</m></term></p><!--<image source="images/cat10-2-10.png"><description>graph</description></image>-->
+    <image xml:id="cat10-2-10">
+        <description>lemniscate</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} 
+        \draw[black, ->,>=stealth'] (-2,0)--(2,0);
+        \draw[gray] (0,-2)--(0,2);
+        \draw[domain=-3:3,smooth, samples=65,variable=\x,red,very thick] plot ({15*\x}:{1.5*sqrt(cos(30*\x)});
+        \draw[domain=-3:3,smooth, samples=65,variable=\x,red,very thick] plot ({15*\x}:{-1.5*sqrt(cos(30*\x)});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</stack><stack>
+  <p><term><m>r^2=a^2 \sin 2\theta</m></term></p><!--<image source="images/cat10-2-11.png"><description>graph</description></image>-->
+    <image xml:id="cat10-2-11">
+        <description>lemniscate</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} 
+        \draw[black, ->,>=stealth'] (-2,0)--(2,0);
+        \draw[gray] (0,-2)--(0,2);
+        \draw[domain=0:6,smooth, samples=65,variable=\x,red,very thick] plot ({15*\x}:{1.5*sqrt(sin(30*\x)});
+        \draw[domain=0:6,smooth, samples=65,variable=\x,red,very thick] plot ({15*\x}:{-1.5*sqrt(sin(30*\x)});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</stack></sidebyside>
 </subsubsection>
 
 <subsubsection><title>Spirals</title>
 <sidebyside widths="30% 30%">
-  <stack><p><term>Archimedean spiral</term></p><p><term><m>r^2=a^2 \cos 2\theta</m></term></p><p><image source="images/cat10-2-12.png"><description>graph</description></image></p></stack>
-  <stack><p><term>Logarithmic spiral</term></p><p><term><m>r^2=a^2 \sin 2\theta</m></term></p><p><image source="images/cat10-2-13.png"><description>graph</description></image></p></stack></sidebyside>
+  <stack><p><term>Archimedean spiral</term></p><p><term><m>r^2=a^2 \cos 2\theta</m></term></p><!--<image source="images/cat10-2-12.png"><description>graph</description></image>-->
+    <image xml:id="cat10-2-12">
+        <description>Archimedean spiral</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} 
+        \draw[black, ->,>=stealth'] (-2,0)--(2,0);
+        \draw[gray] (0,-2)--(0,2);
+        \draw[domain=0:35,smooth, samples=65,variable=\x,red,very thick] plot ({15*\x}:{\x/17.5});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</stack>
+  <stack><p><term>Logarithmic spiral</term></p><p><term><m>r^2=a^2 \sin 2\theta</m></term></p><!--<image source="images/cat10-2-13.png"><description>graph</description></image>-->
+    <image xml:id="cat10-2-13">
+        <description>Logarithmic spiral</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} 
+        \draw[black, ->,>=stealth'] (-2,0)--(2,0);
+        \draw[gray] (0,-2)--(0,2);
+        \draw[domain=0:3.45,smooth, samples=527,variable=\x,red,very thick] plot ({deg(2*pi*\x)}:{0.28*e^(0.18*pi*\x)});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</stack></sidebyside>
 </subsubsection>
 </subsection>
 
