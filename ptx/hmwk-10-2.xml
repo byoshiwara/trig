@@ -259,7 +259,31 @@
     <li>Find the center and radius of the circle.</li>
     <li>Give the Cartesian equation of the circle.</li></ol></p></statement>
 <answer><p><ol label="a">
-    <li><sidebyside width="50%"><image source="images/hp10-2-7ans.png"><description>polar</description></image></sidebyside></li>
+    <li><sidebyside width="55%"><!--<image source="images/hp10-2-7ans.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-7ans">
+        <description>circle on polar grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.4]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[green] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[green] (O) circle (\r);
+        }
+        \node[fill=white, inner sep = 2, text=black, scale=.8] at (90:4) {$4$};
+        \draw[red,thick] (2,0) circle (2cm);
+        \filldraw[blue] (0:4)circle (.1) node[right, text=black, fill=white, inner sep=1, xshift=2, scale=.8] {$(4,0)$ and $(-4,\pi)$};
+        \filldraw[blue] (45:{2*sqrt(2)})circle (.1) node[above, xshift=2, yshift=2, text=black, fill=white, inner sep=1, xshift=1, scale=.8] {$(2\sqrt{2},\frac{\pi}{4})$};
+        \filldraw[blue] (90:0)circle (.1) node[left, xshift=-3, text=black, fill=white, inner sep=1, yshift=2, scale=.8] {$(0,\frac{\pi}{2})$};
+        \filldraw[blue] (315:{2*sqrt(2)})circle (.1) node[below, text=black, fill=white, inner sep=1, xshift=2, yshift=-4, scale=.8] {$(-2\sqrt(2),\frac{3\pi}{4})$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></li>
     <li><p><sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
                     <row bottom="minor">  
                         <cell><m>\theta</m></cell>
@@ -306,7 +330,34 @@
     <li>Graph <m>r=2a\sin\theta</m> for <m>a=-2,-1,1,2</m>.</li>   
     <li>How do the graphs change for different values of <m>a</m>?</li></ol></p></statement>
     <answer><p><ol label="a">
-        <li><sidebyside width="40%"><image source="images/hp10-2-9ans.png"><description>polar</description></image></sidebyside></li>
+        <li><sidebyside width="40%"><!--<image source="images/hp10-2-9ans.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-9ans">
+        <description>circcles on polar grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.4]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[lightgray] (O) circle (\r);
+        }
+        \node[fill=white, inner sep = 2, text=black, scale=.8] at (90:5) {$5$};
+        \draw[red,very thick] (0,-2) circle (2cm);
+        \node[right,fill=white, inner sep=1, scale=.8, text=red] at (2.2,-2)  {$a=-2$};
+        \draw[blue,very thick] (0,-1) circle (1cm);
+        \node[fill=white, inner sep=1, scale=.8, text=blue] at (0,-2.5) {$a=-1$};
+        \draw[magenta,very thick] (0,1) circle (1cm);
+        \node[fill=white, inner sep=1, scale=.8, text=magenta] at (0,2.5) {$a=1$};
+        \draw[teal,very thick] (0,2) circle (2cm) ;
+        \node[fill=white, inner sep=1, scale=.8, text=teal] at (2,4.1) {$a=2$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside></li>
         <li>For <m>a \gt 0</m>, <m>a</m> is the radius of a circle centerd on the positive <m>y</m>-axis; for <m>a \lt 0</m>, <m>\abs{a}</m> is the radius of a circle centerd on the negative <m>y</m>-axis.</li></ol></p>
     </answer></exercise>
 
@@ -336,7 +387,27 @@
     <li><m>r=1-\sin \theta</m></li>
     <li><m>r=-1-\sin \theta</m></li></ol></p></statement>               
     <answer><p><ol label="a" cols="2">
-        <li><p><sidebyside width="60%"><image source="images/hp10-2-11ansa.png"><description>polar</description></image></sidebyside></p>
+        <li><p><sidebyside width="60%"><!--<image source="images/hp10-2-11ansa.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-11ansa">
+        <description>cardioid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.8]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:3);
+        }
+        \foreach \r in {1,2,3} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:6,smooth, samples=65,variable=\x,red,very thick] plot ({60*\x)}:{1+sin(60*\x});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside></p>
     <sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
                     <row bottom="minor">  
                         <cell><m>\theta</m></cell>
@@ -353,7 +424,27 @@
                         <cell><m>0</m></cell>
                         <cell><m>1</m></cell></row>
                     </tabular></sidebyside></li>
-        <li><p><sidebyside width="60%"><image source="images/hp10-2-11ansb.png"><description>polar</description></image></sidebyside></p>
+        <li><p><sidebyside width="60%"><!--<image source="images/hp10-2-11ansb.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-11ansb">
+        <description>cardioid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.8]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:3);
+        }
+        \foreach \r in {1,2,3} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:6,smooth, samples=65,variable=\x,red,very thick] plot ({60*\x)}:{-1+sin(60*\x});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside></p>
     <sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
                     <row bottom="minor">  
                         <cell><m>\theta</m></cell>
@@ -370,7 +461,27 @@
                         <cell><m>-2</m></cell>
                         <cell><m>-1</m></cell></row>
                     </tabular></sidebyside></li>
-        <li><p><sidebyside width="60%"><image source="images/hp10-2-11ansc.png"><description>polar</description></image></sidebyside></p>
+        <li><p><sidebyside width="60%"><!--<image source="images/hp10-2-11ansc.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-11ansc">
+        <description>cardioid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.8]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:3);
+        }
+        \foreach \r in {1,2,3} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:6,smooth, samples=65,variable=\x,red,very thick] plot ({60*\x)}:{1-sin(60*\x});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside></p>
     <sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
                     <row bottom="minor">  
                         <cell><m>\theta</m></cell>
@@ -387,7 +498,27 @@
                         <cell><m>2</m></cell>
                         <cell><m>1</m></cell></row>
                     </tabular></sidebyside></li> 
-        <li><p><sidebyside width="60%"><image source="images/hp10-2-11ansd.png"><description>polar</description></image></sidebyside></p>
+        <li><p><sidebyside width="60%"><!--<image source="images/hp10-2-11ansd.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-11ansd">
+        <description>cardioid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.8]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:3);
+        }
+        \foreach \r in {1,2,3} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:6,smooth, samples=65,variable=\x,red,very thick] plot ({60*\x)}:{-1-sin(60*\x});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside></p>
     <sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
                     <row bottom="minor">  
                         <cell><m>\theta</m></cell>
