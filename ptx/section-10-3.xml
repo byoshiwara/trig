@@ -6,12 +6,33 @@
 
 <introduction><p> So far most of your work in mathematics has been done using the set of <term>real numbers</term>.  We often represent the real numbers by a number line, because they can be matched up one-for-one with the points on the line. Every real number is either rational or irrational, and can be expressed as a decimal number, although irrational numbers are non-repeating, non-terminating decimals. However, the real numbers are actually a subset of a larger set of numbers called the <term>complex numbers</term>.</p>
 
-<sidebyside widths="55% 35%"><p>You may have first encountered complex numbers as solutions of certain quadratic equations. For example, the graph of
+<sidebyside widths="60% 33%" margins="0% 0%" valigns="middle middle"><p>You may have first encountered complex numbers as solutions of certain quadratic equations. For example, the graph of
 <me>f(x)=x^2-2x+2</me>
 has no <m>x</m>-intercepts (as shown at right), because the equation
 <me>x^2-2x+2-0</me></p>
-
-<image source="images/fig10-3-1.png"><description>graph</description></image></sidebyside>
+<!--<image source="images/fig10-3-1.png"><description>graph</description></image>-->
+    <image xml:id="fig10-3-1">
+        <description>triangle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale = .6]
+    \draw[cyan] (-3,0) grid (5,9);
+    \draw[black,thick,->,>=stealth'] (-3,0)--(5.4,0) node[right]{$x$};
+    \draw[black,thick,->,>=stealth'] (0,0)--(0, 9.4) node[above]{$y$};
+    \foreach \y in {2,4,6,8} {
+    \draw[black] (.1,\y) --++ (-.2,0) node[left]{$\y$};
+    }
+    \foreach \x in {-2,2,4} {
+    \draw[black] (\x,.1) --++ (0,-.2) node[below, yshift=-2, fill=white, inner sep=1]{$\x$};
+    }
+    \draw[domain={-2*sqrt(2)+1}:{2*sqrt(2)+1},smooth, samples=17,variable=\x,red,very thick] plot (\x,{(\x)^2-2*\x+2)});
+    \node[above] at (4,9) {$y=x^2-2x+2$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
 <p>has no real-valued solutions. Applying the quadratic formula, we find
 
@@ -51,7 +72,9 @@ or <m>\sqrt{-4} = 2<term><m>i</m></term></m>. Any number that is the product of 
 
 <exercise><statement><p>Write each radical as an imaginary number.<ol label="a" cols="2">
   <li><m>\sqrt{-18}</m></li>
-  <li><m>-6\sqrt{-5}</m></li></ol></p></statement></exercise>
+  <li><m>-6\sqrt{-5}</m></li></ol></p></statement><answer><p><ol label="a">
+        <li><m>3i\sqrt{2}</m></li>
+        <li><m>-6i\sqrt{5}</m></li></ol></p></answer></exercise>
 
 <p>An imaginary number can be positive or negative. Just as each positive number has two real-valued square roots, every negative number has two imaginary square roots. For example, the two square roots of <m>9</m> are <m>3i</m> and <m>-3i</m>.</p>
 </subsection>
@@ -86,7 +109,7 @@ In a complex number <m>a+bi</m>, <m>a</m> is called the <term>real part</term>, 
 <solution><p>Because <m>\sqrt{-4} = \sqrt{-1}\sqrt{4} = 2i,</m> we have <m>\dfrac{2 \pm \sqrt{-4}}{2} = \dfrac{2 \pm 2i}{2}</m>, or <m>1 \pm i</m>. The solutions are <m>1+i</m> and <m>1-i</m>.</p></solution></example>
 
 <exercise><statement><p>Use extraction of roots to solve <m>(2x+1)^2 + 9 = 0</m>.  Write your answers as complex numbers.
-</p></statement></exercise>
+</p></statement><answer><m>x=\dfrac{-1}{2}\pm\dfrac{3}{2}i</m></answer></exercise>
 </subsection>
 
 <subsection><title>Arithmetic of Complex Numbers</title>
@@ -111,7 +134,7 @@ Their difference is
     \amp=3+(-8)i = 3-8i\\
     \end{align*}</p></solution></example>
 
-<exercise><statement><p>Subtract:  <m>(-3_2i)-(-3-2i)</m></p></statement></exercise>
+<exercise><statement><p>Subtract:  <m>(-3+2i)-(-3-2i)</m></p></statement><answer><m>4i</m></answer></exercise>
 </subsection>
 
 <subsection><title>Products of Complex Numbers</title>
@@ -132,7 +155,7 @@ Because <m>i^2=-1</m>, the last term, <m>-15i^2</m>, can be replaced by <m>-15(-
 Finally, we combine the real parts and imaginary parts to obtain
 <me>(6+15)+(-10i+9i) = 21-i</me></p></solution></example>
 
-<exercise><statement><p>Multiply  <m>(-3+2i)(-3-2i)</m>.</p></statement></exercise>
+<exercise><statement><p>Multiply  <m>(-3+2i)(-3-2i)</m>.</p></statement><answer><m>13</m></answer></exercise>
 
 <p>In the Homework Probems, you will verify that the following rule holds.</p>
 
@@ -161,7 +184,7 @@ To write the quotient in the form <m>a+bi></m>, we divide <m>-2</m> into each te
 <me>\dfrac{3i}{-2} - \dfrac{4}{-2} = \dfrac{-3}{2}i +2</me>
 The quotient is <m>2 - \dfrac{3}{2} i</m>.</p></solution></example>
 
-<exercise><statement><p>Divide <m>\dfrac{8+9i}{3i}</m>.</p></statement></exercise>
+<exercise><statement><p>Divide <m>\dfrac{8+9i}{3i}</m>.</p></statement><answer><m>3-\dfrac{8}{3}i</m></answer></exercise>
 
 <p> Perhaps you recall that to rationalize a binomial denominator, we multiply by its conjugate.  For example, to rationalize the denominator of <m>\dfrac{5}{2+\sqrt{3}}</m>, we multiply numerator and denominator by <m>2-\sqrt{3}</m>.  A similar technique works for dividing complex numbers.  We first define the <term>conjugate</term> of a complex number. 
 </p>
@@ -192,7 +215,7 @@ and the quotient is
     \amp = \dfrac{2}{20} + \dfrac{16i}{20} = \dfrac{1}{10} + \dfrac{4}{5}i\\
 \end{align*}</p></solution></example>
 
-<exercise><statement><p>Write the quotient <m>\dfrac{4-2i}{1+i}</m> in the form <m>a+bi</m>.</p></statement></exercise>
+<exercise><statement><p>Write the quotient <m>\dfrac{4-2i}{1+i}</m> in the form <m>a+bi</m>.</p></statement><answer><p><m>1-3i</m></p></answer></exercise>
 
 <p>In the Homework Problems you will verify the rule for dividing complex numbers.</p>
 
@@ -208,9 +231,58 @@ and the quotient is
 <example><statement><p>Plot the numbers <m>z=2+3i</m> and <m>\bar{z}=2-3i</m> in the complex plane.</p></statement>
 
 <solution><sidebyside widths="50% 30%"><p>To plot <m>z=2+3i</m>, we move from the origin 2 units to the right and 3 units up. To plot <m>\bar{z}=2-3i</m> we move from the origin 2 units to the right and 3 units down. The numbers <m>2+3i</m> and <m>2-3i</m> are plotted in the figure at right.  
-</p><image source="images/exam10-3-7.png"><description>graphs</description></image></sidebyside></solution></example>
+</p><!--<image source="images/exam10-3-7.png"><description>graphs</description></image>-->
+    <image xml:id="exam10-3-7">
+        <description>complex conjugates</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale = .5]
+    \draw[cyan] (-4,-4) grid (4,4);
+    \draw[black,thick,->,>=stealth'] (-4,0)--(4.4,0);
+    \draw[black,thick,->,>=stealth'] (0,-4)--(0, 4.4);
+    \foreach \y in {2,4} {
+    \draw[black] (.1,\y) --++ (-.2,0) node[left, xshift=-2, fill=white, inner sep=1]{$\y i$};
+    \draw[black] (.1,-\y) --++ (-.2,0) node[left, xshift=-2, fill=white, inner sep=1]{$-\y i$};
+    }
+    \foreach \x in {2,4} {
+    \draw[black] (\x,.1) --++ (0,-.2) node[below, yshift=-2, fill=white, inner sep=1]{$\x$};
+    \draw[black] (-\x,.1) --++ (0,-.2) node[below, yshift=-2, fill=white, inner sep=1]{$-\x$};
+    }
+    \draw[red, fill=red] (2,3) circle (2.5pt) node[above right, yshift=2, fill=white, inner sep=1, text=black] {$2+3i$};
+    \draw[red, fill=red] (2,-3) circle (2.5pt) node[below right, yshift=-3, fill=white, inner sep=1, text=black] {$2-3i$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></solution></example>
 
-<exercise><statement><p>Plot <m>z=-3+5i</m> and its conjugate in the complex plane.</p></statement></exercise>
+<exercise><statement><p>Plot <m>z=-3+5i</m> and its conjugate in the complex plane.</p></statement><answer><sidebyside width="30%" valign="middle"><!--<image source="images/exer10-3-7ans.png"><description>graphs</description></image>-->
+    <image xml:id="exer10-3-7ans">
+        <description>complex conjugates</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale = .35]
+    \draw[cyan] (-7,-7) grid (7,7);
+    \draw[black,thick,->,>=stealth'] (-7,0)--(7.4,0);
+    \draw[black,thick,->,>=stealth'] (0,-7)--(0, 7.4);
+    \foreach \y in {5} {
+    \draw[black] (.1,\y) --++ (-.2,0) node[left, xshift=-2, fill=white, inner sep=1]{$\y i$};
+    \draw[black] (.1,-\y) --++ (-.2,0) node[left, xshift=-2, fill=white, inner sep=1]{$-\y i$};
+    }
+    \foreach \x in {5} {
+    \draw[black] (\x,.1) --++ (0,-.2) node[below, yshift=-2, fill=white, inner sep=1]{$\x$};
+    \draw[black] (-\x,.1) --++ (0,-.2) node[below, yshift=-2, fill=white, inner sep=1]{$-\x$};
+    }
+    \draw[red, fill=red] (-3,5) circle (3pt) node[above left, yshift=2, fill=white, inner sep=1, text=black] {$-3+5i$};
+    \draw[red, fill=red] (-3,-5) circle (3pt) node[below left, yshift=-3, fill=white, inner sep=1, text=black] {$-3-5i$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+
+</sidebyside></answer></exercise>
 
 <warning><p>You are used to plotting ordered pairs <m>(x,y)</m> in the Cartesian plane, so that one point represents two real numbers, given by its coordinates. However, in the complex plane one point represents a single complex number <m>z=a+bi</m>, and the coordinates of the point are the real and imaginary parts of <m>z</m>. For example, the point <m>(2,-6)</m> in the real plane represents the pair of real numbers <m>x=2</m> and <m>t=-6</m>, but the point <m>(2,-6)</m> in the complex plane represents the complex number <m>z=2-6i</m>.</p></warning>  
 
@@ -225,21 +297,102 @@ and the quotient is
 
 <example><statement><p>Plot all points in the complex plane that satisfy the equation <m>\abs{z}=4</m>.</p></statement>
 
-<solution><sidebyside widths="50% 30%"><p>The points that satisfy <m>\abs{z}=4</m> all lie at a distance of 4 units from the origin. In other words, they lie on a circle of radius 4 centered at the origin, as shown at right.</p>  
-<image source="images/exam10-3-8.png"><description>graphs</description></image></sidebyside></solution></example>
+<solution><sidebyside widths="55% 30%" margins="0% 0%" valigns="middle middle"><p>The points that satisfy <m>\abs{z}=4</m> all lie at a distance of 4 units from the origin. In other words, they lie on a circle of radius 4 centered at the origin, as shown at right.</p>  
+<!--<image source="images/exam10-3-8.png"><description>graphs</description></image>-->
+    <image xml:id="exam10-3-8">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale = .45]
+    \draw[cyan] (-5,-5) grid (5,5);
+    \draw[black,thick,->,>=stealth'] (-5,0)--(5.6,0);
+    \draw[black,thick,->,>=stealth'] (0,-5)--(0, 5.6);
+    \foreach \y in {5} {
+    \draw[black] (.1,\y) --++ (-.2,0) node[left, xshift=-2, fill=white, inner sep=1]{$\y i$};
+    \draw[black] (.1,-\y) --++ (-.2,0) node[left, xshift=-2, fill=white, inner sep=1]{$-\y i$};
+    }
+    \foreach \x in {5} {
+    \draw[black] (\x,.1) --++ (0,-.2) node[below, yshift=-2, fill=white, inner sep=1]{$\x$};
+    \draw[black] (-\x,.1) --++ (0,-.2) node[below, yshift=-2, fill=white, inner sep=1]{$-\x$};
+    }
+    \draw[red, very thick] (0,0) circle (4 cm);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></solution></example>
 
-<exercise><statement><p>Write an equation for the circle of radius 1 centered at the origin in the complex plane.</p></statement></exercise>
+<exercise><statement><p>Write an equation for the circle of radius 1 centered at the origin in the complex plane.</p></statement><answer><p><m>\abs{z}=1</m></p></answer></exercise>
 
 <p> We can think of the graph of a complex number <m>z=a+bi</m> as the vector (or arrow) that starts at the origin and ends at the point <m>(a,b)</m> in the complex plane, as shown in figure (a).</p>  
 
-<sidebyside width="85%"><image source="images/fig10-3-2.png"><description>graphs</description></image></sidebyside>
+<sidebyside width="85%"><!--<image source="images/fig10-3-2.png"><description>graphs</description></image>-->
+    <image xml:id="fig10-3-2">
+        <description>complex numbers as vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} 
+    \coordinate (O) at (0,0);
+    \coordinate (z) at (3,1);
+    \draw[black,thick,->,>=stealth'] (-.5,0)--++(4.5,0) node[right]{$x$};
+    \draw[black,thick,->,>=stealth'] (0,-.5)--++(0, 3) node[above]{$iy$};;
+    \draw[black, thick, ->, >=stealth'] (O) -- ++(z) node[above right, xshift=-.5cm]{$z=a+b i$};
+    \node at (2,-1){a.};
+    %second picture
+    \def\del{6.5};
+    \coordinate (O) at (\del,0);
+    \coordinate (z2) at (.5,1);
+    \draw[black,thick,->,>=stealth'] (O)++(-.5,0)--++(4.5,0) node[right]{$x$};
+    \draw[black,thick,->,>=stealth'] (O)++(0,-.5)--++(0, 3) node[above]{$iy$};;
+    \draw[black, thick, ->, >=stealth'] (O) -- ++(z) node[right]{$z_1$};
+    \draw[black,  ->, >=stealth'] (O)++(z2) -- ++(z);
+    \draw[black, thick, ->, >=stealth'] (O) -- ++(z2) node[above , yshift=.1cm]{$z_2$};
+    \draw[black, ->, >=stealth'] (O)++(z) -- ++(z2);
+    \draw[red, very thick, ->, >=stealth'] (O) -- ++($ (z)+(z2)$) node[above right, yshift=-.2cm]{$z_1 + z_2$};
+    \node at ({\del+2},-1){b.};
+
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 
 <p>Then the sum of two complex numbers corresponds to the sum of the two vectors representing them.  Figure (b) illustrates the sum of two complex numbers, <m>z_1</m> and <m>z_2</m>, by vector addition using the parallelogram law:  we form a parallelogram with the vectors <m>z_1</m> and <m>z_2</m> and as adjacent sides. Their sum is the vector that forms the diagonal of the parallelogram, starting at the origin.</p> 
 
 <example><statement><p>Illustrate the sum of <m>z_1=5-i</m> and <m>z_2=-7+4i</m> by vector addition.</p></statement>
 
-<solution><sidebyside widths="50% 40%"><p>Draw a vector starting at the origin and ending at the point <m>(5,-1)</m> in the complex plane to represent <m>z_1</m>, and another vector ending at <m>(-7,4)</m> to represent <m>z_2</m>. Now sketch the opposite sides of a parallelogram, and draw the diagonal starting at the origin, as shown at right.</p>
-<image source="images/exam10-3-9.png"><description>graphs</description></image></sidebyside>
+<solution><sidebyside widths="55% 40%" margins="0% 0%" valigns="middle middle"><p>Draw a vector starting at the origin and ending at the point <m>(5,-1)</m> in the complex plane to represent <m>z_1</m>, and another vector ending at <m>(-7,4)</m> to represent <m>z_2</m>. Now sketch the opposite sides of a parallelogram, and draw the diagonal starting at the origin, as shown at right.</p>
+<!--<image source="images/exam10-3-9.png"><description>graphs</description></image>-->
+    <image xml:id="exam10-3-9">
+        <description>complex numbers as vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale=.35]
+    \draw[cyan] (-8,-3) grid (8,8);
+    \foreach \y in {8} {
+    \draw[black] (.1,\y) --++ (-.2,0) node[left, xshift=-2, fill=white, inner sep=1]{$\y i$};
+    }
+    \foreach \x in {-8,8} {
+    \draw[black] (\x,.1) --++ (0,-.2) node[below, yshift=-2, fill=white, inner sep=1]{$\x$};
+    }
+    \coordinate (O) at (0,0);
+    \coordinate (z) at (5,-1);
+    \coordinate (z2) at (-7,4);
+    \draw[black,thick,->,>=stealth'] (-8,0)--++(16.9,0);
+    \draw[black,thick,->,>=stealth'] (0,-3)--++(0, 11.9);
+    \draw[red, thick, ->, >=stealth'] (O) -- ++(z) node[right, xshift=2, fill=white, inner sep=1]{$z_1$};
+    \draw[red,  ->, >=stealth'] (z2) -- ++(z);
+    \draw[blue, thick, ->, >=stealth'] (O) -- ++(z2) node[above , yshift=.1cm, fill=white, inner sep=1]{$z_2$};
+    \draw[blue, ->, >=stealth'] (O)++(z) -- ++(z2);
+    \draw[black, ultra thick, ->, >=stealth'] (O) -- ++($ (z)+(z2)$) node[above , yshift=.2cm, fill=white, inner sep=1]{$z_1+z_2$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 <p> This vector represents the sum <m>z_1+z_2</m>.  You can check that the vector ends at the point
 <me>z_1+z_2=(5-7)+(-1+4)i=-2+3i</me></p></solution></example>
 
@@ -247,7 +400,37 @@ and the quotient is
 <me>z_1-z_2=z_1+(-z_2)</me>
 Recall that the opposite of a vector has the same length, but it points in the opposite direction.</p>
 
-<exercise><statement><p>Illustrate <m>z_1-z_2</m>, for <m>z_1=3-2i</m> and <m>z_2=-4+5i</m>.</p></statement></exercise>
+<exercise><statement><p>Illustrate <m>z_1-z_2</m>, for <m>z_1=3-2i</m> and <m>z_2=-4+5i</m>.</p></statement><answer><sidebyside width="40%" valign="middle"><!--<image source="images/exer10-3-9ans.png"><description>graphs</description></image>-->
+    <image xml:id="exer10-3-9ans">
+        <description>complex numbers as vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale=.35]
+    \draw[cyan] (-6,-8) grid (8,8);
+    \foreach \y in {-5,5} {
+    \draw[black] (.1,\y) --++ (-.2,0) node[left, xshift=-2, fill=white, inner sep=1]{$\y i$};
+    }
+    \foreach \x in {-5,5} {
+    \draw[black] (\x,.1) --++ (0,-.2) node[below, yshift=-2, fill=white, inner sep=1]{$\x$};
+    }
+    \coordinate (O) at (0,0);
+    \coordinate (z) at (3,-2);
+    \coordinate (z2) at (-4,5);
+    \coordinate (nz2) at (4,-5);
+    \draw[black,thick,->,>=stealth'] (-8,0)--++(16.9,0);
+    \draw[black,thick,->,>=stealth'] (0,-3)--++(0, 11.9);
+    \draw[red, thick, ->, >=stealth'] (O) -- ++(z) node[right, xshift=2, fill=white, inner sep=1]{$z_1$};
+    \draw[red,thick,  ->, >=stealth'] (nz2) -- ++(z);
+    \draw[blue, thick, ->, >=stealth'] (O) -- ++(z2) node[above left, yshift=.1cm, fill=white, inner sep=1]{$z_2$};
+    \draw[teal,thick, ->, >=stealth'] (O) -- ++(nz2) node[left, xshift=-.2cm, fill=white, inner sep=1]{-$z_2$};
+    \draw[teal,thick, ->, >=stealth'] (z) -- ++(nz2);
+    \draw[black, ultra thick, ->, >=stealth'] (O) -- ++($ (z)+(nz2)$) node[below , xshift=-.2cm, fill=white, inner sep=1]{$z_1+z_2$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer></exercise>
 </subsection>
 
 <subsection><title>Zeros of Polynomials</title>
@@ -264,7 +447,7 @@ Recall that the opposite of a vector has the same length, but it points in the o
 \end{align*}
 Thus, <m>f(1+i)=0</m>, so <m>1+i</m> is a zero of the polynomial.</p></solution></example>
 
-<exercise><statement><p>If <m>f(x)=x^2-6x+13</m>, evaluate <m>f(3+2i)</m>.</p></statement></exercise>
+<exercise><statement><p>If <m>f(x)=x^2-6x+13</m>, evaluate <m>f(3+2i)</m>.</p></statement><answer><p><m>0</m></p></answer></exercise>
 
 <p>The zeros of a quadratic polynomial <m>ax^2+bx+c</m>,  of course, are the solutions of the quadratic equation <m>ax^2+bx+c=0</m>,  and those solutions are given by the quadratic formula,
 
@@ -309,7 +492,9 @@ Because <m>(z+\bar{z})</m> and <m>z\bar{z}</m> are both real numbers, this polyn
 
 <exercise><statement><p><ol label="a">
   <li>Let <m>z=-3+4i</m>.  Compute <m>(z+\bar{z})</m> and <m>z\bar{z}</m>.</li>
-  <li>Find a quadratic polynomial with one zero being <m>z=-3+4i</m>.</li></ol></p></statement></exercise>
+  <li>Find a quadratic polynomial with one zero being <m>z=-3+4i</m>.</li></ol></p></statement><answer><p><ol label="a">
+        <li><p><m>z+\bar{z}=-6</m>, <m>~z\bar{z}=25</m></p></li>
+        <li><m>x^2+6x+25=0</m></li></ol></p></answer></exercise>
 
 <p> One of the most important results in mathematics is the <term>fundamental theorem of algebra</term>, which says that if we allow complex numbers as inputs, then every polynomial <m>p(x)</m> of degree <m>n \ge 1</m> has exactly <m>n</m> complex number zeros.</p>
 
@@ -318,10 +503,32 @@ Because <m>(z+\bar{z})</m> and <m>z\bar{z}</m> are both real numbers, this polyn
 
 <note><p>A polynomial has a zero "of multiplicity <m>k</m>" at <m>x=a</m> if <m>(x-a)</m> occurs <m>k</m> times as a factor of the polynomial.  For example, the polynomial <m>p(x) = (x-5)^2</m> has a zero of multiplicity 2 at <m>x=5</m>.</p></note>
 <p></p>
-<sidebyside widths="65% 30%" valigns="middle middle"><p>As a result, every polynomial of degree can be factored as the product of linear terms. For example, although the graph of  
+<sidebyside widths="65% 30%" valigns="middle middle" margins="0% 0%"><p>As a result, every polynomial of degree can be factored as the product of linear terms. For example, although the graph of  
   <me>y=x^4+4</me>
   shown at right has no <m>x</m>-intercepts, the fundamental theorem tells us that there are four complex solutions to  <m>x^4+4=0</m>, and that <m>x^4+4</m> can be factored.
-</p><image source="images/fig10-3-3.png"><description>graphs</description></image></sidebyside>
+</p><!--<image source="images/fig10-3-3.png"><description>graphs</description></image>-->
+    <image xml:id="fig10-3-3">
+        <description>quartic</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+    \begin{tikzpicture} [scale = .5]
+    \draw[cyan] (-4,0) grid (4,9);
+    \draw[black,thick,->,>=stealth'] (-4,0)--(4.6,0) node[right]{$x$};
+    \draw[black,thick,->,>=stealth'] (0,-.2)--(0, 9.6) node[above]{$y$};
+    \foreach \y in {2,4,6,8} {
+    \draw[black] (.1,\y) --++ (-.2,0) node[left]{$\y$};
+    }
+    \foreach \x in {-4,-2,2,4} {
+    \draw[black] (\x,.1) --++ (0,-.2) node[below, yshift=-2, fill=white, inner sep=1]{$\x$};
+    }
+    \draw[domain={-(5)^(1/4)}:{(5)^(1/4)},smooth, samples=17,variable=\x,red,very thick] plot (\x,{(\x)^4+4)});
+    \node[above right] at (1,9) {$y=x^4 +4$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 <p>  You can check that the four solutions to <m>x^4+4=0</m> are 
 <me>1+i,~-1+i,~-1-i,~\text{and}~ 1-i</me>
 
@@ -350,8 +557,10 @@ Finally, we multiply these two partial products to find the polynomial we seek,
 <me>(x^2+9)(x^2-4x+5)=x^4-4x^3+14x^2-36x+45</me></p></solution></example>
 
 <exercise><statement><p><ol label="a">
-  <li>Find the zeros 0f the polynomial <m>x^4+15x^2-16</m>.</li>
-  <li>Write the polynomial in factored form.</li></ol></p></statement></exercise>
+  <li>Find the zeros of the polynomial <m>x^4+15x^2-16</m>.</li>
+  <li>Write the polynomial in factored form.</li></ol></p></statement><answer><p><ol label="a">
+        <li><m>\pm 1,~\pm 4i</m></li>
+        <li><m>(x-1)(x+1)(x-4i)(x+4i)</m></li></ol></p></answer></exercise>
 </subsection>
 
 <subsection><title>Algebra Refresher</title>
@@ -386,12 +595,12 @@ Finally, we multiply these two partial products to find the polynomial we seek,
     <li><m>13</m></li>
     <li><m>3-\dfrac{8}{3}i</m></li>
     <li><m>1-3i</m></li>
-    <li><sidebyside width="30%" valign="middle"><image source="images/exer10-3-7ans.png"><description>graphs</description></image></sidebyside></li>
+    <li><sidebyside width="30%" valign="middle"><image source="images/exer10-3-7ans"><description>graphs</description></image></sidebyside></li>
     <li><m>\abs{z}=1</m></li>
-    <li><sidebyside width="30%" valign="middle"><image source="images/exer10-3-9ans.png"><description>graphs</description></image></sidebyside></li>
+    <li><sidebyside width="30%" valign="middle"><image source="images/exer10-3-9ans"><description>graphs</description></image></sidebyside></li>
     <li><m>0</m></li>
     <li><p><ol label="a">
-        <li><m>25</m></li>
+        <li><p><m>z+\bar{z}=-6</m>, <m>~z\bar{z}=25</m></p></li>
         <li><m>x^2+6x+25=0</m></li></ol></p>
     </li>    
     <li><p><ol label="a">
