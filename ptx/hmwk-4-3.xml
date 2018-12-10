@@ -460,7 +460,23 @@
                         <cell><m>\hphantom{000}</m></cell>
                         <cell><m>\hphantom{000}</m></cell></row>
                         </tabular></sidebyside>
-    <sidebyside width="60%"><image source="images/hp4-3-3b"><description>grid</description></image></sidebyside></statement></exercise> 
+    <sidebyside width="60%"><!--<image source="images/hp4-3-3b"><description>grid</description></image>-->
+    <image xml:id="hp4-3-4">
+        <description>grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=0.7, yscale=.4]
+        \draw[cyan] (0,-6) grid (12,6);
+        \draw[black, thick, ->] (-0.1,0)--(12.5,0) node[right]{$d$};
+        \draw[black, thick, ->] (0, -6.1)--(0, 6.5) node[above]{$x$};
+        \foreach \x [evaluate=\x as \xi using int( 5* \x )] in { 2, 4, ..., 12} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+        \foreach \y   in { -5, 5} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\y};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></statement></exercise> 
 
     <exercise number="5"><statement><p><ol label="a">
         <li>Refer to Problem 3.  Suppose you know where Delbert is on the square at some given time.  Can you predict where he will be after he has walked another 40 units?</li>  
@@ -1426,7 +1442,7 @@
     </ol></p><sidebyside width="100%"><!--<image source="images/hp4-3-63.png">--><image source="images/fig-chap2-proj-ex-1-3"><description>graph</description></image></sidebyside></statement>
     <answer><p>a.  IV  b.  III  c.  II  d.  I</p></answer></exercise>
 
-    <exercise number="64"><statement><p>Match each of the following situations with an appropriate graph on the next page.</p>
+    <exercise number="64"><statement><p>Match each of the following situations with an appropriate graph below.</p>
     <p><ol label="a">
     <li>The number of hours of daylight in Salt Lake City varies from a minimum of 9.6 hours on the winter solstice to a maximum of 14.4 hours on the summer solstice.</li>
     <li>A weight is 6.5 feet above the floor, suspended from the ceiling by a spring.  The weight is pulled down to 5 feet above the floor and released, rising past 6.5 feet in 0.5 seconds before attaining its maximum height of  feet.  Neglecting the effects of friction, the height of the weight will continue to oscillate between its minimum and maximum height.</li>
