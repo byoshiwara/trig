@@ -94,39 +94,36 @@
                       </tabular></sidebyside></p> 
 
  <p>The completed graph is shown below.</p>
- <sidebyside width="100%"><!--<image source="images/exam6-3-1.png"><description>sine</description></image>-->
+ <sidebyside width="90%"><!--<image source="images/exam6-3-1.png"><description>sine</description></image>-->
     <image xml:id="exam6-3-1">
         <description>sine</description>
         <latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
         }
-        \begin{tikzpicture} [xscale=2]
+        \begin{tikzpicture} [scale=1.6]
 
-        \draw[cyan,xstep=pi/12, ystep=1/2] (0,-2) grid ($2*pi*(1,0)+(0,2) $);
+        \draw[cyan,xstep=pi/12, ystep=1/4] (0,-3/2) grid ($2*pi*(1,0)+(0,3/2) $);
         \draw[->] (0,0) -- (6.5,0) node[right, xshift=2, scale=0.9] {$t$};
-        \draw[->] (0,-2) -- (0,2.3) node[above, yshift=2, scale=0.9] {$y$};
+        \draw[->] (0,-1.5) -- (0,1.8) node[above, yshift=2, scale=0.9] {$y$};
 
-        \foreach \x in {1, 2,...,24}
-        \draw[black] ($ pi*\x /12*(1,0) +(0,.08) $) --++(0,-.16);
+        \foreach \y in {-1, -0.5, 0.5,1}
+        \draw[black, thick] (.06,\y ) --++(-.12,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt, scale=.8] {$\y$};
 
-        \foreach \y in {-1,1}
-        \draw[black, thick] (.06,\y ) --++(-.12,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt, scale=.9] {$\y$};
+        \draw[black, thick] (2*pi,.06) --++(0,-.12) node[anchor=north, xshift=2,yshift=-3, fill=white, inner sep=1pt, scale=.9] {$2\pi$};
 
-        \draw[black, thick] (2*pi,.2) --++(0,-.4) node[anchor=north, xshift=2,yshift=-3, fill=white, inner sep=1pt, scale=.9] {$2\pi$};
+        \draw[black] (pi,.06) --++(0,-.12) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\pi$};
 
-        \draw[black] (pi,.2) --++(0,-.4) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\pi$};
+        \draw[black] (pi,.06) --++(0,-.12) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\pi$};
 
-        \draw[black] (pi,.2) --++(0,-.4) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\pi$};
+        \draw[black] (pi/2,.06) --++(0,-.12) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{\pi}{2}$};
+        \draw[black] (3*pi/2,.06) --++(0,-.12) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{3\pi}{2}$};
 
-        \draw[black] (pi/2,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\frac{\pi}{2}$};
-        \draw[black] (3*pi/2,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\frac{3\pi}{2}$};
+        \draw[black] (pi/4,.06) --++(0,-.12) node[anchor=north, yshift=-4, fill=white, inner sep=1pt] {$\frac{\pi}{4}$};
 
-        \draw[black] (pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-4, fill=white, inner sep=1pt, scale=.9] {$\frac{\pi}{4}$};
-
-        \draw[black] (3*pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\frac{3\pi}{4}$};
-        \draw[black] (5*pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\frac{5\pi}{4}$};
-        \draw[black] (7*pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\frac{7\pi}{4}$};
+        \draw[black] (3*pi/4,.06) --++(0,-.12) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{3\pi}{4}$};
+        \draw[black] (5*pi/4,.06) --++(0,-.12) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{5\pi}{4}$};
+        \draw[black] (7*pi/4,.06) --++(0,-.12) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{7\pi}{4}$};
 
         \draw[domain=0:2*pi,smooth,variable=\x,red,very thick] plot ({\x},{sin(deg(\x))});
 
