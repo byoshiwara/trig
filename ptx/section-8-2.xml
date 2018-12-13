@@ -145,13 +145,13 @@ This symmetry occurs because we interchanged the roles of <m>x</m> and <m>y</m> 
         \draw[black,thick,->,>=stealth'] (0,-3)--(0,7.3) node[above, scale=.9] {$y$};
         \foreach \x in { -2, 2, 4,6} {
           \draw[black,thick] (\x, .08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {\x};
-          \draw[black,thick] ( .08,\x)--++(-.16,0) node[below, xshift=-2, fill=white, inner sep=1, scale=.8] {\x};
+          \draw[black,thick] ( .08,\x)--++(-.16,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\x};
         };
-        \draw[gray!80!, thick, dashed] (-3,-3)--(7,7) node[above right, text=black] {$y=x$};
+        \draw[gray!80!, thick, dashed] (-3,-3)--(7,7) node[above right, xshift=-.3cm, text=black] {$y=x$};
         \draw[samples=65, domain=-3:{3-1/3}, variable=\x, smooth, blue, thick, densely dashed] plot (\x, {1/(\x-3)});
-        \draw[samples=65, domain=7:{3+1/7)}, variable=\x, smooth, blue,thick,densely dashed] plot (\x, {1/(\x-3)}) node[above, scale=.9] {$f(x)=\frac{1}{x-3}$};
+        \draw[samples=65, domain=7:{3+1/7)}, variable=\x, smooth, blue,thick,densely dashed] plot (\x, {1/(\x-3)}) node[above, scale=.9] {$f(x)$};
         \draw[samples=65, domain=-3:-1/6, variable=\x, smooth, red, thick] plot (\x, {1/(\x) +3 });
-        \draw[samples=65, domain=1/4:7, variable=\x, smooth, red, thick] plot (\x, {1/(\x) +3}) node[right, scale=.9] {$f^{-1}(x)=\frac{1}{x}+3$};
+        \draw[samples=65, domain=1/4:7, variable=\x, smooth, red, thick] plot (\x, {1/(\x) +3}) node[right, scale=.9] {$f^{-1}(x)$};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -163,15 +163,15 @@ This symmetry occurs because we interchanged the roles of <m>x</m> and <m>y</m> 
 	<li>Similarly, there is no point on the graph of <m>f^{-1}</m> with <m>y=3</m>, so its range is all real numbers except 3.</li></ul></p></li></ol></p></solution></example>
 
 <exercise><statement><p><ol label="a">
-	<li>Graph <m>g(x)=2x-6</m> and its inverse function on the grid below, and sketch in the line <m>y=x</m> to show the symmetry.
-<sidebyside width="45%"><!--<image source="images/8grid.png"><description>grid</description></image>-->
+    <li>Graph <m>g(x)=2x-6</m> and its inverse function on the grid below, and sketch in the line <m>y=x</m> to show the symmetry.
+<sidebyside width="33%"><!--<image source="images/8grid.png"><description>grid</description></image>-->
      <image xml:id="fig-8grid">
         <description>grid</description>
         <latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
         }
-        \begin{tikzpicture} [scale=0.4]
+        \begin{tikzpicture} [scale=0.3]
         \draw[cyan] (-8,-8) grid (8,8);
         \draw[black,thick,->,>=stealth'] (-8,0)--(8.5,0) node[right, scale=.9] {$x$};
         \draw[black,thick,->,>=stealth'] (0,-8)--(0,8.5) node[above, scale=.9] {$y$};
@@ -184,24 +184,24 @@ This symmetry occurs because we interchanged the roles of <m>x</m> and <m>y</m> 
     </image>
 </sidebyside></li>
 <li>Find the domain and range of <m>g</m>, and the domain and range of <m>g^{-1}</m>.</li></ol></p></statement><answer><p><ol label="a">
-    <li><sidebyside width="60%" margins="0 40%">
+    <li><sidebyside width="33%" margins="0 67%">
     <image xml:id="exer8-2-2ans">
         <description>linear function and inverse</description>
         <latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
         }
-        \begin{tikzpicture} [scale=0.4]
+        \begin{tikzpicture} [scale=0.3]
         \draw[cyan] (-8,-8) grid (8,8);
-        \draw[black,thick,->,>=stealth'] (-8,0)--(8.5,0) node[right, scale=.9] {$x$};
-        \draw[black,thick,->,>=stealth'] (0,-8)--(0,8.5) node[above, scale=.9] {$y$};
+        \draw[black,thick,->,>=stealth'] (-8,0)--(8.5,0) node[right] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-8)--(0,8.5) node[above] {$y$};
         \foreach \x in {-8,-4,4,8} {
           \draw[black,thick] (\x,0.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1] {\x};
           \draw[black,thick] (0.1,\x)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1] {\x};
         };
-        \draw[gray!80!, thick, dashed] (8,8)--(-8,-8) node[below left, text=black] {$y=x$};
-        \draw[blue, densely dashed,thick] (-1,-8)--(7,8) node[above, scale=.9] {$g(x)=2x-6$};
-        \draw[red, thick] (-8,-1)--(8,7) node[right, scale=.9] {$g^{-1}(x)=\frac{1}{2}x+3 $};
+        \draw[gray!80!, thick, dashed] (8,8)--(-8,-8);
+        \draw[blue, densely dashed,thick] (-1,-8)--(7,8);
+        \draw[red, thick] (-8,-1)--(8,7);
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -801,22 +801,22 @@ and solving for <m>\sin \theta</m> gives us <m>\sin \theta = \dfrac{\pm 4}{5}</m
 
 <exercises>
 <exercisegroup cols="3"><introduction><p><ol label="a">
-	<li>Find a formula for the inverse function.</li>
-	<li>State the domain and range of the inverse function.</li>
-	<li>Graph the function and its inverse on the same grid.</li></ol></p></introduction>
+    <li>Find a formula for the inverse function.</li>
+    <li>State the domain and range of the inverse function.</li>
+    <li>Graph the function and its inverse on the same grid.</li></ol></p></introduction>
 
     <exercise number="1"><statement><m>f(x) = \dfrac{1}{2}x-4</m></statement><answer><p><ol label="a" >
         <li><m>f^{-1}(x)=2x+8</m></li>
         <li>Domain: <m>(-\infty, \infty)</m>; 
             Range: <m>(-\infty, \infty)</m></li>
-            <li><sidebyside width="45%" margins="0 55%"><!--<image source="images/ar8-2-1ans.png"><description>graph</description></image>-->
+            <li><sidebyside width="100%" margins="0 0%"><!--<image source="images/ar8-2-1ans.png"><description>graph</description></image>-->
     <image xml:id="ar8-2-1ans">
         <description>linear graph and inverse</description>
         <latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
         }
-        \begin{tikzpicture} [scale=0.35]
+        \begin{tikzpicture} [scale=0.2]
         \draw[cyan] (-10,-10) grid[step=2] (10,10);
         \draw[black,thick,->,>=stealth'] (-10,0)--(10.7,0) node[right, scale=.9] {$x$};
         \draw[black,thick,->,>=stealth'] (0,-10)--(0,10.7) node[above, scale=.9] {$y$};
@@ -824,37 +824,37 @@ and solving for <m>\sin \theta</m> gives us <m>\sin \theta = \dfrac{\pm 4}{5}</m
           \draw[black,thick] (\x,0.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1] {\x};
           \draw[black,thick] (0.1,\x)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1] {\x};
         };
-        \draw[gray!80!, thick, dashed] (-10,-10)--(10,10) node[above right, text=black, scale=.8] {$y=x$};
-        \draw[blue, densely dashed,thick] (-10,-9)--(10,1) node[right, scale=.8] {$f(x)=\frac{1}{2}x-4$};
-        \draw[red, thick] (-9,-10)--(1,10) node[above right, xshift=-2, scale=.8] {$f^{-1}(x)=2x+8 $};
+        \draw[gray!80!, thick, dashed] (-10,-10)--(10,10);
+        \draw[blue, densely dashed,thick] (-10,-9)--(10,1) node[right, scale=.8] {$f(x)$};
+        \draw[red, thick] (-9,-10)--(1,10) node[above right, xshift=-2, scale=.8] {$f^{-1}(x) $};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
             </sidebyside></li>
     </ol></p></answer></exercise> 
 
-	<exercise number="2"><statement><m>g(x) = 3x+6</m></statement><answer><p><ol label="a">
+    <exercise number="2"><statement><m>g(x) = 3x+6</m></statement><answer><p><ol label="a">
         <li><m>g^{-1}(x)=\dfrac{1}{3}x-2</m></li>
         <li>Domain: <m>(-\infty, \infty)</m>; 
             Range: <m>(-\infty, \infty)</m></li>
-            <li><sidebyside width="45%" margins="0 55%"><!--<image source="images/ar8-2-2ans.png"><description>graph</description></image>-->
+            <li><sidebyside width="100%" margins="0 0%"><!--<image source="images/ar8-2-2ans.png"><description>graph</description></image>-->
     <image xml:id="ar8-2-2ans">
         <description>linear function and inverse</description>
         <latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
         }
-        \begin{tikzpicture} [scale=0.35]
+        \begin{tikzpicture} [scale=0.2]
         \draw[cyan] (-10,-10) grid[step=2] (10,10);
-        \draw[black,thick,->,>=stealth'] (-10,0)--(10.7,0) node[right, scale=.9] {$x$};
-        \draw[black,thick,->,>=stealth'] (0,-10)--(0,10.7) node[above, scale=.9] {$y$};
+        \draw[black,thick,->,>=stealth'] (-10,0)--(10.7,0) node[right] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-10)--(0,10.7) node[above] {$y$};
         \foreach \x in {-8,-4,4,8} {
           \draw[black,thick] (\x,0.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1] {\x};
           \draw[black,thick] (0.1,\x)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1] {\x};
         };
-        \draw[gray!80!, thick, dashed] (-10,-10)--(10,10) node[above right, text=black, scale=.8] {$y=x$};
-        \draw[blue, densely dashed,thick] (-16/3,-10)--(4/3,10) node[above right, xshift=-2, scale=.8] {$g(x)=3x+6$};
-        \draw[red, thick] (-10,-16/3)--(10,4/3) node[ right, scale=.8] {$g^{-1}(x)=\frac{1}{3} x-2 $};
+        \draw[gray!80!, thick, dashed] (-10,-10)--(10,10);
+        \draw[blue, densely dashed,thick] (-16/3,-10)--(4/3,10) node[above right, xshift=-2] {$g(x)$};
+        \draw[red, thick] (-10,-16/3)--(10,4/3) node[ right, yshift=2] {$g^{-1}(x)$};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -864,14 +864,14 @@ and solving for <m>\sin \theta</m> gives us <m>\sin \theta = \dfrac{\pm 4}{5}</m
         <li><m>F^{-1}(x)=\dfrac{1}{x-2}</m></li>
         <li>Domain: <m>x \not=0</m>; 
             Range: <m>y \not=2</m></li>
-            <li><sidebyside width="40%" margins="0 60%"><!--<image source="images/ar8-2-3ans.png"><description>graph</description></image>-->
+            <li><sidebyside width="100%" margins="0 0%"><!--<image source="images/ar8-2-3ans.png"><description>graph</description></image>-->
     <image xml:id="ar8-2-3ans">
         <description>transformations of reciprocal function</description>
         <latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
         }
-        \begin{tikzpicture} [scale=0.5]
+        \begin{tikzpicture} [scale=0.3]
         \draw[cyan] (-6,-6) grid[step=2] (6,6);
         \draw[black,thick,->,>=stealth'] (-6,0)--(6.7,0) node[right, scale=.9] {$x$};
         \draw[black,thick,->,>=stealth'] (0,-6)--(0,6.7) node[above, scale=.9] {$y$};
@@ -879,28 +879,28 @@ and solving for <m>\sin \theta</m> gives us <m>\sin \theta = \dfrac{\pm 4}{5}</m
           \draw[black,thick] (\x,0.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1] {\x};
           \draw[black,thick] (0.1,\x)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1] {\x};
         };
-        \draw[gray!80!, thick, dashed] (-6,-6)--(6,6) node[above right, text=black, scale=.8] {$y=x$};
-        \draw[samples=65,domain=-1/8:-6, variable=\x, smooth, blue, densely dashed,thick] plot (\x,{ 2+1/\x}) node[above , xshift=-2, scale=.8, fill=white, inner sep=1] {$F(x)=2+\frac{1}{x} $};
+        \draw[gray!80!, thick, dashed] (-6,-6)--(6,6) ;
+        \draw[samples=65,domain=-1/8:-6, variable=\x, smooth, blue, densely dashed,thick] plot (\x,{ 2+1/\x}) node[above , xshift=-2, scale=.8, fill=white, inner sep=1] {$F(x) $};
         \draw[samples=65,domain=1/4:6, variable=\x, smooth, blue, densely dashed,thick] plot (\x,{ 2+1/\x});
         \draw[samples=65,domain=-6:11/6, variable=\x, smooth ,red, thick] plot (\x,{ 1/(\x-2)});
-        \draw[samples=65,domain=6:13/6, variable=\x ,red, thick] plot (\x,{ 1/(\x-2)}) node[above right, xshift=-10, scale=.8, inner sep=1]  {$F^{-1}(x)=\frac{1}{ x-2} $};
+        \draw[samples=65,domain=6:13/6, variable=\x ,red, thick] plot (\x,{ 1/(\x-2)}) node[above right, xshift=-10, scale=.8, inner sep=1]  {$F^{-1}(x) $};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
             </sidebyside></li></ol></p></answer></exercise>
 
-	<exercise number="4"><statement><m>G(x) = \dfrac{1}{x+5}</m></statement><answer><p><ol label="a">
+    <exercise number="4"><statement><m>G(x) = \dfrac{1}{x+5}</m></statement><answer><p><ol label="a">
         <li><m>G^{-1}(x)=\dfrac{1}{x}-5</m></li>
         <li>Domain: <m>x \not=-5</m>; 
             Range: <m>y \not=0</m></li>
-            <li><sidebyside width="40%" margins="0 60%"><!--<image source="images/ar8-2-4ans.png"><description>graph</description></image>-->
+            <li><sidebyside width="100%" margins="0 0%"><!--<image source="images/ar8-2-4ans.png"><description>graph</description></image>-->
     <image xml:id="ar8-2-4ans">
         <description>transformations of reciprocal function</description>
         <latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
         }
-        \begin{tikzpicture} [scale=0.5]
+        \begin{tikzpicture} [scale=0.3]
         \draw[cyan] (-8,-8) grid[step=2] (4,4);
         \draw[black,thick,->,>=stealth'] (-8,0)--(4.7,0) node[right, scale=.9] {$x$};
         \draw[black,thick,->,>=stealth'] (0,-8)--(0,5.1) node[above, scale=.9] {$y$};
@@ -908,28 +908,28 @@ and solving for <m>\sin \theta</m> gives us <m>\sin \theta = \dfrac{\pm 4}{5}</m
           \draw[black,thick] (\x,0.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1] {\x};
           \draw[black,thick] (0.1,\x)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1] {\x};
         };
-        \draw[gray!80!, thick, dashed] (-8,-8)--(4,4) node[ right, yshift=-2, text=black, scale=.8] {$y=x$};
-        \draw[samples=65,domain=4:-19/4, variable=\x, smooth, blue, densely dashed,thick] plot (\x,{ 1/(\x+5)}) node[above , xshift=-2, scale=.8, fill=white, inner sep=1] {$G(x)=\frac{1}{x+5} $};
+        \draw[gray!80!, thick, dashed] (-8,-8)--(4,4);
+        \draw[samples=65,domain=4:-19/4, variable=\x, smooth, blue, densely dashed,thick] plot (\x,{ 1/(\x+5)}) node[above , xshift=-2, scale=.8, fill=white, inner sep=1] {$G(x) $};
         \draw[samples=65,domain=-8:-41/8, variable=\x, smooth, blue, densely dashed,thick] plot (\x,{ 1/(\x+5)});
         \draw[samples=65,domain=-8:-1/3, variable=\x, smooth ,red, thick] plot (\x,{ 1/(\x)-5});
-        \draw[samples=65,domain=4:1/9, variable=\x ,red, thick] plot (\x,{ 1/(\x)-5}) node[above right, xshift=0, scale=.8, inner sep=1]  {$G^{-1}(x)=\frac{1}{ x}-5 $};
+        \draw[samples=65,domain=4:1/9, variable=\x ,red, thick] plot (\x,{ 1/(\x)-5}) node[above right, xshift=0, scale=.8, inner sep=1]  {$G^{-1}(x)$};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
             </sidebyside></li></ol></p></answer></exercise>
 
-	<exercise number="5"><statement><m>h(x) = \sqrt{x+2}</m></statement><answer><p><ol label="a">
+    <exercise number="5"><statement><m>h(x) = \sqrt{x+2}</m></statement><answer><p><ol label="a">
         <li><m>h^{-1}(x)=x^2-2</m></li>
         <li>Domain: <m>x \ge 0</m>; 
             Range: <m>y \ge -2</m></li>
-            <li><sidebyside width="40%" margins="0 60%"><!--<image source="images/ar8-2-5ans.png"><description>graph</description></image>-->
+            <li><sidebyside width="100%" margins="0 0%"><!--<image source="images/ar8-2-5ans.png"><description>graph</description></image>-->
     <image xml:id="ar8-2-5ans">
         <description>transformations of square root</description>
         <latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
         }
-        \begin{tikzpicture} [scale=0.6]
+        \begin{tikzpicture} [scale=0.45]
         \draw[cyan] (-4,-4) grid[step=2] (4,4);
         \draw[black,thick,->,>=stealth'] (-4,0)--(4.5,0) node[right, scale=.9] {$x$};
         \draw[black,thick,->,>=stealth'] (0,-4)--(0,4.5) node[above, scale=.9] {$y$};
@@ -937,26 +937,26 @@ and solving for <m>\sin \theta</m> gives us <m>\sin \theta = \dfrac{\pm 4}{5}</m
           \draw[black,thick] (\x,0.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1] {\x};
           \draw[black,thick] (0.1,\x)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1] {\x};
         };
-        \draw[gray!80!, thick, dashed] (-4,-4)--(4,4) node[ right, yshift=-2, text=black, scale=.8] {$y=x$};
-        \draw[samples=65,domain=-2:4, variable=\x, smooth, blue, densely dashed,thick] plot (\x,{ sqrt(\x+2) }) node[right, xshift=1,  scale=.8, fill=white, inner sep=1] {$h(x)=\sqrt{x+2} $};
-        \draw[samples=65,domain=-2:4, variable=\x, smooth ,red, thick] plot ({ sqrt(\x+2) },\x) node[above , xshift=0, scale=.8, inner sep=1]  {$h^{-1}(x)=x^2 -2 $};
+        \draw[gray!80!, thick, dashed] (-4,-4)--(4,4) ;
+        \draw[samples=65,domain=-2:4, variable=\x, smooth, blue, densely dashed,thick] plot (\x,{ sqrt(\x+2) }) node[right, xshift=1,  scale=.8, fill=white, inner sep=1] {$h(x) $};
+        \draw[samples=65,domain=-2:4, variable=\x, smooth ,red, thick] plot ({ sqrt(\x+2) },\x) node[above , xshift=0, scale=.8, inner sep=1]  {$h^{-1}(x) $};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
             </sidebyside></li></ol></p></answer></exercise>
 
-	<exercise number="6"><statement><m>H(x) = 3+\sqrt[3]{x}</m></statement><answer><p><ol label="a">
+    <exercise number="6"><statement><m>H(x) = 3+\sqrt[3]{x}</m></statement><answer><p><ol label="a">
         <li><m>H^{-1}(x)=(x-3)^3</m></li>
         <li>Domain: <m>(-\infty, \infty)</m>; 
             Range: <m>(-\infty, \infty)</m></li>
-            <li><sidebyside width="40%" margins="0 60%"><!--<image source="images/ar8-2-6ans.png"><description>graph</description></image>-->
+            <li><sidebyside width="100%" margins="0 0%"><!--<image source="images/ar8-2-6ans.png"><description>graph</description></image>-->
     <image xml:id="ar8-2-6ans">
         <description>transformations of cube root</description>
         <latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
         }
-        \begin{tikzpicture} [scale=0.5]
+        \begin{tikzpicture} [scale=0.3]
         \draw[cyan] (-4,-4) grid[step=2] (8,8);
         \draw[black,thick,->,>=stealth'] (-4,0)--(8.6,0) node[right, scale=.9] {$x$};
         \draw[black,thick,->,>=stealth'] (0,-4)--(0,8.6) node[above, scale=.9] {$y$};
@@ -964,9 +964,9 @@ and solving for <m>\sin \theta</m> gives us <m>\sin \theta = \dfrac{\pm 4}{5}</m
           \draw[black,thick] (\x,0.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1] {\x};
           \draw[black,thick] (0.1,\x)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1] {\x};
         };
-        \draw[gray!80!, thick, dashed] (-4,-4)--(4,4) node[ right, yshift=-2, text=black, scale=.8] {$y=x$};
-        \draw[samples=65,domain={3-4^(1/3)}:5, variable=\x, smooth, blue, densely dashed,thick] plot ({(\x-3)^3},\x) node[right, xshift=1,  scale=.8, fill=white, inner sep=1] {$H(x)=3+\sqrt[3]{x} $};
-        \draw[samples=65,domain={3-4^(1/3)}:5, variable=\x, smooth ,red, thick] plot (\x,{ (\x-3)^3 }) node[above , xshift=0, scale=.8, inner sep=1]  {$H^{-1}(x)=(x-3)^3 $};
+        \draw[gray!80!, thick, dashed] (-4,-4)--(4,4) ;
+        \draw[samples=65,domain={3-4^(1/3)}:5, variable=\x, smooth, blue, densely dashed,thick] plot ({(\x-3)^3},\x) node[right, xshift=1,  scale=.8, fill=white, inner sep=1] {$H(x) $};
+        \draw[samples=65,domain={3-4^(1/3)}:5, variable=\x, smooth ,red, thick] plot (\x,{ (\x-3)^3 }) node[above , xshift=0, scale=.8, inner sep=1]  {$H^{-1}(x) $};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -975,61 +975,62 @@ and solving for <m>\sin \theta</m> gives us <m>\sin \theta = \dfrac{\pm 4}{5}</m
 
 <subsubsection><title>Answers to 8.2 Exercises</title>
 <p><ol label="1">
-	<li><m>g^{-1}(x)=\dfrac{1}{2}x+3</m></li>
-	<li><p><ol label="a">
-		<li><sidebyside  width="60%" margins="0 40%"><image source="images/exer8-2-2ans"><description>graph</description></image></sidebyside></li>
-		<li>The domain and range of <m>g</m> and of <m>g^{-1}</m> each include all real numbers.</li></ol></p></li>
-	<li>I and III</li>
-	<li><p><ol label="a">
-		<li><m>\dfrac{\pi}{3}</m></li>
-		<li><m>\dfrac{\pi}{3}</m></li></ol></p></li>
-	<li><m>\pi</m></li>
-	<li><m>\dfrac{-\pi}{4}</m></li>
-	<li><p><ol label="a">
-		<li><m>\alpha=\tan^{-1}(\dfrac{2}{d})</m></li>
-		<li><m>\beta=\tan^{-1}(\dfrac{3}{d})-\tan^{-1}(\dfrac{2}{d})</m></li></ol></p></li>
-	<li><p><ol label="a">
-		<li><m>\dfrac{-5}{2}</m></li>
-		<li><m>\dfrac{\pi}{6}</m></li></ol></p></li>
-	<li><m>\dfrac{3}{\sqrt{13}}</m></li>
-	<li><m>\dfrac{z}{\sqrt{1+z^2}}</m></li>
+    <li><m>g^{-1}(x)=\dfrac{1}{2}x+3</m></li>
+    <li><p><ol label="a">
+        <li><sidebyside width="33%" margins="0 67%"><image source="images/exer8-2-2ans"><description>graph</description></image></sidebyside></li>
+        <li>The domain and range of <m>g</m> and of <m>g^{-1}</m> each include all real numbers.</li></ol></p></li>
+    <li>I and III</li>
+    <li><p><ol label="a">
+        <li><m>\dfrac{\pi}{3}</m></li>
+        <li><m>\dfrac{\pi}{3}</m></li></ol></p></li>
+    <li><m>\pi</m></li>
+    <li><m>\dfrac{-\pi}{4}</m></li>
+    <li><p><ol label="a">
+        <li><m>\alpha=\tan^{-1}(\dfrac{2}{d})</m></li>
+        <li><m>\beta=\tan^{-1}(\dfrac{3}{d})-\tan^{-1}(\dfrac{2}{d})</m></li></ol></p></li>
+    <li><p><ol label="a">
+        <li><m>\dfrac{-5}{2}</m></li>
+        <li><m>\dfrac{\pi}{6}</m></li></ol></p></li>
+    <li><m>\dfrac{3}{\sqrt{13}}</m></li>
+    <li><m>\dfrac{z}{\sqrt{1+z^2}}</m></li>
 </ol></p></subsubsection>
 
 <subsubsection><title>Algebra Refresher Answers</title>
 <p><ol label="1">
-	<li><p><ol label="a" >
-		<li><m>f^{-1}(x)=2x+8</m></li>
-		<li>Dom: <m>(-\infty, \infty)</m>
-			Rge: <m>(-\infty, \infty)</m></li>
-			<li><sidebyside width="35%"><image source="images/ar8-2-1ans"><description>graph</description></image></sidebyside></li>
-	</ol></p></li>
-	<li><p><ol label="a">
-		<li><m>g^{-1}(x)=\dfrac{1}{3}x-2</m></li>
-		<li>Dom: <m>(-\infty, \infty)</m>
-			Rge: <m>(-\infty, \infty)</m></li>
-			<li><sidebyside width="35%"><image source="images/ar8-2-2ans"><description>graph</description></image></sidebyside></li></ol></p></li>
-	<li><p><ol label="a">
-		<li><m>F^{-1}(x)=\dfrac{1}{x-2}</m></li>
-		<li>Dom: <m>x \not=0</m>
-			Rge: <m>y \not=2</m></li>
-			<li><sidebyside width="35%"><image source="images/ar8-2-3ans"><description>graph</description></image></sidebyside></li></ol></p></li>
-	<li><p><ol label="a">
-		<li><m>G^{-1}(x)=\dfrac{1}{x}-5</m></li>
-		<li>Dom: <m>x \not=-5</m>
-			Rge: <m>y \not=0</m></li>
-			<li><sidebyside width="35%"><image source="images/ar8-2-4ans"><description>graph</description></image></sidebyside></li></ol></p></li>
-	<li><p><ol label="a">
-		<li><m>h^{-1}(x)=x^2-2</m></li>
-		<li>Dom: <m>x \ge 0</m>
-			Rge: <m>y \ge -2</m></li>
-			<li><sidebyside width="35%"><image source="images/ar8-2-5ans"><description>graph</description></image></sidebyside></li></ol></p></li>
-	<li><p><ol label="a">
-		<li><m>H^{-1}(x)=(x-3)^3</m></li>
-		<li>Dom: <m>(-\infty, \infty)</m>
-			Rge: <m>(-\infty, \infty)</m></li>
-			<li><sidebyside width="35%"><image source="images/ar8-2-6ans"><description>graph</description></image></sidebyside></li></ol></p></li>
-	</ol></p></subsubsection>
+    <li><p><ol label="a" >
+        <li><m>f^{-1}(x)=2x+8</m></li>
+        <li>Dom: <m>(-\infty, \infty)</m>
+            Rge: <m>(-\infty, \infty)</m></li>
+            <li><sidebyside width="35%"><image source="images/ar8-2-1ans"><description>graph</description></image></sidebyside></li>
+    </ol></p></li>
+    <li><p><ol label="a">
+        <li><m>g^{-1}(x)=\dfrac{1}{3}x-2</m></li>
+        <li>Dom: <m>(-\infty, \infty)</m>
+            Rge: <m>(-\infty, \infty)</m></li>
+            <li><sidebyside width="35%"><image source="images/ar8-2-2ans"><description>graph</description></image></sidebyside></li></ol></p></li>
+    <li><p><ol label="a">
+        <li><m>F^{-1}(x)=\dfrac{1}{x-2}</m></li>
+        <li>Dom: <m>x \not=0</m>
+            Rge: <m>y \not=2</m></li>
+            <li><sidebyside width="35%"><image source="images/ar8-2-3ans"><description>graph</description></image></sidebyside></li></ol></p></li>
+    <li><p><ol label="a">
+        <li><m>G^{-1}(x)=\dfrac{1}{x}-5</m></li>
+        <li>Dom: <m>x \not=-5</m>
+            Rge: <m>y \not=0</m></li>
+            <li><sidebyside width="35%"><image source="images/ar8-2-4ans"><description>graph</description></image></sidebyside></li></ol></p></li>
+    <li><p><ol label="a">
+        <li><m>h^{-1}(x)=x^2-2</m></li>
+        <li>Dom: <m>x \ge 0</m>
+            Rge: <m>y \ge -2</m></li>
+            <li><sidebyside width="35%"><image source="images/ar8-2-5ans"><description>graph</description></image></sidebyside></li></ol></p></li>
+    <li><p><ol label="a">
+        <li><m>H^{-1}(x)=(x-3)^3</m></li>
+        <li>Dom: <m>(-\infty, \infty)</m>
+            Rge: <m>(-\infty, \infty)</m></li>
+            <li><sidebyside width="35%"><image source="images/ar8-2-6ans"><description>graph</description></image></sidebyside></li></ol></p></li>
+    </ol></p></subsubsection>
 </subsection>
+
 
 <subsection><title>Section 8.2 Summary</title>	
 
