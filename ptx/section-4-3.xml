@@ -485,17 +485,17 @@
           input/.style    = {coordinate}, % Input
           output/.style   = {coordinate} % Output
         }
-        \begin{tikzpicture} [yscale=.6]
+        \begin{tikzpicture} [xscale=.9,yscale=.54]
         \draw[cyan, xstep=.5, ystep=.5] (0,0) grid (6,5);
 
         \draw[->] (-0.1,0) -- (6.3,0) node[right] {$t$};
         \draw[->] (0,-.1) -- (0,5.3) node[above] {$y$};
 
         \foreach \x [evaluate=\x as \xi using int( 10* \x )] in {0, 1, 2, ..., 6}
-        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi $};
 
         \foreach \y  [evaluate=\y as \yi using int( 20* \y )] in {2.5,5}
-        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
 
         \draw[domain=-0:6,smooth,variable=\x,red,very thick] plot ({\x},{ 2.5+2.5*sin(deg(\x*2*pi/3))});
         \end{tikzpicture}]]>
@@ -512,17 +512,17 @@
           input/.style    = {coordinate}, % Input
           output/.style   = {coordinate} % Output
         }
-        \begin{tikzpicture} [yscale=.6]
+        \begin{tikzpicture} [xscale=.9,yscale=.54]
         \draw[cyan, xstep=.5, ystep=.5] (0,0) grid (6,5);
 
         \draw[->] (-0.1,0) -- (6.3,0) node[right] {$t$};
         \draw[->] (0,-.1) -- (0,5.3) node[above] {$y$};
 
         \foreach \x [evaluate=\x as \xi using int( 10* \x )] in {0, 1, 2, ..., 6}
-        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi $};
 
         \foreach \y  [evaluate=\y as \yi using int( 20* \y )] in {2.5,5}
-        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
 
         \draw[domain=-0:6,smooth,variable=\x,red,very thick] plot ({\x},{ 2.5-2.5*cos(deg(\x*2*pi/3))});
         \end{tikzpicture}]]>
@@ -539,17 +539,17 @@
           input/.style    = {coordinate}, % Input
           output/.style   = {coordinate} % Output
         }
-        \begin{tikzpicture} [yscale=.6]
+        \begin{tikzpicture} [xscale=.9,yscale=.54]
         \draw[cyan, xstep=.5, ystep=.5] (0,0) grid (6,5);
 
         \draw[->] (-0.1,0) -- (6.3,0) node[right] {$t$};
         \draw[->] (0,-.1) -- (0,5.3) node[above] {$y$};
 
         \foreach \x [evaluate=\x as \xi using int( 50* \x /3)] in {0, 3, 6}
-        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi $};
 
         \foreach \y  [evaluate=\y as \yi using int( 6* \y )] in {2.5,5}
-        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {   \yi};
 
         \draw[domain=-0:6,smooth,variable=\x,red,very thick] plot ({\x},{ 2.5-2.5*cos(deg(\x*2*pi/3))});
         \end{tikzpicture}]]>

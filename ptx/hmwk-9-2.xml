@@ -10,7 +10,29 @@
     <title>Homework 9-2</title>
 
 <exercisegroup cols="2"><introduction><p>For Problems 1<ndash/>4, give the coordinate form of each vector shown in the figure. Use the coordinate form to find the following.</p>
-<sidebyside width="40%"><image source="images/hp9-2-1.png"><description>vectors</description></image></sidebyside>
+<sidebyside width="40%"><!--<image source="images/hp9-2-1.png"><description>vectors</description></image>-->
+    <image xml:id="hp9-2-1">
+        <description>vectors</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=0.5]
+
+        \draw[cyan] (0,0) grid (13,9);
+        \coordinate (u) at (3,2);
+        \coordinate (v) at (-5,3);
+        \coordinate (w) at (6,-3);
+        \coordinate (z) at (-3, -5);
+
+        \draw[red, thick,->,>=stealth'] (1,6)--++(u) node[above right, xshift=-1, fill=white, inner sep=1] {\textbf{u}};
+        \draw[red, thick,->,>=stealth'] (11,5)--++(v) node[above , xshift=2, yshift=1, fill=white, inner sep=1] {\textbf{v}};;
+        \draw[red, thick,->,>=stealth'] (1,4)--++(w) node[ below, xshift=-3, yshift=-4, fill=white, inner sep=1] {\textbf{w}};
+        \draw[red, thick,->,>=stealth'] (12,6)--++(z) node[below, xshift=4, yshift=-3, fill=white, inner sep=1] {\textbf{z}};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 </introduction>
 
 <exercise number="1"><statement><p><ol label="a" cols="3">
