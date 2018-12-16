@@ -3,22 +3,64 @@
 <exercises xml:id="chap10-rev-problems"  xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Review Problems</title>
 
-<exercisegroup cols="4"><introduction><p>For Problems 1-4, use the grid below to plot the points whose polar coordinates are given. </p>
-<sidebyside width="30%"><image source="images/hp10-rev-1.png"><description>grid</description></image></sidebyside>
+<exercisegroup cols="2"><introduction><p>For Problems 1<ndash/>4, use the grid below to plot the points whose polar coordinates are given. </p>
+<sidebyside width="30%"><image source="images/hp10-1-1"><description>grid</description></image></sidebyside>
 </introduction>
 
-<exercise number="1"><statement><m>(4, \dfrac{5\pi}{6})</m></statement>
-<answer><sidebyside width="30%"><image source="images/hp10-rev-1ans.png"><description>graph</description></image></sidebyside></answer></exercise>
+<exercise number="1"><statement><m>\left(4, \dfrac{5\pi}{6}\right)</m></statement>
+<answer><sidebyside width="60%"><!--<image source="images/hp10-rev-1ans.png"><description>graph</description></image>-->
+    <image xml:id="hp10-rev-1ans">
+        <description>polar plot</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.4]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[cyan] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[cyan] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \filldraw[red] (150:4) circle (5pt) node[below, xshift=2, yshift=-5, text=black, fill=white, inner sep=1]{$(4,\frac{5\pi}{6})$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+
+</sidebyside></answer></exercise>
 
 <exercise number="2"><statement><m>(1, \dfrac{-5\pi}{3})</m></statement></exercise>
 
 <exercise number="3"><statement><m>(-3, \dfrac{\pi}{2})</m></statement>
-<answer><sidebyside width="30%"><image source="images/hp10-rev-3ans.png"><description>graph</description></image></sidebyside></answer></exercise>
+<answer><sidebyside width="60%"><!--<image source="images/hp10-rev-3ans.png"><description>graph</description></image>-->
+    <image xml:id="hp10-rev-3ans">
+        <description>polar plot</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.4]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[cyan] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[cyan] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \filldraw[red] (90:-3) circle (5pt) node[above right, xshift=-2, yshift=3, text=black, fill=white, inner sep=1]{$(-3,\frac{\pi}{2})$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer></exercise>
 
 <exercise number="4"><statement><m>(2, \dfrac{7\pi}{4})</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="4"><introduction><p>For Problems 5-8, convert the polar coordinates to Cartesian coordinates.
+
+<exercisegroup cols="4"><introduction><p>For Problems 5<ndash/>8, convert the polar coordinates to Cartesian coordinates.
 </p></introduction>
 
 <exercise number="5"><statement><m>(1, \dfrac{5\pi}{4})</m></statement>
@@ -32,7 +74,7 @@
 <exercise number="8"><statement><m>(-5.6, -1.1)</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="4"><introduction><p>For Problems 9-12, convert the Cartesian coordinates to polar coordinates with <m>r \ge 0</m> and <m>0 \le \theta \le 2\pi</m>.  Give exact values for <m>r</m> and <m>\theta</m>.</p></introduction>
+<exercisegroup cols="4"><introduction><p>For Problems 9<ndash/>12, convert the Cartesian coordinates to polar coordinates with <m>r \ge 0</m> and <m>0 \le \theta \le 2\pi</m>.  Give exact values for <m>r</m> and <m>\theta</m>.</p></introduction>
 
 <exercise number="9"><statement><m>(-3, 3)</m></statement>
 <answer><m>(3\sqrt{2}, \dfrac{3\pi}{4})</m></answer></exercise>
@@ -45,20 +87,65 @@
 <exercise number="12"><statement><m>(-15, -8)</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 13-16, sketch the region described by the inequalities.</p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 13<ndash/>16, sketch the region described by the inequalities.</p></introduction>
 
 <exercise number="13"><statement><m>r \ge 0,~ \dfrac{-\pi}{4} \le \theta \le \dfrac{\pi}{4}</m></statement>
-<answer><sidebyside width="30%"><image source="images/hp10-rev-13ans.png"><description>graph</description></image></sidebyside></answer></exercise>
+<answer><sidebyside width="60%"><!--<image source="images/hp10-rev-13ans.png"><description>graph</description></image>-->
+    <image xml:id="hp10-rev-13ans">
+        <description>region on polar grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.4]
+        \coordinate(O) at (0,0);
+        \filldraw [yellow, opacity = 0.6] (O)--(-45:{5*sqrt(2)}) -- (45:{5*sqrt(2)}) -- (O);
+        \draw[blue, thick] (-45:{5*sqrt(2)})--(O)--(45:{5*sqrt(2)});
+
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[cyan] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[cyan] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+
+</sidebyside></answer></exercise>
 
 <exercise number="14"><statement><m>1 \le r \le 3,~0 \le \theta \le \pi</m></statement></exercise>
 
 <exercise number="15"><statement><m>0 \le r \le 2</m></statement>
-<answer><sidebyside width="30%"><image source="images/hp10-rev-15ans.png"><description>graph</description></image></sidebyside></answer></exercise>
+<answer><sidebyside width="60%"><!--<image source="images/hp10-rev-15ans.png"><description>graph</description></image>-->
+    <image xml:id="hp10-rev-15ans">
+        <description>region on polar grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.4]
+        \coordinate(O) at (0,0);
+        \draw[blue, thick, fill=yellow, fill opacity = 0.6] (O) circle (2cm);
+
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[cyan] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[cyan] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+
+</sidebyside></answer></exercise>
 
 <exercise number="16"><statement><m>r \ge 4</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 17-20, convert the equation into Cartesian coordinates.</p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 17<ndash/>20, convert the equation into Cartesian coordinates.</p></introduction>
 
 <exercise number="17"><statement><m>r=1</m></statement>
 <answer><m>x^2+y^2=1</m></answer></exercise>
@@ -71,7 +158,7 @@
 <exercise number="20"><statement><m>3\tan \theta = 6r\sin \theta - 1</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 21-24, convert the equation into polar coordinates.</p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 21<ndash/>24, convert the equation into polar coordinates.</p></introduction>
 
 <exercise number="21"><statement><m>x+y = 2</m></statement>
 <answer><m>r\cos\theta+r\sin\theta=2</m></answer></exercise>
@@ -84,7 +171,7 @@
 <exercise number="24"><statement><m>y^2 = 2y = x - x^2</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 25-28, use the catalog of polar graphs to help you identify and sketch the curve. Check your work by graphing with a calculator.</p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 25<ndash/>28, use the catalog of polar graphs to help you identify and sketch the curve. Check your work by graphing with a calculator.</p></introduction>
 
 <exercise number="25"><statement><m>r=3</m></statement>
 <answer><p>Circle of radius 3 centered at the origin</p></answer></exercise>
@@ -97,33 +184,117 @@
 <exercise number="28"><statement><m>r^2=9\sin 2\theta</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 29-32, write a polar equation for the graph.</p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 29<ndash/>32, write a polar equation for the graph.</p></introduction>
 
-<exercise number="29"><statement><sidebyside width="70%"><image source="images/hp10-rev-29.png"><description>graph</description></image></sidebyside></statement>
+<exercise number="29"><statement><sidebyside width="70%"><!--<image source="images/hp10-rev-29.png"><description>graph</description></image>-->
+    <image xml:id="hp10-rev-29">
+        <description>polar grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.5]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[cyan] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[cyan] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[red, very thick] (O) circle (4cm);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+
+</sidebyside></statement>
 <answer><m>r=4</m></answer></exercise>
 
-<exercise number="30"><statement><sidebyside width="70%"><image source="images/hp10-rev-30.png"><description>graph</description></image></sidebyside></statement></exercise>
+<exercise number="30"><statement><sidebyside width="70%"><!--<image source="images/hp10-rev-30.png"><description>graph</description></image>-->
+    <image xml:id="hp10-rev-30">
+        <description>polar grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.5]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[cyan] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[cyan] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[red, very thick] (60:5) -- (240:5);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
 
-<exercise number="31"><statement><sidebyside width="70%"><image source="images/hp10-rev-31.png"><description>graph</description></image></sidebyside></statement>
+</sidebyside></statement></exercise>
+
+<exercise number="31"><statement><sidebyside width="70%"><!--<image source="images/hp10-rev-31.png"><description>graph</description></image>-->
+    <image xml:id="hp10-rev-31">
+        <description>polar grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.5]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[cyan] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[cyan] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[red, very thick] (2,0) circle (2cm);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+
+</sidebyside></statement>
 <answer><m>r=4\cos\theta</m></answer></exercise>
 
-<exercise number="32"><statement><sidebyside width="70%"><image source="images/hp10-rev-32.png"><description>graph</description></image></sidebyside></statement></exercise>
+<exercise number="32"><statement><sidebyside width="70%"><!--<image source="images/hp10-rev-32.png"><description>graph</description></image>-->
+    <image xml:id="hp10-rev-32">
+        <description>polar grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.42]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[cyan] (\angle:0) -- (\angle:6);
+        }
+        \foreach \r in {1,2,3,4,5,6} {
+        \draw[cyan] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:6,smooth, samples=65,variable=\x,red,very thick] plot ({deg(\x)}:{\x});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+
+</sidebyside></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 33-36, find the coordinates of the intersection points of the two curves analytically. Then graph the curves to verify your answers.</p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 33<ndash/>36, find the coordinates of the intersection points of the two curves analytically. Then graph the curves to verify your answers.</p></introduction>
 
 <exercise number="33"><statement><m>r=3+2\sin \theta,~r=4</m></statement>
-<answer><m>(4, \dfrac{\pi}{6}),~(4, \dfrac{5\pi}{6})</m></answer></exercise>
+<answer><m>\left(4, \dfrac{\pi}{6}\right)</m>, <m>~\left(4, \dfrac{5\pi}{6}\right)</m></answer></exercise>
 
 <exercise number="34"><statement><m>r=3\cos\theta,~r=\sqrt{3}\sin \theta</m></statement></exercise>
 
 <exercise number="35"><statement><m>r=4\sin \theta,~r=-4\cos \theta</m></statement>
-<answer><p><m>(2\sqrt{2}, \dfrac{3\pi}{4})</m> and the pole</p></answer></exercise>
+<answer><p><m>\left(2\sqrt{2}, \dfrac{3\pi}{4}\right)</m> and the pole</p></answer></exercise>
 
 <exercise number="36"><statement><m>r=2+6\sin \theta,~r=4\sin \theta</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 37-40, perform the indicated operations on the complex numbers. </p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 37<ndash/>40, perform the indicated operations on the complex numbers. </p></introduction>
 
 <exercise number="37"><statement><m>\dfrac{5-10i}{2-i}</m></statement>
 <answer><m>4-3i</m></answer></exercise>
@@ -136,7 +307,7 @@
 <exercise number="40"><statement><m>-8+3i+\dfrac{9-4i}{i}</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 41-44, evaluate the polynomial for the given values of the variable.
+<exercisegroup cols="2"><introduction><p>For Problems 41<ndash/>44, evaluate the polynomial for the given values of the variable.
 </p></introduction>
 
 <exercise number="41"><statement><m>z^2+4z+6</m><p><ol label="a">
@@ -169,7 +340,7 @@
 
  <exercise number="46"><statement><p>Verify that <m>z_1=-3+4i</m> and <m>z_2=-3-4i</m> are roots of the equation <m>x^2+6x+25=0</m>.</p></statement></exercise>   
 
-<exercisegroup cols="2"><introduction><p>For Problems 47-50, expand the product of polynomials.</p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 47<ndash/>50, expand the product of polynomials.</p></introduction>
 
 <exercise number="47"><statement><m>[z-(-2+i)][z-(-2-i)]</m></statement>
 <answer><m>z^2+4z+5</m></answer></exercise>
@@ -182,10 +353,33 @@
 <exercise number="50"><statement><m>[x+(-6+i)][x+(-6-i)]</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup><introduction><p>For Problems 51-52, sketch the set of points in the complex plane.</p></introduction>
+<exercisegroup><introduction><p>For Problems 51<ndash/>52, sketch the set of points in the complex plane.</p></introduction>
 
 <exercise number="51"><statement><m>z_1=-3+2i,~z_2=-3-2i,~z_3=3+2i,~z_4=3-2i</m></statement>
-<answer><sidebyside width="30%"><image source="images/hp10-rev-51ans.png"><description>graph</description></image></sidebyside></answer></exercise>
+<answer><sidebyside width="30%"><!--<image source="images/hp10-rev-51ans.png"><description>graph</description></image>-->
+    <image xml:id="hp10-rev-51ans">
+        <description>complex numbers</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.4]
+        \draw[cyan] (-5,-5) grid (5,5);
+        \draw[black, thick,->, >=stealth'] (-5,0)--(5.5,0);
+        \draw[black, thick,->, >=stealth'] (0,-5)--(0,5.5);
+        \foreach \x in {-4,-2,2,4}{
+          \draw[black] (\x,0.1) --++(0,-.2) node[below, fill=white, inner sep=1, yshift=-2]{$\x$};
+          \draw[black] (0.1,\x) --++(-.2,0) node[left, fill=white, inner sep=1, xshift=-2]{$\x$};
+        }
+        \draw[red, fill=red] (-3,2) circle (.2cm) node[above left, yshift=3, fill=white, inner sep=1, text=black]{$z_1$};
+        \draw[red, fill=red] (-3,-2) circle (.2cm) node[below left, yshift=-4, fill=white, inner sep=1, text=black]{$z_2$};
+        \draw[red, fill=red] (3,2) circle (.2cm) node[above right, yshift=3, fill=white, inner sep=1, text=black]{$z_3$};
+        \draw[red, fill=red] (3,-2) circle (.2cm) node[below right, yshift=-4, fill=white, inner sep=1, text=black]{$z_4$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+
+</sidebyside></answer></exercise>
 
 <exercise number="52"><statement><m>w_1=4-6i,~w_2=4+6i,~w_3=-4-6i,~w_4=-4+6i</m></statement></exercise>
 </exercisegroup>
@@ -211,7 +405,7 @@
 <exercise number="56"><statement><m>4+\sqrt{3}i</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 57-60, write the complex numbers in standard form. Give exact values for your answers.</p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 57<ndash/>60, write the complex numbers in standard form. Give exact values for your answers.</p></introduction>
 
 <exercise number="57"><statement><m>10(\cos \dfrac{-\pi}{6} + i\sin  \dfrac{-\pi}{6})</m></statement>
 <answer><m>5\sqrt{3}-5i</m></answer></exercise>
@@ -224,7 +418,7 @@
 <exercise number="60"><statement><m>6\sqrt{3}(\cos \dfrac{-\pi}{3} + i\sin  \dfrac{-\pi}{3})</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 61-66, write the complex numbers in polar form. Give exact values for your answers.</p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 61<ndash/>66, write the complex numbers in polar form. Give exact values for your answers.</p></introduction>
 
 <exercise number="61"><statement><m>3-3i</m></statement>
 <answer><m>3\sqrt{2}(\cos\dfrac{7\pi}{4}+i\sin\dfrac{7\pi}{4})</m></answer></exercise>
@@ -242,7 +436,7 @@
 <exercise number="66"><statement><m>6+2\sqrt{3}i</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 67-70, find the product <m>z_1z_2</m> and the quotient <m>\dfrac{z_1}{z_2}</m>. </p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 67<ndash/>70, find the product <m>z_1z_2</m> and the quotient <m>\dfrac{z_1}{z_2}</m>. </p></introduction>
 
 <exercise number="67"><statement><m>z_1=8(\cos \dfrac{\pi}{6} + i\sin \dfrac{\pi}{6})</m><m>z_2=2(\cos \dfrac{5\pi}{6} + i\sin \dfrac{5\pi}{6})</m></statement>
 <answer><m>z_1z_2=16(\cos \pi +i\sin \pi)=-16,~\dfrac{z_1}{z_2}=4(\cos\dfrac{-2\pi}{3}+i\sin\dfrac{-2\pi}{3})=-2-2\sqrt{3}i</m></answer></exercise>
@@ -255,7 +449,7 @@
 <exercise number="70"><statement><m>z_1=14(\cos \dfrac{3\pi}{2} + i\sin \dfrac{3\pi}{2})</m><m>z_2=2(\cos \dfrac{\pi}{6} + i\sin \dfrac{\pi}{6})</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 71-74, find the power.</p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 71<ndash/>74, find the power.</p></introduction>
 
 <exercise number="71"><statement><m>(\dfrac{\sqrt{3}}{2}+\dfrac{1}{2}i)^{12}</m></statement>
 <answer><m>1</m></answer></exercise>
@@ -268,29 +462,73 @@
 <exercise number="74"><statement><m>(-1-i)^{-8}</m></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 75-78,<ol label="a"> 
+<exercisegroup cols="2"><introduction><p>For Problems 75<ndash/>78,<ol label="a"> 
     <li>Find the roots and plot them in the complex plane.</li>
     <li>Write the roots in standard form.</li></ol>
 </p></introduction>
 
 <exercise number="75"><statement><p>The square roots of <m>-16i</m></p></statement>
 <answer><p><ol label="a"> 
-    <li><sidebyside width="40%"><image source="images/hp10-rev-75ans.png"><description>graph</description></image></sidebyside></li>
-    <li><m>-2\sqrt{2}+2\sqrt{2}i,~2\sqrt{2}-2\sqrt{2}i</m></li></ol>
+    <li><sidebyside width="100%"><!--<image source="images/hp10-rev-75ans.png"><description>graph</description></image>-->
+    <image xml:id="hp10-rev-75ans">
+        <description>complex square roots</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.45]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[cyan] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[cyan] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[red, fill=red] (135:4) circle (.2cm) node[above, yshift=3, fill=white, inner sep=1] {$4\left(\cos\frac{3\pi}{4} + i\sin\frac{3\pi}{4}\right)$};
+        \draw[red, fill=red] (-45:4) circle (.2cm) node[above, yshift=3, fill=white, inner sep=1] {$4\left(\cos\frac{7\pi}{4} + i\sin\frac{7\pi}{4}\right)$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+
+    </sidebyside></li>
+    <li><m>-2\sqrt{2}+2\sqrt{2}i</m>, <m>~2\sqrt{2}-2\sqrt{2}i</m></li></ol>
 </p></answer></exercise>
 
 <exercise number="76"><statement><p>The cube roots of <m>-8</m></p></statement></exercise>
 
 <exercise number="77"><statement><p>The cube roots of <m>-27i</m></p></statement>
 <answer><p><ol label="a"> 
-    <li><sidebyside width="40%"><image source="images/hp10-rev-77ans.png"><description>graph</description></image></sidebyside></li>
-    <li><m>3i,~\dfrac{-3\sqrt{3}}{2}-\dfrac{3}{2}i,~\dfrac{3\sqrt{3}}{2}-\dfrac{3}{2}i</m></li></ol>
+    <li><sidebyside  width="100%"><!--<image source="images/hp10-rev-77ans.png"><description>graph</description></image>-->
+    <image xml:id="hp10-rev-77ans">
+        <description>complex cube roots</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.45]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[cyan] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[cyan] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[red, fill=red] (90:3) circle (.2cm) node[above, xshift=1.5cm, yshift=3, fill=white, inner sep=1] {$3\left(\cos\frac{\pi}{2} + i\sin\frac{\pi}{2}\right)$};
+        \draw[red, fill=red] (210:3) circle (.2cm) node[below, yshift=-4, fill=white, inner sep=1] {$3\left(\cos\frac{7\pi}{6} + i\sin\frac{7\pi}{6}\right)$};
+        \draw[red, fill=red] (-30:3) circle (.2cm) node[above, xshift=1.5cm, yshift=3, fill=white, inner sep=1] {$3\left(\cos\frac{11\pi}{6} + i\sin\frac{11\pi}{6}\right)$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></li>
+    <li><m>3i</m>, <m>~\dfrac{-3\sqrt{3}}{2}-\dfrac{3}{2}i</m>, <m>~\dfrac{3\sqrt{3}}{2}-\dfrac{3}{2}i</m></li></ol>
 </p></answer></exercise>
 
 <exercise number="78"><statement><p>The square roots of <m>-2+2\sqrt{3}i</m></p></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 79-82, solve the equation.</p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 79<ndash/>82, solve the equation.</p></introduction>
 
 <exercise number="79"><statement><m>z^6+27=0</m></statement>
 <answer><p><m>3(\cos\theta+i\sin \theta),</m> for <m>\theta=\dfrac{\pi}{6},~\dfrac{\pi}{2},~\dfrac{5\pi}{6},~\dfrac{7\pi}{6},~\dfrac{3\pi}{2},~\dfrac{11\pi}{6}</m></p></answer></exercise>

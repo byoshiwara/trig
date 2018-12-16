@@ -196,7 +196,9 @@
         <li>Find the equation of the terminal side of the angle in the previous example. (Hint:  The terminal side lies on a line that goes through the origin and the point <m>(12,5)</m>.)</li>
         <li>Show that the point <m>P^{\prime}(24, 10)</m> also lies on the terminal side of the angle.</li>
         <li>Compute the trig ratios for <m>\theta</m> using the point <m>P^{\prime}</m> instead of <m>P</m>.</li>
-    </ol></p></statement></exercise> 
+    </ol></p></statement><answer><p><ol label="a"><li><m>y = \dfrac{5}{12}x</m></li>
+        <li> <m>(24, 10)</m> satisfies <m>y = \dfrac{5}{12}x</m>, that is, the equation <m>10 = \dfrac{5}{12}(24)</m> is true.</li>
+        <li><m>r^2 = 24^2 + 10^2 = 676</m>, so <m>r = \sqrt{676} = 26.</m> Then <m>\cos \theta = \dfrac{x}{r} = \dfrac{24}{26} =\dfrac{12}{13},~~\sin\theta = \dfrac{y}{r} = \dfrac{10}{26} =\dfrac{5}{13}</m>, and <m>\tan\theta = \dfrac{y}{x} = \dfrac{10}{24} =\dfrac{5}{12}</m>.</li></ol></p></answer></exercise> 
 
 <activity><title>Obtuse Angles</title>
 <p></p>
@@ -353,7 +355,39 @@
     <p><ol label="a">
         <li>Sketch an obtuse angle <m>\theta</m> whose cosine is <m>\dfrac{-8}{17}</m>.</li>
         <li>Find the sine and the tangent of <m>\theta</m>.</li>
-   </ol></p></statement></exercise>        
+   </ol></p></statement><answer><p><ol label="a">
+            <li><sidebyside width="20%" margins="0% 50%"><!--<image source="images/exer3-1-2ans.png"><description>point</description></image>-->
+    <image xml:id="exer3-1-2ans">
+        <description>point</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+
+        \coordinate (A) at (-.8,0);
+        \coordinate (B) at (-.8,1.5);
+        \coordinate (O) at (0,0);
+
+        \draw[blue,thick] (A) rectangle +(0.25,0.25);
+        \draw[black,thick, ->] (O)+(-1.2,0)--+(1,0);
+        \draw[black,thick] (O)--(B)  node[right,midway, xshift=-4, yshift=3] {\footnotesize\color{blue}17};
+        \draw[black,thick] (B)--(A);
+        \draw[black,thick,->] (O)+(0,-.2)--+(0,2) ;
+
+        \filldraw[black] (B) circle (2pt) node[anchor=south , xshift=-4, yshift=-1] {$(-8,15)$};
+        \draw[red,thick] (O)+(0.3,0) arc(0:{180-atan(1.5/.8)}:.3) node[above,midway, xshift=2] {$\theta$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+            </sidebyside></li>
+            <li><m>\sin\theta = \dfrac{15}{17},~\tan\theta = \dfrac{-15}{8}</m></li>
+        </ol></p></answer></exercise>       
 </subsection> 
 
 <subsection><title>Using a Calculator</title>
@@ -478,7 +512,72 @@
                         <cell><m>~</m></cell>
                         <cell><m>~</m></cell>
                         <cell><m>~</m></cell></row>                           
-                </tabular></sidebyside></statement></exercise>
+                </tabular></sidebyside></statement><answer><sidebyside>
+                <tabular top="major" halign="center" right="minor" left="minor" bottom="minor">             
+                    <row>
+                        <cell><m>\theta</m></cell>
+                        <cell><m>~~~~\cos \theta~~~~</m></cell>
+                        <cell><m>~~~~\sin \theta~~~~</m></cell>
+                        <cell><m>180\degree - \theta</m></cell>
+                        <cell><m>\cos (180\degree - \theta)</m></cell>
+                        <cell><m>\sin (180\degree - \theta)</m></cell></row>
+                    <row> 
+                        <cell><m>10 \degree</m></cell>
+                        <cell><m>0.9848</m></cell>
+                        <cell><m>0.1736</m></cell>
+                        <cell><m>170\degree</m></cell>
+                        <cell><m>-0.9848</m></cell>
+                        <cell><m>0.1736</m></cell></row>
+                    <row> 
+                        <cell><m>20 \degree</m></cell>
+                        <cell><m>0.9397</m></cell>
+                        <cell><m>0.3420</m></cell>
+                        <cell><m>160\degree</m></cell>
+                        <cell><m>-0.9397</m></cell>
+                        <cell><m>0.3420</m></cell></row>
+                    <row> 
+                        <cell><m>30 \degree</m></cell>
+                        <cell><m>0.8660</m></cell>
+                        <cell><m>0.5</m></cell>
+                        <cell><m>150\degree</m></cell>
+                        <cell><m>0.8660</m></cell>
+                        <cell><m>-0.5</m></cell></row>
+                    <row>
+                        <cell><m>40 \degree</m></cell>
+                        <cell><m>0.7660</m></cell>
+                        <cell><m>0.6428</m></cell>
+                        <cell><m>140\degree</m></cell>
+                        <cell><m>-0.7660</m></cell>
+                        <cell><m>0.6428</m></cell></row>  
+                    <row>
+                        <cell><m>50 \degree</m></cell>
+                        <cell><m>0.6428</m></cell>
+                        <cell><m>0.7660</m></cell>
+                        <cell><m>130\degree</m></cell>
+                        <cell><m>-0.6428</m></cell>
+                        <cell><m>0.7660</m></cell></row>
+                    <row>
+                        <cell><m>60 \degree</m></cell>
+                        <cell><m>0.5</m></cell>
+                        <cell><m>0.8660</m></cell>
+                        <cell><m>120\degree</m></cell>
+                        <cell><m>-0.5</m></cell>
+                        <cell><m>0.8660</m></cell></row>
+                    <row>
+                        <cell><m>70 \degree</m></cell>
+                        <cell><m>0.3420</m></cell>
+                        <cell><m>0.9397</m></cell>
+                        <cell><m>110\degree</m></cell>
+                        <cell><m>-0.9397</m></cell>
+                        <cell><m>0.3420</m></cell></row>
+                    <row>
+                        <cell><m>80 \degree</m></cell>
+                        <cell><m>0.1736</m></cell>
+                        <cell><m>0.9848</m></cell>
+                        <cell><m>100\degree</m></cell>
+                        <cell><m>-0.9848</m></cell>
+                        <cell><m>0.1736</m></cell></row>                           
+                </tabular></sidebyside></answer></exercise>
 </subsection>
 
 <subsection><title>Trigonometric Ratios for Supplementary Angles</title>
@@ -586,7 +685,7 @@
 
  <exercise><statement>
     <p>Find two different angles <m>\theta</m> that satisfy <m>\sin \theta = 0.5</m>.
-</p></statement></exercise>        
+</p></statement><answer><p><m>\theta = 30\degree</m>, <m>~ \theta = 150\degree</m></p></answer></exercise>        
 
 <p> Because there are two angles with the same sine, it is easier to find an obtuse angle if we know its cosine instead of its sine. </p> 
     
@@ -683,7 +782,10 @@ we get <m>\theta \approx 53.1 \degree</m>. This is the acute angle whose termina
     <p><ol label="a">
         <li>Find the cosine of an obtuse angle with <m>\tan \theta = -2</m> .</li>
         <li>Find the angle <m>\theta</m> in part (a).</li>
-   </ol></p></statement></exercise>        
+   </ol></p></statement><answer><p><ol label="a">
+            <li><m>\dfrac{-1}{\sqrt{5}}</m></li>
+            <li><m>\theta \approx 116.565\degree</m></li>
+        </ol></p></answer></exercise>        
 </subsection>
 
 <subsection><title>Supplements of the Special Angles</title>
@@ -789,7 +891,23 @@ we get <m>\theta \approx 53.1 \degree</m>. This is the acute angle whose termina
 
 <exercise><statement>
     <p>Find exact values for the trigonometric ratios of <m>120\degree</m> and <m>150\degree</m>.
-</p></statement></exercise> 
+</p></statement><answer><sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
+                    <row>
+                        <cell><m>\theta</m></cell>
+                        <cell><m>\cos\theta</m></cell>
+                        <cell><m>\sin\theta</m></cell>
+                        <cell><m>\tan\theta</m></cell></row>
+                    <row> 
+                        <cell><m>120\degree</m></cell>
+                        <cell><m>\dfrac{-1}{2} </m></cell>
+                        <cell><m>\dfrac{\sqrt{3}}{2}</m></cell>
+                        <cell><m>-\sqrt{3} </m></cell></row>
+                    <row> 
+                        <cell><m>150\degree</m></cell>
+                        <cell><m>\dfrac{-\sqrt{3}}{2} </m></cell>
+                        <cell><m>\dfrac{1}{2} </m></cell>
+                        <cell><m>\dfrac{-1}{\sqrt{3}} </m></cell></row>              
+                </tabular></sidebyside></answer></exercise> 
 
 <p>We can also find the trig ratios for the <term>quadrantal</term> angles. These are the angles, including <m>0\degree</m>, <m>90\degree</m> and <m>180\degree</m>, whose terminal sides lie on one of the axes.</p>
 
@@ -832,7 +950,7 @@ so <m>\cos 90\degree = 0</m> and <m>\sin 90\degree = 1</m>.  Also, <m>\tan 90\de
 
 <exercise><statement>
     <p>Find exact values for the trigonometric ratios of <m>180\degree</m>.
-</p></statement></exercise> 
+</p></statement><answer><p><m>\cos 180\degree = -1</m>, <m>~\sin 180\degree = 0</m>, <m>~\tan 180\degree = 0</m></p></answer></exercise> 
 </subsection>
 
 <subsection><title>The Area of a Triangle</title>
@@ -1029,7 +1147,7 @@ Lot 86 has an area of approximately 17,669 square feet.</p></solution></example>
 </sidebyside></warning>
 
 <exercise><statement>
-    <p>A triangle has sides of length 6 and 7, and the angle between those sides is <m>150\degree</m>. Find the area of the triangle.</p></statement></exercise> 
+    <p>A triangle has sides of length 6 and 7, and the angle between those sides is <m>150\degree</m>. Find the area of the triangle.</p></statement><answer><p><m>\dfrac{21}{2}</m></p></answer></exercise> 
 </subsection>
 
 <subsection><title>Algebra Refresher</title>
@@ -1168,36 +1286,7 @@ Lot 86 has an area of approximately 17,669 square feet.</p></solution></example>
         <li><m>r^2 = 24^2 + 10^2 = 676</m>, so <m>r = \sqrt{676} = 26.</m> Then <m>\cos \theta = \dfrac{x}{r} = \dfrac{24}{26} =\dfrac{12}{13},~~\sin\theta = \dfrac{y}{r} = \dfrac{10}{26} =\dfrac{5}{13},</m> and <m>\tan\theta = \dfrac{y}{x} = \dfrac{10}{24} =\dfrac{5}{12}</m>.</li>
     </ol></p></li>
     <li><p><ol label="a">
-            <li><sidebyside width="20%" margins="5% 50%"><!--<image source="images/exer3-1-2ans.png"><description>point</description></image>-->
-    <image xml:id="exer3-1-2ans">
-        <description>point</description>
-        <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} 
-
-        \coordinate (A) at (-.8,0);
-        \coordinate (B) at (-.8,1.5);
-        \coordinate (O) at (0,0);
-
-        \draw[blue,thick] (A) rectangle +(0.25,0.25);
-        \draw[black,thick, ->] (O)+(-1.2,0)--+(1,0);
-        \draw[black,thick] (O)--(B)  node[right,midway, xshift=-4, yshift=3] {\footnotesize\color{blue}17};
-        \draw[black,thick] (B)--(A);
-        \draw[black,thick,->] (O)+(0,-.2)--+(0,2) ;
-
-        \filldraw[black] (B) circle (2pt) node[anchor=south , xshift=-4, yshift=-1] {$(-8,15)$};
-        \draw[red,thick] (O)+(0.3,0) arc(0:{180-atan(1.5/.8)}:.3) node[above,midway, xshift=2] {$\theta$};
-        \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-            </sidebyside></li>
+            <li><sidebyside width="20%" margins="5% 50%"><image source="images/exer3-1-2ans"><description>point</description></image></sidebyside></li>
             <li><m>\sin\theta = \dfrac{15}{17},~\tan\theta = \dfrac{-15}{8}</m></li>
         </ol></p></li>
     <li><sidebyside>
