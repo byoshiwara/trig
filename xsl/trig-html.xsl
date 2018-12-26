@@ -32,6 +32,7 @@
 <!-- color theme -->
 <xsl:param name="html.css.file"   select="'mathbook-3.css'" />
 
+<xsl:param name="exercise.divisional.hint" select="'yes'" />
 <xsl:param name="exercise.divisional.answer" select="'no'" />
 <xsl:param name="exercise.divisional.solution" select="'no'" />
 
