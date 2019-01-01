@@ -15,7 +15,29 @@
     <li>Graph <m>r=k</m>, for <m>k=1, 2, 3</m>.  How does the graph change for different values of <m>k</m>?</li>
     <li>Write a Cartesian equation for each graph in part (a).</li></ol></p></statement>
 <answer><p><ol label="a">
-    <li><p><sidebyside width="35%"><image source="images/hp10-2-1ans.png"><description>polar</description></image></sidebyside>  <m>k</m> is the radius</p></li>
+    <li><sidebyside width="35%" margins="0% 65%"><!--<image source="images/hp10-2-1ans.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-1ans">
+        <description>circles</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.5]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:4);
+        }
+        \foreach \r in {1,2,3,4} {
+        \draw[gray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.8] at (90:\r) {$\r$};
+        }
+        \draw[red,very thick] (O) circle (1cm) node[left, fill=white, inner sep=1, scale=.8] {$r=1$};
+        \draw[blue,very thick] (O) circle (2cm) node[right, xshift=0.6cm, fill=white, inner sep=1, scale=.8] {$r=2$};
+        \draw[magenta,very thick] (O) circle (3cm) node[left, xshift=-.5cm, yshift=1.6cm, fill=white, inner sep=1, scale=.8] {$r=3$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside><p><m>k</m> is the radius</p></li>
     <li><m>x^2+y^2=1,~ x^2+y^2=4,~ x^2+y^2=9</m></li></ol></p></answer></exercise>
 
 <exercise number="2"><statement><p><ol label="a">
@@ -27,7 +49,30 @@
     <li>Graph <m>\theta=k</m>, for <m>k=\dfrac{\pi}{6},~ \dfrac{\pi}{3},~\dfrac{2\pi}{3},~\dfrac{5\pi}{6}</m>. How does the graph change for different values of <m>k</m>?</li>
     <li>Write a Cartesian equation for each graph in part (a).</li></ol></p></statement>
 <answer><p><ol label="a">
-    <li><p><sidebyside width="40%"><image source="images/hp10-2-3ans.png"><description>polar</description></image></sidebyside> <m>\tan k</m> is the slope</p></li>
+    <li><sidebyside width="40%" margins="0% 60%"><!--<image source="images/hp10-2-3ans.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-3ans">
+        <description>lines on polar grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.4]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:4);
+        }
+        \foreach \r in {1,2,3,4} {
+        \draw[gray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.8] at (90:\r) {$\r$};
+        }
+        \draw[red,very thick] (210:4)-- (30:4) node[above right, fill=white, inner sep=1, scale=.8] {$\theta=\frac{\pi}{6}$};
+        \draw[blue,very thick] (240:4) -- (60:4) node[above right, fill=white, inner sep=1, scale=.8] {$\theta=\frac{\pi}{3}$};
+        \draw[magenta,very thick] (300:4) -- (120:4) node[above left, fill=white, inner sep=1, scale=.8] {$\theta=\frac{2\pi}{3}$};
+        \draw[teal,very thick] (330:4) -- (150:4) node[above left, fill=white, inner sep=1, scale=.8] {$\theta=\frac{5\pi}{6}$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside> <p><m>\tan k</m> is the slope</p></li>
     <li><m>y=\dfrac{x}{\sqrt{3}},~ y=\sqrt{3}x,~ y=-\sqrt{3}x,~ y=\dfrac{x}{\sqrt{3}}</m></li></ol></p></answer></exercise>
 
 <exercise number="4"><statement><p><ol label="a">
@@ -127,7 +172,35 @@
                     </tabular></sidebyside>
     <p>The graph of <m>r=2</m> begins at the right-most point (and proceeds counter-clockwise); the graph of <m>r=-2</m> begins at the left-most point.</p>
 
-    <sidebyside width="50%"><image source="images/hp10-2-5ans.png"><description>polar</description></image></sidebyside></answer></exercise>
+    <sidebyside width="50%"><!--<image source="images/hp10-2-5ans.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-5ans">
+        <description>polar points on circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.6]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:3);
+        }
+        \foreach \r in {1,2,3} {
+        \draw[gray] (O) circle (\r);
+        }
+        \node[fill=white, inner sep = 2, text=black, scale=.8] at (90:1) {$1$};
+
+        \filldraw[red] (0:2)circle (.075) node[right, text=black, fill=white, inner sep=1, xshift=2, scale=.8] {$(2,0)$ and $(-2,\pi)$};
+        \filldraw[red] (45:2)circle (.075) node[above right, text=black, fill=white, inner sep=1, xshift=1, scale=.8] {$(2,\frac{\pi}{4})$ and $(-2,\frac{5\pi}{4})$};
+        \filldraw[red] (90:2)circle (.075) node[above,align=center, text=black, fill=white, inner sep=1, yshift=2, scale=.8] {$(2,\frac{\pi}{2})$, \\ $\,(-2,\frac{3\pi}{2})$};
+        \filldraw[red] (135:2)circle (.075) node[above left, text=black, fill=white, inner sep=1, yshift=1, scale=.8] {$(2,\frac{3\pi}{4})$ and $(-2,\frac{7\pi}{4})$};
+        \filldraw[red] (180:2)circle (.075) node[left, text=black, fill=white, inner sep=1, xshift=-2, scale=.8] {$(2,\pi)$ and $(-2,0)$};
+        \filldraw[red] (225:2)circle (.075) node[below left, text=black, fill=white, inner sep=1, yshift=-1, scale=.8] {$(2,\frac{5\pi}{4})$ and $(-2,\frac{\pi}{4})$};
+        \filldraw[red] (270:2)circle (.075) node[below,align=center, yshift=0cm, text=black, fill=white, inner sep=1, yshift=-2, scale=.8] {$(2,\frac{3\pi}{2})$, \\ $(-2,\frac{\pi}{2})$};
+        \filldraw[red] (315:2)circle (.075) node[below right, text=black, fill=white, inner sep=1, xshift=1, scale=.8] {$(2,\frac{7\pi}{4})$ and $(-2,\frac{3\pi}{4})$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></answer></exercise>
 
 <exercise number="6"><statement><p>Graph each line, and label the points with their coordinates. How are the points on the two lines related?</p>
 
@@ -166,7 +239,7 @@
 
 <exercise number="7"><statement><p><ol label="a">
 <li>Graph the circle <m>r=4\cos \theta</m>. Label the points corresponding to <m>\theta = 0,~\dfrac{\pi}{4},~\dfrac{\pi}{2},~\dfrac{3\pi}{4},</m> and <m>\pi</m>. </li>
-<li><p>Complete the table of values.  What happens to the graph as <m>\theta</m> increases from <m>\pi</m> to <m>2\pi</m>?
+<li><p>Complete the table of values.  What happens to the graph as <m>\theta</m> increases from <m>\pi</m> to <m>2\pi</m>?</p>
 <sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
                     <row bottom="minor">  
                         <cell><m>\theta</m></cell>
@@ -182,12 +255,36 @@
                         <cell><m>\hphantom{000}</m></cell>
                         <cell><m>\hphantom{000}</m></cell>
                         <cell><m>\hphantom{000}</m></cell></row>
-                    </tabular></sidebyside></p></li>   
+                    </tabular></sidebyside></li>   
     <li>Find the center and radius of the circle.</li>
     <li>Give the Cartesian equation of the circle.</li></ol></p></statement>
 <answer><p><ol label="a">
-    <li><sidebyside width="50%"><image source="images/hp10-2-7ans.png"><description>polar</description></image></sidebyside></li>
-    <li><p><sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
+    <li><sidebyside width="55%"><!--<image source="images/hp10-2-7ans.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-7ans">
+        <description>circle on polar grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.4]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[green] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[green] (O) circle (\r);
+        }
+        \node[fill=white, inner sep = 2, text=black, scale=.8] at (90:4) {$4$};
+        \draw[red,thick] (2,0) circle (2cm);
+        \filldraw[blue] (0:4)circle (.1) node[right, text=black, fill=white, inner sep=1, xshift=2, scale=.8] {$(4,0)$ and $(-4,\pi)$};
+        \filldraw[blue] (45:{2*sqrt(2)})circle (.1) node[above, xshift=2, yshift=2, text=black, fill=white, inner sep=1, xshift=1, scale=.8] {$(2\sqrt{2},\frac{\pi}{4})$};
+        \filldraw[blue] (90:0)circle (.1) node[left, xshift=-3, text=black, fill=white, inner sep=1, yshift=2, scale=.8] {$(0,\frac{\pi}{2})$};
+        \filldraw[blue] (315:{2*sqrt(2)})circle (.1) node[below, text=black, fill=white, inner sep=1, xshift=2, yshift=-4, scale=.8] {$(-2\sqrt(2),\frac{3\pi}{4})$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></li>
+    <li><sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
                     <row bottom="minor">  
                         <cell><m>\theta</m></cell>
                         <cell><m>\pi</m></cell>
@@ -203,13 +300,13 @@
                         <cell><m>2\sqrt{2}</m></cell>
                         <cell><m>4</m></cell></row>
                     </tabular></sidebyside>
-        The graph is traced again.</p></li>
+        <p>The graph is traced again.</p></li>
     <li>center: <m>(2,0)</m>, radius: <m>2</m></li>
     <li><m>(x-2)^2+y^2=4</m></li></ol></p></answer></exercise>
 
 <exercise number="8"><statement><p><ol label="a">
 <li>Graph the circle <m>r=4\sin \theta</m>. Label the points corresponding to <m>\theta = 0,~\dfrac{\pi}{4},~\dfrac{\pi}{2},~\dfrac{3\pi}{4},</m> and <m>\pi</m>. </li>
-<li><p>Complete the table of values.  What happens to the graph as <m>\theta</m> increases from <m>\pi</m> to <m>2\pi</m>?
+<li><p>Complete the table of values.  What happens to the graph as <m>\theta</m> increases from <m>\pi</m> to <m>2\pi</m>?</p>
 <sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
                     <row bottom="minor">  
                         <cell><m>\theta</m></cell>
@@ -225,7 +322,7 @@
                         <cell><m>\hphantom{000}</m></cell>
                         <cell><m>\hphantom{000}</m></cell>
                         <cell><m>\hphantom{000}</m></cell></row>
-                    </tabular></sidebyside></p></li>   
+                    </tabular></sidebyside></li>   
     <li>Find the center and radius of the circle.</li>
     <li>Give the Cartesian equation of the circle.</li></ol></p></statement></exercise>
 
@@ -233,7 +330,34 @@
     <li>Graph <m>r=2a\sin\theta</m> for <m>a=-2,-1,1,2</m>.</li>   
     <li>How do the graphs change for different values of <m>a</m>?</li></ol></p></statement>
     <answer><p><ol label="a">
-        <li><sidebyside width="40%"><image source="images/hp10-2-9ans.png"><description>polar</description></image></sidebyside></li>
+        <li><sidebyside width="40%"><!--<image source="images/hp10-2-9ans.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-9ans">
+        <description>circcles on polar grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.4]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[lightgray] (O) circle (\r);
+        }
+        \node[fill=white, inner sep = 2, text=black, scale=.8] at (90:5) {$5$};
+        \draw[red,very thick] (0,-2) circle (2cm);
+        \node[right,fill=white, inner sep=1, scale=.8, text=red] at (2.2,-2)  {$a=-2$};
+        \draw[blue,very thick] (0,-1) circle (1cm);
+        \node[fill=white, inner sep=1, scale=.8, text=blue] at (0,-2.5) {$a=-1$};
+        \draw[magenta,very thick] (0,1) circle (1cm);
+        \node[fill=white, inner sep=1, scale=.8, text=magenta] at (0,2.5) {$a=1$};
+        \draw[teal,very thick] (0,2) circle (2cm) ;
+        \node[fill=white, inner sep=1, scale=.8, text=teal] at (2,4.1) {$a=2$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside></li>
         <li>For <m>a \gt 0</m>, <m>a</m> is the radius of a circle centerd on the positive <m>y</m>-axis; for <m>a \lt 0</m>, <m>\abs{a}</m> is the radius of a circle centerd on the negative <m>y</m>-axis.</li></ol></p>
     </answer></exercise>
 
@@ -263,7 +387,27 @@
     <li><m>r=1-\sin \theta</m></li>
     <li><m>r=-1-\sin \theta</m></li></ol></p></statement>               
     <answer><p><ol label="a" cols="2">
-        <li><p><sidebyside width="60%"><image source="images/hp10-2-11ansa.png"><description>polar</description></image></sidebyside></p>
+        <li><sidebyside width="60%"><!--<image source="images/hp10-2-11ansa.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-11ansa">
+        <description>cardioid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.8]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:3);
+        }
+        \foreach \r in {1,2,3} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:6,smooth, samples=65,variable=\x,red,very thick] plot ({60*\x)}:{1+sin(60*\x});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside>
     <sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
                     <row bottom="minor">  
                         <cell><m>\theta</m></cell>
@@ -280,7 +424,27 @@
                         <cell><m>0</m></cell>
                         <cell><m>1</m></cell></row>
                     </tabular></sidebyside></li>
-        <li><p><sidebyside width="60%"><image source="images/hp10-2-11ansb.png"><description>polar</description></image></sidebyside></p>
+        <li><sidebyside width="60%"><!--<image source="images/hp10-2-11ansb.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-11ansb">
+        <description>cardioid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.8]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:3);
+        }
+        \foreach \r in {1,2,3} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:6,smooth, samples=65,variable=\x,red,very thick] plot ({60*\x)}:{-1+sin(60*\x});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside>
     <sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
                     <row bottom="minor">  
                         <cell><m>\theta</m></cell>
@@ -297,7 +461,27 @@
                         <cell><m>-2</m></cell>
                         <cell><m>-1</m></cell></row>
                     </tabular></sidebyside></li>
-        <li><p><sidebyside width="60%"><image source="images/hp10-2-11ansc.png"><description>polar</description></image></sidebyside></p>
+        <li><sidebyside width="60%"><!--<image source="images/hp10-2-11ansc.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-11ansc">
+        <description>cardioid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.8]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:3);
+        }
+        \foreach \r in {1,2,3} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:6,smooth, samples=65,variable=\x,red,very thick] plot ({60*\x)}:{1-sin(60*\x});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside>
     <sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
                     <row bottom="minor">  
                         <cell><m>\theta</m></cell>
@@ -314,7 +498,27 @@
                         <cell><m>2</m></cell>
                         <cell><m>1</m></cell></row>
                     </tabular></sidebyside></li> 
-        <li><p><sidebyside width="60%"><image source="images/hp10-2-11ansd.png"><description>polar</description></image></sidebyside></p>
+        <li><sidebyside width="60%"><!--<image source="images/hp10-2-11ansd.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-11ansd">
+        <description>cardioid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.8]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:3);
+        }
+        \foreach \r in {1,2,3} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:6,smooth, samples=65,variable=\x,red,very thick] plot ({60*\x)}:{-1-sin(60*\x});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside>
     <sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
                     <row bottom="minor">  
                         <cell><m>\theta</m></cell>
@@ -377,7 +581,27 @@
     <li><m>r=1+2\cos \theta</m></li>
     <li><m>r=1-2\cos \theta</m></li></ol></p></statement> 
     <answer><p><ol label="a" cols="2">
-        <li><p><sidebyside width="60%"><image source="images/hp10-2-13ansa.png"><description>polar</description></image></sidebyside></p>
+        <li><sidebyside width="70%"><!--<image source="images/hp10-2-13ansa.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-13ansa">
+        <description>limacon</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.6]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:4);
+        }
+        \foreach \r in {1,2,3,4} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:6,smooth, samples=65,variable=\x,red,very thick] plot ({60*\x)}:{2+cos(60*\x});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside>
     <sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
                     <row bottom="minor">  
                         <cell><m>\theta</m></cell>
@@ -394,7 +618,27 @@
                         <cell><m>2</m></cell>
                         <cell><m>3</m></cell></row>
                     </tabular></sidebyside></li>
-        <li><p><sidebyside width="60%"><image source="images/hp10-2-13ansb.png"><description>polar</description></image></sidebyside></p>
+        <li><sidebyside width="70%"><!--<image source="images/hp10-2-13ansb.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-13ansb">
+        <description>limacon</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.6]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:4);
+        }
+        \foreach \r in {1,2,3,4} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:6,smooth, samples=65,variable=\x,red,very thick] plot ({60*\x)}:{2-cos(60*\x});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside>
     <sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
                     <row bottom="minor">  
                         <cell><m>\theta</m></cell>
@@ -411,7 +655,27 @@
                         <cell><m>2</m></cell>
                         <cell><m>1</m></cell></row>
                     </tabular></sidebyside></li>
-        <li><p><sidebyside width="60%"><image source="images/hp10-2-13ansc.png"><description>polar</description></image></sidebyside></p>
+        <li><sidebyside width="70%"><!--<image source="images/hp10-2-13ansc.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-13ansc">
+        <description>limacon</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.6]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:4);
+        }
+        \foreach \r in {1,2,3,4} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:6,smooth, samples=65,variable=\x,red,very thick] plot ({60*\x)}:{1+2*cos(60*\x});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside>
     <sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
                     <row bottom="minor">  
                         <cell><m>\theta</m></cell>
@@ -428,7 +692,27 @@
                         <cell><m>1</m></cell>
                         <cell><m>3</m></cell></row>
                     </tabular></sidebyside></li> 
-        <li><p><sidebyside width="60%"><image source="images/hp10-2-13ansd.png"><description>polar</description></image></sidebyside></p>
+        <li><sidebyside width="70%"><!--<image source="images/hp10-2-13ansd.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-13ansd">
+        <description>limacon</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.6]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:4);
+        }
+        \foreach \r in {1,2,3,4} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:6,smooth, samples=65,variable=\x,red,very thick] plot ({60*\x)}:{1-2*cos(60*\x});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside>
     <sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
                     <row bottom="minor">  
                         <cell><m>\theta</m></cell>
@@ -474,11 +758,153 @@
     <li>For each graph above, list the values of <m>\theta</m> where the tips of the petals occur.</li>
     <li>Graph <m>r=a\sin 3\theta</m> for <m>a=1,2,</m> and <m>3</m>.  How does the value of <m>a</m> affect the graph?</li></ol></p></statement>
     <answer><p><ol label="a">
-        <li><p><sidebyside width="90%"><image source="images/hp10-2-15ansa.png"><description>polar</description></image></sidebyside></p><p>There are <m>n</m> petals if <m>n</m> is odd, and <m>2n</m> petals if <m>n</m> is even.</p></li>
-        <li><m>n=2:~ \dfrac{\pi}{4},~ \dfrac{3\pi}{4},~\dfrac{5\pi}{4},~\dfrac{7\pi}{4};~~n=3:~\dfrac{\pi}{6},~\dfrac{5\pi}{6},~\dfrac{3\pi}{2};</m> 
-        <m>n=4:~ \dfrac{\pi}{8},~\dfrac{3\pi}{8},~\dfrac{5\pi}{8},~\dfrac{7\pi}{8},~\dfrac{9\pi}{8},~\dfrac{11\pi}{8},~\dfrac{13\pi}{8},~\dfrac{15\pi}{8};</m>
-         <m>n=5:~~\dfrac{\pi}{10},~\dfrac{\pi}{2},~\dfrac{9\pi}{10},~\dfrac{13\pi}{10},~\dfrac{17\pi}{10}</m></li>
-        <li><p><sidebyside width="80%"><image source="images/hp10-2-15ansc.png"><description>polar</description></image></sidebyside></p><p><m>a</m> is the length of the petal.</p></li></ol></p>
+        <li><sidebyside widths="22% 22%  22% 22%"><!--<image source="images/hp10-2-15ansa.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-15ansa1">
+        <description>4-petal rose</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.7]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:2);
+        }
+        \foreach \r in {1,2} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:6,smooth, samples=65,variable=\x,red,very thick] plot ({60*\x)}:{sin(2*60*\x});
+        \node[right,text=red, fill=white, inner sep =1] at (-.1,1.5) {$r=\sin 2\theta$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    <image xml:id="hp10-2-15ansa2">
+        <description>3-petal rose</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.7]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:2);
+        }
+        \foreach \r in {1,2} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:3,smooth, samples=65,variable=\x,red,very thick] plot ({60*\x)}:{sin(3*60*\x});
+        \node[right,text=red, fill=white, inner sep =1] at (-.1,1.5) {$r=\sin 3\theta$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    <image xml:id="hp10-2-15ansa3">
+        <description>8-petal rose</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.7]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:2);
+        }
+        \foreach \r in {1,2} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:6,smooth, samples=65,variable=\x,red,very thick] plot ({60*\x)}:{sin(4*60*\x});
+        \node[right,text=red, fill=white, inner sep =1] at (-.1,1.5) {$r=\sin 4\theta$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    <image xml:id="hp10-2-15ansa4">
+        <description>5 petal rose</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.7]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:2);
+        }
+        \foreach \r in {1,2} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:3,smooth, samples=65,variable=\x,red,very thick] plot ({60*\x)}:{sin(5*60*\x});
+        \node[right,text=red, fill=white, inner sep =1] at (-.1,1.5) {$r=\sin 5\theta$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside><p>There are <m>n</m> petals if <m>n</m> is odd, and <m>2n</m> petals if <m>n</m> is even.</p></li>
+        <li><p><m>n=2:~ \dfrac{\pi}{4},</m> <m>~ \dfrac{3\pi}{4},~</m><m>\dfrac{5\pi}{4},~</m><m>\dfrac{7\pi}{4};~</m> <m>n=3:~\dfrac{\pi}{6},~</m><m>\dfrac{5\pi}{6},~</m><m>\dfrac{3\pi}{2};</m> 
+        <m>n=4:~ \dfrac{\pi}{8},~</m><m>\dfrac{3\pi}{8},~</m><m>\dfrac{5\pi}{8},~</m><m>\dfrac{7\pi}{8},~</m><m>\dfrac{9\pi}{8},~</m><m>\dfrac{11\pi}{8},~</m><m>\dfrac{13\pi}{8},~</m><m>\dfrac{15\pi}{8};</m>
+         <m>n=5:~~\dfrac{\pi}{10},~</m><m>\dfrac{\pi}{2},~</m><m>\dfrac{9\pi}{10},~</m><m>\dfrac{13\pi}{10},~</m><m>\dfrac{17\pi}{10}</m></p></li>
+        <li><sidebyside widths="30% 30% 30%"><!--<image source="images/hp10-2-15ansc.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-15ansc1">
+        <description>3-petal rose</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.6]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:4);
+        }
+        \foreach \r in {1,2,3,4} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:3,smooth, samples=65,variable=\x,red,very thick] plot ({60*\x)}:{sin(3*60*\x});
+        \node[below,text=red, fill=white, inner sep =1] at (0,-1.5) {$r=1\cdot\sin 3\theta$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    <image xml:id="hp10-2-15ansc2">
+        <description>3-petal rose</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.6]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:4);
+        }
+        \foreach \r in {1,2,3,4} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:3,smooth, samples=65,variable=\x,red,very thick] plot ({60*\x)}:{2*sin(3*60*\x});
+        \node[below,text=red, fill=white, inner sep =1] at (0,-2.5) {$r=2\cdot\sin 3\theta$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    <image xml:id="hp10-2-15ansc3">
+        <description>3-petal rose</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.6]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:4);
+        }
+        \foreach \r in {1,2,3,4} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:3,smooth, samples=65,variable=\x,red,very thick] plot ({60*\x)}:{3*sin(3*60*\x});
+        \node[below,text=red, fill=white, inner sep =1] at (0,-3.5) {$r=3\cdot\sin 3\theta$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside><p><m>a</m> is the length of the petal.</p></li></ol></p>
     </answer></exercise>
 
 <exercise number="16"><statement><p><ol label="a">
@@ -493,7 +919,28 @@
     <li>How does the value of <m>a</m> affect the graph of <m>r^2=a^2\cos 2\theta</m>?</li></ol></p></statement>
 <answer><p><ol label="a">
     <li><m>r=\pm 3\sqrt{\cos 2\theta}</m></li>
-    <li><sidebyside width="30%"><image source="images/hp10-2-17ans.png"><description>polar</description></image></sidebyside></li>
+    <li><sidebyside width="33%" margins="0% 67%"><!--<image source="images/hp10-2-17ans.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-17ans">
+        <description>lemniscate</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.5]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=-3:3,smooth, samples=65,variable=\x,red,very thick] plot ({15*\x}:{3*sqrt(cos(30*\x)});
+        \draw[domain=-3:3,smooth, samples=65,variable=\x,red,very thick] plot ({15*\x}:{-3*sqrt(cos(30*\x)});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></li>
     <li><m>a</m> is the length of the loop.</li></ol></p>
 </answer></exercise>
 
@@ -509,7 +956,27 @@
     \text{Ymin}\amp=-20~~~~\text{Ymax}=20\\
     \end{align*}
     Then graph by pressing Zoom 5.</p></statement>
-<answer><sidebyside width="25%"><image source="images/hp10-2-19ans.png"><description>polar</description></image></sidebyside></answer></exercise>
+<answer><sidebyside width="25%"><!--<image source="images/hp10-2-19ans.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-19ans">
+        <description>Archimedean spiral</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.1]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {5,10,15,20} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:7.77,smooth, samples=65,variable=\x,red,very thick] plot ({180*\x}:{pi*\x)});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer></exercise>
         
 <exercise number="20"><statement><p>Graph the logarithmic spiral <m>r=e^{0.2\theta}</m>. Set your window to
     \begin{align*}
@@ -520,7 +987,7 @@
     Then graph by pressing Zoom 5.</p></statement></exercise>
 
 <exercise number="21"><statement><p><ol label="a">
-    <li><p>Complete the table and graph the equation <m>y=\sin 3\theta</m>  in Cartesian coordinates, for <m>0 \le \theta\le 2\pi</m>.
+    <li><p>Complete the table and graph the equation <m>y=\sin 3\theta</m>  in Cartesian coordinates, for <m>0 \le \theta\le 2\pi</m>.</p>
     <sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
                     <row bottom="minor">
                         <cell><m>\theta</m></cell>
@@ -555,8 +1022,8 @@
                         <cell><m>\hphantom{000}</m></cell>
                         <cell><m>\hphantom{000}</m></cell>
                         <cell><m>\hphantom{000}</m></cell></row>
-                    </tabular></sidebyside></p></li>
-    <li><p>Complete the table and graph the equation <m>r=\sin 3\theta</m> in polar coordinates, for <m>0 \le \theta\le 2\pi</m>.
+                    </tabular></sidebyside></li>
+    <li><p>Complete the table and graph the equation <m>r=\sin 3\theta</m> in polar coordinates, for <m>0 \le \theta\le 2\pi</m>.</p>
     <sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
                     <row bottom="minor">
                         <cell><m>\theta</m></cell>
@@ -591,9 +1058,9 @@
                         <cell><m>\hphantom{000}</m></cell>
                         <cell><m>\hphantom{000}</m></cell>
                         <cell><m>\hphantom{000}</m></cell></row>
-                    </tabular></sidebyside></p></li></ol></p></statement>                
+                    </tabular></sidebyside></li></ol></p></statement>                
     <answer><p><ol label="a">
-        <li><p><sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
+        <li><sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
                     <row bottom="minor">
                         <cell><m>\theta</m></cell>
                         <cell><m>0</m></cell>
@@ -627,9 +1094,29 @@
                         <cell><m>-1</m></cell>
                         <cell><m>\dfrac{-\sqrt{2}}{2}</m></cell>
                         <cell><m>0</m></cell></row>
-                    </tabular></sidebyside></p>
-        <p><sidebyside width="45%"><image source="images/hp10-2-21ansa.png"><description>polar</description></image></sidebyside></p></li>
-        <li><p><sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
+                    </tabular></sidebyside>
+        <sidebyside width="50%"><!--<image source="images/hp10-2-21ansa.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-21ansa">
+        <description>sinusoidal curve</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.8]
+        \draw[cyan] (0,-2) grid[xstep=1/6] (6,2);
+        \draw[black,thick,->,>=stealth'] (0,0)--(6.4,0) node[right]{$\theta$};
+        \draw[black,thick,->,>=stealth'] (0,-2)--(0, 2.4) node[above]{$y$};
+        \foreach \y in {-1,1} {
+        \draw[black] (.1,\y) --++ (-.2,0) node[left]{$\y$};
+        }
+        \draw[black] (3,.1) --++ (0,-.2) node[below, yshift=-2, fill=white, inner sep=1]{$\pi$};
+        \draw[black] (6,.1) --++ (0,-.2) node[below, yshift=-1, fill=white, inner sep=1]{$2\pi$};
+        \draw[domain=0:6,smooth, samples=65,variable=\x,red,very thick] plot (\x,{sin(180*\x)});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside></li>
+        <li><sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
                     <row bottom="minor">
                         <cell><m>\theta</m></cell>
                         <cell><m>0</m></cell>
@@ -663,12 +1150,32 @@
                         <cell><m>-1</m></cell>
                         <cell><m>\dfrac{-\sqrt{2}}{2}</m></cell>
                         <cell><m>0</m></cell></row>
-                    </tabular></sidebyside></p>
-        <p><sidebyside width="35%"><image source="images/hp10-2-21ansb.png"><description>polar</description></image></sidebyside></p></li></ol></p>            
+                    </tabular></sidebyside>
+        <sidebyside width="35%"><!--<image source="images/hp10-2-21ansb.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-21ansb">
+        <description>three-petal rose</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=1]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:2);
+        }
+        \foreach \r in {1,2} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:3,smooth, samples=65,variable=\x,red,very thick] plot ({60*\x)}:{sin(3*60*\x});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside></li></ol></p>            
     </answer></exercise>
 
 <exercise number="22"><statement><p><ol label="a">
-    <li><p>Complete the table and graph the equation <m>y=\cos 2\theta</m>  in Cartesian coordinates, for <m>0 \le \theta\le 2\pi</m>.
+    <li><p>Complete the table and graph the equation <m>y=\cos 2\theta</m>  in Cartesian coordinates, for <m>0 \le \theta\le 2\pi</m>.</p>
     <sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
                     <row bottom="minor">
                         <cell><m>\theta</m></cell>
@@ -703,8 +1210,8 @@
                         <cell><m>\hphantom{000}</m></cell>
                         <cell><m>\hphantom{000}</m></cell>
                         <cell><m>\hphantom{000}</m></cell></row>
-                    </tabular></sidebyside></p></li>
-    <li><p>Complete the table and graph the equation <m>r=\cos 2\theta</m> in polar coordinates, for <m>0 \le \theta\le 2\pi</m>.
+                    </tabular></sidebyside></li>
+    <li><p>Complete the table and graph the equation <m>r=\cos 2\theta</m> in polar coordinates, for <m>0 \le \theta\le 2\pi</m>.</p>
     <sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
                     <row bottom="minor">
                         <cell><m>\theta</m></cell>
@@ -739,10 +1246,10 @@
                         <cell><m>\hphantom{000}</m></cell>
                         <cell><m>\hphantom{000}</m></cell>
                         <cell><m>\hphantom{000}</m></cell></row>
-                    </tabular></sidebyside></p></li></ol></p></statement></exercise>
+                    </tabular></sidebyside></li></ol></p></statement></exercise>
 
 <exercise number="23"><statement><p><ol label="a">
-    <li><p>Complete the table and graph the equation <m>y=2+2\cos\theta</m>  in Cartesian coordinates, for <m>0 \le \theta\le 2\pi</m>.
+    <li><p>Complete the table and graph the equation <m>y=2+2\cos\theta</m>  in Cartesian coordinates, for <m>0 \le \theta\le 2\pi</m>.</p>
     <sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
                     <row bottom="minor">
                         <cell><m>\theta</m></cell>
@@ -766,8 +1273,8 @@
                         <cell><m>\hphantom{000}</m></cell>
                         <cell><m>\hphantom{000}</m></cell>
                         <cell><m>\hphantom{000}</m></cell></row>
-                    </tabular></sidebyside></p></li>
-    <li><p>Complete the table and graph the equation <m>r=2+2\cos\theta</m> in polar coordinates, for <m>0 \le \theta\le 2\pi</m>.
+                    </tabular></sidebyside></li>
+    <li><p>Complete the table and graph the equation <m>r=2+2\cos\theta</m> in polar coordinates, for <m>0 \le \theta\le 2\pi</m>.</p>
     <sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
                     <row bottom="minor">
                         <cell><m>\theta</m></cell>
@@ -791,9 +1298,9 @@
                         <cell><m>\hphantom{000}</m></cell>
                         <cell><m>\hphantom{000}</m></cell>
                         <cell><m>\hphantom{000}</m></cell></row>
-                    </tabular></sidebyside></p></li></ol></p></statement>
+                    </tabular></sidebyside></li></ol></p></statement>
     <answer><p><ol label="a">
-        <li><p><sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
+        <li><sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
                     <row bottom="minor">
                         <cell><m>\theta</m></cell>
                         <cell><m>0</m></cell>
@@ -816,9 +1323,29 @@
                         <cell><m>2</m></cell>
                         <cell><m>2+\sqrt{2}</m></cell>
                         <cell><m>4</m></cell></row>
-                    </tabular></sidebyside></p>
-        <p><sidebyside width="40%"><image source="images/hp10-2-23ansa.png"><description>polar</description></image></sidebyside></p></li>            
-        <li><p><sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
+                    </tabular></sidebyside>
+        <sidebyside width="50%"><!--<image source="images/hp10-2-23ansa.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-23ansa">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [xscale=1, yscale = .75]
+        \draw[cyan] (0,0) grid[xstep=1/6] (6,5);
+        \draw[black,thick,->,>=stealth'] (0,0)--(6.4,0) node[right]{$\theta$};
+        \draw[black,thick,->,>=stealth'] (0,0)--(0, 5.4) node[above]{$y$};
+        \foreach \y in {1,2,3,4,5} {
+        \draw[black] (.1,\y) --++ (-.2,0) node[left]{$\y$};
+        }
+        \draw[black] (3,.1) --++ (0,-.2) node[below, yshift=-2, fill=white, inner sep=1]{$\pi$};
+        \draw[black] (6,.1) --++ (0,-.2) node[below, yshift=-1, fill=white, inner sep=1]{$2\pi$};
+        \draw[domain=0:6,smooth, samples=65,variable=\x,red,very thick] plot (\x,{2+2*cos(60*\x)});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside></li>            
+        <li><sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
                     <row bottom="minor">
                         <cell><m>\theta</m></cell>
                         <cell><m>0</m></cell>
@@ -841,12 +1368,32 @@
                         <cell><m>2</m></cell>
                         <cell><m>2+\sqrt{2}</m></cell>
                         <cell><m>4</m></cell></row>
-                    </tabular></sidebyside></p>
-        <p><sidebyside width="35%"><image source="images/hp10-2-23ansb.png"><description>polar</description></image></sidebyside></p></li></ol></p>
+                    </tabular></sidebyside>
+        <sidebyside width="35%"><!--<image source="images/hp10-2-23ansb.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-23ansb">
+        <description>cardioid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.5]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:2,smooth, samples=65,variable=\x,red,very thick] plot ({180*\x)}:{2+2*cos(180*\x});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside></li></ol></p>
     </answer></exercise>
 
 <exercise number="24"><statement><p><ol label="a">
-    <li><p>Complete the table and graph the equation <m>y=1-\sin\theta</m>  in Cartesian coordinates, for <m>0 \le \theta\le 2\pi</m>.
+    <li><p>Complete the table and graph the equation <m>y=1-\sin\theta</m>  in Cartesian coordinates, for <m>0 \le \theta\le 2\pi</m>.</p>
     <sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
                     <row bottom="minor">
                         <cell><m>\theta</m></cell>
@@ -870,8 +1417,8 @@
                         <cell><m>\hphantom{000}</m></cell>
                         <cell><m>\hphantom{000}</m></cell>
                         <cell><m>\hphantom{000}</m></cell></row>
-                    </tabular></sidebyside></p></li>
-    <li><p>Complete the table and graph the equation <m>r=1-\sin\theta</m> in polar coordinates, for <m>0 \le \theta\le 2\pi</m>.
+                    </tabular></sidebyside></li>
+    <li><p>Complete the table and graph the equation <m>r=1-\sin\theta</m> in polar coordinates, for <m>0 \le \theta\le 2\pi</m>.</p>
     <sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
                     <row bottom="minor">
                         <cell><m>\theta</m></cell>
@@ -895,172 +1442,757 @@
                         <cell><m>\hphantom{000}</m></cell>
                         <cell><m>\hphantom{000}</m></cell>
                         <cell><m>\hphantom{000}</m></cell></row>
-                    </tabular></sidebyside></p></li></ol></p></statement></exercise>
+                    </tabular></sidebyside></li></ol></p></statement></exercise>
 
 
-<exercisegroup cols="2"><introduction><p>For Problems 25-42, use the catalog of polar graphs to help you identify and sketch the following curves. Check your work by graphing with a calculator.</p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 25<ndash/>42, use the catalog of polar graphs to help you identify and sketch the following curves. Check your work by graphing with a calculator.</p></introduction>
 
-<exercise number="25"><statement><m>r=3\cos\theta</m></statement>
-    <answer><p>circle</p><sidebyside width="30%"><image source="images/hp10-2-25ans.png"><description>polar</description></image></sidebyside></answer></exercise>
+<exercise number="25"><statement><p><m>r=3\cos\theta</m></p></statement>
+    <answer><p>circle</p><sidebyside width="60%" margins="0% 40%"><!--<image source="images/hp10-2-25ans.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-25ans">
+        <description>circle on polar grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.5]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[red,very thick] (1.5,0) circle (1.5cm);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></answer></exercise>
 
-<exercise number="26"><statement><m>r=2\sin \theta</m></statement></exercise>
+<exercise number="26"><statement><p><m>r=2\sin \theta</m></p></statement></exercise>
 
-<exercise number="27"><statement><m>\theta=\dfrac{\pi}{4}</m></statement>
-<answer><p>line</p><sidebyside width="30%"><image source="images/hp10-2-27ans.png"><description>polar</description></image></sidebyside></answer></exercise>
+<exercise number="27"><statement><p><m>\theta=\dfrac{\pi}{4}</m></p></statement>
+<answer><p>line</p><sidebyside width="60%" margins="0% 40%"><!--<image source="images/hp10-2-27ans.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-27ans">
+        <description>line on polar grid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.5]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[red,very thick] (-5,-5) -- (5,5);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer></exercise>
  
-<exercise number="28"><statement><m>\theta=\dfrac{4\pi}{3}</m></statement></exercise>
+<exercise number="28"><statement><p><m>\theta=\dfrac{4\pi}{3}</m></p></statement></exercise>
 
- <exercise number="29"><statement><m>\theta=4</m></statement>
-<answer><p>circle</p><sidebyside width="30%"><image source="images/hp10-2-29ans.png"><description>polar</description></image></sidebyside></answer></exercise>
+ <exercise number="29"><statement><p><m>r=4</m></p></statement>
+<answer><p>circle</p><sidebyside width="60%" margins="0% 40%"><!--<image source="images/hp10-2-29ans.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-29ans">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.5]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[red,very thick] (0,0) circle (4cm);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer></exercise>
  
-<exercise number="30"><statement><m>\theta=2</m></statement></exercise>
+<exercise number="30"><statement><p><m>r=2</m></p></statement></exercise>
 
-<exercise number="31"><statement><m>r=2+2\sin \theta</m></statement>
-<answer><p>cardioid</p><sidebyside width="30%"><image source="images/hp10-2-31ans.png"><description>polar</description></image></sidebyside></answer></exercise>
+<exercise number="31"><statement><p><m>r=2+2\sin \theta</m></p></statement>
+<answer><p>cardioid</p><sidebyside width="60%" margins="0% 40%"><!--<image source="images/hp10-2-31ans.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-31ans">
+        <description>cardioid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.5]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:2,smooth, samples=65,variable=\x,red,very thick] plot ({180*\x)}:{2+2*sin(180*\x});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer></exercise>
  
-<exercise number="32"><statement><m>r=3+3\cos\theta</m></statement></exercise>
+<exercise number="32"><statement><p><m>r=3+3\cos\theta</m></p></statement></exercise>
 
-<exercise number="33"><statement><m>r=2-\cos\theta</m></statement>
-<answer><p>limaçon</p><sidebyside width="30%"><image source="images/hp10-2-33ans.png"><description>polar</description></image></sidebyside></answer></exercise>
+<exercise number="33"><statement><p><m>r=2-\cos\theta</m></p></statement>
+<answer><p>limaçon</p><sidebyside width="60%" margins="0% 40%"><!--<image source="images/hp10-2-33ans.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-33ans">
+        <description>limacon</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.6]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:3);
+        }
+        \foreach \r in {1,2,3} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:2,smooth, samples=65,variable=\x,red,very thick] plot ({180*\x)}:{2-cos(180*\x});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer></exercise>
  
-<exercise number="34"><statement><m>r=1-3\sin \theta</m></statement></exercise>
+<exercise number="34"><statement><p><m>r=1-3\sin \theta</m></p></statement></exercise>
 
-<exercise number="35"><statement><m>r=3\sin 2\theta</m></statement>
-<answer><p>rose</p><sidebyside width="30%"><image source="images/hp10-2-35ans.png"><description>polar</description></image></sidebyside>
+<exercise number="35"><statement><p><m>r=3\sin 2\theta</m></p></statement>
+<answer><p>rose</p><sidebyside width="60%" margins="0% 40%"><!--<image source="images/hp10-2-35ans.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-35ans">
+        <description>four-petal rose</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.6]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:4);
+        }
+        \foreach \r in {1,2,3,4} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:2,smooth, samples=65,variable=\x,red,very thick] plot ({180*\x)}:{3*sin(360*\x});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
 </answer></exercise>
  
-<exercise number="36"><statement><m>r=2\cos 3\theta</m></statement></exercise>
+<exercise number="36"><statement><p><m>r=2\cos 3\theta</m></p></statement></exercise>
 
-<exercise number="37"><statement><m>r=2\cos 5\theta</m></statement>
-<answer><p>rose</p><sidebyside width="30%"><image source="images/hp10-2-37ans.png"><description>polar</description></image></sidebyside></answer></exercise>
+<exercise number="37"><statement><p><m>r=2\cos 5\theta</m></p></statement>
+<answer><p>rose</p><sidebyside width="60%" margins="0% 40%"><!--<image source="images/hp10-2-37ans.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-37ans">
+        <description>rose</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.6]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:4);
+        }
+        \foreach \r in {1,2,3,4} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:1,smooth, samples=65,variable=\x,red,very thick] plot ({180*\x)}:{2*cos(900*\x});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer></exercise>
  
-<exercise number="38"><statement><m>r=4\sin 4\theta</m></statement></exercise>
+<exercise number="38"><statement><p><m>r=4\sin 4\theta</m></p></statement></exercise>
 
-<exercise number="39"><statement><m>r=2+3\sin \theta</m></statement>
-<answer><p>limaçon</p><sidebyside width="30%"><image source="images/hp10-2-39ans.png"><description>polar</description></image></sidebyside></answer></exercise>
+<exercise number="39"><statement><p><m>r=2+3\sin \theta</m></p></statement>
+<answer><p>limaçon</p><sidebyside width="60%" margins="0% 40%"><!--<image source="images/hp10-2-39ans.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-39ans">
+        <description>limacon</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.45]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:2,smooth, samples=65,variable=\x,red,very thick] plot ({180*\x)}:{2+3*sin(180*\x});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer></exercise>
  
-<exercise number="40"><statement><m>r=3+2\sin \theta</m></statement></exercise>
+<exercise number="40"><statement><p><m>r=3+2\sin \theta</m></p></statement></exercise>
 
-<exercise number="41"><statement><m>r^2=\cos 2\theta</m></statement>
-<answer><p>lemniscate</p><sidebyside width="30%"><image source="images/hp10-2-41ans.png"><description>polar</description></image></sidebyside></answer></exercise>
+<exercise number="41"><statement><p><m>r^2=\cos 2\theta</m></p></statement>
+<answer><p>lemniscate</p><sidebyside width="60%" margins="0% 40%"><!--<image source="images/hp10-2-41ans.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-41ans">
+        <description>lemniscate</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=1.5]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:1.5);
+        }
+        \foreach \r in {0.5,1,1.5} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=-3:3,smooth, samples=65,variable=\x,red,very thick] plot ({15*\x}:{1*sqrt(cos(30*\x)});
+        \draw[domain=-3:3,smooth, samples=65,variable=\x,red,very thick] plot ({15*\x}:{-1*sqrt(cos(30*\x)});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer></exercise>
  
-<exercise number="42"><statement><m>r^2=4\sin2\theta</m></statement></exercise>
+<exercise number="42"><statement><p><m>r^2=4\sin2\theta</m></p></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 43-52, identify each curve, and graph it.</p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 43<ndash/>52, identify each curve, and graph it.</p></introduction>
 
-<exercise number="43"><statement><m>r\csc\theta = 2</m></statement>
-<answer><p>circle</p><sidebyside width="30%"><image source="images/hp10-2-43ans.png"><description>polar</description></image></sidebyside></answer></exercise>
+<exercise number="43"><statement><p><m>r\csc\theta = 2</m></p></statement>
+<answer><p>circle</p><sidebyside width="60%"><!--<image source="images/hp10-2-43ans.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-43ans">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.6]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:3);
+        }
+        \foreach \r in {1,2,3} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[red,very thick] (0,1) circle (1cm);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer></exercise>
 
-<exercise number="44"><statement><m>r=2\sec \theta</m></statement></exercise>
+<exercise number="44"><statement><p><m>r=2\sec \theta</m></p></statement></exercise>
 
-<exercise number="45"><statement><m>r^2=4,~ 0 \le \theta \le \dfrac{3\pi}{4}</m></statement>
-<answer><p>arcs of a circle</p><sidebyside width="30%"><image source="images/hp10-2-45ans.png"><description>polar</description></image></sidebyside></answer></exercise>
+<exercise number="45"><statement><p><m>r^2=4,~ 0 \le \theta \le \dfrac{3\pi}{4}</m></p></statement>
+<answer><p>arcs of a circle</p><sidebyside width="60%"><!--<image source="images/hp10-2-45ans.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-45ans">
+        <description>arcs of circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.6]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:3);
+        }
+        \foreach \r in {1,2,3} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[red,very thick] (0:2) arc (0:135:2);
+        \draw[red,very thick] (180:2) arc (180:315:2);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer></exercise>
 
-<exercise number="46"><statement><m>\theta = \dfrac{\pi}{4},~ \abs{r} \lt 2</m></statement></exercise>
+<exercise number="46"><statement><p><m>\theta = \dfrac{\pi}{4},~ \abs{r} \lt 2</m></p></statement></exercise>
 
-<exercise number="47"><statement><m>r=\sin \theta,~  \dfrac{3\pi}{4} \le \theta \le \dfrac{5\pi}{4}</m></statement>
-<answer><p>semicircle</p><sidebyside width="30%"><image source="images/hp10-2-47ans.png"><description>polar</description></image></sidebyside></answer></exercise>
+<exercise number="47"><statement><p><m>r=\sin \theta,~  \dfrac{3\pi}{4} \le \theta \le \dfrac{5\pi}{4}</m></p></statement>
+<answer><p>semicircle</p><sidebyside width="60%"><!--<image source="images/hp10-2-47ans.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-47ans">
+        <description>semicircle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=1.5]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:1.5);
+        }
+        \foreach \r in {0.5,1,1.5} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=3:5,smooth, samples=65,variable=\x,red,very thick] plot ({45*\x}:{sin(45*\x)});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer></exercise>
 
-<exercise number="48"><statement><m>r=\cos \theta,~ 0 \le \theta \le \dfrac{\pi}{2}</m></statement></exercise>
+<exercise number="48"><statement><p><m>r=\cos \theta,~ 0 \le \theta \le \dfrac{\pi}{2}</m></p></statement></exercise>
 
-<exercise number="49"><statement><m>r=2\sin 2\theta \cos 2\theta</m></statement>
-<answer><p>rose</p><sidebyside width="30%"><image source="images/hp10-2-49ans.png"><description>polar</description></image></sidebyside></answer></exercise>
+<exercise number="49"><statement><p><m>r=2\sin 2\theta \cos 2\theta</m></p></statement>
+<answer><p>rose</p><sidebyside width="60%"><!--<image source="images/hp10-2-49ans.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-49ans">
+        <description>eight-petal rose</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=1.5]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:1.5);
+        }
+        \foreach \r in {0.5,1,1.5} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:2,smooth, samples=65,variable=\x,red,very thick] plot ({180*\x}:{2*sin(2*180*\x)*cos(2*180*\x)});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer></exercise>
 
-<exercise number="50"><statement><m>r=\cos^2 \theta - \sin^2 \theta</m></statement></exercise>
+<exercise number="50"><statement><p><m>r=\cos^2 \theta - \sin^2 \theta</m></p></statement></exercise>
 
-<exercise number="51"><statement><m>r(1-\cos\theta)=\sin^2\theta</m></statement>
-<answer><p>cardioid</p><sidebyside width="30%"><image source="images/hp10-2-51ans.png"><description>polar</description></image></sidebyside></answer></exercise>
+<exercise number="51"><statement><p><m>r(1-\cos\theta)=\sin^2\theta</m></p></statement>
+<answer><p>cardioid</p><sidebyside width="60%"><!--<image source="images/hp10-2-51ans.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-51ans">
+        <description>cardioid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=0.6]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:3);
+        }
+        \foreach \r in {1,2,3} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:2,smooth, samples=65,variable=\x,red,very thick] plot ({180*\x}:{1+cos(180*\x)});
+``        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer></exercise>
 
-<exercise number="52"><statement><m>r \sec \theta=\sec\theta - \tan \theta</m></statement></exercise>
+<exercise number="52"><statement><p><m>r \sec \theta=\sec\theta - \tan \theta</m></p></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 53-58, graph the following polar curves. Do you recognize them?</p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 53<ndash/>58, graph the following polar curves. Do you recognize them?</p></introduction>
 
-<exercise number="53"><statement><m>r = \dfrac{2}{1-\cos\theta}</m></statement>
-<answer><p>parabola</p><sidebyside width="30%"><image source="images/hp10-2-53ans.png"><description>polar</description></image></sidebyside></answer></exercise>
+<exercise number="53"><statement><p><m>r = \dfrac{2}{1-\cos\theta}</m></p></statement>
+<answer><p>parabola</p><sidebyside width="60%"><!--<image source="images/hp10-2-53ans.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-53ans">
+        <description>parabola</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=0.1]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:20);
+        }
+        \foreach \r in {5,10,15,20} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=.14:1.86,smooth, samples=65,variable=\x,red,very thick] plot ({180*\x}:{2/(1-cos(180*\x))});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer></exercise>
 
-<exercise number="54"><statement><m>r = \dfrac{6}{2+\sin\theta}</m></statement></exercise>
+<exercise number="54"><statement><p><m>r = \dfrac{6}{2+\sin\theta}</m></p></statement></exercise>
 
-<exercise number="55"><statement><m>r = \dfrac{2}{2-\cos\theta}</m></statement>
-<answer><p>ellipse</p><sidebyside width="30%"><image source="images/hp10-2-55ans.png"><description>polar</description></image></sidebyside></answer></exercise>
+<exercise number="55"><statement><p><m>r = \dfrac{2}{2-\cos\theta}</m></p></statement>
+<answer><p>ellipse</p><sidebyside width="60%"><!--<image source="images/hp10-2-55ans.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-55ans">
+        <description>ellipse</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=0.6]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:3);
+        }
+        \foreach \r in {1,2,3} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:2,smooth, samples=65,variable=\x,red,very thick] plot ({180*\x}:{2/(2-cos(180*\x))});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer></exercise>
 
-<exercise number="56"><statement><m>r = \dfrac{1}{1+\sin\theta}</m></statement></exercise>
+<exercise number="56"><statement><p><m>r = \dfrac{1}{1+\sin\theta}</m></p></statement></exercise>
 
-<exercise number="57"><statement><m>r = \dfrac{1}{1+2\sin\theta}</m></statement>
-<answer><p>hyperbola</p><sidebyside width="30%"><image source="images/hp10-2-57ans.png"><description>polar</description></image></sidebyside></answer></exercise>
+<exercise number="57"><statement><p><m>r = \dfrac{1}{1+2\sin\theta}</m></p></statement>
+<answer><p>hyperbola</p><sidebyside width="60%"><!--<image source="images/hp10-2-57ans.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-57ans">
+        <description>hyperbola</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=0.6]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:3);
+        }
+        \foreach \r in {1,2,3} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=-.115:1.115,smooth, samples=33,variable=\x,red,very thick] plot ({180*\x}:{1/(1+2*sin(180*\x))});
+        \draw[domain=1.215:1.785,smooth, samples=33,variable=\x,red,very thick] plot ({180*\x}:{1/(1+2*sin(180*\x))});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer></exercise>
 
-<exercise number="58"><statement><m>r = \dfrac{3}{2-3\cos\theta}</m></statement></exercise>
+<exercise number="58"><statement><p><m>r = \dfrac{3}{2-3\cos\theta}</m></p></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 59-66, write a polar equation for the graph.</p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 59<ndash/>66, write a polar equation for the graph.</p></introduction>
 
-<exercise number="59"><statement><p><sidebyside width="70%"><image source="images/hp10-2-59.png"><description>polar graphs</description></image></sidebyside></p></statement>
-<answer><m>r=2+2\cos \theta</m></answer></exercise>
+<exercise number="59"><statement><sidebyside width="70%"><!--<image source="images/hp10-2-59.png"><description>polar graphs</description></image>-->
+    <image xml:id="hp10-2-59">
+        <description>cardioid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.6]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:4);
+        }
+        \foreach \r in {1,2,3,4} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:2,smooth, samples=65,variable=\x,red,very thick] plot ({180*\x)}:{2+2*cos(180*\x});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement>
+<answer><p><m>r=2+2\cos \theta</m></p></answer></exercise>
 
-<exercise number="60"><statement><p><sidebyside width="70%"><image source="images/hp10-2-60.png"><description>polar graphs</description></image></sidebyside></p></statement></exercise>
+<exercise number="60"><statement><sidebyside width="70%"><!--<image source="images/hp10-2-60.png"><description>polar graphs</description></image>-->
+    <image xml:id="hp10-2-60">
+        <description>cardioid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.3]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:8);
+        }
+        \foreach \r in {2,4,6,8} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:2,smooth, samples=65,variable=\x,red,very thick] plot ({180*\x)}:{4+4*sin(180*\x});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement></exercise>
 
-<exercise number="61"><statement><p><sidebyside width="70%"><image source="images/hp10-2-61.png"><description>polar graphs</description></image></sidebyside></p></statement>
-<answer><m>r=3\sin 5\theta</m></answer></exercise>
+<exercise number="61"><statement><sidebyside width="70%"><!--<image source="images/hp10-2-61.png"><description>polar graphs</description></image>-->
+    <image xml:id="hp10-2-61">
+        <description>five-petal rose</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=0.8]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:3);
+        }
+        \foreach \r in {1,2,3} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:2,smooth, samples=129,variable=\x,red,very thick] plot ({180*\x}:{3*sin(900*\x))});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement>
+<answer><p><m>r=3\sin 5\theta</m></p></answer></exercise>
 
-<exercise number="62"><statement><p><sidebyside width="70%"><image source="images/hp10-2-62.png"><description>polar graphs</description></image></sidebyside></p></statement></exercise>
+<exercise number="62"><statement><sidebyside width="70%"><!--<image source="images/hp10-2-62.png"><description>polar graphs</description></image>-->
+    <image xml:id="hp10-2-62">
+        <description>four-petal rose</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=0.4]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:6);
+        }
+        \foreach \r in {2,4,6} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:2,smooth, samples=129,variable=\x,red,very thick] plot ({180*\x}:{6*sin(360*\x))});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement></exercise>
 
-<exercise number="63"><statement><p><sidebyside width="70%"><image source="images/hp10-2-63.png"><description>polar graphs</description></image></sidebyside></p></statement>
-<answer><m>r=5\sin \theta</m></answer></exercise>
+<exercise number="63"><statement><sidebyside width="70%"><!--<image source="images/hp10-2-63.png"><description>polar graphs</description></image>-->
+    <image xml:id="hp10-2-63">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.45]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:1,smooth, samples=65,variable=\x,red,very thick] plot ({180*\x)}:{5*sin(180*\x});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement>
+<answer><p><m>r=5\sin \theta</m></p></answer></exercise>
 
-<exercise number="64"><statement><p><sidebyside width="70%"><image source="images/hp10-2-64.png"><description>polar graphs</description></image></sidebyside></p></statement></exercise>
+<exercise number="64"><statement><sidebyside width="70%"><!--<image source="images/hp10-2-64.png"><description>polar graphs</description></image>-->
+    <image xml:id="hp10-2-64">
+        <description>circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.45]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[red,very thick] (O) circle (3cm);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement></exercise>
 
-<exercise number="65"><statement><p><sidebyside width="70%"><image source="images/hp10-2-65.png"><description>polar graphs</description></image></sidebyside></p></statement>
-<answer><m>r=1+2\cos \theta</m></answer></exercise>
+<exercise number="65"><statement><sidebyside width="70%"><!--<image source="images/hp10-2-65.png"><description>polar graphs</description></image>-->
+    <image xml:id="hp10-2-65">
+        <description>limacon</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=0.8]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:3);
+        }
+        \foreach \r in {1,2,3} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:2,smooth, samples=129,variable=\x,red,very thick] plot ({180*\x}:{1+2*cos(180*\x))});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement>
+<answer><p><m>r=1+2\cos \theta</m></p></answer></exercise>
 
-<exercise number="66"><statement><p><sidebyside width="70%"><image source="images/hp10-2-66.png"><description>polar graphs</description></image></sidebyside></p></statement></exercise>
+<exercise number="66"><statement><sidebyside width="70%"><!--<image source="images/hp10-2-66.png"><description>polar graphs</description></image>-->
+    <image xml:id="hp10-2-66">
+        <description>limacon</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.45]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:2,smooth, samples=129,variable=\x,red,very thick] plot ({180*\x}:{3+2*sin(180*\x))});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 67-74, find the coordinates of the intersection points of the two curves analytically. Then graph the curves to verify your answers.</p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 67<ndash/>74, find the coordinates of the intersection points of the two curves analytically. Then graph the curves to verify your answers.</p></introduction>
 
-<exercise number="67"><statement><m>r=\cos\theta,~ r=1-\cos\theta</m></statement>
-<answer><m>(0,0),~ (\dfrac{1}{2},\dfrac{\pi}{3})~ (\dfrac{1}{2},\dfrac{5\pi}{3}) </m></answer></exercise>
+<exercise number="67"><statement><p><m>r=\cos\theta,~ r=1-\cos\theta</m></p></statement>
+<answer><p><m>(0,0)</m>,<m>~ \left(\dfrac{1}{2},\dfrac{\pi}{3}\right)</m>,<m>~ \left(\dfrac{1}{2},\dfrac{5\pi}{3}\right) </m></p></answer></exercise>
 
-<exercise number="68"><statement><m>r=\sin\theta,~ r=\cos\theta</m></statement></exercise>
+<exercise number="68"><statement><p><m>r=\sin\theta,~ r=\cos\theta</m></p></statement></exercise>
 
-<exercise number="69"><statement><m>r=3\sin\theta,~ r=3\cos\theta</m></statement>
-<answer><m>(0,0),~ (\dfrac{3}{\sqrt{2}},\dfrac{\pi}{4})~ (\dfrac{-3}{\sqrt{2}},\dfrac{5\pi}{4})</m></answer></exercise>
+<exercise number="69"><statement><p><m>r=3\sin\theta,~ r=3\cos\theta</m></p></statement>
+<answer><p><m>(0,0)</m>, <m>~ \left(\dfrac{3}{\sqrt{2}}, \dfrac{\pi}{4}\right)</m>, <m>~ \left(\dfrac{-3}{\sqrt{2}}, \dfrac{5\pi}{4}\right)</m></p></answer></exercise>
 
-<exercise number="70"><statement><m>r=\sin 2\theta,~ r=\cos 2\theta</m></statement></exercise>
+<exercise number="70"><statement><p><m>r=\sin 2\theta,~ r=\cos 2\theta</m></p></statement></exercise>
 
-<exercise number="71"><statement><m>r=1,~ r=1-\cos\theta</m></statement>
-<answer><m>(1, \dfrac{\pi}{2}),~(1, \dfrac{3\pi}{2})</m></answer></exercise>
+<exercise number="71"><statement><p><m>r=1,~ r=1-\cos\theta</m></p></statement>
+<answer><p><m>\left(1, \dfrac{\pi}{2}\right)</m>, <m>~\left(1, \dfrac{3\pi}{2}\right)</m></p></answer></exercise>
 
-<exercise number="72"><statement><m>r=3\cos\theta,~ r=1+\cos\theta</m></statement></exercise>
+<exercise number="72"><statement><p><m>r=3\cos\theta,~ r=1+\cos\theta</m></p></statement></exercise>
 
-<exercise number="73"><statement><m>r=2+\sin\theta,~ r=2-\cos\theta</m></statement>
-<answer><m>(\dfrac{4+\sqrt{2}}{2},\dfrac{3\pi}{4}),~(\dfrac{4-\sqrt{2}}{2},\dfrac{7\pi}{4})</m></answer></exercise>
+<exercise number="73"><statement><p><m>r=2+\sin\theta,~ r=2-\cos\theta</m></p></statement>
+<answer><p><m>\left(\dfrac{4+\sqrt{2}}{2},\dfrac{3\pi}{4}\right)</m>, <m>~\left(\dfrac{4-\sqrt{2}}{2},\dfrac{7\pi}{4}\right)</m></p></answer></exercise>
 
-<exercise number="74"><statement><m>r=\sin\theta,~ r=\sin 2\theta</m></statement></exercise>
+<exercise number="74"><statement><p><m>r=\sin\theta,~ r=\sin 2\theta</m></p></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 75-82, graph the polar curve.  
+<exercisegroup cols="2"><introduction><p>For Problems 75<ndash/>82, graph the polar curve.  
 </p></introduction>
 
-<exercise number="75"><statement><m>r^2 = \tan \theta</m></statement>
-<answer><sidebyside width="30%"><image source="images/hp10-2-75ans.png"><description>polar</description></image></sidebyside></answer></exercise>
+<exercise number="75"><statement><p><m>r^2 = \tan \theta</m></p></statement>
+<answer><sidebyside width="60%"><!--<image source="images/hp10-2-75ans.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-75ans">
+        <description>polar plot</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.45]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=0:.488,smooth, samples=33,variable=\x,red,very thick] plot ({180*\x}:{sqrt(tan(180*\x)))});
+        \draw[domain=0:.488,smooth, samples=33,variable=\x,red,very thick] plot ({180*\x}:{-sqrt(tan(180*\x)))});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer></exercise>
 
-<exercise number="76"><statement><m>r^2 = \cot \theta</m></statement></exercise>
+<exercise number="76"><statement><p><m>r^2 = \cot \theta</m></p></statement></exercise>
 
 <exercise number="77"><statement><p><m>r=\csc\theta-2</m> (conchoid)</p></statement>
-<answer><sidebyside width="30%"><image source="images/hp10-2-77ans.png"><description>polar</description></image></sidebyside></answer></exercise>
+<answer><sidebyside width="60%"><!--<image source="images/hp10-2-77ans.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-77ans">
+        <description>conchoid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.45]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=.043:.957,smooth, samples=33,variable=\x,red,very thick] plot ({180*\x}:{1/sin(180*\x)-2});
+        \draw[domain=1.09:1.91,smooth, samples=33,variable=\x,red,very thick] plot ({180*\x}:{1/sin(180*\x)-2});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer></exercise>
 
 <exercise number="78"><statement><p><m>r=\tan\theta</m> (kappa curve)</p></statement></exercise>
 
 <exercise number="79"><statement><p><m>r=\cos 2\theta \sec\theta</m> (strophoid)</p></statement>
-<answer><sidebyside width="30%"><image source="images/hp10-2-79ans.png"><description>polar</description></image></sidebyside></answer></exercise>
+<answer><sidebyside width="60%"><!--<image source="images/hp10-2-79ans.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-79ans">
+        <description>strophoid</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.45]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=-.443:.443,smooth, samples=33,variable=\x,red,very thick] plot ({180*\x}:{cos(360*\x)/cos(180*\x)});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer></exercise>
 
 <exercise number="80"><statement><p><m>r=\sin \theta \tan \theta</m> (cissoid)</p></statement></exercise>
 
-<exercise number="81"><statement><m>r=\dfrac{1}{\sqrt{\theta}}</m></statement>
-<answer><sidebyside width="30%"><image source="images/hp10-2-81ans.png"><description>polar</description></image></sidebyside></answer></exercise>
+<exercise number="81"><statement><p><m>r=\dfrac{1}{\sqrt{\theta}}</m></p></statement>
+<answer><sidebyside width="60%"><!--<image source="images/hp10-2-81ans.png"><description>polar</description></image>-->
+    <image xml:id="hp10-2-81ans">
+        <description>polar plot</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.45]
+        \coordinate(O) at (0,0);
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[lightgray] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[lightgray] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        }
+        \draw[domain=.0129:6,smooth, samples=257,variable=\x,red,very thick] plot ({180*\x}:{1/sqrt(pi*\x)});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer></exercise>
 
-<exercise number="82"><statement><m>r=\cos\ \dfrac{\theta}{2},~ 0 \le \theta \le 4\pi</m></statement></exercise>
+<exercise number="82"><statement><p><m>r=\cos\ \dfrac{\theta}{2},~ 0 \le \theta \le 4\pi</m></p></statement></exercise>
 </exercisegroup>
 
 <exercise number="83"><statement><p>Graph the polar curves <m>r=1-2\sin n\theta</m> for <m>n=2,3,4,5,6</m>. Explain how the value of the parameter <m>n</m> affects the curve.</p></statement>

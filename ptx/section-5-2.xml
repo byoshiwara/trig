@@ -4,7 +4,7 @@
 <section xml:id="Solving-Equations"   xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Solving Equations</title>
 
-<introduction>
+<subsection><title>Introduction</title>
 <p>It is important to distinguish between an algebraic <em>expression</em> and an <em>equation</em>.  An <term>equation</term> is a statement that two algebraic expressions are equal.  It may be true or false, depending on the values of any variables involved.  Here are some examples of equations.
         \begin{align*}
                 5(2 + 6) \amp = 5(2) + 5(6)\\
@@ -29,7 +29,7 @@ The first equation is true, the second is false, and the third equation is true 
 
 <exercise><statement><p>Use trial and error to find a solution of the equation
 <me>2x^3 - 4x = 5x^2 - 3</me>
-(Hint:  Try small integer values for <m>x</m>.)</p></statement></exercise>
+</p></statement><hint><p>Try small integer values for <m>x</m>.</p></hint><answer><p><m>x = 3</m></p></answer></exercise>
 
 <p> You probably remember a number of algebraic techniques for solving equations of different types.  Another useful equation-solving method uses graphs.</p>
 
@@ -96,7 +96,7 @@ The first equation is true, the second is false, and the third equation is true 
     </latex-image>
     </image>
         </sidebyside></answer></exercise>
-</introduction>
+</subsection>
 
 <subsection><title>Trigonometric Equations</title>
 <p> The first Ferris wheel was built for the Chicago World's Fair in 1893.  It had a diameter of 250 feet and could carry 2160 people in 36 carriages.  From the top of the wheel, passengers could see into four states.  After loading all the passengers, the wheel made one revolution in nine minutes.</p>  
@@ -287,7 +287,7 @@ We have solved equations like this one before:  we use the inverse cosine to sol
 </sidebyside> 
 <p>Each intersection represents a solution of the equation.  Thus, all of the angles coterminal with <m>30\degree</m> and <m>150\degree</m> are also solutions.  We can easily find these solutions by adding integer multiples of <m>360\degree</m> to <m>30\degree</m> or <m>150\degree</m>.  This is why, when solving a trigonometric equation, we usually list only the solutions in one cycle, typically those between <m>0\degree</m> and <m>360\degree</m>.</p></note>
 
-<exercise><statement><p>Solve the equation <m>~~5 \tan \theta + 7 = 2</m>, for <m>0\degree \le\theta\le 360\degree</m>.</p></statement></exercise>
+<exercise><statement><p>Solve the equation <m>~~5 \tan \theta + 7 = 2</m>, for <m>0\degree \le\theta\le 360\degree</m>.</p></statement><answer><p><m>\theta = 135\degree~ \text{and}~ \theta = 315\degree</m></p></answer></exercise>
 
 <p>We can use a calculator to help us solve equations that do not involve special angles.</p>
 
@@ -343,7 +343,7 @@ We have solved equations like this one before:  we use the inverse cosine to sol
 
 <note><p>In the previous example, notice that the solutions are <m>180\degree</m> apart. The solutions of an equation <m>\tan \theta = k</m> always differ by <m>180\degree</m>, so the use of reference angles is not necessary for these equations:  once we have found one solution, we can add or subtract <m>180\degree</m> to find the other solution between <m>0\degree</m> and <m>360\degree</m>.  (See Homework Problems 69 and 70.)</p></note>
 
-<exercise><statement><p>Solve the equation <m>~~4 \cos C - 6 = -3</m>, for <m>0\degree \le\theta\le 360\degree</m>. Round your solutions to three decimal places.</p></statement></exercise>
+<exercise><statement><p>Solve the equation <m>~~4 \cos C - 6 = -3</m>, for <m>0\degree \le\theta\le 360\degree</m>. Round your solutions to three decimal places.</p></statement><answer><p><m>C = 41.410\degree~</m> or <m>~ C = 318.590\degree</m></p></answer></exercise>
 
 <p> Some trigonometric equations have no solution.  As we can observe from their graphs or from their definitions, the sine and cosine functions only have values ranging from -1 to 1.</p>
 
@@ -357,7 +357,7 @@ We have solved equations like this one before:  we use the inverse cosine to sol
                 \end{align*}
     Because <m>\sin \beta</m>  is never greater than 1, there is no angle <m>\beta</m> whose sine is 20. The equation has no solution.</p></solution></example>
 
-<exercise><statement><p>Solve <m>~~\cos \theta + 5 = 3</m>, for <m>0\degree \le\theta\le 360\degree</m>.</p></statement></exercise>
+<exercise><statement><p>Solve <m>~~\cos \theta + 5 = 3</m>, for <m>0\degree \le\theta\le 360\degree</m>.</p></statement><answer><p>No solution</p></answer></exercise>
 </subsection>
 
 <subsection><title>Graphical Solutions</title>
@@ -386,9 +386,9 @@ We have solved equations like this one before:  we use the inverse cosine to sol
         \draw[black,thick,->] (0,-12)--(0,8.8) node[above]{\small$y$};
 
         \foreach \x [evaluate=\x as \xi using int(45*\x)] in {2, 4, 6, 8}
-         \draw[black] (\x,0.1)--++(0,-0.2) node[below, fill=white, xshift=-3, yshift=-2, inner sep = 1pt] {\scriptsize \xi};
+         \draw[black] (\x,0.1)--++(0,-0.2) node[below, fill=white, xshift=-3, yshift=-2, inner sep = 1pt] {\small \xi};
         \foreach \y [evaluate=\y as \yi using int(1*\y)] in {-12, -8, -4, 4, 8}
-         \draw[black] (0.2,\y)--++(-0.4,0) node[left, fill=white, xshift=-1, inner sep = 1pt] {\scriptsize\yi};
+         \draw[black] (0.2,\y)--++(-0.4,0) node[left, fill=white, xshift=-1, inner sep = 1pt] {\small\yi};
          
         \draw[domain={0:atan(7)/45},smooth,variable=\x,red,ultra thick] plot ({\x},{ 1+tan(45* \x)  });
         \draw[domain={4-atan(13)/45:4+atan(7)/45},smooth,variable=\x,red,ultra thick] plot ({\x},{ 1+tan(45* \x)  });
@@ -497,7 +497,7 @@ There are two angles between <m>0\degree</m> and <m>360\degree</m> with tangent 
 <p>  <me>180\degree - 60\degree = 120\degree ~~ \text{and} ~~ 360\degree - 60\degree = 300\degree</me>  
 The four solutions are shown at right.</p></solution></example>
 
- <exercise><statement><p>Solve the equation <m>~~2\sin^2 \theta = 1,</m> for <m>0\degree \le\theta\le 360\degree</m>.</p></statement></exercise>
+ <exercise><statement><p>Solve the equation <m>~~2\sin^2 \theta = 1,</m> for <m>0\degree \le\theta\le 360\degree</m>.</p></statement><answer><p><m>\theta = 45\degree</m>, <m>~\theta = 135\degree</m>, <m>~\theta = 225\degree~</m>,  or <m>~\theta = 315\degree</m></p></answer></exercise>
 
 <p>Other quadratic equations can be solved by factoring.  For example, we can solve the equation
     <me>4x^2 + 4x - 3 = 0</me> 
@@ -522,7 +522,7 @@ Now we solve each equation for <m>\theta</m>.  We know that <m>\cos 60\degree = 
 <me>180\degree - 60\degree = 120\degree ~~~\text{and} ~~~ 180\degree + 60\degree = 240\degree</me>
 Also, <m>\cos \theta = 1</m>  when <m>\theta = 0\degree</m>.  Thus, the original equation has three solutions: <m>\theta = 120\degree, ~ \theta = 240\degree,</m> and <m>\theta = 0\degree.</m></p></solution></example> 
 
-<exercise><statement><p>Solve <m>~~9 \sin^2 \theta - 3 \sin \theta = 2,</m> for <m>0\degree \le\theta\le 360\degree</m>. Round your answers to the nearest degree.</p></statement></exercise>
+<exercise><statement><p>Solve <m>~~9 \sin^2 \theta - 3 \sin \theta = 2,</m> for <m>0\degree \le\theta\le 360\degree</m>. Round your answers to the nearest degree.</p></statement><answer><p><m>\theta = 42\degree</m>, <m>~\theta = 138\degree</m>, <m>~\theta = 199\degree~</m>, or <m>~\theta = 341\degree</m></p></answer></exercise>
 </subsection>
 
 <subsection><title>Snell's Law</title>
@@ -581,7 +581,7 @@ Also, <m>\cos \theta = 1</m>  when <m>\theta = 0\degree</m>.  Thus, the original
                 \end{align*}
 Because <m>\sin \theta = 0.3552,~~ \theta = \sin^{-1}(0.3552) = 20.8\degree.</m>  (For Snell's Law we use only acute angles.)  The angle of refraction is approximately <m>20.8\degree</m>.</p></solution></example>
 
-<exercise><statement><p>A light ray passes from water to glass with an <m>18\degree</m> angle of incidence.  What is the angle of refraction?</p></statement></exercise>
+<exercise><statement><p>A light ray passes from water to glass with an <m>18\degree</m> angle of incidence.  What is the angle of refraction?</p></statement><answer><p><m>16.315\degree</m></p></answer></exercise>
 </subsection>
 
 <subsection><title>Algebra Refresher</title>
@@ -616,20 +616,6 @@ Because <m>\sin \theta = 0.3552,~~ \theta = \sin^{-1}(0.3552) = 20.8\degree.</m>
                 \end{align*}</p></statement></exercise>
 </exercisegroup></exercises>
 
-<subsubsection><title>Answers to 5.2 Exercises</title>
-<p><ol label="1">
-    <li><m>x = 3</m></li>
-    <li><p>The graph does not cross the line <m>y = 0</m>.</p>
-        <sidebyside width="30%"><image source="images/exer5-2-2ans"><description>graph</description></image></sidebyside></li>
-    <li><m>\theta = 135\degree~ \text{and}~ \theta = 315\degree</m></li>
-    <li><m>C = 41.410\degree~ \text{or}~ C = 318.590\degree</m></li>
-    <li>No solution</li>
-    <li><sidebyside width="40%"><image source="images/exer5-2-6ans"><description>graph</description></image></sidebyside></li>
-     <li><m>\theta = 45\degree,~\theta = 135\degree,~\theta = 225\degree,~\text{or}~\theta = 315\degree</m></li>
-     <li><m>\theta = 42\degree,~\theta = 138\degree,~\theta = 199\degree,~\text{or}~\theta = 341\degree</m></li>
-     <li><m>16.315\degree</m></li>  
-</ol></p>
-</subsubsection>
 
 <subsubsection><title>Algebra Refresher Answers</title>
 <p><ol label="1" >

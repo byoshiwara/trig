@@ -41,7 +41,7 @@
 
 <solution><p>We start by making a table of values for <m>\sin t</m>, where <m>t</m> is in radians. We'll use the special values of <m>t</m>, because we know the sines of those values.</p>
 
-<p><sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                        
+<sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                        
                     <row bottom="minor">
                         <cell><m>t</m></cell>
                         <cell><m>0</m></cell>
@@ -64,11 +64,11 @@
                         <cell><m>0.707</m></cell>
                         <cell><m>0.500</m></cell>
                         <cell><m>0</m></cell></row>
-                      </tabular></sidebyside></p>
+                      </tabular></sidebyside>
 
-<p>In order to plot the points in the table, we scale the horizontal axis in multiples of <m>\dfrac{\pi}{12}</m>. (Note that the special values are all multiples of <m>\dfrac{\pi}{12}</m>. Thus, <m>\dfrac{\pi}{6} = 2(\dfrac{\pi}{12}),~ \dfrac{\pi}{4} = 3(\dfrac{\pi}{12})</m>, and so on.)  The table lists values of <m>\sin t</m> in the first two quadrants; in quadrants three and four the sine values are negative.</p>
+<p>In order to plot the points in the table, we scale the horizontal axis in multiples of <m>\dfrac{\pi}{12}</m>. (Note that the special values are all multiples of <m>\dfrac{\pi}{12}</m>. Thus, <m>\dfrac{\pi}{6} = 2\left(\dfrac{\pi}{12}\right)</m>, <m>~ \dfrac{\pi}{4} = 3\left(\dfrac{\pi}{12}\right)</m>, and so on.)  The table lists values of <m>\sin t</m> in the first two quadrants; in quadrants three and four the sine values are negative.</p>
 
-<p><sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                        
+<sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                        
                     <row bottom="minor">
                         <cell><m>t</m></cell>
                         <cell><m>\pi</m></cell>
@@ -91,42 +91,39 @@
                         <cell><m>-0.707</m></cell>
                         <cell><m>-0.500</m></cell>
                         <cell><m>0</m></cell></row>
-                      </tabular></sidebyside></p> 
+                      </tabular></sidebyside>
 
  <p>The completed graph is shown below.</p>
- <sidebyside width="100%"><!--<image source="images/exam6-3-1.png"><description>sine</description></image>-->
+ <sidebyside width="90%"><!--<image source="images/exam6-3-1.png"><description>sine</description></image>-->
     <image xml:id="exam6-3-1">
         <description>sine</description>
         <latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
         }
-        \begin{tikzpicture} [xscale=2]
+        \begin{tikzpicture} [scale=1.6]
 
-        \draw[cyan,xstep=pi/12, ystep=1/2] (0,-2) grid ($2*pi*(1,0)+(0,2) $);
+        \draw[cyan,xstep=pi/12, ystep=1/4] (0,-3/2) grid ($2*pi*(1,0)+(0,3/2) $);
         \draw[->] (0,0) -- (6.5,0) node[right, xshift=2, scale=0.9] {$t$};
-        \draw[->] (0,-2) -- (0,2.3) node[above, yshift=2, scale=0.9] {$y$};
+        \draw[->] (0,-1.5) -- (0,1.8) node[above, yshift=2, scale=0.9] {$y$};
 
-        \foreach \x in {1, 2,...,24}
-        \draw[black] ($ pi*\x /12*(1,0) +(0,.08) $) --++(0,-.16);
+        \foreach \y in {-1, -0.5, 0.5,1}
+        \draw[black, thick] (.06,\y ) --++(-.12,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt, scale=.8] {$\y$};
 
-        \foreach \y in {-1,1}
-        \draw[black, thick] (.06,\y ) --++(-.12,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt, scale=.9] {$\y$};
+        \draw[black, thick] (2*pi,.06) --++(0,-.12) node[anchor=north, xshift=2,yshift=-3, fill=white, inner sep=1pt, scale=.9] {$2\pi$};
 
-        \draw[black, thick] (2*pi,.2) --++(0,-.4) node[anchor=north, xshift=2,yshift=-3, fill=white, inner sep=1pt, scale=.9] {$2\pi$};
+        \draw[black] (pi,.06) --++(0,-.12) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\pi$};
 
-        \draw[black] (pi,.2) --++(0,-.4) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\pi$};
+        \draw[black] (pi,.06) --++(0,-.12) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\pi$};
 
-        \draw[black] (pi,.2) --++(0,-.4) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\pi$};
+        \draw[black] (pi/2,.06) --++(0,-.12) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{\pi}{2}$};
+        \draw[black] (3*pi/2,.06) --++(0,-.12) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{3\pi}{2}$};
 
-        \draw[black] (pi/2,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\frac{\pi}{2}$};
-        \draw[black] (3*pi/2,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\frac{3\pi}{2}$};
+        \draw[black] (pi/4,.06) --++(0,-.12) node[anchor=north, yshift=-4, fill=white, inner sep=1pt] {$\frac{\pi}{4}$};
 
-        \draw[black] (pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-4, fill=white, inner sep=1pt, scale=.9] {$\frac{\pi}{4}$};
-
-        \draw[black] (3*pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\frac{3\pi}{4}$};
-        \draw[black] (5*pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\frac{5\pi}{4}$};
-        \draw[black] (7*pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\frac{7\pi}{4}$};
+        \draw[black] (3*pi/4,.06) --++(0,-.12) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{3\pi}{4}$};
+        \draw[black] (5*pi/4,.06) --++(0,-.12) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{5\pi}{4}$};
+        \draw[black] (7*pi/4,.06) --++(0,-.12) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{7\pi}{4}$};
 
         \draw[domain=0:2*pi,smooth,variable=\x,red,very thick] plot ({\x},{sin(deg(\x))});
 
@@ -262,42 +259,42 @@
                         <cell><m>\dfrac{\sqrt{3}}{2}</m></cell>
                         <cell><m>1</m></cell></row>
                       </tabular></sidebyside></li>
-    <li><sidebyside width="40%" margins="0 60%">    <image xml:id="exer6-3-1ans">
+    <li><sidebyside width="45%" margins="0% 55%">    <image xml:id="exer6-3-1ans">
         <description>sinusoidal graph</description>
         <latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
         }
-\begin{tikzpicture} 
+        \begin{tikzpicture} 
 
-\draw[cyan,xstep=pi/12, ystep=1/4] (0,-3/2) grid ($2*pi*(1,0)+(0,3/2) $);
-\draw[->] (0,0) -- (6.5,0) node[right, scale=0.9] {$t$};
-\draw[->] (0,-3/2) -- (0,1.7) node[above, scale=0.9] {$y$};
+        \draw[cyan,xstep=pi/12, ystep=1/4] (0,-3/2) grid ($2*pi*(1,0)+(0,3/2) $);
+        \draw[->] (0,0) -- (6.5,0) node[right, scale=0.9] {$t$};
+        \draw[->] (0,-3/2) -- (0,1.7) node[above, scale=0.9] {$y$};
 
-\foreach \x in {1, 2,...,24}
-\draw[black] ($ pi*\x /12*(1,0) +(0,.08) $) --++(0,-.16);
+        \foreach \x in {1, 2,...,24}
+        \draw[black] ($ pi*\x /12*(1,0) +(0,.08) $) --++(0,-.16);
 
-\foreach \y in {-1, -0.5, 0.5,1}
-\draw[black, thick] (.06,\y ) --++(-.12,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt, scale=.6] {$\y$};
+        \foreach \y in {-1, -0.5, 0.5,1}
+        \draw[black, thick] (.06,\y ) --++(-.12,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt, scale=.6] {$\y$};
 
 
-\draw[black, thick] (2*pi,.15) --++(0,-.3) node[anchor=north, xshift=2,yshift=-3, fill=white, inner sep=1pt, scale=.9] {$2\pi$};
+        \draw[black, thick] (2*pi,.15) --++(0,-.3) node[anchor=north, xshift=2,yshift=-3, fill=white, inner sep=1pt, scale=.9] {$2\pi$};
 
-\draw[black] (pi,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\pi$};
+        \draw[black] (pi,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\pi$};
 
-\draw[black] (pi,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\pi$};
+        \draw[black] (pi,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\pi$};
 
-\draw[black] (pi/2,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\frac{\pi}{2}$};
-\draw[black] (3*pi/2,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\frac{3\pi}{2}$};
+        \draw[black] (pi/2,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\frac{\pi}{2}$};
+        \draw[black] (3*pi/2,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\frac{3\pi}{2}$};
 
-\draw[black] (pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-4, fill=white, inner sep=1pt, scale=.9] {$\frac{\pi}{4}$};
+        \draw[black] (pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-4, fill=white, inner sep=1pt, scale=.9] {$\frac{\pi}{4}$};
 
-\draw[black] (3*pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\frac{3\pi}{4}$};
-\draw[black] (5*pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\frac{5\pi}{4}$};
-\draw[black] (7*pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\frac{7\pi}{4}$};
+        \draw[black] (3*pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\frac{3\pi}{4}$};
+        \draw[black] (5*pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\frac{5\pi}{4}$};
+        \draw[black] (7*pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\frac{7\pi}{4}$};
 
-\draw[domain=0:2*pi,smooth,variable=\x,red,very thick] plot ({\x},{cos(deg(\x))});
-        \end{tikzpicture}]]>
+        \draw[domain=0:2*pi,smooth,variable=\x,red,very thick] plot ({\x},{cos(deg(\x))});
+                \end{tikzpicture}]]>
     </latex-image>
     </image>
 </sidebyside></li>
@@ -548,7 +545,7 @@
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
         }
-        \begin{tikzpicture} [yscale=0.5]
+        \begin{tikzpicture} [xscale=0.38, yscale=.23]
 
         \draw[cyan] (0,-8) grid[xstep=0.5, ystep=1] (10,8);
         \draw[black,thick,->] (0,0)--(10.3,0) node[right]{$t$};
@@ -774,7 +771,7 @@ The third quadrant angle with the same reference angle is
  <p>All other solutions of the equation <m>\tan t = 1</m> can be found by adding (or subtracting) multiples of <m>2\pi</m> to these two solutions. We write the solutions as
  <me>t = \dfrac{\pi}{4} \pm 2\pi k,~~ \dfrac{5\pi}{4} \pm 2\pi k,~~  \text{where } k \text{ is an integer.}</me></p></solution></example>
 
-<exercise><statement><p>Find exact values for all the solutions of <m>\tan t = -\sqrt{3}</m>.</p></statement></exercise>
+<exercise><statement><p>Find exact values for all the solutions of <m>\tan t = -\sqrt{3}</m>.</p></statement><answer><p><m>\dfrac{2\pi}{3} \pm 2\pi k</m>, <m>~ \dfrac{5\pi}{3} \pm 2\pi k</m></p></answer></exercise>
 </subsection>
 
 <subsection><title>Modeling with Circular Functions</title>
@@ -1057,91 +1054,27 @@ where <m>t</m> is measured in minutes after boarding.</p>
 <exercisegroup cols="2"><introduction><p>Evaluate the function in part (a), and solve the equation in part (b).
 </p></introduction>
 
-<exercise number="1"><statement><m>f(x) = x^2 + 1</m><p><ol label = "a">
+<exercise number="1"><statement><p><m>f(x) = x^2 + 1</m><ol label = "a">
   <li><m>f(5)</m></li>
   <li><m>f(x) = 5</m></li>
 </ol></p></statement></exercise>
 
-<exercise number="2"><statement><m>g(x) = x^3 - 2</m><p><ol label = "a">
+<exercise number="2"><statement><p><m>g(x) = x^3 - 2</m><ol label = "a">
   <li><m>g(-10)</m></li>
   <li><m>g(x) = -10</m></li>
 </ol></p></statement></exercise>
 
-<exercise number="3"><statement><m>h(t) = \sqrt{2t + 6}</m><p><ol label = "a">
+<exercise number="3"><statement><p><m>h(t) = \sqrt{2t + 6}</m><ol label = "a">
   <li><m>h(3)</m></li>
   <li><m>h(t) = 3</m></li>
 </ol></p></statement></exercise>
 
-<exercise number="4"><statement><p><m>m(t) = 6(2^t)</m><ol label = "a">
+<exercise number="4"><statement><p><m>m(t) = 6\left(2^t\right)</m><ol label = "a">
   <li><m>m(3)</m></li>
   <li><m>m(t) = 3</m></li>
 </ol></p></statement></exercise>
 </exercisegroup></exercises>
 
-<subsubsection><title>Answers to 6.3 Exercises</title>
-<p><ol label="1">
-  <li><p><sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                        
-                    <row bottom="minor">
-                        <cell><m>t</m></cell>
-                        <cell><m>0</m></cell>
-                        <cell><m>\dfrac{\pi}{6}</m></cell>
-                        <cell><m>\dfrac{\pi}{4}</m></cell>
-                        <cell><m>\dfrac{\pi}{3}</m></cell>
-                        <cell><m>\dfrac{\pi}{2}</m></cell>
-                        <cell><m>\dfrac{2\pi}{3}</m></cell>
-                        <cell><m>\dfrac{3\pi}{4}</m></cell>
-                        <cell><m>\dfrac{5\pi}{6}</m></cell> 
-                        <cell><m>\pi</m></cell></row>
-                    <row> 
-                        <cell><m>\cos t</m></cell>
-                        <cell><m>1</m></cell>
-                        <cell><m>\dfrac{\sqrt{3}}{2}</m></cell>
-                        <cell><m>\dfrac{1}{\sqrt{2}}</m></cell>
-                        <cell><m>\dfrac{1}{2}</m></cell>
-                        <cell><m>0</m></cell>
-                        <cell><m>\dfrac{-1}{2}</m></cell>
-                        <cell><m>\dfrac{-1}{\sqrt{2}}</m></cell>
-                        <cell><m>\dfrac{-\sqrt{3}}{2}</m></cell>
-                        <cell><m>-1</m></cell></row>
-                      </tabular></sidebyside></p>
-
-<p><sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                        
-                    <row bottom="minor">
-                        <cell><m>t</m></cell>
-                        <cell><m>\pi</m></cell>
-                        <cell><m>\dfrac{7\pi}{6}</m></cell>
-                        <cell><m>\dfrac{5\pi}{4}</m></cell>
-                        <cell><m>\dfrac{4\pi}{3}</m></cell>
-                        <cell><m>\dfrac{3\pi}{2}</m></cell>
-                        <cell><m>\dfrac{5\pi}{3}</m></cell>
-                        <cell><m>\dfrac{7\pi}{4}</m></cell>
-                        <cell><m>\dfrac{11\pi}{6}</m></cell> 
-                        <cell><m>2\pi</m></cell></row>
-                    <row> 
-                        <cell><m>\cos t</m></cell>
-                        <cell><m>-1</m></cell>
-                        <cell><m>-\dfrac{\sqrt{3}}{2}</m></cell>
-                        <cell><m>-\dfrac{1}{\sqrt{2}}</m></cell>
-                        <cell><m>-\dfrac{1}{2}</m></cell>
-                        <cell><m>0</m></cell>
-                        <cell><m>\dfrac{1}{2}</m></cell>
-                        <cell><m>\dfrac{1}{\sqrt{2}}</m></cell>
-                        <cell><m>\dfrac{\sqrt{3}}{2}</m></cell>
-                        <cell><m>1</m></cell></row>
-                      </tabular></sidebyside></p></li>
-  <li><sidebyside width="35%"><image source="images/exer6-3-2ans"><description>graph</description></image></sidebyside></li>
-  <li>Approximately 4.14 and 5.25</li>
-  <li><m>4.16,~5.27</m></li>
-  <li><m>\dfrac{2\pi}{3} \pm 2\pi k,~ \dfrac{5\pi}{3} \pm 2\pi k</m></li>
-  <li><p><ol label="a">
-    <li><sidebyside width="40%" margins="0 60%"><image source="images/exer6-3-6ans"><description>graph</description></image></sidebyside></li><li>Midline: <m>D = 7</m>, amplitude: <m>6</m>, period: <m>0.5</m> sec</li>
-    <li>Largest: 13 cm, smallest: 1 cm</li>
-    </ol></p></li>
-  <li><p><ol label="a">
-      <li>Dom (<m>f</m>): all real numbers except <m>-4</m>, Rge (<m>f</m>): all real numbers except <m>2</m></li>
-      <li>Dom (<m>8</m>): <m>(-\infty, 5]</m>, Rge (<m>g</m>): <m>[1, \infty)</m></li>
-    </ol></p></li>
-  </ol></p></subsubsection>
 
 <subsubsection><title>Algebra Refresher Answers</title>
 <p><ol label="1">

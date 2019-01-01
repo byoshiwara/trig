@@ -9,73 +9,113 @@
 <exercises xml:id="hmwk-10-4-exercises"  xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Homework 10-4</title>
 
-<exercisegroup cols="2"><introduction><p>For Problems 1-4, simplify and plot each complex number as a point on the complex plane.</p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 1<ndash/>4, simplify and plot each complex number as a point on the complex plane.</p></introduction>
 
 <exercise number="1"><statement><p><m>1,~i,~i^2,~i^3</m> and <m>i^4</m></p></statement>
-<answer><sidebyside widths="55% 20%"><p><m>1,~i,~-1,~-i,~1</m></p><image source="images/hp10-4-1ans.png"><description>graph</description></image></sidebyside></answer></exercise>
+<answer><sidebyside widths="55% 40%"><p><m>1</m>, <m>~i</m>, <m>~-1</m>,<m>~-i</m>, <m>~1</m></p><!--<image source="images/hp10-4-1ans.png"><description>graph</description></image>-->
+    <image xml:id="hp10-4-1ans">
+        <description>powers of i</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=0.9]
+        \draw[cyan] (-3/2,-3/2) grid[step=1/2] (3/2,3/2);
+        \draw[black,thick,->,>=stealth'] (-1.5,0)--(1.8,0);
+        \draw[black,thick,->,>=stealth'] (0,-1.5)--(0, 1.8);
+        \filldraw[red] (1,0) circle (.08cm) node[below, yshift=-.15cm, fill=white, inner sep=1, text=black]{$1$};
+        \filldraw[red] (0,1) circle (.08cm) node[ left, xshift=-.15cm, fill=white, inner sep=1, text=black]{$i$};
+        \filldraw[red] (-1,0) circle (.08cm) node[below , yshift=-.15cm, fill=white, inner sep=1, text=black]{$-1$};
+        \filldraw[red] ((0,-1) circle (.08cm) node[left, xshift=-.15cm, fill=white, inner sep=1, text=black]{$-i$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer></exercise>
 
 <exercise number="2"><statement><p><m>-1,~-i,~-i^2,~-i^3</m> and <m>-i^4</m></p></statement>
 </exercise>
 
 <exercise number="3"><statement><p><m>1+2i</m> and <m>i(1+2i)</m></p></statement>
-<answer><sidebyside widths="55% 20%"><p><m>1+2i,~-2+i</m></p><image source="images/hp10-4-3ans.png"><description>graph</description></image></sidebyside></answer></exercise>
+<answer><sidebyside widths="55% 44%"><p><m>1</m>, <m>~i</m>, <m>~-1</m>,<m>~-i</m>, <m>~1</m></p><!--<image source="images/hp10-4-1ans.png"><description>graph</description></image>-->
+    <image xml:id="hp10-4-3ans">
+        <description>complex numbers</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=0.5]
+        \draw[cyan] (-3,-3) grid (3,3);
+        \draw[black,thick,->,>=stealth'] (-3,0)--(3.4,0);
+        \draw[black,thick,->,>=stealth'] (0,-3)--(0, 3.4);
+        \foreach \r in {2} {
+        \draw[black, thick] (\r,.1) --++ (0,-.2) node[below, yshift=-2, fill=white, inner sep=1]{$\r$};
+        \draw[black, thick] (-\r,.1) --++ (0,-.2) node[below, yshift=-2, fill=white, inner sep=1]{$-\r$};
+        \draw[black, thick] (.1,\r) --++ (-.2,0) node[left, xshift=-2, fill=white, inner sep=1]{$\r i$};
+        \draw[black, thick] (.1,-\r) --++ (-.2,0) node[left, xshift=-2, fill=white, inner sep=1]{$-\r i$};
+        }
+        \filldraw[red] (1,2) circle (.15cm) node[above right, xshift=-.2cm, yshift=.15cm, fill=white, inner sep=1, text=black]{$1+2i$};
+        \filldraw[red] (-2,1) circle (.15cm) node[above, xshift=-.35cm, yshift=.15cm, fill=white, inner sep=1, text=black]{$-2+1$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></answer></exercise>
 
 <exercise number="4"><statement><p><m>3-4i</m> and <m>i(3-4i)</m></p></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 5-8, write the complex numbers in standard form.  Give exact values for your answers.</p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 5<ndash/>8, write the complex numbers in standard form.  Give exact values for your answers.</p></introduction>
 
-<exercise number="5"><statement><m>6(\cos \dfrac{2\pi}{3} + i\sin \dfrac{2\pi}{3})</m></statement>
-<answer><m>-3+3i\sqrt{3}</m></answer></exercise>
+<exercise number="5"><statement><p><m>6\left(\cos \dfrac{2\pi}{3} + i\sin \dfrac{2\pi}{3}\right)</m></p></statement>
+<answer><p><m>-3+3i\sqrt{3}</m></p></answer></exercise>
 
-<exercise number="6"><statement><m>4(\cos \dfrac{7\pi}{4} + i\sin \dfrac{7\pi}{4})</m></statement></exercise>
+<exercise number="6"><statement><p><m>4\left(\cos \dfrac{7\pi}{4} + i\sin \dfrac{7\pi}{4}\right)</m></p></statement></exercise>
 
-<exercise number="7"><statement><m>\sqrt{2}(\cos \dfrac{3\pi}{4} + i\sin \dfrac{3\pi}{4})</m></statement>
-<answer><m>-1+i</m></answer></exercise>
+<exercise number="7"><statement><p><m>\sqrt{2}\left(\cos \dfrac{3\pi}{4} + i\sin \dfrac{3\pi}{4}\right)</m></p></statement>
+<answer><p><m>-1+i</m></p></answer></exercise>
 
-<exercise number="8"><statement><m>\dfrac{3}{2}(\cos \dfrac{5\pi}{6} + i\sin \dfrac{5\pi}{6})</m></statement></exercise>
+<exercise number="8"><statement><p><m>\dfrac{3}{2}\left(\cos \dfrac{5\pi}{6} + i\sin \dfrac{5\pi}{6}\right)</m></p></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 9-12, write the complex numbers in standard form. Round your answers to hundredths.</p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 9<ndash/>12, write the complex numbers in standard form. Round your answers to hundredths.</p></introduction>
 
-<exercise number="9"><statement><m>5(\cos 5.2 + i\sin 5.2)</m></statement>
-    <answer><m>2.34-4.21i</m></answer></exercise>
+<exercise number="9"><statement><p><m>5(\cos 5.2 + i\sin 5.2)</m></p></statement>
+    <answer><p><m>2.34-4.21i</m></p></answer></exercise>
 
-<exercise number="10"><statement><m>3(\cos 3.5 + i\sin 3.5)</m></statement></exercise>
+<exercise number="10"><statement><p><m>3(\cos 3.5 + i\sin 3.5)</m></p></statement></exercise>
 
-<exercise number="11"><statement><m>12(\cos 115\degree + i\sin 115\degree)</m></statement>               
-    <answer><m>-5.07+10.88i</m></answer></exercise>
+<exercise number="11"><statement><p><m>12(\cos 115\degree + i\sin 115\degree)</m></p></statement>               
+    <answer><p><m>-5.07+10.88i</m></p></answer></exercise>
         
-<exercise number="12"><statement><m>20(\cos 250\degree + i\sin 250\degree)</m></statement> </exercise>
+<exercise number="12"><statement><p><m>20(\cos 250\degree + i\sin 250\degree)</m></p></statement> </exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 13-16, write the complex numbers in polar form. Give exact values for your answers.</p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 13<ndash/>16, write the complex numbers in polar form. Give exact values for your answers.</p></introduction>
 
 <exercise number="13"><statement><p><m>3i</m> and <m>-3i</m></p></statement> 
-    <answer><m>3(\cos \dfrac{\pi}{2} + i\sin \dfrac{\pi}{2}),~3(\cos \dfrac{3\pi}{2} + i\sin \dfrac{3\pi}{2})</m></answer></exercise>
+    <answer><p><m>3(\cos \dfrac{\pi}{2} + i\sin \dfrac{\pi}{2}),~</m> <m>3(\cos \dfrac{3\pi}{2} + i\sin \dfrac{3\pi}{2})</m></p></answer></exercise>
         
 <exercise number="14"><statement><p><m>2+2i</m> and <m>2-2i</m></p></statement> </exercise>
 
 <exercise number="15"><statement><p><m>-3-\sqrt{3}i</m> and <m>3-\sqrt{3}i</m></p></statement>
-    <answer><m>2\sqrt{3}(\cos \dfrac{7\pi}{6} + i\sin \dfrac{7\pi}{6}),~2\sqrt{3}(\cos \dfrac{11\pi}{6} + i\sin \dfrac{11\pi}{6})</m></answer></exercise>
+    <answer><p><m>2\sqrt{3}(\cos \dfrac{7\pi}{6} + i\sin \dfrac{7\pi}{6}),~</m> <m>2\sqrt{3}(\cos \dfrac{11\pi}{6} + i\sin \dfrac{11\pi}{6})</m></p></answer></exercise>
 
 <exercise number="16"><statement><p><m>2\sqrt{3}+2i</m> and <m>-2\sqrt{3}+2i</m></p></statement></exercise>
 </exercisegroup>
 
-<exercisegroup><introduction><p>For Problems 17-22, write the complex numbers in polar form. Round your answers to hundredths.</p></introduction>
+<exercisegroup><introduction><p>For Problems 17<ndash/>22, write the complex numbers in polar form. Round your answers to hundredths.</p></introduction>
      
 <exercise number="17"><statement><p><m>-4+2i</m> and <m>4-2i</m></p></statement>
-<answer><m>4.47(\cos 2.68 + i\sin 2.68),~4.47(\cos 5.82 + i\sin 5.82)</m></answer></exercise>
+<answer><p><m>4.47(\cos 2.68 + i\sin 2.68),~</m> <m>4.47(\cos 5.82 + i\sin 5.82)</m></p></answer></exercise>
 
 <exercise number="18"><statement><p><m>-3-8i</m> and <m>3+8i</m></p></statement></exercise>
 
 <exercise number="19"><statement><p><m>9-5i</m> and <m>9+5i</m></p></statement>
-<answer><m>8.60(\cos 5.78 + i\sin 5.78),~8.60(\cos 0.51 + i\sin 0.51)</m></answer></exercise>
+<answer><p><m>8.60(\cos 5.78 + i\sin 5.78),~</m> <m>8.60(\cos 0.51 + i\sin 0.51)</m></p></answer></exercise>
         
 <exercise number="20"><statement><p><m>2+6i</m> and <m>2-6i</m></p></statement></exercise>
 
 <exercise number="21"><statement><p><m>3+4i,~ 3-4i,~ -3+4i,</m> and <m>-3-4i</m></p></statement>                
-    <answer><m>5(\cos 0.93 + i\sin 0.93),~5(\cos 5.36 + i\sin 5.36),~5(\cos 2.21 + i\sin 2.21),~5(\cos 4.07 + i\sin 4.07)</m></answer></exercise>
+    <answer><p><m>5(\cos 0.93 + i\sin 0.93),~</m> <m>5(\cos 5.36 + i\sin 5.36),~</m> <m>5(\cos 2.21 + i\sin 2.21),~</m> <m>5(\cos 4.07 + i\sin 4.07)</m></p></answer></exercise>
 
 <exercise number="22"><statement><p><m>1+3i,~ 1-3i,~ -1+3i,</m> and <m>-1-3i</m></p></statement></exercise>
 </exercisegroup>
@@ -86,99 +126,171 @@
 
 <exercise number="24"><statement><p>What can you conclude about the polar forms of <m>z</m> and <m>-z</m>?</p></statement></exercise>
 
-<exercisegroup cols="2"><introduction><p>For Problems 25-28, find the product <m>z_1z_2</m> and the quotient <m>\dfrac{z_1}{z_2}</m>. </p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 25<ndash/>28, find the product <m>z_1z_2</m> and the quotient <m>\dfrac{z_1}{z_2}</m>. </p></introduction>
 
-<exercise number="25"><statement><m>z_1=4(\cos \dfrac{4\pi}{3} + i\sin \dfrac{4\pi}{3})</m>
-<m>z_2=\dfrac{1}{2}(\cos \dfrac{5\pi}{6} + i\sin \dfrac{5\pi}{6})</m></statement>
-    <answer><m>z_1z_2 = 2(\cos \dfrac{\pi}{6} + i\sin \dfrac{\pi}{6}) = \sqrt{3} + i;~~\dfrac{z_1}{z_2}=8(\cos \dfrac{\pi}{2} + i\sin \dfrac{\pi}{2}) = 8i</m></answer></exercise>
+<exercise number="25"><statement><p><m>z_1=4\left(\cos \dfrac{4\pi}{3} + i\sin \dfrac{4\pi}{3}\right)</m>
+<m>z_2=\dfrac{1}{2}\left(\cos \dfrac{5\pi}{6} + i\sin \dfrac{5\pi}{6}\right)</m></p></statement>
+    <answer><p><m>z_1z_2 = 2\left(\cos \dfrac{\pi}{6} + i\sin \dfrac{\pi}{6}\right) = \sqrt{3} + i</m>;<m>~~\dfrac{z_1}{z_2}=8\left(\cos \dfrac{\pi}{2} + i\sin \dfrac{\pi}{2}\right) = 8i</m></p></answer></exercise>
 
-<exercise number="26"><statement><m>z_1=6(\cos \dfrac{5\pi}{8} + i\sin \dfrac{5\pi}{8})</m>
-<m>z_2=\dfrac{3}{2}(\cos \dfrac{\pi}{8} + i\sin \dfrac{\pi}{8})</m>></statement></exercise>
+<exercise number="26"><statement><p><m>z_1=6\left(\cos \dfrac{5\pi}{8} + i\sin \dfrac{5\pi}{8}\right)</m>
+<m>z_2=\dfrac{3}{2}\left(\cos \dfrac{\pi}{8} + i\sin \dfrac{\pi}{8}\right)</m></p></statement></exercise>
 
-<exercise number="27"><statement><m>z_1=3(\cos \dfrac{3\pi}{5} + i\sin \dfrac{3\pi}{5})</m>
-<m>z_2=2(\cos \dfrac{3\pi}{10} + i\sin \dfrac{3\pi}{10})</m></statement>
-<answer><m>z_1z_2 = 6(\cos \dfrac{9\pi}{10} + i\sin \dfrac{9\pi}{10});~~\dfrac{z_1}{z_2}=\dfrac{3}{2}(\cos \dfrac{3\pi}{10} + i\sin \dfrac{3\pi}{10})</m></answer></exercise>
+<exercise number="27"><statement><p><m>z_1=3\left(\cos \dfrac{3\pi}{5} + i\sin \dfrac{3\pi}{5}\right)</m>
+<m>z_2=2\left(\cos \dfrac{3\pi}{10} + i\sin \dfrac{3\pi}{10}\right)</m></p></statement>
+<answer><p><m>z_1z_2 = 6\left(\cos \dfrac{9\pi}{10} + i\sin \dfrac{9\pi}{10}\right)</m>; <m>~~\dfrac{z_1}{z_2}=\dfrac{3}{2}\left(\cos \dfrac{3\pi}{10} + i\sin \dfrac{3\pi}{10}\right)</m></p></answer></exercise>
  
-<exercise number="28"><statement><m>z_1=4(\cos \dfrac{5\pi}{12} + i\sin \dfrac{5\pi}{12})</m>
-<m>z_2=6(\cos \dfrac{3\pi}{4} + i\sin \dfrac{3\pi}{4})</m></statement></exercise>
+<exercise number="28"><statement><p><m>z_1=4\left(\cos \dfrac{5\pi}{12} + i\sin \dfrac{5\pi}{12}\right)</m>
+<m>z_2=6\left(\cos \dfrac{3\pi}{4} + i\sin \dfrac{3\pi}{4}\right)</m></p></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 29-32, convert the complex number to polar form, then find the product <m>z_1z_2</m> and the quotient <m>\dfrac{z_1}{z_2}</m>. </p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 29<ndash/>32, convert the complex number to polar form, then find the product <m>z_1z_2</m> and the quotient <m>\dfrac{z_1}{z_2}</m>. </p></introduction>
 
- <exercise number="29"><statement><m>z_1=2i,~z_2=4i</m></statement>
-<answer><m>z_1z_2 = 8;~~\dfrac{z_1}{z_2}=\dfrac{1}{2}</m></answer></exercise>
+ <exercise number="29"><statement><p><m>z_1=2i,~z_2=4i</m></p></statement>
+<answer><p><m>z_1z_2 = 8</m>; <m>~\dfrac{z_1}{z_2}=\dfrac{1}{2}</m></p></answer></exercise>
  
-<exercise number="30"><statement><m>z_1=-2i,~z_2=3i</m></statement></exercise>
+<exercise number="30"><statement><p><m>z_1=-2i,~z_2=3i</m></p></statement></exercise>
 
-<exercise number="31"><statement><m>z_1=2\sqrt{3}-2i,~z_2=-1+i</m></statement>
-<answer><m>z_1z_2 = 4\sqrt{2}(\cos \dfrac{7\pi}{12} + i\sin \dfrac{7\pi}{12});~~\dfrac{z_1}{z_2}=2\sqrt{2}(\cos \dfrac{13\pi}{12} + i\sin \dfrac{13\pi}{12})</m></answer></exercise>
+<exercise number="31"><statement><p><m>z_1=2\sqrt{3}-2i</m>, <m>~z_2=-1+i</m></p></statement>
+<answer><p><m>z_1z_2 = 4\sqrt{2}(\cos \dfrac{7\pi}{12} + i\sin \dfrac{7\pi}{12})</m>; <m>~~\dfrac{z_1}{z_2}=2\sqrt{2}(\cos \dfrac{13\pi}{12} + i\sin \dfrac{13\pi}{12})</m></p></answer></exercise>
  
-<exercise number="32"><statement><m>z_1=\sqrt{3}+i,~z_2=-1+\sqrt{3}</m></statement></exercise>
+<exercise number="32"><statement><p><m>z_1=\sqrt{3}+i</m>, <m>~z_2=-1+\sqrt{3}</m></p></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 33-38, find the power.</p></introduction>
+<exercisegroup cols="2"><introduction><p>For Problems 33<ndash/>38, find the power.</p></introduction>
 
-<exercise number="33"><statement><m>(2+2i)^5</m></statement>
-<answer><m>-128-128i</m></answer></exercise>
+<exercise number="33"><statement><p><m>(2+2i)^5</m></p></statement>
+<answer><p><m>-128-128i</m></p></answer></exercise>
  
-<exercise number="34"><statement><m>(\sqrt{2}-\sqrt{2}i)^6</m></statement></exercise>
+<exercise number="34"><statement><p><m>(\sqrt{2}-\sqrt{2}i)^6</m></p></statement></exercise>
 
-<exercise number="35"><statement><m>(-1+\sqrt{3}i)^8</m></statement>
-<answer><m>-128-128\sqrt{3}i</m></answer></exercise>
+<exercise number="35"><statement><p><m>(-1+\sqrt{3}i)^8</m></p></statement>
+<answer><p><m>-128-128\sqrt{3}i</m></p></answer></exercise>
  
-<exercise number="36"><statement><m>(\dfrac{1}{2}+\dfrac{\sqrt{3}}{2}i)^{12}</m></statement></exercise>
+<exercise number="36"><statement><p><m>(\dfrac{1}{2}+\dfrac{\sqrt{3}}{2}i)^{12}</m></p></statement></exercise>
 
-<exercise number="37"><statement><m>(\sqrt{3}-i)^{10}</m></statement>
-<answer><m>512+512\sqrt{3}i</m></answer></exercise>
+<exercise number="37"><statement><p><m>(\sqrt{3}-i)^{10}</m></p></statement>
+<answer><p><m>512+512\sqrt{3}i</m></p></answer></exercise>
  
-<exercise number="38"><statement><m>(1-i)^{20}</m></statement></exercise>
+<exercise number="38"><statement><p><m>(1-i)^{20}</m></p></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 39-42, use DeMoivre's theorem to find the reciprocal.</p></introduction>    
+<exercisegroup cols="2"><introduction><p>For Problems 39<ndash/>42, use DeMoivre's theorem to find the reciprocal.</p></introduction>    
 
-<exercise number="39"><statement><m>2-2i</m></statement>
-<answer><m>\dfrac{1}{4}+\dfrac{1}{4}i</m></answer></exercise>
+<exercise number="39"><statement><p><m>2-2i</m></p></statement>
+<answer><p><m>\dfrac{1}{4}+\dfrac{1}{4}i</m></p></answer></exercise>
  
-<exercise number="40"><statement><m>3+\sqrt{3}i</m></statement></exercise>
+<exercise number="40"><statement><p><m>3+\sqrt{3}i</m></p></statement></exercise>
 
-<exercise number="41"><statement><m>-\sqrt{2}+\sqrt{6}i</m></statement>
-<answer><m>\dfrac{-\sqrt{2}}{8}-\dfrac{\sqrt{6}}{8}i</m></answer></exercise>
+<exercise number="41"><statement><p><m>-\sqrt{2}+\sqrt{6}i</m></p></statement>
+<answer><p><m>\dfrac{-\sqrt{2}}{8}-\dfrac{\sqrt{6}}{8}i</m></p></answer></exercise>
  
-<exercise number="42"><statement><m>-1-i</m></statement></exercise>
+<exercise number="42"><statement><p><m>-1-i</m></p></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="2"><introduction><p>For Problems 43-48,<ol label="a">
+<exercisegroup cols="2"><introduction><p>For Problems 43<ndash/>48,<ol label="a">
     <li>Find the roots and plot them in the complex plane.</li>
     <li>Write the roots in standard form.</li></ol></p></introduction>
 
 <exercise number="43"><statement><p>The square roots of <m>9i</m>.</p></statement>
 <answer><p><ol label="a">
-    <li><m>3(\cos \dfrac{\pi}{4} + i\sin \dfrac{\pi}{4}),~3(\cos \dfrac{3\pi}{4} + i\sin \dfrac{3\pi}{4})</m></li>
-    <li><m>\dfrac{3}{\sqrt{2}}+\dfrac{3}{\sqrt{2}}i,~\dfrac{-3}{\sqrt{2}}-\dfrac{3}{\sqrt{2}}i</m></li></ol></p>
-    <sidebyside width="20%"><image source="images/hp10-4-43ans.png"><description>graph</description></image></sidebyside>
+    <li><m>3(\cos \dfrac{\pi}{4} + i\sin \dfrac{\pi}{4})</m>, <m>~3(\cos \dfrac{3\pi}{4} + i\sin \dfrac{3\pi}{4})</m></li>
+    <li><m>\dfrac{3}{\sqrt{2}}+\dfrac{3}{\sqrt{2}}i</m>, <m>~\dfrac{-3}{\sqrt{2}}-\dfrac{3}{\sqrt{2}}i</m></li></ol></p>
+    <sidebyside width="70%"><!--<image source="images/hp10-4-43ans.png"><description>graph</description></image>-->
+    <image xml:id="hp10-4-43ans">
+        <description>square roots</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=0.7]
+        \draw[cyan] (-3,-3) grid (3,3);
+        \draw[black,thick,->,>=stealth'] (-3,0)--(3.4,0);
+        \draw[black,thick,->,>=stealth'] (0,-3)--(0, 3.4);
+        \foreach \r in {2} {
+        \draw[black, thick] (\r,.1) --++ (0,-.2) node[below, yshift=-2, fill=white, inner sep=1]{$\r$};
+        \draw[black, thick] (-\r,.1) --++ (0,-.2) node[below, yshift=-2, fill=white, inner sep=1]{$-\r$};
+        \draw[black, thick] (.1,\r) --++ (-.2,0) node[left, xshift=-2, fill=white, inner sep=1]{$\r i$};
+        \draw[black, thick] (.1,-\r) --++ (-.2,0) node[left, xshift=-2, fill=white, inner sep=1]{$-\r i$};
+        }
+        \filldraw[red] (45:3) circle (.08cm) node[above, yshift=.15cm, fill=white, inner sep=1, text=black]{$\displaystyle\frac{3}{\sqrt2}+\frac{3}{\sqrt2}i$};
+        \filldraw[blue] (225:3) circle (.08cm) node[below, yshift=-.15cm, fill=white, inner sep=1, text=black]{$\displaystyle\frac{-3}{\sqrt2}-\frac{3}{\sqrt2}i$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+
+    </sidebyside>
     </answer></exercise>
 
 <exercise number="44"><statement><p>The fourth roots of <m>-81</m>.</p></statement></exercise>
 
 <exercise number="45"><statement><p>The fifth roots of <m>32</m>.</p></statement>
 <answer><p><ol label="a">
-    <li><m>2,~2(\cos \dfrac{2\pi}{5} + i\sin \dfrac{2\pi}{5}),~2(\cos \dfrac{4\pi}{5} + i\sin \dfrac{4\pi}{5}),~2(\cos \dfrac{6\pi}{5} + i\sin \dfrac{6\pi}{5}),</m> <m>2(\cos \dfrac{8\pi}{5} + i\sin \dfrac{8\pi}{5})</m></li>
-    <li><m>2,~0.618+1.9i,~-1.618_1.176i,~-1.618-1.176i,~0.618-1.902i</m></li></ol></p>
-    <sidebyside width="20%"><image source="images/hp10-4-45ans.png"><description>graph</description></image></sidebyside></answer></exercise>
+    <li><m>2,~2\left(\cos \dfrac{2\pi}{5} + i\sin \dfrac{2\pi}{5}\right)</m>, <m>~2\left(\cos \dfrac{4\pi}{5} + i\sin \dfrac{4\pi}{5}\right)</m> , <m>~2\left(\cos \dfrac{6\pi}{5} + i\sin \dfrac{6\pi}{5}\right)</m>, <m>2\left(\cos \dfrac{8\pi}{5} + i\sin \dfrac{8\pi}{5}\right)</m></li>
+    <li><m>2,~0.618+1.9i</m>, <m>~-1.618_1.176i</m>, <m>~-1.618-1.176i</m>, <m>~0.618-1.902i</m></li></ol></p>
+    <sidebyside width="100%"><!--<image source="images/hp10-4-45ans.png"><description>graph</description></image>-->
+    <image xml:id="hp10-4-45ans">
+        <description>fifth roots of complex number</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.7]
+        \draw[cyan] (-3,-3) grid (3,3);
+        \draw[black,thick,->,>=stealth'] (-3,0)--(3.4,0);
+        \draw[black,thick,->,>=stealth'] (0,-3)--(0, 3.4);
+        \foreach \r in {2} {
+        \draw[black, thick] (\r,.1) --++ (0,-.2) node[below, yshift=-2, fill=white, inner sep=1]{$\r$};
+        \draw[black, thick] (-\r,.1) --++ (0,-.2) node[below, yshift=-2, fill=white, inner sep=1]{$-\r$};
+        \draw[black, thick] (.1,\r) --++ (-.2,0) node[left, xshift=-2, fill=white, inner sep=1]{$\r i$};
+        \draw[black, thick] (.1,-\r) --++ (-.2,0) node[left, xshift=-2, fill=white, inner sep=1]{$-\r i$};
+        }
+        \filldraw[red] (0:2) circle (.08cm) node[below, yshift=-.15cm, fill=white, inner sep=1, text=black]{$2$};
+        \filldraw[red] (72:2) circle (.08cm) node[above right, yshift=.15cm, fill=white, inner sep=1, text=black]{$\displaystyle2\left(\cos\frac{2\pi}{5}+i\sin\frac{2\pi}{5}\right)$};
+        \filldraw[red] (144:2) circle (.08cm) node[above left, yshift=.15cm, fill=white, inner sep=1, text=black]{$\displaystyle2\left(\cos\frac{4\pi}{5}+i\sin\frac{4\pi}{5}\right)$};
+        \filldraw[red] (214:2) circle (.08cm) node[below left, yshift=-.15cm, fill=white, inner sep=1, text=black]{$\displaystyle2\left(\cos\frac{6\pi}{5}+i\sin\frac{6\pi}{5}\right)$};
+        \filldraw[red] (-72:2) circle (.08cm) node[below right, yshift=-.15cm, fill=white, inner sep=1, text=black]{$\displaystyle2\left(\cos\frac{8\pi}{5}+i\sin\frac{8\pi}{5}\right)$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></answer></exercise>
 
 <exercise number="46"><statement><p>The cube roots of <m>i</m>.</p></statement></exercise>
 
 <exercise number="47"><statement><p>The cube roots of <m>4\sqrt{3}+4i</m>.</p></statement>
 <answer><p><ol label="a">
-    <li><m>4(\cos \dfrac{\pi}{18} + i\sin \dfrac{\pi}{18}),~4(\cos \dfrac{13\pi}{18} + i\sin \dfrac{13\pi}{18}),~4(\cos \dfrac{25\pi}{18} + i\sin \dfrac{25\pi}{18})</m></li>
-    <li><m>1.97+0.347i,~-1.286+1.532i,~-0.684-1.879i</m></li></ol></p>
-    <sidebyside width="20%"><image source="images/hp10-4-47ans.png"><description>graph</description></image></sidebyside></answer></exercise>
+    <li><m>4\left(\cos \dfrac{\pi}{18} + i\sin \dfrac{\pi}{18}\right)</m>, <m>~4\left(\cos \dfrac{13\pi}{18} + i\sin \dfrac{13\pi}{18}\right)</m>, <m>~4\left(\cos \dfrac{25\pi}{18} + i\sin \dfrac{25\pi}{18}\right)</m></li>
+    <li><m>1.97+0.347i</m>, <m>~-1.286+1.532i</m>, <m>~-0.684-1.879i</m></li></ol></p>
+    <sidebyside width="100%"><!--<image source="images/hp10-4-47ans.png"><description>graph</description></image>-->
+    <image xml:id="hp10-4-47ans">
+        <description>cube roots of complex number</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=0.7]
+        \draw[cyan] (-5,-5) grid (5,5);
+        \draw[black,thick,->,>=stealth'] (-5,0)--(5.7,0);
+        \draw[black,thick,->,>=stealth'] (0,-5)--(0, 5.7);
+        \foreach \r in {3} {
+        \draw[black, thick] (\r,.1) --++ (0,-.2) node[below, yshift=-2, fill=white, inner sep=1]{$\r$};
+        \draw[black, thick] (-\r,.1) --++ (0,-.2) node[below, yshift=-2, fill=white, inner sep=1]{$-\r$};
+        \draw[black, thick] (.1,\r) --++ (-.2,0) node[left, xshift=-2, fill=white, inner sep=1]{$\r i$};
+        \draw[black, thick] (.1,-\r) --++ (-.2,0) node[left, xshift=-2, fill=white, inner sep=1]{$-\r i$};
+        }
+        \filldraw[red] (10:4) circle (.08cm) node[above, yshift=.15cm, fill=white, inner sep=1, text=black]{$\displaystyle 4\left(\cos\frac{\pi}{18}+i\sin\frac{\pi}{18}\right)$};
+        \filldraw[red] (130:4) circle (.08cm) node[above left, yshift=.15cm, fill=white, inner sep=1, text=black]{$\displaystyle 4\left(\cos\frac{13\pi}{18}+i\sin\frac{13\pi}{18}\right)$};
+        \filldraw[red] (250:4) circle (.08cm) node[ left, xshift=-.15cm, fill=white, inner sep=1, text=black]{$\displaystyle 4\left(\cos\frac{25\pi}{18}+i\sin\frac{25\pi}{18}\right)$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+
+    </sidebyside></answer></exercise>
 
 <exercise number="48"><statement><p>The square roots of <m>-2+2\sqrt{3}i</m>.</p></statement></exercise>
 </exercisegroup>
 
 <exercise number="49"><statement><p>Show that any complex number of the form <m>z=\cos\theta + i\sin \theta</m> lies on the unit circle in the complex plane.</p></statement>
-<answer><m>\abs{z} = \abs{\cos \theta + i\sin \theta} = \sqrt{\cos^2\theta + \sin^2\theta} = 1</m></answer></exercise>
+<answer><p><m>\abs{z} = \abs{\cos \theta + i\sin \theta} = \sqrt{\cos^2\theta + \sin^2\theta} = 1</m></p></answer></exercise>
 
 <exercise number="50"><statement><p>Show that if <m>\abs{z}=1</m>, then <m>\dfrac{1}{z}=\bar{z}</m>.</p></statement></exercise>
 
@@ -205,29 +317,29 @@
 <me>\omega_k = \cos \dfrac{2\pi k}{n} + i\sin \dfrac{2\pi k}{n}</me>
 for <m>k = 0,~1,~2,~ \cdots,~ n-1.</m>  Show that <m>(\omega_k)^n = 1</m>. (We call <m>\omega_k</m> an <term><m>n^{th}</m>
  root of unity</term>.)</p></statement>
-<answer><m>(\omega_k)^n = 1^n(\cos n \cdot \dfrac{2\pi k}{n} + i\sin n \cdot \dfrac{2\pi k}{n}) = 1(\cos 2\pi k + i\sin 2\pi k) = 1</m></answer></exercise>
+<answer><p><m>(\omega_k)^n = 1^n(\cos n \cdot \dfrac{2\pi k}{n} + i\sin n \cdot \dfrac{2\pi k}{n}) = 1(\cos 2\pi k + i\sin 2\pi k) = 1</m></p></answer></exercise>
 
 <exercise number="54"><statement><p>Let <m>\omega = \cos \dfrac{2\pi}{n} + i\sin \dfrac{2\pi}{n}</m>, where <m>n</m> is a positive integer. Show that the <m>n</m> distinct <m>n^{th}</m> roots of unity are <m>\omega,~\omega^2,~\omega^3,~ \cdots,~\omega^{n-1}</m>. </p></statement></exercise>
 
 <exercisegroup cols="2"><introduction><p>For Problems 55-60, solve the equation.</p></introduction>
 
-<exercise number="55"><statement><m>z^4+4z^2+8=0</m></statement>
-<answer><m>8^{1/4}(\cos \dfrac{3\pi}{8} + i\sin \dfrac{3\pi}{8}),~8^{1/4}(\cos \dfrac{5\pi}{8} + i\sin \dfrac{5\pi}{8}),~8^{1/4}(\cos \dfrac{11\pi}{8} + i\sin \dfrac{11\pi}{8}),</m><m>8^{1/4}(\cos \dfrac{13\pi}{8} + i\sin \dfrac{13\pi}{8})</m></answer></exercise>
+<exercise number="55"><statement><p><m>z^4+4z^2+8=0</m></p></statement>
+<answer><p><m>8^{1/4}\left(\cos \dfrac{3\pi}{8} + i\sin \dfrac{3\pi}{8}\right)</m>, <m>~8^{1/4}\left(\cos \dfrac{5\pi}{8} + i\sin \dfrac{5\pi}{8}\right)</m>, <m>~8^{1/4}\left(\cos \dfrac{11\pi}{8} + i\sin \dfrac{11\pi}{8}\right)</m>, <m>~8^{1/4}\left(\cos \dfrac{13\pi}{8} + i\sin \dfrac{13\pi}{8}\right)</m></p></answer></exercise>
 
-<exercise number="56"><statement><m>z^6+4z^3+8=0</m></statement></exercise>
+<exercise number="56"><statement><p><m>z^6+4z^3+8=0</m></p></statement></exercise>
 
-<exercise number="57"><statement><m>z^6-8=0</m></statement>
-<answer><m>\sqrt{2},~\sqrt{2}(\cos \dfrac{\pi}{3} + i\sin \dfrac{\pi}{3}),~\sqrt{2}(\cos \dfrac{2\pi}{3} + i\sin \dfrac{2\pi}{3}),~-\sqrt{2},</m>
-<m>\sqrt{2}(\cos \dfrac{4\pi}{3} + i\sin \dfrac{4\pi}{3}),~\sqrt{2}(\cos \dfrac{5\pi}{3} + i\sin \dfrac{5\pi}{3})</m>
+<exercise number="57"><statement><p><m>z^6-8=0</m></p></statement>
+<answer><p><m>\sqrt{2}</m>, <m>~\sqrt{2}\left(\cos \dfrac{\pi}{3} + i\sin \dfrac{\pi}{3}\right)</m>, <m>~\sqrt{2}\left(\cos \dfrac{2\pi}{3} + i\sin \dfrac{2\pi}{3}\right)</m>, <m>~-\sqrt{2}</m>,
+<m>~\sqrt{2}\left(\cos \dfrac{4\pi}{3} + i\sin \dfrac{4\pi}{3}\right)</m>, <m>~\sqrt{2}\left(\cos \dfrac{5\pi}{3} + i\sin \dfrac{5\pi}{3}\right)</m></p>
 </answer></exercise>
 
-<exercise number="58"><statement><m>z^4-9i=0</m></statement></exercise>
+<exercise number="58"><statement><p><m>z^4-9i=0</m></p></statement></exercise>
 
-<exercise number="59"><statement><m>z^4+2z^2+4=0</m></statement>
-<answer><m>\sqrt{2}(\cos \dfrac{\pi}{3} + i\sin \dfrac{\pi}{3}),~\sqrt{2}(\cos \dfrac{2\pi}{3} + i\sin \dfrac{2\pi}{3}),</m>
-<m>\sqrt{2}(\cos \dfrac{4\pi}{3} + i\sin \dfrac{4\pi}{3}),~\sqrt{2}(\cos \dfrac{5\pi}{3} + i\sin \dfrac{5\pi}{3})</m></answer></exercise>
+<exercise number="59"><statement><p><m>z^4+2z^2+4=0</m></p></statement>
+<answer><p><m>\sqrt{2}\left(\cos \dfrac{\pi}{3} + i\sin \dfrac{\pi}{3}\right)</m>, <m>~\sqrt{2}\left(\cos \dfrac{2\pi}{3} + i\sin \dfrac{2\pi}{3}\right)</m>, 
+<m>~\sqrt{2}\left(\cos \dfrac{4\pi}{3} + i\sin \dfrac{4\pi}{3}\right)</m>, <m>~\sqrt{2}\left(\cos \dfrac{5\pi}{3} + i\sin \dfrac{5\pi}{3}\right)</m></p></answer></exercise>
 
-<exercise number="60"><statement><m>z^4-2z^2+4=0</m></statement></exercise>
+<exercise number="60"><statement><p><m>z^4-2z^2+4=0</m></p></statement></exercise>
 </exercisegroup>
 
 <exercise number="61"><statement><p><ol label="a">
@@ -256,7 +368,7 @@ for <m>k = 0,~1,~2,~ \cdots,~ n-1.</m>  Show that <m>(\omega_k)^n = 1</m>. (We c
 <answer><p><ol label="a">
     <li><m>\dfrac{b}{a}</m></li>
      <li><m>\dfrac{-a}{b}</m></li>
-    <li><m>-1,~\dfrac{\pi}{2}</m></li></ol></p></answer></exercise>
+    <li><m>-1</m>, <m>~\dfrac{\pi}{2}</m></li></ol></p></answer></exercise>
 
 <exercise number="64"><statement><p>Suppose that <m>z=a+bi</m> and that <m>a</m> and <m>b</m> are both real numbers.
 <ol label="a">

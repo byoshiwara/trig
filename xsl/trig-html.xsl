@@ -7,7 +7,7 @@
 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 <!--
- Assumes current file is in mfg/xsl and that the mathbook repository is adjacent 
+ Assumes current file is in trig/xsl and that the mathbook repository is adjacent 
 -->
 <xsl:import href="../../mathbook/xsl/mathbook-html.xsl"/>
 <!--
@@ -32,16 +32,9 @@
 <!-- color theme -->
 <xsl:param name="html.css.file"   select="'mathbook-3.css'" />
 
-<!--
- Exercises have "solution"s which should be put in the back. 
--->
-<!--  Not sure what to do for homework solutions  -->
-<xsl:param name="exercise.text.statement" select="'yes'"/>
-<xsl:param name="exercise.text.hint" select="'yes'"/>
-<xsl:param name="exercise.text.answer" select="'no'"/>
-<xsl:param name="exercise.text.solution" select="'no'"/>
-<xsl:param name="exercise.backmatter.statement" select="'no'"/>
-<xsl:param name="exercise.backmatter.hint" select="'yes'"/>
-<xsl:param name="exercise.backmatter.answer" select="'yes'"/>
-<xsl:param name="exercise.backmatter.solution" select="'yes'"/>
+<xsl:param name="exercise.divisional.hint" select="'yes'" />
+<xsl:param name="exercise.divisional.answer" select="'no'" />
+<xsl:param name="exercise.divisional.solution" select="'no'" />
+
+
 </xsl:stylesheet>

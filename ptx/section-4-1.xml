@@ -4,7 +4,7 @@
 <section xml:id="Angles-and-Rotation"   xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Angles and Rotation</title>
 
-<introduction>
+<subsection><title>Introduction</title>
     <p>So far we have studied angles as parts of triangles, but we can also use angles to describe rotation. For example, think of the minute hand on a clock.  Every hour, the minute hand moves through one complete rotation, or <m>360\degree</m>. In two hours, the minute hand rotates through <m>720\degree</m>.</p>
 
 <example><statement>
@@ -79,7 +79,7 @@ Forty minutes is two-thirds of an hour, so the minute hand rotates through
  </example>
 
 <exercise><statement>
-<sidebyside widths="50% 25%" valigns="middle middle"><p>The volume control on an amplifier is a dial with ten settings, as shown at right. Through how many degrees would you rotate the dial to increase the volume level from 0 to 7?</p><!--<image source="images/exer4-1-1.png"><description>dial</description></image>-->
+<sidebyside widths="60% 25%" valigns="middle middle" margins="0% 5%"><p>The volume control on an amplifier is a dial with ten settings, as shown at right. Through how many degrees would you rotate the dial to increase the volume level from 0 to 7?</p><!--<image source="images/exer4-1-1.png"><description>dial</description></image>-->
     <image xml:id="exer4-1-1">
         <description>dial</description>
         <latex-image>
@@ -110,8 +110,8 @@ Forty minutes is two-thirds of an hour, so the minute hand rotates through
         \end{tikzpicture}]]>
     </latex-image>
     </image>
-</sidebyside></statement></exercise>
-</introduction>
+</sidebyside></statement><answer><p><m>252\degree</m></p></answer></exercise>
+</subsection>
 
 <subsection><title>Angles in Standard Position</title>
 <p>The degree measure of an angle depends only on the fraction of a whole rotation between its sides, and not on the location or position of the angle.  To compare and analyze angles, we place them in standard position, so that the vertex of the angle is located at the origin and its initial side lies on the positive <m>x</m>-axis. The figure below shows several angles placed in standard position.</p>
@@ -466,7 +466,56 @@ Forty minutes is two-thirds of an hour, so the minute hand rotates through
         \end{tikzpicture}]]>
     </latex-image>
     </image>
-</sidebyside></statement></exercise>
+</sidebyside></statement><answer><sidebyside widths="20% 20%" margins="0% 50%" valigns="middle middle"><p>a. <m>120\degree</m></p><!--<image source="images/ar4-1-2a.png"><description>angles</description></image>-->
+   <image xml:id="ar4-1-2a">
+        <description>angle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+        \coordinate(O) at (0,0);
+        \coordinate(A) at (120:1.7cm);
+
+        \draw[black, thick, ->] (0,-.2)--(0,1.5) node[above] {$y$};
+        \draw[black, thick, ->] (-.6,0)--(1,0) node[right] {$x$};
+        \draw[red, thick, ->] (.3,0) arc(0:120:0.3) node[above right, midway, xshift=-1, yshift=-1]{\footnotesize$\theta = 120\degree$};
+
+        \draw[blue, thick, ->] (O) --(A);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside>
+        <sidebyside widths="20% 15%" margins="0% 50%" valigns="middle middle"><p>b. <m>70\degree</m></p><!--<image source="images/ar4-1-2b.png"><description>angles</description></image>-->
+   <image xml:id="ar4-1-2b">
+        <description>angle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+        \coordinate(O) at (0,0);
+        \coordinate(A) at (70:1.6cm);
+
+        \draw[black, thick, ->] (0,-.2)--(0,1.5) node[above] {$y$};
+        \draw[black, thick, ->] (-.3,0)--(1,0) node[right] {$x$};
+        \draw[red, thick, ->] (.3,0) arc(0:70:0.3) node[above right, midway, xshift=-1, yshift=-3]{\footnotesize$\alpha = 70\degree$};
+
+        \draw[blue, thick, ->] (O) --(A);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></answer></exercise>
 </subsection>
 
 <subsection><title>Trigonometric Ratios for All Angles</title>
@@ -595,7 +644,7 @@ Forty minutes is two-thirds of an hour, so the minute hand rotates through
 
 <exercise><statement>
     <p>For angles in each of the four quadrants shown below, explain why the indicated trig ratios are positive. Then complete the table.</p>
-        <sidebyside widths="50% 35%" valigns="middle middle"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
+        <sidebyside widths="65% 32%" valigns="middle middle" margins="0% 0%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
         <row bottom="minor">
             <cell>Quadrant</cell>
             <cell>Degrees</cell>
@@ -626,9 +675,58 @@ Forty minutes is two-thirds of an hour, so the minute hand rotates through
             <cell><m>\hphantom{0000}</m></cell>
             <cell><m>\hphantom{0000}</m></cell>
             <cell><m>\hphantom{0000}</m></cell></row>
-    </tabular><image source="images/4-1quads.png"><description>angles</description></image></sidebyside></statement></exercise>
+    </tabular><!--<image source="images/4-1quads.png"><description>angles</description></image>-->
+    <image xml:id="fig-4-1quads">
+        <description>quadrants</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} 
+        \draw[black, thick,->,>=stealth'] (0,-3)--(0,3);
+        \draw[black, thick, ->,>=stealth'] (-3,0)--(3,0);
 
-<example><statement><sidebyside widths="50% 25%" valigns="middle middle"><p>Find the sine, cosine, and tangent of the angle shown at right.</p><!--<image source="images/exam4-1-4.png"><description>angles</description></image>-->
+        \node[align=center] at (1.5,1.5) {Quadrant I\\ \\ \Large{All}\\are poositive};
+        \node[align=center] at (-1.5,1.5) {Quadrant II\\ \\ \Large{Sine}\\is poositive};
+        \node[align=center] at (-1.5,-1.5) {Quadrant III\\ \\ \Large{Tangent}\\is poositive};
+        \node[align=center] at (1.5,-1.5) {Quadrant IV\\ \\ \Large{Cosine}\\is poositive};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></statement><answer><sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
+        <row bottom="minor">
+            <cell>Quadrant</cell>
+            <cell>Degrees</cell>
+            <cell>Sine</cell>
+            <cell>Cosine</cell>
+            <cell>Tangent</cell></row>
+        <row>
+            <cell>First</cell>
+            <cell><m>0\degree \lt \theta \lt 90\degree</m></cell>
+            <cell>positive</cell>
+            <cell>positive</cell>
+            <cell>positive</cell></row>
+        <row>
+            <cell>Second</cell>
+            <cell><m>90\degree \lt \theta \lt 180\degree</m></cell>
+            <cell>positive</cell>
+            <cell>negative</cell>
+            <cell>negative</cell></row>
+        <row>
+            <cell>Third</cell>
+            <cell><m>180\degree \lt \theta \lt 270\degree</m></cell>
+            <cell>negative</cell>
+            <cell>negative</cell>
+            <cell>positive</cell></row>
+        <row>
+            <cell>Fourth</cell>
+            <cell><m>270\degree \lt \theta \lt 360\degree</m></cell>
+            <cell>negative</cell>
+            <cell>positive</cell>
+            <cell>negative</cell></row>
+    </tabular></sidebyside></answer></exercise>
+
+<example><statement><sidebyside widths="60% 25%" valigns="middle middle" margins="0% 5%"><p>Find the sine, cosine, and tangent of the angle shown at right.</p><!--<image source="images/exam4-1-4.png"><description>angles</description></image>-->
     <image xml:id="exam4-1-4">
         <description>angle</description>
         <latex-image>
@@ -676,7 +774,7 @@ Forty minutes is two-thirds of an hour, so the minute hand rotates through
                 \end{align*} 
 Because <m>P</m> is in the third quadrant, <m>x = -\sqrt{11}</m>. Thus, <me>\cos \theta = \dfrac{x}{r} = \dfrac{-\sqrt{11}}{6}~~~~ \text{and} ~~~~\tan \theta = \dfrac{y}{x} = \dfrac{-5}{-\sqrt{11}} = \dfrac{5}{\sqrt{11}}</me></p></solution></example>
 
-<exercise><statement><sidebyside widths="50% 25%" valigns="middle middle"><p>Find the sine, cosine, and tangent of the angle shown at right. The circle has radius 4.</p><!--<image source="images/exer4-1-4.png"><description>angles</description></image>-->
+<exercise><statement><sidebyside widths="60% 25%" valigns="middle middle" margins="0% 5%"><p>Find the sine, cosine, and tangent of the angle shown at right. The circle has radius 4.</p><!--<image source="images/exer4-1-4.png"><description>angles</description></image>-->
 <image xml:id="exer4-1-4">
     <description>angles</description>
     <latex-image>
@@ -713,13 +811,13 @@ Because <m>P</m> is in the third quadrant, <m>x = -\sqrt{11}</m>. Thus, <me>\cos
     \end{tikzpicture}]]>
 </latex-image>
 </image>
-</sidebyside></statement></exercise>
+</sidebyside></statement><answer><p><m>\sin \theta = \dfrac{\sqrt{7}}{4},~~\cos \theta = \dfrac{-3}{4},~~\tan \theta = \dfrac{-\sqrt{7}}{3}</m></p></answer></exercise>
 </subsection>
 
 <subsection><title>Reference Angles</title>
 <p>In Section 3.1 we learned that the trig ratios for angles in the second quadrant are the same as the trig ratios for their supplements, except for sign. For example, you can use your calculator to verify that</p>
 
-    <sidebyside widths="50% 35%" valigns="middle middle">><tabular>
+    <sidebyside widths="50% 35%" valigns="middle middle"><tabular>
         <row>
             <cell><m>\sin 130\degree = 0.7660</m></cell>
             <cell><m>\sin 50\degree = 0.7660</m></cell></row>
@@ -890,7 +988,7 @@ Because <m>P</m> is in the third quadrant, <m>x = -\sqrt{11}</m>. Thus, <me>\cos
         \end{tikzpicture}]]>
     </latex-image>
     </image>
-</sidebyside>s
+</sidebyside>
 
 <note><p>These observations may help you remember the formulas:</p>
     <p><ul>
@@ -1028,7 +1126,42 @@ Because <m>P</m> is in the third quadrant, <m>x = -\sqrt{11}</m>. Thus, <me>\cos
 <exercise><statement><p><ol label="a">
     <li>Find the reference angle for <m>285\degree</m>.</li>
     <li>Sketch <m>285\degree</m> and its reference angle in standard position, along with their reference triangles. Verify that both angles have the same trigonometric ratios, up to sign.</li>
-    </ol></p></statement></exercise>
+    </ol></p></statement><answer><p><ol label="a">
+        <li> <m>75\degree</m></li>
+        <li><sidebyside width="15%" margins="0% 50%" valign="middle"><!--<image source="images/ar4-1-5.png"><description>angles</description></image>-->
+    <image xml:id="ar4-1-5">
+        <description>angles</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+        \coordinate(O) at (0,0);
+        \coordinate(A) at (285:1.5cm);
+        \coordinate(B) at (75:1.5cm);
+        \coordinate(C) at ($ 1.5*cos(75)*(1,0)   $);
+
+        \draw[blue,thick] (C) rectangle ++(.2,.2);
+        \draw[black, thick, ->] (0,-.2)--(0,1.5) node[above] {$y$};
+        \draw[black, thick, ->] (-.8,0)--(1,0) node[right] {$x$};
+
+        \draw[gray!50!white, thick] (A) -- (B);
+
+        \draw[blue, thick, ->] (O) --(B) node[above right,xshift=-3, yshift=-3] {\color{red}\footnotesize$75\degree$};
+
+        \draw[red, thick, ->] (.2,0) arc(0:285:0.2);
+
+        \draw[blue, thick, ->] (O) --(A) node[below right,xshift=-3, yshift=3] {\color{red}\footnotesize$285\degree$};
+
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside><p><m>\sin 285\degree = -\sin 75\degree = -0.9659</m>, <m>~\cos 285\degree = \cos 75\degree = 0.2588</m>, <m>~\tan 285\degree = -\tan 75\degree = -3.7321</m></p></li></ol></p></answer></exercise>
 </subsection>
 
 <subsection><title>Using Reference Angles</title>
@@ -1081,7 +1214,7 @@ Because <m>P</m> is in the third quadrant, <m>x = -\sqrt{11}</m>. Thus, <me>\cos
 <p> From the figure, you can see that the angles in each quadrant with a given reference angle are computed as follows.</p>
 
 <assemblage><title>To find an angle <m>\theta</m> with a given reference angle <m>\widetilde{\theta}</m>:</title>
-<sidebyside>><tabular>
+<sidebyside><tabular>
         <row>
             <cell>Quadrant I:    <m>~~~~~~\theta = \widetilde{\theta}</m></cell>
             <cell><m>\hphantom{0000}</m></cell>
@@ -1181,19 +1314,19 @@ Because <m>P</m> is in the third quadrant, <m>x = -\sqrt{11}</m>. Thus, <me>\cos
     </latex-image>
     </image>
 </sidebyside>
-And in the third quadrant,
+<p>And in the third quadrant,
     \begin{align*}
                 \theta \amp = 180\degree + \widetilde{\theta}\\
                 \amp = 180\degree + 51.3\degree = 231.3\degree\\            
                 \end{align*}
-    Both angles are shown above. You can check that the cosines of <m>128.7\degree</m> and <m>231.3\degree</m> are both approximately <m>-0.625</m>.</li>
+    Both angles are shown above. You can check that the cosines of <m>128.7\degree</m> and <m>231.3\degree</m> are both approximately <m>-0.625</m>.</p></li>
     </ol></p>
 </solution></example>
 
 <exercise><statement><p><ol label="a">
     <li>Find an angle in the third quadrant whose tangent is <m>3.66</m>. Round your answer to the nearest tenth of a degree.</li>
     <li>Use reference angles to find two angles whose tangent is <m>-3.66</m>.</li>
-    </ol></p></statement></exercise>
+    </ol></p></statement><answer><p><ol label="a" cols="2"><li><m>254.7\degree</m></li><li><m>105.3\degree</m>, <m>~-258.3\degree</m></li></ol></p></answer></exercise>
 </subsection>
 
 <subsection><title>Coterminal Angles</title>
@@ -1311,7 +1444,7 @@ And in the third quadrant,
     </image>
 </sidebyside>
 
-<exercise><statement><p>Find two angles coterminal with <m>102\degree</m>, one positive and one negative.</p></statement></exercise>
+<exercise><statement><p>Find two angles coterminal with <m>102\degree</m>, one positive and one negative.</p></statement><answer><p><m>462\degree</m>, <m>~-258\degree</m></p></answer></exercise>
 </subsection>
 
 <subsection><title>Solving Trigonometric Equations</title>
@@ -1434,7 +1567,7 @@ You can check that, rounded to four decimal places, both angles satisfy the equa
 
 <warning><p>When you ask your calculator to find an angle with a given sine by pressing  SIN,  it will give you only one of the many possible answers. The same is true of the  COS and  TAN keys.  You must be careful to choose the appropriate answer for the situation, using reference and coterminal angles.</p></warning>
 
-<exercise><statement><p>Solve the equation <m>\tan \theta = -0.4</m> for angles between <m>0\degree</m> and <m>360\degree</m>.</p></statement></exercise>
+<exercise><statement><p>Solve the equation <m>\tan \theta = -0.4</m> for angles between <m>0\degree</m> and <m>360\degree</m>.</p></statement><answer><p><m>338.2\degree</m>, <m>~158.2\degree</m></p></answer></exercise>
 
 <note><p>In the previous example we found two solutions of the equation <m>\sin \theta = -0.6428</m>. Actually, there are infinitely many solutions -- namely, all the angles coterminal with <m>320\degree</m> or <m>220\degree</m>.  Some of these angles are listed below.
     \begin{align*}
@@ -1490,7 +1623,7 @@ We draw a reference triangle as shown at right.  Because the sides of a 30-60-90
 <exercise><statement><p><ol label="a">
     <li>Sketch an angle of <m>300\degree</m> in standard position, and its reference triangle.  Find the reference angle for <m>300\degree</m>.</li>
     <li>Find exact values for the sine, cosine, and tangent of <m>300\degree</m>.</li>
-    </ol></p></statement></exercise>
+    </ol></p></statement><answer><p><ol label="a"><li><m>60\degree</m></li><li><m>\sin 300\degree = \dfrac {-\sqrt{3}}{2}</m>, <m>~\cos 300\degree = \dfrac {1}{2}</m>, <m>~\tan 300\degree = -\sqrt{3}</m></li></ol></p></answer></exercise>
 
 <sidebyside widths="50% 40%" valigns="middle middle"><p>All of the special angles are shown at right. In the Homework Problems you will calculate the three trigonometric ratios for all the special angles, and you should memorize these values, or be able to calculate them quickly.</p><!--<image source="images/4-1-specang.png"><description>angles</description></image>-->
     <image xml:id="fig-4-1-specang">
@@ -1741,7 +1874,7 @@ We draw a reference triangle as shown at right.  Because the sides of a 30-60-90
 <p>Let <m>P</m> be a point on a unit circle determined by the terminal side of an angle <m>\theta</m> in standard position. Then the coordinates <m>(x,y)</m>  of <m>P</m> are given by <me>x = \cos \theta,~~~~~~y = \sin \theta</me></p></assemblage>
 
 <example><statement>
-<sidebyside widths="55% 25%" valigns="middle middle"><p>Find the coordinates of point <m>P</m> on the unit circle shown at right.</p><!--<image source="images/exam4-1-10.png"><description>angles</description></image>-->
+<sidebyside widths="66% 25%" valigns="middle middle" margins="0% 5%"><p>Find the coordinates of point <m>P</m> on the unit circle shown at right.</p><!--<image source="images/exam4-1-10.png"><description>angles</description></image>-->
    <image xml:id="exam4-1-10">
         <description>angles</description>
         <latex-image>
@@ -1773,9 +1906,9 @@ We draw a reference triangle as shown at right.  Because the sides of a 30-60-90
     </latex-image>
     </image>
 </sidebyside></statement>
-<solution><p>The coordinates of <m>P</m> are given by  <me>x = \cos 315\degree,~~~y = \sin 315\degree</me>.  The reference angle for <m>315\degree</m> is <m>~ 360\degree - 315\degree = 45\degree</m>, so the trig ratios of <m>315\degree</m> are the same as the ratios for <m>45\degree</m>, up to sign.</p><p> Because <m>315\degree</m> is in the fourth quadrant, we have  <m>\cos 315\degree = \dfrac{1}{\sqrt{2}}</m>  and  <m>\sin 315\degree = \dfrac{-1}{\sqrt{2}}</m>. Thus, the coordinates of <m>P</m> are <m>(\dfrac{1}{\sqrt{2}}, \dfrac{1}{\sqrt{2}})</m>.</p></solution></example>
+<solution><p>The coordinates of <m>P</m> are given by  <me>x = \cos 315\degree,~~~y = \sin 315\degree</me>.  The reference angle for <m>315\degree</m> is <m>~ 360\degree - 315\degree = 45\degree</m>, so the trig ratios of <m>315\degree</m> are the same as the ratios for <m>45\degree</m>, up to sign.</p><p> Because <m>315\degree</m> is in the fourth quadrant, we have  <m>\cos 315\degree = \dfrac{1}{\sqrt{2}}</m>  and  <m>\sin 315\degree = \dfrac{-1}{\sqrt{2}}</m>. Thus, the coordinates of <m>P</m> are <m>\left(\dfrac{1}{\sqrt{2}}, \dfrac{1}{\sqrt{2}}\right)</m>.</p></solution></example>
 
-<exercise><statement><sidebyside widths="55% 35%" valigns="middle middle"><p>Find two angles coterminal with <m>102\degree</m>, one positive and one negative.</p><!--<image source="images/exer4-1-10.png"><description>angles</description></image>-->
+<exercise><statement><sidebyside widths="60% 35%" valigns="middle middle" margins="0% 0%"><p>Find the sine, cosine, and tangent ofthe angle <m>\varphi</m> shown at right.</p><!--<image source="images/exer4-1-10.png"><description>angles</description></image>-->
    <image xml:id="exer4-1-10">
         <description>angles</description>
         <latex-image>
@@ -1805,170 +1938,40 @@ We draw a reference triangle as shown at right.  Because the sides of a 30-60-90
         \end{tikzpicture}]]>
     </latex-image>
     </image>
-</sidebyside></statement></exercise>
+</sidebyside></statement><answer><p><m>\sin \varphi = -0.7000</m>, <m>~\cos \varphi = -0.7141</m>, <m>~\tan \varphi = 0.9802</m></p></answer></exercise>
 </subsection>
 
 <subsection><title>Algebra Refresher</title>
 <exercises><exercisegroup><introduction><p>Evaluate the function.</p></introduction>
-<exercise number="1"><statement><m>f(x) = x^2 - 2x</m>
+<exercise number="1"><statement><p><m>f(x) = x^2 - 2x</m></p>
 <p><ol label="a" cols="4">
     <li><m>f(-3)</m></li>
     <li><m>f(a-3)</m></li>
     <li><m>f(a) - 5</m></li>
     <li><m>f(a) - f(5)</m></li>
     </ol></p></statement></exercise>
-<exercise number="2"><statement><m>g(x) = \sqrt{x + 4}</m>
+<exercise number="2"><statement><p><m>g(x) = \sqrt{x + 4}</m></p>
 <p><ol label="a" cols="4">
     <li><m>g(9)</m></li>
     <li><m>g(4h)</m></li>
     <li><m>g(0) + g(1)</m></li>
     <li><m>g(c^2)</m></li>
     </ol></p></statement></exercise>
-<exercise number="3"><statement><m>F(x) = \dfrac{2}{x}</m>
+<exercise number="3"><statement><p><m>F(x) = \dfrac{2}{x}</m></p>
 <p><ol label="a" cols="4">
-    <li><m>F(\dfrac{-1}{2})</m></li>
-    <li><m>F(\dfrac{w}{2})</m></li>
+    <li><m>F\left(\dfrac{-1}{2}\right)</m></li>
+    <li><m>F\left(\dfrac{w}{2}\right)</m></li>
     <li><m>F(w + 2)</m></li>
     <li><m>F(w) + F(2)</m></li>
     </ol></p></statement></exercise>
-<exercise number="4"><statement><m>G(x) = 2^x</m>
+<exercise number="4"><statement><p><m>G(x) = 2^x</m></p>
 <p><ol label="a" cols="4">
     <li><m>G(-3)</m></li>
     <li><m>G(a + 3)</m></li>
     <li><m>G(a) + G(3)</m></li>
-    <li><m>G(\dfrac{3}{2})</m></li>
+    <li><m>G\left(\dfrac{3}{2}\right)</m></li>
     </ol></p></statement></exercise>
 </exercisegroup></exercises>
-
-<subsubsection><title>Answers to 4.1 Exercises</title>
-<p><ol label="1">
-    <li><m>252\degree</m></li>
-    <li><sidebyside widths="20% 20%" margins="0% 50%" valigns="middle middle"><p>a. <m>120\degree</m></p><!--<image source="images/ar4-1-2a.png"><description>angles</description></image>-->
-   <image xml:id="ar4-1-2a">
-        <description>angle</description>
-        <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
-        \coordinate(O) at (0,0);
-        \coordinate(A) at (120:1.7cm);
-
-        \draw[black, thick, ->] (0,-.2)--(0,1.5) node[above] {$y$};
-        \draw[black, thick, ->] (-.6,0)--(1,0) node[right] {$x$};
-        \draw[red, thick, ->] (.3,0) arc(0:120:0.3) node[above right, midway, xshift=-1, yshift=-1]{\footnotesize$\theta = 120\degree$};
-
-        \draw[blue, thick, ->] (O) --(A);
-        \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-    </sidebyside>
-        <sidebyside widths="20% 15%" margins="0% 50%" valigns="middle middle"><p>b. <m>70\degree</m></p><!--<image source="images/ar4-1-2b.png"><description>angles</description></image>-->
-   <image xml:id="ar4-1-2b">
-        <description>angle</description>
-        <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
-        \coordinate(O) at (0,0);
-        \coordinate(A) at (70:1.6cm);
-
-        \draw[black, thick, ->] (0,-.2)--(0,1.5) node[above] {$y$};
-        \draw[black, thick, ->] (-.3,0)--(1,0) node[right] {$x$};
-        \draw[red, thick, ->] (.3,0) arc(0:70:0.3) node[above right, midway, xshift=-1, yshift=-3]{\footnotesize$\alpha = 70\degree$};
-
-        \draw[blue, thick, ->] (O) --(A);
-        \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-    </sidebyside></li>
-    <li><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
-        <row bottom="minor">
-            <cell>Quadrant</cell>
-            <cell>Degrees</cell>
-            <cell>Sine</cell>
-            <cell>Cosine</cell>
-            <cell>Tangent</cell></row>
-        <row>
-            <cell>First</cell>
-            <cell><m>0\degree \lt \theta \lt 90\degree</m></cell>
-            <cell>positive</cell>
-            <cell>positive</cell>
-            <cell>positive</cell></row>
-        <row>
-            <cell>Second</cell>
-            <cell><m>90\degree \lt \theta \lt 180\degree</m></cell>
-            <cell>positive</cell>
-            <cell>negative</cell>
-            <cell>negative</cell></row>
-        <row>
-            <cell>Third</cell>
-            <cell><m>180\degree \lt \theta \lt 270\degree</m></cell>
-            <cell>negative</cell>
-            <cell>negative</cell>
-            <cell>positive</cell></row>
-        <row>
-            <cell>Fourth</cell>
-            <cell><m>270\degree \lt \theta \lt 360\degree</m></cell>
-            <cell>negative</cell>
-            <cell>positive</cell>
-            <cell>negative</cell></row>
-    </tabular></li>
-    <li><m>\sin \theta = \dfrac{\sqrt{7}}{4},~~\cos \theta = \dfrac{-3}{4},~~\tan \theta = \dfrac{-\sqrt{7}}{3}</m></li>
-    <li><p><ol label="a">
-        <li> <m>75\degree</m></li>
-        <li><sidebyside width="15%" margins="0% 50%" valign="middle"><!--<image source="images/ar4-1-5.png"><description>angles</description></image>-->
-    <image xml:id="ar4-1-5">
-        <description>angles</description>
-        <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
-        \coordinate(O) at (0,0);
-        \coordinate(A) at (285:1.5cm);
-        \coordinate(B) at (75:1.5cm);
-        \coordinate(C) at ($ 1.5*cos(75)*(1,0)   $);
-
-        \draw[blue,thick] (C) rectangle ++(.2,.2);
-        \draw[black, thick, ->] (0,-.2)--(0,1.5) node[above] {$y$};
-        \draw[black, thick, ->] (-.8,0)--(1,0) node[right] {$x$};
-
-        \draw[gray!50!white, thick] (A) -- (B);
-
-        \draw[blue, thick, ->] (O) --(B) node[above right,xshift=-3, yshift=-3] {\color{red}\footnotesize$75\degree$};
-
-        \draw[red, thick, ->] (.2,0) arc(0:285:0.2);
-
-        \draw[blue, thick, ->] (O) --(A) node[below right,xshift=-3, yshift=3] {\color{red}\footnotesize$285\degree$};
-
-        \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-    </sidebyside><m>\sin 285\degree = -\sin 75\degree = -0.9659,~~\cos 285\degree = \cos 75\degree = 0.2588,~~\tan 285\degree = -\tan 75\degree = -3.7321</m></li></ol></p></li>
-      <li>a. <m>254.7\degree~~~~</m>b. <m>105.3\degree,~-258.3\degree</m></li>
-     <li><m>462\degree,~-258\degree</m></li>
-     <li><m>338.2\degree,~158.2\degree</m></li>
-     <li>a. <m>60\degree ~~~~</m>b.  <m>\sin 300\degree = \dfrac {-\sqrt{3}}{2},~\cos 300\degree = \dfrac {1}{2},~\tan 300\degree = -\sqrt{3}</m></li>
-     <li><m>\sin \phi = -0.7000,~\cos \phi = -0.7141,~\tan \phi = 0.9802</m></li>  
-</ol></p>
-</subsubsection>
 
 <subsubsection><title>Algebra Refresher Answers</title>
 <p><ol label="1">
@@ -2024,11 +2027,11 @@ We draw a reference triangle as shown at right.  Because the sides of a 30-60-90
     <li> Choose a point <m>P</m> on the terminal side.</li>   
     <li> Draw a line from point <m>P</m> perpendicular to the <m>x</m>-axis.</li>
 </ol></p></li> 
-<li>The <term>reference angle</term> for <m>\theta</m> is the positive acute angle formed between the terminal side of <m>\theta</m> and the <m>x</m>-axis. 
+<li><p>The <term>reference angle</term> for <m>\theta</m> is the positive acute angle formed between the terminal side of <m>\theta</m> and the <m>x</m>-axis. </p>
 <sidebyside width="90%"><image source="images/fig-4-1ref"><description>angles</description></image></sidebyside></li>
 <li>The trigonometric ratios of any angle are equal to the ratios of its reference angle, except for sign. The sign of the ratio is determined by the quadrant.</li>
 <li><assemblage><title>To find an angle <m>\theta</m> with a given reference angle <m>\widetilde{\theta}</m>:</title>
-<sidebyside>><tabular>
+<sidebyside><tabular>
         <row>
             <cell>Quadrant I:    <m>~~~~~~\theta = \widetilde{\theta}</m></cell>
             <cell><m>\hphantom{0000}</m></cell>
