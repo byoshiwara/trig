@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- <mathbook><book> -->
+
+<section xml:id="chap3-activity" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Chapter 3 Activity</title>
+<!-- Activity: Law of Sines-->
+
+
+
+
+<activity><title>Understanding the Law of Sines</title>
+<p><ul><li><p>Materials: You will need paper and pencil, a ruler, compass, and protractor, or a dynamic geometry program such as Geogebra.</p></li></ul></p>
+<p><ol label="A">
+<li><p>The vertices of a triangle determine a unique circumscribing circle. 
+    <ol label="1">
+        <li><p>Draw a large acute triangle and label the vertices <m>A</m> , <m>B</m>, and <m>C</m>.</p></li>
+        <li><p>Draw the perpendicular bisector of side <m>\overline{AC}</m>. You can use a compass, or use your ruler and protractor as follows:<ol label="a">
+            <li><p>Find the midpoint, <m>M</m>, of side <m>AC</m>.</p></li> 
+            <li><p>Draw a line that passes through <m>M</m> and is perpendicular to side <m>\overline{AC}</m>.</p></li>
+            </ol></p>
+        </li>
+        <li><p>Draw the perpendicular bisector of side <m>\overline{BC}</m> . Label the point where the two perpendicular bisectors meet with the letter <m>O</m>.</p>
+        </li>
+        <li><p>From geometry, we know that every point on the perpendicular bisector of a segment <m>\overline{PQ}</m> is equidistant between <m>P</m> and <m>Q</m>. Use this fact to explain why the point <m>O</m> is the same distance from each vertex of your triangle.</p></li>
+        <li><sidebyside widths="55% 30%" valigns="middle middle" margins="0% 5%"><p>Using the point at <m>O</m> as the center, draw the circle that passes through all three vertices of your triangle. The circle is called the <term>circumscribing circle</term> of the triangle.</p>
+        <image xml:id="fig-circumscribe-triangle">
+            <description>triangle with circumscribing circle</description>
+            <latex-image>
+            <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+            <![CDATA[\tikzset{%
+            }
+        \begin{tikzpicture} [scale=.4]
+
+        \coordinate (O) at (0,0);
+        \coordinate (A) at (185:5);
+        \coordinate (B) at (100:5);
+        \coordinate (C) at (-50:5);
+
+        \filldraw (A) circle (.1cm) node[anchor= east] {$A$};
+        \filldraw (B) circle (.1cm) node[anchor=south] {$B$};
+        \filldraw (C) circle (.1cm) node[anchor=north west] {$C$};
+
+        \draw[black,thick] (A)--(B) node[above left, midway, yshift=-2]{$c$};
+        \draw[black,thick] (B)--(C)--(A);
+        \draw[blue] (O) circle (5);
+            \end{tikzpicture}]]>
+        </latex-image>
+        </image>
+                </sidebyside></li>
+        
+    </ol></p>
+    </li>
+    <li><p>We can move a vertex around the circle without changing the measure of its angle.
+        <ol label="1">
+            <li><p>Measure angle <m>C</m> in your triangle. We say that this angle <term>subtends</term> the arc joining <m>A</m> and <m>B</m> on the circle.</p></li>
+            <li><p>Choose any other point on the circle that is <em>not</em> on the arc <m>\overset{\large\frown}{AB}</m>. Call this point <m>D</m>. Draw the line segments <m>\overline{AD}</m> and <m>\overline{BD}</m> to create a second triangle. Measure the angle at <m>D</m>; it should be the same as the angle <m>C</m>.</p></li>
+            <li><p>In fact, all angles with vertex on the circle that subtend the same arc have the same measure. Verify this fact by creating two more angles that subtend the arc <m>\overset{\large\frown}{AB}</m>.</p>
+            <sidebyside width="30%">
+                    <image xml:id="fig-triangles-inscribed">
+        <description>triangle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.4]
+        \coordinate (O) at (0,0);
+        \coordinate (A) at (-3,-4);
+        \coordinate (B) at (3,-4);
+        \coordinate (C) at (-1.92,4.62);
+        \coordinate (Cp) at (-4.62,1.92);
+        \coordinate (Cpp) at (0,5);
+        \coordinate (Cppp) at (3,4);
+        \coordinate (Cpppp) at (5,0);
+
+        \filldraw (O) circle (.1cm) node[anchor=north east] {$O$};
+        \filldraw (A) circle (.1cm) node[anchor=north east] {$A$};
+        \filldraw (B) circle (.1cm) node[anchor=north west] {$B$};
+        \filldraw (C) circle (.1cm) node[anchor=south east] {$C$};
+
+        \draw[draw= blue, fill=blue!80!white] (A)--(B)--(C)--(A);
+        \draw[draw= blue, fill=blue!30!white, opacity=.5] (A)--(B)--(Cp)--(A);
+        \draw[draw= blue, fill=blue!30!white, opacity=.5] (A)--(B)--(Cpp)--(A);
+        \draw[draw= blue, fill=blue!30!white, opacity=.5] (A)--(B)--(Cppp)--(A);
+        \draw[draw= blue, fill=blue!30!white, opacity=.5] (A)--(B)--(Cpppp)--(A);
+
+        \draw[blue] (O) circle (5);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+            </sidebyside></li>
+        </ol></p></li>
+        <li><p>What is the length of the diameter of the circumscribing circle?
+        <ol label="1">
+            <li><p>At this point, if your drawing is too cluttered, you may need to make a fresh copy of the circumscribing circle. On this circle draw just the side <m>\overline{AB}</m> from your original triangle.</p></li>
+            <li><p>Draw the diameter that passes through <m>B</m> (remember that <m>O</m> is the center of the circle), and label the other end of the diameter with the letter <m>C'</m>.</p></li>
+            <li><p>Draw triangle <m>\Delta ABC'</m>, and measure the angle at <m>C'</m>. It should be the same as angle <m>C</m> in your original triangle. (Why?) Let's call this angle <m>\theta</m>.</p></li>
+            <li><p>Now measure angle <m>\angle BAC'</m>. It should be 90 degrees, This is another fact from geometry: Any angle that intercepts the diameter of a circle is a right angle. Put a right angle symbol at angle <m>\angle BAC'</m>.</p></li>
+            <li><p>Label the length of the sides of your triangle as follows:
+                <ul>
+                    <li><p>Side <m>\overline{BC'}</m> has length <m>d</m> (for diameter)</p></li>
+                    <li><p>Side <m>\overline{AC'}</m> has length <m>b</m></p></li>
+                    <li><p>Side <m>\overline{AB}</m> has length <m>c</m></p></li>
+                </ul>
+                (Notice that <m>c</m> is the side opposite the angle <m>\theta</m>). Using the letters <m>d</m>, <m>b</m>, and <m>c</m> as needed, finish the equation
+                <me>\sin\theta =\hphantom{0000000}</me></p>
+                <sidebyside width="33%">
+    <image xml:id="fig-labeled-circumscribed-triangle">
+        <description>circumscribed right triangle with sides labeled</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.4]
+        \coordinate (O) at (0,0);
+        \coordinate (A) at (185:5);
+        \coordinate (B) at (100:5);
+        \coordinate (C) at (-80:5);
+        \coordinate (p) at ($ (100:5) - (185:5) $);
+        \coordinate (pp) at ($ (0,0)!1!-90:(p)$);
+        \filldraw (A) circle (.1cm) node[anchor= east] {$A$};
+        \filldraw (B) circle (.1cm) node[anchor=south] {$B$};
+        \filldraw (C) circle (.1cm) node[anchor=north west] {$C$};
+
+        \draw[blue] ($ (A) + 0.1*(p)$)--++($ 0.1*(pp) $)--++($ -0.1*(p)$);
+        \draw[black,thick] (A)--(B) node[above left, midway, yshift=-2]{$c$};
+        \draw[black,thick] (A)--(C) node[below left, midway, yshift=4]{$b$};
+        \draw[black,thick] (C)--(B) ;
+        \draw[red] (C)++(100:1.2) arc (100:142.5:1.2) node[above, midway, xshift=-3, yshift=-2, text=black]{$\theta$};
+        \draw[blue] (O) circle (5);
+        \filldraw[blue] (O) circle (.15cm) node[anchor= east, text=black] {$O$};
+        \draw [decorate,decoration={brace,amplitude=10pt},rotate=190] (-.6,-5) -- (-.6,5) node[right, midway, xshift=.3cm, yshift=.1cm] {$d$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+        </sidebyside></li>
+        <li><p>Start from the last equation, and solve for <m>d</m> in terms of <m>\sin C</m> and <m>c</m>.</p></li>
+        </ol></p></li>
+        <li><p>Equating expressions for the diameter: The Law of Sines
+            <ol label="1">
+                <li><p>You have now written an expression for the diameter of the circumscribing circle in terms of angle <m>C</m> and its opposite side. If you start the derivation with angle <m>B</m> and the arc <m>\overset{\large\frown}{AC}</m>, you will get another expression for the diameter. Write that expression here.</p></li>
+                <li><p>Now write an expression for the diameter that results from starting with angle <m>A</m> and arc <m>\overset{\large\frown}{BC}</m>.</p></li>
+                <li><p>Write an equation that reflects the fact that the diameter of the circle has the same length in all three expressions.</p>
+                <p>This is the Law of Sines! All three expressions represent the diameter of the circumscribing circle, so they are equal to each other.</p></li>
+            </ol></p></li>
+        <li><p>Verification for right and obtuse triangles</p>
+        <p>If ABC is not an acute triangle, then one of the angles must either be a right angle or an obtuse angle.
+            <ul><li><p>In a right triangle, call the right angle <m>A</m>. Now you are already at step (4) of part C , so the derivation continues as before.</p></li></ul></p>
+            <p>To see the derivation for an obtuse triangle, follow the steps:
+                <ol label="1">
+                    <li><p>Draw a circle and a triangle with vertices <m>A</m>, <m>B</m>, and <m>C</m> on the circle so that there is an obtuse angle at point <m>C</m>.</p></li>
+                    <li><p>Measure the angle at <m>C</m>. and note that the larger arc <m>\overset{\large\frown}{AB}</m> subtended by <m>\theta</m> is more than half of the circle.
+                </p></li>
+                <li><p>Choose a point <m>D</m> on the larger arc <m>\overset{\large\frown}{AB}</m>. In triangle <m>\Delta ABD</m>, the angle at <m>D</m> subtends the shorter arc connecting <m>A</m> and <m>B</m>. Measure the angle at <m>D</m>. You should find that the angles at <m>C</m> and <m>D</m> are supplementary.</p></li>
+                <li><p>Here is another fact from geometry: The measure of an inscribed angle in a circle is half the measure of the arc it subtends. Use this fact to explain why the angles at <m>C</m> and <m>D</m> are supplementary.</p></li>
+                <li><p>What can you say about the sines of angles <m>C</m> and <m>D</m>? Because it is an acute triangle, we can use our original derivation on <m>\Delta ABD</m>, and substitute <m>C</m> for <m>D</m> in the result.</p>
+                <sidebyside width="33%">
+    <image xml:id="fig-obtuse-circumscribed-triangle">
+        <description>obtuse circumscribed triangle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.4]
+
+        \coordinate (O) at (0,0);
+        \coordinate (A) at (230:5);
+        \coordinate (B) at (20:5);
+        \coordinate (C) at (-70:5);
+        \coordinate (D) at (150:5);
+
+        \filldraw (A) circle (.1cm) node[anchor= north east] {$A$};
+        \filldraw (B) circle (.1cm) node[anchor=west] {$B$};
+        \filldraw (C) circle (.1cm) node[anchor=north west] {$C$};
+        \filldraw (D) circle (.1cm) node[anchor=south east] {$D$};
+
+        \draw[gray,thick] (A)--(B)--(D)--(A) ;
+        \draw[black,thick] (A)--(B)--(C)--(A) ;
+        \draw[blue] (O) circle (5);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+                </sidebyside></li>
+                </ol></p></li>
+</ol></p>
+</activity>
+
+
+
+
+
+<!-- Activity: Law of Sines-->
+
+</section>
+<!-- </appendix> -->
+<!-- </book>  </mathbook> -->
