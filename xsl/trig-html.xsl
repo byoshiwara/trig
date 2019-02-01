@@ -1,7 +1,7 @@
 <!--  This file is part of the book                  -->
-<!--   Modeling, Functions, and Graphs   -->
+<!--   Trigonometry   -->
 <!--                                                 -->
-<!--  Copyright (C) 2016 Katherine Yoshiwara            -->
+<!--  Copyright (C) 2018 Katherine Yoshiwara            -->
 <!--
  Parts of this file were adapted from the author guide at https://github.com/rbeezer/mathbook and the analagous file at https://github.com/twjudson/aata 
 -->
