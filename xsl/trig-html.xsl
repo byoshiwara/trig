@@ -30,7 +30,7 @@
 <xsl:param name="html.knowl.warning" select="'no'" />
 <xsl:param name="html.knowl.technology" select="'no'" />
 <!-- color theme -->
-<xsl:param name="html.css.colorfile"   select="'mathbook-3.css'" />
+<xsl:param name="html.css.colorfile" select="'colors_default.css'" />
 
 <xsl:param name="exercise.divisional.hint" select="'yes'" />
 <xsl:param name="exercise.divisional.answer" select="'no'" />
