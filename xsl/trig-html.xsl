@@ -1,7 +1,7 @@
 <!--  This file is part of the book                  -->
-<!--   Modeling, Functions, and Graphs   -->
+<!--   Trigonometry   -->
 <!--                                                 -->
-<!--  Copyright (C) 2016 Katherine Yoshiwara            -->
+<!--  Copyright (C) 2018 Katherine Yoshiwara            -->
 <!--
  Parts of this file were adapted from the author guide at https://github.com/rbeezer/mathbook and the analagous file at https://github.com/twjudson/aata 
 -->
@@ -30,7 +30,7 @@
 <xsl:param name="html.knowl.warning" select="'no'" />
 <xsl:param name="html.knowl.technology" select="'no'" />
 <!-- color theme -->
-<xsl:param name="html.css.file"   select="'mathbook-3.css'" />
+<xsl:param name="html.css.colorfile" select="'colors_default.css'" />
 
 <xsl:param name="exercise.divisional.hint" select="'yes'" />
 <xsl:param name="exercise.divisional.answer" select="'no'" />
