@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!-- <mathbook><book> -->
 
-<section xml:id="AngTri"   xmlns:xi="http://www.w3.org/2001/XInclude">
-            <title>Angles and Triangles</title>
+<section xml:id="AngTri"   xmlns:xi="http://www.w3.org/2001/XInclude"><title>Angles and Triangles</title>
+<idx><h>angle</h></idx><idx><h>triangle</h></idx>
 
 <introduction>
- <p>Historically, trigonometry began as the study of triangles and their properties.  Let's review some definitions and facts from geometry.
+ <p>Historically, trigonometry began as the study of triangles and their properties.  Let's review some definitions and facts from geometry. 
+<idx><h>angle</h></idx>
+<idx><h>angle</h><h>straight</h></idx>
+<idx><h>angle</h><h>right</h></idx>
+<idx><h>right angle</h></idx>
+<idx><h>straight angle</h></idx>
     <ul>
         <li> We measure angles in degrees.</li>
         <li> One full rotation is <m>360\degree</m>, as shown below.</li>
@@ -14,7 +19,6 @@
     </ul>  
  </p>
 <sidebyside width="90%">
-<!--    <image source="images/angles-in-degrees.png"><description>quadrantal angles</description></image>-->
     <image xml:id="angles-in-degrees">
         <description>quadrantal angles</description>
         <latex-image>
@@ -60,10 +64,11 @@
     </latex-image></image></sidebyside></introduction>
 
 <subsection> <title>Triangles</title>
+<idx><h>triangle</h></idx>
 <p> If you tear off the corners of any triangle and line them up, as shown below, they will always form a straight angle.
 </p>
 <sidebyside width="40%">
-<!--    <image source="images/tear-off-corners.png"><description>tear corners off triangle</description></image>-->    <image xml:id="tear-off-corners">
+    <image xml:id="tear-off-corners">
         <description>tear corners off triangle</description>
         <latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
@@ -102,14 +107,15 @@
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
 
-<assemblage>
-        <p>1.  The sum of the angles in a triangle is <m>180\degree</m>.</p>
+<assemblage><title>Sum of angles in a triangle</title>
+<idx><h>angle</h><h>sum in a triangle</h></idx>
+<idx><h>triangle</h><h>angle sum</h></idx>
+    <p>1.  The sum of the angles in a triangle is <m>180\degree</m>.</p>
 </assemblage>
 
 <example><statement>
 <sidebyside widths="50% 35%">
     <p>Two of the angles in the triangle at right are <m>25\degree</m> and <m>115\degree</m>.  Find the third angle.</p>
-<!--    <image source="images/exam1-1-1.png"><description>triangle with 25 and 115 angles</description></image>-->
     <image xml:id="exam1-1-1">
         <description>triangle with 25 and 115 angles</description>
         <latex-image>
@@ -137,18 +143,17 @@
 
 <solution><p>To find the third angle, we write an equation.</p>
             <p>
-                <me>\begin{aligned}[t]
-                x+25+115\amp =180 \amp \amp \blert{\text{Simpify the left side.}}\\
-                x+140\amp =180 \amp \amp \blert{\text{Subtract 140 from both sides.}}\\
-                x\amp =40   \amp \amp  
-                \end{aligned}</me>
+                <md>
+                    <mrow>x+25+115\amp =180 \amp \amp \blert{\text{Simpify the left side.}}</mrow>
+                    <mrow>x+140\amp =180 \amp \amp \blert{\text{Subtract 140 from both sides.}}</mrow>
+                    <mrow>x\amp =40   \amp \amp</mrow>
+                </md>
             </p>
         <p>The third angle is <m>40\degree</m>.</p></solution></example>
 
 <exercise><statement>
     <sidebyside widths="60% 30%">
     <p>Find each of the angles in the triangle at right.</p>
-<!--    <image source="images/exer1-1-2.png"><description>triangle with angles x, 2x, and 2x-15</description></image>-->
     <image xml:id="exer1-1-2">
         <description>triangle with angles x, 2x, and 2x-15</description>
         <latex-image>
@@ -177,13 +182,13 @@
 
 <p>Some special categories of triangles are particularly useful.  Most important of these are the <term>right triangles</term>.</p>
 
-<assemblage>
-        <p>2.  A right triangle has one angle of <m>90\degree</m>.</p>
+<assemblage><title>Right triangle</title>
+<idx><h>triangle</h><h>right</h></idx><idx><h>right triangle</h></idx><idx><h>right triangle</h><seealso>triangle</seealso></idx>
+    <p>2.  A right triangle has one angle of <m>90\degree</m>.</p>
 </assemblage>
 
 <example><statement><sidebyside widths="50% 20%">
     <p>One of the smaller angles of a right triangle is <m>34\degree</m>.  What is the third angle?</p>
-<!--    <image source="images/exam1-1-3.png"><description>right triangle with 34 angle</description></image></sidebyside>-->
     <image xml:id="exam1-1-3">
         <description>right triangle with 34 angle</description>
         <latex-image>
@@ -212,10 +217,10 @@
 
 <solution><p>The sum of the two smaller angles in a right triangle is <m>90\degree</m>. So</p>
             <p>
-                <me>\begin{aligned}[t]
-                x+34\amp =90 \amp \amp \blert{\text{Subtract 34 from both sides.}}\\
-                x\amp =56   \amp \amp  
-                \end{aligned}</me>
+                <md>
+                    <mrow>x+34\amp =90 \amp \amp \blert{\text{Subtract 34 from both sides.}}</mrow>
+                    <mrow>x\amp =56   \amp \amp</mrow>
+                </md>
             </p>
         <p>The unknown angle must be <m>56\degree</m>.</p></solution></example>
 
@@ -223,15 +228,15 @@
       <p>Two angles of a triangle are <m>35\degree</m> and <m>45\degree</m>.  Can it be a right triangle?</p>
   </statement><answer><p>No</p></answer></exercise>
 
-<p>An <term>equilateral</term> triangle has all three sides the same length.</p>
+<p>An <term>equilateral</term><idx><h>equilateral triangle</h></idx><idx><h>triangle</h><h>equilateral</h></idx><idx><h>triangle</h><h>equilateral</h><seealso>equilateral triangle</seealso></idx> triangle has all three sides the same length.</p>
 
-<assemblage>
-        <p>3.  All of the angles of an equilateral triangle are equal.</p>
+<assemblage><title>Angles of equilateral triangle</title>
+    <idx><h>equilateral triangle</h><h>angles of</h></idx>
+    <p>3.  All of the angles of an equilateral triangle are equal.</p>
 </assemblage>
 
 <example><statement><sidebyside widths="60% 18%">
     <p>All three sides of a triangle are 4 feet long.  Find the angles.</p>
-<!--    <image source="images/exam1-1-5.png"><description>equilateral triangle</description></image></sidebyside>-->
     <image xml:id="exam1-1-5">
         <description>equilateral triangle</description>
         <latex-image>
@@ -262,16 +267,15 @@
 
 <solution><p>The triangle is equilateral, so all of its angles are equal.  Thus</p>
             <p>
-                <me>\begin{aligned}[t]
-                3x\amp =180 \amp \amp \blert{\text{Divide both sides by 3.}}\\
-                x\amp =60   \amp \amp  
-                \end{aligned}</me>
+                <md>
+                    <mrow>3x\amp =180 \amp \amp \blert{\text{Divide both sides by 3.}}</mrow>
+                    <mrow>x\amp =60   \amp \amp  </mrow>
+                </md>
             </p>
         <p>Each of the angles is <m>60\degree</m>.</p></solution></example>
 
 <exercise><statement><sidebyside widths="50% 18%">
     <p>Find <m>x</m>, <m>y</m>, and <m>z</m> in the triangle at right.</p>
-<!--    <image source="images/exer1-1-6.png"><description>equilateral triangle with side 8</description></image>-->
     <image xml:id="exer1-1-6">
         <description>equilateral triangle with side 8</description>
         <latex-image>
@@ -300,15 +304,15 @@
     </latex-image></image></sidebyside></statement>
 <answer><p><m>x=60\degree, ~y=8, ~z=8</m></p></answer></exercise>
 
-<p> An <term>isosceles</term> triangle has two sides of equal length.  The angle between the equal sides is the <term>vertex angle</term>. The other two angles are the <term>base angles</term>. </p>
+<p> An <term>isosceles</term><idx><h>isosceles triangle</h></idx><idx><h>triangle</h><h>isosceles</h></idx><idx><h>triangle</h><h>isosceles</h><seealso>isosceles triangle</seealso></idx> triangle has two sides of equal length.  The angle between the equal sides is the <term>vertex angle</term><idx><h>vertex angle</h><h>of an isosceles triangle</h></idx>. The other two angles are the <term>base angles</term>. </p>
 
-<assemblage>
+<assemblage><title>Base angles of an isosceles triangle</title>
+<idx><h>isosceles triangle</h><h>base angles</h></idx>
         <p>4.  The base angles of an isosceles triangle are equal.</p>
 </assemblage>
 
 <example><statement><sidebyside widths="50% 32%">
     <p>Find <m>x</m> and <m>y</m> in the triangle at right.</p>
-<!--    <image source="images/exam1-1-7.png"><description>isosceles triangle with side 12, base angle 38</description></image>-->
     <image xml:id="exam1-1-7">
         <description>isosceles triangle with side 12, base angle 38</description>
         <latex-image>
@@ -339,18 +343,17 @@
 
 <solution><p>The triangle is isosceles, so the base angles are equal.  Therefore, <m>y=38\degree</m>.  To find the vertex angle, we solve </p>
             <p>
-                <me>\begin{aligned}[t]
-                x+38+38\amp =180 \amp \amp \\
-                x+76\amp =180 \amp \amp \blert{\text{Subtract 76 from both sides.}}\\
-                x\amp =104   \amp \amp  
-                \end{aligned}</me>
+                <md>
+                    <mrow>x+38+38\amp =180 \amp \amp </mrow>
+                    <mrow>x+76\amp =180 \amp \amp \blert{\text{Subtract 76 from both sides.}}</mrow>
+                    <mrow>x\amp =104   \amp \amp </mrow>
+                </md>
             </p>
         <p>The vertex angle is <m>104\degree</m>.</p></solution></example>
 
 <exercise><statement>
     <sidebyside widths="50% 35%">
     <p>Find <m>x</m> and <m>y</m> in the figure at right.</p>
-<!--    <image source="images/exer1-1-8.png"><description>isosceles triangle with side 9, base angle 20</description></image>-->
     <image xml:id="exer1-1-8">
         <description>isosceles triangle with side 9, base angle 20</description>
         <latex-image>
@@ -379,16 +382,20 @@
 </subsection>
 
 <subsection><title>Angles</title>
+<idx><h>angle</h></idx>
 <p>In addition to the facts about triangles reviewed above, there are several useful properties of angles.  
     <ul>
-        <li> Two angles that add to <m>180\degree</m> are called <term>supplementary</term>.</li>
-        <li> Two angles that add to <m>90\degree</m> are called <term>complementary</term>. </li> 
-        <li> Angles between <m>0\degree</m> and <m>90\degree</m> are called <term>acute</term>.</li> 
-        <li> Angles between <m>90\degree</m> and <m>180\degree</m> are called <term>obtuse</term>. </li>
+        <li> Two angles that add to <m>180\degree</m> are called <term>supplementary</term><idx><h>supplementary angles</h></idx><idx><h>angle</h><h>supplementary</h></idx><idx><h>angle</h><h>supplementary</h><seealso>supplementary angles</seealso></idx>.</li>
+        <li> Two angles that add to <m>90\degree</m> are called <term>complementary</term><idx><h>complementary angles</h></idx><idx><h>angle</h><h>complementary</h></idx><idx><h>angle</h><h>complementary</h><seealso>complementary angles</seealso></idx>. </li> 
+        <li> Angles between <m>0\degree</m> and <m>90\degree</m> are called <term>acute</term><idx><h>acute angle</h></idx><idx><h>angle</h><h>acute</h></idx><idx><h>angle</h><h>acute</h><seelso>acute angle</seelso></idx>.</li> 
+        <li> Angles between <m>90\degree</m> and <m>180\degree</m> are called <term>obtuse</term><idx><h>obtuse angle</h></idx><idx><h>angle</h><h>obtuse</h></idx><idx><h>angle</h><h>obtuse</h><seealso>obtuse angle</seealso></idx>. </li>
     </ul></p> 
+<idx><h>supplementary angles</h></idx>
+<idx><h>complementary angles</h></idx>
+<idx><h>acute angle</h></idx>
+<idx><h>obtuse angle</h></idx>
 
    <sidebyside width="100%">
-       <!--<image source="images/angleterms.png"><description>types of angles</description></image> -->
     <image xml:id="angleterms">
         <description>types of angles</description>
         <latex-image>
@@ -457,7 +464,6 @@
             <li> <m>\angle</m><m>AOC</m> is obtuse,</li> 
             <li>and <m>\angle</m><m>BOC</m> is acute.</li>
         </ul></p>
-<!--    <image source="images/exam1-1-9.png"><description>types of angles</description></image>-->
     <image xml:id="exam1-1-9">
         <description>types of angles</description>
         <latex-image>
@@ -502,7 +508,6 @@
             <li> Find the measure of angle <m>\gamma</m>.</li>
             <li> What do you notice about the measures of the angles?</li>
         </ol></p>
-<!--    <image source="images/exer1-1-10.png"><description>straight angles with 50 degrees</description></image>-->
     <image xml:id="exer1-1-10">
         <description>straight angles with 50 degrees</description>
         <latex-image>
@@ -530,15 +535,15 @@
     </latex-image></image></sidebyside></statement>
 <answer><p><m>\alpha=130\degree, ~\beta=50\degree, ~\gamma=130\degree.</m> The non-adjacent angles are equal.</p></answer></exercise>
 
-<p>Non-adjacent angles formed by the intersection of two straight lines are called <term>vertical angles</term>.  In the previous exercise, the angles labeled <m>\alpha</m> and <m>\gamma</m> are vertical angles, as are the angles labeled <m>\beta</m> and <m>50\degree</m>.</p>
+<p>Non-adjacent angles formed by the intersection of two straight lines are called <term>vertical angles</term><idx><h>vertical angles</h></idx><idx><h>angle</h><h>vertical</h></idx><idx><h>angle</h><h>vertical</h><seealso>vertical angles</seealso></idx>.  In the previous exercise, the angles labeled <m>\alpha</m> and <m>\gamma</m> are vertical angles, as are the angles labeled <m>\beta</m> and <m>50\degree</m>.</p>
 
-<assemblage>
+<assemblage><title>Vertical Angles</title>
+<idx><h>vertical angles</h></idx>
         <p>5.  Vertical angles are equal.</p>
 </assemblage>
 
 <example><statement><sidebyside widths="50% 20%">
     <p>Explain why <m>\alpha=\beta</m> in the triangle at right.</p>
-<!--    <image source="images/exam1-1-11.png"><description>isosceles triangle with alpha and beta</description></image>-->
     <image xml:id="exam1-1-11">
         <description>isosceles triangle with alpha and beta</description>
         <latex-image>
@@ -576,7 +581,6 @@
 
 <exercise><statement><sidebyside widths="50% 30%">
     <p>Find all the unknown angles in the figure at right. (You will find a list of all the Greek letters and their names at the end of this section.)</p>
-<!--    <image source="images/exer1-1-12.png"><description>triangle with external angle 150</description></image>-->
     <image xml:id="exer1-1-12">
         <description>triangle with external angle 150</description>
         <latex-image>
@@ -605,12 +609,11 @@
     </latex-image></image></sidebyside></statement>
 <answer><p><m>\alpha=40\degree,~ \beta=140\degree,~ \gamma=75\degree, \delta=65\degree</m></p></answer></exercise>
 
-<p> A line that intersects two parallel lines forms eight angles, as shown in the figure below. There are four pairs of vertical angles, and four pairs of <term>corresponding angles</term>, or angles in the same position relative to the transversal on each of the parallel lines.</p>  
-<sidebyside widths="60% 30%" valigns="middle middle">
+<p> A line that intersects two parallel lines forms eight angles, as shown in the figure below. There are four pairs of vertical angles, and four pairs of <term>corresponding angles</term><idx><h>corresponding angles</h></idx><idx><h>angle</h><h>corresponding</h></idx><idx><h>angle</h><h>corresponding</h><seealso>corresponding angles</seealso></idx>, or angles in the same position relative to the transversal on each of the parallel lines.</p>  
+<sidebyside widths="60% 30%" valigns="middle middle" margins="0% 5%">
 <p>For example, the angles labeled 1 and 5 are corresponding angles, as are the angles labeled 4 and 8.  
-Finally, angles 3 and 6 are called <term>alternate interior angles</term>, and so are angles 4 and 5.</p>
+Finally, angles 3 and 6 are called <term>alternate interior angles</term><idx><h>alternate interior angles</h></idx><idx><h>angle</h><h>alternate interior</h></idx><idx><h>angle</h><h>alternate interior</h><seealso>alternate interior angles</seealso></idx>, and so are angles 4 and 5.</p>
   
-<!--<image source="images/transversal.png"><description>transversal</description></image>-->
     <image xml:id="transversal">
         <description>transversal</description>
         <latex-image>
@@ -642,7 +645,7 @@ Finally, angles 3 and 6 are called <term>alternate interior angles</term>, and s
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
 
-<assemblage>
+<assemblage><title>Paralles lines cut by a transversal</title>
         <p>6.  If parallel lines are intersected by a transversal, the alternate interior angles are equal.  Corresponding angles are also equal.</p>
 </assemblage>
 
@@ -696,45 +699,45 @@ Finally, angles 3 and 6 are called <term>alternate interior angles</term>, and s
     <p>Show that the adjacent angles of a parallelogram are supplementary.  (You can use angles 1 and 4 in the parallelogram of the previous example.)</p></statement>
 <answer><p>Note that angles 2 and 6 are supplementary because they form a straight angle. Angle 1 equals angle 2 because they are alternate interior angles, and similarly angle 4 equals angle 5. Angle 5 equals angle 6 because they are corresponding angles. Thus, angle 4 equals angle 6, and angle 1 equals angle 2. So angles 4 and 1 are supplementary because 2 and 6 are.</p></answer></exercise>
 
-<note><p>In the Section 1.1 Summary, you will find a list of vocabulary words and a summary of the facts from geometry that we reviewed in this section.  You will also find a set of study questions to test your understanding, and a list of skills to practice in the homework problems.</p></note>
-<sidebyside>
-                <tabular top="major" halign="left" right="minor" left="minor" bottom="minor">
-                    <row>
-                        <cell colspan="3" halign="center"> Greek Alphabet </cell></row>
-                    <row bottom="minor">
-                        <cell><m>\alpha~~~~\text{alpha}</m></cell>
-                        <cell><m>\beta~~~~\text{beta}</m></cell>
-                        <cell><m>\gamma~~~~\text{gamma}</m></cell></row>
-                    <row> 
-                        <cell><m>\delta~~~~\text{delta}</m></cell>
-                        <cell><m>\epsilon~~~~\text{epsilon}</m></cell>
-                        <cell><m>\gamma~~~~\text{gamma}</m></cell></row>
-                    <row> 
-                        <cell><m>\eta~~~~\text{eta}</m></cell>
-                        <cell><m>\theta~~~~\text{theta}</m></cell>
-                        <cell><m>\iota~~~~\text{iota}</m></cell></row>
-                    <row> 
-                        <cell><m>\kappa~~~~\text{kappa}</m></cell>
-                        <cell><m>\lambda~~~~\text{lambda}</m></cell>
-                        <cell><m>\mu~~~~\text{mu}</m></cell></row>
-                    <row>
-                        <cell><m>\nu~~~~\text{nu}</m></cell>
-                        <cell><m>\xi~~~~\text{xi}</m></cell>
-                        <cell><m>\omicron~~~~\text{omicron}</m></cell></row>  
-                    <row>
-                        <cell><m>\pi~~~\text{pi}</m></cell>
-                        <cell><m>\rho~~~~\text{rho}</m></cell>
-                        <cell><m>\sigma~~~~\text{sigma}</m></cell></row> 
-                    <row>
-                        <cell><m>\tau~~~~\text{tau}</m></cell>
-                        <cell><m>\upsilon~~~~\text{upsilon}</m></cell>
-                        <cell><m>\phi~~~~\text{phi}</m></cell></row>
-                    <row>
-                        <cell><m>\chi~~~\text{chi}</m></cell>
-                        <cell><m>\psi~~~\text{psi}</m></cell>
-                        <cell><m>\omega~~~\text{omega}</m></cell></row>                       
-                </tabular>
-            </sidebyside>
+<note><p> In the <!-- <xref ref="Section-1-1-Summary" text="custom">Section 1.1 Summary</xref> -->Section 1.1 Summary, you will find a list of vocabulary words and a summary of the facts from geometry that we reviewed in this section.  You will also find a set of study questions to test your understanding, and a list of skills to practice in the homework problems.</p></note>
+<sidebyside><idx><h>Greek alphabet</h></idx>
+    <tabular top="major" halign="left" right="minor" left="minor" bottom="minor">
+        <row>
+            <cell colspan="3" halign="center"> Greek Alphabet </cell></row>
+        <row bottom="minor">
+            <cell><m>\alpha~~~~\text{alpha}</m></cell>
+            <cell><m>\beta~~~~\text{beta}</m></cell>
+            <cell><m>\gamma~~~~\text{gamma}</m></cell></row>
+        <row> 
+            <cell><m>\delta~~~~\text{delta}</m></cell>
+            <cell><m>\epsilon~~~~\text{epsilon}</m></cell>
+            <cell><m>\gamma~~~~\text{gamma}</m></cell></row>
+        <row> 
+            <cell><m>\eta~~~~\text{eta}</m></cell>
+            <cell><m>\theta~~~~\text{theta}</m></cell>
+            <cell><m>\iota~~~~\text{iota}</m></cell></row>
+        <row> 
+            <cell><m>\kappa~~~~\text{kappa}</m></cell>
+            <cell><m>\lambda~~~~\text{lambda}</m></cell>
+            <cell><m>\mu~~~~\text{mu}</m></cell></row>
+        <row>
+            <cell><m>\nu~~~~\text{nu}</m></cell>
+            <cell><m>\xi~~~~\text{xi}</m></cell>
+            <cell><m>\omicron~~~~\text{omicron}</m></cell></row>  
+        <row>
+            <cell><m>\pi~~~\text{pi}</m></cell>
+            <cell><m>\rho~~~~\text{rho}</m></cell>
+            <cell><m>\sigma~~~~\text{sigma}</m></cell></row> 
+        <row>
+            <cell><m>\tau~~~~\text{tau}</m></cell>
+            <cell><m>\upsilon~~~~\text{upsilon}</m></cell>
+            <cell><m>\phi~~~~\text{phi}</m></cell></row>
+        <row>
+            <cell><m>\chi~~~\text{chi}</m></cell>
+            <cell><m>\psi~~~\text{psi}</m></cell>
+            <cell><m>\omega~~~\text{omega}</m></cell></row>                       
+    </tabular>
+</sidebyside>
 </subsection>
 
 <subsection><title>Algebra Refresher</title>
@@ -808,7 +811,7 @@ Finally, angles 3 and 6 are called <term>alternate interior angles</term>, and s
 </subsection>
 
 
-<subsection><title>Section 1.1 Summary</title>
+<subsection xml:id="Section-1-1-Summary"><title>Section 1.1 Summary</title>
 <subsubsection><title>Vocabulary</title>
 <p><ul cols="2">
     <li>Right angle</li>
@@ -831,6 +834,7 @@ Finally, angles 3 and 6 are called <term>alternate interior angles</term>, and s
 
  <subsubsection><title>Concepts</title>
  <assemblage><title>Facts from Geometry</title>
+ <idx><h>facts from geometry</h></idx>
         <p>1.  The sum of the angles in a triangle is <m>180\degree</m>.</p>
         <p>2.  A right triangle has one angle of <m>90\degree</m>.</p>
         <p>3.  All of the angles of an equilateral triangle are equal.</p>

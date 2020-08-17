@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!-- <mathbook><book> -->
 
 <section xml:id="Arclength-and-Radians"   xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Arclength and Radians</title>
+<idx><h>arclength</h></idx>
+<idx><h>radian</h></idx>
 
 <introduction>
   <sidebyside widths="60% 35%" valigns="middle middle" margins="0% 0%"><p>Imagine that you are riding on a Ferris wheel of radius 100 feet, and each rotation takes eight minutes.  We can use angles in standard position to describe your location as you travel around the wheel. The figure at right shows the locations indicated by <m>\theta = 0\degree,~ 90\degree,~ 180\degree,~ \text{and}~ 270\degree</m>.  But degrees are not the only way to specify location on a circle.</p><!--<image source="images/6-1-intro.png"><description>circle</description></image>-->
@@ -44,10 +45,11 @@
   </p></introduction>
 
 <subsection><title>Arclength</title>
+<idx><h>arclength</h></idx>
 <p> Recall that the circumference of a circle is proportional to its radius,  
   <me> \blert{C = 2 \pi r}</me>
   If we walk around the entire circumference of a circle, the distance we travel is <m>2\pi</m> times the length of the radius, or about 6.28 times the radius.  If we walk only part of the way around the circle, then the distance we travel depends also on the angle of displacement. </p> 
-  <sidebyside widths="40% 55%" margins="0% 0%"><p>For example, an angle of <m>45\degree</m> is <m>\dfrac{1}{8}</m> of a complete revolution, so the arclength, <m>s</m>, from point <m>A</m> to point <m>B</m> in the figure at right is <m>\dfrac{1}{8}</m> of the circumference. Thus </p><!--<image source="images/6-1-arca.png"><description>circle</description></image>-->
+  <sidebyside widths="40% 55%" margins="0% 0%"><p>For example, an angle of <m>45\degree</m> is <m>\dfrac{1}{8}</m> of a complete revolution, so the arclength, <m>s</m>, from point <m>A</m> to point <m>B</m> in the figure at right is <m>\dfrac{1}{8}</m> of the circumference. Thus </p>
     <image xml:id="fig-6-1-arca">
         <description>arc on circle</description>
         <latex-image>
@@ -117,13 +119,15 @@
 
 <p>In general, for a given circle the length of the arc spanned by an angle is proportional to the size of the angle.</p>
 
-<assemblage><p><me>\blert{\textbf{Arclength}}~ = ~ \blert{(\textbf{fraction of one revolution}) \cdot (2\pi r)}</me></p></assemblage>
+<assemblage><title>Arclength on a Circle</title>
+<idx><h>arclength</h></idx>
+<p><me>\blert{\textbf{Arclength}}~ = ~ \blert{(\textbf{fraction of one revolution}) \cdot (2\pi r)}</me></p></assemblage>
 
 <p> The Ferris wheel in the introduction has circumference 
   <me>C = 2\pi (100) = 628~ \text{feet}</me>
   so in half a revolution you travel 314 feet around the edge, and in one-quarter revolution you travel 157 feet.</p>
   <sidebyside widths="55% 35%" ><p> To indicate the same four locations on the wheel by distance traveled, we would use 
-    <me>s = 0,~ s = 157,~ s = 314,~ \text{and}~ s = 471</me>, as shown at right. </p><!--<image source="images/6-1-arcc.png"><description>circle</description></image>-->
+    <me>s = 0,~ s = 157,~ s = 314,~ \text{and}~ s = 471</me>, as shown at right. </p>
       <image xml:id="fig-6-1-arcc">
         <description>circle</description>
         <latex-image>
@@ -159,10 +163,10 @@
 
 <example><statement><p>What length of arc is spanned by an angle of <m>120\degree</m> on a circle of radius 12 centimeters?</p></statement>
 
-<solution><sidebyside widths="50% 35%"><p>Because <m>\dfrac{120}{360} = \dfrac{1}{3}</m>, an angle of <m>120\degree</m> is <m>\dfrac{1}{3}</m> of a complete revolution, as shown at right.  Using the formula above with <m>r = 12</m>, we find that 
+<solution><sidebyside widths="50% 35%" margins="0% 0%"><p>Because <m>\dfrac{120}{360} = \dfrac{1}{3}</m>, an angle of <m>120\degree</m> is <m>\dfrac{1}{3}</m> of a complete revolution, as shown at right.  Using the formula above with <m>r = 12</m>, we find that 
 <me>s = \dfrac{1}{3}(2\pi \cdot 12) = \dfrac{2 \pi}{3} \cdot 12 = 8\pi ~ \text{cm}</me>
 or about 25.1 cm.
-</p><!--<image source="images/exam6-1-1.png"><description>circle</description></image>-->
+</p>
     <image xml:id="exam6-1-1">
         <description>arc on circle</description>
         <latex-image>
@@ -200,6 +204,9 @@ or about 25.1 cm.
 </subsection>
 
 <subsection><title>Measuring Angles in Radians</title>
+<idx><h>radian</h></idx>
+<idx><h>angle</h><h>in radians</h></idx>
+<idx><h>angle</h><h>in radians</h><seealso>radian</seealso></idx>
 <p>If you think about measuring arclength, you will see that the degree measure of the spanning angle is not as important as the fraction of one revolution it covers.  This observation suggests a new unit of measurement for angles, one that is better suited to calculations involving arclength.  We'll make one change in our formula for arclength, from
   <me>\textbf{Arclength}~ = ~ (\textbf{fraction of one revolution}) \cdot (2\pi r)</me>
 to
@@ -208,12 +215,13 @@ to
 We'll call the quantity in parentheses, (fraction of one revolution <m>\times 2\pi</m>), the <term>radian measure</term> of the angle that spans the arc.</p>
 
 <assemblage><title>Radians</title>
+<idx><h>radian</h></idx>
 <p>The <term>radian measure</term> of an angle is given by
 <me>(\textbf{fraction of one revolution}\times 2\pi)</me></p></assemblage>
 
 <p>For example, one complete revolution, or <m>360\degree</m>, is equal to <m>2\pi</m> radians, and one-quarter revolution, or <m>90\degree</m>, is equal to <m>\dfrac{1}{4}(2\pi)</m> or <m>\dfrac{\pi}{2}</m> radians. The figure below shows the radian measure of the quadrantal angles.</p>  
 
-<sidebyside width="90%"><!--<image source="images/6-1-rad.png"><description>circle</description></image>-->
+<sidebyside width="90%">
     <image xml:id="fig-6-1-rad">
         <description>arcs on circles</description>
         <latex-image>
@@ -294,33 +302,33 @@ We'll call the quantity in parentheses, (fraction of one revolution <m>\times 2\
 
 <p>Radian measure does not have to be expressed in multiples of <m>\pi</m>.  Remember that <m>\pi \approx 3.14</m>, so one complete revolution is about 6.28 radians, and one-quarter revolution is <m>\dfrac{1}{4}(2\pi) = \dfrac{\pi}{2}</m>, or about 1.57 radians. The figure below shows decimal approximations for the quadrantal angles.</p>
 
-<sidebyside widths="60% 40%">
-                <tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                        
-                    <row bottom="minor">
-                        <cell>Degrees</cell>
-                        <cell><line>Radians:</line><line>Exact Values</line></cell>
-                        <cell><line>Radians: Decimal</line><line>Approximations</line></cell></row>
-                    <row> 
-                        <cell><m>0\degree</m></cell>
-                        <cell><m>0</m></cell>
-                        <cell><m>0</m></cell></row>
-                    <row> 
-                        <cell><m>90\degree</m></cell>
-                        <cell><m>\dfrac{\pi}{2}</m></cell>
-                        <cell><m>1.57</m></cell></row>
-                    <row> 
-                        <cell><m>180\degree</m></cell>
-                        <cell><m>\pi</m></cell>
-                        <cell><m>3.14</m></cell></row>
-                    <row>
-                        <cell><m>270\degree</m></cell>
-                        <cell><m>\dfrac{3\pi}{2}</m></cell>
-                        <cell><m>4.71</m></cell></row>  
-                    <row>
-                        <cell><m>360\degree</m></cell>
-                        <cell><m>2\pi</m></cell>
-                        <cell><m>6.28</m></cell></row>                
-                </tabular><!--<image source="images/6-1-decrad.png"><description>circle</description></image>-->
+<sidebyside widths="60% 40%" valigns="middle middle">
+    <tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                        
+        <row bottom="minor">
+            <cell>Degrees</cell>
+            <cell><line>Radians:</line><line>Exact Values</line></cell>
+            <cell><line>Radians: Decimal</line><line>Approximations</line></cell></row>
+        <row> 
+            <cell><m>0\degree</m></cell>
+            <cell><m>0</m></cell>
+            <cell><m>0</m></cell></row>
+        <row> 
+            <cell><m>90\degree</m></cell>
+            <cell><m>\dfrac{\pi}{2}</m></cell>
+            <cell><m>1.57</m></cell></row>
+        <row> 
+            <cell><m>180\degree</m></cell>
+            <cell><m>\pi</m></cell>
+            <cell><m>3.14</m></cell></row>
+        <row>
+            <cell><m>270\degree</m></cell>
+            <cell><m>\dfrac{3\pi}{2}</m></cell>
+            <cell><m>4.71</m></cell></row>  
+        <row>
+            <cell><m>360\degree</m></cell>
+            <cell><m>2\pi</m></cell>
+            <cell><m>6.28</m></cell></row>                
+    </tabular>
     <image xml:id="fig-6-1-decrad">
         <description>circle</description>
         <latex-image>
@@ -399,6 +407,7 @@ We'll call the quantity in parentheses, (fraction of one revolution <m>\times 2\
 Dividing both sides of this equation by 2 gives us a <em>conversion factor</em>:</p>
 
 <assemblage><title>Unit Conversion for Angles</title>
+<idx><h>angle</h><h>converting measurement units</h></idx>
 <p><me>\dfrac{180\degree}{\pi~\text{radians}} = 1</me></p>
 </assemblage>
 
@@ -413,8 +422,8 @@ Dividing both sides of this equation by 2 gives us a <em>conversion factor</em>:
   </ol></p></statement>
   
   <solution><p><ol label="a">
-    <li><m>(3 ~\text{radians}) \times (\dfrac{180\degree}{\pi}) = \dfrac{540\degree}{\pi} \approx 171.9\degree</m></li>
-    <li><m>(3\degree) \times (\dfrac{\pi}{180\degree}) = \dfrac{\pi}{60}\approx 0.05~ \text{radians.}</m></li>
+    <li><m>(3 ~\text{radians}) \times \left(\dfrac{180\degree}{\pi}\right) = \dfrac{540\degree}{\pi} \approx 171.9\degree</m></li>
+    <li><m>(3\degree) \times \left(\dfrac{\pi}{180\degree}\right) = \dfrac{\pi}{60}\approx 0.05~ \text{radians.}</m></li>
   </ol></p></solution></example>
 
    <exercise><statement><p><ol label="a">
@@ -422,9 +431,9 @@ Dividing both sides of this equation by 2 gives us a <em>conversion factor</em>:
     <li>Convert <m>\dfrac{3\pi}{4}</m> radians to degrees.</li>
   </ol></p></statement><answer><p><ol label="a" cols="2"><li><p><m>\dfrac{\pi}{3} \approx 1.047</m></p></li><li><p><m>135\degree</m></p></li></ol></p></answer></exercise>
 
-  <sidebyside widths="60% 35%" valigns="middle middle"><p>From our conversion factor we also learn that 
+  <sidebyside widths="60% 35%" valigns="middle middle" margins="0% 0%"><p>From our conversion factor we also learn that 
     <me>\blert{ 1~\text{radian} = \dfrac{180\degree}{\pi} \approx 57.3\degree}</me>
-  So while <m>1\degree</m> is a relatively small angle, 1 radian is much larger — nearly <m>60\degree</m>, in fact. But this is reasonable, because there are only a little more than 6 radians in an entire revolution. An angle of 1 radian is shown at right.</p><!--<image source="images/6-1-onerad.png"><description>circle</description></image>-->
+  So while <m>1\degree</m> is a relatively small angle, 1 radian is much larger — nearly <m>60\degree</m>, in fact. But this is reasonable, because there are only a little more than 6 radians in an entire revolution. An angle of 1 radian is shown at right.</p>
     <image xml:id="fig-6-1-onerad">
         <description>circle</description>
         <latex-image>
@@ -437,12 +446,10 @@ Dividing both sides of this equation by 2 gives us a <em>conversion factor</em>:
           output/.style   = {coordinate} % Output
         }
     \begin{tikzpicture}
-
     \coordinate (O) at (0,0);
     \draw[gray!90!white,thick] (O) circle (1.5cm);
     \coordinate (A) at (0:1.5);
     \coordinate (B) at ($({deg(1)}:1.5) $);
-
     \draw[black,thick] (-1.7,0)--(1.7,0);
     \draw[black,thick] (0,-1.7)--(0,1.7);
     \draw[blue,thick] (O)--(B);
@@ -457,7 +464,7 @@ Dividing both sides of this equation by 2 gives us a <em>conversion factor</em>:
 
   <p>We'll soon see that, for many applications, it is easier to work entirely in radians. For reference, the figure below shows a radian protractor.</p>
 
-  <sidebyside width="60%"><!--<image source="images/6-1-radpro.png"><description>circle</description></image>-->
+  <sidebyside width="60%">
     <image xml:id="fig-6-1-radpro">
         <description>triangle</description>
         <latex-image>
@@ -493,6 +500,7 @@ Dividing both sides of this equation by 2 gives us a <em>conversion factor</em>:
 </subsection>
 
 <subsection><title>Arclength Formula</title>
+ <idx><h>arclength</h><h>formula</h></idx>
 <p>Measuring angles in radians has the following advantage: To calculate an arclength we need only multiply the radius of the circle by the radian measure of the spanning angle, <m>\theta</m>. Look again at our formula for arclength:
 
 <me>\blert{\textbf{Arclength}~ =} ~ \blert{(\textbf{fraction of one revolution}\times 2\pi) \cdot r}</me></p>
@@ -500,10 +508,11 @@ Dividing both sides of this equation by 2 gives us a <em>conversion factor</em>:
  <p> The quantity in parentheses, fraction of one revolution <m>\times 2\pi</m>, is just the measure of the spanning angle in radians.  Thus, if <m>\theta</m> is measured in radians, we have the following formula for arclength, <m>s</m>.</p>
 
  <assemblage><title>Arclength Formula</title>
+ <idx><h>arclength</h><h>formula</h></idx>
  <p>On a circle of radius <m>r</m>, the <term>length <m>s</m> of an arc</term> spanned by an angle <m>\theta</m> in radians is
  <me>s = r\theta</me></p></assemblage>
 
-<sidebyside widths="55% 40%" valigns="middle middle" margins="0% 0%"><p> In particular, if <m>\theta = 1</m> we have <m>s = r</m>. We see that an angle of one radian spans an arc whose length is the radius of the circle. This is true for a circle of any size, as illustrated at right:  <em>an arclength equal to one radius determines a central angle of one radian,</em> or about <m>57.3\degree</m>.</p><!--<image source="images/6-1-arclength.png"><description>circle</description></image>-->
+<sidebyside widths="55% 40%" valigns="middle middle" margins="0% 0%"><p> In particular, if <m>\theta = 1</m> we have <m>s = r</m>. We see that an angle of one radian spans an arc whose length is the radius of the circle. This is true for a circle of any size, as illustrated at right:  <em>an arclength equal to one radius determines a central angle of one radian,</em> or about <m>57.3\degree</m>.</p>
     <image xml:id="fig-6-1-arclength">
         <description>arcs on circles</description>
         <latex-image>
@@ -549,12 +558,12 @@ Dividing both sides of this equation by 2 gives us a <em>conversion factor</em>:
 
 <example><statement><p>The radius of the Earth is about 3960 miles. If you travel 500 miles due north, how many degrees of latitude will you traverse?</p></statement>
   
-  <solution><sidebyside widths="55% 35%" valigns="middle middle"><p>We think of the distance 500 miles as an arclength on the surface of the Earth, as shown at right. Substituting <m>s = 500</m> and <m>r = 3960</m> into the arclength formula gives 
-      <me>\begin{aligned}[t]
-      500 \amp = 3960 \theta\\
-      \theta \amp = \dfrac{500}{3960} = 0.1263~ \text{radians}\\
-      \end{aligned}</me>
-</p><!--<image source="images/exam6-1-5.png"><description>circle</description></image>-->
+  <solution><sidebyside widths="55% 35%" valigns="middle middle" margins="0% 0%"><p>We think of the distance 500 miles as an arclength on the surface of the Earth, as shown at right. Substituting <m>s = 500</m> and <m>r = 3960</m> into the arclength formula gives 
+    <md>
+        <mrow>500 \amp = 3960 \theta</mrow>
+        <mrow>\theta \amp = \dfrac{500}{3960} = 0.1263~ \text{radians}</mrow>
+    </md>
+</p>
     <image xml:id="exam6-1-5"> 
         <description>circle</description> 
         <latex-image> 
@@ -592,6 +601,7 @@ Your latitude has changed by about <m>7.23\degree</m>.</p></solution></example>
 </subsection>
 
 <subsection><title>Unit Circle</title>
+<idx><h>unit circle</h><h>arclength and radians</h></idx>
 <p> On a unit circle, <m>r = 1</m>, so the arclength formula becomes <m>s = \theta</m>. Thus, <em>on a unit circle, the measure of a (positive) angle in radians is equal to the length of the arc it spans. </em></p>
 
 <example><statement><p>You have walked 4 miles around a circular pond of radius one mile.  What is your position relative to your starting point?</p></statement>
