@@ -9,7 +9,7 @@
 <!--
  Assumes current file is in trig/xsl and that the mathbook repository is adjacent 
 -->
-<xsl:import href="../../mathbook/xsl/mathbook-latex.xsl"/>
+<xsl:import href="../../mathbook/xsl/pretext-latex.xsl"/>
 <!--
  Parameters to pass via xsltproc "stringparam" on command-line            
 -->
@@ -35,8 +35,4 @@
 <xsl:param name="exercise.text.hint" select="'no'"/>
 <xsl:param name="exercise.text.answer" select="'no'"/>
 <xsl:param name="exercise.text.solution" select="'no'"/>
-<xsl:param name="exercise.backmatter.statement" select="'no'"/>
-<xsl:param name="exercise.backmatter.hint" select="'yes'"/>
-<xsl:param name="exercise.backmatter.answer" select="'yes'"/>
-<xsl:param name="exercise.backmatter.solution" select="'yes'"/>
 </xsl:stylesheet>
