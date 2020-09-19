@@ -1189,7 +1189,49 @@
 
 <exercise number="49"><statement><p>Here is a method for solving certain oblique triangles by dividing them into two right triangles.  In the triangle shown, we know two angles, <m>A</m> and <m>B</m>, and the side opposite one of them, say <m>a</m>.  We would like to find side <m>b</m>.</p>
 <sidebyside width="40%">
-    <image xml:id="hp3-2-49">
+    <image xml:id="hp3-2-49-no-h">
+        <description>triangle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+
+        \coordinate (A) at (0,0);
+        \coordinate (C) at (4.2,2);
+        \coordinate (B) at (6.7,0);
+
+        \filldraw (A) circle (.2pt) node[anchor=east]{$A$};
+        \filldraw (B) circle (.2pt) node[anchor=west]{$B$};
+        \filldraw (C) circle (.2pt) node[anchor=south]{$C$};
+
+        \draw[black, thick] (B)-- (A);
+        \draw[black, thick] (B)-- (C) node[above right, midway] {\color{blue}$a$};
+        \draw[black,thick] (A) -- (C) node[above left, midway] {\color{blue}$b$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside>
+<p><ol label="a">
+    <li>Draw the altitude <m>h</m> from angle <m>C</m>.</li>
+    <li>Write an expression for <m>b</m> in terms of <m>h</m> and angle <m>A</m>.</li>
+    <li>Write an expression for <m>h</m> in terms of angle <m>B</m>.</li>
+    <li>Substitute your expression for <m>h</m> into your expression for <m>b</m>.</li>
+    <li><p>Which of the following is equivalent to the formula you wrote in part (d)?</p>
+        <p><ol label="i">
+        <li><m>a \sin A = b \sin B</m></li>
+        <li><m>\dfrac{a}{\sin A} = \dfrac{b}{\sin B}</m></li>
+        <li><m>\dfrac{a}{\sin B} = \dfrac{b}{\sin A}</m></li>
+        </ol></p></li>
+    </ol></p></statement>
+    <answer>
+        <p><ol label="a">
+            <li><sidebyside width="40%"><image xml:id="hp3-2-49">
         <description>triangle</description>
         <latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
@@ -1219,23 +1261,7 @@
         \draw[black,thick] (A) -- (C) node[above left, midway] {\color{blue}$b$};
         \end{tikzpicture}]]>
     </latex-image>
-    </image>
-</sidebyside>
-<p><ol label="a">
-    <li>Draw the altitude <m>h</m> from angle <m>C</m>.</li>
-    <li>Write an expression for <m>b</m> in terms of <m>h</m> and angle <m>A</m>.</li>
-    <li>Write an expression for <m>h</m> in terms of angle <m>B</m>.</li>
-    <li>Substitute your expression for <m>h</m> into your expression for <m>b</m>.</li>
-    <li><p>Which of the following is equivalent to the formula you wrote in part (d)?</p>
-        <p><ol label="i">
-        <li><m>a \sin A = b \sin B</m></li>
-        <li><m>\dfrac{a}{\sin A} = \dfrac{b}{\sin B}</m></li>
-        <li><m>\dfrac{a}{\sin B} = \dfrac{b}{\sin A}</m></li>
-        </ol></p></li>
-    </ol></p></statement>
-    <answer>
-        <p><ol label="a">
-            <li><sidebyside width="40%"><image source="images/hp3-2-49.png"><description>triangle</description></image></sidebyside></li>
+    </image></sidebyside></li>
             <li><m>b = \dfrac{h}{\sin A}</m></li>
             <li><m>h = a \sin B</m></li>
             <li><m>b = \dfrac{a \sin B}{\sin A} </m></li>

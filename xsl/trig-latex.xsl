@@ -31,6 +31,8 @@ Adapted from PreTeXt stylesheet pretext-latex-AIM.xsl
     <xsl:apply-templates select="." mode="serial-number" />
 </xsl:template>
 
+<xsl:param name="latex.print" select="'yes'"/>
+
 
 <!-- Intend output for rendering by pdflatex -->
 <xsl:output method="text" />
@@ -39,17 +41,39 @@ Adapted from PreTeXt stylesheet pretext-latex-AIM.xsl
 <!-- Boxed title -->
 <xsl:template match="assemblage" mode="tcb-style">
     <xsl:text>enhanced, arc=2ex, colback=violet!5, colframe=violet!75!black,&#xa;</xsl:text>
-    <xsl:text>colbacktitle=violet!75!black, coltitle=white, boxed title style={sharp corners, frame hidden},&#xa;</xsl:text>
+    <xsl:text>colbacktitle=violet!45!white, coltitle=white, boxed title style={sharp corners, frame hidden},&#xa;</xsl:text>
     <xsl:text>fonttitle=\bfseries, attach boxed title to top left={xshift=4mm,yshift=-3mm}, top=3mm,&#xa;</xsl:text>
 </xsl:template>
 
-<!-- ASIDE-LIKE: "aside", "historical", "biographical" -->
-<!-- Square, drop shadow                               -->
-<xsl:template match="&ASIDE-LIKE;" mode="tcb-style">
-    <xsl:text>enhanced, sharp corners, colback=blue!3, colframe=blue!50!black,&#xa;</xsl:text>
-    <xsl:text>add to width=-1ex, shadow={1ex}{-1ex}{0ex}{black!50!white},&#xa;</xsl:text>
-    <xsl:text>coltitle=black, fonttitle=\bfseries, attach title to upper, after title={\space},</xsl:text>
+<!-- "definition" -->
+<!-- Boxed title -->
+<xsl:template match="definition" mode="tcb-style">
+    <xsl:text>enhanced, arc=1ex, colback=teal!5, colframe=teal!75!black,&#xa;</xsl:text>
+    <xsl:text>colbacktitle=teal!15, coltitle=black, boxed title style={sharp corners, frame hidden},&#xa;</xsl:text>
+    <xsl:text>fonttitle=\bfseries, attach boxed title to top left={xshift=4mm,yshift=-3mm}, top=3mm,&#xa;</xsl:text>
 </xsl:template>
+
+<!-- "example" -->
+<!-- Boxed title -->
+<xsl:template match="example" mode="tcb-style">
+    <xsl:text>enhanced, colback=white, colframe=black,&#xa;</xsl:text>
+    <xsl:text>colbacktitle=blue!45!black, coltitle=white, boxed title style={sharp corners, frame hidden},&#xa;</xsl:text>
+    <xsl:text>fonttitle=\bfseries, attach boxed title to top left={xshift=4mm,yshift=-3mm}, top=3mm,&#xa;</xsl:text>
+</xsl:template>
+
+<!-- "objectives", "outcomes", etc -->
+<xsl:template match="objectives" mode="tcb-style">
+    <xsl:text>enhanced, title engine=path, colback=white, boxed title style={sharp corners, frame hidden},&#xa;</xsl:text>
+    <xsl:text>colframe=blue, colbacktitle=white, coltitle=black,fonttitle=\bfseries,attach boxed title to top left={xshift=4mm,yshift=-3mm}, top=0mm,&#xa;</xsl:text>
+    <xsl:text>title style={left color=white, right color=white}, </xsl:text>
+</xsl:template>
+
+<xsl:template match="outcomes" mode="tcb-style">
+     <xsl:text>enhanced, title engine=path, colback=white, boxed title style={sharp corners, frame hidden},&#xa;</xsl:text>
+    <xsl:text>colframe=magenta!50!black, colbacktitle=white, coltitle=black,fonttitle=\bfseries,attach boxed title to top left={xshift=4mm,yshift=-3mm}, top=0mm,&#xa;</xsl:text>
+    <xsl:text>title style={left color=white, right color=white}, </xsl:text>
+</xsl:template>
+
 
 </xsl:stylesheet>
 

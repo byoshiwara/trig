@@ -2,7 +2,7 @@
 
 \usepackage{tikz}
 \usetikzlibrary{calc}
-\usetikzlibrary{arrows.meta}
+\usetikzlibrary{arrows}
 \usetikzlibrary{patterns}
         \newcommand\degree[0]{^{\circ}}
 
@@ -54,8 +54,40 @@
 
 \draw[red,thick] (C)++(0.55,0) arc (0:{180-atan(2/3)}:0.5) node[ right, midway, yshift=4] {$\theta$};
 
-
 \end{tikzpicture}
+\newline
+
+
+fig-3-1-simtri
+
+        \begin{tikzpicture} 
+
+        \coordinate(A) at (1.7,0);
+        \coordinate (B) at (1.7,1.4);
+        \coordinate(Ap) at (3.4,0);
+        \coordinate (Bp) at (3.4,2.8);
+        \coordinate (O) at (0,0);
+
+        \filldraw[black] (O) circle (.2pt) node[anchor=north east, yshift=0] {$O$};
+        \filldraw[black] (B) circle (1.5pt) node[anchor=south east, yshift=-2] {$P(x,y)$};
+        \filldraw[black] (Bp) circle (1.5pt) node[anchor=north west, yshift=-2] {$P'(x',y')$};
+        \filldraw[black] (A) circle (1.5pt) node[anchor=south west, yshift=-2] {$Q$};
+        \filldraw[black] (Ap) circle (1.5pt) node[anchor=south west, yshift=-2] {$Q'$};
+
+        \draw[gray,thick, dashed] (A)--(B) node [right,midway] {\color{blue}$y$};
+        \draw[gray,thick, dashed] (Ap)--(Bp) node [right,midway] {\color{blue}$y'$};
+        \draw[black,thick] (O)--++(3.4,2.8)--++(.34,.28);
+        \draw[gray,thick,dashed] (A)--(O) node [above,midway, xshift=5, yshift=-1] {\color{blue}$x$};
+        \draw[gray,thick,dashed] (Ap)--(O) node [below,midway, xshift=10] {\color{blue}$x'$};
+
+        \draw[black,thick,->] (-.5,0) -- (4,0);
+        \draw[black,thick] (-.5,0) -- (O);
+        \draw[black,thick,->] (0,-0.5) -- (0,3.1) ;
+
+        \draw[red,thick] (0.3,0) arc (0:{atan(2.8/3.4)}:0.3) node[ right, midway, yshift=2] {$\theta$};
+        \end{tikzpicture}
+        \newline
+
 
 hp3-1-57
 \begin{tikzpicture} [rotate=14]
@@ -143,6 +175,33 @@ act3-1
 \end{tikzpicture}
 \newline
 
+exam3-2-5
+
+    \begin{tikzpicture} 
+
+    \filldraw[gray!30!white] (0,0) -- ++(0,4.5) -- ++(-.5,0) -- ++(0,-.5) -- ++(-.5,0) -- ++(0,.5) -- ++(-.5,0) -- ++(0,-.5) -- ++(-.5,0) -- ++(0,.5) -- ++(-.5,0) -- ++(0,-4.5)--cycle;
+
+    \filldraw[black] (-1.55,2.5) -- ++(.6,0) -- ++(0,.6) arc(0:180:.3) -- cycle;
+
+    \coordinate (D) at (0,0);
+    \coordinate (A) at (0,4.5);
+    \coordinate (B) at (6,0);
+    \coordinate (C) at (10,0);
+
+    \draw[black] (A) node[anchor=south] {$A$};
+    \draw[black] (B) node[anchor=north] {$B$};
+    \draw[black] (C) node[anchor=north] {$C$};
+    \draw[black] (D) node[anchor=north] {$D$};
+
+    \draw[black, thick] (C)--(B) node[below,midway] {\color{blue}20 yd};
+    \draw[black, thick] (A)--(B)--(D);
+    \draw[black, thick] (A)--(C) node[above right,midway] {\color{blue}$r$};
+    \draw[black, thick] (A)--(D) node[right,midway] {\color{blue}$h$};
+    
+    \draw[red] (B)++(-.7,0) arc(180:{180-atan(3/4)}:.7) node[left, xshift=2, yshift=1, midway]{$18.5\degree$};
+    \draw[red] (C)++(-1,0) arc(180:{180-atan(9/20)}:1) node[left, xshift=2, yshift=1, midway]{$15.9\degree$};
+        \end{tikzpicture}
+
 
 
 exam4-1-1
@@ -180,6 +239,23 @@ hp3-2-33 30-60-90 triangle
 
 \draw[red,thick] (O)++(.5,0) arc(0:30:.5) node[right,midway, yshift=2] {\footnotesize$30\degree$};
 
+\end{tikzpicture}
+\newline
+
+
+hp3-sum-41ans
+
+\begin{tikzpicture} [scale=1.2]
+\coordinate(A) at (0,0);
+\coordinate(N) at (0,3);
+\coordinate(T) at (67:4);
+\coordinate(x) at (0,1.6);
+\draw[gray,->,>=stealth'] (A)--(N) node[above, text=black]{$N$};
+\draw[black,thick] (A)--(x)--(T) node[above right, yshift=-5]{$T$};
+\draw[black,thick] (A)--(T) node[right, midway]{40 mi};
+\draw[red] (0,1) arc(90:67:1) node[above, midway, xshift=3] {$23\degree$};
+\draw[red] (0,2.3) arc(90:54:0.7) node[above, midway, xshift=4] {$37\degree$};
+\node[left] at (A) {$A$};
 \end{tikzpicture}
 \newline
 
