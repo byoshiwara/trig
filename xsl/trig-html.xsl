@@ -9,7 +9,7 @@
 <!--
  Assumes current file is in trig/xsl and that the mathbook repository is adjacent 
 -->
-<xsl:import href="../../mathbook/xsl/mathbook-html.xsl"/>
+<xsl:import href="../../mathbook/xsl/pretext-html.xsl"/>
 <!--
  Or make a thin customization layer and use 'select' to provide overrides 
 -->

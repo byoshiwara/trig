@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!-- <mathbook><book> -->
 
 <section xml:id="Sum-and-Difference-Formulas"   xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Sum and Difference Formulas</title>
 <introduction>
 <p>In Chapter 5 we studied identities that relate the three trigonometric functions sine, cosine, and tangent.</p>
 
-<assemblage><p>
-	<me>\begin{aligned}[t]
-	\amp \text{Pythagorean identity}  \amp\amp      \sin^2 \theta + \cos^2 \theta = 1\\ 
-	\amp \text{Tangent identity}      \amp\amp       \tan \theta = \dfrac{\sin \theta}{\cos \theta}\\
-	\end{aligned}</me></p>
+<assemblage><title>Pythagorean and Tangent Identities</title>
+<idx><h>trigonometric identity</h></idx>
+<idx><h>Pythagorean identity</h></idx>
+<idx><h>tangent identity</h></idx>
+<p>
+	<md>
+		<mrow>\amp \text{Pythagorean identity}  \amp\amp      \sin^2 \theta + \cos^2 \theta = 1</mrow>
+		<mrow>\amp \text{Tangent identity}      \amp\amp       \tan \theta = \dfrac{\sin \theta}{\cos \theta}</mrow>
+	</md>
+</p>
 </assemblage>
 
 <p>If we know one of the three trig values for an angle, we can find the other two by using these identities.  Identities are useful for changing from one form to another when solving equations, and for finding exact values for trigonometric functions.</p>  
@@ -18,12 +22,14 @@
 </introduction>
 
 <subsection><title>The Sum of Angles Identities</title>
+<idx><h>trigonometric identity</h><h>sum of angles</h></idx>
+
 <p>	All of the identities that relate the trig ratios of different angles are derived from the sum and difference formulas.  Let's see why we need these formulas.</p>
 <p>	Is it true that
 	<me>\cos (\alpha + \beta)~~~~\text{and}~~~~\cos \alpha + \cos \beta</me>
 are equal for any values of <m>\alpha</m> and <m>\beta</m> ?  We can test this hypothesis by evaluating both expressions for some specific values of <m>\alpha</m> and <m>\beta</m>, say <m>\alpha=45\degree</m> and <m>\beta=30\degree</m>, as shown below.</p>
 
-<sidebyside width="75%"><!--<image source="images/8-1-1.png"><description>circles</description></image>-->
+<sidebyside width="75%">
     <image xml:id="fig-8-1-1">
         <description>3 circles</description>
         <latex-image>
@@ -84,10 +90,10 @@ are equal for any values of <m>\alpha</m> and <m>\beta</m> ?  We can test this h
 
 <example><statement><p>Verify that <m>\cos (45\degree + 30\degree)</m> is not equal to <m>\cos 45\degree + \cos 30\degree</m>.</p></statement>
 <solution><p>Use your calculator to evaluate each expression.
-	<me>\begin{aligned}[t]
-		\cos (45\degree + 30\degree) \amp = \cos 75\degree = 0.2588\\
-		\text{but}  \cos 45\degree + \cos 30\degree \amp = 0.7071 + 0.8660 = 1.5731\\
-		\end{aligned}</me>
+	<md>
+		<mrow>\cos (45\degree + 30\degree) \amp = \cos 75\degree = 0.2588</mrow>
+		<mrow>\text{but}  \cos 45\degree + \cos 30\degree \amp = 0.7071 + 0.8660 = 1.5731</mrow>
+	</md>
 The two expressions are not equal.</p></solution></example>
 
 <exercise><statement><p>Show that <m>\sin(60\degree + 30\degree)</m> is not equal to <m>\sin 60\degree + \sin 30\degree</m>.</p></statement><answer><p><m>\sin(60\degree + 30\degree)=1</m>, but <m>\sin 60\degree + \sin 30\degree = \dfrac{\sqrt{3}}{2} + \dfrac{1}{2}</m></p></answer></exercise>
@@ -95,9 +101,16 @@ The two expressions are not equal.</p></solution></example>
 <warning><p>  Because the values of the expressions in Example 1 and in Exercise 1 are different, it is not true that <m>\cos (\alpha + \beta)</m> is equal to <m>\cos \alpha + \cos \beta</m> for all angles <m>\alpha</m> and <m>\beta</m>, or that <m>\sin (\alpha + \beta)</m> is equal to <m>\sin \alpha + \sin \beta</m>.</p>  
 <p>It turns out that there is a relationship between the trig ratios for <m>\alpha + \beta</m>  and the trig ratios of <m>\alpha</m> and <m>\beta</m>, but it is a little more complicated.</p></warning> 
 
-<assemblage><title>Sum of Angles Identities</title><p>
-<me>\cos (\alpha + \beta) = \cos \alpha \cos \beta - \sin \alpha \sin \beta</me>
-<me>\sin (\alpha + \beta) = \sin \alpha \cos \beta + \cos \alpha \sin \beta</me></p>
+<assemblage><title>Sum of Angles Identities</title>
+<idx><h>trigonometric identity</h><h>sum of angles</h></idx>
+<idx><h>sum of angles</h></idx>
+<idx><h>sum of angles</h><seealso>trigonometric identity</seealso></idx>
+<idx><h>addition formula</h></idx>
+<idx><h>subtraction formula</h></idx>
+<idx><h>subtraction formula</h><seealso>difference of angles</seealso></idx>
+<p>
+	<me>\cos (\alpha + \beta) = \cos \alpha \cos \beta - \sin \alpha \sin \beta</me>
+	<me>\sin (\alpha + \beta) = \sin \alpha \cos \beta + \cos \alpha \sin \beta</me></p>
 </assemblage>
 
 <p>	Notice that to find the sine or cosine of <m>\alpha + \beta</m> we must know (or be able to find) both trig ratios for both  and <m>\alpha</m> and <m>\beta</m>.</p>  
@@ -105,25 +118,25 @@ The two expressions are not equal.</p></solution></example>
 
 <example><statement><p>Find an exact value for <m>\cos 105\degree</m>.</p></statement>
 
-<solution><p>We can write <m>105\degree</m> as the sum of two special angles: <m>105\degree = 60\degree + 45\degree</m>.  Now apply the addition formula for cosine.
-<me>\begin{aligned}[t]
-		\cos (60\degree + 45\degree) \amp = \cos 60\degree \cos 45\degree - \sin 60\degree \sin 45\degree\\
-		\amp = \dfrac{1}{2} \dfrac{\sqrt{2}}{2}-\dfrac{\sqrt{3}}{2} \dfrac{\sqrt{2}}{2} = \dfrac{\sqrt{2}-\sqrt{6}}{4}\\
-	\end{aligned}</me>
+<solution><p>We can write <m>105\degree</m> as the sum of two special angles: <m>105\degree = 60\degree + 45\degree</m>.  Now apply the sum of angles identity for cosine.
+<md>
+	<mrow>\cos (60\degree + 45\degree) \amp = \cos 60\degree \cos 45\degree - \sin 60\degree \sin 45\degree</mrow>
+	<mrow>\amp = \dfrac{1}{2} \dfrac{\sqrt{2}}{2}-\dfrac{\sqrt{3}}{2} \dfrac{\sqrt{2}}{2} = \dfrac{\sqrt{2}-\sqrt{6}}{4}</mrow>
+</md>
 Thus, <m>\cos 105\degree = \dfrac{\sqrt{2}-\sqrt{6}}{4}</m>. You can check that your calculator gives the same decimal approximation of about <m>-0.2588</m> for both <m>\cos 105\degree</m> and <m>\dfrac{\sqrt{2}-\sqrt{6}}{4}</m>.</p></solution></example>
 
 <exercise><statement><p>Find an exact value for <m>\sin 75\degree</m>.</p></statement><answer><p><m>\dfrac{\sqrt{6}+\sqrt{2}}{4}</m></p></answer></exercise>
 
 <p>Of course, the sum formulas hold for angles in radians as well as degrees.</p>
 
-<example><statement><p>Suppose that <m>\sin \theta = 0.6</m> and <m>\cos \theta = -0.8</m>. Find an exact value for <m>\sin(\theta + \dfrac{2\pi}{3})</m>.</p></statement>
+<example><statement><p>Suppose that <m>\sin \theta = 0.6</m> and <m>\cos \theta = -0.8</m>. Find an exact value for <m>\sin\left(\theta + \dfrac{2\pi}{3}\right)</m>.</p></statement>
 
 <solution><p>Recall that <m>\sin \dfrac{2\pi}{3} = \dfrac{\sqrt{3}}{2}</m> and <m>\cos \dfrac{2\pi}{3} = \dfrac{-1}{2}</m>.  Substituting these values into the sum formula for sine, we find
-	<me>\begin{aligned}[t]
-	\sin(\theta + \dfrac{2\pi}{3}) \amp = \sin \theta \cos \dfrac{2\pi}{3} +\cos \theta	\sin \dfrac{2\pi}{3}\\
-	\amp = 0.6 (\dfrac{-1}{2}) +(-0.8)(\dfrac{\sqrt{3}}{2})\\
-	\amp = \dfrac{3}{5} \cdot \dfrac{-1}{2} + \dfrac{-4}{5} \cdot \dfrac{\sqrt{3}}{2} = \dfrac{-3-4\sqrt{3}}{10}\\
-	\end{aligned}</me>
+	<md>
+		<mrow>\sin\left(\theta + \dfrac{2\pi}{3}\right) \amp = \sin \theta \cos \dfrac{2\pi}{3} +\cos \theta	\sin \dfrac{2\pi}{3}</mrow>
+		<mrow>\amp = 0.6 \left(\dfrac{-1}{2}\right) +(-0.8)\left(\dfrac{\sqrt{3}}{2}\right)</mrow>
+		<mrow>\amp = \dfrac{3}{5} \cdot \dfrac{-1}{2} + \dfrac{-4}{5} \cdot \dfrac{\sqrt{3}}{2} = \dfrac{-3-4\sqrt{3}}{10}</mrow>
+	</md>
 </p></solution></example>
 
 <activity><title>Negative Angles</title>
@@ -139,7 +152,7 @@ Thus, <m>\cos 105\degree = \dfrac{\sqrt{2}-\sqrt{6}}{4}</m>. You can check that 
 <p>II Using Graphs</p><p><ol label="1">
 <li><ol label="a">
 	<li><p>Look at the graph of <m>f(\theta) = \sin \theta</m>, and choose three positive values of <m>\theta</m>. Draw dots on the graph that show their function values.</p>
-<sidebyside width="100%"><!--<image source="images/8-1-2.png"><description>graph</description></image>-->
+<sidebyside width="100%">
     <image xml:id="fig-8-1-2">
         <description>sine graph</description>
         <latex-image>
@@ -184,7 +197,7 @@ Thus, <m>\cos 105\degree = \dfrac{\sqrt{2}-\sqrt{6}}{4}</m>. You can check that 
 	<li>Find the negatives of your three values of <m>\theta</m> from part (a), and draw dots to show their function values.</li>
 	<li>How do the values of <m>\sin (-\theta)</m> compare to the values of <m>\sin \theta</m>?</li></ol></li>
 <li><p>Repeat part (1) for the graph of <m>f(\theta) = \cos \theta</m>.</p>
-<sidebyside width="100%"><!--<image source="images/8-1-3.png"><description>graph</description></image>-->
+<sidebyside width="100%">
     <image xml:id="fig-8-1-3">
         <description>cosine graph</description>
         <latex-image>
@@ -229,7 +242,7 @@ Thus, <m>\cos 105\degree = \dfrac{\sqrt{2}-\sqrt{6}}{4}</m>. You can check that 
     </image>
 </sidebyside></li>
 <li><p>Repeat part (1) for the graph of <m>f(\theta) = \tan \theta</m>.</p>
-<sidebyside width="100%"><!--<image source="images/8-1-4.png"><description>graph</description></image>-->
+<sidebyside width="100%">
     <image xml:id="fig-8-1-4">
         <description>tangent graph</description>
         <latex-image>
@@ -280,9 +293,9 @@ Thus, <m>\cos 105\degree = \dfrac{\sqrt{2}-\sqrt{6}}{4}</m>. You can check that 
 <p>III	Negative Angle Identities</p>
 	<p>State your conclusions from parts I and II as identities:
 
-			<me>\sin (-\theta) = </me>
-			<me>\cos (-\theta) = </me>  
-			<me>\tan (-\theta) = </me> 
+			<me>\sin (-\theta) = \qquad\qquad</me>
+			<me>\cos (-\theta) = \qquad\qquad</me>  
+			<me>\tan (-\theta) = \qquad\qquad</me> 
 </p></activity>
 
 <exercise><statement><p>Suppose that <m>\sin \theta = \dfrac{-5}{13}</m> and <m>\cos \theta = \dfrac{12}{13}</m>. Find an exact value for <m>\cos\left(\dfrac{\pi}{4} + \theta\right)</m>.</p></statement><answer><p><m>\dfrac{17}{13\sqrt{2}} = \dfrac{17\sqrt{2}}{26}</m></p></answer></exercise>
@@ -291,7 +304,11 @@ Thus, <m>\cos 105\degree = \dfrac{\sqrt{2}-\sqrt{6}}{4}</m>. You can check that 
 <subsection><title>The Difference of Angles Identities</title>
 <p>The difference formulas for sine and cosine can be derived easily from the sum formulas, using the identities for negative angles.  Note that the difference formulas are identical to the corresponding sum formulas, except for the signs.</p>
 
-<assemblage><title>Difference of Angles Identities</title><p>
+<assemblage><title>Difference of Angles Identities</title>
+<idx><h>trigonometric identity</h><h>difference of angles</h></idx>
+<idx><h>difference of angles</h></idx>
+<idx><h>difference of angles</h><seealso>trigonometric identity</seealso></idx>
+<p>
 <me>\cos (\alpha - \beta) = \cos \alpha \cos \beta + \sin \alpha \sin \beta</me>
 <me>\sin (\alpha - \beta) = \sin \alpha \cos \beta - \cos \alpha \sin \beta</me></p>
 </assemblage>
@@ -299,12 +316,12 @@ Thus, <m>\cos 105\degree = \dfrac{\sqrt{2}-\sqrt{6}}{4}</m>. You can check that 
 <example><statement><p>Use the fact that <m>\dfrac{\pi}{12} = \dfrac{\pi}{4} - \dfrac{\pi}{6}</m> to evaluate <m>\cos \dfrac{\pi}{12}</m> exactly.</p></statement>
 
 <solution><p>Remember that <m>\cos \dfrac{\pi}{4} = \dfrac{\sqrt{2}}{2},~~\cos\dfrac{\pi}{6} =\dfrac{\sqrt{3}}{2},~~\sin\dfrac{\pi}{4} = \dfrac{\sqrt{2}}{2}</m>, and <m>\sin \dfrac{\pi}{6} = \dfrac{1}{2}</m>. Substituting all these values into the difference formula for cosine, we obtain the following.
-	<me>\begin{aligned}[t]
-	\cos\dfrac{\pi}{12} \amp = \cos (\dfrac{\pi}{4} - \dfrac{\pi}{6})\\
-	\amp = \cos \dfrac{\pi}{4} \cos \dfrac{\pi}{6} + \sin \dfrac{\pi}{4} \sin \dfrac{\pi}{6}\\
-	\amp = \dfrac{\sqrt{2}}{2} \cdot \dfrac{\sqrt{3}}{2} +\dfrac{\sqrt{2}}{2} \cdot \dfrac{1}{2}\\
-	\amp = \dfrac{\sqrt{6}+\sqrt{2}}{4}\\
-	\end{aligned}</me>
+	<md>
+		<mrow>\cos\dfrac{\pi}{12} \amp = \cos \left(\dfrac{\pi}{4} - \dfrac{\pi}{6}\right)</mrow>
+		<mrow>\amp = \cos \dfrac{\pi}{4} \cos \dfrac{\pi}{6} + \sin \dfrac{\pi}{4} \sin \dfrac{\pi}{6}</mrow>
+		<mrow>\amp = \dfrac{\sqrt{2}}{2} \cdot \dfrac{\sqrt{3}}{2} +\dfrac{\sqrt{2}}{2} \cdot \dfrac{1}{2}</mrow>
+		<mrow>\amp = \dfrac{\sqrt{6}+\sqrt{2}}{4}</mrow>
+	</md>
 You can check that your calculator gives the same decimal approximation of about 0.9659 for both <m>\cos \dfrac{\pi}{12}</m> and <m>\dfrac{\sqrt{6}+\sqrt{2}}{4}</m>.</p></solution></example>
 
 <exercise><statement><p>Evaluate <m>\sin \dfrac{\pi}{12}</m> exactly.</p></statement><answer><p><m>\dfrac{\sqrt{3}-1}{2\sqrt{2}} = \dfrac{\sqrt{6}-\sqrt{2}}{4}</m></p></answer></exercise>
@@ -314,6 +331,9 @@ You can check that your calculator gives the same decimal approximation of about
 <p>There are also sum and difference formulas for the tangent.</p>
 
 <assemblage><title>Sum and Difference Identities for Tangent</title><p>
+<idx><h>trigonometric identity</h><h>sum and difference for tangent</h></idx>
+<idx><h>difference of angles</h></idx>
+<idx><h>sum of angles</h></idx>
 <me>\tan (\alpha + \beta) = \dfrac{\tan \alpha + \tan \beta}{1 - \tan \alpha \tan \beta}</me>
 <me>\tan (\alpha - \beta) = \dfrac{\tan \alpha - \tan \beta}{1 + \tan \alpha \tan \beta}</me></p>
 </assemblage> 
@@ -321,19 +341,23 @@ You can check that your calculator gives the same decimal approximation of about
 <example><statement><p>Find an exact value for <m>\tan 75\degree</m>.</p></statement>
 
 <solution><p>We observe that <m>75\degree = 45\degree + 30\degree</m>, so <m>\tan 75\degree = \tan (45\degree + 30\degree)</m>.  We can apply the sum formula for tangent.
-	<me>\begin{aligned}[t]
-	\tan(45\degree + 30\degree) \amp = \dfrac{\tan 45\degree + \tan 30\degree}{1 - \tan 45\degree \tan 30\degree}\\
-	\amp = \dfrac{1+\dfrac{1}{\sqrt{3}}}{1-1(\dfrac{1}{\sqrt{3}})} \cdot \blert{\dfrac{\sqrt{3}}{\sqrt{3}}} =\dfrac{\sqrt{3}+1}{\sqrt{3}-1} \\
-	\end{aligned}</me>
+	<md>
+		<mrow>\tan(45\degree + 30\degree) \amp = \dfrac{\tan 45\degree + \tan 30\degree}{1 - \tan 45\degree \tan 30\degree}</mrow>
+		<mrow>\amp = \dfrac{1+\dfrac{1}{\sqrt{3}}}{1-1\left(\dfrac{1}{\sqrt{3}}\right)} \cdot \blert{\dfrac{\sqrt{3}}{\sqrt{3}}} </mrow>
+		<mrow>\amp=\dfrac{\sqrt{3}+1}{\sqrt{3}-1}</mrow>
+	</md>
 	</p></solution></example> 
 
 <exercise><statement><p>Evaluate <m>\tan \dfrac{\pi}{12}</m> exactly.</p></statement><answer><p><m>\dfrac{\sqrt{3}-1}{\sqrt{3}+1}</m></p></answer></exercise>
 </subsection>
 
 <subsection><title>Double Angle Identities</title>
-<p>	There are a number of other very useful identities that can be derived from the sum and difference formulas.  In particular, if we set <m>\alpha = \beta = \theta</m> in the addition formulas, we obtain the double angle formulas.  These identities are used frequently and should be memorized!</p>
+<idx><h>double angle identity</h></idx>
+<p>	There are a number of other very useful identities that can be derived from the sum and difference formulas.  In particular, if we set <m>\alpha = \beta = \theta</m> in the sum of angles identities (also called <term>addition formulas</term><idx><h>addition formula</h></idx><idx><h>addition formula</h><seealso>sum of angles</seealso></idx>), we obtain the <term>double angle formulas</term><idx><h>double angle formulas</h></idx><idx><h>double angle formulas</h><seealso>double angle identity</seealso></idx>.  These identities are used frequently and should be memorized!</p>
 
 <assemblage><title>Double Angle Identities</title><p>
+<idx><h>trigonometric identity</h><h>double angle</h></idx>
+<idx><h>double angle identity</h></idx>
 <me>\cos 2\theta = \cos^2 \theta - \sin^2 \theta</me>
 <me>\sin 2\theta = 2\sin \theta \cos \theta</me>
 <me>\tan 2\theta = \dfrac {2\tan \theta}{1-\tan^2 \theta}</me></p>
@@ -342,14 +366,14 @@ You can check that your calculator gives the same decimal approximation of about
 <p>You can also justify the identities to yourself by graphing both sides of the formula to see that the graphs are identical.</p>
 
 <warning><p>The first thing we can learn from the double angle formulas is that <m>\sin 2\theta</m> is not equal to <m>2\sin \theta</m>! You can check this very easily by choosing a value for <m>\theta</m>, say <m>45\degree</m>. Then
-	<me>\begin{aligned}[t]
-	\sin 2\theta \amp = \sin (90\degree) =1\\
-	\text{but}~~~ 2\sin \theta\amp = 2\sin (45\degree) = 2(\dfrac{\sqrt{2}}{2}) = \sqrt{2}\\
-	\end{aligned}</me>
+	<md>
+		<mrow>\sin 2\theta \amp = \sin (90\degree) =1</mrow>
+		<mrow>\text{but}~~~ 2\sin \theta\amp = 2\sin (45\degree) = 2\left(\dfrac{\sqrt{2}}{2}\right) = \sqrt{2}</mrow>
+	</md>
 and <m>\sqrt{2} \not= 1</m>.  Similarly, <m>\cos 2\theta \not= 2\cos \theta</m> and <m>\tan 2\theta \not= 2\tan \theta</m></p></warning>
 
 <example><statement><p>Find <m>\sin 2\theta</m> for the angle <m>\theta</m> shown.</p>
-<sidebyside width="25%"><!--<image source="images/exam8-1-6.png"><description>triangle</description></image>-->
+<sidebyside width="25%">
     <image xml:id="exam8-1-6">
         <description>triangle</description>
         <latex-image>
@@ -372,11 +396,11 @@ and <m>\sqrt{2} \not= 1</m>.  Similarly, <m>\cos 2\theta \not= 2\cos \theta</m> 
 
 <solution><p>We start by using the Pythagorean Theorem to find the hypotenuse of the triangle.
 <me>c^2 = 2^2 + 3^2 = 13</me>
-so <m>c = \sqrt{13}</m>. Thus, <m>\cos \theta = \dfrac{3}{\sqrt{13}}</m> and <m>\sin \theta = \dfrac{2}{\sqrt{13}}</m>. Now we can use these values in the double angle identity to find <m>\sin 2\theta</m>.     
-	<me>\begin{aligned}[t]
-	\sin 2\theta \amp = 2\sin \theta \cos \theta\\
-	\amp = 2(\dfrac{2}{\sqrt{13}})(\dfrac{3}{\sqrt{13}}) = \dfrac{12}{13}\\
-	\end{aligned}</me>
+so <m>c = \sqrt{13}</m>. Thus, <m>\cos \theta = \dfrac{3}{\sqrt{13}}</m> and <m>\sin \theta = \dfrac{2}{\sqrt{13}}</m>. Now we can use these values in the double angle identity to find <m>\sin 2\theta</m>.
+	<md>
+		<mrow>\sin 2\theta \amp = 2\sin \theta \cos \theta</mrow>
+		<mrow>\amp = 2\left(\dfrac{2}{\sqrt{13}}\right)\left(\dfrac{3}{\sqrt{13}}\right) = \dfrac{12}{13}</mrow>
+	</md>   
 	</p></solution></example>
 
 <exercise><statement><p>Find <m>\cos 2\theta</m> and <m>\tan 2\theta</m> for the angle <m>\theta</m> shown in the previous example.</p></statement><answer><p><m>\cos 2\theta = \dfrac{5}{13},~~\tan 2\theta = \dfrac{12}{5}</m></p></answer></exercise>
@@ -384,7 +408,7 @@ so <m>c = \sqrt{13}</m>. Thus, <m>\cos \theta = \dfrac{3}{\sqrt{13}}</m> and <m>
 <p>We can work with algebraic expressions instead of numerical values for the trig ratios.</p>
 
 <example><statement><p>Use the figure below to express <m>\cos 2\phi</m> in terms of <m>a</m>.</p>	
-<sidebyside width="18%"><!--<image source="images/exam8-1-7.png"><description>triangle</description></image>-->
+<sidebyside width="18%">
     <image xml:id="exam8-1-7">
         <description>triangle</description>
         <latex-image>
@@ -406,54 +430,56 @@ so <m>c = \sqrt{13}</m>. Thus, <m>\cos \theta = \dfrac{3}{\sqrt{13}}</m> and <m>
 </sidebyside></statement>
 
 <solution><p>We use the Pythagorean Theorem to find an expression for the third side of the triangle.
-	<me>\begin{aligned}[t]
-	a^2 + b^2 \amp = 3^2 \amp\amp  \blert{\text{Solve for}~~b.} \\
-	b \amp = \sqrt{9 - a^2}\\
-	\end{aligned}</me>
+	<md>
+		<mrow>a^2 + b^2 \amp = 3^2 \amp\amp  \blert{\text{Solve for}~~b.}</mrow>
+		<mrow>b \amp = \sqrt{9 - a^2}</mrow>
+	</md>
 Now we can write expressions for the sine and cosine of <m>\phi</m>.
 <me>\cos \phi = \dfrac{a}{3} ~~~~\text{and}~~~~\sin \phi = \dfrac{\sqrt{9 - a^2}}{3}</me>
 Finally, we substitute these expressions into the double angle identity.
-<me>\begin{aligned}[t]
-	\cos 2\phi \amp = \cos^2 \phi - \sin^2 \phi \\
-	 \amp = (\dfrac{a}{3})^2 - (\dfrac{\sqrt{9 - a^2}}{3})^2\\
-	 \amp = \dfrac{a^2}{9} - \dfrac{9 - a^2}{9} = \dfrac{a^2-9}{9}\\
-	\end{aligned}</me></p>
+<md>
+	<mrow>\cos 2\phi \amp = \cos^2 \phi - \sin^2 \phi</mrow>
+	<mrow>\amp = \left(\dfrac{a}{3}\right)^2 - \left(\dfrac{\sqrt{9 - a^2}}{3}\right)^2\\
+	 \amp = \dfrac{a^2}{9} - \dfrac{9 - a^2}{9} = \dfrac{a^2-9}{9}</mrow>
+</md></p>
 </solution></example>
 
 <exercise><statement><p>For the triangle in the previous example, find expressions for <m>\sin 2\phi</m> and <m>\tan 2\phi</m>.</p></statement><answer><p><m>\sin 2\phi = \dfrac{2a\sqrt{9-a^2}}{9},~~\tan 2\phi = \dfrac{2a\sqrt{9-a^2}}{2a^2 - 9}</m></p></answer></exercise>
 
 <p>By using the Pythagorean identity, we can write the double angle formula for cosine in two alternate forms.</p>
 
-<p><me>\begin{aligned}[t]
-	\cos 2\theta \amp = \cos^2 \theta - \sin^2 \theta \\
-	 \amp = \cos^2 \theta - (1-\cos^2 \theta)\\
-	 \amp = 2\cos^2 \theta -1\\
-	\end{aligned}</me>
+<p><md>
+	<mrow>\cos 2\theta \amp = \cos^2 \theta - \sin^2 \theta</mrow>
+	<mrow>\amp = \cos^2 \theta - (1-\cos^2 \theta)</mrow>
+	<mrow>\amp = 2\cos^2 \theta -1</mrow>
+</md>
 
-<me>\begin{aligned}[t]
-	\cos 2\theta \amp = \cos^2 \theta - \sin^2 \theta \\
-	 \amp = (1-\sin^2 \theta) - \sin^2 \theta\\
-	 \amp = 1-2\sin^2 \theta \\
-	\end{aligned}</me></p>
+<md>
+	<mrow>\cos 2\theta \amp = \cos^2 \theta - \sin^2 \theta</mrow>
+	<mrow>\amp = (1-\sin^2 \theta) - \sin^2 \theta</mrow>
+	<mrow>\amp = 1-2\sin^2 \theta</mrow>
+</md></p>
 
 <p>Thus, we have three forms for the double angle formula for cosine, and we can use whichever form is most convenient for a particular problem.</p>
 
 <assemblage><title>Double Angle Identities for Cosine</title>
-<p><me>\begin{aligned}[t]
-	\cos 2\theta \amp = \cos^2 \theta - \sin^2 \theta \\
-	 \amp = 2\cos^2 \theta -1\\
-	 \amp = 1-2\sin^2 \theta\\
-	\end{aligned}</me></p>
+<idx><h>trigonometric identity</h><h>double angle</h></idx>
+<idx><h>double angle identity</h><h>for cosine</h></idx>
+<p><md>
+	<mrow>\cos 2\theta \amp = \cos^2 \theta - \sin^2 \theta</mrow>
+	<mrow>\amp = 2\cos^2 \theta -1</mrow>
+	<mrow>\amp = 1-2\sin^2 \theta</mrow>
+</md></p>
 </assemblage>
 	
 <example><statement><p>Find an expression for <m>\cos 2\beta</m> if you know that <m>\cos \beta = \dfrac{x}{4}</m>.</p></statement>
 
 <solution><p>We use the identity <m>\cos 2\theta = 2\cos^2 \theta -1</m></p> 
-	<p><me>\begin{aligned}[t]
-	\cos 2\beta \amp = 2\cos^2 \beta -1\\
-	 \amp = 2(\dfrac{x}{4})^2 - 1 = \dfrac{2x^2}{16} - 1\\
-	 \amp = \dfrac{2x^2 - 16}{16} = \dfrac{x^2 - 8}{8}\\
-	\end{aligned}</me></p>
+	<p><md>
+		<mrow>\cos 2\beta \amp = 2\cos^2 \beta -1</mrow>
+		<mrow>\amp = 2\left(\dfrac{x}{4}\right)^2 - 1 = \dfrac{2x^2}{16} - 1</mrow>
+		<mrow>\amp = \dfrac{2x^2 - 16}{16} = \dfrac{x^2 - 8}{8}</mrow>
+	</md></p>
 </solution></example>
 
 <exercise><statement><p>Find an expression for <m>\cos 2\alpha</m> if you know that <m>\sin \alpha = \dfrac{6}{w}</m>.</p></statement><answer><p><m>\dfrac{w^2 - 76}{w^2}</m></p></answer></exercise>
@@ -465,18 +491,18 @@ Finally, we substitute these expressions into the double angle identity.
 <example><statement><p>Solve <m>\sin 2x - \cos x</m>, for <m>0 \le x \le 2\pi</m>.</p></statement> 
 
 <solution><p>We first use the double angle formula to write <m>\sin 2x</m> in terms of trig functions of <m>x</m> alone.</p>
-	<p><me>\begin{aligned}[t]
-	\sin 2x -\cos x \amp = 0\\
-	 2\sin x \cos x -\cos x \amp = 0\\
-	\end{aligned}</me></p>
+    <p><md>
+    	<mrow>\sin 2x -\cos x \amp = 0</mrow>
+    	<mrow>2\sin x \cos x -\cos x \amp = 0</mrow>
+    </md></p>
 <p>Once we have all the trig functions in terms of a single angle, we try to write the equation in terms of a single trig function.  In this case, we can factor the left side to separate the trig functions.</p>
-	<p><me>\begin{aligned}[t]
-	 2\sin x \cos x -\cos x \amp = 0\\
-	 \cos x (2\sin x - 1) \amp = 0  \amp\amp \blert{\text{Set each factor equal to zero.}}\\
-\cos x = 0 ~~~~~ 2\sin x - 1 \amp = 0 \amp\amp \blert{\text{Solve each equation.}}\\
-				\sin x \amp = \dfrac{1}{2} \\
-x = \dfrac{\pi}{2},~\dfrac{3\pi}{2} ~~~~~~~~~~~~~ x\amp = \dfrac{\pi}{6},~\dfrac{5\pi}{6}\\				
-	\end{aligned}</me></p>
+    <p><md>
+        <mrow>2\sin x \cos x -\cos x \amp = 0</mrow>
+        <mrow>\cos x (2\sin x - 1) \amp = 0  \amp\amp \blert{\text{Set each factor equal to zero.}}</mrow>
+        <mrow>\cos x = 0 \qquad 2\sin x - 1 \amp = 0 \amp\amp \blert{\text{Solve each equation.}}</mrow>
+        <mrow>\sin x \amp = \dfrac{1}{2}</mrow>
+        <mrow>x = \dfrac{\pi}{2},~\dfrac{3\pi}{2} \qquad x = \dfrac{\pi}{6}\amp,~\dfrac{5\pi}{6}</mrow>
+    </md></p>
 <p>There are four solutions, <m>x = \dfrac{\pi}{2},~\dfrac{3\pi}{2},~\dfrac{\pi}{6},</m> and <m>\dfrac{5\pi}{6}</m>.</p></solution></example>
 
 <exercise><statement><p>Solve <m>\cos 2t = \cos t</m>, for <m>0 \le x \le 2\pi</m>.</p></statement><answer><p><m>t = 0,~ \dfrac{2\pi}{3},~\dfrac{4\pi}{3}</m></p></answer></exercise>
@@ -518,6 +544,7 @@ x = \dfrac{\pi}{2},~\dfrac{3\pi}{2} ~~~~~~~~~~~~~ x\amp = \dfrac{\pi}{6},~\dfrac
 </subsection>
 
 <subsection><title>Algebra Refresher</title>
+<p>Review the following skills you will need for this section.</p>
 
 <exercises>
 <exercisegroup cols="3"><introduction><p><ol label="a">
@@ -537,8 +564,9 @@ x = \dfrac{\pi}{2},~\dfrac{3\pi}{2} ~~~~~~~~~~~~~ x\amp = \dfrac{\pi}{6},~\dfrac
 
 	<exercise number="6"><statement><p><m>f(x) = 2^x</m></p></statement></exercise>
 </exercisegroup></exercises>
+</subsection>
 
-<subsubsection><title>Algebra Refresher Answers</title>
+<subsection><title>Algebra Refresher Answers</title>
 <p><ol label="1" cols="2">
 	<li><p><ol label="a" >
 		<li>8, 11, 17</li>
@@ -558,7 +586,7 @@ x = \dfrac{\pi}{2},~\dfrac{3\pi}{2} ~~~~~~~~~~~~~ x\amp = \dfrac{\pi}{6},~\dfrac
 	<li><p><ol label="a">
 		<li>4, 8, 32</li>
 		<li>Not true</li></ol></p></li>
-	</ol></p></subsubsection>
+	</ol></p>
 </subsection>
 
 <subsection><title>Section 8.1 Summary</title>	
@@ -581,29 +609,29 @@ x = \dfrac{\pi}{2},~\dfrac{3\pi}{2} ~~~~~~~~~~~~~ x\amp = \dfrac{\pi}{6},~\dfrac
 <me>\tan (\alpha - \beta) = \dfrac{\tan \alpha - \tan \beta}{1 + \tan \alpha \tan \beta}</me></p>
 </assemblage></li>
 <li><assemblage><title>Double Angle Identities</title>
-<p><me>\begin{aligned}[t]
-	\cos 2\theta \amp = \cos^2 \theta - \sin^2 \theta \amp\amp \sin 2\theta = 2\sin \theta \cos \theta\\
-	 \amp = 2\cos^2 \theta -1 \amp\amp \tan 2\theta = \dfrac {2\tan \theta}{1-\tan^2 \theta}\\
-	 \amp = 1-2\sin^2 \theta\\
-	\end{aligned}</me></p></assemblage></li></ol></p>
+<p><md>
+	<mrow>\cos 2\theta \amp = \cos^2 \theta - \sin^2 \theta \amp\amp \sin 2\theta = 2\sin \theta \cos \theta</mrow>
+	<mrow>\amp = 2\cos^2 \theta -1 \amp\amp \tan 2\theta = \dfrac {2\tan \theta}{1-\tan^2 \theta}</mrow>
+	<mrow>\amp = 1-2\sin^2 \theta</mrow>
+</md></p></assemblage></li></ol></p>
 </subsubsection>
 
 <subsubsection><title>Study Questions</title>
 <p><ol label="1">
 <li>Explain why <m>f(a+b) - f(a) + f(b)</m> is not a valid application of the distributive law.</li>
-<li>Delbert says that <m>\sin(\theta + \dfrac{\pi}{6}) = \dfrac{1}{2} + \sin \theta</m>. Is he correct? Explain.</li>
-<li>Francine says that  <m>\tan(\theta + \dfrac{\pi}{4})= \dfrac{1+\tan \theta}{1 - \tan \theta}</m>. Is she correct? Explain.</li>
+<li>Delbert says that <m>\sin\left(\theta + \dfrac{\pi}{6}\right) = \dfrac{1}{2} + \sin \theta</m>. Is he correct? Explain.</li>
+<li>Francine says that  <m>\tan\left(\theta + \dfrac{\pi}{4}\right)= \dfrac{1+\tan \theta}{1 - \tan \theta}</m>. Is she correct? Explain.</li>
 <li>Provide an example to show that doubling an angle does not double its sine or cosine.</li>
 </ol></p></subsubsection>
 
 <subsubsection><title>Skills</title>
 <p><ol label="1">
-<li>Find trig values for the negative of an angle    #1-6</li>
-<li>Verify or disprove possible formulas    #7-12, 31-42, 73-76, 79-88</li>
-<li>Find exact values for trigonometric functions    #13-24, 55-62</li>
-<li>Simplify or expand expressions    #25-30, 43-54</li>
-<li>Solve equations    #63-72</li>
-<li>Prove standard identities    #77-78, 89-91</li>
+<li>Find trig values for the negative of an angle    #1<ndash/>6</li>
+<li>Verify or disprove possible formulas    #7<ndash/>12, 31<ndash/>42, 73<ndash/>76, 79<ndash/>88</li>
+<li>Find exact values for trigonometric functions    #13<ndash/>24, 55<ndash/>62</li>
+<li>Simplify or expand expressions    #25<ndash/>30, 43<ndash/>54</li>
+<li>Solve equations    #63<ndash/>72</li>
+<li>Prove standard identities    #77<ndash/>78, 89<ndash/>91</li>
 </ol></p>
 </subsubsection>
 </subsection>

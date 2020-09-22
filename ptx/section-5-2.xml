@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!-- <mathbook><book> -->
 
 <section xml:id="Solving-Equations"   xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Solving Equations</title>
 
 <subsection><title>Introduction</title>
-<p>It is important to distinguish between an algebraic <em>expression</em> and an <em>equation</em>.  An <term>equation</term> is a statement that two algebraic expressions are equal.  It may be true or false, depending on the values of any variables involved.  Here are some examples of equations.
-        <me>\begin{aligned}[t]
-                5(2 + 6) \amp = 5(2) + 5(6)\\
-                 \sqrt{3^2 + 4^2}\amp= 3 + 4\\
-                 x^2 + 3x \amp = 10\\                               
-                \end{aligned}</me>
-The first equation is true, the second is false, and the third equation is true only if <m>x = 2</m> or <m>x = -5</m>.  When you <term>solve</term> an equation, you are finding the values of the variable that make the equation true.</p>
+<p>It is important to distinguish between an algebraic <em>expression</em> and an <em>equation</em>.  An <term>equation</term><idx><h>equation</h></idx> is a statement that two algebraic expressions are equal.  It may be true or false, depending on the values of any variables involved.  Here are some examples of equations.
+    <md>
+        <mrow>5(2 + 6) \amp = 5(2) + 5(6)</mrow>
+        <mrow>\sqrt{3^2 + 4^2}\amp= 3 + 4</mrow>
+        <mrow>x^2 + 3x \amp = 10</mrow>
+    </md>
+The first equation is true, the second is false, and the third equation is true only if <m>x = 2</m> or <m>x = -5</m>.  When you <term>solve</term><idx><h>solve</h><h>an equation</h></idx> an equation, you are finding the values of the variable that make the equation true.</p>
 
 <example><statement><p><ol label="a">
     <li>Evaluate <m>~~2x + \sqrt[3]{x - 1}</m> for <m>x = 9</m>.</li>
@@ -20,10 +19,10 @@ The first equation is true, the second is false, and the third equation is true 
 
 <solution><p><ol label="a">
     <li>Substitute <m>x = 9</m> into the expression to find
-            <me>\begin{aligned}[t]
-                2x + \sqrt[3]{x - 1} \amp = 2(\alert{9}) + \sqrt[3]{\alert{9} - 1}\\
-                                    \amp = 18 +  \sqrt[3]{8} = 20\\
-             \end{aligned}</me></li>
+        <md>
+            <mrow>2x + \sqrt[3]{x - 1} \amp = 2(\alert{9}) + \sqrt[3]{\alert{9} - 1}</mrow>
+            <mrow>\amp = 18 +  \sqrt[3]{8} = 20</mrow>
+        </md></li>
     <li>We must find a value for <m>x</m> that makes <m>2x + \sqrt[3]{x - 1}</m> equal to 20.  In part (a) we saw that this expression equals 20 when <m>x = 9</m>, so the solution of the equation <m>2x + \sqrt[3]{x - 1} = 20</m> is <m>x = 9</m>.</li>
 </ol></p></solution></example>
 
@@ -31,11 +30,11 @@ The first equation is true, the second is false, and the third equation is true 
 <me>2x^3 - 4x = 5x^2 - 3</me>
 </p></statement><hint><p>Try small integer values for <m>x</m>.</p></hint><answer><p><m>x = 3</m></p></answer></exercise>
 
-<p> You probably remember a number of algebraic techniques for solving equations of different types.  Another useful equation-solving method uses graphs.</p>
+<p> You probably remember a number of algebraic techniques for solving equations of different types.  Another useful equation-solving method uses graphs. <idx><h>solve</h><h>an equation using a graph</h></idx></p>
 
 <example><statement><p>Use a graph to solve the equation  <m>x^3 - 2x^2 - 5x = -6</m>.</p></statement>
 
-<solution><p>We graph the expressions on either side of the equation, that is, we graph <m>y = x^3 - 2x^2 - 5x</m> and <m>y = -6</m>  on the same grid, as shown below.</p> <sidebyside widths="50% 40%"> <p> We are looking for any values of <m>x</m> where the two <m>y</m>-values are equal, and these occur at the intersection points of the two graphs.  At those points, the <m>x</m>-values are <m>x = -2,~ x = 1</m> and <m>x = 3</m>, and these are the solutions of the equation.  You can check that all three values make the equation true.</p><!--<image source="images/exam5-2-2.png"><description>graph</description></image>-->
+<solution><p>We graph the expressions on either side of the equation, that is, we graph <m>y = x^3 - 2x^2 - 5x</m> and <m>y = -6</m>  on the same grid, as shown below.</p> <sidebyside widths="50% 40%" margins="0% 5%"> <p> We are looking for any values of <m>x</m> where the two <m>y</m>-values are equal, and these occur at the intersection points of the two graphs.  At those points, the <m>x</m>-values are <m>x = -2,~ x = 1</m> and <m>x = 3</m>, and these are the solutions of the equation.  You can check that all three values make the equation true.</p>
     <image xml:id="exam5-2-2">
         <description>cubic graph</description>
         <latex-image>
@@ -99,13 +98,16 @@ The first equation is true, the second is false, and the third equation is true 
 </subsection>
 
 <subsection><title>Trigonometric Equations</title>
+<idx><h>trigonometric equation</h></idx>
+<idx><h>equation</h><h>trigonometric</h></idx>
+<idx><h>equation</h><h>trigonometric</h><seealso>trigonometric equation</seealso></idx>
 <p> The first Ferris wheel was built for the Chicago World's Fair in 1893.  It had a diameter of 250 feet and could carry 2160 people in 36 carriages.  From the top of the wheel, passengers could see into four states.  After loading all the passengers, the wheel made one revolution in nine minutes.</p>  
 <p>If you are in the bottom carriage of the Ferris wheel at the start of its revolution, your height after <m>t</m> seconds is given by
-<me>h = f(t) = 139 - 125\cos (\dfrac{2t}{3})</me>  For how long are you more than 240 feet above the ground?</p>
+<me>h = f(t) = 139 - 125\cos \left(\dfrac{2t}{3}\right)</me>  For how long are you more than 240 feet above the ground?</p>
 
 <p>The figure below shows a graph of the height function and a horizontal line at <m>h = 240</m>.</p>
 
-<sidebyside width="70%"><!--<image source="images/5-2-ferris.png"><description>graph</description></image>-->
+<sidebyside width="70%">
     <image xml:id="fig-5-2-ferris">
         <description>sinusoidal graph</description>
         <latex-image>
@@ -144,21 +146,23 @@ The first equation is true, the second is false, and the third equation is true 
 </subsection>
 
 <subsection><title>Solving Trigonometric Equations</title>
+<idx><h>trigonometric equation</h><h>solving</h></idx>
+<idx><h>solve</h><h>trigonometric equations</h></idx>
+<idx><h>solve</h><h>trigonometric equations</h><seealso>trigonometric equation</seealso></idx>
 <p>In the example above, we used a graph to solve the equation <m>h = 240</m>, or
-    <me>139 - 125\cos (\dfrac{2t}{3}) = 240</me> 
+    <me>139 - 125\cos \left(\dfrac{2t}{3}\right) = 240</me> 
 To find a more precise solution, we can use algebraic methods.  As an example, we'll solve the slightly simpler equation
     <me>139 - 125\cos\theta = 240</me>  
 We'll look for all solutions for <m>\theta</m> between <m>0\degree</m> and <m>360\degree</m>.  We begin by isolating the trigonometric ratio on one side of the equation.
-    <me>\begin{aligned}[t]
-                139 - 125\cos \theta \amp = 240  \amp \amp \blert{\text{Subtract 139 from both sides.}}\\
-                        - 125\cos \theta   \amp = 101 \amp \amp \blert{\text{Divide both sides by -125.}}\\
-                    \cos\theta \amp = -0.808\\
-             \end{aligned}</me>
+    <md>
+        <mrow>139 - 125\cos \theta \amp = 240  \amp \amp \blert{\text{Subtract 139 from both sides.}}</mrow>
+        <mrow>- 125\cos \theta   \amp = 101 \amp \amp \blert{\text{Divide both sides by }{-125.}}</mrow>
+        <mrow> \cos\theta \amp = -0.808</mrow>
+    </md>
 We have solved equations like this one before:  we use the inverse cosine to solve for <m>\theta</m>.  Remember that there are two angles between <m>0\degree</m> and <m>360\degree</m> that have a cosine of <m>-0.808</m>, one in the second quadrant and one in the third quadrant.  The calculator will give us only the second quadrant solution.
 <me>\theta = \cos^{-1}(-0.808) = 143.9\degree</me> To find the second solution, we need the third-quadrant angle whose cosine is <m>-0.808</m>. </p>
-<sidebyside widths="50% 40%"><p> Now, the reference angle for <m>143.9\degree</m> is  <me>180\degree - 143.9\degree = 36.1\degree</me>  and the angle in the third quadrant with the same reference angle is  
+<sidebyside widths="55% 40%" margins="0% 0%" valigns="middle middle"><p> Now, the reference angle for <m>143.9\degree</m> is  <me>180\degree - 143.9\degree = 36.1\degree</me>  and the angle in the third quadrant with the same reference angle is  
 <me>180\degree + 36.1\degree = 216.1\degree</me>  (See the figure at right.)  Thus, the other solution is <m>216.1\degree</m>.</p>
-<!--<image source="images/5-2-eqn.png"><description>graph</description></image>-->
     <image xml:id="fig-5-2-eqn">
         <description>angles</description>
         <latex-image>
@@ -194,6 +198,7 @@ We have solved equations like this one before:  we use the inverse cosine to sol
 <p> To solve simple equations involving a single trigonometric ratio (either <m>\sin \theta, \cos \theta,</m> or <m>\tan \theta</m>), we can follow the steps below.</p>
 
 <assemblage><title>To Solve a Trigonometric Equation for <m>0\degree \le\theta\le 360\degree</m></title>
+<idx><h>trigonometric equation</h><h>solving</h></idx>
     <p><ol label = "1">
     <li>  Isolate the trigonometric ratio.</li>
     <li><p>  Find one solution.</p><p><ol label = "a">
@@ -212,7 +217,7 @@ We have solved equations like this one before:  we use the inverse cosine to sol
                  8 \sin \theta \amp = 4  \amp \amp \blert{\text{Divide both sides by 8.}}\\
                  \sin \theta \amp = \dfrac{4}{8} = \dfrac{1}{2}\\                             
                 \end{aligned}</me></p>
-    <sidebyside widths="45% 45%"><p>We recognize that <m>\sin \theta = \dfrac{1}{2}</m> for one of the special angles, namely <m>\theta = 30\degree</m>, and also for the obtuse angle <m>\theta = 150\degree</m>, as shown at right.</p><!--<image source="images/exam5-2-3.png"><description>graph</description></image>-->
+    <sidebyside widths="45% 45%" margins="0% 0%"><p>We recognize that <m>\sin \theta = \dfrac{1}{2}</m> for one of the special angles, namely <m>\theta = 30\degree</m>, and also for the obtuse angle <m>\theta = 150\degree</m>, as shown at right.</p>
     <image xml:id="exam5-2-3">
         <description>angles</description>
         <latex-image>
@@ -257,7 +262,7 @@ We have solved equations like this one before:  we use the inverse cosine to sol
 <warning><p>To solve the equation in the previous example, it is not enough to find the solution <m>\theta = 30\degree</m>;  we must find <em>all</em> the solutions between <m>0\degree</m> and <m>360\degree</m>. To find the solutions in other quadrants, we use reference angles.</p></warning>
 
 <note><p> In the previous example, we found two solutions of the equation <m>8 \sin \theta - 1 = 3</m>.  The equation actually has infinitely many solutions, as you can see in the figure below, which shows a graph of <m>y = 8 \sin \theta - 1</m>  and the horizontal line <m>y = 3</m>.  The line intersects the sine graph infinitely many times, twice in each cycle.</p> 
-<sidebyside width="60%"><!--<image source="images/5-2-infsoln.png"><description>graph</description></image>-->
+<sidebyside width="60%">
     <image xml:id="fig-5-2-infsoln">
         <description>sinusoidal graph</description>
         <latex-image>
@@ -294,15 +299,15 @@ We have solved equations like this one before:  we use the inverse cosine to sol
 <example><statement><p>Solve the equation <m>~~3 \tan \beta + 1 = -8</m> for <m>0\degree \le\theta\le 360\degree</m>. Round your solutions to three decimal places.</p></statement>
 
 <solution><p>First, we isolate the trig ratio.
-            <me>\begin{aligned}[t]
-                3 \tan \beta + 1 \amp = -8 \\
-                 3 \tan \beta \amp = -9 \\
-                 \tan \beta \amp = -3\\                             
-                \end{aligned}</me></p>
-    <sidebyside widths="65% 25%" valigns="middle middle"><p>There are two angles with tangent -3, one in the second quadrant and one in the fourth quadrant.  The calculator finds the solution
+    <md>
+        <mrow>3 \tan \beta + 1 \amp = -8</mrow>
+        <mrow>3 \tan \beta \amp = -9</mrow>
+        <mrow>\tan \beta \amp = -3</mrow>
+    </md></p>
+    <sidebyside widths="65% 28%" valigns="middle middle" margins="0% 0%"><p>There are two angles with tangent -3, one in the second quadrant and one in the fourth quadrant.  The calculator finds the solution
         <me>\tan^{-1}(-3) = -71.565\degree</me>
     This angle is in the fourth quadrant, but it is not between <m>0\degree</m> and <m>360\degree</m>. The angle we want in is coterminal with <m>-71.565\degree</m>, so we add <m>360\degree</m> to get the first solution:
-        <me>B = \tan^{-1}(-3) + 360\degree = 288.435\degree</me></p><!--<image source="images/exam5-2-4.png"><description>graph</description></image>-->
+        <me>B = \tan^{-1}(-3) + 360\degree = 288.435\degree</me></p>
     <image xml:id="exam5-2-4">
         <description>angles</description>
         <latex-image>
@@ -350,24 +355,25 @@ We have solved equations like this one before:  we use the inverse cosine to sol
 <example><statement><p>Solve  <m>~~\dfrac{\sin \beta}{5} - 3 = 1</m>, for <m>0\degree \le\theta\le 360\degree</m>.</p></statement>
 
 <solution><p>We begin by isolating <m>\sin \beta</m>.
-    <me>\begin{aligned}[t]
-                \dfrac{\sin \beta}{5} - 3 \amp = 1 \amp \amp \blert{\text{Add 3 to both sides.}}\\
-                  \dfrac{\sin \beta}{5} \amp = 4  \amp \amp \blert{\text{Multiply both sides by 5.}}\\
-                 \sin \beta \amp = 20\\                             
-                \end{aligned}</me>
+    <md>
+        <mrow>\dfrac{\sin \beta}{5} - 3 \amp = 1 \amp \amp \blert{\text{Add 3 to both sides.}}</mrow>
+        <mrow>\dfrac{\sin \beta}{5} \amp = 4  \amp \amp \blert{\text{Multiply both sides by 5.}}</mrow>
+        <mrow>\sin \beta \amp = 20</mrow>
+    </md>
     Because <m>\sin \beta</m>  is never greater than 1, there is no angle <m>\beta</m> whose sine is 20. The equation has no solution.</p></solution></example>
 
 <exercise><statement><p>Solve <m>~~\cos \theta + 5 = 3</m>, for <m>0\degree \le\theta\le 360\degree</m>.</p></statement><answer><p>No solution</p></answer></exercise>
 </subsection>
 
 <subsection><title>Graphical Solutions</title>
+<idx><h>trigonometric equation</h><h>graphical solutions</h></idx>
 <p> We can use graphs to approximate the solutions to trigonometric equations.</p>
 
 <example><statement><p>Use a graph to solve the equation <m>3\tan B + 1 = -8</m>.</p></statement>
 
 <solution><p>Graph the equation <m>~~y = 3\tan B + 1</m> and the horizontal line <m>y = -8</m> on the same axes, as shown below.</p>
 
- <sidebyside width="50%"><!--<image source="images/exam5-2-6.png"><description>graph</description></image>-->
+ <sidebyside width="50%">
     <image xml:id="exam5-2-6">
         <description>tangent graph</description>
         <latex-image>
@@ -406,7 +412,7 @@ We have solved equations like this one before:  we use the inverse cosine to sol
 
  <p>It is difficult to read the graph with much accuracy, but you can use the intersect feature on your calculator to verify that the graph of <m>y = 3\tan B + 1</m> has <m>y</m>-value <m>-8</m> when <m>B</m> is about <m>108.4\degree</m> or <m>288.4\degree</m>.</p></solution></example>
 
- <exercise><statement><p>Use a graph to verify your solutions to <m>~~4 \cos C - 6 = -3</m>.</p></statement><answer><sidebyside width="40%"><!--<image source="images/exer5-2-6ans.png"><description>graph</description></image>-->
+ <exercise><statement><p>Use a graph to verify your solutions to <m>~~4 \cos C - 6 = -3</m>.</p></statement><answer><sidebyside width="40%">
     <image xml:id="exer5-2-6ans">
         <description>sinusoidal graph</description>
         <latex-image>
@@ -437,13 +443,14 @@ We have solved equations like this one before:  we use the inverse cosine to sol
 </subsection>
 
  <subsection><title>Equations with Squares of Trig Ratios</title>
+ <idx><h>trigonometric equation</h><h>with squares of trig ratios</h></idx>
 <p> Simple quadratic equations can be solved by extracting roots.  For example, to solve the equation
     <me>4x^2 + 3 = 15</me>
     we first isolate <m>x^2</m>:
-    <me>\begin{aligned}[t]
-                4x^2 \amp = 12\\
-                  x^2 \amp = 3\\                             
-                \end{aligned}</me> 
+    <md>
+        <mrow>4x^2 \amp = 12</mrow>
+        <mrow>x^2 \amp = 3</mrow>
+    </md>
     and then take square roots of both sides to find
     <me>x = \pm \sqrt{3} \approx \pm 1.732</me>
     Recall that a quadratic equation may have two real solutions, one (repeated) real solution, or no real solutions.  We can use extraction of roots to solve trigonometric equations as well.</p>
@@ -451,14 +458,14 @@ We have solved equations like this one before:  we use the inverse cosine to sol
 <example><statement><p>Solve <m>~~4 \tan^2 \theta + 3 = 15, </m> for <m>0\degree \le\theta\le 360\degree</m>.</p></statement>
 
 <solution><p>We begin by isolating the power of tangent, <m>\tan^2 \theta</m>.
-            <me>\begin{aligned}[t]
-                4\tan^2 \theta \amp = 12\\
-                  \tan^2 \theta \amp = 3\\                             
-                \end{aligned}</me>
+    <md>
+        <mrow>4\tan^2 \theta \amp = 12</mrow>
+        <mrow>\tan^2 \theta \amp = 3</mrow>
+    </md>
     Next, we solve for <m>\tan \theta</m>  by extracting roots.
     <me>\tan \theta = \pm \sqrt{3}</me>
 There are two angles between <m>0\degree</m> and <m>360\degree</m> with tangent <m>\sqrt{3}</m> and two angles with tangent <m>-\sqrt{3}</m>, making four solutions to this equation. We know that <m>\tan 60\degree = \sqrt{3}</m>,  so one of the solutions is <m>60\degree</m>. </p>
-<sidebyside widths="60% 22%" valigns="middle middle"><p> The tangent function is also positive in the third quadrant, and the angle in the third quadrant with reference angle <m>60\degree</m> is <m>180\degree + 60\degree = 240\degree</m>. The angles in the second and fourth quadrants with reference angle <m>60\degree</m> have tangent <m>-\sqrt{3}</m>.  These angles are  </p><!--<image source="images/exam5-2-7.png"><description>graph</description></image>-->
+<sidebyside widths="60% 22%" valigns="middle middle" margins="0% 0%"><p> The tangent function is also positive in the third quadrant, and the angle in the third quadrant with reference angle <m>60\degree</m> is <m>180\degree + 60\degree = 240\degree</m>. The angles in the second and fourth quadrants with reference angle <m>60\degree</m> have tangent <m>-\sqrt{3}</m>.  These angles are  </p>
     <image xml:id="exam5-2-7">
         <description>angles</description>
         <latex-image>
@@ -504,20 +511,20 @@ The four solutions are shown at right.</p></solution></example>
 by factoring the left side to get
     <me>(2x + 3)(2x - 1) = 0</me>
 Then we apply the Zero Factor Principle to set each factor equal to zero, and solve each equation.
-        <me>\begin{aligned}[t]
-                2x + 3\amp = 12  ~~~~~~~~~~2x - 1= 0\\
-                  x \amp = \dfrac{-3}{2}  ~~~~~~~~~~~~~~~~~~ x = \dfrac{1}{2}\\                            
-                \end{aligned}</me>
+    <md>
+        <mrow>2x + 3\amp = 12 \amp 2x - 1\amp= 0</mrow>
+        <mrow>x \amp = \dfrac{-3}{2}  \amp x \amp= \dfrac{1}{2}</mrow>
+    </md>
  The solutions are <m>\dfrac{-3}{2}</m> and <m>\dfrac{1}{2}</m>.</p>   
 
- <example><statement><p>Solve <m>~~2 \cos^2 \theta - \cos \theta - 1 = 0,</m> for <m>0\degree \le\theta\le 360\degree</m>.</p></statement>
+<example><statement><p>Solve <m>~~2 \cos^2 \theta - \cos \theta - 1 = 0,</m> for <m>0\degree \le\theta\le 360\degree</m>.</p></statement>
 
- <solution><p>Compare this equation to the algebraic equation <m>2x^2 - x - 1 = 0</m>.  Our equation has the same algebraic form, but with <m>x</m> replaced by <m>\cos \theta </m>. We can solve the algebraic equation by factoring <m>2x^2 - x - 1</m> as <m>(2x + 1)(x - 1),</m> and we'll use the same strategy on the trigonometric equation.            
-     <me>\begin{aligned}[t]
-                2 \cos^2 \theta - \cos \theta - 1 \amp = 0 \amp \amp \blert{\text{Factor the left side.}}\\
-                  (2\cos \theta + 1)(\cos \theta - 1) \amp = 0  \amp \amp \blert{\text{Set each factor equal to zero.}}\\
-                 \cos \theta \amp = \dfrac{-1}{2} ~~~ \text{or} ~~~~\cos \theta = 1\\                             
-                \end{aligned}</me>
+ <solution><p>Compare this equation to the algebraic equation <m>2x^2 - x - 1 = 0</m>.  Our equation has the same algebraic form, but with <m>x</m> replaced by <m>\cos \theta </m>. We can solve the algebraic equation by factoring <m>2x^2 - x - 1</m> as <m>(2x + 1)(x - 1),</m> and we'll use the same strategy on the trigonometric equation. 
+    <md>
+        <mrow>2 \cos^2 \theta - \cos \theta - 1 \amp = 0 \amp \amp \blert{\text{Factor the left side.}}</mrow>
+        <mrow>(2\cos \theta + 1)(\cos \theta - 1) \amp = 0  \amp \amp \blert{\text{Set each factor equal to zero.}}</mrow>
+        <mrow>\cos \theta = \dfrac{-1}{2} ~~ \text{ or } ~~\cos \theta \amp= 1\amp</mrow>
+    </md>           
 Now we solve each equation for <m>\theta</m>.  We know that <m>\cos 60\degree = \dfrac {1}{2},</m> and the cosine function is negative in the second and third quadrants.  The angles in those quadrants with reference angle <m>60\degree</m> are
 <me>180\degree - 60\degree = 120\degree ~~~\text{and} ~~~ 180\degree + 60\degree = 240\degree</me>
 Also, <m>\cos \theta = 1</m>  when <m>\theta = 0\degree</m>.  Thus, the original equation has three solutions: <m>\theta = 120\degree, ~ \theta = 240\degree,</m> and <m>\theta = 0\degree.</m></p></solution></example> 
@@ -526,10 +533,11 @@ Also, <m>\cos \theta = 1</m>  when <m>\theta = 0\degree</m>.  Thus, the original
 </subsection>
 
 <subsection><title>Snell's Law</title>
-<sidebyside widths="60% 20%"><p>When you view an object through a liquid, such as a spoon in a glass of water, or a fish in an aquarium, the object looks distorted or bent.  This distortion is caused by refraction of light.  Light rays bend when they pass from one medium to another, for instance from water to glass or from glass to air.</p><image source="images/5-2-refrac.png"><description>spoon in glass of water</description></image></sidebyside> 
-<p> A light ray enters the boundary between the two media at a certain angle, called the <em>angle of incidence</em>, but leaves the boundary at a different angle, the <em>angle of refraction</em>.  Both angles are acute angles measured from the <em>normal</em> line perpendicular to the boundary, as shown below.</p> 
-<sidebyside widths="58% 30%"><p> The change of angle is caused by the fact that light travels at different speeds in different media.  The relationship between the angle of incidence and the angle of refraction is given by Snell's Law:
-    <me>\dfrac{\sin \theta_1}{\sin \theta_2} = \dfrac{v_1}{v_2}</me></p><!--<image source="images/5-2-snell.png"><description>graph</description></image>-->
+<idx><h>Snell's Law</h></idx>
+<sidebyside widths="60% 22%" margins="0% 5%"><p>When you view an object through a liquid, such as a spoon in a glass of water, or a fish in an aquarium, the object looks distorted or bent.  This distortion is caused by refraction of light.  Light rays bend when they pass from one medium to another, for instance from water to glass or from glass to air.</p><image source="images/5-2-refrac.png"><description>spoon in glass of water</description></image></sidebyside> 
+<p> A light ray enters the boundary between the two media at a certain angle, called the <term>angle of incidence</term><idx><h>angle</h><h>of incidence</h></idx>, but leaves the boundary at a different angle, the <term>angle of refraction</term><idx><h>angle</h><h>of refraction</h></idx>.  Both angles are acute angles measured from the <term>normal</term><idx><h>normal line</h></idx> line perpendicular to the boundary, as shown below.</p> 
+<sidebyside widths="58% 30%" margins="0% 5%"><p> The change of angle is caused by the fact that light travels at different speeds in different media.  The relationship between the angle of incidence and the angle of refraction is given by Snell's Law<idx><h>Snell's Law</h></idx>:
+    <me>\dfrac{\sin \theta_1}{\sin \theta_2} = \dfrac{v_1}{v_2}</me></p>
     <image xml:id="fig-5-2-snell">
         <description>water-glass interface</description>
         <latex-image>
@@ -574,57 +582,57 @@ Also, <m>\cos \theta = 1</m>  when <m>\theta = 0\degree</m>.  Thus, the original
 <example><statement><p>The index of refraction from water to glass is 1.1.  If light passes from water to glass with a <m>23\degree</m> angle of incidence, what is the angle of refraction?</p></statement>
 
 <solution><p>If <m>\theta</m> is the angle of refraction, then from Snell's Law we have
-     <me>\begin{aligned}[t]
-                \dfrac{\sin 23\degree}{\sin \theta} \amp = 1.1 \amp \amp \blert{\text{Multiply both sides by} \sin \theta.}\\
-                  \sin 23\degree \amp = 1.1 \sin \theta  \amp \amp \blert{\text{Divide both sides by 1.1.}}\\
-                 \sin \theta \amp = \dfrac{\sin 23\degree}{1.1} = 0.3552\\                             
-                \end{aligned}</me>
-Because <m>\sin \theta = 0.3552,~~ \theta = \sin^{-1}(0.3552) = 20.8\degree.</m>  (For Snell's Law we use only acute angles.)  The angle of refraction is approximately <m>20.8\degree</m>.</p></solution></example>
+    <md>
+        <mrow>\dfrac{\sin 23\degree}{\sin \theta} \amp = 1.1 \amp \amp \blert{\text{Multiply both sides by} \sin \theta.}</mrow>
+        <mrow>\sin 23\degree \amp = 1.1 \sin \theta  \amp \amp \blert{\text{Divide both sides by 1.1.}}</mrow>
+        <mrow>\sin \theta \amp = \dfrac{\sin 23\degree}{1.1} = 0.3552</mrow>
+    </md>
+Because <m>\sin \theta = 0.3552</m>, <m>~ \theta = \sin^{-1}(0.3552) = 20.8\degree.</m>  (For Snell's Law we use only acute angles.)  The angle of refraction is approximately <m>20.8\degree</m>.</p></solution></example>
 
 <exercise><statement><p>A light ray passes from water to glass with an <m>18\degree</m> angle of incidence.  What is the angle of refraction?</p></statement><answer><p><m>16.315\degree</m></p></answer></exercise>
 </subsection>
 
 <subsection><title>Algebra Refresher</title>
+<p>Review the following skills you will need for this section.</p>
 <exercises>
 <exercisegroup cols="2"><introduction><p>Each of the following "solutions" contains an error.  Find the error, and supply a correct solution.</p></introduction>
 <exercise number="1"><statement><p>
-    <me>\begin{aligned}[t]
+    <m>\begin{aligned}[t]
                 3x^2 - 5x\amp = 0 \\
                   3x^2 \amp = 5x\\
                   3x \amp = 5\\
                   x \amp = \dfrac{5}{3}\\                            
-                \end{aligned}</me></p></statement></exercise>
+                \end{aligned}</m></p></statement></exercise>
 <exercise number="2"><statement><p>
-    <me>\begin{aligned}[t]
+    <m>\begin{aligned}[t]
                 4x^2 - 5x\amp =12 \\
                   x^2 \amp = 3\\
                   x \amp = \sqrt{3}\\                           
-                \end{aligned}</me></p></statement></exercise>
+                \end{aligned}</m></p></statement></exercise>
 <exercise number="3"><statement><p>
-    <me>\begin{aligned}[t]
+    <m>\begin{aligned}[t]
                 (2x+1)^2\amp = 4 \\
                   2x+1 \amp = 2\\
                   2x \amp = 1\\
                   x \amp = \dfrac{1}{2}\\                            
-                \end{aligned}</me></p></statement></exercise>
+                \end{aligned}</m></p></statement></exercise>
 <exercise number="4"><statement><p>
-    <me>\begin{aligned}[t]
+    <m>\begin{aligned}[t]
                 2x^2 - 4x\amp = 3 \\
                  2x(x-2) \amp = 3\\
-                  2x \amp = 3 ~~~~ x - 2 = 3\\
-                  x \amp = \dfrac{3}{2} ~~~~~~~~~~x = 5\\                            
-                \end{aligned}</me></p></statement></exercise>
+                  2x  = 3 \qquad \amp x - 2 = 3\\
+                  x  = \dfrac{3}{2} \qquad\amp x = 5\\                            
+                \end{aligned}</m></p></statement></exercise>
 </exercisegroup></exercises>
+</subsection>
 
-
-<subsubsection><title>Algebra Refresher Answers</title>
+<subsection><title>Algebra Refresher Answers</title>
 <p><ol label="1" >
     <li>We can't divide by <m>x.~~x = 0, \dfrac{5}{3}</m></li>
     <li>3 has two square roots. <m>~x = \pm\sqrt{3}</m></li>
     <li>4 has two square roots. <m>~x = \dfrac{-3}{2}, \dfrac{1}{2} </m></li>
     <li>One side must be zero to use the zero-factor principle.  No real solutions.</li>
 </ol></p>
-</subsubsection>
 </subsection>
 
 <subsection><title>Section 5.2 Summary</title>
@@ -657,16 +665,15 @@ Because <m>\sin \theta = 0.3552,~~ \theta = \sin^{-1}(0.3552) = 20.8\degree.</m>
 
 <subsubsection><title>Skills</title>
 <p><ol label="1">
-    <li>Use reference angles    #1-8</li>
-    <li>Solve equations by trial and error    #9-14</li> 
-    <li>Use graphs to solve equations    #15-18, #39-52</li>
-    <li>Solve trigonometric equations for exact values    #19-32, 39-46</li>
-    <li>Use a calculator to solve trigonometric equations    #33-38, 47-52, 65-68</li>
-    <li>Solve trigonometric equations that involve factoring    #53-64</li>
+    <li>Use reference angles    #1<ndash/>8</li>
+    <li>Solve equations by trial and error    #9<ndash/>14</li> 
+    <li>Use graphs to solve equations    #15<ndash/>18, #39<ndash/>52</li>
+    <li>Solve trigonometric equations for exact values    #19<ndash/>32, 39<ndash/>46</li>
+    <li>Use a calculator to solve trigonometric equations    #33<ndash/>38, 47<ndash/>52, 65<ndash/>68</li>
+    <li>Solve trigonometric equations that involve factoring    #53<ndash/>64</li>
 </ol></p></subsubsection>
 </subsection>
 
 <xi:include href="./hmwk-5-2.xml" />  
 
 </section> 
-<!-- </book>  </mathbook> -->

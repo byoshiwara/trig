@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- <mathbook><book> -->
+
+<section xml:id="Heron-activity" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Hero's Formula Activities</title>
+<!-- Activity: Law of Sines-->
+
+
+<p>This first activity could go with chapter 1 or 2.</p>
+
+<activity xml:id="Activity-inscibed-circle"><title>Part I: The circle  inscribed in a triangle</title>
+<p><ul><li><p>Materials: You will need paper and pencil, a ruler, compass, and protractor, or a dynamic geometry program such as Geogebra.</p></li></ul></p>
+<p><ol label="A">
+<li><p>The vertices of a triangle determine a unique inscribed circle. 
+<ol label="1">
+    <li><p>Draw a large acute triangle and label the vertices <m>A</m> , <m>B</m>, and <m>C</m>.</p></li>
+    <li><p>Draw the angle bisector of the angle <m>\angle{ABC}</m>. You can use a compass and rule, or use your ruler and protractor.</p>
+    </li>
+    <li><sidebyside widths="45% 55%" valigns="middle middle" margins="0% 0%"><p>Draw the angle bisector of the angle <m>\angle{CAB}</m>. Label the point where the two angle bisectors meet with the letter <m>O</m>.</p>
+    <image xml:id="fig-angle-bisectors">
+    <description>angle bisectors of triangle</description>
+    <latex-image>
+    <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+    <![CDATA[\tikzset{%
+    }
+    \begin{tikzpicture}
+    \def\z{1.2}
+    \def\alp{75};
+    \def\bet{65};
+    \def\gam{180-\alp-\bet};
+    \def\c{3*\z};
+    %\def\b{\c  * sin(\bet) / sin(\gam) };
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (\alp:\c);
+    \coordinate (C) at ({\c  * sin(\bet) / sin(\gam) },0);
+
+    \draw[name path=A--O,lightgray,thick,dashed] (A)--({\alp/2}:2*\z);
+    \draw[name path=B--O,lightgray,thick,dashed] (B)--++({180+\alp+\bet/2}:2.2*\z);
+    \path [name intersections={of=A--O and B--O, by=O}];
+    \draw [name path=O--X, opacity=0]  (O) --++({\alp+90}:2*\z);
+    \draw [name path=A--B, opacity=0]  (A) --(B);
+    \path [name intersections={of=O--X and A--B, by=X}];
+    %\draw[cyan,thick] let \p1 = ($(X)-(O)$) in  (O) circle ({veclen(\x1,\y1)});
+    %\draw[green!80!black,thick] (O)--(X);
+    %\draw[lightgray, thick, dashed] (O)--(C);
+    \draw[magenta!80!black,thick] (A)--(B)--(C)--(A);
+    \filldraw (O) circle (.7mm) node[anchor=north west] {$O$};
+    \filldraw (A) circle (.7mm) node[anchor=east] {$A$};
+    \filldraw (B) circle (.7mm) node[anchor=south] {$B$};
+    \filldraw (C) circle (.7mm) node[anchor=north west] {$C$};
+    \end{tikzpicture}]]>
+</latex-image>
+</image></sidebyside>
+    </li>
+    <li><p>From geometry, we know that every point on the angle bisector of <m>\angle XYZ</m> is equidistant between segments <m>\overline{YX}</m> and <m>\overline{YZ}</m>. (The distance from a point to a line is the length of the perpendicular segment joining the point to the line.) Use this fact to explain why the point <m>O</m> is the same distance to each side of your triangle. Notice that the segment <m>\overline{OC}</m> bisects <m>\angle ACB</m>.</p></li>
+    <li><p>Draw a line segment from <m>O</m> to <m>\overline{AB}</m> that is perpendicular to <m>\overline{AB}</m>. Label the point of intersection as <m>P</m>. You can use a compass and ruler, or use your ruler and protractor.</p>
+    </li>
+    <li><sidebyside widths="45% 55%" valigns="middle middle" margins="0% 0%"><p>Using the point at <m>O</m> as the center, draw the circle that passes through <m>P</m>. The circle is called the <term>inscribed circle</term><idx>inscribed circle</idx> of the triangle. The inscribed circle should be tangent to <m>\overline{AB}</m> at <m>P</m>, tangent to <m>\overline{BC}</m> at a point <m>Q</m>, and tangent to <m>\overline{AC}</m> at a point <m>R</m>.</p>
+    <image xml:id="fig-inscribed-circle">
+        <description>triangle with inscribed circle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture}
+        \def\z{1.2}
+        \def\alp{75};
+        \def\bet{65};
+        \def\gam{180-\alp-\bet};
+        \def\c{3*\z};
+        %\def\b{\c  * sin(\bet) / sin(\gam) };
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (\alp:\c);
+        \coordinate (C) at ({\c  * sin(\bet) / sin(\gam) },0);
+        \draw[name path=A--O,lightgray,thick,dashed] (A)--({\alp/2}:2*\z);
+        \draw[name path=B--O,lightgray,thick,dashed] (B)--++({180+\alp+\bet/2}:2.2*\z);
+        \path [name intersections={of=A--O and B--O, by=O}];
+        \draw [name path=O--X, opacity=0]  (O) --++({\alp+90}:2*\z);
+        \draw [name path=A--B, opacity=0]  (A) --(B);
+        \path [name intersections={of=O--X and A--B, by=X}];
+        \draw[cyan,thick] let \p1 = ($(X)-(O)$) in  (O) circle ({veclen(\x1,\y1)});
+        \draw[green!80!black,thick] (O)--(X);
+        \draw[blue,thick] (X)++(\alp:{.2*\z})--++(\alp-90:{.2*\z})--++(\alp-180:{.2*\z});
+        \draw[lightgray, thick, dashed] (O)--(C);
+        \draw[magenta!80!black,thick] (A)--(B)--(C)--(A);
+        \filldraw (O) circle (.7mm) node[anchor=north west] {$O$};
+        \filldraw (A) circle (.7mm) node[anchor=east] {$A$};
+        \filldraw (B) circle (.7mm) node[anchor=south] {$B$};
+        \filldraw (C) circle (.7mm) node[anchor=north west] {$C$};
+        \filldraw (X) circle (.7mm) node[anchor=south east] {$P$};
+            \end{tikzpicture}]]>
+        </latex-image>
+        </image>
+                </sidebyside></li>
+        
+    </ol></p>
+    </li>
+    <li><p>We divide <m>\Delta ABC</m> into six smaller triangles.
+        <ol label="1">
+            <li><p>Draw the segment <m>\overline{OP}</m>. This is a radius of the inscribed circle, and is perpendicular to <m>\overline{AB}</m>. Draw the other two radii that connect <m>O</m> to the points of tangency at <m>Q</m> and <m>R</m>.</p></li>
+            <li><sidebyside widths="45% 55%" valigns="middle middle" margins="0% 0%"><p>At this point, if your drawing is too cluttered, you may need to make a fresh copy of the triangle <m>\Delta ABC</m>, the points of tangency <m>P</m>, <m>Q</m>, and <m>R</m>, and the center of the circle <m>O</m> (but do not include the circle in this drawing).</p>
+            <image xml:id="fig-radius-inscribed">
+        <description>area of triangle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture}
+        \def\z{1.2}
+        \def\alp{75};
+        \def\bet{65};
+        \def\gam{180-\alp-\bet};
+        \def\c{3*\z};
+        %\def\b{\c  * sin(\bet) / sin(\gam) };
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (\alp:\c);
+        \coordinate (C) at ({\c  * sin(\bet) / sin(\gam) },0);
+
+        \draw[name path=A--O, opacity=0] (A)--({\alp/2}:2*\z);
+        \draw[name path=B--O, opacity=0] (B)--++({180+\alp+\bet/2}:2*\z);
+        \path [name intersections={of=A--O and B--O, by=O}];
+        \draw [name path=O--X, opacity=0]  (O) --++({\alp+90}:2*\z);
+        \draw [magenta!80!black,name path=A--B,thick]  (A) --(B);
+        \path [name intersections={of=O--X and A--B, by=X}];
+        \draw[blue,thick] (X)++(\alp:{.2*\z})--++(\alp-90:{.2*\z})--++(\alp-180:{.2*\z});
+        \draw[green!80!black,thick] (O)--(X);
+        \draw [name path=O--Y, opacity=0]  (O) --++({90-(\gam)}:2*\z);
+        \draw [magenta!80!black,name path=B--C,thick]  (B) --(C);
+        \path [name intersections={of=O--Y and B--C, by=Y}];
+        \draw [name path=O--Z, opacity=0]  (O) --++(0,-1.5*\z);
+        \draw [magenta!80!black,name path=A--C,thick]  (A) --(C);
+        \path [name intersections={of=O--Z and A--C, by=Z}];
+        \draw[blue,thick] (Y)++({-90-(\gam)}:.2*\z)--++({-(\gam)}:.2*\z)--++({90-(\gam)}:.2*\z);
+        \draw[blue,thick] (Z) rectangle ++({.2*\z},{.2*\z});
+        \draw[green!80!black,thick] (O)--(Y);
+        \draw[green!80!black,thick] (O)--(Z);
+        \draw[lightgray,thick,dashed] (O)--(A);
+        \draw[lightgray,thick,dashed] (O)--(B);
+        \draw[lightgray,thick,dashed] (O)--(C);
+        \filldraw (O) circle (.7mm) node[anchor=north west] {$O$};
+        \filldraw (A) circle (.7mm) node[anchor=east] {$A$};
+        \filldraw (B) circle (.7mm) node[anchor=south] {$B$};
+        \filldraw (C) circle (.7mm) node[anchor=north west] {$C$};
+        \filldraw (X) circle (.7mm) node[anchor=south east] {$P$};
+        \filldraw (Y) circle (.7mm) node[anchor=south west] {$Q$};
+        \filldraw (Z) circle (.7mm) node[anchor=north] {$R$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+            </sidebyside></li>
+            <li><p>Connect <m>O</m> to each of the other labeled points. The triangle <m>\Delta ABC</m> has been cut into 6 right triangles. Each of the six triangles has one side which is a radius of the inscribed circle. Label the lengths of the three radi with the common value <m>r</m>.</p></li>
+            <li><p>Each of those six triangles can be paired with another that shares one side and is congruent: <m>\Delta AOP</m> and <m>\Delta AOR</m>; <m>\Delta BOP</m> and <m>\Delta BOQ</m>; <m>\Delta COQ</m> and <m>COR</m>.</p>
+            <sidebyside widths="45% 55%" valigns="middle middle" margins="0% 0%"><stack><p>Label the common lengths <m>AP</m> and <m>AR</m> with <m>x</m>.</p><p>Label the common lengths <m>BP</m> and <m>BQ</m> with <m>y</m>.</p><p>Label the common lengths <m>CQ</m> and <m>CR</m> with <m>z</m>.</p></stack>
+        <image xml:id="fig-subdivided-triangle">
+        <description>triangle divided into six right triangles</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture}
+        \def\z{1.2}
+        \def\alp{75};
+        \def\bet{65};
+        \def\gam{180-\alp-\bet};
+        \def\c{3*\z};
+        %\def\b{\c  * sin(\bet) / sin(\gam) };
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (\alp:\c);
+        \coordinate (C) at ({\c  * sin(\bet) / sin(\gam) },0);
+
+        \draw[name path=A--O, opacity=0] (A)--({\alp/2}:2*\z);
+        \draw[name path=B--O, opacity=0] (B)--++({180+\alp+\bet/2}:2*\z);
+        \path [name intersections={of=A--O and B--O, by=O}];
+        \draw [name path=O--X, opacity=0]  (O) --++({\alp+90}:2*\z);
+        \draw [magenta!80!black,name path=A--B,thick]  (A) --(B);
+        \path [name intersections={of=O--X and A--B, by=X}];
+        \draw[blue,thick] (X)++(\alp:{.2*\z})--++(\alp-90:{.2*\z})--++(\alp-180:{.2*\z});
+        \draw[green!80!black,thick] (O)--(X) node[above, midway, text=blue]{$r$};
+        \draw [name path=O--Y, opacity=0]  (O) --++({90-(\gam)}:2*\z);
+        \draw [magenta!80!black,name path=B--C,thick]  (B) --(C);
+        \path [name intersections={of=O--Y and B--C, by=Y}];
+        \draw [name path=O--Z, opacity=0]  (O) --++(0,-1.5*\z);
+        \draw [magenta!80!black,name path=A--C,thick]  (A) --(C);
+        \path [name intersections={of=O--Z and A--C, by=Z}];
+        \draw[blue,thick] (Y)++({-90-(\gam)}:.2*\z)--++({-(\gam)}:.2*\z)--++({90-(\gam)}:.2*\z);
+        \draw[blue,thick] (Z) rectangle ++({.2*\z},{.2*\z});
+        \draw[green!80!black,thick] (O)--(Y) node[above, midway, xshift=-2, text=blue]{$r$};
+        \draw[green!80!black,thick] (O)--(Z) node[left, midway, text=blue]{$r$};
+        \draw[lightgray,thick,dashed] (O)--(A);
+        \draw[lightgray,thick,dashed] (O)--(B);
+        \draw[lightgray,thick,dashed] (O)--(C);
+        \filldraw (O) circle (.7mm) node[anchor=north west] {$O$};
+        \filldraw (A) circle (.7mm) node[anchor=east] {$A$};
+        \filldraw (B) circle (.7mm) node[anchor=south] {$B$};
+        \filldraw (C) circle (.7mm) node[anchor=north west] {$C$};
+        \filldraw (X) circle (.7mm) node[anchor=south east] {$P$};
+        \filldraw (Y) circle (.7mm) node[anchor=south west] {$Q$};
+        \filldraw (Z) circle (.7mm) node[anchor=north] {$R$};
+        \draw [magenta!80!black]  (A) --(X) node[above left, midway, text=blue] {$x$};
+        \draw [magenta!80!black]  (A) --(Z) node[below, midway, text=blue] {$x$};
+        \draw [magenta!80!black]  (B) --(X) node[above left, midway, text=blue] {$y$};
+        \draw [magenta!80!black]  (B) --(Y) node[above right, xshift=-2, midway, text=blue] {$y$};
+        \draw [magenta!80!black]  (C) --(Y) node[above right, xshift=-2, midway, text=blue] {$z$};
+        \draw [magenta!80!black]  (C) --(Z) node[below, midway, text=blue] {$z$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image></sidebyside></li>
+        </ol></p></li>
+        <li><p>What is the length of the radius of the inscribed circle?
+        <ol label="1">
+            <li><p>Write the area of <m>\Delta ABC</m> as the sum of the areas of the six triangles in terms of <m>r</m>, <m>x</m>, <m>y</m>, and <m>z</m>.</p><p>Combine like terms, then factor out the greatest common factor of the terms.</p></li>
+            <li><p>Write the perimeter of <m>\Delta ABC</m> in terms of <m>x</m>, <m>y</m>, and <m>z</m>. (Can you see why the sum of <m>x</m>, <m>y</m>, and <m>z</m> is called the <term>semiperimeter</term><idx>semiperimeter</idx>?)</p></li>
+            <li><p>Show that the radius of the inscribed circle is the area of the triangle divided by its semiperimeter.</p></li>            
+        </ol></p></li>       
+</ol></p>
+</activity>
+
+<p>The second activity would go with chapter 8</p>
+
+<activity><title>Part II: Heron's formula</title>
+<p><ul><li><p>Materials: You will need paper and pencil, a ruler, compass, and protractor, or a dynamic geometry program such as Geogebra.</p></li></ul></p>
+<p><ol label="1">
+    <li><p>Make a new copy of the diagram you used for Activity part I ( <xref ref="Activity-inscibed-circle" text="type-global" />).</p></li>
+    <li><sidebyside widths="45% 50%" valigns="middle middle" margins="0% 0%"><p>Label the two congruent angles at <m>A</m> by <m>\alpha</m>, the two angles at <m>B</m> by <m>\beta</m>, and the two angles at <m>C</m> by <m>\gamma</m>.</p>
+    <image xml:id="fig-Heron">
+        <description>subdivided triangle</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture}
+        \def\z{1.2}
+        \def\alp{75};
+        \def\bet{65};
+        \def\gam{180-\alp-\bet};
+        \def\c{3*\z};
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (\alp:\c);
+        \coordinate (C) at ({\c  * sin(\bet) / sin(\gam) },0);
+
+        \draw[name path=A--O, opacity=0] (A)--({\alp/2}:2*\z);
+        \draw[name path=B--O, opacity=0] (B)--++({180+\alp+\bet/2}:2*\z);
+        \path [name intersections={of=A--O and B--O, by=O}];
+        \draw [name path=O--X, opacity=0]  (O) --++({\alp+90}:2*\z);
+        \draw [magenta!80!black,name path=A--B,thick]  (A) --(B);
+        \path [name intersections={of=O--X and A--B, by=X}];
+        \draw[blue,thick] (X)++(\alp:{.2*\z})--++(\alp-90:{.2*\z})--++(\alp-180:{.2*\z});
+        \draw[green!80!black,thick] (O)--(X) node[above, midway, text=blue]{$r$};
+        \draw [name path=O--Y, opacity=0]  (O) --++({90-(\gam)}:2*\z);
+        \draw [magenta!80!black,name path=B--C,thick]  (B) --(C);
+        \path [name intersections={of=O--Y and B--C, by=Y}];
+        \draw [name path=O--Z, opacity=0]  (O) --++(0,-1.5*\z);
+        \draw [magenta!80!black,name path=A--C,thick]  (A) --(C);
+        \path [name intersections={of=O--Z and A--C, by=Z}];
+        \draw[blue,thick] (Y)++({-90-(\gam)}:.2*\z)--++({-(\gam)}:.2*\z)--++({90-(\gam)}:.2*\z);
+        \draw[blue,thick] (Z) rectangle ++({.2*\z},{.2*\z});
+        \draw[green!80!black,thick] (O)--(Y) node[above, xshift=-2, midway, text=blue]{$r$};
+        \draw[green!80!black,thick] (O)--(Z) node[left, midway, text=blue]{$r$};
+        \draw[lightgray,thick,dashed] (O)--(A);
+        \draw[lightgray,thick,dashed] (O)--(B);
+        \draw[lightgray,thick,dashed] (O)--(C);
+        \filldraw (O) circle (.7mm) node[anchor=north west] {$O$};
+        \filldraw (A) circle (.7mm) node[anchor=east] {$A$};
+        \filldraw (B) circle (.7mm) node[anchor=south] {$B$};
+        \filldraw (C) circle (.7mm) node[anchor=north west] {$C$};
+        \filldraw (X) circle (.7mm);
+        \filldraw (Y) circle (.7mm);
+        \filldraw (Z) circle (.7mm);
+        \node[above right, xshift=3, yshift=10, text=red, scale=.9] at (A) {$\alpha$};
+        \node[above right, xshift=10, text=red, scale=.9] at (A)  {$\alpha$};
+        \node[below, yshift=-14, text=red, scale=.9] at (B)  {$\beta$};
+        \node[below right, xshift=8, yshift=-14, text=red, scale=.9] at (B)  {$\beta$};
+        \node[above left, xshift=-\z cm, yshift=-1, text=red, scale=.9] at (C)  {$\gamma$};
+        \node[above left, xshift=-0.9*\z cm, yshift=0.4*\z cm, text=red, scale=.9] at (C)  {$\gamma$};
+        \draw [magenta!80!black]  (A) --(X) node[above left, midway, text=blue] {$x$};
+        \draw [magenta!80!black]  (A) --(Z) node[below, midway, text=blue] {$x$};
+        \draw [magenta!80!black]  (B) --(X) node[above left, midway, text=blue] {$y$};
+        \draw [magenta!80!black]  (B) --(Y) node[above right, xshift=-2, midway, text=blue] {$y$};
+        \draw [magenta!80!black]  (C) --(Y) node[above right, xshift=-2, midway, text=blue] {$z$};
+        \draw [magenta!80!black]  (C) --(Z) node[below, midway, text=blue] {$z$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image></sidebyside>
+    </li>
+    <li><p>Use the fact that the sum of the angles of <m>\Delta ABC</m> is <m>180\degree</m> to write an equation involving <m>\alpha</m>, <m>\beta</m>, and <m>\gamma</m>.</p> 
+    <p>Solve the equation for <m>\alpha</m> </p>
+    <p><me>\alpha = \underline{\qquad\qquad\qquad}</me>
+    so <me>\tan\alpha = \tan(\qquad\qquad\qquad)</me></p>
+    </li>
+    <li><p>Use the difference of angles identities for the sine and cosine functions and the fact that <m>\tan\theta = \dfrac{\sin\theta}{\cos\theta}</m> to rewrite the right side of your last equation in terms of <m>\tan(\beta+\gamma)</m><me>\tan\alpha = \hphantom{WWWWWWWWWWWWW}</me>Hint: Use <m>\theta = 90\degree -(\beta+\gamma)</m>.</p></li>
+    <li><p>Next use the sum of angles identity for the tangent function to rewrite the right side of your last equation in terms of <m>\tan\beta</m> and <m>\tan\gamma</m><me>\tan\alpha = \hphantom{WWWWWWWWWWWWW}</me></p></li>
+    <li><p>Explain how your last equation imples that 
+        <me>\tan\alpha\tan\beta+\tan\alpha\tan\gamma+\tan\beta\tan\gamma =1</me>
+    </p></li>
+    <li><p>Using the diagram above, rewrite the last equation in terms of <m>r</m>, <m>x</m>, <m>y</m>, and <m>z</m></p>
+    <p>Factor <m>r^2</m> from the left side of the equation, then multiply both sides by <m>xyz</m></p></li>
+    <li><p>Let <m>A</m> be the area of <m>\Delta ABC</m>, and let <m>s=x+y+z</m> be the semiperimeter. Explain why
+    <me>r^2 s = xyz</me></p></li>
+    <li><p>Using the final result of Activity part I ( <xref ref="Activity-inscibed-circle" text="type-global" />), explain why
+    <me>A = rs</me></p></li>
+    <li><p>Using the last two equations, explain why
+        <me>A^2=s(xyz)</me></p></li>
+    <li><p>Referring again to the diagram above, verify that the length of the sides of <m>\Delta ABC</m> are <m>a=y+z</m>, <m>b=x+z</m>, and <m>c=x+y</m></p></li>
+    <li><p>Compute <m>(s-a)</m>, <m>(s-b)</m>, and <m>(s-c)</m>.</p></li>
+    <li><p>You have proven Heron's formula.</p>
+    <assemblage><title>Heron's formula<idx>Heron's formula</idx></title><p>Suppose that <m>\Delta ABC</m> has sides of length <m>a</m>, <m>b</m>, and <m>c</m>. Then the area of <m>\Delta ABC</m> is given by
+    <me>A=\sqrt{s(s-a)(s-b)(s-c)}</me>
+    where <m>s=\dfrac{a+b+c}{2}</m> is the semiperimeter.</p></assemblage>
+    </li>
+</ol></p></activity>
+
+
+
+<!-- Activity: Law of Sines-->
+
+</section>
+<!-- </appendix> -->
+<!-- </book>  </mathbook> -->

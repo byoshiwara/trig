@@ -3,11 +3,12 @@
 
 <section xml:id="Solving-Equations-Chap7"   xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Solving Equations</title>
+<idx><h>trigonometric equation</h><h>solving</h></idx>
 
 <subsection><title>Introduction</title>
 <p> We have seen that an equation of the form <m>\sin \theta = k</m> (for <m>-1 \lt k \lt 1</m>) always has two solutions between <m>0</m> and <m>2\pi </m>.  For example, the figure below illustrates that <m>x=\dfrac{\pi}{6}</m> and <m>x=\dfrac{5\pi}{6}</m> are solutions of the equation <m>\sin x = 0.5</m>. These two solutions correspond to the two points on the unit circle where <m>y=0.5</m>.</p> 
 
-<!--<sidebyside widths="50% 25%"><image source="images/7-3-1.png"><description>sine</description></image><image source="images/7-3-2.png"><description>circle</description></image></sidebyside>-->
+
 <sidebyside width="85%">
     <image xml:id="fig-7-3-1">
         <description>sine graph and unit circle</description>
@@ -53,7 +54,7 @@
 
 <p> The calculator gives us only one of these solutions, but we can use reference angles to find the other solution. In fact, if we use a calculator to find one solution as <m>\theta_{1}=\sin^{-1}k</m>, then the other solution is <m>\theta_{2}=\pi - \theta_{1}</m>. You can see this by considering the symmetry of the sine graph, or of the unit circle, as shown below.</p>
 
-<sidebyside width="85%"><!--<image source="images/7-3-3.png"><description>sine</description></image>-->
+<sidebyside width="85%">
     <image xml:id="fig-7-3-3">
         <description>sine graph and unit circle</description>
         <latex-image>
@@ -97,7 +98,7 @@
 
 <p>	This relationship between the two solutions still holds if <m>k</m> is negative, because the calculator returns a negative angle for <m>\theta_{1}=\sin^{-1}k</m>.  See the figure below.</p>
 
-<sidebyside width="100%"><!--<image source="images/7-3-4.png"><description>sine</description></image>-->
+<sidebyside width="100%">
     <image xml:id="fig-7-3-4">
         <description>sine graph and unit circle</description>
         <latex-image>
@@ -186,7 +187,7 @@
 
 <p>	A similar method applies to equations of the form <m>\cos \theta = k</m>.  The two solutions between <m>0</m> and <m>2\pi</m> are <m>\theta_{1}=\cos^{-1}(k)</m> and <m>\theta_{2}=2\pi -\cos^{-1}(k)</m>.  Once again, you can see this by considering the symmetry of the cosine graph, or of the unit circle, as shown belo</p>
 
-<sidebyside width="85%"><!--<image source="images/7-3-5.png"><description>cosine</description></image>-->
+<sidebyside width="85%">
     <image xml:id="fig-7-3-5">
         <description>cosine graph and unit circle</description>
         <latex-image>
@@ -230,7 +231,7 @@
 
 <p>The relationship between the two solutions still holds if <m>k</m> is negative. See the figure below.</p>
 
-<sidebyside width="85%"><!--<image source="images/7-3-6.png"><description>cosine</description></image>-->
+<sidebyside width="85%">
     <image xml:id="fig-7-3-6">
         <description>cosine graph and unit circle</description>
         <latex-image>
@@ -266,7 +267,7 @@
         \filldraw[blue] (A) circle (.08cm);
         \filldraw[green] (B) circle (.08cm);
         \node[anchor=south east, scale=.8,text=blue] at (A) {$\theta_1$};
-        \node[anchor=north east, xshift=.8cm yshift=-2, scale=.8, text=green!80!black] at (B) {$2\pi - \theta_1$};
+        \node[anchor=north east, xshift=.8cm, yshift=-2, scale=.8, text=green!80!black] at (B) {$2\pi - \theta_1$};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -276,7 +277,7 @@
 
 <p>	Equations of the form <m>\tan \theta = k</m> are generally easier to solve, because there is only one solution in each cycle of the graph.  Each solution differs from the previous one by <m>\pi</m>, as shown below. </p>
 
-<sidebyside width="90%"><!--<image source="images/7-3-7.png"><description>tangent</description></image>-->
+<sidebyside width="90%">
     <image xml:id="fig-7-3-7">
         <description>tangent function and slope</description>
         <latex-image>
@@ -319,15 +320,16 @@
 <p>For example, to solve the equation <m>\tan \theta = -2.4</m> for <m>0 \le \theta \lt 2\pi</m>, we first calculate
 <me>\tan^{-1}(-2.4)=-1.1760</me>
 Because this angle is not between <m>0</m> and <m>2\pi</m>, we add <m>\pi</m> to find the next two solutions:
-	<me>\begin{aligned}[t]
-		\theta_{1}\amp = -1.1760+\pi=1.9656\\
-		\theta_{2}\amp = 1.9656+\pi=5.1072\\
-	\end{aligned}</me></p>
+    <md>
+        <mrow>\theta_{1}\amp = -1.1760+\pi=1.9656</mrow>
+        <mrow>\theta_{2}\amp = 1.9656+\pi=5.1072</mrow>
+    </md></p>
 
 <p>We summarize these observations for the three trigonometric functions as follows.</p>
 		
 
 <assemblage><title>Solutions of Trigonometric Equations</title>
+<idx><h>trigonometric equation</h><h>solving</h></idx>
 <p><ol label="1">
 	<li>The equation <m>\cos \theta = k, ~~ -1\lt k \lt 1</m>, has two solutions between <m>0</m> and <m>2\pi</m>:
 	<me>\theta_{1}=\cos^{-1}(k)~~ \text{and}~~ \theta_{2}=2\pi -\theta_{1}</me></li>
@@ -345,7 +347,7 @@ Because this angle is not between <m>0</m> and <m>2\pi</m>, we add <m>\pi</m> to
 <me>\sin nx = k~~ \text{?}</me>
 For example, how many solutions are there for the equation <m>\sin 2x=0.5</m>? The figure below shows that this equation has four solutions between <m>0</m> and <m>2\pi</m>. The graph of <m>y=\sin 2x</m> completes two cycles between <m>0</m> and <m>2\pi</m>, and each cycle produces two solutions, for a total of four.</p>
 
-<sidebyside width="100%"><!--<image source="images/7-3-8.png"><description>sine</description></image>-->
+<sidebyside width="100%">
     <image xml:id="fig-7-3-8">
         <description>sin 2x graph and unit circle</description>
         <latex-image>
@@ -416,7 +418,7 @@ Note that the solutions in the second cycle are still less than <m>2\pi</m>, so 
     <li>Sketch a graph of <m>y=\cos 2x</m> for  <m>0 \le \theta \le 2\pi</m>.</li>
     <li>Find exact values for all solutions of <m>\cos 2x=\dfrac{-\sqrt{2}}{2}</m>  between <m>0</m> and <m>2\pi</m>.</li>
  </ol></p></statement><answer><p><ol label="a">
-    <li><sidebyside width="60%" margins="0 40%"><!--<image source="images/ar7-3-2ans.png"><description>sine</description></image>-->
+    <li><sidebyside width="60%" margins="0% 40%">
     <image xml:id="exer7-3-2ans">
         <description>sin 2x</description>
         <latex-image>
@@ -449,7 +451,7 @@ Note that the solutions in the second cycle are still less than <m>2\pi</m>, so 
 
 <solution><p>We expect to find four solutions between <m>0</m> and <m>2\pi</m>. The first angle <m>2t</m> between <m>0</m> and <m>2\pi</m> whose tangent is 1 is <m>2t=\dfrac{3\pi}{4}</m>, so the first solution is <m>t_{1}=\dfrac{3\pi}{8}</m>.  Now, the period of the graph of <m>y=\tan 2t</m> is <m>\dfrac{\pi}{2}</m>, as shown below.</p>
 
-<sidebyside width="40%"><!--<image source="images/exam7-3-3.png"><description>tangent</description></image>-->
+<sidebyside width="40%">
     <image xml:id="exam7-3-3">
         <description>tan 2 t</description>
         <latex-image>
@@ -479,11 +481,11 @@ Note that the solutions in the second cycle are still less than <m>2\pi</m>, so 
 </sidebyside>
 
 <p>There is one solution in each cycle, so we add multiples of <m>\dfrac{\pi}{2}</m> to <m>t_{1}</m> to find the other solutions. 
-    <me>\begin{aligned}[t]
-    t_{2}\amp=\dfrac{3\pi}{8}+\dfrac{\pi}{2}=\dfrac{7\pi}{8}\\
-    t_{3}\amp=\dfrac{7\pi}{8}+\dfrac{\pi}{2}=\dfrac{11\pi}{8}\\
-    t_{4}\amp=\dfrac{11\pi}{8}+\dfrac{\pi}{2}=\dfrac{15\pi}{8}\\
-    \end{aligned}</me>
+    <md>
+        <mrow>t_{2}\amp=\dfrac{3\pi}{8}+\dfrac{\pi}{2}=\dfrac{7\pi}{8}</mrow>
+        <mrow>t_{3}\amp=\dfrac{7\pi}{8}+\dfrac{\pi}{2}=\dfrac{11\pi}{8}</mrow>
+        <mrow>t_{4}\amp=\dfrac{11\pi}{8}+\dfrac{\pi}{2}=\dfrac{15\pi}{8}</mrow>
+    </md>
 The four solutions are <m>\dfrac{3\pi}{8},~ \dfrac{7\pi}{8},~ \dfrac{11\pi}{8}</m> and <m>\dfrac{15\pi}{8}</m>.</p>
 </solution></example>
 
@@ -491,7 +493,7 @@ The four solutions are <m>\dfrac{3\pi}{8},~ \dfrac{7\pi}{8},~ \dfrac{11\pi}{8}</
 
 <p>	The larger the value of <m>n</m>, the more cycles the graph completes between <m>0</m> and <m>2\pi</m>, and the more solutions we find.  Thus, for <m>-1 \lt k \lt 1</m>, there are six solutions of <m>\sin 3x=k</m>  between <m>0</m> and <m>2\pi</m>, eight solutions of <m>\sin 4x=k</m>,  and so on.  (See the figure below.)</p>
 
-<sidebyside width="90%"><!--<image source="images/7-3-9.png"><description>sine</description></image>-->
+<sidebyside width="90%">
     <image xml:id="fig-7-3-9">
         <description>sin 3x and sin 4x</description>
         <latex-image>
@@ -539,27 +541,28 @@ The four solutions are <m>\dfrac{3\pi}{8},~ \dfrac{7\pi}{8},~ \dfrac{11\pi}{8}</
 <example><statement><p>Solve  <m>1+4\cos 2x=2</m> for <m>0 \le x \le 2\pi</m>.</p></statement>
 
 <solution><p>We first solve for the trig ratio, <m>\cos 2x</m>
-	<me>\begin{aligned}[t]
-	1+4\cos 2x \amp = 2  \amp\amp \blert{\text{Subtract 1 from both sides.}}\\
-	4\cos 2x \amp = 1  \amp\amp \blert{\text{Divide both sides by 4.}}\\
-	\cos 2x \amp = 0.25\\
-	\end{aligned}</me>
+    <md>
+        <mrow>1+4\cos 2x \amp = 2  \amp\amp \blert{\text{Subtract 1 from both sides.}}</mrow>
+        <mrow>4\cos 2x \amp = 1  \amp\amp \blert{\text{Divide both sides by 4.}}</mrow>
+        <mrow>\cos 2x \amp = 0.25</mrow>
+    </md>
 Next, we use a calculator to find two solutions of <m>\cos 2x=0.25</m>.  The solutions of this equation, rounded to three decimal places, are
-	<me>\begin{aligned}[t]
-	2x \amp = 1.318  \amp\amp \text{and} \amp  2x \amp = 4.965\\
-	x_{1} \amp = 0.659  \amp\amp  \amp  x_{2}\amp =2.483\\
-	\end{aligned}</me>
+    <md>
+        <mrow>2x \amp = 1.318  \amp\amp \text{and} \amp  2x \amp = 4.965</mrow>
+        <mrow>x_{1} \amp = 0.659  \amp\amp  \amp  x_{2}\amp =2.483</mrow>
+    </md>
 Finally, because the period of the function <m>f(x)=\cos 2x</m> is <m>\pi</m>, we can find the other two solutions by adding <m>\pi</m> to the first two solutions, to get
-	<me>\begin{aligned}[t]
-	x_{3}\amp=0.659+\pi = 3.801\\
-	x_{4}\amp=2.483+\pi=5.624\\
-	\end{aligned}</me>
+    <md>
+        <mrow>x_{3}\amp=0.659+\pi = 3.801</mrow>
+        <mrow>x_{4}\amp=2.483+\pi=5.624</mrow>
+    </md>
 To two decimal places, the four solutions are  0.66, 2.48, 3.80, and 5.62</p> </solution></example>
 
 <exercise><statement><p>Solve  <m>5-2\sin 3x = 3.7</m>  for <m>0 \le x \le 2\pi</m>.</p></statement><answer><p>0.24, 1.86, 2.33, 2,95, 4.43, 6.06</p></answer></exercise>
 </subsection>
 
 <subsection><title>Using a Substitution</title>
+<idx><h>substitution</h><h>to solve trigonometric equations</h></idx>
 <p>	For more complicated equations, it can be helpful to use a substitution, in order to reduce the equation to the form <m>\sin \theta=k</m> (or <m>\cos \theta=k</m> or <m>\tan \theta=k</m>).  We want our substitution to replace the input of the sine function by a single variable.  For example, in the next example, we substitute <m>\theta</m> for the angle <m>2x+1.5</m>, so that the equation <m>\sin (2x+1.5)=-0.3</m> becomes <m>\sin \theta = -0.3</m>.</p>
 
 <example><statement><p>Use a substitution to solve <m>\sin (2x+1.5)=-0.3</m>  for <m>0 \le x \le 2\pi</m>. </p></statement>
@@ -569,15 +572,15 @@ To two decimal places, the four solutions are  0.66, 2.48, 3.80, and 5.62</p> </
 Because <m>\theta</m> is not between <m>0</m> and <m>2\pi</m>, we find a coterminal angle,
 <me>\theta_{1}=\sin^{-1}(-0.3)+2\pi = 5.9785</me>
 Next we replace <m>\theta</m> by <m>2x+1.5</m> to find two of the solutions of the original equation:
-	<me>\begin{aligned}[t]
-	2x+1.5 \amp = 3.4463  \amp\amp \text{and} \amp  2x+1.5 \amp = 5.9785\\
-	x_{1} \amp = 0.9731  \amp\amp  \amp  x_{2}\amp =2.2392\\
-	\end{aligned}</me>
+    <md>
+        <mrow>2x+1.5 \amp = 3.4463  \amp\amp \text{and} \amp  2x+1.5 \amp = 5.9785</mrow>
+        <mrow>x_{1} \amp = 0.9731  \amp\amp  \amp  x_{2}\amp =2.2392</mrow>
+    </md>
 Finally, because the period of the function <m>f(x)=\sin (2x+1.5)</m> is <m>\pi</m>, we find the other two solutions by adding <m>\pi</m> to the first two solutions, to get
-	<me>\begin{aligned}[t]
-	x_{3}\amp=0.9731+\pi = 4.1147\\
-	x_{4}\amp=2.2392+\pi=5.3808\\
-	\end{aligned}</me>
+    <md>
+        <mrow>x_{3}\amp=0.9731+\pi = 4.1147</mrow>
+        <mrow>x_{4}\amp=2.2392+\pi=5.3808</mrow>
+    </md>
 Rounded to hundredths, the four solutions are  0.97, 2.24, 4.11, and 5.38.</p></solution></example>
 
 <exercise><statement><p>Use a substitution to solve  <m>4\cos (3x-0.5) = -3.2</m>  for  <m>0 \le x \le 2\pi</m>.</p></statement><answer><p>1.00, 1.43, 3.09, 3.52, 5.19, 5.62</p></answer></exercise>
@@ -585,7 +588,7 @@ Rounded to hundredths, the four solutions are  0.97, 2.24, 4.11, and 5.38.</p></
 <p>Here is our strategy for solving trigonometric equations by using a substitution.</p>
 
 <assemblage><title>Using a Substitution to Solve Trigonometric Equations</title>
-<p>To solve the equation <m>\sin (Bx+C)=k</m>  or  <m>\cos (Bx+C)=k</m>:</p>
+<idx><h>substitution</h><h>to solve trigonometric equations</h></idx><p>To solve the equation <m>\sin (Bx+C)=k</m>  or  <m>\cos (Bx+C)=k</m>:</p>
 <p><ol label="1">
 	<li>Substitute <m>\theta = Bx+C</m>,  and find two solutions for <m>\sin \theta = k</m>  or  <m>\cos \theta = k</m>.</li>
 	<li>Replace <m>\theta</m> by <m>Bx+C</m> in each solution, and solve for <m>x</m>.</li>
@@ -602,18 +605,18 @@ Rounded to hundredths, the four solutions are  0.97, 2.24, 4.11, and 5.38.</p></
 
 <solution><p>The graph of <m>f(x)=5+0.4\tan (3x-0.5)</m> completes six cycles between <m>0</m> and <m>2\pi</m>, so we expect to find six solutions, as illustrated below.  We'll use the substitution <m>\theta=3x-0.5</m> to reduce the equation to <m>5+0.4\tan \theta)=4.5</m>.  Next, we isolate the trig ratio.  Subtract 5 from both sides of the equation, then divide by 0.4.</p>
 <sidebyside widths="50% 50%" valigns="middle middle" margins="0% 0%"><p>
-    <me>\begin{aligned}[t]
-    0.4\tan \theta \amp = -0.5\\
-    \tan \theta \amp = -1.25\\
-    \end{aligned}</me>
+    <md>
+        <mrow>0.4\tan \theta \amp = -0.5</mrow>
+        <mrow>\tan \theta \amp = -1.25</mrow>
+    </md>
 Now we can solve for <m>\theta</m>.
 <me>\theta = \tan^{-1}(-1.25)=-0.8960</me>
 Replacing <m>\theta</m> by <m>3x-0.5</m>, we find the first solution.
-    <me>\begin{aligned}[t]
-    3x-0.5 \amp = -0.8960\\
-    3x\amp = -0.3960\\
-    x \amp = -0.1320\\
-    \end{aligned}</me>
+    <md>
+        <mrow>3x-0.5 \amp = -0.8960</mrow>
+        <mrow>3x\amp = -0.3960</mrow>
+        <mrow>x \amp = -0.1320</mrow>
+    </md>
 </p>
     <image xml:id="exam7-3-6">
         <description>5+0.4tan(3x-0.5)</description>
@@ -642,21 +645,21 @@ Replacing <m>\theta</m> by <m>3x-0.5</m>, we find the first solution.
     </image>
 </sidebyside>
 <p>This value of <m>x</m> is not between <m>0</m> and <m>2\pi</m>, but because the period of <m>f(x)</m> is <m>\dfrac{\pi}{3}</m>, we can add <m>\dfrac{\pi}{3} \approx 1.0472</m> to any solution to find another solution.
-<me>\begin{aligned}[t]
-        x_{1} \amp =-0.1320+1.0472=0.9152\\
-        x_{2} \amp =0.9152+1.0472=1.9624\\
-        x_{3} \amp =1.9624+1.0472=3.0096\\
-        x_{4} \amp =3.0096+1.0472=4.0568\\
-        x_{5} \amp =4.0568+1.0472=5.1040\\
-        x_{6} \amp =5.1040+1.0472=6.1512\\
-    \end{aligned}</me>
+    <md>
+        <mrow>x_{1} \amp =-0.1320+1.0472=0.9152</mrow>
+        <mrow>x_{2} \amp =0.9152+1.0472=1.9624</mrow>
+        <mrow>x_{3} \amp =1.9624+1.0472=3.0096</mrow>
+        <mrow>x_{4} \amp =3.0096+1.0472=4.0568</mrow>
+        <mrow>x_{5} \amp =4.0568+1.0472=5.1040</mrow>
+        <mrow>x_{6} \amp =5.1040+1.0472=6.1512</mrow>
+    </md>
 We stop here, because the next solution is greater than <m>2\pi</m>. Rounded to two decimal places, the six solutions are  0.92, 1.96, 3.01, 4.06, 5.10, and 6.15.</p>
 </solution></example>
 
 <exercise><statement><p><ol label="a">
 <li>Graph <m>y=2-4\tan 3(x+0.2)</m>  from <m>x=0</m> to <m>x=2\pi</m>.</li>
 <li>Find all solutions of <m>2-4\tan 3(x+0.2)=5</m> between <m>0</m> and <m>2\pi</m>. Round your answers to two decimal places.</li></ol></p></statement><answer><p><ol label="a">
-    <li><sidebyside width="45%" margins="0 55%"><!--<image source="images/ar7-3-6ans.png"><description>tangent</description></image>-->
+    <li><sidebyside width="45%" margins="0% 55%">
     <image xml:id="exer7-3-6ans">
         <description>transformed tangent</description>
         <latex-image>
@@ -699,7 +702,7 @@ We stop here, because the next solution is greater than <m>2\pi</m>. Rounded to 
 The amplitude is <m>A=\dfrac{16}{2} = 8</m>, and the midline is <m>k=8</m>. The period is <m>\dfrac{1}{1000}</m>, so <m>\dfrac{B}{1000} = 2\pi</m>, and <m>B=2000\pi</m>. Thus
 <me>h(t)=-8\sin (2000\pi t) + 8</me>
 The graph is shown below.</p>
-<sidebyside width="50%"><!--<image source="images/exam7-3-7.png"><description>sine</description></image>-->
+<sidebyside width="50%">
     <image xml:id="exam7-3-7">
         <description>sinusoidal graph</description>
         <latex-image>
@@ -720,18 +723,18 @@ The graph is shown below.</p>
     </image>
 </sidebyside></li>
 <li>With <m>h(t)=14</m>, we have
-	<me>\begin{aligned}[t]
-		-8\sin (2000\pi t) + 8 \amp = 14 \amp\amp  \blert{\text{Subtract 8 from both sides.}}\\
-		- 8\sin (2000\pi t) \amp = 6 \amp\amp \blert{\text{Divide both sides by} -8.}\\
-		\sin (2000\pi t) \amp =\dfrac{-3}{4}
-		\end{aligned}</me>
+    <md>
+        <mrow>-8\sin (2000\pi t) + 8 \amp = 14 \amp\amp  \blert{\text{Subtract 8 from both sides.}}</mrow>
+        <mrow>- 8\sin (2000\pi t) \amp = 6 \amp\amp \blert{\text{Divide both sides by} -8.}</mrow>
+        <mrow>\sin (2000\pi t) \amp =\dfrac{-3}{4}</mrow>
+    </md>
 We use the substitution <m>\theta = 2000\pi t</m> and find two positive solutions of the equation <m>\sin \theta = \dfrac{-3}{4}</m>. 
-<me>\theta = \sin^{-1}(\dfrac{-3}{4})2\pi = 5.4351 ~~ \text{and} ~~ \theta = \pi - \sin^{-1}(\dfrac{-3}{4})=3.9897</me>
+<me>\theta = \sin^{-1}\left(\dfrac{-3}{4}\right)2\pi = 5.4351 ~~ \text{and} ~~ \theta = \pi - \sin^{-1}\left(\dfrac{-3}{4}\right)=3.9897</me>
 Replace <m>\theta</m> by <m>2000\pi t</m>, and solve each equation for <m>t</m>:
-<me>\begin{aligned}[t]
-	2000\pi t \amp = 5.4351  \amp\amp \text{and} \amp  2000\pi t \amp = 3.9897\\
-	t \amp = 0.000865  \amp\amp  \amp  t \amp =0.000635\\
-	\end{aligned}</me>
+<md>
+    <mrow>2000\pi t \amp = 5.4351  \amp\amp \text{and} \amp  2000\pi t \amp = 3.9897</mrow>
+    <mrow>t \amp = 0.000865  \amp\amp  \amp  t \amp =0.000635</mrow>
+</md>
 Thus, the first two times the piston is at a height of 14 centimeters are approximately <m>t = 0.000865</m> and <m>t =0.000635</m> seconds.</li></ol></p></solution></example>
 
 <exercise><statement><p>A lever on an oil well is pumping vertically at a rate of 10 cycles per minute. The distance between its lowest position at the ground and its highest position is 1.8 meters.</p>  
@@ -743,6 +746,7 @@ Thus, the first two times the piston is at a height of 14 centimeters are approx
 </subsection>
 
 <subsection><title>Algebra Refresher</title>
+<p>Review the following skills you will need for this section.</p>
 
 <exercises>
 <exercisegroup cols="3"><introduction><p>Solve.</p></introduction>
@@ -759,9 +763,9 @@ Thus, the first two times the piston is at a height of 14 centimeters are approx
 
 <exercise number="6"><statement><p><m>2^{2x-6}=4</m></p></statement></exercise>
 </exercisegroup></exercises>
+</subsection>
 
-
-<subsubsection><title>Algebra Refresher Answers</title>
+<subsection><title>Algebra Refresher Answers</title>
 <p><ol label="1" cols="3">
 	<li><m>2,4</m></li>
 	<li><m>11</m></li>
@@ -769,7 +773,7 @@ Thus, the first two times the piston is at a height of 14 centimeters are approx
 	<li><m>1,5</m></li>
 	<li><m>5003</m></li>
 	<li><m>4</m></li>
-</ol></p></subsubsection>
+</ol></p>
 </subsection>
 
 <subsection><title>Section 7.3 Summary</title>
@@ -816,17 +820,14 @@ Thus, the first two times the piston is at a height of 14 centimeters are approx
 
 <subsubsection><title>Skills</title>
 <p><ol label="1">
-	<li>Find exact solutions to equations of the form <m>\sin nx = k</m>     #1-10</li>
-	<li>Find all solutions between <m>0</m> and <m>2\pi</m>  #11-16</li>
-	<li>Use a substitution to solve trigonometric equations    #17-28</li>
-	<li>Write expressions for exact solutions    #29-42</li>
-	<li>Solve problems involving trigonometric models    #43-46</li>
+	<li>Find exact solutions to equations of the form <m>\sin nx = k</m>     #1<ndash/>10</li>
+	<li>Find all solutions between <m>0</m> and <m>2\pi</m>  #11<ndash/>16</li>
+	<li>Use a substitution to solve trigonometric equations    #17<ndash/>28</li>
+	<li>Write expressions for exact solutions    #29<ndash/>42</li>
+	<li>Solve problems involving trigonometric models    #43<ndash/>46</li>
 </ol></p></subsubsection>
 </subsection>
-	
 
-<!--<xi:include href="./summary-7-1.xml" />--> <!-- summary  -->
 <xi:include href="./hmwk-7-3.xml" />
 
 </section> 
-<!-- </book>  </mathbook> -->

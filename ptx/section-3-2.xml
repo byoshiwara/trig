@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!-- <mathbook><book> -->
 
 <section xml:id="The-Law-of-Sines"   xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>The Law of Sines</title><introduction>
+<idx><h>law of sines</h></idx>
 <p>
 We have learned to use the trigonometric ratios to solve right triangles. But the trig ratios are only valid for the sides of right triangles. Can we find unknown sides or angles in an oblique triangle?</p> 
 
-<sidebyside width="100%" > <!--<image source="images/3-2-intro.png"><description>triangles</description></image>-->
+<sidebyside width="100%" >
     <image xml:id="fig-3-2-intro">
         <description>triangles</description>
         <latex-image>
@@ -61,7 +61,7 @@ We have learned to use the trigonometric ratios to solve right triangles. But th
 
 <note><p>Reducing a new problem to an earlier one is a frequently used technique in mathematics.</p></note>
 
-<sidebyside widths="55% 40%" valigns="middle middle" margins="0% 0%"><p>Consider the oblique triangle at right.  By drawing in the altitude <m>h</m> of the triangle, we create two right triangles, <m>\triangle BCD</m> and <m>\triangle ABD</m>, as shown in the figure. Now we can write expressions in terms of <m>h</m> for <m>\sin A</m> and for <m>\sin C</m>.</p> <!--<image source="images/3-2-tworight.png"><description>triangles</description></image>-->
+<sidebyside widths="55% 40%" valigns="middle middle" margins="0% 0%"><p>Consider the oblique triangle at right.  By drawing in the altitude <m>h</m> of the triangle, we create two right triangles, <m>\triangle BCD</m> and <m>\triangle ABD</m>, as shown in the figure. Now we can write expressions in terms of <m>h</m> for <m>\sin A</m> and for <m>\sin C</m>.</p>
     <image xml:id="fig-3-2-tworight">
         <description>triangles</description>
         <latex-image>
@@ -99,21 +99,30 @@ We have learned to use the trigonometric ratios to solve right triangles. But th
 <p>  Looking at <m>\triangle ABD</m>, we see that <m>\dfrac{h}{c} = \sin A.</m> </p>
 <p> Now we solve each of these equations for <m>h</m>:</p> 
 
-<p><me>\begin{aligned}[t]
-                \dfrac{h}{a} \amp = \sin C ~~~~~~~~    \dfrac{h}{c} = \sin A\amp\amp \blert{\text{Solve each equation for } h.}\\
-                h \amp = a \sin C~~~~~~    h = c \sin A \amp\amp \blert{\text{Equate the expressions for } h.}\\
-                \end{aligned}</me> </p>
- <p><me>\begin{aligned}[t]               
-                a \sin C \amp = c \sin A  \amp\amp ~~~\blert{\text{Divide both sides by } ac.}\\
-                \dfrac {\sin C}{c} \amp = \dfrac {\sin A}{a} \\            
-                \end{aligned}</me></p>
+<p><md>
+    <mrow>
+        \dfrac{h}{a} \amp = \sin C \amp\amp\text{and}\amp \dfrac{h}{c} \amp = \sin A\amp    \amp\blert{\text{Solve each equation for } h.}
+    </mrow>
+    <mrow>
+        h \amp = a \sin C  \amp\amp\text{and}\amp   h\amp = c \sin A \amp\amp \blert{\text{Equate the expressions for } h.}
+    </mrow>
+</md>
+<md>
+    <mrow>
+        \amp\amp a \sin C \amp = c \sin A  \amp\amp \qquad\quad\amp \amp \blert{\text{Divide both sides by } ac.}
+    </mrow>
+    <mrow>
+        \amp\amp \dfrac {\sin C}{c} \amp = \dfrac {\sin A}{a} 
+    </mrow>
+</md></p>
 
 <p> We have derived a relationship between the angles <m>A</m> and <m>C</m> and their opposite sides, <m>a</m> and <m>c</m>. If we know any three of these quantities, we can find the fourth.</p>  
 <p>In a similar way, by drawing in the altitude from the vertex <m>C</m>, we can show that <me>\dfrac {\sin A}{a} = \dfrac {\sin B}{b}</me> Putting both results together, we have the <term>Law of Sines</term>. The Law of Sines is true for any triangle, whether it is acute, right, or obtuse.</p>
 
 <assemblage><title>Law of Sines</title>
+<idx><h>law of sines</h></idx>
 <p>If the angles of a triangle are <m>A, B</m>, and <m>C</m>, and the opposite sides are respectively <m>a, b,</m> and <m>c</m>, then</p>
-<sidebyside widths="50% 25%" margins="8% 8%"><p><me>\dfrac {\sin A}{a} = \dfrac {\sin B}{b} = \dfrac {\sin C}{c}</me></p> <!--<image source="images/3-2-sineslaw.png"><description>triangle</description></image>-->
+<sidebyside widths="50% 25%" margins="0% 10%"><p><me>\dfrac {\sin A}{a} = \dfrac {\sin B}{b} = \dfrac {\sin C}{c}</me></p>
     <image xml:id="fig-3-2-sineslaw">
         <description>triangle</description>
         <latex-image>
@@ -150,7 +159,7 @@ We have learned to use the trigonometric ratios to solve right triangles. But th
 
 <example><statement>
     <p>Two observers onshore sight a ship at an unknown distance from the shore. The observers are 400 yards apart at points <m>A</m> and <m>B</m>, and they each measure the angle from the shoreline to the ship, as shown below.  How far is the ship from the observer at <m>A</m>?
- </p> <sidebyside width="80%"><!--<image source="images/exam3-2-1.png"><description>triangle</description></image>-->
+ </p> <sidebyside width="80%">
     <image xml:id="exam3-2-1">
         <description>triangle</description>
         <latex-image>
@@ -188,17 +197,17 @@ We have learned to use the trigonometric ratios to solve right triangles. But th
     <p>First note that <m>\triangle ABC</m> is not a right triangle, so we cannot use the trig ratios directly to find the sides of this triangle.</p><p>  The unknown distance <m>d</m> is the side opposite <m>\angle B = 79.4\degree</m>.  In order to use the Law of Sines, we must know another angle and the side opposite that angle.  We do:  we know that side <m>c = 400</m>, and we can compute the angle at the ship, <m>\angle C</m>.
     <me>\angle C = 180\degree - (79.4\degree + 83.2\degree) = 17.4\degree</me>
     Now we apply the Law of Sines, using angles <m>B</m> and <m>C</m>.
-    <me>\begin{aligned}[t]
-                \dfrac{b}{\sin B} \amp = \dfrac{c}{\sin C} \amp\amp \blert{\text{Substitute the given values.}}\\
-                \dfrac{d}{\sin 79.4\degree} \amp = \dfrac{400}{\sin 17.4\degree} \amp\amp \blert{\text{Evaluate sines.}}\\
-                \dfrac{d}{0.9829} \amp = \dfrac{400}{0.2990} \amp\amp \blert{\text{Multiply both sides by 0.9829.}} \\
-                d \amp = 1315 \\
-                \end{aligned}</me> 
+    <md>
+        <mrow>\dfrac{b}{\sin B} \amp = \dfrac{c}{\sin C} \amp\amp \blert{\text{Substitute the given values.}}</mrow>
+        <mrow>\dfrac{d}{\sin 79.4\degree} \amp = \dfrac{400}{\sin 17.4\degree} \amp\amp \blert{\text{Evaluate sines.}}</mrow>
+        <mrow>\dfrac{d}{0.9829} \amp = \dfrac{400}{0.2990} \amp\amp \blert{\text{Multiply both sides by 0.9829.}}</mrow>
+        <mrow>d \amp = 1315</mrow>
+    </md>
     The ship is about 1315 yards from the observer at <m>A</m>.</p>
 </solution></example>
 
 <exercise><statement>
-    <sidebyside widths="55% 35%" valigns="middle middle"><p>Delbert and Francine are 40 feet apart on one side of a river. They make angle measurements to a pine tree on the opposite shore as shown at right. What is the distance  from Francine to the pine tree?</p> <!--<image source="images/exer3-2-1.png"><description>triangle</description></image>-->
+    <sidebyside widths="55% 35%" valigns="middle middle" margins="0% 5%"><p>Delbert and Francine are 40 feet apart on one side of a river. They make angle measurements to a pine tree on the opposite shore as shown at right. What is the distance  from Francine to the pine tree?</p>
     <image xml:id="exer3-2-1">
         <description>triangle</description>
         <latex-image>
@@ -236,12 +245,11 @@ We have learned to use the trigonometric ratios to solve right triangles. But th
 <p>In order to apply the Law of Sines to find a side, we must know one angle of the triangle and its opposite side (either <m>a</m> and <m>A</m>, or <m>b</m> and <m>B</m>, or <m>c</m> and <m>C</m>), and one other angle. Then we can find the side opposite that angle.</p>
 
 <example><statement>
-    <sidebyside widths="50% 40%" margins="5% 5%"><p>In the triangle shown at right, <m>A = 37\degree, B = 54\degree</m>, and <m>a = 11</m>.
+    <sidebyside widths="50% 40%" margins="0% 5%"><p>In the triangle shown at right, <m>A = 37\degree, B = 54\degree</m>, and <m>a = 11</m>.
     <ol label = "a">
         <li>Find <m>b</m>.</li>
         <li>Solve the triangle.</li>
     </ol></p>
- <!--<image source="images/exam3-2-2.png"><description>triangle</description></image>-->
     <image xml:id="exam3-2-2">
         <description>triangle</description>
         <latex-image>
@@ -273,25 +281,27 @@ We have learned to use the trigonometric ratios to solve right triangles. But th
     </image>
 </sidebyside></statement>
 <solution><p><ol label = "a">
-        <li><p>We use the Law of Sines with <m>a</m> and angle <m>A</m> to find <m>b</m>.</p>
-        <p><me>\begin{aligned}[t]
-                \dfrac{a}{\sin A} \amp = \dfrac{b}{\sin B} \amp\amp \blert{\text{Substitute the given values.}}\\
-                \dfrac{11}{\sin 37\degree} \amp = \dfrac{b}{\sin 54\degree} \amp\amp \blert{\text{Multiply both sides by} \sin 54\degree.}\\
-                \dfrac{11}{\sin 37\degree} \cdot \sin 54\degree\amp = b \\
-                \end{aligned}</me></p>
-         <p>Evaluating this expression with a calculator, we find that <m>b \approx 14.79</m>.</p></li>      
-        <li><p>The angle <m>C = 180\degree - (37\degree + 54\degree) = 89\degree</m>.  Now we use the Law of Sines to find side <m>c</m>.  
-            Note that it is safer to use the given side, <m>a</m>, rather than the value we calculated for <m>b</m>.</p>
-            <p><me>\begin{aligned}[t]
-                \dfrac{a}{\sin A} \amp = \dfrac{c}{\sin C} \amp\amp \blert{\text{Substitute the known values.}}\\
-                \dfrac{11}{\sin 37\degree} \amp = \dfrac{c}{\sin 89\degree} \amp\amp \blert{\text{Multiply both sides by} \sin 89\degree.}\\
-                \dfrac{11}{\sin 37\degree} \cdot \sin 89\degree\amp = c \\
-                \end{aligned}</me></p>
-           <p>so <m>c \approx 18.28.</m></p></li>     
+    <li><p>We use the Law of Sines with <m>a</m> and angle <m>A</m> to find <m>b</m>.</p>
+    <p>
+        <md>
+            <mrow>\dfrac{a}{\sin A} \amp = \dfrac{b}{\sin B} \amp\amp \blert{\text{Substitute the given values.}}</mrow>
+            <mrow>\dfrac{11}{\sin 37\degree} \amp = \dfrac{b}{\sin 54\degree} \amp\amp \blert{\text{Multiply both sides by} \sin 54\degree.}</mrow>
+            <mrow> \dfrac{11}{\sin 37\degree} \cdot \sin 54\degree\amp = b</mrow>
+        </md>
+    </p>
+    <p>Evaluating this expression with a calculator, we find that <m>b \approx 14.79</m>.</p></li>      
+    <li><p>The angle <m>C = 180\degree - (37\degree + 54\degree) = 89\degree</m>.  Now we use the Law of Sines to find side <m>c</m>.  
+        Note that it is safer to use the given side, <m>a</m>, rather than the value we calculated for <m>b</m>.</p>
+        <p><md>
+            <mrow>\dfrac{a}{\sin A} \amp = \dfrac{c}{\sin C} \amp\amp \blert{\text{Substitute the known values.}}</mrow>
+            <mrow>\dfrac{11}{\sin 37\degree} \amp = \dfrac{c}{\sin 89\degree} \amp\amp \blert{\text{Multiply both sides by} \sin 89\degree.}</mrow>
+            <mrow>\dfrac{11}{\sin 37\degree} \cdot \sin 89\degree\amp = c </mrow>
+        </md></p>
+       <p>so <m>c \approx 18.28.</m></p></li>     
     </ol></p></solution></example>
 
 <exercise><statement>
-    <sidebyside widths="50% 25%" margins="0% 15%" valigns="middle middle"><p>In the triangle at right, <m>A = 65\degree, C = 42\degree</m>, and <m>c = 16</m>.  Solve the triangle.  (Hint:  Which side will you find first?)</p> <!--<image source="images/exer3-2-2.png"><description>triangle</description></image>-->
+    <sidebyside widths="50% 25%" margins="0% 15%" valigns="middle middle"><p>In the triangle at right, <m>A = 65\degree, C = 42\degree</m>, and <m>c = 16</m>.  Solve the triangle.  (Hint:  Which side will you find first?)</p>
     <image xml:id="exer3-2-2">
         <description>triangle</description>
         <latex-image>
@@ -323,11 +333,11 @@ We have learned to use the trigonometric ratios to solve right triangles. But th
 </subsection>
 
 <subsection><title>Finding an Angle</title>
+<idx><h>angle</h><h>find</h></idx>
 <p> We can also use the Law of Sines to find an unknown angle of a triangle.  We must know two sides of the triangle and the angle opposite one of them.</p>
 
 <example><statement>
     <sidebyside widths="55% 25%" margins="5% 10%"><p>In the triangle shown at right, <m>B = 55\degree, a = 5</m>, and <m>b = 11</m>. Solve the triangle.</p>
- <!--<image source="images/exam3-2-3.png"><description>triangle</description></image>-->
     <image xml:id="exam3-2-3">
         <description>triangle</description>
         <latex-image>
@@ -356,22 +366,22 @@ We have learned to use the trigonometric ratios to solve right triangles. But th
     </image>
 </sidebyside></statement>
 <solution><p>We must find the three remaining parts of the triangle, <m>A, C</m>, and <m>c</m>. First, we use the Law of Sines to find <m>\sin A</m>.</p>
-        <p><me>\begin{aligned}[t]
-                    \dfrac{\sin A}{a} \amp = \dfrac{\sin B}{b} \amp\amp \blert{\text{Substitute the known values.}}\\
-                \dfrac{\sin A}{5} \amp = \dfrac{\sin 55\degree}{11} \amp\amp \blert{\text{Multiply both sides by 5.}}\\
-               \sin A \amp = 5 \cdot \dfrac{\sin 55\degree}{11} \approx 0.3723 \\
-                \end{aligned}</me></p>
+    <p><md>
+        <mrow>\dfrac{\sin A}{a} \amp = \dfrac{\sin B}{b} \amp\amp \blert{\text{Substitute the known values.}}</mrow>
+        <mrow>\dfrac{\sin A}{5} \amp = \dfrac{\sin 55\degree}{11} \amp\amp \blert{\text{Multiply both sides by 5.}}</mrow>
+        <mrow>\sin A \amp = 5 \cdot \dfrac{\sin 55\degree}{11} \approx 0.3723</mrow>
+    </md></p>
          <p>So <m>A = \sin^{-1}(0.3723) \approx 21.9\degree</m>. Now we know two angles, and we can find angle <m>C</m>.</p>
-         <p><me>\begin{aligned}[t]
-            C \amp = 180\degree - (B + A) \\
-              \amp = 180\degree - 55\degree - 21.9\degree = 103.1\degree \\
-              \end{aligned}</me></p>     
+         <p><md>
+             <mrow>C \amp = 180\degree - (B + A)</mrow>
+             <mrow>\amp = 180\degree - 55\degree - 21.9\degree = 103.1\degree</mrow>
+         </md></p>
         <p>Finally, we use the Law of Sines to find side <m>c</m>.  </p>
-            <p><me>\begin{aligned}[t]
-                \dfrac{b}{\sin B} \amp = \dfrac{c}{\sin C} \amp\amp \blert{\text{Substitute the known values.}}\\
-                \dfrac{11}{\sin 55\degree} \amp = \dfrac{c}{\sin 103.1\degree} \amp\amp \blert{\text{Multiply both sides by} \sin 103.1\degree.}\\
-                \dfrac{11}{\sin 55\degree} \cdot \sin 103.1\degree\amp = c \\
-                \end{aligned}</me></p>
+        <p><md>
+            <mrow>\dfrac{b}{\sin B} \amp = \dfrac{c}{\sin C} \amp\amp \blert{\text{Substitute the known values.}}</mrow>
+            <mrow>\dfrac{11}{\sin 55\degree} \amp = \dfrac{c}{\sin 103.1\degree} \amp\amp \blert{\text{Multiply both sides by} \sin 103.1\degree.}</mrow>
+            <mrow>\dfrac{11}{\sin 55\degree} \cdot \sin 103.1\degree\amp = c</mrow>
+        </md></p>
            <p>Evaluating this expression with a calculator gives <m>c \approx 13.1.</m></p></solution></example>
 
  <exercise><statement>
@@ -385,7 +395,7 @@ We have learned to use the trigonometric ratios to solve right triangles. But th
     </ol></p></answer></exercise>
 
 <warning><p>In the last example we used the value of <m>\sin A</m> to find angle <m>A</m>.  But there are two angles that satisfy <m>\sin A = 0.3723</m>, one acute (<m>21.9\degree</m>) and one obtuse (<m>168.1\degree</m>). How did we know which one to choose?</p>
-<sidebyside width="50%"><!--<image source="images/3-2-caut.png"><description>angles</description></image>-->
+<sidebyside width="50%">
     <image xml:id="fig-3-2-caut">
         <description>angles</description>
         <latex-image>
@@ -432,16 +442,16 @@ We have learned to use the trigonometric ratios to solve right triangles. But th
 <p>In this case, the obtuse angle is too big to fit in the triangle, because angle <m>B = 55\degree</m>.  Sometimes both angles will produce (different) triangles, and sometimes only the acute angle will work.  You should always check whether both angles provide solutions.</p> 
  </warning>
 
- <note><p>Because there can be more than one solution for a triangle in which we know two sides and an angle opposite one of them, this situation is called the <term>ambiguous case</term> for the Law of Sines. (See Homework Problems 33-42 for more about the ambiguous case.)</p></note>
+ <note><p>Because there can be more than one solution for a triangle in which we know two sides and an angle opposite one of them, this situation is called the <term>ambiguous case</term><idx><h>ambiguous case</h></idx> for the Law of Sines. (See Homework Problems 33-42 for more about the ambiguous case.)</p></note>
 
  <example><statement>
     <p>Find two triangles in which <m>B = 14.4\degree, a = 8</m>, and <m>b = 3</m>, and sketch both triangles.</p></statement>
 <solution><p>Using the Law of Sines, we have</p>
-        <p><me>\begin{aligned}[t]
-                \dfrac{\sin A}{a} \amp = \dfrac{\sin B}{b} \amp\amp \blert{\text{Substitute the known values.}}\\
-                \dfrac{\sin A}{8} \amp = \dfrac{\sin 14.4\degree}{3} \amp\amp \blert{\text{Multiply both sides by 8.}}\\
-               \sin A \amp = 8 \cdot \dfrac{\sin 14.4\degree}{3} \approx 0.6632 \\
-                \end{aligned}</me></p>
+    <p><md>
+        <mrow>\dfrac{\sin A}{a} \amp = \dfrac{\sin B}{b} \amp\amp \blert{\text{Substitute the known values.}}</mrow>
+        <mrow>\dfrac{\sin A}{8} \amp = \dfrac{\sin 14.4\degree}{3} \amp\amp \blert{\text{Multiply both sides by 8.}}</mrow>
+        <mrow>\sin A \amp = 8 \cdot \dfrac{\sin 14.4\degree}{3} \approx 0.6632</mrow>
+    </md></p>
          <p>There are two angles with sine <m>0.6632</m>:</p>  
          <p><ul>
             <li>the acute angle <m>A = \sin^{-1}(0.6632) = 41.5\degree,</m></li>
@@ -452,7 +462,7 @@ We have learned to use the trigonometric ratios to solve right triangles. But th
           <li>  In the first case, angle <m>C = 180\degree - (14.4\degree + 138.5\degree) = 27.1\degree</m>, and we have the triangle shown in figure (a).</li>  
           <li>In the second case, <m>C = 180\degree - (14.4\degree + 41.5\degree) = 124.1\degree</m>, which gives us the triangle shown in figure (b).</li>
       </ul></p>
-      <sidebyside width="90%"><!--<image source="images/exam3-2-4.png"><description>triangles</description></image>-->
+      <sidebyside width="90%">
     <image xml:id="exam3-2-4">
         <description>triangles</description>
         <latex-image>
@@ -514,7 +524,7 @@ We have learned to use the trigonometric ratios to solve right triangles. But th
         <li>Solve the triangle for both values of <m>B</m>, and sketch both solutions.</li>
     </ol></p></statement><answer><p><ol label = "a">
         <li><m>B = 52.4\degree</m> or <m>B = 127.6\degree</m></li>
-        <li><sidebyside widths="40% 28%"  margins="0% 30%" valigns = "middle middle"><p><m>A = 97.9\degree,~a = 10</m></p><!--<image source="images/exer3-2-4ans.png"><description>triangle</description></image>-->
+        <li><sidebyside widths="40% 28%"  margins="0% 30%" valigns = "middle middle"><p><m>A = 97.9\degree,~a = 10</m></p>
     <image xml:id="exer3-2-4ans">
         <description>triangle</description>
         <latex-image>
@@ -547,7 +557,7 @@ We have learned to use the trigonometric ratios to solve right triangles. But th
     </latex-image>
     </image>
         </sidebyside>
-        <sidebyside widths="40% 35%" margins="0% 23%" valigns = "middle middle"><p>or <m>A = 22.7\degree,~a = 3.9</m></p><!--<image source="images/exer3-2-4anstoo.png"><description>triangle</description></image>-->
+        <sidebyside widths="40% 35%" margins="0% 23%" valigns = "middle middle"><p>or <m>A = 22.7\degree,~a = 3.9</m></p>
     <image xml:id="exer3-2-4anstoo">
         <description>triangle</description>
         <latex-image>
@@ -588,7 +598,7 @@ We have learned to use the trigonometric ratios to solve right triangles. But th
 
 <example><statement>
     <p>Richard wants to measure the height of a castle controlled by hostile forces. When he is as close as he can get to the castle, the angle of elevation to the top of the wall is <m>18.5\degree</m>. He then retreats 20 yards and measures the angle of elevation again; this time it is <m>15.9\degree</m>. How tall is the castle?</p>
-<sidebyside width="70%"><!--<image source="images/exam3-2-5.png"><description>castle</description></image>-->
+<sidebyside width="70%">
     <image xml:id="exam3-2-5">
         <description>castle</description>
         <latex-image>
@@ -628,7 +638,7 @@ We have learned to use the trigonometric ratios to solve right triangles. But th
 </sidebyside></statement>
 
 <solution><p>Notice that <m>h</m> is one side of the right triangle <m>ADC</m>. If we can find its hypotenuse, labeled <m>r</m> in the figure, we can use the sine ratio to find <m>h</m>. To find <m>r</m>, we consider a second triangle, <m>ABC</m>, as shown below.</p>
-<sidebyside width="55%"><!--<image source="images/exam3-2-5soln.png"><description>castle</description></image>-->
+<sidebyside width="55%">
     <image xml:id="exam3-2-5soln">
         <description>castle</description>
         <latex-image>
@@ -669,27 +679,30 @@ We have learned to use the trigonometric ratios to solve right triangles. But th
 The angle opposite the 20-yard side, <m>\angle BAC</m>, is
 <me>\angle BAC = 180\degree - (161.5\degree + 15.9\degree) = 2.6\degree</me>
 Now we can apply the Law of Sines to find <m>r</m>. We have</p>
-        <p><me>\begin{aligned}[t]
-                \dfrac{r}{\sin 161.5\degree} \amp = \dfrac{20}{\sin 2.6\degree} \amp\amp \blert{\text{Solve for }r.}\\
-               r \amp = \sin 161.5\degree \cdot \dfrac{20}{\sin 2.6\degree} \approx 139.9 \\
-                \end{aligned}</me></p>
-         <p>So <m>r</m> is about 139.9 yards.  Finally, using the right triangle <m>ADC</m> and the definition of sine, we can write</p>  
-         <p><me>\begin{aligned}[t]
-                \dfrac{h}{r} \amp = \sin 15.9\degree \amp\amp \blert{\text{Solve for }h.}\\
-               h \amp = r \cdot \sin 15.9\degree \approx 38.33 \\
-                \end{aligned}</me></p>
-      <p>The castle is about 38.33 yards tall.</p></solution></example> 
+<p><md>
+    <mrow>\dfrac{r}{\sin 161.5\degree} \amp = \dfrac{20}{\sin 2.6\degree} \amp\amp \blert{\text{Solve for }r.}</mrow>
+    <mrow>r \amp = \sin 161.5\degree \cdot \dfrac{20}{\sin 2.6\degree}</mrow>
+    <mrow>\amp  \approx 139.9</mrow>
+</md></p>
+<p>So <m>r</m> is about 139.9 yards.  Finally, using the right triangle <m>ADC</m> and the definition of sine, we can write</p>
+<p><md>
+     <mrow>\dfrac{h}{r} \amp = \sin 15.9\degree \amp\amp \blert{\text{Solve for }h.}</mrow>
+     <mrow>h \amp = r \cdot \sin 15.9\degree \approx 38.33</mrow>
+</md></p>
+<p>The castle is about 38.33 yards tall.</p></solution>
+</example> 
 
 <exercise><statement>
     <p>Solve the problem in the previous example again, but instead of finding <m>r</m>, find the length <m>AB</m>, and then use <m>\triangle ABD</m>  to find <m>h</m>.</p> 
 </statement><answer><p><m>AB = 120.79</m>, the castle is about 38.33 yards tall.</p></answer></exercise>
 </subsection>
 
-<subsection><title>Measuring Astronomical Distances</title>      
-<p> If you look at a nearby object and alternately close your left and right eyes, the object seems to jump in position. This apparent change occurs because your eyes are viewing the object from two different positions spaced several centimeters apart. If the object at point <m>O</m> is straight ahead of one eye, it appears to be at some angle <m>p</m> away from the line of sight of the other eye. The angle <m>p</m> is called the <term>parallax</term> of the object.</p>
+<subsection><title>Measuring Astronomical Distances</title>
+<idx><h>parallax</h></idx>      
+<p> If you look at a nearby object and alternately close your left and right eyes, the object seems to jump in position. This apparent change occurs because your eyes are viewing the object from two different positions spaced several centimeters apart. If the object at point <m>O</m> is straight ahead of one eye, it appears to be at some angle <m>p</m> away from the line of sight of the other eye. The angle <m>p</m> is called the <term>parallax</term><idx><h>parallax</h></idx> of the object.</p>
 
 <p> Use the figure below to see that <m>p</m> is also the angle between the directions to your two eyes when viewed from point <m>O</m>.  (What fact from geometry justifies this statement?)</p>
-<sidebyside width="50%"><!--<image source="images/3-2-parallax.png"><description>parallax</description></image>-->
+<sidebyside width="50%">
     <image xml:id="fig-3-2-parallax">
         <description>parallax</description>
         <latex-image>
@@ -733,7 +746,7 @@ Now we can apply the Law of Sines to find <m>r</m>. We have</p>
     <p>Astronomers 1000 kilometers apart observe an asteroid with a parallax of <m>0.001\degree</m>.  How far is the asteroid from Earth?</p>
 </statement>
 <solution><p>We let <m>x</m> represent the distance to the asteroid.  The asteroid and the two observers make an isosceles triangle with base 1000 km and equal sides of length <m>x</m>, as shown below.</p>
-<sidebyside width="60%"><!--<image source="images/exam3-2-6.png"><description>castle</description></image>-->
+<sidebyside width="60%">
     <image xml:id="exam3-2-6">
         <description>parallax</description>
         <latex-image>
@@ -765,11 +778,11 @@ Now we can apply the Law of Sines to find <m>r</m>. We have</p>
     </image>
 </sidebyside>
 <p>The base angles of the triangle are both <m>\dfrac{180\degree - 0.001\degree}{2} = 89.999\degree</m>. By the Law of Sines,</p>
-<p><me>\begin{aligned}[t]
-                \dfrac{x}{\sin 89.999\degree} \amp = \dfrac{1000}{\sin 0.001\degree} \amp\amp \blert{\text{Solve for }x.}\\
-               x \amp = \sin 89.999\degree \cdot \dfrac{1000}{\sin 0.001\degree}  \\
-               x \amp \approx 57,000,000\\
-                \end{aligned}</me></p>
+<p><md>
+    <mrow>\dfrac{x}{\sin 89.999\degree} \amp = \dfrac{1000}{\sin 0.001\degree} \amp\amp \blert{\text{Solve for }x.}</mrow>
+    <mrow>x \amp = \sin 89.999\degree \cdot \dfrac{1000}{\sin 0.001\degree}</mrow>
+    <mrow>x \amp \approx 57,000,000</mrow>
+</md></p>
   <p>The asteroid is about 57 million kilometers from Earth (roughly one third of the distance to the Sun).</p></solution></example>              
 
 <exercise><statement>
@@ -782,19 +795,21 @@ Now we can apply the Law of Sines to find <m>r</m>. We have</p>
 <p> In order to handle such small angles, we divide degrees into smaller units called <term>minutes</term> and <term>seconds</term>.  One minute is <m>\dfrac{1}{60}</m> of a degree, and 1 second is <m>\dfrac{1}{60}</m> of a minute, or <m>\dfrac{1}{3600}</m> of a degree.  We use the following notation for minutes and seconds.</p>
 
 <assemblage><title>Fractions of a Degree</title>
+<idx><h>minute (as a measure of angle)</h></idx>
+<idx><h>second (as a measure of angle)</h></idx>
 <p><ul>
     <li>One minute:    <m>~~~~~~1^{\prime} = \dfrac{1\degree}{60}</m></li>
     <li>One second:    <m>~~~~~~1^{\prime \prime} = \dfrac{1^{\prime}}{60} = \dfrac{1\degree}{3600}</m></li>
 </ul></p>         
 </assemblage>
 
-<p> When describing large distances, astronomers sometimes use the distance from Earth to the Sun, about 93 million miles, as the unit of measurement. This distance is called 1 <term>Astronomical Unit</term>, or 1 <term>AU</term>. For example, an object that is three times as far away as the Sun would be at a distance of 3 AU.</p>
+<p> When describing large distances, astronomers sometimes use the distance from Earth to the Sun, about 93 million miles, as the unit of measurement. This distance is called 1 <term>Astronomical Unit</term><idx><h>astronomical unit (AU)</h></idx>, or 1 <term>AU</term>. For example, an object that is three times as far away as the Sun would be at a distance of 3 AU.</p>
 
 <example><statement>
     <p>The star Wolf 359 has a parallax of <m>0.85^{\prime \prime}</m> when observed from opposites sides of Earth's orbit. How far away is the star?</p>
 </statement>
 <solution><p>In the figure below, the star Wolf 359 is located at point <m>O</m>. Our Sun is located at point <m>C</m>, halfway between the two observation points at <m>A</m> and <m>B</m>.  Thus, the distance between the observation points is twice the distance from the Earth to the Sun, or 2 AU.</p>
-<sidebyside width="50%"><!--<image source="images/exam3-2-7.png"><description>triangle</description></image>-->
+<sidebyside width="50%">
     <image xml:id="exam3-2-7">
         <description>triangles</description>
         <latex-image>
@@ -834,20 +849,21 @@ Now we can apply the Law of Sines to find <m>r</m>. We have</p>
 <p>The altitude from <m>O</m> to side <m>\overline{AB}</m> forms a right triangle <m>ACO</m> and bisects the angle at <m>O</m>. Thus   
 <me>\angle AOC = \dfrac{1}{2}(0.85^{\prime \prime}) = 0.425^{\prime \prime}</me> 
 We use the definition of tangent to find</p>
-<p><me>\begin{aligned}[t]
-                \tan 0.425^{\prime \prime} \amp = \dfrac{\text{opposite}}{\text{adjacent}} \\
-               \tan (0.425\degree / 3600) \amp = \dfrac{1}{x}  \amp\amp \blert{\text{Solve for }x.}\\
-               x \amp = \dfrac{1}{\tan 0.425\degree / 3600}  \approx 485,000\\
-                \end{aligned}</me></p>
+<p><md>
+    <mrow>\tan 0.425^{\prime \prime} \amp = \dfrac{\text{opposite}}{\text{adjacent}}</mrow>
+    <mrow>\tan (0.425\degree / 3600) \amp = \dfrac{1}{x}  \amp\amp \blert{\text{Solve for }x.}</mrow>
+    <mrow>x \amp = \dfrac{1}{\tan 0.425\degree / 3600}  \approx 485,000</mrow>
+</md></p>
   <p>The star is approximately <m>485,000</m> AU from Earth, or nearly half a million times the distance from Earth to the Sun.</p></solution></example>
 
 <exercise><statement>
     <p>Two observers are 1 AU (astronomical unit) apart.  They find that the parallax to a distant star is <m>1^{\prime \prime}</m>.  What is the distance to the star, in astronomical units?</p>  
-    <p>(This distance is called a <term>parsec</term>. In other words, a parsec is the distance at which the parallax from observations 1 AU apart is <m>1^{\prime \prime}</m>.  In this Exercise, you are calculating the number of astronomical units in 1 parsec.)</p> 
+    <p>(This distance is called a <term>parsec</term><idx><h>parsec</h></idx>. In other words, a parsec is the distance at which the parallax from observations 1 AU apart is <m>1^{\prime \prime}</m>.  In this Exercise, you are calculating the number of astronomical units in 1 parsec.)</p> 
 </statement><answer><p>1 parsec <m>\approx 206,265</m> AU</p></answer></exercise>
 </subsection>
 
 <subsection><title>Algebra Refresher</title>
+<p>Review the following skills you will need for this section.</p>
 <exercises><exercisegroup cols="2"><introduction><p>Convert to a decimal fraction.</p></introduction>
 <exercise number="1"><statement><p>5 inches <m>=</m> <fillin characters = "6"/> foot</p> </statement></exercise>
 <exercise number="2"><statement><p>10 ounces <m>=</m> <fillin characters = "6"/> pound</p> </statement></exercise>
@@ -858,9 +874,9 @@ We use the definition of tangent to find</p>
 <exercise number="7"><statement><p><m>2^{\prime \prime} =</m> <m>=</m> <fillin characters = "6"/> <m>\degree</m></p> </statement></exercise>
 <exercise number="8"><statement><p><m>1^{\prime}>5^{\prime \prime}=</m> <fillin characters = "6"/><m>\degree</m></p> </statement></exercise>
 </exercisegroup></exercises>
+</subsection>
 
-
-<subsubsection><title>Answers to Algebra Refresher</title>
+<subsection><title>Answers to Algebra Refresher</title>
 <p><ol label = "1" cols="4">
     <li><m>0.41\overline{6}</m></li>
     <li><m>0.625</m></li>
@@ -870,7 +886,7 @@ We use the definition of tangent to find</p>
     <li><m>0.0\overline{6}</m></li>
     <li><m>0.000\overline{5}</m></li>
     <li><m>0.0180\overline{5}</m></li>
-</ol></p></subsubsection>
+</ol></p>
 </subsection>
 
 <subsection><title>Section 3.2 Summary</title>
@@ -889,7 +905,7 @@ We use the definition of tangent to find</p>
 <sidebyside widths="60% 30%"><p><me>\dfrac {\sin A}{a} = \dfrac {\sin B}{b} = \dfrac {\sin C}{c}</me></p> <image source="images/fig-3-2-sineslaw"><description>triangle</description></image></sidebyside>
 <p>or equivalently, <me>\dfrac {a}{\sin A} = \dfrac {b}{\sin B} = \dfrac {c}{\sin C}</me></p>         
 </assemblage></li>
-<li> We can use the Law of Sines to find an unknown side in an oblique triangle. We must know the angle opposite the unknown side, and another side-angle pair.</li>
+<li> We can use the Law of Sines to find an unknown side in an oblique triangle<idx><h>oblique triangle</h></idx><idx><h>triangle</h><h>oblique</h><seealso>oblique triangle</seealso></idx>. We must know the angle opposite the unknown side, and another side-angle pair.</li>
 <li>We can also use the Law of Sines to find an unknown angle of a triangle. We must know two sides of the triangle and the angle opposite one of them.</li>
 <li>Remember that there are two angles with a given sine. When using the Law of Sines, we must check whether both angles result in possible triangles.</li> 
 <li>We use minutes and seconds to measure very small angles.
@@ -924,5 +940,4 @@ We use the definition of tangent to find</p>
 
 <xi:include href="./hmwk-3-2.xml" />  
 
-</section> 
-<!-- </book>  </mathbook> -->
+</section>

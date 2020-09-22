@@ -3,7 +3,7 @@
 \usepackage{tikz}
 \usepackage{pgfplots}
 \usetikzlibrary{calc}
-\usetikzlibrary{arrows.meta}
+\usetikzlibrary{arrows}
 \usetikzlibrary{patterns}
         \newcommand\degree[0]{^{\circ}}
 \usetikzlibrary{shapes.misc}
@@ -473,7 +473,7 @@ exer4-2-4ans graph
 
 exam4-2-5 semi-circle graph
 
-\begin{tikzpicture} 
+\begin{tikzpicture} [scale=.55]
 \draw[cyan] (-4,0) grid (4,4);
 
 \draw[->] (-4.2,0) -- (4.3,0) node[right] {$x$};
@@ -1283,6 +1283,42 @@ fig-4-2-circleandgraph
 \draw[black,  thick] ($ \x *(0,1) +(14.2,0) $) --++(-0.4,0); 
 };
 
+\end{tikzpicture}
+\newline
+
+hp4-2-13ans vector
+
+\begin{tikzpicture} 
+\coordinate (O) at (0,0);
+\coordinate (p) at (54:3);
+\draw[gray, thick, ->, >=stealth'] (O) --+(0,2.7) node[above, text=black]{N};
+\draw[black,thick] (0,0)--(p) node[left, midway, xshift=7, yshift=15, fill=white, inner sep=1, text=blue] {26 mi};
+\draw[cyan] (O)--($ 3*cos(54)*(1,0)$) --(p);
+\draw[red] (0,.7) arc(90:54:0.7) node[above, xshift=4, midway]{$36\degree$};
+\end{tikzpicture}
+\newline
+
+hp4-2-15ans vector
+
+\begin{tikzpicture} [scale=.9]
+\coordinate (O) at (0,0);
+\coordinate (p) at (-140:4);
+\draw[gray, thick, ->, >=stealth'] (O) --+(0,1) node[above, text=black]{N};
+\draw[black,thick] (0,0)--(p) node[below right, midway, text=blue] {120 km};
+\draw[cyan] (O)--($ 4*cos(-140)*(1,0)$) --(p);
+\draw[red, ->] (0,.4) arc(90:-140:0.4) node[right, midway]{$230\degree$};
+\end{tikzpicture}
+\newline
+
+hp4-2-17ans vector
+
+\begin{tikzpicture} 
+\coordinate (O) at (0,0);
+\coordinate (p) at (-195:4);
+\draw[gray, thick, ->, >=stealth'] (O) --+(0,1.2) node[above, text=black]{N};
+\draw[black,thick] (0,0)--(p) node[above right, midway, xshift=-5, text=blue] {32 km};
+\draw[cyan] (O)--($ 4*cos(-195)*(1,0)$) --(p);
+\draw[red, ->] (0,.4) arc(90:-195:0.4) node[right, midway]{$285\degree$};
 \end{tikzpicture}
 \newline
 
@@ -2097,7 +2133,6 @@ tangent graph
 part A: law of sines a circumscribing circle
 
 \begin{tikzpicture} [scale=.4]
-
 \coordinate (O) at (0,0);
 \coordinate (A) at (-3,-4);
 \coordinate (B) at (3,-4);
@@ -2113,7 +2148,6 @@ part A: law of sines a circumscribing circle
 \draw[blue!80!white,thick] (0,-4)++(.75,0)-- ++(0,.75) -- ++(-.75,0);
 \draw[blue!80!white,thick] (-2.46,.31) ++(.0864,.6896) -- ++(.6896,-.0864) -- ++(-.0864,-.6896);
 \filldraw (O) circle (.2cm) node[anchor=north east] {$O$};
-
 \draw[blue] (O) circle (5);
 
 \end{tikzpicture}
@@ -2122,7 +2156,6 @@ part A: law of sines a circumscribing circle
 part B: law of sines a circumscribing circle
 
 \begin{tikzpicture} [scale=.4]
-
 \coordinate (O) at (0,0);
 \coordinate (A) at (-3,-4);
 \coordinate (B) at (3,-4);
@@ -2142,7 +2175,6 @@ part B: law of sines a circumscribing circle
 \draw[draw= blue, fill=blue!30!white, opacity=.5] (A)--(B)--(Cpp)--(A);
 \draw[draw= blue, fill=blue!30!white, opacity=.5] (A)--(B)--(Cppp)--(A);
 \draw[draw= blue, fill=blue!30!white, opacity=.5] (A)--(B)--(Cpppp)--(A);
-
 
 \draw[blue] (O) circle (5);
 
