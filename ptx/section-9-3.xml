@@ -415,141 +415,149 @@ Thus, <m>\|{\bf{v}}\|\|{\bf{w}}\| \cos \theta = 0</m>, so <m>{\bf{v}}</m> and <m
 The angle between the vectors is <m>115.35\degree</m>.</p></solution></example>
 
 <exercise><statement><p>Find the angle between the vectors <m>{\bf{u}} = 4{\bf{i}}-6{\bf{j}}</m> and <m>{\bf{v}} = 2{\bf{i}}+8{\bf{j}}</m>.</p></statement><answer><p><m>132.27\degree</m></p></answer></exercise>
-</subsection>
 
-<subsection><title>Skills Refresher</title>
 <p>Review the following skills you will need for this section.</p>
-<exercises>
+<exploration>    
+<!--     <sidebyside><p></p>
+    </sidebyside>    -->
+    <p><ol label="1">
+        <li>
+            <sidebyside widths="60% 35%" margins="0% 0%" valigns="middle middle"> <p><ol label="a">
+              <li>Find the height <m>h</m> of the triangle.</li>   
+              <li>How far is the foot of the altitude from the vertex of the <m>18\degree</m> angle?</li></ol></p>
+                <image xml:id="sr9-3-1">
+                    <description>triangle</description>
+                    <latex-image>
+                    <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+                    <![CDATA[\tikzset{%
+                    }
+                \begin{tikzpicture} [scale=.8]
+                \coordinate (C) at (0,0);
+                \coordinate (A) at (198:5);
+                \def\beta{asin(sin(18)/2*5)};
+                \def\alpha{180-18-\beta};
+                \coordinate (B) at ($ (A) + ({180-\beta}:2)  $);
 
-<exercise number="1"><statement><sidebyside widths="60% 35%" margins="0% 0%" valigns="middle middle"> <p><ol label="a">
-  <li>Find the height <m>h</m> of the triangle.</li>   
-  <li>How far is the foot of the altitude from the vertex of the <m>18\degree</m> angle?</li></ol></p>
-    <image xml:id="sr9-3-1">
-        <description>triangle</description>
-        <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture} [scale=.8]
-    \coordinate (C) at (0,0);
-    \coordinate (A) at (198:5);
-    \def\beta{asin(sin(18)/2*5)};
-    \def\alpha{180-18-\beta};
-    \coordinate (B) at ($ (A) + ({180-\beta}:2)  $);
+                \draw[black,  thick] (C)--(A) node[below right, midway, scale=.9,text=blue]{5};
+                \draw[black,  thick] (B)--(A) node[below left, midway, scale=.9, text=blue]{2};
+                \draw[black,  thick] (C)--(B) node[above, midway, scale=.9, text=blue]{$b$};
+                \draw[red,  thick] (-1.4,0) arc(180:198:1.4) node[left, midway, yshift=-2, scale=.8]{$18\degree$};
+                    \end{tikzpicture}]]>
+                </latex-image>
+                </image>
+              </sidebyside>
+        </li>
+        <li>
+            <sidebyside widths="60% 35%" margins="0%" valigns="middle middle"> <p><ol label="a">
+              <li>Find the height <m>h</m> of the triangle.</li>   
+              <li>Find the length of the third side of the triangle.</li></ol></p>
+                <image xml:id="sr9-3-2">
+                    <description>triangle</description>
+                    <latex-image>
+                    <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+                    <![CDATA[\tikzset{%
+                    }
+                \begin{tikzpicture} [scale=.07]
+                \coordinate (C) at (0,0);
+                \coordinate (B) at (53,0);
+                \def\c{31};
+                \def\a{asin(sin(\c)/53*38)};
+                \def\b{180-\c-\a};
+                \coordinate (A) at ($ (B) + ({\b-180}:38)  $);
 
-    \draw[black,  thick] (C)--(A) node[below right, midway, scale=.9,text=blue]{5};
-    \draw[black,  thick] (B)--(A) node[below left, midway, scale=.9, text=blue]{2};
-    \draw[black,  thick] (C)--(B) node[above, midway, scale=.9, text=blue]{$b$};
-    \draw[red,  thick] (-1.4,0) arc(180:198:1.4) node[left, midway, yshift=-2, scale=.8]{$18\degree$};
-        \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-  </sidebyside></statement></exercise>
+                \draw[black,  thick] (C)--(A) ;
+                \draw[black,  thick] (B)--(A) node[right, midway, yshift=3, scale=.9, text=blue]{38};
+                \draw[black,  thick] (C)--(B) node[above, midway, scale=.9, text=blue]{53};
+                \draw[red,  thick] (15,0) arc(0:-\a:15) node[right, midway, yshift=-2, scale=.9]{$\alpha$};
+                \draw[red,  thick] ($ (A)+({\b}:10) $) arc({\b}:{\b+\c}:10) node[above left, midway, scale=.9]{$31\degree$};
+                    \end{tikzpicture}]]>
+                </latex-image>
+                </image>
+              </sidebyside>
+        </li>
+        <li>
+            <sidebyside widths="60% 20%"> <p><ol label="a">
+              <li>How far north is the tower from the airport?  How far east?</li>
+              <li>What is the distance from <m>A</m> to <m>P</m>?</li></ol></p>
+                <image xml:id="sr9-3-3">
+                    <description>triangle</description>
+                    <latex-image>
+                    <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+                    <![CDATA[\tikzset{%
+                    }
+                \begin{tikzpicture} [scale=.15]
+                \coordinate (A) at (0,0);
+                \def\a{23};
+                \coordinate (T) at ({90-\a}:40);
+                \def\x{40*sin(\a};
+                \def\b{37};
+                \coordinate (P) at ($ (T) + ({270-\b}:{40*sin(\a)/sin(\b)}) $);
 
-<exercise number="2"><statement><sidebyside widths="60% 35%" margins="0%" valigns="middle middle"> <p><ol label="a">
-  <li>Find the height <m>h</m> of the triangle.</li>   
-  <li>Find the length of the third side of the triangle.</li></ol></p>
-    <image xml:id="sr9-3-2">
-        <description>triangle</description>
-        <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture} [scale=.07]
-    \coordinate (C) at (0,0);
-    \coordinate (B) at (53,0);
-    \def\c{31};
-    \def\a{asin(sin(\c)/53*38)};
-    \def\b{180-\c-\a};
-    \coordinate (A) at ($ (B) + ({\b-180}:38)  $);
+                \draw[black,  thick] (A)--(T) node[right, midway, xshift=3, yshift=3, scale=.9, text=blue]{40 mi} ;
+                \draw[black,  thick] (A)--(P)--(T);
+                \draw[black,  thick] (P)--++(90:10);
+                \draw[red,  thick] (0,6) arc(90:{90-\a}:6) node[above, midway, xshift=3, yshift=5, scale=.8]{$\a\degree$};
+                \draw[red,  thick] ($ (P)+(90:5) $) arc(90:{90-\b}:5) node[above, midway, xshift=2, scale=.8]{$\b\degree$};
+                \filldraw[black] (A) circle (.5) node[left]{$A$};
+                \filldraw[black] (P) circle (.5) node[left]{$P$};
+                \filldraw[black] (T) circle (.5) node[below right]{$T$};
+                \node[scale=.9] at (6,0) {airport};
+                \node[scale=.9] at ($ (T)+(-5,0) $) {tower};
+                    \end{tikzpicture}]]>
+                </latex-image>
+                </image>
+            </sidebyside>
+        </li>
+        <li>
+            <sidebyside widths="60% 35%"> <p><ol label="a">
+              <li>Find the distance from <m>A</m> to <m>C</m>.</li>
+              <li>How far north is point <m>C</m> from point <m>B</m>?</li></ol></p>
+                <image xml:id="sr9-3-4">
+                    <description>triangle</description>
+                    <latex-image>
+                    <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+                    <![CDATA[\tikzset{%
+                    }
+                \begin{tikzpicture} [scale=.25]
+                \coordinate (A) at (-15,0);
+                \coordinate (B) at (0,0);
+                \coordinate (C) at (38:8);
 
-    \draw[black,  thick] (C)--(A) ;
-    \draw[black,  thick] (B)--(A) node[right, midway, yshift=3, scale=.9, text=blue]{38};
-    \draw[black,  thick] (C)--(B) node[above, midway, scale=.9, text=blue]{53};
-    \draw[red,  thick] (15,0) arc(0:-\a:15) node[right, midway, yshift=-2, scale=.9]{$\alpha$};
-    \draw[red,  thick] ($ (A)+({\b}:10) $) arc({\b}:{\b+\c}:10) node[above left, midway, scale=.9]{$31\degree$};
-        \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-  </sidebyside></statement></exercise>
+                \draw[black,  thick] (A)--(B) node[below, midway, scale=.9, text=blue]{15};
+                \draw[black,  thick] (A)--(C);
+                \draw[black,  thick] (B)--(C)node[below right, midway, scale=.9, text=blue]{8};
+                \draw[red,  thick] (0,1) arc(90:38:1) node[above, midway, xshift=4, yshift=2, scale=.8]{$52\degree$};
+                \draw[gray, ->, >=stealth'] (B) -- (0,7) node[above, scale=.9, text=black]{N};
+                \draw[gray, ->, >=stealth'] (B) -- (7,0) node[right, scale=.9, text=black]{E};
+                \filldraw[black] (A) circle (.1) node[left, scale=.9]{$A$};
+                \filldraw[black] (B) circle (.1) node[below, scale=.9]{$B$};
+                \filldraw[black] (C) circle (.1) node[above right, scale=.9]{$C$};
+                    \end{tikzpicture}]]>
+                </latex-image>
+                </image>
+            </sidebyside>
+        </li>
+    </ol></p>
 
-<exercise number="3"><statement><sidebyside widths="60% 20%"> <p><ol label="a">
-  <li>How far north is the tower from the airport?  How far east?</li>
-  <li>What is the distance from <m>A</m> to <m>P</m>?</li></ol></p>
-    <image xml:id="sr9-3-3">
-        <description>triangle</description>
-        <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture} [scale=.15]
-    \coordinate (A) at (0,0);
-    \def\a{23};
-    \coordinate (T) at ({90-\a}:40);
-    \def\x{40*sin(\a};
-    \def\b{37};
-    \coordinate (P) at ($ (T) + ({270-\b}:{40*sin(\a)/sin(\b)}) $);
-
-    \draw[black,  thick] (A)--(T) node[right, midway, xshift=3, yshift=3, scale=.9, text=blue]{40 mi} ;
-    \draw[black,  thick] (A)--(P)--(T);
-    \draw[black,  thick] (P)--++(90:10);
-    \draw[red,  thick] (0,6) arc(90:{90-\a}:6) node[above, midway, xshift=3, yshift=5, scale=.8]{$\a\degree$};
-    \draw[red,  thick] ($ (P)+(90:5) $) arc(90:{90-\b}:5) node[above, midway, xshift=2, scale=.8]{$\b\degree$};
-    \filldraw[black] (A) circle (.5) node[left]{$A$};
-    \filldraw[black] (P) circle (.5) node[left]{$P$};
-    \filldraw[black] (T) circle (.5) node[below right]{$T$};
-    \node[scale=.9] at (6,0) {airport};
-    \node[scale=.9] at ($ (T)+(-5,0) $) {tower};
-        \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside></statement></exercise>
-
-<exercise number="4"><statement><sidebyside widths="60% 35%"> <p><ol label="a">
-  <li>Find the distance from <m>A</m> to <m>C</m>.</li>
-  <li>How far north is point <m>C</m> from point <m>B</m>?</li></ol></p>
-    <image xml:id="sr9-3-4">
-        <description>triangle</description>
-        <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture} [scale=.25]
-    \coordinate (A) at (-15,0);
-    \coordinate (B) at (0,0);
-    \coordinate (C) at (38:8);
-
-    \draw[black,  thick] (A)--(B) node[below, midway, scale=.9, text=blue]{15};
-    \draw[black,  thick] (A)--(C);
-    \draw[black,  thick] (B)--(C)node[below right, midway, scale=.9, text=blue]{8};
-    \draw[red,  thick] (0,1) arc(90:38:1) node[above, midway, xshift=4, yshift=2, scale=.8]{$52\degree$};
-    \draw[gray, ->, >=stealth'] (B) -- (0,7) node[above, scale=.9, text=black]{N};
-    \draw[gray, ->, >=stealth'] (B) -- (7,0) node[right, scale=.9, text=black]{E};
-    \filldraw[black] (A) circle (.1) node[left, scale=.9]{$A$};
-    \filldraw[black] (B) circle (.1) node[below, scale=.9]{$B$};
-    \filldraw[black] (C) circle (.1) node[above right, scale=.9]{$C$};
-        \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside></statement></exercise>
-</exercises>
-</subsection>
-
-<subsection><title>Skills Refresher Answers</title>
-<p><ol label="1">
-    <li><p><ol label="a">
-        <li><m>1.55</m></li>
-        <li><m>4.76</m></li></ol></p></li>
-    <li><p><ol label="a">
-        <li><m>19.57</m></li>
-        <li><m>81.83</m></li></ol></p></li>
-    <li><p><ol label="a">
-        <li>36.92 mi, 15.63 mi</li>
-        <li>16.08 mi</li></ol></p></li>
-    <li><p><ol label="a">      
-        <li><m>21.87</m></li>
-        <li><m>5.95</m></li></ol></p></li>  
-</ol></p>
+    <sidebyside><p><m>\underline{\qquad\qquad\qquad\qquad}</m></p></sidebyside>
+    <conclusion>
+    <sidebyside><p>Skills Refresher Answers</p></sidebyside>
+        <p><ol label="1" cols="2">
+            <li><p><ol label="a">
+                <li><m>1.55</m></li>
+                <li><m>4.76</m></li></ol></p></li>
+            <li><p><ol label="a">
+                <li><m>19.57</m></li>
+                <li><m>81.83</m></li></ol></p></li>
+            <li><p><ol label="a">
+                <li>36.92 mi, 15.63 mi</li>
+                <li>16.08 mi</li></ol></p></li>
+            <li><p><ol label="a">      
+                <li><m>21.87</m></li>
+                <li><m>5.95</m></li></ol></p></li>  
+        </ol></p>
+    </conclusion>
+</exploration>
 </subsection>
 
 <subsection><title>Section 9.3 Summary</title>
