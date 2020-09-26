@@ -170,7 +170,7 @@
             <cell><m>3\sqrt{3}</m></cell>
             <cell><m>6</m></cell></row>
             </tabular></sidebyside></li>
-            <li><sidebyside width="60%">
+            <li><sidebyside width="60%" margins="0% 5%">
     <image xml:id="hp4-3-1ansc">
         <description>sinusoidal graph</description>
         <latex-image>
@@ -384,7 +384,7 @@
             <cell><m>-2</m></cell>
             <cell><m>0</m></cell></row>
             </tabular></sidebyside></li>
-                <li><sidebyside width="60%">
+                <li><sidebyside width="60%" margins="0% 5%">
     <image xml:id="hp4-3-3ans">
         <description>periodic function</description>
         <latex-image>
@@ -533,7 +533,7 @@
     </latex-image>
     </image>
     </sidebyside></statement>
-    <answer> <sidebyside width="50%">
+    <answer> <sidebyside width="80%" margins="0% 5%">
     <image xml:id="hp4-3-13ans">
         <description>graph of y = 3 cos theta </description>
         <latex-image>
@@ -563,7 +563,7 @@
     <exercise number="14"><statement><p><m>y = 4 \sin \theta</m></p><sidebyside width="100%"><image source="images/hp4-3-13"><description>grid</description></image></sidebyside></statement></exercise>
  
     <exercise number="15"><statement><p><m>y = 3 + \sin \theta</m></p><sidebyside width="100%"><image source="images/hp4-3-13"><description>grid</description></image></sidebyside></statement>
-        <answer><sidebyside width="50%"><!--<image source="images/hp4-3-15ans.png"><description>graph</description></image>-->
+        <answer><sidebyside width="80%" margins="0% 5%">
     <image xml:id="hp4-3-15ans">
         <description>graph of 3 + sin theta</description>
         <latex-image>
@@ -575,8 +575,16 @@
           input/.style    = {coordinate}, % Input
           output/.style   = {coordinate} % Output
         }
-        \begin{tikzpicture}[auto, thick]
+        \begin{tikzpicture} [scale=.5]
+        \draw[cyan] (0,-4) grid (12,4);
+        \draw[black, thick, ->] (0,0)--(12.5,0) node[right]{$\theta$};
+        \draw[black, thick, ->] (0,-4)--(0,4.5) node[above]{$y$};
 
+        \foreach \x [evaluate=\x as \xi using int( 30* \x )] in { 2, 4, ..., 12} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+
+        \foreach \y   in { -4, -2, 2, 4} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\y};
+
+        \draw[domain={0:12},smooth,variable=\x,red,very thick] plot ({\x},{3 + sin(30*\x)});
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -602,7 +610,7 @@
     </latex-image>
     </image>
 </sidebyside></statement>
-        <answer><sidebyside width="50%">
+        <answer><sidebyside width="80%" margins="0% 5%">
     <image xml:id="hp4-3-17ans">
         <description>graph of cos 3 theta</description>
         <latex-image>
@@ -635,17 +643,17 @@
 <exercisegroup cols="3"><introduction><p>For Problems 19<ndash/>24, graph the function in the Trig window ( ZOOM 7), but change Ymin to <m>-10</m> and Ymax to <m>10</m>.  State the amplitude, period, and midline.</p></introduction>
  
     <exercise number="19"><statement><p><m>y = 3 + 4 \cos \theta</m></p></statement>
-    <answer><p> <m>= 4</m>, period <m>= 360\degree</m>, midline: <m>y = 3</m></p> </answer></exercise>
+    <answer><p> amp<m>= 4</m>, period <m>= 360\degree</m>, midline: <m>y = 3</m></p> </answer></exercise>
 
     <exercise number="20"><statement><p><m>y = -4 + 3 \sin \theta</m></p></statement></exercise>
 
     <exercise number="21"><statement><p><m>y = 5 \sin 2\theta</m></p></statement>
-    <answer><p><m>= 5</m>, period <m>= 180\degree</m>, midline: <m>y = 0</m></p> </answer></exercise>
+    <answer><p>amp<m>= 5</m>, period <m>= 180\degree</m>, midline: <m>y = 0</m></p> </answer></exercise>
 
     <exercise number="22"><statement><p><m>y = 6 \cos 4\theta</m></p></statement></exercise>
        
     <exercise number="23"><statement><p><m>f(\theta) = -4 + 3 \sin 3\theta</m></p></statement>
-    <answer><p><m>= 3</m>, period <m>= 120\degree</m>, midline: <m>y = -4</m></p> </answer></exercise>
+    <answer><p>amp<m>= 3</m>, period <m>= 120\degree</m>, midline: <m>y = -4</m></p> </answer></exercise>
         
     <exercise number="24"><statement><p><m>f(\theta) = 2 + 4 \cos 3\theta</m></p></statement></exercise>
 </exercisegroup>
@@ -1218,7 +1226,7 @@
     <li>Sketch a graph of <m>h(t)</m>, the height of one chair at time <m>t</m>. Show at least two complete trips.</li>
     <li>What is the period of <m>h(t)</m>?</li>
 </ol></p></statement>
-    <answer><p><ol label="a"><li><sidebyside width="50%">    <image xml:id="hp4-3-53ans">
+    <answer><p><ol label="a"><li><sidebyside width="50%" margins="0% 5%">    <image xml:id="hp4-3-53ans">
         <description>piecewise linear graph</description>
         <latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
@@ -1259,7 +1267,7 @@
     <li>Sketch a graph of <m>D(t)</m>, the depth of the water as a function of time.  Show at least two weeks.</li>
     <li>What is the period of <m>D(t)</m>?</li>
 </ol></p></statement>
-    <answer><p><ol label="a"><li><sidebyside width="50%">    <image xml:id="hp4-3-55ans">
+    <answer><p><ol label="a"><li><sidebyside width="50%" margins="0% 5%">    <image xml:id="hp4-3-55ans">
         <description>piercewise linear graph</description>
         <latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
@@ -1304,7 +1312,7 @@
         <li>At <m>t = 0</m>, the light is at its highest point the bicycle wheel.  Sketch a graph of the light's height as a function of <m>t</m>.</li>
         <li>Give the period, midline, and amplitude of your graph.</li>
     </ol></p></statement>
-    <answer><p><ol label="a"><li><sidebyside width="50%">    <image xml:id="hp4-3-57ans">
+    <answer><p><ol label="a"><li><sidebyside width="50%" margins="0% 5%">    <image xml:id="hp4-3-57ans">
         <description>sinusoidal graph</description>
         <latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
@@ -1345,7 +1353,7 @@
         <li>Sketch a graph of <m>M(t)</m>, the number of mosquitoes as a function of the month, where <m>t = 0</m> on January 1.</li>
         <li>Give the period, midline, and amplitude of your graph.</li>
     </ol></p></statement>
-    <answer><p><ol label="a"><li><sidebyside width="50%">    <image xml:id="hp4-3-59ans">
+    <answer><p><ol label="a"><li><sidebyside width="50%" margins="0% 5%">    <image xml:id="hp4-3-59ans">
         <description>sinusoidal graph</description>
         <latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
@@ -1386,7 +1394,7 @@
         <li>Sketch a sinusoidal graph of <m>S(t)</m>, the average maximum temperature in Stockholm as a function of time, for one year.</li>
         <li>Give the period, midline, and amplitude of your graph.</li>
     </ol></p></statement>
-    <answer><p><ol label="a"><li><sidebyside width="50%">    <image xml:id="hp4-3-61ans">
+    <answer><p><ol label="a"><li><sidebyside width="50%" margins="0% 5%">    <image xml:id="hp4-3-61ans">
         <description>sinusoidal graph</description>
         <latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->

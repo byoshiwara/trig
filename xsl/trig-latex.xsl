@@ -21,7 +21,7 @@
 <xsl:param name="exercise.divisional.solution" select="'no'" />
 <xsl:param name="exercise.worksheet.answer" select="'no'" />
 <xsl:param name="latex.print" select="'yes'"/>
-<xsl:output method="text" />
+<xsl:param name="latex.geometry" select="'letterpaper,left=1.5in,right=1in'"/><xsl:output method="text" />
 <!-- "assemblage" -->
 <!-- Boxed title -->
 <xsl:template match="assemblage" mode="tcb-style">
@@ -45,9 +45,29 @@
 </xsl:template>
 <!-- "investigation" -->
 <!-- -->
+<xsl:template match="investigation" mode="tcb-style">
+    <xsl:text>enhanced, arc=2ex, colback=white, colframe=blue!10!black,&#xa;</xsl:text>
+    <xsl:text>colbacktitle=white, coltitle=black, boxed title style={sharp corners, frame hidden},&#xa;</xsl:text>
+    <xsl:text>fonttitle=\bfseries, attach boxed title to top left={xshift=4mm,yshift=-3mm}, top=3mm,&#xa;</xsl:text>
+</xsl:template>
+<!-- "activity" -->
+<!-- -->
 <xsl:template match="activity" mode="tcb-style">
     <xsl:text>enhanced, arc=2ex, colback=yellow!5, colframe=yellow,&#xa;</xsl:text>
     <xsl:text>colbacktitle=white, coltitle=black, boxed title style={sharp corners, frame hidden},&#xa;</xsl:text>
+    <xsl:text>fonttitle=\bfseries, attach boxed title to top left={xshift=4mm,yshift=-3mm}, top=3mm,&#xa;</xsl:text>
+</xsl:template>
+<!-- "for algebra refresher"  -->
+<xsl:template match="project" mode="tcb-style">
+    <xsl:text>enhanced, arc=2ex, colback=cyan!3, colframe=cyan!75,&#xa;</xsl:text>
+    <xsl:text>colbacktitle=white, coltitle=black, boxed title style={sharp corners, frame hidden},&#xa;</xsl:text>
+    <xsl:text>fonttitle=\bfseries, attach boxed title to top left={xshift=4mm,yshift=-3mm}, top=3mm,&#xa;</xsl:text>
+</xsl:template>
+<!-- "for skills answers"  -->
+<xsl:template match="exploration" mode="tcb-style">
+    <xsl:text>enhanced, arc=2ex, colback=cyan!3, colframe=cyan!30!teal!40,&#xa;</xsl:text>
+    <xsl:text>colbacktitle=white, coltitle=black, boxed title style={sharp corners, frame hidden},&#xa;</xsl:text>
+    <xsl:text>fonttitle=\bfseries, attach boxed title to top left={xshift=4mm,yshift=-3mm}, top=3mm,&#xa;</xsl:text>
     <xsl:text>fonttitle=\bfseries, attach boxed title to top left={xshift=4mm,yshift=-3mm}, top=3mm,&#xa;</xsl:text>
 </xsl:template>
 <!-- "objectives", "outcomes", etc -->
