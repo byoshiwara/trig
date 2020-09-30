@@ -67,45 +67,47 @@
 <idx><h>triangle</h></idx>
 <p> If you tear off the corners of any triangle and line them up, as shown below, they will always form a straight angle.
 </p>
-<sidebyside width="40%">
+<sidebyside width="60%">
     <image xml:id="tear-off-corners">
         <description>tear corners off triangle</description>
         <latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
         }
+        \begin{tikzpicture}
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (4,0);
+        \coordinate (C) at (2.5,1.8);
+        \coordinate (D) at (2.5,-0.5);
+        \def\h{5};
+        \coordinate (S) at (\h,0);
+        \coordinate (Ap) at ($ (A) + (S)$);
+        \coordinate (Bp) at ($ (B) + (S)$);
+        \coordinate (Cp) at ($ (C) + (S)$);
+        \draw[black,  thick] (A) node[right, xshift=4mm, yshift=2mm]{$x$} -- (B) node[above left, xshift=-6]{$z$} -- (C) node[below, yshift=-3]{$y$} -- cycle;
 
-        \begin{tikzpicture}[auto, thick, node distance=2cm]
+        \draw[gray!60,  thick, dashed] (Ap) node[right, xshift=4mm, yshift=2mm, text=blue!60]{$x$} -- (Bp) node[above left, xshift=-6, text=green!60]{$z$}-- (Cp) node[below, yshift=-3, text=black]{$y$} -- cycle;
+        \draw[blue!50,thick, dashed] (Ap)++(1.5,0) -- ++(-0.05,.2) -- ++(-.1, .06) -- ++(-0.18,.13)-- ++(-.01,.15)-- ++(-.12,.18);
+        \draw[green!50,thick, dashed] (Bp)++(-1.1,0)-- ++(0,.19)-- ++(.06,.01)-- ++(.1,.1)-- ++(.1,.02)-- ++(.02,.17)--++(.2,.2);
 
-            \filldraw[black] (0,0) circle (.2pt) node[anchor=south west, xshift=15] {$x$};
-            \filldraw[black] (3.6,0) circle (.2pt) node[anchor=south east, xshift=-8]{$z$};
-            \filldraw[black] (2.3,1.5) circle (.2pt) node[anchor=north, yshift=-5]{$y$};
-            \draw[black,  thick] (0,0) -- (3.6,0) -- (2.3,1.5) -- cycle;
+        \draw[blue,thick] (A)++(1.5,0) -- ++(-0.05,.2) -- ++(-.1, .06) -- ++(-0.18,.13)-- ++(-.01,.15)-- ++(-.12,.18);
+        \draw[blue,thick] (Cp)++(-1.5,0) -- ++(0.05,-.2) -- ++(.1, -.06) -- ++(0.18,-.13)-- ++(.01,-.15)-- ++(.12,-.18);
+        \draw[black,thick] (Cp)++(-2,0) --(Cp) -- ++ (-1.04,-.72) ;
 
-            \filldraw[black] (6,1.5) circle (.2pt) node[anchor=north east, xshift=-15] {$x$};
-            \filldraw[black] (6,1.5) circle (.2pt) node[anchor=north, yshift=-3] {$y$};
-            \filldraw[black] (6,1.5) circle (.2pt) node[anchor=north west, xshift=9] {$z$};
-            \draw[black,  very thick] (6,1.5) -- (4.85,1.5);
-            \draw[black,  very thick] (6,1.5) -- (4.85,0.75);
-            \draw[black,  very thick] (6,1.5) -- (6.65,0.75);
-            \draw[black,  very thick] (6,1.5) -- (6.65,1.5);
+        \draw[green,thick] (B)++(-1.1,0)-- ++(0,.19)-- ++(.06,.01)-- ++(.1,.1)-- ++(.1,.02)-- ++(.02,.17)--++(.21,.21);
+        \draw[green,thick] (Cp)++(1.1,0)-- ++(0,-.19)-- ++(-.06,-.01)-- ++(-.1,-.1)-- ++(-.1,-.02)-- ++(-.02,-.17)--++(-.21,-.21);
+        \draw[black,thick] (Cp)++(1.6,0) -- (Cp) -- ++(.77, -.896);
+        \draw[blue,->,>=stealth'] (.5,.6) arc ({180+atan(18/25)}:{atan(18/25)}:.8);
+        \draw[green,->,>=stealth'] (3.8,.6) arc ({-atan(18/15)}:{180-atan(18/15)}:.6);
 
-            \draw[black, thick] (1.2,0) -- (1.2,.15) -- (1.1,.15) -- (1.05,.35) -- (.9,.4) -- (.88, .55)
-            -- (.83,.55);
-            \draw[black, thick] (2.5,0) -- (2.5,.15) -- (2.6,.16)--(2.65,.24)--(2.8,.26)--(2.85,.45)--(2.95, .5)
-            --(3.05,.65);
-            \draw[black, thick] (1.6,1.05)--(1.65,.9) -- (1.9,.78) --(2,.83) -- (2.3,.75) -- (2.4,.8)--(2.6,.8)
-            --(2.85,.85);
-            %\draw[green, ultra thick, dashed] (1.2,1) -- (1.2,-0.3);
-            %\draw[green, ultra thick, dashed] (2.9,1) -- (2.9,-0.3);
-            %\draw[green, ultra thick, dashdotted] (1,.8) -- (3.2,.8);
+        \draw[magenta, thick] (C)++(-.8,-.8*18/25) -- ++(.1,-.2)-- ++(.3, -.16) -- ++(.1, .08)-- ++(.32,-.15)-- ++(.18,.08)-- ++(.27,.01)-- ++(.3,.02);
+        \draw[magenta] (Cp)++(-.8,-.8*18/25) -- ++(.1,-.2)-- ++(.3, -.16) -- ++(.1, .08)-- ++(.32,-.15)-- ++(.18,.08)-- ++(.27,.01)-- ++(.3,.02);
+        \node[below left, xshift=-4mm] at (Cp) {$x$};
+        \node[below right, xshift=4mm] at (Cp) {$z$};
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside>
+        </latex-image>
+    </image>
+</sidebyside>
 
 <assemblage><title>Sum of angles in a triangle</title>
 <idx><h>angle</h><h>sum in a triangle</h></idx>
