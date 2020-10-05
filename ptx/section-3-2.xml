@@ -3,13 +3,10 @@
 <section xml:id="The-Law-of-Sines"   xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>The Law of Sines</title><introduction>
 <idx><h>law of sines</h></idx>
-<p>
-We have learned to use the trigonometric ratios to solve right triangles. But the trig ratios are only valid for the sides of right triangles. Can we find unknown sides or angles in an oblique triangle?</p> 
 
-<sidebyside width="100%" >
-    <image xml:id="fig-3-2-intro">
-        <description>triangles</description>
-        <latex-image>
+<p>We have learned to use the trigonometric ratios to solve right triangles. But the trig ratios are only valid for the sides of right triangles. Can we find unknown sides or angles in an oblique triangle?</p> 
+
+<sidebyside width="100%" ><image xml:id="fig-3-2-intro"><description>triangles</description><latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
           block/.style    = {draw, thick, rectangle, minimum height = 3em,
@@ -53,18 +50,17 @@ We have learned to use the trigonometric ratios to solve right triangles. But th
 
     \node[text width=9cm] at (10,-1.){\small\color{blue}Can find $a$ if we know $A$ and $c$ and $C$?};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside> 
+    </latex-image></image></sidebyside> 
 
 <p>In this section and the next we find relationships among the sides and angles of oblique triangles. These relationships are called the Law of Sines and the Law of Cosines. To derive these new rules, we use what we already know about right triangles.</p> 
 
 <note><p>Reducing a new problem to an earlier one is a frequently used technique in mathematics.</p></note>
 
-<sidebyside widths="55% 40%" valigns="middle middle" margins="0% 0%"><p>Consider the oblique triangle at right.  By drawing in the altitude <m>h</m> of the triangle, we create two right triangles, <m>\triangle BCD</m> and <m>\triangle ABD</m>, as shown in the figure. Now we can write expressions in terms of <m>h</m> for <m>\sin A</m> and for <m>\sin C</m>.</p>
-    <image xml:id="fig-3-2-tworight">
-        <description>triangles</description>
-        <latex-image>
+<p>Consider the oblique triangle below. By drawing in the altitude <m>h</m> of the triangle, we create two right triangles, <m>\triangle BCD</m> and <m>\triangle ABD</m>, as shown in the figure. Now we can write expressions in terms of <m>h</m> for <m>\sin A</m> and for <m>\sin C</m>.</p>
+<sidebyside widths="55% 40%" valigns="middle middle" margins="0% 0%">
+    <stack><p>Looking at <m>\triangle BCD</m>, we see that <m>~~~\dfrac{h}{a} = \sin C.</m></p>
+<p>  Looking at <m>\triangle ABD</m>, we see that <m>~~\dfrac{h}{c} = \sin A.</m> </p></stack>
+<image xml:id="fig-3-2-tworight"><description>triangles</description><latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
           block/.style    = {draw, thick, rectangle, minimum height = 3em,
@@ -91,41 +87,23 @@ We have learned to use the trigonometric ratios to solve right triangles. But th
     \draw[black, thick] (A)--(C) ;
     \draw[gray, thick, dashed] (D)--(B) node[right,midway] {\color{blue}$h$};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside>
+    </latex-image></image></sidebyside>
 
-<p>Looking at <m>\triangle BCD</m>, we see that <m>\dfrac{h}{a} = \sin C.</m></p>
-<p>  Looking at <m>\triangle ABD</m>, we see that <m>\dfrac{h}{c} = \sin A.</m> </p>
-<p> Now we solve each of these equations for <m>h</m>:</p> 
-
-<p><md>
-    <mrow>
-        \dfrac{h}{a} \amp = \sin C \amp\amp\text{and}\amp \dfrac{h}{c} \amp = \sin A\amp    \amp\blert{\text{Solve each equation for } h.}
+<p> Now we solve each of these equations for <m>h</m>:
+    <md><mrow>\dfrac{h}{a} \amp = \sin C \amp\amp\text{and}\amp \dfrac{h}{c} \amp = \sin A\amp \amp\blert{\text{Solve each equation for } h.}</mrow>
+        <mrow>h \amp = a \sin C  \amp\amp\text{and}\amp   h\amp = c \sin A \amp\amp \blert{\text{Equate the expressions for } h.}</mrow></md>
+    <md><mrow>\amp\amp a \sin C \amp = c \sin A  \amp\amp \qquad\quad\amp \amp \blert{\text{Divide both sides by } ac.}
     </mrow>
-    <mrow>
-        h \amp = a \sin C  \amp\amp\text{and}\amp   h\amp = c \sin A \amp\amp \blert{\text{Equate the expressions for } h.}
-    </mrow>
-</md>
-<md>
-    <mrow>
-        \amp\amp a \sin C \amp = c \sin A  \amp\amp \qquad\quad\amp \amp \blert{\text{Divide both sides by } ac.}
-    </mrow>
-    <mrow>
-        \amp\amp \dfrac {\sin C}{c} \amp = \dfrac {\sin A}{a} 
-    </mrow>
-</md></p>
+    <mrow>\amp\amp \dfrac {\sin C}{c} \amp = \dfrac {\sin A}{a} </mrow></md></p>
 
 <p> We have derived a relationship between the angles <m>A</m> and <m>C</m> and their opposite sides, <m>a</m> and <m>c</m>. If we know any three of these quantities, we can find the fourth.</p>  
 <p>In a similar way, by drawing in the altitude from the vertex <m>C</m>, we can show that <me>\dfrac {\sin A}{a} = \dfrac {\sin B}{b}</me> Putting both results together, we have the <term>Law of Sines</term>. The Law of Sines is true for any triangle, whether it is acute, right, or obtuse.</p>
 
 <assemblage><title>Law of Sines</title>
 <idx><h>law of sines</h></idx>
-<p>If the angles of a triangle are <m>A, B</m>, and <m>C</m>, and the opposite sides are respectively <m>a, b,</m> and <m>c</m>, then</p>
-<sidebyside widths="50% 25%" margins="0% 10%"><p><me>\dfrac {\sin A}{a} = \dfrac {\sin B}{b} = \dfrac {\sin C}{c}</me></p>
-    <image xml:id="fig-3-2-sineslaw">
-        <description>triangle</description>
-        <latex-image>
+
+<sidebyside widths="70% 25%" margins="0% 5%"><p>If the angles of a triangle are <m>A, B</m>, and <m>C</m>, and the opposite sides are respectively <m>a, b,</m> and <m>c</m>, then<me>\blert{\dfrac {\sin A}{a} = \dfrac {\sin B}{b} = \dfrac {\sin C}{c}}</me></p>
+    <image xml:id="fig-3-2-sineslaw"><description>triangle</description><latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
           block/.style    = {draw, thick, rectangle, minimum height = 3em,
@@ -147,22 +125,18 @@ We have learned to use the trigonometric ratios to solve right triangles. But th
     \draw[black, thick] (A)--(B) node[above left,midway] {\color{blue}$c$};
     \draw[black, thick] (A)--(C) node[below,midway] {\color{blue}$b$};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside>
-<p>or equivalently, <me>\dfrac {a}{\sin A} = \dfrac {b}{\sin B} = \dfrac {c}{\sin C}</me></p>         
+    </latex-image></image></sidebyside>
+
+<p>or equivalently, <me>\blert{\dfrac {a}{\sin A} = \dfrac {b}{\sin B} = \dfrac {c}{\sin C}}</me></p>         
 </assemblage>
 </introduction>
 
 <subsection><title>Finding a Side</title>
+
 <p> In the next example, we use the Law of Sines to find a distance.</p>
 
-<example><statement>
-    <p>Two observers onshore sight a ship at an unknown distance from the shore. The observers are 400 yards apart at points <m>A</m> and <m>B</m>, and they each measure the angle from the shoreline to the ship, as shown below.  How far is the ship from the observer at <m>A</m>?
- </p> <sidebyside width="80%">
-    <image xml:id="exam3-2-1">
-        <description>triangle</description>
-        <latex-image>
+<example><statement><p>Two observers onshore sight a ship at an unknown distance from the shore. The observers are 400 yards apart at points <m>A</m> and <m>B</m>, and they each measure the angle from the shoreline to the ship, as shown below.  How far is the ship from the observer at <m>A</m>?
+ </p> <sidebyside width="80%"><image xml:id="exam3-2-1"><description>triangle</description><latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
           block/.style    = {draw, thick, rectangle, minimum height = 3em,
@@ -190,27 +164,21 @@ We have learned to use the trigonometric ratios to solve right triangles. But th
 
     \filldraw[black] (C)++(0,-.1)--++(0,-.2) -- ++(.8,0) -- ++(.2,.2) -- ++(-.3,0) --++(0,.1) -- ++ (-.25,0) -- ++(0,.3) -- ++(-.1,0) -- ++(0,-.3) -- ++(-.2,0) -- ++(0,-.1) --cycle;
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
- </sidebyside></statement>
-<solution>
-    <p>First note that <m>\triangle ABC</m> is not a right triangle, so we cannot use the trig ratios directly to find the sides of this triangle.</p><p>  The unknown distance <m>d</m> is the side opposite <m>\angle B = 79.4\degree</m>.  In order to use the Law of Sines, we must know another angle and the side opposite that angle.  We do:  we know that side <m>c = 400</m>, and we can compute the angle at the ship, <m>\angle C</m>.
+    </latex-image></image></sidebyside></statement>
+
+<solution><p>First note that <m>\triangle ABC</m> is not a right triangle, so we cannot use the trig ratios directly to find the sides of this triangle.</p>
+<p>The unknown distance <m>d</m> is the side opposite <m>\angle B = 79.4\degree</m>.  In order to use the Law of Sines, we must know another angle and the side opposite that angle.  We do: we know that side <m>c = 400</m>, and we can compute the angle at the ship, <m>\angle C</m>.
     <me>\angle C = 180\degree - (79.4\degree + 83.2\degree) = 17.4\degree</me>
-    Now we apply the Law of Sines, using angles <m>B</m> and <m>C</m>.
-    <md>
-        <mrow>\dfrac{b}{\sin B} \amp = \dfrac{c}{\sin C} \amp\amp \blert{\text{Substitute the given values.}}</mrow>
+Now we apply the Law of Sines, using angles <m>B</m> and <m>C</m>.
+    <md><mrow>\dfrac{b}{\sin B} \amp = \dfrac{c}{\sin C} \amp\amp \blert{\text{Substitute the given values.}}</mrow>
         <mrow>\dfrac{d}{\sin 79.4\degree} \amp = \dfrac{400}{\sin 17.4\degree} \amp\amp \blert{\text{Evaluate sines.}}</mrow>
         <mrow>\dfrac{d}{0.9829} \amp = \dfrac{400}{0.2990} \amp\amp \blert{\text{Multiply both sides by 0.9829.}}</mrow>
-        <mrow>d \amp = 1315</mrow>
-    </md>
-    The ship is about 1315 yards from the observer at <m>A</m>.</p>
+        <mrow>d \amp = 1315</mrow></md>
+The ship is about 1315 yards from the observer at <m>A</m>.</p>
 </solution></example>
 
-<exercise><statement>
-    <sidebyside widths="55% 35%" valigns="middle middle" margins="0% 5%"><p>Delbert and Francine are 40 feet apart on one side of a river. They make angle measurements to a pine tree on the opposite shore as shown at right. What is the distance  from Francine to the pine tree?</p>
-    <image xml:id="exer3-2-1">
-        <description>triangle</description>
-        <latex-image>
+<exercise><statement><sidebyside widths="62% 35%" valigns="middle middle" margins="0% 0%"><p>Delbert and Francine are 40 feet apart on one side of a river. They make angle measurements to a pine tree on the opposite shore as shown at right. What is the distance  from Francine to the pine tree?</p>
+    <image xml:id="exer3-2-1"><description>triangle</description><latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
           block/.style    = {draw, thick, rectangle, minimum height = 3em,
@@ -235,24 +203,20 @@ We have learned to use the trigonometric ratios to solve right triangles. But th
     \draw[red, thick] (C)++(-.3,0) arc(180:99:.3) node[above left,midway, xshift=5, yshift=-3] {\small$81\degree$};
     \draw[red, thick] (B)++(0,-.3) arc(-90:-169:.3) node[below left,midway,xshift=3] {\small$79\degree$};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-    </sidebyside>
-</statement><answer><p>About 114.8 feet</p></answer></exercise>
+    </latex-image></image></sidebyside></statement>
+    <answer><p>About 114.8 feet</p></answer></exercise>
 </subsection>
 
 <subsection><title>Solving Triangles with the Law of Sines</title>
+
 <p>In order to apply the Law of Sines to find a side, we must know one angle of the triangle and its opposite side (either <m>a</m> and <m>A</m>, or <m>b</m> and <m>B</m>, or <m>c</m> and <m>C</m>), and one other angle. Then we can find the side opposite that angle.</p>
 
-<example><statement>
-    <sidebyside widths="50% 40%" margins="0% 5%"><p>In the triangle shown at right, <m>A = 37\degree, B = 54\degree</m>, and <m>a = 11</m>.
+<example><statement><sidebyside widths="65% 35%" margins="0% 0%"><p>In the triangle shown at right, <m>A = 37\degree, B = 54\degree</m>, and <m>a = 11</m>.
     <ol label = "a">
         <li>Find <m>b</m>.</li>
         <li>Solve the triangle.</li>
     </ol></p>
-    <image xml:id="exam3-2-2">
-        <description>triangle</description>
-        <latex-image>
+    <image xml:id="exam3-2-2"><description>triangle</description><latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
           block/.style    = {draw, thick, rectangle, minimum height = 3em,
@@ -277,34 +241,24 @@ We have learned to use the trigonometric ratios to solve right triangles. But th
     \draw[red, thick] (A)++(.6,0) arc(0:37:.6) node[right,midway] {\small$37\degree$};
     \draw[red, thick] (B)++(0.05,-.4) arc(-89:-143:.4) node[below left,midway,xshift=7] {\small$54\degree$};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside></statement>
+    </latex-image></image></sidebyside></statement>
+
 <solution><p><ol label = "a">
     <li><p>We use the Law of Sines with <m>a</m> and angle <m>A</m> to find <m>b</m>.</p>
-    <p>
-        <md>
-            <mrow>\dfrac{a}{\sin A} \amp = \dfrac{b}{\sin B} \amp\amp \blert{\text{Substitute the given values.}}</mrow>
+    <p><md><mrow>\dfrac{a}{\sin A} \amp = \dfrac{b}{\sin B} \amp\amp \blert{\text{Substitute the given values.}}</mrow>
             <mrow>\dfrac{11}{\sin 37\degree} \amp = \dfrac{b}{\sin 54\degree} \amp\amp \blert{\text{Multiply both sides by} \sin 54\degree.}</mrow>
-            <mrow> \dfrac{11}{\sin 37\degree} \cdot \sin 54\degree\amp = b</mrow>
-        </md>
-    </p>
-    <p>Evaluating this expression with a calculator, we find that <m>b \approx 14.79</m>.</p></li>      
+            <mrow> \dfrac{11}{\sin 37\degree} \cdot \sin 54\degree\amp = b</mrow></md></p>
+<p>Evaluating this expression with a calculator, we find that <m>b \approx 14.79</m>.</p></li>      
     <li><p>The angle <m>C = 180\degree - (37\degree + 54\degree) = 89\degree</m>.  Now we use the Law of Sines to find side <m>c</m>.  
-        Note that it is safer to use the given side, <m>a</m>, rather than the value we calculated for <m>b</m>.</p>
-        <p><md>
-            <mrow>\dfrac{a}{\sin A} \amp = \dfrac{c}{\sin C} \amp\amp \blert{\text{Substitute the known values.}}</mrow>
-            <mrow>\dfrac{11}{\sin 37\degree} \amp = \dfrac{c}{\sin 89\degree} \amp\amp \blert{\text{Multiply both sides by} \sin 89\degree.}</mrow>
-            <mrow>\dfrac{11}{\sin 37\degree} \cdot \sin 89\degree\amp = c </mrow>
-        </md></p>
-       <p>so <m>c \approx 18.28.</m></p></li>     
+Note that it is safer to use the given side, <m>a</m>, rather than the value we calculated for <m>b</m>.
+<md><mrow>\dfrac{a}{\sin A} \amp = \dfrac{c}{\sin C} \amp\amp \blert{\text{Substitute the known values.}}</mrow>
+    <mrow>\dfrac{11}{\sin 37\degree} \amp = \dfrac{c}{\sin 89\degree} \amp\amp \blert{\text{Multiply both sides by} \sin 89\degree.}</mrow>
+    <mrow>\dfrac{11}{\sin 37\degree} \cdot \sin 89\degree\amp = c </mrow></md>
+so <m>c \approx 18.28.</m></p></li>     
     </ol></p></solution></example>
 
-<exercise><statement>
-    <sidebyside widths="50% 25%" margins="0% 15%" valigns="middle middle"><p>In the triangle at right, <m>A = 65\degree, C = 42\degree</m>, and <m>c = 16</m>.  Solve the triangle.  (Hint:  Which side will you find first?)</p>
-    <image xml:id="exer3-2-2">
-        <description>triangle</description>
-        <latex-image>
+<exercise><statement><sidebyside widths="50% 25%" margins="0% 15%" valigns="middle middle"><p>In the triangle at right, <m>A = 65\degree, C = 42\degree</m>, and <m>c = 16</m>.  Solve the triangle.  (Hint:  Which side will you find first?)</p>
+    <image xml:id="exer3-2-2"><description>triangle</description><latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
           block/.style    = {draw, thick, rectangle, minimum height = 3em,
@@ -326,21 +280,17 @@ We have learned to use the trigonometric ratios to solve right triangles. But th
     \draw[black, thick] (A)--(B) node[above left,midway] {\color{blue}$c$};
     \draw[black, thick] (A)--(C) node[above right,midway] {\color{blue}$b$};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-    </sidebyside>
-</statement><answer><p><m>B = 73\degree</m>, <m>~b = 22.87</m>, <m>~a = 21.68</m></p></answer></exercise>
+    </latex-image></image></sidebyside></statement>
+<answer><p><m>B = 73\degree</m>, <m>~b = 22.87</m>, <m>~a = 21.68</m></p></answer></exercise>
 </subsection>
 
 <subsection><title>Finding an Angle</title>
 <idx><h>angle</h><h>find</h></idx>
+
 <p> We can also use the Law of Sines to find an unknown angle of a triangle.  We must know two sides of the triangle and the angle opposite one of them.</p>
 
-<example><statement>
-    <sidebyside widths="55% 25%" margins="5% 10%"><p>In the triangle shown at right, <m>B = 55\degree, a = 5</m>, and <m>b = 11</m>. Solve the triangle.</p>
-    <image xml:id="exam3-2-3">
-        <description>triangle</description>
-        <latex-image>
+<example><statement><sidebyside widths="75% 20%" margins="0% 0%"><p>In the triangle shown at right, <m>B = 55\degree, a = 5</m>, and <m>b = 11</m>. Solve the triangle.</p>
+    <image xml:id="exam3-2-3"><description>triangle</description><latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
           block/.style    = {draw, thick, rectangle, minimum height = 3em,
@@ -362,43 +312,34 @@ We have learned to use the trigonometric ratios to solve right triangles. But th
     \draw[black, thick] (A)--(B) node[above,midway] {\color{blue}$c$};
     \draw[black, thick] (A)--(C) node[below,midway] {\color{blue}$b$};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside></statement>
-<solution><p>We must find the three remaining parts of the triangle, <m>A, C</m>, and <m>c</m>. First, we use the Law of Sines to find <m>\sin A</m>.</p>
-    <p><md>
-        <mrow>\dfrac{\sin A}{a} \amp = \dfrac{\sin B}{b} \amp\amp \blert{\text{Substitute the known values.}}</mrow>
-        <mrow>\dfrac{\sin A}{5} \amp = \dfrac{\sin 55\degree}{11} \amp\amp \blert{\text{Multiply both sides by 5.}}</mrow>
-        <mrow>\sin A \amp = 5 \cdot \dfrac{\sin 55\degree}{11} \approx 0.3723</mrow>
-    </md></p>
-         <p>So <m>A = \sin^{-1}(0.3723) \approx 21.9\degree</m>. Now we know two angles, and we can find angle <m>C</m>.</p>
-         <p><md>
-             <mrow>C \amp = 180\degree - (B + A)</mrow>
-             <mrow>\amp = 180\degree - 55\degree - 21.9\degree = 103.1\degree</mrow>
-         </md></p>
-        <p>Finally, we use the Law of Sines to find side <m>c</m>.  </p>
-        <p><md>
-            <mrow>\dfrac{b}{\sin B} \amp = \dfrac{c}{\sin C} \amp\amp \blert{\text{Substitute the known values.}}</mrow>
-            <mrow>\dfrac{11}{\sin 55\degree} \amp = \dfrac{c}{\sin 103.1\degree} \amp\amp \blert{\text{Multiply both sides by} \sin 103.1\degree.}</mrow>
-            <mrow>\dfrac{11}{\sin 55\degree} \cdot \sin 103.1\degree\amp = c</mrow>
-        </md></p>
-           <p>Evaluating this expression with a calculator gives <m>c \approx 13.1.</m></p></solution></example>
+    </latex-image></image></sidebyside></statement>
 
- <exercise><statement>
-    <p>Sketch a triangle with <m>C = 93\degree, a = 7</m>, and <m>c = 11</m>.</p> 
-    <p><ol label="a">
+<solution><p>We must find the three remaining parts of the triangle, <m>A, C</m>, and <m>c</m>. First, we use the Law of Sines to find <m>\sin A</m>.
+    <md><mrow>\dfrac{\sin A}{a} \amp = \dfrac{\sin B}{b} \amp\amp \blert{\text{Substitute the known values.}}</mrow>
+        <mrow>\dfrac{\sin A}{5} \amp = \dfrac{\sin 55\degree}{11} \amp\amp \blert{\text{Multiply both sides by 5.}}</mrow>
+        <mrow>\sin A \amp = 5 \cdot \dfrac{\sin 55\degree}{11} \approx 0.3723</mrow></md>
+So <m>A = \sin^{-1}(0.3723) \approx 21.9\degree</m>. Now we know two angles, and we can find angle <m>C</m>.
+    <md><mrow>C \amp = 180\degree - (B + A)</mrow>
+        <mrow>\amp = 180\degree - 55\degree - 21.9\degree = 103.1\degree</mrow></md>
+Finally, we use the Law of Sines to find side <m>c</m>.  
+    <md><mrow>\dfrac{b}{\sin B} \amp = \dfrac{c}{\sin C} \amp\amp \blert{\text{Substitute the known values.}}</mrow>
+        <mrow>\dfrac{11}{\sin 55\degree} \amp = \dfrac{c}{\sin 103.1\degree} \amp\amp \blert{\text{Multiply both sides by} \sin 103.1\degree.}</mrow>
+        <mrow>\dfrac{11}{\sin 55\degree} \cdot \sin 103.1\degree\amp = c</mrow></md>
+Evaluating this expression with a calculator gives <m>c \approx 13.1.</m></p></solution></example>
+
+ <exercise><statement><p>Sketch a triangle with <m>C = 93\degree, a = 7</m>, and <m>c = 11</m>. 
+    <ol label="a">
         <li>Use the Law of Sines to find another angle of the triangle.</li>
         <li>Solve the triangle, and label your sketch with the results.</li>
-    </ol></p></statement><answer><p><ol label = "a">
+    </ol></p></statement>
+
+<answer><p><ol label = "a" cols="2">
         <li><m>A = 39.5\degree</m></li>
         <li><m>b = 8.13,~B = 47.5\degree</m></li>
     </ol></p></answer></exercise>
 
 <warning><p>In the last example we used the value of <m>\sin A</m> to find angle <m>A</m>.  But there are two angles that satisfy <m>\sin A = 0.3723</m>, one acute (<m>21.9\degree</m>) and one obtuse (<m>168.1\degree</m>). How did we know which one to choose?</p>
-<sidebyside width="50%">
-    <image xml:id="fig-3-2-caut">
-        <description>angles</description>
-        <latex-image>
+<sidebyside width="50%"><image xml:id="fig-3-2-caut"><description>angles</description><latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
           block/.style    = {draw, thick, rectangle, minimum height = 3em,
@@ -413,7 +354,6 @@ We have learned to use the trigonometric ratios to solve right triangles. But th
     \coordinate (B) at (2.78,1.118);
     \coordinate (C) at (-2.78,0);
     \coordinate (D) at (-2.78,1.118);
-
 
     \draw[blue, thick] (A) rectangle +(-.25,.25);
     \draw[blue, thick] (C) rectangle +(.25,.25);
@@ -436,36 +376,27 @@ We have learned to use the trigonometric ratios to solve right triangles. But th
 
     \node[text width=3cm] at (-1,1.7){\color{black}$\frac{y}{r}\approx 0.3723$};
     \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside>  
-<p>In this case, the obtuse angle is too big to fit in the triangle, because angle <m>B = 55\degree</m>.  Sometimes both angles will produce (different) triangles, and sometimes only the acute angle will work.  You should always check whether both angles provide solutions.</p> 
- </warning>
+    </latex-image></image></sidebyside>  
+<p>In this case, the obtuse angle is too big to fit in the triangle, because angle <m>B = 55\degree</m>.  Sometimes both angles will produce (different) triangles, and sometimes only the acute angle will work.  You should always check whether both angles provide solutions.</p> </warning>
 
  <note><p>Because there can be more than one solution for a triangle in which we know two sides and an angle opposite one of them, this situation is called the <term>ambiguous case</term><idx><h>ambiguous case</h></idx> for the Law of Sines. (See Homework Problems 33-42 for more about the ambiguous case.)</p></note>
 
- <example><statement>
-    <p>Find two triangles in which <m>B = 14.4\degree, a = 8</m>, and <m>b = 3</m>, and sketch both triangles.</p></statement>
-<solution><p>Using the Law of Sines, we have</p>
-    <p><md>
-        <mrow>\dfrac{\sin A}{a} \amp = \dfrac{\sin B}{b} \amp\amp \blert{\text{Substitute the known values.}}</mrow>
+ <example><statement><p>Find two triangles in which <m>B = 14.4\degree, a = 8</m>, and <m>b = 3</m>, and sketch both triangles.</p></statement>
+
+<solution><p>Using the Law of Sines, we have
+    <md><mrow>\dfrac{\sin A}{a} \amp = \dfrac{\sin B}{b} \amp\amp \blert{\text{Substitute the known values.}}</mrow>
         <mrow>\dfrac{\sin A}{8} \amp = \dfrac{\sin 14.4\degree}{3} \amp\amp \blert{\text{Multiply both sides by 8.}}</mrow>
-        <mrow>\sin A \amp = 8 \cdot \dfrac{\sin 14.4\degree}{3} \approx 0.6632</mrow>
-    </md></p>
-         <p>There are two angles with sine <m>0.6632</m>:</p>  
-         <p><ul>
+        <mrow>\sin A \amp = 8 \cdot \dfrac{\sin 14.4\degree}{3} \approx 0.6632</mrow></md>
+There are two angles with sine <m>0.6632</m>:<ul>
             <li>the acute angle <m>A = \sin^{-1}(0.6632) = 41.5\degree,</m></li>
             <li> or its supplement, <m>A^{\prime} = 180\degree - 41.5\degree = 138.5\degree</m>.</li>
             </ul></p>
-          <p>Each of these angles produces a different solution triangle, because the angle <m>C</m> and side <m>c</m> will be different also.</p>
-          <p><ul>
-          <li>  In the first case, angle <m>C = 180\degree - (14.4\degree + 138.5\degree) = 27.1\degree</m>, and we have the triangle shown in figure (a).</li>  
-          <li>In the second case, <m>C = 180\degree - (14.4\degree + 41.5\degree) = 124.1\degree</m>, which gives us the triangle shown in figure (b).</li>
+<p>Each of these angles produces a different solution triangle, because the angle <m>C</m> and side <m>c</m> will be different also.<ul>
+    <li>  In the first case, angle <m>C = 180\degree - (14.4\degree + 138.5\degree) = 27.1\degree</m>, and we have the triangle shown in figure (a).</li>  
+    <li>In the second case, <m>C = 180\degree - (14.4\degree + 41.5\degree) = 124.1\degree</m>, which gives us the triangle shown in figure (b).</li>
       </ul></p>
-      <sidebyside width="90%">
-    <image xml:id="exam3-2-4">
-        <description>triangles</description>
-        <latex-image>
+<sidebyside width="90%">
+    <image xml:id="exam3-2-4"><description>triangles</description><latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
           block/.style    = {draw, thick, rectangle, minimum height = 3em,
@@ -512,19 +443,18 @@ We have learned to use the trigonometric ratios to solve right triangles. But th
 
     \node[text width=1cm] at (11,-1.){b.};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-      </sidebyside>
-  </solution></example> 
+    </latex-image></image></sidebyside></solution></example> 
 
   <exercise><statement>
     <p>Suppose that <m>C = 29.7\degree, b = 8</m>, and <m>c = 5</m>.</p> 
     <p><ol label="a">
         <li>Find two possible values for angle <m>B</m>.</li>
         <li>Solve the triangle for both values of <m>B</m>, and sketch both solutions.</li>
-    </ol></p></statement><answer><p><ol label = "a">
+    </ol></p></statement>
+
+    <answer><p><ol label = "a">
         <li><m>B = 52.4\degree</m> or <m>B = 127.6\degree</m></li>
-        <li><sidebyside widths="40% 28%"  margins="0% 30%" valigns = "middle middle"><p><m>A = 97.9\degree,~a = 10</m></p>
+        <li><sidebyside widths="40% 23%"  margins="0% 30%" valigns = "middle middle"><p><m>A = 97.9\degree,~a = 10</m></p>
     <image xml:id="exer3-2-4ans">
         <description>triangle</description>
         <latex-image>
@@ -557,7 +487,7 @@ We have learned to use the trigonometric ratios to solve right triangles. But th
     </latex-image>
     </image>
         </sidebyside>
-        <sidebyside widths="40% 35%" margins="0% 23%" valigns = "middle middle"><p>or <m>A = 22.7\degree,~a = 3.9</m></p>
+        <sidebyside widths="40% 30%" margins="0% 23%" valigns = "middle middle"><p>or <m>A = 22.7\degree,~a = 3.9</m></p>
     <image xml:id="exer3-2-4anstoo">
         <description>triangle</description>
         <latex-image>
