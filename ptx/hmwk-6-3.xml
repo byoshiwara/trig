@@ -476,7 +476,7 @@
 
         \foreach \x in { 1,2,..., 6} \draw[black,thick] (\x,0.04) -- ++(0,-.08) node[below, yshift=-2, fill=white, inner sep = 1, scale=.8] {\x};
 
-        \foreach \y in {-10, -9,...,-1, 1,2,..., 10} \draw[black,thick] (0.08, \y) -- ++(-.16,0) node[left, xshift=-2, fill=white, inner sep = 1, scale=.8] {\y};
+        \foreach \y in {-10, -8,...,-2, 2,4,..., 10} \draw[black,thick] (0.08, \y) -- ++(-.16,0) node[left, xshift=-2, fill=white, inner sep = 1, scale=.8] {\y};
 
         \draw[samples=65,domain=0:{atan(10)*pi/180},smooth,variable=\x,red,very thick] plot ({\x},{tan(deg(\x))});
         \draw[red,thick,->] ($ atan(9.5)*pi/180*(1,0)+(0,9.5)$)--($ atan(10)*pi/180*(1,0)+(0,10)$);
@@ -770,7 +770,7 @@
         \coordinate (O) at (0,62);
         \draw[black] (O)++(0,.9)--++(-9, -.6)--++(18,-.6)--++(-18,-.6)--++(9,-.3) -- ++(0, -.7);
 
-        \foreach \y in {65, 70, ...,110} \draw[black, thick] (.3,\y)--++(-.6,0) node[left, scale=0.8]{\y};
+        \foreach \y in {70,80, ...,110} \draw[black, thick] (.3,\y)--++(-.6,0) node[left, scale=0.8]{\y};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -794,7 +794,7 @@
         \foreach \x in {50, 100, ..., 350} \draw[black, thick] (\x,60.12)--++(0,-.24) node[below, scale=0.8]{\x};
         \draw[black] (0,62.9)--++(-9, -.6)--++(18,-.6)--++(-18,-.6)--++(9,-.3) -- ++(0, -.7);
 
-        \foreach \y in {65, 70, ...,110} \draw[black, thick] (.3,\y)--++(-.6,0) node[left, scale=0.8]{\y};
+        \foreach \y in {70,80, ...,110} \draw[black, thick] (.3,\y)--++(-.6,0) node[left, scale=0.8]{\y};
         \draw[samples=65,domain=0:365,smooth,variable=\x,blue, thick] plot ({\x},{85.5-19.5*cos(deg(0.0175*\x - 0.436))});
         \draw[samples=65,domain=128:280.89,smooth,variable=\x,red,very thick] plot ({\x},{85.5-19.5*cos(deg(0.0175*\x - 0.436))});
 

@@ -109,13 +109,8 @@
         <latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
         }
-        \begin{tikzpicture} [cross/.style={cross out, draw=black, minimum size=2*(#1-\pgflinewidth), inner sep=0pt, outer sep=0pt},cross/.default={5pt}];
+        \begin{tikzpicture} [scale=1.2,cross/.style={cross out, draw=black, minimum size=2*(#1-\pgflinewidth), inner sep=0pt, outer sep=0pt},cross/.default={5pt}];
         \coordinate(O) at (0,0);
         \coordinate(P) at (215:2cm);
         \coordinate(Q) at ($ 2*cos(215)*(1,0)$);
@@ -124,14 +119,14 @@
         \draw[gray!80!white, thick] (Q) rectangle ++(.2,-.2);
         \draw[gray!80!white, thick, dashed] (P) -- (Q);
 
-        \draw[black, thick, ->] (0,-2.2)--(0,1.3) node[above] {N};
-        \draw[black, thick, ->] (1.5,0)--(-2.3,0) node[left] {W};
+        \draw[black, thick, ->] (0,-1.6)--(0,1.3) node[above, scale=.8] {N};
+        \draw[black, thick, ->] (1.5,0)--(-2.3,0) node[left, scale=.8] {W};
         \draw[gray!80!white, ultra thick, dashed] (Q) -- (O);
 
         \draw[red, thick, ->] (0.25,0) arc (0:215:0.25) node[above left, midway, yshift=0] {\footnotesize$ 215\degree$};
         \draw[blue, thick] (O) --(R) ;
 
-        \node[text width=1.cm,fill=white, inner sep=1pt] at (-.6,-1.)    {\color{blue}\footnotesize 500 yd};
+        \node[text width=1.cm,fill=white, inner sep=1pt] at (-.6,-0.9)    {\color{blue}\scriptsize 500 yd};
         \filldraw[black] (O) circle (1.3pt) node[anchor=north west, xshift=2, yshift=-1, fill=white,inner sep=1pt]{\footnotesize oak tree};
         \draw (P) node[cross,red, ultra thick] {};
         \node[text width=1.cm, anchor=north west, xshift=-3, yshift=-3] at (P) {\color{red}\small treasure};

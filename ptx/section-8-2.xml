@@ -403,7 +403,7 @@ shown below.</p>
 <p>We say that we have <em>restricted the domain</em><idx><h>domain</h><h>restrict</h></idx> of the original function, and we will use this technique to define inverse functions for the trigonometric functions.</p>
 
 <p>The sine function is not one-to-one; there are many angles that have the same sine value. In order to define its inverse function, we must restrict the domain of the sine to an interval on which the <m>y</m>-values do not repeat. But there are many candidates for such an interval; which one shall we choose?</p>  
-<p>	It turns out that the most useful interval is found by starting at <m>x=0</m> and moving as far as we can in either direction until the <m>y</m>-values begin to repeat. By doing so, we obtain the restricted domain <m>\dfrac{-\pi}{2} \le x \le \dfrac{\pi}{2}</m>, as shown below. This piece of the function includes all of the original range values, from <m>-1</m> to <m>1</m>.</p>
+<p> It turns out that the most useful interval is found by starting at <m>x=0</m> and moving as far as we can in either direction until the <m>y</m>-values begin to repeat. By doing so, we obtain the restricted domain <m>\dfrac{-\pi}{2} \le x \le \dfrac{\pi}{2}</m>, as shown below. This piece of the function includes all of the original range values, from <m>-1</m> to <m>1</m>.</p>
 <sidebyside width="80%">
     <image xml:id="fig-8-2-5">
         <description>restricted sine</description>
@@ -423,7 +423,7 @@ shown below.</p>
         \draw[black,thick] (pi,0.1)--++(0,-.2) node [below, scale=.8] {$\pi$};
         \draw[black,thick] (3*pi/2,0.1)--++(0,-.2) node [below] {$\frac{3\pi}{2} $};
         \draw[black,thick] (2*pi,0.1)--++(0,-.2) node [below, scale=.8] {$2\pi$};
-        \draw[samples=65,domain=-2*pi:2*pi,variable=\x, smooth, red, densely dashed] plot (\x,{sin(deg(\x))});
+        \draw[samples=65,domain=-2*pi:2*pi,variable=\x, smooth, blue, densely dashed] plot (\x,{sin(deg(\x))});
         \draw[samples=65,domain=-pi/2:pi/2,variable=\x, smooth, blue, ultra thick] plot (\x,{sin(deg(\x))});
         \end{tikzpicture}]]>
     </latex-image>
@@ -432,24 +432,26 @@ shown below.</p>
 
 <p>Because the sine function is one-to-one on this domain, its inverse is a function.</p>
 <p>The graph of the inverse sine function, <m>y=\sin^{-1}x</m>, is shown below. Its domain is the same as the range of the sine function, and its range is our restricted domain for sine, <m>\dfrac{-\pi}{2} \le y \le \dfrac{\pi}{2}</m>.</p>
-<sidebyside width="50%">
+<sidebyside width="33%">
     <image xml:id="fig-8-2-6">
         <description>inverse sine</description>
         <latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
         }
-        \begin{tikzpicture} [scale=1.4]
-        \draw[green] (-1.6,-1.6) grid (1.6,1.6);
-        \draw[black,thick,->,>=stealth'] (-pi/2,0)--(pi/2,0) node[right, scale=.8] {$x$};
-        \draw[black,thick,->,>=stealth'] (0,-pi/2)--(0,pi/2) node[above, scale=.8] {$y$};
-        \foreach \y in {-1,1} {
-        \draw[black,thick] (\y,.1)--++(0,-.2) node[below, scale=.8] {$\y$};
-        \draw[black,thick] (.1,\y)--++(-.2,0) node[left, scale=.8] {$\y$};
-        };
-        \draw[gray!80!white, dashed] (1.6,1.6)--(-1.6,-1.6) node[below left, scale=.8, text=black] {$y=x$};
-        \draw[samples=65,domain=-pi/2:pi/2,variable=\x, smooth, blue, thick, densely dashed] plot (\x,{sin(deg(\x))}) node[right, scale=.8] {$y=\sin x$};
-        \draw[samples=65,domain=-pi/2:pi/2,variable=\x, smooth, red, ultra thick] plot ({sin(deg(\x))},\x) node[above right, xshift=-5, scale=.8] {$y=\sin^{-1} x$};
+        \begin{tikzpicture} [scale=.7]
+        \draw[black,thick,->,>=stealth'] (-2.5,0)--(2.5,0) node[right, scale=.8] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-1.9)--(0,2) node[above, scale=.8] {$y$};
+        \draw[black,thick] (0.1, -pi/2)--++(-.2,0) node [left, xshift=2] {$\frac{-\pi}{2}$};
+        \draw[black,thick] (0.1, pi/2)--++(-.2,0) node [left, xshift=2] {$\frac{\pi}{2} $};
+        \foreach \x in {-2,-1,1,2} {
+         \draw[black,thick] (\x,0.1)--++(0,-.2) node [below, yshift=2, scale=.8] {$\x $};
+        }
+        \draw[gray, dashed] (1.6,1.6)--(-1.6,-1.6) node[below, xshift=-4 , scale=.8, text=gray] {$y=x$};
+        \draw[samples=65,domain=-2.5:2.5,variable=\x, smooth, blue, densely dashed] plot (\x,{sin(deg(\x))});
+        \draw[samples=65,domain=-pi/2:pi/2,variable=\x, smooth, blue, ultra thick] plot (\x,{sin(deg(\x))});
+        \draw[samples=65,domain=-pi/2:pi/2,variable=\x, smooth, blue, thick, densely dashed] plot (\x,{sin(deg(\x))}) node[above right, xshift=-2, yshift=-2, scale=.8] {$y=\sin x$};
+        \draw[samples=65,domain=-pi/2:pi/2,variable=\x, smooth, red, ultra thick] plot ({sin(deg(\x))},\x) node[above right, xshift=-12, scale=.8] {$y=\sin^{-1} x$};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -492,7 +494,7 @@ shown below.</p>
 </subsection>
 
 <subsection><title>The Inverse Cosine and Inverse Tangent Functions</title>
-<p>	The cosine and tangent functions are also periodic, so, just as with the sine function, to define their inverse functions we must restrict their domains to intervals where they are one-to-one. The graph of cosine is shown below.</p>
+<p> The cosine and tangent functions are also periodic, so, just as with the sine function, to define their inverse functions we must restrict their domains to intervals where they are one-to-one. The graph of cosine is shown below.</p>
 <sidebyside width="80%">
     <image xml:id="fig-8-2-7">
         <description>restricted cosine</description>
@@ -500,9 +502,9 @@ shown below.</p>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
         }
-        \begin{tikzpicture} [scale=1.2]
-        \draw[black,thick,->,>=stealth'] (-2*pi,0)--(6.5,0) node[right, scale=.8] {$x$};
-        \draw[black,thick,->,>=stealth'] (0,-1)--(0,1.4) node[right, scale=.8] {$y$};
+        \begin{tikzpicture} [scale=1.]
+        \draw[black,thick,->,>=stealth'] (-2*pi,0)--(6.5,0) node[right] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-1)--(0,1.4) node[right] {$y$};
         \foreach \y in {-1,1} \draw[black,thick] (.1,\y)--++(-.2,0) node[left, scale=.8] {$\y$};
         \draw[black,thick] (-2*pi,0.1)--++(0,-.2) node [below, scale=.8] {$-2\pi$};
         \draw[black,thick] (-3*pi/2,0.1)--++(0,-.2) node [below] {$\frac{-3\pi}{2} $};
@@ -512,33 +514,35 @@ shown below.</p>
         \draw[black,thick] (pi,0.1)--++(0,-.2) node [below, scale=.8] {$\pi$};
         \draw[black,thick] (3*pi/2,0.1)--++(0,-.2) node [below] {$\frac{3\pi}{2} $};
         \draw[black,thick] (2*pi,0.1)--++(0,-.2) node [below, scale=.8] {$2\pi$};
-        \draw[samples=65,domain=-2*pi:2*pi,variable=\x, smooth, red, densely dashed] plot (\x,{cos(deg(\x))});
+        \draw[samples=65,domain=-2*pi:2*pi,variable=\x, smooth, blue, densely dashed] plot (\x,{cos(deg(\x))});
         \draw[samples=65,domain=0:pi,variable=\x, smooth, blue, ultra thick] plot (\x,{cos(deg(\x))});
         \end{tikzpicture}]]>
     </latex-image>
     </image>
 </sidebyside>
 
-<p>	Once again the choice of these intervals is arbitrary. If we start at <m>\theta=0</m> on the cosine graph, we can move in only one direction, either right or left, without encountering repeated <m>y</m>-values.</p>
-<p>	We choose to move in the positive direction, to obtain the interval <m>0 \le\theta\le \pi</m>, as shown above. On this domain, the inverse of cosine is a function. Its graph is shown below.</p>
-<sidebyside width="50%">
+<p> Once again the choice of these intervals is arbitrary. If we start at <m>\theta=0</m> on the cosine graph, we can move in only one direction, either right or left, without encountering repeated <m>y</m>-values.</p>
+<p> We choose to move in the positive direction, to obtain the interval <m>0 \le\theta\le \pi</m>, as shown above. On this domain, the inverse of cosine is a function. Its graph is shown below.</p>
+<sidebyside width="45%">
     <image xml:id="fig-8-2-8">
         <description>inverse cosine</description>
         <latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
         }
-        \begin{tikzpicture} [scale=.8]
-        \draw[green] (-pi/2,-pi/2) grid (3.2,3.2);
-        \draw[black,thick,->,>=stealth'] (-pi/2,0)--(3.4,0) node[right, scale=.8] {$x$};
-        \draw[black,thick,->,>=stealth'] (0,-pi/2)--(0,4.) node[above, scale=.8] {$y$};
-        \foreach \y in {-1,1,3} {
-        \draw[black,thick] (\y,.1)--++(0,-.2) node[below, scale=.8] {$\y$};
-        \draw[black,thick] (.1,\y)--++(-.2,0) node[left, scale=.8] {$\y$};
-        };
-        \draw[gray!80!white, dashed] (-1.6,-1.6)--(3.2,3.2) node[above right, scale=.8, text=black] {$y=x$};
-        \draw[samples=65,domain=0:pi,variable=\x, smooth, blue, thick, densely dashed] plot (\x,{cos(deg(\x))}) node[right, scale=.8] {$y=\cos x$};
-        \draw[samples=65,domain=0:pi,variable=\x, smooth, red, ultra thick] plot ({cos(deg(\x))},\x) node[above right, xshift=-5, fill=white, inner sep=1, scale=.8] {$y=\cos^{-1} x$};
+        \begin{tikzpicture} [scale=1.]
+        \draw[black,thick,->,>=stealth'] (-1.,0)--(3.5,0) node[right] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-1.)--(0,3.5) node[above] {$y$};
+        \draw[black,thick] (0.1, pi)--++(-.2,0) node [left, xshift=2] {$\pi$};
+        \draw[black,thick] (0.1, pi/2)--++(-.2,0) node [left, xshift=2] {$\frac{\pi}{2} $};
+        \foreach \x in {-1,1,2,3} {
+         \draw[black,thick] (\x,0.1)--++(0,-.2) node [below, yshift=2, scale=.8] {$\x $};
+        }
+        \draw[gray, dashed] (-1.,-1.)--(2.7,2.7) node[above right] {$y=x$};
+        \draw[samples=65,domain=1:3.5,variable=\x, smooth, blue, densely dashed] plot (\x,{cos(deg(\x))});
+        \draw[samples=65,domain=0:pi,variable=\x, smooth, blue, ultra thick] plot (\x,{cos(deg(\x))});
+        \draw[samples=65,domain=-1:3.7,variable=\x, smooth, blue, thick, densely dashed] plot (\x,{cos(deg(\x))}) node[above, xshift=5, yshift=-4] {$y=\cos x$};
+        \draw[samples=65,domain=0:pi,variable=\x, smooth, red, ultra thick] plot ({cos(deg(\x))},\x) node[above left, xshift=5,, yshift=-1] {$y=\cos^{-1} x$};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -570,10 +574,10 @@ shown below.</p>
 
 <exercise><statement><p>Simplify <m>\cos^{-1}(-1)</m> without using a calculator.</p></statement><answer><p><m>\pi</m></p></answer></exercise>
 
-<p>	Finally, consider the graph of the tangent function. To choose a convenient interval on which the tangent is one-to-one, we start at <m>x=0</m> and move as far as we can in either direction along the <m>x</m>-axis. In this way we obtain one cycle of the graph, on the interval <m>\dfrac{-\pi}{2} \lt \theta \lt \dfrac{\pi}{2}</m>, as shown below.</p>
+<p> Finally, consider the graph of the tangent function. To choose a convenient interval on which the tangent is one-to-one, we start at <m>x=0</m> and move as far as we can in either direction along the <m>x</m>-axis. In this way we obtain one cycle of the graph, on the interval <m>\dfrac{-\pi}{2} \lt \theta \lt \dfrac{\pi}{2}</m>, as shown below.</p>
  <sidebyside width="45%">
     <image xml:id="fig-8-2-9">
-        <description>triangle</description>
+        <description>tan</description>
         <latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
@@ -590,8 +594,8 @@ shown below.</p>
         \draw[black,thick] (3*pi/2,0.1)--++(0,-.2) node [below] {$\frac{3\pi}{2} $};
         \draw[green, dashed] (-pi/2,-4.7)--++(0,9.4);
         \draw[green, dashed] (pi/2,-4.7)--++(0,9.4);
-        \draw[samples=65,domain={-atan(4.7)*pi/180}:{atan(4.7)*pi/180},variable=\x, smooth, red, thick, densely dashed] plot (\x-pi,{tan(deg(\x))});
-        \draw[samples=65,domain={-atan(4.7)*pi/180}:{atan(4.7)*pi/180},variable=\x, smooth, red, thick, densely dashed] plot (\x+pi,{tan(deg(\x))});
+        \draw[samples=65,domain={-atan(4.7)*pi/180}:{atan(4.7)*pi/180},variable=\x, smooth, blue, thick, densely dashed] plot (\x-pi,{tan(deg(\x))});
+        \draw[samples=65,domain={-atan(4.7)*pi/180}:{atan(4.7)*pi/180},variable=\x, smooth, blue, thick, densely dashed] plot (\x+pi,{tan(deg(\x))});
         \draw[samples=65,domain={-atan(4.7)*pi/180}:{atan(4.7)*pi/180},variable=\x, smooth, blue, ultra thick] plot (\x,{tan(deg(\x))});
         \end{tikzpicture}]]>
     </latex-image>
@@ -599,8 +603,8 @@ shown below.</p>
  </sidebyside>
 
 <p>The range of the tangent on that interval includes all real numbers. Consequently, the domain of the inverse tangent function includes all real numbers, and its range is the interval <m>\dfrac{-\pi}{2} \lt y \lt \dfrac{\pi}{2}</m>.</p>
-<p>	The graph of the inverse tangent function is shown below. Its outputs are angles in the first and fourth quadrants.</p>
-<sidebyside width="55%">
+<p> The graph of the inverse tangent function is shown below. Its outputs are angles in the first and fourth quadrants.</p>
+<sidebyside width="50%">
     <image xml:id="fig-8-2-10">
         <description>triangle</description>
         <latex-image>
@@ -608,25 +612,24 @@ shown below.</p>
         <![CDATA[\tikzset{%
         }
         \begin{tikzpicture} [scale=0.6]
-        \draw[black,thick,->,>=stealth'] (-3*pi/2,0)--(4.7,0) node[right, scale=.8] {$x$};
-        \draw[black,thick,->,>=stealth'] (0,-4.7)--(0,4.7) node[above, scale=.8] {$y$};
-        \draw[green, dashed] (-4.7,pi/2)--++(9.4,0);
-        \draw[green, dashed] (-4.7,-pi/2)--++(9.4,0);
-        \draw[green, dashed] (-pi/2,-4.7)--++(0,9.4);
-        \draw[green, dashed] (pi/2,-4.7)--++(0,9.4);
+        \draw[black,thick,->,>=stealth'] (-3.5,0)--(3.5,0) node[right, scale=.8] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-3.5)--(0,3.5) node[above, scale=.8] {$y$};
+        \draw[green, dashed] (-3.5,pi/2)--++(7,0);
+        \draw[green, dashed] (-3.5,-pi/2)--++(7,0);
+        \draw[green, dashed] (-pi/2,-3.5)--++(0,7);
+        \draw[green, dashed] (pi/2,-3.5)--++(0,7);
+        \foreach \x in {-2,2} {
+            \draw[black,thick] (\x,0.1)--++(0,-.2) node [below, scale=.8] {$\x$};
+         };
         \foreach \y in {pi} {
           \draw[black,thick] (.1,\y)--++(-.2,0) node[left, scale=.8] {$\pi$};
           \draw[black,thick] (.1,-\y)--++(-.2,0) node[left, scale=.8] {$-\pi$};
          };
           \draw[black,thick] (.1,-pi/2)--++(-.2,0) node[left, scale=.8, fill=white, inner sep = 1] {$\frac{-\pi}{2} $};
           \draw[black,thick] (.1,pi/2)--++(-.2,0) node[left, scale=.8, fill=white, inner sep = 1] {$\frac{\pi}{2} $};
-        \draw[black,thick] (-pi/2,0.1)--++(0,-.2) node [below, fill=white, inner sep = 1] {$\frac{-\pi}{2} $};
-        \draw[black,thick] (-pi,0.1)--++(0,-.2) node [below, scale=.8] {$-\pi$};
-        \draw[black,thick] (pi/2,0.1)--++(0,-.2) node [below, fill=white, inner sep = 1, yshift=-1] {$\frac{\pi}{2} $};
-        \draw[black,thick] (pi,0.1)--++(0,-.2) node [below, scale=.8] {$\pi$};
-        \draw[samples=65,domain={-atan(4.7)*pi/180}:{atan(4.7)*pi/180},variable=\x, smooth, red, thick] plot ({tan(deg(\x))},\x) node[right, scale=.8] {$y=\tan^{-1} x$};
-        \draw[samples=65,domain={-atan(4.7)*pi/180}:{atan(4.7)*pi/180},variable=\x, smooth, blue, densely dashed] plot (\x,{tan(deg(\x))}) node[above right, xshift=-5, scale=.8] {$y=\tan  x$};;
-        \draw[gray!80!white, dashed] (-1.6,-1.6)--(3.2,3.2) node[above right, scale=.8, text=black] {$y=x$};
+        \draw[samples=65,domain={-atan(3.5)*pi/180}:{atan(3.5)*pi/180},variable=\x, smooth, red, ultra thick] plot ({tan(deg(\x))},\x) node[right, scale=.8] {$y=\tan^{-1} x$};
+        \draw[samples=65,domain={-atan(3.5)*pi/180}:{atan(3.5)*pi/180},variable=\x, smooth, blue,ultra thick] plot (\x,{tan(deg(\x))}) node[above right, xshift=-9, scale=.8] {$y=\tan  x$};;
+        \draw[gray, dashed] (-3.5,-3.5)--(3.5,3.5) node[right, scale=.8, text=black] {$y=x$};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
