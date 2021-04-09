@@ -14,21 +14,22 @@
  Or make a thin customization layer and use 'select' to provide overrides 
 -->
 <!--    -->
-<!--  List Chapters and Sections in Table of Contents  -->
-<xsl:param name="toc.level" select="'3'"/>
+<!--  List Chapters and Sections in Table of Contents now designated in pub-html.xml
+<xsl:param name="toc.level" select="'3'"/> -->
 <!--simple numbering -->
-<xsl:param name="numbering.projects.level" select="'1'" />
+<!-- numbering maximum level moved to pub-html.xml 
+<xsl:param name="numbering.maximum.level" select="'2'" /> <xsl:param name="numbering.projects.level" select="'1'" />
 <xsl:param name="numbering.theorems.level" select="'1'" /> 
-<xsl:param name="numbering.maximum.level" select="'2'" /> 
+-->
 <xsl:template match="exercises//exercise" mode="xref-number">
     <xsl:apply-templates select="." mode="serial-number" />
 </xsl:template>
-<!-- Knowls -->
+<!-- Knowls now designated in pub-html.xml 
 <xsl:param name="html.knowl.example" select="'no'" />
 <xsl:param name="html.knowl.exercise.inline" select="'no'" />
 <xsl:param name="html.knowl.example.solution" select="'yes'" />
 <xsl:param name="html.knowl.warning" select="'no'" />
-<xsl:param name="html.knowl.technology" select="'no'" />
+<xsl:param name="html.knowl.technology" select="'no'" />-->
 <!-- color theme -->
 <xsl:param name="html.css.colorfile" select="'colors_default.css'" />
 
