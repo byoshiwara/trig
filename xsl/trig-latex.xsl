@@ -5,22 +5,12 @@
 <xsl:import href="../../mathbook/xsl/pretext-latex.xsl"/>
 <!--    -->
 <!--  List Chapters and Sections in Table of Contents  -->
-<xsl:param name="toc.level" select="'3'"/>
-<!--simple numbering -->
-<xsl:param name="numbering.projects.level" select="'1'" />
-<xsl:param name="numbering.theorems.level" select="'1'" /> 
-<xsl:param name="numbering.maximum.level" select="'2'" /> 
 <xsl:template match="exercises//exercise" mode="xref-number">
     <xsl:apply-templates select="." mode="serial-number" />
 </xsl:template>
 <!-- color theme -->
 <!--<xsl:param name="html.css.colorfile" select="'colors_default.css'" />
 -->
-<xsl:param name="exercise.divisional.hint" select="'yes'" />
-<xsl:param name="exercise.divisional.answer" select="'no'" />
-<xsl:param name="exercise.divisional.solution" select="'no'" />
-<xsl:param name="exercise.worksheet.answer" select="'no'" />
-<xsl:param name="latex.print" select="'yes'"/>
 <xsl:param name="latex.geometry" select="'letterpaper,left=1.5in,right=1in'"/><xsl:output method="text" />
 <!-- "assemblage" -->
 <!-- Boxed title -->
