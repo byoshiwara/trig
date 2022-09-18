@@ -247,7 +247,32 @@
             <cell><m>\hphantom{0000}</m></cell>
             <cell><m>\hphantom{0000}</m></cell></row>
             </tabular></sidebyside>
-            <sidebyside width="60%"><image source="photos/hp4-3-1"><description>grid</description></image></sidebyside></statement></exercise>
+            <sidebyside width="60%">
+            <image xml:id="hp4-3-2">
+                <description>sinusoidal graphs</description>
+                <latex-image>
+                <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+                <![CDATA[\tikzset{%
+                  block/.style    = {draw, thick, rectangle, minimum height = 3em,
+                    minimum width = 3em},
+                  sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+                  input/.style    = {coordinate}, % Input
+                  output/.style   = {coordinate} % Output
+                }
+                \begin{tikzpicture} [scale=.3]
+                \draw[cyan, xstep=2, ystep=1] (0,-8) grid (24,8);
+
+                \draw[black,thick, ->] (-.2,0) -- (24.5,0) node[right]{$t$};
+                \draw[black, thick, ->] (0,-8.1) -- (0,8.6) node[above]{$x$};
+
+                \foreach \x in {4, 8, ..., 24} 
+                \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \x $};
+                \foreach \y in {-8, -4, 4, 8} 
+                \draw[black] ($ \y *(0,1) +(.12,0) $) --++(-.24,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \y $};
+                \end{tikzpicture}]]>
+            </latex-image>
+            </image>
+        </sidebyside></statement></exercise>
 
     <exercise number="3"><statement><sidebyside widths="50% 30%" valigns="middle middle"><p>Delbert is standing at the point <m>(5,0)</m> on the square shown. If he walks around the square in the counter-clockwise direction, his <m>y</m>-coordinate is a function of the distance, <m>d</m>, he has walked.</p>
     <image xml:id="hp4-3-3">
@@ -315,7 +340,7 @@
             <cell><m>\hphantom{000}</m></cell>
             <cell><m>\hphantom{000}</m></cell></row>
             </tabular></sidebyside></li>
-             <li><p>Plot a graph of  Delbert's -coordinate as a function of the distance he has walked.</p>
+             <li><p>Plot a graph of  Delbert's <m>y</m>-coordinate as a function of the distance he has walked.</p>
              <sidebyside width="60%">
     <image xml:id="hp4-3-3b">
         <description>grid</description>
