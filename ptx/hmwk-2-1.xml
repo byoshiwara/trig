@@ -141,11 +141,11 @@
 
         \draw[red,thick] (0,1.5) arc(270:{360-atan(1.9/2.1)}:0.4) node[midway, xshift=0] (measure) {};
         \node[anchor=north west] at (.4,2) (description) {\color{red}$(44+x)\degree$};
-        \draw[red,->] (description) edge[out=270,in=290,->] (measure);
+        \draw[red,->,>=stealth'] (description) edge[out=270,in=290,->,>=stealth'] (measure);
 
         \draw[red,thick] (1.7,0) arc(180:{180-atan(1.9/2.1)}:0.4) node[midway, xshift=0] (measure2) {};
         \node[anchor=south west] at (1.7,0.5) (description2) {\color{red}$(44-x)\degree$};
-        \draw[red,->] (description2) edge[out=180,in=150,->] (measure2);
+        \draw[red,->,>=stealth'] (description2) edge[out=180,in=150,->,>=stealth'] (measure2);
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></statement>
     <answer><p>The sum of the acute angles is not <m>90\degree</m>.</p></answer></exercise>
@@ -550,7 +550,7 @@
         \draw[gray,ultra thick, dashed] (O) -- (B);
         \filldraw[gray] (A) circle (1cm);
         \filldraw[gray] (B) circle (1 cm);
-        \draw[green, thick, ->] (9,15.588) arc (60:80:18);
+        \draw[green, thick, ->,>=stealth'] (9,15.588) arc (60:80:18);
         \draw[black,thick] (-8,0) -- +(20.2,0);
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></statement>
@@ -759,8 +759,8 @@
         \coordinate (C) at (0,1);
         \coordinate (D) at (0.6,0.8);
 
-        \draw[black,thick,->] (-1.4,0)--(1.4,0) node[anchor=west] {$x$};
-        \draw[black,thick,->] (0,-1.3)--(0,1.3) node[anchor=south] {$y$};
+        \draw[black,thick,->,>=stealth'] (-1.4,0)--(1.4,0) node[anchor=west] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-1.3)--(0,1.3) node[anchor=south] {$y$};
         \draw[cyan,thick] (A) circle (1);
         \draw[red,ultra thick] (-1,0)--(B)--(D)--cycle;
         \filldraw[red] (D) circle (1.3pt) node[anchor=south west] {\color{blue}$(p,q)$};
