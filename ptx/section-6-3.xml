@@ -833,12 +833,10 @@ gives the number of hours of daylight in Glasgow, Scotland, as a function of tim
  <p> The <term>domain</term><idx><h>domain</h></idx> of a function is the set of all possible input values. For many familiar functions, the domain is the set of all real numbers. In particular, the domain of any linear or quadratic function is the set of all real numbers.</p>
  <p> Consider the functions <m>f(x) = 2x + 5</m> and <m>g(x) = x^2 - 4</m> shown below.  We can use any real number as an input for either of these functions, and their graphs extend across the entire <m>x</m>-axis.</p>
 
-<sidebyside width="85%">
+<sidebyside width="95%">
     <image xml:id="fig-6-3-domrge"><description>three graphs</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.2]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.18]
 
         \coordinate (O) at (0,0);
         \coordinate (A) at (-8.001,-8.01);
@@ -847,14 +845,13 @@ gives the number of hours of daylight in Glasgow, Scotland, as a function of tim
         \draw[black,thick,->,>=stealth'] (-8,0)--++(17.,0) ;
         \draw[black,thick,->,>=stealth'] (0,-8)--++(0,17) ;
         \foreach \i in {-8,-4,4,8} {
-         \draw[black,thick] (\i,0.16)--++(0,-.32)node[below, yshift=-2, fill=white, inner sep=1, scale=.7]{\i};
-         \draw[black,thick] (0.16,\i)--++(-.32,0)node[left, xshift=-2, fill=white, inner sep=1, scale=.7]{\i};
+         \draw[black,thick] (\i,0.16)--++(0,-.32)node[below, yshift=-2, fill=white, inner sep=1, scale=.8]{\i};
+         \draw[black,thick] (0.16,\i)--++(-.32,0)node[left, xshift=-2, fill=white, inner sep=1, scale=.8]{\i};
         };
         \draw[red,thick,<->,>=stealth'] (-13/2, -8)--(3/2,8);
 
-        \node[align=center, text=blue, scale=.7] at (0, -10.5) {$f(x)=2x+5$};
-        \node[align=left, text=blue, scale=.7] at (0, -13.3) { Domain: all real numbers \\ Range: all real numbers};
-
+        \node[align=center, text=blue, scale=.8] at (0, -10.5) {$f(x)=2x+5$};
+        \node[align=left, text=blue, scale=.8] at (0, -13.3) { Domain: all real numbers \\ Range: all real numbers};
 
         %second grid
         \coordinate (O) at (20,0);
@@ -865,18 +862,17 @@ gives the number of hours of daylight in Glasgow, Scotland, as a function of tim
         \draw[black,thick,->,>=stealth'] (20,-8)--++(0,17) ;
 
         \foreach \i [evaluate=\i as \ix using int(\i+20]  in {-8,-4,4,8} {
-         \draw[black,thick] (\ix,0.16)--++(0,-.32)node[below, yshift=-2, fill=white, inner sep=1, scale=.7]{\i};
-         \draw[black,thick] (20.16,\i)--++(-.32,0)node[left, xshift=-2, fill=white, inner sep=1, scale=.7]{\i};
+         \draw[black,thick] (\ix,0.16)--++(0,-.32)node[below, yshift=-2, fill=white, inner sep=1, scale=.8]{\i};
+         \draw[black,thick] (20.16,\i)--++(-.32,0)node[left, xshift=-2, fill=white, inner sep=1, scale=.8]{\i};
         };
 
         \draw[domain=16.536:23.4641,smooth,variable=\x,red,very thick] plot ({\x},{(\x-20)^2 -4});
-        \draw[red,very thick,<-] (16.536,8)--(17,5);
-        \draw[red,very thick,<-] (23.4641,8)--(23,5);
+        \draw[red,very thick,<-,>=stealth'] (16.536,8)--(17,5);
+        \draw[red,very thick,<-,>=stealth'] (23.4641,8)--(23,5);
 
-        \node[align=center, text=blue, scale=.7] at (20, -10.5) {$g(x)=x^2-4$};
-        \node[align=left, text=blue, scale=.7] at (20, -13.3) { Domain: all real numbers \\ Range: $y \ge -4$};
-
-
+        \node[align=center, text=blue, scale=.8] at (20, -10.5) {$g(x)=x^2-4$};
+        \node[align=left, text=blue, scale=.8] at (20, -13.3) { Domain: all real numbers \\ Range: $y \ge -4$};
+    
         %third grid
         \coordinate (O) at (40,0);
         \coordinate (A) at (31.999,-8.01);
@@ -886,15 +882,15 @@ gives the number of hours of daylight in Glasgow, Scotland, as a function of tim
         \draw[black,thick,->,>=stealth'] (40,-8)--++(0,17) ;
 
         \foreach \i [evaluate=\i as \ix using int(\i+40]  in {-8,-4,4,8} {
-         \draw[black,thick] (\ix,0.16)--++(0,-.32)node[below, yshift=-2, fill=white, inner sep=1, scale=.7]{\i};
-         \draw[black,thick] (40.16,\i)--++(-.32,0)node[left, xshift=-2, fill=white, inner sep=1, scale=.7]{\i};
+         \draw[black,thick] (\ix,0.16)--++(0,-.32)node[below, yshift=-2, fill=white, inner sep=1, scale=.8]{\i};
+         \draw[black,thick] (40.16,\i)--++(-.32,0)node[left, xshift=-2, fill=white, inner sep=1, scale=.8]{\i};
         };
 
         \draw[domain=37:48,smooth,variable=\x,red,very thick] plot ({\x},{sqrt(\x -37)});
         \draw[red,very thick,->,>=stealth'] (46,3)--(48,3.3166);
 
-        \node[align=center, text=blue, scale=.7] at (40, -10.5) {$h(x)=\sqrt{x+3}$};
-        \node[align=left, text=blue, scale=.7] at (40, -13.3) { Domain: $x \ge -3$ \\ Range: $y \ge 0$};
+        \node[align=center, text=blue, scale=.8] at (40, -10.5) {$h(x)=\sqrt{x+3}$};
+        \node[align=left, text=blue, scale=.8] at (40, -13.3) { Domain: $x \ge -3$ \\ Range: $y \ge 0$};
         \end{tikzpicture}]]>
     </latex-image></image>
 </sidebyside>

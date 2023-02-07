@@ -30,7 +30,7 @@ However, we don't have to convert radians to degrees in order to evaluate trig r
        Rounding to four places, we have <m>\cos (3.5) = -0.9365</m> and <m>\sin (3.5) = -0.3508</m>. Note that 3.5 radians is a third-quadrant angle, so the signs of the trig values make sense.</li>
      </ol></p></solution></example>
 
- <note><p>Recall the formula for arclength when the angle is measured in radians:  <m>s = r \theta</m>.
+<note><p>Recall the formula for arclength when the angle is measured in radians:  <m>s = r \theta</m>.
 If we solve for <m>\theta</m>, we see that <m>\theta = \dfrac{s}{r}</m>, a ratio of two lengths.  The units of length cancel out, so that radian measure has no units; it is a "dimensionless" quantity.</p>
 <p>  We shall see that this property makes radians especially useful in applications.  From now on we shall omit the tag "radians," and you may assume that any angle given without units is in radians.</p></note>   
 
@@ -334,15 +334,8 @@ If we solve for <m>\theta</m>, we see that <m>\theta = \dfrac{s}{r}</m>, a ratio
 
 <sidebyside width="60%">
     <image xml:id="act6-1"><description>grid</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} [scale=4]
+        <![CDATA[
+        \begin{tikzpicture} [scale=3.6]
 
         \draw[cyan] (-1.0001,-1.0001) grid[step = 0.1] (1,1);
         \draw[black, thick] (-1,0)--(1,0);
@@ -355,15 +348,15 @@ If we solve for <m>\theta</m>, we see that <m>\theta = \dfrac{s}{r}</m>, a ratio
         };
         \foreach \i in {0.5, 1.5, ..., 5.5} {
          \draw[black, thick] ({deg(\i)}:1) -- ({deg(\i)}:1.06);
-         \node[text width=.4cm, fill=white, inner sep=1, scale=.8] at ({deg(\i)}:1.15) { \i};
+         \node[text width=.4cm, fill=white, inner sep=1] at ({deg(\i)}:1.15) { \i};
         };
         \foreach \i in {1,2, ..., 6} {
          \draw[black, thick] ({deg(\i)}:1) -- ({deg(\i)}:1.1);
-         \node[text width=.2cm, fill=white, inner sep=1, scale=.9] at ({deg(\i)}:1.15) { \i};
+         \node[text width=.2cm, fill=white, inner sep=1] at ({deg(\i)}:1.15) { \i};
         };
         \foreach \i in {-0.5, 0.5} {
-         \draw[black, thick] (0.03,\i) -- (-0.03,\i) node[left, fill=white, inner sep=1, scale=.8]{ \i};
-         \draw[black, thick] (\i,0.03) -- (\i,-0.03) node[below, fill=white, inner sep=1, scale=.8]{\i};
+         \draw[black, thick] (0.03,\i) -- (-0.03,\i) node[left, fill=white, inner sep=1]{ \i};
+         \draw[black, thick] (\i,0.03) -- (\i,-0.03) node[below, fill=white, inner sep=1]{\i};
         };
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
@@ -415,7 +408,7 @@ If we solve for <m>\theta</m>, we see that <m>\theta = \dfrac{s}{r}</m>, a ratio
             <cell><m>\hphantom{000}</m></cell>
             <cell><m>\hphantom{000}</m></cell>
             <cell><m>\hphantom{000}</m></cell>
-            <cell><m>\hphantom{000}</m></cell></row>
+            <cell><m>\hphantom{0}</m></cell></row>
       <row> 
             <cell>Degrees</cell>
             <cell><m>\hphantom{000}</m></cell>
@@ -430,7 +423,7 @@ If we solve for <m>\theta</m>, we see that <m>\theta = \dfrac{s}{r}</m>, a ratio
             <cell><m>\hphantom{000}</m></cell>
             <cell><m>\hphantom{000}</m></cell>
             <cell><m>\hphantom{000}</m></cell>
-            <cell><m>\hphantom{000}</m></cell></row>      
+            <cell><m>\hphantom{0}</m></cell></row>      
           </tabular></sidebyside>
 
 <sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                        
@@ -481,7 +474,7 @@ If we solve for <m>\theta</m>, we see that <m>\theta = \dfrac{s}{r}</m>, a ratio
             <cell><m>\hphantom{0}</m></cell></row>      
           </tabular></sidebyside></li>
 
-<li><p>On the unit circle above, plot the endpoint of each arc in standard position.<ol marker="a" cols="4">
+    <li><p>On the unit circle above, plot the endpoint of each arc in standard position.<ol marker="a" cols="4">
     <li><m>\dfrac{\pi}{3}</m></li>
     <li><m>\dfrac{7\pi}{6}</m></li>
     <li><m>\dfrac{7\pi}{4}</m></li></ol></p></li></ol></p>
@@ -762,30 +755,32 @@ You can set your calculator in radian mode to verify that, to three decimal plac
     </latex-image></image></sidebyside></assemblage>
       
 <example><statement><p>Use the graph of the unit circle shown below to estimate <m>\cos 2.5,~\sin 2.5</m>, and <m>\tan 2.5</m>.</p>
-<sidebyside width="50%"><image xml:id="exam6-2-5"><description>circle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=4]
+<sidebyside width="60%"><image xml:id="exam6-2-5"><description>circle</description><latex-image>
+    <![CDATA[
+    \begin{tikzpicture} [scale=3.6]
 
-        \draw[cyan] (-1.0001,-1.0001) grid[step = 0.1] (1,1);
-        \draw[black, thick, ->,>=stealth'] (-1,0)--(1.1,0);
-        \draw[black, thick, ->,>=stealth'] (0,-1)--(0,1.1);
+    \draw[cyan] (-1.0001,-1.0001) grid[step = 0.1] (1,1);
+    \draw[black, thick] (-1,0)--(1,0);
+    \draw[black, thick] (0,-1)--(0,1);
 
-        \draw[red,thick] (0,0) circle (1cm);
+    \draw[red,thick] (0,0) circle (1cm);
 
-        \foreach \i in {0.1, 0.2, ..., 6.2} {
-         \draw[black, thick] ({deg(\i)}:.98) -- ({deg(\i)}:1.02);
-        };
-        \foreach \i in {1,2, ..., 6} {
-         \draw[black, thick] ({deg(\i)}:1) -- ({deg(\i)}:1.05);
-         \node[text width=.2cm, fill=white, inner sep=1, scale=.9] at ({deg(\i)}:1.1) { $\i$};
-        };
-        \foreach \i in {-0.5, 0.5} {
-         \draw[black, thick] (0.03,\i) -- (-0.03,\i) node[left, fill=white, inner sep=1, scale=.8]{ $\i$};
-         \draw[black, thick] (\i,0.03) -- (\i,-0.03) node[below, fill=white, inner sep=1, scale=.8]{$\i$};
-        };
-        \end{tikzpicture}]]>
+    \foreach \i in {0.1, 0.2, ..., 6.2} {
+     \draw[black, thick] ({deg(\i)}:1) -- ({deg(\i)}:1.03);
+    };
+    \foreach \i in {0.5, 1.5, ..., 5.5} {
+     \draw[black, thick] ({deg(\i)}:1) -- ({deg(\i)}:1.06);
+     \node[text width=.4cm, fill=white, inner sep=1] at ({deg(\i)}:1.15) { \i};
+    };
+    \foreach \i in {1,2, ..., 6} {
+     \draw[black, thick] ({deg(\i)}:1) -- ({deg(\i)}:1.1);
+     \node[text width=.2cm, fill=white, inner sep=1] at ({deg(\i)}:1.15) { \i};
+    };
+    \foreach \i in {-0.5, 0.5} {
+     \draw[black, thick] (0.03,\i) -- (-0.03,\i) node[left, fill=white, inner sep=1]{ \i};
+     \draw[black, thick] (\i,0.03) -- (\i,-0.03) node[below, fill=white, inner sep=1]{\i};
+    };
+    \end{tikzpicture}]]>
     </latex-image></image></sidebyside></statement>
 
 <solution><p>The circle is scaled in units of 0.1 radians, and an arc of 2.5 radians in standard position has its terminal point, <m>P</m>, in the second quadrant. The coordinates of <m>P</m> are approximately <m>(-0.8,0.6)</m>, so we have

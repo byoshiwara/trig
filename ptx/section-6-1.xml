@@ -217,103 +217,79 @@ We'll call the quantity in parentheses, (fraction of one revolution <m>\times 2\
 <p>For example, one complete revolution, or <m>360\degree</m>, is equal to <m>2\pi</m> radians, and one-quarter revolution, or <m>90\degree</m>, is equal to <m>\dfrac{1}{4}(2\pi)</m> or <m>\dfrac{\pi}{2}</m> radians. The figure below shows the radian measure of the quadrantal angles.</p>  
 
 <sidebyside widths="25% 25% 25% 25%">
-        <image xml:id="fig-6-1a-rad"><description>angle on unit circle from positive x-axis to positive y-axis</description><latex-image>
-            <![CDATA[\tikzset{%
-              block/.style    = {draw, thick, rectangle, minimum height = 3em,
-                minimum width = 3em},
-              sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-              input/.style    = {coordinate}, % Input
-              output/.style   = {coordinate} % Output
-            }
-        \begin{tikzpicture} 
-        \coordinate (O) at (0,0);
-        \draw[gray!90!white,thick] (O) circle (1.5cm);
-        \coordinate (A) at (0:1.5);
-        \coordinate (B) at (90:1.5);
-    
-        \draw[black,thick] (-1.7,0)--(1.7,0);
-        \draw[black,thick] (0,-1.7)--(0,1.7);
+    <image xml:id="fig-6-1a-rad"><description>angle on unit circle from positive x-axis to positive y-axis</description><latex-image>
+        <![CDATA[
+    \begin{tikzpicture} 
+    \coordinate (O) at (0,0);
+    \draw[gray!90!white,thick] (O) circle (1.5cm);
+    \coordinate (A) at (0:1.5);
+    \coordinate (B) at (90:1.5);
+
+    \draw[black,thick] (-1.7,0)--(1.7,0);
+    \draw[black,thick] (0,-1.7)--(0,1.7);
 %       \draw[gray, thick] (O)--(B);
-    
-        \draw[red,thick,->,>=stealth'](0.4,0) arc(0:90:.4) node[right, xshift=6, yshift=0]{ $\theta=\frac{\pi}{2}$};
-        \draw[red,thick,<->,>=stealth'](1.7,0)--(O)--(0,1.7);
-        \node[text width=1cm, text=blue] at (0,-2.25){$\theta = \frac{\pi}{2}$};
-            \end{tikzpicture}]]>
-        </latex-image></image>
-        <image xml:id="fig-6-1b-rad"><description>angle on unit circle from positive x-axis to negative x-axis</description><latex-image>
-            <![CDATA[\tikzset{%
-              block/.style    = {draw, thick, rectangle, minimum height = 3em,
-                minimum width = 3em},
-              sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-              input/.style    = {coordinate}, % Input
-              output/.style   = {coordinate} % Output
-            }
-        \begin{tikzpicture}
-        %second circle
-        \coordinate (O) at (4,0);
-        \draw[gray!90!white,thick] (O) circle (1.5cm);
-        \coordinate (A) at ($ (O)+(1.5,0) $);
-        \coordinate (B) at ($ (O)+(-1.5,0) $);
-    
+
+    \draw[red,thick,->,>=stealth'](0.4,0) arc(0:90:.4) node[right, xshift=6, yshift=0, text=blue]{ $\theta=\frac{\pi}{2}$};
+    \draw[red,thick,<->,>=stealth'](1.7,0)--(O)--(0,1.7);
+    \node[text width=1cm, text=blue] at (0,-2.25){$\theta = \frac{\pi}{2}$};
+        \end{tikzpicture}]]>
+    </latex-image></image>
+    <image xml:id="fig-6-1b-rad"><description>angle on unit circle from positive x-axis to negative x-axis</description><latex-image>
+        <![CDATA[
+    \begin{tikzpicture}
+    %second circle
+    \coordinate (O) at (4,0);
+    \draw[gray!90!white,thick] (O) circle (1.5cm);
+    \coordinate (A) at ($ (O)+(1.5,0) $);
+    \coordinate (B) at ($ (O)+(-1.5,0) $);
+
 %       \draw[black,thick] (O)++(-1.7,0)--++(3.47,0);
-        \draw[black,thick] (O)++(0,-1.7)--++(0,3.4);
+    \draw[black,thick] (O)++(0,-1.7)--++(0,3.4);
 %       \draw[gray, thick] (O)--(B);
-    
-        \draw[red,thick,->,>=stealth'](4.4,0) arc(0:180:.4) node[midway, xshift=0, yshift=6,fill=white, inner sep=0pt]{ $\theta=\pi$};
-        \draw[red,thick,<->,>=stealth'](O)++(1.7,0)--(O)--++(-1.7,0);
-        \node[text width=1cm, text=blue] at (4,-2.25){$\theta = \pi$};
 
-            \end{tikzpicture}]]>
-        </latex-image></image>
-        <image xml:id="fig-6-1c-rad"><description>angle on unit circle from positive x-axis to negative y-axis</description><latex-image>
-            <![CDATA[\tikzset{%
-              block/.style    = {draw, thick, rectangle, minimum height = 3em,
-                minimum width = 3em},
-              sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-              input/.style    = {coordinate}, % Input
-              output/.style   = {coordinate} % Output
-            }
-        \begin{tikzpicture}
+    \draw[red,thick,->,>=stealth'](4.4,0) arc(0:180:.4) node[midway, xshift=0, yshift=6,fill=white, inner sep=0pt, text=blue]{ $\theta=\pi$};
+    \draw[red,thick,<->,>=stealth'](O)++(1.7,0)--(O)--++(-1.7,0);
+    \node[text width=1cm, text=blue] at (4,-2.25){$\theta = \pi$};
 
-        %third circle
-        \coordinate (O) at (8,0);
-        \draw[gray!90!white,thick] (O) circle (1.5cm);
-        \coordinate (A) at ($ (O)+(1.5,0) $);
-        \coordinate (B) at ($ (O)+(0, -1.5) $);
-    
-        \draw[black,thick] (O)++(-1.7,0)--++(3.4,0);
-        \draw[black,thick] (O)++(0,-1.7)--++(0,3.4);
+        \end{tikzpicture}]]>
+    </latex-image></image>
+    <image xml:id="fig-6-1c-rad"><description>angle on unit circle from positive x-axis to negative y-axis</description><latex-image>
+        <![CDATA[
+    \begin{tikzpicture}
+
+    %third circle
+    \coordinate (O) at (8,0);
+    \draw[gray!90!white,thick] (O) circle (1.5cm);
+    \coordinate (A) at ($ (O)+(1.5,0) $);
+    \coordinate (B) at ($ (O)+(0, -1.5) $);
+
+    \draw[black,thick] (O)++(-1.7,0)--++(3.4,0);
+    \draw[black,thick] (O)++(0,-1.7)--++(0,3.4);
 %       \draw[gray, thick] (O)--(B);
-    
-        \draw[red,thick,->,>=stealth'](8.4,0) arc(0:270:.4) node[midway, xshift=-11, yshift=8]{ $\theta=\frac{3\pi}{2}$};
-        \draw[red,thick,<->,>=stealth'](O)++(1.7,0)--(O)--++(0,-1.7);
-        \node[text width=1.3cm, text=blue] at (8,-2.25){$\theta = \frac{3\pi}{2}$};
-            \end{tikzpicture}]]>
-        </latex-image></image>
-        <image xml:id="fig-6-1d-rad"><description>angle on unit circle from positive x-axis counterclockwise back to positive x-axis</description><latex-image>
-            <![CDATA[\tikzset{%
-              block/.style    = {draw, thick, rectangle, minimum height = 3em,
-                minimum width = 3em},
-              sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-              input/.style    = {coordinate}, % Input
-              output/.style   = {coordinate} % Output
-            }
-        \begin{tikzpicture} 
-        %fourth circle
-        \coordinate (O) at (12,0);
-        \draw[gray!90!white,thick] (O) circle (1.5cm);
-        \coordinate (A) at ($ (O)+(1.5,0) $);
-        \coordinate (B) at ($ (O)+(0, -1.5) $);
-    
-        \draw[black,thick] (O)++(-1.7,0)--++(3.4,0);
-        \draw[black,thick] (O)++(0,-1.7)--++(0,3.4);
+
+    \draw[red,thick,->,>=stealth'](8.4,0) arc(0:270:.4) node[midway, xshift=-11, yshift=8, text=blue]{ $\theta=\frac{3\pi}{2}$};
+    \draw[red,thick,<->,>=stealth'](O)++(1.7,0)--(O)--++(0,-1.7);
+    \node[text width=1.3cm, text=blue] at (8,-2.25){$\theta = \frac{3\pi}{2}$};
+        \end{tikzpicture}]]>
+    </latex-image></image>
+    <image xml:id="fig-6-1d-rad"><description>angle on unit circle from positive x-axis counterclockwise back to positive x-axis</description><latex-image>
+        <![CDATA[
+    \begin{tikzpicture} 
+    %fourth circle
+    \coordinate (O) at (12,0);
+    \draw[gray!90!white,thick] (O) circle (1.5cm);
+    \coordinate (A) at ($ (O)+(1.5,0) $);
+    \coordinate (B) at ($ (O)+(0, -1.5) $);
+
+    \draw[black,thick] (O)++(-1.7,0)--++(3.4,0);
+    \draw[black,thick] (O)++(0,-1.7)--++(0,3.4);
 %       \draw[gray, thick] (O)--(B);
-    
-        \draw[red,thick,->,>=stealth'](12.4,0) arc(0:360:.4) node[midway, xshift=-8, yshift=-15,]{ $\theta=2\pi$};
-        \draw[red,thick,->,>=stealth'](O)--++(1.7,0);
-        \node[text width=1.3cm, text=blue] at (12,-2.2 5){$\theta = 2\pi$};
-            \end{tikzpicture}]]>
-        </latex-image></image></sidebyside>
+
+    \draw[red,thick,->,>=stealth'](12.4,0) arc(0:360:.4) node[midway, xshift=-8, yshift=-15, text=blue]{ $\theta=2\pi$};
+    \draw[red,thick,->,>=stealth'](O)--++(1.7,0);
+    \node[text width=1.3cm, text=blue] at (12,-2.2 5){$\theta = 2\pi$};
+        \end{tikzpicture}]]>
+</latex-image></image></sidebyside> 
 
 <example><statement><p>What is the radian measure of an angle of <m>120\degree</m>?</p></statement>
 
@@ -354,34 +330,27 @@ We'll call the quantity in parentheses, (fraction of one revolution <m>\times 2\
             <cell><m>6.28</m></cell></row>                
     </tabular>
     <image xml:id="fig-6-1-decrad"><description>circle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-    \begin{tikzpicture}
+        <![CDATA[
+        \begin{tikzpicture}
 
-    \coordinate (O) at (0,0);
-    \draw[gray!90!white,thick] (O) circle (1.5cm);
-    \coordinate (A) at (0:1.5);
-    \coordinate (B) at (90:1.5);
-    \coordinate (C) at (180:1.5);
-    \coordinate (D) at (270:1.5);
+        \coordinate (O) at (0,0);
+        \draw[gray!90!white,thick] (O) circle (1.5cm);
+        \coordinate (A) at (0:1.5);
+        \coordinate (B) at (90:1.5);
+        \coordinate (C) at (180:1.5);
+        \coordinate (D) at (270:1.5);
 
-    \draw[black,thick] (-1.7,0)--(1.7,0);
-    \draw[black,thick] (0,-1.7)--(0,1.7);
-    \draw[red, fill=red] (A) circle (1.5pt) node[anchor=south west] {0};
-    \draw[red, fill=red] (A) circle (1.5pt) node[anchor=north west] {$2\pi \approx 6.28$};
-    \draw[red, fill=red] (B) circle (1.5pt) node[anchor=south west] {$\frac{\pi}{2}\approx 1.57$};
-    \draw[red, fill=red] (C) circle (1.5pt) node[anchor=south east] {$\pi\approx 3.14$};
-    \draw[red, fill=red] (D) circle (1.5pt) node[anchor=north, yshift=-3] {$\frac{3\pi}{2}\approx 4.71$};
+        \draw[black,thick] (-1.7,0)--(1.7,0);
+        \draw[black,thick] (0,-1.7)--(0,1.7);
+        \draw[red, fill=red] (A) circle (1.5pt) node[anchor=south west, text=blue] {0};
+        \draw[red, fill=red] (A) circle (1.5pt) node[anchor=north west, text=blue] {$2\pi \approx 6.28$};
+        \draw[red, fill=red] (B) circle (1.5pt) node[anchor=south west, text=blue] {$\frac{\pi}{2}\approx 1.57$};
+        \draw[red, fill=red] (C) circle (1.5pt) node[anchor=south east, text=blue] {$\pi\approx 3.14$};
+        \draw[red, fill=red] (D) circle (1.5pt) node[anchor=north, yshift=-3, text=blue] {$\frac{3\pi}{2}\approx 4.71$};
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside>  
+</latex-image></image></sidebyside>  
 
-  <note><p>Because they are "benchmarks" for comparing angles, you should be very familiar with both the exact values of these angles in radians and their approximations!</p></note>
+<note><p>Because they are "benchmarks" for comparing angles, you should be very familiar with both the exact values of these angles in radians and their approximations!</p></note>
 
 <example><statement><p>In which quadrant would you find an angle of 2 radians?  An angle of 5 radians?</p></statement>
 
@@ -391,15 +360,8 @@ We'll call the quantity in parentheses, (fraction of one revolution <m>\times 2\
 
 <answer><sidebyside widths="22% 22% 22%" margins="0% 20%">
     <image xml:id="exer6-1-3a"><description>circle</description><latex-image>
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-    \begin{tikzpicture}
-
+        <![CDATA[
+    \begin{tikzpicture} [scale=.8]
     \coordinate (O) at (0,0);
     \draw[black, thick] (-1.7,0)--(1.7,0);
     \draw[black, thick] (0,-1.7)--(0,1.7);
@@ -410,19 +372,12 @@ We'll call the quantity in parentheses, (fraction of one revolution <m>\times 2\
     \coordinate (C) at ({deg(6)}:1.5);
 
     \draw[blue, thick] (A)--(O);
-    \draw[red, thick, ->,>=stealth'] (.7,0) arc (0:{deg(3)}:.7) node[above, xshift=-3, yshift=3]{3};
+    \draw[red, thick, ->,>=stealth'] (.7,0) arc (0:{deg(3)}:.7) node[above, xshift=-3, yshift=3, text=blue]{3};
         \end{tikzpicture}]]>
     </latex-image></image>
     <image xml:id="exer6-1-3b"><description>circle</description><latex-image>
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-    \begin{tikzpicture}
-
+        <![CDATA[
+    \begin{tikzpicture} [scale=.8]
     \coordinate (O) at (0,0);
     \draw[black, thick] (-1.7,0)--(1.7,0);
     \draw[black, thick] (0,-1.7)--(0,1.7);
@@ -433,19 +388,12 @@ We'll call the quantity in parentheses, (fraction of one revolution <m>\times 2\
     \coordinate (C) at ({deg(6)}:1.5);
 
     \draw[blue, thick] (B)--(O);
-    \draw[red, thick, ->,>=stealth'] (.5,0) arc (0:{deg(4)}:.5) node[left, xshift=-4, yshift=1]{4};
+    \draw[red, thick, ->,>=stealth'] (.5,0) arc (0:{deg(4)}:.5) node[left, xshift=-4, yshift=1, text=blue]{4};
         \end{tikzpicture}]]>
     </latex-image></image>
     <image xml:id="exer6-1-3c"><description>circle</description><latex-image>
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-    \begin{tikzpicture}
-
+        <![CDATA[
+    \begin{tikzpicture} [scale=.8]  
     \coordinate (O) at (0,0);
     \draw[black, thick] (-1.7,0)--(1.7,0);
     \draw[black, thick] (0,-1.7)--(0,1.7);
@@ -456,10 +404,10 @@ We'll call the quantity in parentheses, (fraction of one revolution <m>\times 2\
     \coordinate (C) at ({deg(6)}:1.5);
 
     \draw[blue, thick] (C)--(O);
-    \draw[red, thick, ->,>=stealth'] (.3,0) arc (0:{deg(6)}:.3) node[below, yshift=-4]{6};
+    \draw[red, thick, ->,>=stealth'] (.3,0) arc (0:{deg(6)}:.3) node[below, yshift=-4, text=blue]{6};
         \end{tikzpicture}]]>
     </latex-image></image>
-</sidebyside></answer></exercise> 
+</sidebyside></answer></exercise>
 
 <p>It turns out that measuring angles in radians is useful for many applications besides calculating arclengths, so we need to start thinking in radians. To help that process, we'll first learn to convert between degrees and radians.</p>
 </subsection>
@@ -508,48 +456,33 @@ And of course it is also true that
 <note><p>You can review the use of conversion factors in the Algebra Refresher at the end of this Section.</p></note>
 
 <sidebyside widths="65% 35%" valigns="middle middle" margins="0% 0%">
-<p>From our conversion factor we also learn that 
-    <me>\blert{ 1~\text{radian} = \dfrac{180\degree}{\pi} \approx 57.3\degree}</me>
-  So while <m>1\degree</m> is a relatively small angle, 1 radian is much larger — nearly <m>60\degree</m>, in fact. </p>
-    <image xml:id="fig-6-1-onerad"><description>circle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-    \begin{tikzpicture}
-    \coordinate (O) at (0,0);
-    \draw[gray!90!white,thick] (O) circle (1.5cm);
-    \coordinate (A) at (0:1.5);
-    \coordinate (B) at ($({deg(1)}:1.5) $);
-    \draw[black,thick] (-1.7,0)--(1.7,0);
-    \draw[black,thick] (0,-1.7)--(0,1.7);
-    \draw[blue,thick] (O)--(B);
-    \draw[red, fill=red] (A) circle (1.5pt);
-    \draw[red, thick, ->,>=stealth'] (0.4,0) arc ((0:{deg(1)}:0.4) ;
-    \draw[red, fill=red] (B) circle (1.5pt);
-    \draw[red, ultra thick] (A) arc ((0:{deg(1)}:1.5) node[right, midway] {1 rad$\approx 57.3\degree$};
+    <p>From our conversion factor we also learn that 
+        <me>\blert{ 1~\text{radian} = \dfrac{180\degree}{\pi} \approx 57.3\degree}</me>
+        So while <m>1\degree</m> is a relatively small angle, 1 radian is much larger — nearly <m>60\degree</m>, in fact. </p>
+        <image xml:id="fig-6-1-onerad"><description>circle</description><latex-image>
+            <![CDATA[
+        \begin{tikzpicture}
+        \coordinate (O) at (0,0);
+        \draw[gray!90!white,thick] (O) circle (1.5cm);
+        \coordinate (A) at (0:1.5);
+        \coordinate (B) at ($({deg(1)}:1.5) $);
+        \draw[black,thick] (-1.7,0)--(1.7,0);
+        \draw[black,thick] (0,-1.7)--(0,1.7);
+        \draw[blue,thick] (O)--(B);
+        \draw[red, fill=red] (A) circle (1.5pt);
+        \draw[red, thick, ->,>=stealth'] (0.4,0) arc ((0:{deg(1)}:0.4) ;
+        \draw[red, fill=red] (B) circle (1.5pt);
+        \draw[red, ultra thick] (A) arc ((0:{deg(1)}:1.5) node[right, midway, text=blue] {1 rad$\approx 57.3\degree$};
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside>
+</latex-image></image></sidebyside> 
 
 <p>But this is reasonable, because there are only a little more than 6 radians in an entire revolution. An angle of 1 radian is shown above.</p>   
 
 <p>We'll soon see that, for many applications, it is easier to work entirely in radians. For reference, the figure below shows a radian protractor.</p>
 
-  <sidebyside width="60%"><image xml:id="fig-6-1-radpro"><description>triangle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-    \begin{tikzpicture}
-
+<sidebyside width="60%"><image xml:id="fig-6-1-radpro"><description>triangle</description><latex-image>
+    <![CDATA[
+    \begin{tikzpicture} [scale=.7]
     \coordinate (O) at (0,0);
     \draw[gray!60!white, thick] (-6.1,0) --(6.1,0);
     \draw[gray!60!white, thick] (0,-6.1) --(0, 6.1);
@@ -558,15 +491,15 @@ And of course it is also true that
     \draw[red, thick] (O) circle (6cm);
 
     \foreach \i in {0.1, 0.2, ..., 6.2}
-     \draw[black,thick] ({deg(\i)}:6)--({deg(\i)}:5.7);
+        \draw[black,thick] ({deg(\i)}:6)--({deg(\i)}:5.7);
     \foreach \i in {1, 2, ..., 6}{
-     \draw[black,thick] ({deg(\i)}:6)--({deg(\i)}:5);
-     \node[text width=.3cm] at ({deg(\i}:4.7) {\i}; };
+        \draw[black,thick] ({deg(\i)}:6)--({deg(\i)}:5);
+        \node[text width=.3cm] at ({deg(\i}:4.7) {\i}; };
     \foreach \i in {0.5,1.5, 2.5, ..., 5.5} {
-     \draw[black,thick] ({deg(\i)}:6)--({deg(\i)}:5.3);
-     \node[text width=.25cm, scale=.9] at ({deg(\i}:4.9) {\i}; };
+        \draw[black,thick] ({deg(\i)}:6)--({deg(\i)}:5.3);
+        \node[text width=.25cm, scale=.9] at ({deg(\i}:4.9) {\i}; };
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside>
+</latex-image></image></sidebyside>
 </subsection>
 
 <subsection><title>Arclength Formula</title>
