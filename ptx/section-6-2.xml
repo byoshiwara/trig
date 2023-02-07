@@ -155,16 +155,10 @@ If we solve for <m>\theta</m>, we see that <m>\theta = \dfrac{s}{r}</m>, a ratio
 
 <p>Recall that we use reference angles to define the trigonometric ratios for angles greater than <m>90\degree</m>. (See Section 4.1 to review reference angles.) The figure below shows how to calculate reference angles in radians. Note that the formulas are the same as those for degrees if we replace <m>180\degree</m> by <m>\pi</m>!</p>  
 
-<sidebyside width="80%"><image xml:id="fig-6-2-refang"><description>angles</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}[scale=1.4]
+<assemblage><title>Reference Angles in Radians</title>
+    <sidebyside width="80%"><image xml:id="fig-6-2-refang"><description>angles</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture}[scale=1.]
 
         \coordinate (O) at (0,0);
         \coordinate (x) at (2.5,0);
@@ -253,87 +247,70 @@ If we solve for <m>\theta</m>, we see that <m>\theta = \dfrac{s}{r}</m>, a ratio
 
         \node[text width=5.2cm] at (7.6,-5.5)     {\color{blue} Fourth-quadrant: $\tilde{\theta}=2\pi -\theta$};
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside>
+    </latex-image></image></sidebyside></assemblage>
 
 <example><statement><p>Give exact values for the following.</p>
-<p><ol marker="a" cols="2">
-    <li><m>\tan \dfrac{2\pi}{3}</m></li>
-    <li><m>\cos \dfrac{5\pi}{4}</m></li>
-</ol></p></statement>
-
-<solution><p><ol marker="a">
-    <li><sidebyside widths="65% 30%" valigns="middle middle"><p>The reference angle for <m>\dfrac{2\pi}{3}</m> is <m>\pi - \dfrac{2\pi}{3} = \dfrac{\pi}{3}</m>, and the tangent is negative in the second quadrant. (See the figure at right.)  Thus,
-            <me>\tan \dfrac{2\pi}{3} = -\tan \dfrac{\pi}{3} = -\sqrt{3}</me></p>
-    <image xml:id="exam6-2-2a"> <description>angles</description> <latex-image> 
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml --> 
-        <![CDATA[\tikzset{% 
-          block/.style    = {draw, thick, rectangle, minimum height = 3em, 
-            minimum width = 3em}, 
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder 
-          input/.style    = {coordinate}, % Input 
-          output/.style   = {coordinate} % Output 
-        } 
-        \begin{tikzpicture}
-
-        \coordinate (O) at (0,0);
-        \coordinate (A) at (60:1.5);
-        \coordinate (B) at (120:1.5);
-        \coordinate (C) at (0.75,0);
-        \coordinate (D) at (-0.75,0);
-
-        \draw[blue,thick] (C) rectangle ++(-.2,.2);
-        \draw[blue,thick] (D) rectangle ++(.2,.2);
-
-        \draw[black, thick, ->,>=stealth'] (-1.7,0)--(1.8,0);
-        \draw[black, thick, ->,>=stealth'] (0,-1.7)--(0,1.8);
-        \draw[gray, thick] (O) circle (1.5);
-
-        \draw[gray!80, thick, dashed] (O)--(A)--(C);
-        \draw[blue, thick] (O)--(B) ;
-        \draw[gray!80, thick, dashed] (B)--(D) ;
-        \draw[red, thick, ->,>=stealth'] (0.3,0) arc(0:120:0.3);
-        \draw[red, thick, ->,>=stealth'] (-0.5,0) arc(180:120:0.5);
-        \filldraw[black] (A) circle (.06cm) node[anchor=south west, yshift=-0.1cm, text=red] {$s=\frac{\pi}{3}$};
-        \filldraw[black] (B) circle (.06cm) node[anchor=south east, yshift=-0.1cm, text=red] {$s=\frac{2\pi}{3}$};
-        \end{tikzpicture}]]> 
-    </latex-image> </image> </sidebyside></li>
-
-    <li><sidebyside widths="65% 35%" valigns="middle middle"><p>The reference angle for <m>\dfrac{5\pi}{4}</m> is <m>\dfrac{5\pi}{4} - \pi = \dfrac{\pi}{4}</m>, and the cosine is negative in the third quadrant, so
-            <me>\cos \dfrac{5\pi}{4} = - \cos \dfrac{\pi}{4} = \dfrac{-1}{\sqrt{2}}</me></p>
-    <image xml:id="exam6-2-2b"><description>angles</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
-
-        \coordinate (O) at (0,0);
-        \coordinate (A) at (45:1.5);
-        \coordinate (B) at (225:1.5);
-        \coordinate (C) at ($ sqrt(2)*(.75,0) $);
-        \coordinate (D) at ($ -sqrt(2)*(.75,0) $);
-
-        \draw[blue,thick] (C) rectangle ++(-.2,.2);
-        \draw[blue,thick] (D) rectangle ++(.2,-.2);
-
-        \draw[black, thick, ->,>=stealth'] (-1.7,0)--(1.8,0);
-        \draw[black, thick, ->,>=stealth'] (0,-1.7)--(0,1.8);
-        \draw[gray, thick] (O) circle (1.5);
-
-        \draw[gray!80, thick, dashed] (O)--(A)--(C);
-        \draw[blue, thick] (O)--(B) ;
-        \draw[gray!80, thick, dashed] (B)--(D) ;
-        \draw[red, thick, ->,>=stealth'] (0.3,0) arc(0:225:0.3);
-        \draw[red, thick, ->,>=stealth'] (-0.5,0) arc(180:225:0.5);
-        \filldraw[black] (A) circle (.06cm) node[anchor=south west, yshift=-0.1cm, text=red] {$s=\frac{\pi}{4}$};
-        \filldraw[black] (B) circle (.06cm) node[anchor=north east, yshift=0.1cm, text=red] {$s=\frac{5\pi}{4}$};
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></li>
-</ol></p></solution></example>
+        <p><ol marker="a" cols="2">
+            <li><m>\tan \dfrac{2\pi}{3}</m></li>
+            <li><m>\cos \dfrac{5\pi}{4}</m></li>
+        </ol></p></statement>
+        <solution><p><ol marker="a">
+            <li><sidebyside widths="65% 30%" valigns="middle middle"><p>The reference angle for <m>\dfrac{2\pi}{3}</m> is <m>\pi - \dfrac{2\pi}{3} = \dfrac{\pi}{3}</m>, and the tangent is negative in the second quadrant. (See the figure at right.)  Thus,
+                    <me>\tan \dfrac{2\pi}{3} = -\tan \dfrac{\pi}{3} = -\sqrt{3}</me></p>
+            <image xml:id="exam6-2-2a"> <description>angles</description> <latex-image> 
+                <![CDATA[
+                \begin{tikzpicture}     
+                \coordinate (O) at (0,0);
+                \coordinate (A) at (60:1.5);
+                \coordinate (B) at (120:1.5);
+                \coordinate (C) at (0.75,0);
+                \coordinate (D) at (-0.75,0);
+        
+                \draw[blue,thick] (C) rectangle ++(-.2,.2);
+                \draw[blue,thick] (D) rectangle ++(.2,.2);
+        
+                \draw[black, thick, ->,>=stealth'] (-1.7,0)--(1.8,0);
+                \draw[black, thick, ->,>=stealth'] (0,-1.7)--(0,1.8);
+                \draw[gray, thick] (O) circle (1.5);
+        
+                \draw[gray!80, thick, dashed] (O)--(A)--(C);
+                \draw[blue, thick] (O)--(B) ;
+                \draw[gray!80, thick, dashed] (B)--(D) ;
+                \draw[red, thick, ->,>=stealth'] (0.3,0) arc(0:120:0.3);
+                \draw[red, thick, ->,>=stealth'] (-0.5,0) arc(180:120:0.5);
+                \filldraw[black] (A) circle (.06cm) node[anchor=south west, yshift=-0.1cm, text=red] {$s=\frac{\pi}{3}$};
+                \filldraw[black] (B) circle (.06cm) node[anchor=south east, yshift=-0.1cm, text=red] {$s=\frac{2\pi}{3}$};
+                \end{tikzpicture}]]> 
+            </latex-image></image></sidebyside></li>
+        
+            <li><sidebyside widths="65% 35%" valigns="middle middle"><p>The reference angle for <m>\dfrac{5\pi}{4}</m> is <m>\dfrac{5\pi}{4} - \pi = \dfrac{\pi}{4}</m>, and the cosine is negative in the third quadrant, so
+                    <me>\cos \dfrac{5\pi}{4} = - \cos \dfrac{\pi}{4} = \dfrac{-1}{\sqrt{2}}</me></p>
+            <image xml:id="exam6-2-2b"><description>angles</description><latex-image>
+                <![CDATA[
+                \begin{tikzpicture}     
+                \coordinate (O) at (0,0);
+                \coordinate (A) at (45:1.5);
+                \coordinate (B) at (225:1.5);
+                \coordinate (C) at ($ sqrt(2)*(.75,0) $);
+                \coordinate (D) at ($ -sqrt(2)*(.75,0) $);
+        
+                \draw[blue,thick] (C) rectangle ++(-.2,.2);
+                \draw[blue,thick] (D) rectangle ++(.2,-.2);
+        
+                \draw[black, thick, ->,>=stealth'] (-1.7,0)--(1.8,0);
+                \draw[black, thick, ->,>=stealth'] (0,-1.7)--(0,1.8);
+                \draw[gray, thick] (O) circle (1.5);
+        
+                \draw[gray!80, thick, dashed] (O)--(A)--(C);
+                \draw[blue, thick] (O)--(B) ;
+                \draw[gray!80, thick, dashed] (B)--(D) ;
+                \draw[red, thick, ->,>=stealth'] (0.3,0) arc(0:225:0.3);
+                \draw[red, thick, ->,>=stealth'] (-0.5,0) arc(180:225:0.5);
+                \filldraw[black] (A) circle (.06cm) node[anchor=south west, yshift=-0.1cm, text=red] {$s=\frac{\pi}{4}$};
+                \filldraw[black] (B) circle (.06cm) node[anchor=north east, yshift=0.1cm, text=red] {$s=\frac{5\pi}{4}$};
+                \end{tikzpicture}]]>
+            </latex-image></image></sidebyside></li>
+        </ol></p></solution></example>
 
   <note><p>At this point, you may feel that expressions such as <m>~\cos \dfrac{5\pi}{4} = \dfrac{-1}{\sqrt{2}}~</m> look like hieroglyphics.  Keep in mind that <m>\dfrac{5\pi}{4}</m> and <m>\dfrac{-1}{\sqrt{2}}</m> are just numbers, so the equation above says that "the cosine of an angle of 3.9 radians is about -0.7."</p></note>
 
