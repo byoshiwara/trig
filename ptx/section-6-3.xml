@@ -358,7 +358,7 @@
                %second grid
                \draw[cyan] (1.4999,-1.0001) grid[xstep=.3, ystep=.1] (5.7,1);
                \draw[black,thick,->,>=stealth'] (1.45,0)--(5.9,0) node[right] {$t$};
-               \draw[black,thick,->,>=stealth'] (1.5,-1)--(1.5,1.2) node[above, yshift=-2] {$f(t)=\sin t$};
+               \draw[black,thick,->,>=stealth'] (1.5,-1)--(1.5,1.2) node[above, yshift=-2] {$g(t)=\sin t$};
        
                \foreach \x [evaluate=\x as \xi using (1.5 + .6* \x )]  in {1, 2,...,7}
                 \draw[black] (\xi,.05)--++(0,-.1) node[below, yshift=-2, fill=white, inner sep =1, scale=.8] {$\x$};
@@ -737,7 +737,7 @@
     <me>h = f(t) = 100 - 100\cos \left(\dfrac{\pi}{4}t\right)</me> 
 where <m>t</m> is measured in minutes after boarding.</p>
 
-<sidebyside widths="45% 50%" valigns="middle middle" margins="0% 0%">
+<sidebyside widths="45% 52%" valigns="middle middle" margins="0% 0%">
 <p>Thus, after <m>\alert{2}</m> minutes your height is
   <md><mrow>f(\alert{2}) \amp = 100 - 100\cos \left(\dfrac{\pi}{2}\right)</mrow>
        <mrow> \amp = 100 - 100(0) = 100</mrow></md>
@@ -745,10 +745,8 @@ where <m>t</m> is measured in minutes after boarding.</p>
   <md><mrow>f(\alert{4}) \amp = 100 - 100\cos (\pi)</mrow>
         \amp = 100 - 100(-1) = 200</md></p>
     <image xml:id="fig-6-3-height"><description>sinusoidal graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [xscale=.6, yscale=.024]
+        <![CDATA[
+        \begin{tikzpicture} [xscale=.4, yscale=.016]
 
         \draw[cyan] (0,0) grid[ystep=25] (16,200);
         \draw[black,thick,->,>=stealth'] (0,0)--(16.4,0) node[right]{ $t$};
@@ -764,37 +762,35 @@ where <m>t</m> is measured in minutes after boarding.</p>
 <p>The graph of <m>h = f(t)</m> is shown above. From the graph, we see that the midline of the function is <m>h = 100</m>, its amplitude is 100, and its period is 8 (which is reasonable because the Ferris wheel rotates every 8 minutes). You can review period, midline, and amplitude of periodic functions in Section 4.3.</p>
 
 <example><statement><p>The formula  
-  <me>D(t) = 12.25 - 5.25\cos \left(\dfrac{\pi}{6}t\right)</me>  
-gives the number of hours of daylight in Glasgow, Scotland, as a function of time, in months after January 1.</p>
-  <p><ol marker="a">
-<li>Graph the function on your calculator (make sure the calculator is set in radian mode).</li>
-<li>State the midline, amplitude, and period of the graph.</li>
-<li>How many hours of daylight does Glasgow enjoy on the longest day of the year?</li>
-<li>In which months does Glasgow experience less than 8 hours of light per day?</li>
-</ol></p></statement>
-
-<solution><p><ol marker="a">
-  <li><p>The graph is shown below.</p>
-    <sidebyside width="55%"><image xml:id="exam6-3-6"><description>sinusoidal graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [xscale=.5, yscale=.25]
-        \draw[cyan] (0,0) grid[ystep=2] (18,24);
-
-        \draw[black,thick,->,>=stealth'] (0,0)--(18.5,0) node[right]{$t$};
-        \draw[black,thick,->,>=stealth'] (0,0)--(0,24.9) node[above]{$D$};
-        \foreach \x in {2,4,...,18} \draw[black,thick] (\x,0.24)--++(0,-.48) node[below] {\x};
-        \foreach \y in {4,8,...,24} \draw[black,thick] (0.12,\y)--++(-.24,0) node[left] {\y};
-
-        \draw[blue, very thick, dashed] (0,12.25)--++(18,0);
-        \draw[samples=65,domain=0:18,smooth,variable=\x,red,very thick] plot ({\x},{12.25-5.25* cos( 30*\x)});
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></li> 
-  <li>The midline of the graph is <m>D = 12.25</m> hours, the amplitude is 5.25 hours, and the period is 12 months.</li>
-  <li>On the longest day of the year, there are <m>12.25 + 5.25 = 17.5</m> hours of daylight in Glasgow.</li>
-  <li>From the graph, we see that <m>D(t) \lt 8</m> for <m>t</m> between 0 and 2, or in January and February. <m>D(t)</m> is also less than 8 for a short time between <m>t = 11</m> and <m>t = 12</m>, at the end of December.</li>
-</ol></p></solution></example>
+    <me>D(t) = 12.25 - 5.25\cos \left(\dfrac{\pi}{6}t\right)</me>  
+  gives the number of hours of daylight in Glasgow, Scotland, as a function of time, in months after January 1.</p>
+    <p><ol marker="a">
+  <li>Graph the function on your calculator (make sure the calculator is set in radian mode).</li>
+  <li>State the midline, amplitude, and period of the graph.</li>
+  <li>How many hours of daylight does Glasgow enjoy on the longest day of the year?</li>
+  <li>In which months does Glasgow experience less than 8 hours of light per day?</li>
+  </ol></p></statement>
+  
+  <solution><p><ol marker="a">
+    <li><p>The graph is shown below.</p>
+      <sidebyside width="55%"><image xml:id="exam6-3-6"><description>sinusoidal graph</description><latex-image>
+          <![CDATA[
+          \begin{tikzpicture} [xscale=.3, yscale=.15]
+          \draw[cyan] (0,0) grid[ystep=2] (18,24);
+  
+          \draw[black,thick,->,>=stealth'] (0,0)--(18.5,0) node[right]{$t$};
+          \draw[black,thick,->,>=stealth'] (0,0)--(0,24.9) node[above]{$D$};
+          \foreach \x in {2,4,...,18} \draw[black,thick] (\x,0.24)--++(0,-.48) node[below] {\x};
+          \foreach \y in {4,8,...,24} \draw[black,thick] (0.12,\y)--++(-.24,0) node[left] {\y};
+  
+          \draw[blue, very thick, dashed] (0,12.25)--++(18,0);
+          \draw[samples=65,domain=0:18,smooth,variable=\x,red,very thick] plot ({\x},{12.25-5.25* cos( 30*\x)});
+          \end{tikzpicture}]]>
+      </latex-image></image></sidebyside></li> 
+    <li>The midline of the graph is <m>D = 12.25</m> hours, the amplitude is 5.25 hours, and the period is 12 months.</li>
+    <li>On the longest day of the year, there are <m>12.25 + 5.25 = 17.5</m> hours of daylight in Glasgow.</li>
+    <li>From the graph, we see that <m>D(t) \lt 8</m> for <m>t</m> between 0 and 2, or in January and February. <m>D(t)</m> is also less than 8 for a short time between <m>t = 11</m> and <m>t = 12</m>, at the end of December.</li>
+  </ol></p></solution></example>
 
 <exercise><statement><p>The pistons in an automobile engine move up and down in the cylinders. If <m>t</m> is in milliseconds, the distance from the top of the piston to the top of the cylinder is given in centimeters by
         <me>D = 7 + 6\sin (4\pi t)</me></p>
@@ -805,15 +801,12 @@ gives the number of hours of daylight in Glasgow, Scotland, as a function of tim
 </ol></p></statement>
 
 <answer><p><ol marker="a">
-    <li><sidebyside width="25%" margins="0% 60%">
-    <image xml:id="exer6-3-6ans"><description>sinusoidal graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [xscale=1.5, yscale=.15]
+    <li><image xml:id="exer6-3-6ans" width="60%" margins="0% 40%"><description>sinusoidal graph</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture} [xscale=2., yscale=.12]
         \draw[cyan] (0,0) grid[xstep=.25, ystep=2] (2,14);
 
-        \draw[black,thick,->,>=stealth'] (0,0)--(2.05,0) node[right, scale=.7]{$t$};
+        \draw[black,thick,->,>=stealth'] (0,0)--(2.15,0) node[right, scale=.7]{$t$};
         \draw[black,thick,->,>=stealth'] (0,0)--(0,15) node[above, scale=.7]{$D$};
         \foreach \x in {0.5, 1, 1.5, 2} \draw[black,thick] (\x,0.4)--++(0,-.8) node[below, scale=.7] {\x};
         \foreach \y in {4,8, 12} \draw[black,thick] (0.04,\y)--++(-.08,0) node[left, scale=.7] {\y};
@@ -821,7 +814,7 @@ gives the number of hours of daylight in Glasgow, Scotland, as a function of tim
         \draw[samples=65,domain=0:2,smooth,variable=\x,red,very thick] plot ({\x},{7+6* sin( 4*180*\x)});
         \end{tikzpicture}]]>
     </latex-image></image>
-    </sidebyside></li>
+    </li>
     <li>Midline: <m>D = 7</m>, amplitude: <m>6</m>, period: <m>0.5</m> millisec</li>
     <li>Largest: 13 cm, smallest: 1 cm</li>
     </ol></p>
