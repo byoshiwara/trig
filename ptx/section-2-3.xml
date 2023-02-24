@@ -5,14 +5,14 @@
 <title>Solving Right Triangles</title>
 <idx><h>solve</h><h>right triangle</h></idx>
 <idx><h>right triangle</h><h>solving</h></idx>
-<subsection><title>Introduction</title><p>
-    A triangle has six parts: three sides and three angles. In a right triangle, we know that one of the angles is <m>90 \degree</m>. If we know three parts of a right triangle, including one of the sides, we can use trigonometry to find all the other unknown parts. This is called <em>solving</em><idx><h>solve</h><h>a triangle</h></idx> the triangle. </p>
 
-<example><statement>
-    <sidebyside widths="60% 20%" valigns="middle middle"><p>The hypotenuse of a right triangle is 150 feet long, and one of the angles is <m>35 \degree</m>, as shown in the figure. Solve the triangle.</p>
-    <image xml:id="exam2-3-1">
-        <description>triangle</description>
-        <latex-image>
+<subsection><title>Introduction</title>
+
+<p>A triangle has six parts: three sides and three angles. In a right triangle, we know that one of the angles is <m>90 \degree</m>. If we know three parts of a right triangle, including one of the sides, we can use trigonometry to find all the other unknown parts. This is called <em>solving</em><idx><h>solve</h><h>a triangle</h></idx> the triangle. </p>
+
+<example><statement><sidebyside widths="60% 30%" valigns="middle middle">
+<p>The hypotenuse of a right triangle is 150 feet long, and one of the angles is <m>35 \degree</m>, as shown in the figure. Solve the triangle.</p>
+    <image xml:id="exam2-3-1"><description>triangle</description><latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
           block/.style    = {draw, thick, rectangle, minimum height = 3em,
@@ -33,33 +33,25 @@
 
         \draw[red,thick] (B)++(-0.4,0) arc(180:{180-atan(2.3/3.3)}:0.4) node[left,midway, yshift=2] {$35\degree$};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-    </sidebyside></statement>
+    </latex-image></image></sidebyside></statement>
         
 <solution><p>We can find the side opposite the 35° angle by using the sine ratio.
-    <md>
-        <mrow>\sin  35 \degree \amp = \dfrac {\text{opposite}}{\text{hypotenuse}}</mrow>
+    <md><mrow>\sin  (35) \degree \amp = \dfrac {\text{opposite}}{\text{hypotenuse}}</mrow>
         <mrow>0.5736 \amp = \dfrac{a}{150}</mrow>
-        <mrow>a \amp = 150(0.5736) = 86.04 </mrow>
-    </md>
+        <mrow>a \amp = 150(0.5736) = 86.04 </mrow></md>
   The opposite side is about 86 feet long. To find side <m>b</m> we could use the Pythagorean theorem now, but it is better to use given information, rather than values we have calculated, to find the other unknown parts. We will use the cosine ratio.
-    <md>
-        <mrow>\cos 35 \degree \amp = \dfrac {\text{adjacent}}{\text{hypotenuse}}</mrow>
+    <md><mrow>\cos (35) \degree \amp = \dfrac {\text{adjacent}}{\text{hypotenuse}}</mrow>
         <mrow>0.8192 \amp = \dfrac{b}{150}</mrow>
-        <mrow>b \amp = 150(0.8192) = 122.89</mrow>
-    </md>
-  The adjacent side is about 123 feet long. Finally, the unknown angle is the complement of <m>35 \degree</m>, or <m>55 \degree</m>.</p>             
-</solution>
-</example>
+        <mrow>b \amp = 150(0.8192) = 122.89</mrow></md>
+  The adjacent side is about 123 feet long. Finally, the unknown angle is the complement of <m>35 \degree</m>, or <m>55 \degree</m>.</p></solution></example>
 
-<exercise><statement>
-    <p>Sketch a right triangle with </p>
+<exercise><statement><p>Sketch a right triangle with </p>
         <p><ul>
             <li> one angle of <m>37 \degree</m>,</li>
             <li> the side adjacent to that angle of length 5 centimeters.</li>
-    </ul>Without doing the calculations, list the steps you would use to solve the triangle.</p>
-</statement><answer><p>Use  tan <m>37\degree</m> to find the opposite side.  Use cos <m>37\degree</m> to find the hypotenuse. Subtract <m>37\degree</m> from <m>90\degree</m> to find the third angle.</p></answer></exercise>
+</ul>Without doing the calculations, list the steps you would use to solve the triangle.</p></statement>
+
+<answer><p>Use  tan <m>(37\degree)</m> to find the opposite side.  Use cos <m>(37\degree)</m> to find the hypotenuse. Subtract <m>37\degree</m> from <m>90\degree</m> to find the third angle.</p></answer></exercise>
 </subsection>
 
 <subsection><title>Finding an Angle</title>
@@ -68,9 +60,7 @@
 <p>While watching her niece at the playground, Francine wonders how steep the slide is. She happens to have a tape measure and her calculator with her, and finds that the slide is 77 inches high and covers a horizontal distance of 136 inches, as shown below.</p>   
 
 <sidebyside width="60%">
-    <image xml:id="fig-2-3slide">
-        <description>slide</description>
-        <latex-image>
+    <image xml:id="fig-2-3slide"><description>slide</description><latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
           block/.style    = {draw, thick, rectangle, minimum height = 3em,
@@ -122,47 +112,54 @@
         \draw[black,thick,<-] (B)++(0,-1.1)--++(1.1,0) node[right] {\color{blue}136 in};
         \draw[black,thick,<-] (A)++(0,-1.1)--++(-1.1,0);
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside>
+    </latex-image></image></sidebyside>
 
-<p>Francine knows that one way to describe the steepness of an incline is to calculate its slope, which in this case is  <me>\dfrac {\Delta y}{\Delta x} = \dfrac{77}{136} = 0.5662</me>  However, Francine would really like to know what angle the slide makes with the horizontal.  She realizes that the slope she has just calculated is also the tangent of the angle she wants.</p>
+<p>Francine knows that one way to describe the steepness of an incline is to calculate its slope, which in this case is  
+        <me>\dfrac {\Delta y}{\Delta x} = \dfrac{77}{136} = 0.5662</me>  
+However, Francine would really like to know what angle the slide makes with the horizontal. She realizes that the slope she has just calculated is also the tangent of the angle she wants.</p>
 
 <p>If we know the tangent of an angle, can we find the angle?  Yes, we can:  locate the key labeled <m>\boxed{\text{TAN}^{-1}}</m> on your calculator; it is probably the second function above the <kbd>TAN</kbd> key.  Enter</p>
-<p><m>\qquad\qquad\qquad</m><kbd>2nd</kbd> <kbd>TAN</kbd> 0.5662</p>
-<p>and you should find that <me>\text{tan}^{-1} 0.5662 = 29.52 \degree</me>. <idx><h>tan <m>\vphantom{t}^{-1}</m></h></idx><idx><h>tan <m>\vphantom{t}^{-1}</m></h><seealso>inverse trigonometric function</seealso></idx> This means that <m>29.52 \degree</m> is the angle whose tangent is <m>0.5662</m>. We read the notation as "<term>inverse tangent</term><idx><h>inverse trigonometric function</h></idx> of 0.5662 is 29.52 degrees."</p>
-<p> When we find tan<m>^{-1}</m> of a number, we are finding an angle whose tangent is that number. Similarly, sin<m>^{-1}</m><idx><h>sin <m>\vphantom{t}^{-1}</m></h></idx><idx><h>sin <m>\vphantom{t}^{-1}</m></h><seealso>inverse trigonometric function</seealso></idx> and cos<m>^{-1}</m><idx><h>cos <m>\vphantom{t}^{-1}</m></h></idx><idx><h>cos <m>\vphantom{t}^{-1}</m></h><seealso>inverse trigonometric function</seealso></idx>  are read as “inverse sine” and “inverse cosine.” They find an angle with the given sine or cosine.</p>
+        <p><m>\qquad\qquad\qquad</m><kbd>2nd</kbd> <kbd>TAN</kbd> 0.5662</p>
+<p>and you should find that 
+        <me>\text{tan}^{-1} (0.5662) = 29.52 \degree</me>. 
+    <idx><h>tan <m>\vphantom{t}^{-1}</m></h></idx><idx><h>tan <m>\vphantom{t}^{-1}</m></h><seealso>inverse trigonometric function</seealso></idx> 
+This means that <m>29.52 \degree</m> is the angle whose tangent is <m>0.5662</m>. We read the notation as "<term>inverse tangent</term><idx><h>inverse trigonometric function</h></idx> of 0.5662 is 29.52 degrees."</p>
 
-<example><statement>
-    <p>Find the angle whose sine is <m>0.6834</m>.</p></statement> 
+<p> When we find tan<m>^{-1}</m> of a number, we are finding an angle whose tangent is that number. Similarly, sin<m>^{-1}</m>
+    <idx><h>sin <m>\vphantom{t}^{-1}</m></h></idx><idx><h>sin <m>\vphantom{t}^{-1}</m></h><seealso>inverse trigonometric function</seealso></idx> 
+and cos<m>^{-1}</m>
+    <idx><h>cos <m>\vphantom{t}^{-1}</m></h></idx><idx><h>cos <m>\vphantom{t}^{-1}</m></h><seealso>inverse trigonometric function</seealso></idx>  
+are read as “inverse sine” and “inverse cosine.” They find an angle with the given sine or cosine.</p>
+
+<example><statement><p>Find the angle whose sine is <m>0.6834</m>.</p></statement> 
         
-<solution><p>Enter <kbd>2nd</kbd> <kbd>SIN</kbd>  0.6834  into your calculator to find <me>\sin^{-1} 0.6834 = 43.11\degree</me> So <m>43.11\degree</m> is the angle whose sine is <m> 0.6834</m>. Or we can say that  <me>\sin 43.11\degree = 0.6834</me> You can check the last equation on your calculator. </p>
-</solution></example>
+<solution><p>Enter <kbd>2nd</kbd> <kbd>SIN</kbd>  0.6834  into your calculator to find 
+    <me>\sin^{-1} (0.6834) = 43.11\degree</me> 
+So <m>43.11\degree</m> is the angle whose sine is <m> 0.6834</m>. Or we can say that  
+    <me>\sin (43.11\degree) = 0.6834</me> 
+You can check the last equation on your calculator. </p></solution></example>
 
-<note><p>In the last example, the two equations  <me>\sin 43.11\degree = 0.6834~~~~~~\text{and}~~~~~~\sin^{-1} 0.6834 = 43.11\degree</me> say the same thing in different ways.</p></note>
+<note><p>In the last example, the two equations  
+    <me>\sin (43.11\degree) = 0.6834~~~~~~\text{and}~~~~~~\sin^{-1} (0.6834) = 43.11\degree</me> 
+say the same thing in different ways.</p></note>
 
-<warning><p>The notation <m>\sin^{-1} x</m>  does <em>not</em> mean <m>\dfrac{1}{\sin x}</m>.  It is true that  we use negative exponents to indicate reciprocals of numbers, for example <m>a^{-1} = \dfrac{1}{a}</m> and <m>3^{-1} = \dfrac{1}{3}</m>. But “sin” by itself is not a variable.</p>
+<warning><p>The notation <m>\sin^{-1} (x)</m>  does <em>not</em> mean <m>\dfrac{1}{\sin (x)}</m>.  It is true that  we use negative exponents to indicate reciprocals of numbers, for example <m>a^{-1} = \dfrac{1}{a}</m> and <m>3^{-1} = \dfrac{1}{3}</m>. But “sin” by itself is not a variable.</p>
 <p><ul>
-    <li><m>\sin^{-1} x</m>    means  “the angle whose sine is <m>x</m>”</li>
-    <li><m>\dfrac{1}{\sin x}</m>     means  “the reciprocal of the sine of angle <m>x</m>”</li>
-    </ul>(You may recall that <m>f^{-1}(x)</m> denotes the inverse function for <m>f(x)</m>. We will study trigonometric functions in Chapter 4.)</p></warning>
+    <li><m>\sin^{-1} (x)</m>    means  “the angle whose sine is <m>x</m>”</li>
+    <li><m>\dfrac{1}{\sin (x)}</m>     means  “the reciprocal of the sine of angle <m>x</m>”</li>
+    </ul>
+(You may recall that <m>f^{-1}(x)</m> denotes the inverse function for <m>f(x)</m>. We will study trigonometric functions in Chapter 4.)</p></warning>
 
-<exercise><statement>
-    <p>Write the following fact in two different ways: <m>68\degree</m> is the angle whose cosine is <m>0.3746</m>.</p>
-</statement><answer><p><m>\cos 68\degree = 0.3746</m>  or  <m>\cos^{-1}(0.3746) = 68\degree</m></p></answer></exercise> 
+<exercise><statement><p>Write the following fact in two different ways: <m>68\degree</m> is the angle whose cosine is <m>0.3746</m>.</p></statement>
+<answer><p><m>\cos (68\degree) = 0.3746</m>  or  <m>\cos^{-1}(0.3746) = 68\degree</m></p></answer></exercise> 
 
-<example><statement>
-    <p>Find the angle of inclination of a hill if you gain 400 feet in elevation while traveling half a mile.</p></statement> 
+<example><statement><p>Find the angle of inclination of a hill if you gain 400 feet in elevation while traveling half a mile.</p></statement> 
         
 <solution><p>A sketch of the hill is shown at right. (Recall that 1 mile = 5280 feet.) </p>
-<sidebyside widths="55% 35%" valigns="middle middle"><p>
-    <md>
-        <mrow>\sin \theta \amp = \dfrac {400}{2640} = 0.\overline{15}</mrow>
-        <mrow>\theta \amp = \sin^{-1} 0.\overline{15} = 8.71\degree</mrow>
-    </md></p>
-    <image xml:id="exam2-3-3">
-        <description>triangle</description>
-        <latex-image>
+<sidebyside widths="55% 45%" valigns="middle middle"><p>
+    <md><mrow>\sin \theta \amp = \dfrac {400}{2640} = 0.\overline{15}</mrow>
+        <mrow>\theta \amp = \sin^{-1} 0.\overline{15} = 8.71\degree</mrow></md></p>
+    <image xml:id="exam2-3-3"><description>triangle</description><latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
           block/.style    = {draw, thick, rectangle, minimum height = 3em,
@@ -184,33 +181,26 @@
 
         \draw[red,thick] (A)++(1.6,0) arc(00:{atan(1/5)}:1.6) node[right,midway, xshift=2,yshift=1] {\small$\theta$};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside> <p>The angle of inclination of the hill is about <m>8.7\degree</m>.</p>          
-</solution></example>
+    </latex-image></image></sidebyside> 
+<p>The angle of inclination of the hill is about <m>8.7\degree</m>.</p> </solution></example>
 
-<exercise><statement>
-    <p>The tallest living tree is a coast redwood named Hyperion, at 378.1 feet tall. If you stand 100 feet from the base of the tree, what is the angle of elevation of your line of sight to the top of the tree? Round your answer to the nearest degree.</p>
-</statement><answer><p><m>75\degree</m></p></answer></exercise>
+<exercise><statement><p>The tallest living tree is a coast redwood named Hyperion, at 378.1 feet tall. If you stand 100 feet from the base of the tree, what is the angle of elevation of your line of sight to the top of the tree? Round your answer to the nearest degree.</p></statement>
+<answer><p><m>75\degree</m></p></answer></exercise>
 </subsection>
 
 <subsection><title>The Special Angles</title>
-
 <idx><h>angle</h><h>special</h></idx>
+
 <p>The trigonometric ratios for most angles are irrational numbers, but there are a few angles whose trig ratios are “nice” values. You already know one of these values:  the sine of <m>30\degree</m>. Because the sides of a right triangle are related by the Pythagorean theorem, if we know any one of the trig ratios for an angle, we can find the others.</p>
 
 <p>Recall that the side opposite a <m>30\degree</m> angle is half the length of the hypotenuse, so <m>\sin 30\degree = \dfrac{1}{2}</m>. </p>
-<sidebyside widths="72% 12%" valigns="middle middle" margins="0% 10%">
-    <p>The figure at right shows a 30-60-90 triangle with hypotenuse of length 2. The opposite side has length 1, and we can calculate the length of the adjacent side.
-        <md>
-            <mrow>1^2 + b^2 \amp = 2^2 </mrow>
+
+<sidebyside widths="70% 30%" valigns="middle middle" margins="0% 0%">
+<p>The figure at right shows a 30-60-90 triangle with hypotenuse of length 2. The opposite side has length 1, and we can calculate the length of the adjacent side.
+        <md><mrow>1^2 + b^2 \amp = 2^2 </mrow>
             <mrow>b^2 \amp = 2^2 - 1^2 = 3</mrow>
-            <mrow>b \amp = \sqrt{3}</mrow>
-        </md>
-    </p>
-    <image xml:id="fig-2-3-30-60-90">
-        <description>triangle</description>
-        <latex-image>
+            <mrow>b \amp = \sqrt{3}</mrow></md></p>
+    <image xml:id="fig-2-3-30-60-90"><description>triangle</description><latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
           block/.style    = {draw, thick, rectangle, minimum height = 3em,
@@ -233,19 +223,17 @@
         \draw[red,thick] (B)++(-.3,0) arc(180:120:0.3) node[left,midway, yshift=3] {$60\degree$};
         \draw[red,thick] (C)++(0,-.9) arc(-90:-60:0.9) node[below,midway, xshift=3, yshift=-3] {$30\degree$};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside>
+    </latex-image></image></sidebyside>
 
 <p>Now we know the cosine and tangent of <m>30\degree</m>.
 
-<me>\cos 30\degree = \dfrac {\text{adjacent}}{\text{hypotenuse}} = \dfrac{\sqrt{3}}{2} \qquad \tan 30\degree = \dfrac {\text{opposite}}{\text{adjacent}} = \dfrac{1}{\sqrt{3}}</me></p>
+<me>\cos (30\degree) = \dfrac {\text{adjacent}}{\text{hypotenuse}} = \dfrac{\sqrt{3}}{2} \qquad \tan (30\degree) = \dfrac {\text{opposite}}{\text{adjacent}} = \dfrac{1}{\sqrt{3}}</me></p>
 
 <p>These are <em>exact</em> values for the trig ratios, but we can also find decimal approximations. Use your calculator to verify the following approximate values. 
 
 <md><mrow>\amp \blert{\text{exact value}}     \amp\amp  \blert{\text{approximation}}</mrow>
-    <mrow>\cos 30\degree \amp = \dfrac{\sqrt{3}}{2} \amp\amp \approx 0.8660</mrow>
-    <mrow>\tan 30\degree\amp = \dfrac{1}{\sqrt{3}} \amp\amp \approx 0.5774</mrow></md></p>
+    <mrow>\cos (30\degree) \amp = \dfrac{\sqrt{3}}{2} \amp\amp \approx 0.8660</mrow>
+    <mrow>\tan (30\degree) \amp = \dfrac{1}{\sqrt{3}} \amp\amp \approx 0.5774</mrow></md></p>
 
 <warning><p>It is important for you to understand the difference between exact and approximate values. These decimal approximations, like nearly all the other trig values your calculator gives you, are rounded off. Even if your calculator shows you ten or twelve digits, the values are not exactly correct -- although they are quite adequate for most practical calculations!</p></warning> 
 
@@ -253,7 +241,7 @@
 
 <example><statement><p>The sides of an equilateral triangle are 8 centimeters long. Find the exact length of the triangle's altitude, <m>h</m>.</p></statement> 
         
-<solution><sidebyside widths="65% 20%" valigns="middle middle" margins="0% 10%"><p>The altitude divides the triangle into two 30-60-90 right triangles as shown in the figure. The altitude is adjacent to the <m>30\degree</m> angle, and the hypotenuse of the right triangle is 8 centimeters. Thus,</p>  
+<solution><sidebyside widths="65% 30%" valigns="middle middle" margins="0% 5%"><p>The altitude divides the triangle into two 30-60-90 right triangles as shown in the figure. The altitude is adjacent to the <m>30\degree</m> angle, and the hypotenuse of the right triangle is 8 centimeters. Thus,</p>  
     <image xml:id="exam2-3-4"><description>triangle</description><latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
@@ -284,25 +272,22 @@
      The altitude is exactly <m>4\sqrt{3}</m> centimeters long.</p>           
 </solution></example>                              
 
-<p>From this exact answer, we can find approximations to any degree of accuracy we like.  You can check that <m>4\sqrt{3} \approx6.9282</m>, so the altitude is approximately 6.9 centimeters long.</p>
+<p>From this exact answer, we can find approximations to any degree of accuracy we like. You can check that <m>4\sqrt{3} \approx 6.9282</m>, so the altitude is approximately 6.9 centimeters long.</p>
 
 <exercise><statement><p>Use the figure in the previous example to find exact values for the sine, cosine, and tangent of <m>60\degree</m>.</p></statement>
 
-<answer><p><m>\sin 60\degree = \dfrac{\sqrt{3}}{2}</m>, <m>~~\cos 60\degree = \dfrac{1}{2}</m>, <m>~~\tan 60\degree = \sqrt{3}</m></p></answer></exercise>
+<answer><p><m>\sin (60\degree) = \dfrac{\sqrt{3}}{2}</m>, <m>~~\cos (60\degree) = \dfrac{1}{2}</m>, <m>~~\tan 60\degree = \sqrt{3}</m></p></answer></exercise>
 
 <p> There is one more special angle<idx><h>angle</h><h>special</h></idx>: <m>45\degree</m>. We find the trig ratios for this angle using an isosceles right triangle. Because the base angles of an isosceles triangle are equal, they must both be <m>45\degree</m>.</p> 
 
 <p>The figure shows an isosceles right triangle with equal sides of length 1. You can use the Pythagorean theorem to show that the hypotenuse has length <m>\sqrt{2}</m>, so the trig ratios for <m>45\degree</m> are</p>
-<sidebyside widths="60% 20%" valigns="middle middle"><p>
+<sidebyside widths="60% 30%" valigns="middle middle"><p>
     <md>
-        <mrow>\sin 45\degree \amp = \dfrac {\text{opposite}}{\text{hypotenuse}} = \dfrac{1}{\sqrt{2}} \approx 0.7071</mrow>
-        <mrow>\cos 45\degree \amp = \dfrac {\text{adjacent}}{\text{hypotenuse}} = \dfrac{1}{\sqrt{2}} \approx 0.7071</mrow>
-        <mrow>\tan 45\degree\amp = \dfrac {\text{opposite}}{\text{adjacent}} = 1</mrow>
-    </md>
-</p>
-    <image xml:id="fig-2-3-45">
-        <description>triangle</description>
-        <latex-image>
+        <mrow>\sin (45\degree) \amp = \dfrac {\text{opposite}}{\text{hypotenuse}} = \dfrac{1}{\sqrt{2}} \approx 0.7071</mrow>
+        <mrow>\cos (45\degree) \amp = \dfrac {\text{adjacent}}{\text{hypotenuse}} = \dfrac{1}{\sqrt{2}} \approx 0.7071</mrow>
+        <mrow>\tan (45\degree )\amp = \dfrac {\text{opposite}}{\text{adjacent}} = 1</mrow>
+    </md></p>
+    <image xml:id="fig-2-3-45"><description>triangle</description><latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
           block/.style    = {draw, thick, rectangle, minimum height = 3em,
@@ -324,13 +309,12 @@
 
         \draw[red,thick] (B)++(.3,0) arc(0:45:0.3) node[right,midway, yshift=3] {$45\degree$};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside>
+    </latex-image></image></sidebyside>
 </subsection>
 
 <subsection><title>The Trigonometric Ratios for the Special Angles</title>
 <idx><h>angle</h><h>special</h></idx>
+
 <p>Here is a summary of the trig ratios for the special angles.</p>
 
 <sidebyside width="70%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
@@ -359,12 +343,10 @@
     </tabular>
 </sidebyside>
 
-<p>You should memorize the exact values for these trig ratios. A good way to remember them is to know the two special triangles shown below. From these triangles, you can always write down the three trig ratios for the special angles.</p> 
+<p>You should be familiar with the exact values for these trig ratios. A good way to remember them is to know the two special triangles shown below. From these triangles, you can always write down the three trig ratios for the special angles.</p> 
 
-<sidebyside widths="18% 23%" margins="18% 18%" valigns="middle middle">
-    <image xml:id="fig-45-45-90">
-        <description>45-45-90 triangle</description>
-        <latex-image>
+<sidebyside widths="28% 33%" margins="8% 8%" valigns="middle middle">
+    <image xml:id="fig-45-45-90"><description>45-45-90 triangle</description><latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
           block/.style    = {draw, thick, rectangle, minimum height = 3em,
@@ -386,11 +368,8 @@
 
         \draw[red,thick] (B)++(.3,0) arc(0:45:0.3) node[right,midway, yshift=3] {$45\degree$};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-    <image xml:id="fig-30-60-90">
-        <description>30-60-90 triangle</description>
-        <latex-image>
+    </latex-image></image>
+    <image xml:id="fig-30-60-90"><description>30-60-90 triangle</description><latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
           block/.style    = {draw, thick, rectangle, minimum height = 3em,
@@ -413,21 +392,18 @@
         \draw[red,thick] (B)++(.5,0) arc(0:30:0.5) node[right,midway, xshift=1, yshift=3] {$30\degree$};
         \draw[red,thick] (C)++(0,-.3) arc(-90:-150:0.3) node[below,midway, xshift=-5] {$60\degree$};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside>
+    </latex-image></image></sidebyside>
 
 <p>You should also be able to recognize their decimal approximations.</p>
 
-<note><p> We can use the special angles as benchmarks for estimating and mental calculation. For example, we know that <m>60\degree \approx 0.8660</m>, so if sin <m>\theta = 0.95</m> for some unknown angle <m>\theta</m>, we know that <m>\theta \gt 60\degree</m>, because as <m>\theta</m> increases from  the sine of <m>\theta</m> increases also. </p></note> 
+<note><p> We can use the special angles as benchmarks for estimating and mental calculation. For example, we know that sin <m>(60\degree) \approx 0.8660</m>, so if sin <m>(\theta) = 0.95</m> for some unknown angle <m>\theta</m>, we know that <m>\theta \gt 60\degree</m>, because as <m>\theta</m> increases from  the sine of <m>\theta</m> increases also. </p></note> 
 
-<example><statement>
-    <p> If <m>\cos \alpha \gt \dfrac{\sqrt{3}}{2}</m>, what can we say about <m>\alpha</m>?</p></statement> 
+<example><statement><p> If <m>\cos (\alpha) \gt \dfrac{\sqrt{3}}{2}</m>, what can we say about <m>\alpha</m>?</p></statement> 
         
-<solution><p>As an angle increases from <m>0\degree</m> to <m>90\degree</m>, its cosine decreases. Now, <m>\cos 30\degree = \dfrac{\sqrt{3}}{2}</m>, so if <m>\cos \alpha \gt \dfrac{\sqrt{3}}{2}</m>, then <m>\alpha</m> must be less than <m>30\degree</m>.</p></solution></example> 
+<solution><p>As an angle increases from <m>0\degree</m> to <m>90\degree</m>, its cosine decreases. Now, <m>\cos (30\degree) = \dfrac{\sqrt{3}}{2}</m>, so if <m>\cos (\alpha) \gt \dfrac{\sqrt{3}}{2}</m>, then <m>\alpha</m> must be less than <m>30\degree</m>.</p></solution></example> 
 
-<exercise><statement>
-    <p>If <m>1 \lt \tan \beta \lt \sqrt{3}</m>, what can we say about <m>\beta</m>?</p></statement><answer><p><m>45\degree \lt \beta \lt 60\degree </m></p></answer></exercise>
+<exercise><statement><p>If <m>1 \lt \tan (\beta) \lt \sqrt{3}</m>, what can we say about <m>\beta</m>?</p></statement>
+<answer><p><m>45\degree \lt \beta \lt 60\degree </m></p></answer></exercise>
 
 
 <p>Review the following skills you will need for this section.</p>
@@ -505,12 +481,11 @@
                 <cell><m>\dfrac{1}{2} = 0.5 </m></cell>
                 <cell><m>\sqrt{3} \approx 1.732</m></cell></row>              
         </tabular></sidebyside></li>
-      <li><p>You can remember the trig values for the special angles if you memorize two triangles:</p>
+      <li><p>You can remember the trig values for the special angles if you know two triangles:</p>
         <sidebyside widths="20% 27%" margins="18% 18%" valigns="middle middle">
             <image source="photos/fig-45-45-90"><description>triangle</description></image>
             <image source="photos/fig-30-60-90"><description>triangle</description></image>
-        </sidebyside>
-        </li>
+        </sidebyside></li>
       <li>For the trigonometric ratios of most angles, your calculator gives approximations, not exact values.</li>
   </ol></p></subsubsection>
 
