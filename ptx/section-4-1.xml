@@ -17,14 +17,7 @@
     <p>Look at the figure at right. An hour and a half represents 1.5 complete rotations, or
       <me>1.5(360\degree) = 540\degree</me></p>
     <image xml:id="exam4-1-1"><description>clock</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
+        <![CDATA[
         \begin{tikzpicture}
         \coordinate(O) at (0,0);
         \filldraw [fill=cyan!10!white] (O) circle [radius=2cm];
@@ -48,14 +41,7 @@
     <p>Forty minutes is two-thirds of an hour, so the minute hand rotates through
       <me>\dfrac{2}{3}(360\degree) = 240\degree</me> </p>
         <image xml:id="exam4-1-1b"><description>clock</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
+        <![CDATA[
         \begin{tikzpicture}
         \coordinate(O) at (0,0);
         \filldraw [fill=cyan!10!white] (O) circle [radius=2cm];
@@ -78,14 +64,7 @@
 
 <exercise><statement><sidebyside widths="60% 20%" valigns="middle middle" margins="0% 15%"><p>The volume control on an amplifier is a dial with ten settings, as shown at right. Through how many degrees would you rotate the dial to increase the volume level from 0 to 7?</p>
     <image xml:id="exer4-1-1"><description>dial</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
+        <![CDATA[
         \begin{tikzpicture} 
         \coordinate(O) at (0,0);
         \filldraw [fill=gray!10!white] (O) circle [radius=2cm];
@@ -112,374 +91,292 @@
 <idx><h>angle</h><h>standard position</h></idx>
 
 <p>The degree measure of an angle depends only on the fraction of a whole rotation between its sides, and not on the location or position of the angle.  To compare and analyze angles, we place them in <term>standard position</term>, so that the vertex of the angle is located at the origin and its initial side lies on the positive <m>x</m>-axis. The figure below shows several angles placed in standard position.</p>
-<sidebyside widths="24% 24% 25% 20%" valigns="top top top top">
-    <image xml:id="fig-4-1angles-a">
-        <description>angles</description>
-        <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} 
-        \coordinate(O) at (0,0);
-        \coordinate(A) at (0,1);
-        \coordinate(B) at (130:1);
+<sidebyside widths="20% 20% 20% 20%" valigns="bottom bottom bottom bottom">
+  <image xml:id="fig-4-1angles-a">
+      <description>angles</description>
+      <latex-image>
+      <![CDATA[
+      \begin{tikzpicture} [scale=.9]
+      \coordinate(O) at (0,0);
+      \coordinate(A) at (0,1.5);
+      \coordinate(B) at (130:1.5);
 
-        \draw [thick, color=red, <->,>=stealth'] (0,.3) arc(90:-230:.3) node[below, midway] {\small$320\degree$};
-        \draw[gray!70!white] (0,1) arc(90:-230:1);
-        \draw[blue,thick] (A)--(O)--(B);
+      \draw [thick, color=red, <->,>=stealth'] (0,.3) arc(90:-230:.3) node[below, midway] {$320\degree$};
+      \draw[gray!70!white] (0,1.5) arc(90:-230:1.5);
+      \draw[blue,thick] (A)--(O)--(B);
 
-        %second angle
-        \coordinate(O) at (0,-3.5);
-        \coordinate(A) at (1.5,-3.5);
-        \coordinate(B) at ($ (O)++1.5*cos(320)*(1,0) ++ 1.5*sin(320)*(0,1) $);
+      %second angle
+      \coordinate(O) at (0,-3.5);
+      \coordinate(A) at (1.5,-3.5);
+      \coordinate(B) at ($ (O)++1.5*cos(320)*(1,0) ++ 1.5*sin(320)*(0,1) $);
 
-        \draw[black,thick,->,>=stealth'] (O)++(0,-1.5)--++(0,3.2);
-        \draw[black,thick] (O)--+(-1.5,0); 
+      \draw[black,thick,->,>=stealth'] (O)++(0,-1.5)--++(0,3.2);
+      \draw[black,thick] (O)--+(-1.5,0); 
 
-        \draw [thick, color=red, <->,>=stealth'] (O)++(.3,0) arc(0:320:.3) node[above left, midway, inner sep=1pt] {\small$320\degree$};
-        \draw[gray!70!white] (O) circle(1.5);
-        \draw[blue,ultra thick,<-] (A)--(O);
-        \draw[blue,ultra thick,->,>=stealth'] (O)--(B);
+      \draw [thick, color=red, ->,>=stealth'] (O)++(.3,0) arc(0:320:.3) node[above left, midway, inner sep=1pt] {$320\degree$};
+      \draw[gray!70!white] (O) circle(1.5);
+      \draw[blue,ultra thick,<-] (A)--(O);
+      \draw[blue,ultra thick,->,>=stealth'] (O)--(B);
 
-        \node[text width=2.5cm] at (0,1.5) {\color{blue} 8/9 of a cake};
+      \node[text width=2.5cm] at (0,1.9) {\color{blue} 8/9 of a cake};
 
-        \end{tikzpicture}]]>
-    </latex-image></image>
-    <image xml:id="fig-4-1angles-b"><description>angles</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} 
-        \coordinate(O) at (0,0);
-        \coordinate(A) at (0,1);
-        \coordinate(B) at (210:1);
-        \node[text width=.5cm] at (0,.8) {12};
-        \node[text width=.5cm] at (0,-.8) {6};
-        \node[text width=.5cm] at (.8,0) {3};
-        \node[text width=.5cm] at (-.8,0) {9};
+      \end{tikzpicture}]]>
+  </latex-image></image>
+  <image xml:id="fig-4-1angles-b"><description>angles</description><latex-image>
+      <![CDATA[
+      \begin{tikzpicture} [scale=.9]
+      \coordinate(O) at (0,0);
+      \coordinate(A) at (0,1.5);
+      \coordinate(B) at (210:1.5);
+      \node[text width=.3cm] at (0,1.2) {12};
+      \node[text width=.3cm] at (0,-1.2) {6};
+      \node[text width=.3cm] at (1.2,0) {3};
+      \node[text width=.3cm] at (-1.2,0) {9};
 
 
-        \draw [thick, color=red, <->,>=stealth'] (0,.3) arc(90:-150:.3) ;
-        \draw[gray!70!white] (O) circle (1);
-        \draw[blue,thick] (A)--(O)--(B);
+      \draw [thick, color=red, <->,>=stealth'] (0,.3) arc(90:-150:.3) ;
+      \draw[gray!70!white] (O) circle (1.5);
+      \draw[blue,thick] (A)--(O)--(B);
 
-        %second angle
-        \coordinate(O) at (0,-3.5);
-        \coordinate(A) at (1.5,-3.5);
-        \coordinate(B) at ($ (O)++1.5*cos(240)*(1,0) ++ 1.5*sin(240)*(0,1) $);
+      %second angle
+      \coordinate(O) at (0,-3.5);
+      \coordinate(A) at (1.5,-3.5);
+      \coordinate(B) at ($ (O)++1.5*cos(240)*(1,0) ++ 1.5*sin(240)*(0,1) $);
 
-        \draw[black,thick,->,>=stealth'] (O)++(0,-1.5)--++(0,3.2);
-        \draw[black,thick] (O)--+(-1.5,0); 
+      \draw[black,thick,->,>=stealth'] (O)++(0,-1.5)--++(0,3.2);
+      \draw[black,thick] (O)--+(-1.5,0); 
 
-        \draw [thick, color=red, <->,>=stealth'] (O)++(.3,0) arc(0:240:.3) node[above left, midway, inner sep=1pt] {\small$240\degree$};
-        \draw[gray!70!white] (O) circle(1.5);
-        \draw[blue,ultra thick,<-] (A)--(O);
-        \draw[blue,ultra thick,->,>=stealth'] (O)--(B);
+      \draw [thick, color=red, ->,>=stealth'] (O)++(.3,0) arc(0:240:.3) node[above left, midway, inner sep=1pt] {$240\degree$};
+      \draw[gray!70!white] (O) circle(1.5);
+      \draw[blue,ultra thick,<-] (A)--(O);
+      \draw[blue,ultra thick,->,>=stealth'] (O)--(B);
 
-        \node[text width=2.cm] at (0,1.5) {\color{blue} 40 minutes};
+      \node[text width=2.cm] at (0,1.9) {\color{blue} 40 minutes};
 
-        \end{tikzpicture}]]>
-    </latex-image></image>
-    <image xml:id="fig-4-1angles-c"><description>angles</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} 
-        \coordinate(O) at (0,0);
-        \coordinate(A) at (-1.5,0.7);
-        \coordinate(B) at (.4,-1.5);
+      \end{tikzpicture}]]>
+  </latex-image></image>
+  <image xml:id="fig-4-1angles-c"><description>angles</description><latex-image>
+      <![CDATA[
+      \begin{tikzpicture} [scale=.9]
+      \coordinate(O) at (0,0);
+      \coordinate(A) at (155:1.5);
+      \coordinate(B) at (285:1.5);
 
-        \draw[black,thick,->,>=stealth'] (-1.5,0)--(1.5,0);
-        \draw[black,thick,->,>=stealth'] (0,-1.5)--(0,1.5) node[right, xshift=2] {N};
+      \draw[black,thick,->,>=stealth'] (-1.5,0)--(1.5,0);
+      \draw[black,thick,->,>=stealth'] (0,-1.5)--(0,1.5) node[right, yshift=-2] {N};
 
-        \draw [thick, color=blue, ->,>=stealth'] (O)--(A) node[above, xshift=12] {\footnotesize\color{black} $25\degree$ N of W} ;
-        \draw [thick, color=blue, ->,>=stealth'] (O)--(B) node[right] {\footnotesize\color{black} $15\degree$ E of S} ;
+      \draw [thick, color=blue, ->,>=stealth'] (O)--(A) node[above, xshift=8, align=center, text=black, scale=.9] {$25\degree$ N \\of W} ;
+      \draw [thick, color=blue, ->,>=stealth'] (O)--(B) node[right, yshift=5, align=center, text=black, scale=.9] {$15\degree$ E \\of S} ;
 
-        \draw[red,thick,<->,>=stealth'] (O)++(-.36,.169) arc(155:285:.3) node[left,midway, yshift=-5] {\small$130\degree$};
+      \draw[red,thick,<->,>=stealth'] (O)++(155:0.3) arc(155:285:.3) node[left,midway, yshift=-8] {$130\degree$};
 
-        %second angle
-        \coordinate(O) at (0,-3.5);
-        \coordinate(A) at (1.5,-3.5);
-        \coordinate(B) at ($ (O)++1.5*cos(130)*(1,0) ++ 1.5*sin(130)*(0,1) $);
+      %second angle
+      \coordinate(O) at (0,-3.5);
+      \coordinate(A) at (1.5,-3.5);
+      \coordinate(B) at ($ (O)++1.5*cos(130)*(1,0) ++ 1.5*sin(130)*(0,1) $);
 
-        \draw[black,thick,->,>=stealth'] (O)++(0,-1.5)--++(0,3.2);
-        \draw[black,thick] (O)--+(-1.5,0); 
+      \draw[black,thick,->,>=stealth'] (O)++(0,-1.5)--++(0,3.2);
+      \draw[black,thick] (O)--+(-1.5,0); 
 
-        \draw [thick, color=red, <->,>=stealth'] (O)++(.3,0) arc(0:130:.3) node[above right, midway, inner sep=1pt] {\small$130\degree$};
-        \draw[gray!70!white] (O) circle(1.5);
-        \draw[blue,ultra thick,<-] (A)--(O);
-        \draw[blue,ultra thick,->,>=stealth'] (O)--(B);
+      \draw [thick, color=red, ->,>=stealth'] (O)++(.3,0) arc(0:130:.3) node[above right, midway, inner sep=1pt] {$130\degree$};
+      \draw[gray!70!white] (O) circle(1.5);
+      \draw[blue,ultra thick,<-] (A)--(O);
+      \draw[blue,ultra thick,->,>=stealth'] (O)--(B);
 
-        \node[text width=3.2cm] at (0,1.9) {\color{blue} relative direction};
-        \end{tikzpicture}]]>
-    </latex-image></image>
-    <image xml:id="fig-4-1angles-d"><description>angles</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} 
-        \coordinate(O) at (0,0);
-        \coordinate(A) at (-1.5,0);
-        \coordinate(B) at (-1.05,-1.5);
+      \node[text width=2.6cm] at (0,1.9) {\color{blue} relative direction};
+      \end{tikzpicture}]]>
+  </latex-image></image>
+  <image xml:id="fig-4-1angles-d"><description>angles</description><latex-image>
+      <![CDATA[
+      \begin{tikzpicture} [scale=.9]
+      \coordinate(O) at (0,0);
+      \coordinate(A) at (-1.5,0);
+      \coordinate(B) at (-1.05,-1.5);
 
-        \draw[black,thick,->,>=stealth'] (-1.5,0)--(1.5,0);
-        \draw[black,thick,->,>=stealth'] (0,-1.5)--(0,1.5) node[right, xshift=2] {N};
+      \draw[black,thick,->,>=stealth'] (-1.5,0)--(1.5,0);
+      \draw[black,thick,->,>=stealth'] (0,-1.5)--(0,1.5) node[right, xshift=2] {N};
 
-        \draw [thick, color=blue, ->,>=stealth'] (O)--(A);
-        \draw [thick, color=blue, ->,>=stealth'] (O)--(B);
+      \draw [thick, color=blue, ->,>=stealth'] (O)--(A);
+      \draw [thick, color=blue, ->,>=stealth'] (O)--(B);
 
-        \draw[red,thick,<->,>=stealth'] (O)++(-0.7,0) arc(180:235:.7) node[below left,midway, inner sep=2pt] {\small$55\degree$};
-        \draw[red,thick,<->,>=stealth'] (O)++(0.3,0) arc(0:235:.3) node[above right,midway, inner sep=2pt, xshift=4] {\small$235\degree$};
+      \draw[red,thick,<->,>=stealth'] (O)++(-0.7,0) arc(180:235:.7) node[below left,midway, inner sep=2pt] {$55\degree$};
+      \draw[red,thick,<->,>=stealth'] (O)++(0.3,0) arc(0:235:.3) node[above right,midway, inner sep=2pt, xshift=4] {$235\degree$};
 
-        %second angle
-        \coordinate(O) at (0,-3.5);
-        \coordinate(A) at (1.5,-3.5);
-        \coordinate(B) at ($ (O)++1.5*cos(55)*(1,0) ++ 1.5*sin(55)*(0,1) $);
+      %second angle
+      \coordinate(O) at (0,-3.5);
+      \coordinate(A) at (1.5,-3.5);
+      \coordinate(B) at ($ (O)++1.5*cos(55)*(1,0) ++ 1.5*sin(55)*(0,1) $);
 
-        \draw[black,thick,->,>=stealth'] (O)++(0,-1.5)--++(0,3.2);
-        \draw[black,thick] (O)--+(-1.5,0); 
+      \draw[black,thick,->,>=stealth'] (O)++(0,-1.5)--++(0,3.2);
+      \draw[black,thick] (O)--+(-1.5,0); 
 
-        \draw [thick, color=red, <->,>=stealth'] (O)++(.5,0) arc(0:55:.5) node[right, midway, yshift=2, inner sep=4pt] {\small$55\degree$};
-        \draw[gray!70!white] (O) circle(1.5);
-        \draw[blue,ultra thick,<-] (A)--(O);
-        \draw[blue,ultra thick,->,>=stealth'] (O)--(B);
+      \draw [thick, color=red, ->,>=stealth'] (O)++(.5,0) arc(0:55:.5) node[right, midway, yshift=2, inner sep=4pt] {$55\degree$};
+      \draw[gray!70!white] (O) circle(1.5);
+      \draw[blue,ultra thick,<-] (A)--(O);
+      \draw[blue,ultra thick,->,>=stealth'] (O)--(B);
 
-        \node[text width=3.5cm] at (0,1.7) {\color{blue} difference of angles};
-        \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-    </sidebyside>
+      \node[text width=1.5cm] at (0,2.2) {\color{blue} difference of angles};
+      \end{tikzpicture}]]>
+  </latex-image>
+  </image>
+</sidebyside>
 
 <p> One-half a complete revolution is <m>180\degree</m>, and three-quarters of one revolution is <m>270\degree</m>. Thus, for angles between <m>180\degree</m> and <m>270\degree</m> in standard position, the terminal side lies in the third quadrant, and for angles between <m>270\degree</m> and <m>360\degree</m>, the terminal side lies in the fourth quadrant.</p>
 
 <example><statement><p>Find the degree measure of each angle shown below, and sketch the angle in standard position.</p>
-<sidebyside widths="22% 22%" margins="20% 20%" >
-    <image xml:id="exam4-1-2a"><description>angle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
-        \coordinate(O) at (0,0);
-        \coordinate(A) at (90:1.5cm);
-        \coordinate(B) at (18:1.5cm);
-        \coordinate(C) at (-54:1.5cm);
-        \coordinate(D) at (-126:1.5cm);
-        \coordinate(E) at (-198:1.5cm);
-        \draw [gray!40!white,thick] (O) circle [radius=1.5cm];
-        \foreach [evaluate={\angleB=\xi*(-72)+90;}] \angle [count=\xi]  in {90,18,...,-270}
-        {
-          \draw[gray,thick] (O) -- (\angle:1.5cm);
-        }
-
-        \draw[black,thick] (A)--(B)--(C)--(D)--(E)--(A);
-
-        \draw [red,thick,<->,>=stealth'] ($.4*cos(162)*(1,0)++.4*sin(162)*(0,1) $) arc(162:235:0.4) node[left,midway, yshift=-2] {$\alpha$};
-
-        \node[text width=.6cm] at (0,-2.5)  {a.};
-        \end{tikzpicture}]]>
-    </latex-image></image>
-    <image xml:id="exam4-1-2b"><description>angle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} 
-        \coordinate(O) at (0,0);
-        \draw [gray!70!white] (O) circle [radius=1.5cm];
-        \foreach \angle [count=\xi] in {60,30,...,-270}
-        {
-          \node at (\angle:1.32cm) {\textsf{\xi}};
-        }
-        \draw[black,ultra thick] (O) -- (90:1.25cm);
-        \draw[gray!70!white,ultra thick] (0,0) -- (120:1.25cm);
-
-        \draw [red,thick, <->,>=stealth'] (0,.3) arc(90:-240:.3) node[below right, midway, inner sep=2pt] {$\beta$};
-
-        \node[text width=.6cm] at (0,-2.5)  {b.};
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></statement>
-
-<solution><p>a.  The angle <m>\alpha</m> is one-fifth of a complete revolution, or 
-    <me>\dfrac{1}{5}(360\degree) = 72\degree</me>  
-In standard position, it is a first-quadrant angle, as shown in figure (a) below.</p>
-<sidebyside widths="28% 28%" margins="18% 18%"><!--<image source="photos/exam4-1-2soln.png"><description>angles</description></image>-->
-    <image xml:id="exam4-1-2asoln"><description>angle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
-        \coordinate(O) at (0,0);
-        \coordinate(A) at (0:1.5cm);
-        \coordinate(B) at (72:1.5cm);
-
-        \draw [gray!40!white,thick] (O) circle [radius=1.5cm];
-        \draw[black, thick,->,>=stealth'] (0,-1.65)--(0,1.65);
-        \draw[black, thick] (O)--++(-1.65,0);
-        \draw[blue, ultra thick,->,>=stealth'] (O)--(A);
-        \draw[blue, ultra thick,->,>=stealth'] (O)--(B);
-
-        \draw [red,thick,<->,>=stealth'] (0.35,0) arc(0:72:0.35) node[above right,midway, yshift=-2, inner sep=1pt] {\footnotesize$\alpha=72\degree$};
-
-        \node[text width=.6cm] at (0,-2.5)  {a.};
-        \end{tikzpicture}]]>
-    </latex-image></image>
-    <image xml:id="exam4-1-2bsoln"><description>angle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
-        \coordinate(O) at (0,0);
-        \coordinate(A) at (0:1.5cm);
-        \coordinate(B) at (330:1.5cm);
-
-        \draw [gray!40!white,thick] (O) circle [radius=1.5cm];
-        \draw[black, thick,->,>=stealth'] (0,-1.65)--(0,1.65);
-        \draw[black, thick] (O)--++(-1.65,0);
-        \draw[blue, ultra thick,->,>=stealth'] (O)--(A);
-        \draw[blue, ultra thick,->,>=stealth'] (O)--(B);
-
-        \draw [red,thick,<->,>=stealth'] (0.25,0) arc(0:330:0.25) node[below left,midway, xshift=7, yshift=-10, inner sep=1pt] {\footnotesize$\beta=330\degree$};
-
-        \node[text width=.6cm] at (0,-2.5)  {b.};
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside>
-<p>b.  The angle <m>\beta</m> is <m>\dfrac{11}{12}</m> of a complete revolution, or 
-    <me>\dfrac{11}{12}(360\degree) = 330\degree</me> 
-In standard position, it is a fourth-quadrant angle. (See Figure (b).)</p></solution></example>
+  <sidebyside widths="22% 22%" margins="20% 20%" >
+      <image xml:id="exam4-1-2a"><description>Regular pentagon inscribed in circle</description><latex-image>
+          <![CDATA[
+          \begin{tikzpicture}
+          \coordinate(O) at (0,0);
+          \coordinate(A) at (90:1.5cm);
+          \coordinate(B) at (18:1.5cm);
+          \coordinate(C) at (-54:1.5cm);
+          \coordinate(D) at (-126:1.5cm);
+          \coordinate(E) at (-198:1.5cm);
+          \draw [gray!40!white,thick] (O) circle [radius=1.5cm];
+          \foreach [evaluate={\angleB=\xi*(-72)+90;}] \angle [count=\xi]  in {90,18,...,-270}
+          {
+            \draw[gray,thick] (O) -- (\angle:1.5cm);
+          }
+  
+          \draw[black,thick] (A)--(B)--(C)--(D)--(E)--(A);
+  
+          \draw [red,thick,<->,>=stealth'] ($.4*cos(162)*(1,0)++.4*sin(162)*(0,1) $) arc(162:235:0.4) node[left,midway, yshift=-2] {$\alpha$};
+          \node[text width=3cm] at (0,-1.8)  {Regular pentagon inscribed in circle};
+  
+          \node[text width=.6cm] at (0,-2.5)  {a.};
+          \end{tikzpicture}]]>
+      </latex-image></image>
+      <image xml:id="exam4-1-2b"><description>Clock with minute hand pointing to 12 and to 11</description><latex-image>
+          <![CDATA[
+          \begin{tikzpicture} 
+          \coordinate(O) at (0,0);
+          \draw [gray!70!white] (O) circle [radius=1.5cm];
+          \foreach \angle [count=\xi] in {60,30,...,-270}
+          {
+            \node at (\angle:1.32cm) {\textsf{\xi}};
+          }
+          \draw[black,ultra thick] (O) -- (90:1.25cm);
+          \draw[gray!70!white,ultra thick] (0,0) -- (120:1.25cm);
+  
+          \draw [red,thick, <->,>=stealth'] (0,.3) arc(90:-240:.3) node[below right, midway, inner sep=2pt] {$\beta$};
+  
+          \node[text width=.6cm] at (0,-2.5)  {b.};
+          \end{tikzpicture}]]>
+      </latex-image></image></sidebyside></statement>
+  
+  <solution><p>a.  The angle <m>\alpha</m> is one-fifth of a complete revolution, or 
+      <me>\dfrac{1}{5}(360\degree) = 72\degree</me>  
+  In standard position, it is a first-quadrant angle, as shown in figure (a) below.</p>
+  <sidebyside widths="28% 28%" margins="18% 18%"><!--<image source="photos/exam4-1-2soln.png"><description>angles</description></image>-->
+      <image xml:id="exam4-1-2asoln"><description>72 degree angle in standard position</description><latex-image>
+          <![CDATA[
+          \begin{tikzpicture}
+          \coordinate(O) at (0,0);
+          \coordinate(A) at (0:1.5cm);
+          \coordinate(B) at (72:1.5cm);
+  
+          \draw [gray!40!white,thick] (O) circle [radius=1.5cm];
+          \draw[black, thick,->,>=stealth'] (0,-1.65)--(0,1.65);
+          \draw[black, thick] (O)--++(-1.65,0);
+          \draw[blue, ultra thick,->,>=stealth'] (O)--(A);
+          \draw[blue, ultra thick,->,>=stealth'] (O)--(B);
+  
+          \draw [red,thick,->,>=stealth'] (0.35,0) arc(0:72:0.35) node[above right,midway, yshift=-2, inner sep=1pt] {\footnotesize$\alpha=72\degree$};
+  
+          \node[text width=.6cm] at (0,-2.5)  {a.};
+          \end{tikzpicture}]]>
+      </latex-image></image>
+      <image xml:id="exam4-1-2bsoln"><description>330 degree angle in standard position</description><latex-image>
+          <![CDATA[
+          \begin{tikzpicture}
+          \coordinate(O) at (0,0);
+          \coordinate(A) at (0:1.5cm);
+          \coordinate(B) at (330:1.5cm);
+  
+          \draw [gray!40!white,thick] (O) circle [radius=1.5cm];
+          \draw[black, thick,->,>=stealth'] (0,-1.65)--(0,1.65);
+          \draw[black, thick] (O)--++(-1.65,0);
+          \draw[blue, ultra thick,->,>=stealth'] (O)--(A);
+          \draw[blue, ultra thick,->,>=stealth'] (O)--(B);
+  
+          \draw [red,thick,->,>=stealth'] (0.25,0) arc(0:330:0.25) node[below left,midway, xshift=7, yshift=-10, inner sep=1pt] {\footnotesize$\beta=330\degree$};
+  
+          \node[text width=.6cm] at (0,-2.5)  {b.};
+          \end{tikzpicture}]]>
+      </latex-image></image></sidebyside>
+  <p>b.  The angle <m>\beta</m> is <m>\dfrac{11}{12}</m> of a complete revolution, or 
+      <me>\dfrac{11}{12}(360\degree) = 330\degree</me> 
+  In standard position, it is a fourth-quadrant angle. (See Figure (b).)</p></solution></example>
 
 <exercise><statement><p> Find the degree measure of each angle below, and sketch the angle in standard position.</p>
-<sidebyside widths="25% 25%" margins="20% 20%"><!--<image source="photos/exer4-1-2.png"><description>angles</description></image>-->
-    <image xml:id="exer4-1-2a"><description>angle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
-        \coordinate(O) at (0,0);
-        \draw [gray!40!white,thick] (O) circle [radius=1.5cm];
-        \foreach \angle in {30,150,270}
-        {
-          \draw[blue,thick] (O) -- (\angle:1.5cm);
-        }
-
-        \draw [red,thick,<->,>=stealth'] ($.4*cos(30)*(1,0)++.4*sin(30)*(0,1) $) arc(30:150:0.4) node[above,midway] {$\theta$};
-
-        \node[text width=.6cm] at (0,-2.2)  {a.};
-        \end{tikzpicture}]]>
-    </latex-image></image>
-    <image xml:id="exer4-1-2b"><description>angle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} 
-        \coordinate(O) at (0,0);
-        \coordinate(A) at (0:1.5cm);
-        \coordinate(B) at (250:1.5cm);
-
-        \draw[black, thick,->,>=stealth'] (0,-1.65)--(0,1.65);
-        \draw[black, thick] (O)--++(-1.65,0);
-        \draw [gray!70!white] (O) circle [radius=1.5cm];
-
-        \draw[blue, thick,->,>=stealth'] (O) -- (0:1.5cm);
-        \draw[blue, thick,->,>=stealth'] (O) -- (250:1.5cm);
-
-        \draw [red,thick, <->,>=stealth'] (.3,0) arc(0:250:.3) node[above left, midway, inner sep=2pt] {\footnotesize $250\degree$};
-        \draw [red,thick, <->,>=stealth'] (-.7,0) arc(180:250:.7) node[below left, midway, inner sep=2pt] {$\alpha$};
-
-        \node[text width=.6cm] at (0,-2.2)  {b.};
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></statement>
-
-<answer><sidebyside widths="15% 18% 15% 12%" margins="0% 20%" valigns="middle middle middle middle"><p>a. <m>120\degree</m></p><!--<image source="photos/ar4-1-2a.png"><description>angles</description></image>-->
-   <image xml:id="ar4-1-2a"><description>angle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
-        \coordinate(O) at (0,0);
-        \coordinate(A) at (120:1.7cm);
-
-        \draw[black, thick, ->,>=stealth'] (0,-.2)--(0,1.5) node[above] {$y$};
-        \draw[black, thick, ->,>=stealth'] (-.6,0)--(1,0) node[right] {$x$};
-        \draw[red, thick, ->,>=stealth'] (.3,0) arc(0:120:0.3) node[above right, midway, xshift=-1, yshift=-1]{\footnotesize$\theta = 120\degree$};
-
-        \draw[blue, thick, ->,>=stealth'] (O) --(A);
-        \end{tikzpicture}]]>
-    </latex-image></image>
-    <p>b. <m>70\degree</m></p><!--<image source="photos/ar4-1-2b.png"><description>angles</description></image>-->
-   <image xml:id="ar4-1-2b"><description>angle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
-        \coordinate(O) at (0,0);
-        \coordinate(A) at (70:1.6cm);
-
-        \draw[black, thick, ->,>=stealth'] (0,-.2)--(0,1.5) node[above] {$y$};
-        \draw[black, thick, ->,>=stealth'] (-.3,0)--(1,0) node[right] {$x$};
-        \draw[red, thick, ->,>=stealth'] (.3,0) arc(0:70:0.3) node[above right, midway, xshift=-1, yshift=-3]{\footnotesize$\alpha = 70\degree$};
-
-        \draw[blue, thick, ->,>=stealth'] (O) --(A);
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></answer></exercise>
+  <sidebyside widths="25% 25%" margins="20% 20%"><!--<image source="photos/exer4-1-2.png"><description>angles</description></image>-->
+      <image xml:id="exer4-1-2a"><description>Circle divided into 3 equal sectors</description><latex-image>
+          <![CDATA[
+          \begin{tikzpicture}
+          \coordinate(O) at (0,0);
+          \draw [gray!40!white,thick] (O) circle [radius=1.5cm];
+          \foreach \angle in {30,150,270}
+          {
+            \draw[blue,thick] (O) -- (\angle:1.5cm);
+          }
+  
+          \draw [red,thick,<->,>=stealth'] ($.4*cos(30)*(1,0)++.4*sin(30)*(0,1) $) arc(30:150:0.4) node[above,midway] {$\theta$};
+  
+          \node[text width=.6cm] at (0,-2.2)  {a.};
+          \end{tikzpicture}]]>
+      </latex-image></image>
+      <image xml:id="exer4-1-2b"><description>angle difference between 250 degrees and straight angle</description><latex-image>
+          <![CDATA[
+          \begin{tikzpicture} 
+          \coordinate(O) at (0,0);
+          \coordinate(A) at (0:1.5cm);
+          \coordinate(B) at (250:1.5cm);
+  
+          \draw[black, thick,->,>=stealth'] (0,-1.65)--(0,1.65);
+          \draw[black, thick] (O)--++(-1.65,0);
+          \draw [gray!70!white] (O) circle [radius=1.5cm];
+  
+          \draw[blue, thick,->,>=stealth'] (O) -- (0:1.5cm);
+          \draw[blue, thick,->,>=stealth'] (O) -- (250:1.5cm);
+  
+          \draw [red,thick, <->,>=stealth'] (.3,0) arc(0:250:.3) node[above left, midway, inner sep=2pt] {\footnotesize $250\degree$};
+          \draw [red,thick, <->,>=stealth'] (-.7,0) arc(180:250:.7) node[below left, midway, inner sep=2pt] {$\alpha$};
+  
+          \node[text width=.6cm] at (0,-2.2)  {b.};
+          \end{tikzpicture}]]>
+      </latex-image></image></sidebyside></statement>
+  
+  <answer><sidebyside widths="15% 18% 15% 12%" margins="0% 20%" valigns="middle middle middle middle"><p>a. <m>120\degree</m></p><!--<image source="photos/ar4-1-2a.png"><description>angles</description></image>-->
+     <image xml:id="ar4-1-2a"><description>120 degree angle in standard position</description><latex-image>
+          <![CDATA[
+          \begin{tikzpicture}
+          \coordinate(O) at (0,0);
+          \coordinate(A) at (120:1.7cm);
+  
+          \draw[black, thick, ->,>=stealth'] (0,-.2)--(0,1.5) node[above] {$y$};
+          \draw[black, thick, ->,>=stealth'] (-.6,0)--(1,0) node[right] {$x$};
+          \draw[red, thick, ->,>=stealth'] (.3,0) arc(0:120:0.3) node[above right, midway, xshift=-1, yshift=-1]{\footnotesize$\theta = 120\degree$};
+  
+          \draw[blue, thick, ->,>=stealth'] (O) --(A);
+          \end{tikzpicture}]]>
+      </latex-image></image>
+      <p>b. <m>70\degree</m></p><!--<image source="photos/ar4-1-2b.png"><description>angles</description></image>-->
+     <image xml:id="ar4-1-2b"><description>70 degree angle in standard position</description><latex-image>
+          <![CDATA[
+          \begin{tikzpicture}
+          \coordinate(O) at (0,0);
+          \coordinate(A) at (70:1.6cm);
+  
+          \draw[black, thick, ->,>=stealth'] (0,-.2)--(0,1.5) node[above] {$y$};
+          \draw[black, thick, ->,>=stealth'] (-.3,0)--(1,0) node[right] {$x$};
+          \draw[red, thick, ->,>=stealth'] (.3,0) arc(0:70:0.3) node[above right, midway, xshift=-1, yshift=-3]{\footnotesize$\alpha = 70\degree$};
+  
+          \draw[blue, thick, ->,>=stealth'] (O) --(A);
+          \end{tikzpicture}]]>
+      </latex-image></image></sidebyside></answer>
+  </exercise>
 </subsection>
 
 <subsection><title>Trigonometric Ratios for All Angles</title>
@@ -492,14 +389,7 @@ In standard position, it is a fourth-quadrant angle. (See Figure (b).)</p></solu
     <li>Next, we choose a point <m>P</m> with coordinates <m>(x,y)</m> on the terminal side, as shown at right.  The distance from the origin to <m>P</m> is then <m>r = \sqrt{x^2 + y^2}</m>. The trigonometric ratios of <m>\theta</m> are defined as follows.</li>
 </ul></p>
     <image xml:id="fig-4-1stanpos"><description>triangle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
+        <![CDATA[
         \begin{tikzpicture} 
         \coordinate(O) at (0,0);
         \coordinate(A) at (0:2cm);
@@ -543,14 +433,7 @@ In standard position, it is a fourth-quadrant angle. (See Figure (b).)</p></solu
 <solution><p>a.  In standard position, the terminal side of an angle of <m>200\degree</m> lies in the third quadrant. (See figure (a) below.) In the third quadrant, <m>x \lt 0</m> and <m>y \lt 0</m>, but <m>r \gt 0</m>.  Thus, <m>\sin (200\degree)</m> is negative, <m>\cos (200\degree)</m> is negative, and <m>\tan (200\degree)</m> is positive.</p> 
     <sidebyside widths="30% 30%" margins="15% 15%">
     <image xml:id="exam4-1-3a"><description>200 deg angle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
+        <![CDATA[
         \begin{tikzpicture} 
         \coordinate(O) at (0,0);
         \coordinate(A) at (0:1.75cm);
@@ -572,14 +455,7 @@ In standard position, it is a fourth-quadrant angle. (See Figure (b).)</p></solu
         \end{tikzpicture}]]>
     </latex-image></image>
     <image xml:id="exam4-1-3b"><description>300 deg angle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
+        <![CDATA[
         \begin{tikzpicture} 
         \coordinate(O) at (0,0);
         \coordinate(A) at (0:1.75cm);
@@ -640,9 +516,7 @@ In standard position, it is a fourth-quadrant angle. (See Figure (b).)</p></solu
     <image xml:id="fig-4-1quads">
         <description>quadrants</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
+        <![CDATA[
         \begin{tikzpicture} 
         \draw[black, thick,->,>=stealth'] (0,-3)--(0,3);
         \draw[black, thick, ->,>=stealth'] (-3,0)--(3,0);
@@ -690,15 +564,8 @@ In standard position, it is a fourth-quadrant angle. (See Figure (b).)</p></solu
 
 <example><statement><sidebyside widths="55% 25%" valigns="middle middle" margins="0% 12%"><p>Find the sine, cosine, and tangent of the angle shown at right.</p>
     <image xml:id="exam4-1-4"><description>angle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}[scale=.3]
+        <![CDATA[
+        \begin{tikzpicture}[scale=.25]
         \coordinate(O) at (0,0);
         \coordinate(A) at (0:6);
         %\coordinate(B) at ($ -6*asin(5/6)*(1,0)++(0,-5)$);
@@ -708,7 +575,7 @@ In standard position, it is a fourth-quadrant angle. (See Figure (b).)</p></solu
         \draw[thick,->,>=stealth'] (0,-6.2) -- (0,6.8);
         \draw[gray,thick,dashed] (B) -- (0,-5);
         \draw[blue, ultra thick] (O) -- (A);
-        \draw[blue,  thick, ->,>=stealth'] (O) -- (B) node[above left, midway, yshift=-.2cm] {\footnotesize $r=6$};
+        \draw[blue,  thick, ->,>=stealth'] (O) -- (B) node[above left, midway, xshift=1, yshift=-.1cm] {$r=6$};
 
         \foreach \x in {-5,-4,...,4}
             \draw[black,thick] (\x cm,8pt) -- (\x cm,-8pt) ;
@@ -730,16 +597,9 @@ In standard position, it is a fourth-quadrant angle. (See Figure (b).)</p></solu
     <mrow>x \amp = \pm \sqrt{11}</mrow></md>
 Because <m>P</m> is in the third quadrant, <m>x = -\sqrt{11}</m>. Thus, <me>\cos (\theta) = \dfrac{x}{r} = \dfrac{-\sqrt{11}}{6}~~~~ \text{and} ~~~~\tan (\theta) = \dfrac{y}{x} = \dfrac{-5}{-\sqrt{11}} = \dfrac{5}{\sqrt{11}}</me></p></solution></example>
 
-<exercise><statement><sidebyside widths="65% 25%" valigns="middle middle" margins="0% 12%"><p>Find the sine, cosine, and tangent of the angle shown at right. The circle has radius 4.</p>
+<exercise><statement><sidebyside widths="65% 25%" valigns="middle middle" margins="0% 8%"><p>Find the sine, cosine, and tangent of the angle shown at right. The circle has radius 4.</p>
 <image xml:id="exer4-1-4"><description>angles</description><latex-image>
-    <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-    <![CDATA[\tikzset{%
-      block/.style    = {draw, thick, rectangle, minimum height = 3em,
-        minimum width = 3em},
-      sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-      input/.style    = {coordinate}, % Input
-      output/.style   = {coordinate} % Output
-    }
+    <![CDATA[
         \begin{tikzpicture}[scale=.4]
         \coordinate(O) at (0,0);
         \coordinate(A) at (0:4);
@@ -769,9 +629,9 @@ Because <m>P</m> is in the third quadrant, <m>x = -\sqrt{11}</m>. Thus, <me>\cos
 </subsection>
 
 <subsection><title>Reference Angles</title>
-<idx><h>reference angle</h></idx>
-<idx><h>angle</h><h>reference</h></idx>
-
+  <idx><h>reference angle</h></idx>
+  <idx><h>angle</h><h>reference</h></idx>
+  
 <p>In Section 3.1 we learned that the trig ratios for angles in the second quadrant are the same as the trig ratios for their supplements, except for sign. For example, you can use your calculator to verify that</p>
 
     <sidebyside widths="50% 40%" valigns="middle middle"><tabular>
@@ -786,14 +646,7 @@ Because <m>P</m> is in the third quadrant, <m>x = -\sqrt{11}</m>. Thus, <me>\cos
             <cell><m>\tan (50\degree) = 1.1918</m></cell></row>
         </tabular>
     <image xml:id="fig-4-1-refang"><description>angles</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
+        <![CDATA[
         \begin{tikzpicture} 
         \coordinate(O) at (0,0);
         \coordinate(P) at (50:2.5);
@@ -841,15 +694,8 @@ Because <m>P</m> is in the third quadrant, <m>x = -\sqrt{11}</m>. Thus, <me>\cos
 
 <sidebyside width="80%">
     <image xml:id="fig-4-1ref"><description>angles</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} [scale=1.4]
+        <![CDATA[
+        \begin{tikzpicture} [scale=1]
 
         \coordinate (O) at (0,0);
         \coordinate (x) at (2.5,0);
@@ -952,15 +798,8 @@ Because <m>P</m> is in the third quadrant, <m>x = -\sqrt{11}</m>. Thus, <me>\cos
 <idx><h>reference angle</h></idx><idx><h>angle</h><h>reference</h><seealso>reference angle</seealso></idx>
 
 <sidebyside width="55%"><image xml:id="act4-1"><description>unit circle on grid</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-          }
-        \begin{tikzpicture} [scale = .4] 
+        <![CDATA[
+        \begin{tikzpicture} [scale = .35] 
         \draw[cyan] (-10,-10) grid (10,10);
         \draw[black, thick] (-10,0) -- (10,0);
         \draw[black, thick] (0,-10) -- (0, 10);
@@ -1034,16 +873,9 @@ Because <m>P</m> is in the third quadrant, <m>x = -\sqrt{11}</m>. Thus, <me>\cos
         <me>200\degree - 180\degree = 20\degree</me></li>
     <li>Both angles are shown at right. Note that the reference triangle for <m>200\degree</m> is congruent to the reference triangle for <m>20\degree</m>. You can use your calculator to verify the following values.</li>
         </ol></p>
-    <image xml:id="exam4-1-5"><description>angles</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} 
+    <image xml:id="exam4-1-5"><description>200 degree and reference angles</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture} [scale=.75]
         \coordinate(O) at (0,0);
         \coordinate(A) at (20:2.75cm);
         \coordinate(B) at (200:2.75cm);
@@ -1060,10 +892,10 @@ Because <m>P</m> is in the third quadrant, <m>x = -\sqrt{11}</m>. Thus, <me>\cos
         \draw[blue, thick] (O) -- (A);
         \draw[blue, thick] (O) -- (B);
 
-        \draw [red,thick, ->,>=stealth'] (O)++(.4,0) arc(0:200:.4) node[above left, midway, yshift=-2, inner sep=2pt] {\footnotesize$200\degree$};
+        \draw [red,thick, ->,>=stealth'] (O)++(.4,0) arc(0:200:.4) node[above left, midway, yshift=-2, inner sep=2pt] {$200\degree$};
 
-        \draw [red,thick] (O)++(.9,0) arc(0:20:.9) node[ right, midway, yshift=1, inner sep=2pt] {\footnotesize$20\degree$};
-        \draw [red,thick] (O)++(-.9,0) arc(180:200:.9) node[ left, midway, yshift=-2, inner sep=2pt] {\footnotesize$20\degree$};
+        \draw [red,thick] (O)++(.9,0) arc(0:20:.9) node[ right, midway, xshift=2, yshift=1, inner sep=2pt] {$20\degree$};
+        \draw [red,thick] (O)++(-.9,0) arc(180:200:.9) node[ left, midway, xshift=-1, yshift=-2, inner sep=2pt] {$20\degree$};
 
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
@@ -1081,16 +913,9 @@ Because <m>P</m> is in the third quadrant, <m>x = -\sqrt{11}</m>. Thus, <me>\cos
         <li> <m>75\degree</m></li>
         <li><sidebyside widths="22% 60%" margins="0% 0%" valigns="middle middle">
     <image xml:id="ar4-1-5">
-        <description>angles</description>
+        <description>285 degree and reference angles</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
+        <![CDATA[
         \begin{tikzpicture}
         \coordinate(O) at (0,0);
         \coordinate(A) at (285:1.5cm);
@@ -1182,14 +1007,7 @@ Because <m>P</m> is in the third quadrant, <m>x = -\sqrt{11}</m>. Thus, <me>\cos
             <me>\text{COS}^{-1} (5 \div 8)</me> 
     in your calculator to find the first quadrant angle, <m>51.3\degree</m>. The cosine is also positive in the fourth quadrant, so we look for the angle in the fourth quadrant with reference angle <m>51.3\degree</m>. That angle is <m>360\degree - 51.3\degree = 308.7\degree</m>, as shown at right.</p>    
     <image xml:id="exam4-1-6a"><description>angles</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
+        <![CDATA[
         \begin{tikzpicture} 
         \coordinate(O) at (0,0);
         \coordinate(A) at (51.3:2cm);
@@ -1216,14 +1034,7 @@ Because <m>P</m> is in the third quadrant, <m>x = -\sqrt{11}</m>. Thus, <me>\cos
         <mrow>\amp = 180\degree - 51.3\degree = 128.7\degree</mrow></md></p>
 
     <image xml:id="exam4-1-6b"><description>angles</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
+        <![CDATA[
         \begin{tikzpicture} 
         \coordinate(O) at (0,0);
         \coordinate(A) at (128.7:2cm);
@@ -1268,14 +1079,7 @@ Because <m>P</m> is in the third quadrant, <m>x = -\sqrt{11}</m>. Thus, <me>\cos
 
  <sidebyside widths="30% 30%" margins="15% 15%">
     <image xml:id="fig-4-1-coterm"><description>angles</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
+        <![CDATA[
         \begin{tikzpicture}
         \coordinate(O) at (0,0);
         \coordinate(A) at (70:2cm);
@@ -1291,14 +1095,7 @@ Because <m>P</m> is in the third quadrant, <m>x = -\sqrt{11}</m>. Thus, <me>\cos
         \end{tikzpicture}]]>
     </latex-image></image>
     <image xml:id="fig-4-1-coterm2"><description>angles</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
+        <![CDATA[
         \begin{tikzpicture}
         \coordinate(O) at (0,0);
         \coordinate(A) at (70:2cm);
@@ -1338,14 +1135,7 @@ Because <m>P</m> is in the third quadrant, <m>x = -\sqrt{11}</m>. Thus, <me>\cos
 <p><sidebyside widths="65% 25%" valigns="middle middle" margins="0% 5%">
 <p>If the direction of rotation <idx><h>rotation</h></idx> is important, we let positive angles represent rotation in the counter-clockwise direction, and negative angles represent rotation in the clockwise direction. For example, the angle <m>-60\degree</m> shown at right lies in the fourth quadrant. It is coterminal with  <m>-60\degree + 360\degree = 300\degree</m>.</p>
     <image xml:id="fig-4-1-negang"><description>angles</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
+        <![CDATA[
         \begin{tikzpicture}
         \coordinate(O) at (0,0);
         \coordinate(A) at (-60:1.5cm);
@@ -1375,14 +1165,7 @@ Because <m>P</m> is in the third quadrant, <m>x = -\sqrt{11}</m>. Thus, <me>\cos
 These two angles are supplementary, so they have the same reference angle, as shown below.</p>  
 <sidebyside widths="35% 35%" margins="12% 12%">
     <image xml:id="fig-4-1-eqna"><description>angles</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
+        <![CDATA[
         \begin{tikzpicture}
         \coordinate(O) at (0,0);
         \coordinate(A) at (25:2cm);
@@ -1405,14 +1188,7 @@ These two angles are supplementary, so they have the same reference angle, as sh
         \end{tikzpicture}]]>
     </latex-image></image>
     <image xml:id="fig-4-1-eqnb"><description>angles</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
+        <![CDATA[
         \begin{tikzpicture}
         \coordinate(O) at (0,0);
         \coordinate(A) at (-25:2cm);
@@ -1449,14 +1225,7 @@ for angles between <m>0\degree</m> and <m>360\degree</m>. Round your answers to 
 
   <p>Thus, one of the solutions is <m>320\degree</m>. The sine is also negative in the third quadrant, so there should also be a solution in the third quadrant. The reference angle for <m>320\degree</m> is <m>40\degree</m>, and the third-quadrant angle with reference angle <m>40\degree</m> is <m>220\degree</m>, as shown at right.You can check that, rounded to four decimal places, both angles satisfy the equation, that is, </p>
     <image xml:id="exam4-1-8"><description>angles</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
+        <![CDATA[
         \begin{tikzpicture}
         \coordinate(O) at (0,0);
         \coordinate(A) at (-40:2cm);
@@ -1503,14 +1272,7 @@ Because we can easily find coterminal solutions by adding or subtracting multipl
     <me>\widetilde{\theta} = 210\degree - 180\degree =30\degree</me>     
 We draw a reference triangle as shown at right.  Because the sides of a 30-60-90 triangle are in the ratio <m>1:\sqrt{3}:2</m>, we can choose point <m>P</m> with coordinates <m>(-\sqrt{3}, -1)</m>.</p>
    <image xml:id="exam4-1-9"><description>angles</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
+        <![CDATA[
         \begin{tikzpicture}
         \coordinate(O) at (0,0);
         \coordinate(A) at (210:2cm);
@@ -1538,63 +1300,75 @@ We draw a reference triangle as shown at right.  Because the sides of a 30-60-90
     <li>Find exact values for the sine, cosine, and tangent of <m>300\degree</m>.</li>
     </ol></p></statement>
 <answer><p><ol marker="a">
-  <li><m>60\degree</m></li>
+  <li><sidebyside widths = "35% 50%" margins="0% 5%" valigns="middle middle">
+    <image xml:id="Ref-angle-300deg"><description>Reference angle for 300 degrees</description><latex-image>
+    <![CDATA[
+    \begin{tikzpicture}[scale=.8]
+    \coordinate(O) at (0,0);
+    \coordinate(A) at (300:2cm);
+    \coordinate(Ap) at (300:2.5cm);
+    \coordinate(B) at (1,0);
+    \draw[blue, thick] (B) rectangle ++(-.25,-.25);
+    \draw[gray!80!white, thick, dashed] (B)--(A);
+    \draw[black, thick, ->,>=stealth'] (0,-2.2)--(0,2.2) node[above] {$y$};
+    \draw[black, thick, ->,>=stealth'] (-2.2,0)--(2.2,0) node[right] {$x$};
+    \draw [gray!80!white] (O) circle [radius=2cm];
+    \draw[blue, thick, ->,>=stealth'] (O) --(Ap);
+    \filldraw[black] (A) circle (1.8pt) node[anchor=west, yshift=2] {$P(1, -\sqrt{3})$};
+
+    \draw [thick, red, ->,>=stealth'] (O) ++(.3,0) arc(0:300:.3)node[above left, midway, xshift=1, yshift=-3] { $300\degree$};
+
+    \node[text width=.15cm] at (.4,-1.1){ 2};
+    \end{tikzpicture}]]>
+</latex-image></image>
+<p>Reference angle:  <m>~60\degree</m></p></sidebyside></li>
   <li><m>\sin (300\degree) = \dfrac {-\sqrt{3}}{2}</m>, <m>~\cos (300\degree) = \dfrac {1}{2}</m>, <m>~\tan (300\degree) = -\sqrt{3}</m></li>
 </ol></p></answer></exercise>
 
-<sidebyside widths="50% 40%" valigns="middle middle"><p>All of the special angles are shown at right. In the Homework Problems you will calculate the three trigonometric ratios for all the special angles, and it will be useful to be familiar with these values, and be able to calculate them quickly.</p>
-    <image xml:id="fig-4-1-specang"><description>angles</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
-        \draw[black, thick, ->,>=stealth'] (0,-2)--(0,2.75) node[above left, yshift=-6] {$y$};
-        \draw[black, thick, ->,>=stealth'] (-2,0)--(2.75,0) node[right] {$x$};
+<sidebyside widths="50% 40%" valigns="middle middle" margins="0% 5%"><p>All of the special angles are shown at right. In the Homework Problems you will calculate the three trigonometric ratios for all the special angles, and it will be useful to be familiar with these values, and be able to calculate them quickly.</p>
+  <image xml:id="fig-4-1-specang"><description>Special angles on unit circle</description><latex-image>
+    <![CDATA[
+    \begin{tikzpicture}
+    \draw[black, thick, ->,>=stealth'] (0,-2)--(0,2.75) node[above left, yshift=-6] {$y$};
+    \draw[black, thick, ->,>=stealth'] (-2,0)--(2.75,0) node[right] {$x$};
 
-        \coordinate(O) at (0,0);
-        \draw [gray] (O) circle [radius=2cm];
-        \filldraw [black] (O) circle [radius=.075cm];
+    \coordinate(O) at (0,0);
+    \draw [gray] (O) circle [radius=2cm];
+    \filldraw [black] (O) circle [radius=.075cm];
 
-        \foreach \angle [count=\xi] in {15,30,...,345}
-        {
-          \draw[red!50!white] (O) -- (\angle:2cm);
-        }
+    \foreach \angle [count=\xi] in {15,30,...,345}
+    {
+      \draw[red!50!white] (O) -- (\angle:2cm);
+    }
 
-        \foreach \angle [count=\xi] in {30,60,...,330}
-        {
-          \draw[blue] (O) -- (\angle:2cm);
-          \node[font=\footnotesize,] at (\angle:2.35cm) {$\color{red}\angle\degree$};
-        }
+    \foreach \angle [count=\xi] in {30,60,...,330}
+    {
+      \draw[blue] (O) -- (\angle:2cm);
+      \node at (\angle:2.35cm) {$\color{blue}\angle\degree$};
+    }
 
-        \draw[magenta] (O) -- (45:2cm);
-          \node[font=\footnotesize,] at (45:2.35cm) {$\color{red}45\degree$};
+    \draw[magenta] (O) -- (45:2cm);
+      \node at (45:2.35cm) {$\color{blue}45\degree$};
 
-        \draw[magenta] (O) -- (135:2cm);
-          \node[font=\footnotesize,] at (135:2.35cm) {$\color{red}135\degree$};
+    \draw[magenta] (O) -- (135:2cm);
+      \node at (135:2.35cm) {$\color{blue}135\degree$};
 
-        \draw[magenta] (O) -- (225:2cm);
-          \node[font=\footnotesize,] at (225:2.35cm) {$\color{red}225\degree$};
+    \draw[magenta] (O) -- (225:2cm);
+      \node at (225:2.35cm) {$\color{blue}225\degree$};
 
-        \draw[magenta] (O) -- (315:2cm);
-          \node[font=\footnotesize,] at (315:2.35cm) {$\color{red}315\degree$};
+    \draw[magenta] (O) -- (315:2cm);
+      \node at (315:2.35cm) {$\color{blue}315\degree$};
 
-        \node[text width=.25cm,font=\footnotesize] at (2.2,.2){$\color{red}\footnotesize 0\degree$ };
-        \node[text width=.25cm,font=\tiny] at (2.2,-.2){ $\color{red}\footnotesize 360\degree$};
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside>    
+    \node[text width=.25cm] at (2.2,.2){$\color{blue} 0\degree$ };
+    \node[text width=.25cm] at (2.2,-.2){ $\color{blue}\footnotesize 360\degree$};
+    \end{tikzpicture}]]>
+</latex-image></image></sidebyside>   
 
 <activity><title>Unit Circles</title>
 <idx><h>unit circle</h></idx>
 
 <sidebyside width="70%"><image xml:id="act4-2"><description>grid</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
+        <![CDATA[
         \begin{tikzpicture}[scale=.25]
         \coordinate (O) at (0,0);
         \draw[step=1cm,cyan,very thin] (-21,-21) grid (21,21);
@@ -1633,9 +1407,7 @@ We draw a reference triangle as shown at right.  Because the sides of a 30-60-90
     <image xml:id="act4-3">
         <description>grid</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
+        <![CDATA[
         \begin{tikzpicture}[scale=.25]
         \coordinate (O) at (0,0);
         \draw[step=1cm,cyan,very thin] (-11,-11) grid (11,11);
@@ -1709,67 +1481,53 @@ We draw a reference triangle as shown at right.  Because the sides of a 30-60-90
 <idx><h>unit circle</h></idx>
 
 <p>Figure (a) below shows an angle of <m>30\degree</m> in standard position in a circle of radius 2. The hypotenuse of its reference triangle is the radius of the circle, so the legs of the triangle have lengths 1 and <m>\sqrt{3}</m>. The coordinates of the point <m>P</m> where the terminal side meets the circle are thus <m>(\sqrt{3}, 1)</m>.  (You can check that these coordinates satisfy the equation of the circle, <m>x^2 + y^2 = 4</m>.)</p>
-    <sidebyside widths="40% 40%"><image xml:id="fig-4-1-circle2"><description>angle on circle of radius 2</description>
-        <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
-        \coordinate(O) at (0,0);
-        \coordinate(A) at (30:2cm);
-        \coordinate(Ap) at (30:2.7cm);
-        \coordinate(B) at ($ 2* cos(30)*(1,0) $);
+<sidebyside widths="40% 40%"><image xml:id="fig-4-1-circle2"><description>angle on circle of radius 2</description>
+    <latex-image>
+    <![CDATA[
+    \begin{tikzpicture}[scale=.9]
+    \coordinate(O) at (0,0);
+    \coordinate(A) at (30:2cm);
+    \coordinate(Ap) at (30:2.7cm);
+    \coordinate(B) at ($ 2* cos(30)*(1,0) $);
 
-        \draw[black, thick, ->,>=stealth'] (0,-2.2)--(0,2.2) node[above] {$y$};
-        \draw[black, thick, ->,>=stealth'] (-2.2,0)--(2.2,0) node[right] {$x$};
-        \draw [gray!80!white] (O) circle [radius=2cm];
+    \draw[black, thick, ->,>=stealth'] (0,-2.2)--(0,2.3) node[above] {$y$};
+    \draw[black, thick, ->,>=stealth'] (-2.2,0)--(2.3,0) node[right] {$x$};
+    \draw [gray!80!white] (O) circle [radius=2cm];
 
-        \draw[blue, thick] (B) rectangle ++(-.25,.25);
-        \draw[gray!80!white, thick, dashed] (B)--(A) node[right, midway, xshift=-3.5]{\color{blue}1};
-        \draw[gray!80!white, thick, dashed] (B)--(O) node[below, midway]{\color{blue}$\sqrt{3}$};
-        \draw[blue, thick, ->,>=stealth'] (O) --(Ap);
-        \filldraw[black] (A) circle (1.8pt) node[anchor=north west, xshift=2,yshift=7] {\footnotesize $P(-\sqrt{3}, 1)$};
+    \draw[blue, thick] (B) rectangle ++(-.25,.25);
+    \draw[gray!80!white, thick, dashed] (B)--(A) node[right, midway, xshift=-3.5]{\color{blue}1};
+    \draw[gray!80!white, thick, dashed] (B)--(O) node[below, midway]{\color{blue}$\sqrt{3}$};
+    \draw[blue, thick, ->,>=stealth'] (O) --(Ap);
+    \filldraw[black] (A) circle (1.8pt) node[anchor=north west, xshift=2,yshift=7] {$P\left(-\sqrt{3}, 1\right)$};
 
-        \node[text width=.15cm] at (.7,.7){\color{blue} 2};
-        \node[text width=.25cm] at (0,-2.5){ a.};
-        \end{tikzpicture}]]>
-    </latex-image></image>
-    <image xml:id="fig-4-1-unitcircle"><description>angle in unit circle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
-        \coordinate(O) at (0,0);
-        \coordinate(A) at (30:2cm);
-        \coordinate(Ap) at (30:2.7cm);
-        \coordinate(B) at ($ 2* cos(30)*(1,0) $);
+    \node[text width=.15cm] at (.7,.7){\color{blue} 2};
+    \node[text width=.25cm] at (0,-2.5){ a.};
+    \end{tikzpicture}]]>
+</latex-image></image>
+<image xml:id="fig-4-1-unitcircle"><description>angle in unit circle</description><latex-image>
+    <![CDATA[
+    \begin{tikzpicture}[scale=.9]
+    \coordinate(O) at (0,0);
+    \coordinate(A) at (30:2cm);
+    \coordinate(Ap) at (30:2.7cm);
+    \coordinate(B) at ($ 2* cos(30)*(1,0) $);
 
-        \draw[black, thick, ->,>=stealth'] (0,-2.2)--(0,2.2) node[above] {$y$};
-        \draw[black, thick, ->,>=stealth'] (-2.2,0)--(2.2,0) node[right] {$x$};
-        \draw [gray!80!white] (O) circle [radius=2cm];
+    \draw[black, thick, ->,>=stealth'] (0,-2.3)--(0,2.2) node[above] {$y$};
+    \draw[black, thick, ->,>=stealth'] (-2.2,0)--(2.3 ,0) node[right] {$x$};
+    \draw [gray!80!white] (O) circle [radius=2cm];
 
-        \draw[blue, thick] (B) rectangle ++(-.25,.25);
-        \draw[gray!80!white, thick, dashed] (B)--(A) node[right, midway, xshift=1, yshift=-1,fill=white, inner sep=1pt]{\color{blue} $\frac{1}{2}  $ };
-        \draw[gray!80!white, thick, dashed] (B)--(O) node[below, midway]{\color{blue}$\frac{\sqrt{3}}{2}$};
-        \draw[blue, thick, ->,>=stealth'] (O) --(Ap);
-        \filldraw[black] (A) circle (1.8pt) node[anchor=north west, xshift=4,yshift=9] {\footnotesize 
-        $P(\frac{-\sqrt{3}}{2}, \frac{1}{2})$};
+    \draw[blue, thick] (B) rectangle ++(-.25,.25);
+    \draw[gray!80!white, thick, dashed] (B)--(A) node[right, midway, xshift=1, yshift=-1,fill=white, inner sep=1pt]{\color{blue} $\frac{1}{2}  $ };
+    \draw[gray!80!white, thick, dashed] (B)--(O) node[below, midway]{\color{blue}$\frac{\sqrt{3}}{2}$};
+    \draw[blue, thick, ->,>=stealth'] (O) --(Ap);
+    \filldraw[black] (A) circle (1.8pt) node[anchor=north west, xshift=4,yshift=9] { 
+    $Q\left(\frac{-\sqrt{3}}{2}, \frac{1}{2}\right)$};
 
-        \node[text width=.15cm] at (.7,.7){\color{blue} 1};
-        \node[text width=.25cm] at (0,-2.5){ b.};
+    \node[text width=.15cm] at (.7,.7){\color{blue} 1};
+    \node[text width=.25cm] at (0,-2.5){ b.};
 
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside>
+    \end{tikzpicture}]]>
+</latex-image></image></sidebyside>
 
 <p>Now consider the circle of radius 1 in Figure (b).  (A circle of radius 1 is called a <term>unit circle</term><idx><h>unit circle</h></idx>.)  In this figure, the hypotenuse of the reference triangle for <m>30\degree</m> has length 1.  What are the coordinates of the point <m>Q</m> where the terminal side meets the circle?  Each side of this triangle is <m>\frac{1}{2}</m> the length of the sides of the similar triangle in Figure (a), so the coordinates of <m>Q</m> are <m>\left(\dfrac{\sqrt{3}}{2}, \dfrac{1}{2}\right)</m>. (Once again, you should check that these coordinates satisfy the equation of the circle, <m>x^2 + y^2 = 1</m>.)</p>
  <p> Perhaps you recognize the coordinates of the point <m>Q</m>. Because <m>r = 1</m> in this circle, the definitions of the sine and cosine are 
@@ -1956,14 +1714,7 @@ The reference angle for <m>315\degree</m> is <m>~ 360\degree - 315\degree = 45\d
         </tabular></sidebyside></assemblage>
     <sidebyside width="50%"><!--<image source="photos/4-1-concept6.png"><description>angles</description></image>-->
     <image xml:id="fig-4-1-concept6"><description>angles</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
+        <![CDATA[
         \begin{tikzpicture}
 
         \coordinate (O) at (0,0);
@@ -2016,7 +1767,8 @@ The reference angle for <m>315\degree</m> is <m>~ 360\degree - 315\degree = 45\d
     <li>Solve equations    #61-72</li>
     <li>Find coordinates of points on circles    #73-82</li>
 </ol></p></subsubsection>
-</subsection>
+</subsection>  
+
 
 <xi:include href="./hmwk-4-1.xml" />  
 
