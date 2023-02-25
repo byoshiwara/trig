@@ -154,37 +154,26 @@ where <m>\theta = t~</m> is an angle measured in radians.</p>
 
 <note><p>To understand the connection between real numbers and radians, you may find it helpful to remember that the measure of a positive angle in radians is equal to the length of the arc it spans on a unit circle.</p> 
     
-<sidebyside widths="65% 30%" valigns="middle middle" margins="0% 5%"><p>Consider the unit circle shown at right, and the angle <m>\theta</m> determined by the arc of length <m>t</m>. The radian measure of <m>\theta</m> is the same as the length <m>t</m> of the arc. (For example, in this figure <m>\theta = t = 2</m>.) </p>
-
+<sidebyside widths="65% 28%" valigns="middle middle" margins="0% 5%"><p>Consider the unit circle shown at right, and the angle <m>\theta</m> determined by the arc of length <m>t</m>. The radian measure of <m>\theta</m> is the same as the length <m>t</m> of the arc. (For example, in this figure <m>\theta = t = 2</m>.) </p>
     <image xml:id="fig-6-2-realno"><description>circle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
+    <![CDATA[
+    \begin{tikzpicture} [scale=.9]
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (0:1.5);
+    \coordinate (B) at ($({deg(2)}:1.5)$);
+    \coordinate (C) at ($ 1.5*cos(deg(2))*(1,0) $);
+    \coordinate (D) at ($ 1.5*sin(deg(2))*(0,1) $);
 
-        \coordinate (O) at (0,0);
-        \coordinate (A) at (0:1.5);
-        \coordinate (B) at ($({deg(2)}:1.5)$);
-        \coordinate (C) at ($ 1.5*cos(deg(2))*(1,0) $);
-        \coordinate (D) at ($ 1.5*sin(deg(2))*(0,1) $);
+    \draw[black, thick, ->,>=stealth'] (-1.7,0)--(1.8,0);
+    \draw[black, thick, ->,>=stealth'] (0,-1.7)--(0,1.8);
+    \draw[gray, thick] (O) circle (1.5);
 
-        \draw[black, thick, ->,>=stealth'] (-1.7,0)--(1.8,0);
-        \draw[black, thick, ->,>=stealth'] (0,-1.7)--(0,1.8);
-        \draw[gray, thick] (O) circle (1.5);
-
-        \draw[gray!80, thick, dashed] (O)--(A)--(C);
-        \draw[black, thick] (O)--(B) ;
-        \draw[gray!80, thick, dashed] (C)--(B)--(D) ;
-        \draw[red, thick, ->,>=stealth'] (0.3,0) arc(0:{deg(2)}:0.3)  node[above right, midway, xshift=2, scale=.8] {$\theta=2$};
-        \draw[blue, ultra thick] (1.5,0) arc(0:{deg(2)}:1.5)  node[above right, midway, xshift=2, scale=.8 ] {$t=2$};
-        \filldraw[black] (B) circle (.06cm) node[anchor=south east, yshift=2, scale=.8] { $P(x,y)$};
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside>
+    \draw[black, thick] (O)--(B) ;
+    \draw[red, thick, ->,>=stealth'] (0.3,0) arc(0:{deg(2)}:0.3)  node[above right, midway, xshift=2, scale=.8] {$\theta=2$};
+    \draw[blue, ultra thick] (1.5,0) arc(0:{deg(2)}:1.5)  node[above right, midway, xshift=2, scale=.8 ] {$t=2$};
+    \filldraw[black] (B) circle (.06cm);
+    \end{tikzpicture}]]>
+</latex-image></image></sidebyside>
 
 <p>In practice, there is no difference between finding the sine or cosine of the number 2 and the sine or cosine of an angle of 2 radians: in each case we set the calculator in Radian mode and evaluate</p>
             
@@ -194,8 +183,24 @@ where <m>\theta = t~</m> is an angle measured in radians.</p>
 
 <example><statement><p>The sunset time in Stockholm, Sweden, on the <m>n</m>th day of the year can be modeled by 
     <me>T = 3.11 ~\sin ~(0.017n - 1.38) + 6.03</me>
-where <m>T</m> is given in hours after noon. Find the sunset time on January 1 (day <m>n = 1</m>) and on July 1 (day <m>n = 182</m>).</p></statement>
-  
+where <m>T</m> is given in hours after noon. Find the sunset time on January 1 (day <m>n = 1</m>) and on July 1 (day <m>n = 182</m>).</p>
+<sidebyside width="95%"><image xml:id="fig-Stockholm-Daylight"><description>Sinusoidal graph of Stockholm's sunset time vs days</description><latex-image>
+  <![CDATA[
+  \begin{tikzpicture} [xscale=.3, yscale=.3]
+  \draw[cyan] (0,0) grid (37,10);
+  \draw[->,>=stealth'] (0,0) -- (38,0) node[right] {$n$};
+  \draw[->,>=stealth'] (0,0) -- (0,10.7) node[above] {$T$};
+  \foreach \x [evaluate =\x as \xi using int(10*\x] in {5,10,...,35}
+    \draw[black] (\x, .15) --++(0,-.3) node[below]{$\xi$};
+  \foreach \y in {5,10}
+    \draw[black, thick] (.2,\y ) --++(-.4,0) node[anchor=east, xshift=-3] {$\y$};
+  \draw[samples=65,domain=0:36.5,smooth,variable=\x,red,very thick] plot ({\x},{6.03+3.11*sin(deg(.17*\x-1.38))});
+  \node[text width=5cm] at (18.5,10.7)    {Sunset Time in Stockholm};
+  \filldraw[red] (0.1,{6.03+3.11*sin(deg(.017-1.38))}) ellipse (.2cm and .2cm);
+  \filldraw[red] (18.2,{6.03+3.11*sin(deg(.017*182-1.38))}) ellipse (.2cm and .2cm);
+  \end{tikzpicture}]]>
+  </latex-image></image></sidebyside>
+</statement>
 <solution><p>Evaluate the function for <m>n = \alert{1}</m> to find
     <me>T = 3.11 ~\sin ~(0.017(\alert{1}) - 1.38) + 6.03 = 2.99</me>
 On January 1, sunset in Stockholm occurs about 2.99 hours after noon, or at 2:59 pm.</p>
@@ -203,9 +208,25 @@ On January 1, sunset in Stockholm occurs about 2.99 hours after noon, or at 2:59
     <me>T = 3.11 ~\sin ~(0.017(\alert{182}) - 1.38) + 6.03 = 9.11</me>
 On July 1, sunset occurs about 9.11 hours after noon, or at 9:07 pm. (Actually, 10:07 pm, because of daylight savings time.)</p></solution></example>
 
-<exercise><statement><p>Variable stars are important in astronomy because they are used to estimate distances. Their magnitude, or brightness, varies periodically and can be modeled by trigonometric functions. The star T Herculis reached its maximum magnitude on December 27, 2004, and <m>t</m> days later its magnitude is approximately
+<exercise><statement><p>Variable stars are important in astronomy because they are used to estimate distances. Their magnitude, or brightness, varies periodically and can be modeled by trigonometric functions. The star T Herculis reached its minimum magnitude on December 27, 2004, and <m>t</m> days later its magnitude is approximately
     <me>M = 10.2 - 2.2 ~\cos~(0.038t)</me></p>
-<p><ol marker= "a">
+    <sidebyside width="95%"><image xml:id="fig-Variable-Star"><description>Sinusoidal graph of star brightness</description><latex-image>
+      <![CDATA[
+      \begin{tikzpicture} [xscale=.3, yscale=.3]
+      \draw[cyan] (0,0) grid (37,15);
+      \draw[->,>=stealth'] (0,0) -- (38,0) node[right] {$t$};
+      \draw[->,>=stealth'] (0,0) -- (0,15.8) node[above] {$M$};    
+      \foreach \x [evaluate =\x as \xi using int(20*\x] in {5,10,...,35}
+        \draw[black] (\x, .15) --++(0,-.3) node[below]{$\xi$};
+      \foreach \y in {5,10,15}
+        \draw[black, thick] (.2,\y ) --++(-.4,0) node[anchor=east, xshift=-3] {$\y$};    
+      \draw[samples=65,domain=0:37,smooth,variable=\x,red,very thick] plot ({\x},{10.2-2.2*cos(deg(0.038*\x*20))});
+      \node[text width=5cm] at (18.5,15.8)    {Magnitude of T Herculis};
+      \filldraw[red] (0,{10.2-2.2*cos(deg(0.038*0))}) ellipse (.2cm and .2cm);
+      \filldraw[red] (730/20,{10.2-2.2*cos(deg(0.038*730))}) ellipse (.2cm and .2cm);
+      \end{tikzpicture}]]>
+      </latex-image></image></sidebyside>
+    <p><ol marker= "a">
     <li>What was the magnitude of T Herculis on December 27, 2004?</li>
     <li>What was the magnitude of T Herculis be on December 27, 2006 (730 days later)?</li>
   </ol></p></statement>
@@ -213,51 +234,44 @@ On July 1, sunset occurs about 9.11 hours after noon, or at 9:07 pm. (Actually, 
     <li><m>8</m></li>
     <li><m>12.09</m></li>
     </ol></p></answer></exercise>
+
 </subsection>
 
 <subsection><title>The Tangent Function</title>
 <idx><h>tangent function</h></idx>
 
-<p>We can also define the tangent function for real numbers. Let <m>P(x,y)</m> be the terminal point of an arc of length <m>t</m> in standard position on a unit circle. Then</p>
-
-<sidebyside widths="55% 40%" valigns="middle middle" margins="0% 5%"><p>
+<p>We can also define the tangent function for real numbers. Let <m>P(x,y)</m> be the terminal point of an arc of length <m>t</m> in standard position on a unit circle. Then
     <me>\blert{\tan (t) = \dfrac{y}{x}}</me>
 Of course, this definition agrees with our earlier definition of the tangent function for angles, because the point <m>P</m> lies on the terminal side of the angle <m>\theta = t</m> radians.</p>
-    <image xml:id="fig-6-2-tan"><description>circle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
-
-        \coordinate (O) at (0,0);
-        \coordinate (A) at (0:1.5);
-        \coordinate (B) at ($ ({deg(2)}:1.5) $);
-        \coordinate (C) at ($ 1.5*cos(deg(2))*(1,0) $);
-        \coordinate (D) at ($ 1.5*sin(deg(2))*(0,0) $);
-
-        \draw[black, thick, ->,>=stealth'] (-1.7,0)--(1.8,0);
-        \draw[black, thick, ->,>=stealth'] (0,-1.7)--(0,1.8);
-        \draw[gray, thick, dashed] (C)--(B)--(D);
-        \draw[black, thick] (O)--(B);
-        \draw[gray, thick] (O) circle (1.5);
-
-        \draw[red, thick, ->,>=stealth'] (0.3,0) arc(0:{deg(2)}:0.3)  node[above right, midway, scale=.9] {$\theta=2$};
-        \draw[blue, ultra thick] (1.5,0) arc(0:{deg(2)}:1.5)  node[above right, midway, xshift=6, scale=.9 ] {$t=2$};
-        \filldraw[black] (B) circle (.06cm) node[anchor=south east, yshift=3, scale=.9] { $P(-0.4161,0.9093)$};
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside>
-
-<p> For example, we saw earlier that, rounded to four decimal places,
+<sidebyside widths="65% 30%" valigns="middle middle" margins="0% 0%">
+  <p> For example, we saw earlier that, rounded to four decimal places,
     <me>\cos (2) = -0.4161~~~~\text{and} ~~~~ \sin (2) = 0.9093</me>
-so the coordinates of point <m>P</m> on the unit circle in the figure above are <m>(-0.4161, 0.9093)</m>. Therefore,
-    <me>\tan (2) = \dfrac{0.9093}{-0.4161} = -2.1853</me>
-You can set your calculator in radian mode to verify that, to three decimal places, 
-    <me>\tan (2) = -2.185</me></p>
+so the coordinates of point <m>P</m> on the unit circle in the figure at right are <m>(-0.4161, 0.9093)</m>. Therefore,
+<me>\tan (2) = \dfrac{0.9093}{-0.4161} = -2.1853</me>
+</p><image xml:id="fig-6-2-tan"><description>circle</description><latex-image>
+    <![CDATA[
+    \begin{tikzpicture}
+
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (0:1.5);
+    \coordinate (B) at ($ ({deg(2)}:1.5) $);
+    \coordinate (C) at ($ 1.5*cos(deg(2))*(1,0) $);
+    \coordinate (D) at ($ 1.5*sin(deg(2))*(0,0) $);
+
+    \draw[black, thick, ->,>=stealth'] (-1.7,0)--(1.8,0);
+    \draw[black, thick, ->,>=stealth'] (0,-1.7)--(0,1.8);
+    \draw[gray, thick, dashed] (C)--(B)--(D);
+    \draw[black, thick] (O)--(B);
+    \draw[gray, thick] (O) circle (1.5);
+
+    \draw[red, thick, ->,>=stealth'] (0.3,0) arc(0:{deg(2)}:0.3)  node[above right, midway] {$\theta=2$};
+    \draw[blue, ultra thick] (1.5,0) arc(0:{deg(2)}:1.5)  node[above right, midway, xshift=6] {$t=2$};
+    \filldraw[black] (B) circle (.06cm) node[above left]{$P(x,y)$};
+    \end{tikzpicture}]]>
+</latex-image></image></sidebyside>
+  
+<p>You can set your calculator in radian mode to verify that, to three decimal places, 
+      <me>\tan (2) = -2.185</me></p>
 
 <p>Because the trig values can be found as coordinates on a unit circle, our three trig functions are often called the <term>circular functions</term>. We now have the following definitions for the circular functions of real numbers.</p>
 
@@ -484,8 +498,7 @@ Recall that the trig values for these angles can be used as benchmarks for estim
 <assemblage><title>Reference Angles in Radians</title>
     <sidebyside width="80%"><image xml:id="fig-6-2-refang"><description>angles</description><latex-image>
         <![CDATA[
-        \begin{tikzpicture}[scale=1.]
-
+        \begin{tikzpicture}[scale=.9]
         \coordinate (O) at (0,0);
         \coordinate (x) at (2.5,0);
         \coordinate (P) at (2.5,2);
@@ -501,7 +514,7 @@ Recall that the trig values for these angles can be used as benchmarks for estim
         \draw[gray, thick, dashed] (x) -- (P);
         \draw[blue, thick] (x) rectangle +(-.25,.25);
 
-        \filldraw (P) circle (1.5pt) node[anchor = south east, xshift=2]{$P(x,y)$}; 
+        \filldraw (P) circle (1.5pt); 
 
         \node[text width=4cm] at (1.7,-.5)     {\color{blue} First-quadrant: $\tilde{\theta}=\theta$};
 
@@ -525,7 +538,7 @@ Recall that the trig values for these angles can be used as benchmarks for estim
         \draw[gray, thick, dashed] (x) -- (P);
         \draw[blue, thick] (x) rectangle +(.25,.25);
 
-        \filldraw (P) circle (1.5pt) node[anchor = south west, xshift=-2]{$P(x,y)$}; 
+        \filldraw (P) circle (1.5pt); 
 
         \node[text width=5.cm] at (7.8,-.5)     {\color{blue} Second-quadrant: $\tilde{\theta}=\pi-\theta$};
 
@@ -547,7 +560,7 @@ Recall that the trig values for these angles can be used as benchmarks for estim
         \draw[gray, thick, dashed] (x) -- (P);
         \draw[blue, thick] (x) rectangle +(.25,-.25);
 
-        \filldraw (P) circle (1.5pt) node[anchor = north west, xshift=-2]{$P(x,y)$}; 
+        \filldraw (P) circle (1.5pt); 
 
         \node[text width=5.5cm] at (2.,-5.5)     {\color{blue} Third-quadrant: $\tilde{\theta}=\theta-\pi$};
 
@@ -569,7 +582,7 @@ Recall that the trig values for these angles can be used as benchmarks for estim
         \draw[gray, thick, dashed] (x) -- (P);
         \draw[blue, thick] (x) rectangle +(-.25,-.25);
 
-        \filldraw (P) circle (1.5pt) node[anchor = north east, xshift=2]{$P(x,y)$}; 
+        \filldraw (P) circle (1.5pt); 
 
         \node[text width=5.2cm] at (7.6,-5.5)     {\color{blue} Fourth-quadrant: $\tilde{\theta}=2\pi -\theta$};
         \end{tikzpicture}]]>

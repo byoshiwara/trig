@@ -488,36 +488,26 @@ If we solve for <m>\theta</m>, we see that <m>\theta = \dfrac{s}{r}</m>, a ratio
 
 <p>In Section 6.1 we derived the arclength formula, <m>s = r\theta</m>, where <m>\theta</m> is measured in radians, and observed that, on a unit circle, where <m>r = 1</m>, the measure of a positive angle in radians is equal to the length of the arc it spans.  This is an important observation, because it allows us to define the sine and cosine as functions of real numbers, instead of as functions of angles.</p> 
 
-<sidebyside widths="65% 22%" valigns="middle middle" margins="0% 5%"><p>Consider the unit circle shown at right, and the angle <m>\theta</m> determined by the arc of length <m>t</m>. The radian measure of <m>\theta</m> is the same as the length <m>t</m> of the arc. (For example, in this figure <m>\theta = t = 2</m>.) </p>
+<sidebyside widths="65% 28%" valigns="middle middle" margins="0% 5%"><p>Consider the unit circle shown at right, and the angle <m>\theta</m> determined by the arc of length <m>t</m>. The radian measure of <m>\theta</m> is the same as the length <m>t</m> of the arc. (For example, in this figure <m>\theta = t = 2</m>.) </p>
     <image xml:id="fig-6-2-realno"><description>circle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
+    <![CDATA[
+    \begin{tikzpicture} [scale=.9]
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (0:1.5);
+    \coordinate (B) at ($({deg(2)}:1.5)$);
+    \coordinate (C) at ($ 1.5*cos(deg(2))*(1,0) $);
+    \coordinate (D) at ($ 1.5*sin(deg(2))*(0,1) $);
 
-        \coordinate (O) at (0,0);
-        \coordinate (A) at (0:1.5);
-        \coordinate (B) at ($({deg(2)}:1.5)$);
-        \coordinate (C) at ($ 1.5*cos(deg(2))*(1,0) $);
-        \coordinate (D) at ($ 1.5*sin(deg(2))*(0,1) $);
+    \draw[black, thick, ->,>=stealth'] (-1.7,0)--(1.8,0);
+    \draw[black, thick, ->,>=stealth'] (0,-1.7)--(0,1.8);
+    \draw[gray, thick] (O) circle (1.5);
 
-        \draw[black, thick, ->,>=stealth'] (-1.7,0)--(1.8,0);
-        \draw[black, thick, ->,>=stealth'] (0,-1.7)--(0,1.8);
-        \draw[gray, thick] (O) circle (1.5);
-
-        \draw[gray!80, thick, dashed] (O)--(A)--(C);
-        \draw[black, thick] (O)--(B) ;
-        \draw[gray!80, thick, dashed] (C)--(B)--(D) ;
-        \draw[red, thick, ->,>=stealth'] (0.3,0) arc(0:{deg(2)}:0.3)  node[above right, midway, xshift=2, scale=.8] {$\theta=2$};
-        \draw[blue, ultra thick] (1.5,0) arc(0:{deg(2)}:1.5)  node[above right, midway, xshift=2, scale=.8 ] {$t=2$};
-        \filldraw[black] (B) circle (.06cm) node[anchor=south east, yshift=2, scale=.8] { $P(x,y)$};
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside>
+    \draw[black, thick] (O)--(B) ;
+    \draw[red, thick, ->,>=stealth'] (0.3,0) arc(0:{deg(2)}:0.3)  node[above right, midway, xshift=2, scale=.8] {$\theta=2$};
+    \draw[blue, ultra thick] (1.5,0) arc(0:{deg(2)}:1.5)  node[above right, midway, xshift=2, scale=.8 ] {$t=2$};
+    \filldraw[black] (B) circle (.06cm);
+    \end{tikzpicture}]]>
+</latex-image></image></sidebyside>
 
 <assemblage><title>Sine and Cosine of Real Numbers</title>
     <idx><h>sine</h><h>of a real number</h></idx>
