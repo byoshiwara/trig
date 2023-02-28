@@ -17,42 +17,48 @@
 <idx><h>expression</h><h>trigonometric</h><seealso>trigonometric expression</seealso></idx>
 <p> Trigonometric ratios represent numbers, and they may appear as part of an algebraic expression.  Expressions containing trig ratios can be simplified or evaluated like other algebraic expressions.</p>
 
+<note><p>Keep in mind that <m>\sin (X)</m>, for example, is not a product:  it does <em>not</em> mean "sin times X" (whatever that might be). Instead, "sin" is the name of a function, and <m>\sin (X)</m> means to evaluate the sine function at X. Thus, <m>\sin (X)</m> is a single number, the output of the sine function.</p></note>
+
 <example><statement><p>Evaluate each expression for <m>X = 30\degree</m> and <m>Y = 135\degree</m>.</p>
-<p><ol marker="a" cols="2">
-    <li><m>2 \tan Y + 3\sin X</m></li>
-    <li><m>6\tan X \cos Y</m></li>
+<p><ol marker="a">
+    <li><m>2 \tan (Y) + 3\sin (X)</m></li>
+    <li><m>6\tan (X) \cos (Y)</m></li>
 </ol></p></statement>
 
 <solution><p><ol marker="a">
     <li>Substituting the values for <m>X</m> and <m>Y</m>, we get 
-      <me>2 \tan \alert{135\degree} + 3\sin \alert{30\degree}</me>  Next, we evaluate each trig ratio and follow the order of operations.
-    <md><mrow>2 \tan \alert{135\degree} + 3\sin \alert{30\degree} \amp = 2(-1) + 3(\dfrac{1}{2})</mrow>
-      <mrow>\amp= -2 + \dfrac{3}{2} =\dfrac{-1}{2}</mrow></md></li>
-    <li>This expression includes the product of two trig ratios <m>6(\tan X)(\cos Y)</m>, where the parentheses indicate multiplication.
-    <md><mrow>6\tan X \cos Y\amp = 6(\tan \alert{30\degree})(\cos \alert{135\degree})</mrow>
-      <mrow>\amp= 6\left(\frac{1}{\sqrt{3}}\right) \left(\dfrac{-1}{\sqrt{2}}\right) </mrow>
-      <mrow>\amp =\dfrac{-6}{\sqrt{6}} = -\sqrt{6}</mrow></md></li>
+      <me>2 \tan (\alert{135\degree}) + 3\sin (\alert{30\degree})</me>  
+Next, we evaluate each trig ratio and follow the order of operations.
+        <md><mrow>2 \tan (\alert{135\degree}) + 3\sin (\alert{30\degree}) \amp = 2(-1) + 3(\dfrac{1}{2})</mrow>
+            <mrow>\amp= -2 + \dfrac{3}{2} =\dfrac{-1}{2}</mrow></md></li>
+    <li>This expression includes the product of two trig ratios, <m>\tan (X) \cos (Y)</m>.
+        <md><mrow>6\tan (X) \cos (Y)\amp = 6\tan (\alert{30\degree}) \cos (\alert{135\degree})</mrow>
+            <mrow>\amp= 6\left(\frac{1}{\sqrt{3}}\right) \left(\dfrac{-1}{\sqrt{2}}\right) </mrow>
+            <mrow>\amp =\dfrac{-6}{\sqrt{6}} = -\sqrt{6}</mrow></md></li>
 </ol></p></solution></example>
 
 <exercise><statement><p>Evaluate each expression for <m>X = 30\degree</m>, <m>Y = 60\degree</m>.</p>
-<p><ol marker="a" cols="2">
+<p><ol marker="a">
     <li><m>4\sin (3X + 45\degree)</m></li>
     <li><m>1 - \cos(4Y)</m></li>
 </ol></p></statement>
-<answer><p><ol marker="a" cols="2"><li><m>2\sqrt{2}</m></li><li><m>\dfrac{3}{2}</m></li></ol></p></answer></exercise>
+<answer><p><ol marker="a">
+    <li><m>2\sqrt{2}</m></li>
+    <li><m>\dfrac{3}{2}</m></li>
+</ol></p></answer></exercise>
 
-<warning><p>In the previous Exercise, <m>\sin (3X + 45\degree)</m> is <em>not</em> equal to <m>\sin 3X + \sin 45\degree</m>. That is,
-  <me>\sin (90\degree + 45\degree) \not= \sin 90\degree + \sin 45\degree</me>
+<warning><p>In the previous Exercise, <m>\sin (3X + 45\degree)</m> is <em>not</em> equal to <m>\sin (3X) + \sin (45\degree)</m>. That is,
+    <me>\sin (90\degree + 45\degree) \not= \sin (90\degree) + \sin (45\degree)</me>
 (You can check this for yourself.)  We must follow the order of operations and evaluate the expression <m>3X + 45\degree</m>  inside parentheses before applying the sine function.</p></warning>
 </subsection>
 
 <subsection><title>Simplifying Trigonometric Expressions</title>
 <idx><h>trigonometric expression</h><h>simplifying</h></idx>
 
-<p> When we <term>simplify</term><idx><h>simplify</h></idx> an algebraic expression, we obtain a new expression that has the same values as the old one, but is easier to work with.  For example, we can apply the distributive law and combine like terms to simplify
+<p> When we <term>simplify</term><idx><h>simplify</h></idx> an algebraic expression, we obtain a new expression that has the same values as the old one, but is easier to work with. For example, we can apply the distributive law and combine like terms to simplify
 
-<md><mrow>2x(x - 6) + 3(x + 2) \amp = 2x^2 - 12x + 3x + 6</mrow>
-  <mrow>\amp = 2x^2 - 9x + 6</mrow></md>
+    <md><mrow>2x(x - 6) + 3(x + 2) \amp = 2x^2 - 12x + 3x + 6</mrow>
+        <mrow>\amp = 2x^2 - 9x + 6</mrow></md>
 
 The new expression is <term>equivalent</term><idx><h>equivalent</h></idx> to the old one, that is, the expressions have the same value when we evaluate them at any value of <m>x</m>.  For instance, you can check that, at <m>x = \alert{3}</m>,
 
@@ -60,105 +66,112 @@ The new expression is <term>equivalent</term><idx><h>equivalent</h></idx> to the
   <mrow>\text{and}~~~~~~~~~~~~~~~          2(\alert{3})^2 - 9(\alert{3}) + 6 \amp = 18 - 27 + 6 = -3</mrow></md>
                  
 To simplify an expression containing trig ratios, we treat each ratio as a single variable.  Compare the two calculations below: 
-<md alignment="alignat">
-  <mrow>\amp 8xy\amp \amp -{}\amp\amp 6xy \amp\amp = 2xy</mrow>
-  <mrow>\amp 8\cos \theta \sin \theta\amp \amp -{}\amp \amp  6\cos\theta \sin \theta \amp \amp = 2\cos \theta  \sin \theta</mrow></md>
+    <md alignment="alignat">
+        <mrow>\amp 8xy\amp \amp -{}\amp\amp 6xy \amp\amp = 2xy</mrow>
+        <mrow>\amp 8\cos (\theta) \sin (\theta)\amp \amp -{}\amp \amp  6\cos(\theta) \sin (\theta) \amp \amp = 2\cos (\theta)  \sin (\theta)</mrow></md>
 
-  Both calculations are examples of combining like terms.  In the second calculation, we treat  <m>\cos \theta</m>  and <m>\sin \theta</m> as variables, just as we treat <m>x</m> and <m>y</m> in the first calculation.</p>
+  Both calculations are examples of combining like terms. In the second calculation, we treat  <m>\cos (\theta)</m>  and <m>\sin (\theta)</m> as variables, just as we treat <m>x</m> and <m>y</m> as variables in the first calculation.</p>
 
 <example><statement><p>Simplify.</p>
-<p><ol marker="a" cols="2">
-    <li><m>3\tan A + 4\tan A - 2\cos A</m></li>
-    <li><m>2 - \sin B + 2\sin B</m></li>
+<p><ol marker="a">
+    <li><m>3\tan (A) + 4\tan (A) - 2\cos (A)</m></li>
+    <li><m>2 - \sin (B) + 2\sin (B)</m></li>
 </ol></p></statement>
 
 <solution><p><ol marker="a">
     <li><p>Combine like terms.
-        <me>3\tan A + 4\tan A - 2\cos A = 7 \tan A - 2\cos A</me>
-        Note that <m>\tan A</m> and <m>\cos A</m> are not like terms.</p></li>
+        <me>3\tan (A) + 4\tan (A) - 2\cos (A) = 7 \tan (A) - 2\cos (A)</me>
+    Note that <m>\tan (A)</m> and <m>\cos (A)</m> are not like terms.</p></li>
     <li><p>Combine like terms.
-        <me>2 - \sin B + 2\sin B = 2 + \sin B</me>
-    Note that <m>-\sin B</m> means <m>-1\cdot \sin B</m>.</p></li>
+        <me>2 - \sin (B) + 2\sin (B) = 2 + \sin (B)</me>
+    Note that <m>~-\sin (B)</m> is treated as <m>~-1\cdot \sin (B)</m>.</p></li>
 </ol></p></solution></example>
 
-<exercise><statement><p>Simplify  <m>2 \cos t - 4 \cos w \sin w + 3 \cos t - 2 \cos w</m></p></statement><answer><p><m>5\cos t - 4\cos w \sin w - 2 \cos w</m></p></answer></exercise>
+<exercise><statement><p>Simplify  <m>2 \cos (t) - 4 \cos (w) \sin (w) + 3 \cos (t) - 2 \cos (w)</m></p></statement>
+<answer><p><m>5\cos (t) - 4\cos (w) \sin (w) - 2 \cos (w)</m></p></answer></exercise>
 
-<warning><p>In the previous Exercise, note that <m>\cos t</m> and <m>\cos w</m> are not like terms.  (We can choose values for <m>t</m> and <m>w</m> so that <m>\cos t</m> and <m>\cos w</m> have different values.)</p></warning>
+<warning><p>In the previous Exercise, note that <m>\cos (t)</m> and <m>\cos (w)</m> are not like terms.  (We can choose values for <m>t</m> and <m>w</m> so that <m>\cos (t)</m> and <m>\cos (w)</m> have different values.)</p></warning>
 
 <example><statement><p>Simplify, and evaluate for <m>z = 40\degree</m>.
-<me> 3 \sin z - \sin z \tan z + 3 \sin z</me></p></statement>
+    <me> 3 \sin (z) - \sin (z) \tan (z) + 3 \sin (z)</me></p></statement>
 
 <solution><p>We can combine like terms to get 
-    <me>6 \sin z - \sin z \tan z</me> Because <m>40\degree</m> is not one of the angles for which we know exact trig values, we use a calculator to evaluate the expression.
-    <md><mrow> 6 \sin 40\degree - (\sin 40\degree)(\tan 40\degree) \amp = 6 (0.6428)(0.8391)</mrow>
-      <mrow>\amp = 3.3174</mrow></md></p>
+    <me>6 \sin (z) - \sin (z) \tan (z)</me> 
+Because <m>40\degree</m> is not one of the angles for which we know exact trig values, we use a calculator to evaluate the expression.
+    <md><mrow> 6 \sin (40\degree) - \sin (40\degree)\tan (40\degree) \amp = 6 (0.6428)(0.8391)</mrow>
+        <mrow>\amp = 3.3174</mrow></md></p>
   </solution></example>
 
 <exercise><statement><p>Simplify, and evaluate for <m>x = 25\degree,~y = 70\degree</m>
-  <me>3 \cos x + \cos y - 2 \cos y + \cos x</me></p></statement><answer><p><m>3.2832</m></p></answer></exercise>         
+    <me>3 \cos (x) + \cos (y) - 2 \cos (y) + \cos (x)</me></p></statement>
+<answer><p><m>3.2832</m></p></answer></exercise>         
 </subsection>
 
 <subsection><title>Powers of Trigonometric Ratios</title>
 <idx><h>trigonometric function</h><h>raising to power</h></idx>
 
 <p>Compare the two expressions
-    <me>(\cos \theta)^2~~\text{and}~~~ \cos (\theta^2)</me>
+        <me>\Big(\cos (\theta)\Big)^2~~\text{and}~~~ \cos (\theta^2)</me>
  They are not the same.</p>  
  <p><ul>
-    <li>The first expression, <m>(\cos \theta)^2</m>, says to compute <m>\cos \theta</m> and then square the result.</li>
-     <li><m>\cos (\theta^2)</m> says to square the angle first, and then compute the cosine.</li>
-     </ul></p>
- <p> For example, if <m>\theta = 30\degree</m>, then
-  <md><mrow>(\cos 30\degree)^2 \amp = \left(\dfrac{\sqrt{3}}{2}\right)^2  = \dfrac{3}{4}</mrow>
-    <mrow>\text{but}~~~~~~~~ \cos (30^2)\degree\amp =\cos 900\degree = \cos 180\degree = -1</mrow></md></p>
+    <li>The first expression, <m>\Big(\cos (\theta)\Big)^2</m>, says to compute <m>\cos (\theta)</m> and then square the result.</li>
+    <li><m>\cos (\theta^2)</m> says to square the angle first, and then compute the cosine.</li>
+</ul></p>
+ 
+<p> For example, if <m>\theta = 30\degree</m>, then
+    <md><mrow>\Big(\cos (30\degree)\Big)^2 \amp = \left(\dfrac{\sqrt{3}}{2}\right)^2  = \dfrac{3}{4}</mrow>
+        <mrow>\text{but}~~~~~~~~ \cos \Big((30^2) \degree\Big) \amp =\cos (900\degree) = \cos (180\degree) = -1</mrow></md></p>
 
-  <p>We usually write <m>\cos^2 \theta</m> instead of <m>(\cos \theta)^2</m>, and <m>\cos \theta^2</m> for  <m>\cos (\theta^2)</m>.  You must remember that</p>
+  <p>We usually write <m>\cos^2 (\theta)</m> instead of <m>\left(\cos (\theta)\right)^2</m>, to distinguish it from <m>\cos (\theta^2)</m>, and to reduce the number of parentheses.</p>
 
   <assemblage><title>The square of cosine</title>
   <idx><h>trigonometric function</h><h>raising to power</h></idx>
-  <p><me>\cos^2 \theta ~~~~ \text{means} ~~~~~(\cos \theta)^2</me></p></assemblage>
+  <p><me>\cos^2 (\theta) ~~~~ \text{means} ~~~~~\Big(\cos (\theta)\Big)^2</me></p></assemblage>
 
   <p>The same notation applies to the other trig ratios, so that  
-    <me>\sin^2 \theta = (\sin \theta)^2 ~~~\text{and}~~~ \tan^2 \theta = (\tan \theta)^2</me><idx><h>trigonometric function</h><h>raising to power</h></idx></p> 
+        <me>\sin^2 (\theta) = \Big(\sin (\theta)\Big)^2 ~~~\text{and}~~~ \tan^2 (\theta) = \Big(\tan (\theta)\Big)^2</me>
+    <idx><h>trigonometric function</h><h>raising to power</h></idx></p> 
 
-  <example><statement><p>Evaluate <m>\sin^2 45\degree</m>.</p></statement>
+  <example><statement><p>Evaluate <m>\sin^2 (45\degree)</m>.</p></statement>
   
-  <solution><p><m> \sin^2 45\degree = (\sin 45\degree)^2 = \left(\dfrac{1}{\sqrt{2}}\right)^2 = \dfrac{1}{2}</m></p></solution></example>
+  <solution><p><m> \sin^2 (45\degree) = \Big(\sin (45\degree)\Big)^2 = \left(\dfrac{1}{\sqrt{2}}\right)^2 = \dfrac{1}{2}</m></p></solution></example>
 
-  <p>Other powers are written in the same fashion.  Thus, for example, <m>\sin^3\theta = (\sin \theta)^3</m>.</p>
+  <p>Other powers are written in the same fashion. Thus, for example, <m>\sin^3(\theta) = \Big(\sin (\theta)\Big)^3</m>.</p>
 
-   <exercise><statement><p>Evaluate <m>\tan^4 60\degree</m></p></statement><answer><p><m>9</m></p></answer></exercise>
+<exercise><statement><p>Evaluate <m>\tan^4 (60\degree)</m></p></statement>
+<answer><p><m>9</m></p></answer></exercise>
 </subsection>
 
 <subsection><title>Products</title>
 <idx><h>trigonometric function</h><h>product of</h></idx>
 
-<p>We can multiply together trigonometric expressions, just as we multiply algebraic expressions.  Recall that we use the distributive law in computing products such as
-  <me>x(3x - 2) = 3x^2 - 2x</me> and <me>(x - 3)(x + 5) = x^2 + 2x - 15</me></p>  
+<p>We can multiply together trigonometric expressions, just as we multiply algebraic expressions. Recall that we use the distributive law in computing products such as
+    <me>x(3x - 2) = 3x^2 - 2x</me> and <me>(x - 3)(x + 5) = x^2 + 2x - 15</me></p>  
 
-<example><statement><p>Using the distributive law, multiply <m>~~\cos t (3 \cos t - 2)</m>.</p></statement>
+<example><statement><p>Using the distributive law, multiply <m>~~\cos (t) \Big(3 \cos (t) - 2\Big)</m>.</p></statement>
   
-<solution><p>Think of <m>\cos t</m> as a single variable, and multiply by each term inside parentheses. (The algebraic form of the calculation is shown on the right in blue).
-        <md><mrow>\cos t  (3 \cos t - 2)\amp = (\cos t)(3 \cos t) - (\cos t)\cdot 2  \amp \amp  \blert{x (3x-2) = x\cdot 3x - x\cdot 2}</mrow>
-          <mrow>\amp = 3\cos^2 t - 2\cos t \amp \amp \blert{=3x^2 - 2x}</mrow></md>
-  Notice that we write <m>(\cos t)^2</m> as <m>\cos^2 t</m>.</p></solution></example>  
+<solution><p>Think of <m>\cos (t)</m> as a single variable, and multiply by each term inside parentheses. (The algebraic form of the calculation is shown on the right in blue).
+        <md><mrow>\cos (t)  \Big(3 \cos (t) - 2\Big)\amp = \Big(\cos (t)\Big)\Big(3 \cos (t)\Big) - \Big(\cos (t)\Big)\cdot 2  \amp \amp  \blert{x (3x-2) = x\cdot 3x - x\cdot 2}</mrow>
+            <mrow>\amp = 3\cos^2 (t) - 2\cos (t) \amp \amp \blert{=3x^2 - 2x}</mrow></md>
+  Notice that we write <m>\Big(\cos (t)\Big)^2</m> as <m>\cos^2 (t)</m>.</p></solution></example>  
 
-<exercise><statement><p>Multiply  <m>~~2\tan \beta (4 \tan^2 \beta + \tan \alpha)</m></p></statement>
-<answer><p><m>8 \tan^3 \beta + 2 \tan \beta \tan \alpha</m></p></answer></exercise>
+<exercise><statement><p>Multiply  <m>~~2\tan (\beta) \Big(4 \tan^2 (\beta) + \tan (\alpha)\Big)</m></p></statement>
+<answer><p><m>8 \tan^3 (\beta) + 2 \tan (\beta) \tan (\alpha)</m></p></answer></exercise>
 
-<p>We can also use the distributive law to multiply binomials that include trig ratios.  You may have used the acronym <m>\blert{FOIL}</m><idx><h>FOIL (acronym: First, Outside, Inside, Last)</h></idx> to remember the four multiplications in a product of binomials:  <m>\blert{F}</m>irst terms, <m>\blert{O}</m>utside terms, <m>\blert{I}</m>nside terms, and <m>\blert{L}</m>ast terms.</p>
+<p>We can also use the distributive law to multiply binomials that include trig ratios.  You may have used the acronym <m>\blert{FOIL}</m><idx><h>FOIL (acronym: First, Outside, Inside, Last)</h></idx> to remember the four multiplications in a product of binomials:</p>  
+<p><m>~~~~~~~~\blert{F}</m>irst terms, <m>\blert{O}</m>utside terms, <m>\blert{I}</m>nside terms, and <m>\blert{L}</m>ast terms.</p>
 
-<example><statement><p>Multiply <m>~~(4\sin C - 1)(3 \sin C + 2)</m>.</p></statement>
+<example><statement><p>Multiply <m>~~\Big(4\sin (C) - 1\Big)\Big(3 \sin (C) + 2\Big)</m>.</p></statement>
 
- <solution><p>This calculation is similar to the product <m>(4x - 1)(3x+2)</m>, except that the variable <m>x</m> has been replaced by <m>\sin C</m>. Compare the calculations for the two products; first the familiar algebraic product:
-  <md><mrow>(4x  - 1)(3x + 2) \amp = 4x\cdot 3x + 4x\cdot 2 - 1\cdot 3x - 1\cdot 2</mrow>
-     <mrow>\amp  = 12x^2 + 8x - 3x - 2 = 12x^2 + 5x - 2</mrow></md>
-  We compute the product in this example in the same way, but replacing <m>x</m> by <m>\sin C</m>. 
-  <md><mrow>(4\sin C  - 1)(\sin C + 2) \amp = (4\sin C)(3\sin C) + (4\sin C)\cdot 2 - 1(3\sin C) - 1\cdot 2</mrow>
-    <mrow>\amp  = 12\sin^2 C + 5\sin C - 2</mrow></md></p></solution></example>
+ <solution><p>This calculation is similar to the product <m>(4x - 1)(3x+2)</m>, except that the variable <m>x</m> has been replaced by <m>\sin (C)</m>. Compare the calculations for the two products; first the familiar algebraic product:
+    <md><mrow>(4x  - 1)(3x + 2) \amp = 4x\cdot 3x + 4x\cdot 2 - 1\cdot 3x - 1\cdot 2</mrow>
+        <mrow>\amp  = 12x^2 + 8x - 3x - 2 = 12x^2 + 5x - 2</mrow></md>
+We compute the product in this example in the same way, but replacing <m>x</m> by <m>\sin (C)</m>. 
+    <md><mrow>\Big(4\sin (C)  - 1\Big)\Big(\sin (C) + 2\Big) \amp = \Big(4\sin (C)\Big)\Big(3\sin (C)\Big) + \Big(4\sin (C)\Big)\cdot 2 - 1\Big(3\sin (C)\Big) - 1\cdot 2</mrow>
+        <mrow>\amp  = 12\sin^2 (C) + 5\sin (C) - 2</mrow></md></p></solution></example>
 
-<exercise><statement><p>Expand  <m>~~(4\cos \alpha + 3)^2</m></p></statement>
-<answer><p><m>16 \cos^2 \alpha + 24 \cos \alpha + 9</m></p></answer></exercise>              
+<exercise><statement><p>Expand  <m>~~\Big(4\cos (\alpha) + 3\Big)^2</m></p></statement>
+<answer><p><m>16 \cos^2 (\alpha) + 24 \cos (\alpha) + 9</m></p></answer></exercise>              
 </subsection>
 
 <subsection><title>Factoring</title>
@@ -169,65 +182,61 @@ To simplify an expression containing trig ratios, we treat each ratio as a singl
 <example><statement><p>Factor.</p>
 <p><ol marker= "a" cols = "2">
     <li><m>6w^2 - 9w</m></li>
-    <li><m>6 \sin^2 \theta - 9\sin \theta</m></li>
+    <li><m>6 \sin^2 (\theta) - 9\sin (\theta)</m></li>
 </ol></p></statement>
 
 <solution><p><ol marker="a">
     <li><p>We factor out the common factor, <m>3w</m>.
     <me>6w^2 - 9w = 3w(2w-3)</me></p></li>
-    <li><p>We factor out the common factor, <m>3\sin \theta</m>. 
-    <me>6\sin^2 \theta- 9\sin \theta = 3\sin \theta(2\sin \theta-3)</me></p></li>
+    <li><p>We factor out the common factor, <m>3\sin (\theta)</m>. 
+    <me>6\sin^2 (\theta)- 9\sin (\theta) = 3\sin (\theta)\Big(2\sin (\theta)-3\Big)</me></p></li>
 </ol></p></solution></example>
 
 <exercise><statement><p>Factor.</p>
 <p><ol marker= "a" cols = "2">
     <li><m>2a^2 - ab</m></li>
-    <li><m>2 \cos^2 \phi - \cos \phi \sin \phi</m></li>
-</ol></p></statement><answer><p><ol marker="a" cols="2"><li><p><m>a(2a - b)</m></p></li><li><p><m>\cos \phi (2\cos \phi - \sin \phi)</m></p></li></ol></p></answer></exercise>
+    <li><m>2 \cos^2 (\phi) - \cos (\phi) \sin (\phi)</m></li>
+</ol></p></statement>
+<answer><p><ol marker="a" cols="2">
+    <li><p><m>a(2a - b)</m></p></li>
+    <li><p><m>\cos (\phi) \Big(2\cos (\phi) - \sin (\phi)\Big)</m></p></li>
+</ol></p></answer></exercise>
 
 <p>We can also factor quadratic trinomials.</p>
 
 <example><statement><p>Factor.</p>
 <p><ol marker= "a" cols = "2">
     <li><m>t^2 - 3t - 10</m></li>
-    <li><m> \tan^2 \alpha - 3\tan \alpha - 10</m></li>
+    <li><m> \tan^2 (\alpha) - 3\tan (\alpha) - 10</m></li>
 </ol></p></statement>
 
 <solution><p><ol marker="a">
     <li><p>We look for numbers <m>p</m> and <m>q</m> so that <m>(t + p)(t + q) = t^2 - 3t - 10</m>.  Their product is <m>pq = -10</m>, and their sum is <m>p + q = -3</m>.   By checking the factors of <m>-10</m> for the correct sum, we find <m>p = -5</m> and <m>q = 2</m>.  Thus,
         <me>t^2 - 3t - 10 = (t - 5)(t + 2)</me></p></li>
-     <li><p>Now replace <m>t</m> by <m>\tan \alpha</m> to find 
-            <me> \tan^2 \alpha - 3\tan \alpha - 10 = (\tan \alpha - 5)(\tan \alpha + 2)</me></p></li>
+    <li><p>Now replace <m>t</m> by <m>\tan (\alpha)</m> to find 
+        <me> \tan^2 (\alpha) - 3\tan (\alpha) - 10 = \Big(\tan (\alpha) - 5\Big)\Big(\tan (\alpha) + 2\Big)</me></p></li>
      </ol></p></solution></example>  
      
 <exercise><statement><p>Factor.</p>
 <p><ol marker= "a" cols = "2">
     <li><m>3z^2 - 2z - 1</m></li>
-    <li><m>3 \sin^2 \beta - 2\sin \beta - 1</m></li>
-</ol></p></statement><answer><p><ol marker="a" cols="2"><li><p><m>(3z + 1)(z - 1)</m></p></li><li><p><m>(3\sin \beta + 1)(\sin \beta - 1)</m></p></li></ol></p></answer></exercise>           
+    <li><m>3 \sin^2 (\beta) - 2\sin (\beta) - 1</m></li>
+</ol></p></statement>
+<answer><p><ol marker="a" cols="2">
+    <li><p><m>(3z + 1)(z - 1)</m></p></li>
+    <li><p><m>\Big(3\sin (\beta) + 1\Big)\Big(\sin (\beta) - 1\Big)</m></p></li>
+</ol></p></answer></exercise>           
 
 <p>Review the following skills you will need for this section.</p>
 <project>    
     <sidebyside><p>Factor.</p></sidebyside>   
     <sidebyside><p><ol marker="1" cols="3">
-        <li>
-            <p><m>2x^2 + 5x - 12</m></p>
-        </li>
-        <li>
-            <p><m>3x^2 - 2x - 8</m></p>
-        </li>
-        <li>
-            <p><m>12x^2 + x - 1</m></p>
-        </li>
-        <li>
-            <p><m>6x^2 - 13x - 15</m></p>
-        </li>
-        <li>
-            <p><m>6x^2 - x - 12</m></p>
-        </li>
-        <li>
-            <p><m>24x^2 + 10x - 21</m></p>
-        </li>
+        <li><p><m>2x^2 + 5x - 12</m></p></li>
+        <li><p><m>3x^2 - 2x - 8</m></p></li>
+        <li><p><m>12x^2 + x - 1</m></p></li>
+        <li><p><m>6x^2 - 13x - 15</m></p></li>
+        <li><p><m>6x^2 - x - 12</m></p></li>
+        <li><p><m>24x^2 + 10x - 21</m></p></li>
     </ol></p></sidebyside>
 
     <sidebyside><p><m>\underline{\qquad\qquad\qquad\qquad}</m></p></sidebyside>
@@ -263,16 +272,16 @@ To simplify an expression containing trig ratios, we treat each ratio as a singl
 <subsubsection><title>Concepts</title>
 <p><ol marker="1">
     <li>Expressions containing trig ratios can be simplified or evaluated like other algebraic expressions. To simplify an expression containing trig ratios, we treat each ratio as a single variable.</li>
-    <li><m>\sin (X + Y)</m> is not equal to <m>\sin X + \sin Y</m> (and the same holds for the other trig ratios). Remember that the parentheses indicate function notation, not multiplication.</li>
-    <li>We write <m>\cos^2 \theta</m> to denote <m>(\cos \theta)^2</m>, and <m>\cos^n \theta</m> to denote <m>(\cos \theta)^n</m>.  (Similarly for the other trig ratios.)</li>
+    <li><m>\sin (X + Y)</m> is not equal to <m>\sin (X) + \sin (Y)</m> (and the same holds for the other trig ratios). Remember that the parentheses indicate function notation, not multiplication.</li>
+    <li>We write <m>\cos^2 (\theta)</m> to denote <m>(\cos 9)^2</m>, and <m>\cos^n (\theta)</m> to denote <m>(\cos (\theta))^n</m>.  (Similarly for the other trig ratios.)</li>
     <li>We can factor trigonometric expressions with the same techniques we use for algebraic expressions.</li>
 </ol></p></subsubsection>
 
 <subsubsection><title> Study Questions</title>
 <p><ol marker="1">
-    <li> To evaluate <m>\cos^2 30\degree</m>, Delbert used the keystrokes
+    <li> To evaluate <m>\cos^2 (30\degree)</m>, Delbert used the keystrokes
         <me>\boxed {\text{COS}}~~ 30~~ \boxed{x^2}~~ \boxed{\text{ENTER}}</me> and got the answer 1. Were his keystrokes correct?  Why or why not?</li>
-    <li>Make up an example to show that <m>\tan (\theta + \phi) \not= \tan \theta + \tan \phi</m>.</li>
+    <li>Make up an example to show that <m>\tan (\theta + \phi) \not= \tan (\theta) + \tan (\phi)</m>.</li>
 
 <li><p>Factor each expression, if possible.<ol marker="a" cols="2">
   <li><m>x^2 - 4x</m></li>

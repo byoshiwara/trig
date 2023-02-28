@@ -421,11 +421,8 @@
 <me>\blert{\sin (\theta) = \dfrac{y}{r}~~~~~~~~~ \cos (\theta) = \dfrac{x}{r}~~~~~~~~~ \tan (\theta) = \dfrac{y}{x}}</me></p>
 </assemblage>
 
-<p>We can choose any point on the terminal side of the angle, and the trig ratios defined by its coordinates will be the same. (Can you explain why?) And, as we noted when we first defined the trig ratios, they are functions of the input angle, so there is only one sine, cosine, or tangent for a given angle.</p> 
-
-<note><p> The notation <m>\sin(\theta)</m> is read "sine of theta," just as we say "f of x" for <m>f(x)</m>. The parentheses do not mean multiplication, but rather tell us to apply the function.</p></note>
-
- <p>Because it is the distance from the origin to <m>P</m>, <m>r</m> is always positive. However, <m>x</m> and <m>y</m> can be positive or negative (or zero), depending on the angle <m>\theta</m>. For example, in the second quadrant, <m>x</m> is negative but <m>y</m> is positive, so the cosine and the tangent of angles between <m>90\degree</m> and <m>180\degree</m> are negative, but their sines are positive. </p>
+<p>We can choose any point on the terminal side of the angle, and the trig ratios defined by its coordinates will be the same.  (Can you explain why?)</p>
+ <p>   Because it is the distance from the origin to <m>P</m>, <m>r</m> is always positive.  However, <m>x</m> and <m>y</m> can be positive or negative (or zero), depending on the angle <m>\theta</m>. For example, in the second quadrant, <m>x</m> is negative but <m>y</m> is positive, so the cosine and the tangent of angles between <m>90\degree</m> and <m>180\degree</m> are negative, but their sines are positive. </p>
 
 <example><statement><p>Give the sign of each of the three trigonometric ratios of the angles.
 <ol marker="a" cols="2">
@@ -931,7 +928,7 @@ Because <m>P</m> is in the third quadrant, <m>x = -\sqrt{11}</m>. Thus, <me>\cos
         \draw[blue, thick, ->,>=stealth'] (O) --(B) node[above right,xshift=-3, yshift=-3] {\color{red}\footnotesize$75\degree$};
         \draw[red, thick, ->,>=stealth'] (.2,0) arc(0:285:0.2);
         \draw[blue, thick, ->,>=stealth'] (O) --(A) node[below right,xshift=-3, yshift=3] {\color{red}\footnotesize$285\degree$};
-*        \end{tikzpicture}]]>
+        \end{tikzpicture}]]>
     </latex-image>
     </image>
     <p><m>\sin (285\degree) = -\sin (75\degree) = -0.9659</m>, <m>\cos (285\degree) = \cos (75\degree) = 0.2588</m>, <m>\tan (285\degree) = -\tan (75\degree) = -3.7321</m></p></sidebyside></li></ol></p></answer></exercise>
@@ -1073,10 +1070,200 @@ Because <m>P</m> is in the third quadrant, <m>x = -\sqrt{11}</m>. Thus, <me>\cos
     </ol></p></statement>
 <answer><p><ol marker="a" cols="2"><li><m>254.7\degree</m></li><li><m>105.3\degree</m>, <m>~-258.3\degree</m></li></ol></p></answer></exercise></subsection>
 
+<subsection><title>Coterminal Angles</title>
+<idx><h>angle</h><h>coterminal</h></idx>
+<idx><h>coterminal angles</h></idx>
+
+<p>Because <m>360\degree</m> represents one complete revolution, we can add or subtract a multiple of <m>360\degree</m> to any angle, and the terminal side will arrive at the same position. For example, the angles <m>70\degree</m> and <m>430\degree</m> have the same terminal side because <m>430\degree = 70\degree + 360\degree</m>. Such angles are called <term>coterminal</term>.</p>
+<p>The angle <m>790\degree</m> is also coterminal with <m>70\degree</m>, because <m>790\degree = 70\degree+ 2(360\degree)</m>. See the figure below.</p>
+
+ <sidebyside widths="30% 30%" margins="15% 15%">
+    <image xml:id="fig-4-1-coterm"><description>angles</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture}
+        \coordinate(O) at (0,0);
+        \coordinate(A) at (70:2cm);
+        \draw[black, thick] (0,-2.2)--(0,2.2);
+        \draw[black, thick] (-2.2,0)--(0,0) ;
+        \draw [gray!80!white] (O) circle [radius=2cm];
+
+        \draw[blue, thick, ->,>=stealth'] (O) -- +(2,0);
+        \draw[blue, thick, ->,>=stealth'] (O) -- (A) node[above right, xshift=-3, yshift=-3] {\color{red}$70\degree$};
+
+        \draw [thick, color=red, ->, domain=0:pi*(2+7/18), samples=200, smooth]
+          plot (xy polar cs:angle=\x r, radius={.2+(\x r)/2500}) node[above left, midway] {$430\degree$};
+        \end{tikzpicture}]]>
+    </latex-image></image>
+    <image xml:id="fig-4-1-coterm2"><description>angles</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture}
+        \coordinate(O) at (0,0);
+        \coordinate(A) at (70:2cm);
+        \draw[black, thick] (0,-2.2)--(0,2.2);
+        \draw[black, thick] (-2.2,0)--(0,0) ;
+        \draw [gray!80!white] (O) circle [radius=2cm];
+
+        \draw[blue, thick, ->,>=stealth'] (O) -- +(2,0);
+        \draw[blue, thick, ->,>=stealth'] (O) -- (A) node[above right, xshift=-3, yshift=-3] {\color{red}$70\degree$};
+
+        \draw [thick, color=red, ->, domain=0:pi*(4+7/18), samples=200, smooth]
+          plot (xy polar cs:angle=\x r, radius={.2+(\x r)/2500}) node[above left, midway, xshift=-2, yshift=2] {$790\degree$};
+
+        \end{tikzpicture}]]>
+    </latex-image></image></sidebyside>   
+
+<p> Because coterminal angles have the same standard position, their trigonometric ratios are equal. For example, you can verify that, to four decimal places,
+    <me>\cos (790\degree) = \cos (70\degree) = 0.3420</me></p>
+
+<example><statement><p><ol marker="a">
+        <li>Find an angle between <m>0\degree</m> and <m>360\degree</m> that is coterminal with <m>520\degree</m>.</li>
+        <li>Use a calculator to verify that the trig ratios of <m>520\degree</m> are the same as the ratios of the coterminal angle.</li>
+    </ol></p></statement>
+
+<solution><p><ol marker="a">
+    <li>We subtract multiples of <m>360\degree</m> from <m>520\degree</m> until the remainder is less than <m>360\degree</m>.
+        <me>520\degree - 360\degree = 160\degree</me>
+    Because <m>160\degree</m> is between <m>0\degree</m> and <m>360\degree</m>, this is the angle we want.</li>
+    <li>Enter  <kbd>SIN</kbd> 160  and  <kbd>SIN</kbd>  520  to see that
+        <me>\sin (160\degree) = \sin (520\degree) = 0.3420</me>
+    Enter  <kbd>COS</kbd> 160  and  <kbd>COS</kbd> 520  to see that
+        <me>\cos (160\degree) = \cos (520\degree) = -0.9397</me>
+    Enter  <kbd>TAN</kbd> 160  and  <kbd>TAN</kbd> 520  to see that
+        <me>\tan (160\degree) = \tan (520\degree) = -0.3640</me></li>
+    </ol></p></solution></example>
+
+<p><sidebyside widths="65% 25%" valigns="middle middle" margins="0% 5%">
+<p>If the direction of rotation <idx><h>rotation</h></idx> is important, we let positive angles represent rotation in the counter-clockwise direction, and negative angles represent rotation in the clockwise direction. For example, the angle <m>-60\degree</m> shown at right lies in the fourth quadrant. It is coterminal with  <m>-60\degree + 360\degree = 300\degree</m>.</p>
+    <image xml:id="fig-4-1-negang"><description>angles</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture}
+        \coordinate(O) at (0,0);
+        \coordinate(A) at (-60:1.5cm);
+        \draw[black, thick, ->,>=stealth'] (0,-1.6)--(0,1.7);
+        \draw[black, thick] (-1.6,0)--(0,0) ;
+        \draw [gray!80!white] (O) circle [radius=1.5];
+
+        \draw[blue, thick, ->,>=stealth'] (O) -- +(1.6,0);
+        \draw[blue, thick, ->,>=stealth'] (O) -- (A);
+
+        \draw [thick, color=red, ->,>=stealth'](O)++(.25,0) arc (0:300:.25) node[below left, midway, xshift=2, yshift=-4] {\footnotesize$300\degree$};
+
+        \draw [thick, color=red, ->,>=stealth'](O)++(.6,0) arc (0:-60:.6) node[below right, midway, xshift=-2, yshift=2] {\footnotesize$-60\degree$};
+        \end{tikzpicture}]]>
+    </latex-image></image></sidebyside></p>
+
+<exercise><statement><p>Find two angles coterminal with <m>102\degree</m>, one positive and one negative.</p></statement><answer><p><m>462\degree</m>, <m>~-258\degree</m></p></answer></exercise>
+</subsection>
+
+<subsection><title>Solving Trigonometric Equations</title>
+<idx><h>trigonometric equation</h></idx>
+
+<p>In Chapter 3 we saw that there are always two angles between <m>0\degree</m> and <m>180\degree</m> with a given sine ratio between 0 and 1.</p>
+
+<p> For example, the two solutions to the equation <m>~~\sin (\theta) = 0.4226~~</m> are <m>25\degree</m> and <m>155\degree</m>. That is,
+    <me>\sin (25\degree) = \sin (155\degree) = 0.4226</me>
+These two angles are supplementary, so they have the same reference angle, as shown below.</p>  
+<sidebyside widths="35% 35%" margins="12% 12%">
+    <image xml:id="fig-4-1-eqna"><description>angles</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture}
+        \coordinate(O) at (0,0);
+        \coordinate(A) at (25:2cm);
+        \coordinate(B) at (155:2cm);
+        \draw[black, thick, ->,>=stealth'] (0,-2.2)--(0,2.2) node[above] {$y$};
+        \draw[black, thick, ->,>=stealth'] (-2.2,0)--(2.2,0) node[right] {$x$};
+        \draw [gray!80!white] (O) circle [radius=2cm];
+
+        \draw[blue, thick, ->,>=stealth'] (O) -- (B) node[above left, xshift=3, yshift=-3] {\color{red}$155\degree$};
+        \draw[blue, thick, ->,>=stealth'] (O) -- (A);
+
+        \draw [thick, color=red] (O) ++(.9,0) arc(0:25:.9)
+           node[right, midway] {\footnotesize$25\degree$};
+        \draw [thick, color=red] (O) ++(-.9,0) arc(180:155:.9)
+           node[left, midway] {\footnotesize$25\degree$};
+        \draw [thick, red, ->,>=stealth'] (O) ++(.3,0) arc(0:155:.3);
+
+        \node[text width=.25cm] at (0,-2.45){ a.};
+
+        \end{tikzpicture}]]>
+    </latex-image></image>
+    <image xml:id="fig-4-1-eqnb"><description>angles</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture}
+        \coordinate(O) at (0,0);
+        \coordinate(A) at (-25:2cm);
+        \coordinate(B) at (205:2cm);
+        \draw[black, thick, ->,>=stealth'] (0,-2.2)--(0,2.2) node[above] {$y$};
+        \draw[black, thick, ->,>=stealth'] (-2.2,0)--(2.2,0) node[right] {$x$};
+        \draw [gray!80!white] (O) circle [radius=2cm];
+
+        \draw[blue, thick, ->,>=stealth'] (O) -- (B) node[below left, xshift=3, yshift=3] {\color{red}$205\degree$};
+        \draw[blue, thick, ->,>=stealth'] (O) -- (A) node[below right, xshift=-3, yshift=3] {\color{red}$335\degree$};
+
+        \draw [thick, color=red] (O) ++(.9,0) arc(0:-25:.9)
+           node[right, midway] {\footnotesize$25\degree$};
+        \draw [thick, color=red] (O) ++(-.9,0) arc(180:205:.9)
+           node[left, midway] {\footnotesize$25\degree$};
+        \draw [thick, red, ->,>=stealth'] (O) ++(.3,0) arc(0:335:.3);
+        \draw [thick, red, ->,>=stealth'] (O) ++(.6,0) arc(0:205:.6);
+
+        \node[text width=.25cm] at (0,-2.45){ b.};
+
+        \end{tikzpicture}]]>
+    </latex-image></image></sidebyside>
+
+<p>There are also two solutions between <m>0\degree</m> and <m>360\degree</m> to the equation <m>~~\sin (\theta) = -0.4226~~</m>. They are the angles in the third and fourth quadrants whose reference angle is <m>25\degree</m>, namely <m>205\degree</m> and <m>355\degree</m>, as shown above.</p> 
+<p>In fact, there are always two angles between <m>0\degree</m> and <m>360\degree</m> (except for the quadrantal angles) that have the same sine.  There are also two angles that have the same cosine, and two angles that have the same tangent.</p>
+
+<example><statement><p>Solve the equation 
+    <me>\sin (\theta) = -0.6428</me> 
+for angles between <m>0\degree</m> and <m>360\degree</m>. Round your answers to the nearest degree.</p></statement>
+
+<solution><p>Enter <kbd>2nd</kbd> <kbd>SIN</kbd> <m>-0.6428</m> to find that <me>\sin^{-1}(-0.6428) = -40\degree</me>  The angle <m>-40\degree</m> is in the fourth quadrant, but it is not between <m>0\degree</m> and <m>360\degree</m>. We need an angle that is coterminal with <m>-40\degree</m>, so we add <m>360\degree</m>.
+    <me>-40\degree + 360\degree = 320\degree</me> </p>
+<sidebyside widths="60% 30%" margins="0% 0%">
+
+  <p>Thus, one of the solutions is <m>320\degree</m>. The sine is also negative in the third quadrant, so there should also be a solution in the third quadrant. The reference angle for <m>320\degree</m> is <m>40\degree</m>, and the third-quadrant angle with reference angle <m>40\degree</m> is <m>220\degree</m>, as shown at right.You can check that, rounded to four decimal places, both angles satisfy the equation, that is, </p>
+    <image xml:id="exam4-1-8"><description>angles</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture}
+        \coordinate(O) at (0,0);
+        \coordinate(A) at (-40:2cm);
+        \coordinate(B) at (220:2cm);
+        \draw[black, thick, ->,>=stealth'] (0,-2.2)--(0,2.2) node[above] {$y$};
+        \draw[black, thick, ->,>=stealth'] (-2.2,0)--(2.2,0) node[right] {$x$};
+        \draw [gray!80!white] (O) circle [radius=2cm];
+
+        \draw[blue, thick, ->,>=stealth'] (O) -- (B) node[below left, xshift=3, yshift=3] {\color{red}$220\degree$};
+        \draw[blue, thick, ->,>=stealth'] (O) -- (A) node[below right, xshift=-3, yshift=3] {\color{red}$320\degree$};
+
+        \draw [thick, red, <->,>=stealth'] (O) ++(.9,0) arc(0:-40:.9)
+           node[right, midway] {\footnotesize$40\degree$};
+        \draw [thick, red, <->,>=stealth'] (O) ++(-.9,0) arc(180:220:.9)
+           node[left, midway] {\footnotesize$40\degree$};
+        \draw [thick, red, ->,>=stealth'] (O) ++(.3,0) arc(0:320:.3);
+        \draw [thick, red, ->,>=stealth'] (O) ++(.6,0) arc(0:220:.6);
+        \end{tikzpicture}]]>
+    </latex-image></image></sidebyside>
+<p><me>\sin (320\degree) = -0.6428~~~~\text{and} ~~~~\sin (220\degree) = -0.6428</me> </p></solution></example>
+
+<warning><p>When you ask your calculator to find an angle with a given sine by pressing  <kbd>2nd</kbd><kbd>SIN</kbd>,  it will give you only one of the many possible answers. The same is true of the  <kbd>2nd</kbd><kbd>COS</kbd> and  <kbd>2nd</kbd><kbd>TAN</kbd> keys.  You must be careful to choose the appropriate answer for the situation, using reference and coterminal angles.</p></warning>
+
+<exercise><statement><p>Solve the equation <m>\tan (\theta) = -0.4</m> for angles between <m>0\degree</m> and <m>360\degree</m>.</p></statement>
+
+<answer><p><m>338.2\degree</m>, <m>~158.2\degree</m></p></answer></exercise>
+
+<note><p>In the previous example we found two solutions of the equation <m>\sin (\theta) = -0.6428</m>. Actually, there are infinitely many solutions -- namely, all the angles coterminal with <m>320\degree</m> or <m>220\degree</m>.  Some of these angles are listed below.
+    <md><mrow>\text{Angles coterminal with}~ 220\degree: \amp~~  \cdots, ~{-500\degree}, ~{-140\degree}, ~580\degree, ~940\degree, ~\cdots</mrow>
+        <mrow>\amp~~  \cdots, ~{-400\degree}, ~{-40\degree}, ~680\degree, ~1040\degree, ~\cdots</mrow></md>
+         
+Because we can easily find coterminal solutions by adding or subtracting multiples of <m>360\degree</m>, when solving an equation we usually list only the solutions between <m>0\degree</m> and <m>360\degree</m>.</p></note>
+</subsection>
+
 <subsection><title>The Special Angles</title>
 <idx><h>special angles</h></idx>
 
-<p> Recall that the angles <m>30\degree,~45\degree</m> and <m>60</m> are called the special angles because we can express the exact values of their trigonometric ratios in terms of radicals. There are special angles in all four quadrants; namely, those whose reference angles are <m>30\degree,~45\degree</m> and <m>60</m>.</p>
+<p> The angles <m>30\degree,~45\degree</m> and <m>60</m> are called the special angles because we can express the exact values of their trigonometric ratios in terms of radicals. There are special angles in all four quadrants; namely, those whose reference angles are <m>30\degree,~45\degree</m> and <m>60</m>.</p>
 
 <example><statement><p>Find exact values for the sine, cosine, and tangent of <m>210\degree</m>.
 </p></statement>
@@ -1175,100 +1362,250 @@ We draw a reference triangle as shown at right.  Because the sides of a 30-60-90
     \node[text width=.25cm] at (2.2,.2){$\color{blue} 0\degree$ };
     \node[text width=.25cm] at (2.2,-.2){ $\color{blue}\footnotesize 360\degree$};
     \end{tikzpicture}]]>
-</latex-image></image></sidebyside> 
+</latex-image></image></sidebyside>   
 
-<subsection><title>Coterminal Angles</title>
-<idx><h>angle</h><h>coterminal</h></idx>
-<idx><h>coterminal angles</h></idx>
+<activity><title>Unit Circles</title>
+<idx><h>unit circle</h></idx>
 
-<p>Because <m>360\degree</m> represents one complete revolution, we can add or subtract a multiple of <m>360\degree</m> to any angle, and the terminal side will arrive at the same position. For example, the angles <m>70\degree</m> and <m>430\degree</m> have the same terminal side because <m>430\degree = 70\degree + 360\degree</m>. Such angles are called <term>coterminal</term>.</p>
-<p>The angle <m>790\degree</m> is also coterminal with <m>70\degree</m>, because because if we add two revolutins to <m>70\degree</m>, we get<m>790\degree = 70\degree+ 2(360\degree)</m>, as shown below.</p>
-
- <sidebyside widths="30% 30%" margins="15% 15%">
-    <image xml:id="fig-4-1-coterm"><description>angles</description><latex-image>
+<sidebyside width="70%"><image xml:id="act4-2"><description>grid</description><latex-image>
         <![CDATA[
-        \begin{tikzpicture}
-        \coordinate(O) at (0,0);
-        \coordinate(A) at (70:2cm);
-        \draw[black, thick] (0,-2.2)--(0,2.2);
-        \draw[black, thick] (-2.2,0)--(0,0) ;
-        \draw [gray!80!white] (O) circle [radius=2cm];
+        \begin{tikzpicture}[scale=.25]
+        \coordinate (O) at (0,0);
+        \draw[step=1cm,cyan,very thin] (-21,-21) grid (21,21);
+        \draw[thick,->,>=stealth'] (-21,0) -- (21.8,0) node[anchor=west] {$x$};
+        \draw[thick,->,>=stealth'] (0,-21) -- (0,21.8) node[anchor=south] {$y$};
 
-        \draw[blue, thick, ->,>=stealth'] (O) -- +(2,0);
-        \draw[blue, thick, ->,>=stealth'] (O) -- (A) node[above right, xshift=-3, yshift=-3] {\color{red}$70\degree$};
+        \draw[red,thick] (O) circle (10);
+        \draw[blue,thick] (O) circle (20);
 
-        \draw [thick, color=red, ->, domain=0:pi*(2+7/18), samples=200, smooth]
-          plot (xy polar cs:angle=\x r, radius={.2+(\x r)/2500}) node[above left, midway] {$430\degree$};
+        \node[text width=.2cm,fill=white,inner sep=1pt] at (10,-1)    {1};
+        \node[text width=.2cm,fill=white,inner sep=1pt] at (20,-1)    {2};
+        \node[text width=.2cm,fill=white,inner sep=1pt] at (-1,10)    {1};
+        \node[text width=.2cm,fill=white,inner sep=1pt] at (-1,20)    {2};
         \end{tikzpicture}]]>
-    </latex-image></image>
-    <image xml:id="fig-4-1-coterm2"><description>angles</description><latex-image>
+    </latex-image>
+    </image>
+</sidebyside>
+<p><ol marker="1">
+<li><p>Use a protractor to draw an angle <m>36\degree</m> in standard position.<ol marker="a">  
+    <li>Estimate the coordinates of the point <m>P</m> where the terminal side of the angle intersects 
+        the circle of radius <m>r=2</m>.</li>
+    <li>Calculate approximate values for <m>\cos (\theta)</m> and <m>\sin (\theta)</m> using the coordinates of <m>P</m>.</li> 
+    <li>Estimate the coordinates of the point <m>Q</m> where the terminal side of the angle intersects 
+        the circle of radius <m>r=1</m>.</li>
+    <li>Calculate approximate values for <m>\cos (\theta)</m> and <m>\sin (\theta)</m> using the coordinates of <m>Q</m>.</li></ol></p></li>  
+
+<li>Use a protractor to draw an angle <m>107\degree</m> in standard position.  Repeat parts (a)-(d) for 
+    this new angle.</li>
+<li>Use a protractor to draw an angle <m>212\degree</m> in standard position.  Repeat parts (a)-(d) for 
+    this new angle.</li>
+<li>Use a protractor to draw an angle <m>325\degree</m> in standard position.  Repeat parts (a)-(d) for 
+    this new angle.</li>
+<li><p>What do you notice about the coordinates of the point located on the unit circle by an 
+    angle and the values of the trig ratios of that angle?</p>
+<sidebyside width="100%">
+    <image xml:id="act4-3">
+        <description>grid</description>
+        <latex-image>
         <![CDATA[
-        \begin{tikzpicture}
-        \coordinate(O) at (0,0);
-        \coordinate(A) at (70:2cm);
-        \draw[black, thick] (0,-2.2)--(0,2.2);
-        \draw[black, thick] (-2.2,0)--(0,0) ;
-        \draw [gray!80!white] (O) circle [radius=2cm];
+        \begin{tikzpicture}[scale=.25]
+        \coordinate (O) at (0,0);
+        \draw[step=1cm,cyan,very thin] (-11,-11) grid (11,11);
+        \draw[thick,->,>=stealth'] (-11,0) -- (11.8,0) node[anchor=west] {$x$};
+        \draw[thick,->,>=stealth'] (0,-11) -- (0,11.8) node[anchor=south] {$y$};
+        \draw[red,thick] (O) circle (10);
+        \node[text width=.2cm,fill=white,inner sep=1pt, text=red] at (10,-1)    {1};
+        \node[text width=.2cm,fill=white,inner sep=1pt, text=red] at (-1,10)    {1};
+        \node[scale=.9] at (0,-12.5) {Use this grid for \#6 and \#7};
 
-        \draw[blue, thick, ->,>=stealth'] (O) -- +(2,0);
-        \draw[blue, thick, ->,>=stealth'] (O) -- (A) node[above right, xshift=-3, yshift=-3] {\color{red}$70\degree$};
-
-        \draw [thick, color=red, ->, domain=0:pi*(4+7/18), samples=200, smooth]
-          plot (xy polar cs:angle=\x r, radius={.2+(\x r)/2500}) node[above left, midway, xshift=-2, yshift=2] {$790\degree$};
-
+        %second grid
+        \def\del{27};
+        \coordinate (O) at (\del,0);
+        \draw[step=1cm,cyan,very thin] ($ (\del,0)+(-11,-11)$) grid ($ (\del,0)+(11,11)$);
+        \draw[thick,->,>=stealth'] ($ (\del,0)+(-11,0)$) --++(22.8,0) node[anchor=west] {$x$};
+        \draw[thick,->,>=stealth'] ($ (\del,0)+(0,-11)$) --++(0,22.8) node[anchor=south] {$y$};
+        \draw[red,thick] (O) circle (10);
+        \node[text width=.2cm,fill=white,inner sep=1pt, text=red] at ($ (\del,0)+(10,-1) $)   {1};
+        \node[text width=.2cm,fill=white,inner sep=1pt, text=red] at ($ (\del,0)+(-1,10) $)   {1};
+        \node[scale=.9] at ($ (\del,0)+(0,-12.5)$) {Use this grid for \#8 and \#9};
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside>   
+    </latex-image>
+    </image>
+</sidebyside></li>
 
-<p> Because coterminal angles have the same standard position, their trigonometric ratios are equal. For example, you can verify that, to four decimal places,
-    <me>\cos (790\degree) = \cos (70\degree) = 0.3420</me></p>
+<li><p>Draw two different angles <m>\alpha</m> and <m>\beta</m> in standard position whose sine is <m>0.6</m>.
+    <ol marker="a">
+    <li>Use a protractor to measure <m>\alpha</m> and <m>\beta</m>.</li>
+    <li>Find the reference angles for both <m>\alpha</m> and <m>\beta</m>. Draw in the reference triangles.</li>
+    </ol></p></li>
 
-<example><statement><p><ol marker="a">
-        <li>Find an angle between <m>0\degree</m> and <m>360\degree</m> that is coterminal with <m>520\degree</m>.</li>
-        <li>Use a calculator to verify that the trig ratios of <m>520\degree</m> are the same as the ratios of the coterminal angle.</li>
-    </ol></p></statement>
+<li><p>Draw two different angles <m>\theta</m> and <m>\phi</m> in standard position whose sine is <m>-0.8</m>.
+    <ol marker="a">
+    <li>Use a protractor to measure <m>\theta</m> and <m>\phi</m>.</li>
+    <li>Find the reference angles for both <m>\theta</m> and <m>\phi</m>. Draw in the reference triangles.</li>
+    </ol></p></li>
 
-<solution><p><ol marker="a">
-    <li>We subtract multiples of <m>360\degree</m> from <m>520\degree</m> until the remainder is less than <m>360\degree</m>.
-        <me>520\degree - 360\degree = 160\degree</me>
-    Because <m>160\degree</m> is between <m>0\degree</m> and <m>360\degree</m>, this is the angle we want.</li>
-    <li>You can use your calculator  to see that
-        <md><mrow>\sin (160\degree) = \sin (520\degree) = 0.</mrow>
-            <mrow>\cos (160\degree) = \cos (520\degree) = -0.9397</mrow>
-            <mrow>\tan (160\degree) = \tan (520\degree) = -0.3640</mrow></li>
-    </ol></p></solution></example>
+<li><p>Draw two different angles <m>\alpha</m> and <m>\beta</m> in standard position whose cosine is <m>0.3</m>.
+    <ol marker="a">
+    <li>Use a protractor to measure <m>\alpha</m> and <m>\beta</m>.</li>
+    <li>Find the reference angles for both <m>\alpha</m> and <m>\beta</m>.  Draw in the reference triangles.</li>
+    </ol></p></li>
 
-<p><sidebyside widths="65% 25%" valigns="middle middle" margins="0% 5%">
-<p>If the direction of rotation <idx><h>rotation</h></idx> is important, we let positive angles represent rotation in the counter-clockwise direction, and negative angles represent rotation in the clockwise direction. For example, the angle <m>-60\degree</m> shown at right lies in the fourth quadrant. It is coterminal with  <m>-60\degree + 360\degree = 300\degree</m>.</p>
-    <image xml:id="fig-4-1-negang"><description>angles</description><latex-image>
-        <![CDATA[
-        \begin{tikzpicture}
-        \coordinate(O) at (0,0);
-        \coordinate(A) at (-60:1.5cm);
-        \draw[black, thick, ->,>=stealth'] (0,-1.6)--(0,1.7);
-        \draw[black, thick] (-1.6,0)--(0,0) ;
-        \draw [gray!80!white] (O) circle [radius=1.5];
+<li><p>Draw two different angles <m>\theta</m> and <m>\phi</m> in standard position whose cosine is <m>-0.4</m>.
+    <ol marker="a">
+    <li>Use a protractor to measure <m>\theta</m> and <m>\phi</m>.</li>
+    <li>Find the reference angles for both <m>\theta</m> and <m>\phi</m>.  Draw in the reference triangles.</li>
+    </ol></p></li>
 
-        \draw[blue, thick, ->,>=stealth'] (O) -- +(1.6,0);
-        \draw[blue, thick, ->,>=stealth'] (O) -- (A);
+<li><p><ol marker="a">
+    <li>If you know one angle whose sine is a given positive number, how can you find 
+        the other angle?</li>
+    <li>If you know one angle whose sine is a given negative number, how can you find 
+        the other angle?</li>
+    <li>If you know one angle whose cosine is a given positive number, how can you find 
+        the other angle?</li>
+    <li>If you know one angle whose cosine is a given negative number, how can you find 
+        the other angle?</li></ol></p></li>
 
-        \draw [thick, color=red, ->,>=stealth'](O)++(.25,0) arc (0:300:.25) node[below left, midway, xshift=2, yshift=-4] {\footnotesize$300\degree$};
+<li><p>Use your answers to the problems above to solve the equations for <m>0\degree \le \theta \le 360\degree</m>.</p>
+<p><ol marker="a" cols="2">
+    <li><m>\sin (\theta) = 0.6</m></li>    
+    <li><m>\sin (\theta) = -0.8</m></li>
+    <li><m>\cos (\theta) = 0.3</m></li>
+    <li><m>\cos (\theta) = -0.4</m></li></ol></p></li>
+ </ol></p></activity>    
 
-        \draw [thick, color=red, ->,>=stealth'](O)++(.6,0) arc (0:-60:.6) node[below right, midway, xshift=-2, yshift=2] {\footnotesize$-60\degree$};
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></p>
-
-<exercise><statement><p>Find two angles coterminal with <m>102\degree</m>, one positive and one negative.</p></statement><answer><p><m>462\degree</m>, <m>~-258\degree</m></p></answer></exercise>
 </subsection>
 
+<subsection><title>The Unit Circle</title>
+<idx><h>unit circle</h></idx>
 
+<p>Figure (a) below shows an angle of <m>30\degree</m> in standard position in a circle of radius 2. The hypotenuse of its reference triangle is the radius of the circle, so the legs of the triangle have lengths 1 and <m>\sqrt{3}</m>. The coordinates of the point <m>P</m> where the terminal side meets the circle are thus <m>(\sqrt{3}, 1)</m>.  (You can check that these coordinates satisfy the equation of the circle, <m>x^2 + y^2 = 4</m>.)</p>
+<sidebyside widths="40% 40%"><image xml:id="fig-4-1-circle2"><description>angle on circle of radius 2</description>
+    <latex-image>
+    <![CDATA[
+    \begin{tikzpicture}[scale=.9]
+    \coordinate(O) at (0,0);
+    \coordinate(A) at (30:2cm);
+    \coordinate(Ap) at (30:2.7cm);
+    \coordinate(B) at ($ 2* cos(30)*(1,0) $);
 
+    \draw[black, thick, ->,>=stealth'] (0,-2.2)--(0,2.3) node[above] {$y$};
+    \draw[black, thick, ->,>=stealth'] (-2.2,0)--(2.3,0) node[right] {$x$};
+    \draw [gray!80!white] (O) circle [radius=2cm];
 
+    \draw[blue, thick] (B) rectangle ++(-.25,.25);
+    \draw[gray!80!white, thick, dashed] (B)--(A) node[right, midway, xshift=-3.5]{\color{blue}1};
+    \draw[gray!80!white, thick, dashed] (B)--(O) node[below, midway]{\color{blue}$\sqrt{3}$};
+    \draw[blue, thick, ->,>=stealth'] (O) --(Ap);
+    \filldraw[black] (A) circle (1.8pt) node[anchor=north west, xshift=2,yshift=7] {$P\left(-\sqrt{3}, 1\right)$};
 
+    \node[text width=.15cm] at (.7,.7){\color{blue} 2};
+    \node[text width=.25cm] at (0,-2.5){ a.};
+    \end{tikzpicture}]]>
+</latex-image></image>
+<image xml:id="fig-4-1-unitcircle"><description>angle in unit circle</description><latex-image>
+    <![CDATA[
+    \begin{tikzpicture}[scale=.9]
+    \coordinate(O) at (0,0);
+    \coordinate(A) at (30:2cm);
+    \coordinate(Ap) at (30:2.7cm);
+    \coordinate(B) at ($ 2* cos(30)*(1,0) $);
 
+    \draw[black, thick, ->,>=stealth'] (0,-2.3)--(0,2.2) node[above] {$y$};
+    \draw[black, thick, ->,>=stealth'] (-2.2,0)--(2.3 ,0) node[right] {$x$};
+    \draw [gray!80!white] (O) circle [radius=2cm];
 
+    \draw[blue, thick] (B) rectangle ++(-.25,.25);
+    \draw[gray!80!white, thick, dashed] (B)--(A) node[right, midway, xshift=1, yshift=-1,fill=white, inner sep=1pt]{\color{blue} $\frac{1}{2}  $ };
+    \draw[gray!80!white, thick, dashed] (B)--(O) node[below, midway]{\color{blue}$\frac{\sqrt{3}}{2}$};
+    \draw[blue, thick, ->,>=stealth'] (O) --(Ap);
+    \filldraw[black] (A) circle (1.8pt) node[anchor=north west, xshift=4,yshift=9] { 
+    $Q\left(\frac{-\sqrt{3}}{2}, \frac{1}{2}\right)$};
 
+    \node[text width=.15cm] at (.7,.7){\color{blue} 1};
+    \node[text width=.25cm] at (0,-2.5){ b.};
 
+    \end{tikzpicture}]]>
+</latex-image></image></sidebyside>
 
+<p>Now consider the circle of radius 1 in Figure (b).  (A circle of radius 1 is called a <term>unit circle</term><idx><h>unit circle</h></idx>.)  In this figure, the hypotenuse of the reference triangle for <m>30\degree</m> has length 1.  What are the coordinates of the point <m>Q</m> where the terminal side meets the circle?  Each side of this triangle is <m>\frac{1}{2}</m> the length of the sides of the similar triangle in Figure (a), so the coordinates of <m>Q</m> are <m>\left(\dfrac{\sqrt{3}}{2}, \dfrac{1}{2}\right)</m>. (Once again, you should check that these coordinates satisfy the equation of the circle, <m>x^2 + y^2 = 1</m>.)</p>
+ <p> Perhaps you recognize the coordinates of the point <m>Q</m>. Because <m>r = 1</m> in this circle, the definitions of the sine and cosine are 
+ <me>\cos( \theta) = \dfrac{x}{r} = \dfrac{x}{1} = x ~~~~\text{and}~~~~ \sin (\theta) = \dfrac{y}{r} = \dfrac{y}{1} = y</me>       
+ We see that the coordinates <m>(x,y)</m> of <m>Q</m> are given by <m>(\cos \theta, \sin \theta)</m>.  We have discovered an important property of unit circles.</p>
+
+<assemblage><title>Angles in a Unit Circle</title>
+<idx><h>unit circle</h><h>angles in</h></idx>
+<idx><h>unit circle</h><h>coordinates of point</h></idx>
+<p>Let <m>P</m> be a point on a unit circle determined by the terminal side of an angle <m>\theta</m> in standard position. Then the coordinates <m>(x,y)</m>  of <m>P</m> are given by 
+    <me>\blert{x = \cos (\theta),~~~~~~y = \sin (\theta)}</me></p></assemblage>
+
+<example><statement>
+<sidebyside widths="62% 28%" valigns="middle middle" margins="0% 5%">
+  <p>Find the coordinates of point <m>P</m> on the unit circle shown at right.</p><!--<image source="photos/exam4-1-10.png"><description>angles</description></image>-->
+   <image xml:id="exam4-1-10"><description>angles</description><latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+        \coordinate(O) at (0,0);
+        \coordinate(A) at (315:1.5cm);
+        \coordinate(B) at ($ 1.5* cos(45)*(1,0) $);
+
+        \draw[black, thick, ->,>=stealth'] (0,-1.6)--(0,1.7) node[above] {$y$};
+        \draw[black, thick, ->,>=stealth'] (-1.6,0)--(1.7,0) node[right] {$x$};
+        \draw[blue,thick] (B) rectangle ++(-.2,-.2);
+        \draw [gray!80!white] (O) circle [radius=1.5cm];
+        \draw[red, thick] (.3,0) arc(0:315:0.3) node[left, midway, xshift=3, yshift=-11]{\footnotesize$315\degree$};
+
+        \draw[gray!80!white, thick, dashed] (B)--(A);
+        \draw[blue, thick] (O) --(A) node[left,midway, xshift=3, yshift=-4]{1};
+        \filldraw[black] (A) circle (1.8pt) node[anchor= west, xshift=4,yshift=0] {\footnotesize 
+        $P$};
+
+        \end{tikzpicture}]]>
+    </latex-image></image></sidebyside></statement>
+
+<solution><p>The coordinates of <m>P</m> are given by  
+    <me>x = \cos (315\degree),~~~y = \sin (315\degree)</me>.  
+The reference angle for <m>315\degree</m> is <m>~ 360\degree - 315\degree = 45\degree</m>, so the trig ratios of <m>315\degree</m> are the same as the ratios for <m>45\degree</m>, up to sign.</p>
+<p> Because <m>315\degree</m> is in the fourth quadrant, we have  <m>\cos (315\degree) = \dfrac{1}{\sqrt{2}}</m>  and  <m>\sin (315\degree) = \dfrac{-1}{\sqrt{2}}</m>. Thus, the coordinates of <m>P</m> are <m>\left(\dfrac{1}{\sqrt{2}}, \dfrac{1}{\sqrt{2}}\right)</m>.</p></solution></example>
+
+<exercise><statement><sidebyside widths="55% 35%" valigns="middle middle" margins="0% 5%"><p>Find the sine, cosine, and tangent ofthe angle <m>\varphi</m> shown at right.</p><!--<image source="photos/exer4-1-10.png"><description>angles</description></image>-->
+   <image xml:id="exer4-1-10"><description>angles</description><latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+        \coordinate(O) at (0,0);
+        \coordinate(A) at (224.43:1.5cm);
+        \coordinate(B) at (-1.5,-1.05);
+
+        \draw[black, thick, ->,>=stealth'] (0,-1.6)--(0,1.7) node[above] {$y$};
+        \draw[black, thick, ->,>=stealth'] (-1.6,0)--(1.7,0) node[right] {$x$};
+        \draw [gray!80!white] (O) circle [radius=1.5cm];
+        \draw[red, thick] (.3,0) arc(0:180+asin(.7):0.3) node[left, midway, xshift=0, yshift=1]{$\varphi$};
+
+        \draw[gray!80!white, thick, dashed, text=black] (B)--++(3.1,0) node[right]{$y=-0.7$};
+        \draw[blue, thick] (O) --(A);
+        \filldraw[black] (A) circle (1.8pt);
+
+        \node[text width=2cm,anchor=west] at (1,1.2){ $x^2+y^2=1 $ };
+        \end{tikzpicture}]]>
+    </latex-image></image>
+</sidebyside></statement>
+
+<answer><p><m>\sin (\varphi) = -0.7000</m>, <m>~\cos (\varphi) = -0.7141</m>, <m>~\tan (\varphi) = 0.9802</m></p></answer></exercise>
 
 <p>Review the following skills you will need for this section.</p>
 <project>

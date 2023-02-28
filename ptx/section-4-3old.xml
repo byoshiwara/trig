@@ -1,0 +1,913 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- <mathbook><book> -->
+
+<section xml:id="Periodic-Functions"   xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Periodic Functions</title>
+<idx><h>periodic function</h></idx>
+
+<subsection><title>Period, Midline and Amplitude</title>
+
+<p>All sine and cosine graphs have the characteristic "wave" shape we've seen in previous examples. But we can alter the size and frequency of the waves by changing the formula for the function. In the next example we consider three variations of the sine function.</p>
+
+<example><statement><p>Make a table of values and sketch a graph for each of the functions. How does each differ from the graph of <m>y = \sin \theta</m> ?</p>
+<p><ol marker="a" cols="3">
+        <li><m>y = 3\sin \theta</m></li>
+        <li><m>y = 3 + \sin \theta</m></li>
+        <li><m>y = \sin 3\theta</m></li>
+</ol></p></statement>
+
+<solution><p><ol marker="a">
+    <li><p>We make a table with multiples of <m>45\degree</m>.</p>
+    <sidebyside><tabular top="major" halign="left" right="minor" left="minor" bottom="minor">                  
+        <row bottom="minor">
+            <cell><m>\theta</m></cell>
+            <cell><m>0\degree</m></cell>
+            <cell><m>45\degree</m></cell>
+            <cell><m>90\degree</m></cell>
+            <cell><m>135\degree</m></cell>
+            <cell><m>180\degree</m></cell>
+            <cell><m>225\degree</m></cell>
+            <cell><m>270\degree</m></cell>
+            <cell><m>315\degree</m></cell>
+            <cell><m>360\degree</m></cell></row>
+        <row>
+            <cell><m>y = 3\sin \theta</m></cell> 
+            <cell><m>0</m></cell>
+            <cell><m>2.1</m></cell>
+            <cell><m>3</m></cell>
+            <cell><m>2.1</m></cell>
+            <cell><m>0</m></cell>
+            <cell><m>-2.1</m></cell>
+            <cell><m>-3</m></cell>
+            <cell><m>-2.1</m></cell>
+            <cell><m>0</m></cell></row>
+            </tabular></sidebyside>
+    <sidebyside widths="55% 40%"><p>We plot the points, and connect them with a sine-shaped wave. Compare the graph, shown at right, to the graph of <m>y = \sin \theta</m>. The graph is like a sine graph, except that it oscillates between a maximum value of <m>3</m> and a minimum value of <m>-3</m>. The amplitude of this function is 3.</p>
+   <image xml:id="exam4-3-1a">
+        <description>graphs of sine and 3 sine</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [scale=.6] 
+        \draw[cyan]
+        (-0.1,-3) grid (8,3);
+
+        \draw[->,>=stealth'] (-0.1,0) -- (8.3,0) node[right] {$\theta$};
+        \draw[->,>=stealth'] (0,-3.2) -- (0,3.3) node[above] {$y$};
+
+        \foreach \x [evaluate=\x as \xi using int( 45* \x )] in {2, 4, 6, 8}
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+
+        \foreach \y  [evaluate=\y as \yi using int(  \y )] in {-3, -2, -1,1, 2, 3}
+        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+
+        \draw[domain=-0:8,smooth,variable=\x,red,very thick] plot ({\x},{ 3*sin(deg(\x*pi/4))});
+
+        \draw[red, thick, <-] (2.8, 2.6) -- +(0.7,0) node[right, fill=white, inner sep=1pt] {$y=3\sin \theta$};
+        \draw[domain=-0:8,smooth,variable=\x,blue,very thick] plot ({\x},{ sin(deg(\x*pi/4))});
+        \draw[blue, thick, <-] (3.2, 0.7) -- +(0.9,0.3) node[right, fill=white, inner sep=1pt] {$y=\sin \theta$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></li>
+    <li><p>Again, we make a table of values with multiples of <m>45\degree</m> and plot the points.</p>
+    <sidebyside><tabular top="major" halign="left" right="minor" left="minor" bottom="minor">                  
+        <row bottom="minor">
+            <cell><m>\theta</m></cell>
+            <cell><m>0\degree</m></cell>
+            <cell><m>45\degree</m></cell>
+            <cell><m>90\degree</m></cell>
+            <cell><m>135\degree</m></cell>
+            <cell><m>180\degree</m></cell>
+            <cell><m>225\degree</m></cell>
+            <cell><m>270\degree</m></cell>
+            <cell><m>315\degree</m></cell>
+            <cell><m>360\degree</m></cell></row>
+        <row>
+            <cell><m>y = 3 + \sin \theta</m></cell> 
+            <cell><m>3</m></cell>
+            <cell><m>3.7</m></cell>
+            <cell><m>4</m></cell>
+            <cell><m>3.7</m></cell>
+            <cell><m>3</m></cell>
+            <cell><m>2.3</m></cell>
+            <cell><m>2</m></cell>
+            <cell><m>2.1</m></cell>
+            <cell><m>3</m></cell></row>
+            </tabular></sidebyside>
+    <sidebyside widths="55% 40%"><p>This graph has the same amplitude as <m>y = \sin \theta</m>, but the entire graph is shifted up by 3 units, as shown at right. The midline of this function is the line <m>y = 3</m>.</p>   <image xml:id="exam4-3-1b">
+        <description>graph of sine and translated sine</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [scale=.6]  
+        \draw[cyan]
+        (-0.1,-2) grid (8,5);
+
+        \draw[->,>=stealth'] (-0.1,0) -- (8.3,0) node[right] {$\theta$};
+        \draw[->,>=stealth'] (0,-2.2) -- (0,5.3) node[above] {$y$};
+
+        \foreach \x [evaluate=\x as \xi using int( 45* \x )] in {2, 4, 6, 8}
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+
+        \foreach \y  [evaluate=\y as \yi using int(  \y )] in { -1,1, 2, 3, 4, 5}
+        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+
+        \draw[domain=-0:8,smooth,variable=\x,red,very thick] plot ({\x},{ 3+sin(deg(\x*pi/4))});
+        \draw[red, thick, <-] (3.2, 3.7) -- +(0.9,0.3) node[right, fill=white, inner sep=1pt] {$y=3+\sin \theta$};
+
+        \draw[domain=-0:8,smooth,variable=\x,blue,very thick] plot ({\x},{ sin(deg(\x*pi/4))});
+        \draw[blue, thick, <-] (3.2, 0.7) -- +(0.9,0.3) node[right, fill=white, inner sep=1pt] {$y=\sin \theta$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></li>
+    <li><p>This time we'll make a table with multiples of <m>15\degree</m>.</p> 
+        <sidebyside><tabular top="major" halign="left" right="minor" left="minor" bottom="minor">                  
+        <row bottom="minor">
+            <cell><m>\theta</m></cell>
+            <cell><m>15\degree</m></cell>
+            <cell><m>30\degree</m></cell>
+            <cell><m>45\degree</m></cell>
+            <cell><m>60\degree</m></cell>
+            <cell><m>75\degree</m></cell>
+            <cell><m>90\degree</m></cell>
+            <cell><m>105\degree</m></cell>
+            <cell><m>120\degree</m></cell>
+            <cell><m>135\degree</m></cell>
+            <cell><m>150\degree</m></cell>
+            <cell><m>165\degree</m></cell>
+            <cell><m>180\degree</m></cell></row>
+        <row>
+            <cell><m>y = \sin 3\theta</m></cell> 
+            <cell><m>0.7</m></cell>
+            <cell><m>1</m></cell>
+            <cell><m>0.7</m></cell>
+            <cell><m>0</m></cell>
+            <cell><m>-0.7</m></cell>
+            <cell><m>-1</m></cell>
+            <cell><m>-0.7</m></cell>
+            <cell><m>0</m></cell>
+            <cell><m>0.7</m></cell>
+            <cell><m>1</m></cell>
+            <cell><m>0.7</m></cell>
+            <cell><m>0</m></cell></row>
+            </tabular></sidebyside>
+    <sidebyside widths="55% 40%"><p>You can continue the table for <m>\theta</m> between <m>180\degree</m> and <m>360\degree</m>, and plot the points to find the graph shown at right. The graph has the same amplitude and midline as <m>y = \sin \theta</m>, but it completes three cycles from <m>0\degree</m> to <m>360\degree</m> instead of one cycle. The period of this graph is one-third of <m>360\degree</m>, or <m>120\degree</m>.</p>   <image xml:id="exam4-3-1c">
+        <description>graph of sine and sine 3 theta</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [scale=.6]  
+        \draw[cyan]
+        (-0.1,-3) grid (8,3);
+
+        \draw[->,>=stealth'] (-0.1,0) -- (8.3,0) node[right] {$\theta$};
+        \draw[->,>=stealth'] (0,-3.2) -- (0,3.3) node[above] {$y$};
+
+        \foreach \x [evaluate=\x as \xi using int( 45* \x )] in {2, 4, 6, 8}
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+
+        \foreach \y  [evaluate=\y as \yi using int(  \y )] in {-3, -2 -1,1, 2, 3 }
+        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+
+        \draw[domain=-0:8,smooth,variable=\x,red,very thick] plot ({\x},{ sin(deg(\x*3*pi/4))});
+        \draw[red, thick, <-] (3.5, 1.1) -- +(0.9,0.4) node[right, fill=white, inner sep=1pt] {$y=\sin 3 \theta$};
+
+        \draw[domain=-0:8,smooth,variable=\x,blue,very thick] plot ({\x},{ sin(deg(\x*pi/4))});
+        \draw[blue, thick, <-] (1.9, 1.1) -- +(-0.5,0.4) node[above, fill=white, inner sep=1pt] {$y=\sin \theta$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></li>
+</ol></p></solution></example>
+
+<p>The graphs in the previous example illustrate a general rule about sine and cosine graphs.</p>
+
+<assemblage><title>Amplitude, Period, and Midline</title>
+<idx><h>amplitude</h></idx>
+<idx><h>period</h></idx>
+<idx><h>midline</h></idx>
+<idx><h>periodic function</h></idx>
+<p><ol marker="1">
+	<li>The graph of <me>\blert{y = A\cos\theta} ~~~\text{or}~~~ \blert{y = A\sin\theta}</me> has amplitude <m>\abs{A}</m>.</li>
+	<li>The graph of <me>\blert{y =\cos B\theta} ~~~\text{or}~~~ \blert{y = \sin B\theta}</me> has period <m>\dfrac{360\degree}{\abs{B}}</m>.</li>
+	<li>The graph of <me>\blert{y = k + \cos\theta} ~~~\text{or}~~~ \blert{y =k + \sin\theta}</me> has midline <m>y = k</m>.</li>
+</ol></p></assemblage>
+
+<exercise><statement><p>Sketch a graph for each of the following functions.  Describe how each is different from the graph of <m>y = \cos \theta</m>.</p>
+<p><ol marker="a" cols="3">
+    <li><m>f(\theta) = 2 + \cos \theta</m></li>
+    <li><m>g(\theta) = \cos 2\theta</m></li>
+    <li><m>h(\theta) = 2\cos \theta</m></li>
+</ol></p></statement>
+<answer><p>
+    <ol marker="a">
+        <li><sidebyside widths="35% 40%" valigns="middle middle">
+        <image xml:id="exer4-3-1ansa">
+        <description>graph of 2+cosine</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [scale=0.45]
+        \draw[cyan]
+        (-0.1,0) grid (8,4);
+
+        \draw[->,>=stealth'] (-0.1,0) -- (8.3,0) node[right] {$\theta$};
+        \draw[->,>=stealth'] (0,-.2) -- (0,4.3) node[above] {$y$};
+
+        \foreach \x [evaluate=\x as \xi using int( 45* \x )] in {2, 4, 6, 8}
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+
+        \foreach \y  [evaluate=\y as \yi using int(  \y )] in {1, 2, 3 }
+        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+
+        \draw[domain=-0:8,smooth,variable=\x,red,very thick] plot ({\x},{ 2+cos(deg(\x*pi/4))});
+        \end{tikzpicture}]]>
+    </latex-image>    </image>
+
+            <p>The midline is <m>y = 2</m>.</p></sidebyside></li>
+        <li><sidebyside widths="35% 40%" valigns="middle middle"><!--<image source="photos/exer4-3-1ansb.png"><description>graph</description></image>-->
+        <image xml:id="exer4-3-1ansb">
+        <description>graph of cosine 2 theta</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [scale=0.45]
+        \draw[cyan]
+        (-0.1,-2) grid (8,2);
+
+        \draw[->,>=stealth'] (-0.1,0) -- (8.3,0) node[right] {$\theta$};
+        \draw[->,>=stealth'] (0,-2.2) -- (0,2.3) node[above] {$y$};
+
+        \foreach \x [evaluate=\x as \xi using int( 45* \x )] in {2, 4, 6, 8}
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+
+        \foreach \y  [evaluate=\y as \yi using int(  \y )] in { -2, -1, 1, 2 }
+        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+
+        \draw[domain=-0:8,smooth,variable=\x,red,very thick] plot ({\x},{ cos(deg(\x*2*pi/4))});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+            <p>The period is <m>180\degree</m>.</p></sidebyside></li>
+        <li><sidebyside widths="35% 40%" valigns="middle middle"><!--<image source="photos/exer4-3-1ansc.png"><description>graph</description></image>-->
+        <image xml:id="exer4-3-1ansc">
+        <description>graph of 2 cosine</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [scale=0.45]
+        \draw[cyan]
+        (-0.1,-2) grid (8,2);
+
+        \draw[->,>=stealth'] (-0.1,0) -- (8.3,0) node[right] {$\theta$};
+        \draw[->,>=stealth'] (0,-2.2) -- (0,2.3) node[above] {$y$};
+
+        \foreach \x [evaluate=\x as \xi using int( 45* \x )] in {2, 4, 6, 8}
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+
+        \foreach \y  [evaluate=\y as \yi using int(  \y )] in { -2, -1, 1, 2 }
+        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+
+        \draw[domain=-0:8,smooth,variable=\x,red,very thick] plot ({\x},{ 2*cos(deg(\x*pi/4))});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+            <p>The amplitude is 2.</p></sidebyside></li>    
+        </ol></p>
+</answer></exercise>
+
+<p>The quantities <m>A, B,</m> and <m>k</m> in the equations above are called <term>parameters</term><idx><h>parameter</h></idx>, and their values for a particular function give us information about its graph.</p>
+
+<example><statement><p>State the period, midline, and amplitude of the graph of <m>y = -3 + 4\sin 3\theta,</m>  and graph the function.</p></statement>
+<solution><sidebyside widths="45% 35%" valigns="middle middle"><p>For this function, <m>A = 4,~ B = 3,</m> and <m>k = -3</m>.  Its amplitude is 4, its period is <m>\dfrac{360\degree}{3} = 120\degree</m>, and its midline is <m>y = -3</m>. The graph is shown at right.</p>
+    <image xml:id="exam4-3-2">
+        <description>graph -3+4sin 3 theta</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [xscale=.6, yscale=.4]
+        \draw[cyan]
+        (-0.1,-7) grid (8,1);
+
+        \draw[->,>=stealth'] (-0.1,0) -- (8.3,0) node[right] {$\theta$};
+        \draw[->,>=stealth'] (0,-6.2) -- (0,1.3) node[above] {$y$};
+
+        \foreach \x [evaluate=\x as \xi using int( 45* \x )] in {2, 4, 6, 8}
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+
+        \foreach \y  [evaluate=\y as \yi using int(  \y )] in { -6, -4, -2,1}
+        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+
+        \draw[domain=-0:8,smooth,variable=\x,red,very thick] plot ({\x},{ -3+4*sin(deg(\x*3*pi/4))});
+
+        \node [text width= 3cm, text=red] at (4, 1.6){\small $y=-3+4\sin 3 \theta$};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside></solution></example>
+
+<exercise><statement><p>State the period, midline, and amplitude of the graph of  <m>y = 1 - 3\sin 2\theta,</m>  and graph the function.</p></statement>
+<answer>
+    <sidebyside widths="55% 38%" valigns="middle middle"><p>Amplitude 3, period <m>180\degree</m>, midline  <m>y = 1</m></p>
+    <image xml:id="exer4-3-2ans">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [xscale=0.7, yscale=.5]
+        \draw[cyan] (-0.1,-2) grid (8,4);
+
+        \draw[->,>=stealth'] (-0.1,0) -- (8.3,0) node[right] {$\theta$};
+        \draw[->,>=stealth'] (0,-2.2) -- (0,4.3) node[above] {$y$};
+
+        \foreach \x [evaluate=\x as \xi using int( 45* \x )] in {2, 4, 6, 8}
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+
+        \foreach \y  [evaluate=\y as \yi using int(  \y )] in { -2, -1, 1, 2,3,4 }
+        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+
+        \draw[domain=-0:8,smooth,variable=\x,red,very thick] plot ({\x},{ 1-3*sin(deg(\x*2*pi/4))});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside>
+</answer></exercise>
+</subsection>
+
+<subsection><title>Sinusoidal Functions</title>
+<idx><h>sinusoidal function</h></idx>
+<idx><h>function</h><h>sinusoidal</h></idx>
+
+<p>Many interesting functions have graphs shaped like sines or cosines, even though they may not be functions of angles. These functions are called <term>sinusoidal</term>.</p>
+
+<example><statement><p>Imagine a grandfather clock. As the minute hand sweeps around, the height of its tip changes with time. Which of the graphs shown below best represents the height of the tip of the minute hand as a function of time?</p><sidebyside width="85%">
+    <image xml:id="exam4-3-3">
+        <description>grandfather clock and 2 graphs</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} 
+        \coordinate (O) at (0,0);
+
+        \draw[->,>=stealth'] (O)++(-1.5,0) -- +(3.2,0) node[right] {$t$};
+        \draw[->,>=stealth'] (O)++(0,-0.1) -- +(0,3.3) node[above] {$h$};
+
+        \draw[red, very thick] (O)++(0,2) circle (.7 cm);
+        \node[text width=.2 cm] at (0,-.6) {a.};
+
+        % second graph
+        \coordinate (O) at (4.2,0);
+
+        \draw[->,>=stealth'] (O)++(-0.2,0) -- +(3.2,0) node[right] {$t$};
+        \draw[->,>=stealth'] (O)++(0,-0.1) -- +(0,3.3) node[above] {$h$};
+
+        \draw[red, very thick] (O)++(0,2.7) --++(.6,-1.4)--++(.6,1.4)--++(.6,-1.4)--++(.6,1.4)--++(.12,-0.28);
+
+        \node[text width=.2 cm] at ($(O)+(1.5,-.6)$) {b.};
+
+        % third graph
+        \coordinate (O) at (9.4,0);
+
+        \draw[->,>=stealth'] (O)++(-0.2,0) -- +(3.2,0) node[right] {$t$};
+        \draw[->,>=stealth'] (O)++(0,-0.1) -- +(0,3.3) node[above] {$h$};
+
+        \draw[domain=9.4:12.2,smooth,variable=\x,red,very thick] plot ({\x},{2+ 0.7*cos(deg((\x- 9.4)*4.8))});
+        \node[text width=.2 cm] at ($(O)+(1.5,-.6)$) {c.};
+        \end{tikzpicture}]]>
+    </latex-image></image></sidebyside></statement>
+
+<solution><p>Figure (a) is not the graph of a function at all: It does not pass the vertical line test. That is, some values of <m>t</m>, such as <m>t = 0</m>, correspond to more than one value of <m>h</m>, which is not possible in the graph of a function.</p>
+<p>Figure (b) shows the height of the minute hand varying between a maximum and minimum value. The height decreases at a constant rate (the graph is straight and the slope is constant) until the minimum is reached, and then increases at a constant rate.</p>
+<sidebyside widths="60% 35%"><p> But notice that during the 10 minutes from 12:10 to 12:20 the height of the minute hand decreases about half the diameter of the clock, while from 12:20 to 12:30 the height decreases only about a quarter of the diameter of the clock, as shown at right.</p>
+    <image xml:id="exam4-3-3soln">
+        <description>clock</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture}
+        \coordinate (O) at (0,0);
+        \draw[black, thick] (O) circle (1.6 cm);
+
+        \foreach \theta [evaluate=\theta as \h using int(3*\theta )]  in {1, 2, 3, 4}  {
+          \node[text width = .3cm] at (-90*\theta+90:1.3){\h}; }
+
+        \coordinate (h2) at (30:1.5);
+        \coordinate (h4) at (-30:1.5);
+        \coordinate (h6) at (-90:1.5);
+
+        \draw[red, very thick] (h2)--(O)--(h4)--(O)--(h6);
+
+        \coordinate (P) at ($ (1.5,0)+ 1.5*sin(30)*(0,1) $);
+        \coordinate (Q) at ($ (1.5,0)+ 1.5*sin(30)*(0,-1) $);
+        \coordinate (R) at (0.9,-1.5);
+
+        \draw[gray!70!white, thick] (P) -- +(2.5,0);
+        \draw[gray!70!white, thick] (Q) -- +(2.5,0);
+        \draw[blue, thick, <-] (P)++(1.3,0) --+(0,-.5) node[below, fill=white, inner sep=0] {\small 1/2 diameter};
+        \draw[blue, thick, <-] (Q)++(1.3,0) --+(0,.5);
+        \draw[gray!70!white, thick] (R) -- +(3.1,0);
+        \node[text width = 2.4cm, text=blue] at (2.9,-1.2){\small 1/4 diameter};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+</sidebyside> <p>Thus the height of the minute hand does not decrease at a constant rate.</p>
+<p>Figure (c) is the best choice. The graph is curved because the slopes are not constant. The graph is steep when the height is changing rapidly, and the graph is nearly horizontal when the height is changing slowly. The height changes slowly near the hour and the half-hour, and more rapidly near the quarter-hours.</p></solution></example>
+
+<exercise><statement><p>As the moon revolves around the earth, the percent of the disk that we see varies sinusoidally with a period of approximately 30 days. There are eight phases, starting with the new moon, when the moon's disk is dark, followed by waxing crescent, first quarter, waxing gibbous, full moon, waning gibbous, last quarter, and waning crescent. Which graph  best represents the phases of the moon?</p> <sidebyside widths="33% 33% 33%">    <image xml:id="exer4-3-3a">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [xscale=.9,yscale=.54]
+        \draw[cyan, xstep=.5, ystep=.5] (0,0) grid (6,5);
+
+        \draw[->,>=stealth'] (-0.1,0) -- (6.3,0) node[right] {$t$};
+        \draw[->,>=stealth'] (0,-.1) -- (0,5.3) node[above] {$y$};
+
+        \foreach \x [evaluate=\x as \xi using int( 10* \x )] in {0, 1, 2, ..., 6}
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi $};
+
+        \foreach \y  [evaluate=\y as \yi using int( 20* \y )] in {2.5,5}
+        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
+
+        \draw[domain=-0:6,smooth,variable=\x,red,very thick] plot ({\x},{ 2.5+2.5*sin(deg(\x*2*pi/3))});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    <image xml:id="exer4-3-3b">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [xscale=.9,yscale=.54]
+        \draw[cyan, xstep=.5, ystep=.5] (0,0) grid (6,5);
+
+        \draw[->,>=stealth'] (-0.1,0) -- (6.3,0) node[right] {$t$};
+        \draw[->,>=stealth'] (0,-.1) -- (0,5.3) node[above] {$y$};
+
+        \foreach \x [evaluate=\x as \xi using int( 10* \x )] in {0, 1, 2, ..., 6}
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi $};
+
+        \foreach \y  [evaluate=\y as \yi using int( 20* \y )] in {2.5,5}
+        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
+
+        \draw[domain=-0:6,smooth,variable=\x,red,very thick] plot ({\x},{ 2.5-2.5*cos(deg(\x*2*pi/3))});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    <image xml:id="exer4-3-3c">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [xscale=.9,yscale=.54]
+        \draw[cyan, xstep=.5, ystep=.5] (0,0) grid (6,5);
+
+        \draw[->,>=stealth'] (-0.1,0) -- (6.3,0) node[right] {$t$};
+        \draw[->,>=stealth'] (0,-.1) -- (0,5.3) node[above] {$y$};
+
+        \foreach \x [evaluate=\x as \xi using int( 50* \x /3)] in {0, 3, 6}
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi $};
+
+        \foreach \y  [evaluate=\y as \yi using int( 6* \y )] in {2.5,5}
+        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {   \yi};
+
+        \draw[domain=-0:6,smooth,variable=\x,red,very thick] plot ({\x},{ 2.5-2.5*cos(deg(\x*2*pi/3))});
+        \end{tikzpicture}]]>
+    </latex-image></image></sidebyside></statement>
+    <answer><p> (b)</p></answer></exercise>
+
+<example><statement><p>The table shows the number of hours of daylight in Glasgow, Scotland on the first of each month.</p>
+	<sidebyside><tabular top="major" halign="left" right="minor" left="minor" bottom="minor">                  
+        <row bottom="minor">
+            <cell>Month</cell>
+            <cell>Jan</cell>
+            <cell>Feb</cell>
+            <cell>Mar</cell>
+            <cell>Apr</cell>
+            <cell>May</cell>
+            <cell>Jun</cell>
+            <cell>Jul</cell>
+            <cell>Aug</cell>
+            <cell>Sep</cell>
+            <cell>Oct</cell>
+            <cell>Nov</cell>
+            <cell>Dec</cell></row>
+        <row>
+            <cell>Daylight Hours</cell> 
+            <cell><m>7.1</m></cell>
+            <cell><m>8.7</m></cell>
+            <cell><m>10.7</m></cell>
+            <cell><m>13.1</m></cell>
+            <cell><m>15.3</m></cell>
+            <cell><m>17.2</m></cell>
+            <cell><m>17.5</m></cell>
+            <cell><m>16.7</m></cell>
+            <cell><m>13.8</m></cell>
+            <cell><m>11.5</m></cell>
+            <cell><m>9.2</m></cell>
+            <cell><m>7.5</m></cell></row>
+            </tabular></sidebyside>
+     <p><ol marker="a">
+     <li>Sketch a sinusoidal graph of daylight hours as a function of time, with <m>t = 1</m> in January.</li>
+	 <li>Estimate the period, amplitude, and midline of the graph.</li>
+	</ol></p></statement>
+	<solution><p><ol marker="a">
+     <li><p>Plot the data points and fit a sinusoidal curve by eye, as shown below.</p><sidebyside width="70%">
+    <image xml:id="exam4-3-4">
+        <description>sinusoidal graph</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [xscale=.5, yscale=.2] 
+        \draw[cyan, xstep=1, ystep=2] (0,0) grid (18,20);
+
+        \draw[->,>=stealth'] (-0.1,0) -- (18.6,0) node[right] {$t$};
+        \draw[->,>=stealth'] (0,-.1) -- (0,20.9) node[above] {$y$};
+        \draw[green, ultra thick, dashed] (0,12.12)--+(18,0);
+
+        \foreach \x [evaluate=\x as \xi using int( 1* \x /1)] in {4, 8, ..., 16}
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+
+        \foreach \y  [evaluate=\y as \yi using int( 1* \y )] in {4, 8,..., 20}
+        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+
+        \draw[domain=-0:18,smooth,variable=\x,red,very thick] plot ({\x},{ 12.25-5.25*cos(deg((\x-.66)*pi/6))});
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+     </sidebyside></li>
+     <li>The period of the graph is 12 months. The midline is approximately <m>y = 12.25,</m> and the amplitude is approximately 5.25.</li>
+ </ol></p></solution></example>
+
+ <exercise><statement><p>The figure shows the number of daylight hours in Jacksonville, Florida, in Anchorage, Alaska, at the Arctic Circle, and at the Equator.</p>
+ <sidebyside width="60%"><image source="photos/fig-chap2-proj-ex-2-1"><description>graph</description></image></sidebyside>
+ <p><ol marker="a">
+ 	<li>Which graph corresponds to each location?</li>
+	<li>What are the maxium and minimum number of daylight hours in Jacksonville?</li>
+	<li>For how long are there 24 hours of daylight per day at the Arctic Circle?</li>
+</ol></p></statement><answer><p><ol marker="a">
+        <li>From top to bottom in January:  Equator, Jacksonville, Anchorage, Arctic Circle</li>
+        <li>14 hours and 10 hours</li>
+        <li>Four months</li>
+    </ol></p></answer></exercise>
+</subsection>
+
+<subsection><title>Other Periodic Functions</title>
+<idx><h>periodic function</h></idx>
+<p>There are other periodic functions besides sinusoidal functions. Any function that repeats a pattern at intervals of fixed length is periodic.</p>
+
+<assemblage><title>Periodic Function</title>
+<idx><h>periodic function</h></idx>
+<idx><h>period</h></idx>
+<p>The function <m>y = f(x)</m> is <term>periodic</term> if there is a smallest value of <m>p</m> such that 
+    <me>\blert{f(x + p) = f(x)}</me> 
+for all <m>x</m>. The constant <m>p</m>  is called the <term>period</term> of the function.</p></assemblage>
+
+<example><statement><p>Which of the functions shown below are periodic? If the function is periodic, give its period.</p>
+<sidebyside width="85%"><image source="photos/fig-chap2-proj-example-1"><description>graph</description></image></sidebyside></statement>
+<solution><p><ol marker="a">
+	<li>This graph is periodic with period 360.</li>
+	<li>This graph is not periodic.</li>
+	<li>This graph is periodic with period 8.</li>
+</ol></p></solution></example>
+
+<exercise><statement><p>Which of the functions shown below are periodic? If the function is periodic, give its period.</p>
+<sidebyside width="85%"><image source="photos/fig-chap2-proj-ex-1-1"><description>graph</description></image></sidebyside></statement><answer><p><ol marker="a" cols="3">
+        <li>Period:  2</li>
+        <li>Period:  3</li>
+        <li>Not periodic</li>
+    </ol></p></answer></exercise>
+
+<example><statement><p>A patient receives regular doses of medication to maintain a certain level of the drug in his body.  After each dose, the patient's body eliminates a certain percent of the medication before the next dose is administered. The graph shows the amount of the drug, in milliliters, in the patient's body as a function of time in hours.</p>
+<sidebyside width="50%"><image source="photos/fig-chap2-proj-ex-1-4"><description>graph</description></image></sidebyside>
+<p><ol marker="a">
+ 	<li>How much of the medication is administered with each dose?</li>
+	<li>How often is the medication administered?</li>
+	<li>What percent of the drug is eliminated from the body between doses?</li>
+</ol></p></statement>
+
+<solution><p><ol marker="a">
+	<li>The medication level increase from 30 ml to 50 ml at each cycle of the graph, so 20 ml of medication are administerd at each dose.</li>
+	<li>The medication level peaks sharply evey four hours, when each new dose is administered.</li>
+	<li>The medication level declines by 20 ml between doses, or <m>\dfrac{20}{50} = 0.6</m>, or 60%</li>
+</ol></p></solution></example>
+
+<exercise><statement><p>You are sitting on your front porch late one evening, and you see a light coming down the road tracing out the path shown below, with distances in inches. You realize that you are seeing a bicycle light, fixed to the front wheel of the bike.</p>
+<sidebyside width="55%"><image source="photos/fig-chap2-proj-ex-1-5"><description>graph</description></image></sidebyside>
+<p><ol marker="a">
+ 	<li>Approximately what is the period of the graph?</li>
+	<li>How far above the ground is the light?</li>
+	<li>What is the diameter of the bicycle wheel?</li>
+</ol></p></statement>
+
+<answer><p><ol marker="a" cols="3">
+        <li>75 in</li>
+        <li>4 in</li>
+        <li>24 in</li>
+    </ol></p></answer></exercise>
+
+<p>Review the following skills you will need for this section.</p>
+<project>    
+    <sidebyside><p>Sketch the graph.  Give the equations of any vertical or horizontal asymptotes.</p></sidebyside>   
+    <sidebyside><p><ol marker="1" cols="3">
+        <li><p><m>f(x) = \dfrac{1}{x - 2}</m></p></li>
+        <li><p><m>g(x) = \dfrac{1}{x + 3} </m></p></li>
+        <li><p><m>h(x) = \dfrac{1}{x^2 - 1}</m></p></li>
+        <li><p><m>H(x) = \dfrac{-1}{(x + 1)^2}</m></p></li>
+        <li><p><m>G(x) = \dfrac{2x + 1}{x}</m></p></li>
+        <li><p><m>F(x) = \dfrac{x}{x - 1}</m></p></li>
+    </ol></p></sidebyside>
+
+    <sidebyside><p><m>\underline{\qquad\qquad\qquad\qquad}</m></p></sidebyside>
+    <conclusion>
+    <sidebyside><p>Algebra Refresher Answers</p></sidebyside>
+        <p><ol marker="1" cols="3">
+            <li><sidebyside width="75%" margins="0%,30%">
+            <image xml:id="ar4-3-1ans">
+                <description>graph</description>
+                <latex-image>
+                <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+                <![CDATA[\tikzset{%
+                }
+                \begin{tikzpicture} [scale=.5]
+                \draw[cyan] (-2,-3) grid (4,3);
+
+                \draw[->,>=stealth'] (-2.1,0) -- (4.6,0) node[right] {$x$};
+                \draw[->,>=stealth'] (0,-3.1) -- (0,3.3) node[above] {$y$};
+
+                \foreach \x [evaluate=\x as \xi using int( 2* \x )] in {-2,2} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+
+                \foreach \y [evaluate=\y as \yi using int( 1* \y )]   in {-2, 2} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+
+                \draw[domain={-2:5/6},smooth,variable=\x,red,very thick] plot ({\x},{1/(2*\x-2)});
+
+                \draw[domain={7/6:4},smooth,variable=\x,red,very thick] plot ({\x},{1/(2*\x-2)});
+                \end{tikzpicture}]]>
+            </latex-image>
+            </image>
+            </sidebyside><p><m>x = 2,~~y = 0</m></p></li>
+            <li><sidebyside width="75%" margins="0%,30%">
+            <image xml:id="ar4-3-2ans">
+                <description>graph</description>
+                <latex-image>
+                <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+                <![CDATA[\tikzset{%
+                }
+                \begin{tikzpicture} [scale=.5]
+                \draw[cyan] (-4,-3) grid (2,3);
+
+                \draw[->,>=stealth'] (-4.1,0) -- (2.6,0) node[right] {$x$};
+                \draw[->,>=stealth'] (0,-3.1) -- (0,3.3) node[above] {$y$};
+
+                \foreach \x [evaluate=\x as \xi using int( 2* \x )] in {-4,-2,2} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+
+                \foreach \y [evaluate=\y as \yi using int( 1* \y )]   in {-2, 2} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+
+                \draw[domain={-4:-5/3},smooth,variable=\x,red,very thick] plot ({\x},{1/(2*\x +3)});
+
+                \draw[domain={-8/6:2},smooth,variable=\x,red,very thick] plot ({\x},{1/(2*\x +3)});
+                \end{tikzpicture}]]>
+            </latex-image>
+            </image>
+            </sidebyside><p><m>x = -3,~~y = 0</m></p></li>
+            <li><sidebyside width="75%" margins="0%,30%">
+            <image xml:id="ar4-3-3ans">
+                <description>graph</description>
+                <latex-image>
+                <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+                <![CDATA[\tikzset{%
+                }
+                \begin{tikzpicture} [xscale=.375, yscale=.5]
+                \draw[cyan] (-4,-3) grid (4,3);
+
+                \draw[->,>=stealth'] (-4.1,0) -- (4.6,0) node[right] {$x$};
+                \draw[->,>=stealth'] (0,-3.1) -- (0,3.3) node[above] {$y$};
+
+                \foreach \x [evaluate=\x as \xi using int(  \x )] in {-4,-2,2,4} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+
+                \foreach \y [evaluate=\y as \yi using int( 1* \y )]   in {-2, 2} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+
+                \draw[domain={-4:-2/sqrt(3)},smooth,variable=\x,red,very thick] plot ({\x},{1/( (\x)^2 -1)});
+
+                \draw[domain={-sqrt(2/3):sqrt(2/3)},smooth,variable=\x,red,very thick] plot ({\x},{1/( (\x)^2 -1)});
+
+                \draw[domain={2/sqrt(3):4},smooth,variable=\x,red,very thick] plot ({\x},{1/( (\x)^2 -1)});
+                \end{tikzpicture}]]>
+            </latex-image>
+            </image>
+            </sidebyside><p><m>x = -1,~~x = 1~~y = 0</m></p></li>
+            <li><sidebyside width="75%" margins="0%,30%">
+            <image xml:id="ar4-3-4ans">
+                <description>graph</description>
+                <latex-image>
+                <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+                <![CDATA[\tikzset{%
+                }
+                \begin{tikzpicture} [scale=.5]
+                \draw[cyan] (-3,-4) grid (3,2);
+
+                \draw[->,>=stealth'] (-3.1,0) -- (3.3,0) node[right] {$x$};
+                \draw[->,>=stealth'] (0,-4.1) -- (0,2.3) node[above] {$y$};
+
+                \foreach \x [evaluate=\x as \xi using int( 2* \x )] in {-2,2} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+
+                \foreach \y [evaluate=\y as \yi using int( 1* \y )]   in {-2, 2} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+
+                \draw[domain={-3:-3/4},smooth,variable=\x,red,very thick] plot ({\x},{-1/( (2*\x +1)^2 )});
+
+                \draw[domain={-1/4:3},smooth,variable=\x,red,very thick] plot ({\x},{-1/( (2*\x +1)^2 )});
+                \end{tikzpicture}]]>
+            </latex-image>
+            </image>
+            </sidebyside><p><m>x = -1,~~y = 0</m></p></li>
+            <li><sidebyside width="75%" margins="0%,30%">
+            <image xml:id="ar4-3-5ans">
+                <description>graph</description>
+                <latex-image>
+                <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+                <![CDATA[\tikzset{%
+                }
+                \begin{tikzpicture} [xscale=.5, yscale=.375]
+                \draw[cyan] (-3,-2) grid (3,6);
+
+                \draw[->,>=stealth'] (-3.1,0) -- (3.3,0) node[right] {$x$};
+                \draw[->,>=stealth'] (0,-2.1) -- (0,6.3) node[above] {$y$};
+
+                \foreach \x [evaluate=\x as \xi using int( 2* \x )] in {-2,2} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+
+                \foreach \y [evaluate=\y as \yi using int( 1* \y )]   in {-2, 2} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+
+                \draw[domain={-3:-1/8},smooth,variable=\x,red,very thick] plot ({\x},{ (4*\x+1)/( 2*\x ) });
+
+                \draw[domain={1/8:3},smooth,variable=\x,red,very thick] plot ({\x},{ (4*\x+1)/( 2*\x )});
+                \end{tikzpicture}]]>
+            </latex-image>
+            </image>
+            </sidebyside><p><m>x = 0,~~y = 2</m></p></li>
+            <li><sidebyside width="75%" margins="0%,30%">
+            <image xml:id="ar4-3-6ans">
+                <description>graph</description>
+                <latex-image>
+                <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+                <![CDATA[\tikzset{%
+                }
+                \begin{tikzpicture} [scale=.5]
+                \draw[cyan] (-3,-2) grid (3,4);
+
+                \draw[->,>=stealth'] (-3.1,0) -- (3.3,0) node[right] {$x$};
+                \draw[->,>=stealth'] (0,-2.1) -- (0,4.3) node[above] {$y$};
+
+                \foreach \x [evaluate=\x as \xi using int( 2* \x )] in {-2,2} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+
+                \foreach \y [evaluate=\y as \yi using int( 1* \y )]   in {-2, 2, 4} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+
+                \draw[domain={-3:1/3},smooth,variable=\x,red,very thick] plot ({\x},{ (2*\x)/( 2*\x - 1) });
+
+                \draw[domain={4/6:3},smooth,variable=\x,red,very thick] plot ({\x},{ (2*\x)/( 2*\x - 1 )});
+                \end{tikzpicture}]]>
+            </latex-image>
+            </image>
+            </sidebyside><p><m>x = 1,~~y = 1</m></p></li>
+        </ol></p>
+    </conclusion>
+</project>
+</subsection>
+
+<subsection><title>Section 4.3 Summary</title>
+<subsubsection><title>Vocabulary</title>
+<p><ul cols="4">
+	<li>Sinusoidal</li>
+	<li>Period</li>
+	<li>Periodic</li>
+	<li>Parameter</li>
+</ul></p></subsubsection>
+
+<subsubsection><title>Concepts</title>
+<p><ol marker="1">
+	<li><assemblage><title>Amplitude, Period, and Midline</title>
+<p><ol marker="1">
+	<li>The graph of <me>y = A\cos\theta ~~\text{or}~~ y = A\sin\theta</me>  has amplitude <m>\abs{A}</m>.</li>
+	<li>The graph of <me>y =\cos B\theta ~~\text{or}~~ y = \sin B\theta</me>  has period <m>\dfrac{360\degree}{\abs{B}}</m>.</li>
+	<li>The graph of <me>y = k + \cos\theta ~~\text{or}~~ y =k + \sin\theta</me>  has midline <m>y = k</m>.</li>
+</ol></p></assemblage></li>
+<li>The graph of <m>y = k + A\sin B\theta</m> has amplitude <m>A</m>, period <m>\dfrac{360\degree}{B}</m>, and midline <m>y = k</m>. The same is true for the graph of <m>y = k + A\cos B\theta</m>.</li>
+<li>Functions that have graphs shaped like sines or cosines are called <term>sinusoidal</term>.</li>
+<li><assemblage><title>Periodic Function</title>
+<p>The function <m>y = f(x)</m> is <term>periodic</term> if there is a smallest value of <m>p</m> such that <me>f(x + p) = f(x)</me> for all <m>x</m>. The constant <m>p</m>  is called the <term>period</term> of the function.</p></assemblage></li>
+</ol></p></subsubsection>
+
+<subsubsection><title>Study Questions</title>
+<p><ol marker="1">
+    <li>Sketch two examples of a function with period 8:  one that is sinusoidal, and one that is not.</li>
+	<li><p>Delbert says that  <m>\tan (\theta + 180\degree) = \tan \theta</m>  for any value of <m>\theta</m>. Is he correct? Explain why or why not.</p>
+		<p>Each statement in Questions 3<ndash/>6 is false. Write a corrected statement.</p></li>
+
+	<li>The period of a sine or cosine function is the distance between horizontal intercepts.</li>
+	<li>The amplitude is the vertical distance between the maximum and minimum values.</li>
+	<li>The midline of the cosine graph is the vertical line <m>\theta = 180\degree</m>.</li>
+	<li>The cosine graph looks just like the sine graph except flipped upside down.</li>
+</ol></p></subsubsection>
+
+<subsubsection><title>Skills</title>
+<p><ol marker="1">
+    <li>Graph periodic functions    #1<ndash/>6, 11<ndash/>14, 27<ndash/>28</li>
+    <li>Write equations for sinusoidal functions    #7<ndash/>12</li>
+    <li>Graph sinusoidal functions    #13<ndash/>18, 25<ndash/>32</li>
+    <li>Find amplitude, period and midline    #19<ndash/>32</li>
+    <li>Fit a sinusoidal function to data or to a description    #33<ndash/>42</li>
+    <li>Find coordinates of points on a sinusoidal graph    #43<ndash/>48</li>
+    <li>Identify periodic functions and give their periods    #49<ndash/>52</li>
+    <li>Sketch graphs to model sinusoidal functions    #53<ndash/>66</li>
+    <li>Analyze periodic graphs    #67<ndash/>74</li>
+</ol></p></subsubsection>
+</subsection>
+<xi:include href="./hmwk-4-3.xml" />  
+
+</section>
