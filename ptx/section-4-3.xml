@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!-- <mathbook><book> -->
 
 <section xml:id="Periodic-Functions"   xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Using Trigonometric Functions</title>
 <idx><h>periodic function</h></idx>
 
 <subsection><title>Solving Trigonometric Equations</title>
-<idx><h>trigonometric equation</h></idx>
-
+    <idx><h>trigonometric equation</h></idx>
+    
 <p>One of the main reasons we learned about reference angles is to help us solve trigonometric equations. Remember that there are always two angles between <m>0\degree</m> and <m>180\degree</m> with a given sine ratio between 0 and 1.</p>
 
 <p> For example, the two solutions to the equation <m>~~\sin (\theta) = 0.4226~~</m> are <m>25\degree</m> and <m>155\degree</m>. That is,
@@ -66,98 +65,117 @@ These two angles are supplementary, so they have the same reference angle, as sh
 
 
 <example><statement><p>You are riding on the Ferris wheel we modeled in Section 4.2, where your height above ground is given as a function of <m>\theta</m>  by
-                <me>h = 100 + 100 \sin (\theta)</me> 
+            <me>h = 100 + 100 \sin (\theta)</me> 
 When your height is at least 136 feet, you can see the snow on a distant mountain range. Between what angles of rotation can you see snow?</p></statement> 
-
 <solution><sidebyside widths = "60% 40%">
-<p>Look at the diagram of the Ferris wheel to see that when your height is 136 feet, the sine of the angle <m>\theta</m> is <m>\dfrac{36}{100}</m>, or 0.36. The angle with sine 0.36 is 
-        <me>\sin{-1}(0.36) = 21.1 \degree</me>
-And you will be able to see snow until you descend again below 136 feet. That will happen at the angle in the second quadrant with sine 0.36, namely, the second quadrant angle with reference angle 21.1°. And that angle is
-                <me>180 \degree - 21.1 \degree = 158.9 \degree</me>.</p>
-<image xml:id="fig-4-2-ferris3"><description>ferris wheel</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
+    <p>Look at the diagram of the Ferris wheel to see that when your height is 136 feet, the sine of the angle <m>\theta</m> is <m>\dfrac{36}{100}</m>, or 0.36. The angle with sine 0.36 is 
+        <me>\sin^{-1}(0.36) = 21.1 \degree</me>
+    And you will be able to see snow until you descend again below 136 feet. That will happen at the angle in the second quadrant with sine 0.36, namely, the second quadrant angle with reference angle 21.1°. And that angle is
+    <me>180 \degree - 21.1 \degree = 158.9 \degree</me>.</p>
+    <image xml:id="fig-4-2-ferris-height-136ft"><description>ferris wheel where height is 136</description><latex-image>
+        <![CDATA[
         \begin{tikzpicture} [scale=.8]
         \coordinate(O) at (0,0);
-        \coordinate(P) at (30:2cm);
-        \coordinate(Q) at ($ 2*cos(30)*(1,0)$);
-
+        \def\t {atan(36/100)};
+        \coordinate(P) at ({\t}:2cm);
+        \coordinate(Q) at ({2*cos(\t)},0);
+        \coordinate(R) at ({180-\t}:2cm);
+        \draw[gray!80!white, thick, dashed] (-2.5,{2*sin(\t)}) -- +(5.2,0) ;
+   
         \draw[black, thick] (O) circle (2cm);
-        \draw[blue, thick] (Q) rectangle ++(-.2,.2);
-        \draw[gray!80!white, thick, dashed] (P) -- (Q)node[right, midway, color=blue,fill=white, inner sep=2pt] {\footnotesize $y=100 \sin \theta$};
-        \draw[gray!80!white, thick, <-] (-2.25,0) -- +(0,-.8) node[below, yshift=2, color=blue] {\footnotesize $100'$};
-        \draw[gray!80!white, thick, <-] (-2.2,-2) -- +(0,.8) ;
-        \draw[gray!80!white, thick] (-2.25,-2) -- +(5.2,0);
+        \draw[gray!80!white, thick, ->,>=stealth'] (2.25,{2*sin(\t)+.5}) -- +(0,-.5) node[below, xshift=2, color=blue] { $36'$};
+        \draw[gray!80!white, thick, <-,>=stealth'] (2.25,0) -- +(0,-.7) node[below, yshift=2, color=blue] { $100'$};
+        \draw[gray!80!white, thick, <-,>=stealth'] (2.25,-2) -- +(0,.8) ;
+        \draw[gray!80!white, thick, <-,>=stealth'] (-2.25,{2*sin(\t)}) -- +(0,-1.3) node[below, xshift=-2, yshift=2, color=blue] { $136'$};
+        \draw[gray!80!white, thick, <-,>=stealth'] (-2.25,-2) -- +(0,.8) ;
+        \draw[gray!80!white, thick] (-2.5,-2) -- +(5.2,0);
 
         \draw[black, thick, ->,>=stealth'] (0,-2.25)--(0,2.3);
-        \draw[black, thick, ->,>=stealth'] (-2.3,0)--(3,0);
-        \draw[red, thick, ->,>=stealth'] (0.6,0) arc (0:30:0.6) node[right, midway, yshift=1] {$\footnotesize \theta$};
+        \draw[black, thick, ->,>=stealth'] (-2.5,0)--(2.7,0);
+        \draw[red, thick, ->,>=stealth'] (1,0) arc (0:\t:1) node[right, midway, yshift=1] {$\theta$};
 
-        \draw[blue, thick] (O) --(P) node[above left, midway, xshift=8, color=blue] {\footnotesize $100'$};
+        \draw[blue, thick] (O) --(P);
 
-        \filldraw[black] (P) circle (1.5pt);
+        \filldraw[black] (P) circle (1.6pt);
+        \filldraw[black] (R) circle (1.6pt);
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></solution>
+    </latex-image></image></sidebyside>
+</solution></example>
 
 <exercise><statement><sidebyside widths = "60% 40%">
-<p>Refer to Example ? in Section 4.1. about the Knee Over Pedal Stem Rule. The distance between the cyclist's foot and the KOPS line is 
+<p>Refer to the <xref ref="Example-KOPS-Rule" text="custom">Example</xref> in Section 4.2. about the Knee Over Pedal Stem Rule. The distance between the cyclist's foot and the KOPS line is 
         <me>d = 18 - 18 \cos (\theta)</me> 
 At what angles is the cyclist's knee within 9 centimeters of the KOPS line?</p>
-<image xml:id="exam4-2-4bike"><description>bicycle</description><latex-image>
-                <![CDATA[\tikzset{%
-                  block/.style    = {draw, thick, rectangle, minimum height = 3em,
-                    minimum width = 3em},
-                  sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-                  input/.style    = {coordinate}, % Input
-                  output/.style   = {coordinate} % Output
-                }
-                \begin{tikzpicture}        
-                \def\R{2.4}
-                \def\r{1}
-                \def\c{2.2}
-                \coordinate(O) at (0,\c);
-                \coordinate(A) at (-2.8,\R);
-                \coordinate(B) at (3.8,\R);
-                \def\h{5.5}
-                \coordinate(C) at (-1.5,\h);
-                \coordinate(D) at (2.8,\h);
-                \draw[blue!40!black, very thick] (O) circle (\r);
-                \draw[blue!40!black, very thick] (A) circle (\R);
-                \draw[blue!40!black, very thick] (A) --(O);
-                \draw[blue!40!black, very thick] (B) circle (\R);
-                \draw[blue!40!black, very thick] (A) --(C) --(D)--(B);
-                \draw[blue!40!black, very thick] (D)++(-.1,-.6) arc (-90:90:0.6);
-                \draw[blue!40!black, very thick] (O) --(D);
-                \coordinate(E) at (1.8,6);
-                \coordinate(F) at (3.2,5.7);
-                \coordinate(Np) at (1.3,7.1);
-                \draw[black, very thick] (F)--(E)--(Np);
-                \coordinate(S) at (-2.,6.5);
-                \coordinate(N) at (1.8,7.2);
-                \coordinate(H) at (2.4,7.4);
-                \draw[blue!40!black, very thick] (O) --(S);
-                \draw[black, very thick] (H) circle (.6);
-                \coordinate(G) at (\r,0);
-                \coordinate(K) at (\r,5);
-                \coordinate(F) at (0.3,\c);
-                \draw[lightgray, very thick] (G) rectangle ++(.25,.25);
-                \draw[lightgray, very thick] (G) -- ++(0,6);
-                \draw[black, very thick] (N)--(S) --(K)--(F)--++(0.7,0);
-                \draw[gray, very thick] (-5,0) --(6.5,0);
-                \end{tikzpicture}]]>
-            </latex-image></image></sidebyside></statement>
-<answer><p>When the angle of the crank is between 0° and 60°, and again between 300° and 360°.</p></answer></exercise>
+<image xml:id="KOPS-Rule"><description>bicycle and KOPS line</description><latex-image>
+    <![CDATA[
+    \begin{tikzpicture}        
+    \def\R{2.4}
+    \def\r{1}
+    \def\c{2.2}
+    \coordinate(O) at (0,\c);
+    \coordinate(A) at (-2.8,\R);
+    \coordinate(B) at (3.8,\R);
+    \def\h{5.5}
+    \coordinate(C) at (-1.5,\h);
+    \coordinate(D) at (2.8,\h);
+    \draw[blue!40!black, very thick] (O) circle (\r);
+    \draw[blue!40!black, very thick] (A) circle (\R);
+    \draw[blue!40!black, very thick] (A) --(O);
+    \draw[blue!40!black, very thick] (B) circle (\R);
+    \draw[blue!40!black, very thick] (A) --(C) --(D)--(B);
+    \draw[blue!40!black, very thick] (D)++(-.1,-.6) arc (-90:90:0.6);
+    \draw[blue!40!black, very thick] (O) --(D);
+    \coordinate(E) at (1.8,6);
+    \coordinate(F) at (3.2,5.7);
+    \coordinate(Np) at (1.3,7.1);
+    \draw[black, very thick] (F)--(E)--(Np);
+    \coordinate(S) at (-2.,6.5);
+    \coordinate(N) at (1.8,7.2);
+    \coordinate(H) at (2.4,7.4);
+    \draw[blue!40!black, very thick] (O) --(S);
+    \draw[black, very thick] (H) circle (.6);
+    \coordinate(G) at (\r,0);
+    \coordinate(K) at (\r,5);
+    \coordinate(F) at (0.3,\c);
+    \draw[lightgray, very thick] (G) rectangle ++(.25,.25);
+    \draw[lightgray, very thick] (G) -- ++(0,6);
+    \draw[black, very thick] (N)--(S) --(K)--(F)--++(0.7,0);
+    \draw[gray, very thick] (-5,0) --(6.5,0);
+    \end{tikzpicture}]]>
+</latex-image></image></sidebyside></statement>
+<answer><sidebyside widths="58% 35%" margins="0% 0%" valigns="middle middle"><p>When the angle of the crank is between 0° and 60°, and again between 300° and 360°.</p>
+    <image xml:id="KOPS-9cm"><description>knee within 9cm of KOPS line</description><latex-image>
+    <![CDATA[
+    \begin{tikzpicture}
+    \coordinate(O) at (0,0);
+    \coordinate(P) at (60:2cm);
+    \coordinate(P2) at (300:2cm);
+    \coordinate(Q) at (1,0);
+    \coordinate(R) at ($ (2,0) ++2*sin(60)*(0,1)$);
+
+    \draw[gray!80!white, thick, dashed] (1,2.3) -- +(0,-4.55);
+
+    \draw[gray!80!white, thick] (2,2.3) -- (2, -2.25) node[below right, yshift=13, color=blue] {$x=18$};
+    \draw[blue, thick, <->,>=stealth'] (1,2) -- +(1,0) node[midway,fill=white, inner sep=2pt] {$9$};
+
+    \draw[black, thick, ->,>=stealth'] (0,-2.25)--(0,2.3);
+    \draw[black, thick, ->,>=stealth'] (-2.3,0)--(3,0);
+    \draw[red, thick, ->,>=stealth'] (0.4,0) arc (0:60:0.4) node[right, midway] {$ \theta$};
+
+    \draw[blue, thick] (O) --(P) node[above left, midway, xshift=4, color=blue] {$18$};
+
+    \draw[black, thick] (O) circle (2cm);
+    \filldraw[black] (P) circle (1.5pt);
+    \filldraw[black] (P2) circle (1.5pt);
+
+    \end{tikzpicture}]]>
+</latex-image></image></sidebyside>
+</answer></exercise>
 
 <example><statement><p>Solve the equation 
     <me>\sin (\theta) = -0.6428</me> 
 for angles between <m>0\degree</m> and <m>360\degree</m>. Round your answers to the nearest degree.</p></statement>
-
+<solution><p>
 Enter <kbd>2nd</kbd> <kbd>SIN</kbd> <m>-0.6428</m> to find that <me>\sin^{-1}(-0.6428) = -40\degree</me>  The angle <m>-40\degree</m> is in the fourth quadrant, but it is not between <m>0\degree</m> and <m>360\degree</m>. We need an angle that is coterminal with <m>-40\degree</m>, so we add <m>360\degree</m>.
     <me>-40\degree + 360\degree = 320\degree</me> </p>
 <sidebyside widths="60% 30%" margins="0% 0%">
@@ -668,19 +686,35 @@ Francine is about 25.4 miles south of the airport.</p></solution></example>
 <note><p>Recall that the <term>slope</term><idx><h>slope</h></idx> of a line is given by the ratio <m>\dfrac {\text{change in}~ y}{\text{change in}~x}</m> as we move from one point to another on the line. So, if we create a right triangle by dropping a perpendicular segment from the line to the <m>x</m>-axis, the ratio of sides <m>\dfrac {\text{opposite}}{\text{adjacent}}</m> gives the slope of the line.</p> </note>
 
 <assemblage><title>Angle of Inclination</title>
-<idx><h>angle of inclination</h></idx>
-<idx><h>angle</h><h>of inclination</h></idx>
-<idx><h>angle</h><h>of inclination</h><seealso>angle of inclination</seealso></idx>
+    <idx><h>angle of inclination</h></idx>
+    <idx><h>angle</h><h>of inclination</h></idx>
+    <idx><h>angle</h><h>of inclination</h><seealso>angle of inclination</seealso></idx>
 
-<sudebyside widths="50% 50%">
-<p>The tangent function also has applications in measurement. The figure at right shows a graph of the line <m>y = \dfrac{3}{4} x - 3</m>  The angle  measured in the positive direction from the positive  axis to the line is called the <term>angle of inclination</term> of the line. </p>
-    
-    figure missing?
-</sidebyside>
+    <sidebyside widths="50% 40%" valigns="middle middle" margins="0% 0%">
+    <p>The tangent function also has applications in measurement. The figure at right shows a graph of the line <m>y = \dfrac{3}{4} x - 3</m>  The angle  measured in the positive direction from the positive  axis to the line is called the <term>angle of inclination</term> of the line. </p>
+    <image xml:id="Graph-three-quarters-x-minus3"><description>graph y = 3/4 x - 3</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture} [scale = 0.5]
+        \draw[cyan] (-1,-3) grid (8,5);
+
+        \coordinate (A) at (-1, -9/4);
+        \coordinate (B) at (8, 4.5);
+
+        \draw[black,  thick, ->,>=stealth'] (-1.1,0) --  (8.5,0) node[right] {$x$} ;
+        \draw[black,  thick, ->,>=stealth'] (0,-3.1) --  (0,5.5) node[above] {$y$}  ;
+        \draw[red,  thick] (B) --  (A)  ;
+
+        \foreach \x [evaluate=\x as \xi using int( 2* \x )] in {2, 4, 6, 8} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi $};
+
+        \foreach \y [evaluate=\y as \yi using int( 2* \y )]   in {-3, -1, 2, 4} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {$\yi$};
+
+        \end{tikzpicture}]]>
+    </latex-image></image>
+</sidebyside></assemblage>
 
 <p>Recall that the <term>slope</term> of a line is given by the ratio <m>\dfrac{\text{change in} y}{\text{change in} x}</m>  as we move from one point to another on the line. If we create a right triangle by dropping a perpendicular segment from the line to the <m>x</m>-axis, the ratio of sides  <m>\dfrac{\text{opposit}}{\text{adjacent}}</m>  gives the slope of the line.</p>
 
-<assemblage><title>Angleof Inclination</title>
+<assemblage><title>Angle of Inclination</title>
 <p>The <term>angle of inclination</term> of a line is the angle <m>\alpha</m> measured in the positive direction from the positive <m>x</m>-axis to the line. If the slope of the line is <m>m</m>, then
     <me>\blert{\tan (\alpha) = m}</me> 
 where <m>0\degree \le \alpha \le 180\degree</m>.</p></assemblage>
@@ -921,7 +955,7 @@ The angle of inclination is <m>36.9\degree</m>.</p>
     <answer><p> (b)</p></answer></exercise>
 
 <example><statement><p>The table shows the number of hours of daylight in Glasgow, Scotland on the first of each month.</p>
-	<sidebyside><tabular top="major" halign="left" right="minor" left="minor" bottom="minor">                  
+    <sidebyside><tabular top="major" halign="left" right="minor" left="minor" bottom="minor">                  
         <row bottom="minor">
             <cell>Month</cell>
             <cell>Jan</cell>
@@ -953,9 +987,9 @@ The angle of inclination is <m>36.9\degree</m>.</p>
             </tabular></sidebyside>
      <p><ol marker="a">
      <li>Sketch a sinusoidal graph of daylight hours as a function of time, with <m>t = 1</m> in January.</li>
-	 <li>Estimate the period, amplitude, and midline of the graph.</li>
-	</ol></p></statement>
-	<solution><p><ol marker="a">
+     <li>Estimate the period, amplitude, and midline of the graph.</li>
+    </ol></p></statement>
+    <solution><p><ol marker="a">
      <li><p>Plot the data points and fit a sinusoidal curve by eye, as shown below.</p><sidebyside width="70%">
     <image xml:id="exam4-3-4">
         <description>sinusoidal graph</description>
@@ -992,9 +1026,9 @@ The angle of inclination is <m>36.9\degree</m>.</p>
  <exercise><statement><p>The figure shows the number of daylight hours in Jacksonville, Florida, in Anchorage, Alaska, at the Arctic Circle, and at the Equator.</p>
  <sidebyside width="60%"><image source="photos/fig-chap2-proj-ex-2-1"><description>graph</description></image></sidebyside>
  <p><ol marker="a">
- 	<li>Which graph corresponds to each location?</li>
-	<li>What are the maxium and minimum number of daylight hours in Jacksonville?</li>
-	<li>For how long are there 24 hours of daylight per day at the Arctic Circle?</li>
+     <li>Which graph corresponds to each location?</li>
+    <li>What are the maxium and minimum number of daylight hours in Jacksonville?</li>
+    <li>For how long are there 24 hours of daylight per day at the Arctic Circle?</li>
 </ol></p></statement><answer><p><ol marker="a">
         <li>From top to bottom in January:  Equator, Jacksonville, Anchorage, Arctic Circle</li>
         <li>14 hours and 10 hours</li>
@@ -1017,9 +1051,9 @@ for all <m>x</m>. The constant <m>p</m>  is called the <term>period</term> of th
 <example><statement><p>Which of the functions shown below are periodic? If the function is periodic, give its period.</p>
 <sidebyside width="85%"><image source="photos/fig-chap2-proj-example-1"><description>graph</description></image></sidebyside></statement>
 <solution><p><ol marker="a">
-	<li>This graph is periodic with period 360.</li>
-	<li>This graph is not periodic.</li>
-	<li>This graph is periodic with period 8.</li>
+    <li>This graph is periodic with period 360.</li>
+    <li>This graph is not periodic.</li>
+    <li>This graph is periodic with period 8.</li>
 </ol></p></solution></example>
 
 <exercise><statement><p>Which of the functions shown below are periodic? If the function is periodic, give its period.</p>
@@ -1032,23 +1066,23 @@ for all <m>x</m>. The constant <m>p</m>  is called the <term>period</term> of th
 <example><statement><p>A patient receives regular doses of medication to maintain a certain level of the drug in his body.  After each dose, the patient's body eliminates a certain percent of the medication before the next dose is administered. The graph shows the amount of the drug, in milliliters, in the patient's body as a function of time in hours.</p>
 <sidebyside width="50%"><image source="photos/fig-chap2-proj-ex-1-4"><description>graph</description></image></sidebyside>
 <p><ol marker="a">
- 	<li>How much of the medication is administered with each dose?</li>
-	<li>How often is the medication administered?</li>
-	<li>What percent of the drug is eliminated from the body between doses?</li>
+     <li>How much of the medication is administered with each dose?</li>
+    <li>How often is the medication administered?</li>
+    <li>What percent of the drug is eliminated from the body between doses?</li>
 </ol></p></statement>
 
 <solution><p><ol marker="a">
-	<li>The medication level increase from 30 ml to 50 ml at each cycle of the graph, so 20 ml of medication are administerd at each dose.</li>
-	<li>The medication level peaks sharply evey four hours, when each new dose is administered.</li>
-	<li>The medication level declines by 20 ml between doses, or <m>\dfrac{20}{50} = 0.6</m>, or 60%</li>
+    <li>The medication level increase from 30 ml to 50 ml at each cycle of the graph, so 20 ml of medication are administerd at each dose.</li>
+    <li>The medication level peaks sharply evey four hours, when each new dose is administered.</li>
+    <li>The medication level declines by 20 ml between doses, or <m>\dfrac{20}{50} = 0.6</m>, or 60%</li>
 </ol></p></solution></example>
 
 <exercise><statement><p>You are sitting on your front porch late one evening, and you see a light coming down the road tracing out the path shown below, with distances in inches. You realize that you are seeing a bicycle light, fixed to the front wheel of the bike.</p>
 <sidebyside width="55%"><image source="photos/fig-chap2-proj-ex-1-5"><description>graph</description></image></sidebyside>
 <p><ol marker="a">
- 	<li>Approximately what is the period of the graph?</li>
-	<li>How far above the ground is the light?</li>
-	<li>What is the diameter of the bicycle wheel?</li>
+     <li>Approximately what is the period of the graph?</li>
+    <li>How far above the ground is the light?</li>
+    <li>What is the diameter of the bicycle wheel?</li>
 </ol></p></statement>
 
 <answer><p><ol marker="a" cols="3">
@@ -1227,19 +1261,19 @@ for all <m>x</m>. The constant <m>p</m>  is called the <term>period</term> of th
 <subsection><title>Section 4.3 Summary</title>
 <subsubsection><title>Vocabulary</title>
 <p><ul cols="4">
-	<li>Sinusoidal</li>
-	<li>Period</li>
-	<li>Periodic</li>
-	<li>Parameter</li>
+    <li>Sinusoidal</li>
+    <li>Period</li>
+    <li>Periodic</li>
+    <li>Parameter</li>
 </ul></p></subsubsection>
 
 <subsubsection><title>Concepts</title>
 <p><ol marker="1">
-	<li><assemblage><title>Amplitude, Period, and Midline</title>
+    <li><assemblage><title>Amplitude, Period, and Midline</title>
 <p><ol marker="1">
-	<li>The graph of <me>y = A\cos\theta ~~\text{or}~~ y = A\sin\theta</me>  has amplitude <m>\abs{A}</m>.</li>
-	<li>The graph of <me>y =\cos B\theta ~~\text{or}~~ y = \sin B\theta</me>  has period <m>\dfrac{360\degree}{\abs{B}}</m>.</li>
-	<li>The graph of <me>y = k + \cos\theta ~~\text{or}~~ y =k + \sin\theta</me>  has midline <m>y = k</m>.</li>
+    <li>The graph of <me>y = A\cos\theta ~~\text{or}~~ y = A\sin\theta</me>  has amplitude <m>\abs{A}</m>.</li>
+    <li>The graph of <me>y =\cos B\theta ~~\text{or}~~ y = \sin B\theta</me>  has period <m>\dfrac{360\degree}{\abs{B}}</m>.</li>
+    <li>The graph of <me>y = k + \cos\theta ~~\text{or}~~ y =k + \sin\theta</me>  has midline <m>y = k</m>.</li>
 </ol></p></assemblage></li>
 <li>The graph of <m>y = k + A\sin B\theta</m> has amplitude <m>A</m>, period <m>\dfrac{360\degree}{B}</m>, and midline <m>y = k</m>. The same is true for the graph of <m>y = k + A\cos B\theta</m>.</li>
 <li>Functions that have graphs shaped like sines or cosines are called <term>sinusoidal</term>.</li>
@@ -1250,13 +1284,13 @@ for all <m>x</m>. The constant <m>p</m>  is called the <term>period</term> of th
 <subsubsection><title>Study Questions</title>
 <p><ol marker="1">
     <li>Sketch two examples of a function with period 8:  one that is sinusoidal, and one that is not.</li>
-	<li><p>Delbert says that  <m>\tan (\theta + 180\degree) = \tan \theta</m>  for any value of <m>\theta</m>. Is he correct? Explain why or why not.</p>
-		<p>Each statement in Questions 3<ndash/>6 is false. Write a corrected statement.</p></li>
+    <li><p>Delbert says that  <m>\tan (\theta + 180\degree) = \tan \theta</m>  for any value of <m>\theta</m>. Is he correct? Explain why or why not.</p>
+        <p>Each statement in Questions 3<ndash/>6 is false. Write a corrected statement.</p></li>
 
-	<li>The period of a sine or cosine function is the distance between horizontal intercepts.</li>
-	<li>The amplitude is the vertical distance between the maximum and minimum values.</li>
-	<li>The midline of the cosine graph is the vertical line <m>\theta = 180\degree</m>.</li>
-	<li>The cosine graph looks just like the sine graph except flipped upside down.</li>
+    <li>The period of a sine or cosine function is the distance between horizontal intercepts.</li>
+    <li>The amplitude is the vertical distance between the maximum and minimum values.</li>
+    <li>The midline of the cosine graph is the vertical line <m>\theta = 180\degree</m>.</li>
+    <li>The cosine graph looks just like the sine graph except flipped upside down.</li>
 </ol></p></subsubsection>
 
 <subsubsection><title>Skills</title>
