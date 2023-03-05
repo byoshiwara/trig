@@ -9,7 +9,7 @@
     
 <p>One of the main reasons we learned about reference angles is to help us solve trigonometric equations. Remember that there are always two angles between <m>0\degree</m> and <m>180\degree</m> with a given sine ratio between 0 and 1.</p>
 
-<p> For example, the two solutions to the equation <m>~~\sin (\theta) = 0.4226~~</m> are <m>25\degree</m> and <m>155\degree</m>. That is,
+<p> For example, the two solutions to the equation <m>~\sin (\theta) = 0.4226~</m> are <m>25\degree</m> and <m>155\degree</m>. That is,
     <me>\sin (25\degree) = \sin (155\degree) = 0.4226</me>
 These two angles are supplementary, so they have the same reference angle, as shown below.</p>  
 <sidebyside widths="35% 35%" margins="12% 12%">
@@ -61,17 +61,16 @@ These two angles are supplementary, so they have the same reference angle, as sh
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
 
-<p>There are also two solutions between <m>0\degree</m> and <m>360\degree</m> to the equation <m>~~\sin (\theta) = -0.4226~~</m>. They are the angles in the third and fourth quadrants whose reference angle is <m>25\degree</m>, namely <m>205\degree</m> and <m>355\degree</m>, as shown above. But your calculator will only give you one of these angles!</p> 
-
+<p>There are also two solutions between <m>0\degree</m> and <m>360\degree</m> to the equation <m>\sin (\theta) = -0.4226</m>. They are the angles in the third and fourth quadrants whose reference angle is <m>25\degree</m>, namely <m>205\degree</m> and <m>355\degree</m>, as shown above. But your calculator will only give you one of these angles!</p> 
 
 <example><statement><p>You are riding on the Ferris wheel we modeled in Section 4.2, where your height above ground is given as a function of <m>\theta</m>  by
             <me>h = 100 + 100 \sin (\theta)</me> 
-When your height is at least 136 feet, you can see the snow on a distant mountain range. Between what angles of rotation can you see snow?</p></statement> 
-<solution><sidebyside widths = "60% 40%">
-    <p>Look at the diagram of the Ferris wheel to see that when your height is 136 feet, the sine of the angle <m>\theta</m> is <m>\dfrac{36}{100}</m>, or 0.36. The angle with sine 0.36 is 
-        <me>\sin^{-1}(0.36) = 21.1 \degree</me>
-    And you will be able to see snow until you descend again below 136 feet. That will happen at the angle in the second quadrant with sine 0.36, namely, the second quadrant angle with reference angle 21.1°. And that angle is
-    <me>180 \degree - 21.1 \degree = 158.9 \degree</me>.</p>
+When your height is at least 136 feet, you can see the snow on a distant mountain range. Between what angles of rotation can you see snow?</p></statement>
+
+<solution><sidebyside widths = "55% 35%">
+<p>Look at the diagram of the Ferris wheel to see that when your height is 136 feet, the sine of the angle <m>\theta</m> is <m>\dfrac{36}{100}</m>, or 0.36. The angle with sine 0.36 is 
+        <me>\sin^{-1}(0.36) = 21.1 \degree</me></p>
+
     <image xml:id="fig-4-2-ferris-height-136ft"><description>ferris wheel where height is 136</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.8]
@@ -100,49 +99,14 @@ When your height is at least 136 feet, you can see the snow on a distant mountai
         \filldraw[black] (R) circle (1.6pt);
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
+<p>And you will be able to see snow until you descend again below 136 feet. That will happen at the angle in the second quadrant with sine 0.36, namely, the second quadrant angle with reference angle 21.1°. And that angle is
+    <me>180 \degree - 21.1 \degree = 158.9 \degree</me>.</p>
 </solution></example>
 
-<exercise><statement><sidebyside widths = "60% 40%">
-<p>Refer to the <xref ref="Example-KOPS-Rule" text="custom">Example</xref> in Section 4.2. about the Knee Over Pedal Stem Rule. The distance between the cyclist's foot and the KOPS line is 
+<exercise><statement><p>Refer to the <xref ref="Example-KOPS-Rule" text="custom">Example</xref> in Section 4.2. about the Knee Over Pedal Stem Rule. The distance between the cyclist's foot and the KOPS line is 
         <me>d = 18 - 18 \cos (\theta)</me> 
-At what angles is the cyclist's knee within 9 centimeters of the KOPS line?</p>
-<image xml:id="KOPS-Rule"><description>bicycle and KOPS line</description><latex-image>
-    <![CDATA[
-    \begin{tikzpicture}        
-    \def\R{2.4}
-    \def\r{1}
-    \def\c{2.2}
-    \coordinate(O) at (0,\c);
-    \coordinate(A) at (-2.8,\R);
-    \coordinate(B) at (3.8,\R);
-    \def\h{5.5}
-    \coordinate(C) at (-1.5,\h);
-    \coordinate(D) at (2.8,\h);
-    \draw[blue!40!black, very thick] (O) circle (\r);
-    \draw[blue!40!black, very thick] (A) circle (\R);
-    \draw[blue!40!black, very thick] (A) --(O);
-    \draw[blue!40!black, very thick] (B) circle (\R);
-    \draw[blue!40!black, very thick] (A) --(C) --(D)--(B);
-    \draw[blue!40!black, very thick] (D)++(-.1,-.6) arc (-90:90:0.6);
-    \draw[blue!40!black, very thick] (O) --(D);
-    \coordinate(E) at (1.8,6);
-    \coordinate(F) at (3.2,5.7);
-    \coordinate(Np) at (1.3,7.1);
-    \draw[black, very thick] (F)--(E)--(Np);
-    \coordinate(S) at (-2.,6.5);
-    \coordinate(N) at (1.8,7.2);
-    \coordinate(H) at (2.4,7.4);
-    \draw[blue!40!black, very thick] (O) --(S);
-    \draw[black, very thick] (H) circle (.6);
-    \coordinate(G) at (\r,0);
-    \coordinate(K) at (\r,5);
-    \coordinate(F) at (0.3,\c);
-    \draw[lightgray, very thick] (G) rectangle ++(.25,.25);
-    \draw[lightgray, very thick] (G) -- ++(0,6);
-    \draw[black, very thick] (N)--(S) --(K)--(F)--++(0.7,0);
-    \draw[gray, very thick] (-5,0) --(6.5,0);
-    \end{tikzpicture}]]>
-</latex-image></image></sidebyside></statement>
+At what angles is the cyclist's knee within 9 centimeters of the KOPS line?</p></statement>
+
 <answer><sidebyside widths="58% 35%" margins="0% 0%" valigns="middle middle"><p>When the angle of the crank is between 0° and 60°, and again between 300° and 360°.</p>
     <image xml:id="KOPS-9cm"><description>knee within 9cm of KOPS line</description><latex-image>
     <![CDATA[
@@ -175,12 +139,17 @@ At what angles is the cyclist's knee within 9 centimeters of the KOPS line?</p>
 <example><statement><p>Solve the equation 
     <me>\sin (\theta) = -0.6428</me> 
 for angles between <m>0\degree</m> and <m>360\degree</m>. Round your answers to the nearest degree.</p></statement>
-<solution><p>
-Enter <kbd>2nd</kbd> <kbd>SIN</kbd> <m>-0.6428</m> to find that <me>\sin^{-1}(-0.6428) = -40\degree</me>  The angle <m>-40\degree</m> is in the fourth quadrant, but it is not between <m>0\degree</m> and <m>360\degree</m>. We need an angle that is coterminal with <m>-40\degree</m>, so we add <m>360\degree</m>.
-    <me>-40\degree + 360\degree = 320\degree</me> </p>
-<sidebyside widths="60% 30%" margins="0% 0%">
 
-  <p>Thus, one of the solutions is <m>320\degree</m>. The sine is also negative in the third quadrant, so there should also be a solution in the third quadrant. The reference angle for <m>320\degree</m> is <m>40\degree</m>, and the third-quadrant angle with reference angle <m>40\degree</m> is <m>220\degree</m>, as shown at right.You can check that, rounded to four decimal places, both angles satisfy the equation, that is, </p>
+<solution><p>Use your calculator to evaluate 
+        <me>\sin^{-1}(-0.6428) = -40\degree</me>  
+The angle <m>-40\degree</m> is in the fourth quadrant, but it is not between <m>0\degree</m> and <m>360\degree</m>. We need an angle that is coterminal with <m>-40\degree</m>, so we add <m>360\degree</m>.
+    <me>-40\degree + 360\degree = 320\degree</me> 
+Thus, one of the solutions is <m>320\degree</m>.</p>
+
+<sidebyside widths="65% 30%" margins="0% 0%">
+ 
+<p>The sine is also negative in the third quadrant, so there should also be a solution in the third quadrant. The reference angle for <m>320\degree</m> is <m>40\degree</m>, and the third-quadrant angle with reference angle <m>40\degree</m> is <m>220\degree</m>, as shown at right. You can check that, rounded to four decimal places, both angles satisfy the equation, that is, 
+        <me>\sin (320\degree) = -0.6428~~~~\text{and} ~~~~\sin (220\degree) = -0.6428</me> </p>
     <image xml:id="exam4-1-8"><description>angles</description><latex-image>
         <![CDATA[
         \begin{tikzpicture}
@@ -202,14 +171,12 @@ Enter <kbd>2nd</kbd> <kbd>SIN</kbd> <m>-0.6428</m> to find that <me>\sin^{-1}(-0
         \draw [thick, red, ->,>=stealth'] (O) ++(.6,0) arc(0:220:.6);
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
-<p><me>\sin (320\degree) = -0.6428~~~~\text{and} ~~~~\sin (220\degree) = -0.6428</me> </p></solution></example>
+</solution></example>
 
-<note><p>In the previous example we found two solutions of the equation <m>\sin (\theta) = -0.6428</m>. Actually, there are infinitely many solutions -- namely, all the angles coterminal with <m>320\degree</m> or <m>220\degree</m>.  Some of these angles are listed below.
-    <md><mrow>\text{Angles coterminal with}~ 220\degree: \amp~~  \cdots, ~{-500\degree}, ~{-140\degree}, ~580\degree, ~940\degree, ~\cdots</mrow>
-        <mrow>\amp~~  \cdots, ~{-400\degree}, ~{-40\degree}, ~680\degree, ~1040\degree, ~\cdots</mrow></md>        
+<note><p>In the previous example we found two solutions of the equation <m>\sin (\theta) = -0.6428</m>. Actually, there are infinitely many solutions -- namely, all the angles coterminal with <m>320\degree</m> or <m>220\degree</m>.        
 Because we can easily find coterminal solutions by adding or subtracting multiples of <m>360\degree</m>, when solving an equation we usually list only the solutions between <m>0\degree</m> and <m>360\degree</m>.</p></note>
 
-<warning><p>When you ask your calculator to find an angle with a given sine by pressing  <kbd>2nd</kbd><kbd>SIN</kbd>,  it will give you only one of the many possible answers. The same is true of the  <kbd>2nd</kbd><kbd>COS</kbd> and  <kbd>2nd</kbd><kbd>TAN</kbd> keys.  You must be careful to choose the appropriate answer for the situation, using reference and coterminal angles.</p></warning>
+<warning><p>When you ask your calculator to find an angle with a given sine (or cosine or tangent), it will give you only one of the many possible answers. You must be careful to choose the appropriate answer for the situation, using reference and coterminal angles.</p></warning>
 
 <exercise><statement><p>Solve the equation <m>\tan (\theta) = -0.4</m> for angles between <m>0\degree</m> and <m>360\degree</m>.</p></statement>
 
@@ -221,7 +188,7 @@ Because we can easily find coterminal solutions by adding or subtracting multipl
 
 <p>Now that we are thinking of angles as rotations, we'll introduce a tool called the <term>unit circle</term> that will be useful as we proceed.</p>
 
-<p>Figure (a) below shows an angle of <m>30\degree</m> in standard position in a circle of radius 2. The hypotenuse of its reference triangle is the radius of the circle, so the legs of the triangle have lengths 1 and <m>\sqrt{3}</m>. The coordinates of the point <m>P</m> where the terminal side meets the circle are thus <m>(\sqrt{3}, 1)</m>.  (You can check that these coordinates satisfy the equation of the circle, <m>x^2 + y^2 = 4</m>.)</p>
+<p>Figure (a) below shows an angle of <m>30\degree</m> in standard position in a circle of radius 2. The hypotenuse of its reference triangle is the radius of the circle, so the legs of the triangle have lengths 1 and <m>\sqrt{3}</m>. The coordinates of the point <m>P</m> where the terminal side meets the circle are thus <m>(\sqrt{3}, 1)</m>. (You can check that these coordinates satisfy the equation of the circle, <m>x^2 + y^2 = 4</m>.)</p>
 <sidebyside widths="40% 40%"><image xml:id="fig-4-1-circle2"><description>angle on circle of radius 2</description>
     <latex-image>
     <![CDATA[
@@ -270,10 +237,10 @@ Because we can easily find coterminal solutions by adding or subtracting multipl
     \end{tikzpicture}]]>
 </latex-image></image></sidebyside>
 
-<p>Now consider the circle of radius 1 in Figure (b).  (A circle of radius 1 is called a <term>unit circle</term><idx><h>unit circle</h></idx>.)  In this figure, the hypotenuse of the reference triangle for <m>30\degree</m> has length 1.  What are the coordinates of the point <m>Q</m> where the terminal side meets the circle?  Each side of this triangle is <m>\frac{1}{2}</m> the length of the sides of the similar triangle in Figure (a), so the coordinates of <m>Q</m> are <m>\left(\dfrac{\sqrt{3}}{2}, \dfrac{1}{2}\right)</m>. (Once again, you should check that these coordinates satisfy the equation of the circle, <m>x^2 + y^2 = 1</m>.)</p>
+<p>Now consider the circle of radius 1 in Figure (b).  A circle of radius 1 is called a <term>unit circle</term><idx><h>unit circle</h></idx>.  In this figure, the hypotenuse of the reference triangle for <m>30\degree</m> has length 1.  What are the coordinates of the point <m>Q</m> where the terminal side meets the circle?  Each side of this triangle is <m>\frac{1}{2}</m> the length of the sides of the similar triangle in Figure (a), so the coordinates of <m>Q</m> are <m>\left(\frac{\sqrt{3}}{2}, \frac{1}{2}\right)</m>. (Once again, you should check that these coordinates satisfy the equation of the circle, <m>x^2 + y^2 = 1</m>.)</p>
  <p> Perhaps you recognize the coordinates of the point <m>Q</m>. Because <m>r = 1</m> in this circle, the definitions of the sine and cosine are 
  <me>\cos (\theta) = \dfrac{x}{r} = \dfrac{x}{1} = x ~~~~\text{and}~~~~ \sin (\theta) = \dfrac{y}{r} = \dfrac{y}{1} = y</me>       
- We see that the coordinates <m>(x,y)</m> of <m>Q</m> are given by <m>(\cos \theta, \sin \theta)</m>.  We have discovered an important property of unit circles.</p>
+ We see that the coordinates <m>(x,y)</m> of <m>Q</m> are given by <m>(\cos (\theta), \sin (\theta))</m>.  We have discovered an important property of unit circles.</p>
 
 <assemblage><title>Angles in a Unit Circle</title>
 <idx><h>unit circle</h><h>angles in</h></idx>
@@ -316,9 +283,9 @@ Because we can easily find coterminal solutions by adding or subtracting multipl
     <me>x = \cos (315\degree),~~~y = \sin (315\degree)</me>.  
 The reference angle for <m>315\degree</m> is <m>~ 360\degree - 315\degree = 45\degree</m>, so the trig ratios of <m>315\degree</m> are the same as the ratios for <m>45\degree</m>, up to sign.</p>
 
-<p> Because <m>315\degree</m> is in the fourth quadrant, we have <m>\cos (315\degree) = \dfrac{1}{\sqrt{2}}</m> and <m>\sin (315\degree) = \dfrac{-1}{\sqrt{2}}</m>. Thus, the coordinates of <m>P</m> are <m>\left(\dfrac{1}{\sqrt{2}}, \dfrac{1}{\sqrt{2}}\right)</m>.</p></solution></example>
+<p> Because <m>315\degree</m> is in the fourth quadrant, we have <m>\cos (315\degree) = \frac{1}{\sqrt{2}}</m> and <m>\sin (315\degree) = \frac{-1}{\sqrt{2}}</m>. Thus, the coordinates of <m>P</m> are <m>\left(\frac{1}{\sqrt{2}}, \frac{-1}{\sqrt{2}}\right)</m>.</p></solution></example>
 
-<exercise><statement><sidebyside widths="55% 35%" valigns="middle middle" margins="0% 5%"><p>Find the sine, cosine, and tangent ofthe angle <m>\varphi</m> shown at right.</p><!--<image source="photos/exer4-1-10.png"><description>angles</description></image>-->
+<exercise><statement><sidebyside widths="55% 35%" valigns="middle middle" margins="0% 5%"><p>Find the sine, cosine, and tangent of the angle <m>\varphi</m> shown at right.</p><!--<image source="photos/exer4-1-10.png"><description>angles</description></image>-->
    <image xml:id="exer4-1-10"><description>angles</description><latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
@@ -372,92 +339,21 @@ The reference angle for <m>315\degree</m> is <m>~ 360\degree - 315\degree = 45\d
     </image>
 </sidebyside>
 <p><ol marker="1">
-<li><p>Use a protractor to draw an angle <m>36\degree</m> in standard position.<ol marker="a">  
+<li><p>Use a protractor to draw an angle <m>36\degree</m> in standard position.
+    <ol marker="a">  
     <li>Estimate the coordinates of the point <m>P</m> where the terminal side of the angle intersects 
         the circle of radius <m>r=2</m>.</li>
     <li>Calculate approximate values for <m>\cos (\theta)</m> and <m>\sin (\theta)</m> using the coordinates of <m>P</m>.</li> 
     <li>Estimate the coordinates of the point <m>Q</m> where the terminal side of the angle intersects 
         the circle of radius <m>r=1</m>.</li>
-    <li>Calculate approximate values for <m>\cos (\theta)</m> and <m>\sin (\theta)</m> using the coordinates of <m>Q</m>.</li></ol></p></li>  
+    <li>Calculate approximate values for <m>\cos (\theta)</m> and <m>\sin (\theta)</m> using the coordinates of <m>Q</m>.</li>
+    </ol></p></li>  
 
-<li>Use a protractor to draw an angle <m>107\degree</m> in standard position.  Repeat parts (a)-(d) for 
-    this new angle.</li>
-<li>Use a protractor to draw an angle <m>212\degree</m> in standard position.  Repeat parts (a)-(d) for 
-    this new angle.</li>
-<li>Use a protractor to draw an angle <m>325\degree</m> in standard position.  Repeat parts (a)-(d) for 
-    this new angle.</li>
-<li><p>What do you notice about the coordinates of the point located on the unit circle by an 
-    angle and the values of the trig ratios of that angle?</p>
-<sidebyside width="100%">
-    <image xml:id="act4-3">
-        <description>grid</description>
-        <latex-image>
-        <![CDATA[
-        \begin{tikzpicture}[scale=.25]
-        \coordinate (O) at (0,0);
-        \draw[step=1cm,cyan,very thin] (-11,-11) grid (11,11);
-        \draw[thick,->,>=stealth'] (-11,0) -- (11.8,0) node[anchor=west] {$x$};
-        \draw[thick,->,>=stealth'] (0,-11) -- (0,11.8) node[anchor=south] {$y$};
-        \draw[red,thick] (O) circle (10);
-        \node[text width=.2cm,fill=white,inner sep=1pt, text=red] at (10,-1)    {1};
-        \node[text width=.2cm,fill=white,inner sep=1pt, text=red] at (-1,10)    {1};
-        \node[scale=.9] at (0,-12.5) {Use this grid for \#6 and \#7};
+<li>Use a protractor to draw an angle <m>107\degree</m> in standard position. Repeat parts (a)-(d) for this new angle.</li>
+<li>Use a protractor to draw an angle <m>212\degree</m> in standard position. Repeat parts (a)-(d) for this new angle.</li>
+<li>Use a protractor to draw an angle <m>325\degree</m> in standard position. Repeat parts (a)-(d) for this new angle.</li>
+<li><p>What do you notice about the coordinates of the point located on the unit circle by an angle and the values of the trig ratios of that angle?</p></li>
 
-        %second grid
-        \def\del{27};
-        \coordinate (O) at (\del,0);
-        \draw[step=1cm,cyan,very thin] ($ (\del,0)+(-11,-11)$) grid ($ (\del,0)+(11,11)$);
-        \draw[thick,->,>=stealth'] ($ (\del,0)+(-11,0)$) --++(22.8,0) node[anchor=west] {$x$};
-        \draw[thick,->,>=stealth'] ($ (\del,0)+(0,-11)$) --++(0,22.8) node[anchor=south] {$y$};
-        \draw[red,thick] (O) circle (10);
-        \node[text width=.2cm,fill=white,inner sep=1pt, text=red] at ($ (\del,0)+(10,-1) $)   {1};
-        \node[text width=.2cm,fill=white,inner sep=1pt, text=red] at ($ (\del,0)+(-1,10) $)   {1};
-        \node[scale=.9] at ($ (\del,0)+(0,-12.5)$) {Use this grid for \#8 and \#9};
-        \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside></li>
-
-<li><p>Draw two different angles <m>\alpha</m> and <m>\beta</m> in standard position whose sine is <m>0.6</m>.
-    <ol marker="a">
-    <li>Use a protractor to measure <m>\alpha</m> and <m>\beta</m>.</li>
-    <li>Find the reference angles for both <m>\alpha</m> and <m>\beta</m>. Draw in the reference triangles.</li>
-    </ol></p></li>
-
-<li><p>Draw two different angles <m>\theta</m> and <m>\phi</m> in standard position whose sine is <m>-0.8</m>.
-    <ol marker="a">
-    <li>Use a protractor to measure <m>\theta</m> and <m>\phi</m>.</li>
-    <li>Find the reference angles for both <m>\theta</m> and <m>\phi</m>. Draw in the reference triangles.</li>
-    </ol></p></li>
-
-<li><p>Draw two different angles <m>\alpha</m> and <m>\beta</m> in standard position whose cosine is <m>0.3</m>.
-    <ol marker="a">
-    <li>Use a protractor to measure <m>\alpha</m> and <m>\beta</m>.</li>
-    <li>Find the reference angles for both <m>\alpha</m> and <m>\beta</m>.  Draw in the reference triangles.</li>
-    </ol></p></li>
-
-<li><p>Draw two different angles <m>\theta</m> and <m>\phi</m> in standard position whose cosine is <m>-0.4</m>.
-    <ol marker="a">
-    <li>Use a protractor to measure <m>\theta</m> and <m>\phi</m>.</li>
-    <li>Find the reference angles for both <m>\theta</m> and <m>\phi</m>.  Draw in the reference triangles.</li>
-    </ol></p></li>
-
-<li><p><ol marker="a">
-    <li>If you know one angle whose sine is a given positive number, how can you find 
-        the other angle?</li>
-    <li>If you know one angle whose sine is a given negative number, how can you find 
-        the other angle?</li>
-    <li>If you know one angle whose cosine is a given positive number, how can you find 
-        the other angle?</li>
-    <li>If you know one angle whose cosine is a given negative number, how can you find 
-        the other angle?</li></ol></p></li>
-
-<li><p>Use your answers to the problems above to solve the equations for <m>0\degree \le \theta \le 360\degree</m>.</p>
-<p><ol marker="a" cols="2">
-    <li><m>\sin (\theta) = 0.6</m></li>    
-    <li><m>\sin (\theta) = -0.8</m></li>
-    <li><m>\cos (\theta) = 0.3</m></li>
-    <li><m>\cos (\theta) = -0.4</m></li></ol></p></li>
  </ol></p></activity>   
 </subsection>
 
@@ -474,7 +370,8 @@ The reference angle for <m>315\degree</m> is <m>~ 360\degree - 315\degree = 45\d
     <me>\blert{x = r \cos (\theta) ~~~~ \text{and} ~~~~ y = r \sin (\theta)}</me>
 </p></assemblage>
 
-<sidebyside widths="55% 42%" margins="0% 0%"><p>These formulas make sense when we think of the unit circle. On a unit circle, the coordinates of a point designated by angle <m>\theta</m> are <m>(\cos (\theta), \sin (\theta))</m>, as shown at right.  On a circle of radius <m>r</m>, the angle <m>\theta</m> forms a similar triangle whose dimensions are scaled up by a factor of <m>r</m>. In particular, the legs of the new triangle are <m>r</m> times larger than the original triangle.</p>
+<sidebyside widths="55% 42%" margins="0% 0%">
+<p>These formulas make sense when we think of the unit circle. On a unit circle, the coordinates of a point designated by angle <m>\theta</m> are <m>\Big(\cos (\theta), \sin (\theta)\Big)</m>, as shown at right.  On a circle of radius <m>r</m>, the angle <m>\theta</m> forms a similar triangle whose dimensions are scaled up by a factor of <m>r</m>. In particular, the legs of the new triangle are <m>r</m> times larger than the original triangle.</p>
     <image xml:id="fig-4-2-rcircle">
         <description>circle</description>
         <latex-image>
@@ -517,10 +414,12 @@ The reference angle for <m>315\degree</m> is <m>~ 360\degree - 315\degree = 45\d
 
 <example><statement><p>Point <m>P</m> is located 6 centimeters from the origin in the direction of <m>292\degree</m>. Find the coordinates of <m>P</m>, rounded to hundredths.</p></statement>
 
-<solution><sidebyside widths="65% 25%" valigns="middle middle" margins="0% 5%"><p>The location of point <m>P</m> is shown at right. We see that <m>r = 6</m>, and we can use a calculator to evaluate <m>\cos (292\degree)</m> and <m>\sin (292\degree)</m>. 
+<solution><sidebyside widths="60% 30%" valigns="middle middle" margins="0% 5%">
+<p>The location of point <m>P</m> is shown at right. We see that <m>r = 6</m>, and we can use a calculator to evaluate <m>\cos (292\degree)</m> and <m>\sin (292\degree)</m>. 
         <md><mrow>x \amp = r \cos (292\degree) \amp\amp \text{and} \amp y \amp = r \sin (292\degree)</mrow>
             <mrow>\amp = 6(0.3746) \amp\amp\amp \amp = 6(-0.9272)</mrow>
-            <mrow>\amp = 2.2476 \amp\amp\amp \amp = -5.5632</mrow></md>    </p>
+            <mrow>\amp = 2.2476 \amp\amp\amp \amp = -5.5632</mrow></md>    
+The coordinates of <m>P</m> are approximately <m>(2.25, -5.56)</m>.</p>
 <image xml:id="exam4-2-1"><description>angle</description><latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
@@ -549,10 +448,15 @@ The reference angle for <m>315\degree</m> is <m>~ 360\degree - 315\degree = 45\d
         \node[text width=1cm,fill=white, inner sep=1pt] at (0.0,-1.5)    {$\color{blue}\scriptsize r=6$};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
-    <p>The coordinates of <m>P</m> are approximately <m>(2.25, -5.56)</m>.</p></solution></example>
+    </solution></example>
 
-<exercise><statement><sidebyside widths="60% 30%" valigns="middle middle" margins="0% 5%">
-<p>You find an old map that shows a buried treasure located 500 yards from the big oak tree in the direction <m>215\degree</m>, as shown at right. You don't have anything  with you to measure angles, but you have your calculator.</p>
+<exercise><statement>
+<p>You find an old map that shows a buried treasure located 500 yards from the big oak tree in the direction <m>215\degree</m>, as shown below. You don't have anything  with you to measure angles, but you have your calculator.</p>
+<sidebyside widths="60% 40%" valigns="middle middle" margins="0% 0%">
+        <p><ol marker="a">
+        <li>Find the cosine of <m>215\degree</m>. How far west should you walk from the big oak in order to be directly north of the treasure?</li>
+        <li>Find the tangent of <m>215\degree</m>. How far south should you walk from your present location before you begin digging?</li>
+    </ol></p>
     <image xml:id="exer4-2-1"><description>angle</description><latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
@@ -579,17 +483,14 @@ The reference angle for <m>315\degree</m> is <m>~ 360\degree - 315\degree = 45\d
         \node[text width=1.cm, anchor=north west, xshift=-3, yshift=-3] at (P) {\color{red}\small treasure};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside> 
-    <p><ol marker="a">
-        <li>Find the cosine of <m>215\degree</m>. How far west should you walk from the big oak in order to be directly north of the treasure?</li>
-        <li>Find the tangent of <m>215\degree</m>. How far south should you walk from your present location before you begin digging?</li>
-    </ol></p></statement>
+    </statement>
 <answer><p><ol marker="a" cols="2"><li>409.58 yds </li><li>286.79 yds</li> </ol></p></answer></exercise>
 </subsection>
 
 <subsection><title> Bearings</title>
 <idx><h>bearing</h></idx>
 
-<sidebyside widths="60% 28%" valigns="middle middle" margins="0% 5%">
+<sidebyside widths="60% 32%" valigns="middle middle" margins="0% 5%">
 <p>Navigational directions for ships and planes are sometimes given as <term>bearings</term><idx><h>bearing</h></idx>, which are angles measured clockwise from north.  For example, a bearing of <m>110\degree</m> is equivalent to an angle of <m>20\degree</m> in standard position, or to its coterminal angle <m>340\degree</m>, as shown at right.</p>
     <image xml:id="fig-4-2-bearings"><description>angle</description><latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
@@ -650,13 +551,15 @@ The reference angle for <m>315\degree</m> is <m>~ 360\degree - 315\degree = 45\d
 Francine is about 25.4 miles south of the airport.</p></solution></example>
 
 <exercise><statement><p>Delbert leaves the airport and flies 150 miles at a bearing of <m>132\degree</m>. How far east of the airport is he at that time?</p></statement>
+
 <answer><p>111.5 mile</p></answer></exercise>
 </subsection>
 
 <subsection><title>Angle of Inclination</title>
 <idx><h>angle of inclination</h></idx>
 
-<sidebyside widths="60% 25%" valigns="middle middle" margins="0% 10%"><p> The figure at right shows a line in the <m>xy</m>-plane. The angle <m>\alpha</m> measured in the positive direction from the positive <m>x</m>-axis to the line is called the <term>angle of inclination</term> of the line.</p> 
+<sidebyside widths="60% 25%" valigns="middle middle" margins="0% 10%">
+<p>The tangent function also has applications in measurement. The figure at right shows a line in the <m>xy</m>-plane. The angle <m>\alpha</m> measured in the positive direction from the positive <m>x</m>-axis to the line is called the <term>angle of inclination</term> of the line.</p> 
     <image xml:id="fig-angle-inclination"><description>angle of inclination</description><latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
@@ -683,38 +586,15 @@ Francine is about 25.4 miles south of the airport.</p></solution></example>
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
 
-<note><p>Recall that the <term>slope</term><idx><h>slope</h></idx> of a line is given by the ratio <m>\dfrac {\text{change in}~ y}{\text{change in}~x}</m> as we move from one point to another on the line. So, if we create a right triangle by dropping a perpendicular segment from the line to the <m>x</m>-axis, the ratio of sides <m>\dfrac {\text{opposite}}{\text{adjacent}}</m> gives the slope of the line.</p> </note>
+<p>Recall that the <term>slope</term><idx><h>slope</h></idx> of a line is given by the ratio <m>\dfrac {\text{change in}~ y}{\text{change in}~x}</m> as we move from one point to another on the line. So, if we create a right triangle by dropping a perpendicular segment from the line to the <m>x</m>-axis, the ratio of sides <m>\dfrac {\text{opposite}}{\text{adjacent}}</m> gives the slope of the line.</p> 
+
+<p>But the ratio <m>\dfrac {\text{opposite}}{\text{adjacent}}</m> is also the tangent of the angle <m>\alpha</m>.</p>
 
 <assemblage><title>Angle of Inclination</title>
-    <idx><h>angle of inclination</h></idx>
+<idx><h>angle of inclination</h></idx>
     <idx><h>angle</h><h>of inclination</h></idx>
     <idx><h>angle</h><h>of inclination</h><seealso>angle of inclination</seealso></idx>
 
-    <sidebyside widths="50% 40%" valigns="middle middle" margins="0% 0%">
-    <p>The tangent function also has applications in measurement. The figure at right shows a graph of the line <m>y = \dfrac{3}{4} x - 3</m>  The angle  measured in the positive direction from the positive  axis to the line is called the <term>angle of inclination</term> of the line. </p>
-    <image xml:id="Graph-three-quarters-x-minus3"><description>graph y = 3/4 x - 3</description><latex-image>
-        <![CDATA[
-        \begin{tikzpicture} [scale = 0.5]
-        \draw[cyan] (-1,-3) grid (8,5);
-
-        \coordinate (A) at (-1, -9/4);
-        \coordinate (B) at (8, 4.5);
-
-        \draw[black,  thick, ->,>=stealth'] (-1.1,0) --  (8.5,0) node[right] {$x$} ;
-        \draw[black,  thick, ->,>=stealth'] (0,-3.1) --  (0,5.5) node[above] {$y$}  ;
-        \draw[red,  thick] (B) --  (A)  ;
-
-        \foreach \x [evaluate=\x as \xi using int( 2* \x )] in {2, 4, 6, 8} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi $};
-
-        \foreach \y [evaluate=\y as \yi using int( 2* \y )]   in {-3, -1, 2, 4} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {$\yi$};
-
-        \end{tikzpicture}]]>
-    </latex-image></image>
-</sidebyside></assemblage>
-
-<p>Recall that the <term>slope</term> of a line is given by the ratio <m>\dfrac{\text{change in} y}{\text{change in} x}</m>  as we move from one point to another on the line. If we create a right triangle by dropping a perpendicular segment from the line to the <m>x</m>-axis, the ratio of sides  <m>\dfrac{\text{opposit}}{\text{adjacent}}</m>  gives the slope of the line.</p>
-
-<assemblage><title>Angle of Inclination</title>
 <p>The <term>angle of inclination</term> of a line is the angle <m>\alpha</m> measured in the positive direction from the positive <m>x</m>-axis to the line. If the slope of the line is <m>m</m>, then
     <me>\blert{\tan (\alpha) = m}</me> 
 where <m>0\degree \le \alpha \le 180\degree</m>.</p></assemblage>
@@ -778,7 +658,79 @@ The angle of inclination is <m>36.9\degree</m>.</p>
         \foreach \y [evaluate=\y as \yi using int( 1* \y )]   in {1,2,3} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></statement>
+
 <answer><p><m>129.8\degree</m></p></answer></exercise>
+
+<p>Thinking about slope and the angle of inclination can help us understand the graph of the tangent functin.</p>
+
+<example><statement><p><ol marker = "a">
+    <li><p>What happens to the slope of a line as its angle of inclination <m>\alpha</m> increases from <m>0\degree</m> toward <m>90\degree</m>?</p></li>
+    <li><p>What happens to the slope of a line as its angle of inclination <m>\alpha</m> decreases from <m>180\degree</m> toward <m>90\degree</m>?</p></li>
+</ol></p></statement>
+
+<solution><p><ol marker = "a">
+    <li><sidebyside width="50% 40%" margins="0% 5%">
+        <p>Consider the slopes of the lines shown at right, as <m>\alpha</m> increases.</p>
+    <tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                  
+        <row bottom="minor">
+            <cell><m>\alpha</m></cell>
+            <cell><m>0\degree</m></cell>
+            <cell><m>30\degree</m></cell>
+            <cell><m>45\degree</m></cell>
+            <cell><m>60\degree</m></cell>
+            <cell><m>75\degree</m></cell>
+            <cell><m>85\degree</m></cell></row>
+        <row>
+            <cell><m>m</m></cell> 
+            <cell><m>0</m></cell>
+            <cell><m>0.6</m></cell>
+            <cell><m>1</m></cell>
+            <cell><m>1.7</m></cell>
+            <cell><m>3.7</m></cell>
+            <cell><m>11.4</m></cell></row>
+        </tabular>
+
+    </sidebyside>
+    <sidebyside width="50% 40%" margins="0% 5%">
+    <p>The slopes increase towards infinity as <m>\alpha</m> increases. But the values of the slope <m>m</m> are the values of <m>\tan (\alpha)</m>, and if we plot those values against <m>\alpha</m>, we see the graph of the tangent function emerging.</p>
+
+    </sidebyside></li>
+      
+    <li><sidebyside width="45%" margins="0% 5%">
+        <p>Now consider the slopes of the lines as <m>\alpha</m> decreases from <m>180\degree</m> toward <m>90\degree</m>.</p>
+    <tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                  
+        <row bottom="minor">
+            <cell><m>180\degree</m></cell>
+            <cell><m>150\degree</m></cell>
+            <cell><m>135\degree</m></cell>
+            <cell><m>120\degree</m></cell>
+            <cell><m>105\degree</m></cell>
+            <cell><m>95\degree</m></cell></row>
+        <row><cell><m>0</m></cell>
+            <cell><m>-0.6</m></cell> 
+            <cell><m>-1</m></cell>
+            <cell><m>-1.7</m></cell>
+            <cell><m>-3.7</m></cell>
+            <cell><m>-11.5</m></cell></row>
+            </tabular>
+
+    </sidebyside>
+    <sidebyside width="50% 40%" margins="0% 5%">
+    <p>The slopes decrease towards negative infinity as <m>\alpha</m> decreases. But, as before, the values of the slope <m>m</m> are the values of <m>\tan (\alpha)</m>, and if we plot those values against <m>\alpha</m>, we see the graph of the tangent function emerging.</p>
+
+    </sidebyside></li>
+</ol></p></solution></example>
+
+<exercise><statement><p><ol marker = "a">
+    <li><p>What happens to the angle of inclination <m>\alpha</m> of a line as its slope increases from <m>0</m> toward <m>\infty</m>?</p></li>
+    <li><p>What happens to the angle of inclination <m>\alpha</m> of a line as its slope decreases through negative values from <m>0</m> toward <m>- \infty</m>?</p></li>
+</ol></p></statement>
+
+<answer><p><ol marker = "a">
+    <li><p>The angle increases from <m>0\degree</m> toward <m>90\degree</m>.</p></li>
+    <li><p>The angle decreases from <m>180\degree</m> toward <m>90\degree</m></p></li>
+</ol></p></answer></exercise>
+
 </subsection>
 
 <subsection><title>Sinusoidal Functions</title>
@@ -867,14 +819,14 @@ The angle of inclination is <m>36.9\degree</m>.</p>
         \draw[gray!70!white, thick] (R) -- +(3.1,0);
         \node[text width = 2.4cm, text=blue] at (2.9,-1.2){\small 1/4 diameter};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside> <p>Thus the height of the minute hand does not decrease at a constant rate.</p>
+    </latex-image></image></sidebyside> 
+<p>Thus the height of the minute hand does not decrease at a constant rate.</p>
 <p>Figure (c) is the best choice. The graph is curved because the slopes are not constant. The graph is steep when the height is changing rapidly, and the graph is nearly horizontal when the height is changing slowly. The height changes slowly near the hour and the half-hour, and more rapidly near the quarter-hours.</p></solution></example>
 
-<exercise><statement><p>As the moon revolves around the earth, the percent of the disk that we see varies sinusoidally with a period of approximately 30 days. There are eight phases, starting with the new moon, when the moon's disk is dark, followed by waxing crescent, first quarter, waxing gibbous, full moon, waning gibbous, last quarter, and waning crescent. Which graph  best represents the phases of the moon?</p> <sidebyside widths="33% 33% 33%">    <image xml:id="exer4-3-3a">
-        <description>sinusoidal graph</description>
-        <latex-image>
+<exercise><statement><p>As the moon revolves around the earth, the percent of the disk that we see varies sinusoidally with a period of approximately 30 days. There are eight phases, starting with the new moon, when the moon's disk is dark, followed by waxing crescent, first quarter, waxing gibbous, full moon, waning gibbous, last quarter, and waning crescent. Which graph  best represents the phases of the moon?</p> 
+<p><ol marker="a">
+  
+    <li><image xml:id="exer4-3-3a" width="50%"><description>sinusoidal graph</description><latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
           block/.style    = {draw, thick, rectangle, minimum height = 3em,
@@ -897,9 +849,9 @@ The angle of inclination is <m>36.9\degree</m>.</p>
 
         \draw[domain=-0:6,smooth,variable=\x,red,very thick] plot ({\x},{ 2.5+2.5*sin(deg(\x*2*pi/3))});
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-    <image xml:id="exer4-3-3b">
+    </latex-image></image></li>
+
+    <li><image xml:id="exer4-3-3b" width="50%">
         <description>sinusoidal graph</description>
         <latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
@@ -924,11 +876,9 @@ The angle of inclination is <m>36.9\degree</m>.</p>
 
         \draw[domain=-0:6,smooth,variable=\x,red,very thick] plot ({\x},{ 2.5-2.5*cos(deg(\x*2*pi/3))});
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-    <image xml:id="exer4-3-3c">
-        <description>sinusoidal graph</description>
-        <latex-image>
+    </latex-image></image></li>
+
+    <li><image xml:id="exer4-3-3c" width="50%"><description>sinusoidal graph</description><latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
           block/.style    = {draw, thick, rectangle, minimum height = 3em,
@@ -951,8 +901,10 @@ The angle of inclination is <m>36.9\degree</m>.</p>
 
         \draw[domain=-0:6,smooth,variable=\x,red,very thick] plot ({\x},{ 2.5-2.5*cos(deg(\x*2*pi/3))});
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></statement>
-    <answer><p> (b)</p></answer></exercise>
+    </latex-image></image></li>
+</ol></p></statement>
+    
+<answer><p> (b)</p></answer></exercise>
 
 <example><statement><p>The table shows the number of hours of daylight in Glasgow, Scotland on the first of each month.</p>
     <sidebyside><tabular top="major" halign="left" right="minor" left="minor" bottom="minor">                  
@@ -985,15 +937,14 @@ The angle of inclination is <m>36.9\degree</m>.</p>
             <cell><m>9.2</m></cell>
             <cell><m>7.5</m></cell></row>
             </tabular></sidebyside>
-     <p><ol marker="a">
+<p><ol marker="a">
      <li>Sketch a sinusoidal graph of daylight hours as a function of time, with <m>t = 1</m> in January.</li>
      <li>Estimate the period, amplitude, and midline of the graph.</li>
     </ol></p></statement>
-    <solution><p><ol marker="a">
+    
+<solution><p><ol marker="a">
      <li><p>Plot the data points and fit a sinusoidal curve by eye, as shown below.</p><sidebyside width="70%">
-    <image xml:id="exam4-3-4">
-        <description>sinusoidal graph</description>
-        <latex-image>
+        <image xml:id="exam4-3-4"><description>sinusoidal graph</description><latex-image>
         <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
           block/.style    = {draw, thick, rectangle, minimum height = 3em,
@@ -1017,9 +968,7 @@ The angle of inclination is <m>36.9\degree</m>.</p>
 
         \draw[domain=-0:18,smooth,variable=\x,red,very thick] plot ({\x},{ 12.25-5.25*cos(deg((\x-.66)*pi/6))});
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-     </sidebyside></li>
+    </latex-image></image></sidebyside></li>
      <li>The period of the graph is 12 months. The midline is approximately <m>y = 12.25,</m> and the amplitude is approximately 5.25.</li>
  </ol></p></solution></example>
 
@@ -1029,7 +978,9 @@ The angle of inclination is <m>36.9\degree</m>.</p>
      <li>Which graph corresponds to each location?</li>
     <li>What are the maxium and minimum number of daylight hours in Jacksonville?</li>
     <li>For how long are there 24 hours of daylight per day at the Arctic Circle?</li>
-</ol></p></statement><answer><p><ol marker="a">
+</ol></p></statement>
+
+<answer><p><ol marker="a">
         <li>From top to bottom in January:  Equator, Jacksonville, Anchorage, Arctic Circle</li>
         <li>14 hours and 10 hours</li>
         <li>Four months</li>
@@ -1046,10 +997,11 @@ The angle of inclination is <m>36.9\degree</m>.</p>
 
 <p>The function <m>y = f(x)</m> is <term>periodic</term> if there is a smallest value of <m>p</m> such that 
     <me>\blert{f(x + p) = f(x)}</me> 
-for all <m>x</m>. The constant <m>p</m>  is called the <term>period</term> of the function.</p></assemblage>
+for all <m>x</m>. The constant <m>p</m> is called the <term>period</term> of the function.</p></assemblage>
 
 <example><statement><p>Which of the functions shown below are periodic? If the function is periodic, give its period.</p>
 <sidebyside width="85%"><image source="photos/fig-chap2-proj-example-1"><description>graph</description></image></sidebyside></statement>
+
 <solution><p><ol marker="a">
     <li>This graph is periodic with period 360.</li>
     <li>This graph is not periodic.</li>
@@ -1057,7 +1009,9 @@ for all <m>x</m>. The constant <m>p</m>  is called the <term>period</term> of th
 </ol></p></solution></example>
 
 <exercise><statement><p>Which of the functions shown below are periodic? If the function is periodic, give its period.</p>
-<sidebyside width="85%"><image source="photos/fig-chap2-proj-ex-1-1"><description>graph</description></image></sidebyside></statement><answer><p><ol marker="a" cols="3">
+<sidebyside width="85%"><image source="photos/fig-chap2-proj-ex-1-1"><description>graph</description></image></sidebyside></statement>
+
+<answer><p><ol marker="a" cols="3">
         <li>Period:  2</li>
         <li>Period:  3</li>
         <li>Not periodic</li>
@@ -1074,7 +1028,7 @@ for all <m>x</m>. The constant <m>p</m>  is called the <term>period</term> of th
 <solution><p><ol marker="a">
     <li>The medication level increase from 30 ml to 50 ml at each cycle of the graph, so 20 ml of medication are administerd at each dose.</li>
     <li>The medication level peaks sharply evey four hours, when each new dose is administered.</li>
-    <li>The medication level declines by 20 ml between doses, or <m>\dfrac{20}{50} = 0.6</m>, or 60%</li>
+    <li>The medication level declines by 20 ml between doses, or <m>\dfrac{20}{50} = 0.4</m>, or 40%</li>
 </ol></p></solution></example>
 
 <exercise><statement><p>You are sitting on your front porch late one evening, and you see a light coming down the road tracing out the path shown below, with distances in inches. You realize that you are seeing a bicycle light, fixed to the front wheel of the bike.</p>
@@ -1094,7 +1048,7 @@ for all <m>x</m>. The constant <m>p</m>  is called the <term>period</term> of th
 <p>Review the following skills you will need for this section.</p>
 <project>    
     <sidebyside><p>Sketch the graph.  Give the equations of any vertical or horizontal asymptotes.</p></sidebyside>   
-    <sidebyside><p><ol marker="1" cols="3">
+    <sidebyside><p><ol marker="1" cols="2">
         <li><p><m>f(x) = \dfrac{1}{x - 2}</m></p></li>
         <li><p><m>g(x) = \dfrac{1}{x + 3} </m></p></li>
         <li><p><m>h(x) = \dfrac{1}{x^2 - 1}</m></p></li>
@@ -1106,8 +1060,8 @@ for all <m>x</m>. The constant <m>p</m>  is called the <term>period</term> of th
     <sidebyside><p><m>\underline{\qquad\qquad\qquad\qquad}</m></p></sidebyside>
     <conclusion>
     <sidebyside><p>Algebra Refresher Answers</p></sidebyside>
-        <p><ol marker="1" cols="3">
-            <li><sidebyside width="75%" margins="0%,30%">
+        <p><ol marker="1" cols="2">
+            <li><sidebyside width="70%" margins="0%,30%">
             <image xml:id="ar4-3-1ans">
                 <description>graph</description>
                 <latex-image>
@@ -1128,13 +1082,10 @@ for all <m>x</m>. The constant <m>p</m>  is called the <term>period</term> of th
 
                 \draw[domain={7/6:4},smooth,variable=\x,red,very thick] plot ({\x},{1/(2*\x-2)});
                 \end{tikzpicture}]]>
-            </latex-image>
-            </image>
+            </latex-image></image>
             </sidebyside><p><m>x = 2,~~y = 0</m></p></li>
-            <li><sidebyside width="75%" margins="0%,30%">
-            <image xml:id="ar4-3-2ans">
-                <description>graph</description>
-                <latex-image>
+            <li><sidebyside width="70%" margins="0%,30%">
+            <image xml:id="ar4-3-2ans"><description>graph</description><latex-image>
                 <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
                 <![CDATA[\tikzset{%
                 }
@@ -1152,13 +1103,10 @@ for all <m>x</m>. The constant <m>p</m>  is called the <term>period</term> of th
 
                 \draw[domain={-8/6:2},smooth,variable=\x,red,very thick] plot ({\x},{1/(2*\x +3)});
                 \end{tikzpicture}]]>
-            </latex-image>
-            </image>
+            </latex-image></image>
             </sidebyside><p><m>x = -3,~~y = 0</m></p></li>
-            <li><sidebyside width="75%" margins="0%,30%">
-            <image xml:id="ar4-3-3ans">
-                <description>graph</description>
-                <latex-image>
+            <li><sidebyside width="70%" margins="0%,30%">
+            <image xml:id="ar4-3-3ans"><description>graph</description><latex-image>
                 <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
                 <![CDATA[\tikzset{%
                 }
@@ -1178,13 +1126,10 @@ for all <m>x</m>. The constant <m>p</m>  is called the <term>period</term> of th
 
                 \draw[domain={2/sqrt(3):4},smooth,variable=\x,red,very thick] plot ({\x},{1/( (\x)^2 -1)});
                 \end{tikzpicture}]]>
-            </latex-image>
-            </image>
+            </latex-image></image>
             </sidebyside><p><m>x = -1,~~x = 1~~y = 0</m></p></li>
-            <li><sidebyside width="75%" margins="0%,30%">
-            <image xml:id="ar4-3-4ans">
-                <description>graph</description>
-                <latex-image>
+            <li><sidebyside width="70%" margins="0%,30%">
+            <image xml:id="ar4-3-4ans"><description>graph</description><latex-image>
                 <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
                 <![CDATA[\tikzset{%
                 }
@@ -1202,13 +1147,10 @@ for all <m>x</m>. The constant <m>p</m>  is called the <term>period</term> of th
 
                 \draw[domain={-1/4:3},smooth,variable=\x,red,very thick] plot ({\x},{-1/( (2*\x +1)^2 )});
                 \end{tikzpicture}]]>
-            </latex-image>
-            </image>
+            </latex-image></image>
             </sidebyside><p><m>x = -1,~~y = 0</m></p></li>
-            <li><sidebyside width="75%" margins="0%,30%">
-            <image xml:id="ar4-3-5ans">
-                <description>graph</description>
-                <latex-image>
+            <li><sidebyside width="70%" margins="0%,30%">
+            <image xml:id="ar4-3-5ans"><description>graph</description><latex-image>
                 <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
                 <![CDATA[\tikzset{%
                 }
@@ -1226,13 +1168,10 @@ for all <m>x</m>. The constant <m>p</m>  is called the <term>period</term> of th
 
                 \draw[domain={1/8:3},smooth,variable=\x,red,very thick] plot ({\x},{ (4*\x+1)/( 2*\x )});
                 \end{tikzpicture}]]>
-            </latex-image>
-            </image>
+            </latex-image></image>
             </sidebyside><p><m>x = 0,~~y = 2</m></p></li>
-            <li><sidebyside width="75%" margins="0%,30%">
-            <image xml:id="ar4-3-6ans">
-                <description>graph</description>
-                <latex-image>
+            <li><sidebyside width="70%" margins="0%,30%">
+            <image xml:id="ar4-3-6ans"><description>graph</description><latex-image>
                 <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
                 <![CDATA[\tikzset{%
                 }
@@ -1260,7 +1199,9 @@ for all <m>x</m>. The constant <m>p</m>  is called the <term>period</term> of th
 
 <subsection><title>Section 4.3 Summary</title>
 <subsubsection><title>Vocabulary</title>
-<p><ul cols="4">
+<p><ul cols="3">
+    <li>Angle of Inclination</li>
+    <li>Bearings</li>
     <li>Sinusoidal</li>
     <li>Period</li>
     <li>Periodic</li>
@@ -1269,32 +1210,42 @@ for all <m>x</m>. The constant <m>p</m>  is called the <term>period</term> of th
 
 <subsubsection><title>Concepts</title>
 <p><ol marker="1">
-    <li><assemblage><title>Amplitude, Period, and Midline</title>
-<p><ol marker="1">
-    <li>The graph of <me>y = A\cos\theta ~~\text{or}~~ y = A\sin\theta</me>  has amplitude <m>\abs{A}</m>.</li>
-    <li>The graph of <me>y =\cos B\theta ~~\text{or}~~ y = \sin B\theta</me>  has period <m>\dfrac{360\degree}{\abs{B}}</m>.</li>
-    <li>The graph of <me>y = k + \cos\theta ~~\text{or}~~ y =k + \sin\theta</me>  has midline <m>y = k</m>.</li>
-</ol></p></assemblage></li>
-<li>The graph of <m>y = k + A\sin B\theta</m> has amplitude <m>A</m>, period <m>\dfrac{360\degree}{B}</m>, and midline <m>y = k</m>. The same is true for the graph of <m>y = k + A\cos B\theta</m>.</li>
-<li>Functions that have graphs shaped like sines or cosines are called <term>sinusoidal</term>.</li>
-<li><assemblage><title>Periodic Function</title>
-<p>The function <m>y = f(x)</m> is <term>periodic</term> if there is a smallest value of <m>p</m> such that <me>f(x + p) = f(x)</me> for all <m>x</m>. The constant <m>p</m>  is called the <term>period</term> of the function.</p></assemblage></li>
-</ol></p></subsubsection>
+
+    <li>To solve an equation of the form <m>\sin (\theta) = k</m>, or <m>\cos (\theta) = k</m>, or <m>\tan (\theta) = k</m>, we can use the appropriate inverse trig key on a calculator to find one solution (or a coterminal angle.)  We use reference angles to find a second solution between <m>0\degree</m> and <m>360\degree</m>.</li>
+    
+    <li><assemblage><title>Angles in a Unit Circle</title>
+        <p>Let <m>P</m> be a point on a unit circle determined by the terminal side of an angle <m>\theta</m> in standard position. Then the coordinates <m>(x,y)</m>  of <m>P</m> are given by <me>x = \cos (\theta),~~~~~~y = \sin (\theta)</me></p></assemblage></li>
+
+    <li><assemblage><title>Coordinates</title><p>If point <m>P</m> is located at a distance <m>r</m> from the origin in the direction specified by angle <m>\theta</m> in standard position, then the coordinates of <m>P</m> are
+    <me>x = r \cos (\theta) ~~~~ \text{and} ~~~~ y = r \sin (\theta)</me>
+    </p></assemblage></li>
+    
+    <li>Navigational directions for ships and planes are sometimes given as <term>bearings</term>, which are angles measured clockwise from north.</li>
+
+    <li><assemblage><title>Angle of Inclination</title>
+    <p>The <term>angle of inclination</term> of a line is the angle <m>\alpha</m> measured in the positive direction from the positive <m>x</m>-axis to the line. If the slope of the line is <m>m</m>, then
+    <me>\tan \alpha = m</me> where  <m>0\degree \le \alpha \le 180\degree</m>.</p></assemblage></li>
+
+    <li>Functions that have graphs shaped like sines or cosines are called <term>sinusoidal</term>.</li>
+
+    <li><assemblage><title>Periodic Function</title>
+    <p>The function <m>y = f(x)</m> is <term>periodic</term> if there is a smallest value of <m>p</m> such that <me>f(x + p) = f(x)</me> for all <m>x</m>. The constant <m>p</m>  is called the <term>period</term> of the function.</p></assemblage></li>
+    </ol></p></subsubsection>
 
 <subsubsection><title>Study Questions</title>
 <p><ol marker="1">
-    <li>Sketch two examples of a function with period 8:  one that is sinusoidal, and one that is not.</li>
-    <li><p>Delbert says that  <m>\tan (\theta + 180\degree) = \tan \theta</m>  for any value of <m>\theta</m>. Is he correct? Explain why or why not.</p>
-        <p>Each statement in Questions 3<ndash/>6 is false. Write a corrected statement.</p></li>
+    
 
-    <li>The period of a sine or cosine function is the distance between horizontal intercepts.</li>
-    <li>The amplitude is the vertical distance between the maximum and minimum values.</li>
-    <li>The midline of the cosine graph is the vertical line <m>\theta = 180\degree</m>.</li>
-    <li>The cosine graph looks just like the sine graph except flipped upside down.</li>
+    <li>If the angle of inclination of a line is greater than <m>45\degree</m>, what can you say about its slope?</li>
+
+    <li>Sketch two examples of a function with period 8:  one that is sinusoidal, and one that is not.</li>
+
 </ol></p></subsubsection>
 
 <subsubsection><title>Skills</title>
 <p><ol marker="1">
+    <li>Solve equations    #61-72</li>
+    <li>Find coordinates of points on circles    #73-82</li>
     <li>Graph periodic functions    #1<ndash/>6, 11<ndash/>14, 27<ndash/>28</li>
     <li>Write equations for sinusoidal functions    #7<ndash/>12</li>
     <li>Graph sinusoidal functions    #13<ndash/>18, 25<ndash/>32</li>
@@ -1306,13 +1257,8 @@ for all <m>x</m>. The constant <m>p</m>  is called the <term>period</term> of th
     <li>Analyze periodic graphs    #67<ndash/>74</li>
 </ol></p></subsubsection>
 </subsection>
+
 <xi:include href="./hmwk-4-3.xml" />  
-
-
-</subsection>
-
-
-
 
 
 </section>

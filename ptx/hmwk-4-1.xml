@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 
-
 <exercises xml:id="hmwk-4-1-exercises"  xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Homework 4.1</title>
 
@@ -260,9 +259,195 @@
 <exercise number="24"><statement><p><m>-750\degree</m></p></statement></exercise> 
 </exercisegroup>
 
-<exercisegroup cols="3"><introduction><p>For Problems 25<ndash/>30,find the reference angle. Make a sketch showing the angle, the reference angle, and the reference triangle.</p></introduction>
+<exercisegroup><introduction><p>For Problems 25<ndash/>26, use the grid provided below.</p>
 
-<exercise number="25"><statement><p><m>100\degree</m></p></statement>
+    <sidebyside width="50%"><image xml:id="hp4-2-45"><description>unit circle on grid</description><latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [scale = .4] 
+        \draw[cyan] (-10,-10) grid (10,10);
+
+        \coordinate (O) at (0,0);
+
+        \draw[red,thick] (O) circle (10cm);
+
+        \foreach \x  in {-10, -9, ..., 10} 
+        {
+        \draw[black,  thick] ($ \x *(1,0) +(0,.2) $) --++(0,-0.4); 
+        \draw[black,  thick] ($ \x *(0,1) +(.2,0) $) --++(-0.4,0); 
+        };
+
+        \foreach \x  in {-10, -5, 5, 10} 
+        {
+        \draw[black, very thick] ($ \x *(1,0) +(0,.3) $) --++(0,-0.6); 
+        \draw[black, very thick] ($ \x *(0,1) +(.3,0) $) --++(-0.6,0); 
+        };
+
+        \filldraw[black] (10,0) circle (.5pt) node[anchor=north, yshift=-4, fill=white, inner sep=1pt, text=red] {1};
+        \filldraw[black] (0,10) circle (.5pt) node[anchor=east, xshift=-5, fill=white, inner sep=1pt, text=red] {1};
+
+        \end{tikzpicture}]]>
+    </latex-image></image></sidebyside></introduction>
+    
+    <exercise number="25"><statement><p>Draw two different angles <m>\alpha</m> and <m>\beta</m> in standard position whose sine is <m>0.6</m>. Note that the radius of the circle is 1, 
+        <ol marker="a">
+            <li><p>Use a protractor to measure <m>\alpha</m> and <m>\beta</m>.</p></li>
+            <li><p>Find the reference angles for both <m>\alpha</m> and <m>\beta</m>. Draw in the reference triangles.</p></li>
+    </ol></p></statement>
+    
+    <answer><p><ol marker="a">
+        <li><m>36.9\degree,~143.1\degree</m></li>
+        <li><sidebyside width="30%" margins="0% 5%">
+    <image xml:id="hp4-2-45ans"><description>angles on grid</description><latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [scale = .3] 
+        \draw[cyan, step=2] (-10,-10) grid (10,10);
+        \draw[black, thick] (-10,0) -- (10,0);
+        \draw[black, thick] (0,-10) -- (0, 10);
+
+        \coordinate (O) at (0,0);
+        \coordinate (A) at (10, 7.5);
+        \coordinate (B) at (-10, 7.5);
+
+        \draw[red,thick] (O) circle (10cm);
+
+        \filldraw[black] (10,0) circle (.5pt) node[anchor=north, yshift=-4, fill=white, inner sep=1pt, text=red] {1};
+        \filldraw[black] (0,10) circle (.5pt) node[anchor=east, xshift=-5, fill=white, inner sep=1pt, text=red] {1};
+
+        \draw[blue, thick, ->,>=stealth'] (O)--(A);
+        \draw[blue, thick, ->,>=stealth'] (O)--(B);
+        \draw[magenta, thick, ->,>=stealth'] (3,0) arc(0:{atan(.75)}:3) node[right, midway, xshift=3,fill=white, inner sep=0pt]{$\alpha$};
+        \draw[black, thick, <->,>=stealth'] (6,0) arc(0:{atan(.75)}:6) node[right, midway, xshift=5,fill=white, inner sep=0pt] {$\tilde{\alpha}$};
+        \draw[violet, thick, ->,>=stealth'] (2,0) arc(0:{180-atan(.75)}:2) node[above, midway, xshift=-3, yshift=3,fill=white, inner sep=1pt]{$\beta$};
+        \draw[black, thick, <->,>=stealth'] (-6,0) arc(180:{180-atan(.75)}:6) node[left, midway, xshift=-5,fill=white, inner sep=0pt] {$\tilde{\beta}$};
+
+        \draw[black, thick] (0.3,6) -- (-0.3,6) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\footnotesize 0.6};
+        \draw[blue, ultra thick] (8,6)--(8,0)--(-8,0)--(-8,6)--(O)--(8,6);
+        \filldraw[black] (8,6) circle(.2cm);
+        \filldraw[black] (-8,6) circle(.2cm);
+        \end{tikzpicture}]]>
+    </latex-image></image></sidebyside></li>
+    </ol></p></answer></exercise>
+
+    <exercise number="26"><statement><p>Draw two different angles <m>\theta</m> and <m>\phi</m> in standard position whose sine is <m>-0.8</m>.
+        <ol marker="a">
+            <li><p>Use a protractor to measure <m>\theta</m> and <m>\phi</m>.</p></li>
+            <li><p>Find the reference angles for both <m>\theta</m> and <m>\phi</m>. Draw in the reference triangles.</p></li>
+    </ol></p></statement></exercise>
+</exercisegroup>
+
+<exercisegroup><introduction><p>For Problems 27<ndash/>28, use the grid provided below.</p>
+    <sidebyside width="50%">
+    <image xml:id="hp4-2-47"><description>unit circle on grid</description><latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [scale = .4] 
+        \draw[cyan] (-10,-10) grid (10,10);
+        \draw[black, thick] (-10,0) -- (10,0);
+        \draw[black, thick] (0,-10) -- (0, 10);
+
+        \coordinate (O) at (0,0);
+
+        \draw[red,thick] (O) circle (10cm);
+
+        \foreach \x  in {-10, -9, ..., 10} 
+        {
+        \draw[black,  thick] ($ \x *(1,0) +(0,.2) $) --++(0,-0.4); 
+        \draw[black,  thick] ($ \x *(0,1) +(.2,0) $) --++(-0.4,0); 
+        };
+
+        \foreach \x  in {-10, -5, 5, 10} 
+        {
+        \draw[black, very thick] ($ \x *(1,0) +(0,.3) $) --++(0,-0.6); 
+        \draw[black, very thick] ($ \x *(0,1) +(.3,0) $) --++(-0.6,0); 
+        };
+
+        \filldraw[black] (10,0) circle (.5pt) node[anchor=north, yshift=-4, fill=white, inner sep=1pt, text=red] {1};
+        \filldraw[black] (0,10) circle (.5pt) node[anchor=east, xshift=-5, fill=white, inner sep=1pt, text=red] {1};
+
+        \end{tikzpicture}]]>
+    </latex-image></image></sidebyside></introduction>
+
+<exercise number="27"><statement><p>Draw two different angles <m>\alpha</m> and <m>\beta</m> in standard position whose cosine is <m>0.3</m>.
+        <ol marker="a">
+            <li>Use a protractor to measure <m>\alpha</m> and <m>\beta</m>.</li>
+            <li>Find the reference angles for both <m>\alpha</m> and <m>\beta</m>. Draw in the reference triangles.</li>
+    </ol></p></statement>
+    
+<answer><p><ol marker="a">
+    <li><m>72.5\degree,~287.5\degree</m></li>
+    <li><sidebyside width="30%">
+        <image xml:id="hp4-2-47ans"><description>graph</description><latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+          block/.style    = {draw, thick, rectangle, minimum height = 3em,
+            minimum width = 3em},
+          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+          input/.style    = {coordinate}, % Input
+          output/.style   = {coordinate} % Output
+        }
+        \begin{tikzpicture} [scale = .3] 
+        \draw[cyan, step=2] (-10,-10) grid (10,10);
+        \draw[black, thick] (-10,0) -- (10,0);
+        \draw[black, thick] (0,-10) -- (0, 10);
+
+        \coordinate (O) at (0,0);
+        \coordinate (A) at ({acos(0.3)}:11);
+        \coordinate (B) at ({360-acos(0.3)}:11);
+        \coordinate (C) at ({acos(0.3)}:10);
+        \coordinate (D) at ({-acos(0.3)}:10);
+
+        \draw[blue, very thick] (O)--(C)--(D)--(O)--+(3,0);
+
+        \draw[red,thick] (O) circle (10cm);
+
+        \filldraw[black] (10,0) circle (.5pt) node[anchor=north, yshift=-4, fill=white, inner sep=1pt, text=red] {1};
+        \filldraw[black] (0,10) circle (.5pt) node[anchor=east, xshift=-5, fill=white, inner sep=1pt, text=red] {1};
+
+        \draw[blue, thick, ->,>=stealth'] (O)--(A);
+        \draw[blue, thick, ->,>=stealth'] (O)--(B);
+        \draw[magenta, thick, ->,>=stealth'] (4,0) arc(0:{acos(.3)}:4) node[right, midway, xshift=3,fill=white, inner sep=0pt]{$\alpha$};
+        \draw[black, thick, <->,>=stealth'] (6,0) arc(0:{acos(.3)}:6) node[right, midway, xshift=5,fill=white, inner sep=0pt] {$\tilde{\alpha}$};
+        \draw[violet, thick, ->,>=stealth'] (2,0) arc(0:{360-acos(.3)}:2) node[above, midway, xshift=-3, yshift=3,fill=white, inner sep=1pt]{$\beta$};
+        \draw[black, thick, <->,>=stealth'] (6,0) arc(0:{-acos(.3)}:6) node[right, midway, xshift=5,fill=white, inner sep=0pt] {$\tilde{\beta}$};
+
+        \draw[black, thick] (3,.3) -- (3,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=0pt] {\footnotesize 0.3};
+
+        \filldraw[black] (6,-8) circle(.2cm);
+        \filldraw[black] (-6,-8) circle(.2cm);
+        \end{tikzpicture}]]>
+    </latex-image></image></sidebyside></li>
+    </ol></p></answer></exercise>
+
+<exercise number="28"><statement><p>Draw two different angles <m>\theta</m> and <m>\phi</m> in standard position whose cosine is <m>-0.4</m>.
+        <ol marker="a">
+            <li><p>Use a protractor to measure <m>\theta</m> and <m>\phi</m>.</p></li>
+            <li><p>Find the reference angles for both <m>\theta</m> and <m>\phi</m>. Draw in the reference triangles.</p></li>
+    </ol></p></statement></exercise>
+</exercisegroup>
+
+<exercisegroup cols="3"><introduction><p>For Problems 29<ndash/>34, find the reference angle. Make a sketch showing the angle, the reference angle, and the reference triangle.</p></introduction>
+
+<exercise number="29"><statement><p><m>100\degree</m></p></statement>
     <answer><sidebyside widths="20% 60%" margins="0% 5%"><p><m>80\degree</m></p>
 <image xml:id="hp4-1-25ans">
     <description>angles</description>
@@ -295,9 +480,9 @@
 </image>
 </sidebyside></answer></exercise>
     
-<exercise number="26"><statement><p><m>125\degree</m></p></statement></exercise>
+<exercise number="30"><statement><p><m>125\degree</m></p></statement></exercise>
 
-<exercise number="27"><statement><p><m>216\degree</m></p></statement>
+<exercise number="31"><statement><p><m>216\degree</m></p></statement>
     <answer><sidebyside widths="15% 75%" margins="0% 5%"><p><m>36\degree</m></p>
 <image xml:id="hp4-1-27ans">
     <description>angles</description>
@@ -329,9 +514,9 @@
 </image>
 </sidebyside></answer></exercise>
 
-<exercise number="28"><statement><p><m>242\degree</m></p></statement></exercise>
+<exercise number="32"><statement><p><m>242\degree</m></p></statement></exercise>
 
-<exercise number="29"><statement><p><m>297\degree</m></p></statement>
+<exercise number="33"><statement><p><m>297\degree</m></p></statement>
     <answer><sidebyside widths="15% 75%" margins="0% 5%"><p><m>63\degree</m></p>
 <image xml:id="hp4-1-29ans">
     <description>angles</description>
@@ -363,12 +548,12 @@
 </image>
 </sidebyside></answer></exercise>
     
-<exercise number="30"><statement><p><m>336\degree</m></p></statement></exercise> 
+<exercise number="34"><statement><p><m>336\degree</m></p></statement></exercise> 
 </exercisegroup>
 
-<exercisegroup cols="3"><introduction><p>For Problems 31<ndash/>36, find three angles between <m>90\degree</m> and <m>360\degree</m> with the given reference angle, and sketch all four angles on the same grid.</p></introduction>
+<exercisegroup cols="3"><introduction><p>For Problems 35<ndash/>40, find three angles between <m>90\degree</m> and <m>360\degree</m> with the given reference angle, and sketch all four angles on the same grid.</p></introduction>
 
-<exercise number="31"><statement><p><m>15\degree</m></p></statement>
+<exercise number="35"><statement><p><m>15\degree</m></p></statement>
     <answer><p><m>165\degree</m>, <m>95\degree</m>, <m> 345\degree</m></p><sidebyside width="90%" margins="0% 5%">
 <image xml:id="hp4-1-31ans">
     <description>angles</description>
@@ -404,9 +589,9 @@
 </image>
 </sidebyside></answer></exercise>
     
-<exercise number="32"><statement><p><m>26\degree</m></p></statement></exercise>
+<exercise number="36"><statement><p><m>26\degree</m></p></statement></exercise>
 
- <exercise number="33"><statement><p><m>40\degree</m></p></statement>
+ <exercise number="37"><statement><p><m>40\degree</m></p></statement>
     <answer><p><m>140\degree</m>, <m>220\degree</m>, <m>320\degree</m></p><sidebyside width="90%" margins="0% 5%">
 <image xml:id="hp4-1-33ans">
     <description>angles</description>
@@ -442,9 +627,9 @@
 </image>
 </sidebyside></answer></exercise>
     
-<exercise number="34"><statement><p><m>50\degree</m></p></statement></exercise>
+<exercise number="38"><statement><p><m>50\degree</m></p></statement></exercise>
 
-<exercise number="35"><statement><p><m>68\degree</m></p></statement>
+<exercise number="39"><statement><p><m>68\degree</m></p></statement>
 <answer><p><m>112\degree</m>, <m>248\degree</m>, <m>292\degree</m></p><sidebyside width="90%" margins="0% 5%">
 <image xml:id="hp4-1-35ans">
     <description>angles</description>
@@ -480,35 +665,35 @@
 </image>
 </sidebyside></answer></exercise>
 
-<exercise number="36"><statement><p><m>75\degree</m></p></statement></exercise>
+<exercise number="40"><statement><p><m>75\degree</m></p></statement></exercise>
 </exercisegroup>
 
-<exercisegroup cols="4"><introduction><p>For Problems 37<ndash/>44, use the values given below to find the trigonometric ratio.  Do not use a calculator!
+<exercisegroup cols="3"><introduction><p>For Problems 41<ndash/>48, use the values given below to find the trigonometric ratio.  Do not use a calculator!
 <me>\cos (23\degree) = 0.9205~~~~~~\sin (46\degree) = 0.7193~~~~~~\tan (78\degree) = 4.7046</me>  </p></introduction>
 
-<exercise number="37"><statement><p><m>\cos (157\degree)</m></p></statement>
+<exercise number="41"><statement><p><m>\cos (157\degree)</m></p></statement>
 <answer><p><m>-0.9205</m></p></answer></exercise>
 
-<exercise number="38"><statement><p><m>\sin (226\degree)</m></p></statement></exercise>
+<exercise number="42"><statement><p><m>\sin (226\degree)</m></p></statement></exercise>
 
-<exercise number="39"><statement><p><m>\sin (314\degree)</m></p></statement>
+<exercise number="43"><statement><p><m>\sin (314\degree)</m></p></statement>
 <answer><p><m>-0.7193</m></p></answer></exercise>
 
-<exercise number="40"><statement><p><m>\cos (203\degree)</m></p></statement></exercise>
+<exercise number="44"><statement><p><m>\cos (203\degree)</m></p></statement></exercise>
 
-<exercise number="41"><statement><p><m>\tan (258\degree)</m></p></statement>
+<exercise number="45"><statement><p><m>\tan (258\degree)</m></p></statement>
 <answer><p><m>4.705</m></p></answer></exercise>
 
-<exercise number="42"><statement><p><m>\tan (282\degree)</m></p></statement></exercise>
+<exercise number="46"><statement><p><m>\tan (282\degree)</m></p></statement></exercise>
 
-<exercise number="43"><statement><p><m>\sin (-134\degree)</m></p></statement>
+<exercise number="47"><statement><p><m>\sin (-134\degree)</m></p></statement>
 <answer><p><m>-0.7193</m></p></answer></exercise>
 
-<exercise number="44"><statement><p><m>\cos (-383\degree)</m></p></statement></exercise>
+<exercise number="48"><statement><p><m>\cos (-383\degree)</m></p></statement></exercise>
 </exercisegroup>
 
 
-<exercise number="45"><statement><p>On the circle in the figure, all angles are shown in standard position. Find the measure in degrees of the angles labeled (a)-(i).</p>
+<exercise number="49"><statement><p>On the circle in the figure, all angles are shown in standard position. Find the measure in degrees of the angles labeled (a)-(i).</p>
     <image xml:id="hp4-1-45" width="40%"><description>circle</description><latex-image>
     <![CDATA[
     \begin{tikzpicture}  [scale = 1.5]
@@ -561,9 +746,9 @@
     <li><m>330\degree</m></li>
 </ol></p></answer></exercise>
 
-<exercise number="46"><statement><p>Find the reference angle for each of your answers in Problem 45.</p></statement></exercise>
+<exercise number="50"><statement><p>Find the reference angle for each of your answers in Problem 45.</p></statement></exercise>
 
-<exercise number="47"><statement>
+<exercise number="51"><statement>
     <p><ol marker="a">
         <li>Draw three angles, one in each quadrant except the first, whose reference angle is <m>60\degree</m>.</li>
         <li>Find exact values for the sine, cosine, and tangent of each of the angles in part (a).</li>
@@ -596,12 +781,12 @@
         <li><p><m>\sin (120\degree) = \dfrac{\sqrt{3}}{2},~\cos (120\degree) = \dfrac{-1}{2},~\tan (120\degree) = -\sqrt{3},</m></p><p><m>\sin (240\degree) = \dfrac{-\sqrt{3}}{2},~\cos (240\degree) = \dfrac{-1}{2},~\tan (240\degree) = \sqrt{3},</m></p><p><m>\sin (300\degree) = \dfrac{-\sqrt{3}}{2},~\cos (300\degree) = \dfrac{1}{2},~\tan (300\degree) = -\sqrt{3}</m></p></li>
     </ol></p></answer></exercise>
 
-    <exercise number="48"><statement><p><ol marker="a">
+    <exercise number="52"><statement><p><ol marker="a">
         <li>Draw three angles, one in each quadrant except the first, whose reference angle is <m>30\degree</m>.</li>
         <li>Find exact values for the sine, cosine, and tangent of each of the angles in part (a).</li>
     </ol></p></statement></exercise>
 
-    <exercise number="49"><statement><p><ol marker="a">
+    <exercise number="53"><statement><p><ol marker="a">
         <li>Draw three angles, one in each quadrant except the first, whose reference angle is <m>45\degree</m>.</li>
         <li>Find exact values for the sine, cosine, and tangent of each of the angles in part (a).</li>
     </ol></p></statement>
@@ -633,7 +818,7 @@
         <li><p><m>\sin (135\degree) = \dfrac{1}{\sqrt{2}},~\cos (135\degree) = \dfrac{-1}{\sqrt{2}},~(\tan 135\degree) = -1,</m></p><p><m>\sin (225\degree) = \dfrac{-1}{\sqrt{2}},~\cos (225\degree) = \dfrac{-1}{\sqrt{2}},~\tan (225\degree) = 1,</m></p><p><m>\sin (315\degree) = \dfrac{-1}{\sqrt{2}},~\cos (315\degree) = \dfrac{1}{\sqrt{2}},~\tan (315\degree) = -1</m></p></li>
     </ol></p></answer></exercise>
 
-    <exercise number="50"><statement><p>Complete the table with exact values.</p>
+    <exercise number="54"><statement><p>Complete the table with exact values.</p>
     <sidebyside><tabular top="major" halign="left" right="minor" left="minor" bottom="minor">
                     <row bottom="minor">
                         <cell><m>\theta</m></cell>
@@ -692,7 +877,7 @@
                         <cell><m>\hphantom{0000}</m></cell></row>
                     </tabular></sidebyside></statement></exercise>
 
-   <exercise number="51"><statement><p>In which two quadrants is the statement true?</p>
+   <exercise number="55"><statement><p>In which two quadrants is the statement true?</p>
    <p><ol marker="a">
     <li> The sine is negative.</li>
     <li> The cosine is negative.</li>
@@ -704,375 +889,51 @@
     <li> I and III</li>
 </ol></p></answer></exercise>
 
-    <exercise number="52"><statement><p>Find all angles between <m>0\degree</m> and <m>360\degree</m> for which the statement is true.</p>
+    <exercise number="56"><statement><p>Find all angles between <m>0\degree</m> and <m>360\degree</m> for which the statement is true.</p>
     <p><ol marker="a" cols="3">
     <li> <m>\cos (\theta) = -1</m></li>
     <li> <m>\sin (\theta) = -1</m></li>
     <li> <m>\tan (\theta) = -1</m></li>
 </ol></p></statement></exercise>
 
-<exercise number="53"><statement>
+<exercise number="57"><statement>
     <p><ol marker="a">
-    <li> Find two angles, <m>0 \le \theta \le 360\degree</m>, with <m>\sin (\theta) = 0</m>.</li>
-    <li>Find two angles, <m>0 \le \theta \le 360\degree</m>, with <m>\cos (\theta) = 0</m>.</li>
+    <li> Find two angles, <m>0 \le \theta \lt 360\degree</m>, with <m>\sin (\theta) = 0</m>.</li>
+    <li>Find two angles, <m>0 \le \theta \lt 360\degree</m>, with <m>\cos (\theta) = 0</m>.</li>
 </ol></p></statement>
     <answer><p><ol marker="a">
         <li><m>0\degree~ \text{and}~ 180\degree</m></li>
         <li><m>90\degree~ \text{and}~ 270\degree</m></li>
         </ol></p></answer></exercise>
 
-    <exercise number="54"><statement><p><ol marker="a">
-    <li> Find two angles, <m>0 \le \theta \le 360\degree</m>, with <m>\sin (\theta) = \cos \theta</m>.</li>
-    <li>Find two angles, <m>0 \le \theta \le 360\degree</m>, with <m>\sin (\theta) = -\cos \theta</m>.</li>
+    <exercise number="58"><statement><p><ol marker="a">
+    <li> Find two angles, <m>0 \le \theta \lt 360\degree</m>, with <m>\sin (\theta) = \cos \theta</m>.</li>
+    <li>Find two angles, <m>0 \le \theta \lt 360\degree</m>, with <m>\sin (\theta) = -\cos \theta</m>.</li>
 </ol></p></statement></exercise>
 
-<exercisegroup cols="3"><introduction><p>For Problems 55<ndash/>60, find a second angle between <m>0\degree</m> and <m>360\degree</m> with the given trigonometric ratio.</p></introduction>
+<exercisegroup cols="3"><introduction><p>For Problems 59<ndash/>64, find a second angle between <m>0\degree</m> and <m>360\degree</m> with the given trigonometric ratio.</p></introduction>
 
-   <exercise number="55"><statement><p><m>\sin (75\degree)</m></p></statement>
+   <exercise number="59"><statement><p><m>\sin (75\degree)</m></p></statement>
     <answer><p><m>105\degree</m></p></answer></exercise>
 
-    <exercise number="56"><statement><p><m>\cos (32\degree)</m></p></statement></exercise>
+    <exercise number="60"><statement><p><m>\cos (32\degree)</m></p></statement></exercise>
 
-   <exercise number="57"><statement><p><m>\tan (84\degree)</m></p></statement>
+   <exercise number="61"><statement><p><m>\tan (84\degree)</m></p></statement>
     <answer><p><m>264\degree</m></p></answer></exercise>
 
-    <exercise number="58"><statement><p><m>\sin (16\degree)</m></p></statement></exercise>
+    <exercise number="62"><statement><p><m>\sin (16\degree)</m></p></statement></exercise>
     
-    <exercise number="59"><statement><p><m>\cos (47\degree)</m></p></statement>
+    <exercise number="63"><statement><p><m>\cos (47\degree)</m></p></statement>
     <answer><p><m>313\degree</m></p></answer></exercise>
 
-    <exercise number="60"><statement><p><m>\tan (56\degree)</m></p></statement></exercise>
+    <exercise number="64"><statement><p><m>\tan (56\degree)</m></p></statement></exercise>
     </exercisegroup>
 
-    <exercisegroup cols="3"><introduction><p>For Problems 61<ndash/>66, find all solutions between <m>0\degree</m> and <m>360\degree</m>. Round to the nearest degree.</p></introduction>
-
-    <exercise number="61"><statement><p><m>\tan (\theta) = 8.1443</m></p></statement>
-    <answer><p><m>83\degree,~263\degree</m></p> </answer></exercise>
-
-    <exercise number="62"><statement><p><m>\sin (\theta) = 0.7880</m></p></statement></exercise>
- 
-    <exercise number="63"><statement><p><m>\cos (\theta) = 0.9205</m></p></statement>
-    <answer><p><m>23\degree,~337\degree</m></p></answer></exercise>
-
-    <exercise number="64"><statement><p><m>\tan (\theta) = -3.4874</m></p></statement></exercise>
-
-    <exercise number="65"><statement><p><m>\sin (\theta) = -0.9962</m></p></statement>
-    <answer><p><m>265\degree,~275\degree</m></p> </answer></exercise>
-
-    <exercise number="66"><statement><p><m>\cos (\theta) = -0.0349</m></p></statement></exercise>
-</exercisegroup>
-
-<exercisegroup cols="3"><introduction><p>For Problems 67<ndash/>72, find exact values for all solutions between <m>0\degree</m> and <m>360\degree</m>.</p></introduction>
-
-    <exercise number="67"><statement><p><m>\cos (\theta) = -\cos 24\degree</m></p></statement>
-    <answer><p><m>156\degree,~204\degree</m></p></answer></exercise>
-
-    <exercise number="68"><statement><p><m>\tan(\theta) = -\tan 9\degree</m></p></statement></exercise>
- 
-    <exercise number="69"><statement><p><m>\sin (\theta) =-\sin 66\degree</m></p></statement>
-    <answer><p><m>246\degree,~294\degree</m></p></answer></exercise>
-
-    <exercise number="70"><statement><p><m>\cos (\theta) = -\cos 78\degree</m></p></statement></exercise>
-
-    <exercise number="71"><statement><p><m>\tan (\theta) = -\tan 31\degree</m></p></statement>
-    <answer><p><m>149\degree,~329\degree</m></p> </answer></exercise>
-
-    <exercise number="72"><statement><p><m>\sin (\theta) = -\sin 42\degree</m></p></statement></exercise>
-</exercisegroup>
-
-<exercisegroup cols="3"><introduction><p>For Problems 73<ndash/>78, use similar triangles to find the coordinates of the point on the circle.</p></introduction>
-
-    <exercise number="73"><statement><sidebyside width="100%">
-    <image xml:id="hp4-1-73">
-        <description>circle</description>
-        <latex-image>
-        <![CDATA[
-        \begin{tikzpicture}[scale=.8]
-        \coordinate(O) at (0,0);
-        \coordinate(A) at (135:2cm);
-
-        \draw[gray!80!white, thick] (O) circle (2cm);
-
-        \draw[black, thick, ->,>=stealth'] (0,-2.2)--(0,2.3) node[above] {$y$};
-        \draw[black, thick, ->,>=stealth'] (-2.3,0)--(2.3,0) node[right] {$x$};
-        \draw[red, thick, ->,>=stealth'] (.5,0) arc(0:135:0.5) node[above right, midway,  xshift=3, yshift=0,fill=white, inner sep=0pt]{$135\degree$};
-
-        \draw[blue, thick] (O) --(A) node[below left, midway, yshift=2] {4};
-        \filldraw[red] (A) circle (2pt);
-
-        \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-    </sidebyside></statement>
-    <answer><p><m>(-2\sqrt{2}, 2\sqrt{2})</m></p></answer></exercise>
-
-    <exercise number="74"><statement><sidebyside width="100%">
-    <image xml:id="hp4-1-74">
-        <description>circle</description>
-        <latex-image>
-        <![CDATA[
-        \begin{tikzpicture}[scale=.8]
-        \coordinate(O) at (0,0);
-        \coordinate(A) at (300:2cm);
-
-        \draw[gray!80!white, thick] (O) circle (2cm);
-
-        \draw[black, thick, ->,>=stealth'] (0,-2.2)--(0,2.3) node[above] {$y$};
-        \draw[black, thick, ->,>=stealth'] (-2.3,0)--(2.3,0) node[right] {$x$};
-        \draw[red, thick, ->,>=stealth'] (.5,0) arc(0:300:0.5) node[above left, midway,  xshift=-1, yshift=0,fill=white, inner sep=0pt]{$300\degree$};
-
-        \draw[blue, thick] (O) --(A) node[above right, midway, yshift=-2] {6};
-        \filldraw[red] (A) circle (2pt);
-        \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-    </sidebyside></statement></exercise>
- 
-    <exercise number="75"><statement><sidebyside width="100%">
-    <image xml:id="hp4-1-75">
-        <description>circle</description>
-        <latex-image>
-        <![CDATA[
-        \begin{tikzpicture}[scale=.8]
-        \coordinate(O) at (0,0);
-        \coordinate(A) at (60:2cm);
-
-        \draw[gray!80!white, thick] (O) circle (2cm);
-
-        \draw[black, thick, ->,>=stealth'] (0,-2.2)--(0,2.3) node[above] {$y$};
-        \draw[black, thick, ->,>=stealth'] (-2.3,0)--(2.3,0) node[right] {$x$};
-        \draw[red, thick, ->,>=stealth'] (.5,0) arc(0:60:0.5) node[right, midway,  xshift=0, yshift=0]{$60\degree$};
-
-        \draw[blue, thick] (O) --(A) node[above left, midway, yshift=-2] {3};
-        \filldraw[red] (A) circle (2pt);
-        \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-    </sidebyside></statement>
-    <answer><p><m>(\dfrac{3}{2}, \dfrac{3\sqrt{3}}{2})</m></p></answer></exercise>
-
-    <exercise number="76"><statement><sidebyside width="100%">
-    <image xml:id="hp4-1-76">
-        <description>circle</description>
-        <latex-image>
-        <![CDATA[
-        \begin{tikzpicture}[scale=.8]
-        \coordinate(O) at (0,0);
-        \coordinate(A) at (30:2cm);
-
-        \draw[gray!80!white, thick] (O) circle (2cm);
-
-        \draw[black, thick, ->,>=stealth'] (0,-2.2)--(0,2.3) node[above] {$y$};
-        \draw[black, thick, ->,>=stealth'] (-2.3,0)--(2.3,0) node[right] {$x$};
-        \draw[red, thick, ->,>=stealth'] (.7,0) arc(0:30:0.7) node[right, midway,  xshift=1, yshift=2]{$30\degree$};
-
-        \draw[blue, thick] (O) --(A) node[above left, midway, xshift=2, yshift=-2] {12};
-        \filldraw[red] (A) circle (2pt);
-        \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-    </sidebyside></statement></exercise>
-
-    <exercise number="77"><statement><sidebyside width="100%">
-    <image xml:id="hp4-1-77">
-        <description>circle</description>
-        <latex-image>
-        <![CDATA[
-        \begin{tikzpicture}[scale=.8]
-        \coordinate(O) at (0,0);
-        \coordinate(A) at (210:2cm);
-
-        \draw[gray!80!white, thick] (O) circle (2cm);
-
-        \draw[black, thick, ->,>=stealth'] (0,-2.2)--(0,2.3) node[above] {$y$};
-        \draw[black, thick, ->,>=stealth'] (-2.3,0)--(2.3,0) node[right] {$x$};
-        \draw[red, thick, ->,>=stealth'] (.5,0) arc(0:210:0.5) node[above left, midway,  xshift=0, yshift=-3]{$210\degree$};
-
-        \draw[blue, thick] (O) --(A) node[below right, midway, xshift=-2, yshift=2] {1};
-        \filldraw[red] (A) circle (2pt);
-        \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-    </sidebyside></statement>
-    <answer><p><m>(\dfrac{-\sqrt{3}}{2}, \dfrac{-1}{2})</m></p></answer></exercise>
-
-    <exercise number="78"><statement><sidebyside width="100%">
-    <image xml:id="hp4-1-78">
-        <description>circle</description>
-        <latex-image>
-        <![CDATA[
-        \begin{tikzpicture}[scale=.8]
-        \coordinate(O) at (0,0);
-        \coordinate(A) at (225:2cm);
-
-        \draw[gray!80!white, thick] (O) circle (2cm);
-
-        \draw[black, thick, ->,>=stealth'] (0,-2.2)--(0,2.3) node[above] {$y$};
-        \draw[black, thick, ->,>=stealth'] (-2.3,0)--(2.3,0) node[right] {$x$};
-        \draw[red, thick, ->,>=stealth'] (.5,0) arc(0:225:0.5) node[above left, midway,  xshift=0, yshift=-3]{$225\degree$};
-
-        \draw[blue, thick] (O) --(A) node[below right, midway, xshift=-2, yshift=2] {1};
-        \filldraw[red] (A) circle (2pt);
-        \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-    </sidebyside></statement></exercise>
-</exercisegroup>
-
-<exercisegroup cols="2"><introduction><p>For Problems 79<ndash/>82, </p>
-<p><ol marker="a">
-    <li> Use the grid to estimate the coordinates of the point <m>P</m> on the unit circle.</li>  
-    <li> Use a calculator to find the coordinates of the point <m>P</m>. Round to thousandths.</li>
-    <li> Estimate the coordinates of the point <m>Q</m> on the circle of radius 2, and verify with a calculator.</li>
-</ol></p></introduction>
-
-<exercise number="79"><statement><sidebyside width="100%">
-    <image xml:id="hp4-1-79">
-        <description>circle</description>
-        <latex-image>
-        <![CDATA[
-        \begin{tikzpicture}[scale=.15]
-
-        \coordinate (O) at (0,0);
-        \coordinate (P) at (200:10);
-        \coordinate (Q) at (200:20);
-
-        \draw[step=1cm,cyan,very thin] (-21,-21) grid (21,21);
-        \draw[thick,->,>=stealth'] (-21,0) -- (21.8,0) node[anchor=west] {$x$};
-        \draw[thick,->,>=stealth'] (0,-21) -- (0,22) node[anchor=south] {$y$};
-        \draw[black,  thick] (Q)++(200:2)--(O) ;
-
-        \draw[red,thick] (O) circle (10);
-        \draw[blue,thick] (O) circle (20);
-
-        \filldraw[red] (P) circle (.25cm) node[anchor=north east, yshift=-5,fill=white,inner sep=1pt]{$P$};
-        \filldraw[blue] (Q) circle (.25cm) node[anchor=north east, yshift=-5,fill=white,inner sep=1pt]{$Q$} ;
-
-        \draw[gray, thick, ->,>=stealth'] (3,0) arc(0:200:3) node[above left,midway, xshift=0, yshift=0,fill=white,inner sep=1pt, text=black] {$\small 200\degree$};
-
-        \node[text width=.2cm,fill=white,inner sep=1pt] at (10,-1.7)    {1};
-        \node[text width=.2cm,fill=white,inner sep=1pt] at (20,-1.7)    {2};
-        \node[text width=.2cm,fill=white,inner sep=1pt] at (-1,10)    {1};
-        \node[text width=.2cm,fill=white,inner sep=1pt] at (-1,20)    {2};
-        \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside></statement>
-    <answer><p><ol marker="a">
-    <li> <m>(-0.9, -0.3)</m></li>  
-    <li> <m>(-0.940, -0.342)</m></li>
-    <li> <m>(-1.9, -0.7)</m></li>
-</ol></p> </answer></exercise>
-
-<exercise number="80"><statement><sidebyside width="100%">
-    <image xml:id="hp4-1-80">
-        <description>circle</description>
-        <latex-image>
-        <![CDATA[
-        \begin{tikzpicture}[scale=.15]
-
-        \coordinate (O) at (0,0);
-        \coordinate (P) at (228:10);
-        \coordinate (Q) at (228:20);
-
-        \draw[step=1cm,cyan,very thin] (-21,-21) grid (21,21);
-        \draw[thick,->,>=stealth'] (-21,0) -- (21.8,0) node[anchor=west] {$x$};
-        \draw[thick,->,>=stealth'] (0,-21) -- (0,22) node[anchor=south] {$y$};
-        \draw[black,  thick] (Q)++(228:8)--(O) ;
-
-        \draw[red,thick] (O) circle (10);
-        \draw[blue,thick] (O) circle (20);
-
-        \filldraw[red] (P) circle (.25cm) node[anchor=north , yshift=-7,fill=white,inner sep=1pt]{$P$};
-        \filldraw[blue] (Q) circle (.25cm) node[anchor=north , yshift=-7,fill=white,inner sep=1pt]{$Q$} ;
-
-        \draw[gray, thick, ->,>=stealth'] (3,0) arc(0:228:3) node[above left,midway, xshift=0, yshift=0,fill=white,inner sep=1pt, text=black] {$\small 228\degree$};
-
-        \node[text width=.2cm,fill=white,inner sep=1pt] at (10,-1.7)    {1};
-        \node[text width=.2cm,fill=white,inner sep=1pt] at (20,-1.7)    {2};
-        \node[text width=.2cm,fill=white,inner sep=1pt] at (-1,10)    {1};
-        \node[text width=.2cm,fill=white,inner sep=1pt] at (-1,20)    {2};
-        \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-    </sidebyside></statement></exercise>
-
-<exercise number="81"><statement><sidebyside width="100%">
-    <image xml:id="hp4-1-81">
-        <description>circle</description>
-        <latex-image>
-        <![CDATA[
-        \begin{tikzpicture}[scale=.15]
-
-        \coordinate (O) at (0,0);
-        \coordinate (P) at (160:10);
-        \coordinate (Q) at (160:20);
-
-        \draw[step=1cm,cyan,very thin] (-21,-21) grid (21,21);
-        \draw[thick,->,>=stealth'] (-21,0) -- (21.8,0) node[anchor=west] {$x$};
-        \draw[thick,->,>=stealth'] (0,-21) -- (0,22) node[anchor=south] {$y$};
-        \draw[black,  thick] (Q)++(160:2)--(O) ;
-
-        \draw[red,thick] (O) circle (10);
-        \draw[blue,thick] (O) circle (20);
-
-        \filldraw[red] (P) circle (.25cm) node[anchor=south east , yshift=7,fill=white,inner sep=1pt]{$P$};
-        \filldraw[blue] (Q) circle (.25cm) node[anchor=south east , yshift=7,fill=white,inner sep=1pt]{$Q$} ;
-
-        \draw[gray, thick, ->,>=stealth'] (3,0) arc(0:160:3) node[above right,midway, xshift=0, yshift=0,fill=white,inner sep=1pt, text=black] {$\small 160\degree$};
-
-        \node[text width=.2cm,fill=white,inner sep=1pt] at (10,-1.7)    {1};
-        \node[text width=.2cm,fill=white,inner sep=1pt] at (20,-1.7)    {2};
-        \node[text width=.2cm,fill=white,inner sep=1pt] at (-1,10)    {1};
-        \node[text width=.2cm,fill=white,inner sep=1pt] at (-1,20)    {2};
-        \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-    </sidebyside></statement>
-    <answer><p><ol marker="a">
-    <li> <m>(-0.9, 0.3)</m></li>  
-    <li> <m>(-0.940, 0.342)</m></li>
-    <li> <m>(-1.9, 0.7)</m></li>
-</ol></p> </answer></exercise>
-
-<exercise number="82"><statement><sidebyside width="100%">
-    <image xml:id="hp4-1-82">
-        <description>circle</description>
-        <latex-image>
-        <![CDATA[
-        \begin{tikzpicture}[scale=.15]
-
-        \coordinate (O) at (0,0);
-        \coordinate (P) at (312:10);
-        \coordinate (Q) at (312:20);
-
-        \draw[step=1cm,cyan,very thin] (-21,-21) grid (21,21);
-        \draw[thick,->,>=stealth'] (-21,0) -- (21.8,0) node[anchor=west] {$x$};
-        \draw[thick,->,>=stealth'] (0,-21) -- (0,22) node[anchor=south] {$y$};
-        \draw[black,  thick] (Q)++(312:10)--(O) ;
-
-        \draw[red,thick] (O) circle (10);
-        \draw[blue,thick] (O) circle (20);
-
-        \filldraw[red] (P) circle (.25cm) node[anchor=west , xshift=7,fill=white,inner sep=1pt]{$P$};
-        \filldraw[blue] (Q) circle (.25cm) node[anchor=west , xshift=7,fill=white,inner sep=1pt]{$Q$} ;
-
-        \draw[gray, thick, ->,>=stealth'] (3,0) arc(0:312:3) node[above left,midway, xshift=0, yshift=0,fill=white,inner sep=1pt, text=black] {$\small 312\degree$};
-
-        \node[text width=.2cm,fill=white,inner sep=1pt] at (10,-1.7)    {1};
-        \node[text width=.2cm,fill=white,inner sep=1pt] at (20,-1.7)    {2};
-        \node[text width=.2cm,fill=white,inner sep=1pt] at (-1,10)    {1};
-        \node[text width=.2cm,fill=white,inner sep=1pt] at (-1,20)    {2};
-        \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-    </sidebyside></statement></exercise>
-</exercisegroup>
-
-<exercise number="83"><statement><p>Explain why the definitions of the trigonometric ratios for a third-quadrant angle (between <m>180\degree</m> and <m>270\degree</m>) are independent of the point <m>P</m> chosen on the terminal side. Illustrate with a figure.</p></statement>
+<exercise number="65"><statement><p>Explain why the definitions of the trigonometric ratios for a third-quadrant angle (between <m>180\degree</m> and <m>270\degree</m>) are independent of the point <m>P</m> chosen on the terminal side. Illustrate with a figure.</p></statement>
     <answer><p>Sides of similar triangles are proportional.</p> 
     </answer></exercise>
 
-<exercise number="84"><statement><p>Explain why the definitions of the trigonometric ratios for a fourth-quadrant angle (between <m>270\degree</m> and <m>360\degree</m>) are independent of the point <m>P</m> chosen on the terminal side. Illustrate with a figure.</p></statement></exercise>
+<exercise number="66"><statement><p>Explain why the definitions of the trigonometric ratios for a fourth-quadrant angle (between <m>270\degree</m> and <m>360\degree</m>) are independent of the point <m>P</m> chosen on the terminal side. Illustrate with a figure.</p></statement></exercise>
+    
 
 </exercises>
