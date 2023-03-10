@@ -27,9 +27,9 @@ These two angles are supplementary, so they have the same reference angle, as sh
         \draw[blue, thick, ->,>=stealth'] (O) -- (A);
 
         \draw [thick, color=red] (O) ++(.9,0) arc(0:25:.9)
-           node[right, midway] {\footnotesize$25\degree$};
+           node[right, midway] {$25\degree$};
         \draw [thick, color=red] (O) ++(-.9,0) arc(180:155:.9)
-           node[left, midway] {\footnotesize$25\degree$};
+           node[left, midway] {$25\degree$};
         \draw [thick, red, ->,>=stealth'] (O) ++(.3,0) arc(0:155:.3);
 
         \node[text width=.25cm] at (0,-2.45){ a.};
@@ -50,9 +50,9 @@ These two angles are supplementary, so they have the same reference angle, as sh
         \draw[blue, thick, ->,>=stealth'] (O) -- (A) node[below right, xshift=-3, yshift=3] {\color{red}$335\degree$};
 
         \draw [thick, color=red] (O) ++(.9,0) arc(0:-25:.9)
-           node[right, midway] {\footnotesize$25\degree$};
+           node[right, midway] {$25\degree$};
         \draw [thick, color=red] (O) ++(-.9,0) arc(180:205:.9)
-           node[left, midway] {\footnotesize$25\degree$};
+           node[left, midway] {$25\degree$};
         \draw [thick, red, ->,>=stealth'] (O) ++(.3,0) arc(0:335:.3);
         \draw [thick, red, ->,>=stealth'] (O) ++(.6,0) arc(0:205:.6);
 
@@ -109,31 +109,33 @@ At what angles is the cyclist's knee within 9 centimeters of the KOPS line?</p><
 
 <answer><sidebyside widths="58% 35%" margins="0% 0%" valigns="middle middle"><p>When the angle of the crank is between 0° and 60°, and again between 300° and 360°.</p>
     <image xml:id="KOPS-9cm"><description>knee within 9cm of KOPS line</description><latex-image>
-    <![CDATA[
-    \begin{tikzpicture}
-    \coordinate(O) at (0,0);
-    \coordinate(P) at (60:2cm);
-    \coordinate(P2) at (300:2cm);
-    \coordinate(Q) at (1,0);
-    \coordinate(R) at ($ (2,0) ++2*sin(60)*(0,1)$);
+        <![CDATA[
+        \begin{tikzpicture}[scale=.9]
+        \coordinate(O) at (0,0);
+        \coordinate(P) at (60:2cm);
+        \coordinate(P2) at (300:2cm);
+        \coordinate(Q) at (1,0);
+        \coordinate(R) at ($ (2,0) ++2*sin(60)*(0,1)$);
 
-    \draw[gray!80!white, thick, dashed] (1,2.3) -- +(0,-4.55);
+        \draw[gray!80!white, thick, dashed] (1,2.3) -- +(0,-4.55);
 
-    \draw[gray!80!white, thick] (2,2.3) -- (2, -2.25) node[below right, yshift=13, color=blue] {$x=18$};
-    \draw[blue, thick, <->,>=stealth'] (1,2) -- +(1,0) node[midway,fill=white, inner sep=2pt] {$9$};
+        \draw[gray!80!white, thick] (2,2.3) -- (2, -2.25) node[below right, yshift=13, color=blue] {$x=18$};
+        \draw[blue, thick, <->,>=stealth'] (1,2) -- +(1,0) node[midway,fill=white, inner sep=2pt] {$9$};
 
-    \draw[black, thick, ->,>=stealth'] (0,-2.25)--(0,2.3);
-    \draw[black, thick, ->,>=stealth'] (-2.3,0)--(3,0);
-    \draw[red, thick, ->,>=stealth'] (0.4,0) arc (0:60:0.4) node[right, midway] {$ \theta$};
+        \draw[black, thick, ->,>=stealth'] (0,-2.25)--(0,2.3);
+        \draw[black, thick, ->,>=stealth'] (-2.3,0)--(3,0);
+        \draw[red, thick, ->,>=stealth'] (0.5,0) arc (0:60:0.5) node[right, xshift=2, yshift=1, midway,fill=white, inner sep=0pt] {$60^\circ$};
+        \draw[red, thick, ->,>=stealth'] (0.4,0) arc (0:300:0.4) node[below left, yshift=-8, midway] {$300^\circ$};
 
-    \draw[blue, thick] (O) --(P) node[above left, midway, xshift=4, color=blue] {$18$};
+        \draw[blue, thick] (O) --(P) node[above left, midway, xshift=4, color=blue] {$18$};
+        \draw[blue, thick] (O) --(P2);
 
-    \draw[black, thick] (O) circle (2cm);
-    \filldraw[black] (P) circle (1.5pt);
-    \filldraw[black] (P2) circle (1.5pt);
+        \draw[black, thick] (O) circle (2cm);
+        \filldraw[black] (P) circle (1.5pt);
+        \filldraw[black] (P2) circle (1.5pt);
 
-    \end{tikzpicture}]]>
-</latex-image></image></sidebyside>
+        \end{tikzpicture}]]>
+    </latex-image></image></sidebyside>
 </answer></exercise>
 
 <example><statement><p>Solve the equation <m>~\sin (\theta) = -0.6428~</m> for angles between <m>0\degree</m> and <m>360\degree</m>. Round your answers to the nearest degree.</p></statement>
@@ -148,9 +150,9 @@ Thus, one of the solutions is <m>320\degree</m>.</p>
  
 <p>The sine is also negative in the third quadrant, so there should also be a solution in the third quadrant. The reference angle for <m>320\degree</m> is <m>40\degree</m>, and the third-quadrant angle with reference angle <m>40\degree</m> is <m>220\degree</m>, as shown at right. You can check that, rounded to four decimal places, both angles satisfy the equation, that is, 
         <me>\sin (320\degree) = -0.6428~~~~\text{and} ~~~~\sin (220\degree) = -0.6428</me> </p>
-    <image xml:id="exam4-1-8"><description>angles</description><latex-image>
+    <image xml:id="exam4-1-8"><description>angles in 3rd and 4th quadrants</description><latex-image>
         <![CDATA[
-        \begin{tikzpicture}
+        \begin{tikzpicture}[scale=.8]
         \coordinate(O) at (0,0);
         \coordinate(A) at (-40:2cm);
         \coordinate(B) at (220:2cm);
@@ -162,9 +164,9 @@ Thus, one of the solutions is <m>320\degree</m>.</p>
         \draw[blue, thick, ->,>=stealth'] (O) -- (A) node[below right, xshift=-3, yshift=3] {\color{red}$320\degree$};
 
         \draw [thick, red, <->,>=stealth'] (O) ++(.9,0) arc(0:-40:.9)
-           node[right, midway] {\footnotesize$40\degree$};
+           node[right, midway] {$40\degree$};
         \draw [thick, red, <->,>=stealth'] (O) ++(-.9,0) arc(180:220:.9)
-           node[left, midway] {\footnotesize$40\degree$};
+           node[left, midway] {$40\degree$};
         \draw [thick, red, ->,>=stealth'] (O) ++(.3,0) arc(0:320:.3);
         \draw [thick, red, ->,>=stealth'] (O) ++(.6,0) arc(0:220:.6);
         \end{tikzpicture}]]>
@@ -204,7 +206,7 @@ Because we can easily find coterminal solutions by adding or subtracting multipl
     \draw[gray!80!white, thick, dashed] (B)--(A) node[right, midway, xshift=-3.5]{\color{blue}1};
     \draw[gray!80!white, thick, dashed] (B)--(O) node[below, midway]{\color{blue}$\sqrt{3}$};
     \draw[blue, thick, ->,>=stealth'] (O) --(Ap);
-    \filldraw[black] (A) circle (1.8pt) node[anchor=north west, xshift=2,yshift=7] {$P\left(-\sqrt{3}, 1\right)$};
+    \filldraw[black] (A) circle (1.8pt) node[anchor=north west, xshift=2,yshift=7] {$P\left(\sqrt{3}, 1\right)$};
 
     \node[text width=.15cm] at (.7,.7){\color{blue} 2};
     \node[text width=.25cm] at (0,-2.5){ a.};
@@ -227,7 +229,7 @@ Because we can easily find coterminal solutions by adding or subtracting multipl
     \draw[gray!80!white, thick, dashed] (B)--(O) node[below, midway]{\color{blue}$\frac{\sqrt{3}}{2}$};
     \draw[blue, thick, ->,>=stealth'] (O) --(Ap);
     \filldraw[black] (A) circle (1.8pt) node[anchor=north west, xshift=4,yshift=9] { 
-    $Q\left(\frac{-\sqrt{3}}{2}, \frac{1}{2}\right)$};
+    $Q\left(\frac{\sqrt{3}}{2}, \frac{1}{2}\right)$};
 
     \node[text width=.15cm] at (.7,.7){\color{blue} 1};
     \node[text width=.25cm] at (0,-2.5){ b.};
@@ -248,34 +250,26 @@ Because we can easily find coterminal solutions by adding or subtracting multipl
 
 <example><statement>
 <sidebyside widths="62% 28%" valigns="middle middle" margins="0% 5%">
-  <p>Find the coordinates of point <m>P</m> on the unit circle shown at right.</p><!--<image source="photos/exam4-1-10.png"><description>angles</description></image>-->
-   <image xml:id="exam4-1-10"><description>angles</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
-        \coordinate(O) at (0,0);
-        \coordinate(A) at (315:1.5cm);
-        \coordinate(B) at ($ 1.5* cos(45)*(1,0) $);
+    <p>Find the coordinates of point <m>P</m> on the unit circle shown at right.</p><!--<image source="photos/exam4-1-10.png"><description>angles</description></image>-->
+    <image xml:id="exam4-1-10"><description>angles</description><latex-image>
+       <![CDATA[
+       \begin{tikzpicture}
+       \coordinate(O) at (0,0);
+       \coordinate(A) at (315:1.5cm);
+       \coordinate(B) at ($ 1.5* cos(45)*(1,0) $);
 
-        \draw[black, thick, ->,>=stealth'] (0,-1.6)--(0,1.7) node[above] {$y$};
-        \draw[black, thick, ->,>=stealth'] (-1.6,0)--(1.7,0) node[right] {$x$};
-        \draw[blue,thick] (B) rectangle ++(-.2,-.2);
-        \draw [gray!80!white] (O) circle [radius=1.5cm];
-        \draw[red, thick] (.3,0) arc(0:315:0.3) node[left, midway, xshift=3, yshift=-11]{\footnotesize$315\degree$};
+       \draw[black, thick, ->,>=stealth'] (0,-1.6)--(0,1.7) node[above] {$y$};
+       \draw[black, thick, ->,>=stealth'] (-1.6,0)--(1.7,0) node[right] {$x$};
+       \draw[blue,thick] (B) rectangle ++(-.2,-.2);
+       \draw [gray!80!white] (O) circle [radius=1.5cm];
+       \draw[red, thick] (.3,0) arc(0:315:0.3) node[left, midway, xshift=3, yshift=-11]{$315\degree$};
 
-        \draw[gray!80!white, thick, dashed] (B)--(A);
-        \draw[blue, thick] (O) --(A) node[left,midway, xshift=3, yshift=-4]{1};
-        \filldraw[black] (A) circle (1.8pt) node[anchor= west, xshift=4,yshift=0] {\footnotesize 
-        $P$};
+       \draw[gray!80!white, thick, dashed] (B)--(A);
+       \draw[blue, thick] (O) --(A) node[left,midway, xshift=3, yshift=-4]{1};
+       \filldraw[black] (A) circle (1.8pt) node[anchor= west, xshift=4,yshift=0] {$P$};
 
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></statement>
+       \end{tikzpicture}]]>
+   </latex-image></image></sidebyside></statement>
 
 <solution><p>The coordinates of <m>P</m> are given by  
     <me>x = \cos (315\degree),~~~y = \sin (315\degree)</me>.  
@@ -284,15 +278,8 @@ The reference angle for <m>315\degree</m> is <m>~ 360\degree - 315\degree = 45\d
 <p> Because <m>315\degree</m> is in the fourth quadrant, we have <m>\cos (315\degree) = \frac{1}{\sqrt{2}}</m> and <m>\sin (315\degree) = \frac{-1}{\sqrt{2}}</m>. Thus, the coordinates of <m>P</m> are <m>\left(\frac{1}{\sqrt{2}}, \frac{-1}{\sqrt{2}}\right)</m>.</p></solution></example>
 
 <exercise><statement><sidebyside widths="55% 35%" valigns="middle middle" margins="0% 5%"><p>Find the sine, cosine, and tangent of the angle <m>\varphi</m> shown at right.</p><!--<image source="photos/exer4-1-10.png"><description>angles</description></image>-->
-   <image xml:id="exer4-1-10"><description>angles</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
+    <image xml:id="exer4-1-10"><description>angles</description><latex-image>
+        <![CDATA[
         \begin{tikzpicture}
         \coordinate(O) at (0,0);
         \coordinate(A) at (224.43:1.5cm);
@@ -373,14 +360,7 @@ The reference angle for <m>315\degree</m> is <m>~ 360\degree - 315\degree = 45\d
     <image xml:id="fig-4-2-rcircle">
         <description>circle</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
+        <![CDATA[
         \begin{tikzpicture}
         \coordinate(O) at (0,0);
         \coordinate(P) at (50:2cm);
@@ -404,8 +384,8 @@ The reference angle for <m>315\degree</m> is <m>~ 360\degree - 315\degree = 45\d
         \filldraw[blue] (P) circle (2pt)  node[anchor=west , xshift=3] {($r \, \cos \theta, r \, \sin \theta)$};
         \filldraw[blue] (R) circle (2pt);
 
-        \node[text width=2cm,fill=white, inner sep=1pt] at (0.2,-1.3)    {\small $x^2+y^2=1$};
-        \node[text width=2cm] at (2,-2.) {\small $x^2+y^2=r^2$};
+        \node[text width=2cm,fill=white, inner sep=1pt] at (0.2,-1.3)    {$x^2+y^2=1$};
+        \node[text width=2cm] at (2,-2.) {$x^2+y^2=r^2$};
 
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
@@ -419,34 +399,27 @@ The reference angle for <m>315\degree</m> is <m>~ 360\degree - 315\degree = 45\d
             <mrow>\amp = 2.2476 \amp\amp\amp \amp = -5.5632</mrow></md>    
 The coordinates of <m>P</m> are approximately <m>(2.25, -5.56)</m>.</p>
 <image xml:id="exam4-2-1"><description>angle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
-        \coordinate(O) at (0,0);
-        \coordinate(P) at (292:2cm);
-        \coordinate(Q) at ($ 2*cos(292)*(1,0)$);
-        \coordinate(R) at (292:2.3cm);
+    <![CDATA[
+    \begin{tikzpicture}[scale=.9]
+    \coordinate(O) at (0,0);
+    \coordinate(P) at (292:2cm);
+    \coordinate(Q) at ($ 2*cos(292)*(1,0)$);
+    \coordinate(R) at (292:2.3cm);
 
-        \draw[gray!80!white, thick] (Q) rectangle ++(-.2,-.2);
-        \draw[gray!80!white, thick, dashed] (P) -- (Q);
+    \draw[gray!80!white, thick] (Q) rectangle ++(-.2,-.2);
+    \draw[gray!80!white, thick, dashed] (P) -- (Q);
 
-        \draw[black, thick, ->,>=stealth'] (0,-2.2)--(0,1.3) node[above] {$y$};
-        \draw[black, thick, ->,>=stealth'] (-1.5,0)--(2.3,0) node[right] {$x$};
-        \draw[gray!80!white, ultra thick, dashed] (Q) -- (O);
-        \draw[red, thick, ->,>=stealth'] (0.25,0) arc (0:292:0.25) node[left, midway, yshift=-12] {$\scriptsize 292\degree$};
-        \draw[blue, thick] (O) --(R) ;
-        \filldraw[blue] (P) circle (2pt)  node[anchor=west , xshift=3] {$P(x,y)$};
+    \draw[black, thick, ->,>=stealth'] (0,-2.2)--(0,1.3) node[above] {$y$};
+    \draw[black, thick, ->,>=stealth'] (-1.5,0)--(2.3,0) node[right] {$x$};
+    \draw[gray!80!white, ultra thick, dashed] (Q) -- (O);
+    \draw[red, thick, ->,>=stealth'] (0.25,0) arc (0:292:0.25) node[left, midway, yshift=-12] {$ 292\degree$};
+    \draw[blue, thick] (O) --(R) ;
+    \filldraw[blue] (P) circle (2pt)  node[anchor=west , xshift=3] {$P(x,y)$};
 
-        \node[text width=1cm,fill=white, inner sep=1pt] at (0.0,-1.5)    {$\color{blue}\scriptsize r=6$};
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside>
-    </solution></example>
+    \node[text width=1cm,fill=white, inner sep=1pt] at (-0.1,-1.5)    {$\color{blue} r=6$};
+    \end{tikzpicture}]]>
+</latex-image></image></sidebyside>
+</solution></example>
 
 <exercise><statement>
 <p>You find an old map that shows a buried treasure located 500 yards from the big oak tree in the direction <m>215\degree</m>, as shown below. You don't have anything  with you to measure angles, but you have your calculator.</p>
@@ -456,9 +429,7 @@ The coordinates of <m>P</m> are approximately <m>(2.25, -5.56)</m>.</p>
         <li>Find the tangent of <m>215\degree</m>. How far south should you walk from your present location before you begin digging?</li>
     </ol></p>
     <image xml:id="exer4-2-1"><description>angle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
+        <![CDATA[
         \begin{tikzpicture} [scale=1.2,cross/.style={cross out, draw=black, minimum size=2*(#1-\pgflinewidth), inner sep=0pt, outer sep=0pt},cross/.default={5pt}];
         \coordinate(O) at (0,0);
         \coordinate(P) at (215:2cm);
@@ -468,17 +439,17 @@ The coordinates of <m>P</m> are approximately <m>(2.25, -5.56)</m>.</p>
         \draw[gray!80!white, thick] (Q) rectangle ++(.2,-.2);
         \draw[gray!80!white, thick, dashed] (P) -- (Q);
 
-        \draw[black, thick, ->,>=stealth'] (0,-1.6)--(0,1.3) node[above, scale=.8] {N};
-        \draw[black, thick, ->,>=stealth'] (1.5,0)--(-2.3,0) node[left, scale=.8] {W};
+        \draw[black, thick, ->,>=stealth'] (0,-1.6)--(0,1.3) node[above] {N};
+        \draw[black, thick, ->,>=stealth'] (1.5,0)--(-2.3,0) node[left] {W};
         \draw[gray!80!white, ultra thick, dashed] (Q) -- (O);
 
-        \draw[red, thick, ->,>=stealth'] (0.25,0) arc (0:215:0.25) node[above left, midway, yshift=0] {\footnotesize$ 215\degree$};
+        \draw[red, thick, ->,>=stealth'] (0.25,0) arc (0:215:0.25) node[above left, midway, yshift=0] {$ 215\degree$};
         \draw[blue, thick] (O) --(R) ;
 
-        \node[text width=1.cm,fill=white, inner sep=1pt] at (-.6,-0.9)    {\color{blue}\scriptsize 500 yd};
-        \filldraw[black] (O) circle (1.3pt) node[anchor=north west, xshift=2, yshift=-1, fill=white,inner sep=1pt]{\footnotesize oak tree};
+        \node[text width=1.cm,fill=white, inner sep=1pt] at (-.6,-0.9)    {\color{blue}\small 500 yd};
+        \filldraw[black] (O) circle (1.3pt) node[anchor=north west, xshift=2, yshift=-1, fill=white,inner sep=1pt]{oak tree};
         \draw (P) node[cross,red, ultra thick] {};
-        \node[text width=1.cm, anchor=north west, xshift=-3, yshift=-3] at (P) {\color{red}\small treasure};
+        \node[text width=1.cm, anchor=north west, xshift=-3, yshift=-3] at (P) {\color{red}treasure};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside> 
     </statement>
@@ -489,16 +460,9 @@ The coordinates of <m>P</m> are approximately <m>(2.25, -5.56)</m>.</p>
 <idx><h>bearing</h></idx>
 
 <sidebyside widths="60% 32%" valigns="middle middle" margins="0% 5%">
-<p>Navigational directions for ships and planes are sometimes given as <term>bearings</term><idx><h>bearing</h></idx>, which are angles measured clockwise from north.  For example, a bearing of <m>110\degree</m> is equivalent to an angle of <m>20\degree</m> in standard position, or to its coterminal angle <m>340\degree</m>, as shown at right.</p>
-    <image xml:id="fig-4-2-bearings"><description>angle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
+<p>Navigational directions for ships and planes are sometimes given as <term>bearings</term><idx><h>bearing</h></idx>, which are angles measured clockwise from north.  For example, a bearing of <m>110\degree</m> is equivalent to an angle of <m>-20\degree</m> in standard position, or to its coterminal angle <m>340\degree</m>, as shown at right.</p>
+    <image xml:id="fig-4-2-bearings"><description>Bearing of 110 degrees</description><latex-image>
+        <![CDATA[
         \begin{tikzpicture} 
         \coordinate(O) at (0,0);
         \coordinate(P) at (340:2.4cm);
@@ -506,8 +470,8 @@ The coordinates of <m>P</m> are approximately <m>(2.25, -5.56)</m>.</p>
         \draw[black, thick, ->,>=stealth'] (0,-1.2)--(0,1.3) node[above] {N};
         \draw[black, thick, ->,>=stealth'] (-1.7,0)--(2.3,0);
 
-        \draw[red, thick, ->,>=stealth'] (0.25,0) arc (0:340:0.25) node[below left, midway, xshift=3, yshift=-3] {\footnotesize$ \theta = 340\degree$};
-        \draw[blue, thick, ->,>=stealth'] (0, 0.5,0) arc (90:-20:0.5) node[above right, midway, xshift=-2, yshift=-2] {\footnotesize bearing $110\degree$};
+        \draw[red, thick, ->,>=stealth'] (0.25,0) arc (0:340:0.25) node[below left, midway, xshift=3, yshift=-3] {$\theta = 340\degree$};
+        \draw[blue, thick, ->,>=stealth'] (0, 0.5,0) arc (90:-20:0.5) node[above right, midway, xshift=-2, yshift=-2] {$110\degree$};
         \draw[blue, thick] (O) --(P) ;
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
@@ -517,16 +481,9 @@ The coordinates of <m>P</m> are approximately <m>(2.25, -5.56)</m>.</p>
 <example><statement><p>Francine leaves the airport at a bearing of <m>245\degree</m> and flies 60 miles. How far south of the airport is she at that time?</p></statement>
 
 <solution><p>A bearing of <m>245\degree</m> is in the same direction as an angle of</p><sidebyside widths="55% 30%" valigns="middle middle"><p>  <me>-245\degree + 90\degree = -155\degree</me> in standard position, as shown at right, or as the coterminal angle <me>-155\degree + 360\degree = 205\degree</me>.</p>
-    <image xml:id="exam4-2-2"><description>angle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} 
+    <image xml:id="exam4-2-2"><description>Bearing of 245 degrees, 60 miles distance</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture} [scale=.8]
         \coordinate(O) at (0,0);
         \coordinate(P) at (205:2.cm);
         \coordinate(Q) at ($ 2*cos(205)*(1,0) $);
@@ -535,12 +492,12 @@ The coordinates of <m>P</m> are approximately <m>(2.25, -5.56)</m>.</p>
         \draw[gray!80!white, thick, dashed] (P)--(Q) node[left, midway] {$\color{blue} y$};
         \draw[black, thick, ->,>=stealth'] (0,-1.2)--(0,1.3) node[above] {N};
         \draw[black, thick, ->,>=stealth'] (-2.1,0)--(2.3,0);
-        \draw[blue, thick] (P)--(O) node[below right, midway, xshift=-7, yshift=-1] {\footnotesize\color{blue} 60 mi};
+        \draw[blue, thick] (P)--(O) node[below right, midway, xshift=-10, yshift=-1] {\color{blue} 60 mi};
 
-        \draw[red, thick, ->,>=stealth'] (0.25,0) arc (0:205:0.25) node[above left, midway, xshift=1, yshift=-5] {\footnotesize$ \theta = 205\degree$};
-        \draw[blue, thick, ->,>=stealth'] (0, 0.5,0) arc (90:-155:0.5) node[right, midway, xshift=0, yshift=18] {\footnotesize bearing $245\degree$};
-        \draw[blue, thick] (O) --(P) ;
-
+        \draw[red, thick, ->,>=stealth'] (0.25,0) arc (0:205:0.25) node[above left, midway, xshift=1, yshift=-5] {$\theta = 205\degree$};
+        \draw[blue, thick, ->,>=stealth'] (0, 0.5,0) arc (90:-155:0.5);
+        \node[align=center] at (1.2,.7) {\color{blue}bearing \\ \color{blue}$245\degree$};
+        \draw[blue, thick] (O) --(P);        
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
 <p> We would like the <m>y</m>-coordinate of Francine's position, so we calculate <m>y = r \sin (205\degree)</m>. 
@@ -559,15 +516,8 @@ Francine is about 25.4 miles south of the airport.</p></solution></example>
 <sidebyside widths="60% 25%" valigns="middle middle" margins="0% 10%">
 <p>The tangent function also has applications in measurement. The figure at right shows a line in the <m>xy</m>-plane. The angle <m>\alpha</m> measured in the positive direction from the positive <m>x</m>-axis to the line is called the <term>angle of inclination</term> of the line.</p> 
     <image xml:id="fig-angle-inclination"><description>angle of inclination</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
+        <![CDATA[
+        \begin{tikzpicture}[scale=.55]
         \coordinate (O) at (0,0);
         \coordinate (x) at (3.5,0);
         \coordinate (y) at (0,2);
@@ -579,7 +529,7 @@ Francine is about 25.4 miles south of the airport.</p></solution></example>
         \draw[black,  thick, ->,>=stealth'] (-1.5,0) --  (x) node[right] {$x$} ;
         \draw[black,  thick, ->,>=stealth'] (0,-2) --  (y) node[above] {$y$}  ;
         \draw[black,  thick, <->,>=stealth'] (D) --  (A)  ;
-        \draw[red, thick] (1.9,0) arc (0:{atan(0.9)}:.9) node [left, midway,xshift=0,yshift=-3] {$\alpha$};
+        \draw[red, thick] (1.9,0) arc (0:{atan(0.9)}:.9) node [right, midway,xshift=0,yshift=1] {$\alpha$};
 
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
@@ -604,27 +554,20 @@ where <m>0\degree \le \alpha \le 180\degree</m>.</p></assemblage>
     <mrow>\alpha \amp = \tan^{-1} \left(\dfrac{3}{4}\right) = 36.9\degree</mrow></md>
 The angle of inclination is <m>36.9\degree</m>.</p>
     <image xml:id="exam4-2-7"><description>graph y = 3/4 x - 3</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} [scale = 0.5]
+        <![CDATA[
+        \begin{tikzpicture} [scale = 0.35]
         \draw[cyan] (-1,-3) grid (8,5);
 
         \coordinate (A) at (-1, -9/4);
         \coordinate (B) at (8, 4.5);
 
-        \draw[black,  thick, ->,>=stealth'] (-1.1,0) --  (8.5,0) node[right] {$x$} ;
-        \draw[black,  thick, ->,>=stealth'] (0,-3.1) --  (0,5.5) node[above] {$y$}  ;
+        \draw[black,  thick, ->,>=stealth'] (-1.1,0) --  (8.55,0) node[right] {$x$} ;
+        \draw[black,  thick, ->,>=stealth'] (0,-3.1) --  (0,5.55) node[above] {$y$}  ;
         \draw[red,  thick] (B) --  (A)  ;
 
-        \foreach \x [evaluate=\x as \xi using int( 2* \x )] in {2, 4, 6, 8} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+        \foreach \x [evaluate=\x as \xi using int( 2* \x )] in {2, 4, 6, 8} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi $};
 
-        \foreach \y [evaluate=\y as \yi using int( 2* \y )]   in {-3, -1, 2, 4} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+        \foreach \y [evaluate=\y as \yi using int( 2* \y )]   in {-3, -1, 2, 4} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
 
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></solution></example>
@@ -633,27 +576,20 @@ The angle of inclination is <m>36.9\degree</m>.</p>
 <p>Find the angle of inclination of the line shown at right,
         <me>y = \dfrac{-6}{5}x + 2</me> </p>
     <image xml:id="exer4-2-7"><description>graph y= -6/5 x +2</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} [yscale=.8]
+        <![CDATA[
+        \begin{tikzpicture} [xscale=.8, yscale=.64]
         \draw[cyan] (-1,-1) grid (3,3);
 
         \coordinate (A) at (-5/6, 3);
         \coordinate (B) at (2.5,-1);
 
         \draw[black,  thick, ->,>=stealth'] (-1.1,0) --  (3.3,0) node[right] {$x$} ;
-        \draw[black,  thick, ->,>=stealth'] (0,-1.1) --  (0,3.3) node[above] {$y$}  ;
+        \draw[black,  thick, ->,>=stealth'] (0,-1.1) --  (0,3.33) node[above] {$y$}  ;
         \draw[red,  thick] (B) --  (A)  ;
 
-        \foreach \x [evaluate=\x as \xi using int( 1* \x )] in {1,2,3} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+        \foreach \x [evaluate=\x as \xi using int( 1* \x )] in {1,2,3} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi $};
 
-        \foreach \y [evaluate=\y as \yi using int( 1* \y )]   in {1,2,3} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+        \foreach \y [evaluate=\y as \yi using int( 1* \y )]   in {1,2,3} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></statement>
 
@@ -667,56 +603,130 @@ The angle of inclination is <m>36.9\degree</m>.</p>
 </ol></p></statement>
 
 <solution><p><ol marker = "a">
-    <li><sidebyside width="50% 40%" margins="0% 5%">
-        <p>Consider the slopes of the lines shown at right, as <m>\alpha</m> increases.</p>
-    <tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                  
-        <row bottom="minor">
-            <cell><m>\alpha</m></cell>
-            <cell><m>0\degree</m></cell>
-            <cell><m>30\degree</m></cell>
-            <cell><m>45\degree</m></cell>
-            <cell><m>60\degree</m></cell>
-            <cell><m>75\degree</m></cell>
-            <cell><m>85\degree</m></cell></row>
-        <row>
-            <cell><m>m</m></cell> 
-            <cell><m>0</m></cell>
-            <cell><m>0.6</m></cell>
-            <cell><m>1</m></cell>
-            <cell><m>1.7</m></cell>
-            <cell><m>3.7</m></cell>
-            <cell><m>11.4</m></cell></row>
-        </tabular>
-
+    <li><sidebyside widths="45% 45%" margins="0% 0%" valigns="middle middle">
+        <stack>
+            <p>Consider the slopes of the lines shown at right, as <m>\alpha</m> increases.</p>
+            <tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                  
+                <row bottom="minor">
+                    <cell><m>\alpha</m></cell>
+                    <cell><m>0\degree</m></cell>
+                    <cell><m>30\degree</m></cell>
+                    <cell><m>45\degree</m></cell>
+                    <cell><m>60\degree</m></cell>
+                    <cell><m>75\degree</m></cell>
+                    <cell><m>85\degree</m></cell></row>
+                <row>
+                    <cell><m>m</m></cell> 
+                    <cell><m>0</m></cell>
+                    <cell><m>0.6</m></cell>
+                    <cell><m>1</m></cell>
+                    <cell><m>1.7</m></cell>
+                    <cell><m>3.7</m></cell>
+                    <cell><m>11.4</m></cell></row>
+                </tabular>
+        </stack>
+        <image xml:id="Example-angles-inclination"><description>lines with different angles of inclination</description><latex-image>
+            <![CDATA[
+            \begin{tikzpicture}[scale=.7]
+    
+            \draw[black,  thick, ->,>=stealth'] (-3,0) --  (3,0) node[right] {$x$} ;
+            \draw[black,  thick, ->,>=stealth'] (0,-3) --  (0,3) node[left] {$y$}  ;
+            \draw[red, thick] (-3,{-sqrt(3)}) -- (3,{sqrt(3)}) node[right]{$\alpha=30^\circ$};    
+            \draw[blue, thick] (-3,-3) -- (2.7,2.7) node[right]{$\alpha=45^\circ$};    
+            \draw[red, thick] ({-sqrt(3)},-3) -- ({sqrt(3)},3) node[above, xshift=7mm, yshift=-3]{$\alpha=60^\circ$};    
+            \draw[blue, thick] ({-3/tan(75)},-3) -- ({3/tan(75)},3) node[above, xshift=5, yshift=2]{$\alpha=75^\circ$};    
+            \draw[red, thick] ({-3/tan(85)},-3) -- ({3/tan(85)},3);  
+            \draw[gray, <-,>=stealth'] ({2.5/tan(85)},2.5) -- (-.8,2.3)  node[left, xshift=2,text=red]{$\alpha=85^\circ$};
+            \draw[red, thick, ->,>=stealth'] (0.7,0) arc(0:85:.7);
+            \draw[blue, thick, ->,>=stealth'] (1,0) arc(0:75:1);
+            \draw[red, thick, ->,>=stealth'] (1.3,0) arc(0:60:1.3);
+            \draw[blue, thick, ->,>=stealth'] (1.6,0) arc(0:45:1.6);
+            \draw[red, thick, ->,>=stealth'] (1.9,0) arc(0:30:1.9);
+            \end{tikzpicture}]]>
+        </latex-image></image>
     </sidebyside>
-    <sidebyside width="50% 40%" margins="0% 5%">
-    <p>The slopes increase towards infinity as <m>\alpha</m> increases. But the values of the slope <m>m</m> are the values of <m>\tan (\alpha)</m>, and if we plot those values against <m>\alpha</m>, we see the graph of the tangent function emerging.</p>
-
-    </sidebyside></li>
-      
-    <li><sidebyside width="45%" margins="0% 5%">
-        <p>Now consider the slopes of the lines as <m>\alpha</m> decreases from <m>180\degree</m> toward <m>90\degree</m>.</p>
-    <tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                  
-        <row bottom="minor">
-            <cell><m>180\degree</m></cell>
-            <cell><m>150\degree</m></cell>
-            <cell><m>135\degree</m></cell>
-            <cell><m>120\degree</m></cell>
-            <cell><m>105\degree</m></cell>
-            <cell><m>95\degree</m></cell></row>
-        <row><cell><m>0</m></cell>
-            <cell><m>-0.6</m></cell> 
-            <cell><m>-1</m></cell>
-            <cell><m>-1.7</m></cell>
-            <cell><m>-3.7</m></cell>
-            <cell><m>-11.5</m></cell></row>
-            </tabular>
-
+    <sidebyside widths="45% 45%" margins="0% 0%" valigns="middle middle">
+        <p>The slopes increase towards infinity as <m>\alpha</m> increases. But the values of the slope <m>m</m> are the values of <m>\tan (\alpha)</m>, and if we plot those values against <m>\alpha</m>, we see the graph of the tangent function emerging.</p>
+        <image xml:id="tangent0to90deg"><description>graph</description><latex-image>
+            <![CDATA[
+            \begin{tikzpicture} [scale=0.7]
+            \draw[cyan] (0,-3) grid (6,5);
+    
+            \draw[->,>=stealth'] (-.1,0) -- (6.4,0) node[right] {$\alpha$};
+            \draw[->,>=stealth'] (0,-3.1) -- (0,5.3);
+            \foreach \x [evaluate=\x as \xi using int( 30* \x )] in {1,2,...,6}
+            \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$\xi^\circ $};
+    
+            \foreach \y   in {-2,-1,1,2,...,5} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\y};
+    
+            \draw[gray,thick,dashed] (3,-3)--+(0,8);
+            \draw[domain={0:atan(5)/30},smooth,variable=\x,red,very thick, ->, >=stealth'] plot ({\x},{tan(30*\x)});
+            \foreach \x in {0,1,1.5,2,2.5}
+            \filldraw[black] ({\x},{tan(30*\x)}) circle (2pt);
+            \end{tikzpicture}]]>
+        </latex-image></image>
     </sidebyside>
-    <sidebyside width="50% 40%" margins="0% 5%">
-    <p>The slopes decrease towards negative infinity as <m>\alpha</m> decreases. But, as before, the values of the slope <m>m</m> are the values of <m>\tan (\alpha)</m>, and if we plot those values against <m>\alpha</m>, we see the graph of the tangent function emerging.</p>
-
-    </sidebyside></li>
+    </li>
+        
+    <li><sidebyside widths="40% 50%" margins="0% 0%" valigns="middle middle">
+        <stack>
+            <p>Now consider the slopes of the lines as <m>\alpha</m> decreases from <m>180\degree</m> toward <m>90\degree</m>.</p>
+            <tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                  
+                <row bottom="minor">
+                    <cell><m>180\degree</m></cell>
+                    <cell><m>150\degree</m></cell>
+                    <cell><m>135\degree</m></cell>
+                    <cell><m>120\degree</m></cell>
+                    <cell><m>105\degree</m></cell>
+                    <cell><m>95\degree</m></cell></row>
+                <row><cell><m>0</m></cell>
+                    <cell><m>-0.6</m></cell> 
+                    <cell><m>-1</m></cell>
+                    <cell><m>-1.7</m></cell>
+                    <cell><m>-3.7</m></cell>
+                    <cell><m>-11.5</m></cell></row>
+                    </tabular>
+                </stack>
+        <stack>
+        <image xml:id="Example-More-angles-inclination"><description>lines with different angles of inclination</description><latex-image>
+            <![CDATA[
+            \begin{tikzpicture}[scale=.7]    
+            \draw[black,  thick, ->,>=stealth'] (-3,0) --  (3,0) node[right] {$x$} ;
+            \draw[black,  thick, ->,>=stealth'] (0,-3) --  (0,3) node[right] {$y$}  ;
+            \draw[red, thick] (3,{-sqrt(3)}) -- (-3,{sqrt(3)}) node[left, xshift=2]{$\alpha=150^\circ$};    
+            \draw[blue, thick] (3,-3) -- (-2.7,2.7) node[left, xshift=2]{$\alpha=135^\circ$};    
+            \draw[red, thick] ({sqrt(3)},-3) -- ({-sqrt(3)},3) node[above, xshift=-12, yshift=-1]{$\alpha=120^\circ$};    
+            \draw[blue, thick] ({3/tan(75)},-3) -- ({-3/tan(75)},3) node[above, xshift=10, yshift=2]{$\alpha=105^\circ$};    
+            \draw[red, thick, ->,>=stealth'] (0.7,0) arc(0:150:.7);
+            \draw[blue, thick, ->,>=stealth'] (1,0) arc(0:135:1);
+            \draw[red, thick, ->,>=stealth'] (1.3,0) arc(0:120:1.3);
+            \draw[blue, thick, ->,>=stealth'] (1.6,0) arc(0:105:1.6);
+            \end{tikzpicture}]]>
+        </latex-image></image>
+        </stack>
+    </sidebyside>
+    <sidebyside widths="45% 45%" margins="0% 0%" valigns="middle middle">
+        <p>The slopes decrease towards negative infinity as <m>\alpha</m> decreases. But, as before, the values of the slope <m>m</m> are the values of <m>\tan (\alpha)</m>, and if we plot those values against <m>\alpha</m>, we see the graph of the tangent function.</p>
+        <image xml:id="tangent90to180deg"><description>graph</description><latex-image>
+            <![CDATA[
+            \begin{tikzpicture} [scale=0.7]
+            \draw[cyan] (0,-5) grid (6,3);    
+            \draw[->,>=stealth'] (-.1,0) -- (6.4,0) node[right] {$\alpha$};
+            \draw[->,>=stealth'] (0,-5.1) -- (0,3.3);
+            \foreach \x [evaluate=\x as \xi using int( 30* \x )] in {1,2,...,6}
+            \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$\xi^\circ $};
+    
+            \foreach \y   in {-5,-4,-3,-2,-1,1,2,3} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\y};
+    
+            \draw[gray,thick,dashed] (3,-5)--+(0,8);
+            \draw[domain={0:atan(3)/30},smooth,variable=\x,red,very thick, ->, >=stealth'] plot ({\x},{tan(30*\x)});
+            \draw[domain={{6-atan(5)/30}:6},smooth,variable=\x,red,very thick, <-, >=stealth'] plot ({\x},{tan(30*\x)});
+            \foreach \x in {3.5,4,4.5,5,6}
+            \filldraw[black] ({\x},{tan(30*\x)}) circle (2pt);
+            \end{tikzpicture}]]>
+        </latex-image></image>
+    </sidebyside>
+    </li>
 </ol></p></solution></example>
 
 <exercise><statement><p><ol marker = "a">
@@ -741,15 +751,8 @@ The angle of inclination is <m>36.9\degree</m>.</p>
     <image xml:id="exam4-3-3">
         <description>grandfather clock and 2 graphs</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} 
+        <![CDATA[
+        \begin{tikzpicture} [scale=.8]
         \coordinate (O) at (0,0);
 
         \draw[->,>=stealth'] (O)++(-1.5,0) -- +(3.2,0) node[right] {$t$};
@@ -785,20 +788,13 @@ The angle of inclination is <m>36.9\degree</m>.</p>
     <image xml:id="exam4-3-3soln">
         <description>clock</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
+        <![CDATA[
+        \begin{tikzpicture} [scale=.8]
         \coordinate (O) at (0,0);
         \draw[black, thick] (O) circle (1.6 cm);
 
         \foreach \theta [evaluate=\theta as \h using int(3*\theta )]  in {1, 2, 3, 4}  {
-          \node[text width = .3cm] at (-90*\theta+90:1.3){\h}; }
+            \node[text width = .3cm] at (-90*\theta+90:1.3){\h}; }
 
         \coordinate (h2) at (30:1.5);
         \coordinate (h4) at (-30:1.5);
@@ -812,10 +808,10 @@ The angle of inclination is <m>36.9\degree</m>.</p>
 
         \draw[gray!70!white, thick] (P) -- +(2.5,0);
         \draw[gray!70!white, thick] (Q) -- +(2.5,0);
-        \draw[blue, thick, <-] (P)++(1.3,0) --+(0,-.5) node[below, fill=white, inner sep=0] {\small 1/2 diameter};
-        \draw[blue, thick, <-] (Q)++(1.3,0) --+(0,.5);
+        \draw[blue, thick, <-,>=stealth'] (P)++(1.3,0) --+(0,-.5) node[below, fill=white, inner sep=0] { $\frac{1}{2}$ diameter};
+        \draw[blue, thick, <-,>=stealth'] (Q)++(1.3,0) --+(0,.5);
         \draw[gray!70!white, thick] (R) -- +(3.1,0);
-        \node[text width = 2.4cm, text=blue] at (2.9,-1.2){\small 1/4 diameter};
+        \node[text width = 2.4cm, text=blue] at (3,-1.2){$\frac{1}{4}$ diameter};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside> 
 <p>Thus the height of the minute hand does not decrease at a constant rate.</p>
@@ -825,14 +821,7 @@ The angle of inclination is <m>36.9\degree</m>.</p>
 <p><ol marker="a">
   
     <li><image xml:id="exer4-3-3a" width="50%"><description>sinusoidal graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
+        <![CDATA[
         \begin{tikzpicture} [xscale=.9,yscale=.54]
         \draw[cyan, xstep=.5, ystep=.5] (0,0) grid (6,5);
 
@@ -845,21 +834,14 @@ The angle of inclination is <m>36.9\degree</m>.</p>
         \foreach \y  [evaluate=\y as \yi using int( 20* \y )] in {2.5,5}
         \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
 
-        \draw[domain=-0:6,smooth,variable=\x,red,very thick] plot ({\x},{ 2.5+2.5*sin(deg(\x*2*pi/3))});
+        \draw[samples=65,domain=-0:6,smooth,variable=\x,red,very thick] plot ({\x},{ 2.5+2.5*sin(deg(\x*2*pi/3))});
         \end{tikzpicture}]]>
     </latex-image></image></li>
 
     <li><image xml:id="exer4-3-3b" width="50%">
         <description>sinusoidal graph</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
+        <![CDATA[
         \begin{tikzpicture} [xscale=.9,yscale=.54]
         \draw[cyan, xstep=.5, ystep=.5] (0,0) grid (6,5);
 
@@ -872,19 +854,12 @@ The angle of inclination is <m>36.9\degree</m>.</p>
         \foreach \y  [evaluate=\y as \yi using int( 20* \y )] in {2.5,5}
         \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
 
-        \draw[domain=-0:6,smooth,variable=\x,red,very thick] plot ({\x},{ 2.5-2.5*cos(deg(\x*2*pi/3))});
+        \draw[samples=65,domain=-0:6,smooth,variable=\x,red,very thick] plot ({\x},{ 2.5-2.5*cos(deg(\x*2*pi/3))});
         \end{tikzpicture}]]>
     </latex-image></image></li>
 
     <li><image xml:id="exer4-3-3c" width="50%"><description>sinusoidal graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
+        <![CDATA[
         \begin{tikzpicture} [xscale=.9,yscale=.54]
         \draw[cyan, xstep=.5, ystep=.5] (0,0) grid (6,5);
 
@@ -897,7 +872,7 @@ The angle of inclination is <m>36.9\degree</m>.</p>
         \foreach \y  [evaluate=\y as \yi using int( 6* \y )] in {2.5,5}
         \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {   \yi};
 
-        \draw[domain=-0:6,smooth,variable=\x,red,very thick] plot ({\x},{ 2.5-2.5*cos(deg(\x*2*pi/3))});
+        \draw[samples=65,domain=-0:6,smooth,variable=\x,red,very thick] plot ({\x},{ 2.5-2.5*cos(deg(\x*2*pi/3))});
         \end{tikzpicture}]]>
     </latex-image></image></li>
 </ol></p></statement>
@@ -943,30 +918,25 @@ The angle of inclination is <m>36.9\degree</m>.</p>
 <solution><p><ol marker="a">
      <li><p>Plot the data points and fit a sinusoidal curve by eye, as shown below.</p><sidebyside width="70%">
         <image xml:id="exam4-3-4"><description>sinusoidal graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} [xscale=.5, yscale=.2] 
-        \draw[cyan, xstep=1, ystep=2] (0,0) grid (18,20);
+            <![CDATA[
+            \begin{tikzpicture} [xscale=.5, yscale=.2] 
+            \draw[cyan, xstep=1, ystep=2] (0,0) grid (18,20);
 
-        \draw[->,>=stealth'] (-0.1,0) -- (18.6,0) node[right] {$t$};
-        \draw[->,>=stealth'] (0,-.1) -- (0,20.9) node[above] {$y$};
-        \draw[green, ultra thick, dashed] (0,12.12)--+(18,0);
+            \draw[->,>=stealth'] (-0.1,0) -- (18.6,0) node[right] {$t$};
+            \draw[->,>=stealth'] (0,-.1) -- (0,20.9) node[above] {$y$};
+            \draw[green, ultra thick, dashed] (0,12.12)--+(18,0);
 
-        \foreach \x [evaluate=\x as \xi using int( 1* \x /1)] in {4, 8, ..., 16}
-        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+            \foreach \x [evaluate=\x as \xi using int( 1* \x /1)] in {4, 8, ..., 16}
+            \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi $};
 
-        \foreach \y  [evaluate=\y as \yi using int( 1* \y )] in {4, 8,..., 20}
-        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+            \foreach \y  [evaluate=\y as \yi using int( 1* \y )] in {4, 8,..., 20}
+            \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
 
-        \draw[domain=-0:18,smooth,variable=\x,red,very thick] plot ({\x},{ 12.25-5.25*cos(deg((\x-.66)*pi/6))});
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></li>
+            \draw[domain=-0:18,smooth,variable=\x,red,very thick] plot ({\x},{ 12.25-5.25*cos(deg((\x-.66)*pi/6))});
+            \foreach \x  in {1,2, ..., 12}
+            \filldraw[black] (\x, {12.25-5.25*cos(deg((\x-.66)*pi/6))}) ellipse (.12 and .3);
+            \end{tikzpicture}]]>
+        </latex-image></image></sidebyside></li>
      <li>The period of the graph is 12 months. The midline is approximately <m>y = 12.25,</m> and the amplitude is approximately 5.25.</li>
  </ol></p></solution></example>
 
@@ -1063,18 +1033,16 @@ for all <m>x</m>. The constant <m>p</m> is called the <term>period</term> of the
             <image xml:id="ar4-3-1ans">
                 <description>graph</description>
                 <latex-image>
-                <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-                <![CDATA[\tikzset{%
-                }
+                <![CDATA[
                 \begin{tikzpicture} [scale=.5]
                 \draw[cyan] (-2,-3) grid (4,3);
 
                 \draw[->,>=stealth'] (-2.1,0) -- (4.6,0) node[right] {$x$};
                 \draw[->,>=stealth'] (0,-3.1) -- (0,3.3) node[above] {$y$};
 
-                \foreach \x [evaluate=\x as \xi using int( 2* \x )] in {-2,2} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+                \foreach \x [evaluate=\x as \xi using int( 2* \x )] in {-2,2} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi $};
 
-                \foreach \y [evaluate=\y as \yi using int( 1* \y )]   in {-2, 2} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+                \foreach \y [evaluate=\y as \yi using int( 1* \y )]   in {-2, 2} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
 
                 \draw[domain={-2:5/6},smooth,variable=\x,red,very thick] plot ({\x},{1/(2*\x-2)});
 
@@ -1084,18 +1052,16 @@ for all <m>x</m>. The constant <m>p</m> is called the <term>period</term> of the
             </sidebyside><p><m>x = 2,~~y = 0</m></p></li>
             <li><sidebyside width="70%" margins="0%,30%">
             <image xml:id="ar4-3-2ans"><description>graph</description><latex-image>
-                <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-                <![CDATA[\tikzset{%
-                }
+                <![CDATA[
                 \begin{tikzpicture} [scale=.5]
                 \draw[cyan] (-4,-3) grid (2,3);
 
                 \draw[->,>=stealth'] (-4.1,0) -- (2.6,0) node[right] {$x$};
                 \draw[->,>=stealth'] (0,-3.1) -- (0,3.3) node[above] {$y$};
 
-                \foreach \x [evaluate=\x as \xi using int( 2* \x )] in {-4,-2,2} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+                \foreach \x [evaluate=\x as \xi using int( 2* \x )] in {-4,-2,2} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi $};
 
-                \foreach \y [evaluate=\y as \yi using int( 1* \y )]   in {-2, 2} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+                \foreach \y [evaluate=\y as \yi using int( 1* \y )]   in {-2, 2} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
 
                 \draw[domain={-4:-5/3},smooth,variable=\x,red,very thick] plot ({\x},{1/(2*\x +3)});
 
@@ -1105,18 +1071,16 @@ for all <m>x</m>. The constant <m>p</m> is called the <term>period</term> of the
             </sidebyside><p><m>x = -3,~~y = 0</m></p></li>
             <li><sidebyside width="70%" margins="0%,30%">
             <image xml:id="ar4-3-3ans"><description>graph</description><latex-image>
-                <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-                <![CDATA[\tikzset{%
-                }
+                <![CDATA[
                 \begin{tikzpicture} [xscale=.375, yscale=.5]
                 \draw[cyan] (-4,-3) grid (4,3);
 
                 \draw[->,>=stealth'] (-4.1,0) -- (4.6,0) node[right] {$x$};
                 \draw[->,>=stealth'] (0,-3.1) -- (0,3.3) node[above] {$y$};
 
-                \foreach \x [evaluate=\x as \xi using int(  \x )] in {-4,-2,2,4} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+                \foreach \x [evaluate=\x as \xi using int(  \x )] in {-4,-2,2,4} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi $};
 
-                \foreach \y [evaluate=\y as \yi using int( 1* \y )]   in {-2, 2} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+                \foreach \y [evaluate=\y as \yi using int( 1* \y )]   in {-2, 2} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
 
                 \draw[domain={-4:-2/sqrt(3)},smooth,variable=\x,red,very thick] plot ({\x},{1/( (\x)^2 -1)});
 
@@ -1128,18 +1092,16 @@ for all <m>x</m>. The constant <m>p</m> is called the <term>period</term> of the
             </sidebyside><p><m>x = -1,~~x = 1~~y = 0</m></p></li>
             <li><sidebyside width="70%" margins="0%,30%">
             <image xml:id="ar4-3-4ans"><description>graph</description><latex-image>
-                <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-                <![CDATA[\tikzset{%
-                }
+                <![CDATA[
                 \begin{tikzpicture} [scale=.5]
                 \draw[cyan] (-3,-4) grid (3,2);
 
                 \draw[->,>=stealth'] (-3.1,0) -- (3.3,0) node[right] {$x$};
                 \draw[->,>=stealth'] (0,-4.1) -- (0,2.3) node[above] {$y$};
 
-                \foreach \x [evaluate=\x as \xi using int( 2* \x )] in {-2,2} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+                \foreach \x [evaluate=\x as \xi using int( 2* \x )] in {-2,2} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi $};
 
-                \foreach \y [evaluate=\y as \yi using int( 1* \y )]   in {-2, 2} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+                \foreach \y [evaluate=\y as \yi using int( 1* \y )]   in {-2, 2} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
 
                 \draw[domain={-3:-3/4},smooth,variable=\x,red,very thick] plot ({\x},{-1/( (2*\x +1)^2 )});
 
@@ -1148,19 +1110,17 @@ for all <m>x</m>. The constant <m>p</m> is called the <term>period</term> of the
             </latex-image></image>
             </sidebyside><p><m>x = -1,~~y = 0</m></p></li>
             <li><sidebyside width="70%" margins="0%,30%">
-            <image xml:id="ar4-3-5ans"><description>graph</description><latex-image>
-                <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-                <![CDATA[\tikzset{%
-                }
+                <image xml:id="ar4-3-5ans"><description>graph</description><latex-image>
+                <![CDATA[
                 \begin{tikzpicture} [xscale=.5, yscale=.375]
                 \draw[cyan] (-3,-2) grid (3,6);
 
                 \draw[->,>=stealth'] (-3.1,0) -- (3.3,0) node[right] {$x$};
                 \draw[->,>=stealth'] (0,-2.1) -- (0,6.3) node[above] {$y$};
 
-                \foreach \x [evaluate=\x as \xi using int( 2* \x )] in {-2,2} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+                \foreach \x [evaluate=\x as \xi using int( 2* \x )] in {-2,2} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi $};
 
-                \foreach \y [evaluate=\y as \yi using int( 1* \y )]   in {-2, 2} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+                \foreach \y [evaluate=\y as \yi using int( 1* \y )]   in {-2, 2} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
 
                 \draw[domain={-3:-1/8},smooth,variable=\x,red,very thick] plot ({\x},{ (4*\x+1)/( 2*\x ) });
 
@@ -1170,18 +1130,16 @@ for all <m>x</m>. The constant <m>p</m> is called the <term>period</term> of the
             </sidebyside><p><m>x = 0,~~y = 2</m></p></li>
             <li><sidebyside width="70%" margins="0%,30%">
             <image xml:id="ar4-3-6ans"><description>graph</description><latex-image>
-                <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-                <![CDATA[\tikzset{%
-                }
+                <![CDATA[
                 \begin{tikzpicture} [scale=.5]
                 \draw[cyan] (-3,-2) grid (3,4);
 
                 \draw[->,>=stealth'] (-3.1,0) -- (3.3,0) node[right] {$x$};
                 \draw[->,>=stealth'] (0,-2.1) -- (0,4.3) node[above] {$y$};
 
-                \foreach \x [evaluate=\x as \xi using int( 2* \x )] in {-2,2} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+                \foreach \x [evaluate=\x as \xi using int( 2* \x )] in {-2,2} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi $};
 
-                \foreach \y [evaluate=\y as \yi using int( 1* \y )]   in {-2, 2, 4} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+                \foreach \y [evaluate=\y as \yi using int( 1* \y )]   in {-2, 2, 4} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
 
                 \draw[domain={-3:1/3},smooth,variable=\x,red,very thick] plot ({\x},{ (2*\x)/( 2*\x - 1) });
 

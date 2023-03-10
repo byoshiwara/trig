@@ -261,39 +261,8 @@
 
 <exercisegroup><introduction><p>For Problems 25<ndash/>26, use the grid provided below.</p>
 
-    <sidebyside width="50%"><image xml:id="hp4-2-45"><description>unit circle on grid</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} [scale = .4] 
-        \draw[cyan] (-10,-10) grid (10,10);
-
-        \coordinate (O) at (0,0);
-
-        \draw[red,thick] (O) circle (10cm);
-
-        \foreach \x  in {-10, -9, ..., 10} 
-        {
-        \draw[black,  thick] ($ \x *(1,0) +(0,.2) $) --++(0,-0.4); 
-        \draw[black,  thick] ($ \x *(0,1) +(.2,0) $) --++(-0.4,0); 
-        };
-
-        \foreach \x  in {-10, -5, 5, 10} 
-        {
-        \draw[black, very thick] ($ \x *(1,0) +(0,.3) $) --++(0,-0.6); 
-        \draw[black, very thick] ($ \x *(0,1) +(.3,0) $) --++(-0.6,0); 
-        };
-
-        \filldraw[black] (10,0) circle (.5pt) node[anchor=north, yshift=-4, fill=white, inner sep=1pt, text=red] {1};
-        \filldraw[black] (0,10) circle (.5pt) node[anchor=east, xshift=-5, fill=white, inner sep=1pt, text=red] {1};
-
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></introduction>
+    <sidebyside width="50%"><image xml:id="hp4-2-45"><description>unit circle on grid</description>
+    <xi:include href="UnitCircleOnGrid.ptx"/></image></sidebyside></introduction>
     
     <exercise number="25"><statement><p>Draw two different angles <m>\alpha</m> and <m>\beta</m> in standard position whose sine is <m>0.6</m>. Note that the radius of the circle is 1, 
         <ol marker="a">
@@ -303,17 +272,10 @@
     
     <answer><p><ol marker="a">
         <li><m>36.9\degree,~143.1\degree</m></li>
-        <li><sidebyside width="30%" margins="0% 5%">
-    <image xml:id="hp4-2-45ans"><description>angles on grid</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} [scale = .3] 
+        <li><sidebyside width="40%" margins="0% 5%">
+        <image xml:id="hp4-2-45ans"><description>angles on grid</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture} [scale = .2] 
         \draw[cyan, step=2] (-10,-10) grid (10,10);
         \draw[black, thick] (-10,0) -- (10,0);
         \draw[black, thick] (0,-10) -- (0, 10);
@@ -334,7 +296,7 @@
         \draw[violet, thick, ->,>=stealth'] (2,0) arc(0:{180-atan(.75)}:2) node[above, midway, xshift=-3, yshift=3,fill=white, inner sep=1pt]{$\beta$};
         \draw[black, thick, <->,>=stealth'] (-6,0) arc(180:{180-atan(.75)}:6) node[left, midway, xshift=-5,fill=white, inner sep=0pt] {$\tilde{\beta}$};
 
-        \draw[black, thick] (0.3,6) -- (-0.3,6) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\footnotesize 0.6};
+        \draw[black, thick] (0.3,6) -- (-0.3,6) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {0.6};
         \draw[blue, ultra thick] (8,6)--(8,0)--(-8,0)--(-8,6)--(O)--(8,6);
         \filldraw[black] (8,6) circle(.2cm);
         \filldraw[black] (-8,6) circle(.2cm);
@@ -351,41 +313,9 @@
 
 <exercisegroup><introduction><p>For Problems 27<ndash/>28, use the grid provided below.</p>
     <sidebyside width="50%">
-    <image xml:id="hp4-2-47"><description>unit circle on grid</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} [scale = .4] 
-        \draw[cyan] (-10,-10) grid (10,10);
-        \draw[black, thick] (-10,0) -- (10,0);
-        \draw[black, thick] (0,-10) -- (0, 10);
-
-        \coordinate (O) at (0,0);
-
-        \draw[red,thick] (O) circle (10cm);
-
-        \foreach \x  in {-10, -9, ..., 10} 
-        {
-        \draw[black,  thick] ($ \x *(1,0) +(0,.2) $) --++(0,-0.4); 
-        \draw[black,  thick] ($ \x *(0,1) +(.2,0) $) --++(-0.4,0); 
-        };
-
-        \foreach \x  in {-10, -5, 5, 10} 
-        {
-        \draw[black, very thick] ($ \x *(1,0) +(0,.3) $) --++(0,-0.6); 
-        \draw[black, very thick] ($ \x *(0,1) +(.3,0) $) --++(-0.6,0); 
-        };
-
-        \filldraw[black] (10,0) circle (.5pt) node[anchor=north, yshift=-4, fill=white, inner sep=1pt, text=red] {1};
-        \filldraw[black] (0,10) circle (.5pt) node[anchor=east, xshift=-5, fill=white, inner sep=1pt, text=red] {1};
-
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></introduction>
+    <image xml:id="hp4-2-47"><description>unit circle on grid</description>
+        <xi:include href="UnitCircleOnGrid.ptx"/>
+    </image></sidebyside></introduction>
 
 <exercise number="27"><statement><p>Draw two different angles <m>\alpha</m> and <m>\beta</m> in standard position whose cosine is <m>0.3</m>.
         <ol marker="a">
@@ -395,47 +325,41 @@
     
 <answer><p><ol marker="a">
     <li><m>72.5\degree,~287.5\degree</m></li>
-    <li><sidebyside width="30%">
-        <image xml:id="hp4-2-47ans"><description>graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} [scale = .3] 
-        \draw[cyan, step=2] (-10,-10) grid (10,10);
-        \draw[black, thick] (-10,0) -- (10,0);
-        \draw[black, thick] (0,-10) -- (0, 10);
-
-        \coordinate (O) at (0,0);
-        \coordinate (A) at ({acos(0.3)}:11);
-        \coordinate (B) at ({360-acos(0.3)}:11);
-        \coordinate (C) at ({acos(0.3)}:10);
-        \coordinate (D) at ({-acos(0.3)}:10);
-
-        \draw[blue, very thick] (O)--(C)--(D)--(O)--+(3,0);
-
-        \draw[red,thick] (O) circle (10cm);
-
-        \filldraw[black] (10,0) circle (.5pt) node[anchor=north, yshift=-4, fill=white, inner sep=1pt, text=red] {1};
-        \filldraw[black] (0,10) circle (.5pt) node[anchor=east, xshift=-5, fill=white, inner sep=1pt, text=red] {1};
-
-        \draw[blue, thick, ->,>=stealth'] (O)--(A);
-        \draw[blue, thick, ->,>=stealth'] (O)--(B);
-        \draw[magenta, thick, ->,>=stealth'] (4,0) arc(0:{acos(.3)}:4) node[right, midway, xshift=3,fill=white, inner sep=0pt]{$\alpha$};
-        \draw[black, thick, <->,>=stealth'] (6,0) arc(0:{acos(.3)}:6) node[right, midway, xshift=5,fill=white, inner sep=0pt] {$\tilde{\alpha}$};
-        \draw[violet, thick, ->,>=stealth'] (2,0) arc(0:{360-acos(.3)}:2) node[above, midway, xshift=-3, yshift=3,fill=white, inner sep=1pt]{$\beta$};
-        \draw[black, thick, <->,>=stealth'] (6,0) arc(0:{-acos(.3)}:6) node[right, midway, xshift=5,fill=white, inner sep=0pt] {$\tilde{\beta}$};
-
-        \draw[black, thick] (3,.3) -- (3,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=0pt] {\footnotesize 0.3};
-
-        \filldraw[black] (6,-8) circle(.2cm);
-        \filldraw[black] (-6,-8) circle(.2cm);
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></li>
+    <li><sidebyside width="40%" margins="0% 5%">
+        <image xml:id="hp4-2-47ans"><description>graph</description>
+            <latex-image>
+                <![CDATA[
+                \begin{tikzpicture} [scale = .2] 
+                \draw[cyan, step=2] (-10,-10) grid (10,10);
+                \draw[black, thick] (-10,0) -- (10,0);
+                \draw[black, thick] (0,-10) -- (0, 10);
+        
+                \coordinate (O) at (0,0);
+                \coordinate (A) at ({acos(0.3)}:11);
+                \coordinate (B) at ({360-acos(0.3)}:11);
+                \coordinate (C) at ({acos(0.3)}:10);
+                \coordinate (D) at ({-acos(0.3)}:10);
+        
+                \draw[blue, very thick] (O)--(C)--(D)--(O)--+(3,0);
+        
+                \draw[red,thick] (O) circle (10cm);
+        
+                \filldraw[black] (10,0) circle (.5pt) node[anchor=north, yshift=-4, fill=white, inner sep=1pt, text=red] {1};
+                \filldraw[black] (0,10) circle (.5pt) node[anchor=east, xshift=-5, fill=white, inner sep=1pt, text=red] {1};
+        
+                \draw[blue, thick, ->,>=stealth'] (O)--(A);
+                \draw[blue, thick, ->,>=stealth'] (O)--(B);
+                \draw[magenta, thick, ->,>=stealth'] (4,0) arc(0:{acos(.3)}:4) node[right, midway, xshift=3,fill=white, inner sep=0pt]{$\alpha$};
+                \draw[black, thick, <->,>=stealth'] (6,0) arc(0:{acos(.3)}:6) node[right, midway, xshift=5,fill=white, inner sep=0pt] {$\tilde{\alpha}$};
+                \draw[violet, thick, ->,>=stealth'] (2,0) arc(0:{360-acos(.3)}:2) node[above, midway, xshift=-3, yshift=3,fill=white, inner sep=1pt]{$\beta$};
+                \draw[black, thick, <->,>=stealth'] (6,0) arc(0:{-acos(.3)}:6) node[right, midway, xshift=5,fill=white, inner sep=0pt] {$\tilde{\beta}$};
+        
+                \draw[black, thick] (3,.3) -- (3,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=0pt] {0.3};
+        
+                \filldraw[black] (6,-8) circle(.2cm);
+                \filldraw[black] (-6,-8) circle(.2cm);
+                \end{tikzpicture}]]>
+            </latex-image></image></sidebyside></li>
     </ol></p></answer></exercise>
 
 <exercise number="28"><statement><p>Draw two different angles <m>\theta</m> and <m>\phi</m> in standard position whose cosine is <m>-0.4</m>.

@@ -1,0 +1,26 @@
+<latex-image>
+        <![CDATA[
+        \begin{tikzpicture} [scale = .3] 
+        \draw[cyan] (-10,-10) grid (10,10);
+
+        \coordinate (O) at (0,0);
+
+        \draw[red,thick] (O) circle (10cm);
+
+        \foreach \x  in {-10, -9, ..., 10} 
+        {
+        \draw[black,  thick] ($ \x *(1,0) +(0,.2) $) --++(0,-0.4); 
+        \draw[black,  thick] ($ \x *(0,1) +(.2,0) $) --++(-0.4,0); 
+        };
+
+        \foreach \x  in {-10, -5, 5, 10} 
+        {
+        \draw[black, very thick] ($ \x *(1,0) +(0,.3) $) --++(0,-0.6); 
+        \draw[black, very thick] ($ \x *(0,1) +(.3,0) $) --++(-0.6,0); 
+        };
+
+        \filldraw[black] (10,0) circle (.5pt) node[anchor=north, yshift=-4, fill=white, inner sep=1pt, text=red] {1};
+        \filldraw[black] (0,10) circle (.5pt) node[anchor=east, xshift=-5, fill=white, inner sep=1pt, text=red] {1};
+
+        \end{tikzpicture}]]>
+    </latex-image>
