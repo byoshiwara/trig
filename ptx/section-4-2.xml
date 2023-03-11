@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!-- <mathbook><book> -->
 
 <section xml:id="Graphs-of-Trigonometric-Functions"   xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Graphs of Trigonometric Functions</title>
@@ -8,41 +7,32 @@
 <subsection><title>A Periodic Function of Angle</title>
 <idx><h>periodic function</h></idx>
 
-<sidebyside widths="50% 35%" margins="0% 10%"><p> Imagine that you are riding on a Ferris wheel. As the wheel turns, your height above the ground increases and then decreases again, repeating the same pattern each time the Ferris wheel makes a complete rotation.</p> 
-        <image source="photos/ferris.png"></image></sidebyside>
-<p>This pattern is an example of a <term>periodic function</term><idx><h>periodic function</h></idx>. We use periodic functions to model phenomena that exhibit cyclical behavior, such as the height of tides, seasonal patterns of growth in plants and animals, radio waves, and planetary motion.</p>
+<p> Imagine that you are riding on a Ferris wheel. As the wheel turns, your height above the ground increases and then decreases again, repeating the same pattern each time the Ferris wheel makes a complete rotation. This pattern is an example of a <term>periodic function</term><idx><h>periodic function</h></idx>. We use periodic functions to model phenomena that exhibit cyclical behavior, such as the height of tides, seasonal patterns of growth in plants and animals, radio waves, and planetary motion.</p>
 
-<p>We'll create a <term>mathematical model</term><idx><h>mathematical model</h></idx> for a ride on a Ferris wheel that has a radius of 100 feet and rotates counterclockwise. Our model will be a function that describes your height above the ground as you ride the wheel. In order to graph the Ferris wheel function, we must first specify the input and output variables, and then choose a coordinate system to display their values.</p> 
+<p>We'll create a <term>mathematical model</term><idx><h>mathematical model</h></idx> for a ride on a Ferris wheel that has aradius of 100 feet and rotates counterclockwise. Our model will be a function that describes your height above the ground as you ride the wheel. In order to graph the Ferris wheel function, we must first specify the input and output variables, and then choose a coordinate system to display their values.</p> 
 
- <sidebyside widths="60% 35%" valigns="middle middle" margins="0% 0%"><p> We'll place the origin at the center of the Ferris wheel. Then the line from the origin to your position on the wheel makes an angle with the horizontal, as shown at right.  This angle, <m>\theta</m>, will be the <term>input variable</term><idx><h>input variable</h></idx> for the function. Your height, <m>h</m>, is also a variable, and is related to the <m>y</m>-coordinate of your position; in fact, we see that <m>h = y + 100</m>, because the center of the wheel is 100 feet above the ground. </p>
+<sidebyside widths="60% 35%" valigns="middle middle" margins="0% 0%"><p> We'll place the origin at the center of the Ferris wheel. Then the line from the origin to your position on the wheel makes an angle with the horizontal, as shown at right.  This angle, <m>\theta</m>, will be the <term>input variable</term><idx><h>input variable</h></idx> for the function. Your height, <m>h</m>, is also a variable, and is related to the <m>y</m>-coordinate of your position; in fact, we see that <m>h = y + 100</m>, because the center of the wheel is 100 feet above the ground. </p>
     <image xml:id="fig-4-2-ferris"><description>ferris wheel</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
+        <![CDATA[
+        \begin{tikzpicture}[scale=.8]
         \coordinate(O) at (0,0);
         \coordinate(P) at (50:2cm);
         \coordinate(Q) at ($ 2*cos(50)*(1,0)$);
 
         \draw[blue, thick] (Q) rectangle ++(-.2,.2);
-        \draw[gray!80!white, thick, dashed] (P) -- (Q)node[right, midway, color=blue] {\footnotesize $y$};
-        \draw[gray!80!white, thick, <-] (-2.2,0) -- +(0,-.8) node[below, yshift=2, color=blue] {\footnotesize $100'$};
-        \draw[gray!80!white, thick, <-] (-2.2,-2) -- +(0,.8) ;
+        \draw[gray!80!white, thick, dashed] (P) -- (Q)node[right, midway, color=blue] {$y$};
+        \draw[gray!80!white, thick, <-,>=stealth'] (-2.25,0) -- +(0,-.8) node[below, yshift=3, color=blue] {$100'$};
+        \draw[gray!80!white, thick, <-,>=stealth'] (-2.2,-2) -- +(0,.8) ;
         \draw[gray!80!white, thick] (-2.25,-2) -- +(5.2,0);
         \draw[gray!80!white, thick] (P)++(.2,0) -- +(1.5,0);
-        \draw[gray!80!white, thick, <-] (P)++(1,0) -- +(0,-1.7) node[below, color=blue] {\footnotesize $h$};
-        \draw[gray!80!white, thick, <-] (Q)++(1,-2) -- +(0,1.2) ;
+        \draw[gray!80!white, thick, <-,>=stealth'] (P)++(1,0) -- +(0,-1.7) node[below, color=blue] {$h$};
+        \draw[gray!80!white, thick, <-,>=stealth'] (Q)++(1,-2) -- +(0,1.2) ;
 
-        \draw[black, thick, ->,>=stealth'] (0,-2.25)--(0,2.3);
+        \draw[black, thick, ->,>=stealth'] (0,-2.3)--(0,2.3);
         \draw[black, thick, ->,>=stealth'] (-2.3,0)--(3,0);
-        \draw[red, thick, ->,>=stealth'] (0.4,0) arc (0:50:0.4) node[right, midway] {$\footnotesize \theta$};
+        \draw[red, thick, ->,>=stealth'] (0.4,0) arc (0:50:0.4) node[right, midway, yshift=2] {$ \theta$};
 
-        \draw[blue, thick] (O) --(P) node[above left, midway, xshift=8, color=blue] {\footnotesize $100'$};
+        \draw[blue, thick] (O) --(P) node[above left, midway, xshift=8, color=blue] {$100'$};
 
         \draw[black, thick] (O) circle (2cm);
         \filldraw[black] (P) circle (1.5pt);
@@ -54,15 +44,8 @@
 
 <sidebyside width="75%"><!--<image source="photos/4-2-ferris2.png"><description>angle</description></image>-->
     <image xml:id="fig-4-2-ferris2"><description>ferris wheel</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
+        <![CDATA[
+        \begin{tikzpicture}[scale=.9]
         \coordinate(O) at (-4,0);
 
         \draw[black, thick, ->,>=stealth'] (O)++(0,-2.25)--++(0,4.7);
@@ -77,128 +60,115 @@
         \coordinate(P) at ($ (O)++2*cos(30)*(1,0)++2*sin(30)*(0,1) $);
         \coordinate(Pp) at ($ pi/6*(1,0)++2*sin(30)*(0,1) $);
         \coordinate(Po) at ($ pi/6*(1,0) $);
-        \coordinate(Ph) at ($ (0, -.2)++pi/6*(1,0) $);
         \draw[gray!80!white, thick] (P)--(O);
-        \filldraw[black] (P) circle (1.5pt);
         \draw[gray!80!white, thick, dashed] (P)--(Pp);
         \draw[blue, thick] (Pp) -- (Po);
-        \filldraw[black] (Pp) circle (1.5pt);
-        \node[text width=0.4cm, color=blue] at (Ph) {\scriptsize $30\degree$};
+        \draw[gray!80!white,dashed, thick] (Po)--+(0,-.15) node[below, yshift=2, color=blue]{$30\degree$};
 
         \coordinate(Q) at ($ (O)++2*cos(60)*(1,0)++2*sin(60)*(0,1) $);
         \coordinate(Qp) at ($ pi/3*(1,0)++2*sin(60)*(0,1) $);
         \coordinate(Qo) at ($ pi/3*(1,0) $);
-        \coordinate(Qh) at ($ (0, -.4)++pi/3*(1,0) $);
         \draw[gray!80!white, thick] (Q)--(O);
-        \filldraw[black] (Q) circle (1.5pt);
         \draw[gray!80!white, thick, dashed] (Q)--(Qp);
         \draw[blue, thick] (Qp) -- (Qo);
-        \filldraw[black] (Qp) circle (1.5pt);
-        \node[text width=0.4cm, color=blue] at (Qh) {\scriptsize $60\degree$};
+        \draw[gray!80!white,dashed] (Qo)--+(0,-.5) node[below, yshift=2, color=blue]{$60\degree$};
 
         \coordinate(R) at ($ (O)++2*(0,1) $);
         \coordinate(Rp) at ($ pi/2*(1,0)++2*(0,1) $);
         \coordinate(Ro) at ($ pi/2*(1,0) $);
-        \coordinate(Rh) at ($ (0, -.2)++pi/2*(1,0) $);
         \draw[gray!80!white, thick] (R)--(O);
-        \filldraw[black] (R) circle (1.5pt);
         \draw[gray!80!white, thick, dashed] (R)--(Rp);
         \draw[blue, thick] (Rp) -- (Ro);
-        \filldraw[black] (Rp) circle (1.5pt);
-        \node[text width=0.4cm, color=blue] at (Rh) {\scriptsize $90\degree$};
+        \draw[gray!80!white,dashed, thick] (Ro)--+(0,-.15) node[below, yshift=2, color=blue]{$90\degree$};
 
         \coordinate(S) at ($ (O)++2*cos(135)*(1,0)++2*sin(135)*(0,1) $);
         \coordinate(Sp) at ($ 3*pi/4*(1,0)++2*sin(135)*(0,1) $);
         \coordinate(So) at ($ 3*pi/4*(1,0) $);
-        \coordinate(Sh) at ($ (0, -.2)++3*pi/4*(1,0) $);
         \draw[gray!80!white, thick] (S)--(O);
-        \filldraw[black] (S) circle (1.5pt);
         \draw[gray!80!white, thick, dashed] (S)--(Sp);
         \draw[blue, thick] (Sp) -- (So);
-        \filldraw[black] (Sp) circle (1.5pt);
-        \node[text width=0.4cm, color=blue] at (Sh) {\scriptsize $135\degree$};
+        \draw[gray!80!white,dashed, thick] (So)--+(0,-.15) node[below, yshift=2, color=blue]{$135\degree$};
 
         \coordinate(T) at ($ (O)++2*cos(210)*(1,0)++2*sin(210)*(0,1) $);
         \coordinate(Tp) at ($ 7*pi/6*(1,0)++2*sin(210)*(0,1) $);
         \coordinate(To) at ($ 7*pi/6*(1,0) $);
-        \coordinate(Th) at ($ (0, .2)++7*pi/6*(1,0) $);
         \draw[gray!80!white, thick] (P)--(O);
-        \filldraw[black] (T) circle (1.5pt);
         \draw[gray!80!white, thick, dashed] (T)--(Tp);
         \draw[blue, thick] (Tp) -- (To);
-        \filldraw[black] (Tp) circle (1.5pt);
-        \node[text width=0.4cm, color=blue] at (Th) {\scriptsize $210\degree$};
+        \draw[gray!80!white,dashed, thick] (To)--+(0,.15) node[above, yshift=-2, color=blue]{$210\degree$};
 
         \coordinate(U) at ($ (O)++2*(0,-1) $);
         \coordinate(Up) at ($ 3*pi/2*(1,0)++2*(0,-1) $);
         \coordinate(Uo) at ($ 3*pi/2*(1,0) $);
         \coordinate(Uh) at ($ (0, .2)++3*pi/2*(1,0) $);
         \draw[gray!80!white, thick] (U)--(O);
-        \filldraw[black] (U) circle (1.5pt);
         \draw[gray!80!white, thick, dashed] (U)--(Up);
         \draw[blue, thick] (Up) -- (Uo);
+        \draw[gray!80!white,dashed, thick] (Uo)--+(0,.15) node[above, yshift=-2, color=blue]{$270\degree$};
+        \filldraw[black] (P) circle (1.5pt);
+        \filldraw[black] (Pp) circle (1.5pt);
         \filldraw[black] (Up) circle (1.5pt);
-        \node[text width=0.4cm, color=blue] at (Uh) {\scriptsize $270\degree$};
+        \filldraw[black] (Q) circle (1.5pt);
+        \filldraw[black] (Qp) circle (1.5pt);
+        \filldraw[black] (R) circle (1.5pt) node[above left, color=blue]{100};
+        \filldraw[black] (Rp) circle (1.5pt);
+        \filldraw[black] (S) circle (1.5pt);
+        \filldraw[black] (Sp) circle (1.5pt);
+        \filldraw[black] (T) circle (1.5pt);
+        \filldraw[black] (U) circle (1.5pt);
+        \filldraw[black] (Tp) circle (1.5pt);
+        \draw[black] (0.15,2) --+ (-0.3,0) node[above left, color=blue]{100};
+    \end{tikzpicture}]]>
+</latex-image></image></sidebyside>
 
-        \node[text width=0.5cm, anchor=south east, xshift=1, yshift=-3, color=blue] at (R) {\footnotesize 100};
+<p> Finally, as <m>\theta</m> increases from <m>180\degree</m> to <m>360\degree</m>, your <m>y</m>-coordinate decreases from 0 to <m>-100</m> and then increases from <m>-100</m> back to 0. You have made one complete rotation on the Ferris wheel. If you go around again, <m>\theta</m> increases from <m>360\degree</m> to <m>720\degree</m>, and the graph of your <m>y</m>-coordinate will repeat the pattern of the first rotation. The figure above shows how your <m>y</m>-coordinate is plotted as a function of the angle <m>\theta</m>.</p>
 
-        \node[text width=0.5cm, anchor=south east, xshift=1, yshift=-3, color=blue] at (0,2) {\footnotesize 100};
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside>
-
-<p> Finally, as <m>\theta</m> increases from <m>180\degree</m> to <m>360\degree</m>, your <m>y</m>-coordinate decreases from 0 to <m>-100</m> and then increases from <m>-100</m> back to 0. You have made one complete rotation on the Ferris wheel. The figure above shows how your <m>y</m>-coordinate is plotted as a function of the angle <m>\theta</m>. If you go around again, <m>\theta</m> increases from <m>360\degree</m> to <m>720\degree</m>, and the graph of your <m>y</m>-coordinate will repeat the pattern of the first rotation. </p>
-
-<p>Look back at the digram of the Ferris wheel and notice that  <m>\sin(\theta) = \dfrac{y}{100}</m>, so  
+<p>Look back at the diagram of the Ferris wheel and notice that  <m>\sin(\theta) = \dfrac{y}{100}</m>, so  
       <me>y = 100 \sin (\theta)</me></p>  
 
-<p>For example, when <m>\theta = 30\degree</m>, the <m>y</m>-coordinate is</p> <sidebyside widths="60% 35%">
-    <p><me>y = 100 \sin 30\degree = 100\left(\frac{1}{2}\right) = 50</me>  and your height above the ground is 
+<p>For example, when <m>\theta = 30\degree</m>, the <m>y</m>-coordinate is</p> 
+<sidebyside widths="60% 35%" valigns="middle middle" margins="0% 0%">
+    <p><me>y = 100 \sin 30\degree = 100\left(\dfrac{1}{2}\right) = 50</me>  
+        and your height above the ground is 
         <me>h = y + 100 = 150~~ \text{feet}</me></p>
     <image xml:id="fig-4-2-ferris3"><description>ferris wheel</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} [scale=.8]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.75]
         \coordinate(O) at (0,0);
         \coordinate(P) at (30:2cm);
         \coordinate(Q) at ($ 2*cos(30)*(1,0)$);
 
         \draw[black, thick] (O) circle (2cm);
         \draw[blue, thick] (Q) rectangle ++(-.2,.2);
-        \draw[gray!80!white, thick, dashed] (P) -- (Q)node[right, midway, color=blue,fill=white, inner sep=2pt] {\footnotesize $y=100 \sin \theta$};
-        \draw[gray!80!white, thick, <-] (-2.25,0) -- +(0,-.8) node[below, yshift=2, color=blue] {\footnotesize $100'$};
-        \draw[gray!80!white, thick, <-] (-2.2,-2) -- +(0,.8) ;
+        \draw[gray!80!white, thick, dashed] (P) -- (Q)node[right, midway, color=blue,fill=white, inner sep=2pt] { $50'$};
+        \draw[gray!80!white, thick, <-,>=stealth'] (-2.25,0) -- +(0,-.8) node[below, yshift=2, color=blue] {$100'$};
+        \draw[gray!80!white, thick, <-,>=stealth'] (-2.2,-2) -- +(0,.8) ;
         \draw[gray!80!white, thick] (-2.25,-2) -- +(5.2,0);
 
         \draw[black, thick, ->,>=stealth'] (0,-2.25)--(0,2.3);
         \draw[black, thick, ->,>=stealth'] (-2.3,0)--(3,0);
-        \draw[red, thick, ->,>=stealth'] (0.6,0) arc (0:30:0.6) node[right, midway, yshift=1] {$\footnotesize \theta$};
+        \draw[red, thick, ->,>=stealth'] (0.75,0) arc (0:30:0.75) node[right, midway, yshift=2] {$30^\circ$};
 
-        \draw[blue, thick] (O) --(P) node[above left, midway, xshift=8, color=blue] {\footnotesize $100'$};
+        \draw[blue, thick] (O) --(P) node[above left, midway, xshift=8, color=blue] {$100'$};
 
         \filldraw[black] (P) circle (1.5pt);
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside>
-<p>In general, then, <m>h</m> is given as a function of <m>\theta</m> by 
-    <me> h = y + 100 = 100 \sin (\theta) + 100</me>
-This is our model for your height on the Ferris wheel ride.</p>
+        </latex-image></image></sidebyside>
+        <p>In general, then, <m>h</m> is given as a function of <m>\theta</m> by 
+            <me> h = y + 100 = 100 \sin \theta + 100</me>
+        This is our model for your height on a Ferris wheel ride.</p>
 </subsection>
 
 <subsection><title>The Sine Function</title>
 <idx><h>sine function</h></idx>
 <idx><h>sine function</h><seealso>sine</seealso></idx>
 
-<p> Our Ferris wheel model used values of <m>\sin (\theta)</m>, so let us explore its properties. Remember that the trigonometric ratio <m>\sin (\theta)</m> is actually a function of the angle <m>\theta</m>. Thus, for each value of <m>\theta</m>, there is only one value of <m>\sin (\theta)</m>, and we may write <m>f(\theta) = \sin (\theta)</m>.</p>  
+<p> Our Ferris wheel model used values of <m>\sin \theta</m>, so let us explore its properties. Remember that the trigonometric ratio <m>\sin \theta</m> is actually a function of the angle <m>\theta</m>. Thus, for each value of <m>\theta</m>, there is only one value of <m>\sin \theta</m>, and we may write <m>f(\theta) = \sin \theta</m>.</p>  
 
 <example>
-<statement><p>Graph the sine function <m>f(\theta) = \sin (\theta)</m>.</p></statement>
+<statement><p>Graph the sine function <m>f(\theta) = \sin \theta</m>.</p></statement>
 
-<solution><p>To make an accurate graph of the sine function, we'll first make a table of values. You can use your calculator's table feature to verify the following values, rounded to two decimal places.</p>
+<solution><p>We first make a table of values. You can use your calculator's table feature to verify the following values, rounded to two decimal places.</p>
 
 <sidebyside width="85%"><tabular top="major" halign="left" right="minor" left="minor" bottom="minor">                  
                     <row bottom="minor">
@@ -227,7 +197,7 @@ This is our model for your height on the Ferris wheel ride.</p>
                         <cell><m>1</m></cell></row>
                         </tabular></sidebyside>
 
-<p>If we plot the points in the table, we can graph the sine function in the first quadrant, from <m>0\degree</m> to <m>90\degree</m>.</p><p> Recall that the values of <m>\sin (\theta)</m> in the second quadrant can be found using reference angles: <m>\sin (180\degree - \theta) = \sin (\theta)</m>.  This fact gives us values of <m>\sin (\theta)</m> from <m>90\degree</m> to <m>180\degree</m>. Notice that the sine values repeat those in the first quadrant, but in reverse order.</p>
+<p>If we plot the points in the table, we can graph the sine function in the first quadrant, from <m>0\degree</m> to <m>90\degree</m>.</p><p> Recall that the values of <m>\sin \theta</m> in the second quadrant can be found using reference angles: <m>\sin (180\degree - \theta) = \sin \theta</m>.  This fact gives us values of <m>\sin \theta</m>  from <m>90\degree</m> to <m>180\degree</m>.</p>
 
 <sidebyside width="90%"><tabular top="major" halign="left" right="minor" left="minor" bottom="minor">                  
                     <row bottom="minor">
@@ -254,65 +224,100 @@ This is our model for your height on the Ferris wheel ride.</p>
                         <cell><m>0</m></cell></row>
                         </tabular></sidebyside>
 
-<p>You can check that the values of <m>\sin (\theta)</m> in the third and fourth quadrants are the negatives of their values in the second and first quadrants. (Think of the reference angles.)</p>
+<p>The values of <m>\sin \theta</m> in the third and fourth quadrants are the negatives of their values in the second and first quadrants.</p>
 
-<p>The graph of <m>f(\theta) = \sin (\theta)</m> from <m>0\degree</m> to <m>360\degree</m> is shown below.</p>
-<sidebyside width="70%"><image xml:id="exam4-2-3a"><description>sine graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
+<sidebyside><tabular top="major" halign="left" right="minor" left="minor" bottom="minor">                  
+                    <row bottom="minor">
+                        <cell><m>\theta</m></cell>
+                        <cell><m>190\degree</m></cell>
+                        <cell><m>200\degree</m></cell>
+                        <cell><m>210\degree</m></cell>
+                        <cell><m>220\degree</m></cell>
+                        <cell><m>230\degree</m></cell>
+                        <cell><m>240\degree</m></cell>
+                        <cell><m>250\degree</m></cell>
+                        <cell><m>260\degree</m></cell>
+                        <cell><m>270\degree</m></cell></row>
+                       
+                    <row>
+                        <cell><m>\sin \theta</m></cell> 
+                        <cell><m>-0.17</m></cell>
+                        <cell><m>-0.34</m></cell>
+                        <cell><m>-0.50</m></cell>
+                        <cell><m>-0.64</m></cell>
+                        <cell><m>-0.77</m></cell>
+                        <cell><m>-0.87</m></cell>
+                        <cell><m>-0.94</m></cell>
+                        <cell><m>-0.98</m></cell>
+                        <cell><m>-1</m></cell></row>
+                        </tabular></sidebyside>
 
-        \draw[cyan,xstep=pi/6,ystep=0.18]
-        (0,-1.8) grid (2*pi,1.8);
+<sidebyside><tabular top="major" halign="left" right="minor" left="minor" bottom="minor">                  
+                    <row bottom="minor">
+                        <cell><m>\theta</m></cell>
+                        <cell><m>280\degree</m></cell>
+                        <cell><m>290\degree</m></cell>
+                        <cell><m>300\degree</m></cell>
+                        <cell><m>310\degree</m></cell>
+                        <cell><m>320\degree</m></cell>
+                        <cell><m>330\degree</m></cell>
+                        <cell><m>340\degree</m></cell>
+                        <cell><m>350\degree</m></cell>
+                        <cell><m>360\degree</m></cell></row>
+                    <row>
+                        <cell><m>\sin \theta</m></cell> 
+                        <cell><m>-0.98</m></cell>
+                        <cell><m>-0.94</m></cell>
+                        <cell><m>-0.87</m></cell>
+                        <cell><m>-0.77</m></cell>
+                        <cell><m>-0.64</m></cell>
+                        <cell><m>-0.50</m></cell>
+                        <cell><m>-0.34</m></cell>
+                        <cell><m>-0.17</m></cell>
+                        <cell><m>0</m></cell></row>
+                        </tabular></sidebyside>
 
-        \draw[->,>=stealth'] (-.3,0) -- (6.5,0) node[right] {$\theta$};
-        \draw[->,>=stealth'] (0,-1.8) -- (0,2.1) node[above] {$y$};
+<p>The graph of <m>f(\theta) = \sin \theta</m> from <m>0\degree</m> to <m>360\degree</m> is shown below.</p>
+<sidebyside width="60%"><image xml:id="exam4-2-3a"><description>sine graph</description><latex-image>
+    <![CDATA[
+    \begin{tikzpicture}
 
-        \foreach \x [evaluate=\x as \xi using int( 60* \x )] in {0,1,...,6}
-        \draw[black] ($ pi*\x /3*(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi \degree$};
-        \foreach \y in {-0.9, 0.9}
-        \draw[black] (.08,\y ) --++(-.16,0);
-        \foreach \y in {-1,1}
-        \draw[black, thick] (.12,1.8*\y ) --++(-.24,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\y};
+    \draw[cyan,xstep=pi/18,ystep=0.18]
+    (0,-1.8) grid (2*pi,1.8);
 
-        \draw[domain=0:2*pi,smooth,variable=\x,red,very thick] plot ({\x},{1.8*sin(deg(\x))});
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></solution></example>
+    \draw[->,>=stealth'] (-.3,0) -- (6.5,0) node[right] {$\theta$};
+    \draw[->,>=stealth'] (0,-1.8) -- (0,2.1) node[above] {$y$};
 
- <p>If we continue the graph for angles larger than <m>360\degree</m> or smaller than <m>0\degree</m>, we find that the same pattern repeats, as shown below. This should not be surprising, because we know that coterminal angles have the same trigonometric ratios.</p>
-<sidebyside widths="100%"><image xml:id="exam4-2-3b"><description>sine graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} [scale=.75]
+    \foreach \x [evaluate=\x as \xi using int( 60* \x )] in {0,1,...,6}
+    \draw[black] ($ pi*\x /3*(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi \degree$};
+    \foreach \y in {-0.9, 0.9}
+    \draw[black] (.08,\y ) --++(-.16,0);
+    \foreach \y in {-1,1}
+    \draw[black, thick] (.12,1.8*\y ) --++(-.24,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\y};
 
-        \draw[cyan,xstep=pi/6,ystep=0.24]
-        (-2*pi,-2.4) grid (4*pi,2.4);
+    \draw[domain=0:2*pi,smooth,variable=\x,red,very thick] plot ({\x},{1.8*sin(deg(\x))});
+    \foreach \x [evaluate=\x as \xi using ( pi/180 * \x )] in {0,10,20,...,360}
+        \filldraw[black] (\xi, {1.8*sin(\x)} ) circle (1pt);
 
-        \draw[->,>=stealth'] (-6.3,0) -- (13.1,0) node[right] {$\theta$};
-        \draw[->,>=stealth'] (0,-2.4) -- (0,2.7) node[above] {$y$};
+    \end{tikzpicture}]]>
+</latex-image></image></sidebyside></solution></example>
 
-        \foreach \x [evaluate=\x as \xi using int( 90* \x )] in {-4,-3,...,8}
-        \draw[black] ($ pi*\x /2*(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi \degree$};
-        \foreach \y in {-1.2, 1.2}
-        \draw[black] (.08,\y ) --++(-.16,0);
-        \foreach \y in {-1,1}
-        \draw[black, thick] (.12,2.4*\y ) --++(-.24,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\y};
+<p>If we continue the graph for angles larger than <m>360\degree</m> or smaller than <m>0\degree</m>, we find that the same pattern repeats, as shown below. This should not be surprising, because we know that coterminal angles have the same trigonometric ratios.</p>
+<sidebyside width="100%"><image xml:id="exam4-2-3b"><description>sine graph</description><latex-image>
+    <![CDATA[
+    \begin{tikzpicture} [scale=.35]    
+    \draw[cyan, xstep=1, ystep=1] (-12,-4) grid (24,4);
 
-        \draw[domain=-2*pi:4*pi,smooth,variable=\x,red,very thick] plot ({\x},{2.4*sin(deg(\x))});
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside>  
+    \draw[->,>=stealth'] (-12,0) -- (24.7,0) node[right] {$\theta$};
+    \draw[->,>=stealth'] (0,-1) -- (0,4.7) node[above] {$y$};
+
+    \foreach \x [evaluate=\x as \xi using int( 30* \x )] in {-12,-9,-6,-3,3,6,9,12,15,18,21,24}
+    \draw[black] (\x,0.15)  --++(0,-.3) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi^\circ$};
+    \foreach \y in {-1, 1}
+        \draw[black] (.15,{4*\y }) --++(-.3,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\y};    
+    \draw[samples=65,domain=-12:24,smooth,variable=\x,red,very thick] plot ({\x},{4*sin(30*\x)});   
+    \end{tikzpicture}]]>
+</latex-image></image></sidebyside>  
 
 <p> The sine is an example of a periodic function.<idx><h>periodic function</h></idx> The smallest interval on which the graph repeats is called the <term>period</term><idx><h>period</h></idx> of the graph. From the graph in the previous example, we make the following observations:</p>
 <p><ul>
@@ -322,7 +327,9 @@ This is our model for your height on the Ferris wheel ride.</p>
     <li>The distance between the midline and either the maximum or minimum value is called the <term>amplitude</term><idx><h>amplitude</h></idx> of the function, so the amplitude of the sine function is 1.</li>
 </ul></p>
 
-<note><p>You can use your graphing utility to graph the sine function, <m>y = \sin(x)</m>.</p></note>
+<p>You can use your calculator to graph the sine function, by entering  </p>
+<p><m>\qquad\qquad\qquad \text{Y}_{1} =</m><kbd>SIN</kbd> <m>\small\boxed{X,T,\theta, n}</m> <kbd name="right-paren"/></p>
+<p>and pressing  <kbd>ZOOM</kbd> <m>7</m> for the trig window.  The graph shows two periods of the sine function, from  <m>\theta = -360\degree</m> to <m>\theta = 360\degree</m>.</p>
 
 <exercise><statement><p>Your height <m>h</m> on the Ferris wheel is a function of <m>\theta</m>, 
         <me>h = 100 + y = 100 + 100 \sin (\theta)</me> 
@@ -339,7 +346,7 @@ Complete the table of values and graph the Ferris wheel function, <m>h = F(\thet
             <cell><m>150\degree</m></cell>
             <cell><m>180\degree</m></cell></row>   
         <row>
-            <cell><m>\sin (\theta)</m></cell> 
+            <cell><m>\sin \theta</m></cell> 
             <cell><m>\hphantom{0000}</m></cell>
             <cell><m>\hphantom{0000}</m></cell>
             <cell><m>\hphantom{0000}</m></cell>
@@ -368,7 +375,7 @@ Complete the table of values and graph the Ferris wheel function, <m>h = F(\thet
             <cell><m>330\degree</m></cell>
             <cell><m>360\degree</m></cell></row>   
         <row>
-            <cell><m>\sin (\theta)</m></cell> 
+            <cell><m>\sin \theta</m></cell> 
             <cell><m>\hphantom{0000}</m></cell>
             <cell><m>\hphantom{0000}</m></cell>
             <cell><m>\hphantom{0000}</m></cell>
@@ -385,29 +392,21 @@ Complete the table of values and graph the Ferris wheel function, <m>h = F(\thet
             <cell><m>\hphantom{0000}</m></cell></row>
             </tabular></sidebyside>
 
-<sidebyside width="80%"><image xml:id="exer4-2-3"><description>grid</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} [scale=1.2]
-        \draw[cyan,xstep=0.5,ystep=0.4]
-        (0,0) grid (9,4);
+<sidebyside width="60%"><image xml:id="exer4-2-3"><description>grid</description><latex-image>
+    <![CDATA[
+    \begin{tikzpicture} [scale=1]
+    \draw[cyan,xstep=0.5,ystep=0.4] (0,0) grid (6,4);
 
-        \draw[->,>=stealth'] (-.3,0) -- (9.3,0) node[right] {$\theta$};
-        \draw[->,>=stealth'] (0,-.3) -- (0,4.3) node[above] {$h$};
+    \draw[->,>=stealth'] (-.3,0) -- (6.3,0) node[right] {$\theta$};
+    \draw[->,>=stealth'] (0,-.3) -- (0,4.3) node[above] {$h$};
 
-        \foreach \x [evaluate=\x as \xi using int( 60* \x )] in {1,2,...,9}
-        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+    \foreach \x [evaluate=\x as \xi using int( 60* \x )] in {1,2,...,6}
+    \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$\xi^\circ $};
 
-        \foreach \y  [evaluate=\y as \yi using int( 50* \y )] in {2,4}
-        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+    \foreach \y  [evaluate=\y as \yi using int( 50* \y )] in {2,4}
+    \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
 
-        \end{tikzpicture}]]>
+    \end{tikzpicture}]]>
     </latex-image></image>
 </sidebyside></statement>
 
@@ -451,7 +450,7 @@ Complete the table of values and graph the Ferris wheel function, <m>h = F(\thet
             <cell><m>330\degree</m></cell>
             <cell><m>360\degree</m></cell></row>   
         <row>
-            <cell><m>\sin (\theta)</m></cell> 
+            <cell><m>\sin \theta</m></cell> 
             <cell><m>-0.5</m></cell>
             <cell><m>-0.866</m></cell>
             <cell><m>-1.0</m></cell>
@@ -468,31 +467,25 @@ Complete the table of values and graph the Ferris wheel function, <m>h = F(\thet
             <cell><m>100</m></cell></row>
             </tabular></sidebyside>
 
-<sidebyside width="50%"><image xml:id="exer4-2-3ans"><description>sine graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} [scale=1]
-        \draw[cyan,xstep=0.5,ystep=0.4]
-        (0,0) grid (6,4);
+<sidebyside width="60%"><image xml:id="exer4-2-3ans"><description>sine graph</description><latex-image>
+    <![CDATA[
+    \begin{tikzpicture} [scale=1]
+    \draw[cyan,xstep=0.5,ystep=0.4] (0,0) grid (6,4);
 
-        \draw[->,>=stealth'] (-.3,0) -- (6.3,0) node[right] {$\theta$};
-        \draw[->,>=stealth'] (0,-.3) -- (0,4.3) node[above] {$h$};
+    \draw[->,>=stealth'] (-.3,0) -- (6.3,0) node[right] {$\theta$};
+    \draw[->,>=stealth'] (0,-.3) -- (0,4.3) node[above] {$h$};
 
-        \foreach \x [evaluate=\x as \xi using int( 60* \x )] in {1,2,...,6}
-        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+    \foreach \x [evaluate=\x as \xi using int( 60* \x )] in {1,2,...,6}
+    \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$\xi^\circ $};
 
-        \foreach \y  [evaluate=\y as \yi using int( 60* \y )] in {2,4}
-        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+    \foreach \y  [evaluate=\y as \yi using int( 50* \y )] in {2,4}
+    \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
 
-        \draw[domain=0:6,smooth,variable=\x,red,very thick] plot ({\x},{2+2*sin(pi/3*deg(\x))});
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></answer></exercise>
+    \draw[samples=65,domain=0:6,smooth,variable=\x,red,very thick] plot ({\x},{2+2*sin(pi/3*deg(\x))});
+    \foreach \x [evaluate=\x as \xi using int( 60* \x )] in {0,0.5,...,6}
+    \filldraw[black] (\x , {2+2*sin(pi/3*deg(\x))}) circle (1.5pt);
+    \end{tikzpicture}]]>
+</latex-image></image></sidebyside></answer></exercise>
 </subsection>
 
 <subsection><title>The Cosine Function</title>
@@ -501,72 +494,60 @@ Complete the table of values and graph the Ferris wheel function, <m>h = F(\thet
 
 <p>In the previous exercise you graphed the height of a person riding on a Ferris wheel. Your graph involved <m>\sin (\theta)</m>, because the sine function tells us the <m>y</m>-coordinate of a point that travels around a circle. The cosine function tells us the <m>x</m>-coordinate of a point that travels around a circle.</p>
 
-<example><statement><sidebyside widths="65% 35%" margins="0% 0%">
-<p>Small adjustments to the fit of a bicycle can affect both the cyclist's efficiency and the stress on his or her joints.  The KOPS rule (Knee Over Pedal Stem) aligns the cyclist's knee directly over the pedal at the point of maximum force, as shown at right.  As the cyclist's foot rotates away from this KOPS line, stress on the knee increases.</p>
-            <!-- <image source="photos/exam4-2-4bike.png"><description>bicycle</description></image>-->
-            <image xml:id="exam4-2-4bike"><description>bicycle</description><latex-image>
-                <![CDATA[\tikzset{%
-                  block/.style    = {draw, thick, rectangle, minimum height = 3em,
-                    minimum width = 3em},
-                  sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-                  input/.style    = {coordinate}, % Input
-                  output/.style   = {coordinate} % Output
-                }
-                \begin{tikzpicture}        
-                \def\R{2.4}
-                \def\r{1}
-                \def\c{2.2}
-                \coordinate(O) at (0,\c);
-                \coordinate(A) at (-2.8,\R);
-                \coordinate(B) at (3.8,\R);
-                \def\h{5.5}
-                \coordinate(C) at (-1.5,\h);
-                \coordinate(D) at (2.8,\h);
-                \draw[blue!40!black, very thick] (O) circle (\r);
-                \draw[blue!40!black, very thick] (A) circle (\R);
-                \draw[blue!40!black, very thick] (A) --(O);
-                \draw[blue!40!black, very thick] (B) circle (\R);
-                \draw[blue!40!black, very thick] (A) --(C) --(D)--(B);
-                \draw[blue!40!black, very thick] (D)++(-.1,-.6) arc (-90:90:0.6);
-                \draw[blue!40!black, very thick] (O) --(D);
-                \coordinate(E) at (1.8,6);
-                \coordinate(F) at (3.2,5.7);
-                \coordinate(Np) at (1.3,7.1);
-                \draw[black, very thick] (F)--(E)--(Np);
-                \coordinate(S) at (-2.,6.5);
-                \coordinate(N) at (1.8,7.2);
-                \coordinate(H) at (2.4,7.4);
-                \draw[blue!40!black, very thick] (O) --(S);
-                \draw[black, very thick] (H) circle (.6);
-                \coordinate(G) at (\r,0);
-                \coordinate(K) at (\r,5);
-                \coordinate(F) at (0.3,\c);
-                \draw[lightgray, very thick] (G) rectangle ++(.25,.25);
-                \draw[lightgray, very thick] (G) -- ++(0,6);
-                \draw[black, very thick] (N)--(S) --(K)--(F)--++(0.7,0);
-                \draw[gray, very thick] (-5,0) --(6.5,0);
-                \end{tikzpicture}]]>
-            </latex-image></image></sidebyside>  
+<example xml:id="Example-KOPS-Rule"><statement><sidebyside widths="65% 35%" margins="0% 0%">
+    <p>Small adjustments to the fit of a bicycle can affect both the cyclist's efficiency and the stress on his or her jounts.  The KOPS rule (Knee Over Pedal Stem) aligns the cyclist's knee directly over the pedal at the point of maximum force, as shown at right.  As the cyclist's foot rotates away from this KOPS line, stress on the knee increases.</p>
+    <!-- <image source="photos/exam4-2-4bike.png"><description>bicycle</description></image>-->
+    <image xml:id="exam4-2-4bike"><description>bicycle</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture}        
+        \def\R{2.4}
+        \def\r{1}
+        \def\c{2.2}
+        \coordinate(O) at (0,\c);
+        \coordinate(A) at (-2.8,\R);
+        \coordinate(B) at (3.8,\R);
+        \def\h{5.5}
+        \coordinate(C) at (-1.5,\h);
+        \coordinate(D) at (2.8,\h);
+        \draw[blue!40!black, very thick] (O) circle (\r);
+        \draw[blue!40!black, very thick] (A) circle (\R);
+        \draw[blue!40!black, very thick] (A) --(O);
+        \draw[blue!40!black, very thick] (B) circle (\R);
+        \draw[blue!40!black, very thick] (A) --(C) --(D)--(B);
+        \draw[blue!40!black, very thick] (D)++(-.1,-.6) arc (-90:90:0.6);
+        \draw[blue!40!black, very thick] (O) --(D);
+        \coordinate(E) at (1.8,6);
+        \coordinate(F) at (3.2,5.7);
+        \coordinate(Np) at (1.3,7.1);
+        \draw[black, very thick] (F)--(E)--(Np);
+        \coordinate(S) at (-2.,6.5);
+        \coordinate(N) at (1.8,7.2);
+        \coordinate(H) at (2.4,7.4);
+        \draw[blue!40!black, very thick] (O) --(S);
+        \draw[black, very thick] (H) circle (.6);
+        \coordinate(G) at (\r,0);
+        \coordinate(K) at (\r,5);
+        \coordinate(F) at (0.3,\c);
+        \draw[lightgray, very thick] (G) rectangle ++(.25,.25);
+        \draw[lightgray, very thick] (G) -- ++(0,6);
+        \draw[black, very thick] (N)--(S) --(K)--(F)--++(0.7,0);
+        \draw[gray, very thick] (-5,0) --(6.5,0);
+        \end{tikzpicture}]]>
+    </latex-image></image></sidebyside>  
 <p><ol marker="a">
     <li>Suppose the pedal crank is 18 centimeters long.  When the crank makes an angle <m>\theta</m> with the horizontal, how far is the cyclist's foot displaced horizontally from the KOPS line?</li>
     <li>Graph the horizontal displacement, <m>d</m>, as a function of <m>\theta</m>.</li>
 </ol></p></statement>
         
 <solution><p><ol marker="a">
-    <li><p>The cyclist's foot travels around a circle of radius 18 centimeters. If we place the origin at the center of the chain gear, then <m>\cos (\theta) = \dfrac{x}{18}</m>, so the <m>x</m>-coordinate of the foot is given by</p> 
+    <li><p>The cyclist's foot travels around a circle of radius 18 centimeters. If we place the origin at the center of the chain gear, the <m>x</m>-coordinate of the foot is given by 
+        <me>x = r \cos \theta = 18 \cos (\theta)</me></p> 
     <sidebyside widths="58% 35%" margins="0% 0%" valigns="middle middle">
-        <p><me>x = 18 \cos (\theta)</me>
-    (See the figure at right.) The KOPS line is the vertical line <m>x = 18</m>, so the horizontal distance between the cyclist's foot and the KOPS line is 
+    <p> (See the figure at right.) The KOPS line is the vertical line <m>x = 18</m>, so the horizontal distance between the cyclist's foot and the KOPS line is 
         <me>d = 18 - 18 \cos (\theta)</me>  </p>
-    <image xml:id="exam4-2-4a"><description>circle</description><latex-image>
-        <![CDATA[\tikzset{%
-            block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
+    <image xml:id="exam4-2-4a"><description>KOPS line and circle</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture}[scale=.8]
         \coordinate(O) at (0,0);
         \coordinate(P) at (50:2cm);
         \coordinate(Q) at ($ 2*cos(50)*(1,0)$);
@@ -575,14 +556,14 @@ Complete the table of values and graph the Ferris wheel function, <m>h = F(\thet
         \draw[blue, thick] (Q) rectangle ++(.2,.2);
         \draw[gray!80!white, thick, dashed] (P) -- (Q);
 
-        \draw[gray!80!white, thick] (2,2.3) -- (2, -2.25) node[below right, yshift=13, color=blue] {\small $x=18$};
-        \draw[blue, thick] (P) -- (R) node[above, midway] {\small $d$};
+        \draw[gray!80!white, thick] (2,2.3) -- (2, -2.25) node[below right, yshift=13, color=blue] {$x=18$};
+        \draw[blue, thick] (P) -- (R) node[above, midway] {$d$};
 
         \draw[black, thick, ->,>=stealth'] (0,-2.25)--(0,2.3);
         \draw[black, thick, ->,>=stealth'] (-2.3,0)--(3,0);
-        \draw[red, thick, ->,>=stealth'] (0.4,0) arc (0:50:0.4) node[right, midway] {$\footnotesize \theta$};
+        \draw[red, thick, ->,>=stealth'] (0.4,0) arc (0:50:0.4) node[right, midway, yshift=2] {$\theta$};
 
-        \draw[blue, thick] (O) --(P) node[above left, midway, xshift=4, color=blue] {\small $18$};
+        \draw[blue, thick] (O) --(P) node[above left, midway, xshift=4, color=blue] {$18$};
 
         \draw[black, thick] (O) circle (2cm);
         \filldraw[black] (P) circle (1.5pt);
@@ -624,25 +605,19 @@ Complete the table of values and graph the Ferris wheel function, <m>h = F(\thet
             <cell><m>0</m></cell></row>
             </tabular></sidebyside>
 
-     <sidebyside widths="80%"><image xml:id="exam4-2-4b"><description>cosine graph</description><latex-image>
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} [xscale=1.3]
+    <sidebyside widths="65%"><image xml:id="exam4-2-4b"><description>cosine graph</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture} [xscale=1]
 
-        \draw[cyan,xstep=pi/6,ystep=0.4] (0,0) grid (2*pi,4);
+        \draw[cyan,xstep=pi/6,ystep=0.3] (0,0) grid (2*pi,3.9);
 
         \draw[->,>=stealth'] (-.3,0) -- (6.5,0) node[right] {$\theta$};
-        \draw[->,>=stealth'] (0,-0.3) -- (0,4.2) node[above] {$y$};
+        \draw[->,>=stealth'] (0,-0.3) -- (0,4.2) node[above] {$d$};
 
         \foreach \x [evaluate=\x as \xi using int( 60* \x )] in {0,1,...,6}
-        \draw[black] ($ pi*\x /3*(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi \degree$};
-        \foreach \y [evaluate=\y as \yi using int(10* \y )] in {.401, .801,..., 4.01}
-        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=0,yshift=0, fill=white, inner sep=1pt] {\scriptsize$ \yi $};
+        \draw[black] ($ pi*\x /3*(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi \degree$};
+        \foreach \y [evaluate=\y as \yi using int(10* \y )] in {.601, 1.201,..., 3.901}
+        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=0,yshift=0, fill=white, inner sep=1pt] {$ \yi $};
 
         \draw[domain=0:2*pi,smooth,variable=\x,red,very thick] plot ({\x},{1.8-1.8*cos(deg(\x))});
         \end{tikzpicture}]]>
@@ -652,10 +627,10 @@ Complete the table of values and graph the Ferris wheel function, <m>h = F(\thet
 
  <p>You can see that the cosine graph is similar to the sine graph, but they are not identical.</p>
 
- <exercise><statement><p><ol marker="a">
-    <li><p>Complete the table below for the cosine function with values rounded to two decimal places.</p> 
+<exercise><statement><p><ol marker="a">
+    <li><p>Complete the table below with values rounded to two decimal places. Use the table and your knowledge of reference angles to graph the cosine function, <m>f(\theta) = \cos (\theta)~</m> from <m>-180\degree</m> to <m>540\degree</m>.</p>
 
-    <tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                  
+    <sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                  
         <row bottom="minor">
             <cell><m>\theta</m></cell>
             <cell><m>0\degree</m></cell>
@@ -669,7 +644,7 @@ Complete the table of values and graph the Ferris wheel function, <m>h = F(\thet
             <cell><m>80\degree</m></cell>
             <cell><m>90\degree</m></cell></row>
         <row>
-            <cell><m>\cos (\theta)</m></cell> 
+            <cell><m>\cos \theta</m></cell> 
             <cell><m>\hphantom{0000}</m></cell>
             <cell><m>\hphantom{0000}</m></cell>
             <cell><m>\hphantom{0000}</m></cell>
@@ -680,35 +655,24 @@ Complete the table of values and graph the Ferris wheel function, <m>h = F(\thet
             <cell><m>\hphantom{0000}</m></cell>
             <cell><m>\hphantom{0000}</m></cell>
             <cell><m>\hphantom{0000}</m></cell></row>
-            </tabular></li>
-    <li><p>Graph the cosine function for <m>0\degree \le \theta \le 90\degree</m>.  Pay careful attention to the shape of the graph.</p></li>
-
-    <li><p>Use the table and your knowledge of reference angles to graph the cosine function, <m>f(\theta) = \cos (\theta)~</m> from <m>-180\degree</m> to <m>540\degree</m>.</p>
+            </tabular></sidebyside>
 
     <sidebyside width="90%">
     <image xml:id="exer4-2-4"><description>grid</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} [xscale=1.6, yscale=1.2]
-        \draw[cyan,xstep=0.3333, ystep=0.4]
-        (-2.01,-2) grid (6,2);
+        <![CDATA[
+        \begin{tikzpicture} [xscale=1.2, yscale=0.9]
+        \draw[cyan,xstep=0.3333, ystep=0.4] (-2.01,-2) grid (6,2);
 
         \draw[->,>=stealth'] (-2.2,0) -- (6.3,0) node[right] {$\theta$};
         \draw[->,>=stealth'] (0,-2.2) -- (0,2.3) node[above] {$y$};
 
         \foreach \x [evaluate=\x as \xi using int( 90* \x )] in {1,2,...,6}
-        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+        \draw[black] ($\x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$\xi^\circ $};
         \foreach \x [evaluate=\x as \xi using int( 90* \x )] in {-2,-1}
-        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+        \draw[black] ($\x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$\xi^\circ $};
 
         \foreach \y  [evaluate=\y as \yi using int(  \y /2 )] in {-2,2}
-        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></li>
     <li>Use your graph to find the period, amplitude, and midline of the cosine function. How does the graph of cosine differ from the graph of sine? (Hint:  Consider the intercepts of the graph, and the location of the maximum and minimum values.)</li>
@@ -741,106 +705,28 @@ Complete the table of values and graph the Ferris wheel function, <m>h = F(\thet
                         <cell><m>0.17</m></cell>
                         <cell><m>0</m></cell></row>
                         </tabular></sidebyside>
-    <sidebyside width="75%"><image xml:id="exer4-2-4ans"><description>graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} [xscale=0.8, yscale=0.6]
-        \draw[cyan,xstep=0.3333, ystep=0.4]
-        (-2.01,-2) grid (6,2);
+    <sidebyside width="90%"><image xml:id="exer4-2-4ans"><description>graph</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture} [xscale=1.2, yscale=0.9]
+        \draw[cyan,xstep=0.3333, ystep=0.4] (-2.01,-2) grid (6,2);
 
         \draw[->,>=stealth'] (-2.2,0) -- (6.3,0) node[right] {$\theta$};
         \draw[->,>=stealth'] (0,-2.2) -- (0,2.3) node[above] {$y$};
 
         \foreach \x [evaluate=\x as \xi using int( 90* \x )] in {1,2,...,6}
-        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+        \draw[black] ($\x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$\xi^\circ $};
         \foreach \x [evaluate=\x as \xi using int( 90* \x )] in {-2,-1}
-        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+        \draw[black] ($\x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$\xi^\circ $};
 
         \foreach \y  [evaluate=\y as \yi using int(  \y /2 )] in {-2,2}
-        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
 
-        \draw[domain=-2:6,smooth,variable=\x,red,very thick] plot ({\x},{2* cos(deg(\x*pi/2))});
+        \draw[samples=65,domain=-2:6,smooth,variable=\x,red,very thick] plot ({\x},{2* cos(deg(\x*pi/2))});
+        \foreach \x [evaluate=\x as \xi using ( \x/9 )] in {0,1,2,...,9}
+        \filldraw[black] (\xi , {2* cos(\x*10)}) ellipse (.03cm and .04cm);
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></li>
-    <li><p>Period: <m>360\degree</m>, amplitude: 1,  midline: <m>y = 0</m> (the same as the sine function).  But the cosine graph has its high point at <m>\theta = 0\degree</m>, while the sine graph has its high point at <m>\theta = 90\degree</m>.</p></li>
-</ol></p></answer></exercise>                    
-
-
-<activity><title>Graphs of Sine and Cosine</title>
-
-<task><p>The circle below has radius one unit.</p>
-        
-        <sidebyside width="100%"><image xml:id="fig-4-2-circleandgraph"><description>angles</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} [scale = .24] 
-        \draw[cyan] (-10,-10) grid (10,10);
-
-        \coordinate (O) at (0,0);
-
-        \draw[red,thick] (O) circle (10cm);
-        \foreach \theta  in {0,10,...,360}
-        \draw[black] (O)--(\theta:10)  ;
-
-        \foreach \x  in {-10, -9, ..., 10} 
-        {
-        \draw[black,  thick] ($ \x *(1,0) +(0,.2) $) --++(0,-0.4); 
-        \draw[black,  thick] ($ \x *(0,1) +(.2,0) $) --++(-0.4,0); 
-        };
-
-        \foreach \x  in {-10, -5, 5, 10} 
-        {
-        \draw[black, ultra thick] ($ \x *(1,0) +(0,.4) $) --++(0,-0.8); 
-        \draw[black, ultra thick] ($ \x *(0,1) +(.4,0) $) --++(-0.8,0); 
-        };
-
-        \foreach \theta  in {30, 60, 120, 150, 210, 240, 300, 330}
-        {
-        \draw[black] (O)--(\theta:10.4) ;
-        \node[text width=0.5cm, color=red,fill=white, inner sep=1pt] at (\theta:11.3) {\footnotesize $\theta\degree$};
-        };
-
-        \draw[cyan] (14,-10) grid (50,10);
-        \draw[black,very thick, ->,>=stealth'] (14,0) --+(36.9,0) node[right]{$\theta$};
-        \foreach \x [evaluate=\x as \xi using int( 10*(\x - 14))] in {17, 20, ..., 50} 
-        {
-        \draw[black,  thick] ($ \x *(1,0) +(0,.2) $) --++(0,-0.4) node[anchor=north, yshift=-2,fill=white, inner sep=1pt]{\scriptsize$\xi \degree$}; 
-        };
-        \draw[black,very thick, ->,>=stealth'] (14,-10) --(14,10.9);
-        \foreach \x  in {-10, -9, ..., 10} 
-        {
-        \draw[black,  thick] ($ \x *(0,1) +(14.2,0) $) --++(-0.4,0); 
-        };
-        \end{tikzpicture}]]>
-        </latex-image></image></sidebyside>
-    <p><ol marker="1">
-        <li>Draw vertical line segments from the circle to the <m>x</m>-axis to illustrate the <m>y</m>-coordinate of each point designated by the angles, <m>0\degree</m> to <m>90\degree</m>, labeled on the circle.</li>
-        <li>Transfer your vertical line segments to the appropriate position on the grid beside the circle.</li>
-        <li>Repeat parts (a) and (b) for the other three quadrants.</li>
-        <li>Connect the tops of the segments to sketch a graph of <m>y = \sin (\theta)</m>.</li>
-    </ol></p></task>
-
-<task><p>The circle below has radius one unit.</p>
-        <sidebyside width="100%"><image source="photos/fig-4-2-circleandgraph"><description>angles</description></image></sidebyside>
-    <p><ol marker="1">
-        <li>Draw horizontal line segments from the unit circle to the <m>y</m>-axis to illustrate the <m>x</m>-coordinate of each point designated by the angles, <m>0\degree</m> to <m>90\degree</m>, shown on the circle.</li>
-        <li>Transfer your horizontal line segments into vertical line segments at the appropriate position on the grid beside the circle.</li>
-        <li>Repeat parts (a) and (b) for the other three quadrants.</li>
-        <li>Connect the tops of the segments to sketch a graph of <m>y = \cos (\theta)</m>.</li>
-    </ol></p></task>
-</activity>
+    <li>Period: <m>360\degree</m>, amplitude: 1,  midline: <m>y = 0</m>.  The cosine graph starts <m>(\theta = 0\degree)</m> at its high point, while the sine graph starts <m>(\theta = 0\degree)</m> at its midline.</li></ol></p></answer></exercise>                     
 </subsection>
 
 <subsection><title>Interlude: Review of Function Notation</title>
@@ -874,45 +760,31 @@ Complete the table of values and graph the Ferris wheel function, <m>h = F(\thet
                         </tabular></stack>
 
     <image xml:id="exam4-2-5"><description>semicircle graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} [scale=.55]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.5]
         \draw[cyan] (-4,0) grid (4,4);
 
         \draw[->,>=stealth'] (-4.2,0) -- (4.3,0) node[right] {$x$};
-        \draw[->,>=stealth'] (0,-.2) -- (0,4.3) node[above] {$y$};
+        \draw[->,>=stealth'] (0,-.2) -- (0,4.35) node[above] {$y$};
 
         \foreach \x  in {-4, -3, ..., -1, 1,2,...,4}
-        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \x $};
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \x $};
 
         \foreach \y  in {1,2, 3, 4}
-        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\y};
+        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\y};
 
         \draw[red, ultra thick] (3,0) arc (0:180:3);
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></solution></example>  
 
-<p>Of course, we don't always use <m>x</m> and <m>y</m> for the input and output variables.  In the previous example, we could write <m>~w = f(t) = \sqrt{9 - t^2}~</m> for the function, so that <m>t</m> is the input and <m>w</m> is the output. The table of values and the graph are the same; only the names of the variables have changed.</p>
+<p>Of course, we don't always use <m>x</m> and <m>y</m> for the input and output variables.  In the previous example, we could write <m>w = f(t) = \sqrt{9 - t^2}</m> for the function, so that <m>t</m> is the input and <m>w</m> is the output. The table of values and the graph are the same; only the names of the variables have changed.</p>
 
 <note><p>When we discuss trigonometric functions, there are several variables involved.  Our definitions of the trig ratios involve four variables: <m>x</m>, <m>y</m>, <m>r</m>, and <m>\theta</m>, as illustrated below.</p>
 
-<sidebyside widths="30% 22%" margins="15% 15%">
+<sidebyside widths="30% 30%" margins="15% 15%">
     <image xml:id="fig-4-2-caut1"><description>angles</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} 
+        <![CDATA[
+        \begin{tikzpicture} [scale=.6]
         \coordinate(O) at (0,0);
         \coordinate(P) at (220:2cm);
         \coordinate(Pp) at (220:2.7cm);
@@ -921,7 +793,7 @@ Complete the table of values and graph the Ferris wheel function, <m>h = F(\thet
         \draw[blue, thick] (Q) rectangle +(.25, -.25);
 
         \draw[->,>=stealth'] (-2.2,0) -- (2.3,0) node[right] {$x$};
-        \draw[->,>=stealth'] (0,-1.7) -- (0,1.3) node[above] {$y$};
+        \draw[->,>=stealth'] (0,-1.6) -- (0,1.3) node[above] {$y$};
 
         \draw[blue, thick] (O) -- (P) node[below right, midway, yshift = 3] {$r$};
         \draw[gray!80!white, thick, ->,>=stealth'] (P) -- (Pp);
@@ -932,15 +804,8 @@ Complete the table of values and graph the Ferris wheel function, <m>h = F(\thet
         \end{tikzpicture}]]>
     </latex-image></image>
 <image xml:id="fig-4-2-caut2b"><description>graphs</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} 
+        <![CDATA[
+        \begin{tikzpicture}  [scale=.8]
         \coordinate(O) at (0,0);
         \coordinate(P) at (115:1.4cm);
 
@@ -949,62 +814,48 @@ Complete the table of values and graph the Ferris wheel function, <m>h = F(\thet
         \draw[->,>=stealth'] (-1.5,0) -- (1.7,0) node[right] {$x$};
         \draw[->,>=stealth'] (0,-1.5) -- (0,1.7) node[above] {$y$};
 
-        \draw[blue, thick] (O) -- (P) node[below left, midway, xshift=2, yshift = 3] {\footnotesize $r=1$};
-        \filldraw[blue] (P) circle (1.5pt) node[anchor=south, xshift=-6] {$P(x,y)$};
+        \draw[blue, thick] (O) -- (P) node[below left, midway, xshift=3, yshift = 3] {\small$r=1$};
+        \filldraw[blue] (P) circle (1.5pt) node[left, yshift=3] {$P(x,y)$};
 
         \draw[red, thick, ->,>=stealth'] (.4,0) arc (0:115:.4) node[above right, midway, xshift=0, yshift=-4]{$\theta$};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
 
  <p>If the value of <m>r</m> is fixed for a given situation, such as the Ferris wheel or the bicycle wheel discussed above, then <m>x</m> and <m>y</m> are both functions of <m>\theta</m>. This means that the values of <m>x</m> and <m>y</m> depend only on the value of the angle <m>\theta</m>.  If <m>r = 1</m>, we have
-        <md><mrow>x \amp = f(\theta) = \cos (\theta)</mrow>
-            <mrow>y \amp = g(\theta) = \sin (\theta)</mrow></md>
+<md><mrow>x \amp = f(\theta) = \cos (\theta)</mrow>
+     <mrow>y \amp = g(\theta) = \sin (\theta)</mrow></md>
 The graphs of these functions are shown below. Note particularly that the horizontal axis displays values of the input variable, and the vertical axis displays the output variable. </p>
 <sidebyside widths="45% 45%"><image xml:id="fig-4-2-caut2cos"><description>cosine graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} 
-        \draw[cyan] (-1,-2) grid (5,2);
+    <![CDATA[
+    \begin{tikzpicture} [scale=.9]
+    \draw[cyan] (-1,-2) grid (5,2);
 
-        \draw[->,>=stealth'] (-1.1,0) -- (5.2,0) node[right] {$\theta$};
-        \draw[->,>=stealth'] (0,-2.1) -- (0,2.3) node[above] {$x$};
-        \foreach \x [evaluate=\x as \xi using int( 90* \x )] in {-1,1,2,...,5}
-        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+    \draw[->,>=stealth'] (-1.1,0) -- (5.2,0) node[right] {$\theta$};
+    \draw[->,>=stealth'] (0,-2.1) -- (0,2.3) node[above] {$x$};
+    \foreach \x [evaluate=\x as \xi using int( 90* \x )] in {-1,1,2,...,5}
+    \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$\xi^\circ$};
 
-        \foreach \y   in {-1,1} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\y};
+    \foreach \y   in {-1,1} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\y};
 
-        \draw[domain=-1:5,smooth,variable=\x,red,very thick] plot ({\x},{cos(pi/2*deg(\x))});
+    \draw[domain=-1:5,smooth,variable=\x,red,very thick] plot ({\x},{cos(pi/2*deg(\x))});
 
-        \end{tikzpicture}]]>
-    </latex-image></image>
+    \end{tikzpicture}]]>
+</latex-image></image>
 <image xml:id="fig-4-2-caut2sin"><description>sine graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} 
-        \draw[cyan] (-1,-2) grid (5,2);
+    <![CDATA[
+    \begin{tikzpicture}  [scale=.9]
+    \draw[cyan] (-1,-2) grid (5,2);
 
-        \draw[->,>=stealth'] (-1.1,0) -- (5.2,0) node[right] {$\theta$};
-        \draw[->,>=stealth'] (0,-2.1) -- (0,2.3) node[above] {$y$};
-        \foreach \x [evaluate=\x as \xi using int( 90* \x )] in {-1,1,2,...,5}
-        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+    \draw[->,>=stealth'] (-1.1,0) -- (5.2,0) node[right] {$\theta$};
+    \draw[->,>=stealth'] (0,-2.1) -- (0,2.3) node[above] {$y$};
+    \foreach \x [evaluate=\x as \xi using int( 90* \x )] in {-1,1,2,...,5}
+    \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$\xi^\circ$};
 
-        \foreach \y   in {-1,1} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\y};
+    \foreach \y   in {-1,1} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\y};
 
-        \draw[domain=-1:5,smooth,variable=\x,red,very thick] plot ({\x},{sin(pi/2*deg(\x))});
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside>
+    \draw[domain=-1:5,smooth,variable=\x,red,very thick] plot ({\x},{sin(pi/2*deg(\x))});
+    \end{tikzpicture}]]>
+</latex-image></image></sidebyside>
 <p>If we use different variables for the input and output, the functions and their graphs are the same, but the axes should be labeled with the appropriate variables.</p></note>
                      
 <exercise><statement><p>Sketch a graph of each function, and label the axes.</p>
@@ -1014,48 +865,34 @@ The graphs of these functions are shown below. Note particularly that the horizo
 </ol></p></statement>
 
 <answer><p><ol marker="a" cols="2">
-    <li><sidebyside width="90%" margins="0% 5%">
-    <image xml:id="exer4-2-5ansa"><description>sine graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
+    <li><sidebyside width="100%" margins="0% 0%">
+        <image xml:id="exer4-2-5ansa"><description>sine graph</description><latex-image>
+        <![CDATA[
         \begin{tikzpicture} [scale=.8]
         \draw[cyan] (-1,-2) grid (5,2);
 
         \draw[->,>=stealth'] (-1.1,0) -- (5.2,0) node[right] {$\phi$};
         \draw[->,>=stealth'] (0,-2.1) -- (0,2.3) node[above] {$d$};
         \foreach \x [evaluate=\x as \xi using int( 90* \x )] in {-1,1,2,...,5}
-        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$\xi^\circ$};
 
-        \foreach \y   in {-1,1} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\y};
+        \foreach \y   in {-1,1} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\y};
 
         \draw[domain=-1:5,smooth,variable=\x,red,very thick] plot ({\x},{sin(pi/2*deg(\x))});
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></li>
-    <li><sidebyside width="90%" margins="0% 5%"><image xml:id="exer4-2-5ansb"><description>cosine graph</description>
+    <li><sidebyside width="100%" margins="0% 0%"><image xml:id="exer4-2-5ansb"><description>cosine graph</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} [scale=.8] 
+        <![CDATA[
+        \begin{tikzpicture} [scale=.6] 
         \draw[cyan] (-1,-2) grid (5,2);
 
         \draw[->,>=stealth'] (-1.1,0) -- (5.2,0) node[right] {$\beta$};
         \draw[->,>=stealth'] (0,-2.1) -- (0,2.3) node[above] {$t$};
-        \foreach \x [evaluate=\x as \xi using int( 90* \x )] in {-1,1,2,...,5}
-        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+        \scriptsize   \foreach \x [evaluate=\x as \xi using int( 90* \x )] in {-1,1,2,...,5}
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$\xi^\circ$};
 
-        \foreach \y   in {-1,1} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\y};
+        \foreach \y   in {-1,1} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\y};
 
         \draw[domain=-1:5,smooth,variable=\x,red,very thick] plot ({\x},{cos(pi/2*deg(\x))});
         \end{tikzpicture}]]>
@@ -1072,14 +909,16 @@ The graphs of these functions are shown below. Note particularly that the horizo
 
 <sidebyside widths="75% 15%" valigns="middle middle" margins="0% 5%"><p>The tangent function is periodic, but its graph is not similar to the graphs of sine and cosine. Recall that the tangent of an angle in standard position is defined by 
     <me>\tan (\theta) = \dfrac{y}{x}</me> 
-Study the figure at right to see that as <m>\theta</m> increases from <m>0\degree</m> to <m>90\degree</m>, <m>y</m> increases while <m>x</m> remains constant, so the value of <m>\tan (\theta)</m> increases.</p> 
-<image source="photos/hp2-2-53"><description>graphs</description></image></sidebyside>
+Study the figure at right to see that as <m>\theta</m> increases from <m>0\degree</m> to <m>90\degree</m>, <m>y</m> increases while <m>x</m> remains constant, so the value of <m>\tan \theta</m> increases.</p> 
+<image xml:id="Tangent-for-increasing-slope"><description>Right triangles with a common base x and increasing y</description>
+        <xi:include href="Right-triangles-with-increasing-theta.xml"/>
+</image></sidebyside>
 
-<example><statement><p>Sketch a graph of <m>~f(\theta) = \tan (\theta)~</m> for <m>0\degree \le \theta \le 180\degree</m>.</p></statement>
+<example><statement><p>Sketch a graph of <m>f(\theta) = \tan (\theta)</m> for <m>0\degree \le \theta \le 180\degree</m>.</p></statement>
 
 <solution><p>You can use your calculator to verify the following values for <m>\tan \theta</m>.</p>
-<sidebyside widths="60% 35%" valigns="middle middle" margins="0% 5%"><stack>
-    <p><sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
+<sidebyside widths="50% 40%" valigns="middle middle" margins="0% 0%"><stack>
+    <tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
         <row bottom="minor">
             <cell><m>\theta</m></cell>
             <cell><m>0\degree</m></cell>
@@ -1096,45 +935,33 @@ Study the figure at right to see that as <m>\theta</m> increases from <m>0\degre
             <cell><m>2.75</m></cell>
             <cell><m>5.67</m></cell>
             <cell><m>11.43</m></cell></row>
-        </tabular></sidebyside></p>
+        </tabular>
 
-<p>As <m>\theta</m> gets closer to <m>90\degree</m>, <m>\tan (\theta)</m> increases very rapidly. Recall that <m>\tan (90\degree)</m> is undefined, so there is no point on the graph at <m>\theta = 90\degree</m>. The graph of <m>f(\theta) = \tan (\theta)</m> in the first quadrant is shown at right.</p></stack>
+<p>As <m>\theta</m> gets closer to <m>90\degree</m>, <m>\tan (\theta)</m> increases very rapidly. Recall that <m>\tan (90\degree)</m> is undefined, so there is no point on the graph at <m>\theta = 90\degree</m>. The graph of <m>f(\theta) = \tan (\theta)</m> for <m>0\le\theta\lt 90\degree</m> is shown at right.</p></stack>
     <image xml:id="exam4-2-6a"><description>graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
+        <![CDATA[
         \begin{tikzpicture} [scale=0.7]
         \draw[cyan] (0,-3) grid (6,5);
 
-        \draw[->,>=stealth'] (-.1,0) -- (6.2,0) node[right] {$\theta$};
+        \draw[->,>=stealth'] (-.1,0) -- (6.4,0) node[right] {$\theta$};
         \draw[->,>=stealth'] (0,-3.1) -- (0,5.3);
         \foreach \x [evaluate=\x as \xi using int( 30* \x )] in {1,2,...,6}
-        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$\xi^\circ $};
 
-        \foreach \y [evaluate=\y as \yi using int( 2* \y )]   in {-2,-1,1,2,...,5} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+        \foreach \y [evaluate=\y as \yi using int( 2* \y )]   in {-2,-1,1,2,...,5} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
 
-        \draw[domain={0:atan(5)/30},smooth,variable=\x,red,very thick] plot ({\x},{tan(30*\x)});
+        \draw[gray,thick,dashed] (3,-3)--+(0,8);
+        \draw[domain={0:atan(10)/30},smooth,variable=\x,red,very thick,->,>=stealth'] plot ({\x},{tan(30*\x)/2});
+        \foreach \x in {0,1,2,2.33333,2.66666}
+        \filldraw[black] ({\x},{tan(30*\x)/2}) circle (2pt);
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
-
-<sidebyside widths="60% 32%" valigns="middle middle" margins="0% 5%"><p> In the second quadrant, the tangent is negative. The reference angle for each angle in the second quadrant is its supplement, so 
-    <me>\tan (\theta) =-\tan (180\degree - \theta)</me>
-as shown at right.</p> 
+<p>For <m>\theta</m> in the second quadrant, the tangent is negative. The reference angle for each angle in the second quadrant is its supplement, so </p>
+<sidebyside widths="55% 32%" valigns="middle middle" margins="0% 7%"><stack><p><me>\tan (\theta) =-\tan (180\degree - \theta)</me> </p>
+    <p>as shown at right. For example, you can verify that </p></stack>
     <image xml:id="exam4-2-6b"><description>supplementary angles</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} 
+        <![CDATA[
+        \begin{tikzpicture} [scale=.8]
         \coordinate(A) at (2,0);
         \coordinate (B) at ($ (2,0)++2*tan(50)*(0,1)  $);
         \coordinate(Ap) at (-2,0);
@@ -1154,12 +981,13 @@ as shown at right.</p>
         \draw[black,thick,->,>=stealth'] (-2.5,0) -- (2.5,0);
         \draw[black,thick,->,>=stealth'] (0,-.2) -- (0,2.2) ;
 
-        \draw[red!80!white,thick,->,>=stealth'] (1,0) arc (0:50:1) node[right, midway, xshift=0, yshift=1] {\footnotesize$50\degree$};
-        \draw[red,thick,->,>=stealth'] (.4,0) arc (0:130:.4) node[above, midway, xshift=-4, yshift=3,fill=white, inner sep=1pt] {\footnotesize$130\degree$};
+        \draw[red!80!white,thick,->,>=stealth'] (1,0) arc (0:50:1) node[right, midway, xshift=0, yshift=1] {$50\degree$};
+        \draw[red,thick,->,>=stealth'] (.5,0) arc (0:130:.5) node[above, midway, xshift=-4, yshift=5,fill=white, inner sep=0pt] {$130\degree$};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside> 
+<p><me>\tan (130\degree) = -\tan (180\degree - 130\degree) = -\tan (50\degree) = -1.19</me></p>
 
-<sidebyside widths="60% 35%" valigns="middle middle" margins="0% 0%"><stack><p>In particular, for values of <m>\theta</m> close to <m>90\degree</m>, the values of <m>\tan (\theta)</m> are large negative numbers. We plot several points and sketch the graph in the second quadrant.</p><p></p>
+<sidebyside widths="60% 40%" valigns="middle middle" margins="0% 0%"><stack><p>In particular, for values of <m>\theta</m> close to <m>90\degree</m>, the values of <m>\tan (\theta)</m> are large negative numbers. We plot several points and sketch the graph in the second quadrant.</p>
 <tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
                     <row bottom="minor">
                         <cell><m>\theta</m></cell>
@@ -1179,44 +1007,31 @@ as shown at right.</p>
 <p>In the figure at right, note that the graph has a break at <m>\theta = 90\degree</m>, because  <m>\tan (90\degree)</m> is undefined.</p></stack>
 
     <image xml:id="exam4-2-6c"><description>tangent graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}  [scale=0.7]
+        <![CDATA[
+        \begin{tikzpicture} [scale=0.7]
         \draw[cyan] (0,-5) grid (6,5);
 
-        \draw[->,>=stealth'] (-.1,0) -- (6.2,0) node[right] {$\theta$};
+        \draw[->,>=stealth'] (-.1,0) -- (6.4,0) node[right] {$\theta$};
         \draw[->,>=stealth'] (0,-5.1) -- (0,5.3);
         \foreach \x [evaluate=\x as \xi using int( 30* \x )] in {1,2,...,6}
-        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$\xi^\circ $};
 
-        \foreach \y [evaluate=\y as \yi using int( 2* \y )]   in {-5,-4,...,-1,1,2,...,5} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
-
-        \draw[domain={0:atan(5)/30},smooth,variable=\x,red,very thick] plot ({\x},{tan(30*\x)});
-
-        \draw[domain={atan(-5)/30+6:6},smooth,variable=\x,red,very thick] plot ({\x},{tan(30*\x)});
+        \foreach \y [evaluate=\y as \yi using int( 2* \y )]   in {-5,-4,-3,-2,-1,1,2,...,5} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
+        \draw[gray,thick,dashed] (3,-3)--+(0,8);
+        \draw[domain={0:atan(10)/30},smooth,variable=\x,red,very thick,->,>=stealth'] plot ({\x},{tan(30*\x)/2});
+        \draw[domain={6-atan(10)/30:6},smooth,variable=\x,red,very thick,<-,>=stealth'] plot ({\x},{tan(30*\x)/2});
+        \foreach \x in {3.3333,3.66667,4,5,6}
+        \filldraw[black] ({\x},{tan(30*\x)/2}) circle (2pt);
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></solution></example>
 
-<p>Now let's consider the graph of <m>f(\theta) = \tan (\theta)</m> in the third and fourth quadrants. From the figure below you can see that the angles <m>\theta</m> and <m>180\degree + \theta</m> are vertical angles, so they have the same reference angle.</p>
+<p>Now let's consider the graph of <m>f(\theta) = \tan (\theta)</m> in the third and fourth quadrants. The tangent is positive in the third quadrant, and negative in the fourth quadrant. In fact, from the figure below you can see that the angles <m>\theta</m> and <m>180\degree + \theta</m> are vertical angles.</p>
 <sidebyside widths="30% 27%" margins="15% 15%" valigns="middle middle">
     <image xml:id="exam4-2-6d">
         <description>angles differing by 180 degrees</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} 
+        <![CDATA[
+        \begin{tikzpicture}  [scale=.8]
         \coordinate (O) at (0,0);
         \coordinate (B) at (1,0);
         \coordinate (A) at (1,2);
@@ -1236,23 +1051,16 @@ as shown at right.</p>
         \filldraw[black] (A) circle (1.5pt) node[anchor=west] {$(x,y)$};
         \filldraw[black] (Ap) circle (1.5pt) node[anchor=east] {$(-x,-y)$};
 
-        \draw[red, thick, ->,>=stealth'] (0.3,0) arc(0:{atan(2)+180}:.3) node[below  left, midway, xshift=2, yshift=10] {\footnotesize $180\degree + \theta$};
-        \draw[red, thick, ->,>=stealth'] (0.6,0) arc(0:{atan(2)}:.6) node[above  right, midway, xshift=-2, yshift=-2] {\footnotesize $\theta$};
+        \draw[red, thick, ->,>=stealth'] (0.3,0) arc(0:{atan(2)+180}:.3) node[below  left, midway, xshift=2, yshift=10] {$180\degree + \theta$};
+        \draw[red, thick, ->,>=stealth'] (0.6,0) arc(0:{atan(2)}:.6) node[above  right, midway, xshift=-2, yshift=-2] {$\theta$};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
     <image xml:id="exam4-2-6d2">
         <description>angles differing by 180 deg</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} 
+        <![CDATA[
+        \begin{tikzpicture}  [scale=.8]
         \coordinate (O) at (0,0);
         \coordinate (B) at (1.6,0);
         \coordinate (A) at (1.6,-1);
@@ -1272,39 +1080,39 @@ as shown at right.</p>
         \filldraw[black] (A) circle (1.5pt) node[anchor=north] {$(-x,-y)$};
         \filldraw[black] (Ap) circle (1.5pt) node[anchor=south] {$(x,y)$};
 
-        \draw[red, thick, ->,>=stealth'] (0.3,0) arc(0:{360-atan(1/1.6)}:.3) node[below left, midway, xshift=3, yshift=-5] {\footnotesize $180\degree + \theta$};
-        \draw[red, thick, ->,>=stealth'] (0.6,0) arc(0:{180-atan(1/1.6)}:.6) node[above, midway, xshift=7, yshift=-5] {\footnotesize $\theta$};
+        \draw[red, thick, ->,>=stealth'] (0.3,0) arc(0:{360-atan(1/1.6)}:.3) node[below left, midway, xshift=3, yshift=-5] {$180\degree + \theta$};
+        \draw[red, thick, ->,>=stealth'] (0.6,0) arc(0:{180-atan(1/1.6)}:.6) node[above, midway, xshift=7, yshift=-5] {$\theta$};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
 
-<p>Because they have the same reference angle, <m>\theta</m> and <m>180\degree + \theta</m> have the same tangent. Thus, the graph of <m>\tan (\theta)</m> in the third quadrant is the same as its graph in the first quadrant, and the graph in the fourth quadrant is the same as its graph in the second quadrant. The completed graph is shown below.</p>
-<sidebyside width="55%"><image xml:id="exam4-2-6e"><description>tangent graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} [scale=.7]
-        \draw[cyan] (-4,-4) grid (8,4);
+<p>Because <m>\theta</m> and <m>180\degree + \theta</m> have the same reference angle, they have the same tangent.  For example,
+        <md><mrow>\tan (200\degree) \amp = \tan (20\degree)</mrow>
+            <mrow>\tan (230\degree) \amp = \tan (50\degree)</mrow>
+            <mrow>\tan (250\degree) \amp = \tan (70\degree) </mrow></md>
+Thus, the graph of <m>\tan (\theta)</m> in the third quadrant is the same as its graph in the first quadrant. Similarly, the graph of the tangent function in the fourth quadrant is the same as its graph in the second quadrant. The completed graph is shown below.</p>
+<sidebyside width="60%"><image xml:id="exam4-2-6e"><description>tangent graph</description><latex-image>
+    <![CDATA[
+    \begin{tikzpicture} [scale=.6]
+    \draw[cyan] (-4,-4) grid (8,4);
 
-        \draw[->,>=stealth'] (-.1,0) -- (8.2,0) node[right] {$\theta$};
-        \draw[->,>=stealth'] (0,-4.1) -- (0,4.3);
-        \foreach \x [evaluate=\x as \xi using int( 45* \x )] in {-4, -2, 2, 4,6,8} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+    \draw[->,>=stealth'] (-.1,0) -- (8.4,0) node[right] {$\theta$};
+    \draw[->,>=stealth'] (0,-4.1) -- (0,4.3);
+    \foreach \x [evaluate=\x as \xi using int( 45* \x )] in {-4, -2, 2, 4,6,8} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi^\circ $};
 
-        \foreach \y [evaluate=\y as \yi using int( 2* \y )]   in {-4,-3,...,-1,1,2,...,4} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+    \foreach \y [evaluate=\y as \yi using int( 2* \y )]   in {-4,-3,...,-1,1,2,...,4} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
 
-        \draw[domain={atan(-4)/45:atan(4)/45},smooth,variable=\x,red,very thick] plot ({\x},{tan(45*\x)});
+    \draw[samples=65,domain={atan(-8)/45:atan(8)/45},smooth,variable=\x,red,very thick, <->,>=stealth'] plot ({\x},{tan(45*\x)/2});
+    \draw[gray,thick,dashed] (-2,-4)--+(0,8);
+    \draw[gray,thick,dashed] (2,-4)--+(0,8);
+    \draw[gray,thick,dashed] (6,-4)--+(0,8);
 
-        \draw[domain={atan(-4)/45+4:4+atan(4)/45},smooth,variable=\x,red,very thick] plot ({\x},{tan(45*\x)});
+    \draw[samples=65,domain={atan(-8)/45+4:4+atan(8)/45},smooth,variable=\x,red,very thick,<->,>=stealth'] plot ({\x},{tan(45*\x)/2});
 
-        \draw[domain={-4:atan(4)/45-4},smooth,variable=\x,red,very thick] plot ({\x},{tan(45*\x)});
+    \draw[samples=65,domain={-4:atan(8)/45-4},smooth,variable=\x,red,very thick,->,>=stealth'] plot ({\x},{tan(45*\x)/2});
 
-        \draw[domain={atan(-4)/45+8:8},smooth,variable=\x,red,very thick] plot ({\x},{tan(45*\x)});
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside>
+    \draw[samples=65,domain={atan(-8)/45+8:8},smooth,variable=\x,red,very thick,<-,>=stealth'] plot ({\x},{tan(45*\x)/2});
+    \end{tikzpicture}]]>
+</latex-image></image></sidebyside>
 
 <exercise><statement>
 <p><ol marker="a">
@@ -1322,12 +1130,12 @@ as shown at right.</p>
 </ol></p></answer></exercise>
 </subsection>
 
-<subsection><title>Period, Midline, and Amplitude</title>
+<subsection><title>Period, Midline and Amplitude</title>
 
 <p>All sine and cosine graphs have the characteristic "wave" shape we've seen in previous examples. But we can alter the size and frequency of the waves by changing the formula for the function. In the next example we consider three variations of the sine function.</p>
 
 <example><statement><p>Make a table of values and sketch a graph for each of the functions. How does each differ from the graph of <m>y = \sin (\theta)</m> ?</p>
-<p><ol marker="a">
+<p><ol marker="a" cols="3">
         <li><m>y = 3\sin (\theta)</m></li>
         <li><m>y = 3 + \sin (\theta)</m></li>
         <li><m>y = \sin (3\theta)</m></li>
@@ -1360,18 +1168,11 @@ as shown at right.</p>
             <cell><m>0</m></cell></row>
             </tabular></sidebyside>
     <sidebyside widths="55% 40%"><p>We plot the points, and connect them with a sine-shaped wave. Compare the graph, shown at right, to the graph of <m>y = \sin (\theta)</m>. The graph is like a sine graph, except that it oscillates between a maximum value of <m>3</m> and a minimum value of <m>-3</m>. The amplitude of this function is 3.</p>
-   <image xml:id="exam4-3-1a">
+    <image xml:id="exam4-3-1a">
         <description>graphs of sine and 3 sine</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} [scale=.6] 
+        <![CDATA[
+        \begin{tikzpicture} [scale=.45] 
         \draw[cyan]
         (-0.1,-3) grid (8,3);
 
@@ -1379,16 +1180,16 @@ as shown at right.</p>
         \draw[->,>=stealth'] (0,-3.2) -- (0,3.3) node[above] {$y$};
 
         \foreach \x [evaluate=\x as \xi using int( 45* \x )] in {2, 4, 6, 8}
-        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$\xi^\circ $};
 
         \foreach \y  [evaluate=\y as \yi using int(  \y )] in {-3, -2, -1,1, 2, 3}
-        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
 
         \draw[domain=-0:8,smooth,variable=\x,red,very thick] plot ({\x},{ 3*sin(deg(\x*pi/4))});
 
-        \draw[red, thick, <-] (2.8, 2.6) -- +(0.7,0) node[right, fill=white, inner sep=1pt] {$y=3\sin \theta$};
+        \draw[red, thick, <-,>=stealth'] (2.8, 2.6) -- +(0.7,0) node[right, fill=white, inner sep=1pt] {$y=3\sin(\theta)$};
         \draw[domain=-0:8,smooth,variable=\x,blue,very thick] plot ({\x},{ sin(deg(\x*pi/4))});
-        \draw[blue, thick, <-] (3.2, 0.7) -- +(0.9,0.3) node[right, fill=white, inner sep=1pt] {$y=\sin \theta$};
+        \draw[blue, thick, <-,>=stealth'] (3.2, 0.7) -- +(0.9,0.3) node[right, fill=white, inner sep=1pt] {$y=\sin(\theta)$};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -1421,15 +1222,8 @@ as shown at right.</p>
     <sidebyside widths="55% 40%"><p>This graph has the same amplitude as <m>y = \sin (\theta)</m>, but the entire graph is shifted up by 3 units, as shown at right. The midline of this function is the line <m>y = 3</m>.</p>   <image xml:id="exam4-3-1b">
         <description>graph of sine and translated sine</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} [scale=.6]  
+        <![CDATA[
+        \begin{tikzpicture} [scale=.45]  
         \draw[cyan]
         (-0.1,-2) grid (8,5);
 
@@ -1437,16 +1231,16 @@ as shown at right.</p>
         \draw[->,>=stealth'] (0,-2.2) -- (0,5.3) node[above] {$y$};
 
         \foreach \x [evaluate=\x as \xi using int( 45* \x )] in {2, 4, 6, 8}
-        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi^\circ $};
 
         \foreach \y  [evaluate=\y as \yi using int(  \y )] in { -1,1, 2, 3, 4, 5}
-        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
 
         \draw[domain=-0:8,smooth,variable=\x,red,very thick] plot ({\x},{ 3+sin(deg(\x*pi/4))});
-        \draw[red, thick, <-] (3.2, 3.7) -- +(0.9,0.3) node[right, fill=white, inner sep=1pt] {$y=3+\sin \theta$};
+        \draw[red, thick, <-,>=stealth'] (3.2, 3.7) -- +(0.9,0.3) node[right, fill=white, inner sep=1pt] {$y=3+\sin(\theta)$};
 
         \draw[domain=-0:8,smooth,variable=\x,blue,very thick] plot ({\x},{ sin(deg(\x*pi/4))});
-        \draw[blue, thick, <-] (3.2, 0.7) -- +(0.9,0.3) node[right, fill=white, inner sep=1pt] {$y=\sin \theta$};
+        \draw[blue, thick, <-,>=stealth'] (3.2, 0.7) -- +(0.9,0.3) node[right, fill=white, inner sep=1pt] {$y=\sin(\theta)$};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -1485,15 +1279,8 @@ as shown at right.</p>
     <sidebyside widths="55% 40%"><p>You can continue the table for <m>\theta</m> between <m>180\degree</m> and <m>360\degree</m>, and plot the points to find the graph shown at right. The graph has the same amplitude and midline as <m>y = \sin (\theta)</m>, but it completes three cycles from <m>0\degree</m> to <m>360\degree</m> instead of one cycle. The period of this graph is one-third of <m>360\degree</m>, or <m>120\degree</m>.</p>   <image xml:id="exam4-3-1c">
         <description>graph of sine and sine 3 theta</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} [scale=.6]  
+        <![CDATA[
+        \begin{tikzpicture} [scale=.45]  
         \draw[cyan]
         (-0.1,-3) grid (8,3);
 
@@ -1501,16 +1288,16 @@ as shown at right.</p>
         \draw[->,>=stealth'] (0,-3.2) -- (0,3.3) node[above] {$y$};
 
         \foreach \x [evaluate=\x as \xi using int( 45* \x )] in {2, 4, 6, 8}
-        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$\xi^\circ $};
 
         \foreach \y  [evaluate=\y as \yi using int(  \y )] in {-3, -2 -1,1, 2, 3 }
-        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
 
         \draw[domain=-0:8,smooth,variable=\x,red,very thick] plot ({\x},{ sin(deg(\x*3*pi/4))});
-        \draw[red, thick, <-] (3.5, 1.1) -- +(0.9,0.4) node[right, fill=white, inner sep=1pt] {$y=\sin 3 \theta$};
+        \draw[red, thick, <-,>=stealth'] (3.5, 1.1) -- +(0.9,0.4) node[right, fill=white, inner sep=1pt] {$y=\sin(3 \theta)$};
 
         \draw[domain=-0:8,smooth,variable=\x,blue,very thick] plot ({\x},{ sin(deg(\x*pi/4))});
-        \draw[blue, thick, <-] (1.9, 1.1) -- +(-0.5,0.4) node[above, fill=white, inner sep=1pt] {$y=\sin \theta$};
+        \draw[blue, thick, <-,>=stealth'] (1.9, 1.1) -- +(-0.5,0.4) node[above, xshift=2, fill=white, inner sep=1pt] {$y=\sin(\theta)$};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></li>
 </ol></p></solution></example>
@@ -1524,28 +1311,23 @@ as shown at right.</p>
 <idx><h>periodic function</h></idx>
 <p><ol marker="1">
     <li>The graph of <me>\blert{y = A\cos(\theta)} ~~~\text{or}~~~ \blert{y = A\sin(\theta)}</me> has amplitude <m>\abs{A}</m>.</li>
-    <li>The graph of <me>\blert{y =\cos (B\theta)} ~~~\text{or}~~~ \blert{y = \sin (B\theta)}</me> has period <m>\dfrac{360\degree}{\abs{B}}</m>.</li>
+    <li>The graph of <me>\blert{y =\cos (B\theta)} ~~~\text{or}~~~ \blert{y = \sin 9}</me> has period <m>\dfrac{360\degree}{\abs{B}}</m>.</li>
     <li>The graph of <me>\blert{y = k + \cos(\theta)} ~~~\text{or}~~~ \blert{y =k + \sin(\theta)}</me> has midline <m>y = k</m>.</li>
 </ol></p></assemblage>
 
-<exercise><statement><p>Sketch a graph for each of the following functions. Describe how each is different from the graph of <m>y = \cos (\theta)</m>.</p>
-<p><ol marker="a" >
-    <li><m>f(\theta) = 2 + \cos (\theta)</m></li>
-    <li><m>g(\theta) = \cos (2\theta)</m></li>
-    <li><m>h(\theta) = 2\cos (\theta)</m></li>
-</ol></p></statement>
+<exercise><statement><p>Sketch a graph for each of the following functions.  Describe how each is different from the graph of <m>y = \cos \theta</m>.</p>
+    <p><ol marker="a" cols="3">
+        <li><m>f(\theta) = 2 + \cos (\theta)</m></li>
+        <li><m>g(\theta) = \cos (2\theta)</m></li>
+        <li><m>h(\theta) = 2\cos (\theta)</m></li>
+    </ol></p></statement>
 <answer><p>
     <ol marker="a">
         <li><sidebyside widths="35% 40%" valigns="middle middle">
-        <image xml:id="exer4-3-1ansa"><description>graph of 2+cosine</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
+        <image xml:id="exer4-3-1ansa">
+        <description>graph of 2+cosine</description>
+        <latex-image>
+        <![CDATA[
         \begin{tikzpicture} [scale=0.45]
         \draw[cyan]
         (-0.1,0) grid (8,4);
@@ -1554,26 +1336,21 @@ as shown at right.</p>
         \draw[->,>=stealth'] (0,-.2) -- (0,4.3) node[above] {$y$};
 
         \foreach \x [evaluate=\x as \xi using int( 45* \x )] in {2, 4, 6, 8}
-        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi $};
 
         \foreach \y  [evaluate=\y as \yi using int(  \y )] in {1, 2, 3 }
-        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
 
         \draw[domain=-0:8,smooth,variable=\x,red,very thick] plot ({\x},{ 2+cos(deg(\x*pi/4))});
         \end{tikzpicture}]]>
     </latex-image>    </image>
 
-        <p>The midline is <m>y = 2</m>.</p></sidebyside></li>
+            <p>The midline is <m>y = 2</m>.</p></sidebyside></li>
         <li><sidebyside widths="35% 40%" valigns="middle middle"><!--<image source="photos/exer4-3-1ansb.png"><description>graph</description></image>-->
-        <image xml:id="exer4-3-1ansb"><description>graph of cosine 2 theta</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
+        <image xml:id="exer4-3-1ansb">
+        <description>graph of cosine 2 theta</description>
+        <latex-image>
+        <![CDATA[
         \begin{tikzpicture} [scale=0.45]
         \draw[cyan]
         (-0.1,-2) grid (8,2);
@@ -1582,26 +1359,21 @@ as shown at right.</p>
         \draw[->,>=stealth'] (0,-2.2) -- (0,2.3) node[above] {$y$};
 
         \foreach \x [evaluate=\x as \xi using int( 45* \x )] in {2, 4, 6, 8}
-        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi $};
 
         \foreach \y  [evaluate=\y as \yi using int(  \y )] in { -2, -1, 1, 2 }
-        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
 
         \draw[domain=-0:8,smooth,variable=\x,red,very thick] plot ({\x},{ cos(deg(\x*2*pi/4))});
         \end{tikzpicture}]]>
-    </latex-image></image>
-        <p>The period is <m>180\degree</m>.</p></sidebyside></li>
-        
+    </latex-image>
+    </image>
+            <p>The period is <m>180\degree</m>.</p></sidebyside></li>
         <li><sidebyside widths="35% 40%" valigns="middle middle"><!--<image source="photos/exer4-3-1ansc.png"><description>graph</description></image>-->
-        <image xml:id="exer4-3-1ansc"><description>graph of 2 cosine</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
+        <image xml:id="exer4-3-1ansc">
+        <description>graph of 2 cosine</description>
+        <latex-image>
+        <![CDATA[
         \begin{tikzpicture} [scale=0.45]
         \draw[cyan]
         (-0.1,-2) grid (8,2);
@@ -1610,96 +1382,84 @@ as shown at right.</p>
         \draw[->,>=stealth'] (0,-2.2) -- (0,2.3) node[above] {$y$};
 
         \foreach \x [evaluate=\x as \xi using int( 45* \x )] in {2, 4, 6, 8}
-        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi $};
 
         \foreach \y  [evaluate=\y as \yi using int(  \y )] in { -2, -1, 1, 2 }
-        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
 
         \draw[domain=-0:8,smooth,variable=\x,red,very thick] plot ({\x},{ 2*cos(deg(\x*pi/4))});
         \end{tikzpicture}]]>
-    </latex-image></image>
-        <p>The amplitude is 2.</p></sidebyside></li>    
+    </latex-image>
+    </image>
+            <p>The amplitude is 2.</p></sidebyside></li>    
         </ol></p>
 </answer></exercise>
 
-<p>The quantities <m>A, B,</m> and <m>k</m> in the equations above are called <term>parameters</term><idx><h>parameter</h></idx>, and their values for a particular function give us information about its graph. Functions shaped like sines or cosines are called <term>sinusoidal</term>.</p>
+<p>The quantities <m>A, B,</m> and <m>k</m> in the equations above are called <term>parameters</term><idx><h>parameter</h></idx>, and their values for a particular function give us information about its graph.</p>
 
-<example><statement><p>State the period, midline, and amplitude of the graph of <m>y = -3 + 4\sin (3\theta),</m>  and graph the function for <m>0 \degree \le \theta \le 360 \degree</m>.</p></statement>
-
-<solution><p>For this function, <m>A = 4,~ B = 3,</m> and <m>k = -3</m>. Its amplitude is 4, its period is <m>\dfrac{360\degree}{3} = 120\degree</m>, and its midline is <m>y = -3</m>.</p>
-<p>Starting from the midline at <m>y = -3</m>, the graph rises 4 units to its maximum of <m>y = 1</m> and falls to its minimum of <m>y = -7</m>.</p>
-<p>Because the graph completes one cycle in 120°, we plot its four guidepoints at intervals of 30°, namely at <m>(30\degree, 1), ~ (60\degree, -3), ~ (90\degree, -7)</m>, and <m>(120\degree, -3)</m>. The graph repeats two more cycles from 120° to 240° and from 240° to 360°. The graph is shown below.</p>
-    <image xml:id="exam4-3-2" width="50%">
-        <description>graph -3+4sin 3 theta</description>
+<example><statement><p>State the period, midline, and amplitude of the graph of <m>y = -3 + 4\sin (3\theta),</m>  and graph the function.</p></statement>
+<solution><sidebyside widths="45% 50%" valigns="middle middle" margins="0% 0%"><p>For this function, <m>A = 4,~ B = 3,</m> and <m>k = -3</m>.  Its amplitude is 4, its period is <m>\dfrac{360\degree}{3} = 120\degree</m>, and its midline is <m>y = -3</m>. The graph is shown at right.</p>
+    <image xml:id="exam4-3-2">
+        <description>graph -3+4sin(3 theta)</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} [xscale=.6, yscale=.4]
+        <![CDATA[
+        \begin{tikzpicture} [xscale=.45, yscale=.30]
         \draw[cyan]
-        (-0.1,-7) grid (8,1);
+        (-0.1,-7) grid (12,1);
 
-        \draw[->,>=stealth'] (-0.1,0) -- (8.3,0) node[right] {$\theta$};
-        \draw[->,>=stealth'] (0,-6.2) -- (0,1.3) node[above] {$y$};
+        \draw[->,>=stealth'] (-0.1,0) -- (12.4,0) node[right] {$\theta$};
+        \draw[->,>=stealth'] (0,-7) -- (0,1.6) node[above] {$y$};
 
-        \foreach \x [evaluate=\x as \xi using int( 45* \x )] in {2, 4, 6, 8}
-        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+        \foreach \x [evaluate=\x as \xi using int( 30* \x )] in {3,6,9,12}
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi^\circ $};
 
         \foreach \y  [evaluate=\y as \yi using int(  \y )] in { -6, -4, -2,1}
-        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
 
-        \draw[domain=-0:8,smooth,variable=\x,red,very thick] plot ({\x},{ -3+4*sin(deg(\x*3*pi/4))});
+        \draw[samples=65,domain=-0:12,smooth,variable=\x,red,very thick] plot ({\x},{ -3+4*sin(90*\x)});
 
-        \node [text width= 3cm, text=red] at (4, 1.6){\small $y=-3+4\sin 3 \theta$};
+        \node [text width= 3cm, text=red] at (7, 1.63){$y=-3+4\sin(3\theta)$};
         \end{tikzpicture}]]>
-    </latex-image></image>
-</solution></example>
+    </latex-image>
+    </image>
+</sidebyside></solution></example>
 
 <exercise><statement><p>State the period, midline, and amplitude of the graph of  <m>y = 1 - 3\sin (2\theta),</m>  and graph the function.</p></statement>
 <answer>
-    <p>Amplitude 3, period <m>180\degree</m>, midline  <m>y = 1</m></p>
-    <image xml:id="exer4-3-2ans" width="60%">
+    <sidebyside widths="55% 38%" valigns="middle middle"><p>Amplitude 3, period <m>180\degree</m>, midline  <m>y = 1</m></p>
+    <image xml:id="exer4-3-2ans">
         <description>sinusoidal graph</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} [xscale=0.7, yscale=.5]
+        <![CDATA[
+        \begin{tikzpicture} [xscale=0.48, yscale=.32]
         \draw[cyan] (-0.1,-2) grid (8,4);
 
         \draw[->,>=stealth'] (-0.1,0) -- (8.3,0) node[right] {$\theta$};
         \draw[->,>=stealth'] (0,-2.2) -- (0,4.3) node[above] {$y$};
 
         \foreach \x [evaluate=\x as \xi using int( 45* \x )] in {2, 4, 6, 8}
-        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi^\circ $};
 
-        \foreach \y  [evaluate=\y as \yi using int(  \y )] in { -2, -1, 1, 2,3,4 }
-        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+        \foreach \y  [evaluate=\y as \yi using int(  \y )] in { -2,  2,4 }
+        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
 
-        \draw[domain=-0:8,smooth,variable=\x,red,very thick] plot ({\x},{ 1-3*sin(deg(\x*2*pi/4))});
+        \draw[samples=65,domain=-0:8,smooth,variable=\x,red,very thick] plot ({\x},{ 1-3*sin(deg(\x*2*pi/4))});
         \end{tikzpicture}]]>
-    </latex-image></image>
+    </latex-image>
+    </image>
+    </sidebyside>
 </answer></exercise>
-
+</subsection>
+<subsection>
 <p>Review the following skills you will need for this section.</p>
 <project>
-    
+
     <sidebyside><p><ol marker="a">
         <li>Graph the function.</li>
         <li>Give the coordinates of any intercepts, and any maximum or minimum values.</li>
         </ol></p>
     </sidebyside>   
-    <sidebyside><p><ol marker="1" cols="2">
+    <sidebyside><p><ol marker="1" cols="3">
         <li><p><m>f(x) = -6 + \dfrac{2}{3} x</m></p></li>
         <li><p><m>g(x) = 4 - \dfrac{3}{2} x</m></p></li>
         <li><p><m>p(t) = t^2 - 4</m></p></li>
@@ -1710,144 +1470,124 @@ as shown at right.</p>
 
     <sidebyside><p><m>\underline{\qquad\qquad\qquad\qquad}</m></p></sidebyside>
     <conclusion>
-
     <sidebyside><p>Algebra Refresher Answers</p></sidebyside>
         <p><ol marker="1" cols="2">
     <li><p><ol marker="a">
-        <li><sidebyside width="60%" margins="0% 5%">
-        <image xml:id="ar4-2-1"><description>graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.27]
+        <li><sidebyside width="65%" margins="0% 5%">
+    <image xml:id="ar4-2-1"><description>graph</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture} [scale=.25]
         \draw[cyan, xstep=2, ystep=2] (-2,-8) grid (10,4);
 
         \draw[black, thick, ->,>=stealth'] (-2.1,0) -- (10.5,0) node[right] {$x$} ;
         \draw[black, thick, ->,>=stealth'] (0,-8.1) -- (0,4.5) node[above] {$y$}  ;
 
-        \foreach \x [evaluate=\x as \xi using int( 1* \x )] in {4, 8} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+        \foreach \x [evaluate=\x as \xi using int( 1* \x )] in {4, 8} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi $};
 
-        \foreach \y [evaluate=\y as \yi using int( 1* \y )] in {-4, 4} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+        \foreach \y [evaluate=\y as \yi using int( 1* \y )] in {-4, 4} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
 
         \draw[domain=-2:10,smooth,variable=\x,red,very thick] plot ({\x},{-6+ 2/3 *\x)});
         \end{tikzpicture}]]>
-        </latex-image></image></sidebyside></li>
+    </latex-image></image></sidebyside></li>
         <li><m>(0,-6), ~ (9,0)</m></li>
     </ol></p></li>
-
     <li><p><ol marker="a">
-        <li><sidebyside width="60%" margins="0% 5%">
-        <image xml:id="ar4-2-2"><description>graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.27]
+        <li><sidebyside width="65%" margins="0% 5%">
+    <image xml:id="ar4-2-2"><description>graph</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture} [scale=.25]
         \draw[cyan, xstep=2, ystep=2] (-4,-6) grid (8,6);
 
         \draw[black, thick, ->,>=stealth'] (-4.1,0) -- (8.5,0) node[right] {$x$} ;
         \draw[black, thick, ->,>=stealth'] (0,-6.1) -- (0,6.5) node[above] {$y$}  ;
 
-        \foreach \x [evaluate=\x as \xi using int( 1* \x )] in {-4, 4, 8} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+        \foreach \x [evaluate=\x as \xi using int( 1* \x )] in {-4, 4, 8} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi $};
 
-        \foreach \y [evaluate=\y as \yi using int( 1* \y )] in {-4, 4} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+        \foreach \y [evaluate=\y as \yi using int( 1* \y )] in {-4, 4} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
 
         \draw[domain={-4/3}:{20/3},smooth,variable=\x,red,very thick] plot ({\x},{4 - 3/2 *\x)});
         \end{tikzpicture}]]>
-        </latex-image></image></sidebyside></li>
+    </latex-image></image></sidebyside></li>
         <li><m>(0,4)</m>, <m>~ \left(\dfrac{8}{3},0\right)</m></li>
     </ol></p></li>
-
     <li><p><ol marker="a">
-        <li><sidebyside width="60%" margins="0% 5%">
-        <image xml:id="ar4-2-3"><description>parabola</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.27]
+        <li><sidebyside width="65%" margins="0% 5%">
+    <image xml:id="ar4-2-3"><description>parabola</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture} [scale=.25]
         \draw[cyan, xstep=2, ystep=2] (-6,-6) grid (6,6);
 
         \draw[black, thick, ->,>=stealth'] (-6.1,0) -- (6.5,0) node[right] {$t$} ;
         \draw[black, thick, ->,>=stealth'] (0,-6.1) -- (0,6.5) node[above] {$y$}  ;
 
-        \foreach \x [evaluate=\x as \xi using int( 1* \x )] in {-4, 4} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+        \foreach \x [evaluate=\x as \xi using int( 1* \x )] in {-4, 4} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi $};
 
-        \foreach \y [evaluate=\y as \yi using int( 1* \y )] in {-4, 4} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+        \foreach \y [evaluate=\y as \yi using int( 1* \y )] in {-4, 4} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
 
         \draw[domain={-sqrt(10)}:{sqrt(10)},smooth,variable=\x,red,very thick] plot ({\x},{(\x)^2 -4});
         \end{tikzpicture}]]>
-        </latex-image></image></sidebyside></li>
-        <li><p><m>(0,-4), ~ (-2,0), ~ (2,0)</m>,</p> 
-            <p><m>~ \text{Min:}~-4</m></p></li>
+    </latex-image></image></sidebyside></li>
+        <li><m>(0,-4), ~ (-2,0), ~ (2,0), ~ \text{Min:}~-4</m></li>
     </ol></p></li>
-
     <li><p><ol marker="a">
-        <li><sidebyside width="60%" margins="0% 5%">
-        <image xml:id="ar4-2-4"><description>parabola</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.27]
+        <li><sidebyside width="65%" margins="0% 5%">
+    <image xml:id="ar4-2-4"><description>parabola</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture} [scale=.25]
         \draw[cyan, xstep=2, ystep=2] (-6,-2) grid (6,10);
 
         \draw[black, thick, ->,>=stealth'] (-6.1,0) -- (6.5,0) node[right] {$t$} ;
         \draw[black, thick, ->,>=stealth'] (0,-2.1) -- (0,10.5) node[above] {$y$}  ;
 
-        \foreach \x [evaluate=\x as \xi using int( 1* \x )] in {-4, 4} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+        \foreach \x [evaluate=\x as \xi using int( 1* \x )] in {-4, 4} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi $};
 
-        \foreach \y [evaluate=\y as \yi using int( 1* \y )] in {4, 8} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+        \foreach \y [evaluate=\y as \yi using int( 1* \y )] in {4, 8} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
 
         \draw[domain={-sqrt(11)}:{sqrt(11)},smooth,variable=\x,red,very thick] plot ({\x},{9 - (\x)^2 });
         \end{tikzpicture}]]>
-        </latex-image></image></sidebyside></li>
-        <li><p><m>(0,9), ~ (-3,0), ~ (3,0)</m>,</p>
-            <p><m>~ \text{Max:}~9</m></p></li>
+    </latex-image></image></sidebyside></li>
+        <li><m>(0,9), ~ (-3,0), ~ (3,0), ~ \text{Max:}~9</m></li>
     </ol></p></li>
-    
     <li><p><ol marker="a">
-        <li><sidebyside width="60%" margins="0% 5%">
-        <image xml:id="ar4-2-5"><description>graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [xscale=.27, yscale = .54]
+        <li><sidebyside width="65%" margins="0% 5%">
+    <image xml:id="ar4-2-5"><description>graph</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture} [xscale=.25, yscale = .5]
         \draw[cyan, xstep=2, ystep=1] (-2,-2) grid (10,4);
 
         \draw[black, thick, ->,>=stealth'] (-2.1,0) -- (10.5,0) node[right] {$z$} ;
         \draw[black, thick, ->,>=stealth'] (0,-2.1) -- (0,4.3) node[above] {$y$}  ;
 
-        \foreach \x [evaluate=\x as \xi using int( 1* \x )] in {4, 8} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+        \foreach \x [evaluate=\x as \xi using int( 1* \x )] in {4, 8} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi $};
 
-        \foreach \y [evaluate=\y as \yi using int( 1* \y )] in {-2, 2, 4} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+        \foreach \y [evaluate=\y as \yi using int( 1* \y )] in {-2, 2, 4} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
 
         \draw[domain={0:10},smooth,variable=\x,red,very thick] plot ({\x},{2 - sqrt(\x) });
         \end{tikzpicture}]]>
-        </latex-image></image></sidebyside></li>
+    </latex-image></image></sidebyside></li>
         <li><m>(0,2), ~ (4,0), ~ \text{Max:}~2</m></li>
     </ol></p></li>
-
     <li><p><ol marker="a">
-        <li><sidebyside width="60%" margins="0% 5%">
-        <image xml:id="ar4-2-6"><description>graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [xscale=.27, yscale = .54]
+        <li><sidebyside width="65%" margins="0% 5%">
+    <image xml:id="ar4-2-6"><description>graph</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture} [xscale=.25, yscale = .5]
         \draw[cyan, xstep=2, ystep=1] (-6,-2) grid (6,4);
 
         \draw[black, thick, ->,>=stealth'] (-6.1,0) -- (6.5,0) node[right] {$z$} ;
         \draw[black, thick, ->,>=stealth'] (0,-2.1) -- (0,4.3) node[above] {$y$}  ;
 
-        \foreach \x [evaluate=\x as \xi using int( 1* \x )] in {-4, 4} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {\scriptsize$ \xi $};
+        \foreach \x [evaluate=\x as \xi using int( 1* \x )] in {-4, 4} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi $};
 
-        \foreach \y [evaluate=\y as \yi using int( 1* \y )] in {-2, 2, 4} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\scriptsize\yi};
+        \foreach \y [evaluate=\y as \yi using int( 1* \y )] in {-2, 2, 4} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
 
         \draw[domain={-6:4},smooth,variable=\x,red,very thick] plot ({\x},{sqrt(4-\x) });
         \end{tikzpicture}]]>
-        </latex-image></image></sidebyside></li>
+    </latex-image></image></sidebyside></li>
         <li><m>(0,2), ~ (4,0),  ~ \text{Min:}~0</m></li>
     </ol></p></li>
-
-</ol></p></conclusion>
+</ol></p>
+    </conclusion>
 </project>
 
 </subsection>
@@ -1863,63 +1603,110 @@ as shown at right.</p>
     <li>Midline</li>
     <li>Amplitude</li>
     <li>Asymptote</li>
-    <li>Parameter</li>
-    <li>Sinusoidal</li>
+    <li>Angle of Inclination</li>
+    <li>Bearings</li>
 </ul></p>
 </subsubsection>
 
 <subsubsection><title>Concepts</title>
 
 <p><ol marker="1">
+    <li><assemblage><title>Coordinates</title>
+    <p>If point <m>P</m> is located at a distance <m>r</m> from the origin in the direction specified by angle <m>\theta</m> in standard position, then the coordinates of <m>P</m> are
+    <me>x = r \cos \theta ~~~~ \text{and} ~~~~ y = r \sin \theta</me>
+    </p></assemblage></li>
+    <li>Navigational directions for ships and planes are sometimes given as <term>bearings</term>, which are angles measured clockwise from north.</li>
     <li>Periodic functions are used to model phenomena that exhibit cyclical behavior.</li>
-    
-    <li>The trigonometric ratios <m>\sin (\theta)</m> and <m>\cos (\theta)</m> are functions of the angle <m>\theta</m>.</li>
-    
+    <li>The trigonometric ratios <m>\sin \theta</m> and <m>\cos \theta</m> are functions of the angle <m>\theta</m>.</li>
     <li>The <term>period</term> of the sine function is <m>360\degree</m>. Its <term>midline</term> is the horizontal line <m>y = 0</m>, and the <term>amplitude</term> of the sine function is 1.</li>
-    
     <li> The graph of the cosine function has the same period, midline, and amplitude as the graph of the sine function. However, the locations of the intercepts and of the maximum and minimum values are different.</li>
-    
     <li>We use the notation <m>y = f(x)</m> to indicate that <m>y</m> is a function of <m>x</m>, that is, <m>x</m> is the input variable and <m>y</m> is the output variable.</li>
-    
     <li>The tangent function has period <m>180\degree</m>. It is undefined at odd multiples of <m>90\degree</m>, and is increasing on each interval of its domain.</li>
-
-    <li><assemblage><title>Amplitude, Period, and Midline</title>
-    <p><ol marker="1">
-        <li>The graph of <me>y = A\cos\theta ~~\text{or}~~ y = A\sin\theta</me>  has amplitude <m>\abs{A}</m>.</li>
-        <li>The graph of <me>y =\cos B\theta ~~\text{or}~~ y = \sin B\theta</me>  has period <m>\dfrac{360\degree}{\abs{B}}</m>.</li>
-        <li>The graph of <me>y = k + \cos\theta ~~\text{or}~~ y =k + \sin\theta</me>  has midline <m>y = k</m>.</li>
-    </ol></p></assemblage></li>
-
-    <li>The graph of <m>y = k + A\sin B\theta</m> has amplitude <m>A</m>, period <m>\dfrac{360\degree}{B}</m>, and midline <m>y = k</m>. The same is true for the graph of <m>y = k + A\cos B\theta</m>.</li>
-
-    <li>Functions that have graphs shaped like sines or cosines are called <term>sinusoidal</term>.</li>
+    <li><assemblage><title>Angle of Inclination</title>
+    <p>The <term>angle of inclination</term> of a line is the angle <m>\alpha</m> measured in the positive direction from the positive <m>x</m>-axis to the line. If the slope of the line is <m>m</m>, then
+    <me>\tan \alpha = m</me> where  <m>0\degree \le \alpha \le 180\degree</m>.</p></assemblage></li>
 </ol></p></subsubsection>
 
 <subsubsection><title>Study Questions</title>
 
 <p><ol marker="1">
-    <li>List several ways in which the graph of <m>y = \tan \theta</m> is different from the graphs of <m>y = \sin \theta</m> and <m>y = \cos \theta</m>.</li>
-    <li><p>Delbert says that  <m>\tan (\theta + 180\degree) = \tan \theta</m> for any value of <m>\theta</m>. Is he correct? Explain why or why not.</p>
+    <li><sidebyside widths="60% 23%" valigns="middle middle"><p>Use the figure to help you fill in the blanks.</p>
+    <image xml:id="sq4-2-1"><description>circle</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture} [scale=.8]
+        \coordinate (O) at (0,0);
+        \coordinate (A) at (25:1.5);
+        \coordinate (Ap) at ($ 1.5*cos(25)*(1,0) $);
+        \coordinate (B) at (60:1.5);
+        \coordinate (Bp) at ($ 1.5*cos(60)*(1,0) $);
+        \coordinate (C) at (75:1.5);
+        \coordinate (Cp) at ($ 1.5*cos(75)*(1,0) $);
 
-        <p>Each statement in Questions 3<ndash/>6 is false. Write a corrected statement.</p></li>
-    
-    <li>The period of a sine or cosine function is the distance between horizontal intercepts.</li>
-    <li>The amplitude is the vertical distance between the maximum and minimum values.</li>
-    <li>The midline of the cosine graph is the vertical line <m>\theta = 180\degree</m>.</li>
-    <li>The cosine graph looks just like the sine graph except flipped upside down.</li>
-</ol></p>
-</subsubsection>
+        \draw[black, thick, ->,>=stealth'] (-1.7,0) -- (2,0) ;
+        \draw[black, thick, ->,>=stealth'] (0,-1.7) -- (0,2) ;
+
+        \draw[red, thick, ->,>=stealth'] (15:1.8) arc(15:65:1.8) node[left,yshift=2]{$\theta$};
+
+        \draw[gray!80!white, thick] (O) circle (1.5cm);
+        \draw[blue, thick] (O)--(A)--(Ap);
+        \draw[blue, thick] (O)--(B)--(Bp);
+        \draw[blue, thick] (O)--(C)--(Cp);
+
+        \node[text width=1cm, text=blue,fill=white, inner sep=0pt] at (1.5,-.5)  {$r=1$};
+        \end{tikzpicture}]]>
+    </latex-image></image></sidebyside>        
+    <p><ol marker="a">
+        <li><p>As <m>\theta</m> increases from <m>0\degree</m> to <m>90\degree</m>, <m>f(\theta) = \sin \theta</m> <fillin characters="6"/> from <fillin characters="4"/> to <fillin characters="4"/> .</p></li>
+        <li><p>As <m>\theta</m> increases from <m>90\degree</m> to <m>180\degree</m>, <m>f(\theta) = \sin \theta</m> <fillin characters="6"/> from <fillin characters="4"/> to <fillin characters="4"/> .</p></li>
+        <li><p>As <m>\theta</m> increases from <m>180\degree</m> to <m>270\degree</m>, <m>f(\theta) = \sin \theta</m> <fillin characters="6"/> from <fillin characters="4"/> to <fillin characters="4"/> .</p></li>
+        <li><p>As <m>\theta</m> increases from <m>270\degree</m> to <m>360\degree</m>, <m>f(\theta) = \sin \theta</m> <fillin characters="6"/> from <fillin characters="4"/> to <fillin characters="4"/> .</p></li>
+    </ol></p></li>
+    <li><sidebyside widths="60% 23%"  valigns="middle middle"><p>Use the figure to help you fill in the blanks.</p>
+    <image xml:id="sq4-2-2"><description>circle</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture} [scale=.8]
+        \coordinate (O) at (0,0);
+        \coordinate (A) at (25:1.5);
+        \coordinate (Ap) at ($ 1.5*sin(25)*(0,1) $);
+        \coordinate (B) at (60:1.5);
+        \coordinate (Bp) at ($ 1.5*sin(60)*(0,1) $);
+        \coordinate (C) at (75:1.5);
+        \coordinate (Cp) at ($ 1.5*sin(75)*(0,1) $);
+
+        \draw[black, thick, ->,>=stealth'] (-1.7,0) -- (2,0) ;
+        \draw[black, thick, ->,>=stealth'] (0,-1.7) -- (0,2) ;
+
+        \draw[red, thick, ->,>=stealth'] (15:1.8) arc(15:65:1.8) node[left,yshift=2]{$\theta$};
+
+        \draw[gray!80!white, thick] (O) circle (1.5cm);
+        \draw[blue, thick] (O)--(A)--(Ap);
+        \draw[blue, thick] (O)--(B)--(Bp);
+        \draw[blue, thick] (O)--(C)--(Cp);
+
+        \node[text width=1cm, text=blue,fill=white, inner sep=0pt] at (1.5,-.5)  {$r=1$};
+        \end{tikzpicture}]]>
+    </latex-image></image></sidebyside>        
+    <p><ol marker="a">
+        <li><p>As <m>\theta</m> increases from <m>0\degree</m> to <m>90\degree</m>, <m>f(\theta) = \cos \theta</m> <fillin characters="6"/> from <fillin characters="4"/> to <fillin characters="4"/> .</p></li>
+        <li><p>As <m>\theta</m> increases from <m>90\degree</m> to <m>180\degree</m>, <m>f(\theta) = \cos \theta</m> <fillin characters="6"/> from <fillin characters="4"/> to <fillin characters="4"/> .</p></li>
+        <li><p>As <m>\theta</m> increases from <m>180\degree</m> to <m>270\degree</m>, <m>f(\theta) = \cos \theta</m> <fillin characters="6"/> from <fillin characters="4"/> to <fillin characters="4"/> .</p></li>
+        <li><p>As <m>\theta</m> increases from <m>270\degree</m> to <m>360\degree</m>, <m>f(\theta) = \cos \theta</m> <fillin characters="6"/> from <fillin characters="4"/> to <fillin characters="4"/> .</p></li>
+    </ol></p></li>
+    <li>List several ways in which the graph of <m>y = \tan \theta</m> is different from the graphs of <m>y = \sin \theta</m> and <m>y = \cos \theta</m>.</li>
+    <li>If the angle of inclination of a line is greater than <m>45\degree</m>, what can you say about its slope?</li>
+</ol></p></subsubsection>
 
 <subsubsection><title>Skills</title>
 <p><ol marker="1">
-    <li>Sketch graphs of the sine and cosine functions    #1-4, 9-10</li>
-    <li>Find the coordinates of points on a sinusoidal graph    #5-8, 19-22, 37-42</li>
-    <li>Evaluate sine and cosine functions    #11-18</li>
-    <li>Graph the tangent function    #23-24</li>
-    <li>Write a sinusoidal function with given parameters    #25-30</li>
-    <li>Graph sinusoidal functions    #31-36, 43-48</li>
-    <li>Find amplitude, period and midline    #43-56</li>
-    <li>Fit a sinusoidal function to data or to a description    #57-66</li>
+    <li>Find coordinates    #1-12, 19-20</li>
+    <li>Use bearings to determine position    #13-18</li>
+    <li>Sketch graphs of the sine and cosine functions    #21-26, 31-32</li>
+    <li>Find the coordinates of points on a sine or cosine graph    #27-30, 41-44</li>
+    <li>Use function notation    #33-40</li>
+    <li>Find reference angles    #45-48</li>
+    <li>Solve equations graphically    #49-56</li>
+    <li>Graph the tangent function    #57-60</li>
+    <li>Find and use the angle of inclination of a line    #61-70</li>
 </ol></p></subsubsection>
 </subsection>
 

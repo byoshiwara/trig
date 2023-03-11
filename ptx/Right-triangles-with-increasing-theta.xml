@@ -1,0 +1,25 @@
+<latex-image>
+    <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+    <![CDATA[\tikzset{%
+    }
+    \begin{tikzpicture}
+
+    \coordinate (A) at (0,0 );
+    \coordinate (B) at (2.2,0 );
+    \coordinate (C) at (2.2,0.6);
+    \coordinate (D) at (2.2,1.5);
+    \coordinate (E) at (2.2,2.6);
+    \coordinate (F) at (2.2,4);
+
+    \draw[thick, blue] (B) rectangle +(-.25,.25);
+
+    \draw[black,thick] (A)--(B)--(F) --cycle;
+    \draw[black,thick] (C)--(A) --(D);
+    \draw[black,thick] (A) --(E);
+
+    \draw[red,thick] (A)++(0.4,0) arc(0:{atan(0.6/2.2)}:0.4) ;
+    \draw[red,thick] (A)++(0.55,0) arc(0:{atan(1.5/2.2)}:0.55);
+    \draw[red,thick] (A)++(0.7,0) arc(0:{atan(2.6/2.2)}:0.7);
+    \draw[red,thick] (A)++(0.85,0) arc(0:{atan(4/2.2)}:0.85);
+    \end{tikzpicture}]]>
+</latex-image>

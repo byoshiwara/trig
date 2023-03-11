@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!-- <mathbook><book> -->
 
 <section xml:id="Angles-and-Rotation"   xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Angles and Rotation</title>
@@ -70,17 +69,15 @@
         \filldraw [fill=gray!10!white] (O) circle [radius=2cm];
         \filldraw [black] (O) circle [radius=.075cm];
         \foreach    [evaluate={\xmod=int(mod(\xi+1,10));}]
-         \angle [count=\xi] in {54,18,...,-270}
+            \angle [count=\xi] in {54,18,...,-270}
         {
-          \draw[line width=1pt] (\angle:1.9cm) -- (\angle:2cm);
-          \node[font=\large] at (\angle:1.65cm) {\textsf{\xmod}};
+            \draw[line width=1pt] (\angle:1.9cm) -- (\angle:2cm);
+            \node[font=\large] at (\angle:1.65cm) {\textsf{\xmod}};
         }
         \draw[black,ultra thick,->,>=stealth'] (O) -- (90:1.3cm);
         \draw[gray!70!white,ultra thick,->,>=stealth'] (0,0) -- (196:1.3cm);
 
-        \draw [thick, color=red, <->, domain=pi/2:-9*pi/10, samples=200, smooth]
-          plot (xy polar cs:angle=\x r, radius={.45});
-
+        \draw [thick,red, ->,>=stealth'] (90:.45) arc (90:-162:.45);
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></statement>
 
@@ -312,70 +309,72 @@
 
 <exercise><statement><p> Find the degree measure of each angle below, and sketch the angle in standard position.</p>
   <sidebyside widths="25% 25%" margins="20% 20%"><!--<image source="photos/exer4-1-2.png"><description>angles</description></image>-->
-      <image xml:id="exer4-1-2a"><description>Circle divided into 3 equal sectors</description><latex-image>
-          <![CDATA[
-          \begin{tikzpicture}
-          \coordinate(O) at (0,0);
-          \draw [gray!40!white,thick] (O) circle [radius=1.5cm];
-          \foreach \angle in {30,150,270}
-          {
-            \draw[blue,thick] (O) -- (\angle:1.5cm);
-          }
+    <image xml:id="exer4-1-2a"><description>Circle divided into 3 equal sectors</description><latex-image>
+    <![CDATA[
+    \begin{tikzpicture}
+    \coordinate(O) at (0,0);
+    \draw [gray!40!white,thick] (O) circle [radius=1.5cm];
+    \foreach \angle in {30,150,270}
+    {
+      \draw[blue,thick] (O) -- (\angle:1.5cm);
+    }
   
-          \draw [red,thick,<->,>=stealth'] ($.4*cos(30)*(1,0)++.4*sin(30)*(0,1) $) arc(30:150:0.4) node[above,midway] {$\theta$};
+    \draw [red,thick,->,>=stealth'] ($.4*cos(30)*(1,0)++.4*sin(30)*(0,1) $) arc(30:150:0.4) node[above,midway] {$\theta$};
+    \draw [red,thick,->,>=stealth'] ($.4*cos(150)*(1,0)++.4*sin(150)*(0,1) $) arc(150:270:0.4) node[ left,midway] {$\theta$};
+    \draw [red,thick,->,>=stealth'] ($.4*cos(270)*(1,0)++.4*sin(270)*(0,1) $) arc(270:390:0.4) node[right,midway] {$\theta$};
   
-          \node[text width=.6cm] at (0,-2.2)  {a.};
-          \end{tikzpicture}]]>
-      </latex-image></image>
-      <image xml:id="exer4-1-2b"><description>angle difference between 250 degrees and straight angle</description><latex-image>
-          <![CDATA[
-          \begin{tikzpicture} 
-          \coordinate(O) at (0,0);
-          \coordinate(A) at (0:1.5cm);
-          \coordinate(B) at (250:1.5cm);
+    \node[text width=.6cm] at (0,-2.2)  {a.};
+    \end{tikzpicture}]]>
+    </latex-image></image>
+    <image xml:id="exer4-1-2b"><description>angle difference between 250 degrees and straight angle</description><latex-image>
+    <![CDATA[
+    \begin{tikzpicture} 
+    \coordinate(O) at (0,0);
+    \coordinate(A) at (0:1.5cm);
+    \coordinate(B) at (250:1.5cm);
   
-          \draw[black, thick,->,>=stealth'] (0,-1.65)--(0,1.65);
-          \draw[black, thick] (O)--++(-1.65,0);
-          \draw [gray!70!white] (O) circle [radius=1.5cm];
+    \draw[black, thick,->,>=stealth'] (0,-1.65)--(0,1.65);
+    \draw[black, thick] (O)--++(-1.65,0);
+    \draw [gray!70!white] (O) circle [radius=1.5cm];
   
-          \draw[blue, thick,->,>=stealth'] (O) -- (0:1.5cm);
-          \draw[blue, thick,->,>=stealth'] (O) -- (250:1.5cm);
+    \draw[blue, thick,->,>=stealth'] (O) -- (0:1.5cm);
+    \draw[blue, thick,->,>=stealth'] (O) -- (250:1.5cm);
   
-          \draw [red,thick, <->,>=stealth'] (.3,0) arc(0:250:.3) node[above left, midway, inner sep=2pt] {\footnotesize $250\degree$};
-          \draw [red,thick, <->,>=stealth'] (-.7,0) arc(180:250:.7) node[below left, midway, inner sep=2pt] {$\alpha$};
+    \draw [red,thick, ->,>=stealth'] (.3,0) arc(0:250:.3) node[above left, midway, inner sep=2pt] {$250\degree$};
+    \draw [red,thick, ->,>=stealth'] (-.7,0) arc(180:250:.7) node[below left, midway, inner sep=2pt] {$\alpha$};
   
-          \node[text width=.6cm] at (0,-2.2)  {b.};
-          \end{tikzpicture}]]>
-      </latex-image></image></sidebyside></statement>
+    \node[text width=.6cm] at (0,-2.2)  {b.};
+    \end{tikzpicture}]]>
+    </latex-image></image></sidebyside></statement>
   
-  <answer><sidebyside widths="15% 18% 15% 12%" margins="0% 20%" valigns="middle middle middle middle"><p>a. <m>120\degree</m></p><!--<image source="photos/ar4-1-2a.png"><description>angles</description></image>-->
-     <image xml:id="ar4-1-2a"><description>120 degree angle in standard position</description><latex-image>
-          <![CDATA[
-          \begin{tikzpicture}
-          \coordinate(O) at (0,0);
-          \coordinate(A) at (120:1.7cm);
+  <answer><sidebyside widths="15% 20% 15% 16%" margins="0% 20%" valigns="middle middle middle middle"><p>a. <m>120\degree</m></p><!--<image source="photos/ar4-1-2a.png"><description>angles</description></image>-->
+    <image xml:id="ar4-1-2a"><description>120 degree angle in standard position</description><latex-image>
+    <![CDATA[
+    \begin{tikzpicture}
+    \coordinate(O) at (0,0);
+    \coordinate(A) at (120:1.7cm);
   
-          \draw[black, thick, ->,>=stealth'] (0,-.2)--(0,1.5) node[above] {$y$};
-          \draw[black, thick, ->,>=stealth'] (-.6,0)--(1,0) node[right] {$x$};
-          \draw[red, thick, ->,>=stealth'] (.3,0) arc(0:120:0.3) node[above right, midway, xshift=-1, yshift=-1]{\footnotesize$\theta = 120\degree$};
+    \draw[black, thick, ->,>=stealth'] (0,-.2)--(0,1.5) node[above] {$y$};
+    \draw[black, thick, ->,>=stealth'] (-.6,0)--(1,0) node[right] {$x$};
+    \draw[red, thick, ->,>=stealth'] (.3,0) arc(0:120:0.3) node[above right, midway, xshift=-1, yshift=-1]{$\theta = 120\degree$};
   
-          \draw[blue, thick, ->,>=stealth'] (O) --(A);
-          \end{tikzpicture}]]>
-      </latex-image></image>
-      <p>b. <m>70\degree</m></p><!--<image source="photos/ar4-1-2b.png"><description>angles</description></image>-->
-     <image xml:id="ar4-1-2b"><description>70 degree angle in standard position</description><latex-image>
-          <![CDATA[
-          \begin{tikzpicture}
-          \coordinate(O) at (0,0);
-          \coordinate(A) at (70:1.6cm);
+    \draw[blue, thick, ->,>=stealth'] (O) --(A);
+    \end{tikzpicture}]]>
+    </latex-image></image>
+    <p>b. <m>70\degree</m></p><!--<image source="photos/ar4-1-2b.png"><description>angles</description></image>-->
+    <image xml:id="ar4-1-2b"><description>70 degree angle in standard position</description><latex-image>
+    <![CDATA[
+    \begin{tikzpicture}
+    \coordinate(O) at (0,0);
+    \coordinate(A) at (70:1.6cm);
   
-          \draw[black, thick, ->,>=stealth'] (0,-.2)--(0,1.5) node[above] {$y$};
-          \draw[black, thick, ->,>=stealth'] (-.3,0)--(1,0) node[right] {$x$};
-          \draw[red, thick, ->,>=stealth'] (.3,0) arc(0:70:0.3) node[above right, midway, xshift=-1, yshift=-3]{\footnotesize$\alpha = 70\degree$};
+    \draw[black, thick, ->,>=stealth'] (0,-.2)--(0,1.5) node[above] {$y$};
+    \draw[black, thick, ->,>=stealth'] (-.3,0)--(1,0) node[right] {$x$};
+    \draw[red, thick, ->,>=stealth'] (.3,0) arc(0:70:0.3) node[above right, midway, xshift=-1, yshift=-3]{\footnotesize$\alpha = 70\degree$};
   
-          \draw[blue, thick, ->,>=stealth'] (O) --(A);
-          \end{tikzpicture}]]>
-      </latex-image></image></sidebyside></answer>
+    \draw[blue, thick, ->,>=stealth'] (O) --(A);
+    \end{tikzpicture}]]>
+    </latex-image></image></sidebyside></answer>
   </exercise>
 </subsection>
 
@@ -388,30 +387,30 @@
     <li> First, we place the angle <m>\theta</m> in standard position, with its vertex at the origin. We picture the terminal side sweeping counter-clockwise around a circle to form the angle.</li>
     <li>Next, we choose a point <m>P</m> with coordinates <m>(x,y)</m> on the terminal side, as shown at right.  The distance from the origin to <m>P</m> is then <m>r = \sqrt{x^2 + y^2}</m>. The trigonometric ratios of <m>\theta</m> are defined as follows.</li>
 </ul></p>
-    <image xml:id="fig-4-1stanpos"><description>triangle</description><latex-image>
+    <image xml:id="fig-4-1stanpos"><description>Reference triangle in third quadrant</description><latex-image>
         <![CDATA[
-        \begin{tikzpicture} 
+        \begin{tikzpicture} [scale=.8]
         \coordinate(O) at (0,0);
         \coordinate(A) at (0:2cm);
         \coordinate(B) at (245:2cm);
         \coordinate(C) at ($ 2*cos(245)*(1,0) $);
-
+      
         \draw[blue, thick] (C) rectangle +(.25,-.25);
         \draw[gray!70!white, thick, dashed] (C) -- (B);
-
-        \draw[black, thick,->,>=stealth'] (0,-2.15)--(0,2.2);
-        \draw[black, thick, ->,>=stealth'] (-2.15,0)--(2.2,0);
+      
+        \draw[black, thick,->,>=stealth'] (0,-2.15)--(0,2.25);
+        \draw[black, thick, ->,>=stealth'] (-2.15,0)--(2.25,0);
         \draw [gray!70!white] (O) circle [radius=2cm];
-
+      
         \draw[blue, thick] (O) -- (A);
         \draw[blue, thick] (O) -- ($ 2.4*cos(245)*(1,0)++2.4*sin(245)*(0,1) $) node[below right, midway, xshift=-2] {$r$};
-
+      
         \draw [red,thick, ->,>=stealth'] (.3,0) arc(0:250:.3) node[above left, midway, inner sep=2pt] {$\theta$};
-
+      
         \filldraw[black] (B) circle (1.75pt) node[anchor=north west, xshift=-7, yshift=-7] {$P(x,y)$};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
+        </latex-image>
+      </image>
 </sidebyside>
 
 <assemblage><title>The Trigonometric Ratios</title>
@@ -436,51 +435,50 @@
 <solution><p>a.  In standard position, the terminal side of an angle of <m>200\degree</m> lies in the third quadrant. (See figure (a) below.) In the third quadrant, <m>x \lt 0</m> and <m>y \lt 0</m>, but <m>r \gt 0</m>.  Thus, <m>\sin (200\degree)</m> is negative, <m>\cos (200\degree)</m> is negative, and <m>\tan (200\degree)</m> is positive.</p> 
     <sidebyside widths="30% 30%" margins="15% 15%">
     <image xml:id="exam4-1-3a"><description>200 deg angle</description><latex-image>
-        <![CDATA[
-        \begin{tikzpicture} 
-        \coordinate(O) at (0,0);
-        \coordinate(A) at (0:1.75cm);
-        \coordinate(B) at (200:1.75cm);
-
-        \draw[black, thick,->,>=stealth'] (0,-1.85)--(0,2);
-        \draw[black, thick, ->,>=stealth'] (-1.85,0)--(2,0);
-        \draw [gray!70!white] (O) circle [radius=1.75cm];
-
-        \draw[blue, thick] (O) -- (A);
-        \draw[blue, thick] (O) -- (B);
-
-        \draw [red,thick, ->,>=stealth'] (O)++(.3,0) arc(0:200:.3) node[above left, midway, inner sep=2pt] {$200\degree$};
-
-        \filldraw[black] (B) circle (1.75pt) node[anchor=north west, xshift=0, yshift=3] {$P(x,y)$};
-
-        \node[text width=.25cm] at (0,-2.2)  {a.};
-
-        \end{tikzpicture}]]>
-    </latex-image></image>
-    <image xml:id="exam4-1-3b"><description>300 deg angle</description><latex-image>
-        <![CDATA[
-        \begin{tikzpicture} 
-        \coordinate(O) at (0,0);
-        \coordinate(A) at (0:1.75cm);
-        \coordinate(B) at (300:1.75cm);
-
-        \draw[black, thick,->,>=stealth'] (0,-1.85)--(0,2);
-        \draw[black, thick, ->,>=stealth'] (-1.85,0)--(2,0);
-        \draw [gray!70!white] (O) circle [radius=1.75cm];
-
-        \draw[blue, thick] (O) -- (A);
-        \draw[blue, thick] (O) -- (B);
-
-        \draw [red,thick, ->,>=stealth'] (O)++(.3,0) arc(0:300:.3) node[below left, yshift=-.3cm, midway, inner sep=2pt] {$300\degree$};
-
-        \filldraw[black] (B) circle (1.75pt) node[anchor=north west, xshift=0, yshift=3] {$P(x,y)$};
-
-        \node[text width=.25cm] at (0,-2.2)  {b.};
-        \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-
-    </sidebyside>
+          <![CDATA[
+          \begin{tikzpicture} [scale=.9]
+          \coordinate(O) at (0,0);
+          \coordinate(A) at (0:1.75cm);
+          \coordinate(B) at (200:1.75cm);
+      
+          \draw[black, thick,->,>=stealth'] (0,-1.85)--(0,2);
+          \draw[black, thick, ->,>=stealth'] (-1.85,0)--(2,0);
+          \draw [gray!70!white] (O) circle [radius=1.75cm];
+      
+          \draw[blue, thick] (O) -- (A);
+          \draw[blue, thick] (O) -- (B);
+      
+          \draw [red,thick, ->,>=stealth'] (O)++(.3,0) arc(0:200:.3) node[above left, midway, inner sep=2pt] {$200\degree$};
+      
+          \filldraw[black] (B) circle (1.75pt) node[anchor=north west, xshift=0, yshift=3] {$P(x,y)$};
+      
+          \node[text width=.25cm] at (0,-2.2)  {a.};
+      
+          \end{tikzpicture}]]>
+        </latex-image></image>
+        <image xml:id="exam4-1-3b"><description>300 deg angle</description><latex-image>
+          <![CDATA[
+          \begin{tikzpicture} [scale=.9]
+          \coordinate(O) at (0,0);
+          \coordinate(A) at (0:1.75cm);
+          \coordinate(B) at (300:1.75cm);
+      
+          \draw[black, thick,->,>=stealth'] (0,-1.85)--(0,2);
+          \draw[black, thick, ->,>=stealth'] (-1.85,0)--(2,0);
+          \draw [gray!70!white] (O) circle [radius=1.75cm];
+      
+          \draw[blue, thick] (O) -- (A);
+          \draw[blue, thick] (O) -- (B);
+      
+          \draw [red,thick, ->,>=stealth'] (O)++(.3,0) arc(0:300:.3) node[below left, yshift=-.3cm, midway, inner sep=2pt] {$300\degree$};
+      
+          \filldraw[black] (B) circle (1.75pt) node[anchor=north west, xshift=-7, yshift=-2] {$P(x,y)$};
+      
+          \node[text width=.25cm] at (0,-2.2)  {b.};
+          \end{tikzpicture}]]>
+        </latex-image>
+        </image>      
+        </sidebyside>
  <p>b.  The terminal side of <m>300\degree</m> lies in the fourth quadrant, so <m>x \gt 0</m> and <m>y \lt 0</m>, and <m>r \gt 0</m>.  Thus, <m>\sin (300\degree)</m> is negative, <m>\cos (300\degree)</m> is positive, and <m>\tan (300\degree)</m> is negative.</p></solution></example>
 
 <exercise><statement><p>For angles in each of the four quadrants shown below, explain why the indicated trig ratios are positive. Then complete the table.</p>
@@ -517,19 +515,19 @@
             <cell><m>\hphantom{0000}</m></cell></row>
     </tabular>
     <image xml:id="fig-4-1quads">
-        <description>quadrants</description>
+      <description>quadrants</description>
         <latex-image>
         <![CDATA[
-        \begin{tikzpicture} 
+        \begin{tikzpicture} [scale=.75]
         \draw[black, thick,->,>=stealth'] (0,-3)--(0,3);
         \draw[black, thick, ->,>=stealth'] (-3,0)--(3,0);
-
-        \node[align=center] at (1.5,1.5) {Quadrant I\\ \\ \Large{All}\\are poositive};
-        \node[align=center] at (-1.5,1.5) {Quadrant II\\ \\ \Large{Sine}\\is poositive};
-        \node[align=center] at (-1.5,-1.5) {Quadrant III\\ \\ \Large{Tangent}\\is poositive};
-        \node[align=center] at (1.5,-1.5) {Quadrant IV\\ \\ \Large{Cosine}\\is poositive};
+    
+        \node[align=center] at (1.5,1.5) {Quadrant I\\ \\ \Large{All}\\are positive};
+        \node[align=center] at (-1.5,1.5) {Quadrant II\\ \\ \Large{Sine}\\is positive};
+        \node[align=center] at (-1.5,-1.5) {Quadrant III\\ \\ \Large{Tangent}\\is positive};
+        \node[align=center] at (1.5,-1.5) {Quadrant IV\\ \\ \Large{Cosine}\\is positive};
         \end{tikzpicture}]]>
-    </latex-image></image>
+      </latex-image></image>
 </sidebyside></statement>
 
 <answer><sidebyside width="65%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
@@ -567,31 +565,31 @@
 
 <example><statement><sidebyside widths="55% 25%" valigns="middle middle" margins="0% 12%"><p>Find the sine, cosine, and tangent of the angle shown at right.</p>
     <image xml:id="exam4-1-4"><description>angle</description><latex-image>
-        <![CDATA[
-        \begin{tikzpicture}[scale=.25]
-        \coordinate(O) at (0,0);
-        \coordinate(A) at (0:6);
-        %\coordinate(B) at ($ -6*asin(5/6)*(1,0)++(0,-5)$);
-        \coordinate(B) at (-3.32,-5);
-
-        \draw[thick,->,>=stealth'] (-6.2,0) -- (6.8,0);
-        \draw[thick,->,>=stealth'] (0,-6.2) -- (0,6.8);
-        \draw[gray,thick,dashed] (B) -- (0,-5);
-        \draw[blue, ultra thick] (O) -- (A);
-        \draw[blue,  thick, ->,>=stealth'] (O) -- (B) node[above left, midway, xshift=1, yshift=-.1cm] {$r=6$};
-
-        \foreach \x in {-5,-4,...,4}
-            \draw[black,thick] (\x cm,8pt) -- (\x cm,-8pt) ;
-        \foreach \y in {-5,-4,...,4}
-            \draw[black,thick] (8pt,\y cm) -- (-8pt,\y cm);
-        \draw[black,thick] (5 cm,8pt) --(5cm,-8pt) node[anchor=north] {$5$};            
-        \draw[black,thick] (8pt,5 cm) -- (-8pt,5 cm) node[anchor=east] {$5$};
-
-        \filldraw[black] (B) circle (.75pt) node[anchor=north east, xshift=0, yshift=0] {$P$};
-        \draw[gray!70!white,thick] (O) circle (6cm);
-
-        \draw [red,thick, ->,>=stealth'] (O)++(1.3,0) arc(0:{180+asin(5/6)}:1.3) node[above left, xshift=-3, yshift=-5, midway, inner sep=2pt] {$\theta$};
-        \end{tikzpicture}]]>
+      <![CDATA[
+      \begin{tikzpicture}[scale=.25]
+      \coordinate(O) at (0,0);
+      \coordinate(A) at (0:6);
+      %\coordinate(B) at ($ -6*asin(5/6)*(1,0)++(0,-5)$);
+      \coordinate(B) at (-3.32,-5);
+  
+      \draw[thick,->,>=stealth'] (-6.2,0) -- (6.8,0);
+      \draw[thick,->,>=stealth'] (0,-6.2) -- (0,6.8);
+      \draw[gray,thick,dashed] (B) -- (0,-5);
+      \draw[blue, ultra thick] (O) -- (A);
+      \draw[blue,  thick, ->,>=stealth'] (O) -- (B) node[above left, midway, xshift=1, yshift=-.1cm] {$r=6$};
+  
+      \foreach \x in {-5,-4,...,4}
+        \draw[black,thick] (\x cm,8pt) -- (\x cm,-8pt) ;
+      \foreach \y in {-5,-4,...,4}
+        \draw[black,thick] (8pt,\y cm) -- (-8pt,\y cm);
+      \draw[black,thick] (5 cm,8pt) --(5cm,-8pt) node[anchor=north] {$5$};            
+      \draw[black,thick] (8pt,5 cm) -- (-8pt,5 cm) node[anchor=east] {$5$};
+  
+      \filldraw[black] (B) circle (.75pt) node[anchor=north east, xshift=0, yshift=0] {$P$};
+      \draw[gray!70!white,thick] (O) circle (6cm);
+  
+      \draw [red,thick, ->,>=stealth'] (O)++(1.3,0) arc(0:{180+asin(5/6)}:1.3) node[above left, xshift=-3, yshift=-5, midway, inner sep=2pt] {$\theta$};
+      \end{tikzpicture}]]>
     </latex-image></image></sidebyside></statement>
 
 <solution><p>The <m>y</m>-coordinate of the point <m>P</m> is <m>-5</m>, and <m>r = 6</m>, so <me>\sin (\theta) = \dfrac{y}{r} = \dfrac{-5}{6}</me> To find the <m>x</m>-coordinate of <m>P</m>, we use the equation of a circle of radius <m>6</m>, <m>x^2 + y^2 = 36</m>.
@@ -603,30 +601,30 @@ Because <m>P</m> is in the third quadrant, <m>x = -\sqrt{11}</m>. Thus, <me>\cos
 <exercise><statement><sidebyside widths="65% 25%" valigns="middle middle" margins="0% 8%"><p>Find the sine, cosine, and tangent of the angle shown at right. The circle has radius 4.</p>
 <image xml:id="exer4-1-4"><description>angles</description><latex-image>
     <![CDATA[
-        \begin{tikzpicture}[scale=.4]
-        \coordinate(O) at (0,0);
-        \coordinate(A) at (0:4);
-        %\coordinate(B) at ($ -6*asin(5/6)*(1,0)++(0,-5)$);
-        \coordinate(B) at (138.6:4);
-        \draw[gray,thick,dashed] (B) -- (-3,0);
-
-        \draw[thick,->,>=stealth'] (-4.2,0) -- (4.8,0);
-        \draw[thick,->,>=stealth'] (0,-4.2) -- (0,4.8);
-        \draw[blue, ultra thick] (O) -- (A);
-        \draw[blue,  thick ] (O) -- (B) ;
-
-        \foreach \x in {-3,-2,...,3}
-            \draw[black,thick] (\x cm,6pt) -- (\x cm,-6pt) ;
-        \foreach \y in {-3,-2,...,3}
-            \draw[black,thick] (6pt,\y cm) -- (-6pt,\y cm);
-        \draw[black,thick] (3 cm,8pt) --(3cm,-8pt) node[anchor=north] {$3$};            
-        \draw[black,thick] (8pt,3 cm) -- (-8pt,3 cm) node[anchor=east] {$3$};
-        \draw[gray!70!white,thick] (O) circle (4cm);
-
-        \draw [red,thick, ->,>=stealth'] (O)++(1.4,0) arc(0:{acos(-3/4)}:1.4) node[above right, xshift=-0, yshift=-2, midway, inner sep=2pt] {$\phi$};
-
+      \begin{tikzpicture}[scale=.36]
+      \coordinate(O) at (0,0);
+      \coordinate(A) at (0:4);
+      %\coordinate(B) at ($ -6*asin(5/6)*(1,0)++(0,-5)$);
+      \coordinate(B) at (138.6:4);
+      \draw[gray,thick,dashed] (B) -- (-3,0);
+  
+      \draw[thick,->,>=stealth'] (-4.2,0) -- (4.8,0);
+      \draw[thick,->,>=stealth'] (0,-4.2) -- (0,4.8);
+      \draw[blue, ultra thick] (O) -- (A);
+      \draw[blue,  thick ] (O) -- (B) ;
+  
+      \foreach \x in {-3,-2,...,3}
+        \draw[black,thick] (\x cm,6pt) -- (\x cm,-6pt) ;
+      \foreach \y in {-3,-2,...,3}
+        \draw[black,thick] (6pt,\y cm) -- (-6pt,\y cm);
+      \draw[black,thick] (3 cm,8pt) --(3cm,-8pt) node[anchor=north] {$3$};            
+      \draw[black,thick] (8pt,3 cm) -- (-8pt,3 cm) node[anchor=east] {$3$};
+      \draw[gray!70!white,thick] (O) circle (4cm);
+  
+      \draw [red,thick, ->,>=stealth'] (O)++(1.4,0) arc(0:{acos(-3/4)}:1.4) node[above right, xshift=-0, yshift=-2, midway, inner sep=2pt] {$\phi$};
+  
     \end{tikzpicture}]]>
-</latex-image></image></sidebyside></statement>
+  </latex-image></image></sidebyside></statement>
 
 <answer><p><m>\sin (\theta) = \dfrac{\sqrt{7}}{4},~~\cos (\theta) = \dfrac{-3}{4},~~\tan (\theta) = \dfrac{-\sqrt{7}}{3}</m></p></answer></exercise>
 </subsection>
@@ -953,38 +951,31 @@ Because <m>P</m> is in the third quadrant, <m>x = -\sqrt{11}</m>. Thus, <me>\cos
 
    <sidebyside width="45%">
     <image xml:id="fig-4-1-bowtie"><description>angles</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} 
-        \coordinate(O) at (0,0);
-        \coordinate(A) at (35:2.5cm);
-        \coordinate(B) at (215:2.5cm);
-        \coordinate(C) at (-35:2.5cm);
-        \coordinate(D) at (145:2.5cm);
-
-        \draw[black, thick,->,>=stealth'] (0,-2.2)--(0,2.3) node[above]{$y$};
-        \draw[black, thick, ->,>=stealth'] (-2.2,0)--(2.3,0) node[right]{$x$};
-        \draw [gray!80!white] (O) circle [radius=2cm];
-
-
-        \draw[red, ultra thick] (O) -- (A) node[above right, xshift=-3, yshift=-3] {$35\degree$};
-        \draw[red, ultra thick] (O) -- (B) node[below left, xshift=3, yshift=3] {$215\degree$};
-        \draw[red, ultra thick] (O) -- (D) node[above left, xshift=3, yshift=-3] {$145\degree$};
-        \draw[red, ultra thick] (O) -- (C) node[below right, xshift=-3, yshift=3] {$325\degree$};
-
-        \draw [gray!60!white,thick, <->,>=stealth'] (O)++(1,0) arc(0:35:1) node[right, midway, yshift=2, inner sep=2pt] {\color{black}\footnotesize$35\degree$};
-
-        \draw [gray!60!white,thick, <->,>=stealth'] (O)++(1,0) arc(0:-35:1) node[ right, midway, yshift=-2, inner sep=2pt] {\color{black}\footnotesize$35\degree$};
-        \draw [gray!60!white,thick, <->,>=stealth'] (O)++(-1,0) arc(180:215:1) node[ left, midway, yshift=-2, inner sep=2pt] {\color{black}\footnotesize$35\degree$};
-        \draw [gray!60!white,thick, <->,>=stealth'] (O)++(-1,0) arc(180:145:1) node[ left, midway, yshift=2, inner sep=2pt] {\color{black}\footnotesize$35\degree$};
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside>
+         <![CDATA[
+         \begin{tikzpicture} 
+         \coordinate(O) at (0,0);
+         \coordinate(A) at (35:2.5cm);
+         \coordinate(B) at (215:2.5cm);
+         \coordinate(C) at (-35:2.5cm);
+         \coordinate(D) at (145:2.5cm);
+ 
+         \draw[black, thick,->,>=stealth'] (0,-2.2)--(0,2.3) node[above]{$y$};
+         \draw[black, thick, ->,>=stealth'] (-2.2,0)--(2.3,0) node[right]{$x$};
+         \draw [gray!80!white] (O) circle [radius=2cm];
+ 
+ 
+         \draw[red, ultra thick] (O) -- (A) node[above right, xshift=-3, yshift=-3] {$35\degree$};
+         \draw[red, ultra thick] (O) -- (B) node[below left, xshift=3, yshift=3] {$215\degree$};
+         \draw[red, ultra thick] (O) -- (D) node[above left, xshift=3, yshift=-3] {$145\degree$};
+         \draw[red, ultra thick] (O) -- (C) node[below right, xshift=-3, yshift=3] {$325\degree$};
+ 
+         \draw [gray!60!white,thick, <->,>=stealth'] (O)++(1,0) arc(0:35:1) node[right, midway, yshift=2, inner sep=2pt] {\color{black}$35\degree$};
+ 
+         \draw [gray!60!white,thick, <->,>=stealth'] (O)++(1,0) arc(0:-35:1) node[ right, midway, yshift=-2, inner sep=2pt] {\color{black}$35\degree$};
+         \draw [gray!60!white,thick, <->,>=stealth'] (O)++(-1,0) arc(180:215:1) node[ left, midway, yshift=-2, inner sep=2pt] {\color{black}$35\degree$};
+         \draw [gray!60!white,thick, <->,>=stealth'] (O)++(-1,0) arc(180:145:1) node[ left, midway, yshift=2, inner sep=2pt] {\color{black}$35\degree$};
+         \end{tikzpicture}]]>
+     </latex-image></image></sidebyside>
 
 <p>From the figure, you can see that the angles in each quadrant with a given reference angle are computed as follows.</p>
 
@@ -1237,27 +1228,28 @@ In the third quadrant, the sine and cosine are negative, so we have
             <mrow>\tan (160\degree) \amp = \tan (520\degree) = -0.3640</mrow></md></li>
     </ol></p></solution></example>
 
-<p><sidebyside widths="65% 25%" valigns="middle middle" margins="0% 5%">
-<p>If the direction of rotation <idx><h>rotation</h></idx> is important, we let positive angles represent rotation in the counter-clockwise direction, and negative angles represent rotation in the clockwise direction. For example, the angle <m>-60\degree</m> shown at right lies in the fourth quadrant. It is coterminal with  <m>-60\degree + 360\degree = 300\degree</m>.</p>
-    <image xml:id="fig-4-1-negang"><description>angles</description><latex-image>
-        <![CDATA[
-        \begin{tikzpicture}
-        \coordinate(O) at (0,0);
-        \coordinate(A) at (-60:1.5cm);
-        \draw[black, thick, ->,>=stealth'] (0,-1.6)--(0,1.7);
-        \draw[black, thick] (-1.6,0)--(0,0) ;
-        \draw [gray!80!white] (O) circle [radius=1.5];
+<sidebyside widths="65% 25%" valigns="middle middle" margins="0% 5%">
+        <p>If the direction of rotation <idx><h>rotation</h></idx> is important, we let positive angles represent rotation in the counter-clockwise direction, and negative angles represent rotation in the clockwise direction. For example, the angle <m>-60\degree</m> shown at right lies in the fourth quadrant. It is coterminal with  <m>-60\degree + 360\degree = 300\degree</m>.</p>
+            <image xml:id="fig-4-1-negang"><description>angles</description><latex-image>
+                <![CDATA[
+                \begin{tikzpicture}[scale=.8]
+                \coordinate(O) at (0,0);
+                \coordinate(A) at (-60:1.5cm);
+                \draw[black, thick, ->,>=stealth'] (0,-1.6)--(0,1.7);
+                \draw[black, thick] (-1.6,0)--(0,0) ;
+                \draw [gray!80!white] (O) circle [radius=1.5];
+        
+                \draw[blue, thick, ->,>=stealth'] (O) -- +(1.6,0);
+                \draw[blue, thick, ->,>=stealth'] (O) -- (A);
+        
+                \draw [thick, color=red, ->,>=stealth'](O)++(.25,0) arc (0:300:.25) node[below left, midway, xshift=2, yshift=-4] {\footnotesize$300\degree$};
+        
+                \draw [thick, color=red, ->,>=stealth'](O)++(.6,0) arc (0:-60:.6) node[below right, midway, xshift=-2, yshift=2] {\footnotesize$-60\degree$};
+                \end{tikzpicture}]]>
+            </latex-image></image>
+</sidebyside>
 
-        \draw[blue, thick, ->,>=stealth'] (O) -- +(1.6,0);
-        \draw[blue, thick, ->,>=stealth'] (O) -- (A);
-
-        \draw [thick, color=red, ->,>=stealth'](O)++(.25,0) arc (0:300:.25) node[below left, midway, xshift=2, yshift=-4] {\footnotesize$300\degree$};
-
-        \draw [thick, color=red, ->,>=stealth'](O)++(.6,0) arc (0:-60:.6) node[below right, midway, xshift=-2, yshift=2] {\footnotesize$-60\degree$};
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></p>
-
-<exercise><statement><p>Find two angles coterminal with <m>102\degree</m>, one positive and one negative.</p></statement><answer><p><m>462\degree</m>, <m>~-258\degree</m></p></answer></exercise>
+<exercise><statement><p>Find two angles coterminal with <m>102\degree</m>, one positive and one negative.</p></statement><answer><p><m>462\degree</m>, <m>~{-258}\degree</m></p></answer></exercise>
 </subsection>
 
 
@@ -1429,4 +1421,3 @@ In the third quadrant, the sine and cosine are negative, so we have
 <xi:include href="./hmwk-4-1.xml" />  
 
 </section> 
-<!-- </book>  </mathbook> -->
