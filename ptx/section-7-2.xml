@@ -12,80 +12,76 @@
 
 <sidebyside widths="48% 48%" margins="0% 0%">
     <image xml:id="fig-7-2-sina"><description>translated sine</description><latex-image>
-        <![CDATA[\tikzset{%
-        }
+        <![CDATA[\
         \begin{tikzpicture} [scale=.45]
         \draw[cyan] (-2*pi,-3) grid[xstep=pi/4, ystep=1] (2*pi,3);
         \draw[black,thick, ->,>=stealth'](-2*pi,0)--(6.6,0) node[right]{$x$};
         \draw[black,thick, ->,>=stealth'](0,-3)--(0,3.7) node[above]{$y$};
-        \foreach \y in {-3,-2,-1,1,2,3} \draw[black,thick] (0.08,\y)--++(-.16,0) node[left, scale=.8]{\y};
-        \draw[black,thick] (pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$ \pi$};
-        \draw[black,thick] (2*pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$ 2\pi$};
-        \draw[black,thick] (-pi,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$ -\pi$};
-        \draw[black,thick] (-2*pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$ -2\pi$};
+        \foreach \y in {-3,-2,-1,1,2,3} \draw[black,thick] (0.08,\y)--++(-.16,0) node[left]{\y};
+        \draw[black,thick] (pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1] {$ \pi$};
+        \draw[black,thick] (2*pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1] {$ 2\pi$};
+        \draw[black,thick] (-pi,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$ -\pi$};
+        \draw[black,thick] (-2*pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1] {$ -2\pi$};
         \draw[samples=65, domain=-2*pi:2*pi, variable=\x, smooth,red, very thick] plot(\x,{sin(deg(\x))});
         \draw[samples=65, domain=-2*pi:2*pi, variable=\x, smooth, blue, very thick] plot(\x,{2+sin(deg(\x))});
-        \draw[red, <-,>=stealth'] (4.1,-1.1)--++(-.7,-.5) node[below left, xshift=-2, yshift=4, fill=white, inner sep=1, scale=.8] {$y=\sin x$};
-        \draw[blue, <-,>=stealth'] (2.3,3.1)--++(.5,.3) node[above right, xshift=2, yshift=-4, fill=white, inner sep=1, scale=.8] {$y=2+\sin x$};
-        \node[text=blue, scale=.8] at (0,-3.9) {A vertical shift};
+        \draw[red, <-,>=stealth'] (4.1,-1.1)--++(-.7,-.5) node[below left, xshift=-2, yshift=4, fill=white, inner sep=1] {$y=\sin(x)$};
+        \draw[blue, <-,>=stealth'] (2.3,3.1)--++(.5,.3) node[above right, xshift=2, yshift=-4, fill=white, inner sep=1] {$y=2+\sin(x)$};
+        \node[text=blue] at (0,-3.9) {A vertical shift};
         \end{tikzpicture}]]>
     </latex-image></image>
     <image xml:id="fig-7-2-sinb"><description>scaled sine</description><latex-image>
-        <![CDATA[\tikzset{%
-        }
+        <![CDATA[
         \begin{tikzpicture} [scale=.45]
         \draw[cyan] (-2*pi,-3) grid[xstep=pi/4, ystep=1] (2*pi,3);
         \draw[black,thick, ->,>=stealth'](-2*pi,0)--(6.6,0) node[right]{$x$};
         \draw[black,thick, ->,>=stealth'](0,-3)--(0,3.7) node[above]{$y$};
-        \foreach \y in {-3,-2,-1,1,2,3} \draw[black,thick] (0.08,\y)--++(-.16,0) node[left, scale=.8]{\y};
-        \draw[black,thick] (pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$ \pi$};
-        \draw[black,thick] (2*pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$ 2\pi$};
-        \draw[black,thick] (-pi,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$ -\pi$};
-        \draw[black,thick] (-2*pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$ -2\pi$};
+        \foreach \y in {-3,-2,-1,1,2,3} \draw[black,thick] (0.08,\y)--++(-.16,0) node[left]{\y};
+        \draw[black,thick] (pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1] {$ \pi$};
+        \draw[black,thick] (2*pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1] {$ 2\pi$};
+        \draw[black,thick] (-pi,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$ -\pi$};
+        \draw[black,thick] (-2*pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1] {$ -2\pi$};
         \draw[samples=65, domain=-2*pi:2*pi, variable=\x, smooth,red, very thick] plot(\x,{sin(deg(\x))});
         \draw[samples=65, domain=-2*pi:2*pi, variable=\x, smooth, blue, very thick] plot(\x,{3*sin(deg(\x))});
-        \draw[red, <-,>=stealth'] (pi/2,0.8)--++(-0,-2.3) node[below , xshift=-2, yshift=4, fill=white, inner sep=1, scale=.8] {$y=\sin x$};
-        \draw[blue, <-,>=stealth'] (2.3,2.6)--++(.5,.3) node[above right, xshift=2, yshift=-4, fill=white, inner sep=1, scale=.8] {$y=3\sin x$};
-        \node[text=blue, scale=.8] at (0,-3.9) {A vertical stretch};
+        \draw[red, <-,>=stealth'] (pi/2,0.8)--++(-0,-2.3) node[below , xshift=-2, yshift=4, fill=white, inner sep=1] {$y=\sin(x)$};
+        \draw[blue, <-,>=stealth'] (2.3,2.6)--++(.5,.3) node[above right, xshift=2, yshift=-4, fill=white, inner sep=1] {$y=3\sin(x)$};
+        \node[text=blue] at (0,-3.9) {A vertical stretch};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
 <sidebyside widths="48% 48%" margins="0% 0%">
     <image xml:id="fig-7-2-sinc"><description>horizontal compression of sine</description><latex-image>
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.45]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.4]
         \draw[cyan] (-2*pi,-3) grid[xstep=pi/4, ystep=1] (2*pi,3);
         \draw[black,thick, ->,>=stealth'](-2*pi,0)--(6.6,0) node[right]{$x$};
         \draw[black,thick, ->,>=stealth'](0,-3)--(0,3.7) node[above]{$y$};
-        \foreach \y in {-3,-2,-1,1,2,3} \draw[black,thick] (0.08,\y)--++(-.16,0) node[left, scale=.8]{\y};
-        \draw[black,thick] (pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$ \pi$};
-        \draw[black,thick] (2*pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$ 2\pi$};
-        \draw[black,thick] (-pi,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$ -\pi$};
-        \draw[black,thick] (-2*pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$ -2\pi$};
+        \foreach \y in {-3,-2,-1,1,2,3} \draw[black,thick] (0.08,\y)--++(-.16,0) node[left]{\y};
+        \draw[black,thick] (pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1] {$ \pi$};
+        \draw[black,thick] (2*pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1] {$ 2\pi$};
+        \draw[black,thick] (-pi,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$ -\pi$};
+        \draw[black,thick] (-2*pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1] {$ -2\pi$};
         \draw[samples=65, domain=-2*pi:2*pi, variable=\x, smooth,red, very thick] plot(\x,{sin(deg(\x))});
         \draw[samples=65, domain=-2*pi:2*pi, variable=\x, smooth, blue, very thick] plot(\x,{sin(deg(2*\x))});
-        \draw[red, <-,>=stealth'] (1.6,1.1)--++(0.2,.8) node[above right , yshift=-2, yshift=4, fill=white, inner sep=1, scale=.8] {$y=\sin x$};
-        \draw[blue, <-,>=stealth'] (4.1,1.1)--++(.3,.3) node[above right, xshift=2, yshift=-4, fill=white, inner sep=1, scale=.8] {$y=\sin 2x$};
-        \node[text=blue, scale=.8] at (0,-3.9) {A horizontal compression};
+        \draw[red, <-,>=stealth'] (1.6,1.1)--++(0.2,.8) node[above right , yshift=-2, yshift=4, fill=white, inner sep=1] {$y=\sin(x)$};
+        \draw[blue, <-,>=stealth'] (4.1,1.1)--++(.3,.3) node[above right, xshift=2, yshift=-4, fill=white, inner sep=1] {$y=\sin(2x)$};
+        \node[text=blue] at (0,-3.9) {A horizontal compression};
         \end{tikzpicture}]]>
     </latex-image></image>
     <image xml:id="fig-7-2-sind"><description>horizontal shift of sine</description><latex-image>
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.45]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.4]
         \draw[cyan] (-2*pi,-3) grid[xstep=pi/4, ystep=1] (2*pi,3);
         \draw[black,thick, ->,>=stealth'](-2*pi,0)--(6.6,0) node[right]{$x$};
         \draw[black,thick, ->,>=stealth'](0,-3)--(0,3.7) node[above]{$y$};
-        \foreach \y in {-3,-2,-1,1,2,3} \draw[black,thick] (0.08,\y)--++(-.16,0) node[left, scale=.8]{\y};
-        \draw[black,thick] (pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$ \pi$};
-        \draw[black,thick] (2*pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$ 2\pi$};
-        \draw[black,thick] (-pi,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$ -\pi$};
-        \draw[black,thick] (-2*pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$ -2\pi$};
+        \foreach \y in {-3,-2,-1,1,2,3} \draw[black,thick] (0.08,\y)--++(-.16,0) node[left]{\y};
+        \draw[black,thick] (pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1] {$ \pi$};
+        \draw[black,thick] (2*pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1] {$ 2\pi$};
+        \draw[black,thick] (-pi,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$ -\pi$};
+        \draw[black,thick] (-2*pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1] {$ -2\pi$};
         \draw[samples=65, domain=-2*pi:2*pi, variable=\x, smooth,red, very thick] plot(\x,{sin(deg(\x))});
         \draw[samples=65, domain=-2*pi:2*pi, variable=\x, smooth, blue, very thick] plot(\x,{sin(deg(\x-1))});
-        \draw[red,<-,>=stealth'] (1.6,1.1)--++(0.2,.9) node[above  , yshift=-2, yshift=4, fill=white, inner sep=1, scale=.8] {$y=\sin x$};
-        \draw[blue,<-,>=stealth'] (2.9,1.1)--++(.2,.3) node[above right, yshift=2, yshift=-4, fill=white, inner sep=1, scale=.8] {$y=\sin (x-1)$};
-        \node[text=blue, scale=.8] at (0,-3.9) {A horizontal shift};
+        \draw[red,<-,>=stealth'] (1.6,1.1)--++(0.9,1.5) node[above  , yshift=-2, yshift=4, fill=white, inner sep=1] {$y=\sin(x)$};
+        \draw[blue,<-,>=stealth'] (2.9,1.1)--++(.2,.5) node[above right, yshift=2, yshift=-4, fill=white, inner sep=0] {$y=\sin (x-1)$};
+        \node[text=blue] at (0,-3.9) {A horizontal shift};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
 
@@ -96,21 +92,20 @@
     <image xml:id="exam7-2-1">
         <description>sinusoidal graph</description>
         <latex-image>
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.45]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.5]
         \draw[cyan] (-2*pi,-3) grid[xstep=pi/4, ystep=1] (2*pi,3);
         \draw[black,thick,->,>=stealth'](-2*pi,0)--(6.6,0) node[right]{$x$};
         \draw[black,thick, ->,>=stealth'](0,-3)--(0,3.7) node[above]{$y$};
-        \foreach \y in {-3,-2,-1,1,2,3} \draw[black,thick] (0.08,\y)--++(-.16,0) node[left, scale=.8]{\y};
-        \draw[black,thick] (pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$ \pi$};
-        \draw[black,thick] (2*pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$ 2\pi$};
-        \draw[black,thick] (-pi,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$ -\pi$};
-        \draw[black,thick] (-2*pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$ -2\pi$};
+        \foreach \y in {-3,-2,-1,1,2,3} \draw[black,thick] (0.08,\y)--++(-.16,0) node[left]{\y};
+        \draw[black,thick] (pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1] {$ \pi$};
+        \draw[black,thick] (2*pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1] {$ 2\pi$};
+        \draw[black,thick] (-pi,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$ -\pi$};
+        \draw[black,thick] (-2*pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1] {$ -2\pi$};
         \draw[samples=65, domain=-2*pi:2*pi, variable=\x, smooth,red, very thick] plot(\x,{sin(deg(\x))});
         \draw[samples=65, domain=-2*pi:2*pi, variable=\x, smooth, blue, very thick] plot(\x,{sin(deg(\x-pi/4))});
-        \draw[red, <-,>=stealth'] (1.6,1.1)--++(0.2,.9) node[above  , yshift=-2, yshift=4, fill=white, inner sep=1, scale=.8] {$y=\sin x$};
-        \draw[blue, <-,>=stealth'] (2.9,1.1)--++(.2,.3) node[above right, yshift=2, yshift=-4, fill=white, inner sep=1, scale=.8] {$y=\sin (x-\frac{\pi}{4})$};
+        \draw[red, <-,>=stealth'] (1.6,1.1)--++(0.2,.9) node[above  , yshift=-2, yshift=4, fill=white, inner sep=1] {$y=\sin(x)$};
+        \draw[blue, <-,>=stealth'] (2.9,1.1)--++(.2,.3) node[above right, yshift=2, yshift=-4, fill=white, inner sep=1] {$y=\sin (x-\frac{\pi}{4})$};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -248,19 +243,17 @@
     </tabular></sidebyside>
     <p>To make the graph, we'll scale the <m>x</m>-axis in multiples of <m>\dfrac{\pi}{6}</m>. We plot the guide points <m>(x,y)</m> from the table, and sketch a sinusoidal graph through the points. One cycle of the graph is shown below. As we expected,the graph is shifted <m>\dfrac{\pi}{3}</m> units to the left compared to the graph of <m>y = \cos (x)</m>.</p>
 <sidebyside width="60%">
-    <image xml:id="exam7-2-2"><description>transformed sine</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
+    <image xml:id="exam7-2-2"><description>transformed cosine</description><latex-image>
+        <![CDATA[
         \begin{tikzpicture} [yscale=.7]
         \draw[cyan] (-pi/3,-2) grid[xstep=pi/6, ystep=1] (5*pi/3,2);
-        \draw[black,thick,->,>=stealth'](-pi/3,0)--(5.5,0) node[right, scale=.9]{$x$};
-        \draw[black,thick,->,>=stealth'](0,-2)--(0,2.2) node[above, scale=.9]{$y$};
-        \foreach \y in {-1,1} \draw[black,thick] (0.08,\y)--++(-.16,0) node[left, scale=.8]{\y};
-        \draw[black,thick] (pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$ \pi$};
-        \draw[black,thick] (-pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$ \frac{-\pi}{3}$};
-        \draw[black,thick] (pi/2,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$ \frac{\pi}{2}$};
-        \draw[black,thick] (3*pi/2,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$ \frac{3\pi}{2}$};
+        \draw[black,thick,->,>=stealth'](-pi/3,0)--(5.5,0) node[right]{$x$};
+        \draw[black,thick,->,>=stealth'](0,-2)--(0,2.3) node[above]{$y$};
+        \foreach \y in {-1,1} \draw[black,thick] (0.08,\y)--++(-.16,0) node[left]{\y};
+        \draw[black,thick] (pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1] {$ \pi$};
+        \draw[black,thick] (-pi/3,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$ \dfrac{-\pi}{3}$};
+        \draw[black,thick] (pi/2,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$ \dfrac{\pi}{2}$};
+        \draw[black,thick] (3*pi/2,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$ \dfrac{3\pi}{2}$};
         \draw[samples=65, domain=-pi/3:5*pi/3, variable=\x, smooth,red, very thick] plot(\x,{-2*cos(deg(\x+pi/3))});
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></solution></example> 
@@ -300,13 +293,11 @@
     </tabular></sidebyside>
     <sidebyside width="60%">
         <image xml:id="exer7-2-2"><description>grid</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
+        <![CDATA[
         \begin{tikzpicture} [xscale=.75, yscale=.4]
         \draw[cyan] (-pi/3,-5) grid[xstep=pi/6] (7*pi/3,1);
-        \draw[black,thick,->,>=stealth'] (-pi/3,0)--(7.7,0) node[right, scale=.9]{$x$};
-        \draw[black,thick,->,>=stealth'] (0,-5)--(0,1.5) node[above, scale=.9]{$y$};
+        \draw[black,thick,->,>=stealth'] (-pi/3,0)--(7.7,0) node[right]{$x$};
+        \draw[black,thick,->,>=stealth'] (0,-5)--(0,1.5) node[above]{$y$};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></statement>
 
@@ -342,18 +333,16 @@
                         <cell><m>0</m></cell>
                         <cell><m>-2</m></cell></row>                
         </tabular></sidebyside>
-    <sidebyside width="45%">
-    <image xml:id="exer7-2-2ans"><description>transformed sine</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
+    <sidebyside width="60%">
+        <image xml:id="exer7-2-2ans"><description>transformed sine</description><latex-image>
+        <![CDATA[
         \begin{tikzpicture} [xscale=.75, yscale=.4]
         \draw[cyan] (-pi/3,-5) grid[xstep=pi/6] (7*pi/3,1);
-        \draw[black,thick,->,>=stealth'] (-pi/3,0)--(7.7,0) node[right, scale=.9]{$x$};
-        \draw[black,thick,->,>=stealth'] (0,-5)--(0,1.5) node[above, scale=.9]{$y$};
-        \foreach \y in {-4,-2} \draw[black,thick] (.05,\y)--++(-.1,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
-        \draw[black,thick] (pi,.1)--++(0,-.2) node[below, yshift=-2, scale=.8] {$\pi$};
-        \draw[black,thick] (2*pi,.1)--++(0,-.2) node[below, yshift=-2, scale=.8] {$2\pi$};
+        \draw[black,thick,->,>=stealth'] (-pi/3,0)--(7.7,0) node[right]{$x$};
+        \draw[black,thick,->,>=stealth'] (0,-5)--(0,1.5) node[above]{$y$};
+        \foreach \y in {-4,-2} \draw[black,thick] (.05,\y)--++(-.1,0) node[left, xshift=-2, fill=white, inner sep=1] {$\y$};
+        \draw[black,thick] (pi,.1)--++(0,-.2) node[below, yshift=-2] {$\pi$};
+        \draw[black,thick] (2*pi,.1)--++(0,-.2) node[below, yshift=-2] {$2\pi$};
         \draw[samples=65, domain=-pi/3:7*pi/3, variable=\x, smooth,red, very thick] plot(\x,{-2+sin(deg(\x-pi/6))});
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></answer></exercise>
@@ -367,35 +356,31 @@
 Graph the two functions for <m>0 \le x \le 2\pi</m>, along with <m>y = \sin (2x)</m>, as shown below. Each graph involves a horizontal shift relative to <m>y = \sin (2x)</m>, but the graph of <m>f</m> is shifted <m>\dfrac{\pi}{3}</m> units to the right, while the graph of <m>g</m> is shifted only <m>\dfrac{\pi}{6}</m> units to the right. This difference occurs because of the order of the transformations.</p>
 <sidebyside widths="45% 45%">
     <image xml:id="fig-7-2-cta"><description>sinusoidal graphs</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [xscale=1, yscale=1]
+        <![CDATA[
+        \begin{tikzpicture} [xscale=.8, yscale=.8]
         \draw[cyan] (0,-2) grid[xstep=pi/6, ystep=1/2] (2*pi,2);
-        \draw[black,thick,->,>=stealth'] (0,0)--(6.6,0) node[right, scale=.9]{$x$};
-        \draw[black,thick,->,>=stealth'] (0,-2)--(0,2.3) node[above, scale=.9]{$y$};
-        \foreach \y in {-1,1} \draw[black,thick] (.05,\y)--++(-.1,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
-        \draw[black,thick] (pi,.1)--++(0,-.2) node[below, yshift=-2, scale=.8] {$\pi$};
-        \draw[black,thick] (2*pi,.1)--++(0,-.2) node[below, yshift=-2, scale=.8] {$2\pi$};
+        \draw[black,thick,->,>=stealth'] (0,0)--(6.6,0) node[right]{$x$};
+        \draw[black,thick,->,>=stealth'] (0,-2)--(0,2.3) node[above]{$y$};
+        \foreach \y in {-1,1} \draw[black,thick] (.05,\y)--++(-.1,0) node[left, xshift=-2, fill=white, inner sep=1] {\y};
+        \draw[black,thick] (pi,.1)--++(0,-.2) node[below, yshift=-2] {$\pi$};
+        \draw[black,thick] (2*pi,.1)--++(0,-.2) node[below, yshift=-2] {$2\pi$};
         \draw[samples=65, domain=0:2*pi, variable=\x, smooth,red, thick, dashed] plot(\x,{ sin( (deg(2* \x) )});
         \draw[samples=65, domain=0:2*pi, variable=\x, smooth,blue, very thick] plot(\x,{sin( (deg(2* (\x-pi/3)) )});
-        \node[text=blue, scale=.8] at (pi,-2.7) {$\displaystyle f(x)=\sin\left[2\left(x-\frac{\pi}{3}\right)\right]$};
+        \node[text=blue] at (pi,-2.7) {$\displaystyle f(x)=\sin\left[2\left(x-\frac{\pi}{3}\right)\right]$};
         \end{tikzpicture}]]>
     </latex-image></image>
     <image xml:id="fig-7-2-ctb"><description>sinusoidal graphs</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [xscale=1, yscale=1]
+        <![CDATA[
+        \begin{tikzpicture} [xscale=.8, yscale=.8]
         \draw[cyan] (0,-2) grid[xstep=pi/6, ystep=1/2] (2*pi,2);
-        \draw[black,thick,->,>=stealth'] (0,0)--(6.6,0) node[right, scale=.9]{$x$};
-        \draw[black,thick,->,>=stealth'] (0,-2)--(0,2.3) node[above, scale=.9]{$y$};
-        \foreach \y in {-1,1} \draw[black,thick] (.05,\y)--++(-.1,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
-        \draw[black,thick] (pi,.1)--++(0,-.2) node[below, yshift=-2, scale=.8] {$\pi$};
-        \draw[black,thick] (2*pi,.1)--++(0,-.2) node[below, yshift=-2, scale=.8] {$2\pi$};
+        \draw[black,thick,->,>=stealth'] (0,0)--(6.6,0) node[right]{$x$};
+        \draw[black,thick,->,>=stealth'] (0,-2)--(0,2.3) node[above]{$y$};
+        \foreach \y in {-1,1} \draw[black,thick] (.05,\y)--++(-.1,0) node[left, xshift=-2, fill=white, inner sep=1] {\y};
+        \draw[black,thick] (pi,.1)--++(0,-.2) node[below, yshift=-2] {$\pi$};
+        \draw[black,thick] (2*pi,.1)--++(0,-.2) node[below, yshift=-2] {$2\pi$};
         \draw[samples=65, domain=0:2*pi, variable=\x, smooth,red, thick, dashed] plot(\x,{ sin( (deg(2* \x) )});
         \draw[samples=65, domain=0:2*pi, variable=\x, smooth,blue, very thick] plot(\x,{sin (deg( (2*\x-pi/3)) });
-        \node[text=blue, scale=.8] at (pi,-2.7) {$\displaystyle f(x)=\sin \left(2x-\frac{\pi}{3}\right)$};
+        \node[text=blue] at (pi,-2.7) {$\displaystyle f(x)=\sin \left(2x-\frac{\pi}{3}\right)$};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
 
@@ -405,39 +390,35 @@ Graph the two functions for <m>0 \le x \le 2\pi</m>, along with <m>y = \sin (2x)
 <p>Step 2:  Then we replace <m>x</m> by <m>x - \dfrac{\pi}{3}</m> to get <m>f(x) = \sin \left[2\left(x - \dfrac{\pi}{3}\right)\right]</m>, which shifts the graph <m>\dfrac{\pi}{3}</m> units to the right.  (See figure (b).)</p>
 <sidebyside widths="50% 50%">
     <image xml:id="fig-7-2-ctc"><description>horizontal compression of sin x</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [xscale=1, yscale=1]
+        <![CDATA[
+        \begin{tikzpicture} [xscale=.9, yscale=.9]
         \draw[cyan] (0,-2) grid[xstep=pi/6, ystep=1/2] (2*pi,2);
-        \draw[black,thick,->,>=stealth'] (0,0)--(6.6,0) node[right, scale=.9]{$x$};
-        \draw[black,thick,->,>=stealth'] (0,-2)--(0,2.3) node[above, scale=.9]{$y$};
-        \foreach \y in {-1,1} \draw[black,thick] (.05,\y)--++(-.1,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
-        \draw[black,thick] (pi,.1)--++(0,-.2) node[below, yshift=-2, scale=.8] {$\pi$};
-        \draw[black,thick] (2*pi,.1)--++(0,-.2) node[below, yshift=-2, scale=.8] {$2\pi$};
+        \draw[black,thick,->,>=stealth'] (0,0)--(6.6,0) node[right]{$x$};
+        \draw[black,thick,->,>=stealth'] (0,-2)--(0,2.3) node[above]{$y$};
+        \foreach \y in {-1,1} \draw[black,thick] (.05,\y)--++(-.1,0) node[left, xshift=-2, fill=white, inner sep=1] {\y};
+        \draw[black,thick] (pi,.1)--++(0,-.2) node[below, yshift=-2] {$\pi$};
+        \draw[black,thick] (2*pi,.1)--++(0,-.2) node[below, yshift=-2] {$2\pi$};
         \draw[samples=65, domain=0:2*pi, variable=\x, smooth,blue, thick, dashed] plot(\x,{ sin( deg( \x) });
         \draw[samples=65, domain=0:2*pi, variable=\x, smooth,red, very thick] plot(\x,{sin( deg(2* \x) });
-        \draw[blue, <-] (2.1,1.)--++(0.8,.3) node[above right, yshift=-3,  fill=white, inner sep=1, scale=.8] {$y=\sin x$};
-        \draw[red, <-] (0.8,1.1)--++(.2,.5) node[above right, yshift=-2, fill=white, inner sep=1, scale=.8] {$y=\sin 2x$};
-        \node[text=blue, scale=.8] at (pi,-2.7) {a. Step 1};
+        \draw[blue, <-,>=stealth'] (2.1,1.)--++(0.8,.3) node[above right, yshift=-3,  fill=white, inner sep=1] {$y=\sin(x)$};
+        \draw[red, <-,>=stealth'] (0.8,1.1)--++(.2,.5) node[above, xshift=2, fill=white, inner sep=1] {$y=\sin(2x)$};
+        \node[text=blue] at (pi,-2.7) {a. Step 1};
         \end{tikzpicture}]]>
     </latex-image></image>
     <image xml:id="fig-7-2-ctd"><description>translation of sin 2x</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [xscale=1, yscale=1]
+        <![CDATA[
+        \begin{tikzpicture} [xscale=.9, yscale=.9]
         \draw[cyan] (0,-2) grid[xstep=pi/6, ystep=1/2] (2*pi,2);
-        \draw[black,thick,->,>=stealth'] (0,0)--(6.6,0) node[right, scale=.9]{$x$};
-        \draw[black,thick,->,>=stealth'] (0,-2)--(0,2.3) node[above, scale=.9]{$y$};
-        \foreach \y in {-1,1} \draw[black,thick] (.05,\y)--++(-.1,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
-        \draw[black,thick] (pi,.1)--++(0,-.2) node[below, yshift=-2, scale=.8] {$\pi$};
-        \draw[black,thick] (2*pi,.1)--++(0,-.2) node[below, yshift=-2, scale=.8] {$2\pi$};
+        \draw[black,thick,->,>=stealth'] (0,0)--(6.6,0) node[right]{$x$};
+        \draw[black,thick,->,>=stealth'] (0,-2)--(0,2.3) node[above]{$y$};
+        \foreach \y in {-1,1} \draw[black,thick] (.05,\y)--++(-.1,0) node[left, xshift=-2, fill=white, inner sep=1] {$\y$};
+        \draw[black,thick] (pi,.1)--++(0,-.2) node[below, yshift=-2] {$\pi$};
+        \draw[black,thick] (2*pi,.1)--++(0,-.2) node[below, yshift=-2] {$2\pi$};
         \draw[samples=65, domain=0:2*pi, variable=\x, smooth,red, very thick] plot(\x,{ sin( deg( 2*(\x- pi/3)) });
         \draw[samples=65, domain=0:2*pi, variable=\x, smooth,blue, thick, dashed] plot(\x,{sin( deg(2* \x) });
-        \draw[red, <-] (2.1,1.)--++(0.8,.6) node[above right, yshift=-9,  fill=white, inner sep=1, scale=.8] {$\displaystyle y=\sin \left[ 2\left( x - \frac{\pi}{3}\right)\right]$};
-        \draw[blue, <-] (0.8,1.1)--++(.2,.5) node[above right, yshift=-2, fill=white, inner sep=1, scale=.8] {$y=\sin 2x$};
-        \node[text=blue, scale=.8] at (pi,-2.7) {b. Step 2};
+        \draw[red, <-,>=stealth'] (2.1,1.)--++(0.8,.6) node[above right, yshift=-9,  fill=white, inner sep=1] {$\displaystyle y=\sin \left[ 2\left( x - \frac{\pi}{3}\right)\right]$};
+        \draw[blue, <-,>=stealth'] (0.8,1.1)--++(.2,.5) node[above, xshift=2, fill=white, inner sep=1] {$y=\sin(2x)$};
+        \node[text=blue] at (pi,-2.7) {b. Step 2};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -450,39 +431,35 @@ Graph the two functions for <m>0 \le x \le 2\pi</m>, along with <m>y = \sin (2x)
 graph horizontally by a factor of 2, including the horizontal shift.  This reduces the horizontal shift from <m>\dfrac{\pi}{3}</m> to <m>\dfrac{\pi}{6}</m>. (See figure (b.)</p>
 <sidebyside widths="50% 50%">
     <image xml:id="fig-7-2-cte"><description>horizontal shift of sine</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [xscale=1, yscale=1]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.9]
         \draw[cyan] (0,-2) grid[xstep=pi/6, ystep=1/2] (2*pi,2);
-        \draw[black,thick,->,>=stealth'] (0,0)--(6.6,0) node[right, scale=.9]{$x$};
-        \draw[black,thick,->,>=stealth'] (0,-2)--(0,2.3) node[above, scale=.9]{$y$};
-        \foreach \y in {-1,1} \draw[black,thick] (.05,\y)--++(-.1,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
-        \draw[black,thick] (pi,.1)--++(0,-.2) node[below, yshift=-2, scale=.8] {$\pi$};
-        \draw[black,thick] (2*pi,.1)--++(0,-.2) node[below, yshift=-2, scale=.8] {$2\pi$};
+        \draw[black,thick,->,>=stealth'] (0,0)--(6.6,0) node[right]{$x$};
+        \draw[black,thick,->,>=stealth'] (0,-2)--(0,2.3) node[above]{$y$};
+        \foreach \y in {-1,1} \draw[black,thick] (.05,\y)--++(-.1,0) node[left, xshift=-2, fill=white, inner sep=1] {\y};
+        \draw[black,thick] (pi,.1)--++(0,-.2) node[below, yshift=-2] {$\pi$};
+        \draw[black,thick] (2*pi,.1)--++(0,-.2) node[below, yshift=-2] {$2\pi$};
         \draw[samples=65, domain=0:2*pi, variable=\x, smooth,blue, thick, dashed] plot(\x,{ sin( deg( \x) });
         \draw[samples=65, domain=0:2*pi, variable=\x, smooth,red, very thick] plot(\x,{sin( deg( \x - pi/3 ) });
-        \draw[blue, <-] (1.1,1.)--++(-0.3,.5) node[above , yshift=-6,  fill=white, inner sep=1, scale=.8] {$y=\sin x$};
-        \draw[red, <-] (3.,1.1)--++(.2,.3) node[above right, yshift=-2, fill=white, inner sep=1, scale=.8] {$\displaystyle y=\sin \left(x- \frac{\pi}{3}\right)$};
-        \node[text=blue, scale=.8] at (pi,-2.7) {a. Step 1};
+        \draw[blue, <-,>=stealth'] (1.1,1.)--++(-0.1,.7) node[above , yshift=-6,  fill=white, inner sep=1] {$y=\sin(x$)};
+        \draw[red, <-,>=stealth'] (3.,1.1)--++(.2,.3) node[above right, yshift=-2, fill=white, inner sep=1] {$\displaystyle y=\sin \left(x- \frac{\pi}{3}\right)$};
+        \node[text=blue] at (pi,-2.7) {a. Step 1};
         \end{tikzpicture}]]>
     </latex-image></image>
     <image xml:id="fig-7-2-ctf"><description>horizontal compression of shifted sine</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [xscale=1, yscale=1]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.9]
         \draw[cyan] (0,-2) grid[xstep=pi/6, ystep=1/2] (2*pi,2);
-        \draw[black,thick,->,>=stealth'] (0,0)--(6.6,0) node[right, scale=.9]{$x$};
-        \draw[black,thick,->,>=stealth'] (0,-2)--(0,2.3) node[above, scale=.9]{$y$};
-        \foreach \y in {-1,1} \draw[black,thick] (.05,\y)--++(-.1,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
-        \draw[black,thick] (pi,.1)--++(0,-.2) node[below, yshift=-2, scale=.8] {$\pi$};
-        \draw[black,thick] (2*pi,.1)--++(0,-.2) node[below, yshift=-2, scale=.8] {$2\pi$};
+        \draw[black,thick,->,>=stealth'] (0,0)--(6.6,0) node[right]{$x$};
+        \draw[black,thick,->,>=stealth'] (0,-2)--(0,2.3) node[above]{$y$};
+        \foreach \y in {-1,1} \draw[black,thick] (.05,\y)--++(-.1,0) node[left, xshift=-2, fill=white, inner sep=1] {\y};
+        \draw[black,thick] (pi,.1)--++(0,-.2) node[below, yshift=-2] {$\pi$};
+        \draw[black,thick] (2*pi,.1)--++(0,-.2) node[below, yshift=-2] {$2\pi$};
         \draw[samples=65, domain=0:2*pi, variable=\x, smooth,red, very thick] plot(\x,{ sin(  deg( 2*\x - pi/3  });
         \draw[samples=65, domain=0:2*pi, variable=\x, smooth,blue, dashed, thick] plot(\x,{sin( deg( \x - pi/3 ) });
-        \draw[red, <-] (1.25,1.1)--++(0.1,.4) node[above , yshift=-6,  fill=white, inner sep=1, scale=.8] {$\displaystyle y=\sin \left(2x - \frac{\pi}{3}\right)$};
-        \draw[blue, <-] (3.,1.1)--++(.2,.3) node[above right, yshift=-2, fill=white, inner sep=1, scale=.8] {$\displaystyle y=\sin \left(x- \frac{\pi}{3}\right)$};
-        \node[text=blue, scale=.8] at (pi,-2.7) {b. Step 2};
+        \draw[red, <-,>=stealth] (1.25,1.1)--++(0.5,.8) node[above, xshift=2, yshift=-6, fill=white, inner sep=1] {$\displaystyle y=\sin \left(2x - \frac{\pi}{3}\right)$};
+        \draw[blue, <-,>=stealth] (3.,1.1)--++(.5,.3) node[right, xshift=5, yshift=4, fill=white, inner sep=1] {$\displaystyle y=\sin \left(x- \frac{\pi}{3}\right)$};
+        \node[text=blue] at (pi,-2.7) {b. Step 2};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
 
@@ -559,21 +536,19 @@ are transformations of the sine and cosine graphs.</p>
     </tabular></sidebyside>
 <sidebyside widths="45% 50%" valigns="middle middle"><p>Finally, plot the guidepoints and connect them with a sinusoidal curve.  The graph is shown at right.</p>   
     <image xml:id="exam7-2-3"><description>sinusoidal graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [xscale=1, yscale=.4]
+        <![CDATA[
+        \begin{tikzpicture} [xscale=.9, yscale=.36]
         \draw[cyan] (-pi,-6) grid[xstep=pi/6] (pi,2);
-        \draw[black,thick,->,>=stealth'] (-pi,0)--(3.4,0) node[right, scale=.9]{$x$};
-        \draw[black,thick,->,>=stealth'] (0,-6)--(0,2.4) node[above, scale=.9]{$y$};
-        \foreach \y in {-6,-4,-2,2} \draw[black,thick] (.05,\y)--++(-.1,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
-        \draw[black,thick] (-pi,.1)--++(0,-.2) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$-\pi$};
-        \draw[black,thick] (pi,.1)--++(0,-.2) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$\pi$};
-        \draw[black,thick] (-2*pi/3,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{-2\pi}{3}$};
-        \draw[black,thick] (-pi/3,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{-\pi}{3}$};
-        \draw[black,thick] (2*pi/3,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{2\pi}{3}$};
-        \draw[black,thick] (pi/3,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{\pi}{3}$};
+        \draw[black,thick,->,>=stealth'] (-pi,0)--(3.4,0) node[right]{$x$};
+        \draw[black,thick,->,>=stealth'] (0,-6)--(0,2.4) node[above]{$y$};
+        \foreach \y in {-6,-4,-2,2} \draw[black,thick] (.05,\y)--++(-.1,0) node[left, xshift=-2, fill=white, inner sep=1] {$\y$};
+        \draw[black,thick] (-pi,.1)--++(0,-.2) node[below, yshift=-4, fill=white, inner sep=1] {$-\pi$};
+        \draw[black,thick] (pi,.1)--++(0,-.2) node[below, yshift=-4, fill=white, inner sep=1] {$\pi$};
         \draw[green!80!black, very thick, dashed] (-pi,-2)--(pi,-2);
+        \draw[black,thick] (-2*pi/3,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1] {$\dfrac{-2\pi}{3}$};
+        \draw[black,thick] (-pi/3,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1] {$\dfrac{-\pi}{3}$};
+        \draw[black,thick] (2*pi/3,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1] {$\dfrac{2\pi}{3}$};
+        \draw[black,thick] (pi/3,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1] {$\dfrac{\pi}{3}$};
         \draw[samples=65, domain=-pi:pi, variable=\x, smooth,red] plot(\x,{ 4*cos( 3* deg( \x + pi/3))-2 });
         \draw[samples=65, domain=-pi/3:pi/3, variable=\x, smooth,blue, ultra thick] plot(\x,{ 4*cos( 3* deg( \x + pi/3))-2 });
         \end{tikzpicture}]]>
@@ -665,18 +640,16 @@ are transformations of the sine and cosine graphs.</p>
     </tabular></sidebyside>
     <sidebyside width="55%">
     <image xml:id="exer7-2-3ans"><description>sinusoidal function</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [xscale=1.6, yscale=.013]
+        <![CDATA[
+        \begin{tikzpicture} [xscale=1.7, yscale=.014]
         \draw[cyan] (-pi/4,0) grid[xstep=pi/16, ystep=25] (3*pi/4,200);
-        \draw[black,thick,->,>=stealth'] (-pi/4,0)--(2.6,0) node[right, scale=.9]{$x$};
-        \draw[black,thick,->,>=stealth'] (0,-10)--(0,220) node[above, scale=.9]{$y$};
-        \foreach \y in {50,100, 150,200} \draw[black,thick] (.05,\y)--++(-.1,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
-        \draw[black,thick] (pi/4,4)--++(0,-8) node[below] {$\frac{\pi}{4}$};
-        \draw[black,thick] (-pi/4,4)--++(0,-8) node[below] {$\frac{-\pi}{4}$};
-        \draw[black,thick] (pi/2,4)--++(0,-8) node[below] {$\frac{\pi}{2}$};
-        \draw[black,thick] (3*pi/4,4)--++(0,-8) node[below] {$\frac{3\pi}{4}$};
+        \draw[black,thick,->,>=stealth'] (-pi/4,0)--(2.6,0) node[right]{$x$};
+        \draw[black,thick,->,>=stealth'] (0,-10)--(0,220) node[above]{$y$};
+        \foreach \y in {50,100, 150,200} \draw[black,thick] (.05,\y)--++(-.1,0) node[left, xshift=-2, fill=white, inner sep=1] {\y};
+        \draw[black,thick] (pi/4,4)--++(0,-8) node[below] {$\dfrac{\pi}{4}$};
+        \draw[black,thick] (-pi/4,4)--++(0,-8) node[below] {$\dfrac{-\pi}{4}$};
+        \draw[black,thick] (pi/2,4)--++(0,-8) node[below] {$\dfrac{\pi}{2}$};
+        \draw[black,thick] (3*pi/4,4)--++(0,-8) node[below] {$\dfrac{3\pi}{4}$};
         \draw[samples=65, domain=-pi/4:3*pi/4, variable=\x, smooth,red, very thick] plot(\x,{150-25*cos( deg(4*\x-pi/2))});
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></li>
@@ -690,17 +663,15 @@ are transformations of the sine and cosine graphs.</p>
 <example><statement><p>Find a formula for the sinusoidal function whose graph is shown below.</p>
 <sidebyside width="55%">
     <image xml:id="exam7-2-4"><description>sinusoidal function</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
+        <![CDATA[
         \begin{tikzpicture} [xscale=.6, yscale=.2]
         \draw[cyan] (-pi,-6) grid[xstep=pi/6, ystep=2] (5*pi/2,6);
-        \draw[black,thick,->,>=stealth'] (-pi,0)--(8.2,0) node[right, scale=.9]{$x$};
-        \draw[black,thick,->,>=stealth'] (0,-6)--(0,6.7) node[above, scale=.9]{$y$};
-        \foreach \y in {-4,4} \draw[black,thick] (.05,\y)--++(-.1,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
-        \draw[black,thick] (-pi,0.1)--++(0,-.2) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$-\pi$};
-        \draw[black,thick] (pi,0.1)--++(0,-.2) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$\pi$};
-        \draw[black,thick] (2*pi,0.1)--++(0,-.2) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$2\pi$};
+        \draw[black,thick,->,>=stealth'] (-pi,0)--(8.2,0) node[right]{$x$};
+        \draw[black,thick,->,>=stealth'] (0,-6)--(0,6.9) node[above]{$y$};
+        \foreach \y in {-4,4} \draw[black,thick] (.05,\y)--++(-.1,0) node[left, xshift=-2, fill=white, inner sep=1] {$\y$};
+        \draw[black,thick] (-pi,0.1)--++(0,-.2) node[below, yshift=-4, fill=white, inner sep=1] {$-\pi$};
+        \draw[black,thick] (pi,0.1)--++(0,-.2) node[below, yshift=-4, fill=white, inner sep=1] {$\pi$};
+        \draw[black,thick] (2*pi,0.1)--++(0,-.2) node[below, yshift=-4, fill=white, inner sep=1] {$2\pi$};
         \draw[samples=65, domain=-pi:5*pi/2, variable=\x, smooth,red, very thick] plot(\x,{4*cos( deg(\x-pi/6))});
         \end{tikzpicture}]]>
     </latex-image></image>
@@ -715,17 +686,15 @@ as our formula for the function.</p></solution></example>
 
 <exercise><statement><sidebyside widths="45% 50%" valigns="middle middle"><p>Find a formula for the sinusoidal function whose graph is shown at right.</p>
     <image xml:id="exer7-2-4"><description>sinusoidal function</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [xscale=.6, yscale=.2]
+        <![CDATA[
+        \begin{tikzpicture} [xscale=.54, yscale=.18]
         \draw[cyan] (-pi,-6) grid[xstep=pi/4, ystep=2] (5*pi/2,6);
-        \draw[black,thick,->,>=stealth'] (-pi,0)--(8.2,0) node[right, scale=.9]{$x$};
-        \draw[black,thick,->,>=stealth'] (0,-6)--(0,6.7) node[above, scale=.9]{$y$};
-        \foreach \y in {-4,4} \draw[black,thick] (.05,\y)--++(-.1,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
-        \draw[black,thick] (-pi,0.1)--++(0,-.2) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$-\pi$};
-        \draw[black,thick] (pi,0.1)--++(0,-.2) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$\pi$};
-        \draw[black,thick] (2*pi,0.1)--++(0,-.2) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$2\pi$};
+        \draw[black,thick,->,>=stealth'] (-pi,0)--(8.3,0) node[right]{$x$};
+        \draw[black,thick,->,>=stealth'] (0,-6)--(0,6.9) node[above]{$y$};
+        \foreach \y in {-4,4} \draw[black,thick] (.05,\y)--++(-.1,0) node[left, xshift=-2, fill=white, inner sep=1] {$\y$};
+        \draw[black,thick] (-pi,0.1)--++(0,-.2) node[below, yshift=-4, fill=white, inner sep=1] {$-\pi$};
+        \draw[black,thick] (pi,0.1)--++(0,-.2) node[below, yshift=-4, fill=white, inner sep=1] {$\pi$};
+        \draw[black,thick] (2*pi,0.1)--++(0,-.2) node[below, yshift=-4, fill=white, inner sep=1] {$2\pi$};
         \draw[samples=65, domain=-pi:5*pi/2, variable=\x, smooth,red, very thick] plot(\x,{6*sin( deg(\x-pi/4))});
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></statement>
