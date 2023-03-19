@@ -147,28 +147,26 @@
 <answer> <p><ol marker="a">
     <li><m>P(t)=4000\cos\left(\dfrac{\pi}{6}t\right)+46,000</m></li>
     <li><m>t=\cos^{-1}\left( \dfrac{-1}{4} \right)\cdot\dfrac{6}{\pi}\approx3.48</m> months (Dec) or <m>t=12-\cos^{-1}\left( \frac{-1}{4} \right)\cdot\frac{6}{\pi}\approx 8.52</m> months (June)</li>
-    <li><sidebyside widths="40% 50%" valigns="middle middle">
-    <image xml:id="hp7-3-43ans"><description>sinusoidal graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [xscale=.35,yscale=.25]
-        \draw[cyan] (0,40) grid[ystep=1] (12,50);
-        \draw[black,thick,->,>=stealth'] (0,38.4)--++(12.7,0) node[right, scale=.9] {$t$};
-        \draw[black,thick,->,>=stealth'] (0,39.5)--++(0,11.9) node[above, scale=.9] {$P$};
-        \foreach \x in {1,2,...,12} \draw[black,thick] (\x,38.6)--++(0,-.4);
-        \foreach \x in {4,8,12} \draw[black,thick] (\x,38.7)--++(0,-.6) node[below, scale=.9] {\x};
-        \coordinate (O) at (0,39.5);
-        \draw[black] (O)--++(-.6, -.2)--++(1.2,-.2)--++(-1.2,-.2)--++(.6,-.2) -- ++(0, -.3);
-        \draw[black,thick] (.15,40)--++(-.3,0) node[left,scale=.9] {40,000};
-        \draw[black,thick] (.15,45)--++(-.3,0) node[left,scale=.9] {45,000};
-        \draw[black,thick] (.15,50)--++(-.3,0) node[left,scale=.9] {50,000};
-        \draw[samples=65,domain=0:12, variable=\t, smooth, red, thick] plot(\t, {( 46+4*cos(30*\t )});
-        \filldraw[blue] (3.48,45) ellipse(.25cm and .35cm) node[above right, yshift=2,scale=.9, fill=white, inner sep=1] {A};
-        \filldraw[blue] (8.52,45) ellipse(.25cm and .35cm) node[above left, yshift=2,scale=.9, fill=white, inner sep=1] {B};
-        \end{tikzpicture}]]>
-    </latex-image></image>
-    <p><m>P(t)</m> is less than 45,000 between <m>A</m> and <m>B</m>.</p></sidebyside></li>
+    <li><sidebyside widths="50% 45%" valigns="middle middle" margins="0% 0%">
+        <image xml:id="hp7-3-43ans"><description>sinusoidal graph</description><latex-image>
+            <![CDATA[
+            \begin{tikzpicture} [xscale=.35,yscale=.25]
+            \draw[cyan] (0,40) grid[ystep=1] (12,50);
+            \draw[black,thick,->,>=stealth'] (0,38.4)--++(12.7,0) node[right] {$t$};
+            \draw[black,thick,->,>=stealth'] (0,39.5)--++(0,11.9) node[above] {$P$};
+            \foreach \x in {1,2,...,12} \draw[black,thick] (\x,38.6)--++(0,-.4);
+            \foreach \x in {4,8,12} \draw[black,thick] (\x,38.7)--++(0,-.6) node[below] {$\x$};
+            \coordinate (O) at (0,39.5);
+            \draw[black] (O)--++(-.6, -.2)--++(1.2,-.2)--++(-1.2,-.2)--++(.6,-.2) -- ++(0, -.3);
+            \draw[black,thick] (.15,40)--++(-.3,0) node[left] {40,000};
+            \draw[black,thick] (.15,45)--++(-.3,0) node[left] {45,000};
+            \draw[black,thick] (.15,50)--++(-.3,0) node[left] {50,000};
+            \draw[samples=65,domain=0:12, variable=\t, smooth, red, thick] plot(\t, {( 46+4*cos(30*\t )});
+            \filldraw[blue] (3.48,45) ellipse(.25cm and .35cm) node[above right, yshift=2, fill=white, inner sep=1] {A};
+            \filldraw[blue] (8.52,45) ellipse(.25cm and .35cm) node[above left, yshift=2, fill=white, inner sep=1] {B};
+            \end{tikzpicture}]]>
+        </latex-image></image>
+        <p><m>P(t)</m> is less than 45,000 between <m>A</m> and <m>B</m>.</p></sidebyside></li>
 </ol></p></answer></exercise>
 
 <exercise number="44"><statement><p>The percent of the moon visible from earth is a sinusoidal function ranging from 0% to 100%, with a period of 29.5 days.</p>
@@ -188,23 +186,21 @@
 <answer><p><ol marker="a">
     <li><m>h(t)=11-10\cos\left(\dfrac{\pi}{30}t\right)</m></li>
     <li><m>t=\cos\left(-0.7 \right)\cdot \dfrac{30}{\pi}\approx 22.40</m> sec or <m>t=60-\cos\left(-0.7 \right)\cdot \dfrac{30}{\pi}\approx 37.60</m> sec</li>
-    <li><sidebyside widths="40% 50%" valigns="middle middle">
-    <image xml:id="hp7-3-45ans"><description>sinusoidal graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [xscale=.075,yscale=.1]
-        \draw[cyan] (0,0) grid[xstep=5,ystep=2] (60,22);
-        \draw[black,thick,->,>=stealth'] (0,0)--++(63,0) node[right, scale=.9] {$t$};
-        \draw[black,thick,->,>=stealth'] (0,0)--++(0,23.3) node[above, scale=.9] {$h$};
-        \foreach \x in {10,20,...,60} \draw[black,thick] (\x,.7)--++(0,-1.4) node[below, scale=.9] {\x};
-        \foreach \y in {10,20} \draw[black,thick] (1.5,\y)--++(-3,0) node[left,scale=.9] {\y};
-        \draw[samples=65,domain=0:60, variable=\t, smooth, red, thick] plot(\t, { 11-10*cos(6*\t )});
-        \filldraw[blue] (22.4,18) ellipse(.8cm and .6cm) node[above left, yshift=2,scale=.9, fill=white, inner sep=1] {A};
-        \filldraw[blue] (37.6,18) ellipse(.8cm and .6cm) node[above right, yshift=2,scale=.9, fill=white, inner sep=1] {B};
-        \end{tikzpicture}]]>
-    </latex-image></image>
-    <p>Delbert is above 18 m between <m>A</m> and <m>B</m>.</p></sidebyside></li>
+    <li><sidebyside widths="50% 45%" valigns="middle middle" margins="0% 0%">
+        <image xml:id="hp7-3-45ans"><description>sinusoidal graph</description><latex-image>
+            <![CDATA[
+            \begin{tikzpicture} [xscale=.075,yscale=.1]
+            \draw[cyan] (0,0) grid[xstep=5,ystep=2] (60,22);
+            \draw[black,thick,->,>=stealth'] (0,0)--++(63,0) node[right] {$t$};
+            \draw[black,thick,->,>=stealth'] (0,0)--++(0,23.3) node[above] {$h$};
+            \foreach \x in {10,20,...,60} \draw[black,thick] (\x,.7)--++(0,-1.4) node[below] {\x};
+            \foreach \y in {10,20} \draw[black,thick] (1.5,\y)--++(-3,0) node[left] {\y};
+            \draw[samples=65,domain=0:60, variable=\t, smooth, red, thick] plot(\t, { 11-10*cos(6*\t )});
+            \filldraw[blue] (22.4,18) ellipse(.8cm and .6cm) node[above left, yshift=2, fill=white, inner sep=1] {A};
+            \filldraw[blue] (37.6,18) ellipse(.8cm and .6cm) node[above right, yshift=2, fill=white, inner sep=1] {B};
+            \end{tikzpicture}]]>
+        </latex-image></image>
+        <p>Delbert is above 18 m between <m>A</m> and <m>B</m>.</p></sidebyside></li>
 </ol></p></answer></exercise>
         
 <exercise number="46"><statement><p>High tides occur every 12.2 hours at Point Lookout.  The depth of the water at the end of David's dock is 2.6 meters at high tide and 1.8 meters at low tide.</p> 

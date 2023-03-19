@@ -12,10 +12,8 @@
 <exercisegroup cols="2"><introduction><p>In Problems 1<ndash/>4, which functions have an inverse function?  Explain your answer.</p></introduction>  
 <exercise number="1"><statement><sidebyside width="60%">
     <image xml:id="hp8-2-1"><description>graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.6]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.4]
         \draw [cyan] (0,0) grid (6,6);
         \draw[black,thick,->,>=stealth'] (0,0)--(6.3,0) node[right]{$x$};
         \draw[black,thick,->,>=stealth'] (0,0)--(0,6.3) node[above]{$y$};
@@ -26,10 +24,8 @@
 
 <exercise number="2"><statement><sidebyside width="60%">
     <image xml:id="hp8-2-2"><description>transformed reciprocal function</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.5]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.32]
         \draw [cyan] (0,0) grid (8,8);
         \draw[black,thick,->,>=stealth'] (0,0)--(8.4,0) node[right]{$x$};
         \draw[black,thick,->,>=stealth'] (0,0)--(0,8.4) node[above]{$y$};
@@ -40,10 +36,8 @@
 
 <exercise number="3"><statement><sidebyside width="60%">
     <image xml:id="hp8-2-3"><description>graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.5]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.32]
         \draw [cyan] (-2,0) grid (6,8);
         \draw[black,thick,->,>=stealth'] (-2,0)--(6.4,0) node[right]{$x$};
         \draw[black,thick,->,>=stealth'] (0,0)--(0,8.4) node[above]{$y$};
@@ -54,10 +48,8 @@
 
 <exercise number="4"><statement><sidebyside width="60%">
     <image xml:id="hp8-2-4"><description>quartic graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.5]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.32]
         \draw [cyan] (-4,0) grid (4,8);
         \draw[black,thick,->,>=stealth'] (-4,0)--(4.4,0) node[right]{$x$};
         \draw[black,thick,->,>=stealth'] (0,0)--(0,8.4) node[above]{$y$};
@@ -73,18 +65,16 @@
 
 <answer><sidebyside>
     <image xml:id="hp8-2-5ans"><description>graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture}
+        <![CDATA[
+        \begin{tikzpicture}[scale=.8]
         \draw [cyan] (-pi,-2) grid[xstep=pi/4, ystep=1/2] (pi,2);
         \draw[black,thick,->,>=stealth'] (-pi,0)--(3.4,0) node[right]{$x$};
         \draw[black,thick,->,>=stealth'] (0,-2)--(0,2.3) node[above]{$y$};
-        \foreach \y in {-1,1} \draw[black,thick] (.15,\y)--++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.9] {$\y$};
-        \draw[black,thick] (-pi,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1, scale=.9] {$-\pi$};
-        \draw[black,thick] (-pi/2,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{-\pi}{2} $};
-        \draw[black,thick] (pi/2,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{\pi}{2} $};
-        \draw[black,thick] (pi,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1, scale=.9] {$\pi$};
+        \foreach \y in {-1,1} \draw[black,thick] (.15,\y)--++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1] {$\y$};
+        \draw[black,thick] (-pi,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1] {$-\pi$};
+        \draw[black,thick] (-pi/2,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1] {$\dfrac{-\pi}{2} $};
+        \draw[black,thick] (pi/2,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1] {$\dfrac{\pi}{2} $};
+        \draw[black,thick] (pi,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1] {$\pi$};
         \draw[samples=65,domain=-pi:pi, variable=\x, smooth, red, thick] plot (\x, { sin(deg(2*\x)) - cos(deg(\x)) });
         \end{tikzpicture}]]>
     </latex-image></image>
@@ -94,15 +84,14 @@
 
 <exercise number="7"><statement><p><m>G(x)=\sqrt{25-x^2}</m></p> </statement><answer><sidebyside width="90%">
     <image xml:id="hp8-2-7ans"><description>simicircle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
         <![CDATA[\tikzset{%
         }
-        \begin{tikzpicture} [scale=.5]
+        \begin{tikzpicture} [scale=.4]
         \draw [cyan] (-5,0) grid (5,5);
         \draw[black,thick,->,>=stealth'] (-5,0)--(5.8,0) node[right]{$x$};
         \draw[black,thick,->,>=stealth'] (0,-.3)--(0,5.8) node[above]{$y$};
-        \draw[black,thick] (.15,5)--++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.9] {$5$};
-        \foreach \x in {-5,5} \draw[black,thick] (\x,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1, scale=.9] {$\x$};
+        \draw[black,thick] (.15,5)--++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1] {$5$};
+        \foreach \x in {-5,5} \draw[black,thick] (\x,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1] {$\x$};
         \draw[red, thick] (5,0) arc (0:180:5);
         \end{tikzpicture}]]>
     </latex-image></image>
@@ -158,10 +147,8 @@
 
 <answer><sidebyside width="18%" margins="10% 50%">
     <image xml:id="hp8-2-21ans"><description>triangle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} 
+        <![CDATA[
+        \begin{tikzpicture} [scale=.9]
         \draw[blue] (2,0) rectangle ++(-.25,.25);
         \draw[black,thick] (0,0) -- (2,0) node[below, midway, xshift=2, text=blue] {500 yd};
         \draw[gray,thick] (2,0) --++(0,3) node[right, midway, text=blue] {$h$};
@@ -189,10 +176,8 @@
 
 <answer><sidebyside width="18%" margins="10% 50%">
     <image xml:id="hp8-2-23ans"><description>triangle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} 
+        <![CDATA[
+        \begin{tikzpicture} [scale=.9]
         \draw[blue] (0,0) rectangle ++(.25,-.25);
         \draw[black,thick] (0,0) -- (2,0) node[above, midway, xshift=2, text=blue] {50 ft};
         \draw[gray,thick] (0,0) --++(0,-3.5) node[left, midway, text=blue] {$d$};
@@ -220,17 +205,15 @@
 
 <answer><sidebyside width="25%" margins="10% 65%">
     <image xml:id="hp8-2-25ans"><description>triangles</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.8]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.45]
         \draw[blue] (5,0) rectangle ++(-.25,.25);
         \draw[black,thick] (0,0) -- (5,0) node[below, midway, xshift=2, text=blue] {$x$};
         \draw[gray,thick] (5,0) --++(0,1) node[right, midway, text=blue] {1 m};
         \draw[red, ultra thick] (5,1) --++(0,4) node[right, midway, text=blue] {4 m};
         \draw[gray,thick] (5,1)--(0,0)--(5,5);
-        \draw[red,thick] (2,0) arc(0:atan(1/5):2) node[right, midway] {$\alpha$};
-        \draw[red,thick] ({atan(1/5)}:1) arc({atan(1/5)}:45:1) node[above right, midway, yshift=-2] {$\beta$};
+        \draw[red,thick] (3,0) arc(0:atan(1/5):3) node[right, midway] {$\alpha$};
+        \draw[red,thick] ({atan(1/5)}:1.5) arc({atan(1/5)}:45:1.5) node[above right, midway, yshift=-2] {$\beta$};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
 <p><ol marker="a">
@@ -328,14 +311,12 @@
     </tabular></sidebyside>
     <sidebyside width="30%">
     <image xml:id="hp8-2-45"><description>grid</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=1.1]
+        <![CDATA[
+        \begin{tikzpicture} [scale=0.6]
         \draw[cyan] (-2,-pi) grid[xstep=1/2, ystep=pi/6] (2,pi);
-        \draw[black,thick,->,>=stealth'] (0,-pi)--(0,3.35) node[above, scale=.8]{$y$};
-        \draw[black,thick,->,>=stealth'] (-2,0)--(2.3,0) node[right, scale=.8]{$x$};
-        \foreach \x in {-2,-1,1,2} \draw[black,thick](\x,.1)--++(0,-.2) node[below, fill=white, inner sep=1, yshift=-2, scale=.8]{\x};
+        \draw[black,thick,->,>=stealth'] (0,-pi)--(0,3.4) node[above]{$y$};
+        \draw[black,thick,->,>=stealth'] (-2,0)--(2.3,0) node[right]{$x$};
+        \foreach \x in {-2,-1,1,2} \draw[black,thick](\x,.1)--++(0,-.2) node[below, fill=white, inner sep=1, yshift=-2]{$\x$};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></statement>       
     
@@ -365,16 +346,14 @@
         <cell><m>0 </m></cell></row>
     </tabular>        
     <image xml:id="hp8-2-45ans"><description>arccosine</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.6]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.54]
         \draw[cyan] (-2,0) grid[xstep=1/2, ystep=pi/6] (2,pi);
-        \draw[black,thick,->,>=stealth'] (0,-.2)--(0,3.35) node[above, scale=.8]{$y$};
-        \draw[black,thick] (.1,pi)--++(-.2,0) node [left, xshift=-2, fill=white, inner sep=1, scale=.8] {$\pi$};
-        \draw[black,thick] (.1,pi/2)--++(-.2,0) node [left, xshift=-2, fill=white, inner sep=1] {$\frac{\pi}{2}$};
-        \draw[black,thick,->,>=stealth'] (-2,0)--(2.3,0) node[right, scale=.8]{$x$};
-        \foreach \x in {-2,-1,1,2} \draw[black,thick](\x,.1)--++(0,-.2) node[below, fill=white, inner sep=1, yshift=-2, scale=.8]{\x};
+        \draw[black,thick,->,>=stealth'] (0,-.2)--(0,3.4) node[above]{$y$};
+        \draw[black,thick] (.1,pi)--++(-.2,0) node [left, xshift=-2, fill=white, inner sep=1] {$\pi$};
+        \draw[black,thick] (.1,pi/2)--++(-.2,0) node [left, xshift=-2, fill=white, inner sep=1] {$\dfrac{\pi}{2}$};
+        \draw[black,thick,->,>=stealth'] (-2,0)--(2.4,0) node[right]{$x$};
+        \foreach \x in {-2,-1,1,2} \draw[black,thick](\x,.1)--++(0,-.2) node[below, fill=white, inner sep=1, yshift=-2]{$\x$};
         \draw[samples=65, variable=\x,domain=0:pi, smooth, red, thick] plot ({cos(deg(\x))},\x);
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></answer></exercise>
@@ -404,7 +383,15 @@
         <cell><m>\hphantom{0000}</m></cell></row>
     </tabular></sidebyside>
     <sidebyside width="30%">
-        <image source="photos/hp8-2-45"><description>grid</description></image></sidebyside></statement></exercise>
+        <image xml:id="hp8-2-46"><description>grid</description><latex-image>
+            <![CDATA[
+            \begin{tikzpicture} [scale=0.6]
+            \draw[cyan] (-2,-pi) grid[xstep=1/2, ystep=pi/6] (2,pi);
+            \draw[black,thick,->,>=stealth'] (0,-pi)--(0,3.4) node[above]{$y$};
+            \draw[black,thick,->,>=stealth'] (-2,0)--(2.3,0) node[right]{$x$};
+            \foreach \x in {-2,-1,1,2} \draw[black,thick](\x,.1)--++(0,-.2) node[below, fill=white, inner sep=1, yshift=-2]{$\x$};
+            \end{tikzpicture}]]>
+        </latex-image></image></sidebyside></statement></exercise>
 
 <exercise number="47"><statement><sidebyside width="75%" margins="0% 20%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
     <row bottom="minor">
@@ -428,12 +415,10 @@
     </tabular></sidebyside>
     <sidebyside width="45%">
     <image xml:id="hp8-2-47"><description>grid</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture}
+        <![CDATA[
+        \begin{tikzpicture}[scale=0.6]
         \draw[cyan] (-4,-pi) grid[xstep=1/2, ystep=pi/6] (4,pi);
-        \draw[black,thick,->,>=stealth'] (0,-pi)--(0,3.35) node[above]{$y$};
+        \draw[black,thick,->,>=stealth'] (0,-pi)--(0,3.4) node[above]{$y$};
         \draw[black,thick,->,>=stealth'] (-4,0)--(4.3,0) node[right]{$x$};
         \foreach \x in {-2,2,-4,4} \draw[black,thick](\x,.1)--++(0,-.2) node[below, fill=white, inner sep=1, yshift=-2]{$\x$};
         \end{tikzpicture}]]>
@@ -462,10 +447,8 @@
     </row>
     </tabular>        
     <image xml:id="hp8-2-47ans"><description>arctangent</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.65]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.5]
         \draw[cyan] (-4,-pi/2) grid[xstep=1/2, ystep=pi/6] (4,pi/2);
         \draw[black,thick,->,>=stealth'] (0,-pi/2)--(0,1.8) node[above]{$y$};
         \draw[black,thick,->,>=stealth'] (-4,0)--(4.3,0) node[right]{$x$};
@@ -638,6 +621,7 @@
 
 <answer><p><ol marker="a">
     <li><p>Domain: <m>-1\le x \le 1</m>, range: <m>\left\{\dfrac{\pi}{2}\right\} </m></p></li>
+    <li><p>Let <m>\theta=\sin^{-1}(x)</m>. Then <m>x=\sin(\theta)= \cos\left(\dfrac{\pi}{2} - \theta \right)  </m> and <m>\cos^{-1}(x)= \dfrac{\pi}{2} - \theta </m>. So <m>~\sin^{-1}(x)+\cos^{-1}(x) = \theta + \left(\dfrac{\pi}{2} - \theta\right) = \dfrac{\pi}{2} </m> .</p></li>
 </ol></p></answer></exercise>
 
 <exercise number="72"><statement><p>Use your calculator to graph <m>~y=\tan^{-1}(x)+\tan^{-1}\left(\dfrac{1}{x}\right)</m>.<ol marker="a">
@@ -655,20 +639,18 @@
         <li>Combine your answers to (a) and (b) to write an expression for the area of the sector in terms of <m>t</m>.</li>
     </ol></p>
     <image xml:id="hp8-2-73"><description>unit circle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=1.5]
+        <![CDATA[
+        \begin{tikzpicture} [scale=1.3]
         \def\th{55};
         \coordinate (A) at ({\th}:1);
         \coordinate (B) at ($ cos(\th) *(1,0) $);
         \draw[blue] (B) rectangle ++(-.15,.15);
         \filldraw[cyan!50!white] (0,0)--(A) arc({\th}:90:1)--(0,0);
-        \draw[black,thick,->,>=stealth'] (-1.2,0)--(1.3,0) node[below left, xshift = -2, scale=.9] {1};
-        \draw[black,thick,->,>=stealth'] (0,-1.2)--(0,1.3) node[below left, scale=.9] {1};
+        \draw[black,thick,->,>=stealth'] (-1.2,0)--(1.3,0) node[below left, xshift = -2] {1};
+        \draw[black,thick,->,>=stealth'] (0,-1.2)--(0,1.3) node[below left] {1};
         \draw[black,thick] (0,0) circle (1cm);
-        \draw[red,thick] ({\th}:0.3) arc({\th}:90:0.3) node[above right,scale=.9] {$\theta$};
-        \draw[gray,thick] (A)--(B) node[below, text=black, scale=.9] {$t$};
+        \draw[red,thick] ({\th}:0.3) arc({\th}:90:0.3) node[above right] {$\theta$};
+        \draw[gray,thick] (A)--(B) node[below, text=black] {$t$};
         \draw[gray,thick] (A)--(0,0);
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></statement>
@@ -686,20 +668,18 @@
     <li>Combine your answers to (b) and to Problem 73 to write an expression for the area bounded above by the upper semicircle, below by the <m>x</m>-axis, on the left by the <m>y</m>-axis, and on the right by <m>x=t</m>, when <m>0 \le t \le 1</m>.</li>
     </ol></p>
     <image xml:id="hp8-2-74"><description>unit circle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=1.5]
+        <![CDATA[
+        \begin{tikzpicture} [scale=1.3]
         \def\th{55};
         \coordinate (A) at ({\th}:1);
         \coordinate (B) at ($ cos(\th) *(1,0) $);
         \filldraw[cyan!50!white] (0,0)--(A)--(B) --(0,0);
         \draw[blue] (B) rectangle ++(-.15,.15);
-        \draw[black,thick,->,>=stealth'] (-1.2,0)--(1.3,0) node[below left, xshift = -2, scale=.9] {1};
-        \draw[black,thick,->,>=stealth'] (0,-1.2)--(0,1.3) node[below left, scale=.9] {1};
+        \draw[black,thick,->,>=stealth'] (-1.2,0)--(1.3,0) node[below left, xshift = -2] {1};
+        \draw[black,thick,->,>=stealth'] (0,-1.2)--(0,1.3) node[below left] {1};
         \draw[black,thick] (0,0) circle (1cm);
-        \draw[red,thick] ({\th}:0.3) arc({\th}:90:0.3) node[above right,scale=.9] {$\theta$};
-        \draw[gray,thick] (A)--(B) node[below, text=black, scale=.9] {$t$};
+        \draw[red,thick] ({\th}:0.3) arc({\th}:90:0.3) node[above right] {$\theta$};
+        \draw[gray,thick] (A)--(B) node[below, text=black] {$t$};
         \draw[gray,thick] (A)--(0,0);
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></statement></exercise>

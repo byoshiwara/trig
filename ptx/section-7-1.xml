@@ -47,7 +47,26 @@
 <exercise><statement><p>Compare the graphs of <m>f(x)=3\cos (x)</m> and <m>g(x)=-3\cos (x)</m> with the graph of <m>y=\cos (x)</m>.</p></statement>
 
 <answer><p>Both graphs have amplitude 3. The graph of <m>g(x)=-3\cos (x)</m> is reflected about the <m>x</m>-axis.
-</p></answer></exercise>
+</p>
+<image xml:id="ex7-1-1ans" width="60%"><description>cosines</description><latex-image>
+    <![CDATA[
+    \begin{tikzpicture} [scale=0.5]
+    \draw[cyan] (-2*pi,-3) grid[xstep=pi/4, ystep=1] (2*pi,3);
+    \draw[black,thick,->,>=stealth'](-2*pi,0)--(6.6,0) node[right]{$x$};
+    \draw[black,thick,->,>=stealth'](0,-3)--(0,3.5) node[above]{$y$};
+    \foreach \y in {-3,-2,-1,1,2,3} \draw[black,thick] (0.08,\y)--++(-.16,0) node[left]{\y};
+    \draw[black,thick] (pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white,inner sep=1] {$\pi$};
+    \draw[black,thick] (2*pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1] {$2\pi$};
+    \draw[black,thick] (-pi,.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1] {$-\pi$};
+    \draw[black,thick] (-2*pi,.08)--++(0,-.16) node[below, yshift=-4, fill=white, inner sep=1] {$-2\pi$};
+    \draw[samples=65, domain=-2*pi:2*pi, variable=\x, smooth,red, very thick] plot(\x,{cos(deg(\x))});
+    \draw[samples=65, domain=-2*pi:2*pi, variable=\x, smooth, blue, very thick] plot(\x,{-3*cos(deg(\x))});
+    \draw[samples=65, domain=-2*pi:2*pi, variable=\x, smooth, green!70!black, very thick] plot(\x,{3*cos(deg(\x))});
+    \draw[red, <-,>=stealth'] (0.9,.9)--(1.5,3.1) node[above right, xshift=-2, yshift=-1] {$y=\cos(x)$};
+    \draw[blue, <-,>=stealth'] (-pi,3.1)--+(-.1,.6) node[above, xshift=-2, yshift=-3] {$y=-3\cos(x)$};
+    \draw[green!70!black, <-,>=stealth']  (pi,-3.1)--+(.1,-.6) node[below, xshift=2, yshift=3] {$y=3\cos(x)$};
+    \end{tikzpicture}]]>
+</latex-image></image></answer></exercise>
 
 <p>Next, we'll consider changes in the period of the graph.</p>
 

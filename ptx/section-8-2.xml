@@ -106,80 +106,74 @@ so <m>~~y = \dfrac{1}{x} + 3.~~</m></p>
 <subsection><title>The Graph of the Inverse</title>
 <idx><h>inverse</h><h>graph of</h></idx>
 
-<p>	If we graph the function <m>f(x)=x^3</m> and  its inverse <m>f^{-1}(x)=\sqrt[3]{x}</m> on the same set of axes, we see that the graphs are related in an interesting way, as shown below.</p>
+<p> If we graph the function <m>f(x)=x^3</m> and  its inverse <m>f^{-1}(x)=\sqrt[3]{x}</m> on the same set of axes, we see that the graphs are related in an interesting way, as shown below.</p>
 
- <sidebyside widths="50% 50%" valigns="middle middle"><stack><p>The graphs are symmetric about the line <m>y=x</m>, which means that if we were to place a mirror along the line each graph would be the reflection of the other.</p>
- <p>This symmetry occurs because we interchanged the roles of <m>x</m> and <m>y</m> when we defined the inverse function.</p></stack>  
+<sidebyside widths="50% 50%" valigns="middle middle"><stack><p>The graphs are symmetric about the line <m>y=x</m>, which means that if we were to place a mirror along the line each graph would be the reflection of the other.</p>
+<p>This symmetry occurs because we interchanged the roles of <m>x</m> and <m>y</m> when we defined the inverse function.</p></stack>  
     <image xml:id="fig-8-2-2"><description>graph of inverse</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.6]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.54]
         \draw[cyan] (-4,-4) grid (4,4);
-        \draw[black,thick,->,>=stealth'] (-4,0)--(4.3,0) node[right, scale=.9] {$x$};
-        \draw[black,thick,->,>=stealth'] (0,-4)--(0,4.3) node[above, scale=.9] {$y$};
+        \draw[black,thick,->,>=stealth'] (-4,0)--(4.4,0) node[right] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-4)--(0,4.4) node[above] {$y$};
         \foreach \x in {-4, -2, 2, 4} {
-          \draw[black,thick] (\x, .08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {\x};
-          \draw[black,thick] ( .08,\x)--++(-.16,0) node[below, xshift=-2, fill=white, inner sep=1, scale=.8] {\x};
+            \draw[black,thick] (\x, .08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1]{$\x$};
+            \draw[black,thick] ( .08,\x)--++(-.16,0) node[below, xshift=-2, fill=white, inner sep=1]{$\x$};
         };
         \draw[gray!80!, thick, dashed] (-4,-4)--(4,4) node[above right, text=black] {$y=x$};
         \draw[samples=65, domain=0:4, variable=\x, smooth, red, thick] plot (-\x, {-(\x)^(1/3)});
-        \draw[samples=65, domain={-4^(1/3)}:{4^(1/3)}, variable=\x, smooth, blue,thick,densely dashed] plot (\x, {(\x)^3}) node[above, scale=.9] {$f(x)=x^3$};
+        \draw[samples=65, domain={-4^(1/3)}:{4^(1/3)}, variable=\x, smooth, blue,thick,densely dashed] plot (\x, {(\x)^3}) node[above] {$f(x)=x^3$};
         \draw[samples=65, domain=0:4, variable=\x, smooth, red, thick] plot (-\x, {-(\x)^(1/3)});
-        \draw[samples=65, domain=0:4, variable=\x, smooth, red, thick] plot (\x, {(\x)^(1/3)}) node[right, scale=.9] {$f^{-1}(x)=\sqrt[3]{x}$};
+        \draw[samples=65, domain=0:4, variable=\x, smooth, red, thick] plot (\x, {(\x)^(1/3)}) node[right] {$f^{-1}(x)=\sqrt[3]{x}$};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
 
 <p>Note that, for this example, both graphs pass the vertical line test, so they are both graphs of functions.</p>
 
 <example><statement><p><ol marker="a">
-	<li>Graph the function <m>f(x)=\dfrac{1}{x-3}</m> and its inverse <m>f^{-1}(x)=\dfrac{1}{x} + 3</m> on the same grid, and sketch in the line <m>y=x</m> to illustrate the symmetry.</li>
-	<li>Find the domain and range of <m>f</m>, and the domain and range of <m>f^{-1}</m>.</li>
+    <li>Graph the function <m>f(x)=\dfrac{1}{x-3}</m> and its inverse <m>f^{-1}(x)=\dfrac{1}{x} + 3</m> on the same grid, and sketch in the line <m>y=x</m> to illustrate the symmetry.</li>
+    <li>Find the domain and range of <m>f</m>, and the domain and range of <m>f^{-1}</m>.</li>
 </ol></p></statement>
 
 <solution> <p><ol marker="a">
-	<li><sidebyside widths=" 50% 45%" valigns="middle middle"><p>The graph is shown at right. Note that <m>f</m> has a vertical asymptote at <m>x=3</m>, and <m>f^{-1}</m> has a horizontal asymptote at <m>y=3</m>.</p>
+    <li><sidebyside widths=" 50% 45%" valigns="middle middle" margins="0% 0%"><p>The graph is shown at right. Note that <m>f</m> has a vertical asymptote at <m>x=3</m>, and <m>f^{-1}</m> has a horizontal asymptote at <m>y=3</m>.</p>
     <image xml:id="exam8-2-2"><description>graph of inverse</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.45]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.4]
         \draw[cyan] (-3,-3) grid (7,7);
-        \draw[black,thick,->,>=stealth'] (-3,0)--(7.3,0) node[right, scale=.9] {$x$};
-        \draw[black,thick,->,>=stealth'] (0,-3)--(0,7.3) node[above, scale=.9] {$y$};
+        \draw[black,thick,->,>=stealth'] (-3,0)--(7.4,0) node[right] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-3)--(0,7.4) node[above] {$y$};
         \foreach \x in { -2, 2, 4,6} {
-          \draw[black,thick] (\x, .08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {\x};
-          \draw[black,thick] ( .08,\x)--++(-.16,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\x};
+            \draw[black,thick] (\x, .08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1]{$\x$};
+            \draw[black,thick] ( .08,\x)--++(-.16,0) node[left, xshift=-2, fill=white, inner sep=1]{$\x$};
         };
         \draw[gray!80!, thick, dashed] (-3,-3)--(7,7) node[above right, xshift=-.3cm, text=black] {$y=x$};
         \draw[samples=65, domain=-3:{3-1/3}, variable=\x, smooth, blue, thick, densely dashed] plot (\x, {1/(\x-3)});
-        \draw[samples=65, domain=7:{3+1/7)}, variable=\x, smooth, blue,thick,densely dashed] plot (\x, {1/(\x-3)}) node[above, scale=.9] {$f(x)$};
+        \draw[samples=65, domain=7:{3+1/7)}, variable=\x, smooth, blue,thick,densely dashed] plot (\x, {1/(\x-3)}) node[above] {$f(x)$};
         \draw[samples=65, domain=-3:-1/6, variable=\x, smooth, red, thick] plot (\x, {1/(\x) +3 });
-        \draw[samples=65, domain=1/4:7, variable=\x, smooth, red, thick] plot (\x, {1/(\x) +3}) node[right, scale=.9] {$f^{-1}(x)$};
+        \draw[samples=65, domain=1/4:7, variable=\x, smooth, red, thick] plot (\x, {1/(\x) +3}) node[right] {$f^{-1}(x)$};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></li>
     <li><p>Note that <m>f</m> is undefined at <m>x=3</m>, and <m>f^{-1}</m> is undefined at <m>x=0</m>. Thus, the domain of <m>f</m> is all real numbers except 3, and the domain of <m>f^{-1}</m> is all real numbers except 0.</p>
     
     <p> We can find the range of each function by examining its graph: 
     <ul>
-	   <li><m>f</m> has a horizontal asymptote at <m>y=0</m>, so there is no point on the graph with <m>y=0</m>. Its range is all real numbers except 0.</li>
-	   <li>Similarly, there is no point on the graph of <m>f^{-1}</m> with <m>y=3</m>, so its range is all real numbers except 3.</li></ul></p>
+        <li><m>f</m> has a horizontal asymptote at <m>y=0</m>, so there is no point on the graph with <m>y=0</m>. Its range is all real numbers except 0.</li>
+        <li>Similarly, there is no point on the graph of <m>f^{-1}</m> with <m>y=3</m>, so its range is all real numbers except 3.</li></ul></p>
     </li></ol></p></solution></example>
 
 <exercise><statement><p><ol marker="a">
-    <li><sidebyside widths="50% 33%" valigns="middle middle">
+    <li><sidebyside widths="50% 40%" valigns="middle middle" margins="0% 0%">
     <p>Graph <m>g(x)=2x-6</m> and its inverse function on the grid at right, and sketch in the line <m>y=x</m> to show the symmetry.</p>
-     <image xml:id="fig-8grid"><description>grid</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=0.3]
+    <image xml:id="fig-8grid"><description>grid</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture} [scale=0.27]
         \draw[cyan] (-8,-8) grid (8,8);
-        \draw[black,thick,->,>=stealth'] (-8,0)--(8.5,0) node[right, scale=.9] {$x$};
-        \draw[black,thick,->,>=stealth'] (0,-8)--(0,8.5) node[above, scale=.9] {$y$};
+        \draw[black,thick,->,>=stealth'] (-8,0)--(8.7,0) node[right] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-8)--(0,8.7) node[above] {$y$};
         \foreach \x in {-8,-4,4,8} {
-          \draw[black,thick] (\x,0.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1] {\x};
-          \draw[black,thick] (0.1,\x)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1] {\x};
+            \draw[black,thick] (\x,0.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1]{$\x$};
+            \draw[black,thick] (0.1,\x)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1]{$\x$};
         };
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></li>
@@ -187,24 +181,22 @@ so <m>~~y = \dfrac{1}{x} + 3.~~</m></p>
 </ol></p></statement>
 
 <answer><p><ol marker="a" cols="2">
-    <li><sidebyside width="80%" margins="0% 0%" valigns="middle middle">
-    <image xml:id="exer8-2-2ans"><description>linear function and inverse</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=0.3]
+    <li>
+    <image xml:id="exer8-2-2ans" width="90%" margins="0% 10%"><description>linear function and inverse</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture} [scale=0.24]
         \draw[cyan] (-8,-8) grid (8,8);
         \draw[black,thick,->,>=stealth'] (-8,0)--(8.5,0) node[right] {$x$};
         \draw[black,thick,->,>=stealth'] (0,-8)--(0,8.5) node[above] {$y$};
         \foreach \x in {-8,-4,4,8} {
-          \draw[black,thick] (\x,0.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1] {\x};
-          \draw[black,thick] (0.1,\x)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1] {\x};
+            \draw[black,thick] (\x,0.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1] {$\x$};
+            \draw[black,thick] (0.1,\x)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1] {$\x$};
         };
         \draw[gray!80!, thick, dashed] (8,8)--(-8,-8);
         \draw[blue, densely dashed,thick] (-1,-8)--(7,8);
         \draw[red, thick] (-8,-1)--(8,7);
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></li>
+    </latex-image></image></li>
     <li><p>The domain and range of <m>g</m> and <m>g^{-1} </m> each include all real numbers </p></li>
 </ol></p></answer></exercise>
 
@@ -219,25 +211,23 @@ so <m>~~y = \dfrac{1}{x} + 3.~~</m></p>
 <subsection><title>Does Every Function Have an Inverse?</title>
 
 <p>	In the examples above, the inverse of the function turned out to be a function as well. But this is not always the case. Consider the function <m>F(x)=x^2 - 4</m>. First we'll find a formula for the inverse. We interchange <m>x</m> and <m>y</m> and solve for <m>y</m>:</p>
-<sidebyside widths=" 55% 35%" valigns="middle middle">
-	<p><md><mrow>x \amp = y^2 - 4</mrow>
-		<mrow>y^2 \amp = x-4</mrow>
-		<mrow>y \amp = \pm \sqrt{x-4}</mrow></md>
+<sidebyside widths=" 55% 35%" valigns="middle middle" margins="0% 5%">
+    <p><md><mrow>x \amp = y^2 - 4</mrow>
+        <mrow>y^2 \amp = x-4</mrow>
+        <mrow>y \amp = \pm \sqrt{x-4}</mrow></md>
 The graphs of <m>F</m> and its inverse are shown at right. You can see that although <m>F</m> is a function, its inverse is not.</p>
     <image xml:id="fig-8-2-3"><description>function and inverse</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=1/2]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.32]
         \draw[cyan] (-6,-6) grid (6,6);
-        \draw[black,thick,->,>=stealth'] (-6,0)--(6.4,0) node[right, scale=.9] {$x$};
-        \draw[black,thick,->,>=stealth'] (0,-6)--(0,6.4) node[above, scale=.9] {$y$};
+        \draw[black,thick,->,>=stealth'] (-6,0)--(6.4,0) node[right] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-6)--(0,6.4) node[above] {$y$};
         \foreach \x in {-6,-4,-2,2,4,6} {
-          \draw[black,thick] (\x,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {\x};
-          \draw[black,thick] (.1,\x)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\x};
+            \draw[black,thick] (\x,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1] {$\x$};
+            \draw[black,thick] (.1,\x)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1] {$\x$};
         };
-        \draw[domain={-sqrt(10)}:{sqrt(10)},smooth, blue, thick, densely dashed] plot (\x, {(\x)^2-4}) node[above, scale=.8] {$F$};
-        \draw[domain={-sqrt(10)}:{sqrt(10)},smooth, red, thick] plot ( {(\x)^2-4}, \x) node[right, scale=.8] {$F^{-1}$};
+        \draw[domain={-sqrt(10)}:{sqrt(10)},smooth, blue, thick, densely dashed] plot (\x, {(\x)^2-4}) node[above] {$F$};
+        \draw[domain={-sqrt(10)}:{sqrt(10)},smooth, red, thick] plot ( {(\x)^2-4}, \x) node[right] {$F^{-1}$};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
 
@@ -254,101 +244,97 @@ The graphs of <m>F</m> and its inverse are shown at right. You can see that alth
 <p>A function <m>f</m> has an <term>inverse function</term> if and only if <m>f</m> is one-to-one.</p></assemblage>
 
 <example><statement><p><ol marker="a">
-	<li>Which of the graphs below represent functions?</li>
-	<li>Which of the functions are one-to-one?</li>
-	<li>Which of these functions have inverse functions?</li>
+    <li>Which of the graphs below represent functions?</li>
+    <li>Which of the functions are one-to-one?</li>
+    <li>Which of these functions have inverse functions?</li>
 </ol></p>
 <sidebyside width="85%">
     <image xml:id="exam8-2-3"><description>three graphs</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
+        <![CDATA[
         \begin{tikzpicture} [scale=.2]
         \draw[cyan] (-8,-8) grid[step=2] (8,8);
-        \draw[black,thick,->,>=stealth] (-8,0)--++(16.9,0) node[right, scale=.8] {$x$};
-        \draw[black,thick,->,>=stealth'] (0,-8)--++(0,16.9) node[above, scale=.8] {$y$};;
+        \draw[black,thick,->,>=stealth] (-8,0)--++(16.9,0) node[right] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-8)--++(0,16.9) node[above] {$y$};;
         \foreach \x in {-8,-4,4,8}{
-          \draw[black,thick] (\x,.4)--++(0,-.8) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {\x};
-          \draw[black,thick] (.4,\x)--++(-.8,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\x};
+            \draw[black,thick] (\x,.4)--++(0,-.8) node[below, yshift=-2, fill=white, inner sep=1] {$\x$};
+            \draw[black,thick] (.4,\x)--++(-.8,0) node[left, xshift=-2, fill=white, inner sep=1] {$\x$};
         };
-        \node[scale=.8] at (0,-11) {I};
+        \node at (0,-11) {I};
         \draw[domain=-8:{-1/sqrt(8)}, variable=\x, smooth, red, thick] plot (\x,{1/(\x)^2});
         \draw[domain={1/sqrt(8)}:8, variable=\x, smooth, red, thick] plot (\x,{1/(\x)^2});
 
         %second grid
         \def\del{20};
         \draw[cyan] ($ (\del,0)+(-8,-8)$) grid[step=2] ($ (\del,0)+(8,8)$);
-        \draw[black,thick,->,>=stealth] ($ (\del,0)+(-8,0)$)--++(16.9,0) node[right, scale=.8] {$x$};
-        \draw[black,thick,->,>=stealth'] ($ (\del,0)+(0,-8)$)--++(0,16.9) node[above, scale=.8] {$y$};;
+        \draw[black,thick,->,>=stealth] ($ (\del,0)+(-8,0)$)--++(16.9,0) node[right] {$x$};
+        \draw[black,thick,->,>=stealth'] ($ (\del,0)+(0,-8)$)--++(0,16.9) node[above] {$y$};;
         \foreach \x in {-8,-4,4,8}{
-          \draw[black,thick] ($ (\del,0)+(\x,.4)$)--++(0,-.8) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {\x};
-          \draw[black,thick] ($ (\del,0)+(.4,\x)$)--++(-.8,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\x};
+            \draw[black,thick] ($ (\del,0)+(\x,.4)$)--++(0,-.8) node[below, yshift=-2, fill=white, inner sep=1] {$\x$};
+            \draw[black,thick] ($ (\del,0)+(.4,\x)$)--++(-.8,0) node[left, xshift=-2, fill=white, inner sep=1] {$\x$};
         };
-        \node[scale=.8] at ($ (\del,0)+(0,-11)$) {II};
+        \node at ($ (\del,0)+(0,-11)$) {II};
         \draw[,domain={-6}:{8}, variable=\x, smooth, red, thick] plot ({\x+\del},{sqrt(\x+6)});
 
         %third grid
         \def\del{40};
         \draw[cyan] ($ (\del,0)+(-8,-8)$) grid[step=2] ($ (\del,0)+(8,8)$);
-        \draw[black,thick,->,>=stealth] ($ (\del,0)+(-8,0)$)--++(16.9,0) node[right, scale=.8] {$x$};
-        \draw[black,thick,->,>=stealth'] ($ (\del,0)+(0,-8)$)--++(0,16.9) node[above, scale=.8] {$y$};;
+        \draw[black,thick,->,>=stealth] ($ (\del,0)+(-8,0)$)--++(16.9,0) node[right] {$x$};
+        \draw[black,thick,->,>=stealth'] ($ (\del,0)+(0,-8)$)--++(0,16.9) node[above] {$y$};;
         \foreach \x in {-8,-4,4,8}{
-          \draw[black,thick] ($ (\del,0)+(\x,.4)$)--++(0,-.8) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {\x};
-          \draw[black,thick] ($ (\del,0)+(.4,\x)$)--++(-.8,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\x};
+            \draw[black,thick] ($ (\del,0)+(\x,.4)$)--++(0,-.8) node[below, yshift=-2, fill=white, inner sep=1] {$\x$};
+            \draw[black,thick] ($ (\del,0)+(.4,\x)$)--++(-.8,0) node[left, xshift=-2, fill=white, inner sep=1] {$\x$};
         };
-        \node[scale=.8] at ($ (\del,0)+(0,-11)$) {III};
+        \node at ($ (\del,0)+(0,-11)$) {III};
         \draw[samples=65,domain={-2.23}:{6.525}, variable=\x, smooth, red, thick] plot ({\x+\del},{(\x+1)*(\x-4)^2 /6});
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></statement>
 
 <solution><p><ol marker="a">
-	<li>All three graphs pass the vertical line test, so all three represent functions.</li>
-	<li>Only the function represented by graph II passes the horizontal line test, so it is the only one-to-one function.</li>
-	<li>Only function II is one-to-one, so it is the only function that has an inverse function.</li>
+    <li>All three graphs pass the vertical line test, so all three represent functions.</li>
+    <li>Only the function represented by graph II passes the horizontal line test, so it is the only one-to-one function.</li>
+    <li>Only function II is one-to-one, so it is the only function that has an inverse function.</li>
 </ol></p></solution></example>
 
 <exercise><statement><p>Which of the functions below are one-to-one?</p>
 <sidebyside width="85%">
     <image xml:id="exer8-2-3"><description>three graphs</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
+        <![CDATA[
         \begin{tikzpicture} [scale=.27]
         \draw[cyan] (-6,-6) grid[step=1] (6,6);
-        \draw[black,thick,->,>=stealth] (-6,0)--++(12.6,0) node[right, scale=.8] {$x$};
-        \draw[black,thick,->,>=stealth'] (0,-6)--++(0,12.6) node[above, scale=.8] {$y$};;
+        \draw[black,thick,->,>=stealth] (-6,0)--++(12.6,0) node[right] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-6)--++(0,12.6) node[above] {$y$};;
         \foreach \x in {-6,-4,-2,2,4,6}{
-          \draw[black,thick] (\x,.4)--++(0,-.8) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {\x};
-          \draw[black,thick] (.4,\x)--++(-.8,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\x};
+            \draw[black,thick] (\x,.4)--++(0,-.8) node[below, yshift=-2, fill=white, inner sep=1] {$\x$};
+            \draw[black,thick] (.4,\x)--++(-.8,0) node[left, xshift=-2, fill=white, inner sep=1] {$\x$};
         };
-        \node[scale=.8] at (0,-8) {I};
+        \node at (0,-8) {I};
         \draw[domain=-6:{2-1/6}, variable=\x, smooth, red, thick] plot (\x,{1/(\x-2)});
         \draw[domain={13/6}:6, variable=\x, smooth, red, thick] plot (\x,{1/(\x-2)});
 
         %second grid
         \def\del{15};
         \draw[cyan] ($ (\del,0)+(-6,-6)$) grid[step=1] ($ (\del,0)+(6,6)$);
-        \draw[black,thick,->,>=stealth] ($ (\del,0)+(-6,0)$)--++(12.6,0) node[right, scale=.8] {$x$};
-        \draw[black,thick,->,>=stealth'] ($ (\del,0)+(0,-6)$)--++(0,12.6) node[above, scale=.8] {$y$};;
+        \draw[black,thick,->,>=stealth] ($ (\del,0)+(-6,0)$)--++(12.6,0) node[right] {$x$};
+        \draw[black,thick,->,>=stealth'] ($ (\del,0)+(0,-6)$)--++(0,12.6) node[above] {$y$};;
         \foreach \x in {-6,-4,-2,2,4,6}{
-          \draw[black,thick] ($ (\del,0)+(\x,.4)$)--++(0,-.8) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {\x};
-          \draw[black,thick] ($ (\del,0)+(.4,\x)$)--++(-.8,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\x};
+            \draw[black,thick] ($ (\del,0)+(\x,.4)$)--++(0,-.8) node[below, yshift=-2, fill=white, inner sep=1,] {$\x$};
+            \draw[black,thick] ($ (\del,0)+(.4,\x)$)--++(-.8,0) node[left, xshift=-2, fill=white, inner sep=1] {$\x$};
         };
-        \node[scale=.8] at ($ (\del,0)+(0,-8)$) {II};
+        \node at ($ (\del,0)+(0,-8)$) {II};
         \draw[,domain={-6}:{6}, variable=\x, smooth, red, thick] plot ({\x+\del},{3*cos(deg(\x))});
 
         %third grid
         \def\del{28};
         \draw[cyan] ($ (\del,0)+(-4,-6)$) grid[step=1] ($ (\del,0)+(8,6)$);
-        \draw[black,thick,->,>=stealth] ($ (\del,0)+(-4,0)$)--++(12.9,0) node[right, scale=.8] {$x$};
-        \draw[black,thick,->,>=stealth'] ($ (\del,0)+(0,-6)$)--++(0,12.6) node[above, scale=.8] {$y$};;
+        \draw[black,thick,->,>=stealth] ($ (\del,0)+(-4,0)$)--++(12.9,0) node[right] {$x$};
+        \draw[black,thick,->,>=stealth'] ($ (\del,0)+(0,-6)$)--++(0,12.6) node[above] {$y$};;
         \foreach \x in {-6,-4,-2,2,4,6}{
-          \draw[black,thick] ($ (\del,0)+(.4,\x)$)--++(-.8,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\x};
+            \draw[black,thick] ($ (\del,0)+(.4,\x)$)--++(-.8,0) node[left, xshift=-2, fill=white, inner sep=1] {$\x$};
         };
         \foreach \x in {-4,-2,2,4,6,8}{
-          \draw[black,thick] ($ (\del,0)+(\x,.4)$)--++(0,-.8) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {\x};
+            \draw[black,thick] ($ (\del,0)+(\x,.4)$)--++(0,-.8) node[below, yshift=-2, fill=white, inner sep=1] {$\x$};
         };
-        \node[scale=.8] at ($ (\del,0)+(2,-8)$) {III};
+        \node at ($ (\del,0)+(2,-8)$) {III};
         \draw[samples=65,domain={-4}:{8}, variable=\x, smooth, red, thick] plot ({\x+\del},{ 5*e^\x)/(1+e^(\x)  ) });
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></statement>
@@ -361,25 +347,23 @@ The graphs of <m>F</m> and its inverse are shown at right. You can see that alth
 
 <p>	Sometimes it is so important that the inverse be a function that we are willing to sacrifice part of the original function to achieve this result.</p>
 
- <sidebyside widths=" 55% 35%" valigns="middle middle"> <p>Look again at the graph of <m>F(x)=x^2 - 4</m>. If we use only nonnegative <m>x</m>-values for the domain, we create a new function,
-        <me>f(x)=x^2 - 4,~~x \ge 0</me>
+<sidebyside widths=" 55% 35%" valigns="middle middle"> <p>Look again at the graph of <m>F(x)=x^2 - 4</m>. If we use only nonnegative <m>x</m>-values for the domain, we create a new function,
+    <me>f(x)=x^2 - 4,~~x \ge 0</me>
 The graph of this new function is shown as a dashed curve in the figure at right.</p>
-    <image xml:id="fig-8-2-4"><description>function and inverse function</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=1/2]
-        \draw[cyan] (-6,-6) grid (6,6);
-        \draw[black,thick,->,>=stealth'] (-6,0)--(6.4,0) node[right, scale=.9] {$x$};
-        \draw[black,thick,->,>=stealth'] (0,-6)--(0,6.4) node[above, scale=.9] {$y$};
-        \foreach \x in {-6,-4,-2,2,4,6} {
-          \draw[black,thick] (\x,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {\x};
-          \draw[black,thick] (.1,\x)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\x};
-        };
-        \draw[domain=0:{sqrt(10)},smooth, blue, thick, densely dashed] plot (\x, {(\x)^2-4}) node[above, scale=.9] {$f$};
-        \draw[domain=0:{sqrt(10)},smooth, red, thick] plot ( {(\x)^2-4}, \x) node[right, scale=.9] {$f^{-1}$};
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside>
+<image xml:id="fig-8-2-4"><description>function and inverse function</description><latex-image>
+    <![CDATA[
+    \begin{tikzpicture} [scale=.3]
+    \draw[cyan] (-6,-6) grid (6,6);
+    \draw[black,thick,->,>=stealth'] (-6,0)--(6.4,0) node[right] {$x$};
+    \draw[black,thick,->,>=stealth'] (0,-6)--(0,6.4) node[above] {$y$};
+    \foreach \x in {-6,-4,-2,2,4,6} {
+    \draw[black,thick] (\x,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1] {\x};
+    \draw[black,thick] (.1,\x)--++(-.2,0) node[left, xshift=-2, fill=white, inner sep=1] {\x};
+    };
+    \draw[domain=0:{sqrt(10)},smooth, blue, thick, densely dashed] plot (\x, {(\x)^2-4}) node[above] {$f$};
+    \draw[domain=0:{sqrt(10)},smooth, red, thick] plot ( {(\x)^2-4}, \x) node[right] {$f^{-1}$};
+    \end{tikzpicture}]]>
+</latex-image></image></sidebyside>
 <p>The new function is one-to-one, and its inverse, <m>f^{-1}(x) = \sqrt{x+4}</m>, is also a function. (We could also have used only negative <m>x</m>-values for the domain, or some smaller interval, just as long as the resulting function is one-to-one.)</p>
 <p>We say that we have <em>restricted the domain</em><idx><h>domain</h><h>restrict</h></idx> of the original function, and we will use this technique to define inverse functions for the trigonometric functions.</p>
 
@@ -387,21 +371,19 @@ The graph of this new function is shown as a dashed curve in the figure at right
 <p>	It turns out that the most useful interval is found by starting at <m>x=0</m> and moving as far as we can in either direction until the <m>y</m>-values begin to repeat. By doing so, we obtain the restricted domain <m>\dfrac{-\pi}{2} \le x \le \dfrac{\pi}{2}</m>, as shown below. This piece of the function includes all of the original range values, from <m>-1</m> to <m>1</m>.</p>
 <sidebyside width="80%">
     <image xml:id="fig-8-2-5"><description>restricted sine</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
+        <![CDATA[
         \begin{tikzpicture} [scale=.7]
-        \draw[black,thick,->,>=stealth'] (-2*pi,0)--(6.5,0) node[right, scale=.8] {$x$};
-        \draw[black,thick,->,>=stealth'] (0,-1)--(0,1.4) node[above, scale=.8] {$y$};
-        \foreach \y in {-1,1} \draw[black,thick] (.1,\y)--++(-.2,0) node[left, scale=.8] {$\y$};
-        \draw[black,thick] (-2*pi,0.1)--++(0,-.2) node [below, scale=.8] {$-2\pi$};
-        \draw[black,thick] (-3*pi/2,0.1)--++(0,-.2) node [below] {$\frac{-3\pi}{2} $};
-        \draw[black,thick] (-pi/2,0.1)--++(0,-.2) node [below] {$\frac{-\pi}{2} $};
-        \draw[black,thick] (-pi,0.1)--++(0,-.2) node [below, scale=.8] {$-\pi$};
-        \draw[black,thick] (pi/2,0.1)--++(0,-.2) node [below] {$\frac{\pi}{2} $};
-        \draw[black,thick] (pi,0.1)--++(0,-.2) node [below, scale=.8] {$\pi$};
-        \draw[black,thick] (3*pi/2,0.1)--++(0,-.2) node [below] {$\frac{3\pi}{2} $};
-        \draw[black,thick] (2*pi,0.1)--++(0,-.2) node [below, scale=.8] {$2\pi$};
+        \draw[black,thick,->,>=stealth'] (-2*pi,0)--(6.5,0) node[right] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-1)--(0,1.4) node[above] {$y$};
+        \foreach \y in {-1,1} \draw[black,thick] (.1,\y)--++(-.2,0) node[left] {$\y$};
+        \draw[black,thick] (-2*pi,0.1)--++(0,-.2) node [below] {$-2\pi$};
+        \draw[black,thick] (-3*pi/2,0.1)--++(0,-.2) node [below] {$\dfrac{-3\pi}{2} $};
+        \draw[black,thick] (-pi/2,0.1)--++(0,-.2) node [below] {$\dfrac{-\pi}{2} $};
+        \draw[black,thick] (-pi,0.1)--++(0,-.2) node [below] {$-\pi$};
+        \draw[black,thick] (pi/2,0.1)--++(0,-.2) node [below] {$\dfrac{\pi}{2} $};
+        \draw[black,thick] (pi,0.1)--++(0,-.2) node [below] {$\pi$};
+        \draw[black,thick] (3*pi/2,0.1)--++(0,-.2) node [below] {$\dfrac{3\pi}{2} $};
+        \draw[black,thick] (2*pi,0.1)--++(0,-.2) node [below] {$2\pi$};
         \draw[samples=65,domain=-2*pi:2*pi,variable=\x, smooth, blue, densely dashed] plot (\x,{sin(deg(\x))});
         \draw[samples=65,domain=-pi/2:pi/2,variable=\x, smooth, blue, ultra thick] plot (\x,{sin(deg(\x))});
         \end{tikzpicture}]]>
@@ -411,22 +393,20 @@ The graph of this new function is shown as a dashed curve in the figure at right
 <p>The graph of the inverse sine function, <m>y=\sin^{-1}(x)</m>, is shown below. Its domain is the same as the range of the sine function, namely <m>-1 \le x \le 1</m>, and its range is our restricted domain for sine, <m>\dfrac{-\pi}{2} \le y \le \dfrac{\pi}{2}</m>.</p>
 <sidebyside width="40%">
     <image xml:id="fig-8-2-6"><description>inverse sine</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.7]
-        \draw[black,thick,->,>=stealth'] (-2.5,0)--(2.5,0) node[right, scale=.8] {$x$};
-        \draw[black,thick,->,>=stealth'] (0,-1.9)--(0,2) node[above, scale=.8] {$y$};
-        \draw[black,thick] (0.1, -pi/2)--++(-.2,0) node [left, xshift=2] {$\frac{-\pi}{2}$};
-        \draw[black,thick] (0.1, pi/2)--++(-.2,0) node [left, xshift=2] {$\frac{\pi}{2} $};
+        <![CDATA[
+        \begin{tikzpicture} [scale=.75]
+        \draw[black,thick,->,>=stealth'] (-2.5,0)--(2.5,0) node[right] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-1.9)--(0,2) node[above] {$y$};
+        \draw[black,thick] (0.1, -pi/2)--++(-.2,0) node [left, xshift=2] {$\dfrac{-\pi}{2}$};
+        \draw[black,thick] (0.1, pi/2)--++(-.2,0) node [left, xshift=2] {$\dfrac{\pi}{2} $};
         \foreach \x in {-2,-1,1,2} {
-         \draw[black,thick] (\x,0.1)--++(0,-.2) node [below, yshift=2, scale=.8] {$\x $};
+            \draw[black,thick] (\x,0.1)--++(0,-.2) node [below, yshift=2] {$\x $};
         }
-        \draw[gray, dashed] (1.6,1.6)--(-1.6,-1.6) node[below, xshift=-4 , scale=.8, text=gray] {$y=x$};
+        \draw[gray, dashed] (1.6,1.6)--(-1.6,-1.6) node[below, xshift=-4, text=gray] {$y=x$};
         \draw[samples=65,domain=-2.5:2.5,variable=\x, smooth, blue, densely dashed] plot (\x,{sin(deg(\x))});
         \draw[samples=65,domain=-pi/2:pi/2,variable=\x, smooth, blue, ultra thick] plot (\x,{sin(deg(\x))});
-        \draw[samples=65,domain=-pi/2:pi/2,variable=\x, smooth, blue, thick, densely dashed] plot (\x,{sin(deg(\x))}) node[above right, xshift=-2, yshift=-2, scale=.8] {$y=\sin x$};
-        \draw[samples=65,domain=-pi/2:pi/2,variable=\x, smooth, red, ultra thick] plot ({sin(deg(\x))},\x) node[above right, xshift=-12, scale=.8] {$y=\sin^{-1} x$};
+        \draw[samples=65,domain=-pi/2:pi/2,variable=\x, smooth, blue, thick, densely dashed] plot (\x,{sin(deg(\x))}) node[above right, xshift=-2, yshift=-2] {$y=\sin x$};
+        \draw[samples=65,domain=-pi/2:pi/2,variable=\x, smooth, red, ultra thick] plot ({sin(deg(\x))},\x) node[above right, xshift=-12] {$y=\sin^{-1} x$};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
 
@@ -465,21 +445,19 @@ The graph of this new function is shown as a dashed curve in the figure at right
 <p>	The cosine and tangent functions are also periodic, so, just as with the sine function, to define their inverse functions we must restrict their domains to intervals where they are one-to-one. The graph of cosine is shown below.</p>
 <sidebyside width="80%">
     <image xml:id="fig-8-2-7"><description>restricted cosine</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=1.]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.7]
         \draw[black,thick,->,>=stealth'] (-2*pi,0)--(6.5,0) node[right] {$x$};
         \draw[black,thick,->,>=stealth'] (0,-1)--(0,1.4) node[right] {$y$};
-        \foreach \y in {-1,1} \draw[black,thick] (.1,\y)--++(-.2,0) node[left, scale=.8] {$\y$};
-        \draw[black,thick] (-2*pi,0.1)--++(0,-.2) node [below, scale=.8] {$-2\pi$};
-        \draw[black,thick] (-3*pi/2,0.1)--++(0,-.2) node [below] {$\frac{-3\pi}{2} $};
-        \draw[black,thick] (-pi/2,0.1)--++(0,-.2) node [below] {$\frac{-\pi}{2} $};
-        \draw[black,thick] (-pi,0.1)--++(0,-.2) node [below, scale=.8] {$-\pi$};
-        \draw[black,thick] (pi/2,0.1)--++(0,-.2) node [below] {$\frac{\pi}{2} $};
-        \draw[black,thick] (pi,0.1)--++(0,-.2) node [below, scale=.8] {$\pi$};
-        \draw[black,thick] (3*pi/2,0.1)--++(0,-.2) node [below] {$\frac{3\pi}{2} $};
-        \draw[black,thick] (2*pi,0.1)--++(0,-.2) node [below, scale=.8] {$2\pi$};
+        \foreach \y in {-1,1} \draw[black,thick] (.1,\y)--++(-.2,0) node[left] {$\y$};
+        \draw[black,thick] (-2*pi,0.1)--++(0,-.2) node [below] {$-2\pi$};
+        \draw[black,thick] (-3*pi/2,0.1)--++(0,-.2) node [below] {$\dfrac{-3\pi}{2} $};
+        \draw[black,thick] (-pi/2,0.1)--++(0,-.2) node [below] {$\dfrac{-\pi}{2} $};
+        \draw[black,thick] (-pi,0.1)--++(0,-.2) node [below] {$-\pi$};
+        \draw[black,thick] (pi/2,0.1)--++(0,-.2) node [below] {$\dfrac{\pi}{2} $};
+        \draw[black,thick] (pi,0.1)--++(0,-.2) node [below] {$\pi$};
+        \draw[black,thick] (3*pi/2,0.1)--++(0,-.2) node [below] {$\dfrac{3\pi}{2} $};
+        \draw[black,thick] (2*pi,0.1)--++(0,-.2) node [below] {$2\pi$};
         \draw[samples=65,domain=-2*pi:2*pi,variable=\x, smooth, blue, densely dashed] plot (\x,{cos(deg(\x))});
         \draw[samples=65,domain=0:pi,variable=\x, smooth, blue, ultra thick] plot (\x,{cos(deg(\x))});
         \end{tikzpicture}]]>
@@ -489,22 +467,19 @@ The graph of this new function is shown as a dashed curve in the figure at right
 <p>	We choose to move in the positive direction, to obtain the interval <m>0 \le\theta\le \pi</m>, as shown above. On this domain, the inverse of cosine is a function. Its graph is shown below.</p>
 <sidebyside width="45%">
     <image xml:id="fig-8-2-8"><description>inverse cosine</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=1.]
-        \draw[black,thick,->,>=stealth'] (-1.,0)--(3.5,0) node[right] {$x$};
+        <![CDATA[
+        \begin{tikzpicture} [scale=.66]
+        \draw[black,thick,->,>=stealth'] (-1.,0)--(3.9,0) node[right] {$x$};
         \draw[black,thick,->,>=stealth'] (0,-1.)--(0,3.5) node[above] {$y$};
         \draw[black,thick] (0.1, pi)--++(-.2,0) node [left, xshift=2] {$\pi$};
-        \draw[black,thick] (0.1, pi/2)--++(-.2,0) node [left, xshift=2] {$\frac{\pi}{2} $};
+        \draw[black,thick] (0.1, pi/2)--++(-.2,0) node [left, xshift=2] {$\dfrac{\pi}{2} $};
         \foreach \x in {-1,1,2,3} {
-         \draw[black,thick] (\x,0.1)--++(0,-.2) node [below, yshift=2, scale=.8] {$\x $};
+            \draw[black,thick] (\x,0.1)--++(0,-.2) node [below, yshift=2] {$\x $};
         }
         \draw[gray, dashed] (-1.,-1.)--(2.7,2.7) node[above right] {$y=x$};
-        \draw[samples=65,domain=1:3.5,variable=\x, smooth, blue, densely dashed] plot (\x,{cos(deg(\x))});
-        \draw[samples=65,domain=0:pi,variable=\x, smooth, blue, ultra thick] plot (\x,{cos(deg(\x))});
-        \draw[samples=65,domain=-1:3.7,variable=\x, smooth, blue, thick, densely dashed] plot (\x,{cos(deg(\x))}) node[above, xshift=5, yshift=-4] {$y=\cos x$};
-        \draw[samples=65,domain=0:pi,variable=\x, smooth, red, ultra thick] plot ({cos(deg(\x))},\x) node[above left, xshift=5,, yshift=-1] {$y=\cos^{-1} x$};
+        \draw[samples=65,domain=-1:3.9,variable=\x, smooth, blue, densely dashed] plot (\x,{cos(deg(\x))});
+        \draw[samples=65,domain=0:pi,variable=\x, smooth, blue, ultra thick] plot (\x,{cos(deg(\x))}) node[above right, xshift=0, yshift=0] {$y=\cos x$};;
+        \draw[samples=65,domain=0:pi,variable=\x, smooth, red, ultra thick] plot ({cos(deg(\x))},\x) node[above left, xshift=9, yshift=-1] {$y=\cos^{-1} x$};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside> 
 
@@ -530,19 +505,17 @@ The graph of this new function is shown as a dashed curve in the figure at right
 
 <sidebyside widths="55% 35%" valigns= "middle middle"><p>Finally, consider the graph of the tangent function. To choose a convenient interval on which the tangent is one-to-one, we start at <m>x=0</m> and move as far as we can in either direction along the <m>x</m>-axis. In this way we obtain one cycle of the graph, on the interval <m>\dfrac{-\pi}{2} \lt \theta \lt \dfrac{\pi}{2}</m>, as shown at right.</p>
     <image xml:id="fig-8-2-9"><description>tan</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.6]
-        \draw[black,thick,->,>=stealth'] (-3*pi/2,0)--(4.7,0) node[right, scale=.8] {$x$};
-        \draw[black,thick,->,>=stealth'] (0,-4.7)--(0,4.7) node[above, scale=.8] {$y$};
-        \foreach \y in {-4,-2,2,4} \draw[black,thick] (.1,\y)--++(-.2,0) node[left, scale=.8] {$\y$};
-        \draw[black,thick] (-3*pi/2,0.1)--++(0,-.2) node [below] {$\frac{-3\pi}{2} $};
-        \draw[black,thick] (-pi/2,0.1)--++(0,-.2) node [below] {$\frac{-\pi}{2} $};
-        \draw[black,thick] (-pi,0.1)--++(0,-.2) node [below, scale=.8] {$-\pi$};
-        \draw[black,thick] (pi/2,0.1)--++(0,-.2) node [below] {$\frac{\pi}{2} $};
-        \draw[black,thick] (pi,0.1)--++(0,-.2) node [below, scale=.8] {$\pi$};
-        \draw[black,thick] (3*pi/2,0.1)--++(0,-.2) node [below] {$\frac{3\pi}{2} $};
+        <![CDATA[
+        \begin{tikzpicture} [scale=.45]
+        \draw[black,thick,->,>=stealth'] (-3*pi/2,0)--(4.7,0) node[right] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-4.7)--(0,4.7) node[above] {$y$};
+        \foreach \y in {-4,-2,2,4} \draw[black,thick] (.1,\y)--++(-.2,0) node[left] {$\y$};
+        \draw[black,thick] (-3*pi/2,0.1)--++(0,-.2) node [below] {$\dfrac{-3\pi}{2} $};
+        \draw[black,thick] (-pi/2,0.1)--++(0,-.2) node [below] {$\dfrac{-\pi}{2} $};
+        \draw[black,thick] (-pi,0.1)--++(0,-.2) node [below] {$-\pi$};
+        \draw[black,thick] (pi/2,0.1)--++(0,-.2) node [below] {$\dfrac{\pi}{2} $};
+        \draw[black,thick] (pi,0.1)--++(0,-.2) node [below] {$\pi$};
+        \draw[black,thick] (3*pi/2,0.1)--++(0,-.2) node [below] {$\dfrac{3\pi}{2} $};
         \draw[green, dashed] (-pi/2,-4.7)--++(0,9.4);
         \draw[green, dashed] (pi/2,-4.7)--++(0,9.4);
         \draw[samples=65,domain={-atan(4.7)*pi/180}:{atan(4.7)*pi/180},variable=\x, smooth, blue, thick, densely dashed] plot (\x-pi,{tan(deg(\x))});
@@ -553,28 +526,26 @@ The graph of this new function is shown as a dashed curve in the figure at right
 
 <sidebyside widths="48% 45%" valigns="middle middle"><p>The range of the tangent on that interval includes all real numbers. Consequently, the domain of the inverse tangent function includes all real numbers, and its range is the interval <m>\dfrac{-\pi}{2} \lt y \lt \dfrac{\pi}{2}</m>. The graph of the inverse tangent function is shown below. Its outputs are angles in the first and fourth quadrants.</p>
     <image xml:id="fig-8-2-10"><description>triangle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
+        <![CDATA[
         \begin{tikzpicture} [scale=0.6]
-        \draw[black,thick,->,>=stealth'] (-3.5,0)--(3.5,0) node[right, scale=.8] {$x$};
-        \draw[black,thick,->,>=stealth'] (0,-3.5)--(0,3.5) node[above, scale=.8] {$y$};
+        \draw[black,thick,->,>=stealth'] (-3.5,0)--(3.5,0) node[right] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-3.5)--(0,3.5) node[above] {$y$};
         \draw[green, dashed] (-3.5,pi/2)--++(7,0);
         \draw[green, dashed] (-3.5,-pi/2)--++(7,0);
         \draw[green, dashed] (-pi/2,-3.5)--++(0,7);
         \draw[green, dashed] (pi/2,-3.5)--++(0,7);
         \foreach \x in {-2,2} {
-            \draw[black,thick] (\x,0.1)--++(0,-.2) node [below, scale=.8] {$\x$};
-         };
+            \draw[black,thick] (\x,0.1)--++(0,-.2) node [below] {$\x$};
+            };
         \foreach \y in {pi} {
-          \draw[black,thick] (.1,\y)--++(-.2,0) node[left, scale=.8] {$\pi$};
-          \draw[black,thick] (.1,-\y)--++(-.2,0) node[left, scale=.8] {$-\pi$};
-         };
-          \draw[black,thick] (.1,-pi/2)--++(-.2,0) node[left, scale=.8, fill=white, inner sep = 1] {$\frac{-\pi}{2} $};
-          \draw[black,thick] (.1,pi/2)--++(-.2,0) node[left, scale=.8, fill=white, inner sep = 1] {$\frac{\pi}{2} $};
-        \draw[samples=65,domain={-atan(3.5)*pi/180}:{atan(3.5)*pi/180},variable=\x, smooth, red, ultra thick] plot ({tan(deg(\x))},\x) node[right, scale=.8] {$y=\tan^{-1} x$};
-        \draw[samples=65,domain={-atan(3.5)*pi/180}:{atan(3.5)*pi/180},variable=\x, smooth, blue,ultra thick] plot (\x,{tan(deg(\x))}) node[above right, xshift=-9, scale=.8] {$y=\tan  x$};;
-        \draw[gray, dashed] (-3.5,-3.5)--(3.5,3.5) node[right, scale=.8, text=black] {$y=x$};
+            \draw[black,thick] (.1,\y)--++(-.2,0) node[left] {$\pi$};
+            \draw[black,thick] (.1,-\y)--++(-.2,0) node[left] {$-\pi$};
+            };
+            \draw[black,thick] (.1,-pi/2)--++(-.2,0) node[left, fill=white, inner sep = 1] {$\dfrac{-\pi}{2} $};
+            \draw[black,thick] (.1,pi/2)--++(-.2,0) node[left, fill=white, inner sep = 1] {$\dfrac{\pi}{2} $};
+        \draw[samples=65,domain={-atan(3.5)*pi/180}:{atan(3.5)*pi/180},variable=\x, smooth, red, ultra thick] plot ({tan(deg(\x))},\x) node[right] {$y=\tan^{-1} x$};
+        \draw[samples=65,domain={-atan(3.5)*pi/180}:{atan(3.5)*pi/180},variable=\x, smooth, blue,ultra thick] plot (\x,{tan(deg(\x))}) node[above right, xshift=-9] {$y=\tan  x$};;
+        \draw[gray, dashed] (-3.5,-3.5)--(3.5,3.5) node[right, text=black] {$y=x$};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
 
@@ -629,17 +600,15 @@ This inequality occurs because the inverse sine function returns just one of the
 <solution><p><ol marker="a">
 	<li><sidebyside widths=" 70% 20%" valigns="middle middle"><p>We draw a sketch of the triangle formed by the tapestry and the lines of sight to its bottom and top, as shown at right.  From the triangle we see that <m>\tan (\theta) = \dfrac{3}{d}</m>, so <m>d=\dfrac{3}{\tan (\theta)}</m>.</p>
     <image xml:id="exam8-2-7"><description>triangle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture}
+        <![CDATA[
+        \begin{tikzpicture}[scale=.9]
         \coordinate (O) at (0,0);
         \coordinate (A) at (2,0);
         \coordinate (B) at (2,3);
-        \draw[red, ultra thick] (A)--(B) node[right, midway, scale=.9, text=blue] {3};
-        \draw[gray!70!white] (O)--(A) node[below, midway, text=blue, scale=.9] {$d$};
+        \draw[red, ultra thick] (A)--(B) node[right, midway, text=blue] {3};
+        \draw[gray!70!white] (O)--(A) node[below, midway, text=blue] {$d$};
         \draw[gray!70!white] (O)--(B) ;
-        \draw[red] (0.5,0) arc (0:atan(3/2): 0.5) node [right, midway, scale=.9] {$\theta$};
+        \draw[red] (0.5,0) arc (0:atan(3/2): 0.5) node [right, midway] {$\theta$};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></li>
 	<li>Because <m>\tan (\theta) = \dfrac{3}{d}</m>, <m>\theta = \tan^{-1}\left(\dfrac{3}{d}\right)</m>.</li></ol></p>
@@ -650,31 +619,29 @@ This inequality occurs because the inverse sine function returns just one of the
     <li><p>Express <m>\alpha</m>, the angle subtended vertically by the unicorn, as a function of <m>d</m>, your distance to the tapestry.</p></li>
     <li><p>Express <m>\beta</m>, the angle subtended by the portion of the tapestry above the unicorn, as a function of <m>d</m>. (See the figure at right).</p></li></ol></p>
     <image xml:id="exer8-2-7"><description>triangle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture}
+        <![CDATA[
+        \begin{tikzpicture}[scale=.8]
         \coordinate (O) at (0,0);
         \coordinate (A) at (2,0);
         \coordinate (B) at (2,3);
         \coordinate (C) at (2,2);
         \draw[red, ultra thick] (A)--(B);
         \draw[black, ultra thick] (A)--(C);
-        \draw[gray!90!white] (O)--(A) node[below, midway, text=blue, scale=.9] {$d$};
+        \draw[gray!90!white] (O)--(A) node[below, midway, text=blue] {$d$};
         \draw[gray!90!white] (O)--(B) ;
         \draw[gray!90!white] (O)--(C) ;
-        \draw[red] (0.5,0) arc (0:atan(2/2): 0.5) node [right, midway, scale=.9] {$\alpha$};
-        \draw[red] ({atan(3/2)}:1.3) arc (atan(3/2):atan(1): 1.3) node [above right, xshift=-1,yshift=-1, midway, scale=.9] {$\beta$};
+        \draw[red] (0.5,0) arc (0:atan(2/2): 0.5) node [right, midway] {$\alpha$};
+        \draw[red] ({atan(3/2)}:1.3) arc (atan(3/2):atan(1): 1.3) node [above right, xshift=-1,yshift=-1, midway] {$\beta$};
         \draw[gray!70!white] ((2.1,3)--++(0.9,0);
         \draw[gray!70!white] ((2.1,2)--++(0.4,0);
         \draw[gray!70!white] ((2.1,0)--++(0.9,0);
 
         \draw[gray!70!white,<-,>=stealth'] ((2.3,2)--++(0, -.8);
         \draw[gray!70!white,<-,>=stealth'] ((2.3,0)--++(0, .8);
-        \node[scale=.9, text=blue] at (2.3,1) {$2$};
+        \node[text=blue] at (2.3,1) {$2$};
         \draw[gray!70!white,<-,>=stealth'] ((2.8,3)--++(0, -1.3);
         \draw[gray!70!white,<-,>=stealth'] ((2.8,0)--++(0, 1.3);
-        \node[scale=.9, text=blue] at (2.8,1.5) {$3$};
+        \node[text=blue] at (2.8,1.5) {$3$};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></statement>
 
@@ -686,28 +653,26 @@ This inequality occurs because the inverse sine function returns just one of the
 
 <subsection><title>Alternate Notations</title>
 
-<sidebyside widths="65% 25%" valigns="middle middle"><p>The inverse sine function, <m>\sin^{-1}(x)</m>, is also called the <term>arcsine</term><idx><h>arcsin</h></idx><idx><h>arcsin</h><seealso>inverse sine</seealso></idx>  function and denoted by <term>arcsin <m>(x)</m></term>. (This terminology reminds us that the output of the inverse sine function is an angle, or the arc on a unit circle determined by that angle, as shown at right.)</p>
+<sidebyside widths="65% 25%" valigns="middle middle" margins="0% 5%"><p>The inverse sine function, <m>\sin^{-1}(x)</m>, is also called the <term>arcsine</term><idx><h>arcsin</h></idx><idx><h>arcsin</h><seealso>inverse sine</seealso></idx>  function and denoted by <term>arcsin <m>(x)</m></term>. (This terminology reminds us that the output of the inverse sine function is an angle, or the arc on a unit circle determined by that angle, as shown at right.)</p>
     <image xml:id="fig-8-2-11"><description>unit circle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=1.5]
-        \def\th{55};
-        \coordinate (O) at (0,0);
-        \coordinate (A) at (1,0);
-        \coordinate (B) at ({\th}:1);
-        \coordinate (D) at ($ cos(\th)*(1,0)$);
-        \draw[blue] (D) rectangle ++(-.1,.1);
-        \draw[black,thick,->,>=stealth'] (-1.1,0)--(1.3,0) node[below left, xshift=-2, scale=.8] {1};
-        \draw[black,thick,->,>=stealth'] (0,-1.1)--(0,1.3) node[below left, yshift=-2, scale=.8] {1};
-        \draw[gray] (O) circle (1cm);
-        \draw[red,ultra thick] (A) arc(0:{\th}:1) node[right, midway, scale=.9] {$\arcsin t$};
-        \filldraw[red] (A) circle (.05cm);
-        \filldraw[red] (B) circle (.05cm);
-        \draw[blue,thick] (D)--(B) node[right, midway, scale=.8, inner sep=1.5] {$t$};
-        \draw[gray!70!white,thick] (O)--(B);
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside>  
+    <![CDATA[
+    \begin{tikzpicture} [scale=1]
+    \def\th{55};
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (1,0);
+    \coordinate (B) at ({\th}:1);
+    \coordinate (D) at ($ cos(\th)*(1,0)$);
+    \draw[blue] (D) rectangle ++(-.1,.1);
+    \draw[black,thick,->,>=stealth'] (-1.1,0)--(1.3,0) node[below right, xshift=-9] {1};
+    \draw[black,thick,->,>=stealth'] (0,-1.1)--(0,1.3) node[left, yshift=-3] {1};
+    \draw[gray] (O) circle (1cm);
+    \draw[red,ultra thick] (A) arc(0:{\th}:1) node[right, midway] {$\arcsin t$};
+    \filldraw[red] (A) circle (.05cm);
+    \filldraw[red] (B) circle (.05cm);
+    \draw[blue,thick] (D)--(B) node[right, midway, inner sep=1.5] {$t$};
+    \draw[gray!70!white,thick] (O)--(B);
+    \end{tikzpicture}]]>
+</latex-image></image></sidebyside>
 
 <p>Similarly, the inverse cosine function is sometimes denoted by <term>arccos <m>(x)</m></term><idx><h>arccos</h></idx><idx><h>arccos</h><seealso>inverse cosine</seealso></idx>, and the inverse tangent function by  <term>arctan <m>(x)</m></term><idx><h>arctan</h></idx><idx><h>arctan</h><seealso>inverse tangent</seealso></idx>.  Some computer programs use the notation <term>asin <m>(x)</m></term>, <term>accos <m>(x)</m></term>, and <term>atan <m>(x)</m></term>.<idx><h>acos</h></idx><idx><h>acos</h><seealso>inverse cosine</seealso></idx><idx><h>asin</h></idx><idx><h>asin</h><seealso>inverse sine</seealso></idx><idx><h>atan</h></idx><idx><h>atan</h><seealso>inverse tangent</seealso></idx></p>
 

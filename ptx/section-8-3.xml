@@ -22,24 +22,23 @@ terminal side, then we define the following functions.</p>
          <md><mrow>\text{The}~~ \textbf{secant}:~~~~~~  \amp  \blert{\sec (\theta) = \dfrac{r}{x}}</mrow>
             <mrow> \text{The}~~ \textbf{cosecant}:~~~~ \amp  \blert{\csc (\theta) = \dfrac{r}{y}}</mrow>
             <mrow>\text{The}~~ \textbf{cotangent}:~~~ \amp  \blert{\cot (\theta) =  \dfrac{x}{y}}</mrow></md></p>                
-<image source="photos/fig-4-2-caut1"><description>angle</description></image></sidebyside></statement></definition>
+            <image xml:id="Def-8-3-1"><description>angle</description>
+            <xi:include href="Angle-Q3.ptx"/></image></sidebyside></statement></definition>
 
 <p>We can find exact values for all six trig functions at a given angle if we know the value of any one of them.</p>
 
 <example><statement><p>If <m>\sec (\theta) = 3</m>, and <m>-\dfrac{\pi}{2} \le \theta \le 0</m>, find exact values for the other five trig functions.
 </p></statement>
 
-<solution><sidebyside widths="60% 15%" valigns="middle middle"><p>Because <m>-\dfrac{\pi}{2} \le \theta \le 0</m>, we draw a reference triangle in the fourth quadrant, as shown at right. Because <m>\sec (\theta) = 3 = \dfrac{3}{1}</m>, we label the horizontal leg with <m>x=1</m> and the hypotenuse with <m>r=3</m>.</p>
+<solution><sidebyside widths="60% 18%" valigns="middle middle" margins="0% 10%"><p>Because <m>-\dfrac{\pi}{2} \le \theta \le 0</m>, we draw a reference triangle in the fourth quadrant, as shown at right. Because <m>\sec (\theta) = 3 = \dfrac{3}{1}</m>, we label the horizontal leg with <m>x=1</m> and the hypotenuse with <m>r=3</m>.</p>
     <image xml:id="exam8-3-1"><description>angle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=1.2]
+        <![CDATA[
+        \begin{tikzpicture} [scale=0.6]
         \draw[blue,thick] (1,0) rectangle ++(-.2,-.2);
         \draw[black,thick,->,>=stealth'] (-.6,0)--(1.5,0) node[right] {$x$};
         \draw[black,thick,->,>=stealth'] (0,-2.9)--(0,.6) node[right] {$y$};
         \coordinate (P) at ({-acos(1/3)}:3);
-        \draw[black,thick] (0,0)--(P) node[below left, midway, text=blue] {$3$};
+        \draw[black,thick] (0,0)--(P) node[below left, midway, xshift=4, text=blue] {$3$};
         \draw[black,thick] (1,0)--(P);
         \filldraw[red] (P) circle (.05cm) node[right, text=black] {$(1,y)$};
         \end{tikzpicture}]]>
@@ -146,13 +145,15 @@ In particular, the exact values for the reciprocal trig functions of the special
 <idx><h>reciprocal function</h></idx>
 <idx><h>reciprocal trigonometric ratios</h><seealso>reciprocal function</seealso></idx>
 <p>If <m>\theta</m> is one of the acute angles in a right triangle,</p>
-<sidebyside widths="60% 36%" valigns="middle middle"><p>
-    <md>
-        <mrow>\blert{\sec (\theta)} \amp = \blert{\dfrac{\text{hypotenuse}}{\text{adjacent}}}</mrow>
-        <mrow>\blert{\csc (\theta)} \amp = \blert{\dfrac{\text{hypotenuse}}{\text{opposite}}}</mrow>
-        <mrow>\blert{\cot (\theta)} \amp =  \blert{\dfrac{\text{adjacent}}{\text{opposite}}}</mrow>
-    </md>
-</p> <image source="photos/fig-2-2trigratios"><description>triangle</description></image></sidebyside></assemblage>
+<sidebyside widths="55% 40%" valigns="middle middle"><p>
+        <md>
+            <mrow>\blert{\sec (\theta)} \amp = \blert{\dfrac{\text{hypotenuse}}{\text{adjacent}}}</mrow>
+            <mrow>\blert{\csc (\theta)} \amp = \blert{\dfrac{\text{hypotenuse}}{\text{opposite}}}</mrow>
+            <mrow>\blert{\cot (\theta)} \amp =  \blert{\dfrac{\text{adjacent}}{\text{opposite}}}</mrow>
+        </md>
+    </p><image xml:id="Reciprocal-Trig-ratios"><description>triangle</description>
+        <xi:include href="Right-Triangle-side-names.ptx"/></image></sidebyside>
+</assemblage>
 
 <p>Although we can express any relationship between the sides of a right triangle using sine, cosine, and tangent, sometimes it is more convenient to use one of the reciprocal functions.</p>
 

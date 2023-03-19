@@ -25,42 +25,35 @@
 </introduction>
 
 <exercise number="5"><statement><p><m>f(t)=2+3\cos (t)</m></p></statement>
-<answer><sidebyside width="80%" margins="0% 20%">
-    <image xml:id="hp7-sum-5ans"><description>sinusoidal graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
+<answer><image xml:id="hp7-sum-5ans"><description>sinusoidal graph</description><latex-image>
+        <![CDATA[
         \begin{tikzpicture} [scale=.4]
         \draw[cyan] (-2*pi,-1) grid[xstep=pi/2] (2*pi,5);
-        \draw[black,thick,->,>=stealth'] (-2*pi,0)--(6.9,0) node[right, scale=.9] {$t$};
-        \draw[black,thick,->,>=stealth'] (0,-1.2)--(0,5.8) node[above, scale=.9] {$y$};
-        \draw[black,thick] (-2*pi,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$-2\pi$};
-        \draw[black,thick] (-pi,.15)--++(0,-.3) node[below, yshift=-1, fill=white, inner sep=1, scale=.8] {$-\pi$};
-        \draw[black,thick] (2*pi,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$2\pi$};
-        \draw[black,thick] (pi,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$\pi$};
-        \foreach \y in {-1,1,2,...,5} \draw[black,thick] (.15,\y)--++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[black,thick,->,>=stealth'] (-2*pi,0)--(6.9,0) node[right] {$t$};
+        \draw[black,thick,->,>=stealth'] (0,-1.2)--(0,5.8) node[above] {$y$};
+        \draw[black,thick] (-2*pi,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1] {$-2\pi$};
+        \draw[black,thick] (-pi,.15)--++(0,-.3) node[below, yshift=-1, fill=white, inner sep=1] {$-\pi$};
+        \draw[black,thick] (2*pi,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1] {$2\pi$};
+        \draw[black,thick] (pi,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1,] {$\pi$};
+        \foreach \y in {-1,1,2,...,5} \draw[black,thick] (.15,\y)--++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1] {$\y$};
         \draw[samples=65,domain=-2*pi:2*pi, variable=\t, smooth, red, thick] plot (\t,{2+3*cos(deg(\t))});
-
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></answer></exercise>
+    </latex-image></image></answer></exercise>
 
 <exercise number="6"><statement><p><m>g(t)=-4-2\sin (t)</m></p></statement></exercise>
 
 <exercise number="7"><statement><p><m>h(w)=-4\sin (\pi w)</m></p></statement>
-<answer><sidebyside width="80%" margins="0% 20%">
-    <image xml:id="hp7-sum-7ans"><description>sinusoidal graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
+<answer><image xml:id="hp7-sum-7ans"><description>sinusoidal graph</description><latex-image>
+        <![CDATA[
         \begin{tikzpicture} [xscale=.85, yscale=.35]
         \draw[cyan] (0,-4) grid[xstep=1] (6,4);
-        \draw[black,thick,->,>=stealth'] (0,0)--(6.4,0) node[right, scale=.9] {$w$};
-        \draw[black,thick,->,>=stealth'] (0,-4.2)--(0,4.8) node[above, scale=.9] {$y$};
-        \foreach \x in {2,4,6} \draw[black,thick] (\x,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {\x};
-        \foreach \y in {-4,-2,2,4} \draw[black,thick] (.15,\y)--++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[black,thick,->,>=stealth'] (0,0)--(6.4,0) node[right] {$w$};
+        \draw[black,thick,->,>=stealth'] (0,-4.2)--(0,4.8) node[above] {$y$};
+        \foreach \x in {2,4,6} \draw[black,thick] (\x,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1] {$\x$};
+        \foreach \y in {-4,-2,2,4} \draw[black,thick] (.15,\y)--++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1] {$\y$};
         \draw[samples=65,domain=-0:6, variable=\t, smooth, red, thick] plot (\t,{-4*sin(deg(pi*\t))});
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></answer></exercise>
+    </latex-image></image></answer></exercise>
 
 <exercise number="8"><statement><p><m>q(w)=3-\cos \left(\dfrac{w}{2}\right)</m></p></statement></exercise>
 </exercisegroup>
@@ -70,18 +63,16 @@
 
 <exercise number="9"><statement><sidebyside width="90%">
     <image xml:id="hp7-sum-9"><description>sinusoidal graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.4]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.36]
         \draw[cyan] (-2*pi,-1) grid[xstep=pi/2] (2*pi,5);
-        \draw[black,thick,->,>=stealth'] (-2*pi,0)--(6.9,0) node[right, scale=.9] {$x$};
-        \draw[black,thick,->,>=stealth'] (0,-1.2)--(0,5.8) node[above, scale=.9] {$y$};
-        \draw[black,thick] (-2*pi,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$-2\pi$};
-        \draw[black,thick] (-pi,.15)--++(0,-.3) node[below, yshift=-1, fill=white, inner sep=1, scale=.8] {$-\pi$};
-        \draw[black,thick] (2*pi,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$2\pi$};
-        \draw[black,thick] (pi,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$\pi$};
-        \foreach \y in {-1,1,2,...,5} \draw[black,thick] (.15,\y)--++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[black,thick,->,>=stealth'] (-2*pi,0)--(6.9,0) node[right] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-1.2)--(0,5.8) node[above] {$y$};
+        \draw[black,thick] (-2*pi,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1] {$-2\pi$};
+        \draw[black,thick] (-pi,.15)--++(0,-.3) node[below, yshift=-1, fill=white, inner sep=1] {$-\pi$};
+        \draw[black,thick] (2*pi,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1] {$2\pi$};
+        \draw[black,thick] (pi,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1] {$\pi$};
+        \foreach \y in {-1,1,3,5} \draw[black,thick] (.15,\y)--++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1] {\y};
         \draw[samples=65,domain=-2*pi:2*pi, variable=\t, smooth, red, thick] plot (\t,{3+2*sin(deg(\t))});
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></statement>
@@ -90,33 +81,29 @@
 
 <exercise number="10"><statement><sidebyside width="90%">
     <image xml:id="hp7-sum-10"><description>sinusoidal graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.4]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.36]
         \draw[cyan] (-2*pi,-5) grid[xstep=pi/2] (2*pi,1);
-        \draw[black,thick,->,>=stealth'] (-2*pi,0)--(6.9,0) node[right, scale=.9] {$x$};
-        \draw[black,thick,->,>=stealth'] (0,-5)--(0,1.8) node[above, scale=.9] {$y$};
-        \draw[black,thick] (-2*pi,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$-2\pi$};
-        \draw[black,thick] (-pi,.15)--++(0,-.3) node[below, yshift=-1, fill=white, inner sep=1, scale=.8] {$-\pi$};
-        \draw[black,thick] (2*pi,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$2\pi$};
-        \draw[black,thick] (pi,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$\pi$};
-        \foreach \y in {-5,-4,...,-1,1} \draw[black,thick] (.15,\y)--++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[black,thick,->,>=stealth'] (-2*pi,0)--(6.9,0) node[right] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-5)--(0,1.8) node[above] {$y$};
+        \draw[black,thick] (-2*pi,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1] {$-2\pi$};
+        \draw[black,thick] (-pi,.15)--++(0,-.3) node[below, yshift=-1, fill=white, inner sep=1] {$-\pi$};
+        \draw[black,thick] (2*pi,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1] {$2\pi$};
+        \draw[black,thick] (pi,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1] {$\pi$};
+        \foreach \y in {-5,-3,-1,1} \draw[black,thick] (.15,\y)--++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1] {$\y$};
         \draw[samples=65,domain=-2*pi:2*pi, variable=\t, smooth, red, thick] plot (\t,{-2+3*cos(deg(\t))});
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></statement></exercise>
 
 <exercise number="11"><statement><sidebyside width="90%">
     <image xml:id="hp7-sum-11"><description>sinusoidal graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [xscale=.1,yscale=.3]
+        <![CDATA[
+        \begin{tikzpicture} [xscale=.09,yscale=.27]
         \draw[cyan] (-8*pi,-1) grid[xstep=pi] (8*pi,7);
-        \draw[black,thick,->,>=stealth'] (-8*pi,0)--(27.3,0) node[right, scale=.9] {$x$};
-        \draw[black,thick,->,>=stealth'] (0,-1)--(0,7.8) node[above, scale=.9] {$y$};
-        \foreach \x [evaluate=\x as \xi using (pi*\x)]  in {-8,-6,-4,-2,2,4,6,8}  \draw[black,thick] (\xi,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {$\x \pi$};
-        \foreach \y in {2,4,6} \draw[black,thick] (.15,\y)--++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[black,thick,->,>=stealth'] (-8*pi,0)--(27.3,0) node[right] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-1)--(0,7.8) node[above] {$y$};
+        \foreach \x [evaluate=\x as \xi using (pi*\x)]  in {-8,-6,-4,-2,2,4,6,8}  \draw[black,thick] (\xi,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1] {$\x \pi$};
+        \foreach \y in {2,4,6} \draw[black,thick] (.15,\y)--++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1] {$\y$};
         \draw[samples=65,domain=-8*pi:8*pi, variable=\t, smooth, red, thick] plot (\t,{4-3*sin(deg(\t)/4)});
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></statement>
@@ -124,18 +111,16 @@
 
 <exercise number="12"><statement><sidebyside width="90%">
     <image xml:id="hp7-sum-12"><description>sinusoidal graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [xscale=1.6,yscale=.3]
+        <![CDATA[
+        \begin{tikzpicture} [xscale=1.4,yscale=.27]
         \draw[cyan] (-pi/2,-2) grid[xstep=pi/8] (pi/2,6);
-        \draw[black,thick,->,>=stealth'] (-pi/2,0)--(1.75,0) node[right, scale=.9] {$x$};
-        \draw[black,thick,->,>=stealth'] (0,-2)--(0,7.) node[above, scale=.9] {$y$};
-        \draw[black,thick] (-pi/2,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{-\pi}{2}$};
-        \draw[black,thick] (-pi/4,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{-\pi}{4}$};
-        \draw[black,thick] (pi/4,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{\pi}{4}$};
-        \draw[black,thick] (pi/2,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{\pi}{2}$};
-        \foreach \y in {-2,2,4,6} \draw[black,thick] (.05,\y)--++(-.1,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[black,thick,->,>=stealth'] (-pi/2,0)--(1.75,0) node[right] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-2)--(0,7.) node[above] {$y$};
+        \draw[black,thick] (-pi/2,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1] {$\dfrac{-\pi}{2}$};
+        \draw[black,thick] (-pi/4,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1] {$\dfrac{-\pi}{4}$};
+        \draw[black,thick] (pi/4,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1] {$\dfrac{\pi}{4}$};
+        \draw[black,thick] (pi/2,.15)--++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1] {$\dfrac{\pi}{2}$};
+        \foreach \y in {-2,2,4,6} \draw[black,thick] (.05,\y)--++(-.1,0) node[left, xshift=-2, fill=white, inner sep=1] {$\y$};
         \draw[samples=65,domain=-pi/2:pi/2, variable=\t, smooth, red, thick] plot (\t,{2-4*cos(deg(\t)*4)});
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></statement></exercise>
@@ -193,19 +178,17 @@
     </tabular></sidebyside></li>
 <li><p>Sketch the graph.</p><sidebyside width="85%">
     <image xml:id="hp7-sum-13"><description>grid</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [xscale=1.8]
+        <![CDATA[
+        \begin{tikzpicture} [xscale=1.4]
         \draw[cyan] (-2*pi/3,-1) grid[xstep=pi/6, ystep=1/2] (pi,1);
-        \draw[black,thick,->,>=stealth'] (-2*pi/3,0)--(3.3,0) node[right, scale=.9] {$x$};
-        \draw[black,thick,->,>=stealth'] (0,-1)--(0,1.2) node[above, scale=.9] {$y$};
-        \draw[black,thick] (-2*pi/3,.05)--++(0,-.1) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{-2\pi}{3}$};
-        \draw[black,thick] (-pi/3,.05)--++(0,-.1) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{-\pi}{3}$};
-        \draw[black,thick] (pi/3,.05)--++(0,-.1) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{\pi}{3}$};
-        \draw[black,thick] (2*pi/3,.05)--++(0,-.1) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{2\pi}{3}$};
-        \draw[black,thick] (pi,.05)--++(0,-.1) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$\pi$};
-        \foreach \y in {-1,1} \draw[black,thick] (.05,\y)--++(-.1,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[black,thick,->,>=stealth'] (-2*pi/3,0)--(3.3,0) node[right] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-1)--(0,1.2) node[above] {$y$};
+        \draw[black,thick] (-2*pi/3,.05)--++(0,-.1) node[below, yshift=-2, fill=white, inner sep=1] {$\dfrac{-2\pi}{3}$};
+        \draw[black,thick] (-pi/3,.05)--++(0,-.1) node[below, yshift=-2, fill=white, inner sep=1] {$\dfrac{-\pi}{3}$};
+        \draw[black,thick] (pi/3,.05)--++(0,-.1) node[below, yshift=-2, fill=white, inner sep=1] {$\dfrac{\pi}{3}$};
+        \draw[black,thick] (2*pi/3,.05)--++(0,-.1) node[below, yshift=-2, fill=white, inner sep=1] {$\dfrac{2\pi}{3}$};
+        \draw[black,thick] (pi,.05)--++(0,-.1) node[below, yshift=-4, fill=white, inner sep=1] {$\pi$};
+        \foreach \y in {-1,1} \draw[black,thick] (.05,\y)--++(-.1,0) node[left, xshift=-2, fill=white, inner sep=1] {$\y$};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></li>
 <li>Solve <m>~~\sin\left(\dfrac{x}{2}+\dfrac{\pi}{6}\right)=1,~~ \text{for}~~ \dfrac{-2\pi}{3} \le x \le \dfrac{2\pi}{3}</m></li>
@@ -258,19 +241,17 @@
     </tabular></sidebyside></li>
 <li><sidebyside width="90%" margins="0% 0%">
     <image xml:id="hp7-sum-13ans"><description>sinusoidal graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [xscale=1.8]
+        <![CDATA[
+        \begin{tikzpicture} [xscale=1.4]
         \draw[cyan] (-2*pi/3,-1) grid[xstep=pi/6, ystep=1/2] (pi,1);
-        \draw[black,thick,->,>=stealth'] (-2*pi/3,0)--(3.3,0) node[right, scale=.9] {$x$};
-        \draw[black,thick,->,>=stealth'] (0,-1)--(0,1.2) node[above, scale=.9] {$y$};
-        \draw[black,thick] (-2*pi/3,.05)--++(0,-.1) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{-2\pi}{3}$};
-        \draw[black,thick] (-pi/3,.05)--++(0,-.1) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{-\pi}{3}$};
-        \draw[black,thick] (pi/3,.05)--++(0,-.1) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{\pi}{3}$};
-        \draw[black,thick] (2*pi/3,.05)--++(0,-.1) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{2\pi}{3}$};
-        \draw[black,thick] (pi,.05)--++(0,-.1) node[below, yshift=-4, fill=white, inner sep=1, scale=.8] {$\pi$};
-        \foreach \y in {-1,1} \draw[black,thick] (.05,\y)--++(-.1,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[black,thick,->,>=stealth'] (-2*pi/3,0)--(3.3,0) node[right] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-1)--(0,1.2) node[above] {$y$};
+        \draw[black,thick] (-2*pi/3,.05)--++(0,-.1) node[below, yshift=-2, fill=white, inner sep=1] {$\dfrac{-2\pi}{3}$};
+        \draw[black,thick] (-pi/3,.05)--++(0,-.1) node[below, yshift=-2, fill=white, inner sep=1] {$\dfrac{-\pi}{3}$};
+        \draw[black,thick] (pi/3,.05)--++(0,-.1) node[below, yshift=-2, fill=white, inner sep=1] {$\dfrac{\pi}{3}$};
+        \draw[black,thick] (2*pi/3,.05)--++(0,-.1) node[below, yshift=-2, fill=white, inner sep=1] {$\dfrac{2\pi}{3}$};
+        \draw[black,thick] (pi,.05)--++(0,-.1) node[below, yshift=-4, fill=white, inner sep=1] {$\pi$};
+        \foreach \y in {-1,1} \draw[black,thick] (.05,\y)--++(-.1,0) node[left, xshift=-2, fill=white, inner sep=1] {$\y$};
         \draw[samples=65,domain=-2*pi/3:pi, variable=\t, smooth, red, thick] plot (\t,{sin(deg(\t/2 + pi/6) )});
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></li>
@@ -322,19 +303,17 @@
     </tabular></sidebyside></li>
     <li><p>Sketch the graph.</p><sidebyside width="85%">
     <image xml:id="hp7-sum-14"><description>grid</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [xscale=3.7, yscale=.4]
+        <![CDATA[
+        \begin{tikzpicture} [xscale=2.8, yscale=.36]
         \draw[cyan] (0,0) grid[xstep=pi/18] (5*pi/6,7);
-        \draw[black,thick,->,>=stealth'] (0,0)--(2.7,0) node[right, scale=.9] {$x$};
-        \draw[black,thick,->,>=stealth'] (0,0)--(0,7.5) node[above, scale=.9] {$y$};
-        \draw[black,thick] (pi/6,.2)--++(0,-.4) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{\pi}{6}$};
-        \draw[black,thick] (pi/3,.2)--++(0,-.4) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{\pi}{3}$};
-        \draw[black,thick] (pi/2,.2)--++(0,-.4) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{\pi}{2}$};
-        \draw[black,thick] (2*pi/3,.2)--++(0,-.4) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{2\pi}{3}$};
-        \draw[black,thick] (5*pi/6,.2)--++(0,-.4) node[below, yshift=-2, fill=white, inner sep=1] {$\frac{5\pi}{6}$};
-        \foreach \y in {2,4,6} \draw[black,thick] (.03,\y)--++(-.06,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[black,thick,->,>=stealth'] (0,0)--(2.7,0) node[right] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,0)--(0,7.5) node[above] {$y$};
+        \draw[black,thick] (pi/6,.2)--++(0,-.4) node[below, yshift=-2, fill=white, inner sep=1] {$\dfrac{\pi}{6}$};
+        \draw[black,thick] (pi/3,.2)--++(0,-.4) node[below, yshift=-2, fill=white, inner sep=1] {$\dfrac{\pi}{3}$};
+        \draw[black,thick] (pi/2,.2)--++(0,-.4) node[below, yshift=-2, fill=white, inner sep=1] {$\dfrac{\pi}{2}$};
+        \draw[black,thick] (2*pi/3,.2)--++(0,-.4) node[below, yshift=-2, fill=white, inner sep=1] {$\dfrac{2\pi}{3}$};
+        \draw[black,thick] (5*pi/6,.2)--++(0,-.4) node[below, yshift=-2, fill=white, inner sep=1] {$\dfrac{5\pi}{6}$};
+        \foreach \y in {2,4,6} \draw[black,thick] (.03,\y)--++(-.06,0) node[left, xshift=-2, fill=white, inner sep=1] {$\y$};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></li>
     <li>Solve <m>~~2\cos\left(3x-\dfrac{\pi}{2}\right)+5=7,~~ \text{for}~~ 0 \le x \le 2\pi</m></li>
@@ -376,7 +355,7 @@
         <cell><m>\dfrac{\pi}{2}</m></cell>
         <cell><m>\hphantom{0000}</m></cell>
         <cell><m>\hphantom{0000}</m></cell></row>
-                                             <row> 
+                                                <row> 
         <cell><m>\hphantom{0000}</m></cell>
         <cell><m>\pi</m></cell>
         <cell><m>\hphantom{0000}</m></cell>
@@ -384,15 +363,13 @@
     </tabular></sidebyside></li>
     <li><p>Sketch the graph.</p><sidebyside width="85%">
     <image xml:id="hp7-sum-15"><description>grid</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=0.1]
+        <![CDATA[
+        \begin{tikzpicture} [scale=0.07]
         \draw[cyan] (-60,0) grid[step=5] (60,30);
-        \draw[black,thick,->,>=stealth'] (-60,0)--(63,0) node[right, scale=.9] {$x$};
-        \draw[black,thick,->,>=stealth'] (0,-3)--(0,33) node[above, scale=.9] {$y$};
-        \foreach \x in {-60,-50,...,-10,10,20,...,60} \draw[black,thick] (\x,.8)--++(0,-1.6) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {\x};
-        \foreach \y in {5,10,...,30} \draw[black,thick] (.8,\y)--++(-1.6,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[black,thick,->,>=stealth'] (-60,0)--(63,0) node[right] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-3)--(0,33) node[above] {$y$};
+        \foreach \x in {-60,-50,...,-10,10,20,...,60} \draw[black,thick] (\x,.8)--++(0,-1.6) node[below, yshift=-2, fill=white, inner sep=1] {$\x$};
+        \foreach \y in {10,20,30} \draw[black,thick] (.8,\y)--++(-1.6,0) node[left, xshift=-2, fill=white, inner sep=1] {$\y$};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></li>
     <li>Solve <m>~~20-5\cos\left(\dfrac{\pi}{30}x\right)=25,~~ \text{for}~~ 0 \le x \le 60</m></li>
@@ -433,7 +410,7 @@
         <cell><m>\dfrac{\pi}{2}</m></cell>
         <cell><m>0</m></cell>
         <cell><m>20</m></cell></row>
-                                             <row> 
+                                                <row> 
         <cell><m>50</m></cell>
         <cell><m>\pi</m></cell>
         <cell><m>-1</m></cell>
@@ -441,15 +418,13 @@
     </tabular></sidebyside></li>
     <li><sidebyside width="90%" margins="0% 0%">
     <image xml:id="hp7-sum-15ans"><description>sinusoidal graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=0.1]
+        <![CDATA[
+        \begin{tikzpicture} [scale=0.07]
         \draw[cyan] (-60,0) grid[step=5] (60,30);
-        \draw[black,thick,->,>=stealth'] (-60,0)--(63,0) node[right, scale=.9] {$x$};
-        \draw[black,thick,->,>=stealth'] (0,-3)--(0,33) node[above, scale=.9] {$y$};
-        \foreach \x in {-60,-50,...,-10,10,20,...,60} \draw[black,thick] (\x,.8)--++(0,-1.6) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {\x};
-        \foreach \y in {5,10,...,30} \draw[black,thick] (.8,\y)--++(-1.6,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[black,thick,->,>=stealth'] (-60,0)--(63,0) node[right] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-3)--(0,33) node[above] {$y$};
+        \foreach \x in {-60,-50,...,-10,10,20,...,60} \draw[black,thick] (\x,.8)--++(0,-1.6) node[below, yshift=-2, fill=white, inner sep=1] {$\x$};
+        \foreach \y in {10,20,30} \draw[black,thick] (.8,\y)--++(-1.6,0) node[left, xshift=-2, fill=white, inner sep=1] {$\y$};
         \draw[samples=65,domain=-60:60, variable=\t, smooth, red, thick] plot (\t,{20-5*cos(deg(pi*\t/30) )});
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></li>
@@ -492,7 +467,7 @@
         <cell><m>\pi</m></cell>
         <cell><m>\hphantom{0000}</m></cell>
         <cell><m>\hphantom{0000}</m></cell></row>
-                                             <row> 
+                                                <row> 
         <cell><m>\hphantom{0000}</m></cell>
         <cell><m>\dfrac{-\pi}{3}</m></cell>
         <cell><m>\hphantom{0000}</m></cell>
@@ -500,15 +475,13 @@
     </tabular></sidebyside></li>
     <li><p>Sketch the graph.</p><sidebyside width="95%">
     <image xml:id="hp7-sum-16"><description>grid</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [xscale=4.8, yscale=0.024]
+        <![CDATA[
+        \begin{tikzpicture} [xscale=3.6, yscale=0.04]
         \draw[cyan] (-5/4,0) grid[xstep=1/4, ystep=10] (5/4,100);
-        \draw[black,thick,->,>=stealth'] (-1.25,0)--(1.34,0) node[right, scale=.9] {$x$};
-        \draw[black,thick,->,>=stealth'] (0,-3)--(0,110) node[above, scale=.9] {$y$};
-        \foreach \x in {-1,-0.5, 0.5,1} \draw[black,thick] (\x,3)--++(0,-6) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {\x};
-        \foreach \y in {20,40,...,100} \draw[black,thick] (.02,\y)--++(-.04,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+        \draw[black,thick,->,>=stealth'] (-1.25,0)--(1.34,0) node[right] {$x$};
+        \draw[black,thick,->,>=stealth'] (0,-3)--(0,110) node[above] {$y$};
+        \foreach \x in {-1,-0.5, 0.5,1} \draw[black,thick] (\x,3)--++(0,-6) node[below, yshift=-2, fill=white, inner sep=1] {$\x$};
+        \foreach \y in {20,40,...,100} \draw[black,thick] (.02,\y)--++(-.04,0) node[left, xshift=-2, fill=white, inner sep=1] {$\y$};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></li>
     <li>Solve <m>~~50-50\cos(2\pi x)=50,~~ \text{for}~~ -1 \le x \le 1</m></li>
@@ -518,50 +491,44 @@
 
 <exercisegroup><introduction><p>For Problems 17<ndash/>18, label the scales on the axes for the graph.</p></introduction>
 
-<exercise number="17"><statement><sidebyside widths="40% 40%" valigns="middle middle" margins="10% 0%"><p><m>y=\dfrac{1}{4}\sin\left(\dfrac{x}{6}\right)+\dfrac{1}{2}</m></p>
-    <image xml:id="hp7-sum-17"><description>sinusoidal graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [xscale=.2, yscale=3]
-        \draw[cyan] (-6*pi,0) grid[xstep=pi, ystep=1/4] (6*pi,1);
-        \draw[black,thick,->,>=stealth'] (-6*pi,0)--(19.5,0) node[right] {$x$};
-        \draw[black,thick,->,>=stealth'] (0,-0.03)--(0,1.2) node[above] {$y$};
-        \foreach \x [evaluate=\x as \xi using (pi*\x)] in {-6,-4,-2,2,4,6}  \draw[black,thick] (\xi,.03)--++(0,-.06) ;
-        \foreach \y in {0.5,1} \draw[black,thick] (.6,\y)--++(-1.2,0);
-        \draw[samples=65,domain=-6*pi:6*pi,variable=\x, smooth, red, thick] plot (\x,{ 1/4*sin(deg(\x/6) ) +1/2 });
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></statement>
-
-<answer><sidebyside width="50%" margins="0% 0%">
-    <image xml:id="hp7-sum-17ans"><description>sinusoidal graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [xscale=.2, yscale=3]
-        \draw[cyan] (-6*pi,0) grid[xstep=pi, ystep=1/4] (6*pi,1);
-        \draw[black,thick,->,>=stealth'] (-6*pi,0)--(19.5,0) node[right] {$x$};
-        \draw[black,thick,->,>=stealth'] (0,0)--(0,1.1) node[above] {$y$};
-        \foreach \x [evaluate=\x as \xi using (pi*\x)] in {-6,-4,-2,2,4,6}  \draw[black,thick] (\xi,.03)--++(0,-.06) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {\x$\pi$};
-        \foreach \y in {0.5,1} \draw[black,thick] (.6,\y)--++(-1.2,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
-        \draw[samples=65,domain=-6*pi:6*pi,variable=\x, smooth, red, thick] plot (\x,{ 1/4*sin(deg(\x/6) ) +1/2 });
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></answer></exercise>
-
-<exercise number="18"><statement><sidebyside widths="40% 40%" valigns="middle middle" margins="10% 0%"><p><m>y=\dfrac{3}{2}\cos\left(\dfrac{x}{2}\right)-2</m></p>
-    <image xml:id="hp7-sum-18"><description>sinusoidal graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [xscale=.56, yscale=.8]
-        \draw[cyan] (-2*pi,-4) grid[xstep=pi/2, ystep=1/2] (2*pi,0);
-        \draw[black,thick,->,>=stealth'] (-2*pi,0)--(6.65,0) node[right, scale=.9] {$x$};
-        \draw[black,thick,->,>=stealth'] (0,-4)--(0,0.2) node[above, scale=.9] {$y$};
-        \foreach \x [evaluate=\x as \xi using (pi/2*\x)] in {-4,-2,2,4}  \draw[black,thick] (\xi,.04)--++(0,-.08) ;
-        \foreach \y in {-4,-3,-2,-1} \draw[black,thick] (.08,\y)--++(-.16,0);
-        \draw[samples=65,domain=-2*pi:2*pi,variable=\x, smooth, red, thick] plot (\x,{ 3/2*cos(deg(\x/2) ) -2 });
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></statement></exercise>
+    <exercise number="17"><statement><sidebyside widths="35% 50%" valigns="middle middle" margins="5% 5%"><p><m>y=\dfrac{1}{4}\sin\left(\dfrac{x}{6}\right)+\dfrac{1}{2}</m></p>
+        <image xml:id="hp7-sum-17"><description>sinusoidal graph</description><latex-image>
+            <![CDATA[
+            \begin{tikzpicture} [xscale=.16, yscale=2.4]
+            \draw[cyan] (-6*pi,0) grid[xstep=pi, ystep=1/4] (6*pi,1);
+            \draw[black,thick,->,>=stealth'] (-6*pi,0)--(19.9,0) node[right] {$x$};
+            \draw[black,thick,->,>=stealth'] (0,-0.03)--(0,1.1) node[above] {$y$};
+            \foreach \x [evaluate=\x as \xi using (pi*\x)] in {-6,-4,-2,2,4,6}  \draw[black,thick] (\xi,.03)--++(0,-.06) ;
+            \foreach \y in {0.5,1} \draw[black,thick] (.6,\y)--++(-1.2,0);
+            \draw[samples=65,domain=-6*pi:6*pi,variable=\x, smooth, red, thick] plot (\x,{ 1/4*sin(deg(\x/6) ) +1/2 });
+            \end{tikzpicture}]]>
+        </latex-image></image></sidebyside></statement>
+    
+    <answer>
+        <image xml:id="hp7-sum-17ans"  width="50%" margins="0% 50%"><description>sinusoidal graph</description><latex-image>
+            <![CDATA[
+            \begin{tikzpicture} [xscale=.16, yscale=2.4]
+            \draw[cyan] (-6*pi,0) grid[xstep=pi, ystep=1/4] (6*pi,1);
+            \draw[black,thick,->,>=stealth'] (-6*pi,0)--(19.9,0) node[right] {$x$};
+            \draw[black,thick,->,>=stealth'] (0,0)--(0,1.1) node[above] {$y$};
+            \foreach \x [evaluate=\x as \xi using (pi*\x)] in {-6,-4,-2,2,4,6}  \draw[black,thick] (\xi,.03)--++(0,-.06) node[below, yshift=-2, fill=white, inner sep=1] {\x$\pi$};
+            \foreach \y in {0.5,1} \draw[black,thick] (.6,\y)--++(-1.2,0) node[left, xshift=-2, fill=white, inner sep=1] {$\y$};
+            \draw[samples=65,domain=-6*pi:6*pi,variable=\x, smooth, red, thick] plot (\x,{ 1/4*sin(deg(\x/6) ) +1/2 });
+            \end{tikzpicture}]]>
+        </latex-image></image></answer></exercise>
+    
+    <exercise number="18"><statement><sidebyside widths="35% 50%" valigns="middle middle" margins="5% 5%"><p><m>y=\dfrac{3}{2}\cos\left(\dfrac{x}{2}\right)-2</m></p>
+        <image xml:id="hp7-sum-18"><description>sinusoidal graph</description><latex-image>
+            <![CDATA[
+            \begin{tikzpicture} [xscale=.5, yscale=.7]
+            \draw[cyan] (-2*pi,-4) grid[xstep=pi/2, ystep=1/2] (2*pi,0);
+            \draw[black,thick,->,>=stealth'] (-2*pi,0)--(6.7,0) node[right] {$x$};
+            \draw[black,thick,->,>=stealth'] (0,-4)--(0,0.4) node[above] {$y$};
+            \foreach \x [evaluate=\x as \xi using (pi/2*\x)] in {-4,-2,2,4}  \draw[black,thick] (\xi,.04)--++(0,-.08) ;
+            \foreach \y in {-4,-3,-2,-1} \draw[black,thick] (.08,\y)--++(-.16,0);
+            \draw[samples=65,domain=-2*pi:2*pi,variable=\x, smooth, red, thick] plot (\x,{ 3/2*cos(deg(\x/2) ) -2 });
+            \end{tikzpicture}]]>
+        </latex-image></image></sidebyside></statement></exercise>
 </exercisegroup>
 
 <exercisegroup cols="2"><introduction><p>
@@ -579,9 +546,7 @@
 <answer><p><ol marker="a">
     <li><sidebyside width="80%" margins="0% 20%">
     <image xml:id="hp7-sum-19ans"><description>sinusoidal graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
+        <![CDATA[
         \begin{tikzpicture} [xscale=.8, yscale=.25]
         \draw[black,thick] (0,-3) --++(2*pi,0) --++(0,13)--++(-2*pi,0) --++(0,-13);
         \draw[black,thick] (0,0)--(2*pi,0);
