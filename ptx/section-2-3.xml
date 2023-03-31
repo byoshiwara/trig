@@ -11,18 +11,10 @@
 <p>A triangle has six parts: three sides and three angles. In a right triangle, we know that one of the angles is <m>90 \degree</m>. If we know three parts of a right triangle, including one of the sides, we can use trigonometry to find all the other unknown parts. This is called <em>solving</em><idx><h>solve</h><h>a triangle</h></idx> the triangle. </p>
 
 <example><statement><sidebyside widths="60% 30%" valigns="middle middle">
-<p>The hypotenuse of a right triangle is 150 feet long, and one of the angles is <m>35 \degree</m>, as shown in the figure. Solve the triangle.</p>
+    <p>The hypotenuse of a right triangle is 150 feet long, and one of the angles is <m>35 \degree</m>, as shown in the figure. Solve the triangle.</p>
     <image xml:id="exam2-3-1"><description>triangle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
-
+        <![CDATA[
+        \begin{tikzpicture}[scale=1.05]
         \coordinate (A) at (0,0 );
         \coordinate (B) at (3.3,0);
         \coordinate (C) at (0,2.3);
@@ -39,11 +31,11 @@
     <md><mrow>\sin  (35\degree) \amp = \dfrac {\text{opposite}}{\text{hypotenuse}}</mrow>
         <mrow>0.5736 \amp = \dfrac{a}{150}</mrow>
         <mrow>a \amp = 150(0.5736) = 86.04 </mrow></md>
-  The opposite side is about 86 feet long. To find side <m>b</m> we could use the Pythagorean theorem now, but it is better to use given information, rather than values we have calculated, to find the other unknown parts. We will use the cosine ratio.
+    The opposite side is about 86 feet long. To find side <m>b</m> we could use the Pythagorean theorem now, but it is better to use given information, rather than values we have calculated, to find the other unknown parts. We will use the cosine ratio.
     <md><mrow>\cos (35 \degree) \amp = \dfrac {\text{adjacent}}{\text{hypotenuse}}</mrow>
         <mrow>0.8192 \amp = \dfrac{b}{150}</mrow>
         <mrow>b \amp = 150(0.8192) = 122.89</mrow></md>
-  The adjacent side is about 123 feet long. Finally, the unknown angle is the complement of <m>35 \degree</m>, or <m>55 \degree</m>.</p></solution></example>
+    The adjacent side is about 123 feet long. Finally, the unknown angle is the complement of <m>35 \degree</m>, or <m>55 \degree</m>.</p></solution></example>
 
 <exercise><statement><p>Sketch a right triangle with </p>
         <p><ul>
@@ -61,15 +53,8 @@
 
 <sidebyside width="75%">
     <image xml:id="fig-2-3slide"><description>slide</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
+        <![CDATA[
+        \begin{tikzpicture}[scale=.9]
         \coordinate (B) at (0,0 );
         \coordinate (A) at (3.5,0);
         \coordinate (C) at (3.5,2);
@@ -84,13 +69,13 @@
 
         \draw[red,thick] (A)++(1.5,0)--++(-1.3,0);
         \draw[red,thick] (C)++(1.5,0)--++(-1.3,0);
-        \draw[black,thick,<-] (C)++(0.9,0)--++(0,-0.75) node[below] {\color{blue}77 in};
-        \draw[black,thick,<-] (A)++(0.9,0)--++(0,0.75);
+        \draw[black,thick,<-,>=stealth'] (C)++(0.9,0)--++(0,-0.75) node[below] {\color{blue}77 in};
+        \draw[black,thick,<-,>=stealth'] (A)++(0.9,0)--++(0,0.75);
 
         \draw [black, ultra thick] (C) to[out=185,in=0,distance=1cm] (B);
         \draw [black, ultra thick] (B) -- +(-0.25,0);
-        \draw[black,thick,<-] (B)++(0,-1.1)--++(1.1,0) node[right] {\color{blue}136 in};
-        \draw[black,thick,<-] (A)++(0,-1.1)--++(-1.1,0);
+        \draw[black,thick,<-,>=stealth'] (B)++(0,-1.1)--++(1.1,0) node[right] {\color{blue}136 in};
+        \draw[black,thick,<-,>=stealth'] (A)++(0,-1.1)--++(-1.1,0);
 
         \coordinate (B) at (6,0 );
         \coordinate (A) at (9.5,0);
@@ -106,11 +91,11 @@
 
         \draw[red,thick] (A)++(1.5,0)--++(-1.3,0);
         \draw[red,thick] (C)++(+1.5,0)--++(-1.3,0);
-        \draw[black,thick,<-] (C)++(0.9,0)--++(0,-0.75) node[below] {\color{blue}77 in};
-        \draw[black,thick,<-] (A)++(0.9,0)--++(0,0.75);
+        \draw[black,thick,<-,>=stealth'] (C)++(0.9,0)--++(0,-0.75) node[below] {\color{blue}77 in};
+        \draw[black,thick,<-,>=stealth'] (A)++(0.9,0)--++(0,0.75);
 
-        \draw[black,thick,<-] (B)++(0,-1.1)--++(1.1,0) node[right] {\color{blue}136 in};
-        \draw[black,thick,<-] (A)++(0,-1.1)--++(-1.1,0);
+        \draw[black,thick,<-,>=stealth'] (B)++(0,-1.1)--++(1.1,0) node[right] {\color{blue}136 in};
+        \draw[black,thick,<-,>=stealth'] (A)++(0,-1.1)--++(-1.1,0);
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
 
@@ -154,22 +139,14 @@ say the same thing in different ways.</p></note>
 <answer><p><m>\cos (68\degree) = 0.3746</m>  or  <m>\cos^{-1}(0.3746) = 68\degree</m></p></answer></exercise> 
 
 <example><statement><p>Find the angle of inclination of a hill if you gain 400 feet in elevation while traveling half a mile.</p></statement> 
-        
+
 <solution><p>A sketch of the hill is shown at right. (Recall that 1 mile = 5280 feet.) </p>
 <sidebyside widths="55% 45%" valigns="middle middle"><p>
     <md><mrow>\sin \theta \amp = \dfrac {400}{2640} = 0.\overline{15}</mrow>
         <mrow>\theta \amp = \sin^{-1} 0.\overline{15} = 8.71\degree</mrow></md></p>
     <image xml:id="exam2-3-3"><description>triangle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
-
+        <![CDATA[
+        \begin{tikzpicture}[scale=.9]
         \coordinate (A) at (0,0 );
         \coordinate (B) at (5,0 );
         \coordinate (C) at (5,1);
@@ -179,7 +156,7 @@ say the same thing in different ways.</p></note>
         \draw[black,thick] (C)--(B)  node[right,midway] {\color{blue}400};
         \draw[black,thick] (A) --(C) node[above, midway] {\color{blue}2640};
 
-        \draw[red,thick] (A)++(1.6,0) arc(00:{atan(1/5)}:1.6) node[right,midway, xshift=2,yshift=1] {\small$\theta$};
+        \draw[red,thick] (A)++(1.9,0) arc(00:{atan(1/5)}:1.9) node[right,midway, xshift=2,yshift=1] {$\theta$};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside> 
 <p>The angle of inclination of the hill is about <m>8.7\degree</m>.</p> </solution></example>
@@ -195,35 +172,29 @@ say the same thing in different ways.</p></note>
 
 <p>Recall that the side opposite a <m>30\degree</m> angle is half the length of the hypotenuse, so <m>\sin 30\degree = \dfrac{1}{2}</m>. </p>
 
-<sidebyside widths="70% 16%" valigns="middle middle" margins="0% 0%">
-<p>The figure at right shows a 30-60-90 triangle with hypotenuse of length 2. The opposite side has length 1, and we can calculate the length of the adjacent side.
-        <md><mrow>1^2 + b^2 \amp = 2^2 </mrow>
-            <mrow>b^2 \amp = 2^2 - 1^2 = 3</mrow>
-            <mrow>b \amp = \sqrt{3}</mrow></md></p>
-    <image xml:id="fig-2-3-30-60-90"><description>triangle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
-
-        \coordinate (A) at (0,0 );
-        \coordinate (B) at (1.6,0 );
-        \coordinate (C) at (0,2.77);
-
-        \draw[blue,thick] (A) rectangle +(.25,.25);
-        \draw[black,thick] (A)--(B) node[below,midway] {\color{blue}1};
-        \draw[black,thick] (C)--(B)  node[above right,midway, yshift=-2] {\color{blue}2};
-        \draw[black,thick] (A) --(C) node[left, midway, yshift=-2] {\color{blue}$b$};
-
-        \draw[red,thick] (B)++(-.3,0) arc(180:120:0.3) node[left,midway, yshift=3] {$60\degree$};
-        \draw[red,thick] (C)++(0,-.9) arc(-90:-60:0.9) node[below,midway, xshift=3, yshift=-3] {$30\degree$};
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside>
+<sidebyside widths="70% 16%" valigns="middle middle" margins="0% 5%">
+    <p>The figure at right shows a 30-60-90 triangle with hypotenuse of length 2. The opposite side has length 1, and we can calculate the length of the adjacent side.
+            <md><mrow>1^2 + b^2 \amp = 2^2 </mrow>
+                <mrow>b^2 \amp = 2^2 - 1^2 = 3</mrow>
+                <mrow>b \amp = \sqrt{3}</mrow></md></p>
+        <image xml:id="fig-2-3-30-60-90"><description>triangle</description><latex-image>
+            <![CDATA[
+            \begin{tikzpicture}
+    
+            \coordinate (A) at (0,0 );
+            \coordinate (B) at (1.6,0 );
+            \coordinate (C) at (0,2.77);
+    
+            \draw[blue,thick] (A) rectangle +(.25,.25);
+            \draw[black,thick] (A)--(B) node[below,midway] {\color{blue}1};
+            \draw[black,thick] (C)--(B)  node[above right,midway, yshift=-2] {\color{blue}2};
+            \draw[black,thick] (A) --(C) node[left, midway, yshift=-2] {\color{blue}$b$};
+    
+            \draw[red,thick] (B)++(-.3,0) arc(180:120:0.3) node[left,midway, yshift=3] {$60\degree$};
+            \draw[red,thick] (C)++(0,-.9) arc(-90:-60:0.9) node[below,midway, xshift=3, yshift=-3] {$30\degree$};
+            \end{tikzpicture}]]>
+        </latex-image></image>
+</sidebyside>
 
 <p>Now we know the cosine and tangent of <m>30\degree</m>.
 
@@ -240,19 +211,11 @@ say the same thing in different ways.</p></note>
 <p> The angles <m>30\degree</m>, <m>60\degree</m>, and <m>45\degree</m> are “special” <idx><h>angle</h><h>special</h></idx> because we can easily find exact values for their trig ratios, and use those exact values to find exact lengths for the sides of triangles with those angles.</p>
 
 <example><statement><p>The sides of an equilateral triangle are 8 centimeters long. Find the exact length of the triangle's altitude, <m>h</m>.</p></statement> 
-        
+
 <solution><sidebyside widths="65% 27%" valigns="middle middle" margins="0% 5%"><p>The altitude divides the triangle into two 30-60-90 right triangles as shown in the figure. The altitude is adjacent to the <m>30\degree</m> angle, and the hypotenuse of the right triangle is 8 centimeters. Thus,</p>  
     <image xml:id="exam2-3-4"><description>triangle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
-
+        <![CDATA[
+        \begin{tikzpicture}[scale=.9]
         \coordinate (A) at (0,0 );
         \coordinate (B) at (1.6,0 );
         \coordinate (C) at (0,2.77);
@@ -269,8 +232,8 @@ say the same thing in different ways.</p></note>
     <p><md><mrow>\cos 35 \degree \amp = \dfrac {\text{adjacent}}{\text{hypotenuse}} \amp \amp \blert{\text{Fill in the values.}}</mrow>
             <mrow>\dfrac{\sqrt{3}}{2} \amp = \dfrac{h}{8} \amp \amp \blert{\text{Multiply both sides by 8.}}</mrow>
             <mrow>h \amp = 8\left(\dfrac{\sqrt{3}}{2}\right) = 4\sqrt{3} </mrow></md>
-     The altitude is exactly <m>4\sqrt{3}</m> centimeters long.</p>           
-</solution></example>                              
+        The altitude is exactly <m>4\sqrt{3}</m> centimeters long.</p>           
+</solution></example>                            
 
 <p>From this exact answer, we can find approximations to any degree of accuracy we like. You can check that <m>4\sqrt{3} \approx 6.9282</m>, so the altitude is approximately 6.9 centimeters long.</p>
 
@@ -288,16 +251,8 @@ say the same thing in different ways.</p></note>
         <mrow>\tan (45\degree )\amp = \dfrac {\text{opposite}}{\text{adjacent}} = 1</mrow>
     </md></p>
     <image xml:id="fig-2-3-45"><description>triangle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
+        <![CDATA[
         \begin{tikzpicture}
-
         \coordinate (A) at (0,0 );
         \coordinate (B) at (-3,0 );
         \coordinate (C) at (0,3);
@@ -309,7 +264,7 @@ say the same thing in different ways.</p></note>
 
         \draw[red,thick] (B)++(.3,0) arc(0:45:0.3) node[right,midway, yshift=3] {$45\degree$};
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside>
+    </latex-image></image></sidebyside> 
 </subsection>
 
 <subsection><title>The Trigonometric Ratios for the Special Angles</title>

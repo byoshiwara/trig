@@ -12,15 +12,8 @@
 
 <sidebyside widths="12% 26%" valigns="middle middle" margins="25% 5%">
     <image xml:id="fig-2-2intro-a"><description>right triangle with one unknown side</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}  
+        <![CDATA[
+        \begin{tikzpicture} [scale=.8]
 
         \coordinate (A) at (0,0);
         \coordinate (B) at (1.5,0);
@@ -34,15 +27,8 @@
     </latex-image></image>
     
     <image xml:id="fig-2-2intro-b"><description>right triangle with two unknown sides</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} [scale=1.1] 
+        <![CDATA[
+        \begin{tikzpicture} [scale=1.] 
 
         \coordinate (A) at (0,0);
         \coordinate (B) at (-3,0);
@@ -70,15 +56,8 @@
 <sidebyside widths="60% 32%" valigns="middle middle" margins="0% 0%">
 <p>In <xref ref="example-equilateral-triangle-altitude" text="custom">Example 2 of Section 1.2</xref>, we saw that in a 30-60-90 right triangle, the ratio of the shortest side to the hypotenuse was <m>\frac{1}{2}</m>, or 0.5. This ratio is the same for any two right triangles with a <m>30\degree</m> angle, because they are similar triangles, as shown at right.</p>
     <image xml:id="fig-2-2-30deg"><description>triangle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
+        <![CDATA[
+        \begin{tikzpicture} [scale=.8]
 
         \coordinate (A) at (0,0);
         \coordinate (B) at (4.2,0);
@@ -98,10 +77,10 @@
         \draw[gray, thick] (-.09,.14) -- ++(-.27,.42) -- ++(-.27,.42);
         \draw[gray, thick] (C)++(-.09,.14) -- ++(-.27,.42) -- ++(-.27,.42);
         \draw[gray, thick] (E)++(-.09,.14) -- ++(-.27,.42);
-        \draw[gray, thick, <-] (E)++(-.225,.35) -- ++(-1.05,-.675);
-        \draw[gray, thick, <-] (A)++(-.225,.35) -- ++(1.05,.675) node [above right, xshift=2] {\color{blue}$4$};
-        \draw[gray, thick, <-] (A)++(-.225,.35)++(-.27,.42) -- ++(1.68,1.08) node [above right, xshift=4] {\color{blue}$6$};
-        \draw[gray, thick, <-] (C)++(-.225,.35)++(-.27,.42) -- ++(-1.68,-1.08);
+        \draw[gray, thick, <-,>=stealth'] (E)++(-.225,.35) -- ++(-1.05,-.675);
+        \draw[gray, thick, <-,>=stealth'] (A)++(-.225,.35) -- ++(1.05,.675) node [above right, xshift=2] {\color{blue}$4$};
+        \draw[gray, thick, <-,>=stealth'] (A)++(-.225,.35)++(-.27,.42) -- ++(1.68,1.08) node [above right, xshift=4] {\color{blue}$6$};
+        \draw[gray, thick, <-,>=stealth'] (C)++(-.225,.35)++(-.27,.42) -- ++(-1.68,-1.08);
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
 
@@ -110,47 +89,32 @@
  <note><p>Recall that we use the notation <m>f(x)</m> to indicate a <term>function</term> of an input variable, <m>x</m>. In fact, the sine ratio is a function of the angle, so we use parentheses around the angle input to refer to its sine, like this: <m>\sin (\theta)</m>. </p></note>
 
 <definition><title>Sine of an Acute Angle</title>
-<idx><h>sine</h></idx><idx><h>sine</h><h>of an acute angle</h></idx>
-<statement>
-<sidebyside widths="30% 46%" margins="10% 10%" valigns="middle middle">
-    <p><m>~~~~~~\sin (\theta) = \dfrac{\text{opposite}}{\text{hypotenuse}}</m></p>
-    <image xml:id="fig-2-2sine"><description>triangle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
-
-        \coordinate (A) at (0,0);
-        \coordinate (B) at (4.2,0);
-        \coordinate (C) at (4.2,2);
-
-        \draw[blue,thick] (B) rectangle +(-0.25,0.25);
-        \draw[black,thick] (A)--(B);
-        \draw[black,thick] (A)--(C) node[above left,midway, xshift=6] {hypotenuse};
-        \draw[black,thick] (B)--(C) node[right,midway] {opposite};
-
-        \draw [red, thick] (0.7,0) arc(0:{atan(2/4.2)}:.7) node[right,midway, xshift=3, yshift=1] {$\theta$};
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></statement>         
+    <idx><h>sine</h></idx><idx><h>sine</h><h>of an acute angle</h></idx>
+    <statement>
+    <sidebyside widths="30% 46%" margins="5% 5%" valigns="middle middle">
+        <p><m>~~~~~~\sin (\theta) = \dfrac{\text{opposite}}{\text{hypotenuse}}</m></p>
+        <image xml:id="fig-2-2sine"><description>triangle</description><latex-image>
+            <![CDATA[
+            \begin{tikzpicture} [scale=.9]    
+            \coordinate (A) at (0,0);
+            \coordinate (B) at (4.2,0);
+            \coordinate (C) at (4.2,2);    
+            \draw[blue,thick] (B) rectangle +(-0.25,0.25);
+            \draw[black,thick] (A)--(B);
+            \draw[black,thick] (A)--(C) node[above left,midway, xshift=6] {hypotenuse};
+            \draw[black,thick] (B)--(C) node[right,midway] {opposite};
+    
+            \draw [red, thick] (0.7,0) arc(0:{atan(2/4.2)}:.7) node[right,midway, xshift=3, yshift=1] {$\theta$};
+            \end{tikzpicture}]]>
+        </latex-image></image></sidebyside>
+    </statement>         
 </definition>
 
 <example><statement><p>Find the sine of the labeled angle in each triangle below. </p> 
 <sidebyside widths="40% 40%" valigns="middle middle">
     <image xml:id="exam2-2-1a"><description>triangle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} [scale=.9]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.72]
 
         \coordinate (A) at (0,0);
         \coordinate (B) at (6,0);
@@ -166,15 +130,8 @@
         \end{tikzpicture}]]>
     </latex-image></image>
     <image xml:id="exam2-2-1b"><description>triangle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}  [rotate=-138.1888, scale=1.7]
+        <![CDATA[
+        \begin{tikzpicture}  [rotate=-138.1888, scale=1.55]
 
         \coordinate (A) at (0,0);
         \coordinate (B) at (2.236,0);
@@ -199,15 +156,8 @@
 <exercise><statement><sidebyside widths="60% 38%" valigns="middle middle" margins="0% 0%">
     <p>Find the sine of the labeled angle in the triangle at right. Round your answer to 4 decimal places.</p>
     <image xml:id="exer2-2-1"><description>triangle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}  [rotate=41.91]
+        <![CDATA[
+        \begin{tikzpicture}  [scale=.81, rotate=41.91]
 
         \coordinate (A) at (0,0);
         \coordinate (B) at (4,0);
@@ -227,15 +177,8 @@
 <warning><sidebyside widths="65% 35%" margins="0% 0%"><stack><p>We must use the sides of a <em>right</em> triangle to calculate the sine of an angle. For example, in the triangle at right, <m>\sin (\theta)=\frac{4}{7}</m>, because <m>\triangle ABC</m> is a right triangle.</p>
 <p>It is <em>not</em> true that <m>\sin (\theta)=\frac{5}{7}</m>, or <m>\sin (\theta)=\frac{6}{7}</m>.  In this chapter, we consider only right triangles.</p></stack>
     <image xml:id="caut2-2"><description>triangle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}  
+        <![CDATA[
+        \begin{tikzpicture} [scale=.81]
 
         \coordinate (A) at (0,0);
         \coordinate (B) at (3.6,2);
@@ -258,7 +201,7 @@
         \draw[cyan,thick] (E)--(C) node[right ,midway, xshift=2, yshift=7] {6};
         \draw[cyan,thick] (E)--(B);
 
-        \draw [red, thick] (.4,0) arc(0:{atan(2/3.6)}:.4) node[ right,midway, xshift=2, yshift=2] {$\alpha$};
+        \draw [red, thick] (.6,0) arc(0:{atan(2/3.6)}:.6) node[ right,midway, xshift=2, yshift=2] {$\alpha$};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></warning>
 </subsection>
@@ -268,39 +211,32 @@
 <p> Mathematicians have calculated the sines of any angle we like. The values of the sine were originally collected into tables, and are now available on scientific calculators. For example, let's find the sine of <m>50\degree</m>. First, consider some triangles, as shown below.</p>
 
 <sidebyside width="65%"><image xml:id="fig-2-2largesine"><description>triangle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}  
+    <![CDATA[
+    \begin{tikzpicture} [scale=.9]
 
-        \coordinate (A) at (0,0);
-        \coordinate (B) at (3.464,0);
-        \coordinate (C) at (3.464,2);
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (3.464,0);
+    \coordinate (C) at (3.464,2);
 
-        \draw[blue,thick] (B) rectangle +(-0.25,0.25);
-        \draw[black,thick] (A)--(B);
-        \draw[black,thick] (C)--(B);
-        \draw[black,thick] (A)--(C) node[above left,midway] {\color{blue}$18$};
+    \draw[blue,thick] (B) rectangle +(-0.25,0.25);
+    \draw[black,thick] (A)--(B);
+    \draw[black,thick] (C)--(B);
+    \draw[black,thick] (A)--(C) node[above left,midway] {\color{blue}$18$};
 
-        \draw [red, thick] (.5,0) arc(0:30:.5) node[ right,midway, xshift=2, yshift=2] {$30\degree$};
+    \draw [red, thick] (.5,0) arc(0:30:.5) node[ right,midway, xshift=2, yshift=2] {$30\degree$};
 
-        \coordinate (D) at (6,0);
-        \coordinate (E) at (8.57,0);
-        \coordinate (F) at (8.57,3.06);
+    \coordinate (D) at (6,0);
+    \coordinate (E) at (8.57,0);
+    \coordinate (F) at (8.57,3.06);
 
-        \draw[blue,thick] (E) rectangle +(-0.25,0.25);
-        \draw[black,thick] (D)--(E);
-        \draw[black,thick] (F)--(E);
-        \draw[black,thick] (D)--(F) node[above left,midway] {\color{blue}$18$};
+    \draw[blue,thick] (E) rectangle +(-0.25,0.25);
+    \draw[black,thick] (D)--(E);
+    \draw[black,thick] (F)--(E);
+    \draw[black,thick] (D)--(F) node[above left,midway] {\color{blue}$18$};
 
-        \draw [red, thick] (D)++(.5,0) arc(0:50:.5) node[ right,midway, xshift=2, yshift=2] {$50\degree$};
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside>
+    \draw [red, thick] (D)++(.5,0) arc(0:50:.5) node[ right,midway, xshift=2, yshift=2] {$50\degree$};
+    \end{tikzpicture}]]>
+</latex-image></image></sidebyside>
 <sidebyside width="55%"><p><m>\blert{\text{Which angle has the larger sine,}~ 30\degree~ \text{or}~ 50\degree ?}</m></p></sidebyside>
 
 <p> Do you expect the sine of <m>50\degree</m> to be larger or smaller than the sine of <m>30\degree</m>?  Do you expect the sine of <m>50\degree</m> to be larger or smaller than 1?</p>
@@ -379,16 +315,8 @@ with an open parenthesis, as the prompt to enter an angle, because the sine is a
 <p> The figure below shows three different right triangles with a <m>50 \degree</m> angle. Although the sides of the triangle may be bigger or smaller, the <em>ratio</em> <m>\dfrac {\text{opposite}}{\text{hypotenuse}}</m> is always the same for that angle, because the triangles are similar. This is why the sine ratio <idx><h>sine ratio</h></idx><idx><h>sine ratio</h><seealso>sine</seealso></idx> is useful.</p>
 
 <sidebyside width="65%"><image xml:id="fig-2-2sin50"><description>triangles</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}  
-
+        <![CDATA[
+        \begin{tikzpicture} [scale=.7]
         \coordinate (A) at (0,0);
         \coordinate (B) at (-2.25,0);
         \coordinate (C) at (0,2.7);
@@ -408,7 +336,8 @@ with an open parenthesis, as the prompt to enter an angle, because the sine is a
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>           
 <sidebyside width="80%">
-    <p><m>\blert{\text{In each triangle, the ratio}~ \sin (50\degree)=\dfrac{\text{opposite}}{\text{hypotenuse}}=0.7660} </m></p></sidebyside></note>
+    <p><m>\blert{\text{In each triangle, the ratio}~ \sin (50\degree)=\dfrac{\text{opposite}}{\text{hypotenuse}}=0.7660} </m></p></sidebyside>
+</note>
 
 </subsection>
 
@@ -420,16 +349,8 @@ with an open parenthesis, as the prompt to enter an angle, because the sine is a
 
 <example><statement><sidebyside widths="60% 20%" margins="0% 5%"><p>Find the length of the side opposite the <m>50 \degree</m> angle in the triangle shown. </p>  
     <image xml:id="exam2-2-3"><description>triangle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}  
-
+        <![CDATA[
+        \begin{tikzpicture} [scale=.9]
         \coordinate (A) at (0,0);
         \coordinate (B) at (-2.25,0);
         \coordinate (C) at (0,2.7);
@@ -457,15 +378,8 @@ The calculator returns <m>x=13.78879998.</m></p></warning>
 
 <exercise><statement><sidebyside widths="60% 20%" margins="0% 5%" valigns="middle middle"><p>Find the length of the hypotenuse in the triangle shown.</p>
     <image xml:id="exer2-2-3"><description>triangle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}  
+        <![CDATA[
+        \begin{tikzpicture} [scale=.9]
 
         \coordinate (A) at (0,0);
         \coordinate (B) at (1.6,3);
@@ -494,22 +408,14 @@ The calculator returns <m>x=13.78879998.</m></p></warning>
 <sidebyside widths="60% 40%" valigns="middle middle"><p>These values give us two parts of a right triangle, as shown at right. The height we want is the side opposite the angle of elevation. The distance to the base of the cliff is the length of the side <term>adjacent</term> to the angle of elevation.</p>
 
     <image xml:id="fig-2-2angelev"><description>triangle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}  
-
+        <![CDATA[
+        \begin{tikzpicture} [scale=.81]
         \coordinate (A) at (0,0);
         \coordinate (B) at (-5,0);
         \coordinate (C) at (0,2.5);
 
         \draw[blue,thick] (A) rectangle +(-0.25,0.25);
-        \draw[black,thick] (A)--(B) node[below,midway, xshift=17] {\color{red}angle of elevation};
+        \draw[black,thick] (A)--(B) node[below,midway, xshift=19] {\color{red}angle of elevation};
         \draw[black,thick] (A)-- (C)  node[right, midway] {cliff};
         \draw[gray,thick, dashed] (B) -- (C);
         \draw [red, thick] (B)++(.5,0) arc(0:{atan(.5)}:.5) node[right,midway, xshift=-5](angle) {};
@@ -528,16 +434,8 @@ The calculator returns <m>x=13.78879998.</m></p></warning>
 <statement><sidebyside widths="48% 40%" margins="8% 4%" valigns="middle middle">
 <p><m>\qquad\tan (\theta) = \dfrac{\text{opposite}}{\text{adjacent}}</m></p>
     <image xml:id="fig-2-2tan"><description>triangle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
-
+        <![CDATA[
+        \begin{tikzpicture}[scale=.72]
         \coordinate (A) at (0,0);
         \coordinate (B) at (4.2,0);
         \coordinate (C) at (4.2,2);
@@ -549,7 +447,8 @@ The calculator returns <m>x=13.78879998.</m></p></warning>
 
         \draw [red, thick] (0.7,0) arc(0:{atan(2/4.2)}:.7) node[right,midway, xshift=3, yshift=2] {$\theta$};
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></statement>  </definition>
+    </latex-image></image></sidebyside></statement>
+</definition>
 
 <p>Just like the sine of an angle, the tangent ratio is always the same for a given angle, no matter what size triangle it occurs in. And just like <m>\sin (\theta)</m>, we can find the values of <m>\tan (\theta)</m> on a scientific calculator.</p>
 
@@ -569,83 +468,63 @@ Solving for <m>h</m> gives
         <me>h = 300(1,6003) = 480.0</me> so the height of the cliff is about 480 feet.</p></li></ol></p></solution></example>
 
 <exercise><statement><p><ol marker="a">
-        <li><sidebyside widths= "50% 35%" valigns="middle middle"><p>Use the tangent ratio to find <m>x</m> in the triangle shown.</p>         
+    <li><sidebyside widths= "50% 35%" valigns="middle middle"><p>Use the tangent ratio to find <m>x</m> in the triangle shown.</p>         
     <image xml:id="exer2-2-4"><description>triangle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
+    <![CDATA[
+    \begin{tikzpicture} [scale=.9]
 
-        \coordinate (A) at (0,0);
-        \coordinate (B) at (4,0);
-        \coordinate (C) at (4,1.84);
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (4,0);
+    \coordinate (C) at (4,1.84);
 
-        \draw[blue,thick] (B) rectangle +(-0.25,0.25);
-        \draw[black,thick] (A)--(B) node[below,midway] {\color{blue}50 ft};
-        \draw[black,thick] (A)--(C) node[above left,midway] {\color{blue}$c$};
-        \draw[black,thick] (B)--(C) node[right,midway] {\color{blue}$x$};
+    \draw[blue,thick] (B) rectangle +(-0.25,0.25);
+    \draw[black,thick] (A)--(B) node[below,midway, text=blue] {50 ft};
+    \draw[black,thick] (A)--(C) node[above left,midway, text=blue] {$c$};
+    \draw[black,thick] (B)--(C) node[right,midway, text=blue] {$x$};
 
-        \draw [red, thick] (0.7,0) arc(0:24.7:.7) node[right,midway, xshift=3, yshift=2] {\small$24.7\degree$};
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></li>
-    <li>Use the sine ratio to find the hypotenuse, <m>c</m>, of the triangle.</li>
-    <li>Use the Pythagorean theorem to find the hypotenuse of the triangle. Do you get the same answer with both methods? Can you explain why the calculations might give (slightly) different answers?</li>
-    </ol></p> <!--<image source="photos/exer2-2-4.png"><description>triangle</description></image>--></statement>
+    \draw [red, thick] (0.9,0) arc(0:24.7:.9) node[right,midway, xshift=1, yshift=2] {$24.7\degree$};
+    \end{tikzpicture}]]>
+</latex-image></image></sidebyside></li>
+<li>Use the sine ratio to find the hypotenuse, <m>c</m>, of the triangle.</li>
+<li>Use the Pythagorean theorem to find the hypotenuse of the triangle. Do you get the same answer with both methods? Can you explain why the calculations might give (slightly) different answers?</li>
+</ol></p> <!--<image source="photos/exer2-2-4.png"><description>triangle</description></image>--></statement>
 
 <answer><p><ol marker="a"><li><p><m>x = 23</m> ft</p></li>
-    <li><p><m>c = 55</m> ft</p></li>
-    <li><p>The answers agree when rounded to units. Rounding during calculation can cause the results to differ.</p></li></ol></p></answer></exercise>
+<li><p><m>c = 55</m> ft</p></li>
+<li><p>The answers agree when rounded to units. Rounding during calculation can cause the results to differ.</p></li></ol></p></answer></exercise>
 
 <p>The third trigonometric ratio, called the <term>cosine</term>, is the ratio of the side adjacent to an angle and the hypotenuse of the triangle.</p>
 
 <definition><title>Cosine of an Acute Angle</title>
-<idx><h>cos <m>\theta</m></h></idx>
-<idx><h>cos <m>\theta</m></h><seealso>cosine</seealso></idx>
-<idx><h>cosine</h></idx>
-
-<statement><sidebyside widths="50% 35%" margins="0% 5%" valigns="middle middle">
-<p><m>\qquad\cos (\theta) = \dfrac{\text{adjacent}}{\text{hypotenuse}}</m></p>
-    <image xml:id="fig-2-2cos"><description>triangle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX cod ../../mathbook/script/mbx -vv -c latex-image -f svg -d images ../ptx/scratch.xmle from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
-
-        \coordinate (A) at (0,0);
-        \coordinate (B) at (4.2,0);
-        \coordinate (C) at (4.2,2);
-
-        \draw[blue,thick] (B) rectangle +(-0.25,0.25);
-        \draw[black,thick] (A)--(B) node[below,midway] {adjacent};
-        \draw[black,thick] (A)--(C) node[above left,midway, xshift=6] {hypotenuse};
-        \draw[black,thick] (B)--(C);
-
-        \draw [red, thick] (0.7,0) arc(0:{atan(2/4.2)}:.7) node[right,midway, xshift=3, yshift=2] {$\theta$};
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></statement>  </definition>
-
-<example><statement> <sidebyside widths="55% 30%" margins="5% 0%" valigns="middle middle">
+    <idx><h>cos <m>\theta</m></h></idx>
+    <idx><h>cos <m>\theta</m></h><seealso>cosine</seealso></idx>
+    <idx><h>cosine</h></idx>
+    
+    <statement><sidebyside widths="50% 35%" margins="0% 5%" valigns="middle middle">
+    <p><m>\qquad\cos (\theta) = \dfrac{\text{adjacent}}{\text{hypotenuse}}</m></p>
+        <image xml:id="fig-2-2cos"><description>triangle</description><latex-image>
+            <![CDATA[
+            \begin{tikzpicture}[scale=.9]
+    
+            \coordinate (A) at (0,0);
+            \coordinate (B) at (4.2,0);
+            \coordinate (C) at (4.2,2);
+    
+            \draw[blue,thick] (B) rectangle +(-0.25,0.25);
+            \draw[black,thick] (A)--(B) node[below,midway] {adjacent};
+            \draw[black,thick] (A)--(C) node[above left,midway, xshift=6] {hypotenuse};
+            \draw[black,thick] (B)--(C);
+    
+            \draw [red, thick] (0.7,0) arc(0:{atan(2/4.2)}:.7) node[right,midway, xshift=3, yshift=2] {$\theta$};
+            \end{tikzpicture}]]>
+        </latex-image></image></sidebyside></statement>
+</definition>
+    
+<example><statement> <sidebyside widths="55% 30%" margins="0% 5%" valigns="middle middle">
     <p>Find  <m>\sin (\theta),~ \cos (\theta)</m>, and <m>\tan (\theta)</m> for the triangle shown at right.</p><!--<image source="photos/exam2-2-5.png"><description>triangle</description></image>-->
     <image xml:id="exam2-2-5"><description>triangle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} [scale=.8]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.72]
 
         \coordinate (A) at (0,0);
         \coordinate (B) at (4,0);
@@ -752,35 +631,29 @@ For the angle <m>\theta</m>, the opposite side is 8 inches long, and the adjacen
         <li><p>The cosine of <m>\theta</m> is equal to the sine of the complement of <m>\theta</m>, or <m>\cos (\theta) = \sin (90-\theta)</m>.</p></li></ol></p></answer></exercise> 
 
 <note><p>In the previous exercise, you should also notice that as the angle <m>\theta</m> increases, <m>\sin (\theta)</m> increases but <m>\cos (\theta)</m> decreases.</p>
-<p> You can see why this is true in the figure below. In each right triangle, the hypotenuse has the same length. But as the angle increases, the opposite side gets longer and the adjacent side gets shorter.</p>
-    <sidebyside width="65%"><image xml:id="fig-2-2incang"><description>triangles</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} 
-
-        \coordinate (A) at (0,0);
-        \coordinate (B) at (2.82,0);
-        \coordinate (C) at (2.82,1.03);
-
-        \draw[blue,thick] (B) rectangle +(-0.25,0.25);
-        \draw[black,thick] (A)--(B)--(C)--cycle;
-        \draw [red, thick] (.6,0) arc(0:20:.6) node[right,midway, xshift=5, yshift=2] {$20\degree$};
-
-        \draw[blue,thick] (5.4,0) rectangle +(-0.25,0.25);
-        \draw[black,thick] (3.1,0)--(5.4,0)--(5.4,1.93)--cycle;
-        \draw [red, thick] (3.6,0) arc(0:40:.5) node[right,midway, yshift=2] {$40\degree$};
-
-        \draw[blue,thick] (7.2,0) rectangle +(-0.25,0.25);
-        \draw[black,thick] (5.7,0)--(7.2,0)--(7.2,2.6)--cycle;
-        \draw [red, thick] (6.1,0) arc(0:60:.4) node[right,midway, yshift=2] {$60\degree$};
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></note>       
+    <p> You can see why this is true in the figure below. In each right triangle, the hypotenuse has the same length. But as the angle increases, the opposite side gets longer and the adjacent side gets shorter.</p>
+        <sidebyside width="65%"><image xml:id="fig-2-2incang"><description>triangles</description><latex-image>
+            <![CDATA[
+            \begin{tikzpicture} 
+    
+            \coordinate (A) at (0,0);
+            \coordinate (B) at (2.82,0);
+            \coordinate (C) at (2.82,1.03);
+    
+            \draw[blue,thick] (B) rectangle +(-0.25,0.25);
+            \draw[black,thick] (A)--(B)--(C)--cycle;
+            \draw [red, thick] (.6,0) arc(0:20:.6) node[right,midway, xshift=5, yshift=2] {$20\degree$};
+    
+            \draw[blue,thick] (5.4,0) rectangle +(-0.25,0.25);
+            \draw[black,thick] (3.1,0)--(5.4,0)--(5.4,1.93)--cycle;
+            \draw [red, thick] (3.6,0) arc(0:40:.5) node[right,midway, yshift=2] {$40\degree$};
+    
+            \draw[blue,thick] (7.2,0) rectangle +(-0.25,0.25);
+            \draw[black,thick] (5.7,0)--(7.2,0)--(7.2,2.6)--cycle;
+            \draw [red, thick] (6.1,0) arc(0:60:.4) node[right,midway, yshift=2] {$60\degree$};
+            \end{tikzpicture}]]>
+        </latex-image></image></sidebyside>
+</note>      
 </subsection>
 
 <subsection><title>The Three Trigonometric Ratios</title>
@@ -788,36 +661,28 @@ For the angle <m>\theta</m>, the opposite side is 8 inches long, and the adjacen
 <p>Here is a summary of the three trigonometric ratios we have discussed.</p>
 
 <assemblage><title>Trigonometric Ratios</title>
-<idx><h>trigonometric ratios</h></idx>
-
-<p>If <m>\theta</m>  is one of the angles in a right triangle,</p>
-<sidebyside widths="50% 40%" valigns="middle middle" margins="5% 5%">
-    <p><md><mrow>\sin (\theta) \amp = \dfrac{\text{opposite}}{\text{hypotenuse}}</mrow>
-        <mrow>\cos (\theta) \amp = \dfrac{\text{adjacent}}{\text{hypotenuse}}</mrow>
-        <mrow>\tan (\theta) \amp =  \dfrac{\text{opposite}}{\text{adjacent}}</mrow></md></p>
-    <image xml:id="fig-2-2trigratios"><description>triangle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
-
-        \coordinate (A) at (0,0);
-        \coordinate (B) at (4.2,0);
-        \coordinate (C) at (4.2,2);
-
-        \draw[blue,thick] (B) rectangle +(-0.25,0.25);
-        \draw[black,thick] (A)--(B) node[below,midway] {adjacent};
-        \draw[black,thick] (A)--(C) node[above left,midway, xshift=6] {hypotenuse};
-        \draw[black,thick] (B)--(C) node[right,midway] {opposite};
-
-        \draw [red, thick] (0.7,0) arc(0:{atan(2/4.2)}:.7) node[right,midway, xshift=3, yshift=2] {$\theta$};
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside>   </assemblage>
+    <idx><h>trigonometric ratios</h></idx>
+    
+    <p>If <m>\theta</m>  is one of the angles in a right triangle,</p>
+    <sidebyside widths="50% 40%" valigns="middle middle" margins="5% 5%">
+        <p><md><mrow>\sin (\theta) \amp = \dfrac{\text{opposite}}{\text{hypotenuse}}</mrow>
+            <mrow>\cos (\theta) \amp = \dfrac{\text{adjacent}}{\text{hypotenuse}}</mrow>
+            <mrow>\tan (\theta) \amp =  \dfrac{\text{opposite}}{\text{adjacent}}</mrow></md></p>
+        <image xml:id="fig-2-2trigratios"><description>triangle</description><latex-image>
+            <![CDATA[
+            \begin{tikzpicture}[scale=.72]    
+            \coordinate (A) at (0,0);
+            \coordinate (B) at (4.2,0);
+            \coordinate (C) at (4.2,2);
+            \draw[blue,thick] (B) rectangle +(-0.25,0.25);
+            \draw[black,thick] (A)--(B) node[below,midway] {adjacent};
+            \draw[black,thick] (A)--(C) node[above left,midway, xshift=6] {hypotenuse};
+            \draw[black,thick] (B)--(C) node[right,midway] {opposite};
+    
+            \draw [red, thick] (0.7,0) arc(0:{atan(2/4.2)}:.7) node[right,midway, xshift=3, yshift=2] {$\theta$};
+            \end{tikzpicture}]]>
+        </latex-image></image></sidebyside>
+</assemblage>
 
 <p> These three definitions are the foundation for all the rest of trigonometry.  <term>You should internalize them immediately!!</term></p> 
 
@@ -825,17 +690,10 @@ For the angle <m>\theta</m>, the opposite side is 8 inches long, and the adjacen
 
 <example><statement><p>The vertex angle of an isosceles triangle is <m>34 \degree</m>, and the equal sides are 16 meters long. Find the altitude of the triangle.</p> </statement>
 
-<solution><sidebyside widths="70% 25%" margins="0% 5%">
+<solution><sidebyside widths="70% 25%" margins="0% 0%">
 <p>The triangle described is not a right triangle. However, the altitude of an isosceles triangle bisects the vertex angle and divides the triangle into two congruent right triangles, as shown in the figure. The 16-meter side becomes the hypotenuse of the right triangle, and the altitude, <m>h</m>, of original triangle is the side adjacent to the <m>17\degree</m> angle.</p> <!--<image source="photos/exam2-2-6.png"><description>triangle</description></image>-->
     <image xml:id="exam2-2-6"><description>triangle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
+        <![CDATA[
         \begin{tikzpicture}
 
         \coordinate (A) at (0,0);
@@ -860,7 +718,7 @@ Solving for <m>h</m> gives
         <me>h = 16(0.9563) = 15.3008</me>  
 The altitude of the triangle is about 15.3 meters long.</p>
 </solution></example>
-
+    
 <exercise><statement><p>Another isosceles triangle has base angles of <m>72\degree</m> and equal sides of length 6.8 centimeters. Find the length of the base.</p></statement>
 <answer><p>4 cm</p></answer></exercise>
 
@@ -878,9 +736,7 @@ The altitude of the triangle is about 15.3 meters long.</p>
     <sidebyside widths="5% 40% 5% 40%" margins="0% 0%">
             <p>5.</p>
         <image xml:id="ar2-2-5"><description>grid</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
+        <![CDATA[
         \begin{tikzpicture}[scale=.4]
 
         \draw[thick,->,>=stealth'] (-5,0) -- (7,0) node[anchor=west] {$x$};
@@ -904,9 +760,7 @@ The altitude of the triangle is about 15.3 meters long.</p>
     </latex-image></image>
             <p>6.</p>
     <image xml:id="ar2-2-6"><description>grid</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
+        <![CDATA[
         \begin{tikzpicture}[xscale=.3, yscale=0.16]
 
         \draw[thick,->,>=stealth'] (-9,0) -- (7,0) node[anchor=west] {$x$};
@@ -931,10 +785,8 @@ The altitude of the triangle is about 15.3 meters long.</p>
     <sidebyside widths="5% 40% 5% 40%" margins="0% 0%">
         <p>7.</p>
         <image xml:id="ar2-2-7"><description>grid</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture}[xscale=.48, yscale=0.32]
+        <![CDATA[
+        \begin{tikzpicture}[xscale=.36, yscale=0.24]
 
         \draw[thick,->,>=stealth'] (-6,0) -- (6,0) node[anchor=west] {$x$};
         \draw[thick,->,>=stealth'] (0,-6) -- (0,6) node[anchor=south] {$y$};
@@ -957,10 +809,8 @@ The altitude of the triangle is about 15.3 meters long.</p>
     </latex-image></image>
             <p>8.</p>
     <image xml:id="ar2-2-8"><description>grid</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture}[xscale=.33, yscale=0.22]
+        <![CDATA[
+        \begin{tikzpicture}[xscale=.3, yscale=0.2]
 
         \draw[thick,->,>=stealth'] (-6,0) -- (10,0) node[anchor=west] {$x$};
         \draw[thick,->,>=stealth'] (0,-7) -- (0,4) node[anchor=south] {$y$};

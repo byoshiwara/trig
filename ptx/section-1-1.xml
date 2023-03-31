@@ -22,23 +22,14 @@
     <image xml:id="angles-in-degrees">
         <description>quadrantal angles</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-
-        \begin{tikzpicture}[auto, thick, node distance=2cm]
+        <![CDATA[
+        \begin{tikzpicture}[scale=.9]
 
             \filldraw[black] (0,0) circle (2pt) ;
             \draw[blue, thick] (0,0)rectangle (.25,.25);
             \draw [very thick, ->,>=stealth'] (0,0) -- (2,0);
             \draw[very thick, black!50!blue,->,>=stealth'] (0,0) -- (0,2);
             \draw[red, thick, ->,>=stealth'] (0.6,0) arc (0:90:.6) node [above right, midway] {$90 \degree$};
-
 
             \filldraw[black] (5,0) circle (2pt);
             %\draw[blue, thick] (5,0)rectangle (5.25,.25);
@@ -52,7 +43,6 @@
             \draw [very thick, ->,>=stealth' ] (8,0) -- (10,0);
             \draw[very thick,black!50!blue, ->,>=stealth'] (8,0) -- (8,-2);
             \draw[red, thick, ->,>=stealth'] (8.4,0) arc (0:270:.4) node [above left, midway] {$270 \degree$};
-
 
             \filldraw[black] (11,0) circle (2pt);
             %\draw[blue, thick] (5,0)rectangle (5.25,.25);
@@ -71,10 +61,8 @@
     <image xml:id="tear-off-corners">
         <description>tear corners off triangle</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture}
+        <![CDATA[
+        \begin{tikzpicture}[scale=.8]
         \coordinate (A) at (0,0);
         \coordinate (B) at (4,0);
         \coordinate (C) at (2.5,1.8);
@@ -90,8 +78,7 @@
         \draw[blue!50,thick, dashed] (Ap)++(1.5,0) -- ++(-0.05,.2) -- ++(-.1, .06) -- ++(-0.18,.13)-- ++(-.01,.15)-- ++(-.12,.18);
         \draw[green!50,thick, dashed] (Bp)++(-1.1,0)-- ++(0,.19)-- ++(.06,.01)-- ++(.1,.1)-- ++(.1,.02)-- ++(.02,.17)--++(.2,.2);
 
-        \draw[blue,thick] (A)++(1.5,0) -- ++(-0.05,.2) -- ++(-.1, .06) -- ++(-0.18,.13)-- ++(-.01,.15)-- ++(-.12,.18);
-        \draw[blue,thick] (Cp)++(-1.5,0) -- ++(0.05,-.2) -- ++(.1, -.06) -- ++(0.18,-.13)-- ++(.01,-.15)-- ++(.12,-.18);
+         \draw[blue,thick] (Cp)++(-1.5,0) -- ++(0.05,-.2) -- ++(.1, -.06) -- ++(0.18,-.13)-- ++(.01,-.15)-- ++(.12,-.18);
         \draw[black,thick] (Cp)++(-2,0) --(Cp) -- ++ (-1.04,-.72) ;
 
         \draw[green,thick] (B)++(-1.1,0)-- ++(0,.19)-- ++(.06,.01)-- ++(.1,.1)-- ++(.1,.02)-- ++(.02,.17)--++(.21,.21);
@@ -121,25 +108,15 @@
     <image xml:id="exam1-1-1">
         <description>triangle with 25 and 115 angles</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-
-        \begin{tikzpicture}[auto, thick, node distance=2cm]
-
+        <![CDATA[
+        \begin{tikzpicture}[scale=.7]
             \coordinate (A) at (0,0);
             \coordinate (B) at (5,0.7);
             \coordinate(C) at (3,2.1);
-            \filldraw[black] (A) circle (.2pt) node[anchor=south west, xshift=19, yshift=3] {$25\degree$};
-            \filldraw[black] (B) circle (.2pt) node[anchor=south east, xshift=-8, yshift=-3] {$x$};
-            \filldraw[black] (C) circle (.2pt) node[anchor=north, yshift=-8] {$115\degree$};
+            \draw[red] ({atan(.7/5)}:1.25) arc (atan(.7/5):atan(.7):1.25) node[right, midway, yshift=3, text=black] {$25\degree$};
+            \draw[red] ($ (B)+({180-atan(.7)}:.75) $) arc ({180-atan(.7)}:{180+atan(.7/5)}:.75) node[left, midway, text=black] {$x$};
+            \draw[red] ($ (C)+({180+atan(.7)}:.5) $) arc ({180+atan(.7)}:{360-atan(.7)}:.5) node[below, midway, yshift=0, text=black] {$115\degree$};
             \draw[black,  thick] (A) -- (B) --( C) -- cycle;
-
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></statement>
 
@@ -155,25 +132,15 @@
     <image xml:id="exer1-1-2">
         <description>triangle with angles x, 2x, and 2x-15</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-
-        \begin{tikzpicture}[auto, thick, node distance=2cm]
-
+        <![CDATA[
+        \begin{tikzpicture}[scale=.7]
         \coordinate (A) at (0,0);
         \coordinate (B) at (5,0);
         \coordinate(C) at (3,2.7);
-        \filldraw[black] (A) circle (.2pt) node[anchor=south west, xshift=12, yshift=1] {$x$};
-        \filldraw[black] (B) circle (.2pt) node[anchor=south east, xshift=-8, yshift=1] {$2x-15$};
-        \filldraw[black] (C) circle (.2pt) node[anchor=north, yshift=-8]{$2x$};
+        \draw[red] (.75,0) arc (0:atan(.9):.75) node[right, midway, yshift=3, text=black] {$x$};
+        \draw[red] ($ (B)+(-.75,0) $) arc ({180}:{180-atan(2.7/2)}:.75) node[left, midway, text=black] {$2x-15$};
+        \draw[red] ($ (C)+({180+atan(.9)}:.5) $) arc ({180+atan(.9)}:{360-atan(2.7/2)}:.5) node[below, midway, yshift=0, text=black] {$2x$};
         \draw[black,  thick] (A) -- (B) --( C) -- cycle;
-
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></statement>
 <answer><p><m>x=39\degree,~~2x=78\degree, ~~2x-15=63\degree</m></p></answer></exercise>
@@ -190,26 +157,15 @@
     <image xml:id="exam1-1-3">
         <description>right triangle with 34 angle</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-
-        \begin{tikzpicture}[auto, thick, node distance=2cm]
-
+        <![CDATA[
+        \begin{tikzpicture}[scale=.7]
             \coordinate (A) at (0,0);
             \coordinate (B) at (3,0);
             \coordinate(C) at (0,4);
-            \filldraw[black] (A) circle (.2pt) node[anchor=south west, xshift=10, yshift=1]{};
-            \filldraw[black] (B) circle (.2pt) node[anchor=south east, xshift=-8, yshift=1]{$x$};
-            \filldraw[black] (C) circle (.2pt) node[anchor=north west, yshift=-23]{$34\degree$};
+            \draw[red] ($ (B)+(-.75,0) $) arc ({180}:{180-atan(4/3)}:.75) node[left, midway, text=black] {$x$};
+            \draw[red] ($ (C)+(0,-1) $) arc (-90:-atan(4/3):1) node[below, midway, xshift=3, text=black] {$34\degree$};
             \draw[black,  thick] (A) -- (B) --( C) -- cycle;
-            \draw[blue, thick] (0,0)rectangle (.25,.25);
-
+            \draw[blue, thick] (0,0)rectangle (.3,.3);
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></statement>
 
@@ -234,28 +190,17 @@
     <image xml:id="exam1-1-5">
         <description>equilateral triangle</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-
-        \begin{tikzpicture}[auto, thick, node distance=2cm]
-
+        <![CDATA[
+        \begin{tikzpicture}[scale=.75]
             \coordinate (A) at (0,0);
             \coordinate (B) at (2.5,0);
-            \coordinate(C) at (1.25,2.165);
-            \filldraw[black] (A) circle (.2pt) node[anchor=south west, xshift=10, yshift=1]{$x$};
-            \filldraw[black] (B) circle (.2pt) node[anchor=south east, xshift=-8, yshift=1]{$x$};
-            \filldraw[black] (C) circle (.2pt) node[anchor=north , yshift=-10]{$x$};
-            %\draw[black,  thick] (A) -- (B) --( C) -- cycle;
+            \coordinate(C) at (60:2.5);
+            \draw[red] (.5,0)  arc (0:60:.5) node[right, midway, text=black] {$x$};
+            \draw[red] ($ (B)+(-.5,0) $) arc ({180}:{120}:.5) node[left, midway, text=black] {$x$};
+            \draw[red] (60:2) arc (240:300:.5) node[below, midway,text=black] {$x$};
             \draw[black] (A) --  (B) node [below, midway] {$4$};
-            \draw[black] (A) --  (C) node [above left, midway,yshift=-4] {$4$};
-            \draw[black] (C) --  (B) node [above right, midway,yshift=-4] {$4$};
-
+            \draw[black] (A) --  (C) node [above left, midway,yshift=-2] {$4$};
+            \draw[black] (C) --  (B) node [above right, midway,yshift=-2] {$4$};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></statement>
 
@@ -269,27 +214,17 @@
     <image xml:id="exer1-1-6">
         <description>equilateral triangle with side 8</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-
-        \begin{tikzpicture}[auto, thick, node distance=2cm]
-
+        <![CDATA[
+        \begin{tikzpicture}[scale=.75]
             \coordinate (A) at (0,0);
             \coordinate (B) at (2.5,0);
-            \coordinate(C) at (1.25,2.165);
-            \filldraw[black] (A) circle (.2pt) node[anchor=south west, xshift=10, yshift=1]{$60\degree$};
-            \filldraw[black] (B) circle (.2pt) node[anchor=south east, xshift=-8, yshift=1]{$x$};
-            \filldraw[black] (C) circle (.2pt) node[anchor=north , yshift=-15]{$60\degree$};
+            \coordinate(C) at (60:2.5);
+            \draw[red] (.5,0)  arc (0:60:.5) node[right, midway, text=black] {$60\degree$};
+            \draw[red] ($ (B)+(-.5,0) $) arc ({180}:{120}:.5) node[left, midway, text=black] {$x$};
+            \draw[red] (60:2) arc (240:300:.5) node[below, midway,text=black] {$60\degree$};
             \draw[black] (A) --  (B) node [below, midway] {$z$};
             \draw[black] (A) --  (C) node [above left, midway,yshift=-4] {$y$};
             \draw[black] (C) --  (B) node [above right, midway,yshift=-4] {$8$};
-
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></statement>
 <answer><p><m>x=60\degree, ~y=8, ~z=8</m></p></answer></exercise>
@@ -304,32 +239,22 @@
 <example><statement><sidebyside widths="50% 32%" valigns="middle middle">
     <p>Find <m>x</m> and <m>y</m> in the triangle at right.</p>
     <image xml:id="exam1-1-7">
-        <description>isosceles triangle with side 12, base angle 38</description>
-        <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-
-        \begin{tikzpicture}[auto, thick, node distance=2cm]
-
-            \coordinate (A) at (0,0);
-            \coordinate (B) at (4.7,0);
-            \coordinate(C) at (2.35,1.5);
-            \filldraw[black] (A) circle (.2pt) node[anchor=south west, xshift=18]{$y$};
-            \filldraw[black] (B) circle (.2pt) node[anchor=south east, xshift=-18]{$38\degree$};
-            \filldraw[black] (C) circle (.2pt) node[anchor=north , yshift=-3]{$x$};
-            %\draw[black,  thick] (A) -- (B) --( C) -- cycle;
-            \draw[black] (A) --  (B) node [below, midway] {};
-            \draw[black] (A) --  (C) node [above left, midway,yshift=-4] {$12$};
-            \draw[black] (C) --  (B) node [above right, midway,yshift=-4] {$12$};
-
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></statement>
+    <description>isosceles triangle with side 12, base angle 38</description>
+    <latex-image>
+    <![CDATA[
+    \begin{tikzpicture}[scale=.8]
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (4.7,0);
+        \coordinate(C) at (2.35,1.5);
+        \draw[red] (.75,0) arc (0:atan(1.5/2.35):.75) node[right, midway, text=black] {$y$};
+        \draw[red] ($ (B)+(-.75,0) $) arc (180:{180-atan(1.5/2.35)}:.75) node[left, midway, yshift=2, text=black] {$38\degree$};
+        \draw[red] ($ (C)+({180+atan(1.5/2.35)}:.3) $) arc ({180+atan(1.5/2.35)}:{360-atan(1.5/2.35)}:.3) node[below, midway, yshift=0, text=black] {$x$};
+        %\draw[black,  thick] (A) -- (B) --( C) -- cycle;
+        \draw[black] (A) --  (B) node [below, midway] {};
+        \draw[black] (A) --  (C) node [above left, midway,yshift=-2] {$12$};
+        \draw[black] (C) --  (B) node [above right, midway,yshift=-2] {$12$};
+    \end{tikzpicture}]]>
+</latex-image></image></sidebyside></statement>
 
 <solution><p>The triangle is isosceles, so the base angles are equal.  Therefore, <m>y=38\degree</m>.  To find the vertex angle, we solve </p>
             <p><md><mrow>x+38+38\amp =180 \amp \amp </mrow>
@@ -343,25 +268,18 @@
     <image xml:id="exer1-1-8">
         <description>isosceles triangle with side 9, base angle 20</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}[auto, thick, node distance=2cm]
+        <![CDATA[
+        \begin{tikzpicture}[scale=.72]
             \coordinate (A) at (0,0);
             \coordinate (B) at (5.6,0);
             \coordinate(C) at (2.8,1.2);
-            \filldraw[black] (A) circle (.2pt) node[anchor=south west, xshift=28]{$20\degree$};
-            \filldraw[black] (B) circle (.2pt) node[anchor=south east, xshift=-28]{$20\degree$};
-            \filldraw[black] (C) circle (.2pt) node[anchor=north , yshift=-2]{$x$};
-            %\draw[black,  thick] (A) -- (B) --( C) -- cycle;
+            \draw[red] (.75,0) arc (0:atan(1.2/2.8):.75) node[right, midway, xshift=2, yshift=2, text=black] {$20\degree$};
+            \draw[red] ($ (B)+(-.75,0) $) arc (180:{180-atan(1.2/2.8)}:.75) node[left, midway, yshift=2, text=black] {$20\degree$};
+            \draw[red] ($ (C)+({180+atan(1.2/2.8)}:.3) $) arc ({180+atan(1.2/2.8)}:{360-atan(1.2/2.8)}:.3) node[below, midway, yshift=0, text=black] {$x$};
+           %\draw[black,  thick] (A) -- (B) --( C) -- cycle;
             \draw[black] (A) --  (B) node [below, midway] {};
-            \draw[black] (A) --  (C) node [above left, midway,yshift=-2] {$9$};
-            \draw[black] (C) --  (B) node [above right, midway,yshift=-2] {$y$};
+            \draw[black] (A) --  (C) node [above left, midway] {$9$};
+            \draw[black] (C) --  (B) node [above right, midway] {$y$};
         \end{tikzpicture}]]>    
     </latex-image></image></sidebyside></statement>
 <answer><p><m>x=140\degree,~y=9</m></p></answer></exercise>
@@ -381,14 +299,12 @@
         <li> Angles between <m>90\degree</m> and <m>180\degree</m> are called <term>obtuse</term><idx><h>obtuse angle</h></idx><idx><h>angle</h><h>obtuse</h></idx><idx><h>angle</h><h>obtuse</h><seealso>obtuse angle</seealso></idx>. </li>
     </ul></p> 
 
-   <sidebyside width="90%">
+<sidebyside width="100%">
     <image xml:id="angleterms">
         <description>types of angles</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture}
+        <![CDATA[
+        \begin{tikzpicture}[scale=.9]
         %supplementary
         \coordinate (O) at (0,0);
         \coordinate (A) at (-2,0);
@@ -440,7 +356,7 @@
         \end{tikzpicture}]]>
     </latex-image>
     </image>
-        </sidebyside> 
+</sidebyside> 
 
 <example><statement><sidebyside widths="60% 30%">
     <p>In the figure at right, 
@@ -453,15 +369,8 @@
     <image xml:id="exam1-1-9">
         <description>types of angles</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}[auto, thick, node distance=2cm]
+        <![CDATA[
+        \begin{tikzpicture}[scale=.8]
             \coordinate (O) at (0,0);
             \coordinate (A) at (-2,0);
             \coordinate (B) at (2,0);
@@ -496,24 +405,17 @@
     <image xml:id="exer1-1-10">
         <description>straight angles with 50 degrees</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}[auto, thick, node distance=2cm]
+        <![CDATA[
+        \begin{tikzpicture}[scale=.9]
             \coordinate (O) at (0,0);
             \coordinate (A) at (-2,0);
             \coordinate (B) at (2,0);
-            \coordinate(C) at (-1.157,-1.3789);
-            \coordinate (D) at (1.157,1.3789);
-            \filldraw[black] (O) circle (.2pt) node[anchor=south east]{$\alpha$};
-            \filldraw[black] (O) circle (.2pt) node[anchor=north east, xshift=-10]{$\beta$};
-            \filldraw[black] (O) circle (.2pt) node[anchor=north west, yshift=0]{$\gamma$};
-            \filldraw[black] (O) circle (.2pt) node[anchor=south west, xshift=9]{$50\degree$};
+            \coordinate(C) at (230:1.8);
+            \coordinate (D) at (50:1.8);
+            \draw[red, <->,>=stealth'] (.5,0) arc (0:50:.5) node[right, midway, xshift=2, yshift=2, text=black] {$50\degree$};
+            \draw[red, <->,>=stealth'] (.3,0) arc (0:-130:.3) node[below right, midway, xshift=-2, text=black] {$\gamma$};
+            \draw[red, <->,>=stealth'] (-.5,0) arc (180:230:.5) node[below left, midway, yshift=2, text=black] {$\beta$};
+            \draw[red, <->,>=stealth'] (-.3,0) arc (180:50:.3) node[above left, midway, xshift=2, yshift=-2, text=black] {$\alpha$};
             \draw[black] (A) --  (B);
             \draw[black] (C) --  (D) ;
         \end{tikzpicture}]]>
@@ -531,61 +433,41 @@
 <example><statement><sidebyside widths="60% 20%" margins="0% 15%" valigns="middle middle">
     <p>Explain why <m>\alpha=\beta</m> in the triangle at right.</p>
     <image xml:id="exam1-1-11">
-        <description>isosceles triangle with alpha and beta</description>
-        <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}[auto, thick, node distance=2cm]
-
-            \coordinate (A) at (-.6,0);
-            \coordinate (B) at (0.6,0);
-            \coordinate(C) at (-.6,0);
-            \coordinate (D) at (0.6,0);
-            \filldraw[black] (A) circle (.2pt) node[anchor=south west, xshift=2]{$\theta$};
-            \filldraw[black] (B) circle (.2pt) node[anchor=south east, xshift=-3]{$\phi$};
-            \filldraw[black] (C) circle (.2pt) node[anchor=north east, xshift=-2]{$\alpha$};
-            \filldraw[black] (D) circle (.2pt) node[anchor=north west, xshift=3]{$\beta$};
-            \draw[black,  thick] (-1.5,0) -- (1.5,0);
-            \draw[black] (-.8,-.6) --  (0,1.8);
-            \draw[black] (0.8,-0.6) --  (0,1.8) ;
-            \draw[blue] (-.48,.86) -- (-.15,.75);
-            \draw[blue] (.48,.86) -- (.15,.75);
-
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></statement>
+    <description>isosceles triangle with alpha and beta</description>
+    <latex-image>
+    <![CDATA[
+        \begin{tikzpicture}[scale=.8]
+        \draw[red] (-.4,0) arc (0:atan(3):.2) node[right, midway, xshift=-1, yshift=4, text=black] {$\theta$};
+        \draw[red] (.4,0) arc (180:180-atan(3):.2) node[left, midway, xshift=1, yshift=4, text=black] {$\phi$};
+        \draw[red] (-.9,0) arc (180:180+atan(3):.3) node[left, midway, xshift=2, yshift=-3, text=black] {$\alpha$};
+        \draw[red] (.9,0) arc (0:-atan(3):.3) node[right, midway, xshift=-2, yshift=-3, text=black] {$\beta$};
+        \draw[black,  thick] (-1.5,0) -- (1.5,0);
+        \draw[black] (-.8,-.6) --  (0,1.8);
+        \draw[black] (0.8,-0.6) --  (0,1.8) ;
+        \draw[blue] (-.48,.86) -- (-.15,.75);
+        \draw[blue] (.48,.86) -- (.15,.75);
+    \end{tikzpicture}]]>
+</latex-image></image></sidebyside></statement>
 
 <solution><p>Because they are the base angles of an isosceles triangle, <m>\theta</m> (theta) and <m>\phi</m> (phi) are equal. Also, <m>\alpha=\theta</m> because they are vertical angles, and similarly <m>\beta=\phi</m>. Therefore, <m>\alpha=\beta</m> because they are equal to equal quantities.</p>
 </solution></example>
 
-<exercise><statement><sidebyside widths="50% 30%" valigns="middle middle">
+<exercise><statement><sidebyside widths="50% 30%" valigns="middle middle" margins="0% 10%">
     <p>Find all the unknown angles in the figure at right. (You will find a list of all the Greek letters and their names at the end of this section.)</p>
     <image xml:id="exer1-1-12">
         <description>triangle with external angle 150</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}[auto, thick, node distance=2cm]
+        <![CDATA[
+        \begin{tikzpicture}[scale=.8]
             \coordinate (A) at (-1.8,0);
             \coordinate (B) at (0.7,0);
             \coordinate (C) at (0,1.50);
-            \filldraw[black] (A) circle (.2pt) node[anchor=south east, xshift=4]{$\beta$};
-            \filldraw[black] (A) circle (.2pt) node[anchor=south west, xshift=10]{$40\degree$};
-            \filldraw[black] (B) circle (.2pt) node[anchor=south east, xshift=-5]{$\delta$};
-            \filldraw[black] (A) circle (.2pt) node[anchor=north east, xshift=-10]{$\alpha$};
-            \filldraw[black] (B) circle (.2pt) node[anchor=south west, xshift=-3]{$115\degree$};
-            \filldraw[black] (C) circle (.2pt) node[anchor=north,xshift=-3, yshift=-5]{$\gamma$};
+            \draw[red] (-1.3,0) arc (0:40:.5) node[right, midway, xshift=-1, yshift=3, text=black] {$40\degree$};
+            \draw[red] (-2.3,0) arc (180:220:.5) node[left, midway, xshift=1, yshift=-2, text=black] {$\alpha$};
+            \draw[red] (-2.1,0) arc (180:40:.3) node[above, midway, xshift=-1, yshift=-2, text=black] {$\beta$};
+            \draw[red] (.4,0) arc (180:115:.3) node[left, midway, xshift=1, yshift=2, text=black] {$\delta$};
+            \draw[red] (1.1,0) arc (0:115:.4) node[above, midway, xshift=3, text=black] {$115\degree$};
+            \draw[red] ($(C)+(220:.3) $) arc (220:295:.3) node[below, midway, xshift=-1, text=black] {$\gamma$};
             \draw[black,  thick] (-3.5,0) -- (1.5,0);
             \draw[black] (-2.4,-.5) --  (0,1.5);
             \draw[black] (B) --  (0,1.5) ;
@@ -601,22 +483,15 @@ Finally, angles 3 and 6 are called <term>alternate interior angles</term><idx><h
     <image xml:id="transversal">
         <description>transversal</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}[auto, thick, node distance=2cm]
+        <![CDATA[
+        \begin{tikzpicture}[scale=.8]
             \coordinate (A) at (.6,1.8);
             \coordinate (B) at (-.6,0);
             \filldraw[black] (A) circle (.2pt) node[anchor=south east, xshift=3]{$1$};
             \filldraw[black] (A) circle (.2pt) node[anchor=south west, xshift=7]{$2$};
-            \filldraw[black] (A) circle (.2pt) node[anchor=north east, xshift=-5]{$3$};
+            \filldraw[black] (A) circle (.2pt) node[anchor=north east, xshift=-6]{$3$};
             \filldraw[black] (A) circle (.2pt) node[anchor=north west, xshift=-1]{$4$};
-            \filldraw[black] (B) circle (.2pt) node[anchor=south east, xshift=5]{$5$};
+            \filldraw[black] (B) circle (.2pt) node[anchor=south east, xshift=4]{$5$};
             \filldraw[black] (B) circle (.2pt) node[anchor=south west, xshift=7]{$6$};
             \filldraw[black] (B) circle (.2pt) node[anchor=north east, xshift=-5]{$7$};
             \filldraw[black] (B) circle (.2pt) node[anchor=north west, xshift=-1]{$8$};
@@ -625,7 +500,6 @@ Finally, angles 3 and 6 are called <term>alternate interior angles</term><idx><h
             \draw[black,  thick, ->] (-2.5,1.8) -- (2.,1.8);
             \draw[black,  thick, ->] (-2.5,0) -- (2.,0);
             \draw[black, thick] (-1.2,-.9) --  (1.2,2.7) ;
-
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
 
@@ -641,15 +515,8 @@ Finally, angles 3 and 6 are called <term>alternate interior angles</term><idx><h
     <image xml:id="parallelogram">
         <description>parallelogram</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}[auto, thick, node distance=2cm]
+        <![CDATA[
+        \begin{tikzpicture}[scale=.8]
             \coordinate (A) at (0,0);
             \coordinate (B) at (.4,1.6);
             \coordinate (C) at( 4.4,1.6);

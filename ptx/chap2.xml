@@ -79,97 +79,91 @@ In the 6th century BC, the Greek philosopher Thales estimated the distances to s
         <li><p>What is the ratio of the two given sides in each triangle?  Are the corresponding sides 
         of the three triangles proportional? How do we know that <m>\alpha = \beta = \gamma</m> ?</p>
             <sidebyside width="100%">
-    <image xml:id="ch2-4">
-        <description>similar triangles</description>
-        <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} 
-        \coordinate(A) at (0,0);
-        \coordinate (B) at (2.5,0 );
-        \coordinate (C) at (2.5,1);
-
-        \draw[blue,thick] (B) rectangle +(-0.25,0.25);
-        \draw[black,thick] (A)--(B) node [below,midway] {\color{blue}$5$};
-        \draw[black,thick] (C)--(B) node [right,midway] {\color{blue}$2$};
-        \draw[black,thick] (A)--(C);
-        \draw[red,thick] (0.8,0) arc (0:{atan(2/5)}:0.8) node[ right, midway] {$\alpha$};
-
-        \draw[blue,thick, xshift=3.2cm, scale=1.5] (2.5,0) rectangle +(-0.16,0.16);
-        \draw[black,thick, xshift=3.2cm, scale=1.5] (0,0)--(2.5,0) node [below,midway] {\color{blue}$7.5$};
-        \draw[black,thick, xshift=3.2cm, scale=1.5] (2.5,1)--(2.5,0) node [right,midway] {\color{blue}$3$};
-        \draw[black,thick, xshift=3.2cm, scale=1.5] (0,0)--(2.5,1);
-        \draw[red,thick, xshift=3.2cm, scale=1.5] (0.7,0) arc (0:{atan(2/5)}:0.7) node[ right, midway] {$\beta$};
-
-        \draw[blue,thick, xshift=7.7cm, scale=1.6] (2.5,0) rectangle +(-0.15,0.15);
-        \draw[black,thick, xshift=7.7cm, scale=1.6] (0,0)--(2.5,0) node [below,midway] {\color{blue}$8$};
-        \draw[black,thick, xshift=7.7cm, scale=1.6] (2.5,1)--(2.5,0) node [right,midway] {\color{blue}$3.2$};
-        \draw[black,thick, xshift=7.7cm, scale=1.6] (0,0)--(2.5,1);
-        \draw[red,thick, xshift=7.7cm, scale=1.6] (0.5,0) arc (0:{atan(2/5)}:0.5) node[ right, midway] {$\gamma$};
-        \end{tikzpicture}]]>
-    </latex-image>
-    </image>
+        <image xml:id="ch2-4">
+            <description>similar triangles</description>
+            <latex-image>
+            <![CDATA[
+            \begin{tikzpicture} [scale=.8]
+            \coordinate(A) at (0,0);
+            \coordinate (B) at (2.5,0 );
+            \coordinate (C) at (2.5,1);
+    
+            \draw[blue,thick] (B) rectangle +(-0.25,0.25);
+            \draw[black,thick] (A)--(B) node [below,midway] {\color{blue}$5$};
+            \draw[black,thick] (C)--(B) node [right,midway] {\color{blue}$2$};
+            \draw[black,thick] (A)--(C);
+            \draw[red,thick] (0.9,0) arc (0:{atan(2/5)}:0.9) node[right, midway,yshift=2] {$\alpha$};
+    
+            \draw[blue,thick, xshift=3.2cm, scale=1.5] (2.5,0) rectangle +(-0.16,0.16);
+            \draw[black,thick, xshift=3.2cm, scale=1.5] (0,0)--(2.5,0) node [below,midway] {\color{blue}$7.5$};
+            \draw[black,thick, xshift=3.2cm, scale=1.5] (2.5,1)--(2.5,0) node [right,midway] {\color{blue}$3$};
+            \draw[black,thick, xshift=3.2cm, scale=1.5] (0,0)--(2.5,1);
+            \draw[red,thick, xshift=3.2cm, scale=1.5] (0.8,0) arc (0:{atan(2/5)}:0.8) node[right, midway,yshift=2] {$\beta$};
+    
+            \draw[blue,thick, xshift=7.7cm, scale=1.6] (2.5,0) rectangle +(-0.15,0.15);
+            \draw[black,thick, xshift=7.7cm, scale=1.6] (0,0)--(2.5,0) node [below,midway] {\color{blue}$8$};
+            \draw[black,thick, xshift=7.7cm, scale=1.6] (2.5,1)--(2.5,0) node [right,midway] {\color{blue}$3.2$};
+            \draw[black,thick, xshift=7.7cm, scale=1.6] (0,0)--(2.5,1);
+            \draw[red,thick, xshift=7.7cm, scale=1.6] (0.6,0) arc (0:{atan(2/5)}:0.6) node[right, midway, yshift=1] {$\gamma$};
+            \end{tikzpicture}]]>
+        </latex-image>
+        </image>
             </sidebyside></li>
         <li>Find the hypotenuse of each right triangle.</li>
         <li>Use the sides of the approporiate triangle to compute <m>\sin \alpha,~ \sin \beta,</m> and <m>\sin \gamma</m>. Round 
         your answers to four decimal places. Does the sine of an angle depend on the lengths of its sides?</li>
         <li><p>How do you know that the triangle below is similar to the three triangles in part (a)?  Write an equation using the ratio from part (c) to find <m>x</m>.</p>
             <sidebyside width="40%">
-    <image xml:id="ch2-5">
-        <description>triangle</description>
-        <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} 
-        \coordinate(A) at (0,0);
-        \coordinate (B) at (4.5,0 );
-        \coordinate (C) at (4.5,2);
-
-        \draw[blue,thick] (B) rectangle +(-0.25,0.25);
-        \draw[black,thick] (A)--(B);
-        \draw[black,thick] (C)--(B) node [right,midway] {\color{blue}$12$};
-        \draw[black,thick] (A)--(C) node [above left,midway] {\color{blue}$x$};
-        \draw[red,thick] (0.8,0) arc (0:{atan(2/5)}:0.8) node[ right, midway] {$\alpha$};
-        \end{tikzpicture}]]>
-    </latex-image>
-    </image>
+        <image xml:id="ch2-5">
+            <description>triangle</description>
+            <latex-image>
+            <![CDATA[
+            \begin{tikzpicture} [scale=.72]
+            \coordinate(A) at (0,0);
+            \coordinate (B) at (4.5,0 );
+            \coordinate (C) at (4.5,2);
+    
+            \draw[blue,thick] (B) rectangle +(-0.25,0.25);
+            \draw[black,thick] (A)--(B);
+            \draw[black,thick] (C)--(B) node [right,midway] {\color{blue}$12$};
+            \draw[black,thick] (A)--(C) node [above left,midway] {\color{blue}$x$};
+            \draw[red,thick] (0.8,0) arc (0:{atan(2/5)}:0.8) node[ right, midway, yshift=2] {$\alpha$};
+            \end{tikzpicture}]]>
+        </latex-image>
+        </image>
             </sidebyside></li>
         </ol></p></li>  
     <li><p>In the three right triangles below, the angle <m>\theta</m> is the same size.</p>
         <sidebyside width="80%">
-    <image xml:id="ch2-6">
-        <description>similar triangles</description>
-        <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=1.2]
-        \coordinate(A) at (0,0);
-        \coordinate (B) at (2.5,0 );
-        \coordinate (C) at (2.5,2);
-
-        \draw[blue,thick] (B) rectangle +(-0.25,0.25);
-        \draw[black,thick] (A)--(B) node [below,midway] {\color{blue}$10$};
-        \draw[black,thick] (C)--(B);
-        \draw[black,thick] (A)--(C) node [above left,midway] {\color{blue}$13$};
-        \draw[red,thick] (0.4,0) arc (0:{acos(10/13)}:0.4) node[ right, midway, yshift=2] {$\theta$};
-
-        \draw[blue,thick, xshift=3.5cm, scale=0.33] (2.5,0) rectangle +(-0.5,0.5);
-        \draw[black,thick, xshift=3.5cm, scale=0.33] (0,0)--(2.5,0) node [below,midway] {\color{blue}$x$};
-        \draw[black,thick, xshift=3.5cm, scale=0.33] (2.5,2)--(2.5,0);
-        \draw[black,thick, xshift=3.5cm, scale=0.33] (0,0)--(2.5,2) node [above left,midway] {\color{blue}$4.3$};
-        \draw[red,thick, xshift=3.5cm, scale=0.33] (0.7,0) arc (0:{acos(10/13)}:0.7) node[ right, midway, yshift=2] {\footnotesize$\theta$};
-
-        \draw[blue,thick, xshift=5.2cm, scale=1.4] (2.5,0) rectangle +(-0.17,0.17);
-        \draw[black,thick, xshift=5.2cm, scale=1.4] (0,0)--(2.5,0) node [below,midway] {\color{blue}$14$};
-        \draw[black,thick, xshift=5.2cm, scale=1.4] (2.5,2)--(2.5,0);
-        \draw[black,thick, xshift=5.2cm, scale=1.4] (0,0)--(2.5,2) node [above left,midway] {\color{blue}$z$};
-        \draw[red,thick, xshift=5.2cm, scale=1.4] (0.3,0) arc (0:{acos(10/13)}:0.3) node[ right, midway, yshift=2] {$\theta$};
-        \end{tikzpicture}]]>
-    </latex-image>
-    </image>
+        <image xml:id="ch2-6">
+            <description>similar triangles</description>
+            <latex-image>
+            <![CDATA[
+            \begin{tikzpicture} [scale=1]
+            \coordinate(A) at (0,0);
+            \coordinate (B) at (2.5,0 );
+            \coordinate (C) at (2.5,2);
+    
+            \draw[blue,thick] (B) rectangle +(-0.25,0.25);
+            \draw[black,thick] (A)--(B) node [below,midway] {\color{blue}$10$};
+            \draw[black,thick] (C)--(B);
+            \draw[black,thick] (A)--(C) node [above left,midway] {\color{blue}$13$};
+            \draw[red,thick] (0.4,0) arc (0:{acos(10/13)}:0.4) node[ right, midway, yshift=2] {$\theta$};
+    
+            \draw[blue,thick, xshift=3.5cm, scale=0.33] (2.5,0) rectangle +(-0.5,0.5);
+            \draw[black,thick, xshift=3.5cm, scale=0.33] (0,0)--(2.5,0) node [below,midway] {\color{blue}$x$};
+            \draw[black,thick, xshift=3.5cm, scale=0.33] (2.5,2)--(2.5,0);
+            \draw[black,thick, xshift=3.5cm, scale=0.33] (0,0)--(2.5,2) node [above left,midway] {\color{blue}$4.3$};
+            \draw[red,thick, xshift=3.5cm, scale=0.33] (0.7,0) arc (0:{acos(10/13)}:0.7) node[ right, midway, yshift=2] {\small$\theta$};
+    
+            \draw[blue,thick, xshift=5.2cm, scale=1.4] (2.5,0) rectangle +(-0.17,0.17);
+            \draw[black,thick, xshift=5.2cm, scale=1.4] (0,0)--(2.5,0) node [below,midway] {\color{blue}$14$};
+            \draw[black,thick, xshift=5.2cm, scale=1.4] (2.5,2)--(2.5,0);
+            \draw[black,thick, xshift=5.2cm, scale=1.4] (0,0)--(2.5,2) node [above left,midway] {\color{blue}$z$};
+            \draw[red,thick, xshift=5.2cm, scale=1.4] (0.3,0) arc (0:{acos(10/13)}:0.3) node[ right, midway, yshift=2] {$\theta$};
+            \end{tikzpicture}]]>
+        </latex-image>
+        </image>
         </sidebyside>
         <p><ol marker="a">
         <li>Use the first triangle to calculate <m>\cos \theta</m>. Round your answer to four decimal places.</li>
@@ -180,54 +174,48 @@ In the 6th century BC, the Greek philosopher Thales estimated the distances to s
     <li><p><ol marker="a">
         <li><p>Use your calculator to find the value of <m>\dfrac{h}{2.4}</m>. (Hint: Which trig ratio should you use?) What is the length of side <m>h</m>?</p>
             <sidebyside width="35%">
-    <image xml:id="ch2-7">
-        <description>triangle</description>
-        <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.8]
-        \coordinate(A) at (0,0);
-        \coordinate (B) at (4.5,0 );
-        \coordinate (C) at (4.5,-2.4);
-
-        \draw[blue,thick] (B) rectangle +(-0.25,-0.25);
-        \draw[black,thick] (A)--(B) node [above,midway] {\color{blue}$h$};
-        \draw[black,thick] (C)--(B) node [right,midway] {\color{blue}$2.4$};
-        \draw[black,thick] (A)--(C);
-        \draw[red,thick] (4.5,-1.9) arc (90:152:0.5) node[ above , midway, xshift=-3] {$62\degree$};
-        \end{tikzpicture}]]>
-    </latex-image>
-    </image>
+        <image xml:id="ch2-7">
+            <description>triangle</description>
+            <latex-image>
+            <![CDATA[
+            \begin{tikzpicture} [scale=.56]
+            \coordinate(A) at (0,0);
+            \coordinate (B) at (4.5,0 );
+            \coordinate (C) at (4.5,-2.4);
+    
+            \draw[blue,thick] (B) rectangle +(-0.25,-0.25);
+            \draw[black,thick] (A)--(B) node [above,midway] {\color{blue}$h$};
+            \draw[black,thick] (C)--(B) node [right,midway] {\color{blue}$2.4$};
+            \draw[black,thick] (A)--(C);
+            \draw[red,thick] (4.5,-1.9) arc (90:152:0.5) node[ above , midway, xshift=-5] {$62\degree$};
+            \end{tikzpicture}]]>
+        </latex-image>
+        </image>
             </sidebyside></li>
         <li><p>What is the value of <m>\dfrac{6}{w}</m> for the triangle below?  Write an equation and solve for <m>w</m>.</p>
             <sidebyside widths="20% 28%" valigns="bottom bottom">
-    <image xml:id="ch2-8">
-        <description>triangle</description>
-        <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.8, rotate=90]
-        \coordinate(A) at (0,0);
-        \coordinate (B) at (4.5,0 );
-        \coordinate (C) at (4.5,-2.4);
+        <image xml:id="ch2-8">
+            <description>triangle</description>
+            <latex-image>
+            <![CDATA[
+            \begin{tikzpicture} [scale=.64, rotate=90]
+            \coordinate(A) at (0,0);
+            \coordinate (B) at (4.5,0 );
+            \coordinate (C) at (4.5,-2.4);
 
-        \draw[blue,thick] (B) rectangle +(-0.3,-0.3);
-        \draw[black,thick] (A)--(B) node [left,midway] {\color{blue}$6$};
-        \draw[black,thick] (C)--(B) node [above,midway] {\color{blue}$w$};
-        \draw[black,thick] (A)--(C);
-        \draw[red,thick] (4.5,-1.9) arc (90:152:0.5) node[ left , midway, yshift=-5] {$62\degree$};
-        \end{tikzpicture}]]>
-    </latex-image>
-    </image>
+            \draw[blue,thick] (B) rectangle +(-0.3,-0.3);
+            \draw[black,thick] (A)--(B) node [left,midway] {\color{blue}$6$};
+            \draw[black,thick] (C)--(B) node [above,midway] {\color{blue}$w$};
+            \draw[black,thick] (A)--(C);
+            \draw[red,thick] (4.5,-1.9) arc (90:152:0.5) node[ left , midway, yshift=-5] {$62\degree$};
+            \end{tikzpicture}]]>
+        </latex-image>
+        </image>
     <image xml:id="ch2-8ii">
         <description>triangle</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.85, rotate=30]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.68, rotate=30]
         \coordinate(A) at (0,0);
         \coordinate (B) at (-4.5,0 );
         \coordinate (C) at (-4.5,-2.4);
@@ -240,9 +228,9 @@ In the 6th century BC, the Greek philosopher Thales estimated the distances to s
         \end{tikzpicture}]]>
     </latex-image>
     </image>
-            </sidebyside></li>
-        <li>Write an equation and solve it to find <m>x</m> in the triangle above.</li>
-        </ol></p>   
+    </sidebyside></li>
+    <li>Write an equation and solve it to find <m>x</m> in the triangle above.</li>
+    </ol></p>   
     </li></ol></p>
 </li></ol></p>
 </activity>
