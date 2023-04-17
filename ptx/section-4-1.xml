@@ -112,7 +112,7 @@
 
       \draw [thick, color=red, ->,>=stealth'] (O)++(.3,0) arc(0:320:.3) node[above left, midway, inner sep=1pt] {$320\degree$};
       \draw[gray!70!white] (O) circle(1.5);
-      \draw[blue,ultra thick,<-] (A)--(O);
+      \draw[blue,ultra thick,<-,>=stealth'] (A)--(O);
       \draw[blue,ultra thick,->,>=stealth'] (O)--(B);
 
       \node[text width=2.5cm] at (0,1.9) {\color{blue} 8/9 of a cake};
@@ -145,7 +145,7 @@
 
       \draw [thick, color=red, ->,>=stealth'] (O)++(.3,0) arc(0:240:.3) node[above left, midway, inner sep=1pt] {$240\degree$};
       \draw[gray!70!white] (O) circle(1.5);
-      \draw[blue,ultra thick,<-] (A)--(O);
+      \draw[blue,ultra thick,<-,>=stealth'] (A)--(O);
       \draw[blue,ultra thick,->,>=stealth'] (O)--(B);
 
       \node[text width=2.cm] at (0,1.9) {\color{blue} 40 minutes};
@@ -177,7 +177,7 @@
 
       \draw [thick, color=red, ->,>=stealth'] (O)++(.3,0) arc(0:130:.3) node[above right, midway, inner sep=1pt] {$130\degree$};
       \draw[gray!70!white] (O) circle(1.5);
-      \draw[blue,ultra thick,<-] (A)--(O);
+      \draw[blue,ultra thick,<-,>=stealth'] (A)--(O);
       \draw[blue,ultra thick,->,>=stealth'] (O)--(B);
 
       \node[text width=2.6cm] at (0,1.9) {\color{blue} relative direction};
@@ -209,7 +209,7 @@
 
       \draw [thick, color=red, ->,>=stealth'] (O)++(.5,0) arc(0:55:.5) node[right, midway, yshift=2, inner sep=4pt] {$55\degree$};
       \draw[gray!70!white] (O) circle(1.5);
-      \draw[blue,ultra thick,<-] (A)--(O);
+      \draw[blue,ultra thick,<-,>=stealth'] (A)--(O);
       \draw[blue,ultra thick,->,>=stealth'] (O)--(B);
 
       \node[text width=1.5cm] at (0,2.2) {\color{blue} difference of angles};
@@ -694,98 +694,10 @@ Because <m>P</m> is in the third quadrant, <m>x = -\sqrt{11}</m>. Thus, <me>\cos
     <p>The figure below shows angles <m>\theta</m> between <m>0\degree</m> and <m>360\degree</m>, and the reference angle, <m>\widetilde{\theta}</m>, for each. Study the figures, and make sure you understand the formula for finding the reference angle in each quadrant.</p> 
 
 <sidebyside width="80%">
-    <image xml:id="fig-4-1ref"><description>angles</description><latex-image>
-        <![CDATA[
-        \begin{tikzpicture} [scale=1]
-
-        \coordinate (O) at (0,0);
-        \coordinate (x) at (2.5,0);
-        \coordinate (P) at (2.5,2);
-        \coordinate (A) at (3.5,0);
-        \coordinate (B) at (0,3);
-        \coordinate (C) at (3.5,2.8);
-
-        \draw[black,  thick, ->,>=stealth'] (O)++(-.3,0) --(A);
-        \draw[black,  thick, ->,>=stealth'] (O)++(0,-.3) -- (B) ;
-        \draw[blue,  thick, ->,>=stealth'] (O) --  (C) node[left, midway, xshift=-5, yshift=-2]{$r$}  ;
-        \draw[red, thick, ->,>=stealth'] (.6,0) arc (0:{atan(2/2.5)}:.6) node [right, midway,xshift=0,yshift=2] {$\color{black}\theta=\color{red}\tilde{\theta}$};
-
-        \draw[gray, thick, dashed] (x) -- (P);
-        \draw[blue, thick] (x) rectangle +(-.25,.25);
-
-        \filldraw (P) circle (1.5pt) node[anchor = south east, xshift=2]{$P(x,y)$}; 
-
-        \node[text width=4cm] at (1.7,-.5)     {\color{blue} First-quadrant: $\tilde{\theta}=\theta$};
-
-        %second quadrant
-
-        \coordinate (O) at (9.5,0);
-        \coordinate (x) at (7,0);
-        \coordinate (P) at (7,2);
-        \coordinate (A) at (6,0);
-        \coordinate (B) at (9.5,3);
-        \coordinate (C) at (6,2.8);
-
-        \draw[black,  thick, <-] (O)++(.6,0) --(A);
-        \draw[black,  thick, ->,>=stealth'] (O)++(0,-.3) -- (B) ;
-        \draw[blue,  thick, ->,>=stealth'] (O) --  (C) node[right, midway, xshift=5, yshift=-2]{$r$}  ;
-
-        \draw[red, thick, <->,>=stealth'] (O)++(-.7,0) arc (180:{180-atan(2/2.5)}:.7) node [left, midway,xshift=0,yshift=2] {$\tilde{\theta}$};
-        \draw[gray, thick, ->,>=stealth'] (O)++(.3,0) arc (0:{180-atan(2/2.5)}:.3) node [above, midway,xshift=2,yshift=0] {\color{black}$\theta$};
-
-        \draw[gray, thick, dashed] (x) -- (P);
-        \draw[blue, thick] (x) rectangle +(.25,.25);
-
-        \filldraw (P) circle (1.5pt) node[anchor = south west, xshift=-2]{$P(x,y)$}; 
-
-        \node[text width=5.5cm] at (8.8,-.5)     {\color{blue} Second-quadrant: $\tilde{\theta}=180\degree-\theta$};
-
-        %third quadrant
-
-        \coordinate (O) at (3.5,-2);
-        \coordinate (x) at (1,-2);
-        \coordinate (P) at (1,-4);
-        \coordinate (A) at (0,-2);
-        \coordinate (B) at (3.5,-4.8);
-        \coordinate (C) at (0,-4.8);
-
-        \draw[black,  thick, <-] (O)++(.5,0) --(A);
-        \draw[black,  thick, <-] (O)++(0,.7) -- (B) ;
-        \draw[blue,  thick, ->,>=stealth'] (O) --  (C) node[right, midway, xshift=5, yshift=2]{$r$}  ;
-        \draw[red, thick, <->,>=stealth'] (O)++(-.7,0) arc (180:{180+atan(2/2.5)}:.7) node [left, midway,xshift=-2,yshift=-2] {$\tilde{\theta}$};
-        \draw[gray, thick, ->,>=stealth'] (O)++(.3,0) arc (0:{180+atan(2/2.5)}:.3) node [above, midway,xshift=-7,yshift=-5] {\color{black}$\theta$};
-
-        \draw[gray, thick, dashed] (x) -- (P);
-        \draw[blue, thick] (x) rectangle +(.25,-.25);
-
-        \filldraw (P) circle (1.5pt) node[anchor = north west, xshift=-2]{$P(x,y)$}; 
-
-        \node[text width=5.5cm] at (2.5,-5.5)     {\color{blue} Third-quadrant: $\tilde{\theta}=\theta-180\degree$};
-
-        %fourth quadrant
-
-        \coordinate (O) at (6,-2);
-        \coordinate (x) at (8.5,-2);
-        \coordinate (P) at (8.5,-4);
-        \coordinate (A) at (9.5,-2);
-        \coordinate (B) at (6,-4.8);
-        \coordinate (C) at (9.5,-4.8);
-
-        \draw[black,  thick, ->,>=stealth'] (O)++(-.5,0) --(A);
-        \draw[black,  thick, <-] (O)++(0,.7) -- (B) ;
-        \draw[blue,  thick, ->,>=stealth'] (O) --  (C) node[left, midway, xshift=-5, yshift=2]{$r$}  ;
-        \draw[red, thick, <->,>=stealth'] (O)++(.7,0) arc (0:{-atan(2/2.5)}:.7) node [right, midway,xshift=2,yshift=-2] {$\tilde{\theta}$};
-        \draw[gray, thick, ->,>=stealth'] (O)++(.3,0) arc (0:{360-atan(2/2.5)}:.3) node [above, midway,xshift=0,yshift=0] {\color{black}$\theta$};
-
-        \draw[gray, thick, dashed] (x) -- (P);
-        \draw[blue, thick] (x) rectangle +(-.25,-.25);
-
-        \filldraw (P) circle (1.5pt) node[anchor = north east, xshift=2]{$P(x,y)$}; 
-
-        \node[text width=5.5cm] at (8.5,-5.5)     {\color{blue} Fourth-quadrant: $\tilde{\theta}=360\degree -\theta$};
-
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside>
+    <image xml:id="fig-4-1ref"><description>Reference angles for all quadrants</description>
+        <xi:include href="Fig-reference-angles.ptx"/>
+    </image>
+</sidebyside>
 
 <note><p>These observations may help you remember the formulas:</p>
     <p><ul>
@@ -1175,10 +1087,10 @@ In the third quadrant, the sine and cosine are negative, so we have
 <p>Because <m>360\degree</m> represents one complete revolution, we can add or subtract a multiple of <m>360\degree</m> to any angle, and the terminal side will arrive at the same position. For example, the angles <m>70\degree</m> and <m>430\degree</m> have the same terminal side because <m>430\degree = 70\degree + 360\degree</m>. Such angles are called <term>coterminal</term>.</p>
 <p>The angle <m>790\degree</m> is also coterminal with <m>70\degree</m>, because because if we add two revolutions to <m>70\degree</m>, we get <m>~790\degree = 70\degree+ 2(360\degree)</m>, as shown below.</p>
 
- <sidebyside widths="25% 25%" margins="15% 15%">
+<sidebyside widths="25% 25%" margins="15% 15%">
     <image xml:id="fig-4-1-coterm"><description>angles</description><latex-image>
         <![CDATA[
-        \begin{tikzpicture}
+        \begin{tikzpicture}[scale=.8]
         \coordinate(O) at (0,0);
         \coordinate(A) at (70:2cm);
         \draw[black, thick] (0,-2.2)--(0,2.2);
@@ -1188,13 +1100,13 @@ In the third quadrant, the sine and cosine are negative, so we have
         \draw[blue, thick, ->,>=stealth'] (O) -- +(2,0);
         \draw[blue, thick, ->,>=stealth'] (O) -- (A) node[above right, xshift=-3, yshift=-3] {\color{red}$70\degree$};
 
-        \draw [thick, color=red, ->, domain=0:pi*(2+7/18), samples=200, smooth]
-          plot (xy polar cs:angle=\x r, radius={.2+(\x r)/2500}) node[above left, midway] {$430\degree$};
+        \draw [thick, color=red, ->,>=stealth', domain=0:pi*(2+7/18), samples=200, smooth]
+            plot (xy polar cs:angle=\x r, radius={.2+(\x r)/2500}) node[above left, midway, yshift=2] {$430\degree$};
         \end{tikzpicture}]]>
     </latex-image></image>
     <image xml:id="fig-4-1-coterm2"><description>angles</description><latex-image>
         <![CDATA[
-        \begin{tikzpicture}
+        \begin{tikzpicture}[scale=.8]
         \coordinate(O) at (0,0);
         \coordinate(A) at (70:2cm);
         \draw[black, thick] (0,-2.2)--(0,2.2);
@@ -1204,8 +1116,8 @@ In the third quadrant, the sine and cosine are negative, so we have
         \draw[blue, thick, ->,>=stealth'] (O) -- +(2,0);
         \draw[blue, thick, ->,>=stealth'] (O) -- (A) node[above right, xshift=-3, yshift=-3] {\color{red}$70\degree$};
 
-        \draw [thick, color=red, ->, domain=0:pi*(4+7/18), samples=200, smooth]
-          plot (xy polar cs:angle=\x r, radius={.2+(\x r)/2500}) node[above left, midway, xshift=-2, yshift=2] {$790\degree$};
+        \draw [thick, color=red, ->,>=stealth', domain=0:pi*(4+7/18), samples=200, smooth]
+            plot (xy polar cs:angle=\x r, radius={.2+(\x r)/2500}) node[above left, midway, xshift=-3, yshift=3] {$790\degree$};
 
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>   
@@ -1331,71 +1243,49 @@ In the third quadrant, the sine and cosine are negative, so we have
 </subsubsection>
 
 <subsubsection><title>Concepts</title>
-<p><ol marker="1">
-    <li>We can use angles to describe rotation. Positive angles indicate rotation in the counter-clockwise direction; negative angles describe clockwise rotation.</li>
-
-    <li>We define the trigonometric ratios of any angle by placing the angle in standard position and choosing a point  on the terminal side, with <m>r = \sqrt{x^2 + y^2}</m>.
-        <assemblage><title>The Trigonometric Ratios</title>
-        <p>If <m>\theta</m> is an angle in standard position, and <m>(x,y)</m> is a point on its terminal side, with  <m>r = \sqrt{x^2 + y^2}</m>,  then
-        <me>\sin (\theta) = \dfrac{y}{r}~~~~~~~~~ \cos (\theta) = \dfrac{x}{r}~~~~~~~~~ \tan (\theta) = \dfrac{y}{x}</me></p>
-        </assemblage></li>
-
-    <li><p>To construct a reference triangle for an angle :</p>
-      <p><ol marker="1">
-        <li> Choose a point <m>P</m> on the terminal side.</li>   
-        <li> Draw a line from point <m>P</m> perpendicular to the <m>x</m>-axis.</li>
-      </ol></p></li> 
-
-  <li><p>The <term>reference angle</term> for <m>\theta</m> is the positive acute angle formed between the terminal side of <m>\theta</m> and the <m>x</m>-axis. </p>
-      <sidebyside width="90%"><image source="photos/fig-4-1ref"><description>angles</description></image></sidebyside></li>
-
-  <li>The trigonometric ratios of any angle are equal to the ratios of its reference angle, except for sign. The sign of the ratio is determined by the quadrant.</li>
-
-  <li><assemblage><title>To find an angle <m>\theta</m> with a given reference angle <m>\widetilde{\theta}</m>:</title>
-    <sidebyside><tabular>
-        <row>
-            <cell>Quadrant I:    <m>~~~~~~\theta = \widetilde{\theta}</m></cell>
-            <cell><m>\hphantom{0000}</m></cell>
-            <cell>Quadrant II:  <m>~~~~\theta = 180\degree - \widetilde{\theta}</m></cell></row>
-        <row>
-            <cell>Quadrant III:  <m>~~~~~\theta = 180\degree + \widetilde{\theta}</m></cell>
-            <cell><m>\hphantom{0000}</m></cell>
-            <cell>Quadrant IV:  <m>~~~~\theta = 360\degree - \widetilde{\theta}</m></cell></row>
-        </tabular></sidebyside></assemblage>
-    <sidebyside width="50%"><!--<image source="photos/4-1-concept6.png"><description>angles</description></image>-->
-    <image xml:id="fig-4-1-concept6"><description>angles</description><latex-image>
-        <![CDATA[
-        \begin{tikzpicture}
-
-        \coordinate (O) at (0,0);
-        \coordinate (A) at (3,1.8);
-        \coordinate (B) at (-3.,1.8);
-        \coordinate (C) at (-3,-1.8);
-        \coordinate (D) at (3,-1.8);
-
-        \draw[black,  thick, ->,>=stealth'] (-3.1,0) --  (3.1,0) node[right] {$x$} ;
-        \draw[black,  thick, ->,>=stealth'] (0,-1.9) --  (0,1.9) node[above] {$y$}  ;
-
-        \draw[blue, thick] (O)--(A) node[above right, xshift=-10, yshift=-3]{\footnotesize\color{red}$\theta = \tilde\theta$} ;
-        \draw[red, thick, <->,>=stealth'] (.9,0) arc (0:{atan(.6)}:.9) node [right, midway,xshift=0,yshift=2] {\footnotesize$\tilde\theta$};
-
-        \draw[blue, thick] (O)--(B) node[above left, xshift=35, yshift=-3]{\footnotesize\color{red}$\theta = 180\degree- \tilde\theta$} ;
-        \draw[red, thick, <->,>=stealth'] (-.9,0) arc (180:{180-atan(.6)}:.9) node [left, midway,xshift=0,yshift=2] {\footnotesize$\tilde\theta$};
-
-        \draw[blue, thick] (O)--(C) node[below left, xshift=35, yshift=3]{\footnotesize\color{red}$\theta = 180\degree + \tilde\theta$} ;
-        \draw[red, thick, <->,>=stealth'] (-.9,0) arc (180:{180+atan(.6)}:.9) node [left, midway,xshift=0,yshift=-2] {\footnotesize$\tilde\theta$};
-
-        \draw[blue, thick] (O)--(D) node[below right, xshift=-35, yshift=3]{\footnotesize\color{red}$\theta = 360\degree - \tilde\theta$} ;
-        \draw[red, thick, <->,>=stealth'] (.9,0) arc (0:{-atan(.6)}:.9) node [right, midway,xshift=0,yshift=-2] {$\footnotesize\tilde\theta$};
-
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></li>
-    
-    <li>There are always two angles between <m>0\degree</m> and <m>360\degree</m> (except for the quadrantal angles) with a given trigonometric ratio.</li>
-
-    <li><term>Coterminal angles</term> have equal trigonometric ratios.</li>
-
-</ol></p></subsubsection>
+  <p><ol marker="1">
+      <li>We can use angles to describe rotation. Positive angles indicate rotation in the counter-clockwise direction; negative angles describe clockwise rotation.</li>
+  
+      <li>We define the trigonometric ratios of any angle by placing the angle in standard position and choosing a point  on the terminal side, with <m>r = \sqrt{x^2 + y^2}</m>.
+          <assemblage><title>The Trigonometric Ratios</title>
+          <p>If <m>\theta</m> is an angle in standard position, and <m>(x,y)</m> is a point on its terminal side, with  <m>r = \sqrt{x^2 + y^2}</m>,  then
+          <me>\sin (\theta) = \dfrac{y}{r}~~~~~~~~~ \cos (\theta) = \dfrac{x}{r}~~~~~~~~~ \tan (\theta) = \dfrac{y}{x}</me></p>
+          </assemblage></li>
+  
+      <li><p>To construct a reference triangle for an angle :</p>
+          <p><ol marker="1">
+          <li> Choose a point <m>P</m> on the terminal side.</li>   
+          <li> Draw a line from point <m>P</m> perpendicular to the <m>x</m>-axis.</li>
+          </ol></p></li> 
+  
+      <li><p>The <term>reference angle</term> for <m>\theta</m> is the positive acute angle formed between the terminal side of <m>\theta</m> and the <m>x</m>-axis. </p>
+          <sidebyside width="90%"><image xml:id="Summary-fig-4-1ref"><description>angles</description>
+              <xi:include href="Fig-reference-angles.ptx"/>
+          </image></sidebyside></li>
+  
+      <li>The trigonometric ratios of any angle are equal to the ratios of its reference angle, except for sign. The sign of the ratio is determined by the quadrant.</li>
+  
+      <li><assemblage><title>To find an angle <m>\theta</m> with a given reference angle <m>\widetilde{\theta}</m>:</title>
+      <sidebyside><tabular>
+          <row>
+              <cell>Quadrant I:    <m>~~~~~~\theta = \widetilde{\theta}</m></cell>
+              <cell><m>\hphantom{0000}</m></cell>
+              <cell>Quadrant II:  <m>~~~~\theta = 180\degree - \widetilde{\theta}</m></cell></row>
+          <row>
+              <cell>Quadrant III:  <m>~~~~~\theta = 180\degree + \widetilde{\theta}</m></cell>
+              <cell><m>\hphantom{0000}</m></cell>
+              <cell>Quadrant IV:  <m>~~~~\theta = 360\degree - \widetilde{\theta}</m></cell></row>
+          </tabular></sidebyside></assemblage>
+      <sidebyside width="50%"><!--<image source="photos/4-1-concept6.png"><description>angles</description></image>-->
+      <image xml:id="fig-4-1-concept6"><description>angles</description>
+       <xi:include href="Fig-find-theta-for-given-reference-angle.ptx"/>
+      </image></sidebyside></li>
+      
+      <li>There are always two angles between <m>0\degree</m> and <m>360\degree</m> (except for the quadrantal angles) with a given trigonometric ratio.</li>
+  
+      <li><term>Coterminal angles</term> have equal trigonometric ratios.</li>
+  
+  </ol></p></subsubsection>
 
 <subsubsection><title> Study Questions</title>
 <p><ol marker="1">

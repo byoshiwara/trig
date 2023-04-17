@@ -1,0 +1,91 @@
+<latex-image>
+    <![CDATA[
+    \begin{tikzpicture}
+    \coordinate (O) at (0,0);
+    \coordinate (x) at (2.5,0);
+    \coordinate (P) at (2.5,2);
+    \coordinate (A) at (3.5,0);
+    \coordinate (B) at (0,3);
+    \coordinate (C) at (3.5,2.8);
+
+    \draw[black,  thick, ->,>=stealth'] (O)++(-.3,0) --(A);
+    \draw[black,  thick, ->,>=stealth'] (O)++(0,-.3) -- (B) ;
+    \draw[blue,  thick, ->,>=stealth'] (O) --  (C) node[left, midway, xshift=-5, yshift=-2]{$r$}  ;
+    \draw[red, thick, ->,>=stealth'] (.6,0) arc (0:{atan(2/2.5)}:.6) node [right, midway,xshift=0,yshift=2] {$\color{black}\theta=\color{red}\tilde{\theta}$};
+
+    \draw[gray, thick, dashed] (x) -- (P);
+    \draw[blue, thick] (x) rectangle +(-.25,.25);
+
+    \filldraw (P) circle (1.5pt) node[anchor = south east, xshift=2]{$P(x,y)$}; 
+
+    \node[text width=4cm] at (1.7,-.5)     {\color{blue} First-quadrant: $\tilde{\theta}=\theta$};
+
+    %second quadrant
+
+    \coordinate (O) at (9.5,0);
+    \coordinate (x) at (7,0);
+    \coordinate (P) at (7,2);
+    \coordinate (A) at (6,0);
+    \coordinate (B) at (9.5,3);
+    \coordinate (C) at (6,2.8);
+
+    \draw[black,  thick, <-] (O)++(.6,0) --(A);
+    \draw[black,  thick, ->,>=stealth'] (O)++(0,-.3) -- (B) ;
+    \draw[blue,  thick, ->,>=stealth'] (O) --  (C) node[right, midway, xshift=5, yshift=-2]{$r$}  ;
+
+    \draw[red, thick, <->,>=stealth'] (O)++(-.7,0) arc (180:{180-atan(2/2.5)}:.7) node [left, midway,xshift=0,yshift=2] {$\tilde{\theta}$};
+    \draw[gray, thick, ->,>=stealth'] (O)++(.3,0) arc (0:{180-atan(2/2.5)}:.3) node [above, midway,xshift=2,yshift=0] {\color{black}$\theta$};
+
+    \draw[gray, thick, dashed] (x) -- (P);
+    \draw[blue, thick] (x) rectangle +(.25,.25);
+
+    \filldraw (P) circle (1.5pt) node[anchor = south west, xshift=-2]{$P(x,y)$}; 
+
+    \node[text width=5.5cm] at (8.8,-.5)     {\color{blue} Second-quadrant: $\tilde{\theta}=180\degree-\theta$};
+
+    %third quadrant
+
+    \coordinate (O) at (3.5,-2);
+    \coordinate (x) at (1,-2);
+    \coordinate (P) at (1,-4);
+    \coordinate (A) at (0,-2);
+    \coordinate (B) at (3.5,-4.8);
+    \coordinate (C) at (0,-4.8);
+
+    \draw[black,  thick, <-] (O)++(.5,0) --(A);
+    \draw[black,  thick, <-] (O)++(0,.7) -- (B) ;
+    \draw[blue,  thick, ->,>=stealth'] (O) --  (C) node[right, midway, xshift=5, yshift=2]{$r$}  ;
+    \draw[red, thick, <->,>=stealth'] (O)++(-.7,0) arc (180:{180+atan(2/2.5)}:.7) node [left, midway,xshift=-2,yshift=-2] {$\tilde{\theta}$};
+    \draw[gray, thick, ->,>=stealth'] (O)++(.3,0) arc (0:{180+atan(2/2.5)}:.3) node [above, midway,xshift=-7,yshift=-5] {\color{black}$\theta$};
+
+    \draw[gray, thick, dashed] (x) -- (P);
+    \draw[blue, thick] (x) rectangle +(.25,-.25);
+
+    \filldraw (P) circle (1.5pt) node[anchor = north west, xshift=-2]{$P(x,y)$}; 
+
+    \node[text width=5.5cm] at (2.5,-5.5)     {\color{blue} Third-quadrant: $\tilde{\theta}=\theta-180\degree$};
+
+    %fourth quadrant
+
+    \coordinate (O) at (6,-2);
+    \coordinate (x) at (8.5,-2);
+    \coordinate (P) at (8.5,-4);
+    \coordinate (A) at (9.5,-2);
+    \coordinate (B) at (6,-4.8);
+    \coordinate (C) at (9.5,-4.8);
+
+    \draw[black,  thick, ->,>=stealth'] (O)++(-.5,0) --(A);
+    \draw[black,  thick, <-] (O)++(0,.7) -- (B) ;
+    \draw[blue,  thick, ->,>=stealth'] (O) --  (C) node[left, midway, xshift=-5, yshift=2]{$r$}  ;
+    \draw[red, thick, <->,>=stealth'] (O)++(.7,0) arc (0:{-atan(2/2.5)}:.7) node [right, midway,xshift=2,yshift=-2] {$\tilde{\theta}$};
+    \draw[gray, thick, ->,>=stealth'] (O)++(.3,0) arc (0:{360-atan(2/2.5)}:.3) node [above, midway,xshift=0,yshift=0] {\color{black}$\theta$};
+
+    \draw[gray, thick, dashed] (x) -- (P);
+    \draw[blue, thick] (x) rectangle +(-.25,-.25);
+
+    \filldraw (P) circle (1.5pt) node[anchor = north east, xshift=2]{$P(x,y)$}; 
+
+    \node[text width=5.5cm] at (8.5,-5.5)     {\color{blue} Fourth-quadrant: $\tilde{\theta}=360\degree -\theta$};
+
+    \end{tikzpicture}]]>
+</latex-image>

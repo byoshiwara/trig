@@ -6,36 +6,29 @@
 <idx><h>radian</h></idx>
 
 <introduction>
-<sidebyside widths="60% 35%" valigns="middle middle" margins="0% 5%"><p>Imagine that you are riding on a Ferris wheel of radius 100 feet, and each rotation takes eight minutes.  We can use angles in standard position to describe your location as you travel around the wheel. The figure at right shows the locations indicated by <m>\theta = 0\degree,~ 90\degree,~ 180\degree,</m> and  <m>270\degree</m>.  But degrees are not the only way to specify location on a circle.</p>
+<sidebyside widths="55% 38%" valigns="middle middle" margins="0% 5%"><p>Imagine that you are riding on a Ferris wheel of radius 100 feet, and each rotation takes eight minutes.  We can use angles in standard position to describe your location as you travel around the wheel. The figure at right shows the locations indicated by <m>\theta = 0\degree,~ 90\degree,~ 180\degree,</m> and  <m>270\degree</m>.  But degrees are not the only way to specify location on a circle.</p>
 
-        <!--<image source="photos/6-1-intro.png"><description>circle</description></image>-->
-          <image xml:id="circle-6-1-intro"><description>triangle</description><latex-image>
-              <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-              <![CDATA[\tikzset{%
-                block/.style    = {draw, thick, rectangle, minimum height = 3em,
-                  minimum width = 3em},
-                sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-                input/.style    = {coordinate}, % Input
-                output/.style   = {coordinate} % Output
-              }
-          \begin{tikzpicture}
-      
-          \coordinate (O) at (0,0);
-          \draw[blue,thick] (O) circle (1.5cm);
-          \coordinate (A) at (0:1.5);
-          \coordinate (B) at (90:1.5);
-          \coordinate (C) at (180:1.5);
-          \coordinate (D) at (270:1.5);
-      
-          \draw[black,thick] (-1.7,0)--(1.7,0);
-          \draw[black,thick] (0,-1.7)--(0,1.7);
-      
-          \filldraw[red] (A) circle (2.pt) node[anchor=west, align=left, yshift=-.2cm,scale=.8] {\color{blue}$\theta=0\degree$ \\ \color{blue}$p=0$ \\ \color{blue}$t=0$};
-          \filldraw[red] (B) circle (2.pt) node[anchor=south west, align=left,scale=.8] {\color{blue}$\theta=90\degree$ \\ \color{blue}$p=25$ \\ \color{blue}$t=2$};
-          \filldraw[red] (C) circle (2.pt) node[anchor=east, align=left, yshift=-.2cm,scale=.8] {\color{blue}$\theta=180\degree$ \\ \color{blue}$p=50$ \\ \color{blue}$t=4$};
-          \filldraw[red] (D) circle (2.pt) node[anchor=north west, align=left, yshift=-2, scale=.8] {\color{blue}$\theta=270\degree$ \\ \color{blue}$p=75$ \\ \color{blue}$t=6$};
-              \end{tikzpicture}]]>
-          </latex-image></image></sidebyside>  
+<!--<image source="photos/6-1-intro.png"><description>circle</description></image>-->
+    <image xml:id="circle-6-1-intro"><description>triangle</description><latex-image>
+        <![CDATA[
+    \begin{tikzpicture}[scale=.7]
+
+    \coordinate (O) at (0,0);
+    \draw[blue,thick] (O) circle (1.5cm);
+    \coordinate (A) at (0:1.5);
+    \coordinate (B) at (90:1.5);
+    \coordinate (C) at (180:1.5);
+    \coordinate (D) at (270:1.5);
+
+    \draw[black,thick] (-1.7,0)--(1.7,0);
+    \draw[black,thick] (0,-1.7)--(0,1.7);
+
+    \filldraw[red] (A) circle (2.pt) node[anchor=west, align=left, yshift=-.2cm,scale=.8] {\color{blue}$\theta=0\degree$ \\ \color{blue}$p=0$ \\ \color{blue}$t=0$};
+    \filldraw[red] (B) circle (2.pt) node[anchor=south west, align=left,scale=.8] {\color{blue}$\theta=90\degree$ \\ \color{blue}$p=25$ \\ \color{blue}$t=2$};
+    \filldraw[red] (C) circle (2.pt) node[anchor=east, align=left, yshift=-.2cm,scale=.8] {\color{blue}$\theta=180\degree$ \\ \color{blue}$p=50$ \\ \color{blue}$t=4$};
+    \filldraw[red] (D) circle (2.pt) node[anchor=north west, align=left, yshift=-2, scale=.8] {\color{blue}$\theta=270\degree$ \\ \color{blue}$p=75$ \\ \color{blue}$t=6$};
+        \end{tikzpicture}]]>
+    </latex-image></image></sidebyside>  
 
 <p>We could use percent of one complete rotation and label the same locations by <m>p = 0,~ p = 25,~ p = 50,~\text{and}~ p = 75</m>. Or we could use the time elapsed, so that for this example we would have <m>t = 0,~ t = 2,~t = 4,~\text{and}~ t = 6</m> minutes.</p>  
 
@@ -51,16 +44,9 @@
         <me> \blert{C = 2 \pi r}</me>
 If we walk around the entire circumference of a circle, the distance we travel is <m>2\pi</m> times the length of the radius, or about 6.28 times the radius. If we walk only part of the way around the circle, then the distance we travel depends also on the angle of displacement. </p>
 
-<sidebyside widths="40% 55%" margins="0% 0%"><p>For example, an angle of <m>45\degree</m> is <m>\dfrac{1}{8}</m> of a complete revolution, so the the length of the arc from point <m>A</m> to point <m>B</m>, called <m>s</m> in the figure at right, is <m>\dfrac{1}{8}</m> of the circumference. Thus </p>
+<sidebyside widths="45% 42%" margins="0% 5%"><p>For example, an angle of <m>45\degree</m> is <m>\dfrac{1}{8}</m> of a complete revolution, so the the length of the arc from point <m>A</m> to point <m>B</m>, called <m>s</m> in the figure at right, is <m>\dfrac{1}{8}</m> of the circumference. Thus </p>
     <image xml:id="fig-6-1-arca"><description>arc on circle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
+        <![CDATA[
     \begin{tikzpicture}
 
     \coordinate (O) at (0,0);
@@ -73,26 +59,19 @@ If we walk around the entire circumference of a circle, the distance we travel i
     \draw[gray, thick] (O)--(B);
 
 
-    \draw[red,thick,->,>=stealth'](0.4,0) arc(0:45:.4) node[right, midway, yshift=3]{\footnotesize $\frac{1}{8}$ rev};
-    \draw[blue, ultra thick](1.5,0) arc(0:45:1.5) node[right, midway, color=blue] {\small $s=\frac{\pi}{4}r$ (or $\frac{1}{8}$ circumference)};
-    \filldraw[red] (A) circle (2.pt) node[anchor=north west, yshift=0,scale=.8] {$A$};
-    \filldraw[red] (B) circle (2.pt) node[anchor=south, xshift=4, scale=.8] {$B$};
+    \draw[red,thick,->,>=stealth'](0.4,0) arc(0:45:.4) node[right, midway, yshift=3]{ $\frac{1}{8}$ rev};
+    \draw[blue, ultra thick](1.5,0) arc(0:45:1.5) node[right, midway, color=blue, text width=2.5cm, xshift=3] { $s=\frac{\pi}{4}r$ (or $\frac{1}{8}$ circumference)};
+    \filldraw[red] (A) circle (2.pt) node[anchor=north west] {$A$};
+    \filldraw[red] (B) circle (2.pt) node[anchor=south, xshift=4] {$B$};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
 
 <p><me>s = \dfrac{1}{8}(2\pi r) = \dfrac{\pi}{4} r</me></p>
 
-<sidebyside widths="50% 45%" margins="0% 0%"><p>Similarly, the angle of displacement from point <m>A</m> to point <m>C</m> is <m>\dfrac{3}{4}</m> of a complete revolution, so the arclength <m>s</m> along the circle from <m>A</m> to <m>C</m>, shown at right, is </p><!--<image source="photos/6-1-arcb.png"><description>circle</description></image>-->
+<sidebyside widths="45% 45%" margins="0% 5%"><p>Similarly, the angle of displacement from point <m>A</m> to point <m>C</m> is <m>\dfrac{3}{4}</m> of a complete revolution, so the arclength <m>s</m> along the circle from <m>A</m> to <m>C</m>, shown at right, is </p><!--<image source="photos/6-1-arcb.png"><description>circle</description></image>-->
     <image xml:id="fig-6-1-arcb"><description>arc on circle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-    \begin{tikzpicture} [scale=.8]
+        <![CDATA[
+    \begin{tikzpicture} 
 
     \coordinate (O) at (0,0);
     \draw[gray!90!white,thick] (O) circle (1.5cm);
@@ -105,9 +84,9 @@ If we walk around the entire circumference of a circle, the distance we travel i
 
 
     \draw[red,thick,->,>=stealth'](0.3,0) arc(0:270:.3) node[above left, midway, xshift=6, yshift=-5]{\small $\frac{3}{4}$ rev};
-    \draw[blue, ultra thick](1.5,0) arc(0:270:1.5) node[left, midway, xshift=-.55cm, yshift=-1.1cm, align=right, color=blue]{$s=\frac{3\pi}{2}r$ \\ (or $\frac{3}{4}$ circumference)};
-    \filldraw[red] (A) circle (2.pt) node[anchor=north west, yshift=0,scale=.8] {$A$};
-    \filldraw[red] (C) circle (2.pt) node[anchor=north east, scale=.8] {$C$};
+    \draw[blue, ultra thick](1.5,0) arc(0:270:1.5) node[left, midway, xshift=-.55cm, yshift=-1.1cm, align=right, text width=2.5cm, color=blue]{$s=\frac{3\pi}{2}r$  (or $\frac{3}{4}$ circumference)};
+    \filldraw[red] (A) circle (2.pt) node[anchor=north west] {$A$};
+    \filldraw[red] (C) circle (2.pt) node[anchor=north east] {$C$};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
 
@@ -120,22 +99,15 @@ If we walk around the entire circumference of a circle, the distance we travel i
 <p><me>\blert{\textbf{Arclength}}~ = ~ \blert{(\textbf{fraction of one revolution}) \cdot (2\pi r)}</me></p></assemblage>
 
 <p> The Ferris wheel in the introduction has circumference 
-  <me>C = 2\pi (100) = 628~ \text{feet}</me>
+<me>C = 2\pi (100) = 628~ \text{feet}</me>
 so in half a revolution you travel 314 feet around the edge, and in one-quarter revolution you travel 157 feet.</p>
-  
+
 <sidebyside widths="55% 32%" margins="0% 10%">
 <p> To indicate the same four locations on the wheel by distance traveled, we would use 
     <me>s = 0,~ s = 157,~ s = 314,~ \text{and}~ s = 471</me>, as shown at right. </p>
-      <image xml:id="fig-6-1-arcc"><description>circle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-    \begin{tikzpicture}
+    <image xml:id="fig-6-1-arcc"><description>circle</description><latex-image>
+        <![CDATA[
+    \begin{tikzpicture}[scale=.72]
 
     \coordinate (O) at (0,0);
     \draw[gray,thick] (O) circle (1.5cm);
@@ -147,11 +119,11 @@ so in half a revolution you travel 314 feet around the edge, and in one-quarter 
     \draw[black,thick] (-1.7,0)--(1.7,0);
     \draw[black,thick] (0,-1.7)--(0,1.7);
 
-    \filldraw[red] (A) circle (2.pt) node[anchor=south west, yshift=0,scale=.8, text=blue] {$s=0$};
-    \filldraw[red] (B) circle (2.pt) node[anchor=south west, align=left,scale=.8, text=blue] {$s=157$};
-    \filldraw[red] (C) circle (2.pt) node[anchor=east, align=left, yshift=-.2cm,scale=.8, text=blue] {$s=314$};
-    \filldraw[red] (D) circle (2.pt) node[anchor=north west, align=left, yshift=-2, scale=.8, text=blue] {$s=471$};
-    \node[text width=1.1cm,  text=blue] at (.7,.15){\scriptsize $r=100$};
+    \filldraw[red] (A) circle (2.pt) node[anchor=south west, yshift=0, text=blue] {$s=0$};
+    \filldraw[red] (B) circle (2.pt) node[anchor=south west, align=left, text=blue] {$s=157$};
+    \filldraw[red] (C) circle (2.pt) node[anchor=east, align=left, yshift=-.2cm,, text=blue] {$s=314$};
+    \filldraw[red] (D) circle (2.pt) node[anchor=north west, align=left, yshift=-2, text=blue] {$s=471$};
+    \node[fill=white, inner sep=0,  text=blue] at (0,.5){ $r=100$};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
 
@@ -159,21 +131,13 @@ so in half a revolution you travel 314 feet around the edge, and in one-quarter 
 
 <solution><p>Because <m>\dfrac{120}{360} = \dfrac{1}{3}</m>, an angle of <m>120\degree</m> is <m>\dfrac{1}{3}</m> of a complete revolution, as shown at right.</p>  
 
-<sidebyside widths="68% 30%" margins="0% 0%">
+<sidebyside widths="68% 32%" margins="0% 0%">
 <p>Using the formula above with <m>r = 12</m>, we find that 
         <me>s = \dfrac{1}{3}(2\pi \cdot 12) = \dfrac{2 \pi}{3} \cdot 12 = 8\pi ~ \text{cm}</me>
 or about 25.1 cm.</p>
     <image xml:id="exam6-1-1"><description>arc on circle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-    \begin{tikzpicture}
-
+        <![CDATA[
+    \begin{tikzpicture}[scale=.8]
     \coordinate (O) at (0,0);
     \draw[gray!90!white,thick] (O) circle (1.5cm);
     \coordinate (A) at (0:1.5);
@@ -186,9 +150,9 @@ or about 25.1 cm.</p>
     \filldraw[blue] (A) circle (2.pt);
     \filldraw[blue] (B) circle (2.pt);
 
-    \draw[red,thick,->,>=stealth'](0.3,0) arc(0:120:.3) node[above right, midway, xshift=2, yshift=-5]{\scriptsize $120\degree$};
-    \draw[blue, ultra thick](1.5,0) arc(0:120:1.5) node[above right, midway, xshift=.3cm, yshift=-.4cm, scale=.8]{$s=8\pi$ cm};
-    \node[text width=1.4cm, text=blue, fill=white, inner sep=1pt] at (.9,-.45){\scriptsize $r=12$ cm};
+    \draw[red,thick,->,>=stealth'](0.3,0) arc(0:120:.3) node[above right, midway, xshift=2, yshift=-5]{ $120\degree$};
+    \draw[blue, ultra thick](1.5,0) arc(0:120:1.5) node[above right, midway, xshift=.0cm, yshift=-.1cm]{$s=8\pi$ cm};
+    \node[text=blue, fill=white, inner sep=1pt] at (0,-.6){ $r=12$ cm};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></solution></example>
 
@@ -329,26 +293,9 @@ We'll call the quantity in parentheses, (fraction of one revolution <m>\times 2\
             <cell><m>2\pi</m></cell>
             <cell><m>6.28</m></cell></row>                
     </tabular>
-    <image xml:id="fig-6-1-decrad"><description>circle</description><latex-image>
-        <![CDATA[
-        \begin{tikzpicture}
-
-        \coordinate (O) at (0,0);
-        \draw[gray!90!white,thick] (O) circle (1.5cm);
-        \coordinate (A) at (0:1.5);
-        \coordinate (B) at (90:1.5);
-        \coordinate (C) at (180:1.5);
-        \coordinate (D) at (270:1.5);
-
-        \draw[black,thick] (-1.7,0)--(1.7,0);
-        \draw[black,thick] (0,-1.7)--(0,1.7);
-        \draw[red, fill=red] (A) circle (1.5pt) node[anchor=south west, text=blue] {0};
-        \draw[red, fill=red] (A) circle (1.5pt) node[anchor=north west, text=blue] {$2\pi \approx 6.28$};
-        \draw[red, fill=red] (B) circle (1.5pt) node[anchor=south west, text=blue] {$\frac{\pi}{2}\approx 1.57$};
-        \draw[red, fill=red] (C) circle (1.5pt) node[anchor=south east, text=blue] {$\pi\approx 3.14$};
-        \draw[red, fill=red] (D) circle (1.5pt) node[anchor=north, yshift=-3, text=blue] {$\frac{3\pi}{2}\approx 4.71$};
-        \end{tikzpicture}]]>
-</latex-image></image></sidebyside>  
+    <image xml:id="fig-6-1-decrad"><description>Quadrantal angles on unit circle radian approximation</description>
+        <xi:include href="Fig-quadrantal-angles-decimal-approx.ptx"/>
+    </image></sidebyside> 
 
 <note><p>Because they are "benchmarks" for comparing angles, you should be very familiar with both the exact values of these angles in radians and their approximations!</p></note>
 
@@ -517,45 +464,43 @@ And of course it is also true that
  <me>\blert{s = r\theta}</me></p></assemblage>
 
 <sidebyside widths="55% 45%" valigns="middle middle" margins="0% 0%">
-<p>Thus, there is a special relationship between arclength and radians. An angle of 1 radian spans an arc on a circle equal to the radius of the circle, as shown at right. And the length of any arc is just the measure of its spanning angle in radians times the radius of the circle. </p>
-    <image xml:id="fig-6-1-arclength"><description>arcs on circles</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{}
-    \begin{tikzpicture}[scale=.7]
-
-    \coordinate (O) at (0,0);
-    \draw[gray!90!white,thick] (O) circle (1.cm);
-    \draw[gray!90!white,thick] (O) circle (2cm);
-    \draw[gray!90!white,thick] (O) circle (4cm);
-    \coordinate (A) at (0:1.);
-    \coordinate (B) at ($({deg(1)}:4.5) $);
-    \coordinate (Ab) at ($(0:2) $);
-    \coordinate (Ac) at ($(0:4) $);
-
-    \draw[black,thick] (-4.2,0)--(4.2,0);
-    \draw[black,thick] (0,-4.2)--(0,4.2);
-    \draw[blue,thick] (O)--(B) node[anchor=south west, xshift=-1, yshift=-2, text=red]{1 rad};
-    \draw[red, fill=red] (A) circle (1.5pt) node[anchor=north west, scale=.9, text=black]{1};
-    \draw[red, fill=red] ($({deg(1)}:1) $) circle (1.5pt);
-    \draw[red, ultra thick] (A) arc ((0:{deg(1)}:1) node[right, midway, xshift=-2, yshift=2, scale=.85, text=blue, scale=.8] {$s=1$};
-
-    \draw[red, fill=red] (Ab) circle (1.5pt) node[anchor=north west, scale=.9, text=black]{2};
-    \draw[red, fill=red] ($({deg(1)}:2) $) circle (1.5pt);
-    \draw[red, ultra thick] (Ab) arc ((0:{deg(1)}:2) node[right, midway, text=blue] {$s=2$};
-
-    \draw[red, fill=red] (Ac) circle (1.5pt) node[anchor=north west, scale=.9, text=black]{4};
-    \draw[red, fill=red] ($({deg(1)}:4) $) circle (1.5pt);
-    \draw[red, ultra thick] (Ac) arc ((0:{deg(1)}:4) node[right, midway, text=blue] {$s=4$};
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside>
-
+    <p>Thus, there is a special relationship between arclength and radians. An angle of 1 radian spans an arc on a circle equal to the radius of the circle, as shown at right. And the length of any arc is just the measure of its spanning angle in radians times the radius of the circle. </p>
+        <image xml:id="fig-6-1-arclength"><description>arcs on circles</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture}[scale=.7]
+    
+        \coordinate (O) at (0,0);
+        \draw[gray!90!white,thick] (O) circle (1.cm);
+        \draw[gray!90!white,thick] (O) circle (2cm);
+        \draw[gray!90!white,thick] (O) circle (4cm);
+        \coordinate (A) at (0:1.);
+        \coordinate (B) at ($({deg(1)}:4.5) $);
+        \coordinate (Ab) at ($(0:2) $);
+        \coordinate (Ac) at ($(0:4) $);
+    
+        \draw[black,thick] (-4.2,0)--(4.2,0);
+        \draw[black,thick] (0,-4.2)--(0,4.2);
+        \draw[blue,thick] (O)--(B) node[anchor=south west, xshift=-1, yshift=-2, text=red]{1 rad};
+        \draw[red, fill=red] (A) circle (1.5pt) node[anchor=north west, scale=.9, text=black]{1};
+        \draw[red, fill=red] ($({deg(1)}:1) $) circle (1.5pt);
+        \draw[red, ultra thick] (A) arc ((0:{deg(1)}:1) node[right, midway, xshift=-2, yshift=2, scale=.85, text=blue, scale=.8] {$s=1$};
+    
+        \draw[red, fill=red] (Ab) circle (1.5pt) node[anchor=north west, scale=.9, text=black]{2};
+        \draw[red, fill=red] ($({deg(1)}:2) $) circle (1.5pt);
+        \draw[red, ultra thick] (Ab) arc ((0:{deg(1)}:2) node[right, midway, text=blue] {$s=2$};
+    
+        \draw[red, fill=red] (Ac) circle (1.5pt) node[anchor=north west, scale=.9, text=black]{4};
+        \draw[red, fill=red] ($({deg(1)}:4) $) circle (1.5pt);
+        \draw[red, ultra thick] (Ac) arc ((0:{deg(1)}:4) node[right, midway, text=blue] {$s=4$};
+            \end{tikzpicture}]]>
+        </latex-image></image></sidebyside>
+    
 <sidebyside widths="60% 22%" valigns="middle middle" margins="0% 10%">
     <p>So for instance, we can use the formula to find the arclength spanned by an angle of 2.5 radians on a circle of radius six inches:
         <me>s = r \theta = 6 (2.5) = 15 ~ \text{inches}</me></p>
     
         <image xml:id="fig-6-1b-arclength"><description>arcs on circles</description><latex-image>
-            <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-            <![CDATA[\tikzset{}
+            <![CDATA[
         \begin{tikzpicture}[scale=0.6]
     
         \coordinate (O) at (0,0);
@@ -574,24 +519,16 @@ And of course it is also true that
         \end{tikzpicture}]]>
         </latex-image></image></sidebyside>
 
-<p>We can also use the formula in the form  <m>\theta = \dfrac{s}{r}</m> to find an angle that spans a given arc. For example, an arclength equal to one radius determines a central angle of one radian, or about <m>57.3\degree</m>. In the next example, we compute a change in latitude on the Earth's surface.</p>
+<p>We can also use the formula in the form  <m>\theta = \dfrac{s}{r}</m> to find an angle that spans a given arc. For example, an arclength equal to one radius determines a central angle of one radian, or about <m>57.3\degree</m>. In the next example, we compute a change in latitude on the Earth's surface.</p> 
 
 <example><statement><p>The radius of the Earth is about 3960 miles. If you travel 500 miles due north, how many degrees of latitude will you traverse? (Latitude is measured in degrees north or south of the equator.)</p></statement>
-  
-<solution><sidebyside widths="55% 30%" valigns="middle middle" margins="0% 5%"><p>We think of the distance 500 miles as an arclength on the surface of the Earth, as shown at right. Substituting <m>s = 500</m> and <m>r = 3960</m> into the arclength formula gives 
+
+<solution><sidebyside widths="55% 35%" valigns="middle middle" margins="0% 5%"><p>We think of the distance 500 miles as an arclength on the surface of the Earth, as shown at right. Substituting <m>s = 500</m> and <m>r = 3960</m> into the arclength formula gives 
     <md><mrow>500 \amp = 3960 ~ \theta</mrow>
         <mrow>\theta \amp = \dfrac{500}{3960} = 0.1263~ \text{radians}</mrow></md></p>
     <image xml:id="exam6-1-5"> <description>circle</description> <latex-image> 
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml --> 
-        <![CDATA[\tikzset{% 
-          block/.style    = {draw, thick, rectangle, minimum height = 3em, 
-            minimum width = 3em}, 
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder 
-          input/.style    = {coordinate}, % Input 
-          output/.style   = {coordinate} % Output 
-        } 
+        <![CDATA[
     \begin{tikzpicture}
-
     \coordinate (O) at (0,0);
     \draw[gray, thick] (O) circle (1.5cm);
 
@@ -599,17 +536,17 @@ And of course it is also true that
     \coordinate (B) at (40:1.5);
 
     \draw[blue, thick] (A)--(O);
-    \draw[blue, thick] (O) --(B) node[above left, midway] {\scriptsize 3960 mi};
+    \draw[blue, thick] (O) --(B) node[above left, midway] { 3960 mi};
 
-    \draw[red, ultra thick] (A) arc(26:40:1.5) node[above right, midway, xshift=-2, yshift=-4, text=blue] {\scriptsize 500 mi};
+    \draw[red, ultra thick] (A) arc(26:40:1.5) node[above right, midway, xshift=-2, yshift=-4, text=blue] {500 mi};
 
-    \node[text width=.2 cm] at (32:1) {\color{red}\scriptsize$\theta$};
+    \node[text=red,yshift=1] at (32:1) {\small$\theta$};
         \end{tikzpicture}]]> 
     </latex-image> </image> </sidebyside>
 
 <p>To convert the angle measure to degrees, we multiply by <m>\dfrac{180\degree}{\pi}</m> to get
     <me>0.1263\left(\dfrac{180\degree}{\pi}\right) = 7.23\degree</me>
-Your latitude has changed by about <m>7.23\degree</m>.</p></solution></example>  
+Your latitude has changed by about <m>7.23\degree</m>.</p></solution></example>
 
 <exercise><statement><p>The distance around the face of a large clock from 2 to 3 is five feet. What is the radius of the clock?</p></statement>
 
@@ -628,13 +565,13 @@ Here is an important observation that will inform our study:</p>
 <example><statement><p>You are walking on a trail around a circular pond of radius one mile. You have have walked 4 miles from the trailhead. Sketch your location now. </p></statement>
 
 <solution><sidebyside widths="60% 25%" margins="0% 5%" valigns="middle middle"><p>The pond is a unit circle, so you have traversed an angle in radians equal to the arc length traveled, 4 miles. An angle of 4 radians is in the middle of the third quadrant relative to your starting point, more than halfway but less than three-quarters around the pond.</p><image xml:id="exam6-1-pond"><description>walk along circle pond</description><latex-image>
-        <![CDATA[\tikzset{}
+        <![CDATA[
     \begin{tikzpicture}
     \coordinate (O) at (0,0);
     \draw[black, thick] (O) circle (1.5cm);
     \coordinate (B) at ({deg(4)}:1.5);
-    \draw[gray, thick] (O)--++(1.5,0) node[below, midway, xshift=0, yshift=0, scale=.8] {\color{blue}$r=1$ mi};
-    \draw[blue, ultra thick, ->,>=stealth'] (1.5,0) arc (0:{deg(4)}:1.5) node[midway, xshift=-6, yshift=7, scale=.9]{4 mi};
+    \draw[gray, thick] (O)--++(1.5,0) node[below, midway, xshift=0, yshift=0] {\color{blue}$r=1$ mi};
+    \draw[blue, ultra thick, ->,>=stealth'] (1.5,0) arc (0:{deg(4)}:1.5) node[midway, xshift=-6, yshift=7]{4 mi};
     \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
 </solution></example>
@@ -642,8 +579,8 @@ Here is an important observation that will inform our study:</p>
 <exercise><statement>
     <sidebyside widths="60% 20%" margins="0% 10%" valigns="middle middle"><p>An ant walks around the rim of a circular birdbath of diameter 2 feet. How far has the ant walked when it has turned through an angle of <m>210\degree</m>?</p>
     <image xml:id="exer6-1-birdbath"><description>walk along circular birdbath</description><latex-image>
-        <![CDATA[\tikzset{}
-    \begin{tikzpicture}
+        <![CDATA[
+    \begin{tikzpicture}[scale=.9]
     \coordinate (O) at (0,0);
     \draw[black, thick] (O) circle (1.5cm);
     \coordinate (B) at ({210}:1.5);
@@ -708,52 +645,54 @@ Here is an important observation that will inform our study:</p>
 </subsubsection>
 
 <subsubsection><title>Concepts</title>
-<p><ol marker="1">
-    <li>The distance we travel around a circle of radius  is proportional to the angle of displacement.
-    <me>\textbf{Arclength}~ = ~ (\textbf{fraction of one revolution}) \cdot (2\pi r)</me></li>
-    <li><p>We measure angles in radians when we work with arclength.</p>
-    <assemblage><title>Radians</title>
-    <p>The <term>radian measure</term> of an angle is given by
-    <me>(\textbf{fraction of one revolution}\times 2\pi)</me></p></assemblage></li>
-    <li>An arclength equal to one radius determines a central angle of one radian.</li>
-    <li><p>Radian measure can be expressed as multiples of <m>\pi</m> or as decimals.</p>
-      <sidebyside widths="55% 40%" margind="0% 0%" valigns="middle middle">
-                <tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                        
-                    <row bottom="minor">
-                        <cell>Degrees</cell>
-                        <cell><m>\dfrac{\text{Radians:}}{\text{Exact Values}}</m></cell>
-                        <cell><m>\dfrac{\text{Radians: Decimal}}{\text{Approximations}}</m></cell></row>
-                    <row> 
-                        <cell><m>0\degree</m></cell>
-                        <cell><m>0</m></cell>
-                        <cell><m>0</m></cell></row>
-                    <row> 
-                        <cell><m>90\degree</m></cell>
-                        <cell><m>\dfrac{\pi}{2}</m></cell>
-                        <cell><m>1.57</m></cell></row>
-                    <row> 
-                        <cell><m>180\degree</m></cell>
-                        <cell><m>\pi</m></cell>
-                        <cell><m>3.14</m></cell></row>
-                    <row>
-                        <cell><m>270\degree</m></cell>
-                        <cell><m>\dfrac{3\pi}{2}</m></cell>
-                        <cell><m>4.71</m></cell></row>  
-                    <row>
-                        <cell><m>360\degree</m></cell>
-                        <cell><m>2\pi</m></cell>
-                        <cell><m>6.28</m></cell></row>                
-                </tabular><image source="photos/fig-6-1-decrad"><description>circle</description></image></sidebyside></li>
-     <li><p>We multiply by the appropriate conversion factor to convert between degrees and radians.</p>
-      <assemblage><title>Unit Conversion for Angles</title>
-      <p><me>\dfrac{180\degree}{\pi~\text{radians}} = 1</me></p></assemblage>
-        <p>To convert from radians to degrees we multiply the radian measure by <m>\dfrac{180\degree}{\pi}</m>.</p>
-        <p>To convert from degrees to radians we multiply the degree measure by <m>\dfrac{\pi}{180}</m>.</p> </li>
-     <li><assemblage><title>Arclength Formula</title>
- <p>On a circle of radius <m>r</m>, the <term>length <m>s</m> of an arc</term> spanned by an angle <m>\theta</m> in radians is
- <me>s = r\theta</me></p></assemblage></li>
- <li>On a <term>unit circle</term>, the measure of a (positive) angle in radians is equal to the length of the arc it spans.</li>             
-</ol></p></subsubsection>
+    <p><ol marker="1">
+        <li>The distance we travel around a circle of radius  is proportional to the angle of displacement.
+        <me>\textbf{Arclength}~ = ~ (\textbf{fraction of one revolution}) \cdot (2\pi r)</me></li>
+        <li><p>We measure angles in radians when we work with arclength.</p>
+        <assemblage><title>Radians</title>
+        <p>The <term>radian measure</term> of an angle is given by
+        <me>(\textbf{fraction of one revolution}\times 2\pi)</me></p></assemblage></li>
+        <li>An arclength equal to one radius determines a central angle of one radian.</li>
+        <li><p>Radian measure can be expressed as multiples of <m>\pi</m> or as decimals.</p>
+            <sidebyside widths="55% 40%" margind="0% 0%" valigns="middle middle">
+                    <tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                        
+                        <row bottom="minor">
+                            <cell>Degrees</cell>
+                            <cell><m>\dfrac{\text{Radians:}}{\text{Exact Values}}</m></cell>
+                            <cell><m>\dfrac{\text{Radians: Decimal}}{\text{Approximations}}</m></cell></row>
+                        <row> 
+                            <cell><m>0\degree</m></cell>
+                            <cell><m>0</m></cell>
+                            <cell><m>0</m></cell></row>
+                        <row> 
+                            <cell><m>90\degree</m></cell>
+                            <cell><m>\dfrac{\pi}{2}</m></cell>
+                            <cell><m>1.57</m></cell></row>
+                        <row> 
+                            <cell><m>180\degree</m></cell>
+                            <cell><m>\pi</m></cell>
+                            <cell><m>3.14</m></cell></row>
+                        <row>
+                            <cell><m>270\degree</m></cell>
+                            <cell><m>\dfrac{3\pi}{2}</m></cell>
+                            <cell><m>4.71</m></cell></row>  
+                        <row>
+                            <cell><m>360\degree</m></cell>
+                            <cell><m>2\pi</m></cell>
+                            <cell><m>6.28</m></cell></row>                
+                    </tabular><image xml:id="fig-Summary6-1-decrad"><description>Quadrantal angles on unit circle radian approximation</description>
+                        <xi:include href="Fig-quadrantal-angles-decimal-approx.ptx"/>
+                    </image></sidebyside></li>
+            <li><p>We multiply by the appropriate conversion factor to convert between degrees and radians.</p>
+            <assemblage><title>Unit Conversion for Angles</title>
+            <p><me>\dfrac{180\degree}{\pi~\text{radians}} = 1</me></p></assemblage>
+            <p>To convert from radians to degrees we multiply the radian measure by <m>\dfrac{180\degree}{\pi}</m>.</p>
+            <p>To convert from degrees to radians we multiply the degree measure by <m>\dfrac{\pi}{180}</m>.</p> </li>
+            <li><assemblage><title>Arclength Formula</title>
+        <p>On a circle of radius <m>r</m>, the <term>length <m>s</m> of an arc</term> spanned by an angle <m>\theta</m> in radians is
+        <me>s = r\theta</me></p></assemblage></li>
+        <li>On a <term>unit circle</term>, the measure of a (positive) angle in radians is equal to the length of the arc it spans.</li>             
+    </ol></p></subsubsection>
 
 <subsubsection><title> Study Questions</title>
 <p><ol marker="1">

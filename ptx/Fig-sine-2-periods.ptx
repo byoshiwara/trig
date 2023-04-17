@@ -1,0 +1,34 @@
+<latex-image>
+    <![CDATA[
+    \begin{tikzpicture}[scale=.54]
+
+    \draw[cyan,xstep=pi/12,ystep=0.18]
+    (-2*pi,-1.8) grid (2*pi,1.8);
+
+    \draw[->,>=stealth'] (-6.3,0) -- (6.6,0) node[right] {$x$};
+    \draw[->,>=stealth'] (0,-1.8) -- (0,2.2) node[above] {$f(x)=\sin(x)$};
+
+    \foreach \x in {-24,-23,...,24}
+    \draw[black] ($ pi*\x /12*(1,0) +(0,.08) $) --++(0,-.16);
+    \foreach \y in {-0.9, 0.9}
+    \draw[black] (.08,\y ) --++(-.16,0);
+    \foreach \y in {-1,1}
+    \draw[black, thick] (.12,1.8*\y ) --++(-.24,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {$\y$};
+
+    \draw[black, thick] (-2*pi,.2) --++(0,-.4) node[anchor=north, xshift=-2,yshift=-3, fill=white, inner sep=1pt] {$-2\pi$};
+    \draw[black, thick] (2*pi,.2) --++(0,-.4) node[anchor=north, xshift=2,yshift=-3, fill=white, inner sep=1pt] {$2\pi$};
+
+    \draw[black] (pi,.2) --++(0,-.4) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\pi$};
+
+    \draw[black] (pi,.2) --++(0,-.4) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\pi$};
+    \draw[black] (-pi,.2) --++(0,-.4) node[anchor=north, xshift=-2,yshift=-3, fill=white, inner sep=1pt] {$-\pi$};
+    \draw[black] (-pi/2,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{-\pi}{2}$};
+    \draw[black] (pi/2,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{\pi}{2}$};
+    \draw[black] (3*pi/2,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{3\pi}{2}$};
+    \draw[black] (-3*pi/2,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{-3\pi}{2}$};    
+    \draw[black] (pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-4, fill=white, inner sep=1pt] {$\frac{\pi}{4}$};    
+    \draw[black] (3*pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{3\pi}{4}$};
+
+    \draw[samples=65,domain=-2*pi:2*pi,smooth,variable=\x,red,very thick] plot ({\x},{1.8*sin(deg(\x))});
+    \end{tikzpicture}]]>
+</latex-image>

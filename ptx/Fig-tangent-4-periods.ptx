@@ -1,0 +1,31 @@
+<latex-image>
+    <![CDATA[
+    \begin{tikzpicture} [xscale=.4, yscale=.36]    
+    \draw[cyan,xstep=pi/12,ystep=0.5]
+    (-2*pi,-5) grid (2*pi,5);
+
+    \draw[->,>=stealth'] (-6.3,0) -- (6.6,0) node[right] {$x$};
+    \draw[->,>=stealth'] (0,-5) -- (0,5.5) node[above] {$h(x)=\tan(x)$};
+
+    \foreach \x in {-24,-23,...,24}
+    \draw[black] ($ pi*\x /12*(1,0) +(0,.06) $) --++(0,-.12);
+    \foreach \y in {-5,-3,1,3,5}
+    \draw[black, thick] (.10,\y ) --++(-.2,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {$\y$};
+
+    \draw[black, thick] (-2*pi,.2) --++(0,-.4) node[anchor=north, xshift=-2,yshift=-2, fill=white, inner sep=0pt] {\small$-2\pi$};
+    \draw[black, thick] (2*pi,.2) --++(0,-.4) node[anchor=north, xshift=2,yshift=-2, fill=white, inner sep=0pt] {$2\pi$};
+
+    \draw[black] (pi,.2) --++(0,-.4) node[anchor=north, yshift=-2, fill=white, inner sep=0pt] {$\pi$};
+    \draw[black] (-pi,.2) --++(0,-.4) node[anchor=north, xshift=-2,yshift=-2, fill=white, inner sep=0pt] {\small$-\pi$};
+    \draw[black] (-pi/2,.15) --++(0,-.3) node[anchor=north, yshift=-2, fill=white, inner sep=0pt] {\small$\frac{-\pi}{2}$};
+    \draw[black] (pi/2,.15) --++(0,-.3) node[anchor=north, yshift=-2, fill=white, inner sep=0pt] {$\frac{\pi}{2}$};
+    \draw[black] (3*pi/2,.15) --++(0,-.3) node[anchor=north,xshift=3, yshift=-2, fill=white, inner sep=0pt] {$\frac{3\pi}{2}$};
+    \draw[black] (-3*pi/2,.15) --++(0,-.3) node[anchor=north,xshift=-3, yshift=-2, fill=white, inner sep=0pt] {\small$\frac{-3\pi}{2}$};    
+
+    \foreach \i in {-1, 0, 1}
+        \draw[domain={\i*pi-atan(5)*pi/180}:{\i*pi+atan(5)*pi/180}, smooth, variable=\x,red,very thick] plot ({\x},{tan(deg(\x))}) ;
+
+    \draw[domain={-2*pi:atan(5)*pi/180-2*pi}, smooth, variable=\x,red,very thick] plot ({\x},{tan(deg(\x))}) ;
+    \draw[domain={2*pi-atan(5)*pi/180:2*pi}, smooth, variable=\x,red,very thick] plot ({\x},{tan(deg(\x))}) ;
+    \end{tikzpicture}]]>
+</latex-image>

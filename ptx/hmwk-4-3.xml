@@ -5,84 +5,70 @@
 
 <exercisegroup cols="3"><introduction><p>For Problems 1<ndash/>8, use the graphs to estimate the solutions to the equations. Show your work on the graph.</p>
 
-<sidebyside width="70%">
-    <image xml:id="fig-4-2-sinegraph"><description>sine graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} [xscale=1.2, yscale=2]
-
-        \draw[cyan,xstep=pi/9,ystep=0.2]
-        (0,-1) grid (2*pi,1);
-
-        \draw[->,>=stealth'] (-0.3,0) -- (6.5,0) node[right] {\footnotesize$\theta$};
-        \draw[->,>=stealth'] (0,-0.2) -- (0,1.2) node[above] {\footnotesize$y=\sin(\theta)$};
-
-        \foreach \x [evaluate=\x as \xi using int( 20*(\x ))]  in {2, 4,...,18}
-        \draw[black] ($ pi*\x /9*(1,0) +(0,.04) $) --++(0,-.08) node[anchor=north, yshift=-4, fill=white, inner sep=0pt] {\scriptsize \xi};
-        \foreach \y   in {-1, -.8, ..., -.2, .2, .4,..., 1}
-        \draw[black] (.08,\y ) --++(-.16,0) ;
-        \foreach \y in {-1,1}
-        \draw[black, thick] (.12,\y ) --++(-.24,0) node[anchor=east] {\footnotesize \y};
-
-        \draw[domain=0:2*pi,smooth,variable=\x,red,very thick] plot ({\x},{sin(deg(\x))});
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside>
-
-<sidebyside width="70%">
-    <image xml:id="fig-4-2-cosinegraph"><description>cosine graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} [xscale=1.2, yscale=2]
-
-        \draw[cyan,xstep=pi/9,ystep=0.2]
-        (0,-1) grid (2*pi,1);
-
-        \draw[->,>=stealth'] (-0.3,0) -- (6.5,0) node[right] {\footnotesize$\theta$};
-        \draw[->,>=stealth'] (0,-0.2) -- (0,1.2) node[above] {\footnotesize$y=\cos(\theta)$};
-
-        \foreach \x [evaluate=\x as \xi using int( 20*(\x ))]  in {2, 4,...,18}
-        \draw[black] ($ pi*\x /9*(1,0) +(0,.04) $) --++(0,-.08) node[anchor=north, yshift=-4, fill=white, inner sep=0pt] {\scriptsize \xi};
-        \foreach \y   in {-1, -.8, ..., -.2, .2, .4,..., 1}
-        \draw[black] (.08,\y ) --++(-.16,0) ;
-        \foreach \y in {-1,1}
-        \draw[black, thick] (.12,\y ) --++(-.24,0) node[anchor=east] {\footnotesize \y};
-
-        \draw[domain=0:2*pi,smooth,variable=\x,red,very thick] plot ({\x},{cos(deg(\x))});
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></introduction>
-
-<exercise number="1"><statement><p><m>\sin \theta = 0.6</m></p></statement>
-<answer><p><m>36.9\degree,~143.1\degree</m></p></answer></exercise>
-
-<exercise number="2"><statement><p><m>\sin \theta = -0.8</m></p></statement></exercise>
-
-<exercise number="3"><statement><p><m>\cos \theta = 0.3</m></p></statement>
-<answer><p><m>72.5\degree,~287.5\degree</m></p></answer></exercise>
-
-<exercise number="4"><statement><p><m>\cos \theta = -0.4</m></p></statement></exercise>
-
-<exercise number="5"><statement><p><m>\sin \theta = -0.2</m></p></statement>
-<answer><p><m>191.5\degree,~348.5\degree</m></p></answer></exercise>
-
-<exercise number="6"><statement><p><m>\sin \theta = 1.2</m></p></statement></exercise>
-
-<exercise number="7"><statement><p><m>\cos \theta = -0.9</m></p></statement>
-<answer><p><m>154.2\degree,~205.8\degree</m></p></answer></exercise>
-
-<exercise number="8"><statement><p><m>\cos \theta = -1.1</m></p></statement></exercise>
-</exercisegroup>
+    <sidebyside width="70%">
+        <image xml:id="fig-4-2-sinegraph"><description>sine graph</description><latex-image>
+            <![CDATA[
+            \begin{tikzpicture} [xscale=1.2, yscale=2]
+    
+            \draw[cyan,xstep=pi/9,ystep=0.2]
+            (0,-1) grid (2*pi,1);
+    
+            \draw[->,>=stealth'] (-0.3,0) -- (6.5,0) node[right] {$\theta$};
+            \draw[->,>=stealth'] (0,-0.2) -- (0,1.2) node[above] {$y=\sin(\theta)$};
+    
+            \foreach \x [evaluate=\x as \xi using int( 20*(\x ))]  in {2, 4,...,18}
+            \draw[black] ($ pi*\x /9*(1,0) +(0,.04) $) --++(0,-.08) node[anchor=north, yshift=-4, fill=white, inner sep=0pt] { \xi};
+            \foreach \y   in {-1, -.8, ..., -.2, .2, .4,..., 1}
+            \draw[black] (.08,\y ) --++(-.16,0) ;
+            \foreach \y in {-1,1}
+            \draw[black, thick] (.12,\y ) --++(-.24,0) node[anchor=east] { \y};
+    
+            \draw[domain=0:2*pi,smooth,variable=\x,red,very thick] plot ({\x},{sin(deg(\x))});
+            \end{tikzpicture}]]>
+        </latex-image></image></sidebyside>
+    
+    <sidebyside width="70%">
+        <image xml:id="fig-4-2-cosinegraph"><description>cosine graph</description><latex-image>
+            <![CDATA[
+            \begin{tikzpicture} [xscale=1.2, yscale=2]
+    
+            \draw[cyan,xstep=pi/9,ystep=0.2]
+            (0,-1) grid (2*pi,1);
+    
+            \draw[->,>=stealth'] (-0.3,0) -- (6.5,0) node[right] {$\theta$};
+            \draw[->,>=stealth'] (0,-0.2) -- (0,1.2) node[above] {$y=\cos(\theta)$};
+    
+            \foreach \x [evaluate=\x as \xi using int( 20*(\x ))]  in {2, 4,...,18}
+            \draw[black] ($ pi*\x /9*(1,0) +(0,.04) $) --++(0,-.08) node[anchor=north, yshift=-4, fill=white, inner sep=0pt] { \xi};
+            \foreach \y   in {-1, -.8, ..., -.2, .2, .4,..., 1}
+            \draw[black] (.08,\y ) --++(-.16,0) ;
+            \foreach \y in {-1,1}
+            \draw[black, thick] (.12,\y ) --++(-.24,0) node[anchor=east] {\y};
+    
+            \draw[domain=0:2*pi,smooth,variable=\x,red,very thick] plot ({\x},{cos(deg(\x))});
+            \end{tikzpicture}]]>
+        </latex-image></image></sidebyside></introduction>
+    
+    <exercise number="1"><statement><p><m>\sin \theta = 0.6</m></p></statement>
+    <answer><p><m>36.9\degree,~143.1\degree</m></p></answer></exercise>
+    
+    <exercise number="2"><statement><p><m>\sin \theta = -0.8</m></p></statement></exercise>
+    
+    <exercise number="3"><statement><p><m>\cos \theta = 0.3</m></p></statement>
+    <answer><p><m>72.5\degree,~287.5\degree</m></p></answer></exercise>
+    
+    <exercise number="4"><statement><p><m>\cos \theta = -0.4</m></p></statement></exercise>
+    
+    <exercise number="5"><statement><p><m>\sin \theta = -0.2</m></p></statement>
+    <answer><p><m>191.5\degree,~348.5\degree</m></p></answer></exercise>
+    
+    <exercise number="6"><statement><p><m>\sin \theta = 1.2</m></p></statement></exercise>
+    
+    <exercise number="7"><statement><p><m>\cos \theta = -0.9</m></p></statement>
+    <answer><p><m>154.2\degree,~205.8\degree</m></p></answer></exercise>
+    
+    <exercise number="8"><statement><p><m>\cos \theta = -1.1</m></p></statement></exercise>
+    </exercisegroup>
 
 <exercisegroup cols="2"><introduction><p>For Problems 9<ndash/>14, find all solutions between <m>0\degree</m> and <m>360\degree</m>. Round to the nearest degree.</p></introduction>
 
@@ -121,15 +107,15 @@
 </exercisegroup>
 
 <exercisegroup cols="2"><introduction><p>For Problems 21<ndash/>24, </p>
-<p><ol marker="a">
-    <li> Use a calculator to find the coordinates of the point <m>P</m>. Round to hundredths.</li>
-    <li> Find the coordinates of the point <m>Q</m> on the circle of radius 2.</li>
-</ol></p></introduction>
-
+    <p><ol marker="a">
+        <li> Use a calculator to find the coordinates of the point <m>P</m>. Round to hundredths.</li>
+        <li> Find the coordinates of the point <m>Q</m> on the circle of radius 2.</li>
+    </ol></p></introduction>
+    
 <exercise number="21"><statement><sidebyside width="100%">
     <image xml:id="hp4-1-79"><description>circle</description><latex-image>
         <![CDATA[
-        \begin{tikzpicture}[scale=.15]
+        \begin{tikzpicture}[scale=.12]
 
         \coordinate (O) at (0,0);
         \coordinate (P) at (200:10);
@@ -137,7 +123,7 @@
 
         \draw[step=1cm,cyan,very thin] (-21,-21) grid (21,21);
         \draw[thick,->,>=stealth'] (-21,0) -- (21.8,0) node[anchor=west] {$x$};
-        \draw[thick,->,>=stealth'] (0,-21) -- (0,22) node[anchor=south] {$y$};
+        \draw[thick,->,>=stealth'] (0,-21) -- (0,23) node[anchor=south] {$y$};
         \draw[black,  thick] (Q)++(200:2)--(O) ;
 
         \draw[red,thick] (O) circle (10);
@@ -146,7 +132,7 @@
         \filldraw[red] (P) circle (.25cm) node[anchor=north east, yshift=-5,fill=white,inner sep=1pt]{$P$};
         \filldraw[blue] (Q) circle (.25cm) node[anchor=north east, yshift=-5,fill=white,inner sep=1pt]{$Q$} ;
 
-        \draw[gray, thick, ->,>=stealth'] (3,0) arc(0:200:3) node[above left,midway, xshift=0, yshift=0,fill=white,inner sep=1pt, text=black] {$\small 200\degree$};
+        \draw[gray, thick, ->,>=stealth'] (3,0) arc(0:200:3) node[above left,midway, xshift=0, yshift=0,fill=white,inner sep=1pt, text=black] {$ 200\degree$};
 
         \node[text width=.2cm,fill=white,inner sep=1pt] at (10,-1.7)    {1};
         \node[text width=.2cm,fill=white,inner sep=1pt] at (20,-1.7)    {2};
@@ -163,7 +149,7 @@
 <exercise number="22"><statement><sidebyside width="100%">
     <image xml:id="hp4-1-80"><description>circle</description><latex-image>
         <![CDATA[
-        \begin{tikzpicture}[scale=.15]
+        \begin{tikzpicture}[scale=.12]
 
         \coordinate (O) at (0,0);
         \coordinate (P) at (228:10);
@@ -171,7 +157,7 @@
 
         \draw[step=1cm,cyan,very thin] (-21,-21) grid (21,21);
         \draw[thick,->,>=stealth'] (-21,0) -- (21.8,0) node[anchor=west] {$x$};
-        \draw[thick,->,>=stealth'] (0,-21) -- (0,22) node[anchor=south] {$y$};
+        \draw[thick,->,>=stealth'] (0,-21) -- (0,23) node[anchor=south] {$y$};
         \draw[black,  thick] (Q)++(228:8)--(O) ;
 
         \draw[red,thick] (O) circle (10);
@@ -180,7 +166,7 @@
         \filldraw[red] (P) circle (.25cm) node[anchor=north , yshift=-7,fill=white,inner sep=1pt]{$P$};
         \filldraw[blue] (Q) circle (.25cm) node[anchor=north , yshift=-7,fill=white,inner sep=1pt]{$Q$} ;
 
-        \draw[gray, thick, ->,>=stealth'] (3,0) arc(0:228:3) node[above left,midway, xshift=0, yshift=0,fill=white,inner sep=1pt, text=black] {$\small 228\degree$};
+        \draw[gray, thick, ->,>=stealth'] (3,0) arc(0:228:3) node[above left,midway, xshift=0, yshift=0,fill=white,inner sep=1pt, text=black] {$ 228\degree$};
 
         \node[text width=.2cm,fill=white,inner sep=1pt] at (10,-1.7)    {1};
         \node[text width=.2cm,fill=white,inner sep=1pt] at (20,-1.7)    {2};
@@ -192,7 +178,7 @@
 <exercise number="23"><statement><sidebyside width="100%">
     <image xml:id="hp4-1-81"><description>circle</description><latex-image>
         <![CDATA[
-        \begin{tikzpicture}[scale=.15]
+        \begin{tikzpicture}[scale=.12]
 
         \coordinate (O) at (0,0);
         \coordinate (P) at (160:10);
@@ -200,7 +186,7 @@
 
         \draw[step=1cm,cyan,very thin] (-21,-21) grid (21,21);
         \draw[thick,->,>=stealth'] (-21,0) -- (21.8,0) node[anchor=west] {$x$};
-        \draw[thick,->,>=stealth'] (0,-21) -- (0,22) node[anchor=south] {$y$};
+        \draw[thick,->,>=stealth'] (0,-21) -- (0,23) node[anchor=south] {$y$};
         \draw[black,  thick] (Q)++(160:2)--(O) ;
 
         \draw[red,thick] (O) circle (10);
@@ -209,7 +195,7 @@
         \filldraw[red] (P) circle (.25cm) node[anchor=south east , yshift=7,fill=white,inner sep=1pt]{$P$};
         \filldraw[blue] (Q) circle (.25cm) node[anchor=south east , yshift=7,fill=white,inner sep=1pt]{$Q$} ;
 
-        \draw[gray, thick, ->,>=stealth'] (3,0) arc(0:160:3) node[above right,midway, xshift=0, yshift=0,fill=white,inner sep=1pt, text=black] {$\small 160\degree$};
+        \draw[gray, thick, ->,>=stealth'] (3,0) arc(0:160:3) node[above right,midway, xshift=0, yshift=0,fill=white,inner sep=1pt, text=black] {$ 160\degree$};
 
         \node[text width=.2cm,fill=white,inner sep=1pt] at (10,-1.7)    {1};
         \node[text width=.2cm,fill=white,inner sep=1pt] at (20,-1.7)    {2};
@@ -226,7 +212,7 @@
 <exercise number="24"><statement><sidebyside width="100%">
     <image xml:id="hp4-1-82"><description>circle</description><latex-image>
         <![CDATA[
-        \begin{tikzpicture}[scale=.15]
+        \begin{tikzpicture}[scale=.12]
 
         \coordinate (O) at (0,0);
         \coordinate (P) at (312:10);
@@ -234,7 +220,7 @@
 
         \draw[step=1cm,cyan,very thin] (-21,-21) grid (21,21);
         \draw[thick,->,>=stealth'] (-21,0) -- (21.8,0) node[anchor=west] {$x$};
-        \draw[thick,->,>=stealth'] (0,-21) -- (0,22) node[anchor=south] {$y$};
+        \draw[thick,->,>=stealth'] (0,-21) -- (0,23) node[anchor=south] {$y$};
         \draw[black,  thick] (Q)++(312:10)--(O) ;
 
         \draw[red,thick] (O) circle (10);
@@ -243,7 +229,7 @@
         \filldraw[red] (P) circle (.25cm) node[anchor=west , xshift=7,fill=white,inner sep=1pt]{$P$};
         \filldraw[blue] (Q) circle (.25cm) node[anchor=west , xshift=7,fill=white,inner sep=1pt]{$Q$} ;
 
-        \draw[gray, thick, ->,>=stealth'] (3,0) arc(0:312:3) node[above left,midway, xshift=0, yshift=0,fill=white,inner sep=1pt, text=black] {$\small 312\degree$};
+        \draw[gray, thick, ->,>=stealth'] (3,0) arc(0:312:3) node[above left,midway, xshift=0, yshift=0,fill=white,inner sep=1pt, text=black] {$ 312\degree$};
 
         \node[text width=.2cm,fill=white,inner sep=1pt] at (10,-1.7)    {1};
         \node[text width=.2cm,fill=white,inner sep=1pt] at (20,-1.7)    {2};
@@ -257,24 +243,17 @@
 
 <exercise number="25"><statement><sidebyside width="80%">
     <image xml:id="hp4-2-1"><description>circle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} 
+        <![CDATA[
+        \begin{tikzpicture} [scale=.8]
         \coordinate (O) at (0,0);
         \coordinate (A) at (315:1.5);
         \draw[black, thick, ->,>=stealth'] (-1.7,0) -- (2,0) ;
         \draw[black, thick, ->,>=stealth'] (0,-1.7) -- (0,2) ;
 
-        \draw[red, thick, ->,>=stealth'] (0.25,0) arc(0:315:.25) node[left, midway, xshift=2,yshift=2]{\footnotesize $315\degree$};
+        \draw[red, thick, ->,>=stealth'] (0.25,0) arc(0:315:.25) node[left, midway, xshift=2,yshift=2]{ $315\degree$};
 
         \draw[gray!80!white, thick] (O) circle (1.5cm);
-        \draw[blue, thick] (O)--(A) node[above right, midway, yshift=-4]{\footnotesize 8};
+        \draw[blue, thick] (O)--(A) node[above right, midway, yshift=-4]{ 8};
         \filldraw[black] (A) circle (1.5pt);
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></statement>
@@ -282,48 +261,34 @@
 
 <exercise number="26"><statement>
     <sidebyside width="80%"><image xml:id="hp4-2-2"><description>circle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} 
+        <![CDATA[
+        \begin{tikzpicture} [scale=.8]
         \coordinate (O) at (0,0);
         \coordinate (A) at (225:1.5);
         \draw[black, thick, ->,>=stealth'] (-1.7,0) -- (2,0) ;
         \draw[black, thick, ->,>=stealth'] (0,-1.7) -- (0,2) ;
 
-        \draw[red, thick, ->,>=stealth'] (0.25,0) arc(0:225:.25) node[above left, midway, xshift=5, yshift=-2]{\footnotesize $225\degree$};
+        \draw[red, thick, ->,>=stealth'] (0.25,0) arc(0:225:.25) node[above left, midway, xshift=5, yshift=-2]{ $225\degree$};
 
         \draw[gray!80!white, thick] (O) circle (1.5cm);
-        \draw[blue, thick] (O)--(A) node[above left, midway, yshift=-4]{\footnotesize 12};
+        \draw[blue, thick] (O)--(A) node[above left, midway, yshift=-4]{ 12};
         \filldraw[black] (A) circle (1.5pt);
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></statement></exercise>
 
 <exercise number="27"><statement><sidebyside width="80%">
     <image xml:id="hp4-2-3"><description>circle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} 
+        <![CDATA[
+        \begin{tikzpicture} [scale=.8]
         \coordinate (O) at (0,0);
         \coordinate (A) at (240:1.5);
         \draw[black, thick, ->,>=stealth'] (-1.7,0) -- (2,0) ;
         \draw[black, thick, ->,>=stealth'] (0,-1.7) -- (0,2) ;
 
-        \draw[red, thick, ->,>=stealth'] (0.25,0) arc(0:240:.25) node[above left, midway, xshift=5, yshift=-2]{\footnotesize $240\degree$};
+        \draw[red, thick, ->,>=stealth'] (0.25,0) arc(0:240:.25) node[above left, midway, xshift=5, yshift=-2]{ $240\degree$};
 
         \draw[gray!80!white, thick] (O) circle (1.5cm);
-        \draw[blue, thick] (O)--(A) node[above left, midway, yshift=-4]{\footnotesize 20};
+        \draw[blue, thick] (O)--(A) node[above left, midway, yshift=-4]{ 20};
         \filldraw[black] (A) circle (1.5pt);
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></statement>
@@ -331,48 +296,34 @@
         
 <exercise number="28"><statement><sidebyside width="80%">
     <image xml:id="hp4-2-4"><description>circle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} 
+        <![CDATA[
+        \begin{tikzpicture} [scale=.8]
         \coordinate (O) at (0,0);
         \coordinate (A) at (330:1.5);
         \draw[black, thick, ->,>=stealth'] (-1.7,0) -- (2,0) ;
         \draw[black, thick, ->,>=stealth'] (0,-1.7) -- (0,2) ;
 
-        \draw[red, thick, ->,>=stealth'] (0.25,0) arc(0:330:.25) node[below left, midway, xshift=3, yshift=-2]{\footnotesize $330\degree$};
+        \draw[red, thick, ->,>=stealth'] (0.25,0) arc(0:330:.25) node[below left, midway, xshift=3, yshift=-2]{ $330\degree$};
 
         \draw[gray!80!white, thick] (O) circle (1.5cm);
-        \draw[blue, thick] (O)--(A) node[above right, midway, yshift=-4]{\footnotesize 4};
+        \draw[blue, thick] (O)--(A) node[above right, midway, yshift=-4]{ 4};
         \filldraw[black] (A) circle (1.5pt);
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></statement></exercise> 
 
 <exercise number="29"><statement><sidebyside width="80%">
     <image xml:id="hp4-2-5"><description>circle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} 
+        <![CDATA[
+        \begin{tikzpicture} [scale=.8]
         \coordinate (O) at (0,0);
         \coordinate (A) at (150:1.5);
         \draw[black, thick, ->,>=stealth'] (-1.7,0) -- (2,0) ;
         \draw[black, thick, ->,>=stealth'] (0,-1.7) -- (0,2) ;
 
-        \draw[red, thick, ->,>=stealth'] (0.25,0) arc(0:150:.25) node[above right, midway, xshift=0, yshift=-5]{\footnotesize $150\degree$};
+        \draw[red, thick, ->,>=stealth'] (0.25,0) arc(0:150:.25) node[above right, midway, xshift=0, yshift=-5]{ $150\degree$};
 
         \draw[gray!80!white, thick] (O) circle (1.5cm);
-        \draw[blue, thick] (O)--(A) node[above right, midway, xshift=-4]{\footnotesize 15};
+        \draw[blue, thick] (O)--(A) node[above right, midway, xshift=-4]{ 15};
         \filldraw[black] (A) circle (1.5pt);
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></statement>
@@ -380,24 +331,17 @@
         
 <exercise number="30"><statement><sidebyside width="80%">
     <image xml:id="hp4-2-6"><description>circle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} 
+        <![CDATA[
+        \begin{tikzpicture} [scale=.8]
         \coordinate (O) at (0,0);
         \coordinate (A) at (120:1.5);
         \draw[black, thick, ->,>=stealth'] (-1.7,0) -- (2,0) ;
         \draw[black, thick, ->,>=stealth'] (0,-1.7) -- (0,2) ;
 
-        \draw[red, thick, ->,>=stealth'] (0.25,0) arc(0:120:.25) node[above right, midway, xshift=0, yshift=-5]{\footnotesize $120\degree$};
+        \draw[red, thick, ->,>=stealth'] (0.25,0) arc(0:120:.25) node[above right, midway, xshift=0, yshift=-5]{ $120\degree$};
 
         \draw[gray!80!white, thick] (O) circle (1.5cm);
-        \draw[blue, thick] (O)--(A) node[above right, midway, xshift=-4]{\footnotesize 9};
+        \draw[blue, thick] (O)--(A) node[above right, midway, xshift=-4]{ 9};
         \filldraw[black] (A) circle (1.5pt);
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></statement></exercise>
@@ -407,24 +351,17 @@
 
 <exercise number="31"><statement><sidebyside width="80%">
     <image xml:id="hp4-2-7"><description>circle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} 
+        <![CDATA[
+        \begin{tikzpicture} [scale=.8]
         \coordinate (O) at (0,0);
         \coordinate (A) at (258:1.5);
         \draw[black, thick, ->,>=stealth'] (-1.7,0) -- (2,0) ;
         \draw[black, thick, ->,>=stealth'] (0,-1.7) -- (0,2) ;
 
-        \draw[red, thick, ->,>=stealth'] (0.25,0) arc(0:258:.25) node[above left, midway, xshift=4, yshift=-5]{\footnotesize $258\degree$};
+        \draw[red, thick, ->,>=stealth'] (0.25,0) arc(0:258:.25) node[above left, midway, xshift=4, yshift=-5]{ $258\degree$};
 
         \draw[gray!80!white, thick] (O) circle (1.5cm);
-        \draw[blue, thick] (O)--(A) node[ left, midway, xshift=0]{\footnotesize 6};
+        \draw[blue, thick] (O)--(A) node[ left, midway, xshift=0]{ 6};
         \filldraw[black] (A) circle (1.5pt);
 
         \end{tikzpicture}]]>
@@ -434,48 +371,34 @@
         
 <exercise number="32"><statement><sidebyside width="80%">
     <image xml:id="hp4-2-8"><description>circle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} 
+        <![CDATA[
+        \begin{tikzpicture} [scale=.8]
         \coordinate (O) at (0,0);
         \coordinate (A) at (312:1.5);
         \draw[black, thick, ->,>=stealth'] (-1.7,0) -- (2,0) ;
         \draw[black, thick, ->,>=stealth'] (0,-1.7) -- (0,2) ;
 
-        \draw[red, thick, ->,>=stealth'] (0.25,0) arc(0:312:.25) node[ left, midway, xshift=1, yshift=-10]{\footnotesize $312\degree$};
+        \draw[red, thick, ->,>=stealth'] (0.25,0) arc(0:312:.25) node[ left, midway, xshift=1, yshift=-10]{ $312\degree$};
 
         \draw[gray!80!white, thick] (O) circle (1.5cm);
-        \draw[blue, thick] (O)--(A) node[above right, midway, yshift=-3]{\footnotesize 16};
+        \draw[blue, thick] (O)--(A) node[above right, midway, yshift=-3]{16};
         \filldraw[black] (A) circle (1.5pt);
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></statement></exercise> 
 
 <exercise number="33"><statement><sidebyside width="80%">
     <image xml:id="hp4-2-9"><description>circle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} 
+        <![CDATA[
+        \begin{tikzpicture} [scale=.8]
         \coordinate (O) at (0,0);
         \coordinate (A) at (296:1.5);
         \draw[black, thick, ->,>=stealth'] (-1.7,0) -- (2,0) ;
         \draw[black, thick, ->,>=stealth'] (0,-1.7) -- (0,2) ;
 
-        \draw[red, thick, ->,>=stealth'] (0.25,0) arc(0:296:.25) node[above left, midway, xshift=4, yshift=0]{\footnotesize $296\degree$};
+        \draw[red, thick, ->,>=stealth'] (0.25,0) arc(0:296:.25) node[above left, midway, xshift=4, yshift=0]{ $296\degree$};
 
         \draw[gray!80!white, thick] (O) circle (1.5cm);
-        \draw[blue, thick] (O)--(A) node[above right, midway, yshift=-5]{\footnotesize 13};
+        \draw[blue, thick] (O)--(A) node[above right, midway, yshift=-5]{ 13};
         \filldraw[black] (A) circle (1.5pt);
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></statement>
@@ -484,48 +407,34 @@
         
 <exercise number="34"><statement><sidebyside width="80%">
     <image xml:id="hp4-2-10"><description>circle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} 
+        <![CDATA[
+        \begin{tikzpicture} [scale=.8]
         \coordinate (O) at (0,0);
         \coordinate (A) at (341:1.5);
         \draw[black, thick, ->,>=stealth'] (-1.7,0) -- (2,0) ;
         \draw[black, thick, ->,>=stealth'] (0,-1.7) -- (0,2) ;
 
-        \draw[red, thick, ->,>=stealth'] (0.25,0) arc(0:341:.25) node[ left, midway, xshift=2, yshift=-8]{\footnotesize $341\degree$};
+        \draw[red, thick, ->,>=stealth'] (0.25,0) arc(0:341:.25) node[ left, midway, xshift=2, yshift=-8]{ $341\degree$};
 
         \draw[gray!80!white, thick] (O) circle (1.5cm);
-        \draw[blue, thick] (O)--(A) node[below , midway, yshift=0]{\footnotesize 10};
+        \draw[blue, thick] (O)--(A) node[below , midway, yshift=0]{ 10};
         \filldraw[black] (A) circle (1.5pt);
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></statement></exercise>
 
 <exercise number="35"><statement><sidebyside width="80%">
     <image xml:id="hp4-2-11"><description>circle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} 
+       <![CDATA[
+        \begin{tikzpicture} [scale=.8]
         \coordinate (O) at (0,0);
         \coordinate (A) at (204:1.5);
         \draw[black, thick, ->,>=stealth'] (-1.7,0) -- (2,0) ;
         \draw[black, thick, ->,>=stealth'] (0,-1.7) -- (0,2) ;
 
-        \draw[red, thick, ->,>=stealth'] (0.25,0) arc(0:204:.25) node[above left, midway, xshift=2, yshift=-4]{\footnotesize $204\degree$};
+        \draw[red, thick, ->,>=stealth'] (0.25,0) arc(0:204:.25) node[above left, midway, xshift=2, yshift=-4]{ $204\degree$};
 
         \draw[gray!80!white, thick] (O) circle (1.5cm);
-        \draw[blue, thick] (O)--(A) node[below , midway, yshift=0]{\footnotesize 20};
+        \draw[blue, thick] (O)--(A) node[below , midway, yshift=0]{ 20};
         \filldraw[black] (A) circle (1.5pt);
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></statement>
@@ -534,44 +443,35 @@
 
 <exercise number="36"><statement><sidebyside width="80%">
     <image xml:id="hp4-2-12"><description>circle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} 
+        <![CDATA[
+        \begin{tikzpicture}[scale=.8] 
         \coordinate (O) at (0,0);
         \coordinate (A) at (106:1.5);
         \draw[black, thick, ->,>=stealth'] (-1.7,0) -- (2,0) ;
         \draw[black, thick, ->,>=stealth'] (0,-1.7) -- (0,2) ;
 
-        \draw[red, thick, ->,>=stealth'] (0.25,0) arc(0:106:.25) node[above right, midway, xshift=0, yshift=-4]{\footnotesize $106\degree$};
+        \draw[red, thick, ->,>=stealth'] (0.25,0) arc(0:106:.25) node[above right, midway, xshift=0, yshift=-4]{ $106\degree$};
 
         \draw[gray!80!white, thick] (O) circle (1.5cm);
-        \draw[blue, thick] (O)--(A) node[left , midway, yshift=0]{\footnotesize 7};
+        \draw[blue, thick] (O)--(A) node[left , midway, yshift=0]{ 7};
         \filldraw[black] (A) circle (1.5pt);
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></statement></exercise>
 </exercisegroup>
 
 <exercisegroup cols="3"><introduction><p>For Problems 37<ndash/>41, a ship sails from the seaport on the given bearing for the given distance.</p>
-<p><ol marker="a">
-    <li>Make a sketch showing the ship's current location relative to the seaport.</li>
-    <li>How far east or west of the seaport is the ship's present location?  How far north or south?</li>
-</ol></p></introduction>    
-
+    <p><ol marker="a">
+        <li>Make a sketch showing the ship's current location relative to the seaport.</li>
+        <li>How far east or west of the seaport is the ship's present location?  How far north or south?</li>
+    </ol></p></introduction>    
+    
 <exercise number="37"><statement><p><m>36\degree</m>, 26 miles</p></statement>
     
 <answer><p><ol marker="a">
-    <li><sidebyside width="45%" margins="0% 5%">
+    <li><sidebyside width="60%" margins="0% 5%">
     <image xml:id="hp4-2-13ans"><description>angle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} 
+        <![CDATA[
+        \begin{tikzpicture} [scale=.9]
         \coordinate (O) at (0,0);
         \coordinate (p) at (54:3);
         \draw[gray, thick, ->, >=stealth'] (O) --+(0,2.7) node[above, text=black]{N};
@@ -584,16 +484,14 @@
 </ol></p></answer></exercise>
 
 <exercise number="38"><statement><p><m>124\degree</m>, 80 km</p></statement></exercise>
- 
+    
 <exercise number="39"><statement><p><m>230\degree</m>, 120 km</p></statement>
         
 <answer><p><ol marker="a">
-    <li><sidebyside width="60%" margins="0% 5%">
+    <li><sidebyside width="80%" margins="0% 5%">
     <image xml:id="hp4-2-15ans"><description>angle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.9]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.5]
         \coordinate (O) at (0,0);
         \coordinate (p) at (-140:4);
         \draw[gray, thick, ->, >=stealth'] (O) --+(0,1) node[above, text=black]{N};
@@ -610,16 +508,14 @@
 <exercise number="41"><statement><p><m>285\degree</m>, 32 km</p></statement>
         
 <answer><p><ol marker="a">
-    <li> <sidebyside width="90%" margins="0% 0%">
+    <li> <sidebyside width="100%" margins="0% 0%">
     <image xml:id="hp4-2-17ans"><description>angle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} 
+        <![CDATA[
+        \begin{tikzpicture} [scale=.5]
         \coordinate (O) at (0,0);
         \coordinate (p) at (-195:4);
         \draw[gray, thick, ->, >=stealth'] (O) --+(0,1.2) node[above, text=black]{N};
-        \draw[black,thick] (0,0)--(p) node[above right, midway, xshift=-5, text=blue] {32 km};
+        \draw[black,thick] (0,0)--(p) node[above right, midway, xshift=-7, text=blue] {32 km};
         \draw[cyan] (O)--($ 4*cos(-195)*(1,0)$) --(p);
         \draw[red, ->,>=stealth'] (0,.4) arc(90:-195:0.4) node[right, midway]{$285\degree$};
         \end{tikzpicture}]]>
@@ -678,27 +574,20 @@
     <li>What is the period of <m>h(t)</m>?</li>
 </ol></p></statement>
     
-<answer><p><ol marker="a"><li><sidebyside width="50%" margins="0% 5%">    
+<answer><p><ol marker="a"><li><sidebyside width="70%" margins="0% 5%">    
     <image xml:id="hp4-3-53ans"><description>piecewise linear graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} [scale=.4]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.32]
 
         \draw[cyan] (0,0) grid (20,9);
         \draw[black,thick,->,>=stealth'] (0,0) --(20.8,0) node[right]{$t$};
         \draw[black,thick,->,>=stealth'] (0,0) --(0,9.4) node[above]{$y$};
 
         \foreach \x in {5, 10, 15, 20} {
-         \draw[black] (\x,0.1)--+(0, -.2) node[below]{\small \x};
+            \draw[black] (\x,0.1)--+(0, -.2) node[below]{\small \x};
         };
         \foreach \y [evaluate=\y as \yi using int( 500* \y )] in {2, 4, 6, 8} {
-         \draw[black] (0.1,\y)--+(-.2,0) node[left]{\small \yi};
+            \draw[black] (0.1,\y)--+(-.2,0) node[left]{\small \yi};
         };
 
         \draw[red, ultra thick] (0,6)--++(5,2)--++(5,-2) --++(5,2)--++(5,-2);
@@ -720,16 +609,9 @@
     <li>What is the period of <m>D(t)</m>?</li>
 </ol></p></statement>
     
-<answer><p><ol marker="a"><li><sidebyside width="50%" margins="0% 5%">    <image xml:id="hp4-3-55ans">
+<answer><p><ol marker="a"><li><sidebyside width="70%" margins="0% 5%">    <image xml:id="hp4-3-55ans">
         <description>piercewise linear graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
+        <![CDATA[
         \begin{tikzpicture} [scale=.4]
 
         \draw[cyan] (0,0) grid (15,7);
@@ -737,10 +619,10 @@
         \draw[black,thick,->,>=stealth'] (0,0) --(0,7.4) node[above]{$y$};
 
         \foreach \x [evaluate=\x as \xi using int( \x/7)] in {7, 14} {
-         \draw[black] (\x,0.1)--+(0, -.2) node[below]{\small \xi};
+            \draw[black] (\x,0.1)--+(0, -.2) node[below]{\small \xi};
         };
         \foreach \y [evaluate=\y as \yi using int( 5* \y )] in {2, 4, 6} {
-         \draw[black] (0.1,\y)--+(-.2,0) node[left]{\small \yi};
+            \draw[black] (0.1,\y)--+(-.2,0) node[left]{\small \yi};
         };
 
         \draw[red, ultra thick] (0,6)--++(7,-.7)--++(0,.7) --++(7,-.7)--++(0,.7)--++(1, -.1);
@@ -753,9 +635,9 @@
     <li>Sketch a graph of Casey's height, <m>D(t)</m>, as a function of time.  Show at least two jumps.</li>
     <li>What is the period of <m>h(t)</m>?</li>
 </ol></p></statement></exercise>
-</exercisegroup>    
+</exercisegroup> 
 
-<exercisegroup><introduction><p>For Problems 59<ndash/>66, sketch a sinusoidal function that models the situation.</p></introduction>
+<exercisegroup><introduction><p>For Problems 59<ndash/>64, sketch a sinusoidal function that models the situation.</p></introduction>
 
 <exercise number="59"><statement>
     <p>Delbert's bicycle wheel is 24 inches in diameter, and he has a light attached to the spokes 10 inches from the center of the wheel.  It is dark, and he is cycling home slowly from work.  The bicycle wheel makes one revolution every second.</p>
@@ -764,27 +646,20 @@
         <li>Give the period, midline, and amplitude of your graph.</li>
     </ol></p></statement>
     
-<answer><p><ol marker="a"><li><sidebyside width="50%" margins="0% 5%">    <image xml:id="hp4-3-57ans">
+<answer><p><ol marker="a"><li><sidebyside width="60%" margins="0% 5%">    <image xml:id="hp4-3-57ans">
         <description>sinusoidal graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} [xscale=.75, yscale=.25]
+        <![CDATA[
+        \begin{tikzpicture} [xscale=.72, yscale=.24]
 
         \draw[cyan] (0,0) grid (9,12);
         \draw[black,thick,->,>=stealth'] (0,0) --(9.3,0) node[right]{$t$};
         \draw[black,thick,->,>=stealth'] (0,0) --(0,12.4) node[above]{$y$};
 
         \foreach \x [evaluate=\x as \xi using int( \x/4)] in {4,8} {
-         \draw[black] (\x,0.1)--+(0, -.2) node[below]{\small \xi};
+            \draw[black] (\x,0.1)--+(0, -.2) node[below]{ \xi};
         };
         \foreach \y [evaluate=\y as \yi using int( 2* \y )] in {5,10} {
-         \draw[black] (0.1,\y)--+(-.2,0) node[left]{\small \yi};
+            \draw[black] (0.1,\y)--+(-.2,0) node[left]{ \yi};
         };
 
         \draw[samples=65,domain={0:9},smooth,variable=\x,red,very thick] plot ({\x},{6 + 5* cos( 90*\x)});
@@ -805,27 +680,20 @@
         <li>Give the period, midline, and amplitude of your graph.</li>
     </ol></p></statement>
     
-<answer><p><ol marker="a"><li><sidebyside width="50%" margins="0% 5%">    <image xml:id="hp4-3-59ans">
+<answer><p><ol marker="a"><li><sidebyside width="60%" margins="0% 5%">    <image xml:id="hp4-3-59ans">
         <description>sinusoidal graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} [xscale=.6, yscale=.4]
+        <![CDATA[
+        \begin{tikzpicture} [xscale=.54, yscale=.36]
 
         \draw[cyan] (0,0) grid (12,7);
         \draw[black,thick,->,>=stealth'] (0,0) --(12.5,0) node[right]{$t$};
         \draw[black,thick,->,>=stealth'] (0,0) --(0,7.6) node[above]{$y$};
 
         \foreach \x  in {2,4,...,12} {
-         \draw[black] (\x,0.1)--+(0, -.2) node[below]{\small \x};
+            \draw[black] (\x,0.1)--+(0, -.2) node[below]{ \x};
         };
         \foreach \y [evaluate=\y as \yi using int( 1000* \y )] in {2,4,6} {
-         \draw[black] (0.1,\y)--+(-.2,0) node[left]{\small \yi};
+            \draw[black] (0.1,\y)--+(-.2,0) node[left]{ \yi};
         };
 
         \draw[samples=65,domain={0:12},smooth,variable=\x,red,very thick] plot ({\x},{3.5 - 2.5* cos( 30*\x)});
@@ -846,17 +714,10 @@
         <li>Give the period, midline, and amplitude of your graph.</li>
     </ol></p></statement>
     
-<answer><p><ol marker="a"><li><sidebyside width="50%" margins="0% 5%">    <image xml:id="hp4-3-61ans">
+<answer><p><ol marker="a"><li><sidebyside width="60%" margins="0% 5%">    <image xml:id="hp4-3-61ans">
         <description>sinusoidal graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} [xscale=.6, yscale=.05]
+        <![CDATA[
+        \begin{tikzpicture} [xscale=.54, yscale=.045]
 
         \draw[cyan, ystep=5] (0,20) grid (12,80);
         \draw[black,->,>=stealth'] (0,16) --+(12.5,0) node[right]{$t$};
@@ -865,10 +726,10 @@
         \draw[black,thick] (0,16) --++(0,1);
 
         \foreach \x  in {2,4,...,12} {
-         \draw[black] (\x,16.1)--+(0, -.2) node[below]{\small \x};
+            \draw[black] (\x,16.1)--+(0, -.2) node[below]{ \x};
         };
         \foreach \y in {20,40,...,80} {
-         \draw[black] (0.1,\y)--+(-.2,0) node[left]{\small \y};
+            \draw[black] (0.1,\y)--+(-.2,0) node[left]{ \y};
         };
 
         \draw[samples=65,domain={0:12},smooth,variable=\x,red,very thick] plot ({\x},{51 - 21* cos( 30*\x)});
@@ -885,7 +746,7 @@
 </exercisegroup>    
 
 <exercise number="65"><statement><p>Each situation describes a periodic function.  Match each situation with the appropriate graph.</p>
-   <p><ol marker="a">
+    <p><ol marker="a">
     <li>When the heart contracts, blood pressure in the arteries rises rapidly to a peak (systolic blood pressure) and then falls off quickly to a minimum (diastolic blood pressure).  Blood pressure is a function of time.</li>
     <li>After an injection is given to a patient, the amount of the drug present in his bloodstream decreases over time.  The patient receives injections at regular intervals to restore the drug level to the prescribed level.  The amount of the drug present is a function of time.</li>
     <li>The monorail shuttle train between the north and south terminals at Gatwick Airport departs from the south terminal every 12 minutes.  The distance from the train to the south terminal is a function of time.</li>
@@ -904,157 +765,143 @@
 </ol></p><sidebyside width="65%"><image source="photos/hp4-3-64"><description>graph</description></image></sidebyside></statement></exercise>
 
 <exercise number="67"><statement><p>The table shows sunrise and sunset times in Los Angeles on the fifteenth of each month.</p>
-<sidebyside width="85%" margins="0% 15%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                  
-    <row bottom="minor">
-        <cell>Month</cell>
-        <cell>Oct</cell>
-        <cell>Nov</cell>
-        <cell>Dec</cell>
-        <cell>Jan</cell>
-        <cell>Feb</cell>
-        <cell>Mar</cell></row>
-    <row>
-        <cell>Sunrise</cell> 
-        <cell><m>5:58</m></cell>
-        <cell><m>6:26</m></cell>
-        <cell><m>6:51</m></cell>
-        <cell><m>6:59</m></cell>
-        <cell><m>6:39</m></cell>
-        <cell><m>6:04</m></cell></row>
-    <row>
-        <cell>Sunset</cell> 
-        <cell><m>17:20</m></cell>
-        <cell><m>16:50</m></cell>
-        <cell><m>16:45</m></cell>
-        <cell><m>17:07</m></cell>
-        <cell><m>17:37</m></cell>
-        <cell><m>18:01</m></cell></row>    
-        </tabular></sidebyside>
-
     <sidebyside width="85%" margins="0% 15%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                  
-            <row bottom="minor">
-                <cell>Month</cell>
-                <cell>Apr</cell>
-                <cell>May</cell>
-                <cell>Jun</cell>
-                <cell>Jul</cell>
-                <cell>Aug</cell>
-                <cell>Sep</cell></row>
-            <row>
-                <cell>Sunrise</cell> 
-                <cell><m>5:22</m></cell>
-                <cell><m>4:52</m></cell>
-                <cell><m>4:42</m></cell>
-                <cell><m>4:43</m></cell>
-                <cell><m>5:15</m></cell>
-                <cell><m>5:37</m></cell></row>
-            <row>
-                <cell>Sunset</cell> 
-                <cell><m>18:25</m></cell>
-                <cell><m>18:48</m></cell>
-                <cell><m>19:07</m></cell>
-                <cell><m>19:05</m></cell>
-                <cell><m>18:40</m></cell>
-                <cell><m>18:00</m></cell></row>    
-                </tabular></sidebyside>
-    <p><ol marker="a">
-    <li>Use the left-hand grid to plot the sunrise times and sketch a sinusoidal graph through the points.</li>
-    <li> Use the right-hand grid to plot the sunset times and sketch a sinusoidal graph through the points.</li>
-    </ol></p>
-    <sidebyside widths="90%">
-        <image xml:id="hp4-3-65"><description>grid</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} [xscale=.5, yscale=.4] 
-        \coordinate (O) at (0,0);
-        \draw[cyan] (0,0.9) grid (12,12);
-        \draw[black,->,>=stealth'] (O) --+(12.5,0) node[right]{$m$};
-        \draw[black,thick,->,>=stealth'] (O)++(0,.9) --++(0,12.) node[above]{$y$};
-        \draw[black] (O)++(0,.9)--++(-.3, -.2)--++(.6,-.2)--++(-.3,-.2) -- ++(0, -.3);
-
-        \foreach \x  in {2,4,...,12} {
-         \draw[black] (\x,0)--+(0, -.2) node[below]{\footnotesize \x};
-        };
-        \foreach \y  [evaluate=\y as \yi using int(  \y /2 + 2)] in {2, 4, 6, ..., 12} {
-         \draw[black] (0.1,\y)--+(-.2,0) node[left]{\footnotesize \yi};
-        };
-
-        % second grid
-        \coordinate (O) at (15,0);
-        \draw[cyan] (15,0.9) grid (27,12);
-        \draw[black,->,>=stealth'] (O) --+(12.5,0) node[right]{$m$};
-        \draw[black,thick,->,>=stealth'] (O)++(0,.9) --++(0,12.) node[above]{$y$};
-        \draw[black] (O)++(0,.9)--++(-.3, -.2)--++(.6,-.2)--++(-.3,-.2) -- ++(0, -.3);
-
-        \foreach \x  in {2,4,...,12} {
-         \draw[black] (O)++(\x,0)--+(0, -.2) node[below]{\footnotesize \x};
-        };
-        \foreach \y  [evaluate=\y as \yi using int(  \y /2 + 14)] in {2, 4, 6, ..., 12} {
-         \draw[black] (O)++(0.1,\y)--+(-.2,0) node[left]{\footnotesize \yi};
-        };
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></statement>
+        <row bottom="minor">
+            <cell>Month</cell>
+            <cell>Oct</cell>
+            <cell>Nov</cell>
+            <cell>Dec</cell>
+            <cell>Jan</cell>
+            <cell>Feb</cell>
+            <cell>Mar</cell></row>
+        <row>
+            <cell>Sunrise</cell> 
+            <cell><m>5:58</m></cell>
+            <cell><m>6:26</m></cell>
+            <cell><m>6:51</m></cell>
+            <cell><m>6:59</m></cell>
+            <cell><m>6:39</m></cell>
+            <cell><m>6:04</m></cell></row>
+        <row>
+            <cell>Sunset</cell> 
+            <cell><m>17:20</m></cell>
+            <cell><m>16:50</m></cell>
+            <cell><m>16:45</m></cell>
+            <cell><m>17:07</m></cell>
+            <cell><m>17:37</m></cell>
+            <cell><m>18:01</m></cell></row>    
+            </tabular></sidebyside>
     
-<answer><sidebyside>
-    <image xml:id="hp4-3-65ans"><description>two graphs</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} [xscale=.5, yscale=.4] 
-        \coordinate (O) at (0,0);
-        \draw[cyan] (0,0.9) grid (12,12);
-        \draw[black,->,>=stealth'] (O) --+(12.5,0) node[right]{$m$};
-        \draw[black,thick,->,>=stealth'] (O)++(0,.9) --++(0,12.) node[above]{$y$};
-        \draw[black] (O)++(0,.9)--++(-.3, -.2)--++(.6,-.2)--++(-.3,-.2) -- ++(0, -.3);
-
-        \foreach \x  in {2,4,...,12} {
-         \draw[black] (\x,0)--+(0, -.2) node[below]{\footnotesize \x};
-        };
-        \foreach \y  [evaluate=\y as \yi using int(  \y /2 + 2)] in {2, 4, 6, ..., 12} {
-         \draw[black] (0.1,\y)--+(-.2,0) node[left]{\footnotesize \yi};
-        };
-
-        % second grid
-        \coordinate (O) at (15,0);
-        \draw[cyan] (15,0.9) grid (27,12);
-        \draw[black,->,>=stealth'] (O) --+(12.5,0) node[right]{$m$};
-        \draw[black,thick,->,>=stealth'] (O)++(0,.9) --++(0,12.) node[above]{$y$};
-        \draw[black] (O)++(0,.9)--++(-.3, -.2)--++(.6,-.2)--++(-.3,-.2) -- ++(0, -.3);
-
-        \foreach \x  in {2,4,...,12} {
-         \draw[black] (O)++(\x,0)--+(0, -.2) node[below]{\footnotesize \x};
-        };
-        \foreach \y  [evaluate=\y as \yi using int(  \y /2 + 14)] in {2, 4, 6, ..., 12} {
-         \draw[black] (O)++(0.1,\y)--+(-.2,0) node[left]{\footnotesize \yi};
-        };
-
-        %\def\sunrise{{5.97, 6.43, 6.85, 6.98, 6.65, 6.1, 5.4, 4.9, 4.7, 4.72, 5.25, 5.62}}
-        \def\sunrise{{7.93, 8.87, 9.7, 9.97, 9.3, 8.13, 6.73, 5.73, 5.4, 5.43, 6.5, 7.23}}
-        %\def\sunset{{17.3, 16.8, 16.75, 17.1, 17.6, 18., 18.4, 18.8, 19.1, 19.1, 18.67, 18}}
-        \def\sunset{{6.67, 5.67, 5.5, 6.23, 7.23, 8., 8.83, 9.6, 10.23, 10.17, 9.33, 8}}
-
-        \foreach \x  in {0, 1,..., 11}
-         \filldraw[red] (\x, \sunrise[\x]) ellipse (3.6pt and 4.5pt) ;
-
-        \draw[samples=65,domain={0:12},smooth,variable=\x,blue,very thick] plot ({\x},{7.57 + 2.3* sin( deg(.55*\x+.12)))});
-
-        \foreach \x [evaluate=\x as \y using (  \x  + 15)] in {0, 1,..., 11}
-         \filldraw[red] (\y, \sunset[\x])  ellipse (3.6pt and 4.5pt) ;
-
-        \draw[samples=65,domain={0:12},smooth,variable=\x,blue,very thick] plot ({\x+15},{7.92 + 2.24* sin( deg(.49*\x-2.45)))});
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></answer></exercise>
+        <sidebyside width="85%" margins="0% 15%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                  
+                <row bottom="minor">
+                    <cell>Month</cell>
+                    <cell>Apr</cell>
+                    <cell>May</cell>
+                    <cell>Jun</cell>
+                    <cell>Jul</cell>
+                    <cell>Aug</cell>
+                    <cell>Sep</cell></row>
+                <row>
+                    <cell>Sunrise</cell> 
+                    <cell><m>5:22</m></cell>
+                    <cell><m>4:52</m></cell>
+                    <cell><m>4:42</m></cell>
+                    <cell><m>4:43</m></cell>
+                    <cell><m>5:15</m></cell>
+                    <cell><m>5:37</m></cell></row>
+                <row>
+                    <cell>Sunset</cell> 
+                    <cell><m>18:25</m></cell>
+                    <cell><m>18:48</m></cell>
+                    <cell><m>19:07</m></cell>
+                    <cell><m>19:05</m></cell>
+                    <cell><m>18:40</m></cell>
+                    <cell><m>18:00</m></cell></row>    
+                    </tabular></sidebyside>
+        <p><ol marker="a">
+        <li>Use the left-hand grid to plot the sunrise times and sketch a sinusoidal graph through the points.</li>
+        <li> Use the right-hand grid to plot the sunset times and sketch a sinusoidal graph through the points.</li>
+        </ol></p>
+        <sidebyside widths="90%">
+            <image xml:id="hp4-3-67"><description>grid</description><latex-image>
+            <![CDATA[
+            \begin{tikzpicture} [xscale=.45, yscale=.36] 
+            \coordinate (O) at (0,0);
+            \draw[cyan] (0,0.9) grid (12,12);
+            \draw[black,->,>=stealth'] (O) --+(12.5,0) node[right]{$m$};
+            \draw[black,thick,->,>=stealth'] (O)++(0,.9) --++(0,12.) node[above]{$y$};
+            \draw[black] (O)++(0,.9)--++(-.3, -.2)--++(.6,-.2)--++(-.3,-.2) -- ++(0, -.3);
+    
+            \foreach \x  in {2,4,...,12} {
+                \draw[black] (\x,0)--+(0, -.2) node[below]{ \x};
+            };
+            \foreach \y  [evaluate=\y as \yi using int(  \y /2 + 2)] in {2, 4, 6, ..., 12} {
+                \draw[black] (0.1,\y)--+(-.2,0) node[left]{ \yi};
+            };
+    
+            % second grid
+            \coordinate (O) at (15,0);
+            \draw[cyan] (15,0.9) grid (27,12);
+            \draw[black,->,>=stealth'] (O) --+(12.5,0) node[right]{$m$};
+            \draw[black,thick,->,>=stealth'] (O)++(0,.9) --++(0,12.) node[above]{$y$};
+            \draw[black] (O)++(0,.9)--++(-.3, -.2)--++(.6,-.2)--++(-.3,-.2) -- ++(0, -.3);
+    
+            \foreach \x  in {2,4,...,12} {
+                \draw[black] (O)++(\x,0)--+(0, -.2) node[below]{ \x};
+            };
+            \foreach \y  [evaluate=\y as \yi using int(  \y /2 + 14)] in {2, 4, 6, ..., 12} {
+                \draw[black] (O)++(0.1,\y)--+(-.2,0) node[left]{ \yi};
+            };
+            \end{tikzpicture}]]>
+        </latex-image></image></sidebyside></statement>
+        
+    <answer><sidebyside>
+        <image xml:id="hp4-3-67ans"><description>two graphs</description><latex-image>
+            <![CDATA[
+            \begin{tikzpicture} [xscale=.5, yscale=.4] 
+            \coordinate (O) at (0,0);
+            \draw[cyan] (0,0.9) grid (12,12);
+            \draw[black,->,>=stealth'] (O) --+(12.5,0) node[right]{$m$};
+            \draw[black,thick,->,>=stealth'] (O)++(0,.9) --++(0,12.) node[above]{$y$};
+            \draw[black] (O)++(0,.9)--++(-.3, -.2)--++(.6,-.2)--++(-.3,-.2) -- ++(0, -.3);
+    
+            \foreach \x  in {2,4,...,12} {
+                \draw[black] (\x,0)--+(0, -.2) node[below]{ \x};
+            };
+            \foreach \y  [evaluate=\y as \yi using int(  \y /2 + 2)] in {2, 4, 6, ..., 12} {
+                \draw[black] (0.1,\y)--+(-.2,0) node[left]{ \yi};
+            };
+    
+            % second grid
+            \coordinate (O) at (15,0);
+            \draw[cyan] (15,0.9) grid (27,12);
+            \draw[black,->,>=stealth'] (O) --+(12.5,0) node[right]{$m$};
+            \draw[black,thick,->,>=stealth'] (O)++(0,.9) --++(0,12.) node[above]{$y$};
+            \draw[black] (O)++(0,.9)--++(-.3, -.2)--++(.6,-.2)--++(-.3,-.2) -- ++(0, -.3);
+    
+            \foreach \x  in {2,4,...,12} {
+                \draw[black] (O)++(\x,0)--+(0, -.2) node[below]{ \x};
+            };
+            \foreach \y  [evaluate=\y as \yi using int(  \y /2 + 14)] in {2, 4, 6, ..., 12} {
+                \draw[black] (O)++(0.1,\y)--+(-.2,0) node[left]{ \yi};
+            };
+    
+            %\def\sunrise{{5.97, 6.43, 6.85, 6.98, 6.65, 6.1, 5.4, 4.9, 4.7, 4.72, 5.25, 5.62}}
+            \def\sunrise{{7.93, 8.87, 9.7, 9.97, 9.3, 8.13, 6.73, 5.73, 5.4, 5.43, 6.5, 7.23}}
+            %\def\sunset{{17.3, 16.8, 16.75, 17.1, 17.6, 18., 18.4, 18.8, 19.1, 19.1, 18.67, 18}}
+            \def\sunset{{6.67, 5.67, 5.5, 6.23, 7.23, 8., 8.83, 9.6, 10.23, 10.17, 9.33, 8}}
+    
+            \foreach \x  in {0, 1,..., 11}
+                \filldraw[red] (\x, \sunrise[\x]) ellipse (3.6pt and 4.5pt) ;
+    
+            \draw[samples=65,domain={0:12},smooth,variable=\x,blue,very thick] plot ({\x},{7.57 + 2.3* sin( deg(.55*\x+.12)))});
+    
+            \foreach \x [evaluate=\x as \y using (  \x  + 15)] in {0, 1,..., 11}
+                \filldraw[red] (\y, \sunset[\x])  ellipse (3.6pt and 4.5pt) ;
+    
+            \draw[samples=65,domain={0:12},smooth,variable=\x,blue,very thick] plot ({\x+15},{7.92 + 2.24* sin( deg(.49*\x-2.45)))});
+            \end{tikzpicture}]]>
+        </latex-image></image></sidebyside></answer></exercise>
 
 <exercise number="68"><statement><p><ol marker="a">
     <li><p>Use the data from Problem 67 to complete the table with the hours of sunlight in Los Angeles on the fifteenth of each month.</p>
@@ -1095,17 +942,10 @@
                 <cell><m>\hphantom{0000}</m></cell>
                 <cell><m>\hphantom{0000}</m></cell></row>
                 </tabular></sidebyside></li>
-    <li><p>Plot the daylight hours and sketch a sinusoidal graph through the points.</p><sidebyside width="45%">
-    <image xml:id="hp4-3-66"><description>grid</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} [xscale=.5, yscale=.4] 
+    <li><p>Plot the daylight hours and sketch a sinusoidal graph through the points.</p><sidebyside width="50%">
+    <image xml:id="hp4-3-68"><description>grid</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture} [xscale=.45, yscale=.36] 
         \coordinate (O) at (0,0);
         \draw[cyan] (0,0.9) grid (12,12);
         \draw[black,->,>=stealth'] (O) --+(12.5,0) node[right]{$m$};
@@ -1113,10 +953,10 @@
         \draw[black] (O)++(0,.9)--++(-.3, -.2)--++(.6,-.2)--++(-.3,-.2) -- ++(0, -.3);
 
         \foreach \x  in {2,4,...,12} {
-         \draw[black] (\x,0)--+(0, -.2) node[below]{\footnotesize \x};
+            \draw[black] (\x,0)--+(0, -.2) node[below]{\x};
         };
         \foreach \y  [evaluate=\y as \yi using int(  \y /2 + 9)] in {2, 4, 6, ..., 12} {
-         \draw[black] (0.1,\y)--+(-.2,0) node[left]{\footnotesize \yi};
+            \draw[black] (0.1,\y)--+(-.2,0) node[left]{ \yi};
         };
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></li></ol></p></statement></exercise>

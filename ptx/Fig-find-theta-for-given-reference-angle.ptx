@@ -1,0 +1,25 @@
+<latex-image>
+    <![CDATA[
+    \begin{tikzpicture}[scale=.72]    
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (3,1.8);
+    \coordinate (B) at (-3.,1.8);
+    \coordinate (C) at (-3,-1.8);
+    \coordinate (D) at (3,-1.8);
+
+    \draw[black,  thick, ->,>=stealth'] (-3.1,0) --  (3.1,0) node[right] {$x$} ;
+    \draw[black,  thick, ->,>=stealth'] (0,-1.9) --  (0,1.9) node[above] {$y$}  ;
+
+    \draw[blue, thick] (O)--(A) node[above right, xshift=-10, yshift=-3]{\color{red}$\theta = \tilde\theta$} ;
+    \draw[red,  <->,>=stealth'] (1.2,0) arc (0:{atan(.6)}:1.2) node [right, midway,xshift=0,yshift=2] {$\tilde\theta$};
+
+    \draw[blue, thick] (O)--(B) node[above left, xshift=35, yshift=-3]{\color{red}$\theta = 180\degree- \tilde\theta$} ;
+    \draw[red,  <->,>=stealth'] (-1.2,0) arc (180:{180-atan(.6)}:1.2) node [left, midway,xshift=0,yshift=2] {$\tilde\theta$};
+
+    \draw[blue, thick] (O)--(C) node[below left, xshift=35, yshift=3]{\color{red}$\theta = 180\degree + \tilde\theta$} ;
+    \draw[red,  <->,>=stealth'] (-1.2,0) arc (180:{180+atan(.6)}:1.2) node [left, midway,xshift=0,yshift=-2] {$\tilde\theta$};
+
+    \draw[blue, thick] (O)--(D) node[below right, xshift=-35, yshift=3]{\color{red}$\theta = 360\degree - \tilde\theta$} ;
+    \draw[red,  <->,>=stealth'] (1.2,0) arc (0:{-atan(.6)}:1.2) node [right, midway,xshift=0,yshift=-2] {$\tilde\theta$};    
+    \end{tikzpicture}]]>
+</latex-image>

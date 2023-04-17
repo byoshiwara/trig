@@ -1,0 +1,20 @@
+<latex-image>
+    <![CDATA[
+    \begin{tikzpicture} [scale=.72]
+    \coordinate(A) at (3.2,0);
+    \coordinate (B) at (0,0 );
+    \coordinate (C) at (-1.3,1.857);
+    \draw[->,>=stealth'](B)--++(3.6,0) node[right]{East};
+    \draw[->,>=stealth'](B)--++(0,2.1) node[above]{North};
+
+    \filldraw[black] (A) circle (2pt) node[anchor=north] {$A$};
+    \filldraw[black] (B) circle (2pt) node[anchor=north east] {$B$};
+    \filldraw[black] (C) circle (2pt) node[anchor=east] {$C$};
+
+    \draw[black,thick] (A)--(B) node [below,midway,text=blue] {48 mi};
+    \draw[black,thick] (C)--(B) node [below left,midway,text=blue] {34 mi};
+    \draw[black,thick] (A)--(C)  node [above right,midway,text=blue] {?};
+
+    \draw[red,thick] (90:.8) arc (90:{180-atan(1.857/1.3)}:0.8) node[above, midway, xshift=-1, yshift=-1] {\small$35\degree$};
+    \end{tikzpicture}]]>
+</latex-image>

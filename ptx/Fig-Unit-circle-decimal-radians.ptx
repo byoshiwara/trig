@@ -1,0 +1,27 @@
+<latex-image>
+    <![CDATA[
+    \begin{tikzpicture} [scale=3.6]
+
+    \draw[cyan] (-1.0001,-1.0001) grid[step = 0.1] (1,1);
+    \draw[black, thick] (-1,0)--(1,0);
+    \draw[black, thick] (0,-1)--(0,1);
+
+    \draw[red,thick] (0,0) circle (1cm);
+
+    \foreach \i in {0.1, 0.2, ..., 6.2} {
+        \draw[black, thick] ({deg(\i)}:1) -- ({deg(\i)}:1.03);
+    };
+    \foreach \i in {0.5, 1.5, ..., 5.5} {
+        \draw[black, thick] ({deg(\i)}:1) -- ({deg(\i)}:1.06);
+        \node[text width=.4cm, fill=white, inner sep=1] at ({deg(\i)}:1.15) { \i};
+    };
+    \foreach \i in {1,2, ..., 6} {
+        \draw[black, thick] ({deg(\i)}:1) -- ({deg(\i)}:1.1);
+        \node[text width=.2cm, fill=white, inner sep=1] at ({deg(\i)}:1.15) { \i};
+    };
+    \foreach \i in {-0.5, 0.5} {
+        \draw[black, thick] (0.03,\i) -- (-0.03,\i) node[left, fill=white, inner sep=1]{ \i};
+        \draw[black, thick] (\i,0.03) -- (\i,-0.03) node[below, fill=white, inner sep=1]{\i};
+    };
+    \end{tikzpicture}]]>
+</latex-image>

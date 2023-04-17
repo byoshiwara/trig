@@ -153,7 +153,7 @@ where <m>\theta = t~</m> is an angle measured in radians.</p>
 <p>We can think of the definition this way: to find the sine or cosine of a real number <m>t</m>, we find the sine or cosine of the angle <m>\theta = t</m> in radians.</p>
 
 <note><p>To understand the connection between real numbers and radians, you may find it helpful to remember that the measure of a positive angle in radians is equal to the length of the arc it spans on a unit circle.</p> 
-    
+
 <sidebyside widths="65% 28%" valigns="middle middle" margins="0% 5%"><p>Consider the unit circle shown at right, and the angle <m>\theta</m> determined by the arc of length <m>t</m>. The radian measure of <m>\theta</m> is the same as the length <m>t</m> of the arc. (For example, in this figure <m>\theta = t = 2</m>.) </p>
     <image xml:id="fig-6-2-realno"><description>circle</description><latex-image>
     <![CDATA[
@@ -169,8 +169,8 @@ where <m>\theta = t~</m> is an angle measured in radians.</p>
     \draw[gray, thick] (O) circle (1.5);
 
     \draw[black, thick] (O)--(B) ;
-    \draw[red, thick, ->,>=stealth'] (0.3,0) arc(0:{deg(2)}:0.3)  node[above right, midway, xshift=2, scale=.8] {$\theta=2$};
-    \draw[blue, ultra thick] (1.5,0) arc(0:{deg(2)}:1.5)  node[above right, midway, xshift=2, scale=.8 ] {$t=2$};
+    \draw[red, thick, ->,>=stealth'] (0.3,0) arc(0:{deg(2)}:0.3)  node[above right, midway, xshift=-2] {$\theta=2$};
+    \draw[blue, ultra thick] (1.5,0) arc(0:{deg(2)}:1.5)  node[above right, midway, xshift=-2] {$t=2$};
     \filldraw[black] (B) circle (.06cm);
     \end{tikzpicture}]]>
 </latex-image></image></sidebyside>
@@ -276,70 +276,25 @@ so the coordinates of point <m>P</m> on the unit circle in the figure at right a
 <p>Because the trig values can be found as coordinates on a unit circle, our three trig functions are often called the <term>circular functions</term>. We now have the following definitions for the circular functions of real numbers.</p>
 
 <assemblage><title>The Circular Functions</title>
-<idx><h>circular function</h></idx>
-<idx><h>sine</h><h>of a real number</h></idx>
-<idx><h>cosine</h><h>of a real number</h></idx>
-<idx><h>tangent</h><h>of a real number</h></idx>
-
-<p>Let <m>P</m> be the terminal point of an arc of length <m>t</m> in standard position on a unit circle. The <term>circular functions</term> of <m>t</m> are defined by</p>
-  <sidebyside widths="40% 30%" valigns="middle middle" margins="10% 10%"><p>
+    <idx><h>circular function</h></idx>
+    <idx><h>sine</h><h>of a real number</h></idx>
+    <idx><h>cosine</h><h>of a real number</h></idx>
+    <idx><h>tangent</h><h>of a real number</h></idx>
+    
+    <p>Let <m>P</m> be the terminal point of an arc of length <m>t</m> in standard position on a unit circle. The <term>circular functions</term> of <m>t</m> are defined by</p>
+    <sidebyside widths="40% 35%" valigns="middle middle" margins="10% 10%"><p>
     <md><mrow>\blert{\cos (t)~} \amp \blert{= x}</mrow>
         <mrow>\blert{\sin (t)~} \amp \blert{= y}</mrow>
         <mrow>\blert{\tan (t)~} \amp \blert{= \dfrac{y}{x},~~~~x \not= 0}</mrow></md></p>
-    <image xml:id="fig-6-2-circfun"><description>circle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
-
-        \coordinate (O) at (0,0);
-        \coordinate (A) at (0:1.5);
-        \coordinate (B) at (140:1.5);
-
-        \draw[black, thick, ->,>=stealth'] (-1.7,0)--(1.8,0);
-        \draw[black, thick, ->,>=stealth'] (0,-1.7)--(0,1.8);
-        \draw[gray, thick] (O) circle (1.5);
-
-        \draw[blue, ultra thick] (1.5,0) arc(0:140:1.5)  node[above right, midway, xshift=6, scale=.8 ] {$t$};
-        \filldraw[black] (A) circle (.06cm) node[anchor=north west, yshift=-5, scale=.8] { $(1,0)$};
-        \filldraw[black] (B) circle (.06cm) node[anchor=south east, yshift=3, scale=.8] { $(x,y)$};
-        \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></assemblage>
+    <image xml:id="fig-6-2-circfun"><description>circle</description>
+        <xi:include href="Fig-circular-functions.ptx"/>
+    </image></sidebyside></assemblage>
       
 <example><statement><p>Use the graph of the unit circle shown below to estimate <m>\cos (2.5),~\sin (2.5)</m>, and <m>\tan (2.5)</m>.</p>
-<sidebyside width="60%"><image xml:id="exam6-2-5"><description>circle</description><latex-image>
-    <![CDATA[
-    \begin{tikzpicture} [scale=3.6]
-
-    \draw[cyan] (-1.0001,-1.0001) grid[step = 0.1] (1,1);
-    \draw[black, thick] (-1,0)--(1,0);
-    \draw[black, thick] (0,-1)--(0,1);
-
-    \draw[red,thick] (0,0) circle (1cm);
-
-    \foreach \i in {0.1, 0.2, ..., 6.2} {
-     \draw[black, thick] ({deg(\i)}:1) -- ({deg(\i)}:1.03);
-    };
-    \foreach \i in {0.5, 1.5, ..., 5.5} {
-     \draw[black, thick] ({deg(\i)}:1) -- ({deg(\i)}:1.06);
-     \node[text width=.4cm, fill=white, inner sep=1] at ({deg(\i)}:1.15) { \i};
-    };
-    \foreach \i in {1,2, ..., 6} {
-     \draw[black, thick] ({deg(\i)}:1) -- ({deg(\i)}:1.1);
-     \node[text width=.2cm, fill=white, inner sep=1] at ({deg(\i)}:1.15) { \i};
-    };
-    \foreach \i in {-0.5, 0.5} {
-     \draw[black, thick] (0.03,\i) -- (-0.03,\i) node[left, fill=white, inner sep=1]{ \i};
-     \draw[black, thick] (\i,0.03) -- (\i,-0.03) node[below, fill=white, inner sep=1]{\i};
-    };
-    \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></statement>
-
+    <sidebyside width="60%"><image xml:id="exam6-2-5"><description>Unit circle</description>
+        <xi:include href="Fig-Unit-circle-decimal-radians.ptx"/>
+    </image></sidebyside></statement>
+    
 <solution><p>The circle is scaled in units of 0.1 radians, and an arc of 2.5 radians in standard position has its terminal point, <m>P</m>, in the second quadrant. The coordinates of <m>P</m> are approximately <m>(-0.8,0.6)</m>, so we have
             <me>\cos (2.5) = -0.8~~~~\text{and}~~~~\sin (2.5) = 0.6</me>
 To find <m>\tan (2.5)</m>,  we calculate <m>\dfrac{y}{x}</m>.
@@ -407,16 +362,8 @@ Recall that the trig values for these angles can be used as benchmarks for estim
             <cell>undefined</cell></row>                
     </tabular>
     <image xml:id="fig-6-2-rads"><description>circle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
-
+        <![CDATA[
+        \begin{tikzpicture}[scale=.72]
         \coordinate (O) at (0,0);
         \coordinate (A) at (0:2.5);
         \coordinate (B) at (30:2.5);
@@ -434,14 +381,14 @@ Recall that the trig values for these angles can be used as benchmarks for estim
         \draw[red, thick] (O)--(D) node[above, xshift=.2cm]{$\theta = \frac{\pi}{3}$};
         \draw[red, thick] (O)--(E) node[above, xshift=.2cm, yshift=.1cm]{$\theta = \frac{\pi}{2}$};
 
-        \filldraw[black] (A) circle (.1cm);
-        \filldraw[black] (B) circle (.1cm);
-        \filldraw[black] (C) circle (.1cm);
-        \filldraw[black] (D) circle (.1cm);
-        \filldraw[black] (E) circle (.1cm);
+        \filldraw[black] (A) circle (.07cm);
+        \filldraw[black] (B) circle (.07cm);
+        \filldraw[black] (C) circle (.07cm);
+        \filldraw[black] (D) circle (.07cm);
+        \filldraw[black] (E) circle (.07cm);
 
-        \node[text width=.15cm, scale=.8] at (2.6,-.3) {1};
-        \node[text width=.15cm, scale=.8] at (-.2,2.7) {1};
+        \node at (2.6,-.3) {1};
+        \node at (-.2,2.7) {1};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
 
@@ -463,7 +410,7 @@ Recall that the trig values for these angles can be used as benchmarks for estim
         \draw[black,  thick, ->,>=stealth'] (O)++(-.3,0) --(A);
         \draw[black,  thick, ->,>=stealth'] (O)++(0,-.3) -- (B) ;
         \draw[blue,  thick, ->,>=stealth'] (O) --  (C) node[left, midway, xshift=-5, yshift=-2]{$r$}  ;
-        \draw[red, thick, ->,>=stealth'] (.6,0) arc (0:{atan(2/2.5)}:.6) node [right, midway,xshift=0,yshift=2] {$\color{black}\theta=\color{red}\tilde{\theta}$};
+        \draw[red, thick, ->,>=stealth'] (.7,0) arc (0:{atan(2/2.5)}:.7) node [right, midway,xshift=0,yshift=2] {$\color{black}\theta=\color{red}\tilde{\theta}$};
 
         \draw[gray, thick, dashed] (x) -- (P);
         \draw[blue, thick] (x) rectangle +(-.25,.25);
@@ -482,11 +429,11 @@ Recall that the trig values for these angles can be used as benchmarks for estim
         \coordinate (B) at (9.5,3);
         \coordinate (C) at (6,2.8);
 
-        \draw[black,  thick, <-] (O)++(.6,0) --(A);
+        \draw[black,  thick, <-,>=stealth'] (O)++(.6,0) --(A);
         \draw[black,  thick, ->,>=stealth'] (O)++(0,-.3) -- (B) ;
         \draw[blue,  thick, ->,>=stealth'] (O) --  (C) node[right, midway, xshift=5, yshift=-2]{$r$}  ;
 
-        \draw[red, thick, <->,>=stealth'] (O)++(-.7,0) arc (180:{180-atan(2/2.5)}:.7) node [left, midway,xshift=0,yshift=2] {$\tilde{\theta}$};
+        \draw[red, thick, <->,>=stealth'] (O)++(-.8,0) arc (180:{180-atan(2/2.5)}:.8) node [left, midway,xshift=0,yshift=2] {$\tilde{\theta}$};
         \draw[gray, thick, ->,>=stealth'] (O)++(.3,0) arc (0:{180-atan(2/2.5)}:.3) node [above, midway,xshift=2,yshift=0] {\color{black}$\theta$};
 
         \draw[gray, thick, dashed] (x) -- (P);
@@ -505,10 +452,10 @@ Recall that the trig values for these angles can be used as benchmarks for estim
         \coordinate (B) at (3.5,-4.8);
         \coordinate (C) at (0,-4.8);
 
-        \draw[black,  thick, <-] (O)++(.5,0) --(A);
-        \draw[black,  thick, <-] (O)++(0,.7) -- (B) ;
+        \draw[black,  thick, <-,>=stealth'] (O)++(.5,0) --(A);
+        \draw[black,  thick, <-,>=stealth'] (O)++(0,.7) -- (B) ;
         \draw[blue,  thick, ->,>=stealth'] (O) --  (C) node[right, midway, xshift=5, yshift=2]{$r$}  ;
-        \draw[red, thick, <->,>=stealth'] (O)++(-.7,0) arc (180:{180+atan(2/2.5)}:.7) node [left, midway,xshift=-2,yshift=-2] {$\tilde{\theta}$};
+        \draw[red, thick, <->,>=stealth'] (O)++(-.8,0) arc (180:{180+atan(2/2.5)}:.8) node [left, midway,xshift=-2,yshift=-2] {$\tilde{\theta}$};
         \draw[gray, thick, ->,>=stealth'] (O)++(.3,0) arc (0:{180+atan(2/2.5)}:.3) node [above, midway,xshift=-7,yshift=-5] {\color{black}$\theta$};
 
         \draw[gray, thick, dashed] (x) -- (P);
@@ -528,9 +475,9 @@ Recall that the trig values for these angles can be used as benchmarks for estim
         \coordinate (C) at (9.5,-4.8);
 
         \draw[black,  thick, ->,>=stealth'] (O)++(-.5,0) --(A);
-        \draw[black,  thick, <-] (O)++(0,.7) -- (B) ;
+        \draw[black,  thick, <-,>=stealth'] (O)++(0,.7) -- (B) ;
         \draw[blue,  thick, ->,>=stealth'] (O) --  (C) node[left, midway, xshift=-5, yshift=2]{$r$}  ;
-        \draw[red, thick, <->,>=stealth'] (O)++(.7,0) arc (0:{-atan(2/2.5)}:.7) node [right, midway,xshift=2,yshift=-2] {$\tilde{\theta}$};
+        \draw[red, thick, <->,>=stealth'] (O)++(.8,0) arc (0:{-atan(2/2.5)}:.8) node [right, midway,xshift=2,yshift=-2] {$\tilde{\theta}$};
         \draw[gray, thick, ->,>=stealth'] (O)++(.3,0) arc (0:{360-atan(2/2.5)}:.3) node [above, midway,xshift=0,yshift=0] {\color{black}$\theta$};
 
         \draw[gray, thick, dashed] (x) -- (P);
@@ -543,67 +490,67 @@ Recall that the trig values for these angles can be used as benchmarks for estim
     </latex-image></image></sidebyside></assemblage>
 
 <example><statement><p>Give exact values for the following.</p>
-        <p><ol marker="a" cols="2">
-            <li><m>\tan \left(\dfrac{2\pi}{3}\right)</m></li>
-            <li><m>\cos \left(\dfrac{5\pi}{4}\right)</m></li>
-        </ol></p></statement>
-        <solution><p><ol marker="a">
-            <li><sidebyside widths="60% 35%" valigns="middle middle"><p>The reference angle for <m>\dfrac{2\pi}{3}</m> is <m>\pi - \dfrac{2\pi}{3} = \dfrac{\pi}{3}</m>, and the tangent is negative in the second quadrant. (See the figure at right.)  Thus,
-                    <me>\tan \left(\dfrac{2\pi}{3}\right) = -\tan \left(\dfrac{\pi}{3}\right) = -\sqrt{3}</me></p>
-            <image xml:id="exam6-2-2a"> <description>angles</description> <latex-image> 
-                <![CDATA[
-                \begin{tikzpicture}     
-                \coordinate (O) at (0,0);
-                \coordinate (A) at (60:1.5);
-                \coordinate (B) at (120:1.5);
-                \coordinate (C) at (0.75,0);
-                \coordinate (D) at (-0.75,0);
-        
-                \draw[blue,thick] (C) rectangle ++(-.2,.2);
-                \draw[blue,thick] (D) rectangle ++(.2,.2);
-        
-                \draw[black, thick, ->,>=stealth'] (-1.7,0)--(1.8,0);
-                \draw[black, thick, ->,>=stealth'] (0,-1.7)--(0,1.8);
-                \draw[gray, thick] (O) circle (1.5);
-        
-                \draw[gray!80, thick, dashed] (O)--(A)--(C);
-                \draw[blue, thick] (O)--(B) ;
-                \draw[gray!80, thick, dashed] (B)--(D) ;
-                \draw[red, thick, ->,>=stealth'] (0.3,0) arc(0:120:0.3);
-                \draw[red, thick, ->,>=stealth'] (-0.5,0) arc(180:120:0.5);
-                \filldraw[black] (A) circle (.06cm) node[anchor=south west, yshift=-0.1cm, text=red] {$s=\frac{\pi}{3}$};
-                \filldraw[black] (B) circle (.06cm) node[anchor=south east, yshift=-0.1cm, text=red] {$s=\frac{2\pi}{3}$};
-                \end{tikzpicture}]]> 
-            </latex-image></image></sidebyside></li>
-        
-            <li><sidebyside widths="60% 35%" valigns="middle middle"><p>The reference angle for <m>\dfrac{5\pi}{4}</m> is <m>\dfrac{5\pi}{4} - \pi = \dfrac{\pi}{4}</m>, and the cosine is negative in the third quadrant, so
-                    <me>\cos \left(\dfrac{5\pi}{4}\right) = - \cos \left(\dfrac{\pi}{4}\right) = \dfrac{-1}{\sqrt{2}}</me></p>
-            <image xml:id="exam6-2-2b"><description>angles</description><latex-image>
-                <![CDATA[
-                \begin{tikzpicture}     
-                \coordinate (O) at (0,0);
-                \coordinate (A) at (45:1.5);
-                \coordinate (B) at (225:1.5);
-                \coordinate (C) at ($ sqrt(2)*(.75,0) $);
-                \coordinate (D) at ($ -sqrt(2)*(.75,0) $);
-        
-                \draw[blue,thick] (C) rectangle ++(-.2,.2);
-                \draw[blue,thick] (D) rectangle ++(.2,-.2);
-        
-                \draw[black, thick, ->,>=stealth'] (-1.7,0)--(1.8,0);
-                \draw[black, thick, ->,>=stealth'] (0,-1.7)--(0,1.8);
-                \draw[gray, thick] (O) circle (1.5);
-        
-                \draw[gray!80, thick, dashed] (O)--(A)--(C);
-                \draw[blue, thick] (O)--(B) ;
-                \draw[gray!80, thick, dashed] (B)--(D) ;
-                \draw[red, thick, ->,>=stealth'] (0.3,0) arc(0:225:0.3);
-                \draw[red, thick, ->,>=stealth'] (-0.5,0) arc(180:225:0.5);
-                \filldraw[black] (A) circle (.06cm) node[anchor=south west, yshift=-0.1cm, text=red] {$s=\frac{\pi}{4}$};
-                \filldraw[black] (B) circle (.06cm) node[anchor=north east, yshift=0.1cm, text=red] {$s=\frac{5\pi}{4}$};
-                \end{tikzpicture}]]>
-            </latex-image></image></sidebyside></li>
-        </ol></p></solution></example>
+<p><ol marker="a" cols="2">
+    <li><m>\tan \left(\dfrac{2\pi}{3}\right)</m></li>
+    <li><m>\cos \left(\dfrac{5\pi}{4}\right)</m></li>
+</ol></p></statement>
+<solution><p><ol marker="a">
+    <li><sidebyside widths="60% 35%" valigns="middle middle"><p>The reference angle for <m>\dfrac{2\pi}{3}</m> is <m>\pi - \dfrac{2\pi}{3} = \dfrac{\pi}{3}</m>, and the tangent is negative in the second quadrant. (See the figure at right.)  Thus,
+            <me>\tan \left(\dfrac{2\pi}{3}\right) = -\tan \left(\dfrac{\pi}{3}\right) = -\sqrt{3}</me></p>
+    <image xml:id="exam6-2-2a"> <description>angles</description> <latex-image> 
+        <![CDATA[
+        \begin{tikzpicture}     
+        \coordinate (O) at (0,0);
+        \coordinate (A) at (60:1.5);
+        \coordinate (B) at (120:1.5);
+        \coordinate (C) at (0.75,0);
+        \coordinate (D) at (-0.75,0);
+
+        \draw[blue,thick] (C) rectangle ++(-.2,.2);
+        \draw[blue,thick] (D) rectangle ++(.2,.2);
+
+        \draw[black, thick, ->,>=stealth'] (-1.7,0)--(1.8,0);
+        \draw[black, thick, ->,>=stealth'] (0,-1.7)--(0,1.8);
+        \draw[gray, thick] (O) circle (1.5);
+
+        \draw[gray!80, thick, dashed] (O)--(A)--(C);
+        \draw[blue, thick] (O)--(B) ;
+        \draw[gray!80, thick, dashed] (B)--(D) ;
+        \draw[red, thick, ->,>=stealth'] (0.4,0) arc(0:120:0.4);
+        \draw[red, thick, ->,>=stealth'] (-0.5,0) arc(180:120:0.5);
+        \filldraw[black] (A) circle (.06cm) node[anchor=south west, yshift=-0.1cm, text=red] {$s=\dfrac{\pi}{3}$};
+        \filldraw[black] (B) circle (.06cm) node[anchor=south east, yshift=-0.1cm, text=red] {$s=\dfrac{2\pi}{3}$};
+        \end{tikzpicture}]]> 
+    </latex-image></image></sidebyside></li>
+
+    <li><sidebyside widths="60% 35%" valigns="middle middle"><p>The reference angle for <m>\dfrac{5\pi}{4}</m> is <m>\dfrac{5\pi}{4} - \pi = \dfrac{\pi}{4}</m>, and the cosine is negative in the third quadrant, so
+            <me>\cos \left(\dfrac{5\pi}{4}\right) = - \cos \left(\dfrac{\pi}{4}\right) = \dfrac{-1}{\sqrt{2}}</me></p>
+    <image xml:id="exam6-2-2b"><description>angles</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture} [scale=.9]  
+        \coordinate (O) at (0,0);
+        \coordinate (A) at (45:1.5);
+        \coordinate (B) at (225:1.5);
+        \coordinate (C) at ($ sqrt(2)*(.75,0) $);
+        \coordinate (D) at ($ -sqrt(2)*(.75,0) $);
+
+        \draw[blue,thick] (C) rectangle ++(-.2,.2);
+        \draw[blue,thick] (D) rectangle ++(.2,-.2);
+
+        \draw[black, thick, ->,>=stealth'] (-1.7,0)--(1.8,0);
+        \draw[black, thick, ->,>=stealth'] (0,-1.7)--(0,1.8);
+        \draw[gray, thick] (O) circle (1.5);
+
+        \draw[gray!80, thick, dashed] (O)--(A)--(C);
+        \draw[blue, thick] (O)--(B) ;
+        \draw[gray!80, thick, dashed] (B)--(D) ;
+        \draw[red, thick, ->,>=stealth'] (0.4,0) arc(0:225:0.4);
+        \draw[red, thick, ->,>=stealth'] (-0.6,0) arc(180:225:0.6);
+        \filldraw[black] (A) circle (.06cm) node[anchor=south west, yshift=-0.1cm, text=red] {$s=\dfrac{\pi}{4}$};
+        \filldraw[black] (B) circle (.06cm) node[anchor=north east, yshift=0.1cm, text=red] {$s=\dfrac{5\pi}{4}$};
+        \end{tikzpicture}]]>
+    </latex-image></image></sidebyside></li>
+</ol></p></solution></example>
 
 <note><p>At this point, you may feel that expressions such as <m>~\cos \left(\dfrac{5\pi}{4}\right) = \dfrac{-1}{\sqrt{2}}~</m> look like hieroglyphics.  Keep in mind that <m>\dfrac{5\pi}{4}</m> and <m>\dfrac{-1}{\sqrt{2}}</m> are just numbers, so the equation above says that "the cosine of an angle of 3.9 radians is about -0.7."</p></note>
 
@@ -739,22 +686,14 @@ Recall that the trig values for these angles can be used as benchmarks for estim
 </activity>
 
 <example><statement><p>Find the coordinates of the terminal point, <m>P</m>, of an arc of length <m>t = \dfrac{5\pi}{6}</m> starting at <m>(1,0)</m> on a unit circle.</p></statement>
-  
+
 <solution><p>The coordinates of <m>P</m> are <m>\left(\cos \dfrac{5\pi}{6}, \sin \dfrac{5\pi}{6}\right)</m>, so</p>
-  <sidebyside widths="50% 33%" valigns="middle middle" margins="0% 5%">
+    <sidebyside widths="50% 33%" valigns="middle middle" margins="0% 5%">
     <p><md><mrow>x \amp= \cos \left(\dfrac{5\pi}{6}\right) = \dfrac{-\sqrt{3}}{2}~~~</mrow>
         <mrow>y \amp= \sin \left(\dfrac{5\pi}{6}\right) = \dfrac{1}{2}</mrow></md></p>
     <image xml:id="exam6-2-4b"><description>circle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
-
+        <![CDATA[
+        \begin{tikzpicture}[scale=.9]
         \coordinate (O) at (0,0);
         \coordinate (A) at (0:1.5);
         \coordinate (B) at (150:1.5);
@@ -764,12 +703,12 @@ Recall that the trig values for these angles can be used as benchmarks for estim
         \draw[black, thick] (O)--(B);
         \draw[gray, thick] (O) circle (1.5);
 
-        \draw[red, thick, ->,>=stealth'] (0.3,0) arc(0:150:0.3)  node[above right, xshift=3, midway, scale=.9] {$\theta$};
-        \draw[blue, ultra thick] (1.5,0) arc(0:150:1.5)  node[above right, midway, xshift=6, scale=.9 ] {$t=\frac{5\pi}{6}$};
-        \filldraw[black] (B) circle (.06cm) node[anchor=south east, yshift=3, scale=.9] { $P(\frac{-\sqrt{3}}{2}, \frac{1}{2})$};
+        \draw[red, thick, ->,>=stealth'] (0.3,0) arc(0:150:0.3)  node[above right, xshift=3, midway] {$\theta$};
+        \draw[blue, ultra thick] (1.5,0) arc(0:150:1.5)  node[above right, midway, yshift=-8] {$t=\dfrac{5\pi}{6}$};
+        \filldraw[black] (B) circle (.06cm) node[anchor=south east, yshift=-3] { $P\left(\dfrac{-\sqrt{3}}{2}, \dfrac{1}{2}\right)$};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
-<p>Thus, the coordinates of <m>P</m> are <m>\left(\dfrac{-\sqrt{3}}{2},\dfrac{1}{2}\right)</m>, as shown at right.</p></solution></example>   
+<p>Thus, the coordinates of <m>P</m> are <m>\left(\dfrac{-\sqrt{3}}{2},\dfrac{1}{2}\right)</m>, as shown at right.</p></solution></example>  
 
 <exercise><statement><p>Find the coordinates of the terminal point, <m>P</m>, of an arc of length <m>t = \dfrac{\pi}{3}</m> starting at <m>(1,0)</m> on a unit circle.</p></statement>
 
@@ -858,61 +797,65 @@ Recall that the trig values for these angles can be used as benchmarks for estim
 </subsubsection>
 
 <subsubsection><title>Concepts</title>
-<p><ol marker="1">
-  <li>The sine, cosine, or tangent of a particular angle is the same whether the angle is measured in radians or in degrees.</li>
-  <li><p>You should memorize the trig values of the special angles in radians.</p>
-      <sidebyside width="65%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                        
-                    <row bottom="minor">
-                        <cell>Degrees</cell>
-                        <cell>Radians</cell>
-                        <cell>Sine</cell>
-                        <cell>Cosine</cell>
-                        <cell>Tangent</cell></row>
-                    <row> 
-                        <cell><m>0\degree</m></cell>
-                        <cell><m>0</m></cell>
-                        <cell><m>0</m></cell>
-                        <cell><m>1</m></cell>
-                        <cell><m>0</m></cell></row>
-                    <row> 
-                        <cell><m>30\degree</m></cell>
-                        <cell><m>\dfrac{\pi}{6}</m></cell>
-                        <cell><m>\dfrac{1}{2}</m></cell>
-                        <cell><m>\dfrac{\sqrt{3}}{2}</m></cell>
-                        <cell><m>\dfrac{1}{\sqrt{3}}</m></cell></row>
-                    <row> 
-                        <cell><m>45\degree</m></cell>
-                        <cell><m>\dfrac{\pi}{4}</m></cell>
-                        <cell><m>\dfrac{1}{\sqrt{2}}</m></cell>
-                        <cell><m>\dfrac{1}{\sqrt{2}}</m></cell>
-                        <cell><m>1</m></cell></row>
-                    <row>
-                        <cell><m>60\degree</m></cell>
-                        <cell><m>\dfrac{\pi}{3}</m></cell>
-                        <cell><m>\dfrac{\sqrt{3}}{2}</m></cell>
-                        <cell><m>\dfrac{1}{2}</m></cell>
-                        <cell><m>\sqrt{3}</m></cell></row>  
-                    <row>
-                        <cell><m>90\degree</m></cell>
-                        <cell><m>\dfrac{\pi}{2}</m></cell>
-                        <cell><m>1</m></cell>
-                        <cell><m>0</m></cell>
-                        <cell>undefined</cell></row>                
-                </tabular></sidebyside></li>
-     <li>To find the sine or cosine of a real number <m>t</m>, we find the sine or cosine of the angle <m>\theta = t</m> in radians.</li>
-    <li><assemblage><title>Coordinates on a Unit Circle</title>
-    <sidebyside widths="60% 35%"><p>The <term>coordinates</term> of the point <m>P</m> determined by an arc of length <m>t</m> in standard position on a unit circle are 
-    <me>(x, y) = (\cos t, \sin t)</me></p><image source="photos/fig-6-2-coords"><description>circle</description></image></sidebyside></assemblage></li>
-    <li><assemblage><title>The Circular Functions</title>
-    <p>Let <m>P</m> be the terminal point of an arc of length <m>t</m> in standard position on a unit circle. The <term>circular functions</term> of <m>t</m> are defined by</p>
-    <sidebyside widths="65% 35%" valigns="middle middle"><p>
-            <me>\begin{aligned}[t]
-                \cos (t) \amp = x\\
-                \sin (t) \amp = y\\
-                \tan (t) \amp = \dfrac{y}{x},~~x \not= 0\\
-      \end{aligned}</me></p>
-    <image source="photos/fig-6-2-circfun"><description>circle</description></image></sidebyside></assemblage></li>
-</ol></p></subsubsection>
+    <p><ol marker="1">
+        <li>The sine, cosine, or tangent of a particular angle is the same whether the angle is measured in radians or in degrees.</li>
+        <li><p>You should memorize the trig values of the special angles in radians.</p>
+            <sidebyside width="65%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                        
+                        <row bottom="minor">
+                            <cell>Degrees</cell>
+                            <cell>Radians</cell>
+                            <cell>Sine</cell>
+                            <cell>Cosine</cell>
+                            <cell>Tangent</cell></row>
+                        <row> 
+                            <cell><m>0\degree</m></cell>
+                            <cell><m>0</m></cell>
+                            <cell><m>0</m></cell>
+                            <cell><m>1</m></cell>
+                            <cell><m>0</m></cell></row>
+                        <row> 
+                            <cell><m>30\degree</m></cell>
+                            <cell><m>\dfrac{\pi}{6}</m></cell>
+                            <cell><m>\dfrac{1}{2}</m></cell>
+                            <cell><m>\dfrac{\sqrt{3}}{2}</m></cell>
+                            <cell><m>\dfrac{1}{\sqrt{3}}</m></cell></row>
+                        <row> 
+                            <cell><m>45\degree</m></cell>
+                            <cell><m>\dfrac{\pi}{4}</m></cell>
+                            <cell><m>\dfrac{1}{\sqrt{2}}</m></cell>
+                            <cell><m>\dfrac{1}{\sqrt{2}}</m></cell>
+                            <cell><m>1</m></cell></row>
+                        <row>
+                            <cell><m>60\degree</m></cell>
+                            <cell><m>\dfrac{\pi}{3}</m></cell>
+                            <cell><m>\dfrac{\sqrt{3}}{2}</m></cell>
+                            <cell><m>\dfrac{1}{2}</m></cell>
+                            <cell><m>\sqrt{3}</m></cell></row>  
+                        <row>
+                            <cell><m>90\degree</m></cell>
+                            <cell><m>\dfrac{\pi}{2}</m></cell>
+                            <cell><m>1</m></cell>
+                            <cell><m>0</m></cell>
+                            <cell>undefined</cell></row>                
+                    </tabular></sidebyside></li>
+            <li>To find the sine or cosine of a real number <m>t</m>, we find the sine or cosine of the angle <m>\theta = t</m> in radians.</li>
+        <li><assemblage><title>Coordinates on a Unit Circle</title>
+        <sidebyside widths="50% 46%" margins="0% 0%" valigns="middle middle"><p>The <term>coordinates</term> of the point <m>P</m> determined by an arc of length <m>t</m> in standard position on a unit circle are 
+        <me>(x, y) = \left(\cos (t), \sin (t)\right)</me></p><image xml:id="fig-6-2-coords"><description>circle</description>
+            <xi:include href="Fig-Unit-circle-coordinates-by-arclength.ptx"/>
+        </image></sidebyside></assemblage></li>
+        <li><assemblage><title>The Circular Functions</title>
+        <p>Let <m>P</m> be the terminal point of an arc of length <m>t</m> in standard position on a unit circle. The <term>circular functions</term> of <m>t</m> are defined by</p>
+        <sidebyside widths="65% 35%" valigns="middle middle"><p>
+                <me>\begin{aligned}[t]
+                    \cos (t) \amp = x\\
+                    \sin (t) \amp = y\\
+                    \tan (t) \amp = \dfrac{y}{x},~~x \not= 0\\
+            \end{aligned}</me></p>
+        <image xml:id="fig-6-2-Summary-circfun"><description>circle</description>
+        <xi:include href="Fig-circular-functions.ptx"/>
+        </image></sidebyside></assemblage></li>
+    </ol></p></subsubsection>
 
 <subsubsection><title> Study Questions</title>
 <p><ol marker="1">

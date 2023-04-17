@@ -1,0 +1,15 @@
+<latex-image>
+    <![CDATA[
+    \begin{tikzpicture} [yscale=2]
+
+    \draw[cyan] (0,-1) grid[xstep=1/5, ystep=1/10] (6.4,1);
+    \draw[black,thick,->,>=stealth'] (0,0)--(6.7,0) node[right]{$x$};
+    \draw[black,thick,->,>=stealth'] (0,-1)--(0,1.12) node[above]{$y$};
+
+    \foreach \x in { 1, 2, ..., 6} \draw[black,thick] (\x,0.04) -- ++(0,-.08) node[below, yshift=-2, fill=white, inner sep = 1] {\x};
+
+    \foreach \y in {-1, -0.5, 0.5, 1} \draw[black,thick] (0.08, \y) -- ++(-.16,0) node[left, xshift=-2, fill=white, inner sep = 1] {\y};
+
+    \draw[samples=65,domain=-0:6.4,smooth,variable=\x,red,very thick] plot ({\x},{cos(deg(\x))});
+    \end{tikzpicture}]]>
+</latex-image>

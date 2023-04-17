@@ -7,20 +7,12 @@
 
 <p>If we know two angles and one side of a triangle, we can use the Law of Sines to solve the triangle. We can also use the Law of Sines when we know two sides and the angle opposite one of them.  But the Law of Sines is not helpful for the problem that opened this chapter, finding the distance from Avery to Clio.  In this case we know two sides of the triangle, <m>a</m> and <m>c</m>, and the <em>included</em> angle, <m>B</m>.</p> 
 
-<sidebyside width="80%">
+<sidebyside width="95%">
     <image xml:id="fig-3-3intro">
         <description>triangle</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
-
+        <![CDATA[
+        \begin{tikzpicture}[scale=.8]
         \coordinate (A) at (0,0);
         \coordinate (B) at (2.2,1.17);
         \coordinate (C) at (5.5,0);
@@ -35,13 +27,13 @@
         \draw[black, thick] (B)-- (C) node[above right, midway] {\color{blue}$7$};
         \draw[black,thick] (A) -- (C);
 
-        \node[text width=6.6cm] at ($(A)+(3.,-1)$){\small\color{blue}Two sides and an angle opposite one of them. We can use the Law of Sines.};
+        \node[text width=6.cm, text=blue] at ($(A)+(3.,-1)$){Two sides and an angle opposite one of them. We can use the Law of Sines.};
 
         %second triangle
 
-        \coordinate (A) at (7.7,0);
-        \coordinate (B) at (9.7,1.6);
-        \coordinate (C) at (12.7,0);
+        \coordinate (A) at (8.7,0);
+        \coordinate (B) at (10.7,1.6);
+        \coordinate (C) at (13.7,0);
 
         \draw[red,thick] (B)++(-.4,-.32) arc(218.6:333.6:.5) node[below,midway]{$115\degree$};
 
@@ -53,7 +45,7 @@
         \draw[black, thick] (B)-- (C) node[above right, midway] {\color{blue}$7$};
         \draw[black,thick] (A) -- (C);
 
-        \node[text width=6.4cm] at ($(A)+(3.,-1)$){\small\color{blue}Two sides and the included angle. We cannot use the Law of Sines.};
+        \node[text width=5.5cm,text=blue] at ($(A)+(3.,-1)$){Two sides and the included angle. We cannot use the Law of Sines.};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -64,19 +56,12 @@
         <me>c^{2} = a^{2} + b^{2}</me>
 If we allow angle <m>C</m> to vary, but keep <m>a</m> and <m>b</m> the same length, the side <m>c</m> will grow or shrink, depending on whether we increase or decrease the angle <m>C</m>, as shown below.  </p>
 
-<sidebyside width="70%">
+<sidebyside width="80%">
     <image xml:id="fig-3-3cosinelaw">
         <description>triangle</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
+        <![CDATA[
+        \begin{tikzpicture}[scale=.81]
         \coordinate (A) at (2,0);
         \coordinate (B) at (0,3);
         \coordinate (C) at (0,0);
@@ -85,11 +70,11 @@ If we allow angle <m>C</m> to vary, but keep <m>a</m> and <m>b</m> the same leng
 
         \filldraw (C) circle (.2pt) node[anchor=north east]{$C$};
 
-        \draw[black, thick] (B)-- (A) node[above right, midway] {\color{blue}$c$};
-        \draw[black, thick] (B)-- (C) node[left, midway] {\color{blue}$a$};
-        \draw[black,thick] (A) -- (C) node[below, midway] {\color{blue}$b$};
+        \draw[black, thick] (B)-- (A) node[above right, midway,text=blue] {$c$};
+        \draw[black, thick] (B)-- (C) node[left, midway,text=blue] {$a$};
+        \draw[black,thick] (A) -- (C) node[below, midway,text=blue] {$b$};
 
-        \node[text width=2.2cm] at ($(C)+(1.,-1)$){\color{blue}$\angle C=90\degree$ $c^2=a^2+b^2$};
+        \node[text width=2.2cm,text=blue] at ($(C)+(1.,-1.2)$){$\angle C=90\degree$ $c^2=a^2+b^2$};
 
         %second triangle
 
@@ -99,11 +84,11 @@ If we allow angle <m>C</m> to vary, but keep <m>a</m> and <m>b</m> the same leng
 
         \filldraw (C) circle (.2pt) node[anchor=north east]{$C$};
 
-        \draw[black, thick] (B)-- (A) node[right, midway] {\color{blue}$c$};
-        \draw[black, thick] (B)-- (C) node[above left, midway] {\color{blue}$a$};
-        \draw[black,thick] (A) -- (C) node[below, midway] {\color{blue}$b$};
+        \draw[black, thick] (B)-- (A) node[right, midway,text=blue] {$c$};
+        \draw[black, thick] (B)-- (C) node[above left, midway,text=blue] {$a$};
+        \draw[black,thick] (A) -- (C) node[below, midway,text=blue] {$b$};
 
-        \node[text width=2.2cm] at ($(C)+(1.25,-1)$){\color{blue} $\angle C$ is acute $c^2 < a^2+b^2$};
+        \node[text width=2.2cm,text=blue] at ($(C)+(1.25,-1.2)$){ $\angle C$ is acute $c^2 < a^2+b^2$};
 
         %third triangle
 
@@ -113,11 +98,11 @@ If we allow angle <m>C</m> to vary, but keep <m>a</m> and <m>b</m> the same leng
 
         \filldraw (C) circle (.2pt) node[anchor=north east]{$C$};
 
-        \draw[black, thick] (B)-- (A) node[above right, midway] {\color{blue}$c$};
-        \draw[black, thick] (B)-- (C) node[below left, midway] {\color{blue}$a$};
-        \draw[black,thick] (A) -- (C) node[below, midway] {\color{blue}$b$};
+        \draw[black, thick] (B)-- (A) node[above right, midway,text=blue] {$c$};
+        \draw[black, thick] (B)-- (C) node[below left, midway,text=blue] {$a$};
+        \draw[black,thick] (A) -- (C) node[below, midway,text=blue] {$b$};
 
-        \node[text width=2.4cm] at ($(C)+(1.,-1)$){\color{blue} $\angle C$ is obtuse $c^2 > a^2+b^2$};
+        \node[text width=2.4cm,text=blue] at ($(C)+(1.,-1.2)$){$\angle C$ is obtuse $c^2 > a^2+b^2$};
 
         \end{tikzpicture}]]>
     </latex-image>
@@ -143,7 +128,10 @@ You can see that when <m>C</m> is a right angle, <m>\cos 90\degree = 0</m>, so t
 
 <subsection><title>Finding a Side</title>
 
-<sidebyside widths="55% 35%" valigns="middle middle" margins="0% 5%"><p>Now we can solve the problem of the distance from Avery to Clio. Here is the figure from Section 3.1 showing the location of the three towns.</p><image source="photos/fig-3-1-towns"><description>triangle</description></image></sidebyside>
+<sidebyside widths="55% 35%" valigns="middle middle" margins="0% 5%"><p>Now we can solve the problem of the distance from Avery to Clio. Here is the figure from Section 3.1 showing the location of the three towns.</p><image xml:id="fig-3-1-towns-repeat">
+    <description>triangle</description>
+    <xi:include href="Fig-Avery-Clio-towns.ptx"/>
+</image></sidebyside>
 
 <example><statement><p>How far is it from Avery to Clio?</p> </statement>
 
@@ -151,16 +139,8 @@ You can see that when <m>C</m> is a right angle, <m>\cos 90\degree = 0</m>, so t
     <image xml:id="exam3-3-1">
         <description>triangle</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} 
-
+        <![CDATA[
+        \begin{tikzpicture} [scale=.72]
         \coordinate(A) at (3.2,0);
         \coordinate (B) at (0,0 );
         \coordinate (C) at (-1.3,1.857);
@@ -169,11 +149,11 @@ You can see that when <m>C</m> is a right angle, <m>\cos 90\degree = 0</m>, so t
         \filldraw[black] (B) circle (.5pt) node[anchor=north east] {$B$};
         \filldraw[black] (C) circle (.5pt) node[anchor=east] {$C$};
 
-        \draw[black,thick] (A)--(B) node [below,midway] {\color{blue}48};
-        \draw[black,thick] (C)--(B) node [below left,midway] {\color{blue}34};
+        \draw[black,thick] (A)--(B) node [below,midway,text=blue] {48};
+        \draw[black,thick] (C)--(B) node [below left,midway,text=blue] {34};
         \draw[black,thick] (A)--(C) ;
 
-        \draw[red,thick] (0.3,0) arc (0:{180-atan(1.857/1.3)}:0.3) node[above right, midway, yshift=-3] {\footnotesize$125\degree$};
+        \draw[red,thick] (0.3,0) arc (0:{180-atan(1.857/1.3)}:0.3) node[above right, midway, yshift=-5] {$125\degree$};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -202,19 +182,12 @@ Note that 3264 is the coefficient of <m>\cos (125\degree)</m>, so it would be in
 <p>We can also use the Law of Cosines to find an angle when we know all three sides of a triangle. Pay close attention to the algebraic steps used to solve the equation in the next example.</p>
 
 <example><statement>
-    <sidebyside widths="55% 27%" valigns="middle middle"><p>In the triangle at right, <m>a = 6,~ b = 7</m>, and <m>c = 11</m>. Find angle <m>C</m>.</p>
+    <sidebyside widths="55% 27%" valigns="middle middle" margins="0% 10%"><p>In the triangle at right, <m>a = 6,~ b = 7</m>, and <m>c = 11</m>. Find angle <m>C</m>.</p>
     <image xml:id="exam3-3-2">
         <description>triangle</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} [scale=.36, rotate=-140]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.27, rotate=-140]
 
         \coordinate(B) at (6,0);
         \coordinate (A) at (-3,6.32);
@@ -268,22 +241,15 @@ Alternatively, we can use the Law of Cosines to find angle <m>A</m>.
 <p>If we know two sides <m>a</m> and <m>b</m> of a triangle and the acute angle <m>\alpha</m> opposite one of them, there may be one solution, two solutions, or no solution, depending on the size of <m>a</m> in relation to <m>b</m> and <m>\alpha</m>, as shown below.</p>
 
 <assemblage><title>The Ambiguous Case</title>
-<idx><h>ambiguous case</h></idx>
+    <idx><h>ambiguous case</h></idx>
 <p><ol marker="1" cols="2">
     <li><p>No solution: <m>a \lt b \sin (\alpha)</m></p>
         <sidebyside width="50%">
-   <image xml:id="fig-3-3amcase1">
+    <image xml:id="fig-3-3amcase1">
         <description>triangle</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
+        <![CDATA[
+        \begin{tikzpicture}[scale=.7]
 
         \coordinate (A) at (0,0);
         \coordinate (B) at (3,0);
@@ -293,28 +259,20 @@ Alternatively, we can use the Law of Cosines to find angle <m>A</m>.
         \draw[gray!80!white] (C)++(-.4,-.69) arc(-120:-60:.8);
 
         \draw[black,thick] (A)--(B) ;
-        \draw[red,thick] (C)--+(0,-.8) node [right,midway] {\color{blue}$a$};
-        \draw[black,thick] (A)--(C) node [above left,midway] {\color{blue}$b$};
+        \draw[red,thick] (C)--+(0,-.8) node [right,midway,text=blue] {$a$};
+        \draw[black,thick] (A)--(C) node [above left,midway,text=blue] {$b$};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
         </sidebyside>
         <p><m>\alpha</m> is too short to make a triangle.</p></li>
-     <li><p>One solution: <m>a = b \sin (\alpha)</m> </p>
+        <li><p>One solution: <m>a = b \sin (\alpha)</m> </p>
         <sidebyside width="50%">
-   <image xml:id="fig-3-3amcase2">
+    <image xml:id="fig-3-3amcase2">
         <description>triangle</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
-
+        <![CDATA[
+        \begin{tikzpicture}[scale=.7]
         \coordinate (A) at (0,0);
         \coordinate (B) at (3,0);
         \coordinate (C) at (1.6,1.5);
@@ -323,28 +281,20 @@ Alternatively, we can use the Law of Cosines to find angle <m>A</m>.
         \draw[gray!90!white] (C)++(-.51,-1.4) arc(-110:-70:1.5);
 
         \draw[black,thick] (A)--(B) ;
-        \draw[red,thick] (C)--+(0,-1.5) node [right,midway] {\color{blue}$a$};
-        \draw[black,thick] (A)--(C) node [above left,midway] {\color{blue}$b$};
+        \draw[red,thick] (C)--+(0,-1.5) node [right,midway,text=blue] {$a$};
+        \draw[black,thick] (A)--(C) node [above left,midway,text=blue] {$b$};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
         </sidebyside>
-         <p><m>\alpha</m> is exactly the right length to make a right triangle.</p></li>
-      <li><p>Two solutions:  <m>b \sin (\alpha) \lt a \lt b</m></p>   
+            <p><m>\alpha</m> is exactly the right length to make a right triangle.</p></li>
+        <li><p>Two solutions:  <m>b \sin (\alpha) \lt a \lt b</m></p>   
         <sidebyside width="50%">
-   <image xml:id="fig-3-3amcase3">
+    <image xml:id="fig-3-3amcase3">
         <description>triangle</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
-
+        <![CDATA[
+        \begin{tikzpicture}[scale=.7]
         \coordinate (A) at (0,0);
         \coordinate (B) at (3,0);
         \coordinate (C) at (1.6,1.5);
@@ -353,28 +303,20 @@ Alternatively, we can use the Law of Cosines to find angle <m>A</m>.
         \draw[gray!90!white] (C)++(-.547,-1.5) arc(-110:-70:1.5);
 
         \draw[black,thick] (A)--(B) ;
-        \draw[red,thick] (C)--+(-.547,-1.5) node [right,midway, xshift=-3, yshift=-2] {\color{blue}$a$};
-        \draw[red,thick] (C)--+(.547,-1.5) node [right,midway, yshift=-2] {\color{blue}$a$};
-        \draw[black,thick] (A)--(C) node [above left,midway] {\color{blue}$b$};
+        \draw[red,thick] (C)--+(-.547,-1.5) node [right,midway, xshift=-3, yshift=-2,text=blue] {$a$};
+        \draw[red,thick] (C)--+(.547,-1.5) node [right,midway, yshift=-2,text=blue] {$a$};
+        \draw[black,thick] (A)--(C) node [above left,midway,text=blue] {$b$};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
         </sidebyside></li>
-      <li><p>One solution: <m>a \gt b</m>  </p>
+        <li><p>One solution: <m>a \gt b</m>  </p>
         <sidebyside width="85%">
-   <image xml:id="fig-3-3amcase4">
+    <image xml:id="fig-3-3amcase4">
         <description>triangle</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
-
+        <![CDATA[
+        \begin{tikzpicture}[scale=.63]
         \coordinate (A) at (0,0);
         \coordinate (B) at (5,0);
         \coordinate (C) at (1.6,1.5);
@@ -416,37 +358,29 @@ Alternatively, we can use the Law of Cosines to find angle <m>A</m>.
             <mrow>3^{2} \amp = 8^{2} + c^{2} - 2(8)c \cos (14.4\degree) \amp\amp \blert{\text{Simplify.}}</mrow>
             <mrow>9 \amp = 64 + c^{2} - 16c (0.9686) \amp\amp \blert{\text{Write the quadratic equation in standard form.}}</mrow>
             <mrow>0 \amp = c^{2}-15.497c + 55 \amp\amp \blert{\text{Apply the quadratic formula.}}</mrow></md></p>
-         
+            
     <p><md><mrow>c \amp = \dfrac{15.497 \pm \sqrt{(-15.497)^{2} - 4(1)(55)}}{2(1)} \amp\amp \blert{\text{Simplify.}}</mrow>
-             <mrow>\amp = \dfrac{15.497 \pm  4.490}{2} = 5.503~ \text{ or }~ 9.994</mrow></md></p>     
+                <mrow>\amp = \dfrac{15.497 \pm  4.490}{2} = 5.503~ \text{ or }~ 9.994</mrow></md></p>     
         
 <p>Because there are two positive solutions for side <m>c</m>, either <m>c = 5.503</m> or <m>c = 9.994</m>, there are two triangles with the given properties. We apply the Law of Cosines again to find angle <m>C</m> in each triangle.</p>  
         <p>For the triangle with <m>c = 5.503</m>, we have</p>
         <p><md><mrow>c^{2} \amp = a^{2} + b^{2} - 2ab \cos (C) \amp\amp \blert{\text{Substitute the known values.}}</mrow>
-               <mrow>5.503^{2} \amp = 8^{2} + 3^{2} - 2(8)(3) \cos (C) \amp\amp \blert{\text{Solve for} \cos (C).}</mrow>
-               <mrow>\cos (C) \amp = \dfrac{5.503^{2} - 64 - 9}{-48} = 0.889876\\
+                <mrow>5.503^{2} \amp = 8^{2} + 3^{2} - 2(8)(3) \cos (C) \amp\amp \blert{\text{Solve for} \cos (C).}</mrow>
+                <mrow>\cos (C) \amp = \dfrac{5.503^{2} - 64 - 9}{-48} = 0.889876\\
                 C \amp = \cos^{-1} 0.889876) = 27.1\degree</mrow></md></p>
 <p>and <m>A = 180\degree - (14.4\degree + 27.1\degree) = 138.5\degree</m>.</p>
 <p> For the triangle with <m>c = 9.994</m>, we have</p>
-           <p><md><mrow>c^{2} \amp = a^{2} + b^{2} - 2ab \cos (C) \amp\amp \blert{\text{Substitute the known values.}}</mrow>
-               <mrow>9.994^{2} \amp = 8^{2} + 3^{2} - 2(8)(3) \cos (C) \amp\amp \blert{\text{Solve for} \cos (C).}</mrow>
-               <mrow>\cos (C) \amp = \dfrac{9.994^{2} - 64 - 9}{-48} = -0.560027</mrow>
-               <mrow>C \amp = \cos^{-1} (-0.560027) = 124.1\degree</mrow></md></p>
+<p><md><mrow>c^{2} \amp = a^{2} + b^{2} - 2ab \cos (C) \amp\amp \blert{\text{Substitute the known values.}}</mrow>
+    <mrow>9.994^{2} \amp = 8^{2} + 3^{2} - 2(8)(3) \cos (C) \amp\amp \blert{\text{Solve for} \cos (C).}</mrow>
+    <mrow>\cos (C) \amp = \dfrac{9.994^{2} - 64 - 9}{-48} = -0.560027</mrow>
+    <mrow>C \amp = \cos^{-1} (-0.560027) = 124.1\degree</mrow></md></p>
 <p>and <m>A = 180\degree - (14.4\degree + 124.1\degree) = 41.5\degree</m>.  Both triangles are shown below.</p>
-         <sidebyside width="85%">
-   <image xml:id="exam3-3-3">
+<sidebyside width="90%">
+    <image xml:id="exam3-3-3">
         <description>triangle</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture}
-
+        <![CDATA[
+        \begin{tikzpicture}[scale=.8]
         \coordinate (A) at (3.73,.96);
         \coordinate (B) at (0,0);
         \coordinate (C) at (5.6,0);
@@ -455,9 +389,9 @@ Alternatively, we can use the Law of Cosines to find angle <m>A</m>.
         \filldraw[black] (B) circle (.2pt) node[anchor=east] {$B$};
         \filldraw[black] (C) circle (.2pt) node[anchor=north west] {$C$};
 
-        \draw[black,thick] (B)++(1.2,0) arc(0:14.4:1.2) node[right,midway,yshift=1]{\footnotesize$14.4\degree$};
-        \draw[red,thick] (A)++(-.29,-.07) arc(194.4:332.9:.3) node[below,midway,yshift=2]{\footnotesize$138.5\degree$};
-        \draw[red,thick] (C)++(-.5,0) arc(180:152.9:.5) node[left,midway,yshift=2]{\footnotesize$27.1\degree$};
+        \draw[black,thick] (B)++(1.5,0) arc(0:14.4:1.5) node[right,midway,yshift=1]{$14.4\degree$};
+        \draw[red,thick] (A)++(-.29,-.07) arc(194.4:332.9:.3) node[below,midway, xshift=-4,yshift=2]{$138.5\degree$};
+        \draw[red,thick] (C)++(-.5,0) arc(180:152.9:.5) node[left,midway,yshift=2]{$27.1\degree$};
 
         \draw[black,thick] (A)--(B) node [above left,midway, xshift=5] {\color{red}$5.5$};
         \draw[black,thick] (C)--(B) node [below,midway, yshift=-2] {$8$};
@@ -472,9 +406,9 @@ Alternatively, we can use the Law of Cosines to find angle <m>A</m>.
         \filldraw[black] (B) circle (.2pt) node[anchor=east] {$B$};
         \filldraw[black] (C) circle (.2pt) node[anchor=north west] {$C$};
 
-        \draw[black,thick] (B)++(1.2,0) arc(0:14.4:1.2) node[right,midway,yshift=1]{\footnotesize$14.4\degree$};
-        \draw[red,thick] (A)++(-.29,-.07) arc(194.4:235.9:.3) node[below left,midway,xshift=2]{\footnotesize$41.5\degree$};
-        \draw[red,thick] (C)++(-.3,0) arc(180:55.9:.3) node[left,midway,yshift=2]{\footnotesize$124.1\degree$};
+        \draw[black,thick] (B)++(1.5,0) arc(0:14.4:1.5) node[right,midway,yshift=1]{$14.4\degree$};
+        \draw[red,thick] (A)++(194.4:.5) arc(194.4:235.9:.5) node[below left,midway,xshift=2]{$41.5\degree$};
+        \draw[red,thick] (C)++(-.3,0) arc(180:55.9:.3) node[left,midway,yshift=2]{$124.1\degree$};
 
         \draw[black,thick] (A)--(B) node [above left,midway, xshift=5] {\color{red}$9.99$};
         \draw[black,thick] (C)--(B) node [below,midway, yshift=-2] {$8$};
@@ -482,7 +416,7 @@ Alternatively, we can use the Law of Cosines to find angle <m>A</m>.
         \end{tikzpicture}]]>
     </latex-image>
     </image>
-         </sidebyside></solution></example>
+</sidebyside></solution></example>
 
 <note><p>In the previous example, notice that we used the Law of Cosines instead of the Law of Sines to find a second angle in the triangle, because there is only one angle between <m>0\degree</m> and <m>180\degree</m> with a given cosine. We don't have to check the results, as we would if we used the Law of Sines.</p></note> 
 
@@ -500,17 +434,10 @@ Alternatively, we can use the Law of Cosines to find angle <m>A</m>.
 <p>We'd like to find the distance <m>x</m> and the angle <m>\theta</m> shown in the figure. In <m>\triangle ABC</m>, we can calculate the angle at point <m>B</m> where the sailing club changed course: 
         <me>B = 180\degree - 35\degree+ 15\degree = 160\degree</me>
 We know <m>a = 12</m> and <m>c = 18</m>.  We use the Law of Cosines to find <m>b</m> and <m>\angle A</m>.</p>
-   
-   <image xml:id="exam3-3-4"><description>triangle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} [scale=.8]
+    
+    <image xml:id="exam3-3-4"><description>triangle</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture} [scale=.72]
 
         \coordinate (A) at (0,0);
         \coordinate (B) at (1.16,4.35);
@@ -524,13 +451,13 @@ We know <m>a = 12</m> and <m>c = 18</m>.  We use the Law of Cosines to find <m>b
         \filldraw[black] (B) circle (.2pt) node[anchor=east] {$B$};
         \filldraw[black] (C) circle (.2pt) node[anchor=west] {$C$};
 
-        \draw[red,thick,->,>=stealth'] (A)++(0,1.2) arc(90:{atan(6.8/2.89}:1.2) node[above right,midway,xshift=-8]{\small$\theta$};
-        \draw[red,thick,->,>=stealth'] (A)++(0,2) arc(90:75:2) node[above,midway,xshift=1]{\footnotesize$15\degree$};
-        \draw[red,thick,->,>=stealth'] (B)++(0,.65) arc(90:55:.65) node[above right,midway,xshift=-.3cm]{\footnotesize$35\degree$};
+        \draw[red,thick,->,>=stealth'] (A)++(0,1.5) arc(90:{atan(6.8/2.89}:1.5) node[above right,midway,xshift=-8]{$\theta$};
+        \draw[red,thick,->,>=stealth'] (A)++(0,2.3) arc(90:75:2.3) node[above,midway,xshift=1]{\small$15\degree$};
+        \draw[red,thick,->,>=stealth'] (B)++(0,.7) arc(90:55:.7) node[above right,midway,xshift=-2.5mm]{\small$35\degree$};
 
-        \draw[black,thick] (A)--(B) node [above left,midway, xshift=7, yshift=13] {\color{blue}$18$};
-        \draw[black,thick] (C)--(B) node [above left,midway, xshift=3, yshift=-1] {\color{blue}$12$};
-        \draw[black,thick] (A)--(C) node [below right,midway] {\color{blue}$x$};
+        \draw[black,thick] (A)--(B) node [above left,midway, xshift=7, yshift=13,text=blue] {$18$};
+        \draw[black,thick] (C)--(B) node [above left,midway, xshift=3, yshift=1,text=blue] {$12$};
+        \draw[black,thick] (A)--(C) node [below right,midway,text=blue] {$x$};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
 
@@ -544,21 +471,13 @@ We know <m>a = 12</m> and <m>c = 18</m>.  We use the Law of Cosines to find <m>b
     <mrow>12^{2} \amp = 29.56^{2} + 18^{2} - 2(29.56)(18) \cos (A) \amp\amp \blert{\text{Solve for} \cos (A).}</mrow>
     <mrow>\cos (A) \amp = \dfrac{12^{2} - 29.56^{2} - 18^{2}}{-2(29.56)(18)} = 0.9903</mrow>
     <mrow>C \amp = \cos^{-1} (0.9903) = 8\degree</mrow></md></p>
- <p>Thus, <m>x = 29.56</m> and <m>\theta = 8\degree + 15\degree = 23\degree</m>. The speed boat should travel 29.56 miles on a heading <m>23\degree</m> east of north.</p></solution></example> 
+    <p>Thus, <m>x = 29.56</m> and <m>\theta = 8\degree + 15\degree = 23\degree</m>. The speed boat should travel 29.56 miles on a heading <m>23\degree</m> east of north.</p></solution></example> 
 
 <exercise><statement><sidebyside widths="60% 35%" valigns="middle middle" margins="0% 0%">
 <p>Howard wants to fly from Anchorage to Nome, Alaska, a distance of 540 miles on a heading <m>57\degree</m> west of north. After flying for some time, he discovers that his heading is in error, and he is actually flying <m>47\degree</m> west of north. Howard corrects his flight plan and changes course when he is exactly 200 miles from Anchorage. What is his new heading, and how far is he from Nome?</p>
-   <image xml:id="exer3-3-4"><description>triangle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} 
-
+    <image xml:id="exer3-3-4"><description>triangle</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture} [scale=.72]
         \coordinate (A) at (0,0);
         \coordinate (B) at (-5,3.3);
         \coordinate (C) at (-1.63,1.52);
@@ -566,18 +485,18 @@ We know <m>a = 12</m> and <m>c = 18</m>.  We use the Law of Cosines to find <m>b
         \draw[gray!50!white,thick] (A)+(.5,0)--+(-5.5,0);
         \draw[gray!50!white,thick] (A)+(0,-.1)--+(0,3.5);
 
-        \filldraw[black] (A) circle (.2pt) node[anchor=north] {\small Anchorage};
-        \filldraw[black] (B) circle (.2pt) node[anchor=south] {\small Nome};
+        \filldraw[black] (A) circle (.2pt) node[anchor=north] {Anchorage};
+        \filldraw[black] (B) circle (.2pt) node[anchor=south] {Nome};
 
-        \draw[red,thick,->,>=stealth'] (A)++(0,.4) arc(90:137:.4) node[above,midway,xshift=-2, yshift=-2]{\footnotesize$47\degree$};
-        \draw[red,thick,->,>=stealth'] (A)++(0,.9) arc(90:147:.9) node[above,midway,xshift=3]{\footnotesize$57\degree$};
+        \draw[red,thick,<-,>=stealth'] (A)++(137:.6) arc(137:90:.6) node[right,yshift=-1]{\small$47\degree$};
+        \draw[red,thick,<-,>=stealth'] (A)++(147:1) arc(147:90:1) node[right]{\small$57\degree$};
 
-        \draw[black,thick] (A)--(B) node [below left,midway, xshift=2, yshift=0] {\small\color{blue}$540$};
-        \draw[black,thick] (A)--(C) node [right, xshift=8, yshift=-6] {\small\color{blue}200};
+        \draw[black,thick] (A)--(B) node [below left,midway, xshift=2, yshift=0,text=blue] {$540$};
+        \draw[black,thick] (A)--(C) node [right, xshift=8, yshift=-6,text=blue] {200};
         \draw[black,thick] (C)--(B) ;
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></statement>
-<answer><p><m>62.8\degree</m> west of north, 344.8 miles</p></answer></exercise>           
+<answer><p><m>62.8\degree</m> west of north, 344.8 miles</p></answer></exercise>        
 </subsection>
 
 <subsection><title>Which Law to Use</title>
@@ -626,20 +545,12 @@ We know <m>a = 12</m> and <m>c = 18</m>.  We use the Law of Cosines to find <m>b
 
 <note><p> In the ambiguous case, SSA, the Law of Sines is easier to apply, but there will be two possible angles, and we must check each angle to see if it produces a solution. Using the Law of Cosines involves solving a quadratic equation, but each positive solution of the equation yields a solution of the triangle.</p></note>
 
-<example><statement><sidebyside widths="50% 35%" valigns="middle middle">
+<example><statement><sidebyside widths="50% 35%" valigns="middle middle" margins="0% 5%">
 <p>In the triangle at right, which law should you use to find <m>\angle B</m> ?  Which law should you use to find <m>c</m> ? 
 </p><!--<image source="photos/exam3-3-5.png"><description>triangle</description></image>-->
-   <image xml:id="exam3-3-5"><description>triangle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} 
-
+    <image xml:id="exam3-3-5"><description>triangle</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture} [scale=.63]
         \coordinate (A) at (0,0);
         \coordinate (C) at (1.84,1.54);
         \coordinate (B) at (5.53,0);
@@ -648,11 +559,11 @@ We know <m>a = 12</m> and <m>c = 18</m>.  We use the Law of Cosines to find <m>b
         \filldraw[black] (B) circle (.2pt) node[anchor=west] {$B$};
         \filldraw[black] (C) circle (.2pt) node[anchor=south] {$C$};
 
-        \draw[red,thick] (A)++(.5,0) arc(0:40:.5) node[right,midway,yshift=2]{\footnotesize$40\degree$};
+        \draw[red,thick] (A)++(.6,0) arc(0:40:.6) node[right,midway,yshift=2]{$40\degree$};
 
-        \draw[black,thick] (A)--(B) node [below,midway] {\color{blue}$c$};
-        \draw[black,thick] (A)--(C) node [above left,midway] {\color{blue}6};
-        \draw[black,thick] (C)--(B)  node [above right, midway] {\color{blue}10};
+        \draw[black,thick] (A)--(B) node [below,midway,text=blue] {$c$};
+        \draw[black,thick] (A)--(C) node [above left,midway,text=blue] {6};
+        \draw[black,thick] (C)--(B)  node [above right, midway,text=blue] {10};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></statement>
 
@@ -667,19 +578,11 @@ We know <m>a = 12</m> and <m>c = 18</m>.  We use the Law of Cosines to find <m>b
         <mrow>c \amp = \dfrac{12 \cos 40\degree \pm \sqrt{(-12 \cos (40\degree))^{2} - 4(1)(-64)}}{2(1)}</mrow></md></p>
 <p>You can check that the quadratic equation has only one positive solution for <m>c</m> (or notice that because <m>a \gt b</m>, angle <m>B</m> must be acute).</p></solution></example> 
 
-<exercise><statement><sidebyside widths="60% 30%">
+<exercise><statement><sidebyside widths="60% 30%" margins="0% 5%">
 <p>In the triangle at right, which part of the triangle can you find, and which law should you use?</p>
-   <image xml:id="exer3-3-5"><description>triangle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-          block/.style    = {draw, thick, rectangle, minimum height = 3em,
-            minimum width = 3em},
-          sum/.style      = {draw, circle, node distance = 2cm}, % Adder
-          input/.style    = {coordinate}, % Input
-          output/.style   = {coordinate} % Output
-        }
-        \begin{tikzpicture} 
-
+    <image xml:id="exer3-3-5"><description>triangle</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture} [scale=.72]
         \coordinate (A) at (0,0);
         \coordinate (C) at (-2.67,1.37);
         \coordinate (B) at (-4.38,0);
@@ -690,9 +593,9 @@ We know <m>a = 12</m> and <m>c = 18</m>.  We use the Law of Cosines to find <m>b
 
         \draw[red,thick] (C)++(.222,-.114) arc({-atan(1.37/2.67)}:{-atan(1.37/2.67)-115}:.25) node[below,midway]{$115\degree$};
 
-        \draw[black,thick] (A)--(B) node [below,midway] {\color{blue}$c$};
-        \draw[black,thick] (A)--(C) node [above right,midway] {\color{blue}71};
-        \draw[black,thick] (C)--(B)  node [above left, midway] {\color{blue}53};
+        \draw[black,thick] (A)--(B) node [below,midway,text=blue] {$c$};
+        \draw[black,thick] (A)--(C) node [above right,midway,text=blue] {71};
+        \draw[black,thick] (C)--(B)  node [above left, midway,text=blue] {53};
 
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside> </statement>

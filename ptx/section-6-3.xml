@@ -11,19 +11,16 @@
 
 <sidebyside width="60%">
     <image xml:id="fig-6-3-sin"><description>sine</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture}
-
+        <![CDATA[
+        \begin{tikzpicture}[scale=.8]
         \draw[cyan,step=1/2] (0,-2) grid (8,2);
-        \draw[->,>=stealth'] (0,0) -- (8.3,0) node[right, xshift=2, scale=0.9] {$t$};
-        \draw[->,>=stealth'] (0,-2) -- (0,2.3) node[above, yshift=2, scale=0.9] {$y$};
+        \draw[->,>=stealth'] (0,0) -- (8.3,0) node[right] {$t$};
+        \draw[->,>=stealth'] (0,-2) -- (0,2.3) node[above] {$y$};
 
         \foreach \x in {1,2, ...,8}
-         \draw[black] (\x, .08) --++(0,-.16) node[below, fill=white, inner sep=1, yshift=-2, scale=0.9]{$\x$};
+            \draw[black] (\x, .08) --++(0,-.16) node[below, fill=white, inner sep=1, yshift=-2]{$\x$};
         \foreach \y in {-1,1}
-         \draw[black, thick] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, scale=0.9] {$\y$};
+            \draw[black, thick] (.08,\y ) --++(-.16,0) node[anchor=east] {$\y$};
 
         \draw[domain=0:8,smooth,variable=\x,red,very thick] plot ({\x},{sin(deg(\x))});
         \end{tikzpicture}]]>
@@ -61,7 +58,7 @@
         <cell><m>0.707</m></cell>
         <cell><m>0.500</m></cell>
         <cell><m>0</m></cell></row>
-      </tabular></sidebyside>
+        </tabular></sidebyside>
 
 <p>In order to plot the points in the table, we scale the horizontal axis in multiples of <m>\dfrac{\pi}{12}</m>. (Note that the special values are all multiples of <m>\dfrac{\pi}{12}</m>. Thus, <m>\dfrac{\pi}{6} = 2\left(\dfrac{\pi}{12}\right)</m>, <m>~ \dfrac{\pi}{4} = 3\left(\dfrac{\pi}{12}\right)</m>, and so on.)  The table lists values of <m>\sin (t)</m> in the first two quadrants; in quadrants three and four the sine values are negative.</p>
 
@@ -88,206 +85,199 @@
         <cell><m>-0.707</m></cell>
         <cell><m>-0.500</m></cell>
         <cell><m>0</m></cell></row>
-      </tabular></sidebyside>
+        </tabular></sidebyside>
 
- <p>The completed graph is shown below.</p>
- <sidebyside width="80%">
+    <p>The completed graph is shown below.</p>
+    <sidebyside width="80%">
     <image xml:id="exam6-3-1"><description>sine</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=1.6]
+        <![CDATA[
+        \begin{tikzpicture} [scale=1.4]
 
         \draw[cyan,xstep=pi/12, ystep=1/4] (0,-3/2) grid ($2*pi*(1,0)+(0,3/2) $);
-        \draw[->,>=stealth'] (0,0) -- (6.5,0) node[right, xshift=2, scale=0.9] {$t$};
-        \draw[->,>=stealth'] (0,-1.5) -- (0,1.8) node[above, yshift=2, scale=0.9] {$y$};
+        \draw[->,>=stealth'] (0,0) -- (6.5,0) node[right] {$t$};
+        \draw[->,>=stealth'] (0,-1.5) -- (0,1.8) node[above] {$y$};
 
         \foreach \y in {-1, -0.5, 0.5,1}
-        \draw[black, thick] (.06,\y ) --++(-.12,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt, scale=.8] {$\y$};
+        \draw[black, thick] (.06,\y ) --++(-.12,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {$\y$};
 
-        \draw[black, thick] (2*pi,.06) --++(0,-.12) node[anchor=north, xshift=2,yshift=-3, fill=white, inner sep=1pt, scale=.9] {$2\pi$};
+        \draw[black, thick] (2*pi,.06) --++(0,-.12) node[anchor=north, xshift=2,yshift=-3, fill=white, inner sep=1pt,] {$2\pi$};
 
-        \draw[black] (pi,.06) --++(0,-.12) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\pi$};
+        \draw[black, thick] (pi,.06) --++(0,-.12) node[anchor=north, yshift=-2, fill=white, inner sep=1pt] {$\pi$};
 
-        \draw[black] (pi,.06) --++(0,-.12) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\pi$};
+        \draw[black, thick] (pi,.06) --++(0,-.12) node[anchor=north, yshift=-2, fill=white, inner sep=1pt] {$\pi$};
 
-        \draw[black] (pi/2,.06) --++(0,-.12) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{\pi}{2}$};
-        \draw[black] (3*pi/2,.06) --++(0,-.12) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{3\pi}{2}$};
+        \draw[black, thick] (pi/2,.06) --++(0,-.12) node[anchor=north, yshift=-2, fill=white, inner sep=1pt] {$\dfrac{\pi}{2}$};
+        \draw[black, thick] (3*pi/2,.06) --++(0,-.12) node[anchor=north, yshift=-2, fill=white, inner sep=1pt] {$\dfrac{3\pi}{2}$};
 
-        \draw[black] (pi/4,.06) --++(0,-.12) node[anchor=north, yshift=-4, fill=white, inner sep=1pt] {$\frac{\pi}{4}$};
+        \draw[black, thick] (pi/4,.06) --++(0,-.12) node[anchor=north, yshift=-2, fill=white, inner sep=1pt] {$\dfrac{\pi}{4}$};
 
-        \draw[black] (3*pi/4,.06) --++(0,-.12) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{3\pi}{4}$};
-        \draw[black] (5*pi/4,.06) --++(0,-.12) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{5\pi}{4}$};
-        \draw[black] (7*pi/4,.06) --++(0,-.12) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{7\pi}{4}$};
+        \draw[black, thick] (3*pi/4,.06) --++(0,-.12) node[anchor=north, yshift=-2, fill=white, inner sep=1pt] {$\dfrac{3\pi}{4}$};
+        \draw[black, thick] (5*pi/4,.06) --++(0,-.12) node[anchor=north, yshift=-2, fill=white, inner sep=1pt] {$\dfrac{5\pi}{4}$};
+        \draw[black, thick] (7*pi/4,.06) --++(0,-.12) node[anchor=north, yshift=-2, fill=white, inner sep=1pt] {$\dfrac{7\pi}{4}$};
 
         \draw[domain=0:2*pi,smooth,variable=\x,red,very thick] plot ({\x},{sin(deg(\x))});
         \end{tikzpicture}]]>
     </latex-image></image>
- </sidebyside></solution></example>
+    </sidebyside></solution></example>
 
  <p>If we continued to plot points for values of <m>t</m> greater than <m>2 \pi</m> or less than 0, we would see the periodic behavior of the graph, as it repeats the same shape over each interval of length <m>2 \pi</m>, just as it does for periods of <m>360\degree</m> when the angles are measured in degrees.</p>
 
 <exercise><statement><p><ol marker="a">
-  <li><p>Complete the table of values for <m>y = \cos (t)</m>.</p>
-<sidebyside width="90%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                        
-    <row bottom="minor">
-        <cell><m>t</m></cell>
-        <cell><m>0</m></cell>
-        <cell><m>\dfrac{\pi}{6}</m></cell>
-        <cell><m>\dfrac{\pi}{4}</m></cell>
-        <cell><m>\dfrac{\pi}{3}</m></cell>
-        <cell><m>\dfrac{\pi}{2}</m></cell>
-        <cell><m>\dfrac{2\pi}{3}</m></cell>
-        <cell><m>\dfrac{3\pi}{4}</m></cell>
-        <cell><m>\dfrac{5\pi}{6}</m></cell> 
-        <cell><m>\pi</m></cell></row>
-    <row> 
-        <cell><m>\cos (t)</m></cell>
-        <cell><m>\hphantom{0000}</m></cell>
-        <cell><m>\hphantom{0000}</m></cell>
-        <cell><m>\hphantom{0000}</m></cell>
-        <cell><m>\hphantom{0000}</m></cell>
-        <cell><m>\hphantom{0000}</m></cell>
-        <cell><m>\hphantom{0000}</m></cell>
-        <cell><m>\hphantom{0000}</m></cell>
-        <cell><m>\hphantom{0000}</m></cell>
-        <cell><m>\hphantom{0000}</m></cell></row>
-      </tabular></sidebyside>
-
-<sidebyside width="90%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                        
-    <row bottom="minor">
-        <cell><m>t</m></cell>
-        <cell><m>\pi</m></cell>
-        <cell><m>\dfrac{7\pi}{6}</m></cell>
-        <cell><m>\dfrac{5\pi}{4}</m></cell>
-        <cell><m>\dfrac{4\pi}{3}</m></cell>
-        <cell><m>\dfrac{3\pi}{2}</m></cell>
-        <cell><m>\dfrac{5\pi}{3}</m></cell>
-        <cell><m>\dfrac{7\pi}{4}</m></cell>
-        <cell><m>\dfrac{11\pi}{6}</m></cell> 
-        <cell><m>2\pi</m></cell></row>
-    <row> 
-        <cell><m>\cos (t)</m></cell>
-        <cell><m>\hphantom{0000}</m></cell>
-        <cell><m>\hphantom{0000}</m></cell>
-        <cell><m>\hphantom{0000}</m></cell>
-        <cell><m>\hphantom{0000}</m></cell>
-        <cell><m>\hphantom{0000}</m></cell>
-        <cell><m>\hphantom{0000}</m></cell>
-        <cell><m>\hphantom{0000}</m></cell>
-        <cell><m>\hphantom{0000}</m></cell>
-        <cell><m>\hphantom{0000}</m></cell></row>
-      </tabular></sidebyside></li>
-    <li><p>Graph one cycle of <m>y = \cos (t)</m>, and scale the horizontal axis in multiples of <m>\pi</m>. Use the 
-  grid below.</p>
-  <sidebyside width="90%"><image xml:id="exer6-3-1"><description>grid</description><latex-image>
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} 
-        \draw[cyan,xstep=pi/12, ystep=1/4] (0,-3/2) grid ($2*pi*(1,0)+(0,3/2) $);
-        \draw[->,>=stealth'] (0,0) -- (6.5,0) node[right, scale=0.9] {$t$};
-        \draw[->,>=stealth'] (0,-3/2) -- (0,1.7) node[above, scale=0.9] {$y$};
-
-        \foreach \x in {1, 2,...,24}
-        \draw[black] ($ pi*\x /12*(1,0) +(0,.08) $) --++(0,-.16);
-
-        \foreach \y in {-1, -0.5, 0.5,1}
-        \draw[black, thick] (.06,\y ) --++(-.12,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt, scale=.6] {$\y$};
-        \end{tikzpicture}]]>
-    </latex-image></image>
-</sidebyside></li></ol></p>
-  </statement>
-
-<answer><p><ol marker="a">
+    <li><p>Complete the table of values for <m>y = \cos (t)</m>.</p>
+    <sidebyside width="90%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                        
+        <row bottom="minor">
+            <cell><m>t</m></cell>
+            <cell><m>0</m></cell>
+            <cell><m>\dfrac{\pi}{6}</m></cell>
+            <cell><m>\dfrac{\pi}{4}</m></cell>
+            <cell><m>\dfrac{\pi}{3}</m></cell>
+            <cell><m>\dfrac{\pi}{2}</m></cell>
+            <cell><m>\dfrac{2\pi}{3}</m></cell>
+            <cell><m>\dfrac{3\pi}{4}</m></cell>
+            <cell><m>\dfrac{5\pi}{6}</m></cell> 
+            <cell><m>\pi</m></cell></row>
+        <row> 
+            <cell><m>\cos (t)</m></cell>
+            <cell><m>\hphantom{0000}</m></cell>
+            <cell><m>\hphantom{0000}</m></cell>
+            <cell><m>\hphantom{0000}</m></cell>
+            <cell><m>\hphantom{0000}</m></cell>
+            <cell><m>\hphantom{0000}</m></cell>
+            <cell><m>\hphantom{0000}</m></cell>
+            <cell><m>\hphantom{0000}</m></cell>
+            <cell><m>\hphantom{0000}</m></cell>
+            <cell><m>\hphantom{0000}</m></cell></row>
+        </tabular></sidebyside>
+    
+    <sidebyside width="90%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                        
+        <row bottom="minor">
+            <cell><m>t</m></cell>
+            <cell><m>\pi</m></cell>
+            <cell><m>\dfrac{7\pi}{6}</m></cell>
+            <cell><m>\dfrac{5\pi}{4}</m></cell>
+            <cell><m>\dfrac{4\pi}{3}</m></cell>
+            <cell><m>\dfrac{3\pi}{2}</m></cell>
+            <cell><m>\dfrac{5\pi}{3}</m></cell>
+            <cell><m>\dfrac{7\pi}{4}</m></cell>
+            <cell><m>\dfrac{11\pi}{6}</m></cell> 
+            <cell><m>2\pi</m></cell></row>
+        <row> 
+            <cell><m>\cos (t)</m></cell>
+            <cell><m>\hphantom{0000}</m></cell>
+            <cell><m>\hphantom{0000}</m></cell>
+            <cell><m>\hphantom{0000}</m></cell>
+            <cell><m>\hphantom{0000}</m></cell>
+            <cell><m>\hphantom{0000}</m></cell>
+            <cell><m>\hphantom{0000}</m></cell>
+            <cell><m>\hphantom{0000}</m></cell>
+            <cell><m>\hphantom{0000}</m></cell>
+            <cell><m>\hphantom{0000}</m></cell></row>
+        </tabular></sidebyside></li>
+        <li><p>Graph one cycle of <m>y = \cos (t)</m>, and scale the horizontal axis in multiples of <m>\pi</m>. Use the 
+    grid below.</p>
+    <sidebyside width="90%"><image xml:id="exer6-3-1"><description>grid</description><latex-image>
+            <![CDATA[
+            \begin{tikzpicture} [scale=1.3]
+            \draw[cyan,xstep=pi/12, ystep=1/4] (0,-3/2) grid ($2*pi*(1,0)+(0,3/2) $);
+            \draw[->,>=stealth'] (0,0) -- (6.5,0) node[right] {$t$};
+            \draw[->,>=stealth'] (0,-3/2) -- (0,1.7) node[above] {$y$};
+    
+            \foreach \x in {1, 2,...,24}
+            \draw[black] ($ pi*\x /12*(1,0) +(0,.08) $) --++(0,-.16);
+    
+            \foreach \y in {-1, -0.5, 0.5,1}
+            \draw[black, thick] (.06,\y ) --++(-.12,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {$\y$};
+            \end{tikzpicture}]]>
+        </latex-image></image>
+    </sidebyside></li></ol></p>
+    </statement>
+    
+    <answer><p><ol marker="a">
+        <li><sidebyside width="80%" margins="0% 10%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                        
+        <row bottom="minor">
+            <cell><m>t</m></cell>
+            <cell><m>0</m></cell>
+            <cell><m>\dfrac{\pi}{6}</m></cell>
+            <cell><m>\dfrac{\pi}{4}</m></cell>
+            <cell><m>\dfrac{\pi}{3}</m></cell>
+            <cell><m>\dfrac{\pi}{2}</m></cell>
+            <cell><m>\dfrac{2\pi}{3}</m></cell>
+            <cell><m>\dfrac{3\pi}{4}</m></cell>
+            <cell><m>\dfrac{5\pi}{6}</m></cell> 
+            <cell><m>\pi</m></cell></row>
+        <row> 
+            <cell><m>\cos (t)</m></cell>
+            <cell><m>1</m></cell>
+            <cell><m>\dfrac{\sqrt{3}}{2}</m></cell>
+            <cell><m>\dfrac{1}{\sqrt{2}}</m></cell>
+            <cell><m>\dfrac{1}{2}</m></cell>
+            <cell><m>0</m></cell>
+            <cell><m>\dfrac{-1}{2}</m></cell>
+            <cell><m>\dfrac{-1}{\sqrt{2}}</m></cell>
+            <cell><m>\dfrac{-\sqrt{3}}{2}</m></cell>
+            <cell><m>-1</m></cell></row>
+        </tabular></sidebyside></li>
+    
     <li><sidebyside width="80%" margins="0% 10%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                        
-    <row bottom="minor">
-        <cell><m>t</m></cell>
-        <cell><m>0</m></cell>
-        <cell><m>\dfrac{\pi}{6}</m></cell>
-        <cell><m>\dfrac{\pi}{4}</m></cell>
-        <cell><m>\dfrac{\pi}{3}</m></cell>
-        <cell><m>\dfrac{\pi}{2}</m></cell>
-        <cell><m>\dfrac{2\pi}{3}</m></cell>
-        <cell><m>\dfrac{3\pi}{4}</m></cell>
-        <cell><m>\dfrac{5\pi}{6}</m></cell> 
-        <cell><m>\pi</m></cell></row>
-    <row> 
-        <cell><m>\cos (t)</m></cell>
-        <cell><m>1</m></cell>
-        <cell><m>\dfrac{\sqrt{3}}{2}</m></cell>
-        <cell><m>\dfrac{1}{\sqrt{2}}</m></cell>
-        <cell><m>\dfrac{1}{2}</m></cell>
-        <cell><m>0</m></cell>
-        <cell><m>\dfrac{-1}{2}</m></cell>
-        <cell><m>\dfrac{-1}{\sqrt{2}}</m></cell>
-        <cell><m>\dfrac{-\sqrt{3}}{2}</m></cell>
-        <cell><m>-1</m></cell></row>
-      </tabular></sidebyside></li>
-
-<li><sidebyside width="80%" margins="0% 10%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                        
-    <row bottom="minor">
-        <cell><m>t</m></cell>
-        <cell><m>\pi</m></cell>
-        <cell><m>\dfrac{7\pi}{6}</m></cell>
-        <cell><m>\dfrac{5\pi}{4}</m></cell>
-        <cell><m>\dfrac{4\pi}{3}</m></cell>
-        <cell><m>\dfrac{3\pi}{2}</m></cell>
-        <cell><m>\dfrac{5\pi}{3}</m></cell>
-        <cell><m>\dfrac{7\pi}{4}</m></cell>
-        <cell><m>\dfrac{11\pi}{6}</m></cell> 
-        <cell><m>2\pi</m></cell></row>
-    <row> 
-        <cell><m>\cos (t)</m></cell>
-        <cell><m>-1</m></cell>
-        <cell><m>-\dfrac{\sqrt{3}}{2}</m></cell>
-        <cell><m>-\dfrac{1}{\sqrt{2}}</m></cell>
-        <cell><m>-\dfrac{1}{2}</m></cell>
-        <cell><m>0</m></cell>
-        <cell><m>\dfrac{1}{2}</m></cell>
-        <cell><m>\dfrac{1}{\sqrt{2}}</m></cell>
-        <cell><m>\dfrac{\sqrt{3}}{2}</m></cell>
-        <cell><m>1</m></cell></row>
-      </tabular></sidebyside></li>
-
-<li><sidebyside width="45%" margins="0% 55%">
-    <image xml:id="exer6-3-1ans"><description>sinusoidal graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} 
-
-        \draw[cyan,xstep=pi/12, ystep=1/4] (0,-3/2) grid ($2*pi*(1,0)+(0,3/2) $);
-        \draw[->,>=stealth'] (0,0) -- (6.5,0) node[right, scale=0.9] {$t$};
-        \draw[->,>=stealth'] (0,-3/2) -- (0,1.7) node[above, scale=0.9] {$y$};
-
-        \foreach \x in {1, 2,...,24}
-        \draw[black] ($ pi*\x /12*(1,0) +(0,.08) $) --++(0,-.16);
-
-        \foreach \y in {-1, -0.5, 0.5,1}
-        \draw[black, thick] (.06,\y ) --++(-.12,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt, scale=.6] {$\y$};
-
-
-        \draw[black, thick] (2*pi,.15) --++(0,-.3) node[anchor=north, xshift=2,yshift=-3, fill=white, inner sep=1pt, scale=.9] {$2\pi$};
-
-        \draw[black] (pi,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\pi$};
-
-        \draw[black] (pi,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\pi$};
-
-        \draw[black] (pi/2,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\frac{\pi}{2}$};
-        \draw[black] (3*pi/2,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\frac{3\pi}{2}$};
-
-        \draw[black] (pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-4, fill=white, inner sep=1pt, scale=.9] {$\frac{\pi}{4}$};
-
-        \draw[black] (3*pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\frac{3\pi}{4}$};
-        \draw[black] (5*pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\frac{5\pi}{4}$};
-        \draw[black] (7*pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-3, fill=white, inner sep=1pt, scale=.9] {$\frac{7\pi}{4}$};
-
-        \draw[domain=0:2*pi,smooth,variable=\x,red,very thick] plot ({\x},{cos(deg(\x))});
-        \end{tikzpicture}]]>
-    </latex-image></image>
-</sidebyside></li>
-</ol></p>    
-</answer></exercise>
+        <row bottom="minor">
+            <cell><m>t</m></cell>
+            <cell><m>\pi</m></cell>
+            <cell><m>\dfrac{7\pi}{6}</m></cell>
+            <cell><m>\dfrac{5\pi}{4}</m></cell>
+            <cell><m>\dfrac{4\pi}{3}</m></cell>
+            <cell><m>\dfrac{3\pi}{2}</m></cell>
+            <cell><m>\dfrac{5\pi}{3}</m></cell>
+            <cell><m>\dfrac{7\pi}{4}</m></cell>
+            <cell><m>\dfrac{11\pi}{6}</m></cell> 
+            <cell><m>2\pi</m></cell></row>
+        <row> 
+            <cell><m>\cos (t)</m></cell>
+            <cell><m>-1</m></cell>
+            <cell><m>-\dfrac{\sqrt{3}}{2}</m></cell>
+            <cell><m>-\dfrac{1}{\sqrt{2}}</m></cell>
+            <cell><m>-\dfrac{1}{2}</m></cell>
+            <cell><m>0</m></cell>
+            <cell><m>\dfrac{1}{2}</m></cell>
+            <cell><m>\dfrac{1}{\sqrt{2}}</m></cell>
+            <cell><m>\dfrac{\sqrt{3}}{2}</m></cell>
+            <cell><m>1</m></cell></row>
+        </tabular></sidebyside></li>
+    
+    <li><sidebyside width="75%" margins="0% 25%">
+        <image xml:id="exer6-3-1ans"><description>sinusoidal graph</description><latex-image>
+            <![CDATA[
+            \begin{tikzpicture}     
+            \draw[cyan,xstep=pi/12, ystep=1/4] (0,-3/2) grid ($2*pi*(1,0)+(0,3/2) $);
+            \draw[->,>=stealth'] (0,0) -- (6.5,0) node[right] {$t$};
+            \draw[->,>=stealth'] (0,-3/2) -- (0,1.7) node[above] {$y$};
+    
+            \foreach \x in {1, 2,...,24}
+            \draw[black] ($ pi*\x /12*(1,0) +(0,.08) $) --++(0,-.16);
+    
+            \foreach \y in {-1, -0.5, 0.5,1}
+            \draw[black, thick] (.06,\y ) --++(-.12,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {$\y$};    
+    
+            \draw[black, thick] (2*pi,.15) --++(0,-.3) node[anchor=north, xshift=2,yshift=-3, fill=white, inner sep=1pt] {$2\pi$};
+    
+            \draw[black] (pi,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\pi$};
+    
+            \draw[black] (pi,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\pi$};
+    
+            \draw[black] (pi/2,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{\pi}{2}$};
+            \draw[black] (3*pi/2,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{3\pi}{2}$};
+    
+            \draw[black] (pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-4, fill=white, inner sep=1pt,] {$\frac{\pi}{4}$};
+    
+            \draw[black] (3*pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{3\pi}{4}$};
+            \draw[black] (5*pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{5\pi}{4}$};
+            \draw[black] (7*pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{7\pi}{4}$};
+    
+            \draw[domain=0:2*pi,smooth,variable=\x,red,very thick] plot ({\x},{cos(deg(\x))});
+            \end{tikzpicture}]]>
+        </latex-image></image>
+    </sidebyside></li>
+    </ol></p>    
+    </answer></exercise>
 
 <note><p>Because we know the basic shapes of the sine and cosine graphs, to make an adequate graph it is usually sufficient to plot the guide points at the quadrantal angles, and then draw a smooth curve through the points. Try it for yourself. Use the axes below.</p>
 
@@ -323,99 +313,97 @@
       </sidebyside></note>
 
 <activity><title>Graphs of Sine and Cosine</title>
-        <p></p>
-       <p>We are going to graph <m>f(t) = \sin (t)</m> and <m>g(t) = \cos (t)</m> from their definitions. The unit circle <m>x^2 + y^2 = 1</m> at the left of each grid is marked off in radians. (Each tick mark is <m>0.1</m> radian.) The horizontal <m>t</m>-axis of each grid is also marked in radians.</p>
-       
-       <p><ol marker="1">
-       <li>Choose a value of <m>t</m> along the horizontal axis of the <m>f(t) = \sin (t)</m> grid. This value of <m>t</m> represents an angle in radians.</li>
-       <li>Now look at the unit circle and find the point <m>P</m> designated by that same angle in radians.</li>
-       <li> Measure the vertical (signed) distance that gives the <m>y</m>-coordinate of point <m>P</m>.</li>
-       <li>At the value of <m>t</m> you chose in step 1, lightly draw a vertical line segment the same length 
-           as the <m>y</m>-coordinate of <m>P</m>. Put a dot at the top (or bottom) of the line segment.</li>
-       <li>Repeat for some more values of <m>t</m>.  Connect the dots to see the graph of <m>f(t) = \sin (t)</m>.</li></ol></p>
-       <sidebyside width="100%">
-           <image xml:id="act6-2"><description>circle and grid</description><latex-image>
-               <![CDATA[
-               \begin{tikzpicture} [scale=1.6]
-       
-               \draw[cyan] (-1.0001,-1.0001) grid[step = 0.1] (1,1);
-               \draw[black, thick, ->,>=stealth'] (-1,0)--(1.15,0) node[right, xshift=-2] {$x$};
-               \draw[black, thick, ->,>=stealth'] (0,-1)--(0,1.2) node[above] {$y$};
-       
-               \draw[red,thick] (0,0) circle (1cm);    
-               \foreach \i in {0.1, 0.2, ..., 6.2} {
-                \draw[black, thick] ({deg(\i)}:.98) -- ({deg(\i)}:1.02);
-               };
-               \foreach \i in {1,2, ..., 6} {
-                \draw[black, thick] ({deg(\i)}:1) -- ({deg(\i)}:1.05);
-                \node[text width=.2cm, fill=white, inner sep=1, scale=.8] at ({deg(\i)}:1.1) { $\i$};
-               };
-               \foreach \i in {-0.5, 0.5} {
-                \draw[black, thick] (0.03,\i) -- (-0.03,\i) node[left, xshift=-2, fill=white, inner sep=1, scale=.7]{ $\i$};
-                \draw[black, thick] (\i,0.03) -- (\i,-0.03) node[below, yshift=-2, fill=white, inner sep=1, scale=.7]{$\i$};
-               };
-               \node[text width=2cm, scale=1] at (0,-1.3) {Unit circle};
-       
-               %second grid
-               \draw[cyan] (1.4999,-1.0001) grid[xstep=.3, ystep=.1] (5.7,1);
-               \draw[black,thick,->,>=stealth'] (1.45,0)--(5.9,0) node[right] {$t$};
-               \draw[black,thick,->,>=stealth'] (1.5,-1)--(1.5,1.2) node[above, yshift=-2] {$g(t)=\sin t$};
-       
-               \foreach \x [evaluate=\x as \xi using (1.5 + .6* \x )]  in {1, 2,...,7}
-                \draw[black] (\xi,.05)--++(0,-.1) node[below, yshift=-2, fill=white, inner sep =1, scale=.8] {$\x$};
-                \foreach \y in {-1, -0.5, 0.5,1}
-                 \draw[black] (1.55,\y)--++(-.1,0) node[left, xshift=-2, fill=white, inner sep =1, scale=.7] {$\y$};
-       
-               \node[text width=3cm, scale=1] at (3.6,-1.3) {$ f(t) =\sin t $};
-               \end{tikzpicture}]]>
-           </latex-image></image>
-       </sidebyside>
-       
-       <p><ol marker="1">
-       <li>Choose a value of <m>t</m> along the horizontal axis of the <m>g(t) = \cos (t)</m> grid.  This value of <m>t</m> represents an angle in radians.</li>
-       <li>Now look at the unit circle and find the point <m>P</m> designated by that same angle in radians.</li>
-       <li>Measure the horizontal (signed) distance that gives the <m>x</m>-coordinate of point <m>P</m>.</li>
-       <li>At the value of <m>t</m> you chose in step 1, lightly draw a vertical line segment the same 
-           length as the <m>x</m>-coordinate of <m>P</m>. Put a dot at the top (or bottom) of the line segment.</li>
-       <li>Repeat for some more values of <m>t</m>.  Connect the dots to see the graph of <m>g(t) = \cos (t)</m>.</li></ol></p>
-       <sidebyside width="100%"><!--<image source="photos/act6-3.png"><description>grid</description></image>-->
-           <image xml:id="act6-3"><description>unit circle and grid</description><latex-image>
-               <![CDATA[
-               \begin{tikzpicture} [scale=1.6]     
-               \draw[cyan] (-1.0001,-1.0001) grid[step = 0.1] (1,1);
-               \draw[black, thick, ->,>=stealth'] (-1,0)--(1.15,0) node[right, xshift=-2] {$x$};
-               \draw[black, thick, ->,>=stealth'] (0,-1)--(0,1.2) node[above] {$y$};
-       
-               \draw[red,thick] (0,0) circle (1cm);    
-               \foreach \i in {0.1, 0.2, ..., 6.2} {
-                \draw[black, thick] ({deg(\i)}:.98) -- ({deg(\i)}:1.02);
-               };
-               \foreach \i in {1,2, ..., 6} {
-                \draw[black, thick] ({deg(\i)}:1) -- ({deg(\i)}:1.05);
-                \node[text width=.2cm, fill=white, inner sep=1, scale=.8] at ({deg(\i)}:1.1) { $\i$};
-               };
-               \foreach \i in {-0.5, 0.5} {
-                \draw[black, thick] (0.03,\i) -- (-0.03,\i) node[left, xshift=-2, fill=white, inner sep=1, scale=.7]{ $\i$};
-                \draw[black, thick] (\i,0.03) -- (\i,-0.03) node[below, yshift=-2, fill=white, inner sep=1, scale=.7]{$\i$};
-               };
-       
-               \node[text width=2cm, scale=1] at (0,-1.3) {Unit circle};
-       
-               %second grid
-               \draw[cyan] (1.4999,-1.0001) grid[xstep=.3, ystep=.1] (5.7,1);
-               \draw[black,thick,->,>=stealth'] (1.45,0)--(5.9,0) node[right] {$t$};
-               \draw[black,thick,->,>=stealth'] (1.5,-1)--(1.5,1.1) node[above, yshift=-2] {$f(t)=\cos t$};
-       
-               \foreach \x [evaluate=\x as \xi using (1.5 + .6* \x )]  in {1, 2,...,7}
-                \draw[black] (\xi,.05)--++(0,-.1) node[below, yshift=-2, fill=white, inner sep =1, scale=.8] {$\x$};
-                \foreach \y in {-1, -0.5, 0.5,1}
-                 \draw[black] (1.55,\y)--++(-.1,0) node[left, xshift=-2, fill=white, inner sep =1, scale=.7] {$\y$};
-       
-               \node[text width=3cm, scale=1] at (3.6,-1.3) {$ g(t) =\cos t $};
-               \end{tikzpicture}]]>
-           </latex-image></image>
-       </sidebyside>
-       </activity>
+    <p></p>
+    <p>We are going to graph <m>f(t) = \sin (t)</m> and <m>g(t) = \cos (t)</m> from their definitions. The unit circle <m>x^2 + y^2 = 1</m> at the left of each grid is marked off in radians. (Each tick mark is <m>0.1</m> radian.) The horizontal <m>t</m>-axis of each grid is also marked in radians.</p>
+    
+    <p><ol marker="1">
+    <li>Choose a value of <m>t</m> along the horizontal axis of the <m>f(t) = \sin (t)</m> grid. This value of <m>t</m> represents an angle in radians.</li>
+    <li>Now look at the unit circle and find the point <m>P</m> designated by that same angle in radians.</li>
+    <li> Measure the vertical (signed) distance that gives the <m>y</m>-coordinate of point <m>P</m>.</li>
+    <li>At the value of <m>t</m> you chose in step 1, lightly draw a vertical line segment the same length 
+        as the <m>y</m>-coordinate of <m>P</m>. Put a dot at the top (or bottom) of the line segment.</li>
+    <li>Repeat for some more values of <m>t</m>.  Connect the dots to see the graph of <m>f(t) = \sin (t)</m>.</li></ol></p>
+    <sidebyside width="100%">
+        <image xml:id="act6-2"><description>circle and grid</description><latex-image>
+            <![CDATA[
+            \begin{tikzpicture} [scale=1.6]    
+            \draw[cyan] (-1.0001,-1.0001) grid[step = 0.1] (1,1);
+            \draw[black, thick, ->,>=stealth'] (-1,0)--(1.15,0) node[right, xshift=-2] {$x$};
+            \draw[black, thick, ->,>=stealth'] (0,-1)--(0,1.2) node[above] {$y$};
+    
+            \draw[red,thick] (0,0) circle (1cm);    
+            \foreach \i in {0.1, 0.2, ..., 6.2} {
+            \draw[black, thick] ({deg(\i)}:.98) -- ({deg(\i)}:1.02);
+            };
+            \foreach \i in {1,2, ..., 6} {
+            \draw[black, thick] ({deg(\i)}:1) -- ({deg(\i)}:1.05);
+            \node[text width=.2cm, fill=white, inner sep=1] at ({deg(\i)}:1.15) { $\i$};
+            };
+            \foreach \i in {-0.5, 0.5} {
+            \draw[black, thick] (0.03,\i) -- (-0.03,\i) node[left, xshift=-2, fill=white, inner sep=1, scale=.9]{ $\i$};
+            \draw[black, thick] (\i,0.03) -- (\i,-0.03) node[below, yshift=-2, fill=white, inner sep=1, scale=.9]{$\i$};
+            };
+            \node[text width=2cm, scale=1] at (0,-1.3) {Unit circle};
+    
+            %second grid
+            \draw[cyan] (1.4999,-1.0001) grid[xstep=.3, ystep=.1] (5.7,1);
+            \draw[black,thick,->,>=stealth'] (1.45,0)--(5.9,0) node[right] {$t$};
+            \draw[black,thick,->,>=stealth'] (1.5,-1)--(1.5,1.2) node[above, yshift=-2] {$f(t)=\sin t$};
+    
+            \foreach \x [evaluate=\x as \xi using (1.5 + .6* \x )]  in {1, 2,...,7}
+            \draw[black] (\xi,.05)--++(0,-.1) node[below, yshift=-2, fill=white, inner sep =1, scale=.9] {$\x$};
+            \foreach \y in {-1, -0.5, 0.5,1}
+                \draw[black] (1.55,\y)--++(-.1,0) node[left, fill=white, inner sep =1, scale=.8] {$\y$};
+    
+            \node[text width=3cm, scale=1] at (3.6,-1.3) {$ f(t) =\sin t $};
+            \end{tikzpicture}]]>
+        </latex-image></image>
+    </sidebyside>
+    
+    <p><ol marker="1">
+    <li>Choose a value of <m>t</m> along the horizontal axis of the <m>g(t) = \cos (t)</m> grid.  This value of <m>t</m> represents an angle in radians.</li>
+    <li>Now look at the unit circle and find the point <m>P</m> designated by that same angle in radians.</li>
+    <li>Measure the horizontal (signed) distance that gives the <m>x</m>-coordinate of point <m>P</m>.</li>
+    <li>At the value of <m>t</m> you chose in step 1, lightly draw a vertical line segment the same 
+        length as the <m>x</m>-coordinate of <m>P</m>. Put a dot at the top (or bottom) of the line segment.</li>
+    <li>Repeat for some more values of <m>t</m>.  Connect the dots to see the graph of <m>g(t) = \cos (t)</m>.</li></ol></p>
+    <sidebyside width="100%"><!--<image source="photos/act6-3.png"><description>grid</description></image>-->
+        <image xml:id="act6-3"><description>unit circle and grid</description><latex-image>
+            <![CDATA[
+            \begin{tikzpicture} [scale=1.6]    
+            \draw[cyan] (-1.0001,-1.0001) grid[step = 0.1] (1,1);
+            \draw[black, thick, ->,>=stealth'] (-1,0)--(1.15,0) node[right, xshift=-2] {$x$};
+            \draw[black, thick, ->,>=stealth'] (0,-1)--(0,1.2) node[above] {$y$};
+    
+            \draw[red,thick] (0,0) circle (1cm);    
+            \foreach \i in {0.1, 0.2, ..., 6.2} {
+            \draw[black, thick] ({deg(\i)}:.98) -- ({deg(\i)}:1.02);
+            };
+            \foreach \i in {1,2, ..., 6} {
+            \draw[black, thick] ({deg(\i)}:1) -- ({deg(\i)}:1.05);
+            \node[text width=.2cm, fill=white, inner sep=1] at ({deg(\i)}:1.15) { $\i$};
+            };
+            \foreach \i in {-0.5, 0.5} {
+            \draw[black, thick] (0.03,\i) -- (-0.03,\i) node[left, xshift=-2, fill=white, inner sep=1, scale=.9]{ $\i$};
+            \draw[black, thick] (\i,0.03) -- (\i,-0.03) node[below, yshift=-2, fill=white, inner sep=1, scale=.9]{$\i$};
+            };
+            \node[text width=2cm, scale=1] at (0,-1.3) {Unit circle};
+    
+            %second grid
+            \draw[cyan] (1.4999,-1.0001) grid[xstep=.3, ystep=.1] (5.7,1);
+            \draw[black,thick,->,>=stealth'] (1.45,0)--(5.9,0) node[right] {$t$};
+            \draw[black,thick,->,>=stealth'] (1.5,-1)--(1.5,1.2) node[above, yshift=-2] {$g(t)=\cos t$};
+    
+            \foreach \x [evaluate=\x as \xi using (1.5 + .6* \x )]  in {1, 2,...,7}
+            \draw[black] (\xi,.05)--++(0,-.1) node[below, yshift=-2, fill=white, inner sep =1, scale=.9] {$\x$};
+            \foreach \y in {-1, -0.5, 0.5,1}
+                \draw[black] (1.55,\y)--++(-.1,0) node[left, fill=white, inner sep =1, scale=.8] {$\y$};
+    
+            \node[text width=3cm, scale=1] at (3.6,-1.3) {$ g(t) =\cos t $};
+            \end{tikzpicture}]]>
+        </latex-image></image>
+    </sidebyside>
+    </activity>
 </subsection>
 
 <subsection><title>The Tangent Function</title>
@@ -449,16 +437,15 @@
         <cell><m>-1</m></cell>
         <cell><m>-0.577</m></cell>
         <cell><m>0</m></cell></row>
-      </tabular></sidebyside>
+        </tabular></sidebyside>
 
-  <sidebyside widths="50% 50%" valigns="middle middle" margins="0% 0%"><p>Plot the points and connect them with smooth curves, remembering that <m>\tan (\dfrac{\pi}{2})</m> is undefined. The graph repeats for values of <m>t</m> between <m>\pi</m> and <m>2\pi</m>. So, while the graph in degrees had vertical asymptotes at <m>\theta = 90\degree</m> and <m>\theta = 270\degree</m>, this graph has vertical asymptotes at <m>t = \dfrac{\pi}{2}</m> and <m>t = \dfrac{3\pi}{2}</m>. The figure at right shows the graph of <m>y = \tan (t)</m> for <m>0 \le t \le 2\pi</m>.</p>
+    <sidebyside widths="50% 50%" valigns="middle middle" margins="0% 0%"><p>Plot the points and connect them with smooth curves, remembering that <m>\tan (\dfrac{\pi}{2})</m> is undefined. The graph repeats for values of <m>t</m> between <m>\pi</m> and <m>2\pi</m>. So, while the graph in degrees had vertical asymptotes at <m>\theta = 90\degree</m> and <m>\theta = 270\degree</m>, this graph has vertical asymptotes at <m>t = \dfrac{\pi}{2}</m> and <m>t = \dfrac{3\pi}{2}</m>. The figure at right shows the graph of <m>y = \tan (t)</m> for <m>0 \le t \le 2\pi</m>.</p>
     <image xml:id="exam6-3-2"><description>tangent</description><latex-image>
         <![CDATA[
-        \begin{tikzpicture} [yscale=0.85]
-
+        \begin{tikzpicture} [xscale=.8, yscale=0.7]
         \draw[cyan,xstep=pi/4,ystep=1]
         (0,-4) grid (2*pi,4);
- 
+    
         \draw[gray, very thick, dashed] (pi/2,-4)--++(0,8);
         \draw[gray, very thick, dashed] (3*pi/2,-4)--++(0,8);
 
@@ -485,37 +472,33 @@
 <exercise><statement><p>Sketch a graph of the tangent function <m>y =\tan (t)</m> and scale the horizontal axis in integers, as shown below. Label the <m>t</m>-intercepts and the vertical asymptotes with their coordinates.</p>
 <sidebyside width="50%"><image xml:id="exer6-3-2"><description>grid</description><latex-image>
         <![CDATA[
-        \begin{tikzpicture} [xscale=0.6, yscale=.28]
-
+        \begin{tikzpicture} [xscale=.5, yscale=0.25]
         \draw[cyan] (0,-8) grid[xstep=0.5, ystep=1] (10,8);
-        \draw[black,thick,->,>=stealth'] (0,0)--(10.3,0) node[right]{$t$};
-        \draw[black,thick,->,>=stealth'](0,-8)--(0,8.3) node[above] {$y$};
+        \draw[black,thick,->,>=stealth'] (0,0)--(10.8,0) node[right]{$t$};
+        \draw[black,thick,->,>=stealth'](0,-8)--(0,8.9) node[above] {$y$};
 
-        \foreach \x in {1,2,...,10} \draw[black] (\x,0.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1, scale=0.9] {\x};
-        \foreach \y in {-8, -6, -4, -2, 2, 4, 6, 8} \draw[black] (0.08,\y)--++(-.16,0) node[left, xshift=-2, fill=white, inner sep=1, scale=0.9] {\y};
+        \foreach \x in {1,2,...,10} \draw[black] (\x,0.16)--++(0,-.32) node[below, yshift=-2, fill=white, inner sep=1] {\x};
+        \foreach \y in {-8, -6, -4, -2, 2, 4, 6, 8} \draw[black] (0.08,\y)--++(-.16,0) node[left, xshift=-2, fill=white, inner sep=1] {$\y$};
         \end{tikzpicture}]]>
     </latex-image></image>
 </sidebyside></statement>
 
 <answer>
-    <sidebyside width="40%" margins="0% 30%"><image xml:id="exer6-3-2ans"><description>tangent graph</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [yscale=0.5]
-
+    <sidebyside width="50%" margins="0% 30%"><image xml:id="exer6-3-2ans"><description>tangent graph</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture} [xscale=.5, yscale=0.25]
         \draw[cyan] (0,-8) grid[xstep=0.5, ystep=1] (10,8);
-        \draw[black,thick,->,>=stealth'] (0,0)--(10.3,0) node[right]{$t$};
-        \draw[black,thick,->,>=stealth'](0,-8)--(0,8.3) node[above] {$y$};
+        \draw[black,thick,->,>=stealth'] (0,0)--(10.8,0) node[right]{$t$};
+        \draw[black,thick,->,>=stealth'](0,-8)--(0,8.9) node[above] {$y$};
 
-        \foreach \x in {1,2,...,10} \draw[black] (\x,0.08)--++(0,-.16) node[below, yshift=-2, fill=white, inner sep=1, scale=0.9] {\x};
-        \foreach \y in {-8, -6, -4, -2, 2, 4, 6, 8} \draw[black] (0.08,\y)--++(-.16,0) node[left, xshift=-2, fill=white, inner sep=1, scale=0.9] {\y};
+        \foreach \x in {1,2,...,10} \draw[black] (\x,0.16)--++(0,-.32) node[below, yshift=-2, fill=white, inner sep=1] {\x};
+        \foreach \y in {-8, -6, -4, -2, 2, 4, 6, 8} \draw[black] (0.08,\y)--++(-.16,0) node[left, xshift=-2, fill=white, inner sep=1] {$\y$};
 
-        \draw[domain={pi-atan(8)*pi/180}:{pi+atan(8)*pi/180}, smooth, variable=\x,red,very thick, <->,>=stealth'] plot ({\x},{tan(deg(\x))}) ;
-        \draw[domain={2*pi-atan(8)*pi/180}:{2*pi+atan(8)*pi/180}, smooth, variable=\x,red,very thick, <->,>=stealth'] plot ({\x},{tan(deg(\x))}) ;
+        \draw[domain={pi-atan(8)*pi/180}:{pi+atan(8)*pi/180}, smooth, variable=\x,red,very thick, <->,>=stealth'] plot ({\x},{tan(deg(\x))});
+        \draw[domain={2*pi-atan(8)*pi/180}:{2*pi+atan(8)*pi/180}, smooth, variable=\x,red,very thick, <->,>=stealth'] plot ({\x},{tan(deg(\x))});
 
         \draw[domain={0:atan(8)*pi/180}, smooth, variable=\x,red,very thick,->,>=stealth'] plot ({\x},{tan(deg(\x))}) ;
-        \draw[domain={3*pi-atan(8)*pi/180:10}, smooth, variable=\x,red,very thick, <-] plot ({\x},{tan(deg(\x))}) ;
+        \draw[domain={3*pi-atan(8)*pi/180:10}, smooth, variable=\x,red,very thick, <-,>=stealth'] plot ({\x},{tan(deg(\x))}) ;
         \end{tikzpicture}]]>
     </latex-image></image>
 </sidebyside></answer></exercise>
@@ -553,105 +536,101 @@
 <answer><p>Approximately 4.14 and 5.25</p></answer></exercise>
 
 <activity><title>Solving Equations</title>
-        
-        <sidebyside width="90%">
-            <image xml:id="act6-4"><description>unit circle and sine graph</description><latex-image>
-                <![CDATA[
-                \begin{tikzpicture} [scale=1.6]
-        
-                \draw[cyan] (-1.0001,-1.0001) grid[step = 0.1] (1,1);
-                \draw[black, thick, ->,>=stealth'] (-1,0)--(1.15,0) node[right, xshift=-2] {$x$};
-                \draw[black, thick, ->,>=stealth'] (0,-1)--(0,1.2) node[above] {$y$};
-        
-                \draw[red,thick] (0,0) circle (1cm);
-        
-                \foreach \i in {0.1, 0.2, ..., 6.2} {
-                 \draw[black, thick] ({deg(\i)}:.98) -- ({deg(\i)}:1.02);
-                };
-                \foreach \i in {1,2, ..., 6} {
-                 \draw[black, thick] ({deg(\i)}:1) -- ({deg(\i)}:1.05);
-                 \node[text width=.2cm, fill=white, inner sep=1, scale=.8] at ({deg(\i)}:1.1) { $\i$};
-                };
-                \foreach \i in {-0.5, 0.5} {
-                 \draw[black, thick] (0.03,\i) -- (-0.03,\i) node[left, xshift=-2, fill=white, inner sep=1]{ $\i$};
-                 \draw[black, thick] (\i,0.03) -- (\i,-0.03) node[below, yshift=-2, fill=white, inner sep=1]{$\i$};
-                };      
-        
-                %second grid
-                \draw[cyan] (1.4999,-1.0001) grid[xstep=.3, ystep=.1] (5.4,1);
-                \draw[black,thick,->,>=stealth'] (1.45,0)--(5.55,0) node[right]{$t$};
-                \draw[black,thick,->,>=stealth'] (1.5,-1)--(1.5,1.2) node[above] {$y$};
-        
-                \foreach \x [evaluate=\x as \xi using (1.5 + .6* \x )]  in {1, 2,...,6}
-                 \draw[black] (\xi,.05)--++(0,-.1) node[below, yshift=-2, fill=white, inner sep =1] {$\x$};
-                 \foreach \y in {-1, -0.5, 0.5,1}
-                  \draw[black] (1.55,\y)--++(-.1,0) node[left, xshift=-2, fill=white, inner sep =1] {$\y$};
-        
-                \draw[domain=1.5:5.4,smooth,variable=\x,red,very thick] plot ({\x},{ sin(deg( (\x-1.5)/.6))});
-                \end{tikzpicture}]]>
-            </latex-image></image>
-        </sidebyside>
-        
-        <p><ol marker="1">
-            <li><p><ol marker="a">
-                <li>Use the graph of <m>y=\sin (t)</m> to estimate two solutions of the equation <m>\sin (t) = 0.65</m>.  
-                Show your solutions on the graph.</li>
-                <li>Use the unit circle to estimate two solutions of the equation <m>\sin (t) = 0.65</m>. Show your 
-                solutions on the circle.</li></ol></p></li>
-        <li><p><ol marker="a">
-                <li>Use the graph of <m>y=\sin (t)</m> to estimate two solutions of the equation <m>\sin (t) = -0.2</m>.
-                Show your solutions on the graph.</li>
-                <li>Use the unit circle to estimate two solutions of the equation <m>\sin (t) = -0.2</m>. Show your 
-                solutions on the circle.</li></ol></p>
-        <sidebyside width="100%">
-            <image xml:id="act6-5"><description>unit circle and grid</description><latex-image>
-                <![CDATA[
-                \begin{tikzpicture} [scale=1.6]
-        
-                \draw[cyan] (-1.0001,-1.0001) grid[step = 0.1] (1,1);
-                \draw[black, thick, ->,>=stealth'] (-1,0)--(1.15,0) node[right, xshift=-2] {$x$};
-                \draw[black, thick, ->,>=stealth'] (0,-1)--(0,1.2) node[above] {$y$};
-        
-                \draw[red,thick] (0,0) circle (1cm);
-        
-                \foreach \i in {0.1, 0.2, ..., 6.2} {
-                 \draw[black, thick] ({deg(\i)}:.98) -- ({deg(\i)}:1.02);
-                };
-                \foreach \i in {1,2, ..., 6} {
-                 \draw[black, thick] ({deg(\i)}:1) -- ({deg(\i)}:1.05);
-                 \node[text width=.2cm, fill=white, inner sep=1, scale=.8] at ({deg(\i)}:1.1) { $\i$};
-                };
-                \foreach \i in {-0.5, 0.5} {
-                 \draw[black, thick] (0.03,\i) -- (-0.03,\i) node[left, xshift=-2, fill=white, inner sep=1]{ $\i$};
-                 \draw[black, thick] (\i,0.03) -- (\i,-0.03) node[below, yshift=-2, fill=white, inner sep=1]{$\i$};
-                };      
-        
-                %second grid
-                \draw[cyan] (1.4999,-1.0001) grid[xstep=.3, ystep=.1] (5.4,1);
-                \draw[black,thick,->,>=stealth'] (1.45,0)--(5.55,0) node[right]{$t$};
-                \draw[black,thick,->,>=stealth'] (1.5,-1)--(1.5,1.2) node[above] {$y$};
-        
-                \foreach \x [evaluate=\x as \xi using (1.5 + .6* \x )]  in {1, 2,...,6}
-                 \draw[black] (\xi,.05)--++(0,-.1) node[below, yshift=-2, fill=white, inner sep =1, scale=.7] {$\x$};
-                 \foreach \y in {-1, -0.5, 0.5,1}
-                  \draw[black] (1.55,\y)--++(-.1,0) node[left, xshift=-2, fill=white, inner sep =1, scale=.7] {$\y$};
-        
-                \draw[domain=1.5:5.4,smooth,variable=\x,red,very thick] plot ({\x},{ cos(deg( (\x-1.5)/.6))});
-                \end{tikzpicture}]]>
-            </latex-image></image>
-        </sidebyside></li>
-        
-        <li><p><ol marker="a">
-                <li>Use the graph of <m>y=\cos (t)</m> to estimate two solutions of the equation <m>\cos (t) = 0.15</m>.
-                 Show your solutions on the graph.</li>
-                <li>Use the unit circle to estimate two solutions of the equation <m>\cos (t) = 0.15</m>. Show your 
-                solutions on the circle.</li></ol></p></li>
-        <li><p><ol marker="a">
-                <li>Use the graph of <m>y=\cos (t)</m> to estimate two solutions of the equation <m>\cos (t) = -0.4</m>. 
-                 Show your solutions on the graph.</li>
-                <li>Use the unit circle to estimate two solutions of the equation <m>\cos (t) = -0.4</m>. Show your 
-                solutions on the circle.</li></ol></p></li>
-        </ol></p></activity>          
+
+<sidebyside width="90%">
+    <image xml:id="act6-4"><description>unit circle and sine graph</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture} [scale=1.6]    
+            \draw[cyan] (-1.0001,-1.0001) grid[step = 0.1] (1,1);
+            \draw[black, thick, ->,>=stealth'] (-1,0)--(1.15,0) node[right, xshift=-2] {$x$};
+            \draw[black, thick, ->,>=stealth'] (0,-1)--(0,1.2) node[above] {$y$};
+    
+            \draw[red,thick] (0,0) circle (1cm);    
+            \foreach \i in {0.1, 0.2, ..., 6.2} {
+            \draw[black, thick] ({deg(\i)}:.98) -- ({deg(\i)}:1.02);
+            };
+            \foreach \i in {1,2, ..., 6} {
+            \draw[black, thick] ({deg(\i)}:1) -- ({deg(\i)}:1.05);
+            \node[text width=.2cm, fill=white, inner sep=1] at ({deg(\i)}:1.15) { $\i$};
+            };
+            \foreach \i in {-0.5, 0.5} {
+            \draw[black, thick] (0.03,\i) -- (-0.03,\i) node[left, xshift=-2, fill=white, inner sep=1, scale=.9]{ $\i$};
+            \draw[black, thick] (\i,0.03) -- (\i,-0.03) node[below, yshift=-2, fill=white, inner sep=1, scale=.9]{$\i$};
+            };
+    
+            %second grid
+            \draw[cyan] (1.4999,-1.0001) grid[xstep=.3, ystep=.1] (5.4,1);
+            \draw[black,thick,->,>=stealth'] (1.45,0)--(5.55,0) node[right] {$t$};
+            \draw[black,thick,->,>=stealth'] (1.5,-1)--(1.5,1.2) node[above, yshift=-2] {$y$};
+    
+            \foreach \x [evaluate=\x as \xi using (1.5 + .6* \x )]  in {1, 2,...,6}
+            \draw[black] (\xi,.05)--++(0,-.1) node[below, yshift=-2, fill=white, inner sep =1, scale=.9] {$\x$};
+            \foreach \y in {-1, -0.5, 0.5,1}
+                \draw[black] (1.55,\y)--++(-.1,0) node[left, fill=white, inner sep =1, scale=.8] {$\y$};
+
+        \draw[domain=1.5:5.4,smooth,variable=\x,red,very thick] plot ({\x},{ sin(deg( (\x-1.5)/.6))});
+        \end{tikzpicture}]]>
+    </latex-image></image>
+</sidebyside>
+
+<p><ol marker="1">
+    <li><p><ol marker="a">
+        <li>Use the graph of <m>y=\sin (t)</m> to estimate two solutions of the equation <m>\sin (t) = 0.65</m>.  
+        Show your solutions on the graph.</li>
+        <li>Use the unit circle to estimate two solutions of the equation <m>\sin (t) = 0.65</m>. Show your 
+        solutions on the circle.</li></ol></p></li>
+<li><p><ol marker="a">
+        <li>Use the graph of <m>y=\sin (t)</m> to estimate two solutions of the equation <m>\sin (t) = -0.2</m>.
+        Show your solutions on the graph.</li>
+        <li>Use the unit circle to estimate two solutions of the equation <m>\sin (t) = -0.2</m>. Show your 
+        solutions on the circle.</li></ol></p>
+<sidebyside width="100%">
+    <image xml:id="act6-5"><description>unit circle and cosine graph</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture} [scale=1.6]    
+            \draw[cyan] (-1.0001,-1.0001) grid[step = 0.1] (1,1);
+            \draw[black, thick, ->,>=stealth'] (-1,0)--(1.15,0) node[right, xshift=-2] {$x$};
+            \draw[black, thick, ->,>=stealth'] (0,-1)--(0,1.2) node[above] {$y$};
+    
+            \draw[red,thick] (0,0) circle (1cm);    
+            \foreach \i in {0.1, 0.2, ..., 6.2} {
+            \draw[black, thick] ({deg(\i)}:.98) -- ({deg(\i)}:1.02);
+            };
+            \foreach \i in {1,2, ..., 6} {
+            \draw[black, thick] ({deg(\i)}:1) -- ({deg(\i)}:1.05);
+            \node[text width=.2cm, fill=white, inner sep=1] at ({deg(\i)}:1.15) { $\i$};
+            };
+            \foreach \i in {-0.5, 0.5} {
+            \draw[black, thick] (0.03,\i) -- (-0.03,\i) node[left, xshift=-2, fill=white, inner sep=1, scale=.9]{ $\i$};
+            \draw[black, thick] (\i,0.03) -- (\i,-0.03) node[below, yshift=-2, fill=white, inner sep=1, scale=.9]{$\i$};
+            };
+    
+            %second grid
+            \draw[cyan] (1.4999,-1.0001) grid[xstep=.3, ystep=.1] (5.4,1);
+            \draw[black,thick,->,>=stealth'] (1.45,0)--(5.55,0) node[right] {$t$};
+            \draw[black,thick,->,>=stealth'] (1.5,-1)--(1.5,1.2) node[above, yshift=-2] {$y$};
+    
+            \foreach \x [evaluate=\x as \xi using (1.5 + .6* \x )]  in {1, 2,...,6}
+            \draw[black] (\xi,.05)--++(0,-.1) node[below, yshift=-2, fill=white, inner sep =1, scale=.9] {$\x$};
+            \foreach \y in {-1, -0.5, 0.5,1}
+                \draw[black] (1.55,\y)--++(-.1,0) node[left, fill=white, inner sep =1, scale=.8] {$\y$};
+
+        \draw[domain=1.5:5.4,smooth,variable=\x,red,very thick] plot ({\x},{ cos(deg( (\x-1.5)/.6))});
+        \end{tikzpicture}]]>
+    </latex-image></image>
+</sidebyside></li>
+
+<li><p><ol marker="a">
+        <li>Use the graph of <m>y=\cos (t)</m> to estimate two solutions of the equation <m>\cos (t) = 0.15</m>.
+            Show your solutions on the graph.</li>
+        <li>Use the unit circle to estimate two solutions of the equation <m>\cos (t) = 0.15</m>. Show your 
+        solutions on the circle.</li></ol></p></li>
+<li><p><ol marker="a">
+        <li>Use the graph of <m>y=\cos (t)</m> to estimate two solutions of the equation <m>\cos (t) = -0.4</m>. 
+            Show your solutions on the graph.</li>
+        <li>Use the unit circle to estimate two solutions of the equation <m>\cos (t) = -0.4</m>. Show your 
+        solutions on the circle.</li></ol></p></li>
+</ol></p></activity>       
 
 <p>We can also solve equations algebraically, using a calculator or computer to obtain more accurate values for the solutions.</p>
 
@@ -659,21 +638,18 @@
     <li><p>Solve the equation <m>~~\cos (t) = -0.62~~</m> algebraically, for <m>0 \le t \le 2\pi</m>.</p></li>
     <li><p>Find all solutions of the equation.</p></li>
 </ol></p></statement>
-  
+    
 <solution><p><ol marker="a">
     <li><p>The cosine is negative in the second and third quadrants, so we expect to find our answers between <m>t = 1.57</m> and <m>t = 4.71</m>. We use a calculator to find one of the angles:
         <me>\cos^{-1}~ (-0.62) = 2.23953903</me> 
     Rounded to hundredths, the second quadrant angle is <m>t_1 = 2.24</m> radans. To find the other angle, we first find the reference angle for <m>t_1</m>:</p>
-    <sidebyside widths="60% 40%" valigns="middle middle">
+    <sidebyside widths="60% 33%" valigns="middle middle" margins="0% 4%">
         <p><me> \text{reference angle} = \pi - t_1 = 0.90</me>
     The third quadrant angle with the same reference angle is
         <me>t_2 = \pi + 0.90 = 4.04</me></p>
     <image xml:id="exam6-3-4"><description>unit circle</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture}
-
+        <![CDATA[
+        \begin{tikzpicture}[scale=1.]
         \coordinate (O) at (0,0);
         \coordinate (A) at ({acos(0.62)}:1);
         \coordinate (B) at ({acos(-0.62)}:1);
@@ -683,9 +659,9 @@
         \draw[black,thick,->,>=stealth'] (0,-1.2)--++(0,2.5);
         \draw[gray,thick] (O) circle (1cm);
 
-        \draw[blue!80, thick] (O)--(A) node[above right, scale=0.7] {\color{red} ref ang $\,=0.90$};
-        \draw[blue, thick] (O)--(B) node[above left, scale=0.8] {\color{red} $t_1=2.24$};
-        \draw[blue, thick] (O)--(C) node[below left, scale=0.8] {\color{red} $t_2=4.04$};
+        \draw[blue!80, thick] (O)--(A) node[above, text=red, align=left, xshift=10] {ref ang \\$\,=0.90$};
+        \draw[blue, thick] (O)--(B) node[above left] {\color{red} $t_1=2.24$};
+        \draw[blue, thick] (O)--(C) node[below left] {\color{red} $t_2=4.04$};
         \draw[gray!80,thick, dashed] (B)--(C);
 
         \draw[red,thick,->,>=stealth'] (.2,0) arc(0:{180+acos(0.62)}:0.2);
@@ -699,7 +675,7 @@
     </latex-image></image></sidebyside>
     <p>Thus, the two solutions are <m>t_1 = 2.24</m> and <m>t_2 = 4.04</m> radians, as shown in the figure.</p></li>
     <li><p>All angles coterminal with <m>t_1</m> and <m>t_2 </m> are also solutions of the equation <m>~~\cos t = -0.62~~</m>. So adding or subtracting multiples of <m>2 \pi</m> to <m>t_1</m> and <m>t_2 </m> produces all the solutions. For example, <m>2.24 + 2\pi = 8.52</m> and <m>4.04 - 2 \pi = -2.24</m> are solutions. We write the solutions as <m>t = 2.24 \pm 2 \pi k</m> and <m>t = 4.04 \pm 2 \pi k</m>, where <m>k</m> is an integer.</p></li>
-</ol></p></solution></example> 
+</ol></p></solution></example>
 
 <exercise><statement><p><ol marker="a">
     <li><p>Solve the equation <m>~~\sin (t) = -0.85~~</m> algebraically, for <m>0 \le t \le 2\pi</m>.</p></li>
@@ -794,31 +770,31 @@ where <m>t</m> is measured in minutes after boarding.</p>
   </ol></p></solution></example>
 
 <exercise><statement><p>The pistons in an automobile engine move up and down in the cylinders. If <m>t</m> is in milliseconds, the distance from the top of the piston to the top of the cylinder is given in centimeters by
-        <me>D = 7 + 6\sin (4\pi t)</me></p>
+    <me>D = 7 + 6\sin (4\pi t)</me></p>
 <p><ol marker= "a">
-  <li>Graph the function on your calculator (make sure the calculator is set in radian mode).</li>
-  <li>State the midline, amplitude, and period of the graph.</li>
+<li>Graph the function on your calculator (make sure the calculator is set in radian mode).</li>
+<li>State the midline, amplitude, and period of the graph.</li>
 <li>Find the largest and the smallest clearance between the piston and the top of the cylinder.</li>
 </ol></p></statement>
 
 <answer><p><ol marker="a">
-    <li><image xml:id="exer6-3-6ans" width="60%" margins="0% 40%"><description>sinusoidal graph</description><latex-image>
-        <![CDATA[
-        \begin{tikzpicture} [xscale=2., yscale=.12]
-        \draw[cyan] (0,0) grid[xstep=.25, ystep=2] (2,14);
+<li><image xml:id="exer6-3-6ans" width="60%" margins="0% 40%"><description>sinusoidal graph</description><latex-image>
+    <![CDATA[
+    \begin{tikzpicture} [xscale=3, yscale=.2]
+    \draw[cyan] (0,0) grid[xstep=.25, ystep=2] (2,14);
 
-        \draw[black,thick,->,>=stealth'] (0,0)--(2.15,0) node[right, scale=.7]{$t$};
-        \draw[black,thick,->,>=stealth'] (0,0)--(0,15) node[above, scale=.7]{$D$};
-        \foreach \x in {0.5, 1, 1.5, 2} \draw[black,thick] (\x,0.4)--++(0,-.8) node[below, scale=.7] {\x};
-        \foreach \y in {4,8, 12} \draw[black,thick] (0.04,\y)--++(-.08,0) node[left, scale=.7] {\y};
+    \draw[black,thick,->,>=stealth'] (0,0)--(2.15,0) node[right]{$t$};
+    \draw[black,thick,->,>=stealth'] (0,0)--(0,16) node[above]{$D$};
+    \foreach \x in {0.5, 1, 1.5, 2} \draw[black,thick] (\x,0.4)--++(0,-.8) node[below] {\x};
+    \foreach \y in {4,8, 12} \draw[black,thick] (0.04,\y)--++(-.08,0) node[left] {\y};
 
-        \draw[samples=65,domain=0:2,smooth,variable=\x,red,very thick] plot ({\x},{7+6* sin( 4*180*\x)});
-        \end{tikzpicture}]]>
-    </latex-image></image>
-    </li>
-    <li>Midline: <m>D = 7</m>, amplitude: <m>6</m>, period: <m>0.5</m> millisec</li>
-    <li>Largest: 13 cm, smallest: 1 cm</li>
-    </ol></p>
+    \draw[samples=65,domain=0:2,smooth,variable=\x,red,very thick] plot ({\x},{7+6* sin( 4*180*\x)});
+    \end{tikzpicture}]]>
+</latex-image></image>
+</li>
+<li>Midline: <m>D = 7</m>, amplitude: <m>6</m>, period: <m>0.5</m> millisec</li>
+<li>Largest: 13 cm, smallest: 1 cm</li>
+</ol></p>
 </answer></exercise>
 </subsection>
 
@@ -831,7 +807,6 @@ where <m>t</m> is measured in minutes after boarding.</p>
     <image xml:id="fig-6-3-domrge"><description>three graphs</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.18]
-
         \coordinate (O) at (0,0);
         \coordinate (A) at (-8.001,-8.01);
         \coordinate (B) at (8,8);
@@ -905,47 +880,41 @@ where <m>t</m> is measured in minutes after boarding.</p>
 </assemblage>
 
 <example><statement><p>Find the domain and range of each function.</p>
-  <p><ol marker="a" cols="2">
+<p><ol marker="a" cols="2">
     <li><m>f(x) = 1 - x^2</m></li>
     <li><m>g(x) = \dfrac{1}{x - 3}</m></li>
 </ol></p></statement>
 
 <solution><p><ol marker="a">
-  <li><p>There are no restrictions on the input values for this function, so its domain is all real numbers. The graph is a parabola with high point at <m>(0,1)</m>, so the range of the function is all <m>y \le 1</m>. See the figure below.</p>
-       <sidebyside widths="25% 25%">
+<li><p>There are no restrictions on the input values for this function, so its domain is all real numbers. The graph is a parabola with high point at <m>(0,1)</m>, so the range of the function is all <m>y \le 1</m>. See the figure below left.</p>
+        <sidebyside widths="28% 28%">
     <image xml:id="exam6-3-7a"><description>parabola</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.2]
-
+        <![CDATA[
+        \begin{tikzpicture} [scale=.17]
         \draw[cyan] (-8,-8) grid[step=2] (8,8);
         \draw[black,thick,->,>=stealth'] (-8,0)--++(17.,0) ;
         \draw[black,thick,->,>=stealth'] (0,-8)--++(0,17) ;
         \foreach \i in {-8,-4,4,8} {
-         \draw[black,thick] (\i,0.16)--++(0,-.32)node[below, yshift=-2, fill=white, inner sep=1, scale=.7]{\i};
-         \draw[black,thick] (0.16,\i)--++(-.32,0)node[left, xshift=-2, fill=white, inner sep=1, scale=.7]{\i};
+        \draw[black,thick] (\i,0.16)--++(0,-.32)node[below, yshift=-2, fill=white, inner sep=1]{\i};
+        \draw[black,thick] (0.16,\i)--++(-.32,0)node[left, xshift=-2, fill=white, inner sep=1]{\i};
         };
         \draw[domain=-3:3,smooth,variable=\x,red,very thick] plot ({\x},{1-(\x) ^2});
         \draw[red,very thick,->,>=stealth'] (-5/2,-21/4)--(-3,-8);
         \draw[red,very thick,->,>=stealth'] (5/2,-21/4)--(3,-8);
 
-        \node[align=center, text=blue, scale=.7] at (0, -10.5) {$f(x)=1-x^2$};
+        \node[align=center, text=blue] at (0, -10.9) {$f(x)=1-x^2$};
         \end{tikzpicture}]]>
     </latex-image></image>
     
     <image xml:id="exam6-3-7b"><description>graph of hyperbola</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.2]
-
+        <![CDATA[
+        \begin{tikzpicture} [scale=.17]
         \draw[cyan] (-8,-8) grid[step=2] (8,8);
         \draw[black,thick,->,>=stealth'] (-8,0)--++(17.,0) ;
         \draw[black,thick,->,>=stealth'] (0,-8)--++(0,17) ;
         \foreach \i in {-8,-4,4,8} {
-         \draw[black,thick] (\i,0.16)--++(0,-.32)node[below, yshift=-2, fill=white, inner sep=1, scale=.7]{\i};
-         \draw[black,thick] (0.16,\i)--++(-.32,0)node[left, xshift=-2, fill=white, inner sep=1, scale=.7]{\i};
+        \draw[black,thick] (\i,0.16)--++(0,-.32)node[below, yshift=-2, fill=white, inner sep=1]{\i};
+        \draw[black,thick] (0.16,\i)--++(-.32,0)node[left, xshift=-2, fill=white, inner sep=1]{\i};
         };
 
         \draw[gray,thick,dashed] (3,-8)--(3,8);
@@ -956,12 +925,12 @@ where <m>t</m> is measured in minutes after boarding.</p>
         \draw[samples=65,domain=25/8:8,smooth,variable=\x,red,very thick] plot ({\x},{1/(\x -3)});
         \draw[red,very thick,->,>=stealth'] (22/7,7)--(25/8,8);
         \draw[red,very thick,->,>=stealth'] (7,1/4)--(8,1/5);
-        \node[align=center, text=blue, scale=.7] at (0, -10.5) {$\displaystyle g(x)=\frac{1}{x-3}$};
+        \node[align=center, text=blue] at (0, -10.9) {$\displaystyle g(x)=\frac{1}{x-3}$};
         \end{tikzpicture}]]>
     </latex-image></image>
     </sidebyside></li>
 
-  <li>Because we cannot divide by zero, we cannot allow <m>x = 3</m> for this function. Thus, the domain of <m>g</m> is all real numbers except <m>3</m>. The graph has a horizontal asymptote at <m>y = 0</m>, and you can see that there is no input that will produce an output of zero. So the range of <m>g</m> is all real numbers except <m>0</m>.</li>
+<li>Because we cannot divide by zero, we cannot allow <m>x = 3</m> for this function. Thus, the domain of <m>g</m> is all real numbers except <m>3</m>. The graph has a horizontal asymptote at <m>y = 0</m>, and you can see that there is no input that will produce an output of zero. So the range of <m>g</m> is all real numbers except <m>0</m>.</li>
 </ol></p>
 </solution></example>
 
@@ -1041,213 +1010,93 @@ where <m>t</m> is measured in minutes after boarding.</p>
 </subsubsection>
 
 <subsubsection><title>Concepts</title>
-<p><ol marker="1">
-  <li>We can use circular functions of real numbers to describe periodic phenomena.</li>
-  <li>The <term>domain</term> of a function is the set of all possible input values. The <term>range</term> of a function is the set of all output values for the function.</li>
-  <li>We can use a graph to solve trigonometric equations, or the inverse trig keys on a calculator or computer. We can find exact values for the solutions of equations involving the special values without using a calculator.</li>
-
-     <li><sidebyside widths="40% 60%" valigns="middle middle"><p>
-      <assemblage><title><m>f(x) = \sin (x)</m></title>
-      <p>Domain: all real numbers</p>
-      <p>Range: <m>[-1,1]</m></p>
-      <p>Period: <m>2\pi</m></p></assemblage></p>
-      <image xml:id="fig-6-3-sumsin">
-        <description>sine graph</description>
-        <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture}
-
-        \draw[cyan,xstep=pi/12,ystep=0.18]
-        (-2*pi,-1.8) grid (2*pi,1.8);
-
-        \draw[->,>=stealth'] (-6.3,0) -- (6.5,0) node[right] {$x$};
-        \draw[->,>=stealth'] (0,-1.8) -- (0,2.2) node[above] {$f(x)=\sin(x)$};
-
-        \foreach \x in {-24,-23,...,24}
-        \draw[black] ($ pi*\x /12*(1,0) +(0,.08) $) --++(0,-.16);
-        \foreach \y in {-0.9, 0.9}
-        \draw[black] (.08,\y ) --++(-.16,0);
-        \foreach \y in {-1,1}
-        \draw[black, thick] (.12,1.8*\y ) --++(-.24,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\y};
-
-        \draw[black, thick] (-2*pi,.2) --++(0,-.4) node[anchor=north, xshift=-2,yshift=-3, fill=white, inner sep=1pt] {$-2\pi$};
-        \draw[black, thick] (2*pi,.2) --++(0,-.4) node[anchor=north, xshift=2,yshift=-3, fill=white, inner sep=1pt] {$2\pi$};
-
-        \draw[black] (pi,.2) --++(0,-.4) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\pi$};
-
-        \draw[black] (pi,.2) --++(0,-.4) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\pi$};
-        \draw[black] (-pi,.2) --++(0,-.4) node[anchor=north, xshift=-2,yshift=-3, fill=white, inner sep=1pt] {$-\pi$};
-        \draw[black] (-pi/2,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{-\pi}{2}$};
-        \draw[black] (pi/2,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{\pi}{2}$};
-        \draw[black] (3*pi/2,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{3\pi}{2}$};
-        \draw[black] (-3*pi/2,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{-3\pi}{2}$};
-
-        \draw[black] (pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-4, fill=white, inner sep=1pt] {$\frac{\pi}{4}$};
-
-        \draw[black] (3*pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{3\pi}{4}$};
-
-        \draw[samples=65,domain=-2*pi:2*pi,smooth,variable=\x,red,very thick] plot ({\x},{1.8*sin(deg(\x))});
-        \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside>
-
-    <sidebyside widths="40% 60%" valigns="middle middle"><p>
-      <assemblage><title><m>g(x) = \cos (x)</m></title>
-      <p>Domain: all real numbers</p>
-      <p>Range: <m>[-1,1]</m></p>
-      <p>Period: <m>2\pi</m></p></assemblage></p>
-    <image xml:id="fig-6-3-sumcos">
-        <description>cosine graph</description>
-        <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} 
-
-        \draw[cyan,xstep=pi/12,ystep=0.18]
-        (-2*pi,-1.8) grid (2*pi,1.8);
-
-        \draw[->,>=stealth'] (-6.3,0) -- (6.5,0) node[right] {$x$};
-        \draw[->,>=stealth'] (0,-1.8) -- (0,2.2) node[above] {$g(x)=\cos(x)$};
-
-        \foreach \x in {-24,-23,...,24}
-        \draw[black] ($ pi*\x /12*(1,0) +(0,.08) $) --++(0,-.16);
-        \foreach \y in {-0.9, 0.9}
-        \draw[black] (.08,\y ) --++(-.16,0);
-        \foreach \y in {-1,1}
-        \draw[black, thick] (.12,1.8*\y ) --++(-.24,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\y};
-
-        \draw[black, thick] (-2*pi,.2) --++(0,-.4) node[anchor=north, xshift=-2,yshift=-3, fill=white, inner sep=1pt] {$-2\pi$};
-        \draw[black, thick] (2*pi,.2) --++(0,-.4) node[anchor=north, xshift=2,yshift=-3, fill=white, inner sep=1pt] {$2\pi$};
-
-        \draw[black] (pi,.2) --++(0,-.4) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\pi$};
-
-        \draw[black] (pi,.2) --++(0,-.4) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\pi$};
-        \draw[black] (-pi,.2) --++(0,-.4) node[anchor=north, xshift=-2,yshift=-3, fill=white, inner sep=1pt] {$-\pi$};
-        \draw[black] (-pi/2,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{-\pi}{2}$};
-        \draw[black] (pi/2,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{\pi}{2}$};
-        \draw[black] (3*pi/2,.15) --++(0,-.3) node[anchor=north,xshift=3, yshift=-3, fill=white, inner sep=1pt] {$\frac{3\pi}{2}$};
-        \draw[black] (-3*pi/2,.15) --++(0,-.3) node[anchor=north,xshift=-3, yshift=-3, fill=white, inner sep=1pt] {$\frac{-3\pi}{2}$};
-
-        \draw[black] (pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-4, fill=white, inner sep=1pt] {$\frac{\pi}{4}$};
-
-        \draw[black] (3*pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{3\pi}{4}$};
-
-        \draw[black] (5*pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{5\pi}{4}$};
-
-        \draw[samples=65, domain=-2*pi:2*pi,smooth,variable=\x,red,very thick] plot ({\x},{1.8*cos(deg(\x))});
-        \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-  </sidebyside>
-
-    <sidebyside widths="45% 55%" valigns="middle middle"><p>
-      <assemblage><title><m>h(x) = \tan (x)</m></title>
-      <p>Domain: all real numbers except 
-        <m>\cdots,~ \dfrac{-3\pi}{2},~ \dfrac{-\pi}{2},~ \dfrac{\pi}{2},~ \dfrac{3\pi}{2},~\cdots</m></p>
-      <p>Range: all real numbers</p>
-      <p>Period: <m>\pi</m></p></assemblage></p>
-    <image xml:id="fig-6-3-sumtan">
-        <description>tangent graph</description>
-        <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [yscale=.5]
-
-        \draw[cyan,xstep=pi/12,ystep=0.5]
-        (-2*pi,-5) grid (2*pi,5);
-
-        \draw[->,>=stealth'] (-6.3,0) -- (6.5,0) node[right] {$x$};
-        \draw[->,>=stealth'] (0,-5) -- (0,5.5) node[above] {$h(x)=\tan(x)$};
-
-        \foreach \x in {-24,-23,...,24}
-        \draw[black] ($ pi*\x /12*(1,0) +(0,.08) $) --++(0,-.16);
-        \foreach \y in {-5,-4,...,-1,1,2,...,5}
-        \draw[black, thick] (.10,\y ) --++(-.2,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\y};
-
-        \draw[black, thick] (-2*pi,.2) --++(0,-.4) node[anchor=north, xshift=-2,yshift=-3, fill=white, inner sep=1pt] {$-2\pi$};
-        \draw[black, thick] (2*pi,.2) --++(0,-.4) node[anchor=north, xshift=2,yshift=-3, fill=white, inner sep=1pt] {$2\pi$};
-
-        \draw[black] (pi,.2) --++(0,-.4) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\pi$};
-
-        \draw[black] (pi,.2) --++(0,-.4) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\pi$};
-        \draw[black] (-pi,.2) --++(0,-.4) node[anchor=north, xshift=-2,yshift=-3, fill=white, inner sep=1pt] {$-\pi$};
-        \draw[black] (-pi/2,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{-\pi}{2}$};
-        \draw[black] (pi/2,.15) --++(0,-.3) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{\pi}{2}$};
-        \draw[black] (3*pi/2,.15) --++(0,-.3) node[anchor=north,xshift=3, yshift=-3, fill=white, inner sep=1pt] {$\frac{3\pi}{2}$};
-        \draw[black] (-3*pi/2,.15) --++(0,-.3) node[anchor=north,xshift=-3, yshift=-3, fill=white, inner sep=1pt] {$\frac{-3\pi}{2}$};
-
-        \draw[black] (pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-4, fill=white, inner sep=1pt] {$\frac{\pi}{4}$};
-
-        \draw[black] (3*pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{3\pi}{4}$};
-
-        \draw[black] (5*pi/4,.11) --++(0,-.22) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\frac{5\pi}{4}$};
-
-        \foreach \i in {-1, 0, 1}
-            \draw[domain={\i*pi-atan(5)*pi/180}:{\i*pi+atan(5)*pi/180}, smooth, variable=\x,red,very thick] plot ({\x},{tan(deg(\x))}) ;
-
-        \draw[domain={-2*pi:atan(5)*pi/180-2*pi}, smooth, variable=\x,red,very thick] plot ({\x},{tan(deg(\x))}) ;
-        \draw[domain={2*pi-atan(5)*pi/180:2*pi}, smooth, variable=\x,red,very thick] plot ({\x},{tan(deg(\x))}) ;
-        \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-  </sidebyside></li>   
-</ol></p></subsubsection>
+    <p><ol marker="1">
+        <li>We can use circular functions of real numbers to describe periodic phenomena.</li>
+        <li>The <term>domain</term> of a function is the set of all possible input values. The <term>range</term> of a function is the set of all output values for the function.</li>
+        <li>We can use a graph to solve trigonometric equations, or the inverse trig keys on a calculator or computer. We can find exact values for the solutions of equations involving the special values without using a calculator.</li>
+    
+            <li><sidebyside widths="32% 68%" valigns="middle middle"><p>
+            <assemblage><title><m>f(x) = \sin (x)</m></title>
+            <p>Domain: all real numbers</p>
+            <p>Range: <m>[-1,1]</m></p>
+            <p>Period: <m>2\pi</m></p></assemblage></p>
+            <image xml:id="fig-6-3-sumsin">
+            <description>sine graph</description>
+            <xi:include href="Fig-sine-2-periods.ptx"/>
+        </image>
+    </sidebyside>
+    
+    <sidebyside widths="32% 68%" valigns="middle middle"><p>
+        <assemblage><title><m>g(x) = \cos (x)</m></title>
+        <p>Domain: all real numbers</p>
+        <p>Range: <m>[-1,1]</m></p>
+        <p>Period: <m>2\pi</m></p></assemblage></p>
+        <image xml:id="fig-6-3-sumcos">
+            <description>cosine graph</description>
+            <xi:include href="Fig-cosine-2-periods.ptx"/>
+        </image>
+        </sidebyside>
+    
+        <sidebyside widths="48% 52%" valigns="middle middle"><p>
+            <assemblage><title><m>h(x) = \tan (x)</m></title>
+            <p>Domain: all real numbers except 
+            <m>\cdots,~ \dfrac{-3\pi}{2},~ \dfrac{-\pi}{2},~ \dfrac{\pi}{2},~ \dfrac{3\pi}{2},~\cdots</m></p>
+            <p>Range: all real numbers</p>
+            <p>Period: <m>\pi</m></p></assemblage></p>
+        <image xml:id="fig-6-3-sumtan">
+            <description>tangent graph</description>
+            <xi:include href="Fig-tangent-4-periods.ptx"/>
+        </image>
+        </sidebyside></li>   
+    </ol></p></subsubsection>
 
 <subsubsection><title> Study Questions</title>
-<p><ol marker="1">
-  <li>How do the graphs of the circular functions differ from the graphs of the trigonometric functions of angles in degrees?</li>
-  <li><p>Use guidepoints to sketch graphs of <m>y = \cos (t)</m> and <m>y = \tan (t)</m>.</p>
-  <sidebyside widths="60% 30%" valigns="middle middle"><p>For each equation below, suppose that <m>\omega</m> is one of the solutions between <m>0</m> and <m>2\pi</m>. Use the diagram to find the other solution.</p>
-     <image xml:id="fig-6-3-sq">
-        <description>circle</description>
-        <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture}
-
-        \draw[black,thick,->,>=stealth'] (-1.1,0)--(1.2,0);
-        \draw[black,thick,->,>=stealth'] (0,-1.1)--(0,1.2);
-        \draw[gray,thick] (0,0) circle (1cm);
-
-        \coordinate(A) at (35:1);
-        \coordinate(B) at (145:1);
-        \coordinate(C) at (215:1);
-        \coordinate(D) at (325:1);
-
-        \draw[gray!60, thick] (A)--(C);
-        \draw[gray!60, thick] (B)--(D);
-
-        \filldraw[black] (A) circle (.05cm) node[above right, scale=.75, color=red]{$\omega$};
-        \filldraw[black] (B) circle (.05cm) node[above left, scale=.75, color=red]{$\pi -\omega$};
-        \filldraw[black] (C) circle (.05cm) node[below left, scale=.75, color=red]{$\pi +\omega$};
-        \filldraw[black] (D) circle (.05cm) node[below right, scale=.75, color=red]{$2\pi-\omega$};
-        \end{tikzpicture}]]>
-    </latex-image>
-    </image>
- </sidebyside></li>
-  <li><m>\sin (t) = k</m></li>
-  <li><m>\cos (t) = k</m></li>
-  <li><m>\tan (t) = k</m></li>
-</ol></p>
-</subsubsection>
-
-<subsubsection><title>Skills</title>
-<p><ol marker="1">
-  <li>Graph the trig functions of real numbers    #1<ndash/>8</li>
-  <li>Solve trigonometric equations graphically    #9<ndash/>20</li>
-  <li>Work with reference angles    #21<ndash/>26</li>
-  <li>Solve trigonometric equations algebraically    #27<ndash/>52</li>
-  <li>Evaluate trigonometric functions of real numbers    #45<ndash/>58</li>
-  <li>Use trigonometric models    #59<ndash/>62</li>
-  <li>Locate points on the graphs of the trigonometric functions    #63<ndash/>70</li>
-  <li>Find the domain and range of a function    #71<ndash/>80</li> 
-</ol></p></subsubsection>
+    <p><ol marker="1">
+        <li>How do the graphs of the circular functions differ from the graphs of the trigonometric functions of angles in degrees?</li>
+        <li><p>Use guidepoints to sketch graphs of <m>y = \cos (t)</m> and <m>y = \tan (t)</m>.</p>
+        <sidebyside widths="60% 34%" valigns="middle middle" margins="0% 5%"><p>For each equation below, suppose that <m>\omega</m> is one of the solutions between <m>0</m> and <m>2\pi</m>. Use the diagram to find the other solution.</p>
+            <image xml:id="fig-6-3-sq">
+            <description>circle</description>
+            <latex-image>
+            <![CDATA[
+            \begin{tikzpicture}
+            \draw[black,thick,->,>=stealth'] (-1.1,0)--(1.3,0);
+            \draw[black,thick,->,>=stealth'] (0,-1.1)--(0,1.3);
+            \draw[gray,thick] (0,0) circle (1cm);
+    
+            \coordinate(A) at (35:1);
+            \coordinate(B) at (145:1);
+            \coordinate(C) at (215:1);
+            \coordinate(D) at (325:1);
+    
+            \draw[gray!60, thick] (A)--(C);
+            \draw[gray!60, thick] (B)--(D);
+    
+            \filldraw[black] (A) circle (.05cm) node[above right, color=red]{$\omega$};
+            \filldraw[black] (B) circle (.05cm) node[above left, color=red,xshift=6]{$\pi -\omega$};
+            \filldraw[black] (C) circle (.05cm) node[below left, color=red,xshift=6]{$\pi +\omega$};
+            \filldraw[black] (D) circle (.05cm) node[below right, color=red,xshift=-6]{$2\pi-\omega$};
+            \end{tikzpicture}]]>
+        </latex-image>
+        </image>
+        </sidebyside></li>
+        <li><m>\sin (t) = k</m></li>
+        <li><m>\cos (t) = k</m></li>
+        <li><m>\tan (t) = k</m></li>
+    </ol></p>
+    </subsubsection>
+    
+    <subsubsection><title>Skills</title>
+    <p><ol marker="1">
+        <li>Graph the trig functions of real numbers    #1<ndash/>8</li>
+        <li>Solve trigonometric equations graphically    #9<ndash/>20</li>
+        <li>Work with reference angles    #21<ndash/>26</li>
+        <li>Solve trigonometric equations algebraically    #27<ndash/>52</li>
+        <li>Evaluate trigonometric functions of real numbers    #45<ndash/>58</li>
+        <li>Use trigonometric models    #59<ndash/>62</li>
+        <li>Locate points on the graphs of the trigonometric functions    #63<ndash/>70</li>
+        <li>Find the domain and range of a function    #71<ndash/>80</li> 
+    </ol></p></subsubsection>
 </subsection>
 
 <xi:include href="./hmwk-6-3.xml" />  

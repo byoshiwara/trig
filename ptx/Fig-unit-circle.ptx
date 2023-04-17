@@ -1,0 +1,22 @@
+<latex-image>
+    <![CDATA[
+    \begin{tikzpicture} [scale=2.2]
+    \draw[cyan] (-1.0001,-1.0001) grid[step = 0.1] (1,1);
+    \draw[black, thick, ->,>=stealth'] (-1,0)--(1.1,0);
+    \draw[black, thick, ->,>=stealth'] (0,-1)--(0,1.1);
+
+    \draw[red,thick] (0,0) circle (1cm);
+
+    \foreach \i in {0.1, 0.2, ..., 6.2} {
+     \draw[black, thick] ({deg(\i)}:.98) -- ({deg(\i)}:1.02);
+    };
+    \foreach \i in {1,2, ..., 6} {
+     \draw[black, thick] ({deg(\i)}:1) -- ({deg(\i)}:1.05);
+     \node[text width=.2cm, fill=white, inner sep=1] at ({deg(\i)}:1.1) { $\i$};
+    };
+    \foreach \i in {-0.5, 0.5} {
+     \draw[black, thick] (0.03,\i) -- (-0.03,\i) node[left, xshift=-2, fill=white, inner sep=1]{ $\i$};
+     \draw[black, thick] (\i,0.03) -- (\i,-0.03) node[below, yshift=-2, fill=white, inner sep=1]{$\i$};
+    };
+    \end{tikzpicture}]]>
+</latex-image>

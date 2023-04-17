@@ -1,0 +1,24 @@
+<latex-image>
+    <![CDATA[
+    \begin{tikzpicture} [yscale=.4]
+    \draw[cyan] (0,-10) grid[xstep=1/5, ystep=1/2] (6.4,10);
+    \draw[black,thick,->,>=stealth'] (0,0)--(6.7,0) node[right]{$x$};
+    \draw[black,thick,->,>=stealth'] (0,-10)--(0,10.6) node[above]{$y$};
+    \draw[gray, very thick,dashed] (pi/2,-10)--++(0,20);
+    \draw[gray, very thick,dashed] (3*pi/2,-10)--++(0,20);
+
+    \foreach \x in { 1,2,..., 6} \draw[black,thick] (\x,0.04) -- ++(0,-.08) node[below, yshift=-2, fill=white, inner sep = 1] {\x};
+
+    \foreach \y in {-10, -8,...,-2, 2,4,..., 10} \draw[black,thick] (0.08, \y) -- ++(-.16,0) node[left, xshift=-2, fill=white, inner sep = 1] {\y};
+
+    \draw[samples=65,domain=0:{atan(10)*pi/180},smooth,variable=\x,red,very thick] plot ({\x},{tan(deg(\x))});
+    \draw[red,thick,->,>=stealth'] ($ atan(9.5)*pi/180*(1,0)+(0,9.5)$)--($ atan(10)*pi/180*(1,0)+(0,10)$);
+
+    \draw[samples=65,domain={pi-atan(10)*pi/180}:{pi+atan(10)*pi/180},smooth,variable=\x,red,very thick] plot ({\x},{tan(deg(\x))});
+    \draw[red,thick,->,>=stealth'] ($ atan(9.5)*pi/180*(1,0)+(pi,9.5)$)--($ atan(10)*pi/180*(1,0)+(pi,10)$);
+    \draw[red,thick,->,>=stealth'] ($ atan(9.5)*pi/180*(-1,0)+(pi,-9.5)$)--($ atan(10)*pi/180*(-1,0)+(pi,-10)$);
+
+    \draw[samples=65,domain={2*pi-atan(10)*pi/180}:6.4,smooth,variable=\x,red,very thick] plot ({\x},{tan(deg(\x))});
+    \draw[red,thick,->,>=stealth'] ($ atan(9.5)*pi/180*(-1,0)+(2*pi,-9.5)$)--($ atan(10)*pi/180*(-1,0)+(2*pi,-10)$);
+    \end{tikzpicture}]]>
+</latex-image>

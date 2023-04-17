@@ -1,0 +1,12 @@
+<latex-image>
+    <![CDATA[
+    \begin{tikzpicture} [scale=.38]
+    \draw[cyan] (0,-4) grid (12,4);
+    \draw[black, thick, ->,>=stealth'] (0,0)--(12.5,0) node[right]{$\theta$};
+    \draw[black, thick, ->,>=stealth'] (0,-4)--(0,4.5) node[above]{$y$};
+
+    \foreach \x [evaluate=\x as \xi using int( 30* \x )] in { 2, 4, ..., 12} \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi $};
+
+    \foreach \y   in { -4, -2, 2, 4} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\y};
+    \end{tikzpicture}]]>
+</latex-image>

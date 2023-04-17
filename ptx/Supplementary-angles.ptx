@@ -1,0 +1,27 @@
+<latex-image>
+    <![CDATA[
+    \begin{tikzpicture} [scale=.9]
+    \coordinate(A) at (2,0);
+    \coordinate (B) at (2,1.2);
+    \coordinate(Ap) at (-2,0);
+    \coordinate (Bp) at (-2,1.2);
+    \coordinate (C) at (0,0);
+
+    \filldraw[black] (B) circle (1.5pt) node[anchor=south] {$P(x,y)$};
+    \draw[blue,thick] (A) rectangle +(-0.25,0.25);
+    \draw[gray,thick, dashed] (A)--(B);
+    \draw[black, ultra thick] (C)--(B) node[above,midway] {\color{blue}$r$};
+
+    \filldraw[black] (Bp) circle (1.5pt) node[anchor=south] {$P'(-x,y)$};
+    \draw[blue,thick] (Ap) rectangle +(0.25,0.25);
+    \draw[gray,thick, dashed] (Ap)--(Bp);
+    \draw[black, ultra thick] (C)--(Bp) node[above,midway] {\color{blue}$r$};
+
+    \draw[black,thick,->,>=stealth'] (-2.5,0) -- (2.5,0);
+    \draw[black,thick,->,>=stealth'] (0,.8) -- (0,2.2) ;
+    \draw[black,thick] (0,-0.5) -- (0,0.45) ;
+
+    \draw[red!80!white,thick,->,>=stealth'] (1,0) arc (0:{atan(1.2/2)}:1) node[right, midway, xshift=0, yshift=-1] {$\theta$};
+    \draw[red,thick,->,>=stealth'] (.4,0) arc (0:{180-atan(1.2/2)}:.4) node[midway, xshift=-3, yshift=6] {$180\degree-\theta$};
+    \end{tikzpicture}]]>
+</latex-image>

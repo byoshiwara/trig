@@ -30,7 +30,7 @@
 
         \draw[black, thick, ->,>=stealth'] (0,-2.3)--(0,2.3);
         \draw[black, thick, ->,>=stealth'] (-2.3,0)--(3,0);
-        \draw[red, thick, ->,>=stealth'] (0.4,0) arc (0:50:0.4) node[right, midway, yshift=2] {$ \theta$};
+        \draw[red, thick, ->,>=stealth'] (0.6,0) arc (0:50:0.6) node[right, midway, xshift=-1] {$ \theta$};
 
         \draw[blue, thick] (O) --(P) node[above left, midway, xshift=8, color=blue] {$100'$};
 
@@ -281,7 +281,6 @@
 <sidebyside width="60%"><image xml:id="exam4-2-3a"><description>sine graph</description><latex-image>
     <![CDATA[
     \begin{tikzpicture}
-
     \draw[cyan,xstep=pi/18,ystep=0.18]
     (0,-1.8) grid (2*pi,1.8);
 
@@ -298,7 +297,6 @@
     \draw[domain=0:2*pi,smooth,variable=\x,red,very thick] plot ({\x},{1.8*sin(deg(\x))});
     \foreach \x [evaluate=\x as \xi using ( pi/180 * \x )] in {0,10,20,...,360}
         \filldraw[black] (\xi, {1.8*sin(\x)} ) circle (1pt);
-
     \end{tikzpicture}]]>
 </latex-image></image></sidebyside></solution></example>
 
@@ -405,7 +403,6 @@ Complete the table of values and graph the Ferris wheel function, <m>h = F(\thet
 
     \foreach \y  [evaluate=\y as \yi using int( 50* \y )] in {2,4}
     \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
-
     \end{tikzpicture}]]>
     </latex-image></image>
 </sidebyside></statement>
@@ -607,8 +604,7 @@ Complete the table of values and graph the Ferris wheel function, <m>h = F(\thet
 
     <sidebyside widths="65%"><image xml:id="exam4-2-4b"><description>cosine graph</description><latex-image>
         <![CDATA[
-        \begin{tikzpicture} [xscale=1]
-
+        \begin{tikzpicture}
         \draw[cyan,xstep=pi/6,ystep=0.3] (0,0) grid (2*pi,3.9);
 
         \draw[->,>=stealth'] (-.3,0) -- (6.5,0) node[right] {$\theta$};
@@ -1012,7 +1008,7 @@ Study the figure at right to see that as <m>\theta</m> increases from <m>0\degre
         <description>angles differing by 180 degrees</description>
         <latex-image>
         <![CDATA[
-        \begin{tikzpicture}  [scale=.8]
+        \begin{tikzpicture}  [scale=.7]
         \coordinate (O) at (0,0);
         \coordinate (B) at (1,0);
         \coordinate (A) at (1,2);
@@ -1041,7 +1037,7 @@ Study the figure at right to see that as <m>\theta</m> increases from <m>0\degre
         <description>angles differing by 180 deg</description>
         <latex-image>
         <![CDATA[
-        \begin{tikzpicture}  [scale=.8]
+        \begin{tikzpicture}  [scale=.7]
         \coordinate (O) at (0,0);
         \coordinate (B) at (1.6,0);
         \coordinate (A) at (1.6,-1);
@@ -1614,7 +1610,7 @@ Thus, the graph of <m>\tan (\theta)</m> in the third quadrant is the same as its
     <li><sidebyside widths="60% 23%" valigns="middle middle"><p>Use the figure to help you fill in the blanks.</p>
     <image xml:id="sq4-2-1"><description>circle</description><latex-image>
         <![CDATA[
-        \begin{tikzpicture} [scale=.8]
+        \begin{tikzpicture} [scale=.72]
         \coordinate (O) at (0,0);
         \coordinate (A) at (25:1.5);
         \coordinate (Ap) at ($ 1.5*cos(25)*(1,0) $);
@@ -1645,7 +1641,7 @@ Thus, the graph of <m>\tan (\theta)</m> in the third quadrant is the same as its
     <li><sidebyside widths="60% 23%"  valigns="middle middle"><p>Use the figure to help you fill in the blanks.</p>
     <image xml:id="sq4-2-2"><description>circle</description><latex-image>
         <![CDATA[
-        \begin{tikzpicture} [scale=.8]
+        \begin{tikzpicture} [scale=.72]
         \coordinate (O) at (0,0);
         \coordinate (A) at (25:1.5);
         \coordinate (Ap) at ($ 1.5*sin(25)*(0,1) $);
