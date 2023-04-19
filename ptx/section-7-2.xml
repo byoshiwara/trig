@@ -537,7 +537,7 @@ are transformations of the sine and cosine graphs.</p>
 <sidebyside widths="45% 50%" valigns="middle middle"><p>Finally, plot the guidepoints and connect them with a sinusoidal curve.  The graph is shown at right.</p>   
     <image xml:id="exam7-2-3"><description>sinusoidal graph</description><latex-image>
         <![CDATA[
-        \begin{tikzpicture} [xscale=.9, yscale=.36]
+        \begin{tikzpicture} [xscale=.8, yscale=.32]
         \draw[cyan] (-pi,-6) grid[xstep=pi/6] (pi,2);
         \draw[black,thick,->,>=stealth'] (-pi,0)--(3.4,0) node[right]{$x$};
         \draw[black,thick,->,>=stealth'] (0,-6)--(0,2.4) node[above]{$y$};
@@ -553,7 +553,7 @@ are transformations of the sine and cosine graphs.</p>
         \draw[samples=65, domain=-pi/3:pi/3, variable=\x, smooth,blue, ultra thick] plot(\x,{ 4*cos( 3* deg( \x + pi/3))-2 });
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></li>
-</ol></p></solution></example> 
+</ol></p></solution></example>
 
 <exercise><statement><p><ol marker="a">
 <li>State the midline, amplitude, period, and horizontal shift of the graph of
@@ -755,45 +755,39 @@ as our formula for the function.</p></solution></example>
     <p><ol marker="1" cols="2">
         <li><p><m>g(x)=(x-2)^2</m></p><sidebyside width="80%">
             <image xml:id="ar7-2-1ans"><description>parabolas</description><latex-image>
-                <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-                <![CDATA[\tikzset{%
-                }
+                <![CDATA[
                 \begin{tikzpicture} [scale=.25]
                 \draw[cyan] (-4,-2) grid[step=2] (6,8);
                 \draw[black,thick,->,>=stealth'] (-4,0)--(6.8,0) node[right, scale=.9]{$x$};
                 \draw[black,thick,->,>=stealth'] (0,-2)--(0,8.8) node[above, scale=.9]{$y$};
                 \foreach \x in {-4,4} \draw[black] (\x,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {\x};
-                \foreach \y in {-2,4,8} \draw[black] (.15,\y)--++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+                \foreach \y in {-2,4,8} \draw[black] (.15,\y)--++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {$\y$};
                 \draw[samples=65, domain={-2*sqrt(2)}:{2*sqrt(2)}, variable=\x, smooth,blue, thick] plot(\x,{ (\x)^2 });
                 \draw[samples=65, domain={2-2*sqrt(2)}:{2+2*sqrt(2)}, variable=\x, smooth,red, very thick] plot(\x,{ (\x-2)^2 });
                 \end{tikzpicture}]]>
             </latex-image></image></sidebyside></li>
         <li><p><m>g(x)=\sqrt{x+4}</m></p><sidebyside width="80%">
             <image xml:id="ar7-2-2ans"><description>translated square root function</description><latex-image>
-                <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-                <![CDATA[\tikzset{%
-                }
+                <![CDATA[
                 \begin{tikzpicture} [scale=.3]
                 \draw[cyan] (-5,-2) grid (5,4);
-                \draw[black,thick,->,>=stealth'] (-5,0)--(5.6,0) node[right, scale=.9]{$x$};
-                \draw[black,thick,->,>=stealth'] (0,-2)--(0,4.6) node[above, scale=.9]{$y$};
+                \draw[black,thick,->,>=stealth'] (-5,0)--(5.7,0) node[right, scale=.9]{$x$};
+                \draw[black,thick,->,>=stealth'] (0,-2)--(0,4.7) node[above, scale=.9]{$y$};
                 \foreach \x in {-4,4, -2,2} \draw[black] (\x,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {\x};
-                \foreach \y in {-2,2,4} \draw[black] (.15,\y)--++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+                \foreach \y in {-2,2,4} \draw[black] (.15,\y)--++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {$\y$};
                 \draw[samples=65, domain=0:5, variable=\x, smooth,blue, thick] plot(\x,{ sqrt(\x) });
                 \draw[samples=65, domain=-4:5, variable=\x, smooth,red, very thick] plot(\x,{ sqrt(\x+4) });
                 \end{tikzpicture}]]>
             </latex-image></image></sidebyside></li>
         <li><p><m>g(x)=\dfrac{1}{x+1}</m></p><sidebyside width="80%">
             <image xml:id="ar7-2-3ans"><description>translation of reciprocal function</description><latex-image>
-                <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-                <![CDATA[\tikzset{%
-                }
+                <![CDATA[
                 \begin{tikzpicture} [scale=.38]
                 \draw[cyan] (-4,-4) grid (4,4);
-                \draw[black,thick,->,>=stealth'] (-4,0)--(4.4,0) node[right, scale=.9]{$x$};
-                \draw[black,thick,->,>=stealth'] (0,-4)--(0,4.4) node[above, scale=.9]{$y$};
+                \draw[black,thick,->,>=stealth'] (-4,0)--(4.5,0) node[right, scale=.9]{$x$};
+                \draw[black,thick,->,>=stealth'] (0,-4)--(0,4.5) node[above, scale=.9]{$y$};
                 \foreach \x in {-4,4, -2,2} \draw[black] (\x,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {\x};
-                \foreach \y in {-2,2,4,-4} \draw[black] (.15,\y)--++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+                \foreach \y in {-2,2,4,-4} \draw[black] (.15,\y)--++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {$\y$};
                 \draw[samples=65, domain=-4:-1/4, variable=\x, smooth,blue, thick] plot(\x,{ 1/(\x) });
                 \draw[samples=65, domain=1/4:4, variable=\x, smooth,blue, thick] plot(\x,{ 1/(\x) });
                 \draw[samples=65, domain=-4:-1/4-1, variable=\x, smooth,red, very thick] plot(\x,{ 1/(\x+1) });
@@ -802,15 +796,13 @@ as our formula for the function.</p></solution></example>
                 </latex-image></image></sidebyside></li>
         <li><p><m>g(x)=\dfrac{1}{(x-1)^2}</m></p><sidebyside width="80%">
             <image xml:id="ar7-2-4ans"><description>translation of inverse-square function</description><latex-image>
-                <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-                <![CDATA[\tikzset{%
-                }
+                <![CDATA[
                 \begin{tikzpicture} [scale=.38]
                 \draw[cyan] (-4,-2) grid (4,6);
-                \draw[black,thick,->,>=stealth'] (-4,0)--(4.4,0) node[right, scale=.9]{$x$};
-                \draw[black,thick,->,>=stealth'] (0,-2)--(0,6.4) node[above, scale=.9]{$y$};
+                \draw[black,thick,->,>=stealth'] (-4,0)--(4.5,0) node[right, scale=.9]{$x$};
+                \draw[black,thick,->,>=stealth'] (0,-2)--(0,6.5) node[above, scale=.9]{$y$};
                 \foreach \x in {-4,4, -2,2} \draw[black] (\x,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {\x};
-                \foreach \y in {-2,2,4,6} \draw[black] (.15,\y)--++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+                \foreach \y in {-2,2,4,6} \draw[black] (.15,\y)--++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {$\y$};
                 \draw[samples=65, domain=-4:-1/sqrt(6), variable=\x, smooth,blue, thick] plot(\x,{ 1/(\x)^2 });
                 \draw[samples=65, domain=1/sqrt(6):4, variable=\x, smooth,blue, thick] plot(\x,{  1/(\x)^2 });
                 \draw[samples=65, domain=-4:-1/1/sqrt(6)+1, variable=\x, smooth,red, very thick] plot(\x,{  1/(\x -1)^2 });
@@ -819,30 +811,26 @@ as our formula for the function.</p></solution></example>
                 </latex-image></image></sidebyside></li>
         <li><p><m>g(x)=\abs{x-3}</m></p><sidebyside width="80%">
             <image xml:id="ar7-2-5ans"><description>translation of inverse-square function</description><latex-image>
-                <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-                <![CDATA[\tikzset{%
-                }
+                <![CDATA[
                 \begin{tikzpicture} [scale=.38]
                 \draw[cyan] (-3,-2) grid (5,6);
-                \draw[black,thick,->,>=stealth'] (-3,0)--(5.4,0) node[right, scale=.9]{$x$};
-                \draw[black,thick,->,>=stealth'] (0,-2)--(0,6.4) node[above, scale=.9]{$y$};
+                \draw[black,thick,->,>=stealth'] (-3,0)--(5.5,0) node[right, scale=.9]{$x$};
+                \draw[black,thick,->,>=stealth'] (0,-2)--(0,6.5) node[above, scale=.9]{$y$};
                 \foreach \x in {4, -2,2} \draw[black] (\x,.1)--++(0,-.2) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {\x};
-                \foreach \y in {-2,2,4,6} \draw[black] (.15,\y)--++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+                \foreach \y in {-2,2,4,6} \draw[black] (.15,\y)--++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {$\y$};
                 \draw[samples=65, domain=-3:5, variable=\x, smooth,blue, thick] plot(\x,{  abs(\x)});
                 \draw[samples=65, domain=-3:5, variable=\x, smooth,red, very thick] plot(\x,{ abs(\x-3 });
                 \end{tikzpicture}]]>
             </latex-image></image></sidebyside></li>
         <li><p><m>g(x)=2^{x+3}</m></p><sidebyside width="80%">
             <image xml:id="ar7-2-6ans"><description>translation of exponential</description><latex-image>
-                <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-                <![CDATA[\tikzset{%
-                }
+                <![CDATA[
                 \begin{tikzpicture} [xscale=.38, yscale=.18]
                 \draw[cyan] (-5,0) grid[ystep=2] (3,14);
-                \draw[black,thick,->,>=stealth'] (-5,0)--(3.4,0) node[right, scale=.9]{$x$};
-                \draw[black,thick,->,>=stealth'] (0,-.8)--(0,14.8) node[above, scale=.9]{$y$};
+                \draw[black,thick,->,>=stealth'] (-5,0)--(3.5,0) node[right, scale=.9]{$x$};
+                \draw[black,thick,->,>=stealth'] (0,-.8)--(0,15) node[above, scale=.9]{$y$};
                 \foreach \x in {-4,-2,2} \draw[black] (\x,.2)--++(0,-.4) node[below, yshift=-2, fill=white, inner sep=1, scale=.8] {\x};
-                \foreach \y in {4,8,12} \draw[black] (.15,\y)--++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {\y};
+                \foreach \y in {4,8,12} \draw[black] (.15,\y)--++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.8] {$\y$};
                 \draw[samples=65, domain=-5:3, variable=\x, smooth,blue, thick] plot(\x,{  2^(\x)});
                 \draw[samples=65, domain=-5:{log2(14)-3}, variable=\x, smooth,red, very thick] plot(\x,{ 2^(\x+3 });
                 \end{tikzpicture}]]>
