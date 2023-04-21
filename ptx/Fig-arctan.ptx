@@ -1,0 +1,12 @@
+<latex-image>
+    <![CDATA[
+    \begin{tikzpicture} [scale=.5]
+    \draw[cyan] (-4,-pi/2) grid[xstep=1/2, ystep=pi/6] (4,pi/2);
+    \draw[black,thick,->,>=stealth'] (0,-pi/2)--(0,2) node[above]{$y$};
+    \draw[black,thick,->,>=stealth'] (-4,0)--(4.5,0) node[right]{$x$};
+    \foreach \x in {-2,2,-4,4} \draw[black,thick](\x,.1)--++(0,-.2) node[below, fill=white, inner sep=1, yshift=-2]{$\x$};
+    \draw[black,thick] (.1,pi/2)--++(-.2,0) node [left, xshift=-2, fill=white, inner sep=1] {$\frac{\pi}{2}$};
+    \draw[black,thick] (.1,-pi/2)--++(-.2,0) node [left, xshift=-2, fill=white, inner sep=1] {$\frac{-\pi}{2}$};
+    \draw[samples=65, variable=\x,domain=-4:4, smooth, red, thick] plot (\x,{atan(\x)*pi/180});
+    \end{tikzpicture}]]>
+</latex-image>
