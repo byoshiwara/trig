@@ -24,25 +24,23 @@
     <image xml:id="exam9-2-1">
         <description>vectors on coordinate plane</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture} [scale=.9]
+        <![CDATA[
+    \begin{tikzpicture} [scale=.8]
     \draw[black,->,>=stealth'] (0,0)--(4.,0) node[right] {$x$};
     \draw[black,->,>=stealth'] (0,0)--(0,2.4) node[above] {$y$};
     \coordinate (w) at (29:4);
     \coordinate (wx) at (3.5,0);
     \coordinate (wy) at (0, 1.94);
 
-    \draw[gray] (3.5,.1)--++(0, -.2) node[below, text=black, scale=.7]{3.50};
-    \draw[gray] (.1, 1.94)--++(-.2, 0) node[left, text=black, scale=.7]{1.94};
-    \node[text width=.3cm, text=blue, scale=.8] at ($ .5*(w) + (-.1, .3) $) {4};
+    \draw[gray] (3.5,.1)--++(0, -.2) node[below, text=black]{3.50};
+    \draw[gray] (.1, 1.94)--++(-.2, 0) node[left, text=black]{1.94};
+    \node[text width=.3cm, text=blue] at ($ .5*(w) + (-.1, .3) $) {4};
 
-    \draw[gray, thick] (0.9,0) arc (0:29:0.9) node[right, midway, text=black, scale=.8] {$29\degree$};
+    \draw[gray, thick] (0.9,0) arc (0:29:0.9) node[right, midway, text=black] {$29\degree$};
     \draw[gray, thick, dashed] (wy)--(w)--(wx);
-    \draw[red, very thick,->,>=stealth'] (0,0)--++(w) node[above right, xshift=1,  yshift=1, scale=.9, fill=white, inner sep=1]{\textbf{w}};
-    \draw[green, thick,->,>=stealth'] (0,0)--++(wx) node[below, midway, xshift=3, yshift=-3, scale=.9, fill=white, inner sep=1]{$\textbf{w}_x$};
-    \draw[green, thick,->,>=stealth'] (0,0)--++(wy) node[left, midway, xshift=-3, yshift=3, scale=.9, fill=white, inner sep=1]{$\textbf{w}_y$};
+    \draw[red, very thick,->,>=stealth'] (0,0)--++(w) node[above right, xshift=1,  yshift=1, fill=white, inner sep=1]{\textbf{w}};
+    \draw[green, thick,->,>=stealth'] (0,0)--++(wx) node[below, midway, xshift=3, yshift=-3, fill=white, inner sep=1]{$\textbf{w}_x$};
+    \draw[green, thick,->,>=stealth'] (0,0)--++(wy) node[left, midway, xshift=-3, yshift=3, fill=white, inner sep=1]{$\textbf{w}_y$};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -58,16 +56,14 @@
 
 <p> It is often useful to describe a vector by giving its horizontal and vertical components, instead of its magnitude and direction. To make the notation easier, we give names to the vectors of length 1 that point in the <m>x</m>- and <m>y</m>-directions. A vector of magnitude 1 is called a <term>unit vector</term>. We can have unit vectors in any direction, but the unit vector in the <m>x</m>-direction is denoted by <m>\bf{i}</m>, and the unit vector in the <m>y</m>-direction is called <m>\bf{j}</m>, as shown below.</p>
 
-<sidebyside widths="65% 30%" valigns="middle middle"><p>By taking scalar multiples of <m>\bf{i}</m> and <m>\bf{j}</m>, we can describe any vector that lies in the directions of the coordinate axes. For example, <m>4{\bf{i}}</m> represents the vector of magnitude 4 pointing in the <m>x</m>-direction, and <m>3{\bf{j}}</m> represents the vector of magnitude 3 pointing in the<m>y</m>-direction. And by adding multiples of <m>\bf{i}</m> and <m>\bf{j}</m>, we can represent any vector we like. The vector <m>{\bf{v}} = 4{\bf{i}} + 3{\bf{j}}</m> is shown at right.</p>
+<sidebyside widths="65% 30%" valigns="middle middle" margins="0% 0%"><p>By taking scalar multiples of <m>\bf{i}</m> and <m>\bf{j}</m>, we can describe any vector that lies in the directions of the coordinate axes. For example, <m>4{\bf{i}}</m> represents the vector of magnitude 4 pointing in the <m>x</m>-direction, and <m>3{\bf{j}}</m> represents the vector of magnitude 3 pointing in the<m>y</m>-direction. And by adding multiples of <m>\bf{i}</m> and <m>\bf{j}</m>, we can represent any vector we like. The vector <m>{\bf{v}} = 4{\bf{i}} + 3{\bf{j}}</m> is shown at right.</p>
     <image xml:id="fig9-2-1">
         <description>vectors on xy-plane</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture} [scale=.95]
-    \draw[black,->,>=stealth'] (0,0)--(4.4,0) node[right, scale=.9] {$x$};
-    \draw[black,->,>=stealth'] (0,0)--(0,3.4) node[above, scale=.9] {$y$};
+        <![CDATA[
+    \begin{tikzpicture} [scale=.65]
+    \draw[black,->,>=stealth'] (0,0)--(4.4,0) node[right] {$x$};
+    \draw[black,->,>=stealth'] (0,0)--(0,3.4) node[above] {$y$};
     \coordinate (O) at (0,0);
     \coordinate (v) at (4,3);
     \coordinate (wx) at (4,0);
@@ -75,16 +71,16 @@
     \coordinate (i) at (1,0);
     \coordinate (j) at (0,1);
 
-    \draw[gray] (4,.1)--++(0, -.2) node[below, text=black, scale=.9]{4};
-    \draw[gray] (.1, 3)--++(-.2, 0) node[left, text=black, scale=.9]{3};
+    \draw[gray] (4,.1)--++(0, -.2) node[below, text=black]{4};
+    \draw[gray] (.1, 3)--++(-.2, 0) node[left, text=black]{3};
     \draw[gray, thick, dashed] (0,3)--(v)--(4,0);
-    \filldraw[black] (v) circle (.1) node[above, yshift=3, scale=.9]{$(4,3)$};
+    \filldraw[black] (v) circle (.1) node[above, yshift=3]{$(4,3)$};
 
-    \draw[red, very thick,->,>=stealth'] (O)--++(v) node[left, xshift=-16,  yshift=-8, scale=.9, fill=white, inner sep=1]{\textbf{v}};
-    \draw[green, thick,->,>=stealth'] (O)--++(4,0) node[above, xshift=-13, yshift=3, scale=.9, fill=white, inner sep=1]{$4\textbf{i}$};
-    \draw[green, thick,->,>=stealth'] (O)--++(0,3) node[right, xshift=3, yshift=-13, scale=.9, fill=white, inner sep=1]{$3\textbf{j}$};
-    \draw[blue, ultra thick,->,>=stealth'] (O)--++(i) node[below, yshift=-3, scale=.9, fill=white, inner sep=1]{$\textbf{i}$};
-    \draw[blue, ultra thick,->,>=stealth'] (O)--++(j) node[left, xshift=-3, scale=.9, fill=white, inner sep=1]{$\textbf{j}$};
+    \draw[red, very thick,->,>=stealth'] (O)--++(v) node[left, xshift=-16,  yshift=-8, fill=white, inner sep=1]{\textbf{v}};
+    \draw[green, thick,->,>=stealth'] (O)--++(4,0) node[above, xshift=-13, yshift=3, fill=white, inner sep=1]{$4\textbf{i}$};
+    \draw[green, thick,->,>=stealth'] (O)--++(0,3) node[right, xshift=3, yshift=-13, fill=white, inner sep=1]{$3\textbf{j}$};
+    \draw[blue, ultra thick,->,>=stealth'] (O)--++(i) node[below, yshift=-3, fill=white, inner sep=1]{$\textbf{i}$};
+    \draw[blue, ultra thick,->,>=stealth'] (O)--++(j) node[left, xshift=-3, fill=white, inner sep=1]{$\textbf{j}$};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -104,22 +100,20 @@ is the vector whose horizontal component is <m>a</m> and whose vertical componen
     <image xml:id="exam9-2-2">
         <description>vectors on xy-plane</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture} [scale=.4]
+        <![CDATA[
+    \begin{tikzpicture} [scale=.27]
     \draw[cyan] (-6,-1) grid (6,7);
     \draw[black,->,>=stealth'] (-6,0)--(6.4,0) node[right] {$x$};
     \draw[black,->,>=stealth'] (0,-1)--(0,7.4) node[above] {$y$};
     \foreach \x   in  {5} {
-     \draw[black, thick] (\x,0.15) --++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.9] {$\x$};
-     \draw[black, thick] (-\x,0.15) --++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.9] {$-\x$};
-     \draw[black, thick] (0.15,\x) --++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.9] {$\x$};
+     \draw[black, thick] (\x,0.15) --++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1] {$\x$};
+     \draw[black, thick] (-\x,0.15) --++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1] {$-\x$};
+     \draw[black, thick] (0.15,\x) --++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1] {$\x$};
     };
     \coordinate (O) at (0,0);
     \coordinate (v) at (-4,6);
 
-    \draw[red, very thick,->,>=stealth'] (O)--++(v) node[above left, scale=.9, fill=white, inner sep=1]{\textbf{v}};
+    \draw[red, very thick,->,>=stealth'] (O)--++(v) node[above left, fill=white, inner sep=1]{\textbf{v}};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -131,21 +125,19 @@ is the vector whose horizontal component is <m>a</m> and whose vertical componen
     <image xml:id="exer9-2-2">
         <description>vectors</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture} [scale=.4]
+        <![CDATA[
+    \begin{tikzpicture} [scale=.24]
     \draw[cyan] (-2,-6) grid (6,1);
     \draw[black,->,>=stealth'] (-2,0)--(6.4,0) node[right] {$x$};
     \draw[black,->,>=stealth'] (0,-6)--(0,1.4) node[above] {$y$};
     \foreach \x   in  {5} {
-     \draw[black, thick] (\x,0.15) --++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1, scale=.9] {$\x$};
-     \draw[black, thick] (0.15,-\x) --++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1, scale=.9] {$-\x$};
+     \draw[black, thick] (\x,0.15) --++(0,-.3) node[below, yshift=-2, fill=white, inner sep=1] {$\x$};
+     \draw[black, thick] (0.15,-\x) --++(-.3,0) node[left, xshift=-2, fill=white, inner sep=1] {$-\x$};
     };
     \coordinate (O) at (0,0);
     \coordinate (v) at (3,-5);
 
-    \draw[red, very thick,->,>=stealth'] (O)--++(v) node[right, xshift=3, scale=.9, fill=white, inner sep=1]{\textbf{w}};
+    \draw[red, very thick,->,>=stealth'] (O)--++(v) node[right, xshift=3, fill=white, inner sep=1]{\textbf{w}};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -190,10 +182,8 @@ and direction <m>\theta = \tan^{-1}\left(\dfrac{3}{4}\right) = 36.9\degree</m>. 
 <sidebyside widths="60% 35%" valigns="middle middle"><p>The figure at right shows the vectors <m>{\bf{u}} = 3{\bf{i}}+2{\bf{j}}</m> and <m>{\bf{v}} = 2{\bf{u}}</m>. The vector <m>{\bf{v}}</m> is twice as long as <m>{\bf{u}}</m> and points in the same direction as <m>{\bf{u}}</m>. You can see that each component of <m>{\bf{v}}</m> is twice the corresponding component of <m>{\bf{u}}</m>, so that <m>{\bf{v}} = 6{\bf{i}}+4{\bf{j}}</m>.</p>    <image xml:id="fig9-2-2">
         <description>vectors</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture} [scale=.5]
+        <![CDATA[
+    \begin{tikzpicture} [scale=.36]
     \draw[cyan] (0,0) grid (12,6);
 
     \coordinate (u) at (3,2);
@@ -212,8 +202,8 @@ and direction <m>\theta = \tan^{-1}\left(\dfrac{3}{4}\right) = 36.9\degree</m>. 
      \draw[lightgray, thick, ->,>=stealth'] (11,\y)--++(j);
     };
 
-    \draw[red, thick,->,>=stealth'] (1,1)--++(u) node[above, xshift=-6, yshift=3, scale=.9, fill=white, inner sep=1]{\textbf{u}};
-    \draw[blue, thick,->,>=stealth'] (5,1)--++(v) node[above, xshift=-6, yshift=3, scale=.9, fill=white, inner sep=1]{\textbf{v}};
+    \draw[red, thick,->,>=stealth'] (1,1)--++(u) node[above, xshift=-6, yshift=3, fill=white, inner sep=1]{\textbf{u}};
+    \draw[blue, thick,->,>=stealth'] (5,1)--++(v) node[above, xshift=-6, yshift=3, fill=white, inner sep=1]{\textbf{v}};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -284,24 +274,22 @@ But we arrive at the same endpoint by traveling
 <image xml:id="fig9-2-3">
         <description>triangle</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.5]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.32]
         \draw[cyan] (0,0) grid (8,7);
 
         \coordinate (u) at (1,2);
         \coordinate (v) at (5,3);
         \coordinate (s) at ($ (u) + (v) $);
 
-        \draw[blue, thick,->,>=stealth'] (1,1)--++(u) node[above, xshift=-3, yshift=3, scale=.9, fill=white, inner sep=1]{\textbf{u}};
-        \draw[blue, thick,->,>=stealth'] (2,3)--++(v) node[above, xshift=-12, yshift=-3, scale=.9, fill=white, inner sep=1]{\textbf{v}};
-        \draw[red, very thick,->,>=stealth'] (1,1)--++(s) node[right, xshift=3, yshift=-5, scale=.9, fill=white, inner sep=1]{\textbf{u+v}};
+        \draw[blue, thick,->,>=stealth'] (1,1)--++(u) node[above, xshift=-3, yshift=3, fill=white, inner sep=1]{\textbf{u}};
+        \draw[blue, thick,->,>=stealth'] (2,3)--++(v) node[above, xshift=-12, yshift=-3, fill=white, inner sep=1]{\textbf{v}};
+        \draw[red, very thick,->,>=stealth'] (1,1)--++(s) node[right, xshift=3, yshift=-5, fill=white, inner sep=1]{\textbf{u+v}};
 
         %second grid
         \coordinate (O) at (0,-8);
 
-        \draw[cyan] (O) grid ($ (O)+(8,7) $);
+        \draw[cyan] (O) grid ($ (O)+(8,7.01) $);
 
         \coordinate (i) at (1,0);
         \coordinate (j) at (0,1);
@@ -316,9 +304,9 @@ But we arrive at the same endpoint by traveling
          \draw[lightgray, thick, ->,>=stealth']  ($ (O)+(7,\y)$)--++(j);
         };
 
-        \draw[blue, thick,->,>=stealth']  ($ (O)+(1,1)$)--++(u) node[above, xshift=-3, yshift=3, scale=.9, fill=white, inner sep=1]{\textbf{u}};
-        \draw[blue, thick,->,>=stealth']  ($ (O)+(2,3)$)--++(v) node[above, xshift=-12, yshift=-3, scale=.9, fill=white, inner sep=1]{\textbf{v}};
-        \draw[red, very thick,->,>=stealth']  ($ (O)+(1,1)$)--++(s) node[right, xshift=3, yshift=-5, scale=.9, fill=white, inner sep=1]{\textbf{u+v}};
+        \draw[blue, thick,->,>=stealth']  ($ (O)+(1,1)$)--++(u) node[above, xshift=-3, yshift=3, fill=white, inner sep=1]{\textbf{u}};
+        \draw[blue, thick,->,>=stealth']  ($ (O)+(2,3)$)--++(v) node[above, xshift=-12, yshift=-3, fill=white, inner sep=1]{\textbf{v}};
+        \draw[red, very thick,->,>=stealth']  ($ (O)+(1,1)$)--++(s) node[right, xshift=3, yshift=-5, fill=white, inner sep=1]{\textbf{u+v}};
         \end{tikzpicture}]]>
     </latex-image>
     </image></sidebyside>
@@ -344,15 +332,13 @@ But we arrive at the same endpoint by traveling
     <image xml:id="exam9-2-6">
         <description>vectors</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture} [scale=.15]
+        <![CDATA[
+    \begin{tikzpicture} [scale=.1]
 
     \coordinate (O) at (0,0);
     \coordinate (v) at (225:15);
     \coordinate (w) at (190:20);
-    \def\u{4};
+    \def\u{5};
 
     \coordinate (i) at (\u,0);
     \coordinate (j) at (0,\u);
@@ -362,12 +348,12 @@ But we arrive at the same endpoint by traveling
     \draw[lightgray, thick, ->,>=stealth'] (v)--++(i);
     \draw[lightgray, thick, ->,>=stealth'] (v)--++(j);
 
-    \draw[lightgray, thick, ->,>=stealth'] (1.5,0)arc (0:225: 1.5) node[above left, midway, yshift=-5, scale=0.8, text=black]{$225\degree$};
-    \draw[lightgray, thick, ->,>=stealth'] ($ (v)+(1.5,0)$) arc (0:190: 1.5) node[above left, midway, yshift=-5, scale=0.8, text=black]{$190\degree$};
-    \draw[lightgray, thick, ->,>=stealth'] ($ (v)+(0,2)$) arc (90:-170: 2) node[below right, midway, xshift=-5, scale=0.8, text=black]{$260\degree$};
+    \draw[lightgray, thick, ->,>=stealth'] (1.5,0)arc (0:225: 1.5) node[above left, midway, yshift=-5, text=black]{$225\degree$};
+    \draw[lightgray, thick, ->,>=stealth'] ($ (v)+(1.5,0)$) arc (0:190: 1.5) node[above left, midway, yshift=-5, text=black]{$190\degree$};
+    \draw[lightgray, thick, ->,>=stealth'] ($ (v)+(0,2)$) arc (90:-170: 2) node[below right, midway, xshift=-5, text=black]{$260\degree$};
 
-    \draw[red, thick,->,>=stealth'] (O)--++(v) node[below right, midway, xshift=3, scale=.9, fill=white, inner sep=1, text=blue]{15 mi};
-    \draw[red, thick,->,>=stealth'] (v)--++(w) node[below, midway , xshift=-2, yshift=-5, scale=.9, fill=white, inner sep=1, text=blue]{20 mi};
+    \draw[red, thick,->,>=stealth'] (O)--++(v) node[below right, midway, xshift=3, fill=white, inner sep=1, text=blue]{15 mi};
+    \draw[red, thick,->,>=stealth'] (v)--++(w) node[below, midway , xshift=-2, yshift=-5, fill=white, inner sep=1, text=blue]{20 mi};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -414,14 +400,12 @@ Thus, the treasure is 17.3 km from the cottage, in the direction <m>54.7\degree<
 <exercise><statement><p>From your campsite you hike 1.6 km in the direction <m>175\degree</m>, then 0.8 km in the direction <m>65\degree</m>, and finally 1.2 km in the direction <m>350\degree</m>.<ol marker="a">  
 <li>Draw a diagram for your hike, using vectors to represent each of the three segments. Use ae grid in which 1 square represents 0.1 km.</li>
 <li>Resolve each vector into components, and determine your location after your hike.</li></ol></p></statement><answer><p><ol marker="a">
-      <li><sidebyside width="25%" valign = "middle" margins="0% 75%">
+      <li><sidebyside width="28%" valign = "middle" margins="0% 72%">
     <image xml:id="exer9-2-7ans">
         <description>vectors</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture} [scale=2]
+        <![CDATA[
+    \begin{tikzpicture} [scale=1.6]
     \coordinate (O) at (0,0);
     \coordinate (v) at (-85:1.6);
     \coordinate (w) at (25:0.8);
@@ -433,21 +417,21 @@ Thus, the treasure is 17.3 km from the cottage, in the direction <m>54.7\degree<
     \coordinate (j) at (0,\u);
 
     \draw[lightgray, thick, ->,>=stealth'] (O)--++($.7*(j)$);
-    \draw[lightgray, thick, <->,>=stealth'] (0,.15) arc (90:-85: 0.15) node[right, midway, yshift=-1, scale=0.8, text=black]{$175\degree$};
+    \draw[lightgray, thick, <->,>=stealth'] (0,.15) arc (90:-85: 0.15) node[right, midway, yshift=-1, text=black]{$175\degree$};
     \draw[lightgray, thick, ->,>=stealth'] ($(v)+(w)$)--++(j);
-    \draw[lightgray, thick, <-,>=stealth'] ($(v)+(w)+(0,.3)$) arc (90:60: 0.3) node[right, xshift=-1, yshift=-1, scale=0.8, text=black]{$10\degree$};
+    \draw[lightgray, thick, <-,>=stealth'] ($(v)+(w)+(0,.3)$) arc (90:60: 0.3) node[right, xshift=-1, yshift=-1, text=black]{$10\degree$};
     \draw[lightgray, thick, <-,>=stealth'] ($(v)+(w)+0.25*(x)$) arc (95:125: 0.35) ;
     \draw[lightgray, thick, ->,>=stealth'] (v)--++(j);
-    \draw[lightgray, thick, <->,>=stealth'] ($(v)+(0,.3)$) arc (90:25: 0.3) node[above right, midway, xshift=-2, yshift=-1, scale=0.8, text=black]{$65\degree$};
+    \draw[lightgray, thick, <->,>=stealth'] ($(v)+(0,.3)$) arc (90:25: 0.3) node[above right, midway, xshift=-2, yshift=-1, text=black]{$65\degree$};
 
-    \draw[red, thick,->,>=stealth'] (O)--++(v) node[left, midway, xshift=-3, scale=.9, fill=white, inner sep=1, text=blue]{1.6 km};
-    \draw[red, thick,->,>=stealth'] (v)--++(w) node[below, midway, xshift=6, yshift=-5, scale=.9, fill=white, inner sep=1, text=blue]{0.8 km};
-    \draw[red, thick,->,>=stealth'] ($(v)+(w)$)--++(x) node[left, midway , xshift=-2, yshift=-5, scale=.9, fill=white, inner sep=1, text=blue]{1.2 km};
+    \draw[red, thick,->,>=stealth'] (O)--++(v) node[left, midway, xshift=-3, fill=white, inner sep=1, text=blue]{1.6 km};
+    \draw[red, thick,->,>=stealth'] (v)--++(w) node[below, midway, xshift=6, yshift=-5, fill=white, inner sep=1, text=blue]{0.8 km};
+    \draw[red, thick,->,>=stealth'] ($(v)+(w)$)--++(x) node[right, midway , xshift=2, yshift=3, fill=white, inner sep=1, text=blue]{1.2 km};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
       </sidebyside></li>
-      <li><m>-1.594{\bf{i}} +0.139{\bf{j}},~0.338{\bf{i}} +0.725{\bf{j}},~1.182{\bf{i}} -0.208{\bf{j}},~-0.074{\bf{i}} +0.656{\bf{j}}</m></li></ol></p></answer></exercise>
+      <li><m>-1.594{\bf{i}} +0.139{\bf{j}}</m>, <m>~0.338{\bf{i}} +0.725{\bf{j}}</m>, <m>~1.182{\bf{i}} -0.208{\bf{j}}</m>, <m>~{-0.074}{\bf{i}} +0.656{\bf{j}}</m></li></ol></p></answer></exercise>
 </subsection>
 
 <subsection><title>Force</title>
@@ -459,22 +443,20 @@ Thus, the treasure is 17.3 km from the cottage, in the direction <m>54.7\degree<
     <image xml:id="exam9-2-8">
         <description>vectors</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture} [scale=0.02]
+        <![CDATA[
+    \begin{tikzpicture} [scale=0.018]
     \coordinate (O) at (0,0);
     \coordinate (A) at (20:150);
     \coordinate (B) at (80:120);
 
     \draw[lightgray, thick] (O)--++(140,0);
-    \draw[lightgray, thick, <->,>=stealth'] (50,0) arc (0:20: 50) node[right, midway, scale=0.8, text=black]{$20\degree$};
-    \draw[lightgray, thick, <->,>=stealth'] (25,0) arc (0:80: 25) node[right, xshift=3, xshift=2, scale=0.8, text=black]{$80\degree$};
+    \draw[lightgray, thick, <->,>=stealth'] (70,0) arc (0:20: 70) node[right, midway, text=black]{$20\degree$};
+    \draw[lightgray, thick, <->,>=stealth'] (45,0) arc (0:80: 45) node[right, xshift=10, yshift=-2, text=black]{$80\degree$};
 
-    \draw[blue, thick,->,>=stealth'] (O)--++(A) node[below, xshift=-3, yshift=-6, scale=.9, fill=white, inner sep=1, text=blue]{$A$};
-    \draw[blue, thick,->,>=stealth'] (O)--++(B) node[right, xshift=3, yshift=-5, scale=.9, fill=white, inner sep=1, text=blue]{$B$};
-    \node[left, xshift=-3, scale=.9, text=blue] at ($ .5*(B) $) {120};
-    \node[left, yshift=6, scale=.9, text=blue] at ($ .8*(A) $) {150};
+    \draw[blue, thick,->,>=stealth'] (O)--++(A) node[below, xshift=-3, yshift=-6, fill=white, inner sep=1, text=blue]{$A$};
+    \draw[blue, thick,->,>=stealth'] (O)--++(B) node[right, xshift=3, yshift=-5, fill=white, inner sep=1, text=blue]{$B$};
+    \node[left, xshift=-3, text=blue] at ($ .5*(B) $) {120};
+    \node[left, yshift=6, text=blue] at ($ .8*(A) $) {150};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -497,10 +479,8 @@ and the direction of the force is given by
     <image xml:id="exam9-2-8ans">
         <description>vectors</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture} [scale=0.02]
+        <![CDATA[
+    \begin{tikzpicture} [scale=0.015]
     \coordinate (O) at (0,0);
     \coordinate (A) at (20:150);
     \coordinate (B) at (80:120);
@@ -510,10 +490,10 @@ and the direction of the force is given by
     \coordinate (Bx) at ($ 120*cos(80)*(1,0)  $);
     \coordinate (By) at ($ 120*sin(80)*(0,1)  $);
 
-    \draw[lightgray, thick, ->, >=stealth'] (O)--++(Ax) node[below, midway, scale=.9, text=black]{140.95\textbf{i}};
-    \draw[lightgray, thick, ->, >=stealth'] (Ax)--++(Ay) node[right, midway, yshift=-1, scale=.9, text=black]{51.3\textbf{j}};
-    \draw[lightgray, thick, ->, >=stealth'] (A)--++(Bx) node[right, scale=.9, text=black]{20.84\textbf{i}};
-    \draw[lightgray, thick, ->, >=stealth'] ($ (A) +(Bx)$)--++(By) node[right, midway, yshift=1, scale=.9, text=black]{118.18\textbf{j}};
+    \draw[lightgray, thick, ->, >=stealth'] (O)--++(Ax) node[below, midway, text=black]{140.95\textbf{i}};
+    \draw[lightgray, thick, ->, >=stealth'] (Ax)--++(Ay) node[right, midway, yshift=-1, text=black]{51.3\textbf{j}};
+    \draw[lightgray, thick, ->, >=stealth'] (A)--++(Bx) node[right, text=black]{20.84\textbf{i}};
+    \draw[lightgray, thick, ->, >=stealth'] ($ (A) +(Bx)$)--++(By) node[right, midway, yshift=1, text=black]{118.18\textbf{j}};
 
     \draw[blue, thick,->,>=stealth'] (O)--++(A);
     \draw[blue, thick,->,>=stealth'] (A)--++(B) ;

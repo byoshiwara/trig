@@ -9,14 +9,12 @@
 
 <p>In Chapter 9 we used vectors to specify a location by giving a distance and a direction. For example, we might say that the airport is located 5 miles southwest of the city center. This method of designating locations is so useful that we will construct a new coordinate system using the same tools: distance and direction.</p>
 
-<sidebyside widths = "25% 25%">
+<sidebyside widths = "25% 23%">
     <image xml:id="fig10-1-1a">
         <description>Cartesian</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture}
+        <![CDATA[
+    \begin{tikzpicture}[scale=.72]
     \coordinate (O) at (0,0);
     \def\a{3};
     \def\b{1};
@@ -41,10 +39,8 @@
     <image xml:id="fig10-1-1b">
         <description>polar</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture}
+        <![CDATA[
+    \begin{tikzpicture}[scale=.72]
     \coordinate (O) at (0,0);
     \def\a{3};
     \def\b{1};
@@ -58,9 +54,9 @@
     \draw[black,  thick] (O)++(0,-.3) -- (0,2.3) ;
     \draw[blue,  thick] (O) --  ++(P) node[above left, midway,  ]{$r$}  ;
 
-    \draw[red, thick] (O)++(1,0) arc (0:{atan(\b /\a)}:1) node [right, midway,xshift=0,yshift=1] {$ \theta$};
+    \draw[red, thick] (O)++(1.3,0) arc (0:{atan(\b /\a)}:1.3) node [right, midway,xshift=0,yshift=1] {$ \theta$};
 
-    \filldraw[red] ($ (O)+(P)$) circle (1.7pt) node[anchor = south, xshift=2]{$P(r, \theta)$}; 
+    \filldraw[red] ($ (O)+(P)$) circle (1.7pt) node[anchor = south, xshift=4]{$P(r, \theta)$}; 
     \node at (1.6,-.8)     {\color{blue} Polar coordinates};
         \end{tikzpicture}]]>
     </latex-image>
@@ -87,10 +83,8 @@
     <image xml:id="fig10-1-2">
         <description>points in polar coordinates</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture} [scale=.7]
+        <![CDATA[
+    \begin{tikzpicture} [scale=.56]
 
     \coordinate (O) at (0,0);
     \coordinate (x) at (4,0);
@@ -120,10 +114,8 @@
     <image xml:id="fig10-1-3">
         <description>rectangular and polar grids</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture} [scale=.6]
+        <![CDATA[
+    \begin{tikzpicture} [scale=.45]
     \def\d{-15};
     \draw[step=1cm,cyan,very thin] ({\d-5},-5) grid ({\d+5},5);
     \draw[thick,->, >=stealth'] (-20,0) -- ++(10.8,0) node[anchor=west] {$x$};
@@ -145,7 +137,7 @@
         \end{tikzpicture}]]>
     </latex-image>
     </image>
-</sidebyside>   
+</sidebyside>  
 </introduction>
 
 <subsection><title>Plotting Points</title>
@@ -154,14 +146,12 @@
 
 <example><statement><p>Plot the points whose polar coordinates are given: <m>A\left(1, \dfrac{\pi}{2}\right)</m> and <m>B\left(2, \dfrac{7\pi}{4}\right)</m>.</p></statement>
 
-<solution><sidebyside widths="55% 25%"><p>To plot point <m>A</m>, we move 1 unit away from the pole in the direction <m>\dfrac{\pi}{2}</m>, as shown at right. To plot point <m>B</m>, we move 2 units away from the pole in the direction <m>\dfrac{7\pi}{4}</m>.</p>      
+<solution><sidebyside widths="55% 25%" margins="0% 5%"><p>To plot point <m>A</m>, we move 1 unit away from the pole in the direction <m>\dfrac{\pi}{2}</m>, as shown at right. To plot point <m>B</m>, we move 2 units away from the pole in the direction <m>\dfrac{7\pi}{4}</m>.</p>      
     <image xml:id="exam10-1-1">
         <description>polar points</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture} [scale=.6]
+        <![CDATA[
+    \begin{tikzpicture} [scale=.36]
     \coordinate(O) at (0,0);
     \coordinate(A) at (90:1);
     \coordinate(B) at (315:2);
@@ -171,10 +161,10 @@
     \draw[cyan] (O) circle (1);
     \foreach \r in {2,3,4} {
     \draw[cyan] (O) circle (\r);
-    \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+    \node[fill=white, inner sep = 1, text=black] at (90:\r) {$\r$};
     }
-    \filldraw[black] (A) circle (1.8pt) node[anchor = west, xshift=2, fill=white, inner sep=2]{$A$}; 
-    \filldraw[black] (B) circle (1.8pt) node[anchor = south west, xshift=2, fill=white, inner sep=2]{$B$}; 
+    \filldraw[red] (A) circle (4pt) node[anchor = west, xshift=4, fill=white, inner sep=0]{$A$}; 
+    \filldraw[red] (B) circle (4pt) node[anchor = south west, xshift=4, fill=white, inner sep=0]{$B$}; 
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -186,10 +176,8 @@
     <image xml:id="exer10-1-1">
         <description>polar points</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture} [scale=.6]
+        <![CDATA[
+    \begin{tikzpicture} [scale=.4]
     \coordinate(O) at (0,0);
     \coordinate(T) at (120:3);
     \coordinate(S) at (180:2);
@@ -199,15 +187,15 @@
     \draw[cyan] (O) circle (1);
     \foreach \r in {2,3,4} {
     \draw[cyan] (O) circle (\r);
-    \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+    \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
     }
-    \filldraw[black] (T) circle (1.9pt) node[anchor = east, xshift=-2, yshift=2, fill=white, inner sep=2]{$T$}; 
-    \filldraw[black] (S) circle (1.9pt) node[anchor = north east, xshift=-2, yshift=-2, fill=white, inner sep=2]{$S$}; 
+    \filldraw[red] (T) circle (4pt) node[anchor = east, xshift=-2, yshift=2, fill=white, inner sep=0]{$T$}; 
+    \filldraw[red] (S) circle (4pt) node[anchor = north east, xshift=-2, yshift=-2, fill=white, inner sep=0]{$S$}; 
         \end{tikzpicture}]]>
     </latex-image>
     </image>
 </sidebyside></statement>
-<answer><p><m>S\left(2,\pi\right)</m>, <m>T\left(3,\dfrac{2\pi}{3}\right)</m></p></answer></exercise> 
+<answer><p><m>S\left(2,\pi\right)</m>, <m>T\left(3,\dfrac{2\pi}{3}\right)</m></p></answer></exercise>
 
 <p> Each point has infinitely many polar coordinates, because we can add multiples of <m>2\pi</m> to the value of <m>\theta</m>. For example, the point with polar coordinates <m>\left(1, \dfrac{\pi}{2}\right)</m> also has polar coordinates <m>\left(1,\dfrac{5\pi}{2}\right)</m> and <m>\left(1, \dfrac{-3\pi}{2}\right)</m>.</p> 
 
@@ -217,10 +205,8 @@
     <image xml:id="fig10-1-4">
         <description>point on polar grid</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture} [scale=.6]
+        <![CDATA[
+    \begin{tikzpicture} [scale=.4]
     \coordinate(O) at (0,0);
     \coordinate(Q) at (225:2);
     \foreach \angle [count=\xi] in {0, 15, ..., 345}{
@@ -228,10 +214,10 @@
     }
     \foreach \r in {1,2,3,4} {
     \draw[cyan] (O) circle (\r);
-    \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+    \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
     }
-    \filldraw[black] (Q) circle (2pt) node[anchor = north west, xshift=2, yshift=-2, fill=white, inner sep=2]{$Q$}; 
-    \filldraw[black] (45:2) circle (2pt) node[anchor = north west, xshift=2, yshift=-2, fill=white, inner sep=2]{$P$}; 
+    \filldraw[red] (Q) circle (4pt) node[anchor = north west, xshift=2, yshift=-2, fill=white, inner sep=2]{$Q$}; 
+    \filldraw[red] (45:2) circle (4pt) node[anchor = north west, xshift=2, yshift=-2, fill=white, inner sep=2]{$P$}; 
     \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -265,10 +251,8 @@
     <image xml:id="fig10-1-5">
         <description>regions in the plane</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture} [scale=.4]
+        <![CDATA[
+    \begin{tikzpicture} [scale=.3]
     \draw[fill=yellow, yellow] (-5,-5)--(-5,-3)--(3,5)--(5,5)--(5,-5)--(-5,-5);
 
     \draw[black, thick, ->, >=stealth'] (-5,0)--(5.5,0)node[right] {$x$};
@@ -305,10 +289,8 @@
     <image xml:id="exam10-1-3">
         <description>regions in polar coordinates</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture} [scale=.5]
+        <![CDATA[
+    \begin{tikzpicture} [scale=.32]
     \coordinate(O) at (0,0);
     \path [draw=none,fill=yellow, fill opacity = 0.6,even odd rule] (O) circle (1) (O) circle (3);
     \foreach \angle [count=\xi] in {0, 15, ..., 345}{
@@ -316,7 +298,7 @@
     }
     \foreach \r in {1,2,3,4,5} {
     \draw[cyan] (O) circle (\r);
-    \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+    \node[fill=white, inner sep = 1, text=black] at (90:\r) {$\r$};
     }
     \draw[cyan, very thick,dashed] (O) circle (3);
 
@@ -330,7 +312,7 @@
     }
     \foreach \r in {1,2,3,4,5} {
     \draw[cyan] (O) circle (\r);
-    \node[fill=white, inner sep = 2, text=black, scale=.9] at ($ (O)+(90:\r)$) {$\r$};
+    \node[fill=white, inner sep = 1, text=black] at ($ (O)+(90:\r)$) {$\r$};
     }
     \draw[cyan, very thick,dashed] (O)--++(30:2);
     \draw[cyan, very thick,dashed] (O)--++(60:2);
@@ -348,10 +330,8 @@
     <image xml:id="exer10-1-3">
         <description>regions</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.5]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.3]
         \coordinate(O) at (0,0);
         \path [draw=none,fill=yellow, fill opacity = 0.6] (135:2)--(135:{5.5*sqrt(2)}) -- (225:{5.5*sqrt(2)})--(225:2) arc(225:135:2);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
@@ -359,7 +339,7 @@
         }
         \foreach \r in {1,2,3,4,5} {
         \draw[cyan] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep = 1, text=black] at (90:\r) {$\r$};
         }
         \draw[cyan, very thick,dashed] (135:2)--(135:{5.5*sqrt(2)});
         \draw[cyan,  thick] (225:2)--(225:{5.5*sqrt(2)});
@@ -374,7 +354,7 @@
         }
         \foreach \r in {1,2,3,4,5} {
         \draw[cyan] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at ($ (O)+(90:\r)$) {$\r$};
+        \node[fill=white, inner sep = 1, text=black] at ($ (O)+(90:\r)$) {$\r$};
         }
         \node at ($(O)+(0,-6)$){b.};
         \end{tikzpicture}]]>

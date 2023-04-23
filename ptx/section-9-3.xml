@@ -17,34 +17,32 @@
     <image xml:id="fig9-3-1">
         <description>ramp</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture} [scale=.6]
+        <![CDATA[
+    \begin{tikzpicture} [scale=.38]
     \def\a{20};
     \def\r{.6};
     \def\w{4.5};
     \coordinate (O) at ($ (\a:12) + ({\a +90}:\r) $);
     \coordinate (F) at (-90:\w);
 
-    \draw[gray] (2,0) arc (0:\a:2) node[right, midway, yshift=1, text=black, scale=.9]{$\alpha$};
+    \draw[gray] (2,0) arc (0:\a:2) node[right, midway, yshift=1, text=black]{$\alpha$};
     \draw[black, thick] (0,0)--++(15,0);
     \draw[black,thick] (0,0)--++(\a:15)--($15*cos(\a)*(1,0)$);
     \draw[black, fill=lightgray] (O) circle (\r);
-    \draw[black, very thick,->,>=stealth'] (O)--++(F) node[ right, midway, xshift=1,  yshift=1, scale=.9, fill=white, inner sep=1]{\textbf{F}};
-    \draw[red, very thick,->,>=stealth'] (O)--++($ \w*sin(\a)*({\a+180}:1)  $) node[ left, xshift=-1,  yshift=-1, scale=.9, fill=white, inner sep=1]{\textbf{v}};
-    \draw[blue, very thick,->,>=stealth'] ($ (O)+\w*sin(\a)*({\a+180}:1)  $)--++($ \w*cos(\a)*({\a-90}:1)  $) node[ left, midway, xshift=-2,  yshift=1, scale=.9, fill=white, inner sep=1]{\textbf{u}};
+    \draw[black, very thick,->,>=stealth'] (O)--++(F) node[ right, midway, xshift=1,  yshift=1, fill=white, inner sep=1]{\textbf{F}};
+    \draw[red, very thick,->,>=stealth'] (O)--++($ \w*sin(\a)*({\a+180}:1)  $) node[ left, xshift=-1,  yshift=-1, fill=white, inner sep=1]{\textbf{v}};
+    \draw[blue, very thick,->,>=stealth'] ($ (O)+\w*sin(\a)*({\a+180}:1)  $)--++($ \w*cos(\a)*({\a-90}:1)  $) node[ left, midway, xshift=-2,  yshift=1, fill=white, inner sep=1]{\textbf{u}};
     \node at (7.5,-1) {a.};
 
     % second set
     \coordinate (O) at ($ (10,0)+(\a:12) + ({\a +90}:\r) $);
-    \draw[gray] ($ (O) + (0,-.5)$) arc (-90:{\a-180}:.5) node[below left, midway, xshift=3, text=black, scale=.9, inner sep = 2]{$\theta$};
+    \draw[gray] ($ (O) + (0,-.5)$) arc (-90:{\a-180}:.5) node[below left, midway, xshift=3, text=black, inner sep = 2]{$\theta$};
 
 
     \draw[gray, thick] ($(O) + 3.2*sin(\a)*({\a+180}:1) $) --++ ($ 1.3*sin(\a)*({\a-90}:1) $)--++($ 1.3*sin(\a)*({\a+180}:1) $);
-    \draw[black, very thick,->,>=stealth'] (O)--++(F) node[ right, midway, xshift=1,  yshift=1, scale=.9, fill=white, inner sep=1]{\textbf{F}};
-    \draw[red, very thick,->,>=stealth'] (O)--++($ \w*sin(\a)*({\a+180}:1)  $) node[ left, xshift=-1,  yshift=-1, scale=.9, fill=white, inner sep=1]{\textbf{v}};
-    \draw[blue, very thick,->,>=stealth'] ($ (O)+\w*sin(\a)*({\a+180}:1)  $)--++($ \w*cos(\a)*({\a-90}:1)  $) node[ left, midway, xshift=-2,  yshift=1, scale=.9, fill=white, inner sep=1]{\textbf{u}};
+    \draw[black, very thick,->,>=stealth'] (O)--++(F) node[ right, midway, xshift=1,  yshift=1, fill=white, inner sep=1]{\textbf{F}};
+    \draw[red, very thick,->,>=stealth'] (O)--++($ \w*sin(\a)*({\a+180}:1)  $) node[ left, xshift=-1,  yshift=-1, fill=white, inner sep=1]{\textbf{v}};
+    \draw[blue, very thick,->,>=stealth'] ($ (O)+\w*sin(\a)*({\a+180}:1)  $)--++($ \w*cos(\a)*({\a-90}:1)  $) node[ left, midway, xshift=-2,  yshift=1, fill=white, inner sep=1]{\textbf{u}};
     \node at (20.5,-1) {b.};
         \end{tikzpicture}]]>
     </latex-image>
@@ -76,24 +74,22 @@ where <m>\theta</m> is the angle between <m>{\bf{F}}</m> and <m>{\bf{v}}</m>.</p
     <image xml:id="exam9-3-1">
         <description>ramp</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture} [scale=1]
+        <![CDATA[
+    \begin{tikzpicture} [scale=.75]
     \def\a{15};
     \def\r{.2};
     \def\w{2};
     \coordinate (O) at ($ (\a:4) + ({\a +90}:\r) $);
     \coordinate (F) at (-90:\w);
 
-    \draw[gray] (1.5,0) arc (0:\a:1.5) node[right, midway, yshift=1, text=black, scale=.9]{$15 \degree$};
+    \draw[gray] (1.5,0) arc (0:\a:1.5) node[right, midway, yshift=1, text=black]{$15 \degree$};
     \draw[gray] (0,0)--++(2,0);
     \draw[black,thick] (0,0)--++(\a:5.5);
     \draw[black, fill=lightgray] (O) circle (\r);
-    \draw[red, very thick,->,>=stealth'] (O)--++(F) node[left, xshift=-3,  yshift=3, scale=.9, fill=white, inner sep=1]{\textbf{w}};
-    \draw[blue, very thick,->,>=stealth'] (O)--++($ \w*cos(\a)*({\a-90}:1)  $) node[right, xshift=1,  yshift=3, scale=.9]{\textbf{v}};
+    \draw[red, very thick,->,>=stealth'] (O)--++(F) node[left, xshift=-3,  yshift=3, fill=white, inner sep=1]{\textbf{w}};
+    \draw[blue, very thick,->,>=stealth'] (O)--++($ \w*cos(\a)*({\a-90}:1)  $) node[right, xshift=1,  yshift=3]{\textbf{v}};
     \draw[green, very thick,->,>=stealth'] ($ (O)+\w*cos(\a)*({\a-90}:1)  $)--++($ \w*sin(\a)*({\a+180}:1)  $);
-    \node[scale=.9] at (4.7,.5){200 lbs};
+    \node at (4.9,.5){200 lbs};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -104,26 +100,24 @@ where <m>\theta</m> is the angle between <m>{\bf{F}}</m> and <m>{\bf{v}}</m>.</p
     <image xml:id="exer9-3-1">
         <description>lawn mower</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture} [scale=0.05]
+        <![CDATA[
+    \begin{tikzpicture} [scale=0.04]
     \coordinate (O) at (0,0);
     \def\w{30};
     \def\a{40};
     \coordinate (F) at (220:\w);
     \coordinate (A) at (\a:70);
 
-    \draw[gray] (10,0) arc (0:\a:10) node[right, midway, xshift=1, yshift=2, text=black, scale=.9, inner sep=1]{$40 \degree$};
+    \draw[gray] (10,0) arc (0:\a:10) node[right, midway, xshift=1, yshift=2, text=black, inner sep=1]{$40 \degree$};
     \draw[green] (0,0)--++(18,0);
     \draw[black,thick] (0,0)--++(A);
     \draw[blue, very thick,->,>=stealth'] (A)--++($30*cos(\a)*(-1,0)$) node[above, yshift=1, midway,scale=.9,inner sep=1 ]{?};
     \draw[green, very thick,->,>=stealth'] ($(A)+30*cos(\a)*(-1,0) $)--++($30*sin(\a)*(0,-1)$) ;
-    \draw[red, very thick,->,>=stealth'] (A)--++(F) node[below right, midway, scale=.9,inner sep=1 ]{30 lb};
+    \draw[red, very thick,->,>=stealth'] (A)--++(F) node[below right, midway,inner sep=1 ]{30 lb};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
-</sidebyside></statement><answer><p>23 pounds</p></answer></exercise> 
+</sidebyside></statement><answer><p>23 pounds</p></answer></exercise>
 </subsection>
 
 <subsection><title>Coordinate Form for Components</title>
@@ -141,10 +135,8 @@ where <m>\theta</m> is the angle between <m>{\bf{F}}</m> and <m>{\bf{v}}</m>.</p
     <image xml:id="fig9-3-2">
         <description>vectors and components</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture} [scale=1.1]
+        <![CDATA[
+    \begin{tikzpicture} [scale=0.72]
     \coordinate (O) at (0,0);
     \def\lv{3};
     \def\lw{2.7};
@@ -159,16 +151,16 @@ where <m>\theta</m> is the angle between <m>{\bf{F}}</m> and <m>{\bf{v}}</m>.</p
     \draw[black,thick,->,>=stealth'] (O)--(3.2,0);
     \draw[black,thick,->,>=stealth'] (O)--(0,3);
 
-    \draw[blue, very thick,->,>=stealth'] (O)--++(w) node[above, yshift=1, scale=.9,inner sep=1 ]{\textbf{w}};
-    \draw[blue, thick] ($(wx)+(0,.1)$)--++(0,-.2) node[below, scale=.9,inner sep=1 ]{$c$};
-    \draw[blue, thick] ($(wy)+(.1,0)$)--++(-.2,0) node[left, scale=.9,inner sep=1 ]{$d$};
-    \draw[red, very thick,->,>=stealth'] (O)--++(v) node[below right, scale=.9,inner sep=1 ]{\textbf{v}};
-    \draw[red, thick] ($(vx)+(0,.1)$)--++(0,-.2) node[below, scale=.9,inner sep=1 ]{$a$};
-    \draw[red, thick] ($(vy)+(.1,0)$)--++(-.2,0) node[left, scale=.9,inner sep=1 ]{$b$};
+    \draw[blue, very thick,->,>=stealth'] (O)--++(w) node[above, yshift=1]{\textbf{w}};
+    \draw[blue, thick] ($(wx)+(0,.08)$)--++(0,-.16) node[below]{$c$};
+    \draw[blue, thick] ($(wy)+(.08,0)$)--++(-.16,0) node[left]{$d$};
+    \draw[red, very thick,->,>=stealth'] (O)--++(v) node[below right]{\textbf{v}};
+    \draw[red, thick] ($(vx)+(0,.08)$)--++(0,-.16) node[below]{$a$};
+    \draw[red, thick] ($(vy)+(.08,0)$)--++(-.16,0) node[left]{$b$};
 
-    \draw[gray] (0.35,0) arc(0:\b:0.35) node[right, midway, xshift=3, yshift=2, text=black, scale=.8, fill=white, inner sep=1]{$\beta$};
-    \draw[gray] (0.8,0) arc(0:\a:0.8) node[right, midway, xshift=3, text=black, scale=.8, fill=white, inner sep=1]{$\alpha$};
-    \draw[gray] (\a:1) arc(\a:\b:1) node[right, midway, xshift=3, yshift=1, text=black, scale=.8, fill=white, inner sep=1]{$\theta$};
+    \draw[gray] (0.35,0) arc(0:\b:0.35) node[right, midway, xshift=3, yshift=2, text=black, fill=white, inner sep=0]{$\beta$};
+    \draw[gray] (1.2,0) arc(0:\a:1.2) node[right, midway, xshift=1, text=black, fill=white, inner sep=0]{$\alpha$};
+    \draw[gray] (\a:1) arc(\a:\b:1) node[right, midway, xshift=3, yshift=3, text=black, fill=white, inner sep=0]{$\theta$};
 
     \draw[gray] (w) -- ($ (w) + \lw*sin(\b-\a)*({\a-90}:1) $);
     \draw[gray]  ($ (w) + \lw*sin(\b-\a)*({\a-90}:1)+({\a+90}:.25) $) --++(\a:.25)--++({\a-90}:.25);
@@ -209,10 +201,8 @@ And finally,
     <image xml:id="exam9-3-2">
         <description>vectors</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture} [scale=.5]
+        <![CDATA[
+    \begin{tikzpicture} [scale=.45]
     \draw[cyan] (0,0) grid (8,6);
     \coordinate (O) at (1,1);
     \coordinate (v) at (4,3);
@@ -222,11 +212,11 @@ And finally,
 
     \draw[lightgray] ($(O)+(q)+-.1*(p)$)--++($-.6*(p)$);
     \draw[lightgray] ($(O)+-.1*(p)$)--++($-.6*(p)$);
-    \draw[lightgray,  thick,<->,>=stealth'] ($(O)-.4*(p)$)--++(q) node[midway,  scale=.9,fill=white, inner sep=2, scale=.9, text=black]{6};
-    \draw[green, ultra thick,->,>=stealth'] (O)--++(q) node[above right , yshift=-2, scale=.9,fill=white, inner sep=1, scale=.9, text=green!80!black]{\textbf{q}};
-    \draw[magenta,  thick,->,>=stealth'] ($(O)+(q)$)--++(p) node[above right , yshift=2, scale=.9,fill=white, inner sep=1, scale=.9, text=magenta]{\textbf{p}};
-    \draw[blue, thick,->,>=stealth'] (O)--++(v) node[below , yshift=-6, scale=.9,fill=white, inner sep=1, scale=.9]{\textbf{v}};
-    \draw[red, very thick,->,>=stealth'] (O)--++(w) node[below, yshift=-6, scale=.9, fill=white,inner sep=1 ]{\textbf{w}};
+    \draw[lightgray,  thick,<->,>=stealth'] ($(O)-.4*(p)$)--++(q) node[midway,fill=white, inner sep=2, text=black]{6};
+    \draw[green, ultra thick,->,>=stealth'] (O)--++(q) node[above right , yshift=-2,fill=white, inner sep=1, text=green!80!black]{\textbf{q}};
+    \draw[magenta,  thick,->,>=stealth'] ($(O)+(q)$)--++(p) node[above right , yshift=2,fill=white, inner sep=1, text=magenta]{\textbf{p}};
+    \draw[blue, thick,->,>=stealth'] (O)--++(v) node[below , yshift=-6,fill=white, inner sep=1]{\textbf{v}};
+    \draw[red, very thick,->,>=stealth'] (O)--++(w) node[below, yshift=-6, fill=white,inner sep=1 ]{\textbf{w}};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -276,16 +266,14 @@ You can check that this is true in the following example.</p></note>
 <solution><p>Using the formula above, we have <m>\text{comp}_{\bf{w}}{\bf{v}} = \dfrac{{\bf{v}} \cdot {\bf{w}}}{\|{\bf{w}}\|}</m>. We first compute <m>{\bf{v}} \cdot {\bf{w}}</m> and <m>\|{\bf{w}}\|</m>. 
 <me>{\bf{v}} \cdot {\bf{w}} = 5(4) + (-3)(1) = 17~~\text{and}~~\|{\bf{w}}\| = \sqrt{4^2+1^2}=\sqrt{17}</me>
 Thus,</p>
-<sidebyside widths="60% 22%" margins="0% 10%"><p>
+<sidebyside widths="60% 24%" margins="0% 10%"><p>
 <me>\text{comp}_{\bf{w}}{\bf{v}} = \dfrac{{\bf{v}} \cdot {\bf{w}}}{\|{\bf{w}}\|} = \dfrac{17}{\sqrt{17}} = \sqrt{17}</me>  
 The length of the projection of <m>{\bf{v}}</m> in the direction of <m>{\bf{w}}</m> is <m>\sqrt{17}</m> units, as shown at right.</p>
     <image xml:id="exam9-3-4">
         <description>vectors on grid</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture} [scale=.5]
+        <![CDATA[
+    \begin{tikzpicture} [scale=.4]
     \draw[cyan] (0,0) grid (7,7);
     \coordinate (O) at (1,4);
     \coordinate (v) at (5,-3);
@@ -294,10 +282,10 @@ The length of the projection of <m>{\bf{v}}</m> in the direction of <m>{\bf{w}}<
 
     \draw[lightgray] ($(O)+-.06*(q)$)--++($-.3*(q)$);
     \draw[lightgray] ($(O)+(w)+-.06*(q)$)--++($-.3*(q)$);
-    \draw[lightgray,  thick,<->,>=stealth'] ($(O)-.2*(q)$)--++(w) node[midway,  scale=.9,fill=white, inner sep=2, scale=.9, text=black]{$\sqrt{17}$};
+    \draw[lightgray,  thick,<->,>=stealth'] ($(O)-.2*(q)$)--++(w) node[midway,fill=white, inner sep=1, text=black]{$\sqrt{17}$};
     \draw[green, thick,->,>=stealth'] ($(O)+(w)$)--++(q);
-    \draw[blue, thick,->,>=stealth'] (O)--++(w) node[right , xshift=3, scale=.9,fill=white, inner sep=1, scale=.9]{\textbf{w}};
-    \draw[red, very thick,->,>=stealth'] (O)--++(v) node[below, yshift=-6, scale=.9, fill=white,inner sep=1 ]{\textbf{v}};
+    \draw[blue, thick,->,>=stealth'] (O)--++(w) node[right , xshift=3,fill=white, inner sep=1]{\textbf{w}};
+    \draw[red, very thick,->,>=stealth'] (O)--++(v) node[below, yshift=-6, fill=white,inner sep=1 ]{\textbf{v}};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -330,25 +318,23 @@ where <m>\theta</m> is the angle between the vectors.</p></assemblage>
     <image xml:id="fig9-3-3">
         <description>vectors</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture} [scale=.6]
+        <![CDATA[
+    \begin{tikzpicture} [scale=.45]
     \coordinate (O) at (0,0);
     \coordinate (v) at (3,0);
     \coordinate (w) at (2,0);
 
-    \draw[blue, very thick,->,>=stealth'] (0,.75)--++(w) node[right , xshift=3, scale=.9, inner sep=1, scale=.9]{\textbf{w}};
-    \draw[red, very thick,->,>=stealth'] (O)--++(v) node[right, xshift=3, scale=.9, inner sep=1 ]{\textbf{v}};
-    \node[text=blue, scale=.9] at (2,-1.2) {$ \textbf{v}\cdot\textbf{w}= \Vert\textbf{v}\Vert   \,  \Vert\textbf{w} \Vert  $};
+    \draw[blue, very thick,->,>=stealth'] (0,.75)--++(w) node[right , xshift=3, inner sep=1]{\textbf{w}};
+    \draw[red, very thick,->,>=stealth'] (O)--++(v) node[right, xshift=3, inner sep=1 ]{\textbf{v}};
+    \node[text=blue] at (2,-1.2) {$ \textbf{v}\cdot\textbf{w}= \Vert\textbf{v}\Vert   \,  \Vert\textbf{w} \Vert  $};
 
     \coordinate (O) at (7,0);
     \coordinate (v) at (3,0);
     \coordinate (w) at (0,2);
 
-    \draw[blue, very thick,->,>=stealth'] (O)--++(w) node[above, yshift=3, scale=.9, inner sep=1, scale=.9]{\textbf{w}};
-    \draw[red, very thick,->,>=stealth'] (O)--++(v) node[right, xshift=3, scale=.9, inner sep=1 ]{\textbf{v}};
-    \node[text=blue, scale=.9] at ($(O)+(1.6,-1.2)$) {$ \textbf{v}\cdot\textbf{w}= 0 $};
+    \draw[blue, very thick,->,>=stealth'] (O)--++(w) node[above, yshift=3, inner sep=1]{\textbf{w}};
+    \draw[red, very thick,->,>=stealth'] (O)--++(v) node[right, xshift=3, inner sep=1 ]{\textbf{v}};
+    \node[text=blue] at ($(O)+(1.6,-1.2)$) {$ \textbf{v}\cdot\textbf{w}= 0 $};
 
     \coordinate (O) at (14,0);
     \coordinate (v) at (3,0);
@@ -357,11 +343,11 @@ where <m>\theta</m> is the angle between the vectors.</p></assemblage>
     \coordinate (w) at (\a:\r);
     \coordinate (c) at ( {\r*cos(\a)},0);
 
-    \draw[blue, very thick,->,>=stealth'] (O)--++(w) node[above, yshift=3, scale=.9, inner sep=1, scale=.9]{\textbf{w}};
-    \draw[red, ultra thick,->,>=stealth'] (O)--++(v) node[right, xshift=3, scale=.9, inner sep=1 ]{\textbf{v}};
-    \draw[green, thick,->,>=stealth', opacity = .5] (O)--++(c);
+    \draw[blue, very thick,->,>=stealth'] (O)--++(w) node[above, yshift=3, inner sep=1]{\textbf{w}};
+    \draw[red, ultra thick,->,>=stealth'] (O)--++(v) node[right, xshift=3, inner sep=1 ]{\textbf{v}};
+    \draw[green, ultra thick,->,>=stealth', opacity = .5] (O)--++(c);
     \draw[gray, dashed] ($ (O)+(c)$) --($ (O) + (w) $);
-    \node[text=blue, scale=.9] at ($(O)+(2,-1.2)$) {$ \textbf{v}\cdot\textbf{w}= \Vert\textbf{v}\Vert \,\textsf{comp}_{\textbf{v}} \textbf{w} $};
+    \node[text=blue] at ($(O)+(2,-1.2)$) {$ \textbf{v}\cdot\textbf{w}= \Vert\textbf{v}\Vert \,\textsf{comp}_{\textbf{v}} \textbf{w} $};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -397,18 +383,16 @@ Thus, <m>\|{\bf{v}}\|\|{\bf{w}}\| \cos (\theta) = 0</m>, so <m>{\bf{v}}</m> and 
     <image xml:id="exam9-3-6">
         <description>vectors</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture} [scale=.5]
+        <![CDATA[
+    \begin{tikzpicture} [scale=.35]
     \draw[cyan] (0,0) grid (10,5);
     \coordinate (O) at (4,1);
     \coordinate (v) at (5,3);
     \coordinate (u) at (-3,2);
 
-    \draw[blue, very thick,->,>=stealth'] (O)--++(v) node[above right , xshift=3, scale=.9, inner sep=1, scale=.9]{\textbf{v}};
-    \draw[red, very thick,->,>=stealth'] (O)--++(u) node[above left, xshift=-3, scale=.9, inner sep=1 ]{\textbf{u}};
-    \draw[gray,thick] ($ (O) + ({atan(3/5)}:.6) $) arc({atan(3/5)}:{180-atan(2/3)}:.6) node[above, midway, text=black, fill=white, inner sep=1, scale=.9]{$\theta$}; 
+    \draw[blue, very thick,->,>=stealth'] (O)--++(v) node[above right , xshift=3, inner sep=1]{\textbf{v}};
+    \draw[red, very thick,->,>=stealth'] (O)--++(u) node[above left, xshift=-3, inner sep=1 ]{\textbf{u}};
+    \draw[gray,thick] ($ (O) + ({atan(3/5)}:.6) $) arc({atan(3/5)}:{180-atan(2/3)}:.6) node[above, midway, text=black, fill=white, inner sep=1]{$\theta$}; 
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -433,20 +417,18 @@ The angle between the vectors is <m>115.35\degree</m>.</p></solution></example>
                 <image xml:id="sr9-3-1">
                     <description>triangle</description>
                     <latex-image>
-                    <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-                    <![CDATA[\tikzset{%
-                    }
-                \begin{tikzpicture} [scale=.8]
+                    <![CDATA[
+                \begin{tikzpicture} [scale=.55]
                 \coordinate (C) at (0,0);
                 \coordinate (A) at (198:5);
                 \def\beta{asin(sin(18)/2*5)};
                 \def\alpha{180-18-\beta};
                 \coordinate (B) at ($ (A) + ({180-\beta}:2)  $);
 
-                \draw[black,  thick] (C)--(A) node[below right, midway, scale=.9,text=blue]{5};
-                \draw[black,  thick] (B)--(A) node[below left, midway, scale=.9, text=blue]{2};
-                \draw[black,  thick] (C)--(B) node[above, midway, scale=.9, text=blue]{$b$};
-                \draw[red,  thick] (-1.4,0) arc(180:198:1.4) node[left, midway, yshift=-2, scale=.8]{$18\degree$};
+                \draw[black,  thick] (C)--(A) node[below right, midway,text=blue]{5};
+                \draw[black,  thick] (B)--(A) node[below left, midway, text=blue]{2};
+                \draw[black,  thick] (C)--(B) node[above, midway, text=blue]{$b$};
+                \draw[red,  thick] (-1.8,0) arc(180:198:1.8) node[left, midway, yshift=-2]{$18\degree$};
                     \end{tikzpicture}]]>
             </latex-image></image></sidebyside></li>
         <li><sidebyside widths="60% 32%" margins="0%" valigns="middle middle"> <p><ol marker="a">
@@ -455,10 +437,8 @@ The angle between the vectors is <m>115.35\degree</m>.</p></solution></example>
                 <image xml:id="sr9-3-2">
                     <description>triangle</description>
                     <latex-image>
-                    <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-                    <![CDATA[\tikzset{%
-                    }
-                \begin{tikzpicture} [scale=.07]
+                    <![CDATA[
+                \begin{tikzpicture} [scale=.05]
                 \coordinate (C) at (0,0);
                 \coordinate (B) at (53,0);
                 \def\c{31};
@@ -467,10 +447,10 @@ The angle between the vectors is <m>115.35\degree</m>.</p></solution></example>
                 \coordinate (A) at ($ (B) + ({\b-180}:38)  $);
 
                 \draw[black,  thick] (C)--(A) ;
-                \draw[black,  thick] (B)--(A) node[right, midway, yshift=3, scale=.9, text=blue]{38};
-                \draw[black,  thick] (C)--(B) node[above, midway, scale=.9, text=blue]{53};
-                \draw[red,  thick] (15,0) arc(0:-\a:15) node[right, midway, yshift=-2, scale=.9]{$\alpha$};
-                \draw[red,  thick] ($ (A)+({\b}:10) $) arc({\b}:{\b+\c}:10) node[above left, midway, scale=.9]{$31\degree$};
+                \draw[black,  thick] (B)--(A) node[right, midway, yshift=3, text=blue]{38};
+                \draw[black,  thick] (C)--(B) node[above, midway, text=blue]{53};
+                \draw[red,  thick] (15,0) arc(0:-\a:15) node[right, midway, yshift=-2]{$\alpha$};
+                \draw[red,  thick] ($ (A)+({\b}:10) $) arc({\b}:{\b+\c}:10) node[above left, midway]{$31\degree$};
                     \end{tikzpicture}]]>
             </latex-image></image></sidebyside></li>
         <li><sidebyside widths="60% 18%"> <p><ol marker="a">
@@ -479,10 +459,8 @@ The angle between the vectors is <m>115.35\degree</m>.</p></solution></example>
                 <image xml:id="sr9-3-3">
                     <description>triangle</description>
                     <latex-image>
-                    <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-                    <![CDATA[\tikzset{%
-                    }
-                \begin{tikzpicture} [scale=.15]
+                    <![CDATA[
+                \begin{tikzpicture} [scale=.075]
                 \coordinate (A) at (0,0);
                 \def\a{23};
                 \coordinate (T) at ({90-\a}:40);
@@ -490,16 +468,16 @@ The angle between the vectors is <m>115.35\degree</m>.</p></solution></example>
                 \def\b{37};
                 \coordinate (P) at ($ (T) + ({270-\b}:{40*sin(\a)/sin(\b)}) $);
 
-                \draw[black,  thick] (A)--(T) node[right, midway, xshift=3, yshift=3, scale=.9, text=blue]{40 mi} ;
+                \draw[black,  thick] (A)--(T) node[right, midway, xshift=3, yshift=3, text=blue]{40 mi} ;
                 \draw[black,  thick] (A)--(P)--(T);
-                \draw[black,  thick] (P)--++(90:10);
-                \draw[red,  thick] (0,6) arc(90:{90-\a}:6) node[above, midway, xshift=3, yshift=5, scale=.8]{$\a\degree$};
-                \draw[red,  thick] ($ (P)+(90:5) $) arc(90:{90-\b}:5) node[above, midway, xshift=2, scale=.8]{$\b\degree$};
+                \draw[black,  thick] (P)--++(90:12);
+                \draw[red,  thick] (0,9) arc(90:{90-\a}:9) node[above, midway, xshift=3, yshift=5, scale=.8]{$\a\degree$};
+                \draw[red,  thick] ($ (P)+(90:9) $) arc(90:{90-\b}:9) node[above, midway, xshift=4]{$\b\degree$};
                 \filldraw[black] (A) circle (.5) node[left]{$A$};
                 \filldraw[black] (P) circle (.5) node[left]{$P$};
                 \filldraw[black] (T) circle (.5) node[below right]{$T$};
-                \node[scale=.9] at (6,0) {airport};
-                \node[scale=.9] at ($ (T)+(-5,0) $) {tower};
+                \node at (9,0) {airport};
+                \node at ($ (T)+(-8,0) $) {tower};
                     \end{tikzpicture}]]>
             </latex-image></image></sidebyside></li>
         <li><sidebyside widths="60% 32%"> <p><ol marker="a">
@@ -508,23 +486,21 @@ The angle between the vectors is <m>115.35\degree</m>.</p></solution></example>
                 <image xml:id="sr9-3-4">
                     <description>triangle</description>
                     <latex-image>
-                    <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-                    <![CDATA[\tikzset{%
-                    }
-                \begin{tikzpicture} [scale=.25]
+                    <![CDATA[
+                \begin{tikzpicture} [scale=.15]
                 \coordinate (A) at (-15,0);
                 \coordinate (B) at (0,0);
                 \coordinate (C) at (38:8);
 
-                \draw[black,  thick] (A)--(B) node[below, midway, scale=.9, text=blue]{15};
+                \draw[black,  thick] (A)--(B) node[below, midway, text=blue]{15};
                 \draw[black,  thick] (A)--(C);
-                \draw[black,  thick] (B)--(C)node[below right, midway, scale=.9, text=blue]{8};
-                \draw[red,  thick] (0,1) arc(90:38:1) node[above, midway, xshift=4, yshift=2, scale=.8]{$52\degree$};
-                \draw[gray, ->, >=stealth'] (B) -- (0,7) node[above, scale=.9, text=black]{N};
-                \draw[gray, ->, >=stealth'] (B) -- (7,0) node[right, scale=.9, text=black]{E};
-                \filldraw[black] (A) circle (.1) node[left, scale=.9]{$A$};
-                \filldraw[black] (B) circle (.1) node[below, scale=.9]{$B$};
-                \filldraw[black] (C) circle (.1) node[above right, scale=.9]{$C$};
+                \draw[black,  thick] (B)--(C)node[below right, midway, text=blue, xshift=-2, yshift=3]{8};
+                \draw[red,  thick] (38:1.8) arc(38:90:1.8) node[left, xshift=3, yshift=-1]{$52\degree$};
+                \draw[gray, ->, >=stealth'] (B) -- (0,6) node[above, text=black]{N};
+                \draw[gray, ->, >=stealth'] (B) -- (7,0) node[right, text=black]{E};
+                \filldraw[black] (A) circle (.1) node[left]{$A$};
+                \filldraw[black] (B) circle (.1) node[below]{$B$};
+                \filldraw[black] (C) circle (.1) node[above right]{$C$};
                     \end{tikzpicture}]]>
             </latex-image></image></sidebyside></li>
     </ol></p>

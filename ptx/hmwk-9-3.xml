@@ -34,16 +34,16 @@
     <li>Sketch both vectors and the vector components.</li></ol></p></introduction>    
 
 <exercise number="7"><statement><p><m>{\bf{w}} = 8{\bf{i}}+4{\bf{j}},</m> <m>~~{\bf{v}} = 2{\bf{i}}+3{\bf{j}}</m></p>
-<sidebyside width="70%"><image source="photos/eight-grid"><description>grid</description></image></sidebyside></statement>
+<sidebyside width="70%"><image xml:id="hp-9-3-7"><description>8x8 grid</description>
+        <xi:include href="Fig-Grid-minus8-8.ptx"/>
+        </image></sidebyside></statement>
 <answer><p><ol marker="a">
-<li><m>{\bf{w}} = (\dfrac{56}{13}{\bf{i}}+\dfrac{84}{13}{\bf{j}}) + (\dfrac{48}{13}{\bf{i}}-\dfrac{32}{13}{\bf{j}})</m></li>
+<li><m>{\bf{w}} = \left(\dfrac{56}{13}{\bf{i}}+\dfrac{84}{13}{\bf{j}}\right) + \left(\dfrac{48}{13}{\bf{i}}-\dfrac{32}{13}{\bf{j}}\right)</m></li>
 <li><sidebyside width="55%" margins="0% 45%">
     <image xml:id="hp9-3-7ans">
         <description>vectors</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
+        <![CDATA[
         \begin{tikzpicture} [scale =0.3]
 
         \draw[cyan,very thin] (-1,-1) grid (8,8);
@@ -69,18 +69,20 @@
     </image>
 </sidebyside></li></ol></p></answer></exercise>
 
-<exercise number="8"><statement><p><m>{\bf{w}} = -3{\bf{i}}+7{\bf{j}},</m> <m>~~{\bf{v}} = 4{\bf{i}}+2{\bf{j}}</m></p><sidebyside width="70%"><image source="photos/eight-grid"><description>grid</description></image></sidebyside></statement></exercise>
+<exercise number="8"><statement><p><m>{\bf{w}} = -3{\bf{i}}+7{\bf{j}},</m> <m>~~{\bf{v}} = 4{\bf{i}}+2{\bf{j}}</m></p><sidebyside width="70%"><image xml:id="hp-9-3-8"><description>8x8 grid</description>
+        <xi:include href="Fig-Grid-minus8-8.ptx"/>
+        </image></sidebyside></statement></exercise>
 
-<exercise number="9"><statement><p><m>{\bf{w}} = 6{\bf{i}}-2{\bf{j}},</m> <m>~~{\bf{v}} = {\bf{i}}-{\bf{j}}</m></p><sidebyside width="70%"><image source="photos/eight-grid"><description>grid</description></image></sidebyside></statement>
+<exercise number="9"><statement><p><m>{\bf{w}} = 6{\bf{i}}-2{\bf{j}},</m> <m>~~{\bf{v}} = {\bf{i}}-{\bf{j}}</m></p><sidebyside width="70%"><image xml:id="hp-9-3-9"><description>8x8 grid</description>
+        <xi:include href="Fig-Grid-minus8-8.ptx"/>
+        </image></sidebyside></statement>
     <answer><p><ol marker="a">
 <li><m>{\bf{w}} = (4{\bf{i}}-4{\bf{j}}) + (2{\bf{i}}+2{\bf{j}})</m></li>
 <li><sidebyside width="60%" margins="0% 40%">
     <image xml:id="hp9-3-9ans">
         <description>vectors</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
+        <![CDATA[
         \begin{tikzpicture} [scale =0.3]
 
         \draw[cyan,very thin] (-1,-6) grid (6,1);
@@ -106,7 +108,9 @@
     </image>
 </sidebyside></li></ol></p></answer></exercise>
 
-<exercise number="10"><statement><p><m>{\bf{w}} = -5{\bf{i}}+3{\bf{j}},</m> <m>~~{\bf{v}} = -{\bf{i}}-3{\bf{j}}</m></p><sidebyside width="70%"><image source="photos/eight-grid"><description>grid</description></image></sidebyside></statement></exercise>
+<exercise number="10"><statement><p><m>{\bf{w}} = -5{\bf{i}}+3{\bf{j}},</m> <m>~~{\bf{v}} = -{\bf{i}}-3{\bf{j}}</m></p><sidebyside width="70%"><image xml:id="hp-9-3-10"><description>8x8 grid</description>
+        <xi:include href="Fig-Grid-minus8-8.ptx"/>
+        </image></sidebyside></statement></exercise>
 </exercisegroup>
 
 <exercisegroup cols="2"><introduction><p>For Problems 11<ndash/>18, compute the dot product <m>{\bf{u}} \cdot {\bf{v}}</m>.</p></introduction>
@@ -130,11 +134,8 @@
     <image xml:id="hp9-3-17">
         <description>vectors</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale =0.04]
-
+        <![CDATA[
+        \begin{tikzpicture} [scale =0.025]
         \draw[thick,->, >=stealth'] (-10,0) -- (98,0) node[anchor=west] {$x$};
         \draw[thick,->, >=stealth'] (0,-10) -- (0,68) node[anchor=south] {$y$};
 
@@ -142,11 +143,11 @@
         \coordinate (w) at (17:95);
         \coordinate (v) at (110:64);
 
-        \draw[red, thick, ->,>=stealth'] (O) --(v) node[left, midway, xshift=-5, yshift=3, scale=.9, text=blue]{64};
-        \draw[red, thick, ->,>=stealth'] (O) --++(w) node[above, midway, xshift=-2, scale=.9, text=blue]{95};
+        \draw[red, thick, ->,>=stealth'] (O) --(v) node[left, midway, xshift=-2, yshift=3, text=blue]{64};
+        \draw[red, thick, ->,>=stealth'] (O) --++(w) node[above, midway, xshift=2, text=blue]{95};
         
-        \draw[gray,thick,->,>=stealth'] (0:20) arc (0:17:20) node[right, xshift=5, yshift=1, midway, text=black, scale=.8]{$17\degree$};
-        \draw[gray,thick,->,>=stealth'] (0:10) arc (0:110:10) node[above, xshift=5, midway, text=black, scale=.8]{$110\degree$};
+        \draw[gray,thick,->,>=stealth'] (0:50) arc (0:17:50) node[right, xshift=0, yshift=1, midway, text=black]{$17\degree$};
+        \draw[gray,thick,->,>=stealth'] (0:30) arc (0:110:30) node[above, xshift=5, midway, text=black]{$110\degree$};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -157,22 +158,19 @@
     <image xml:id="hp9-3-18">
         <description>vectors</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale =0.12]
-
+        <![CDATA[
+        \begin{tikzpicture} [scale =0.075]
         \draw[gray,->, >=stealth'] (0,0) -- (0,28);
 
         \coordinate (O) at (0,0);
         \coordinate (w) at (115:24);
         \coordinate (v) at (48:33);
 
-        \draw[red, thick, ->,>=stealth'] (O) --(w) node[left, midway, xshift=-5, yshift=3, scale=.9, text=blue]{24};
-        \draw[red, thick, ->,>=stealth'] (O) --++(v) node[right, midway, xshift=2, scale=.9, text=blue]{33};
+        \draw[red, thick, ->,>=stealth'] (O) --(w) node[left, midway, xshift=-5, yshift=3, text=blue]{24};
+        \draw[red, thick, ->,>=stealth'] (O) --++(v) node[right, midway, xshift=2, text=blue]{33};
         v
-        \draw[gray,thick,<->,>=stealth'] (90:10) arc (90:115:10) node[above, yshift=2, midway, text=black, scale=.8]{$25\degree$};
-        \draw[gray,thick,<->,>=stealth'] (90:7) arc (90:48:7) node[above, xshift=3, midway, text=black, scale=.8]{$42\degree$};
+        \draw[gray,thick,<->,>=stealth'] (90:15) arc (90:115:15) node[above,xshift=-2, yshift=2, midway, text=black]{$25\degree$};
+        \draw[gray,thick,<->,>=stealth'] (90:12) arc (90:48:12) node[above, xshift=3, midway, text=black]{$42\degree$};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -257,7 +255,31 @@
     <li><m>\dfrac{1}{\sqrt{2}}{\bf{i}}+\dfrac{1}{\sqrt{2}}{\bf{j}}~~\text{and}~~\dfrac{-1}{\sqrt{2}}{\bf{i}}+\dfrac{1}{\sqrt{2}}{\bf{j}}</m></li>
     <li><m>{\bf{u}} \cdot {\bf{v}} = 0</m></li>
     <li><m>\dfrac{11}{\sqrt{2}}</m> and <m>\dfrac{5}{\sqrt{2}}</m></li>
-    <li><sidebyside width="20%" margins="0% 0%"><image source="photos/hp9-3-41ans.png"><description>vectors</description></image></sidebyside></li>
+    <li><sidebyside width="24%" margins="0% 0%">
+    <!-- <image source="photos/hp9-3-41ans.png"><description>vectors</description></image> -->
+    <image xml:id="hp9-3-41ans"><description>orthogonal vectors</description>
+    <latex-image>
+        <![CDATA[
+        \begin{tikzpicture} [scale=0.3]
+        \draw[cyan] (-1,-1) grid (6,9);
+        \draw[thick,->, >=stealth'] (-1,0) -- (6.6,0) node[anchor=west] {$x$};
+        \draw[thick,->, >=stealth'] (0,-1) -- (0,9.9) node[anchor=south] {$y$};
+        `
+        \foreach \x in {5}
+            \draw (\x,.1) -- (\x,-.1) node[anchor=north, fill=white, inner sep=1, yshift=-2] {$\x$};
+        \foreach \y in {5}
+            \draw (.1,\y) -- (-.1,\y) node[anchor=east, fill=white, inner sep=1, xshift=-2] {$\y$};
+        \draw[blue,->,>=stealth'](0,0)--(1,1);
+        \draw[blue,->,>=stealth'](0,0)--(-1,1);
+        \draw[green,very thick,->,>=stealth'](0,0)--(3,8);
+        \draw[magenta,very thick,->,>=stealth'](0,0)--(11/2,11/2);
+        \draw[magenta,very thick,->,>=stealth'](11/2,11/2)--(3,8);
+        \draw[blue,very thick,->,>=stealth',opacity=.5](0,0)--(1,1);
+        \draw[blue,very thick,->,>=stealth'](0,0)--(-1,1);
+        \end{tikzpicture}]]>
+</latex-image>
+    </image>
+    </sidebyside></li>
 </ol></p></answer></exercise>
  
 <exercise number="42"><statement><p><ol marker="a">
@@ -311,21 +333,19 @@
     <image xml:id="hp9-3-53">
         <description>vectors</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale =1.1]
+        <![CDATA[
+        \begin{tikzpicture} [scale =1]
 
         \coordinate (O) at (0,0);
         \coordinate (u) at (80:2);
         \coordinate (v) at (15:3);
         \coordinate (d) at ($ (u) - (v) $);
 
-        \draw[blue, thick, ->,>=stealth'] (O) --(u) node[left, midway, yshift=5, yshift=3, scale=.8, text=blue]{\textbf{u}};
-        \draw[blue, thick, ->,>=stealth'] (O) --++(v) node[right, midway, xshift=15, yshift=-2, scale=.8, text=blue]{\textbf{v}};
-        \draw[red, thick, ->,>=stealth'] (v) --++(d) node[right, xshift=15, yshift=-3, scale=.8, text=red]{\textbf{u - v}};
+        \draw[blue, thick, ->,>=stealth'] (O) --(u) node[left, midway, yshift=5, yshift=3, text=blue]{\textbf{u}};
+        \draw[blue, thick, ->,>=stealth'] (O) --++(v) node[right, midway, xshift=15, yshift=-2, text=blue]{\textbf{v}};
+        \draw[red, thick, ->,>=stealth'] (v) --++(d) node[right, xshift=15, yshift=-3, text=red]{\textbf{u - v}};
 
-        \draw[gray,thick,<->,>=stealth'] (15:.5) arc (15:80:.5) node[above right, midway, text=black, scale=.8]{$\theta$};
+        \draw[gray,thick,<->,>=stealth'] (15:.5) arc (15:80:.5) node[above right, midway, text=black]{$\theta$};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -343,10 +363,8 @@
     <image xml:id="hp9-3-54">
         <description>vectors</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture} [scale =1.3]
+        <![CDATA[
+    \begin{tikzpicture} [scale =1.1]
     \draw[thick,->, >=stealth'] (-0.3,0) -- (2.2,0) node[anchor=west] {$x$};
     \draw[thick,->, >=stealth'] (0,-0.3) -- (0,2.2) node[anchor=south] {$y$};
     \def\a{22};
@@ -355,11 +373,11 @@
     \coordinate (u) at (\a:2.2);
     \coordinate (v) at (\b:1.6);
 
-    \draw[blue, thick, ->,>=stealth'] (O) --(u) node[above right, yshift=-4, scale=.9, text=blue]{\textbf{u}};
-    \draw[blue, thick, ->,>=stealth'] (O) --++(v) node[above right, xshift=-3, yshift=-3, scale=.9, text=blue]{\textbf{v}};
+    \draw[blue, thick, ->,>=stealth'] (O) --(u) node[above right, yshift=-4, text=blue]{\textbf{u}};
+    \draw[blue, thick, ->,>=stealth'] (O) --++(v) node[above right, xshift=-3, yshift=-3, text=blue]{\textbf{v}};
 
-    \draw[gray,thick,->,>=stealth'] (0:1) arc (0:\a:1) node[right, midway, text=red, scale=.9]{$\alpha$};
-    \draw[gray,thick,->,>=stealth'] (0:0.6) arc (0:\b:.6) node[above, midway, xshift=2, text=red, scale=.9]{$\beta$};
+    \draw[gray,thick,->,>=stealth'] (0:1) arc (0:\a:1) node[right, midway, text=red]{$\alpha$};
+    \draw[gray,thick,->,>=stealth'] (0:0.6) arc (0:\b:.6) node[above, midway, xshift=2, text=red]{$\beta$};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
