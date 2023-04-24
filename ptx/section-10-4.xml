@@ -14,24 +14,22 @@
     <image xml:id="exam10-4-1">
         <description>complex numbers as vectors</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture} [scale=.5]
+        <![CDATA[
+    \begin{tikzpicture} [scale=.32]
     \draw[cyan] (-4,-4) grid (4,4);
     \foreach \y in {-4,-2,2,4} {
-    \draw[black] (.1,\y) --++ (-.2,0) node[left, xshift=-2, fill=white, inner sep=1]{$\y i$};
+    \draw[black] (.1,\y) --++ (-.2,0) node[left, xshift=-2, fill=white, inner sep=0]{$\y i$};
     }
     \foreach \x in {-4,-2,2,4} {
-    \draw[black] (\x,.1) --++ (0,-.2) node[below, yshift=-2, fill=white, inner sep=1]{$\x$};
+    \draw[black] (\x,.1) --++ (0,-.2) node[below, yshift=-2, fill=white, inner sep=0]{$\x$};
     }
     \coordinate (O) at (0,0);
     \coordinate (z) at (2,3);
     \coordinate (z2) at (-3,2);
     \draw[black,thick,->,>=stealth'] (-4,0)--(4.4,0);
     \draw[black,thick,->,>=stealth'] (0,-4)--(0, 4.4);
-    \draw[red, thick, ->, >=stealth'] (O) -- ++(z) node[above right, yshift=-.1cm, fill=white, inner sep=1]{$z$};
-    \draw[blue, thick, ->, >=stealth'] (O) -- ++(z2) node[above left, yshift=-.1cm, fill=white, inner sep=1]{$iz$};
+    \draw[red, thick, ->, >=stealth'] (O) -- ++(z) node[above right, yshift=-.1cm, fill=white, inner sep=0]{$z$};
+    \draw[blue, thick, ->, >=stealth'] (O) -- ++(z2) node[above left, yshift=-.1cm, fill=white, inner sep=0]{$iz$};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -42,14 +40,12 @@
   <li>Plot <m>z,~ iz,~ i^2z,</m> and <m>i^3z</m> as points on the complex plane.</li></ol></p></statement>
   <answer><p><ol marker="a">
         <li><m>iz=i-1,~i^2z=-1-i,~i^3z=-i+1</m></li>
-        <li><sidebyside width="20%" margins="0% 0%"><!--<image source="photos/exer10-4-1ans.png"><description>graph</description></image>-->
+        <li><sidebyside width="28%" margins="0% 0%"><!--<image source="photos/exer10-4-1ans.png"><description>graph</description></image>-->
     <image xml:id="exer10-4-1ans">
         <description>rotations of complex number</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture} [scale=.85]
+        <![CDATA[
+    \begin{tikzpicture} [scale=.72]
     \draw[cyan] (-2,-2) grid (2,2);
     \coordinate (O) at (0,0);
     \coordinate (z) at (1,1);
@@ -58,10 +54,10 @@
     \coordinate (z4) at (1,-1);
     \draw[black,thick,->,>=stealth'] (-2,0)--(2.3,0);
     \draw[black,thick,->,>=stealth'] (0,-2)--(0, 2.3);
-    \filldraw[red] (z) circle (.08cm) node[above, yshift=.15cm, fill=white, inner sep=1, text=black]{$z=1+i$};
-    \filldraw[red] (z2) circle (.08cm) node[above left, yshift=.15cm, fill=white, inner sep=1, text=black]{$iz$};
-    \filldraw[red] (z3) circle (.08cm) node[below left, yshift=-.15cm, fill=white, inner sep=1, text=black]{$i^2 z$};
-    \filldraw[red] (z4) circle (.08cm) node[below right, yshift=-.15cm, fill=white, inner sep=1, text=black]{$i^3 z$};
+    \filldraw[red] (z) circle (.08cm) node[above, yshift=.15cm, fill=white, inner sep=0, text=black]{$z=1+i$};
+    \filldraw[red] (z2) circle (.08cm) node[above left, yshift=.15cm, fill=white, inner sep=0, text=black]{$iz$};
+    \filldraw[red] (z3) circle (.08cm) node[below left, yshift=-.15cm, fill=white, inner sep=0, text=black]{$i^2 z$};
+    \filldraw[red] (z4) circle (.08cm) node[below right, yshift=-.15cm, fill=white, inner sep=0, text=black]{$i^3 z$};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -81,10 +77,8 @@ and the angle from the real axis to the vector is <m>\theta=\dfrac{\pi}{4}</m>.<
     <image xml:id="fig10-4-1">
         <description>polar form of complex number</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture} [scale=1.1]
+        <![CDATA[
+    \begin{tikzpicture} [scale=.72]
     \coordinate (O) at (0,0);
     \coordinate (z) at (3,3);
     \coordinate (z2) at (3,0);
@@ -96,7 +90,7 @@ and the angle from the real axis to the vector is <m>\theta=\dfrac{\pi}{4}</m>.<
     \draw[gray] (.1,3) --++ (-.2,0) node[left, text=black] {$3$}; 
     \draw[black,thick,->,>=stealth'] (O) -- (z) node[above right, yshift=-.1cm] {$3+3i$}; 
     \draw[red, ->,>=stealth'] (0:0.8) arc (0:45:0.8) node[right, yshift=3, midway] {$\theta = \displaystyle\frac{\pi}{4}$};
-    \node[blue] at (1,2.1) {$r=3\sqrt{2}$};
+    \node[blue] at (1,2.2) {$r=3\sqrt{2}$};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -118,10 +112,8 @@ Thus, the complex number <m>z=a+bi</m> can also be written as
     <image xml:id="exam10-4-2">
         <description>polar form of complex number</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture} [scale=2.1]
+        <![CDATA[
+    \begin{tikzpicture} [scale=1.3]
     \coordinate (O) at (0,0);
     \coordinate (z) at (30:2);
     \coordinate (z2) at ({sqrt(3)},0);
@@ -133,7 +125,7 @@ Thus, the complex number <m>z=a+bi</m> can also be written as
     \draw[gray] (.07,1) --++ (-.14,0) node[left, text=black] {$1$}; 
     \draw[black,thick,->,>=stealth'] (O) -- (z) node[above right, yshift=-.1cm] {$\sqrt{3}+i$}; 
     \draw[red, ->,>=stealth'] (0:0.8) arc (0:30:0.8) node[right, yshift=3, midway] {$\theta =\displaystyle\frac{\pi}{6}$};
-    \node[blue] at (0.7,0.7) {$r=2$};
+    \node[blue] at (0.6,0.7) {$r=2$};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -156,7 +148,7 @@ The angle <m>\theta</m> is called the <term>argument</term> of the complex numbe
 
 <p> Of course, we can always recover the Cartesian form of a complex number from its polar form by evaluating the trigonometric functions. We'll check the result of the previous example: 
     <md><mrow> z \amp = 2\left(\cos \left(\dfrac{\pi}{6}\right) + i\sin \left(\dfrac{\pi}{6}\right)\right)</mrow>
-        <mrow>\amp = 2\left(\dfrac{\sqrt{3}}{2}\right) + i \cdot \dfrac{1}{2}\right) = \sqrt{3} + i</mrow></md></p>
+        <mrow>\amp = 2\left(\dfrac{\sqrt{3}}{2} + i \cdot \dfrac{1}{2}\right) = \sqrt{3} + i</mrow></md></p>
   </subsection>
 
 <subsection><title>Products and Quotients in Polar Form</title>
@@ -179,10 +171,8 @@ Note that <m>z</m> and <m>w</m> are the numbers from the previous Example and Ex
     <image xml:id="exam10-4-3">
         <description>product of complex numbers</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture} [scale=.4]
+        <![CDATA[
+    \begin{tikzpicture} [scale=.28]
     \coordinate(O) at (0,0);
     \foreach \angle [count=\xi] in {0, 15, ..., 345}{
       \draw[green] (\angle:0) -- (\angle:5);
@@ -213,7 +203,7 @@ Note that <m>z</m> and <m>w</m> are the numbers from the previous Example and Ex
 
 <assemblage><title>Quotient in Polar Form</title>
 <idx><h>polar form</h><h>quotient</h></idx>
-<p>If <m>z_1=r\left((\cos \left(\alpha+i\sin \left(\alpha\right)\right)</m> and <m>z_2=R\left(\left(\cos \beta\right)+i\sin \left(\beta\right)\right)</m>, then
+<p>If <m>z_1=r\left(\cos \left(\alpha\right)+i\sin \left(\alpha\right)\right)</m> and <m>z_2=R\left(\left(\cos \beta\right)+i\sin \left(\beta\right)\right)</m>, then
 <me>\blert{ \dfrac{z_1}{z_2}=\dfrac{r}{R}(\cos (\alpha - \beta) + i \sin (\alpha - \beta))}</me> </p></assemblage>
 
 <example><statement><p>Find the quotient of <m>z= 2\left(\cos \left(\dfrac{\pi}{6}\right) + i\sin \left(\dfrac{\pi}{6}\right)\right)</m> and <m>w= 2\left(\cos \left(\dfrac{\pi}{3}\right) + i\sin \left(\dfrac{\pi}{3}\right)\right)</m>.</p></statement>
@@ -225,10 +215,8 @@ The figure at right shows the graphs of <m>z,~w</m>, and the quotient <m>\dfrac{
     <image xml:id="exam10-4-4">
         <description>quotient of complex numbers</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture} [scale=.7]
+        <![CDATA[
+    \begin{tikzpicture} [scale=.45]
     \coordinate(O) at (0,0);
     \foreach \angle [count=\xi] in {0, 15, ..., 345}{
       \draw[green] (\angle:0) -- (\angle:3);
@@ -236,15 +224,15 @@ The figure at right shows the graphs of <m>z,~w</m>, and the quotient <m>\dfrac{
     \draw[black,thick,->,>=stealth'] (O)--(3.5,0);
     \foreach \r in {2,3} {
     \draw[green] (O) circle (\r);
-    \draw[black] (\r,.15) --++ (0,-.3) node[below, yshift=-2, fill=white, inner sep=1]{$\r$};
+    \draw[black] (\r,.15) --++ (0,-.3) node[below, yshift=-2, fill=white, inner sep=0]{$\r$};
     }
     \draw[green] (O) circle (1);
     \coordinate (O) at (0,0);
     \coordinate (z) at (30:2);
     \coordinate (w) at (60:2);
-    \draw[red, thick, ->, >=stealth'] (O) -- (z) node[above right, xshift=1, yshift=-.1cm, fill=white, inner sep=1]{$z$};
-    \draw[blue, thick, ->, >=stealth'] (O) -- (w) node[above right, fill=white, inner sep=1]{$w$};
-    \draw[black, very thick, ->, >=stealth'] (O) -- (-30:1) node[below right, fill=white, inner sep=1]{$\displaystyle\frac{z}{w}$};
+    \draw[red, thick, ->, >=stealth'] (O) -- (z) node[above right, xshift=1, yshift=-.1cm, fill=white, inner sep=0]{$z$};
+    \draw[blue, thick, ->, >=stealth'] (O) -- (w) node[above right, fill=white, inner sep=0]{$w$};
+    \draw[black, very thick, ->, >=stealth'] (O) -- (-30:1) node[below, yshift=-5, fill=white, inner sep=0]{$\displaystyle\frac{z}{w}$};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -286,12 +274,12 @@ Now, every number,whether real or complex, has two square roots. To find the oth
 The second square root of <m>z</m> is thus 
         <me>r^{1/2}\left(\cos \left(\dfrac{\alpha}{2}+\pi\right)+i\sin \left(\dfrac{\alpha}{2}+\pi\right)\right)</me></p>
 
-<p> As an example consider <m>w=-8+8i\sqrt{3},</m> whose polar form is <m>16\left(\cos \left(\dfrac{2\pi}{3} + i\sin \dfrac{2\pi}{3}\right)</m>, or by adding <m>2\pi</m> to the argument, <m>16\left(\cos \dfrac{8\pi}{3}\right) + i\sin \left(\dfrac{8\pi}{3}\right)\right)</m>. The two square roots of <m>w</m> are 
+<p> As an example consider <m>w=-8+8i\sqrt{3},</m> whose polar form is <m>16\left(\cos \left(\dfrac{2\pi}{3}\right) + i\sin\left( \dfrac{2\pi}{3}\right)\right)</m>, or by adding <m>2\pi</m> to the argument, <m>16\left(\cos\left( \dfrac{8\pi}{3}\right) + i\sin \left(\dfrac{8\pi}{3}\right)\right)</m>. The two square roots of <m>w</m> are 
 <md>
     <mrow>z_1 \amp = 16^{1/2}\left(\cos \left(\dfrac{\pi}{3}\right) + i\sin \left(\dfrac{\pi}{3}\right)\right)=4\left(\dfrac{1}{2} + i\dfrac{\sqrt{3}}{2}\right) = 2+2i\sqrt{3}</mrow>
     <mrow>z_2\amp=16^{1/2}\left(\cos \left(\dfrac{4\pi}{3}\right) + i\sin \left(\dfrac{4\pi}{3}\right)\right)=4\left(\dfrac{-1}{2} + i\dfrac{-\sqrt{3}}{2}\right) = -2-2i\sqrt{3}</mrow>
 </md></p>
-<sidebyside widths="70% 25%" margins="0% 0%" valigns="middle middle"><p>You can verify that both of these numbers are square roots of <m>w=-8+8i\sqrt{3}</m>, for instance,
+<sidebyside widths="70% 29%" margins="0% 0%" valigns="middle middle"><p>You can verify that both of these numbers are square roots of <m>w=-8+8i\sqrt{3}</m>, for instance,
 <md>
     <mrow>\left(2+2i\sqrt{3}\right)^2 \amp = 4+2(2)\left(2i\sqrt{3}\right)+12i^2</mrow>
     <mrow>\amp=-8+8i\sqrt{3}</mrow>
@@ -300,10 +288,8 @@ The graphs of <m>w</m> and its two square roots are shown at right.</p>
     <image xml:id="fig10-4-2">
         <description>square roots of complex number</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture} [scale=.15]
+        <![CDATA[
+    \begin{tikzpicture} [scale=.11]
     \coordinate(O) at (0,0);
     \foreach \angle [count=\xi] in {0, 15, ..., 345}{
       \draw[green] (\angle:0) -- (\angle:15);
@@ -345,18 +331,16 @@ But by adding multiples of <m>2\pi</m> to the argument, we can also write the po
     <image xml:id="exam10-4-6">
         <description>square roots of complex number</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture} [scale=1.3]
+        <![CDATA[
+    \begin{tikzpicture} [scale=.72]
     \coordinate(O) at (0,0);
     \draw[gray] (-2,0) -- (O);
     \draw[gray] (0,-2) -- (0,2);
     \foreach \r in {1} {
-    \draw[black, thick] (\r,.1) --++ (0,-.2) node[below, yshift=-2, fill=white, inner sep=1]{$\r$};
-    \draw[black, thick] (-\r,.1) --++ (0,-.2) node[below, yshift=-2, fill=white, inner sep=1]{$-\r$};
-    \draw[black, thick] (.1,\r) --++ (-.2,0) node[left, xshift=-2, fill=white, inner sep=1]{$i$};
-    \draw[black, thick] (.1,-\r) --++ (-.2,0) node[left, xshift=-2, fill=white, inner sep=1]{$-i$};
+    \draw[black, thick] (\r,.1) --++ (0,-.2) node[below]{$\r$};
+    \draw[black, thick] (-\r,.1) --++ (0,-.2) node[below]{$-\r$};
+    \draw[black, thick] (.1,\r) --++ (-.2,0) node[left]{$i$};
+    \draw[black, thick] (.1,-\r) --++ (-.2,0) node[left]{$-i$};
     }
     \draw[green, dashed] (O) circle (2);
     \coordinate (O) at (0,0);
@@ -448,7 +432,7 @@ and
 
 <li><assemblage><title>Roots of a Complex Number</title>
 <p>A complex number <m>z=r(\cos (\alpha) + i\sin (\alpha))</m> in polar form has <m>n</m> complex <m>n</m>th roots, given by
-  <me>z_k = r^{1/n}\left(\cos \left\dfrac{\alpha + 2\pi k}{n}\right) + i\sin \left\dfrac{\alpha + 2\pi k}{n}\right)\right)</me>
+  <me>z_k = r^{1/n}\left(\cos \left(\dfrac{\alpha + 2\pi k}{n}\right) + i\sin \left(\dfrac{\alpha + 2\pi k}{n}\right)\right)</me>
 for <m>k = 0,~1,~2, \cdots,~ n-1</m>.</p></assemblage></li>
 </ol></p></subsubsection>
 

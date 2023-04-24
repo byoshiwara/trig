@@ -1,0 +1,17 @@
+<latex-image>
+    <![CDATA[
+    \begin{tikzpicture} [scale=.8] 
+    \def\r{3.3};
+    \def\t{55};
+    \coordinate(O) at (0,0);
+    \coordinate(P) at (\t:\r);
+    \coordinate(x) at (0:{\r*cos(\t)});
+    \draw[gray,thick,->,>=stealth'] (-0.5,0)--(3,0);
+    \draw[gray,thick,->,>=stealth'] (0, -0.5)--(0,3);
+    \draw[black,thick] (O)--(P) node[above left, midway]{$r$};
+    \draw[lightgray,thick, dashed, text=black] (x)--(P) node[right, midway]{$y$};
+    \draw[red] (0:.5) arc(0:\t:0.5) node[right,midway, yshift=2,text=black] {$\theta$};
+    \filldraw[blue] (P) circle (1.5pt) node[right, text=black]{$P$};
+    \draw [lightgray,decorate,decoration={brace,amplitude=5pt}] (x)++(0, -.1) -- (0,-.1) node [black, below,midway,yshift=-4pt] {$x$};
+        \end{tikzpicture}]]>
+</latex-image>

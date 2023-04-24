@@ -1,0 +1,18 @@
+<latex-image>
+        <![CDATA[
+        \begin{tikzpicture} [scale=.3]
+        \coordinate(O) at (0,0);
+        \path [draw=none,fill=yellow, fill opacity = 0.6] (O)--(30:{11/sqrt(3)}) -- (5.5,5.5)--(60:{11/sqrt(3)}) (O);
+        \draw[cyan, thick] (60:{11/sqrt(3)})--(O)--(30:{11/sqrt(3)});
+        \path [draw=none,fill=yellow, fill opacity = 0.6] (O)--(210:{11/sqrt(3)}) -- (-5.5,-5.5)--(240:{11/sqrt(3)}) (O);
+        \draw[cyan, thick] (210:{11/sqrt(3)})--(O)--(240:{11/sqrt(3)});
+
+        \foreach \angle [count=\xi] in {0, 15, ..., 345}{
+          \draw[cyan] (\angle:0) -- (\angle:5);
+        }
+        \foreach \r in {1,2,3,4,5} {
+        \draw[cyan] (O) circle (\r);
+        \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
+        }
+        \end{tikzpicture}]]>
+</latex-image>

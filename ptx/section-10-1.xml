@@ -374,28 +374,11 @@
 <p>  If we know the polar coordinates <m>(r, \theta)</m>, we can compute the Cartesian coordinates <m>(x,y)</m> as the legs of a right triangle.</p>
 <sidebyside widths="60% 22%" margins="0% 15%"><p>
   <md><mrow>\dfrac{x}{r} = \cos (\theta), ~~~~ \text{so} ~~~~ x = r\cos (\theta)</mrow>
-        <mrow> \dfrac{y}{r} = \sin (\theta), ~~~~ \text{so} ~~~~ y = r\sin (\thet)a</mrow></md></p>
+        <mrow> \dfrac{y}{r} = \sin (\theta), ~~~~ \text{so} ~~~~ y = r\sin (\theta)</mrow></md></p>
     <image xml:id="fig10-1-6">
         <description>rectangular and polar coordinates</description>
-        <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture} [scale=1.3] 
-    \def\r{3.3};
-    \def\t{55};
-    \coordinate(O) at (0,0);
-    \coordinate(P) at (\t:\r);
-    \coordinate(x) at (0:{\r*cos(\t)});
-    \draw[gray,thick,->,>=stealth'] (-0.5,0)--(3,0);
-    \draw[gray,thick,->,>=stealth'] (0, -0.5)--(0,3);
-    \draw[black,thick] (O)--(P) node[above left, midway]{$r$};
-    \draw[lightgray,thick, dashed, text=black] (x)--(P) node[right, midway]{$y$};
-    \draw[red] (0:.5) arc(0:\t:0.5) node[right,midway, yshift=2,text=black] {$\theta$};
-    \filldraw[blue] (P) circle (1.5pt) node[above right, text=black]{$P$};
-    \draw [lightgray,decorate,decoration={brace,amplitude=5pt}] (x)++(0, -.1) -- (0,-.1) node [black, below,midway,yshift=-4pt] {$x$};
-        \end{tikzpicture}]]>
-    </latex-image>
+        
+        <xi:include href="Fig-polar-and-cartesian.ptx"/>
     </image>
 </sidebyside>
 
@@ -412,10 +395,8 @@ and its <m>y</m>-coordinate is </p>
     <image xml:id="exam10-1-4">
         <description>point</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture}  [scale=2.5]
+        <![CDATA[
+    \begin{tikzpicture}  [scale=1.4]
     \coordinate(O) at (0,0);
     \coordinate(P) at (135:{sqrt(2)});
     \draw[gray,thick,->,>=stealth'] (-1.2,0)--(1.,0) node[below, text=black]{$x$};
@@ -452,16 +433,14 @@ There are infinitely many values of <m>\theta</m> that satisfy this equation, bu
     <image xml:id="exam10-1-5">
         <description>polar</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-    \begin{tikzpicture}  [scale=2.5]
+        <![CDATA[
+    \begin{tikzpicture}  [scale=1.5]
     \coordinate(O) at (0,0);
     \coordinate(P) at (240:1);
     \draw[gray,thick,->,>=stealth'] (-1,0)--(1.,0) node[below, text=black]{$x$};
-    \draw[gray,thick,->,>=stealth'] (0, -1.2)--(0,.8) node[left, text=black]{$y$};
+    \draw[gray,thick,->,>=stealth'] (0, -.9)--(0,.8) node[left, text=black]{$y$};
     \draw[black,thick] (O)--(P);
-    \filldraw[blue] (P) circle (1pt) node[below , text=black]{$(-\frac{1}{2},-\frac{\sqrt{3}}{2})$};
+    \filldraw[blue] (P) circle (1pt) node[below, xshift=-3, yshift=2, text=black]{$\left(-\frac{1}{2},-\frac{\sqrt{3}}{2}\right)$};
     \node[below right] at (O) {$O$};
         \end{tikzpicture}]]>
     </latex-image>
@@ -562,10 +541,13 @@ The center of the circle is <m>\left(\dfrac{3}{2},0\right)</m>, and its radius i
 <subsubsection><title>Concepts</title>
 <p><ol marker="1">
   <li><assemblage><title>Polar Coordinates</title>
-    <p>The <term>polar coordinates</term> of a point <m>P</m> in the plane are <m>(r, \theta)</m>, where</p><sidebyside widths="65% 30%"><p><ul>
+    <p>The <term>polar coordinates</term> of a point <m>P</m> in the plane are <m>(r, \theta)</m>, where</p><sidebyside widths="65% 25%"><p><ul>
         <li><p><m>\abs{r}</m>  is the <term>distance</term> from  <m>P</m>  to the pole,</p></li>
         <li><p><m>\theta</m>   is the <term>angle</term> measured counterclockwise from the polar axis to the ray through <m>P</m> from the pole.</p></li>
-    </ul></p><image source="photos/fig10-1-6"><description>polar</description></image></sidebyside>
+    </ul></p><image xml:id="sum10-1-6">
+        <description>rectangular and polar coordinates</description>        
+        <xi:include href="Fig-polar-and-cartesian.ptx"/>
+    </image></sidebyside>
     </assemblage></li>
 
   <li><assemblage><title>Non-Uniqueness of Polar Coordinates</title>

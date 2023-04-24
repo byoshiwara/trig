@@ -9,7 +9,7 @@
 <exercises xml:id="hmwk-10-2-exercises"  xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Homework 10-2</title>
 
-<exercisegroup><introduction><p>In Problems 1-4, use your calculator to graph the equations.</p></introduction>
+<exercisegroup><introduction><p>In Problems 1-4, use graphing technology to graph the equations.</p></introduction>
 
 <exercise number="1"><statement><p><ol marker="a">
     <li>Graph <m>r=k</m>, for <m>k=1, 2, 3</m>.  How does the graph change for different values of <m>k</m>?</li>
@@ -19,9 +19,7 @@
     <image xml:id="hp10-2-1ans">
         <description>circles</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
+        <![CDATA[
         \begin{tikzpicture} [scale=.5]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
@@ -29,11 +27,11 @@
         }
         \foreach \r in {1,2,3,4} {
         \draw[gray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.8] at (90:\r) {$\r$};
+        \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
         }
-        \draw[red,very thick] (O) circle (1cm) node[left, fill=white, inner sep=1, scale=.8] {$r=1$};
-        \draw[blue,very thick] (O) circle (2cm) node[right, xshift=0.6cm, fill=white, inner sep=1, scale=.8] {$r=2$};
-        \draw[magenta,very thick] (O) circle (3cm) node[left, xshift=-.5cm, yshift=1.6cm, fill=white, inner sep=1, scale=.8] {$r=3$};
+        \draw[red,very thick] (O) circle (1cm) node[left, fill=white, inner sep=0] {$r=1$};
+        \draw[blue,very thick] (O) circle (2cm) node[right, xshift=0.6cm, fill=white, inner sep=0] {$r=2$};
+        \draw[magenta,very thick] (O) circle (3cm) node[left, xshift=-.5cm, yshift=1.6cm, fill=white, inner sep=0] {$r=3$};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -49,13 +47,11 @@
     <li>Graph <m>\theta=k</m>, for <m>k=\dfrac{\pi}{6},~ \dfrac{\pi}{3},~\dfrac{2\pi}{3},~\dfrac{5\pi}{6}</m>. How does the graph change for different values of <m>k</m>?</li>
     <li>Write a Cartesian equation for each graph in part (a).</li></ol></p></statement>
 <answer><p><ol marker="a">
-    <li><sidebyside width="40%" margins="0% 60%">
+    <li><sidebyside width="45%" margins="0% 10%">
     <image xml:id="hp10-2-3ans">
         <description>lines on polar grid</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
+        <![CDATA[
         \begin{tikzpicture} [scale=.4]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
@@ -63,12 +59,12 @@
         }
         \foreach \r in {1,2,3,4} {
         \draw[gray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.8] at (90:\r) {$\r$};
+        \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
         }
-        \draw[red,very thick] (210:4)-- (30:4) node[above right, fill=white, inner sep=1, scale=.8] {$\theta=\frac{\pi}{6}$};
-        \draw[blue,very thick] (240:4) -- (60:4) node[above right, fill=white, inner sep=1, scale=.8] {$\theta=\frac{\pi}{3}$};
-        \draw[magenta,very thick] (300:4) -- (120:4) node[above left, fill=white, inner sep=1, scale=.8] {$\theta=\frac{2\pi}{3}$};
-        \draw[teal,very thick] (330:4) -- (150:4) node[above left, fill=white, inner sep=1, scale=.8] {$\theta=\frac{5\pi}{6}$};
+        \draw[red,very thick] (210:4)-- (30:4) node[above right, fill=white, inner sep=0] {$\theta=\frac{\pi}{6}$};
+        \draw[blue,very thick] (240:4) -- (60:4) node[above right, fill=white, inner sep=0] {$\theta=\frac{\pi}{3}$};
+        \draw[magenta,very thick] (300:4) -- (120:4) node[above left, fill=white, inner sep=0] {$\theta=\frac{2\pi}{3}$};
+        \draw[teal,very thick] (330:4) -- (150:4) node[above left, fill=white, inner sep=0] {$\theta=\frac{5\pi}{6}$};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -78,7 +74,7 @@
 <exercise number="4"><statement><p><ol marker="a">
     <li>Graph <m>\theta=k</m>, for <m>k=\dfrac{7\pi}{6},~ \dfrac{5\pi}{3},~\dfrac{7\pi}{3},~\dfrac{11\pi}{6}</m>. How does the graph change for different values of <m>k</m>?</li>
     <li>Write a Cartesian equation for each graph in part (a).</li></ol></p></statement></exercise>
-</exercisegroup>   
+</exercisegroup>  
 
 <exercise number="5"><statement><p>Complete the table of values for each equation. Plot the points in order of increasing <m>\theta</m>. What is different about the two graphs?</p>
 
@@ -174,13 +170,11 @@
     </tabular></sidebyside>
 <p>The graph of <m>r=2</m> begins at the right-most point (and proceeds counter-clockwise); the graph of <m>r=-2</m> begins at the left-most point.</p>
 
-<sidebyside width="50%">
+<sidebyside width="60%">
     <image xml:id="hp10-2-5ans">
         <description>polar points on circle</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
+        <![CDATA[
         \begin{tikzpicture} [scale=.6]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
@@ -189,16 +183,16 @@
         \foreach \r in {1,2,3} {
         \draw[gray] (O) circle (\r);
         }
-        \node[fill=white, inner sep = 2, text=black, scale=.8] at (90:1) {$1$};
+        \node[fill=white, inner sep = 2, text=black] at (90:1) {$1$};
 
-        \filldraw[red] (0:2)circle (.075) node[right, text=black, fill=white, inner sep=1, xshift=2, scale=.8] {$(2,0)$ and $(-2,\pi)$};
-        \filldraw[red] (45:2)circle (.075) node[above right, text=black, fill=white, inner sep=1, xshift=1, scale=.8] {$(2,\frac{\pi}{4})$ and $(-2,\frac{5\pi}{4})$};
-        \filldraw[red] (90:2)circle (.075) node[above,align=center, text=black, fill=white, inner sep=1, yshift=2, scale=.8] {$(2,\frac{\pi}{2})$, \\ $\,(-2,\frac{3\pi}{2})$};
-        \filldraw[red] (135:2)circle (.075) node[above left, text=black, fill=white, inner sep=1, yshift=1, scale=.8] {$(2,\frac{3\pi}{4})$ and $(-2,\frac{7\pi}{4})$};
-        \filldraw[red] (180:2)circle (.075) node[left, text=black, fill=white, inner sep=1, xshift=-2, scale=.8] {$(2,\pi)$ and $(-2,0)$};
-        \filldraw[red] (225:2)circle (.075) node[below left, text=black, fill=white, inner sep=1, yshift=-1, scale=.8] {$(2,\frac{5\pi}{4})$ and $(-2,\frac{\pi}{4})$};
-        \filldraw[red] (270:2)circle (.075) node[below,align=center, yshift=0cm, text=black, fill=white, inner sep=1, yshift=-2, scale=.8] {$(2,\frac{3\pi}{2})$, \\ $(-2,\frac{\pi}{2})$};
-        \filldraw[red] (315:2)circle (.075) node[below right, text=black, fill=white, inner sep=1, xshift=1, scale=.8] {$(2,\frac{7\pi}{4})$ and $(-2,\frac{3\pi}{4})$};
+        \filldraw[red] (0:2)circle (.075) node[right, text=black, fill=white, inner sep=0, xshift=2] {$(2,0)$ and $(-2,\pi)$};
+        \filldraw[red] (45:2)circle (.075) node[above right, text=black, fill=white, inner sep=0, xshift=1] {$(2,\frac{\pi}{4})$ and $(-2,\frac{5\pi}{4})$};
+        \filldraw[red] (90:2)circle (.075) node[above,align=center, text=black, fill=white, inner sep=0, yshift=2] {$(2,\frac{\pi}{2})$, \\ $\,(-2,\frac{3\pi}{2})$};
+        \filldraw[red] (135:2)circle (.075) node[above left, text=black, fill=white, inner sep=0, yshift=1] {$(2,\frac{3\pi}{4})$ and $(-2,\frac{7\pi}{4})$};
+        \filldraw[red] (180:2)circle (.075) node[left, text=black, fill=white, inner sep=0, xshift=-2] {$(2,\pi)$ and $(-2,0)$};
+        \filldraw[red] (225:2)circle (.075) node[below left, text=black, fill=white, inner sep=0, yshift=-1] {$(2,\frac{5\pi}{4})$ and $(-2,\frac{\pi}{4})$};
+        \filldraw[red] (270:2)circle (.075) node[below,align=center, yshift=0cm, text=black, fill=white, inner sep=0, yshift=-2] {$(2,\frac{3\pi}{2})$, \\ $(-2,\frac{\pi}{2})$};
+        \filldraw[red] (315:2)circle (.075) node[below right, text=black, fill=white, inner sep=0, xshift=1] {$(2,\frac{7\pi}{4})$ and $(-2,\frac{3\pi}{4})$};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -266,9 +260,7 @@
     <image xml:id="hp10-2-7ans">
         <description>circle on polar grid</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
+        <![CDATA[
         \begin{tikzpicture} [scale=.4]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
@@ -277,12 +269,12 @@
         \foreach \r in {1,2,3,4,5} {
         \draw[green] (O) circle (\r);
         }
-        \node[fill=white, inner sep = 2, text=black, scale=.8] at (90:4) {$4$};
+        \node[fill=white, inner sep = 2, text=black] at (90:4) {$4$};
         \draw[red,thick] (2,0) circle (2cm);
-        \filldraw[blue] (0:4)circle (.1) node[right, text=black, fill=white, inner sep=1, xshift=2, scale=.8] {$(4,0)$ and $(-4,\pi)$};
-        \filldraw[blue] (45:{2*sqrt(2)})circle (.1) node[above, xshift=2, yshift=2, text=black, fill=white, inner sep=1, xshift=1, scale=.8] {$(2\sqrt{2},\frac{\pi}{4})$};
-        \filldraw[blue] (90:0)circle (.1) node[left, xshift=-3, text=black, fill=white, inner sep=1, yshift=2, scale=.8] {$(0,\frac{\pi}{2})$};
-        \filldraw[blue] (315:{2*sqrt(2)})circle (.1) node[below, text=black, fill=white, inner sep=1, xshift=2, yshift=-4, scale=.8] {$(-2\sqrt(2),\frac{3\pi}{4})$};
+        \filldraw[blue] (0:4)circle (.1) node[right, text=black, fill=white, inner sep=0, xshift=2] {$(4,0)$ and $(-4,\pi)$};
+        \filldraw[blue] (45:{2*sqrt(2)})circle (.1) node[above, xshift=2, yshift=2, text=black, fill=white, inner sep=0, xshift=1] {$(2\sqrt{2},\frac{\pi}{4})$};
+        \filldraw[blue] (90:0)circle (.1) node[left, xshift=-3, text=black, fill=white, inner sep=0, yshift=2] {$(0,\frac{\pi}{2})$};
+        \filldraw[blue] (315:{2*sqrt(2)})circle (.1) node[below, text=black, fill=white, inner sep=0, xshift=2, yshift=-4] {$(-2\sqrt(2),\frac{3\pi}{4})$};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -333,14 +325,12 @@
     <li>Graph <m>r=2a\sin(\theta)</m> for <m>a=-2,-1,1,2</m>.</li>   
     <li>How do the graphs change for different values of <m>a</m>?</li></ol></p></statement>
     <answer><p><ol marker="a">
-        <li><sidebyside width="40%" margins="0% 0%">
+        <li><sidebyside width="38%" margins="0% 0%">
     <image xml:id="hp10-2-9ans">
         <description>circcles on polar grid</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.4]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.42]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:5);
@@ -348,15 +338,15 @@
         \foreach \r in {1,2,3,4,5} {
         \draw[lightgray] (O) circle (\r);
         }
-        \node[fill=white, inner sep = 2, text=black, scale=.8] at (90:5) {$5$};
+        \node[fill=white, inner sep = 2, text=black] at (90:5) {$5$};
         \draw[red,very thick] (0,-2) circle (2cm);
-        \node[right,fill=white, inner sep=1, scale=.8, text=red] at (2.2,-2)  {$a=-2$};
+        \node[right,fill=white, inner sep=0, text=red] at (2.2,-2)  {$a=-2$};
         \draw[blue,very thick] (0,-1) circle (1cm);
-        \node[fill=white, inner sep=1, scale=.8, text=blue] at (0,-2.5) {$a=-1$};
+        \node[fill=white, inner sep=0, text=blue] at (0,-2.5) {$a=-1$};
         \draw[magenta,very thick] (0,1) circle (1cm);
-        \node[fill=white, inner sep=1, scale=.8, text=magenta] at (0,2.5) {$a=1$};
+        \node[fill=white, inner sep=0, text=magenta] at (0,2.5) {$a=1$};
         \draw[teal,very thick] (0,2) circle (2cm) ;
-        \node[fill=white, inner sep=1, scale=.8, text=teal] at (2,4.1) {$a=2$};
+        \node[fill=white, inner sep=0, text=teal] at (2,4.1) {$a=2$};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -385,7 +375,7 @@
         <cell><m>\hphantom{000}</m></cell></row>
     </tabular></sidebyside>
   <p><ol marker="a" cols="2">
-    <li><m>r=1+\sin \(theta)</m></li> 
+    <li><m>r=1+\sin (\theta)</m></li> 
     <li><m>r=-1+\sin (\theta)</m></li>
     <li><m>r=1-\sin (\theta)</m></li>
     <li><m>r=-1-\sin (\theta)</m></li></ol></p></statement>               
@@ -394,17 +384,15 @@
     <image xml:id="hp10-2-11ansa">
         <description>cardioid</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.8]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.5]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:3);
         }
         \foreach \r in {1,2,3} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=0:6,smooth, samples=65,variable=\x,red,very thick] plot ({60*\x)}:{1+sin(60*\x});
         \end{tikzpicture}]]>
@@ -427,17 +415,15 @@
         </tabular></sidebyside></li>
         <li><sidebyside width="60%" margins="0% 0%">
     <image xml:id="hp10-2-11ansb"><description>cardioid</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.8]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.5]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:3);
         }
         \foreach \r in {1,2,3} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=0:6,smooth, samples=65,variable=\x,red,very thick] plot ({60*\x)}:{-1+sin(60*\x});
         \end{tikzpicture}]]>
@@ -460,17 +446,15 @@
         </tabular></sidebyside></li>
         <li><sidebyside width="60%" margins="0% 0%">
     <image xml:id="hp10-2-11ansc"><description>cardioid</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.8]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.5]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:3);
         }
         \foreach \r in {1,2,3} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=0:6,smooth, samples=65,variable=\x,red,very thick] plot ({60*\x)}:{1-sin(60*\x});
         \end{tikzpicture}]]>
@@ -491,19 +475,17 @@
             <cell><m>2</m></cell>
             <cell><m>1</m></cell></row>
         </tabular></sidebyside></li> 
-    <li><sidebyside width="45%" margins="0% 0%">
+    <li><sidebyside width="60%" margins="0% 0%">
     <image xml:id="hp10-2-11ansd"><description>cardioid</description><latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.8]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.5]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:3);
         }
         \foreach \r in {1,2,3} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=0:6,smooth, samples=65,variable=\x,red,very thick] plot ({60*\x)}:{-1-sin(60*\x});
         \end{tikzpicture}]]>
@@ -548,7 +530,7 @@
     <li><m>r=1-\cos (\theta)</m></li>
     <li><m>r=-1-\cos (\theta)</m></li></ol></p></statement> </exercise>
 
-<exercise number="13"><statement><p>Complete the table of values for each limaçon, and graph the equation.</p> <sidebyside width="45%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
+<exercise number="13"><statement><p>Complete the table of values for each limaçon, and graph the equation.</p> <sidebyside width="90%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
     <row bottom="minor">  
         <cell><m>\theta</m></cell>
         <cell><m>0</m></cell>
@@ -570,21 +552,19 @@
     <li><m>r=1+2\cos (\theta)</m></li>
     <li><m>r=1-2\cos (\theta)</m></li></ol></p></statement> 
     <answer><p><ol marker="a" cols="2">
-        <li><sidebyside width="55%" margins="0% 0%">
+        <li><sidebyside width="60%" margins="0% 0%">
     <image xml:id="hp10-2-13ansa">
         <description>limacon</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.6]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.4]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:4);
         }
         \foreach \r in {1,2,3,4} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=0:6,smooth, samples=65,variable=\x,red,very thick] plot ({60*\x)}:{2+cos(60*\x});
         \end{tikzpicture}]]>
@@ -607,21 +587,19 @@
             <cell><m>2</m></cell>
             <cell><m>3</m></cell></row>
         </tabular></sidebyside></li>
-        <li><sidebyside width="70%" margins="0% 0%">
+        <li><sidebyside width="60%" margins="0% 0%">
     <image xml:id="hp10-2-13ansb">
         <description>limacon</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.6]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.4]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:4);
         }
         \foreach \r in {1,2,3,4} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=0:6,smooth, samples=65,variable=\x,red,very thick] plot ({60*\x)}:{2-cos(60*\x});
         \end{tikzpicture}]]>
@@ -644,21 +622,19 @@
             <cell><m>2</m></cell>
             <cell><m>1</m></cell></row>
         </tabular></sidebyside></li>
-        <li><sidebyside width="70%" margins="0% 0%">
+        <li><sidebyside width="60%" margins="0% 0%">
     <image xml:id="hp10-2-13ansc">
         <description>limacon</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.6]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.4]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:4);
         }
         \foreach \r in {1,2,3,4} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=0:6,smooth, samples=65,variable=\x,red,very thick] plot ({60*\x)}:{1+2*cos(60*\x});
         \end{tikzpicture}]]>
@@ -681,21 +657,19 @@
             <cell><m>1</m></cell>
             <cell><m>3</m></cell></row>
         </tabular></sidebyside></li> 
-        <li><sidebyside width="70%" margins="0% 0%">
+        <li><sidebyside width="60%" margins="0% 0%">
     <image xml:id="hp10-2-13ansd">
         <description>limacon</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.6]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.4]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:4);
         }
         \foreach \r in {1,2,3,4} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=0:6,smooth, samples=65,variable=\x,red,very thick] plot ({60*\x)}:{1-2*cos(60*\x});
         \end{tikzpicture}]]>
@@ -751,80 +725,72 @@
     <image xml:id="hp10-2-15ansa1">
         <description>4-petal rose</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.7]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.58]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:2);
         }
         \foreach \r in {1,2} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=0:6,smooth, samples=65,variable=\x,red,very thick] plot ({60*\x)}:{sin(2*60*\x});
-        \node[right,text=red, fill=white, inner sep =1] at (-.1,1.5) {$r=\sin 2\theta$};
+        \node[right,text=red, fill=white, inner sep =1] at (-1.1,-1.5) {$r=\sin 2\theta$};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
     <image xml:id="hp10-2-15ansa2">
         <description>3-petal rose</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.7]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.58]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:2);
         }
         \foreach \r in {1,2} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=0:3,smooth, samples=65,variable=\x,red,very thick] plot ({60*\x)}:{sin(3*60*\x});
-        \node[right,text=red, fill=white, inner sep =1] at (-.1,1.5) {$r=\sin 3\theta$};
+        \node[right,text=red, fill=white, inner sep =1] at (-1.1,-1.5) {$r=\sin 3\theta$};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
     <image xml:id="hp10-2-15ansa3">
         <description>8-petal rose</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.7]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.58]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:2);
         }
         \foreach \r in {1,2} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=0:6,smooth, samples=65,variable=\x,red,very thick] plot ({60*\x)}:{sin(4*60*\x});
-        \node[right,text=red, fill=white, inner sep =1] at (-.1,1.5) {$r=\sin 4\theta$};
+        \node[right,text=red, fill=white, inner sep =1] at (-1.1,-1.5) {$r=\sin 4\theta$};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
     <image xml:id="hp10-2-15ansa4">
         <description>5 petal rose</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.7]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.58]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:2);
         }
         \foreach \r in {1,2} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=0:3,smooth, samples=65,variable=\x,red,very thick] plot ({60*\x)}:{sin(5*60*\x});
-        \node[right,text=red, fill=white, inner sep =1] at (-.1,1.5) {$r=\sin 5\theta$};
+        \node[right,text=red, fill=white, inner sep =1] at (-1.1,-1.5) {$r=\sin 5\theta$};
         \end{tikzpicture}]]>
     </latex-image>
     </image>
@@ -836,17 +802,15 @@
     <image xml:id="hp10-2-15ansc1">
         <description>3-petal rose</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.6]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.44]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:4);
         }
         \foreach \r in {1,2,3,4} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=0:3,smooth, samples=65,variable=\x,red,very thick] plot ({60*\x)}:{sin(3*60*\x});
         \node[below,text=red, fill=white, inner sep =1] at (0,-1.5) {$r=1\cdot\sin 3\theta$};
@@ -856,17 +820,15 @@
     <image xml:id="hp10-2-15ansc2">
         <description>3-petal rose</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.6]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.44]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:4);
         }
         \foreach \r in {1,2,3,4} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=0:3,smooth, samples=65,variable=\x,red,very thick] plot ({60*\x)}:{2*sin(3*60*\x});
         \node[below,text=red, fill=white, inner sep =1] at (0,-2.5) {$r=2\cdot\sin 3\theta$};
@@ -876,17 +838,15 @@
     <image xml:id="hp10-2-15ansc3">
         <description>3-petal rose</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.6]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.44]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:4);
         }
         \foreach \r in {1,2,3,4} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=0:3,smooth, samples=65,variable=\x,red,very thick] plot ({60*\x)}:{3*sin(3*60*\x});
         \node[below,text=red, fill=white, inner sep =1] at (0,-3.5) {$r=3\cdot\sin 3\theta$};
@@ -912,17 +872,15 @@
     <image xml:id="hp10-2-17ans">
         <description>lemniscate</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.5]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.4]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:5);
         }
         \foreach \r in {1,2,3,4,5} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=-3:3,smooth, samples=65,variable=\x,red,very thick] plot ({15*\x}:{3*sqrt(cos(30*\x)});
         \draw[domain=-3:3,smooth, samples=65,variable=\x,red,very thick] plot ({15*\x}:{-3*sqrt(cos(30*\x)});
@@ -949,10 +907,8 @@
     <image xml:id="hp10-2-19ans">
         <description>Archimedean spiral</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.1]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.07]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:5);
@@ -1088,9 +1044,7 @@
     <image xml:id="hp10-2-21ansa">
         <description>sinusoidal curve</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
+        <![CDATA[
         \begin{tikzpicture} [scale=.8]
         \draw[cyan] (0,-2) grid[xstep=1/6] (6,2);
         \draw[black,thick,->,>=stealth'] (0,0)--(6.4,0) node[right]{$\theta$};
@@ -1098,8 +1052,8 @@
         \foreach \y in {-1,1} {
         \draw[black] (.1,\y) --++ (-.2,0) node[left]{$\y$};
         }
-        \draw[black] (3,.1) --++ (0,-.2) node[below, yshift=-2, fill=white, inner sep=1]{$\pi$};
-        \draw[black] (6,.1) --++ (0,-.2) node[below, yshift=-1, fill=white, inner sep=1]{$2\pi$};
+        \draw[black] (3,.1) --++ (0,-.2) node[below, yshift=-2, fill=white, inner sep=0]{$\pi$};
+        \draw[black] (6,.1) --++ (0,-.2) node[below, yshift=-1, fill=white, inner sep=0]{$2\pi$};
         \draw[domain=0:6,smooth, samples=65,variable=\x,red,very thick] plot (\x,{sin(180*\x)});
         \end{tikzpicture}]]>
     </latex-image>
@@ -1144,17 +1098,15 @@
     <image xml:id="hp10-2-21ansb">
         <description>three-petal rose</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=1]
+        <![CDATA[
+        \begin{tikzpicture}
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:2);
         }
         \foreach \r in {1,2} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=0:3,smooth, samples=65,variable=\x,red,very thick] plot ({60*\x)}:{sin(3*60*\x});
         \end{tikzpicture}]]>
@@ -1318,18 +1270,16 @@
     <image xml:id="hp10-2-23ansa">
         <description>sinusoidal graph</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [xscale=1, yscale = .75]
+        <![CDATA[
+        \begin{tikzpicture} [xscale=.8, yscale = .6]
         \draw[cyan] (0,0) grid[xstep=1/6] (6,5);
         \draw[black,thick,->,>=stealth'] (0,0)--(6.4,0) node[right]{$\theta$};
         \draw[black,thick,->,>=stealth'] (0,0)--(0, 5.4) node[above]{$y$};
         \foreach \y in {1,2,3,4,5} {
         \draw[black] (.1,\y) --++ (-.2,0) node[left]{$\y$};
         }
-        \draw[black] (3,.1) --++ (0,-.2) node[below, yshift=-2, fill=white, inner sep=1]{$\pi$};
-        \draw[black] (6,.1) --++ (0,-.2) node[below, yshift=-1, fill=white, inner sep=1]{$2\pi$};
+        \draw[black] (3,.1) --++ (0,-.2) node[below, yshift=-2, fill=white, inner sep=0]{$\pi$};
+        \draw[black] (6,.1) --++ (0,-.2) node[below, yshift=-1, fill=white, inner sep=0]{$2\pi$};
         \draw[domain=0:6,smooth, samples=65,variable=\x,red,very thick] plot (\x,{2+2*cos(60*\x)});
         \end{tikzpicture}]]>
     </latex-image>
@@ -1363,10 +1313,8 @@
     <image xml:id="hp10-2-23ansb">
         <description>cardioid</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.5]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.36]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:5);
@@ -1442,17 +1390,15 @@
     <image xml:id="hp10-2-25ans">
         <description>circle on polar grid</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.5]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.28]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:5);
         }
         \foreach \r in {1,2,3,4,5} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
         }
         \draw[red,very thick] (1.5,0) circle (1.5cm);
         \end{tikzpicture}]]>
@@ -1466,17 +1412,15 @@
 <answer><p>line</p><sidebyside width="60%" margins="0% 40%">    <image xml:id="hp10-2-27ans">
         <description>line on polar grid</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.5]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.28]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:5);
         }
         \foreach \r in {1,2,3,4,5} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
         }
         \draw[red,very thick] (-5,-5) -- (5,5);
         \end{tikzpicture}]]>
@@ -1490,17 +1434,15 @@
 <answer><p>circle</p><sidebyside width="60%" margins="0% 40%">    <image xml:id="hp10-2-29ans">
         <description>circle</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.5]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.28]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:5);
         }
         \foreach \r in {1,2,3,4,5} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
         }
         \draw[red,very thick] (0,0) circle (4cm);
         \end{tikzpicture}]]>
@@ -1515,17 +1457,15 @@
     <image xml:id="hp10-2-31ans">
         <description>cardioid</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.5]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.28]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:5);
         }
         \foreach \r in {1,2,3,4,5} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=0:2,smooth, samples=65,variable=\x,red,very thick] plot ({180*\x)}:{2+2*sin(180*\x});
         \end{tikzpicture}]]>
@@ -1540,17 +1480,15 @@
     <image xml:id="hp10-2-33ans">
         <description>limacon</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.6]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.5]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:3);
         }
         \foreach \r in {1,2,3} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=0:2,smooth, samples=65,variable=\x,red,very thick] plot ({180*\x)}:{2-cos(180*\x});
         \end{tikzpicture}]]>
@@ -1564,17 +1502,15 @@
 <answer><p>rose</p><sidebyside width="60%" margins="0% 40%">    <image xml:id="hp10-2-35ans">
         <description>four-petal rose</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.6]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.36]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:4);
         }
         \foreach \r in {1,2,3,4} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=0:2,smooth, samples=65,variable=\x,red,very thick] plot ({180*\x)}:{3*sin(360*\x});
         \end{tikzpicture}]]>
@@ -1589,17 +1525,15 @@
 <answer><p>rose</p><sidebyside width="60%" margins="0% 40%">    <image xml:id="hp10-2-37ans">
         <description>rose</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.6]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.36]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:4);
         }
         \foreach \r in {1,2,3,4} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=0:1,smooth, samples=65,variable=\x,red,very thick] plot ({180*\x)}:{2*cos(900*\x});
         \end{tikzpicture}]]>
@@ -1613,17 +1547,15 @@
 <answer><p>limaçon</p><sidebyside width="60%" margins="0% 40%">    <image xml:id="hp10-2-39ans">
         <description>limacon</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.45]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.28]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:5);
         }
         \foreach \r in {1,2,3,4,5} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=0:2,smooth, samples=65,variable=\x,red,very thick] plot ({180*\x)}:{2+3*sin(180*\x});
         \end{tikzpicture}]]>
@@ -1638,17 +1570,15 @@
     <image xml:id="hp10-2-41ans">
         <description>lemniscate</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=1.5]
+        <![CDATA[
+        \begin{tikzpicture} [scale=1]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:1.5);
         }
         \foreach \r in {0.5,1,1.5} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=-3:3,smooth, samples=65,variable=\x,red,very thick] plot ({15*\x}:{1*sqrt(cos(30*\x)});
         \draw[domain=-3:3,smooth, samples=65,variable=\x,red,very thick] plot ({15*\x}:{-1*sqrt(cos(30*\x)});
@@ -1667,17 +1597,15 @@
     <image xml:id="hp10-2-43ans">
         <description>circle</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.6]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.48]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:3);
         }
         \foreach \r in {1,2,3} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
         }
         \draw[red,very thick] (0,1) circle (1cm);
         \end{tikzpicture}]]>
@@ -1692,17 +1620,15 @@
     <image xml:id="hp10-2-45ans">
         <description>arcs of circle</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.6]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.48]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:3);
         }
         \foreach \r in {1,2,3} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
         }
         \draw[red,very thick] (0:2) arc (0:135:2);
         \draw[red,very thick] (180:2) arc (180:315:2);
@@ -1718,17 +1644,15 @@
     <image xml:id="hp10-2-47ans">
         <description>semicircle</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=1.5]
+        <![CDATA[
+        \begin{tikzpicture} [scale=1.]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:1.5);
         }
         \foreach \r in {0.5,1,1.5} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=3:5,smooth, samples=65,variable=\x,red,very thick] plot ({45*\x}:{sin(45*\x)});
         \end{tikzpicture}]]>
@@ -1743,17 +1667,15 @@
     <image xml:id="hp10-2-49ans">
         <description>eight-petal rose</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=1.5]
+        <![CDATA[
+        \begin{tikzpicture} [scale=1.]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:1.5);
         }
         \foreach \r in {0.5,1,1.5} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=0:2,smooth, samples=65,variable=\x,red,very thick] plot ({180*\x}:{2*sin(2*180*\x)*cos(2*180*\x)});
         \end{tikzpicture}]]>
@@ -1768,17 +1690,15 @@
     <image xml:id="hp10-2-51ans">
         <description>cardioid</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=0.6]
+        <![CDATA[
+        \begin{tikzpicture} [scale=0.48]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:3);
         }
         \foreach \r in {1,2,3} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=0:2,smooth, samples=65,variable=\x,red,very thick] plot ({180*\x}:{1+cos(180*\x)});
 ``        \end{tikzpicture}]]>
@@ -1796,17 +1716,15 @@
     <image xml:id="hp10-2-53ans">
         <description>parabola</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=0.1]
+        <![CDATA[
+        \begin{tikzpicture} [scale=0.08]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:20);
         }
         \foreach \r in {5,10,15,20} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=.14:1.86,smooth, samples=65,variable=\x,red,very thick] plot ({180*\x}:{2/(1-cos(180*\x))});
         \end{tikzpicture}]]>
@@ -1821,17 +1739,15 @@
     <image xml:id="hp10-2-55ans">
         <description>ellipse</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=0.6]
+        <![CDATA[
+        \begin{tikzpicture} [scale=0.5]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:3);
         }
         \foreach \r in {1,2,3} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=0:2,smooth, samples=65,variable=\x,red,very thick] plot ({180*\x}:{2/(2-cos(180*\x))});
         \end{tikzpicture}]]>
@@ -1846,17 +1762,15 @@
     <image xml:id="hp10-2-57ans">
         <description>hyperbola</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=0.6]
+        <![CDATA[
+        \begin{tikzpicture} [scale=0.5]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:3);
         }
         \foreach \r in {1,2,3} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=-.115:1.115,smooth, samples=33,variable=\x,red,very thick] plot ({180*\x}:{1/(1+2*sin(180*\x))});
         \draw[domain=1.215:1.785,smooth, samples=33,variable=\x,red,very thick] plot ({180*\x}:{1/(1+2*sin(180*\x))});
@@ -1874,17 +1788,15 @@
     <image xml:id="hp10-2-59">
         <description>cardioid</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.6]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.33]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:4);
         }
         \foreach \r in {1,2,3,4} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep=0, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=0:2,smooth, samples=65,variable=\x,red,very thick] plot ({180*\x)}:{2+2*cos(180*\x});
         \end{tikzpicture}]]>
@@ -1897,17 +1809,15 @@
     <image xml:id="hp10-2-60">
         <description>cardioid</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.3]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.18]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:8);
         }
         \foreach \r in {2,4,6,8} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep=0, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=0:2,smooth, samples=65,variable=\x,red,very thick] plot ({180*\x)}:{4+4*sin(180*\x});
         \end{tikzpicture}]]>
@@ -1919,17 +1829,15 @@
     <image xml:id="hp10-2-61">
         <description>five-petal rose</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=0.8]
+        <![CDATA[
+        \begin{tikzpicture} [scale=0.45]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:3);
         }
         \foreach \r in {1,2,3} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep=0, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=0:2,smooth, samples=129,variable=\x,red,very thick] plot ({180*\x}:{3*sin(900*\x))});
         \end{tikzpicture}]]>
@@ -1942,17 +1850,15 @@
     <image xml:id="hp10-2-62">
         <description>four-petal rose</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=0.4]
+        <![CDATA[
+        \begin{tikzpicture} [scale=0.22]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:6);
         }
         \foreach \r in {2,4,6} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep=0, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=0:2,smooth, samples=129,variable=\x,red,very thick] plot ({180*\x}:{6*sin(360*\x))});
         \end{tikzpicture}]]>
@@ -1964,17 +1870,15 @@
     <image xml:id="hp10-2-63">
         <description>circle</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.45]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.28]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:5);
         }
         \foreach \r in {1,2,3,4,5} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep=0, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=0:1,smooth, samples=65,variable=\x,red,very thick] plot ({180*\x)}:{5*sin(180*\x});
         \end{tikzpicture}]]>
@@ -1987,17 +1891,15 @@
     <image xml:id="hp10-2-64">
         <description>circle</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.45]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.28]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:5);
         }
         \foreach \r in {1,2,3,4,5} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep=0, text=black] at (90:\r) {$\r$};
         }
         \draw[red,very thick] (O) circle (3cm);
         \end{tikzpicture}]]>
@@ -2009,17 +1911,15 @@
     <image xml:id="hp10-2-65">
         <description>limacon</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=0.8]
+        <![CDATA[
+        \begin{tikzpicture} [scale=0.4]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:3);
         }
         \foreach \r in {1,2,3} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep=0, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=0:2,smooth, samples=129,variable=\x,red,very thick] plot ({180*\x}:{1+2*cos(180*\x))});
         \end{tikzpicture}]]>
@@ -2032,17 +1932,15 @@
     <image xml:id="hp10-2-66">
         <description>limacon</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.45]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.28]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:5);
         }
         \foreach \r in {1,2,3,4,5} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep=0, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=0:2,smooth, samples=129,variable=\x,red,very thick] plot ({180*\x}:{3+2*sin(180*\x))});
         \end{tikzpicture}]]>
@@ -2078,21 +1976,19 @@
 </p></introduction>
 
 <exercise number="75"><statement><p><m>r^2 = \tan (\theta)</m></p></statement>
-<answer><sidebyside width="60%" margins="0% 0%">
+<answer><sidebyside width="70%" margins="0% 0%">
     <image xml:id="hp10-2-75ans">
         <description>polar plot</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.45]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.36]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:5);
         }
         \foreach \r in {1,2,3,4,5} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep=0, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=0:.488,smooth, samples=33,variable=\x,red,very thick] plot ({180*\x}:{sqrt(tan(180*\x)))});
         \draw[domain=0:.488,smooth, samples=33,variable=\x,red,very thick] plot ({180*\x}:{-sqrt(tan(180*\x)))});
@@ -2104,21 +2000,19 @@
 <exercise number="76"><statement><p><m>r^2 = \cot (\theta)</m></p></statement></exercise>
 
 <exercise number="77"><statement><p><m>r=\csc(\theta)-2</m> (conchoid)</p></statement>
-<answer><sidebyside width="60%" margins="0% 0%">
+<answer><sidebyside width="70%" margins="0% 0%">
     <image xml:id="hp10-2-77ans">
         <description>conchoid</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.45]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.36]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:5);
         }
         \foreach \r in {1,2,3,4,5} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep=0, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=.043:.957,smooth, samples=33,variable=\x,red,very thick] plot ({180*\x}:{1/sin(180*\x)-2});
         \draw[domain=1.09:1.91,smooth, samples=33,variable=\x,red,very thick] plot ({180*\x}:{1/sin(180*\x)-2});
@@ -2130,21 +2024,19 @@
 <exercise number="78"><statement><p><m>r=\tan(\theta)</m> (kappa curve)</p></statement></exercise>
 
 <exercise number="79"><statement><p><m>r=\cos (2\theta) \sec(\theta)</m> (strophoid)</p></statement>
-<answer><sidebyside width="60%" margins="0% 0%">
+<answer><sidebyside width="70%" margins="0% 0%">
     <image xml:id="hp10-2-79ans">
         <description>strophoid</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.45]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.36]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:5);
         }
         \foreach \r in {1,2,3,4,5} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep=0, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=-.443:.443,smooth, samples=33,variable=\x,red,very thick] plot ({180*\x}:{cos(360*\x)/cos(180*\x)});
         \end{tikzpicture}]]>
@@ -2155,21 +2047,19 @@
 <exercise number="80"><statement><p><m>r=\sin (\theta) \tan (\theta)</m> (cissoid)</p></statement></exercise>
 
 <exercise number="81"><statement><p><m>r=\dfrac{1}{\sqrt{\theta}}</m></p></statement>
-<answer><sidebyside width="60%" margins="0% 0%">
+<answer><sidebyside width="70%" margins="0% 0%">
     <image xml:id="hp10-2-81ans">
         <description>polar plot</description>
         <latex-image>
-        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
-        <![CDATA[\tikzset{%
-        }
-        \begin{tikzpicture} [scale=.45]
+        <![CDATA[
+        \begin{tikzpicture} [scale=.36]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
           \draw[lightgray] (\angle:0) -- (\angle:5);
         }
         \foreach \r in {1,2,3,4,5} {
         \draw[lightgray] (O) circle (\r);
-        \node[fill=white, inner sep = 2, text=black, scale=.9] at (90:\r) {$\r$};
+        \node[fill=white, inner sep=0, text=black] at (90:\r) {$\r$};
         }
         \draw[domain=.0129:6,smooth, samples=257,variable=\x,red,very thick] plot ({180*\x}:{1/sqrt(pi*\x)});
         \end{tikzpicture}]]>
