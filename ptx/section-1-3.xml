@@ -79,7 +79,37 @@
     <p><ol marker="a">
     <li>Find the distance between the points <m>(-5,3)</m> and <m>(3,-9)</m>.</li>
     <li>Plot the points on a Cartesian grid and show how the Pythagorean theorem is used to calculate the distance.</li></ol></p></statement>
-<answer><p><m>4\sqrt{13}</m></p></answer></exercise>
+<answer>    
+    <p><ol marker="a">
+        <li><p><m>4\sqrt{13}</m></p></li>
+        <li><sidebyside widths="45% 53%" margins="0% 0%">
+    <image xml:id="exer1-3-1"><description>distance formula</description><latex-image>
+    <![CDATA[
+    \begin{tikzpicture}[auto, thick, scale=.4]
+        \draw[thick,->,>=stealth'] (-6,0) -- (5,0) node[anchor=west] {$x$};
+        \draw[thick,->,>=stealth'] (0,-10) -- (0,4.5) node[anchor=south] {$y$};        `
+        \foreach \x in {-5,2}
+            \draw (\x cm,2mm) -- (\x cm,-2mm) node[anchor=north] {$\x$};
+        \foreach \y in {-10,-5,2}
+            \draw (2mm,\y cm) -- (-2mm,\y cm) node[anchor=east] {$\y$};    
+        \coordinate (A) at (-5,3);
+        \coordinate (B) at (3,-9);
+        \coordinate (C) at (3,3);    
+        \filldraw[black] (A) circle (5pt) node[left] {$(-5,3)$};
+        \filldraw[black] (B) circle (5pt) node[below] {$(3,-9)$};
+        \draw[blue,thick] (C) rectangle +(-.6,-.6);
+        \draw[red, thick] (A)--(B) node[left, midway, xshift=-2] {$c=4\sqrt{13}$};
+        \draw[black, ultra thick, dashed] (A)--(C) ;
+        \draw[black, ultra thick, dashed] (C)--(B) ;
+        \draw [green, decorate, decoration={brace,amplitude=10pt}] ($ (A)+(0,.4) $)-- ($ (C)+(0,.4)$) node [blue,above,midway, yshift=.3cm] { $8$};
+        \draw [green, decorate, decoration={brace,amplitude=10pt}] ($ (C)+(0.4,0) $)-- ($ (B)+(0.4,0)$) node [blue,right,midway, xshift=.3cm] { $12$};
+    \end{tikzpicture}]]></latex-image></image>
+    <p>The points <m>(-5,3)</m> and <m>(3,-9)</m> are two vertices of a right triangle with one horizontal leg of length 8 and one vertical leg of length 12. The distance between <m>(-5,3)</m> and <m>(3,-9)</m> is the hypotenuse <m>c</m>.
+        <md><mrow>c^2\amp = 8^2+12^2</mrow>
+            <mrow>\amp = 208</mrow> </md>
+        so
+    <me>c = \sqrt{208} = 4\sqrt{13}</me></p></sidebyside></li>
+    </ol></p></answer></exercise>
 </subsection>
 
 <subsection><title>Equation for a Circle</title>
@@ -296,7 +326,7 @@ The points are <m>(-1, \sqrt{3})</m> and <m>(-1,\sqrt{3})</m>, as shown at right
 <solution><p>As we saw in the previous example, Delbert's sector of the pie is <m>\dfrac{1}{6}</m> of the entire pie, so its area <m>\dfrac{1}{6}</m> of the area of the whole pie, or
     <me>\dfrac{1}{6} \pi (4^2)= \dfrac{8\pi}{3}~~ \text{square inches}</me></p>
 
-<p>The area of the wedge is <m>\dfrac{8\pi}{3}</m>, or about 8.34 square inches.</p></solution></example>
+<p>The area of the wedge is <m>\dfrac{8\pi}{3}</m>, or about 8.38 square inches.</p></solution></example>
 
 <exercise><statement>
     <p> What is the area of a 60° wedge cut from a blueberry pie of diameter 10 inches?</p>
