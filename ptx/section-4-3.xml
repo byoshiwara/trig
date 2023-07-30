@@ -426,7 +426,7 @@ The coordinates of <m>P</m> are approximately <m>(2.25, -5.56)</m>.</p>
 <sidebyside widths="60% 40%" valigns="middle middle" margins="0% 0%">
         <p><ol marker="a">
         <li>Find the cosine of <m>215\degree</m>. How far west should you walk from the big oak in order to be directly north of the treasure?</li>
-        <li>Find the tangent of <m>215\degree</m>. How far south should you walk from your present location before you begin digging?</li>
+        <li>Find the sine of <m>215\degree</m>. How far south should you walk from your present location before you begin digging?</li>
     </ol></p>
     <image xml:id="exer4-2-1"><description>angle</description><latex-image>
         <![CDATA[
@@ -534,7 +534,29 @@ Francine is about 25.4 miles south of the airport.</p></solution></example>
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
 
-<p>Recall that the <term>slope</term><idx><h>slope</h></idx> of a line is given by the ratio <m>\dfrac {\text{change in}~ y}{\text{change in}~x}</m> as we move from one point to another on the line. So, if we create a right triangle by dropping a perpendicular segment from the line to the <m>x</m>-axis, the ratio of sides <m>\dfrac {\text{opposite}}{\text{adjacent}}</m> gives the slope of the line.</p> 
+<sidebyside widths="65% 30%" valigns="middle middle" margins="0% 0%">
+    <p>Recall that the <term>slope</term><idx><h>slope</h></idx> of a line is given by the ratio <m>m = \dfrac{\Delta y}{ \Delta x} =\dfrac {\text{change in}~ y}{\text{change in}~x}</m> as we move from one point to another on the line. So, if we create a right triangle by dropping a perpendicular segment from the line to the <m>x</m>-axis, the ratio of sides <m>\dfrac {\text{opposite}}{\text{adjacent}}</m> gives the slope of the line.</p> 
+    <image xml:id="fig-angle-inclination2"><description>angle of inclination</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture}[scale=.65]
+        \coordinate (O) at (0,0);
+        \coordinate (x) at (4,0);
+        \coordinate (y) at (0,2.8);
+        \coordinate (A) at (4,2.7);
+        \coordinate (B) at (3.5,0);
+        \coordinate (C) at (3.5,2.25);
+        \coordinate (D) at (-1,-1.8);
+        \draw[blue] (B) rectangle ++(-.3,.3);
+        \draw[gray,thick,dashed] (B)--(C);
+        \draw[black,  thick, ->,>=stealth'] (-1.,0) --  (x) node[right] {$x$} ;
+        \draw[black,  thick, ->,>=stealth'] (0,-2) --  (y) node[above] {$y$}  ;
+        \draw[black,  thick, <->,>=stealth'] (D) --  (A)  ;
+        \draw[red, thick] (1.9,0) arc (0:{atan(0.9)}:.9) node [right, midway,xshift=0,yshift=1] {$\alpha$};
+        \draw [blue, decorate, decoration={brace,amplitude=5pt}] (3.6,2.25) -- (3.6,0) node [blue,right,midway, xshift=3] { $\Delta y$};
+        \draw [blue, decorate, decoration={brace,amplitude=5pt}] (3.5,-.1) -- (1,-.1) node [blue,below,midway, yshift=-3] { $\Delta x$};
+        \end{tikzpicture}]]>
+    </latex-image></image>
+</sidebyside> 
 
 <p>But the ratio <m>\dfrac {\text{opposite}}{\text{adjacent}}</m> is also the tangent of the angle <m>\alpha</m>.</p>
 

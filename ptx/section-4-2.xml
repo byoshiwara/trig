@@ -9,7 +9,7 @@
 
 <p> Imagine that you are riding on a Ferris wheel. As the wheel turns, your height above the ground increases and then decreases again, repeating the same pattern each time the Ferris wheel makes a complete rotation. This pattern is an example of a <term>periodic function</term><idx><h>periodic function</h></idx>. We use periodic functions to model phenomena that exhibit cyclical behavior, such as the height of tides, seasonal patterns of growth in plants and animals, radio waves, and planetary motion.</p>
 
-<p>We'll create a <term>mathematical model</term><idx><h>mathematical model</h></idx> for a ride on a Ferris wheel that has aradius of 100 feet and rotates counterclockwise. Our model will be a function that describes your height above the ground as you ride the wheel. In order to graph the Ferris wheel function, we must first specify the input and output variables, and then choose a coordinate system to display their values.</p> 
+<p>We'll create a <term>mathematical model</term><idx><h>mathematical model</h></idx> for a ride on a Ferris wheel that has a radius of 100 feet and rotates counterclockwise. Our model will be a function that describes your height above the ground as you ride the wheel. In order to graph the Ferris wheel function, we must first specify the input and output variables, and then choose a coordinate system to display their values.</p> 
 
 <sidebyside widths="60% 35%" valigns="middle middle" margins="0% 0%"><p> We'll place the origin at the center of the Ferris wheel. Then the line from the origin to your position on the wheel makes an angle with the horizontal, as shown at right.  This angle, <m>\theta</m>, will be the <term>input variable</term><idx><h>input variable</h></idx> for the function. Your height, <m>h</m>, is also a variable, and is related to the <m>y</m>-coordinate of your position; in fact, we see that <m>h = y + 100</m>, because the center of the wheel is 100 feet above the ground. </p>
     <image xml:id="fig-4-2-ferris"><description>ferris wheel</description><latex-image>
@@ -128,7 +128,7 @@
 
 <p>For example, when <m>\theta = 30\degree</m>, the <m>y</m>-coordinate is</p> 
 <sidebyside widths="60% 35%" valigns="middle middle" margins="0% 0%">
-    <p><me>y = 100 \sin 30\degree = 100\left(\dfrac{1}{2}\right) = 50</me>  
+    <p><me>y = 100 \sin \left(30\degree\right) = 100\left(\dfrac{1}{2}\right) = 50</me>  
         and your height above the ground is 
         <me>h = y + 100 = 150~~ \text{feet}</me></p>
     <image xml:id="fig-4-2-ferris3"><description>ferris wheel</description><latex-image>
@@ -155,7 +155,7 @@
         \end{tikzpicture}]]>
         </latex-image></image></sidebyside>
         <p>In general, then, <m>h</m> is given as a function of <m>\theta</m> by 
-            <me> h = y + 100 = 100 \sin \theta + 100</me>
+            <me> h = y + 100 = 100 \sin \left(\theta\right) + 100</me>
         This is our model for your height on a Ferris wheel ride.</p>
 </subsection>
 
@@ -330,10 +330,12 @@
 <p>and pressing  <kbd>ZOOM</kbd> <m>7</m> for the trig window.  The graph shows two periods of the sine function, from  <m>\theta = -360\degree</m> to <m>\theta = 360\degree</m>.</p>
 
 <exercise><statement><p>Your height <m>h</m> on the Ferris wheel is a function of <m>\theta</m>, 
-        <me>h = 100 + y = 100 + 100 \sin (\theta)</me> 
-Complete the table of values and graph the Ferris wheel function, <m>h = F(\theta)</m>.</p>
-
-<sidebyside width="75%"><tabular top="major" halign="left" right="minor" left="minor" bottom="minor">                  
+    <me>h = 100 + y = 100 + 100 \sin (\theta)</me> 
+</p>
+<ol marker="a">
+<li>
+    Complete the table of values and graph the Ferris wheel function, <m>h = F(\theta)</m>.
+    <sidebyside width="75%"><tabular top="major" halign="left" right="minor" left="minor" bottom="minor">                  
         <row bottom="minor">
             <cell><m>\theta</m></cell>
             <cell><m>0\degree</m></cell>
@@ -399,90 +401,105 @@ Complete the table of values and graph the Ferris wheel function, <m>h = F(\thet
     \draw[->,>=stealth'] (0,-.3) -- (0,4.3) node[above] {$h$};
 
     \foreach \x [evaluate=\x as \xi using int( 60* \x )] in {1,2,...,6}
-    \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$\xi^\circ $};
+    \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3] {$\xi^\circ $};
 
     \foreach \y  [evaluate=\y as \yi using int( 50* \y )] in {2,4}
-    \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
+    \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3] {\yi};
     \end{tikzpicture}]]>
     </latex-image></image>
-</sidebyside></statement>
+</sidebyside>    </li>
+<li>
+    Give the period, amplitude, and midline of the graph.
+</li>
+</ol>
+</statement>
 
-<answer><sidebyside width="75%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                  
-        <row bottom="minor">
-            <cell><m>\theta</m></cell>
-            <cell><m>0\degree</m></cell>
-            <cell><m>30\degree</m></cell>
-            <cell><m>60\degree</m></cell>
-            <cell><m>90\degree</m></cell>
-            <cell><m>120\degree</m></cell>
-            <cell><m>150\degree</m></cell>
-            <cell><m>180\degree</m></cell></row>   
-        <row>
-            <cell><m>\sin \theta</m></cell> 
-            <cell><m>0</m></cell>
-            <cell><m>0.5</m></cell>
-            <cell><m>0.866</m></cell>
-            <cell><m>1.0</m></cell>
-            <cell><m>0.866</m></cell>
-            <cell><m>0.5</m></cell>
-            <cell><m>0</m></cell></row>
-        <row>
-            <cell><m>h = F(\theta)</m></cell> 
-            <cell><m>100</m></cell>
-            <cell><m>150</m></cell>
-            <cell><m>186.6</m></cell>
-            <cell><m>200</m></cell>
-            <cell><m>186.6</m></cell>
-            <cell><m>150</m></cell>
-            <cell><m>100</m></cell></row>
-            </tabular></sidebyside>
+<answer>
+<p><ol marker="a">
+<li>
+<sidebyside width="75%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                  
+    <row bottom="minor">
+        <cell><m>\theta</m></cell>
+        <cell><m>0\degree</m></cell>
+        <cell><m>30\degree</m></cell>
+        <cell><m>60\degree</m></cell>
+        <cell><m>90\degree</m></cell>
+        <cell><m>120\degree</m></cell>
+        <cell><m>150\degree</m></cell>
+        <cell><m>180\degree</m></cell></row>   
+    <row>
+        <cell><m>\sin \theta</m></cell> 
+        <cell><m>0</m></cell>
+        <cell><m>0.5</m></cell>
+        <cell><m>0.866</m></cell>
+        <cell><m>1.0</m></cell>
+        <cell><m>0.866</m></cell>
+        <cell><m>0.5</m></cell>
+        <cell><m>0</m></cell></row>
+    <row>
+        <cell><m>h = F(\theta)</m></cell> 
+        <cell><m>100</m></cell>
+        <cell><m>150</m></cell>
+        <cell><m>186.6</m></cell>
+        <cell><m>200</m></cell>
+        <cell><m>186.6</m></cell>
+        <cell><m>150</m></cell>
+        <cell><m>100</m></cell></row>
+        </tabular></sidebyside>
 
 <sidebyside width="75%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                  
-        <row bottom="minor">
-            <cell><m>\theta</m></cell>
-            <cell><m>210\degree</m></cell>
-            <cell><m>240\degree</m></cell>
-            <cell><m>270\degree</m></cell>
-            <cell><m>300\degree</m></cell>
-            <cell><m>330\degree</m></cell>
-            <cell><m>360\degree</m></cell></row>   
-        <row>
-            <cell><m>\sin \theta</m></cell> 
-            <cell><m>-0.5</m></cell>
-            <cell><m>-0.866</m></cell>
-            <cell><m>-1.0</m></cell>
-            <cell><m>-0.866</m></cell>
-            <cell><m>-0.5</m></cell>
-            <cell><m>0</m></cell></row>
-        <row>
-            <cell><m>h = F(\theta)</m></cell> 
-            <cell><m>50</m></cell>
-            <cell><m>13.4</m></cell>
-            <cell><m>0</m></cell>
-            <cell><m>13.4</m></cell>
-            <cell><m>50</m></cell>
-            <cell><m>100</m></cell></row>
-            </tabular></sidebyside>
+    <row bottom="minor">
+        <cell><m>\theta</m></cell>
+        <cell><m>210\degree</m></cell>
+        <cell><m>240\degree</m></cell>
+        <cell><m>270\degree</m></cell>
+        <cell><m>300\degree</m></cell>
+        <cell><m>330\degree</m></cell>
+        <cell><m>360\degree</m></cell></row>   
+    <row>
+        <cell><m>\sin \theta</m></cell> 
+        <cell><m>-0.5</m></cell>
+        <cell><m>-0.866</m></cell>
+        <cell><m>-1.0</m></cell>
+        <cell><m>-0.866</m></cell>
+        <cell><m>-0.5</m></cell>
+        <cell><m>0</m></cell></row>
+    <row>
+        <cell><m>h = F(\theta)</m></cell> 
+        <cell><m>50</m></cell>
+        <cell><m>13.4</m></cell>
+        <cell><m>0</m></cell>
+        <cell><m>13.4</m></cell>
+        <cell><m>50</m></cell>
+        <cell><m>100</m></cell></row>
+        </tabular></sidebyside>
 
 <sidebyside width="60%"><image xml:id="exer4-2-3ans"><description>sine graph</description><latex-image>
-    <![CDATA[
-    \begin{tikzpicture} [scale=1]
-    \draw[cyan,xstep=0.5,ystep=0.4] (0,0) grid (6,4);
+<![CDATA[
+\begin{tikzpicture} [scale=1]
+\draw[cyan,xstep=0.5,ystep=0.4] (0,0) grid (6,4);
 
-    \draw[->,>=stealth'] (-.3,0) -- (6.3,0) node[right] {$\theta$};
-    \draw[->,>=stealth'] (0,-.3) -- (0,4.3) node[above] {$h$};
+\draw[->,>=stealth'] (-.3,0) -- (6.3,0) node[right] {$\theta$};
+\draw[->,>=stealth'] (0,-.3) -- (0,4.3) node[above] {$h$};
 
-    \foreach \x [evaluate=\x as \xi using int( 60* \x )] in {1,2,...,6}
-    \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$\xi^\circ $};
+\foreach \x [evaluate=\x as \xi using int( 60* \x )] in {1,2,...,6}
+\draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3] {$\xi^\circ $};
 
-    \foreach \y  [evaluate=\y as \yi using int( 50* \y )] in {2,4}
-    \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
+\foreach \y  [evaluate=\y as \yi using int( 50* \y )] in {2,4}
+\draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3] {\yi};
 
-    \draw[samples=65,domain=0:6,smooth,variable=\x,red,very thick] plot ({\x},{2+2*sin(pi/3*deg(\x))});
-    \foreach \x [evaluate=\x as \xi using int( 60* \x )] in {0,0.5,...,6}
-    \filldraw[black] (\x , {2+2*sin(pi/3*deg(\x))}) circle (1.5pt);
-    \end{tikzpicture}]]>
-</latex-image></image></sidebyside></answer></exercise>
+\draw[samples=65,domain=0:6,smooth,variable=\x,red,very thick] plot ({\x},{2+2*sin(pi/3*deg(\x))});
+\foreach \x [evaluate=\x as \xi using int( 60* \x )] in {0,0.5,...,6}
+\filldraw[black] (\x , {2+2*sin(pi/3*deg(\x))}) circle (1.5pt);
+\end{tikzpicture}]]>
+</latex-image></image></sidebyside>
+</li>
+<li>
+<p>Period: <m>360\degree</m>, amplitude: 100, midline: <m>h=100</m></p>
+</li>
+</ol></p>
+</answer></exercise>
+
 </subsection>
 
 <subsection><title>The Cosine Function</title>
@@ -621,7 +638,8 @@ Complete the table of values and graph the Ferris wheel function, <m>h = F(\thet
     </ol></p></solution>
 </example>
 
- <p>You can see that the cosine graph is similar to the sine graph, but they are not identical.</p>
+<p>In the example above, the period is <m>360\degree</m>, the amplitude is 18 cm, and the midline is <m>d=18</m>. </p>
+<p>You can see that the cosine graph is similar to the sine graph, but they are not identical.</p>
 
 <exercise><statement><p><ol marker="a">
     <li><p>Complete the table below with values rounded to two decimal places. Use the table and your knowledge of reference angles to graph the cosine function, <m>f(\theta) = \cos (\theta)~</m> from <m>-180\degree</m> to <m>540\degree</m>.</p>
