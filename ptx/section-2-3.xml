@@ -10,32 +10,44 @@
 
 <p>A triangle has six parts: three sides and three angles. In a right triangle, we know that one of the angles is <m>90 \degree</m>. If we know three parts of a right triangle, including one of the sides, we can use trigonometry to find all the other unknown parts. This is called <em>solving</em><idx><h>solve</h><h>a triangle</h></idx> the triangle. </p>
 
-<example><statement><sidebyside widths="60% 30%" valigns="middle middle">
-    <p>The hypotenuse of a right triangle is 150 feet long, and one of the angles is <m>35 \degree</m>, as shown in the figure. Solve the triangle.</p>
-    <image xml:id="exam2-3-1"><description>triangle</description><latex-image>
+<example><statement><sidebyside widths="60% 17%" valigns="middle middle" margins="0% 10%">
+    <p>A 10 foot ladder is leaning againt a wall. If the base of the ladder is too far from the wall, the base can slide out. If the ladder base is too close to the wall, there’s a risk that the ladder could tip over backwards. For safety reasons, the leaning ladder should make a <m>75\degree</m> angle with the ground. 
+    <ol marker="a">
+        <li>How far should the base of the ladder be from the wall?</li>
+        <li>How far up the wall will the top of the ladder reach?</li>
+    </ol></p>
+    <image xml:id="Ten-ft-ladder-leaning-75deg"><description>triangle</description><latex-image>
         <![CDATA[
-        \begin{tikzpicture}[scale=1.05]
+        \begin{tikzpicture}[scale=.45]
         \coordinate (A) at (0,0 );
-        \coordinate (B) at (3.3,0);
-        \coordinate (C) at (0,2.3);
+        \coordinate (B) at ({10*cos(75)},0);
+        \coordinate (C) at (0,{10*sin(75)});
 
-        \draw[blue,thick] (A) rectangle +(.25,.25);
-        \draw[black,thick] (C)--(A)--(B);
-        \draw[black,thick] (C)--(B)  node[above right,midway] {\color{blue}150};
+        \draw[blue,thick] (A) rectangle +(.4,.4);
+        \draw[black,thick] (B)++(1.5,0)--(A)--($(C)+(0,.5)$);
+        \draw[black,thick] (C)--(B)  node[above right,midway] {\color{blue}10 ft};
+        \draw[blue, fill=cyan] (B)++(-.05,-.05) --++(.1,.1)--($(C)+(.05,.05)$)--++(-.1,-.1)--cycle;
+        \draw[ultra thick,dash pattern=on \pgflinewidth off 5pt] (B) -- (C);
 
-        \draw[red,thick] (B)++(-0.4,0) arc(180:{180-atan(2.3/3.3)}:0.4) node[left,midway, yshift=2] {$35\degree$};
+        \draw[red,thick] (B)++(-0.7,0) arc(180:105:0.7) node[left,midway, xshift=3, yshift=2] {$75\degree$};
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></statement>
-        
-<solution><p>We can find the side opposite the 35° angle by using the sine ratio.
-    <md><mrow>\sin  (35\degree) \amp = \dfrac {\text{opposite}}{\text{hypotenuse}}</mrow>
-        <mrow>0.5736 \amp = \dfrac{a}{150}</mrow>
-        <mrow>a \amp = 150(0.5736) = 86.04 </mrow></md>
-    The opposite side is about 86 feet long. To find side <m>b</m> we could use the Pythagorean theorem now, but it is better to use given information, rather than values we have calculated, to find the other unknown parts. We will use the cosine ratio.
-    <md><mrow>\cos (35 \degree) \amp = \dfrac {\text{adjacent}}{\text{hypotenuse}}</mrow>
-        <mrow>0.8192 \amp = \dfrac{b}{150}</mrow>
-        <mrow>b \amp = 150(0.8192) = 122.89</mrow></md>
-    The adjacent side is about 123 feet long. Finally, the unknown angle is the complement of <m>35 \degree</m>, or <m>55 \degree</m>.</p></solution></example>
+    </latex-image></image></sidebyside></statement>       
+<solution><p>
+    <ol>
+        <li><p>The distance between the base of the ladder and the wall is the side adjacent to the <m>75\degree</m> angle. We can find the side adjacent to the <m>75\degree</m> angle angle by using the cosine ratio.
+            <md><mrow>\cos  (75\degree) \amp = \dfrac {\text{adjacent}}{\text{hypotenuse}}</mrow>
+                <mrow>0.2588 \amp = \dfrac{b}{10}</mrow>
+                <mrow>b \amp = 10(0.2588) = 2.588 </mrow>
+            </md>
+            The base of the ladder should be about 2.6 feet from the wall.</p></li>
+        <li><p>To find side how far up the wall the ladder will reach, we could use the Pythagorean theorem now, but it is better to use given information, rather than values we have calculated, to find the other unknown parts. We will use the sine ratio.
+            <md><mrow>\sin (75 \degree) \amp = \dfrac {\text{opposite}}{\text{hypotenuse}}</mrow>
+                <mrow>0.9659 \amp = \dfrac{a}{10}</mrow>
+                <mrow>b \amp = 10(0.9659) = 9.659</mrow>
+            </md>
+            The ladder will reach about 9.7 feet.</p></li>
+    </ol></p></solution>
+</example>
 
 <exercise><statement><p>Sketch a right triangle with </p>
         <p><ul>
@@ -212,10 +224,10 @@ say the same thing in different ways.</p></note>
 
 <p> The angles <m>30\degree</m>, <m>60\degree</m>, and <m>45\degree</m> are “special” <idx><h>angle</h><h>special</h></idx> because we can easily find exact values for their trig ratios, and use those exact values to find exact lengths for the sides of triangles with those angles.</p>
 
-<example><statement><p>The sides of an equilateral triangle are 8 centimeters long. Find the exact length of the triangle's altitude, <m>h</m>.</p></statement> 
-
-<solution><sidebyside widths="65% 27%" valigns="middle middle" margins="0% 5%"><p>The altitude divides the triangle into two 30-60-90 right triangles as shown in the figure. The altitude is adjacent to the <m>30\degree</m> angle, and the hypotenuse of the right triangle is 8 centimeters. Thus,</p>  
-    <image xml:id="exam2-3-4"><description>45-45-90 triangle</description><latex-image>
+<example><statement><p>Matterhorn Chocolate bars are sold in boxes shaped like triangular prisms. The two triangular ends of a box are equilateral triangles with 8 centimeter sides. When stacking the boxes on a shelf, the second level will be a triangle's altitude above bottom level.
+    Find the exact length of the triangle's altitude, <m>h</m>.</p></statement> 
+<solution><sidebyside widths="65% 25%" valigns="middle middle" margins="0% 5%"><p>The altitude divides the triangle into two 30-60-90 right triangles as shown in the figure. The altitude is adjacent to the <m>30\degree</m> angle, and the hypotenuse of the right triangle is 8 centimeters. Thus,</p>  
+    <image xml:id="Toblerone"><description>Equilateral triangle</description><latex-image>
         <![CDATA[
         \begin{tikzpicture}[scale=.9]
         \coordinate (A) at (0,0 );
@@ -226,15 +238,15 @@ say the same thing in different ways.</p></note>
         \draw[blue,thick] (A) rectangle +(.25,.25);
         \draw[black,thick] (C)--(D)--(B);
         \draw[black,thick] (C)--(B)  node[above right,midway, yshift=-2] {\color{blue}8};
-        \draw[gray,thick] (A) --(C);
+        \draw[gray,thick] (A) --(C)  node[right,midway, yshift=-2] {\color{blue}$h$};
 
         \draw[red,thick] (B)++(-.3,0) arc(180:120:0.3) node[left,midway, yshift=3] {$60\degree$};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
-    <p><md><mrow>\cos \left(35 \degree\right) \amp = \dfrac {\text{adjacent}}{\text{hypotenuse}} \amp \amp \blert{\text{Fill in the values.}}</mrow>
-            <mrow>\dfrac{\sqrt{3}}{2} \amp = \dfrac{h}{8} \amp \amp \blert{\text{Multiply both sides by 8.}}</mrow>
-            <mrow>h \amp = 8\left(\dfrac{\sqrt{3}}{2}\right) = 4\sqrt{3} </mrow></md>
-        The altitude is exactly <m>4\sqrt{3}</m> centimeters long.</p>           
+    <p><md><mrow>\cos \left(30 \degree\right) \amp = \dfrac {\text{adjacent}}{\text{hypotenuse}} \amp \amp \blert{\text{Fill in the values.}}</mrow>
+        <mrow>\dfrac{\sqrt{3}}{2} \amp = \dfrac{h}{8} \amp \amp \blert{\text{Multiply both sides by 8.}}</mrow>
+        <mrow>h \amp = 8\left(\dfrac{\sqrt{3}}{2}\right) = 4\sqrt{3} </mrow></md>
+    The altitude is <m>4\sqrt{3}</m> centimeters long, which is approximately 6.9 cm.</p>           
 </solution></example>                            
 
 <p>From this exact answer, we can find approximations to any degree of accuracy we like. You can check that <m>4\sqrt{3} \approx 6.9282</m>, so the altitude is approximately 6.9 centimeters long.</p>
