@@ -1,6 +1,6 @@
 %********************************************%
 %*       Generated from PreTeXt source      *%
-%*       on 2023-08-22T14:57:56-07:00       *%
+%*       on 2023-08-23T14:13:43-07:00       *%
 %*   A recent stable commit (2022-07-01):   *%
 %* 6c761d3dba23af92cba35001c852aac04ae99a5f *%
 %*                                          *%
@@ -773,7 +773,7 @@ colback=white, colbacktitle=white, coltitle=black, opacityfill=0.0} }
 {\Huge Trigonometry}\\[3\baselineskip]
 {\Large Katherine Yoshiwara}\\[0.5\baselineskip]
 {\Large Los Angeles Pierce College}\\[3\baselineskip]
-{\Large August 22, 2023}\\}
+{\Large August 23, 2023}\\}
 \clearpage
 %% end:   title page
 %% begin: copyright-page
@@ -25396,9 +25396,9 @@ Sketch a graph for each of the following functions.  Describe how each is differ
 %
 \begin{multicols}{3}
 \begin{enumerate}[label=\alph*]
-\item{}\(\displaystyle f(\theta) = 2 + \cos (\theta)\)%
-\item{}\(\displaystyle g(\theta) = \cos (2\theta)\)%
 \item{}\(\displaystyle h(\theta) = 2\cos (\theta)\)%
+\item{}\(\displaystyle g(\theta) = \cos (2\theta)\)%
+\item{}\(\displaystyle f(\theta) = 2 + \cos (\theta)\)%
 \end{enumerate}
 \end{multicols}
 %
@@ -25408,25 +25408,25 @@ Sketch a graph for each of the following functions.  Describe how each is differ
 \item{}\begin{sidebyside}{2}{0.0625}{0.0625}{0.125}%
 \begin{sbspanel}{0.35}[center]%
 \resizebox{\linewidth}{!}{%
-\begin{tikzpicture} [scale=0.45]
-\draw[cyan]
-(-0.1,0) grid (8,4);
+        \begin{tikzpicture} [scale=0.45]
+        \draw[cyan]
+        (-0.1,-2) grid (8,2);
 
-\draw[->,>=stealth'] (-0.1,0) -- (8.3,0) node[right] {$\theta$};
-\draw[->,>=stealth'] (0,-.2) -- (0,4.3) node[above] {$y$};
+        \draw[->,>=stealth'] (-0.1,0) -- (8.3,0) node[right] {$\theta$};
+        \draw[->,>=stealth'] (0,-2.2) -- (0,2.3) node[above] {$y$};
 
-\foreach \x [evaluate=\x as \xi using int( 45* \x )] in {2, 4, 6, 8}
-\draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi $};
+        \foreach \x [evaluate=\x as \xi using int( 45* \x )] in {2, 4, 6, 8}
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi $};
 
-\foreach \y  [evaluate=\y as \yi using int(  \y )] in {1, 2, 3 }
-\draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
+        \foreach \y  [evaluate=\y as \yi using int(  \y )] in { -2, -1, 1, 2 }
+        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
 
-\draw[domain=-0:8,smooth,variable=\x,red,very thick] plot ({\x},{ 2+cos(deg(\x*pi/4))});
-\end{tikzpicture}
+        \draw[domain=-0:8,smooth,variable=\x,red,very thick] plot ({\x},{ 2*cos(deg(\x*pi/4))});
+        \end{tikzpicture}
 }%
 \end{sbspanel}%
 \begin{sbspanel}{0.4}[center]%
-The midline is \(y = 2\).%
+The amplitude is 2.%
 \end{sbspanel}%
 \end{sidebyside}%
 %
@@ -25458,25 +25458,25 @@ The period is \(180\degree\).%
 \item{}\begin{sidebyside}{2}{0.0625}{0.0625}{0.125}%
 \begin{sbspanel}{0.35}[center]%
 \resizebox{\linewidth}{!}{%
-\begin{tikzpicture} [scale=0.45]
-\draw[cyan]
-(-0.1,-2) grid (8,2);
+        \begin{tikzpicture} [scale=0.45]
+        \draw[cyan]
+        (-0.1,0) grid (8,4);
 
-\draw[->,>=stealth'] (-0.1,0) -- (8.3,0) node[right] {$\theta$};
-\draw[->,>=stealth'] (0,-2.2) -- (0,2.3) node[above] {$y$};
+        \draw[->,>=stealth'] (-0.1,0) -- (8.3,0) node[right] {$\theta$};
+        \draw[->,>=stealth'] (0,-.2) -- (0,4.3) node[above] {$y$};
 
-\foreach \x [evaluate=\x as \xi using int( 45* \x )] in {2, 4, 6, 8}
-\draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi $};
+        \foreach \x [evaluate=\x as \xi using int( 45* \x )] in {2, 4, 6, 8}
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi $};
 
-\foreach \y  [evaluate=\y as \yi using int(  \y )] in { -2, -1, 1, 2 }
-\draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
+        \foreach \y  [evaluate=\y as \yi using int(  \y )] in {1, 2, 3 }
+        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
 
-\draw[domain=-0:8,smooth,variable=\x,red,very thick] plot ({\x},{ 2*cos(deg(\x*pi/4))});
-\end{tikzpicture}
+        \draw[domain=-0:8,smooth,variable=\x,red,very thick] plot ({\x},{ 2+cos(deg(\x*pi/4))});
+        \end{tikzpicture}
 }%
 \end{sbspanel}%
 \begin{sbspanel}{0.4}[center]%
-The amplitude is 2.%
+The midline is \(y = 2\).%
 \end{sbspanel}%
 \end{sidebyside}%
 %
@@ -25666,7 +25666,7 @@ Algebra Refresher Answers%
 \item{}%
 \begin{enumerate}[label=\alph*]
 \item{}\begin{sidebyside}{1}{0}{0.05}{0}%
-\begin{sbspanel}{0.65}%
+\begin{sbspanel}{0.59}%
 \resizebox{\linewidth}{!}{%
 \begin{tikzpicture} [scale=.25]
 \draw[cyan, xstep=2, ystep=2] (-6,-2) grid (6,10);
@@ -25684,7 +25684,7 @@ Algebra Refresher Answers%
 \end{sbspanel}%
 \end{sidebyside}%
 %
-\item{}\((0,9)\), \(~ (-3,0)\), \(~ (3,0)\), Max: \(9\)%
+\item{}\((0,9)\), \(~ (-3,0)\), \(~ (3,0)\), \(\text{Max: }9\)%
 \end{enumerate}
 %
 \item{}%
@@ -41212,7 +41212,7 @@ For Problems 19\textendash{}20, evaluate exactly.%
 \par\medskip\noindent
 \par\medskip\noindent%
 \textbf{Exercise Group.}\space\space%
-For Problems 21\textendash{}22, factor the expressionsketch an arc with the given length in standard position on a unit circle.  Find the coordinates of the terminal point. Round to tenths.%
+For Problems 21\textendash{}22, sketch an arc with the given length in standard position on a unit circle.  Find the coordinates of the terminal point. Round to tenths.%
 \begin{exercisegroup}
 \begin{divisionexerciseeg}{21}{}{}{exercise-chap6-rev-problems-m-b}%
 %
@@ -41316,32 +41316,38 @@ With a central angle of \(240\degree\) in a circle of radius 12 centimeters.%
 \end{divisionexerciseeg}%
 \end{exercisegroup}
 \par\medskip\noindent
-\begin{divisionexercise}{27}{}{}{exercise-chap6-rev-problems-p}%
-If \(\dfrac{\pi}{2} \lt \alpha \lt \beta \lt \pi\), then \(\cos (\alpha) \fillinmath{XXXXXX} \cos (\beta)\).%
-\end{divisionexercise}%
-\begin{divisionexercise}{28}{}{}{exercise-chap6-rev-problems-q}%
-If \(\pi \lt \theta \lt \phi \lt \dfrac{3\pi}{2}\), then \(\sin (\theta) \fillinmath{XXXXXX} \sin (\phi)\).%
-\end{divisionexercise}%
-\begin{divisionexercise}{29}{}{}{exercise-chap6-rev-problems-r}%
-If \(\dfrac{3\pi}{2} \lt s \lt t \lt 2\pi\), then \(\tan (s) \fillinmath{XXXXXX} \tan (t)\).%
-\end{divisionexercise}%
-\begin{divisionexercise}{30}{}{}{exercise-chap6-rev-problems-s}%
-If \(\dfrac{\pi}{2} \lt x \lt y \lt \dfrac{3\pi}{2}\), then \(\cos (x) \fillinmath{XXXXXX} \cos (y)\).%
-\end{divisionexercise}%
+\par\medskip\noindent%
+\textbf{Exercise Group.}\space\space%
+For Problems 27\textendash{}30, fill in the correct inequality symbol.%
+\begin{exercisegroup}
+\begin{divisionexerciseeg}{27}{}{}{exercise-chap6-rev-problems-p-b}%
+If \(\dfrac{\pi}{2} \lt \alpha \lt \beta \lt \pi\), then \(\cos (\alpha) \, \fillinmath{XX}\,  \cos (\beta)\).%
+\end{divisionexerciseeg}%
+\begin{divisionexerciseeg}{28}{}{}{exercise-chap6-rev-problems-p-c}%
+If \(\pi \lt \theta \lt \phi \lt \dfrac{3\pi}{2}\), then \(\sin (\theta) \, \fillinmath{XX}\,  \sin (\phi)\).%
+\end{divisionexerciseeg}%
+\begin{divisionexerciseeg}{29}{}{}{exercise-chap6-rev-problems-p-d}%
+If \(\dfrac{3\pi}{2} \lt s \lt t \lt 2\pi\), then \(\tan (s) \, \fillinmath{XX}\,  \tan (t)\).%
+\end{divisionexerciseeg}%
+\begin{divisionexerciseeg}{30}{}{}{exercise-chap6-rev-problems-p-e}%
+If \(\dfrac{\pi}{2} \lt x \lt y \lt \dfrac{3\pi}{2}\), then \(\cos (x) \, \fillinmath{XX}\,  \cos (y)\).%
+\end{divisionexerciseeg}%
+\end{exercisegroup}
+\par\medskip\noindent
 \par\medskip\noindent%
 \textbf{Exercise Group.}\space\space%
 For Problems 31\textendash{}34, evaluate the function%
 \begin{exercisegroup}
-\begin{divisionexerciseeg}{31}{}{}{exercise-chap6-rev-problems-t-b}%
+\begin{divisionexerciseeg}{31}{}{}{exercise-chap6-rev-problems-q-b}%
 \(f(t) = 12 - 2.8 \sin (3.5t - 2)\) for \(t = 8\)%
 \end{divisionexerciseeg}%
-\begin{divisionexerciseeg}{32}{}{}{exercise-chap6-rev-problems-t-c}%
+\begin{divisionexerciseeg}{32}{}{}{exercise-chap6-rev-problems-q-c}%
 \(h(x) = 2.4 + 6 \tan\left(\dfrac{3x-5}{4}\right)\) for \(x = 1.8\)%
 \end{divisionexerciseeg}%
-\begin{divisionexerciseeg}{33}{}{}{exercise-chap6-rev-problems-t-d}%
+\begin{divisionexerciseeg}{33}{}{}{exercise-chap6-rev-problems-q-d}%
 \(g(z) = 0.07 \tan(0.4z + 0.2) - 1.3\) for \(z = 22\)%
 \end{divisionexerciseeg}%
-\begin{divisionexerciseeg}{34}{}{}{exercise-chap6-rev-problems-t-e}%
+\begin{divisionexerciseeg}{34}{}{}{exercise-chap6-rev-problems-q-e}%
 \(F(s) = -1.5\cos \left(\dfrac{s}{8} - 3\right) + 5\) for \(s = 6.2\)%
 \end{divisionexerciseeg}%
 \end{exercisegroup}
@@ -41350,7 +41356,7 @@ For Problems 31\textendash{}34, evaluate the function%
 \textbf{Exercise Group.}\space\space%
 For Problems 35\textendash{}38, find the reference angle in radians.%
 \begin{exercisegroup}
-\begin{divisionexerciseeg}{35}{}{}{exercise-chap6-rev-problems-u-b}%
+\begin{divisionexerciseeg}{35}{}{}{exercise-chap6-rev-problems-r-b}%
 %
 \begin{multicols}{4}
 \begin{enumerate}[label=\alph*]
@@ -41362,7 +41368,7 @@ For Problems 35\textendash{}38, find the reference angle in radians.%
 \end{multicols}
 %
 \end{divisionexerciseeg}%
-\begin{divisionexerciseeg}{36}{}{}{exercise-chap6-rev-problems-u-c}%
+\begin{divisionexerciseeg}{36}{}{}{exercise-chap6-rev-problems-r-c}%
 %
 \begin{multicols}{4}
 \begin{enumerate}[label=\alph*]
@@ -41374,7 +41380,7 @@ For Problems 35\textendash{}38, find the reference angle in radians.%
 \end{multicols}
 %
 \end{divisionexerciseeg}%
-\begin{divisionexerciseeg}{37}{}{}{exercise-chap6-rev-problems-u-d}%
+\begin{divisionexerciseeg}{37}{}{}{exercise-chap6-rev-problems-r-d}%
 %
 \begin{multicols}{4}
 \begin{enumerate}[label=\alph*]
@@ -41386,7 +41392,7 @@ For Problems 35\textendash{}38, find the reference angle in radians.%
 \end{multicols}
 %
 \end{divisionexerciseeg}%
-\begin{divisionexerciseeg}{38}{}{}{exercise-chap6-rev-problems-u-e}%
+\begin{divisionexerciseeg}{38}{}{}{exercise-chap6-rev-problems-r-e}%
 %
 \begin{multicols}{4}
 \begin{enumerate}[label=\alph*]
@@ -41404,15 +41410,15 @@ For Problems 35\textendash{}38, find the reference angle in radians.%
 \textbf{Exercise Group.}\space\space%
 For Problems 39\textendash{}40, find the angle of inclination of the line.%
 \begin{exercisegroupcol}{2}
-\begin{divisionexerciseegcol}{39}{}{}{exercise-chap6-rev-problems-v-b}%
+\begin{divisionexerciseegcol}{39}{}{}{exercise-chap6-rev-problems-s-b}%
 \(2x + 5y = -3\)%
 \end{divisionexerciseegcol}%
-\begin{divisionexerciseegcol}{40}{}{}{exercise-chap6-rev-problems-v-c}%
+\begin{divisionexerciseegcol}{40}{}{}{exercise-chap6-rev-problems-s-c}%
 \(\dfrac{x}{8} - \dfrac{y}{11} = 1\)%
 \end{divisionexerciseegcol}%
 \end{exercisegroupcol}
 \par\medskip\noindent
-\begin{divisionexercise}{41}{}{}{exercise-chap6-rev-problems-w}%
+\begin{divisionexercise}{41}{}{}{exercise-chap6-rev-problems-t}%
 %
 \begin{enumerate}[label=\alph*]
 \item{}Prepare a Cartesian coordinate system with the \(x\)-axis scaled from 0 to 10 and the \(y\)-axis scaled from \(-2\) to \(2\). Label multiples of \(\dfrac{\pi}{4}\) on the \(x\)-axis.%
@@ -41420,7 +41426,7 @@ For Problems 39\textendash{}40, find the angle of inclination of the line.%
 \end{enumerate}
 %
 \end{divisionexercise}%
-\begin{divisionexercise}{42}{}{}{exercise-chap6-rev-problems-x}%
+\begin{divisionexercise}{42}{}{}{exercise-chap6-rev-problems-u}%
 %
 \begin{enumerate}[label=\alph*]
 \item{}Use your calculator to make a table of values for \(Y_1 = \sin (x),~ Y_2 = \cos (x),\) and \(Y_s = \dfrac{Y_1}{Y_2}\), for \(0 \le x \le 3,\) and \(\Delta x = 0.1\).%
@@ -41439,7 +41445,7 @@ For Problems 43\textendash{}46,%
 \end{enumerate}
 %
 \begin{exercisegroupcol}{2}
-\begin{divisionexerciseegcol}{43}{}{}{exercise-chap6-rev-problems-y-b}%
+\begin{divisionexerciseegcol}{43}{}{}{exercise-chap6-rev-problems-v-b}%
 %
 \begin{enumerate}[label=\alph*]
 \item{}\(\displaystyle h(s) = 5 + 3\cos (2s)\)%
@@ -41447,7 +41453,7 @@ For Problems 43\textendash{}46,%
 \end{enumerate}
 %
 \end{divisionexerciseegcol}%
-\begin{divisionexerciseegcol}{44}{}{}{exercise-chap6-rev-problems-y-c}%
+\begin{divisionexerciseegcol}{44}{}{}{exercise-chap6-rev-problems-v-c}%
 %
 \begin{enumerate}[label=\alph*]
 \item{}\(\displaystyle f(s) = 4 - 2\sin (3s)\)%
@@ -41455,7 +41461,7 @@ For Problems 43\textendash{}46,%
 \end{enumerate}
 %
 \end{divisionexerciseegcol}%
-\begin{divisionexerciseegcol}{45}{}{}{exercise-chap6-rev-problems-y-d}%
+\begin{divisionexerciseegcol}{45}{}{}{exercise-chap6-rev-problems-v-d}%
 %
 \begin{enumerate}[label=\alph*]
 \item{}\(\displaystyle g(s) = 10 + 4.8\sin (s - 1.5)\)%
@@ -41463,7 +41469,7 @@ For Problems 43\textendash{}46,%
 \end{enumerate}
 %
 \end{divisionexerciseegcol}%
-\begin{divisionexerciseegcol}{46}{}{}{exercise-chap6-rev-problems-y-e}%
+\begin{divisionexerciseegcol}{46}{}{}{exercise-chap6-rev-problems-v-e}%
 %
 \begin{enumerate}[label=\alph*]
 \item{}\(\displaystyle j(s) = 1.5 + 0.25\cos (s + 0.5)\)%
@@ -41477,10 +41483,10 @@ For Problems 43\textendash{}46,%
 \textbf{Exercise Group.}\space\space%
 For Problems 47\textendash{}48, solve the equation graphically for \(0 \le x \lt 2\pi\).%
 \begin{exercisegroupcol}{2}
-\begin{divisionexerciseegcol}{47}{}{}{exercise-chap6-rev-problems-z-b}%
+\begin{divisionexerciseegcol}{47}{}{}{exercise-chap6-rev-problems-w-b}%
 \(6 + \tan (x - \dfrac{\pi}{6}) = 7\)%
 \end{divisionexerciseegcol}%
-\begin{divisionexerciseegcol}{48}{}{}{exercise-chap6-rev-problems-z-c}%
+\begin{divisionexerciseegcol}{48}{}{}{exercise-chap6-rev-problems-w-c}%
 \(3 - \tan (x + \dfrac{3\pi}{4}) = 4\)%
 \end{divisionexerciseegcol}%
 \end{exercisegroupcol}
@@ -41489,16 +41495,16 @@ For Problems 47\textendash{}48, solve the equation graphically for \(0 \le x \lt
 \textbf{Exercise Group.}\space\space%
 For Problems 49\textendash{}52, solve the equation exactly for \(0 \le x \lt 2\pi\).%
 \begin{exercisegroupcol}{2}
-\begin{divisionexerciseegcol}{49}{}{}{exercise-chap6-rev-problems-aa-b}%
+\begin{divisionexerciseegcol}{49}{}{}{exercise-chap6-rev-problems-x-b}%
 \(\sin (\theta) = \dfrac{\sqrt{3}}{2}\)%
 \end{divisionexerciseegcol}%
-\begin{divisionexerciseegcol}{50}{}{}{exercise-chap6-rev-problems-aa-c}%
+\begin{divisionexerciseegcol}{50}{}{}{exercise-chap6-rev-problems-x-c}%
 \(\sin (\theta) = -\dfrac{1}{2}\)%
 \end{divisionexerciseegcol}%
-\begin{divisionexerciseegcol}{51}{}{}{exercise-chap6-rev-problems-aa-d}%
+\begin{divisionexerciseegcol}{51}{}{}{exercise-chap6-rev-problems-x-d}%
 \(\cos (\theta) = -1\)%
 \end{divisionexerciseegcol}%
-\begin{divisionexerciseegcol}{52}{}{}{exercise-chap6-rev-problems-aa-e}%
+\begin{divisionexerciseegcol}{52}{}{}{exercise-chap6-rev-problems-x-e}%
 \(\tan (\theta) = \sqrt{3}\)%
 \end{divisionexerciseegcol}%
 \end{exercisegroupcol}
@@ -41507,22 +41513,22 @@ For Problems 49\textendash{}52, solve the equation exactly for \(0 \le x \lt 2\p
 \textbf{Exercise Group.}\space\space%
 For Problems 53\textendash{}58, find all solutions between \(0\) and \(2\pi\). Round to two decimal places.%
 \begin{exercisegroupcol}{3}
-\begin{divisionexerciseegcol}{53}{}{}{exercise-chap6-rev-problems-ab-b}%
+\begin{divisionexerciseegcol}{53}{}{}{exercise-chap6-rev-problems-y-b}%
 \(\tan (t) = 5\)%
 \end{divisionexerciseegcol}%
-\begin{divisionexerciseegcol}{54}{}{}{exercise-chap6-rev-problems-ab-c}%
+\begin{divisionexerciseegcol}{54}{}{}{exercise-chap6-rev-problems-y-c}%
 \(\cos (x) = -0.63\)%
 \end{divisionexerciseegcol}%
-\begin{divisionexerciseegcol}{55}{}{}{exercise-chap6-rev-problems-ab-d}%
+\begin{divisionexerciseegcol}{55}{}{}{exercise-chap6-rev-problems-y-d}%
 \(\sin (h) = -0.26\)%
 \end{divisionexerciseegcol}%
-\begin{divisionexerciseegcol}{56}{}{}{exercise-chap6-rev-problems-ab-e}%
+\begin{divisionexerciseegcol}{56}{}{}{exercise-chap6-rev-problems-y-e}%
 \(\tan (\phi) = -2.5\)%
 \end{divisionexerciseegcol}%
-\begin{divisionexerciseegcol}{57}{}{}{exercise-chap6-rev-problems-ab-f}%
+\begin{divisionexerciseegcol}{57}{}{}{exercise-chap6-rev-problems-y-f}%
 \(\cos (\beta) = 0.95\)%
 \end{divisionexerciseegcol}%
-\begin{divisionexerciseegcol}{58}{}{}{exercise-chap6-rev-problems-ab-g}%
+\begin{divisionexerciseegcol}{58}{}{}{exercise-chap6-rev-problems-y-g}%
 \(\sin (\alpha) = 0.1\)%
 \end{divisionexerciseegcol}%
 \end{exercisegroupcol}
@@ -41531,7 +41537,7 @@ For Problems 53\textendash{}58, find all solutions between \(0\) and \(2\pi\). R
 \textbf{Exercise Group.}\space\space%
 For Problems 59\textendash{}62, solve for \(x\).%
 \begin{exercisegroupcol}{2}
-\begin{divisionexerciseegcol}{59}{}{}{exercise-chap6-rev-problems-ac-b}%
+\begin{divisionexerciseegcol}{59}{}{}{exercise-chap6-rev-problems-z-b}%
 %
 \begin{enumerate}[label=\alph*]
 \item{}\(\displaystyle \cos (x) = 0.35\)%
@@ -41539,7 +41545,7 @@ For Problems 59\textendash{}62, solve for \(x\).%
 \end{enumerate}
 %
 \end{divisionexerciseegcol}%
-\begin{divisionexerciseegcol}{60}{}{}{exercise-chap6-rev-problems-ac-c}%
+\begin{divisionexerciseegcol}{60}{}{}{exercise-chap6-rev-problems-z-c}%
 %
 \begin{enumerate}[label=\alph*]
 \item{}\(\displaystyle \sin (x) = 0.84\)%
@@ -41547,7 +41553,7 @@ For Problems 59\textendash{}62, solve for \(x\).%
 \end{enumerate}
 %
 \end{divisionexerciseegcol}%
-\begin{divisionexerciseegcol}{61}{}{}{exercise-chap6-rev-problems-ac-d}%
+\begin{divisionexerciseegcol}{61}{}{}{exercise-chap6-rev-problems-z-d}%
 %
 \begin{enumerate}[label=\alph*]
 \item{}\(\displaystyle \sin (x) = \dfrac{\pi}{8}\)%
@@ -41555,7 +41561,7 @@ For Problems 59\textendash{}62, solve for \(x\).%
 \end{enumerate}
 %
 \end{divisionexerciseegcol}%
-\begin{divisionexerciseegcol}{62}{}{}{exercise-chap6-rev-problems-ac-e}%
+\begin{divisionexerciseegcol}{62}{}{}{exercise-chap6-rev-problems-z-e}%
 %
 \begin{enumerate}[label=\alph*]
 \item{}\(\displaystyle \tan x = 1.7\pi\)%
@@ -41569,21 +41575,21 @@ For Problems 59\textendash{}62, solve for \(x\).%
 \textbf{Exercise Group.}\space\space%
 For Problems 63\textendash{}66, sketch the graph. State its domain and range.%
 \begin{exercisegroupcol}{2}
-\begin{divisionexerciseegcol}{63}{}{}{exercise-chap6-rev-problems-ad-b}%
+\begin{divisionexerciseegcol}{63}{}{}{exercise-chap6-rev-problems-aa-b}%
 \(g(x) = 2x^2 + 4\)%
 \end{divisionexerciseegcol}%
-\begin{divisionexerciseegcol}{64}{}{}{exercise-chap6-rev-problems-ad-c}%
+\begin{divisionexerciseegcol}{64}{}{}{exercise-chap6-rev-problems-aa-c}%
 \(h(w) = 1 - \dfrac{1}{w^2}\)%
 \end{divisionexerciseegcol}%
-\begin{divisionexerciseegcol}{65}{}{}{exercise-chap6-rev-problems-ad-d}%
+\begin{divisionexerciseegcol}{65}{}{}{exercise-chap6-rev-problems-aa-d}%
 \(F(s) = -\sqrt{16 - s^2}\)%
 \end{divisionexerciseegcol}%
-\begin{divisionexerciseegcol}{66}{}{}{exercise-chap6-rev-problems-ad-e}%
+\begin{divisionexerciseegcol}{66}{}{}{exercise-chap6-rev-problems-aa-e}%
 \(G(t) = 4 + \sqrt{4 - t}\)%
 \end{divisionexerciseegcol}%
 \end{exercisegroupcol}
 \par\medskip\noindent
-\begin{divisionexercise}{67}{}{}{exercise-chap6-rev-problems-ae}%
+\begin{divisionexercise}{67}{}{}{exercise-chap6-rev-problems-ab}%
 Prove the Pythagorean identity \(\cos^2 (t) + \sin^2 (t) = 1\) by carrying out the following steps. Sketch a unit circle, and an arc \(t\) in standard position.%
 \par
 %
@@ -41595,7 +41601,7 @@ Prove the Pythagorean identity \(\cos^2 (t) + \sin^2 (t) = 1\) by carrying out t
 \end{enumerate}
 %
 \end{divisionexercise}%
-\begin{divisionexercise}{68}{}{}{exercise-chap6-rev-problems-af}%
+\begin{divisionexercise}{68}{}{}{exercise-chap6-rev-problems-ac}%
 Prove the tangent identity \(\tan (t) = \dfrac{\sin (t)}{\cos (t)}\) by carrying out the following steps. Sketch an arc \(t\) in standard position on a unit circle, and label its terminal point \((x,y)\).%
 \par
 %
@@ -73039,24 +73045,27 @@ d. High: day 204, \(105\degree\); low: day 25, \(66\degree\) e. \(d \approx 128\
 \end{divisionsolutioneg}%
 \end{exercisegroup}
 \par\medskip\noindent
-\begin{divisionsolution}{Exercise}{27}{}{exercise-chap6-rev-problems-p}%
-\noindent\hypertarget{answer-chap6-rev-problems-p-b-back}{}\(\gt\)%
-\end{divisionsolution}%
-\begin{divisionsolution}{Exercise}{29}{}{exercise-chap6-rev-problems-r}%
-\noindent\hypertarget{answer-chap6-rev-problems-r-b-back}{}\(\lt\)%
-\end{divisionsolution}%
 \begin{exercisegroup}
-\begin{divisionsolutioneg}{Exercise}{31}{}{exercise-chap6-rev-problems-t-b}%
-\noindent\hypertarget{answer-chap6-rev-problems-t-b-b-back}{}\(9.86\)%
+\begin{divisionsolutioneg}{Exercise}{27}{}{exercise-chap6-rev-problems-p-b}%
+\noindent\hypertarget{answer-chap6-rev-problems-p-b-b-back}{}\(\gt\)%
 \end{divisionsolutioneg}%
-\begin{divisionsolutioneg}{Exercise}{33}{}{exercise-chap6-rev-problems-t-d}%
-\noindent\hypertarget{answer-chap6-rev-problems-t-d-b-back}{}\(-1.33\)%
+\begin{divisionsolutioneg}{Exercise}{29}{}{exercise-chap6-rev-problems-p-d}%
+\noindent\hypertarget{answer-chap6-rev-problems-p-d-b-back}{}\(\lt\)%
 \end{divisionsolutioneg}%
 \end{exercisegroup}
 \par\medskip\noindent
 \begin{exercisegroup}
-\begin{divisionsolutioneg}{Exercise}{35}{}{exercise-chap6-rev-problems-u-b}%
-\noindent\hypertarget{answer-chap6-rev-problems-u-b-b-back}{}%
+\begin{divisionsolutioneg}{Exercise}{31}{}{exercise-chap6-rev-problems-q-b}%
+\noindent\hypertarget{answer-chap6-rev-problems-q-b-b-back}{}\(9.86\)%
+\end{divisionsolutioneg}%
+\begin{divisionsolutioneg}{Exercise}{33}{}{exercise-chap6-rev-problems-q-d}%
+\noindent\hypertarget{answer-chap6-rev-problems-q-d-b-back}{}\(-1.33\)%
+\end{divisionsolutioneg}%
+\end{exercisegroup}
+\par\medskip\noindent
+\begin{exercisegroup}
+\begin{divisionsolutioneg}{Exercise}{35}{}{exercise-chap6-rev-problems-r-b}%
+\noindent\hypertarget{answer-chap6-rev-problems-r-b-b-back}{}%
 \begin{multicols}{4}
 \begin{enumerate}[label=\alph*]
 \item{}\(\displaystyle \dfrac{\pi}{6}\)%
@@ -73067,8 +73076,8 @@ d. High: day 204, \(105\degree\); low: day 25, \(66\degree\) e. \(d \approx 128\
 \end{multicols}
 %
 \end{divisionsolutioneg}%
-\begin{divisionsolutioneg}{Exercise}{37}{}{exercise-chap6-rev-problems-u-d}%
-\noindent\hypertarget{answer-chap6-rev-problems-u-d-b-back}{}%
+\begin{divisionsolutioneg}{Exercise}{37}{}{exercise-chap6-rev-problems-r-d}%
+\noindent\hypertarget{answer-chap6-rev-problems-r-d-b-back}{}%
 \begin{multicols}{4}
 \begin{enumerate}[label=\alph*]
 \item{}\(\displaystyle 0.34\)%
@@ -73082,13 +73091,13 @@ d. High: day 204, \(105\degree\); low: day 25, \(66\degree\) e. \(d \approx 128\
 \end{exercisegroup}
 \par\medskip\noindent
 \begin{exercisegroupcol}{2}
-\begin{divisionsolutionegcol}{Exercise}{39}{}{exercise-chap6-rev-problems-v-b}%
-\noindent\hypertarget{answer-chap6-rev-problems-v-b-b-back}{}\(158.2\degree\)%
+\begin{divisionsolutionegcol}{Exercise}{39}{}{exercise-chap6-rev-problems-s-b}%
+\noindent\hypertarget{answer-chap6-rev-problems-s-b-b-back}{}\(158.2\degree\)%
 \end{divisionsolutionegcol}%
 \end{exercisegroupcol}
 \par\medskip\noindent
-\begin{divisionsolution}{Exercise}{41}{}{exercise-chap6-rev-problems-w}%
-\noindent\hypertarget{answer-chap6-rev-problems-w-b-back}{}\begin{sidebyside}{1}{0}{0.5}{0}%
+\begin{divisionsolution}{Exercise}{41}{}{exercise-chap6-rev-problems-t}%
+\noindent\hypertarget{answer-chap6-rev-problems-t-b-back}{}\begin{sidebyside}{1}{0}{0.5}{0}%
 \begin{sbspanel}{0.5}%
 \resizebox{\linewidth}{!}{%
 \tikzset{%
@@ -73118,8 +73127,8 @@ d. High: day 204, \(105\degree\); low: day 25, \(66\degree\) e. \(d \approx 128\
 \end{sidebyside}%
 \end{divisionsolution}%
 \begin{exercisegroupcol}{2}
-\begin{divisionsolutionegcol}{Exercise}{43}{}{exercise-chap6-rev-problems-y-b}%
-\noindent\hypertarget{answer-chap6-rev-problems-y-b-b-back}{}%
+\begin{divisionsolutionegcol}{Exercise}{43}{}{exercise-chap6-rev-problems-v-b}%
+\noindent\hypertarget{answer-chap6-rev-problems-v-b-b-back}{}%
 \begin{enumerate}[label=\alph*]
 \item{}\begin{sidebyside}{2}{0}{0}{0.05}%
 \begin{sbspanel}{0.7}%
@@ -73174,8 +73183,8 @@ mid: \(y = 5\), amp: \(3\), period: \(\pi\)%
 \end{enumerate}
 %
 \end{divisionsolutionegcol}%
-\begin{divisionsolutionegcol}{Exercise}{45}{}{exercise-chap6-rev-problems-y-d}%
-\noindent\hypertarget{answer-chap6-rev-problems-y-d-b-back}{}%
+\begin{divisionsolutionegcol}{Exercise}{45}{}{exercise-chap6-rev-problems-v-d}%
+\noindent\hypertarget{answer-chap6-rev-problems-v-d-b-back}{}%
 \begin{enumerate}[label=\alph*]
 \item{}\begin{sidebyside}{2}{0}{0}{0.05}%
 \begin{sbspanel}{0.7}%
@@ -73233,35 +73242,35 @@ mid: \(y = 10\), amp: \(4.8\), period: \(2\pi\)%
 \end{exercisegroupcol}
 \par\medskip\noindent
 \begin{exercisegroupcol}{2}
-\begin{divisionsolutionegcol}{Exercise}{47}{}{exercise-chap6-rev-problems-z-b}%
-\noindent\hypertarget{answer-chap6-rev-problems-z-b-b-back}{}\(\dfrac{5\pi}{12},~\dfrac{17\pi}{12}\)%
+\begin{divisionsolutionegcol}{Exercise}{47}{}{exercise-chap6-rev-problems-w-b}%
+\noindent\hypertarget{answer-chap6-rev-problems-w-b-b-back}{}\(\dfrac{5\pi}{12},~\dfrac{17\pi}{12}\)%
 \end{divisionsolutionegcol}%
 \end{exercisegroupcol}
 \par\medskip\noindent
 \begin{exercisegroupcol}{2}
-\begin{divisionsolutionegcol}{Exercise}{49}{}{exercise-chap6-rev-problems-aa-b}%
-\noindent\hypertarget{answer-chap6-rev-problems-aa-b-b-back}{}\(\dfrac{\pi}{3},~\dfrac{2\pi}{3}\)%
+\begin{divisionsolutionegcol}{Exercise}{49}{}{exercise-chap6-rev-problems-x-b}%
+\noindent\hypertarget{answer-chap6-rev-problems-x-b-b-back}{}\(\dfrac{\pi}{3},~\dfrac{2\pi}{3}\)%
 \end{divisionsolutionegcol}%
-\begin{divisionsolutionegcol}{Exercise}{51}{}{exercise-chap6-rev-problems-aa-d}%
-\noindent\hypertarget{answer-chap6-rev-problems-aa-d-b-back}{}\(\pi\)%
+\begin{divisionsolutionegcol}{Exercise}{51}{}{exercise-chap6-rev-problems-x-d}%
+\noindent\hypertarget{answer-chap6-rev-problems-x-d-b-back}{}\(\pi\)%
 \end{divisionsolutionegcol}%
 \end{exercisegroupcol}
 \par\medskip\noindent
 \begin{exercisegroupcol}{3}
-\begin{divisionsolutionegcol}{Exercise}{53}{}{exercise-chap6-rev-problems-ab-b}%
-\noindent\hypertarget{answer-chap6-rev-problems-ab-b-b-back}{}\(1.37,~4.51\)%
+\begin{divisionsolutionegcol}{Exercise}{53}{}{exercise-chap6-rev-problems-y-b}%
+\noindent\hypertarget{answer-chap6-rev-problems-y-b-b-back}{}\(1.37,~4.51\)%
 \end{divisionsolutionegcol}%
-\begin{divisionsolutionegcol}{Exercise}{55}{}{exercise-chap6-rev-problems-ab-d}%
-\noindent\hypertarget{answer-chap6-rev-problems-ab-d-b-back}{}\(6.02,~3.40\)%
+\begin{divisionsolutionegcol}{Exercise}{55}{}{exercise-chap6-rev-problems-y-d}%
+\noindent\hypertarget{answer-chap6-rev-problems-y-d-b-back}{}\(6.02,~3.40\)%
 \end{divisionsolutionegcol}%
-\begin{divisionsolutionegcol}{Exercise}{57}{}{exercise-chap6-rev-problems-ab-f}%
-\noindent\hypertarget{answer-chap6-rev-problems-ab-f-b-back}{}\(0.32,~5.97\)%
+\begin{divisionsolutionegcol}{Exercise}{57}{}{exercise-chap6-rev-problems-y-f}%
+\noindent\hypertarget{answer-chap6-rev-problems-y-f-b-back}{}\(0.32,~5.97\)%
 \end{divisionsolutionegcol}%
 \end{exercisegroupcol}
 \par\medskip\noindent
 \begin{exercisegroupcol}{2}
-\begin{divisionsolutionegcol}{Exercise}{59}{}{exercise-chap6-rev-problems-ac-b}%
-\noindent\hypertarget{answer-chap6-rev-problems-ac-b-b-back}{}%
+\begin{divisionsolutionegcol}{Exercise}{59}{}{exercise-chap6-rev-problems-z-b}%
+\noindent\hypertarget{answer-chap6-rev-problems-z-b-b-back}{}%
 \begin{multicols}{2}
 \begin{enumerate}[label=\alph*]
 \item{}\(\displaystyle 1.21,~5.07\)%
@@ -73270,8 +73279,8 @@ mid: \(y = 10\), amp: \(4.8\), period: \(2\pi\)%
 \end{multicols}
 %
 \end{divisionsolutionegcol}%
-\begin{divisionsolutionegcol}{Exercise}{61}{}{exercise-chap6-rev-problems-ac-d}%
-\noindent\hypertarget{answer-chap6-rev-problems-ac-d-b-back}{}%
+\begin{divisionsolutionegcol}{Exercise}{61}{}{exercise-chap6-rev-problems-z-d}%
+\noindent\hypertarget{answer-chap6-rev-problems-z-d-b-back}{}%
 \begin{multicols}{2}
 \begin{enumerate}[label=\alph*]
 \item{}\(\displaystyle 0.40,~2.74\)%
@@ -73283,8 +73292,8 @@ mid: \(y = 10\), amp: \(4.8\), period: \(2\pi\)%
 \end{exercisegroupcol}
 \par\medskip\noindent
 \begin{exercisegroupcol}{2}
-\begin{divisionsolutionegcol}{Exercise}{63}{}{exercise-chap6-rev-problems-ad-b}%
-\noindent\hypertarget{answer-chap6-rev-problems-ad-b-b-back}{}\begin{sidebyside}{2}{0}{0}{0.05}%
+\begin{divisionsolutionegcol}{Exercise}{63}{}{exercise-chap6-rev-problems-aa-b}%
+\noindent\hypertarget{answer-chap6-rev-problems-aa-b-b-back}{}\begin{sidebyside}{2}{0}{0}{0.05}%
 \begin{sbspanel}{0.5}%
 \resizebox{\linewidth}{!}{%
 \tikzset{%
@@ -73304,8 +73313,8 @@ Dom:  all real numbers, Rge: \(y \ge 4\)%
 \end{sbspanel}%
 \end{sidebyside}%
 \end{divisionsolutionegcol}%
-\begin{divisionsolutionegcol}{Exercise}{65}{}{exercise-chap6-rev-problems-ad-d}%
-\noindent\hypertarget{answer-chap6-rev-problems-ad-d-b-back}{}\begin{sidebyside}{2}{0}{0}{0.05}%
+\begin{divisionsolutionegcol}{Exercise}{65}{}{exercise-chap6-rev-problems-aa-d}%
+\noindent\hypertarget{answer-chap6-rev-problems-aa-d-b-back}{}\begin{sidebyside}{2}{0}{0}{0.05}%
 \begin{sbspanel}{0.5}%
 \resizebox{\linewidth}{!}{%
 \tikzset{%
@@ -73330,8 +73339,8 @@ Dom:  \(-4 \le s \le 4\), Rge: \(-4 \le y \le 0\)%
 \end{divisionsolutionegcol}%
 \end{exercisegroupcol}
 \par\medskip\noindent
-\begin{divisionsolution}{Exercise}{67}{}{exercise-chap6-rev-problems-ae}%
-\noindent\hypertarget{answer-chap6-rev-problems-ae-b-back}{}%
+\begin{divisionsolution}{Exercise}{67}{}{exercise-chap6-rev-problems-ab}%
+\noindent\hypertarget{answer-chap6-rev-problems-ab-b-back}{}%
 \begin{enumerate}[label=\alph*]
 \item{}\(\displaystyle x^2 + y^2 = 1\)%
 \item{}\(\displaystyle (\cos (t), \sin (t))\)%

@@ -1355,36 +1355,36 @@ Thus, the graph of <m>\tan (\theta)</m> in the third quadrant is the same as its
 
 <exercise><statement><p>Sketch a graph for each of the following functions.  Describe how each is different from the graph of <m>y = \cos \theta</m>.</p>
     <p><ol marker="a" cols="3">
-        <li><m>f(\theta) = 2 + \cos (\theta)</m></li>
-        <li><m>g(\theta) = \cos (2\theta)</m></li>
         <li><m>h(\theta) = 2\cos (\theta)</m></li>
+        <li><m>g(\theta) = \cos (2\theta)</m></li>
+        <li><m>f(\theta) = 2 + \cos (\theta)</m></li>
     </ol></p></statement>
 <answer><p>
     <ol marker="a">
-        <li><sidebyside widths="35% 40%" valigns="middle middle">
-        <image xml:id="exer4-3-1ansa">
-        <description>graph of 2+cosine</description>
-        <latex-image>
-        <![CDATA[
-        \begin{tikzpicture} [scale=0.45]
-        \draw[cyan]
-        (-0.1,0) grid (8,4);
-
-        \draw[->,>=stealth'] (-0.1,0) -- (8.3,0) node[right] {$\theta$};
-        \draw[->,>=stealth'] (0,-.2) -- (0,4.3) node[above] {$y$};
-
-        \foreach \x [evaluate=\x as \xi using int( 45* \x )] in {2, 4, 6, 8}
-        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi $};
-
-        \foreach \y  [evaluate=\y as \yi using int(  \y )] in {1, 2, 3 }
-        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
-
-        \draw[domain=-0:8,smooth,variable=\x,red,very thick] plot ({\x},{ 2+cos(deg(\x*pi/4))});
-        \end{tikzpicture}]]>
-    </latex-image>    </image>
-
-            <p>The midline is <m>y = 2</m>.</p></sidebyside></li>
-        <li><sidebyside widths="35% 40%" valigns="middle middle"><!--<image source="photos/exer4-3-1ansb.png"><description>graph</description></image>-->
+        <li><sidebyside widths="35% 40%" valigns="middle middle"><!--<image source="photos/exer4-3-1ansc.png"><description>graph</description></image>-->
+            <image xml:id="exer4-3-1ansc">
+            <description>graph of 2 cosine</description>
+            <latex-image>
+            <![CDATA[
+            \begin{tikzpicture} [scale=0.45]
+            \draw[cyan]
+            (-0.1,-2) grid (8,2);
+    
+            \draw[->,>=stealth'] (-0.1,0) -- (8.3,0) node[right] {$\theta$};
+            \draw[->,>=stealth'] (0,-2.2) -- (0,2.3) node[above] {$y$};
+    
+            \foreach \x [evaluate=\x as \xi using int( 45* \x )] in {2, 4, 6, 8}
+            \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi $};
+    
+            \foreach \y  [evaluate=\y as \yi using int(  \y )] in { -2, -1, 1, 2 }
+            \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
+    
+            \draw[domain=-0:8,smooth,variable=\x,red,very thick] plot ({\x},{ 2*cos(deg(\x*pi/4))});
+            \end{tikzpicture}]]>
+        </latex-image>
+        </image>
+                <p>The amplitude is 2.</p></sidebyside></li>    
+            <li><sidebyside widths="35% 40%" valigns="middle middle"><!--<image source="photos/exer4-3-1ansb.png"><description>graph</description></image>-->
         <image xml:id="exer4-3-1ansb">
         <description>graph of cosine 2 theta</description>
         <latex-image>
@@ -1407,30 +1407,30 @@ Thus, the graph of <m>\tan (\theta)</m> in the third quadrant is the same as its
     </latex-image>
     </image>
             <p>The period is <m>180\degree</m>.</p></sidebyside></li>
-        <li><sidebyside widths="35% 40%" valigns="middle middle"><!--<image source="photos/exer4-3-1ansc.png"><description>graph</description></image>-->
-        <image xml:id="exer4-3-1ansc">
-        <description>graph of 2 cosine</description>
-        <latex-image>
-        <![CDATA[
-        \begin{tikzpicture} [scale=0.45]
-        \draw[cyan]
-        (-0.1,-2) grid (8,2);
-
-        \draw[->,>=stealth'] (-0.1,0) -- (8.3,0) node[right] {$\theta$};
-        \draw[->,>=stealth'] (0,-2.2) -- (0,2.3) node[above] {$y$};
-
-        \foreach \x [evaluate=\x as \xi using int( 45* \x )] in {2, 4, 6, 8}
-        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi $};
-
-        \foreach \y  [evaluate=\y as \yi using int(  \y )] in { -2, -1, 1, 2 }
-        \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
-
-        \draw[domain=-0:8,smooth,variable=\x,red,very thick] plot ({\x},{ 2*cos(deg(\x*pi/4))});
-        \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-            <p>The amplitude is 2.</p></sidebyside></li>    
-        </ol></p>
+            <li><sidebyside widths="35% 40%" valigns="middle middle">
+                <image xml:id="exer4-3-1ansa">
+                <description>graph of 2+cosine</description>
+                <latex-image>
+                <![CDATA[
+                \begin{tikzpicture} [scale=0.45]
+                \draw[cyan]
+                (-0.1,0) grid (8,4);
+        
+                \draw[->,>=stealth'] (-0.1,0) -- (8.3,0) node[right] {$\theta$};
+                \draw[->,>=stealth'] (0,-.2) -- (0,4.3) node[above] {$y$};
+        
+                \foreach \x [evaluate=\x as \xi using int( 45* \x )] in {2, 4, 6, 8}
+                \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi $};
+        
+                \foreach \y  [evaluate=\y as \yi using int(  \y )] in {1, 2, 3 }
+                \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
+        
+                \draw[domain=-0:8,smooth,variable=\x,red,very thick] plot ({\x},{ 2+cos(deg(\x*pi/4))});
+                \end{tikzpicture}]]>
+            </latex-image>    
+        </image>
+        <p>The midline is <m>y = 2</m>.</p></sidebyside></li>
+    </ol></p>
 </answer></exercise>
 
 <p>The quantities <m>A, B,</m> and <m>k</m> in the equations above are called <term>parameters</term><idx><h>parameter</h></idx>, and their values for a particular function give us information about its graph.</p>
@@ -1490,8 +1490,8 @@ Thus, the graph of <m>\tan (\theta)</m> in the third quadrant is the same as its
 </subsection>
 <subsection>
 <p>Review the following skills you will need for this section.</p>
-<project>
 
+<project>
     <sidebyside><p><ol marker="a">
         <li>Graph the function.</li>
         <li>Give the coordinates of any intercepts, and any maximum or minimum values.</li>
@@ -1568,7 +1568,7 @@ Thus, the graph of <m>\tan (\theta)</m> in the third quadrant is the same as its
         <li><m>(0,-4)</m>, <m>~ (-2,0)</m>, <m>~ (2,0)</m>, Min: <m>-4</m></li>
     </ol></p></li>
     <li><p><ol marker="a">
-        <li><sidebyside width="65%" margins="0% 5%">
+        <li><sidebyside width="59%" margins="0% 5%">
     <image xml:id="ar4-2-4"><description>parabola</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.25]
@@ -1584,7 +1584,7 @@ Thus, the graph of <m>\tan (\theta)</m> in the third quadrant is the same as its
         \draw[domain={-sqrt(11)}:{sqrt(11)},smooth,variable=\x,red,very thick] plot ({\x},{9 - (\x)^2 });
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></li>
-        <li><m>(0,9)</m>, <m>~ (-3,0)</m>, <m>~ (3,0)</m>, Max: <m>9</m></li>
+        <li><m>(0,9)</m>, <m>~ (-3,0)</m>, <m>~ (3,0)</m>, <m>\text{Max: }9</m></li>
     </ol></p></li>
     <li><p><ol marker="a">
         <li><sidebyside width="65%" margins="0% 5%">
@@ -1625,7 +1625,7 @@ Thus, the graph of <m>\tan (\theta)</m> in the third quadrant is the same as its
         <li><m>(0,2)</m>, <m>~ (4,0)</m>,  Min: <m>~0</m></li>
     </ol></p></li>
 </ol></p>
-    </conclusion>
+</conclusion>
 </project>
 
 </subsection>
