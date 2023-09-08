@@ -15,7 +15,18 @@
 
 <p> A <term>Lissajous figure</term><idx>Lissajous figure</idx> is a pattern produced by the intersection of two sinusoidal curves at right angles to each other. They are the curves you often see on oscilloscope screens depicting compound vibration.</p>
 
-<sidebyside width="70%"><image source="photos/ch4-2.png"><description>Lissajous</description></image></sidebyside>
+<sidebyside width="70%"><image xml:id="Lissajous"><description>Two Lissajous curves</description>
+    <latex-image>
+        <![CDATA[
+        \begin{tikzpicture}[scale=1]
+        \draw [domain=0:{2*pi},variable=\t, smooth, samples=65, blue, thick] plot ({sin(deg(3*\t))} , {sin(deg(2 *\t))});
+        \draw [domain=0:{2*pi},variable=\t, smooth, samples=65, blue, thick] plot ({2.7+sin(deg(3*\t))} , {sin(deg(4 *\t))});
+    
+        \draw [domain=0:{2*pi},variable=\t, smooth, samples=65, blue, thick] plot ({5.4+sin(deg(5*\t))} , {sin(deg(4 *\t))});
+    
+        \end{tikzpicture}]]>
+    </latex-image></image>
+</sidebyside>
 
 <p>They were first studied by the American mathematician Nathaniel Bowditch in 1815, and later by the French mathematician Jules-Antoine Lissajous, and today have applications in physics and astronomy, medicine, music, and many other fields.</p>
 

@@ -21,7 +21,32 @@
 <p>Babylonian astronomers kept detailed records on the motion of the planets, and were able to predict solar and lunar eclipses.  All of this required familiarity with angular distances measured on the celestial sphere.</p>
 <p>	To find angles and distances on this imaginary sphere, astronomers invented techniques that are now part of <term>spherical trigonometry</term>. The laws of sines and cosines were first stated in this context, in a slightly different form than the laws for plane trigonometry.</p>
 
-<sidebyside width = "40%"><image source="photos/ch3-3.png"><description>sphere</description></image></sidebyside>
+<sidebyside width = "40%">
+  <image source="spherical-trig"><description>Triangle on sphere</description>
+      <latex-image>
+          <![CDATA[
+          \begin{tikzpicture}[scale=1.2]
+          \coordinate (O) at (0,0 );
+          \coordinate (x) at (190:1.7);
+          \coordinate (y) at (-15:1.4);
+          \coordinate (z) at (0,2.4);
+          \node at (-.25,.15) {$O$};
+          \filldraw[red] (0,2) circle (.4mm) node[above left]{$A$};
+          \filldraw[red] (140:1.3cm and 2cm) circle (.4mm) node[left]{$B$};
+          \filldraw[red] (27:1.cm and 2cm) circle (.4mm) node[right]{$C$};
+          \draw[black,thick,->,>=stealth'] (O)--(x) node[below] {$x$};
+          \draw[black,thick,->,>=stealth'] (O)--(y) node[right] {$y$};
+          \draw[black,thick,->,>=stealth'] (O)--(z) node[right] {$z$};
+          \draw (O) circle (2cm);
+          \draw (O) ellipse (2cm and .3cm);
+          \draw[thick, gray] (90:1.3cm and 2cm) arc (90:200:1.3cm and 2cm);
+          \draw[thick, red] (90:1.3cm and 2cm) arc (90:140:1.3cm and 2cm) node[midway,right, yshift=-3,text=blue]{$c$};
+          \draw[thick, red] (90:1.cm and 2cm) arc   (90:27:1.cm and 2cm) node[midway,right,text=blue]{$b$};
+          \draw[rotate=70,thick, red] (-16:1.2cm and 2cm) arc   (-16:45:1.2cm and 2cm) node[midway,below, xshift=-3,text=blue]{$a$};
+      
+          \end{tikzpicture}]]>
+      </latex-image></image>
+</sidebyside>
 
 <p>On a sphere, a <term>great-circle</term> lies in a plane passing through the sphere's center. It gives the shortest distance between any two points on a sphere,  and is the analogue of a straight line on a plane.  A spherical angle is formed where two such arcs intersect, and a spherical triangle is made up of three arcs of great circles.</p>
 
