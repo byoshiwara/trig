@@ -1,6 +1,6 @@
 %********************************************%
 %*       Generated from PreTeXt source      *%
-%*       on 2023-08-31T16:32:38-07:00       *%
+%*       on 2023-09-19T09:35:07-07:00       *%
 %*   A recent stable commit (2022-07-01):   *%
 %* 6c761d3dba23af92cba35001c852aac04ae99a5f *%
 %*                                          *%
@@ -58,6 +58,11 @@ colback=white, colbacktitle=white, coltitle=black, opacityfill=0.0} }
 %% and is necessary for some smaller documents that use partial tcolor boxes
 %% See:  https://github.com/PreTeXtBook/pretext/issues/1624
 \usetikzlibrary{calc}
+%% We use some more exotic tcolorbox keys to restore indentation to parboxes
+\tcbuselibrary{hooks}
+%% Save default paragraph indentation for use later, when adjusting parboxes
+\newlength{\normalparindent}
+\AtBeginDocument{\setlength{\normalparindent}{\parindent}}
 %% Hyperref should be here, but likes to be loaded late
 %%
 %% Inline math delimiters, \(, \), need to be robust
@@ -446,38 +451,38 @@ colback=white, colbacktitle=white, coltitle=black, opacityfill=0.0} }
 %% End: Semantic Macros
 %% begin: environments for duplicates in solutions divisions
 %% Solutions to inline exercises, style and environment
-\tcbset{ inlinesolutionstyle/.style={bwminimalstyle, runintitlestyle, exercisespacingstyle, after title={\space}, breakable, parbox=false } }
+\tcbset{ inlinesolutionstyle/.style={bwminimalstyle, runintitlestyle, exercisespacingstyle, after title={\space}, breakable, before upper app={\setlength{\parindent}{\normalparindent}} } }
 \newtcolorbox{inlinesolution}[4]{inlinesolutionstyle, title={\hyperref[#4]{#1~#2}\notblank{#3}{\space#3}{}}}
 %% Solutions to division exercises, not in exercise group
 %% Parameter #1 is type-name and is ignored
-\tcbset{ divisionsolutionstyle/.style={bwminimalstyle, runintitlestyle, exercisespacingstyle, after title={\space}, breakable, parbox=false } }
+\tcbset{ divisionsolutionstyle/.style={bwminimalstyle, runintitlestyle, exercisespacingstyle, after title={\space}, breakable, before upper app={\setlength{\parindent}{\normalparindent}} } }
 \newtcolorbox{divisionsolution}[4]{divisionsolutionstyle, title={\hyperlink{#4}{#2}.\notblank{#3}{\space#3}{}}}
 %% Solutions to division exercises, in exercise group, no columns
 %% Parameter #1 is type-name and is ignored
-\tcbset{ divisionsolutionegstyle/.style={bwminimalstyle, runintitlestyle, exercisespacingstyle, after title={\space}, left skip=\egindent, breakable, parbox=false } }
+\tcbset{ divisionsolutionegstyle/.style={bwminimalstyle, runintitlestyle, exercisespacingstyle, after title={\space}, left skip=\egindent, breakable, before upper app={\setlength{\parindent}{\normalparindent}} } }
 \newtcolorbox{divisionsolutioneg}[4]{divisionsolutionegstyle, title={\hyperlink{#4}{#2}.\notblank{#3}{\space#3}{}}}
 %% Solutions to division exercises, in exercise group with columns
 %% Parameter #1 is type-name and is ignored
-\tcbset{ divisionsolutionegcolstyle/.style={bwminimalstyle, runintitlestyle,  exercisespacingstyle, after title={\space}, halign=flush left, unbreakable, parbox=false } }
+\tcbset{ divisionsolutionegcolstyle/.style={bwminimalstyle, runintitlestyle,  exercisespacingstyle, after title={\space}, halign=flush left, unbreakable, before upper app={\setlength{\parindent}{\normalparindent}} } }
 \newtcolorbox{divisionsolutionegcol}[4]{divisionsolutionegcolstyle, title={\hyperlink{#4}{#2}.\notblank{#3}{\space#3}{}}}
-\tcbset{ activitysolutionstyle/.style={bwminimalstyle, runintitlestyle, exercisespacingstyle, after title={\space}, breakable, parbox=false } }
+\tcbset{ activitysolutionstyle/.style={bwminimalstyle, runintitlestyle, exercisespacingstyle, after title={\space}, breakable, before upper app={\setlength{\parindent}{\normalparindent}} } }
 \newtcolorbox{activitysolution}[4]{activitysolutionstyle, title={\hyperref[#4]{#1~#2}\notblank{#3}{\space#3}{}}}
-\tcbset{ projectsolutionstyle/.style={bwminimalstyle, runintitlestyle, exercisespacingstyle, after title={\space}, breakable, parbox=false } }
+\tcbset{ projectsolutionstyle/.style={bwminimalstyle, runintitlestyle, exercisespacingstyle, after title={\space}, breakable, before upper app={\setlength{\parindent}{\normalparindent}} } }
 \newtcolorbox{projectsolution}[4]{projectsolutionstyle, title={\hyperref[#4]{#1~#2}\notblank{#3}{\space#3}{}}}
-\tcbset{ explorationsolutionstyle/.style={bwminimalstyle, runintitlestyle, exercisespacingstyle, after title={\space}, breakable, parbox=false } }
+\tcbset{ explorationsolutionstyle/.style={bwminimalstyle, runintitlestyle, exercisespacingstyle, after title={\space}, breakable, before upper app={\setlength{\parindent}{\normalparindent}} } }
 \newtcolorbox{explorationsolution}[4]{explorationsolutionstyle, title={\hyperref[#4]{#1~#2}\notblank{#3}{\space#3}{}}}
 %% Divisional exercises (and worksheet) as LaTeX environments
 %% Third argument is option for extra workspace in worksheets
 %% Hanging indent occupies a 5ex width slot prior to left margin
 %% Experimentally this seems just barely sufficient for a bold "888."
 %% Division exercises, not in exercise group
-\tcbset{ divisionexercisestyle/.style={bwminimalstyle, runintitlestyle, exercisespacingstyle, left=5ex, breakable, parbox=false } }
+\tcbset{ divisionexercisestyle/.style={bwminimalstyle, runintitlestyle, exercisespacingstyle, left=5ex, breakable, before upper app={\setlength{\parindent}{\normalparindent}} } }
 \newtcolorbox{divisionexercise}[4]{divisionexercisestyle, before title={\hspace{-5ex}\makebox[5ex][l]{#1.}}, title={\notblank{#2}{#2\space}{}}, phantom={\hypertarget{#4}{}}, after={\notblank{#3}{\newline\rule{\workspacestrutwidth}{#3}\newline\vfill}{\par}}}
 %% Division exercises, in exercise group, no columns
-\tcbset{ divisionexerciseegstyle/.style={bwminimalstyle, runintitlestyle, exercisespacingstyle, left=5ex, left skip=\egindent, breakable, parbox=false } }
+\tcbset{ divisionexerciseegstyle/.style={bwminimalstyle, runintitlestyle, exercisespacingstyle, left=5ex, left skip=\egindent, breakable, before upper app={\setlength{\parindent}{\normalparindent}} } }
 \newtcolorbox{divisionexerciseeg}[4]{divisionexerciseegstyle, before title={\hspace{-5ex}\makebox[5ex][l]{#1.}}, title={\notblank{#2}{#2\space}{}}, phantom={\hypertarget{#4}{}}, after={\notblank{#3}{\newline\rule{\workspacestrutwidth}{#3}\newline\vfill}{\par}}}
 %% Division exercises, in exercise group with columns
-\tcbset{ divisionexerciseegcolstyle/.style={bwminimalstyle, runintitlestyle, exercisespacingstyle, left=5ex, halign=flush left, unbreakable, parbox=false } }
+\tcbset{ divisionexerciseegcolstyle/.style={bwminimalstyle, runintitlestyle, exercisespacingstyle, left=5ex, halign=flush left, unbreakable, before upper app={\setlength{\parindent}{\normalparindent}} } }
 \newtcolorbox{divisionexerciseegcol}[4]{divisionexerciseegcolstyle, before title={\hspace{-5ex}\makebox[5ex][l]{#1.}}, title={\notblank{#2}{#2\space}{}}, phantom={\hypertarget{#4}{}}, after={\notblank{#3}{\newline\rule{\workspacestrutwidth}{#3}\newline\vfill}{\par}}}
 %% Equation Numbering
 %% Controlled by  numbering.equations.level  processing parameter
@@ -629,47 +634,47 @@ colback=white, colbacktitle=white, coltitle=black, opacityfill=0.0} }
 %% tcolorbox, with styles, for DEFINITION-LIKE
 %%
 %% definition: fairly simple numbered block/structure
-\tcbset{ definitionstyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, after upper={\space\space\hspace*{\stretch{1}}\(\lozenge\)}, } }
-\newtcolorbox[use counter from=block]{definition}[3]{title={{#1~\thetcbcounter\notblank{#2}{\space\space#2}{}}}, phantomlabel={#3}, breakable, parbox=false, after={\par}, definitionstyle, }
+\tcbset{ definitionstyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, before upper app={\setlength{\parindent}{\normalparindent}}, after upper={\space\space\hspace*{\stretch{1}}\(\lozenge\)}, } }
+\newtcolorbox[use counter from=block]{definition}[3]{title={{#1~\thetcbcounter\notblank{#2}{\space\space#2}{}}}, phantomlabel={#3}, breakable, after={\par}, definitionstyle, }
 %%
 %% tcolorbox, with styles, for REMARK-LIKE
 %%
 %% note: fairly simple numbered block/structure
-\tcbset{ notestyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, } }
-\newtcolorbox[use counter from=block]{note}[3]{title={{#1~\thetcbcounter\notblank{#2}{\space\space#2}{}}}, phantomlabel={#3}, breakable, parbox=false, after={\par}, notestyle, }
+\tcbset{ notestyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, before upper app={\setlength{\parindent}{\normalparindent}}, } }
+\newtcolorbox[use counter from=block]{note}[3]{title={{#1~\thetcbcounter\notblank{#2}{\space\space#2}{}}}, phantomlabel={#3}, breakable, after={\par}, notestyle, }
 %% warning: fairly simple numbered block/structure
-\tcbset{ warningstyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, } }
-\newtcolorbox[use counter from=block]{warning}[3]{title={{#1~\thetcbcounter\notblank{#2}{\space\space#2}{}}}, phantomlabel={#3}, breakable, parbox=false, after={\par}, warningstyle, }
+\tcbset{ warningstyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, before upper app={\setlength{\parindent}{\normalparindent}}, } }
+\newtcolorbox[use counter from=block]{warning}[3]{title={{#1~\thetcbcounter\notblank{#2}{\space\space#2}{}}}, phantomlabel={#3}, breakable, after={\par}, warningstyle, }
 %%
 %% tcolorbox, with styles, for EXAMPLE-LIKE
 %%
 %% example: fairly simple numbered block/structure
-\tcbset{ examplestyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, after upper={\space\space\hspace*{\stretch{1}}\(\square\)}, } }
-\newtcolorbox[use counter from=block]{example}[3]{title={{#1~\thetcbcounter\notblank{#2}{\space\space#2}{}}}, phantomlabel={#3}, breakable, parbox=false, after={\par}, examplestyle, }
+\tcbset{ examplestyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, before upper app={\setlength{\parindent}{\normalparindent}}, after upper={\space\space\hspace*{\stretch{1}}\(\square\)}, } }
+\newtcolorbox[use counter from=block]{example}[3]{title={{#1~\thetcbcounter\notblank{#2}{\space\space#2}{}}}, phantomlabel={#3}, breakable, after={\par}, examplestyle, }
 %%
 %% tcolorbox, with styles, for inline exercises
 %%
 %% inlineexercise: fairly simple numbered block/structure
-\tcbset{ inlineexercisestyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, } }
-\newtcolorbox[use counter from=block]{inlineexercise}[3]{title={{#1~\thetcbcounter\notblank{#2}{\space\space#2}{}}}, phantomlabel={#3}, breakable, parbox=false, after={\par}, inlineexercisestyle, }
+\tcbset{ inlineexercisestyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, before upper app={\setlength{\parindent}{\normalparindent}}, } }
+\newtcolorbox[use counter from=block]{inlineexercise}[3]{title={{#1~\thetcbcounter\notblank{#2}{\space\space#2}{}}}, phantomlabel={#3}, breakable, after={\par}, inlineexercisestyle, }
 %%
 %% tcolorbox, with styles, for PROJECT-LIKE
 %%
 %% activity: fairly simple numbered block/structure
-\tcbset{ activitystyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, } }
-\newtcolorbox[use counter from=project-distinct]{activity}[3]{title={{#1~\thetcbcounter\notblank{#2}{\space\space#2}{}}}, phantomlabel={#3}, breakable, parbox=false, after={\par}, activitystyle, }
+\tcbset{ activitystyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, before upper app={\setlength{\parindent}{\normalparindent}}, } }
+\newtcolorbox[use counter from=project-distinct]{activity}[3]{title={{#1~\thetcbcounter\notblank{#2}{\space\space#2}{}}}, phantomlabel={#3}, breakable, after={\par}, activitystyle, }
 %% project: fairly simple numbered block/structure
-\tcbset{ projectstyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, } }
-\newtcolorbox[use counter from=project-distinct]{project}[3]{title={{#1~\thetcbcounter\notblank{#2}{\space\space#2}{}}}, phantomlabel={#3}, breakable, parbox=false, after={\par}, projectstyle, }
+\tcbset{ projectstyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, before upper app={\setlength{\parindent}{\normalparindent}}, } }
+\newtcolorbox[use counter from=project-distinct]{project}[3]{title={{#1~\thetcbcounter\notblank{#2}{\space\space#2}{}}}, phantomlabel={#3}, breakable, after={\par}, projectstyle, }
 %% exploration: fairly simple numbered block/structure
-\tcbset{ explorationstyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, } }
-\newtcolorbox[use counter from=project-distinct]{exploration}[3]{title={{#1~\thetcbcounter\notblank{#2}{\space\space#2}{}}}, phantomlabel={#3}, breakable, parbox=false, after={\par}, explorationstyle, }
+\tcbset{ explorationstyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, before upper app={\setlength{\parindent}{\normalparindent}}, } }
+\newtcolorbox[use counter from=project-distinct]{exploration}[3]{title={{#1~\thetcbcounter\notblank{#2}{\space\space#2}{}}}, phantomlabel={#3}, breakable, after={\par}, explorationstyle, }
 %%
 %% tcolorbox, with styles, for FIGURE-LIKE
 %%
 %% tableptx: 2-D display structure
 \tcbset{ tableptxstyle/.style={bwminimalstyle, middle=1ex, blockspacingstyle, coltitle=black, bottomtitle=2ex, titlerule=-0.3pt, fonttitle=\blocktitlefont, breakable} }
-\newtcolorbox[use counter from=block]{tableptx}[4]{title={{\textbf{#1~\thetcbcounter}\space#2}}, phantomlabel={#3}, unbreakable, parbox=false, tableptxstyle, }
+\newtcolorbox[use counter from=block]{tableptx}[4]{title={{\textbf{#1~\thetcbcounter}\space#2}}, phantomlabel={#3}, unbreakable, tableptxstyle, }
 %%
 %% xparse environments for introductions and conclusions of divisions
 %%
@@ -681,7 +686,7 @@ colback=white, colbacktitle=white, coltitle=black, opacityfill=0.0} }
 %%
 %% assemblage: fairly simple un-numbered block/structure
 \tcbset{ assemblagestyle/.style={size=normal, colback=white, colbacktitle=white, coltitle=black, colframe=black, rounded corners, titlerule=0.0pt, center title, fonttitle=\blocktitlefont\bfseries, blockspacingstyle, } }
-\newtcolorbox{assemblage}[3]{title={\notblank{#2}{#2}{}}, phantomlabel={#3}, breakable, parbox=false, assemblagestyle}
+\newtcolorbox{assemblage}[3]{title={\notblank{#2}{#2}{}}, phantomlabel={#3}, breakable, before upper app={\setlength{\parindent}{\normalparindent}}, assemblagestyle}
 %% paragraphs: the terminal, pseudo-division
 %% We use the lowest LaTeX traditional division
 \titleformat{\subparagraph}[runin]{\normalfont\normalsize\bfseries}{\thesubparagraph}{1em}{#1}
@@ -690,7 +695,7 @@ colback=white, colbacktitle=white, coltitle=black, opacityfill=0.0} }
 {\subparagraph*{#1}\hypertarget{#2}{}}{}
 %% back colophon, at the very end, typically on its own page
 \tcbset{ backcolophonstyle/.style={bwminimalstyle, blockspacingstyle, before skip=5ex, left skip=0.15\textwidth, right skip=0.15\textwidth, fonttitle=\blocktitlefont\large\bfseries, center title, halign=center, bottomtitle=2ex} }
-\newtcolorbox{backcolophon}[2]{title={#1}, phantom={\hypertarget{#2}{}}, breakable, parbox=false, backcolophonstyle}
+\newtcolorbox{backcolophon}[2]{title={#1}, phantom={\hypertarget{#2}{}}, breakable, before upper app={\setlength{\parindent}{\normalparindent}}, backcolophonstyle}
 %% Graphics Preamble Entries
 \usepackage{tikz}
 \usetikzlibrary{arrows}
@@ -773,7 +778,7 @@ colback=white, colbacktitle=white, coltitle=black, opacityfill=0.0} }
 {\Huge Trigonometry}\\[3\baselineskip]
 {\Large Katherine Yoshiwara}\\[0.5\baselineskip]
 {\Large Los Angeles Pierce College}\\[3\baselineskip]
-{\Large August 31, 2023}\\}
+{\Large September 19, 2023}\\}
 \clearpage
 %% end:   title page
 %% begin: copyright-page
@@ -7470,7 +7475,76 @@ Florence wants to create a piechart (or circle graph) to display how much of her
 %
 \end{sbspanel}%
 \begin{sbspanel}{0.4}[center]%
-\includegraphics[width=\linewidth]{external/photos/ch2-1.png}
+\resizebox{\linewidth}{!}{%
+    \begin{tikzpicture}[scale=1]
+    \coordinate (O) at (0,0);
+    \coordinate (P) at (-1,0);
+
+        \coordinate (Q) at ($(P)+(90:1)$);
+        \draw[draw=black,fill=orange] (0,0)--(P)--(Q)--cycle;
+        \coordinate (P) at (Q);
+
+    \coordinate (Q) at ($(P)+(45:1)$);
+        \draw[draw=black,fill=pink] (0,0)--(P)--(Q)--cycle;
+        \coordinate (P) at (Q);
+
+    \coordinate (Q) at ($(P)!1cm!90:(O)$);
+        \draw[draw=black,fill=yellow] (0,0)--(P)--(Q)--cycle;
+        \coordinate (P) at (Q);
+
+    \coordinate (Q) at ($(P)!1cm!90:(O)$);
+        \draw[draw=black,fill=green] (0,0)--(P)--(Q)--cycle;
+        \coordinate (P) at (Q);
+
+    \coordinate (Q) at ($(P)!1cm!90:(O)$);
+        \draw[draw=black,fill=blue] (0,0)--(P)--(Q)--cycle;
+        \coordinate (P) at (Q);
+
+    \coordinate (Q) at ($(P)!1cm!90:(O)$);
+        \draw[draw=black,fill=magenta] (0,0)--(P)--(Q)--cycle;
+        \coordinate (P) at (Q);
+
+    \coordinate (Q) at ($(P)!1cm!90:(O)$);
+        \draw[draw=black,fill=orange] (0,0)--(P)--(Q)--cycle;
+        \coordinate (P) at (Q);
+
+    \coordinate (Q) at ($(P)!1cm!90:(O)$);
+        \draw[draw=black,fill=pink] (0,0)--(P)--(Q)--cycle;
+        \coordinate (P) at (Q);
+
+    \coordinate (Q) at ($(P)!1cm!90:(O)$);
+        \draw[draw=black,fill=yellow] (0,0)--(P)--(Q)--cycle;
+        \coordinate (P) at (Q);
+
+    \coordinate (Q) at ($(P)!1cm!90:(O)$);
+        \draw[draw=black,fill=green] (0,0)--(P)--(Q)--cycle;
+        \coordinate (P) at (Q);
+
+    \coordinate (Q) at ($(P)!1cm!90:(O)$);
+        \draw[draw=black,fill=blue] (0,0)--(P)--(Q)--cycle;
+        \coordinate (P) at (Q);
+
+    \coordinate (Q) at ($(P)!1cm!90:(O)$);
+        \draw[draw=black,fill=magenta] (0,0)--(P)--(Q)--cycle;
+        \coordinate (P) at (Q);
+
+    \coordinate (Q) at ($(P)!1cm!90:(O)$);
+        \draw[draw=black,fill=orange] (0,0)--(P)--(Q)--cycle;
+        \coordinate (P) at (Q);
+
+    \coordinate (Q) at ($(P)!1cm!90:(O)$);
+        \draw[draw=black,fill=pink] (0,0)--(P)--(Q)--cycle;
+        \coordinate (P) at (Q);
+
+    \coordinate (Q) at ($(P)!1cm!90:(O)$);
+        \draw[draw=black,fill=yellow] (0,0)--(P)--(Q)--cycle;
+        \coordinate (P) at (Q);
+
+    \coordinate (Q) at ($(P)!1cm!90:(O)$);
+        \draw[draw=black,fill=cyan] (0,0)--(P)--(Q)--cycle;
+        \coordinate (P) at (Q);
+\end{tikzpicture}
+}%
 \end{sbspanel}%
 \end{sidebyside}%
 \par
@@ -14052,13 +14126,34 @@ Babylonian astronomers kept detailed records on the motion of the planets, and w
 To find angles and distances on this imaginary sphere, astronomers invented techniques that are now part of \terminology{spherical trigonometry}. The laws of sines and cosines were first stated in this context, in a slightly different form than the laws for plane trigonometry.%
 \begin{sidebyside}{1}{0.3}{0.3}{0}%
 \begin{sbspanel}{0.4}%
-\includegraphics[width=\linewidth]{external/photos/ch3-3.png}
+\resizebox{\linewidth}{!}{%
+    \begin{tikzpicture}[scale=1.2]
+    \coordinate (O) at (0,0 );
+    \coordinate (x) at (190:1.7);
+    \coordinate (y) at (-15:1.4);
+    \coordinate (z) at (0,2.4);
+    \node at (-.25,.15) {$O$};
+    \filldraw[red] (0,2) circle (.4mm) node[above left]{$A$};
+    \filldraw[red] (140:1.3cm and 2cm) circle (.4mm) node[left]{$B$};
+    \filldraw[red] (27:1.cm and 2cm) circle (.4mm) node[right]{$C$};
+    \draw[black,thick,->,>=stealth'] (O)--(x) node[below] {$x$};
+    \draw[black,thick,->,>=stealth'] (O)--(y) node[right] {$y$};
+    \draw[black,thick,->,>=stealth'] (O)--(z) node[right] {$z$};
+    \draw (O) circle (2cm);
+    \draw (O) ellipse (2cm and .3cm);
+    \draw[thick, gray] (90:1.3cm and 2cm) arc (90:200:1.3cm and 2cm);
+    \draw[thick, red] (90:1.3cm and 2cm) arc (90:140:1.3cm and 2cm) node[midway,right, yshift=-3,text=blue]{$c$};
+    \draw[thick, red] (90:1.cm and 2cm) arc   (90:27:1.cm and 2cm) node[midway,right,text=blue]{$b$};
+    \draw[rotate=70,thick, red] (-16:1.2cm and 2cm) arc   (-16:45:1.2cm and 2cm) node[midway,below, xshift=-3,text=blue]{$a$};
+
+    \end{tikzpicture}
+}%
 \end{sbspanel}%
 \end{sidebyside}%
 \par
 On a sphere, a \terminology{great-circle} lies in a plane passing through the sphere's center. It gives the shortest distance between any two points on a sphere,  and is the analogue of a straight line on a plane.  A spherical angle is formed where two such arcs intersect, and a spherical triangle is made up of three arcs of great circles.%
 \par
-The spherical law of sines was first introduced in Europe in 1464 by Johann Muller, also known as Regiomontus, who wrote:%
+The spherical law of sines was first introduced in Europe in 1464 by Johann Müller, also known as Regiomontanus, who wrote:%
 \par
 "You, who wish to study great and wondrous things, who wonder about the movement of the stars, must read these theorems about triangles. ... For no one can bypass the science of triangles and reach a satisfying knowledge of the stars."%
 \end{introduction}%
@@ -21546,7 +21641,15 @@ To see the derivation for an obtuse triangle, follow the steps:%
 A \terminology{Lissajous figure}\index{Lissajous figure} is a pattern produced by the intersection of two sinusoidal curves at right angles to each other. They are the curves you often see on oscilloscope screens depicting compound vibration.%
 \begin{sidebyside}{1}{0.15}{0.15}{0}%
 \begin{sbspanel}{0.7}%
-\includegraphics[width=\linewidth]{external/photos/ch4-2.png}
+\resizebox{\linewidth}{!}{%
+    \begin{tikzpicture}[scale=1]
+    \draw [domain=0:{2*pi},variable=\t, smooth, samples=65, blue, thick] plot ({sin(deg(3*\t))} , {sin(deg(2 *\t))});
+    \draw [domain=0:{2*pi},variable=\t, smooth, samples=65, blue, thick] plot ({2.7+sin(deg(3*\t))} , {sin(deg(4 *\t))});
+
+    \draw [domain=0:{2*pi},variable=\t, smooth, samples=65, blue, thick] plot ({5.4+sin(deg(5*\t))} , {sin(deg(4 *\t))});
+
+    \end{tikzpicture}
+}%
 \end{sbspanel}%
 \end{sidebyside}%
 \par
@@ -22784,7 +22887,7 @@ Both angles are shown above. You can check that the cosines of \(128.7\degree\) 
 \begin{multicols}{2}
 \begin{enumerate}[label=\alph*]
 \item{}\(\displaystyle 254.7\degree\)%
-\item{}\(105.3\degree\), \(~-258.3\degree\)%
+\item{}\(105.3\degree\), \(~258.3\degree\)%
 \end{enumerate}
 \end{multicols}
 %
@@ -67091,7 +67194,7 @@ For Problems 79\textendash{}82, solve the equation.%
 \item{}\(\displaystyle 135\degree\)%
 \item{}\(\displaystyle 60\degree\)%
 \item{}\(\displaystyle 155\degree\)%
-\item{}\(\displaystyle 25\degree\)%
+\item{}\(\displaystyle 15\degree\)%
 \item{}\(\displaystyle 70\degree\)%
 \end{enumerate}
 \end{multicols}
