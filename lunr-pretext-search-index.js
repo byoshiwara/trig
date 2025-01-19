@@ -1,18 +1,18 @@
 var ptx_lunr_search_style = "textbook";
 var ptx_lunr_docs = [
 {
-  "id": "frontmatter-2",
+  "id": "front-colophon",
   "level": "1",
-  "url": "frontmatter-2.html",
+  "url": "front-colophon.html",
   "type": "Colophon",
   "number": "",
   "title": "Colophon",
-  "body": " copyright  "
+  "body": ""
 },
 {
-  "id": "frontmatter-3",
+  "id": "frontmatter-4",
   "level": "1",
-  "url": "frontmatter-3.html",
+  "url": "frontmatter-4.html",
   "type": "Preface",
   "number": "",
   "title": "Preface",
