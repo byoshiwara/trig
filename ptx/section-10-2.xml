@@ -2,16 +2,14 @@
 
 <section xml:id="Polar-Graphs"   xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Polar Graphs</title>
-<idx><h>polar graphs</h></idx>
-<idx><h>polar coordinates</h><h>graphing</h></idx>
+    <idx><h>polar graphs</h></idx>
+    <idx><h>polar coordinates</h><h>graphing</h></idx>
 
 <subsection><title>Graphing in Polar Coordinates</title>
+
 <p>When we plot points in Cartesian coordinates, we start at the origin and move a distance right or left given by the <m>x</m>-coordinate of the point, then move up or down according to the <m>y</m>-coordinate. When we sketch the graph of an equation or function, we think of drawing the graph from left to right, with the "height" of the graph at each <m>x</m>-value given by the function, as shown in figure (a).</p>
 
-<sidebyside width = "60%">
-    <image xml:id="fig10-2-1">
-        <description>Cartesian and polar graphs</description>
-        <latex-image>
+    <image width = "60%" xml:id="fig10-2-1"><description>Cartesian and polar graphs</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=1.2]
         \def\d{-9/2};
@@ -23,7 +21,6 @@
         }
         \draw[domain=0:2,smooth,variable=\x,red,very thick] plot ({\x+\d},{0.5*cos(90*\x))});
         \node[text=black] at (-3.5,-1.4) {a.};
-
 
         %polar 
         \coordinate(O) at (0,0);
@@ -38,17 +35,15 @@
         }
         \node[text=black] at (0,-1.4) {b.};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside>
+    </latex-image></image>
 
-  <p>In polar coordinates, however, the dependent variable, <m>r</m>, gives not a height but a distance from the pole in direction <m>\theta</m>, as shown in figure (b). When graphing an equation in polar coordinates, we think of sweeping around the pole in the counterclockwise direction, and at each angle <m>\theta</m> the <m>r</m>-value tells us how far the graph is from the pole. </p>
+<p>In polar coordinates, however, the dependent variable, <m>r</m>, gives not a height but a distance from the pole in direction <m>\theta</m>, as shown in figure (b). When graphing an equation in polar coordinates, we think of sweeping around the pole in the counterclockwise direction, and at each angle <m>\theta</m> the <m>r</m>-value tells us how far the graph is from the pole. </p>
 
 <example><statement><p>Graph the polar equation <m>r=2\sin (\theta)</m>.</p></statement>
 
 <solution><p>We make a table of values, choosing the special values for <m>\theta</m>. For each value of <m>\theta</m>, we evaluate <m>r=2\sin (\theta)</m>.</p>
 
-<sidebyside width="65%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
+<tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
     <row bottom="minor">
         <cell><m>\theta</m></cell>
         <cell><m>0</m></cell>
@@ -71,14 +66,11 @@
         <cell><m>\sqrt{2}</m></cell>
         <cell><m>1</m></cell>
         <cell><m>0</m></cell></row>
-    </tabular></sidebyside>
+    </tabular>
 
 <p>First we'll plot the points in the first quadrant.  Observe that as <m>\theta</m> increases from <m>0</m> to <m>\dfrac{\pi}{2}</m>, <m>r</m> increases from <m>0</m> to <m>2</m>.  Starting at the pole, we connect the points in order of increasing <m>\theta</m>.  Imagine a radial line sweeping around the graph through the first quadrant:  as the angle increases, the length of the segment increases, so that its tip traces out the graph shown in figure (a).</p>  
     
-<sidebyside width="70%">
-    <image xml:id="exam10-2-1">
-        <description>polar graphs</description>
-        <latex-image>
+    <image width="70%" xml:id="exam10-2-1"><description>polar graphs</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.81]
         \coordinate(O) at (0,0);
@@ -113,13 +105,11 @@
         \draw[red,very thick] ($(O)+(0,1)$) circle (1cm) ;
         \node at ($(O)+(0,-2.5)$){b.};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside>
+    </latex-image></image>
 
 <p>Now continue plotting the points in the table as <m>\theta</m> increases from <m>\dfrac{\pi}{2}</m> to <m>\pi</m>. In the second quadrant, <m>r</m> decreases as <m>\theta</m> increases, as shown in figure (b). The graph we obtain is, in fact, a circle, which we will prove algebraically shortly. However, we have not yet plotted points for <m>\theta</m> between <m>0</m> and <m>2\pi</m>. Because <m>\sin (\theta)</m> is negative in the third and fourth quadrants, all the <m>r</m>-values for these angles are negative.</p>
 
-<sidebyside width="70%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
+<tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
     <row bottom="minor">
         <cell><m>\theta</m></cell>
         <cell><m>\pi</m></cell>
@@ -142,9 +132,10 @@
         <cell><m>-\sqrt{2}</m></cell>
         <cell><m>-1</m></cell>
         <cell><m>0</m></cell></row>
-    </tabular></sidebyside>
+    </tabular>
 
-<p>When we plot the points in this table, we see that the original graph is traced out again. For example, the point <m>\left(\dfrac{7\pi}{6}, -1\right)</m> is the same as the point <m>\left(\dfrac{\pi}{6}, 1\right)</m>, the point <m>\left(\dfrac{5\pi}{4}, -\sqrt{2}\right)</m> is the same as the point <m>\left(\dfrac{\pi}{4}, \sqrt{2}\right)</m>, and so on, around the circle.  Thus, the graph of <m>r=2\sin \theta</m> is a circle, traced twice for <m>0 \le \theta \le 2\pi</m>.</p></solution></example>
+<p>When we plot the points in this table, we see that the original graph is traced out again. For example, the point <m>\left(\dfrac{7\pi}{6}, -1\right)</m> is the same as the point <m>\left(\dfrac{\pi}{6}, 1\right)</m>, the point <m>\left(\dfrac{5\pi}{4}, -\sqrt{2}\right)</m> is the same as the point <m>\left(\dfrac{\pi}{4}, \sqrt{2}\right)</m>, and so on, around the circle.  Thus, the graph of <m>r=2\sin \theta</m> is a circle, traced twice for <m>0 \le \theta \le 2\pi</m>.</p>
+</solution></example>
 
 <p>To prove that the graph in the precious Example is really a circle, we convert the equation <m>r=2\sin (\theta)</m> to Cartesian form. First, multiply both sides by <m>r</m> to obtain 
         <me>r^2=2r\sin (\theta)</me>
@@ -157,10 +148,7 @@
 We have the equation of a circle with center <m>(0,1)</m> and radius <m>1</m>.</p>
 
 <exercise><statement><p>Graph the polar equation <m>r=4\cos(\theta)</m>.</p></statement>
-<answer><sidebyside width="23%" margins="0% 5%">
-    <image xml:id="exer10-2-1ans">
-        <description>polar graph</description>
-        <latex-image>
+<answer><image width="23%" xml:id="exer10-2-1ans"><description>polar graph</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=0.35]
         \coordinate(O) at (0,0);
@@ -173,14 +161,13 @@ We have the equation of a circle with center <m>(0,1)</m> and radius <m>1</m>.</
         }
         \draw[domain=0:6,smooth,variable=\x,red,very thick] plot ({30*\x}:{4*cos(30*\x))});
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside></answer></exercise>
+    </latex-image></image></answer></exercise>
 </subsection>
 
 <subsection><title>Using a Graphing Calculator</title>
 
-<p>   You are familiar with the graphs of many equations in Cartesian coordinates, including lines, parabolas and other conic sections, and the graphs of basic functions. You should now become familiar with some standard graphs in polar coordinates. These include circles and roses, cardioids and limaçons, lemniscates, and spirals.</p>
+<p>You are familiar with the graphs of many equations in Cartesian coordinates, including lines, parabolas and other conic sections, and the graphs of basic functions. You should now become familiar with some standard graphs in polar coordinates. These include circles and roses, cardioids and limaçons, lemniscates, and spirals.</p>
+
 <p> At the end of this section you will find a Catalog of the basic polar graphs and their properties. You can use your calculator, set in Polar mode, to experiment with these graphs. </p>
 
 <example><statement><p>Graph the Archimedean spiral <m>r=2\theta</m>, for <m>0 \le \theta \le 6\pi</m>.</p></statement>
@@ -188,13 +175,11 @@ We have the equation of a circle with center <m>(0,1)</m> and radius <m>1</m>.</
 <solution><p>After setting the calculator in Polar mode, we enter the equation <m>r=2\theta</m> and enter the window settings</p>
 <sidebyside widths="50% 30%" valigns="middle middle"><p>
     <md><mrow>\theta\text{min}\amp=0~~~~~~~~~~\theta\text{max}=6\pi~~~~\theta\text{step}=0.1</mrow>
-    <mrow>\text{Xmin}\amp=-25~~~~\text{Xmax}=25~~~~\text{Xstep}=5</mrow>
-    <mrow>\text{Ymin}\amp=-25~~~~\text{Ymax}=25~~~~~~\text{Yscl}=5</mrow>
-</md>
+        <mrow>\text{Xmin}\amp=-25~~~~\text{Xmax}=25~~~~\text{Xstep}=5</mrow>
+        <mrow>\text{Ymin}\amp=-25~~~~\text{Ymax}=25~~~~~~\text{Yscl}=5</mrow></md>
 We then press Zoom 5 to set a square window. The graph is shown at right.</p>
-    <image xml:id="exam10-2-2">
-        <description>polar graph</description>
-        <latex-image>
+    
+    <image xml:id="exam10-2-2"><description>polar graph</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=0.04]
         \coordinate(O) at (0,0);
@@ -207,13 +192,11 @@ We then press Zoom 5 to set a square window. The graph is shown at right.</p>
         }
         \draw[domain=0:3,smooth, samples=257,variable=\x,red,very thick] plot ({deg(2*pi*\x)}:{4*pi*\x});
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside>
+    </latex-image></image></sidebyside>
 
 <p>Studying a table of values can help us understand the shape of the graph.</p>
 
-<sidebyside width="50%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
+<tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
     <row bottom="minor">
         <cell><m>\theta</m></cell>
         <cell><m>0.25</m></cell>
@@ -228,20 +211,15 @@ We then press Zoom 5 to set a square window. The graph is shown at right.</p>
         <cell><m>1.50</m></cell>
         <cell><m>2.00</m></cell>
         <cell><m>2.50</m></cell></row>
-    </tabular></sidebyside>
+    </tabular>
 <p>As <m>\theta</m> increases, <m>r</m> increases also, at a constant rate. We wind our way around the pole, steadily increasing our distance from the pole as we go. We spiral outwards, tracing the graph shown above.</p></solution></example>
 
 <exercise><statement><p>Use a calculator to graph the polar equation <m>r=e^{0.1\theta}</m>.  Use the window settings
-<md>
-    <mrow>\theta\text{min}\amp=0~~~~~~~~~~\theta\text{max}=12\pi~~~~~\theta\text{step}=0.5</mrow>
-    <mrow>\text{Xmin}\amp=-45~~~~\text{Xmax}=45~~~~~~\text{Xstep}=10</mrow>
-    <mrow>\text{Ymin}\amp=-35~~~~\text{Ymax}=35~~~~~~~~~~\text{Yscl}=10</mrow>
-</md>
-</p></statement>
-<answer><sidebyside width="25%" margins="0% 5%">
-    <image xml:id="exer10-2-2ans">
-        <description>polar graph spiral</description>
-        <latex-image>
+    <md><mrow>\theta\text{min}\amp=0~~~~~~~~~~\theta\text{max}=12\pi~~~~~\theta\text{step}=0.5</mrow>
+        <mrow>\text{Xmin}\amp=-45~~~~\text{Xmax}=45~~~~~~\text{Xstep}=10</mrow>
+        <mrow>\text{Ymin}\amp=-35~~~~\text{Ymax}=35~~~~~~~~~~\text{Yscl}=10</mrow></md></p></statement>
+
+<answer><image width="25%" xml:id="exer10-2-2ans"><description>polar graph spiral</description><latex-image>
             <![CDATA[\tikzset{%
             }
         \begin{tikzpicture} [scale=0.04]
@@ -255,26 +233,20 @@ We then press Zoom 5 to set a square window. The graph is shown at right.</p>
         }
         \draw[domain=0:6,smooth, samples=257,variable=\x,red,very thick] plot ({deg(2*pi*\x)}:{e^(0.2*pi*\x)});
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside></answer></exercise>
+    </latex-image></image></answer></exercise>
 
 <p> It is important to connect the points on the graph in order of increasing <m>\theta</m>.</p> 
 
 <example><statement><p>Graph the polar equation <m>r=2\sin (3\theta)</m>.</p></statement>
 
 <solution><p>We'll graph the equation in stages in order to see how the graph is traced out. Begin with the window settings
-    <md>
-        <mrow>\theta\text{min}\amp=0~~~~~~~~~~~\theta\text{max}=\dfrac{\pi}{3}~~~~~~\theta\text{step}=0.5</mrow>
+    <md><mrow>\theta\text{min}\amp=0~~~~~~~~~~~\theta\text{max}=\dfrac{\pi}{3}~~~~~~\theta\text{step}=0.5</mrow>
         <mrow>\text{Xmin}\amp=-4.5~~~~\text{Xmax}=4.5~~~~~~\text{Xstep}=1</mrow>
-        <mrow>\text{Ymin}\amp=-3~~~~~~~\text{Ymax}=3~~~~~~~~~~~~\text{Yscl}=1</mrow>
-    </md>
+        <mrow>\text{Ymin}\amp=-3~~~~~~~\text{Ymax}=3~~~~~~~~~~~~\text{Yscl}=1</mrow></md>
 Watch as your calculator produces the graph shown in figure (a).</p>
 
 <sidebyside widths="23% 23% 23%">    
-    <image xml:id="exam10-2-3a">
-        <description>one loop</description>
-        <latex-image>
+    <image xml:id="exam10-2-3a"><description>one loop</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=0.4]
         \coordinate(O) at (0,0);
@@ -289,11 +261,8 @@ Watch as your calculator produces the graph shown in figure (a).</p>
         \draw[domain=0:4,smooth, samples=257,variable=\x,red,very thick] plot ({15*\x}:{2*sin(45*\x});
         \node at (0,-4){a.};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-    <image xml:id="exam10-2-3b">
-        <description>two loops</description>
-        <latex-image>
+    </latex-image></image>
+    <image xml:id="exam10-2-3b"><description>two loops</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=0.42]
         \coordinate(O) at (0,0);
@@ -309,11 +278,8 @@ Watch as your calculator produces the graph shown in figure (a).</p>
         \draw[domain=0:8,smooth, samples=257,variable=\x,red,very thick] plot ({15*\x}:{2*sin(45*\x});
         \node at (0,-4){b.};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-    <image xml:id="exam10-2-3c">
-        <description>three loops</description>
-        <latex-image>
+    </latex-image></image>
+    <image xml:id="exam10-2-3c"><description>three loops</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=0.4]
         \coordinate(O) at (0,0);
@@ -329,13 +295,11 @@ Watch as your calculator produces the graph shown in figure (a).</p>
         \draw[domain=0:12,smooth, samples=257,variable=\x,red,very thick] plot ({15*\x}:{2*sin(45*\x});
         \node at (0,-4){c.};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside>
+    </latex-image></image></sidebyside>
 
 <p>Observe that, as <m>\theta</m> increases from <m>0</m> to <m>\dfrac{\pi}{3}</m>, <m>r</m> first increases, reaching its maximum value of 2 at <m>\theta = \dfrac{\pi}{6}</m> and then decreases back to 0. You can verify the values in the table below, which shows the points at multiples of <m>\dfrac{\pi}{18}</m>. These points create the first loop of the graph.</p>
 
-<sidebyside width="55%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
+<tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
     <row bottom="minor">
         <cell><m>\theta</m></cell>
         <cell><m>0</m></cell>
@@ -363,11 +327,11 @@ Watch as your calculator produces the graph shown in figure (a).</p>
         <cell><m>\sqrt{3}</m></cell>
         <cell><m>1</m></cell>
         <cell><m>0</m></cell></row>
-    </tabular></sidebyside>
+    </tabular>
 
 <p>Next, change <m>\theta\text{max}</m> to <m>\dfrac{2\pi}{3}</m>, and graph again. This time the calculator traces out two loops, as shown in figure (b). For <m>\theta</m> between <m>\dfrac{\pi}{3}</m> and <m>\dfrac{2\pi}{3}</m>, <m>r</m> is negative, so the second loop lies in the third and fourth quadrants.</p>
 
-<sidebyside width="60%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
+<tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
     <row bottom="minor">
         <cell><m>\theta</m></cell>
         <cell><m>\dfrac{\pi}{3}</m></cell>
@@ -395,14 +359,14 @@ Watch as your calculator produces the graph shown in figure (a).</p>
         <cell><m>-\sqrt{3}</m></cell>
         <cell><m>-1</m></cell>
         <cell><m>0</m></cell></row>
-    </tabular></sidebyside>
+    </tabular>
 
   <p>Finally, change <m>\theta\text{max}</m> to <m>\pi</m>, and graph again. For <m>\theta</m> between <m>\dfrac{2\pi}{3}</m> and <m>\pi</m>, the graph traces out a third loop, as shown in figure (c). For <m>\theta</m> between <m>\pi</m> and <m>2\pi</m>, the entire graph is traced a second time. The finished graph is a rose with 3 petals of length 2.</p></solution></example>
 
-<exercise><statement><p><ol marker="a">
+<exercise><statement><p><ol marker="a.">
     <li>Use your calculator to graph the polar equation <m>r=2\cos (3\theta)</m>.</li>  
     <li><p>Complete the table of values for the function.</p>
-      <sidebyside width="60%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
+        <tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
     <row bottom="minor">  
         <cell><m>\theta</m></cell>
         <cell><m>0</m></cell>
@@ -421,11 +385,9 @@ Watch as your calculator produces the graph shown in figure (a).</p>
         <cell><m>\hphantom{000}</m></cell>
         <cell><m>\hphantom{000}</m></cell>
         <cell><m>\hphantom{000}</m></cell></row>
-    </tabular></sidebyside></li> 
-<li><sidebyside widths= "50% 25%" valigns="middle middle"><p>Sketch the graph by hand on the grid at right.</p>
-    <image xml:id="exer10-2-3">
-        <description>polar grid</description>
-        <latex-image>
+    </tabular></li> 
+    <li><sidebyside widths= "50% 25%" valigns="middle middle"><p>Sketch the graph by hand on the grid at right.</p>
+    <image xml:id="exer10-2-3"><description>polar grid</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.3]
         \coordinate(O) at (0,0);
@@ -437,13 +399,10 @@ Watch as your calculator produces the graph shown in figure (a).</p>
         \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
         }
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside></li></ol></p></statement>
-<answer><sidebyside width="25%" margins="0% 5%">
-    <image xml:id="exer10-2-3ans">
-        <description>polar graph: three petals</description>
-        <latex-image>
+    </latex-image></image></sidebyside></li>
+</ol></p></statement>
+
+<answer><image width="25%" xml:id="exer10-2-3ans"><description>polar graph: three petals</description><latex-image>
        <![CDATA[
         \begin{tikzpicture} [scale=.3]
         \coordinate(O) at (0,0);
@@ -456,35 +415,29 @@ Watch as your calculator produces the graph shown in figure (a).</p>
         }
         \draw[domain=0:12,smooth, samples=257,variable=\x,red,very thick] plot ({15*\x}:{2*cos(45*\x});
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside></answer></exercise>
+    </latex-image></image></answer></exercise>
 </subsection>
 
 <subsection><title>Sketching Familiar Equations</title>
 
-<p> You should also be able to sketch the standard polar graphs by hand. Once you recognize an equation as a particular type of graph, say a rose or a limaçon, you can sketch the graph quickly by finding just a few well-chosen guidepoints.  The next example demonstrates a technique for sketching a rose.</p>
+<p>You should also be able to sketch the standard polar graphs by hand. Once you recognize an equation as a particular type of graph, say a rose or a limaçon, you can sketch the graph quickly by finding just a few well-chosen guidepoints. The next example demonstrates a technique for sketching a rose.</p>
 
 <example><statement><p>Graph the polar equation <m>r=3\sin (2\theta)</m>.</p></statement>
 
 <solution><p>Referring to the Catalog of Polar Graphs, we see that the graph of this equation is a <term>rose</term>, with petal length <m>a=3</m> and four petals, because <m>2n=4</m>. If we can locate the tips of the petals, we can use them as guidepoints to sketch the graph.</p>
+
 <p> Now, the points at the tips of the petals have <m>r=3</m>, so we substitute <m>r=3</m> into the equation of the rose to find the values of <m>\theta</m> at those points.
-<md>
-    <mrow>3 \amp =3\sin (2\theta)  \amp\amp \blert{\text{Divide both sides by } 3.}\\
-    1 \amp = \sin (2\theta)   \amp\amp \blert{\text{Apply the arcsine function to both sides.}}</mrow>
-    <mrow>\dfrac{\pi}{2} \amp = 2\theta    \amp\amp \blert{\text{Divide both sides by } 2.}</mrow>
-    <mrow>\dfrac{\pi}{4} \amp = \theta</mrow>
-</md></p>
+    <md><mrow>3 \amp = 3\sin (2\theta)  \amp\amp \blert{\text{Divide both sides by } 3.}\\
+              1 \amp = \sin (2\theta)   \amp\amp \blert{\text{Apply the arcsine function to both sides.}}</mrow>
+        <mrow>\dfrac{\pi}{2} \amp = 2\theta    \amp\amp \blert{\text{Divide both sides by } 2.}</mrow>
+        <mrow>\dfrac{\pi}{4} \amp = \theta</mrow></md></p>
 <p>Thus, one of the petal tips is located at <m>\theta = \dfrac{\pi}{4}</m>. Because the 4 petals are evenly spaced around the pole, the angle between the petals is <m>\dfrac{2\pi}{4} = \dfrac{\pi}{2}</m>, and the other petal tips occur at
-<md>
-    <mrow>\theta \amp = \dfrac{\pi}{4} + \dfrac{\pi}{2} = \dfrac{3\pi}{4}</mrow>
-    <mrow>\theta \amp = \dfrac{\pi}{4} + 2\left(\dfrac{\pi}{2}\right) = \dfrac{5\pi}{4}</mrow>
-    <mrow>\theta \amp = \dfrac{\pi}{4} + 3\left(\dfrac{\pi}{2}\right) = \dfrac{7\pi}{4}</mrow>
-</md></p>
+    <md><mrow>\theta \amp = \dfrac{\pi}{4} + \dfrac{\pi}{2} = \dfrac{3\pi}{4}</mrow>
+        <mrow>\theta \amp = \dfrac{\pi}{4} + 2\left(\dfrac{\pi}{2}\right) = \dfrac{5\pi}{4}</mrow>
+        <mrow>\theta \amp = \dfrac{\pi}{4} + 3\left(\dfrac{\pi}{2}\right) = \dfrac{7\pi}{4}</mrow></md></p>
+
 <sidebyside widths="60% 25%" valigns="middle middle"><p>We plot the tips of the petals as guidepoints, at <m>\left(3, \dfrac{\pi}{4}\right)</m>,<m>~ \left(3, \dfrac{3\pi}{4}\right)</m>, <m>~ \left(3, \dfrac{5\pi}{4}\right)</m>and <m>(3, \dfrac{7\pi}{4})</m>. Now we can sketch a rose with 4 petals of length 3, as shown at right.</p>
-    <image xml:id="exam10-2-4">
-        <description>rose</description>
-        <latex-image>
+    <image xml:id="exam10-2-4"><description>rose</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.36]
         \coordinate(O) at (0,0);
@@ -497,15 +450,12 @@ Watch as your calculator produces the graph shown in figure (a).</p>
         }
         \draw[domain=0:24,smooth, samples=257,variable=\x,red,very thick] plot ({15*\x}:{3*sin(30*\x});
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
- </sidebyside></solution></example>
+    </latex-image></image></sidebyside>
+</solution></example>
 
 <exercise><statement><p>Graph the polar equation <m>r=4\cos (5\theta)</m>.</p></statement>
-<answer><sidebyside width="24%" margins="0% 5%">
-    <image xml:id="exer10-2-4ans">
-        <description>rose</description>
-        <latex-image>
+
+<answer><image width="24%" xml:id="exer10-2-4ans"><description>rose</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.3]
         \coordinate(O) at (0,0);
@@ -518,9 +468,8 @@ Watch as your calculator produces the graph shown in figure (a).</p>
         }
         \draw[domain=0:12,smooth, samples=257,variable=\x,red,very thick] plot ({15*\x}:{4*cos(75*\x});
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside></answer></exercise>
+    </latex-image></image>
+</answer></exercise>
 
 <p> The <term>limaçons</term>, <m>r=a\pm\sin (\theta)</m> and <m>r=a\pm\cos (\theta)</m>, are another family of polar graphs.  In particular, the <term>cardioid</term> is a special case of a limaçon with <m>a=b</m>.</p>
 
@@ -547,9 +496,7 @@ Watch as your calculator produces the graph shown in figure (a).</p>
     </tabular></sidebyside>
 
 <sidebyside widths="60% 30%" valigns="middle middle"><p>We plot the guidepoints and connect them in order with a smooth curve, as shown below. Note that this limaçon involving cosine is symmetric about the <m>x</m>-axis; limaçons involving sine are symmetric about the <m>y</m>-axis.</p>
-    <image xml:id="exam10-2-5">
-        <description>limacon</description>
-        <latex-image>
+    <image xml:id="exam10-2-5"><description>limacon</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.3]
         \coordinate(O) at (0,0);
@@ -562,15 +509,12 @@ Watch as your calculator produces the graph shown in figure (a).</p>
         }
         \draw[domain=0:24,smooth, samples=257,variable=\x,red,very thick] plot ({15*\x}:{3+2*cos(15*\x});
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside></solution></example>
+    </latex-image></image></sidebyside>
+</solution></example>
 
 <exercise><statement><p>Graph the polar equation <m>r=1-3\sin (\theta)</m>.</p></statement>
-<answer><sidebyside width="25%" margins="0% 5%">
-    <image xml:id="exer10-2-5ans">
-        <description>limacon</description>
-        <latex-image>
+
+<answer><image width="25%" xml:id="exer10-2-5ans"><description>limacon</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.3]
         \coordinate(O) at (0,0);
@@ -583,18 +527,15 @@ Watch as your calculator produces the graph shown in figure (a).</p>
         }
         \draw[domain=0:24,smooth, samples=257,variable=\x,red,very thick] plot ({15*\x}:{1-3*sin(15*\x});
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside></answer></exercise>
+    </latex-image></image>
+</answer></exercise>
 
 <p>You should also be able to identify a polar graph and write its equation.</p> 
 
 <example><statement><p>Give a polar equation for each of the graphs below.</p>
 
 <sidebyside widths="22% 22%" margins="20% 20%">
-    <image xml:id="exam10-2-6a">
-        <description>circle</description>
-        <latex-image>
+    <image xml:id="exam10-2-6a"><description>circle</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.33]
         \coordinate(O) at (0,0);
@@ -608,11 +549,8 @@ Watch as your calculator produces the graph shown in figure (a).</p>
         \draw[domain=0:24,smooth, samples=257,variable=\x,red,very thick] plot ({15*\x}:{-4*cos(15*\x});
         \node at (0,-5) {a.};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-    <image xml:id="exam10-2-6b">
-        <description>cardioid</description>
-        <latex-image>
+    </latex-image></image>
+    <image xml:id="exam10-2-6b"><description>cardioid</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.45]
         \coordinate(O) at (0,0);
@@ -628,24 +566,20 @@ Watch as your calculator produces the graph shown in figure (a).</p>
         \draw[domain=0:24,smooth, samples=257,variable=\x,red,very thick] plot ({15*\x}:{1+cos(15*\x});
         \node at (0,-3.75) {b.};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside></statement>
+    </latex-image></image></sidebyside>
+</statement>
 
-<solution><p><ol marker="a">
-<li>The graph is a circle centered at <m>(-2,0)</m> and with radius 2, so we choose the equation <m>r=2a\cos (\theta)</m>, with <m>a=-2</m>. Thus, <m>r=-4\cos (\theta)</m>.</li>
-<li><p>The graph is a cardioid with its axis of symmetry on the <m>x</m>-axis, and the "bottom" of the heart points in the positive<m>x</m>direction, so its equation has the form <m>r=a+a\cos (\theta)</m>.  At <m>\theta=0,~ r=2</m>, so we can solve for <m>a</m>: 
-<md>
-    <mrow>2 \amp = a + a\cos (0)</mrow>
-    <mrow>2 \amp = a + a(1) =2a</mrow>
-</md>
-Thus, <m>a=1</m> and we choose the equation <m>r=1+\cos (\theta)</m>.</p></li></ol></p></solution></example>
+<solution><p><ol marker="a.">
+    <li>The graph is a circle centered at <m>(-2,0)</m> and with radius 2, so we choose the equation <m>r=2a\cos (\theta)</m>, with <m>a=-2</m>. Thus, <m>r=-4\cos (\theta)</m>.</li>
+    <li><p>The graph is a cardioid with its axis of symmetry on the <m>x</m>-axis, and the "bottom" of the heart points in the positive<m>x</m>direction, so its equation has the form <m>r=a+a\cos (\theta)</m>.  At <m>\theta=0,~ r=2</m>, so we can solve for <m>a</m>: 
+        <md><mrow>2 \amp = a + a\cos (0)</mrow>
+            <mrow>2 \amp = a + a(1) =2a</mrow></md>
+    Thus, <m>a=1</m> and we choose the equation <m>r=1+\cos (\theta)</m>.</p></li>
+</ol></p></solution></example>
 
 <exercise><statement><p>Give a polar equation for each of the graphs below.</p>
 <sidebyside widths="20% 20%" margins="20% 20%">
-    <image xml:id="exer10-2-6a">
-        <description>lemniscate</description>
-        <latex-image>
+    <image xml:id="exer10-2-6a"><description>lemniscate</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.5]
         \coordinate(O) at (0,0);
@@ -662,11 +596,8 @@ Thus, <m>a=1</m> and we choose the equation <m>r=1+\cos (\theta)</m>.</p></li></
         \draw[domain=0:6,smooth, samples=65,variable=\x,red,very thick] plot ({15*\x}:{-sqrt(4*sin(30*\x)});
         \node at (0,-3) {a.};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-    <image xml:id="exer10-2-6b">
-        <description>cardioid</description>
-        <latex-image>
+    </latex-image></image>
+    <image xml:id="exer10-2-6b"><description>cardioid</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.5]
         \coordinate(O) at (0,0);
@@ -682,32 +613,31 @@ Thus, <m>a=1</m> and we choose the equation <m>r=1+\cos (\theta)</m>.</p></li></
         \draw[domain=0:24,smooth, samples=65,variable=\x,red,very thick] plot ({15*\x}:{1-sin(15*\x});
         \node at (0,-3) {b.};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside></statement>
-<answer><p><ol marker="a" cols="2">
+    </latex-image></image></sidebyside>
+</statement>
+
+<answer><p><ol marker="a." cols="2">
     <li><p><m>r^2=4\sin (2\theta)</m></p></li>
-    <li><p><m>r=1-\sin (\theta)</m></p></li></ol></p></answer></exercise>
+    <li><p><m>r=1-\sin (\theta)</m></p></li>
+</ol></p></answer></exercise>
 </subsection>
 
 <subsection><title>Finding Intersection Points</title>
 
 <p>To find the intersection points of two graphs, we solve the system made up of their equations. If the equations are <m>y=f(x)</m> and <m>y=g(x)</m>, we simply solve the equation <m>f(x)=g(x)</m>. For example, we find the intersection points of <m>y=x^2</m> and <m>y=x+2</m> by solving the equation <m>x^2-x-2=0</m> to get
-<md>
-    <mrow>x^2-x-2 \amp = 0</mrow>
-    <mrow>(x-2)(x+1) \amp = 0</mrow>
-    <mrow>x-2 = 0, ~~~ x+1 \amp = 0</mrow>
-    <mrow>x=2,~~~~~~ x \amp = -1</mrow>
-</md></p>   
+    <md><mrow>x^2-x-2 \amp = 0</mrow>
+        <mrow>(x-2)(x+1) \amp = 0</mrow>
+        <mrow>x-2 = 0, ~~~ x+1 \amp = 0</mrow>
+        <mrow>x=2,~~~~~~ x \amp = -1</mrow></md></p>   
 
-
-<sidebyside widths="60% 25%" valigns="middle middle" margins="0% 5%"><p> These are the <m>x</m>-coordinates of the intersection points, and we can find the <m>y</m>-coordinates by substituting these values into either equation. <ul>
-<li>For <m>x=2,</m> we find <m>y=2^2=4.</m></li>
-<li>For <m>x=-1,</m> we find <m>y=(-1)^2=1.</m></li></ul>
+<sidebyside widths="60% 25%" valigns="middle middle" margins="0% 5%">
+<p> These are the <m>x</m>-coordinates of the intersection points, and we can find the <m>y</m>-coordinates by substituting these values into either equation. 
+<ul>
+    <li>For <m>x=2,</m> we find <m>y=2^2=4.</m></li>
+    <li>For <m>x=-1,</m> we find <m>y=(-1)^2=1.</m></li>
+</ul>
 Thus, the intersection points are <m>(2,4)</m> and <m>(-1,1)</m>, as shown at right.</p>
-    <image xml:id="fig10-2-2">
-        <description>line intersecting parabola</description>
-        <latex-image>
+    <image xml:id="fig10-2-2"><description>line intersecting parabola</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.32]
         \coordinate(O) at (0,0);
@@ -728,29 +658,24 @@ Thus, the intersection points are <m>(2,4)</m> and <m>(-1,1)</m>, as shown at ri
         \filldraw[black] (2,4) circle (.1);
         \filldraw[black] (-1,1) circle (.1);
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside>
+    </latex-image></image></sidebyside>
 
 <p> To find the intersection points of the polar graphs <m>r=f(\theta)</m> and <m>r=g(\theta)</m> we solve the equation <m>f(\theta) = g(\theta)</m>.</p>
 
 <example><statement><p>Find all intersection points of the graphs of <m>~~r=2+2\sin (\theta)~~</m> and <m>~~r=2+2\cos (\theta)</m>.</p></statement>
 
 <solution><p>We equate the two expressions for <m>r</m> and solve for <m>\theta</m>.
-<md>
-    <mrow>r=2+2\sin (\theta) \amp = r=2+2\cos (\theta)</mrow>
-    <mrow>\sin (\theta) \amp = \cos (\theta)  \amp \amp \blert{\text{Divide both sides by } \cos(\theta).}</mrow>
-    <mrow>\tan (\theta) \amp = 1  \amp \amp \blert{\text{Solve for }\theta.}</mrow>
-    <mrow>\theta\amp = \dfrac{\pi}{4},~\dfrac{5\pi}{4}</mrow>
-</md></p>
+    <md><mrow>r=2+2\sin (\theta) \amp = r=2+2\cos (\theta)</mrow>
+        <mrow>\sin (\theta) \amp = \cos (\theta)  \amp \amp \blert{\text{Divide both sides by } \cos(\theta).}</mrow>
+        <mrow>\tan (\theta) \amp = 1  \amp \amp \blert{\text{Solve for }\theta.}</mrow>
+        <mrow>\theta\amp = \dfrac{\pi}{4},~\dfrac{5\pi}{4}</mrow></md></p>
+
 <p>We evaluate either expression for <m>t</m> to find the other coordinate of the intersection point.
     <md><mrow>\text{when}~~~~\theta = \dfrac{\pi}{4},~~~~r = 2 + 2\sin \left(\dfrac{\pi}{4}\right) = 2 + \left(\dfrac{1}{\sqrt{2}}\right) = 2 + \sqrt{2}</mrow>
-    <mrow>\text{when}~~~~\theta = \dfrac{5\pi}{4},~~~~r = 2 + 2\sin \left(\dfrac{5\pi}{4}\right) = 2 + \left(\dfrac{-1}{\sqrt{2}}\right) = 2 - \sqrt{2}</mrow></md></p>
+        <mrow>\text{when}~~~~\theta = \dfrac{5\pi}{4},~~~~r = 2 + 2\sin \left(\dfrac{5\pi}{4}\right) = 2 + \left(\dfrac{-1}{\sqrt{2}}\right) = 2 - \sqrt{2}</mrow></md></p>
 
 <sidebyside widths="65% 25%"><p>Thus, two of the intersection points are <m>\left(2 + \sqrt{2}, \dfrac{\pi}{4}\right)</m> and <m>\left(2 - \sqrt{2}, \dfrac{5\pi}{4}\right)</m>, as shown at right. However, you can see in the figure that the graphs also appear to intersect at the pole. To verify that the pole indeed lies on both graphs, we can solve for <m>\theta</m> in each equation when <m>r=0</m>.</p>
-    <image xml:id="exam10-2-7">
-        <description>cardioids</description>
-        <latex-image>
+    <image xml:id="exam10-2-7"><description>cardioids</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.4]
         \coordinate(O) at (0,0);
@@ -764,29 +689,24 @@ Thus, the intersection points are <m>(2,4)</m> and <m>(-1,1)</m>, as shown at ri
         \draw[domain=0:24,smooth, samples=65,variable=\x,red,very thick] plot ({15*\x}:{2+2*sin(15*\x});
         \draw[domain=0:24,smooth, samples=65,variable=\x,blue,very thick] plot ({15*\x}:{2+2*cos(15*\x});
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside>
+    </latex-image></image></sidebyside>
 
 <p>However, you can see in the figure that the graphs also appear to intersect at the pole. To verify that the pole indeed lies on both graphs, we can solve for <m>\theta</m> in each equation when <m>r=\alert{0}</m>.
-<md>
-    <mrow>\alert{0} \amp =2+2\sin (\theta) \qquad \qquad\amp  \alert{0} \amp=2+2\cos (\theta) \qquad \qquad</mrow>
-    <mrow> -1 \amp =\sin (\theta) \amp   -1 \amp= \cos \theta </mrow>
-    <mrow> \\
-    \theta \amp = \dfrac{3\pi}{2}  \amp  \theta \amp=\pi</mrow>
-</md></p>
-<p>Both points, <m>\left(0,\dfrac{3\pi}{2}\right)</m> and <m>(0,\pi)</m>, represent the pole. Thus, the graphs intersect at three points: <m>\left(2 + \sqrt{2}, \dfrac{\pi}{4}\right)</m>, <m>\left(2 - \sqrt{2}, \dfrac{5\pi}{4}\right)</m>, and the pole.</p></solution></example>
+    <md><mrow>\alert{0} \amp =2+2\sin (\theta) \qquad \qquad\amp  \alert{0} \amp=2+2\cos (\theta) \qquad \qquad</mrow>
+        <mrow> -1 \amp =\sin (\theta) \amp   -1 \amp= \cos \theta </mrow>
+        <mrow> \\\theta \amp = \dfrac{3\pi}{2}  \amp  \theta \amp=\pi</mrow></md></p>
+<p>Both points, <m>\left(0,\dfrac{3\pi}{2}\right)</m> and <m>(0,\pi)</m>, represent the pole. Thus, the graphs intersect at three points: <m>\left(2 + \sqrt{2}, \dfrac{\pi}{4}\right)</m>, <m>\left(2 - \sqrt{2}, \dfrac{5\pi}{4}\right)</m>, and the pole.</p>
+</solution></example>
 
 <warning><p>As we saw in the previous Example, solving a system of equations <m>r=f(\theta)</m> and <m>r=g(\theta)</m> will not always reveal an intersection at the pole, because <m>r</m> may be equal to zero for different values of <m>\theta</m> in the two equations. We should always check separately whether the pole is a point on both graphs.</p></warning>  
 
-<exercise><statement><p>Find all intersection points of the graphs of <m>r=1</m> and <m>r=2\cos\theta</m>.</p></statement><answer><p><m>\left(1, \dfrac{\pi}{3}\right)</m>,<m>~\left(1, \dfrac{5\pi}{3}\right)</m></p></answer></exercise>
+<exercise><statement><p>Find all intersection points of the graphs of <m>r=1</m> and <m>r=2\cos\theta</m>.</p></statement><answer><p><m>\left(1, \dfrac{\pi}{3}\right)</m>,<m>~\left(1, \dfrac{5\pi}{3}\right)</m></p>
+</answer></exercise>
 
 <p>Review the following skills you will need for this section.</p>
 <exploration>    
-    <sidebyside><p>Solve each equation. Give two solutions, <m>0 \le \theta \le 2\pi</m>.
-</p>
-    </sidebyside>
-    <p><ol marker="1" cols="3">
+    <sidebyside><p>Solve each equation. Give two solutions, <m>0 \le \theta \le 2\pi</m>.</p></sidebyside>
+    <p><ol marker="1." cols="3">
         <li><p><m>\cos (\theta) = \dfrac{\sqrt{3}}{2}</m></p></li>
         <li><p><m>\sin (\theta) = \dfrac{1}{\sqrt{2}}</m></p></li>
         <li><p><m>\tan (\theta) = \sqrt{3}</m></p></li>
@@ -800,7 +720,7 @@ Thus, the intersection points are <m>(2,4)</m> and <m>(-1,1)</m>, as shown at ri
     <sidebyside><p><m>\underline{\qquad\qquad\qquad\qquad}</m></p></sidebyside>
     <conclusion>
     <sidebyside><p>Skills Refresher Answers</p></sidebyside>
-        <p><ol marker="1" cols="4">
+        <p><ol marker="1." cols="4">
                 <li><p><m>\dfrac{\pi}{6}</m>, <m>\dfrac{11\pi}{6}</m></p></li>
                 <li><p><m>\dfrac{\pi}{4}</m>, <m>\dfrac{3\pi}{4}</m></p></li>
                 <li><p><m>\dfrac{\pi}{3}</m>, <m>\dfrac{4\pi}{3}</m></p></li>
@@ -822,10 +742,9 @@ Thus, the intersection points are <m>(2,4)</m> and <m>(-1,1)</m>, as shown at ri
 
 <p><ul cols="2">
     <li><stack><p><term><m>\theta = k~~</m></term> (<m>k</m> a constant)</p>
-    <p>A <term>line</term> through the pole.</p> 
-    <p><m>k</m> gives the angle of inclination of the line (in radians).</p> 
-    <sidebyside widths="50%"><image xml:id="cat10-2-1">
-        <description>line</description><latex-image>
+        <p>A <term>line</term> through the pole.</p> 
+        <p><m>k</m> gives the angle of inclination of the line (in radians).</p> 
+    <image width="50%" xml:id="cat10-2-1"><description>line</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.63]
         \draw[black, ->,>=stealth'] (-2,0)--(2,0);
@@ -834,13 +753,12 @@ Thus, the intersection points are <m>(2,4)</m> and <m>(-1,1)</m>, as shown at ri
         \draw[red,thick] (\theta:{2/sin(\theta)}) --({180+\theta}:{2/sin(\theta)});
         \draw[lightgray, ->, >=stealth'] (.5,0) arc(0:\theta:0.5) node[above right, yshift=-4, midway, text=red] {$k$};
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></stack></li>
+    </latex-image></image></stack></li>
 
-<li><stack><p><term><m>r = k~~</m></term> (<m>k</m> a constant)</p>
-<p>A <term>circle</term> centered at the pole.</p> 
- <p><m>k</m> is the radius of the circle.</p> 
-    <sidebyside widths="50%"><image xml:id="cat10-2-2">
-        <description>circle</description><latex-image>
+    <li><stack><p><term><m>r = k~~</m></term> (<m>k</m> a constant)</p>
+        <p>A <term>circle</term> centered at the pole.</p> 
+        <p><m>k</m> is the radius of the circle.</p> 
+    <image width="50%" xml:id="cat10-2-2"><description>circle</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.63]
         \draw[black, ->,>=stealth'] (-2,0)--(2,0);
@@ -849,16 +767,16 @@ Thus, the intersection points are <m>(2,4)</m> and <m>(-1,1)</m>, as shown at ri
         \draw[blue,thick] (0,0) --(65:\k) node[below right, xshift=-2, yshift=5, midway,text=blue] {$k$};
         \draw[red, thick] (0,0) circle (\k);
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></stack></li></ul></p>
+    </latex-image></image></stack></li>
+</ul></p>
 </subsubsection>
 
 <subsubsection><title>Circles</title>
 
 <p><ul cols="2">
     <li><stack><p><term><m>r=2a\sin (\theta)</m></term> </p>
-<p>A <term>circle</term> with center <m>(0,a)</m> on the <m>y</m>-axis, and radius <m>\abs{a}</m>.</p> 
-    <sidebyside widths="50%"><image xml:id="cat10-2-3">
-        <description>circle</description><latex-image>
+        <p>A <term>circle</term> with center <m>(0,a)</m> on the <m>y</m>-axis, and radius <m>\abs{a}</m>.</p> 
+    <image width="50%" xml:id="cat10-2-3"><description>circle</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.8]
         \draw[black, ->,>=stealth'] (-1.5,0)--(1.5,0);
@@ -866,13 +784,11 @@ Thus, the intersection points are <m>(2,4)</m> and <m>(-1,1)</m>, as shown at ri
         \draw[red, thick] (0,1.2) circle (1.2);
         \filldraw[black] (0,1.2) circle (0.08) node[right] {$(0,a)$};
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></stack></li>
+    </latex-image></image></stack></li>
 
-<li><stack><p><term><m>r=2a\cos (\theta)</m></term> </p>
-<p>A <term>circle</term> with center <m>(a,0)</m> on the <m>x</m>-axis, and radius <m>\abs{a}</m>.</p> 
-    <sidebyside widths="50%"><image xml:id="at10-2-4">
-        <description>circle</description>
-        <latex-image>
+    <li><stack><p><term><m>r=2a\cos (\theta)</m></term> </p>
+        <p>A <term>circle</term> with center <m>(a,0)</m> on the <m>x</m>-axis, and radius <m>\abs{a}</m>.</p> 
+    <image width="50%" xml:id="at10-2-4"><description>circle</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.8]
         \draw[black, ->,>=stealth'] (-.5,0)--(2.5,0);
@@ -880,17 +796,16 @@ Thus, the intersection points are <m>(2,4)</m> and <m>(-1,1)</m>, as shown at ri
         \draw[red, thick] (1.2,0) circle (1.2);
         \filldraw[black] (1.2,0) circle (0.08) node[below, yshift=-1] {$(a,0)$};
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></stack></li></ul></p>
+    </latex-image></image></stack></li></ul></p>
 </subsubsection>
 
 <subsubsection><title>Roses</title>
 
 <p><ul cols="2">
     <li><stack><p><term><m>r=a\sin (n\theta)</m></term> </p>
-<p>A <term>rose</term> with petal length <m>a</m>.</p> 
-<p><m>n</m> petals if <m>n</m> is odd; <m>~~2n</m> petals if <m>n</m> is even.</p> 
-    <sidebyside widths="50%"><image xml:id="cat10-2-5">
-        <description>rose</description><latex-image>
+        <p>A <term>rose</term> with petal length <m>a</m>.</p> 
+        <p><m>n</m> petals if <m>n</m> is odd; <m>~~2n</m> petals if <m>n</m> is even.</p> 
+    <image width="50%" xml:id="cat10-2-5"><description>rose</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.7]
         \draw[black, ->,>=stealth'] (-1.8,0)--(1.8,0);
@@ -898,13 +813,12 @@ Thus, the intersection points are <m>(2,4)</m> and <m>(-1,1)</m>, as shown at ri
         \draw[domain=0:12,smooth, samples=65,variable=\x,red,very thick] plot ({15*\x}:{1.5*sin(45*\x});
         \draw[gray, dashed] (-2,{2/sqrt(3)})--(0,0)--(2,{2/sqrt(3)});
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></stack></li>
+    </latex-image></image></stack></li>
 
-<li><stack><p><term><m>r=a\cos (n\theta)</m></term> </p>
-<p>A <term>rose</term> with petal length <m>a</m>.</p> 
-<p><m>n</m> petals if <m>n</m> is odd; <m>~~2n</m> petals if <m>n</m> is even.</p> 
-    <sidebyside widths="50%"><image xml:id="cat10-2-6">
-        <description>rose</description><latex-image>
+    <li><stack><p><term><m>r=a\cos (n\theta)</m></term> </p>
+        <p>A <term>rose</term> with petal length <m>a</m>.</p> 
+        <p><m>n</m> petals if <m>n</m> is odd; <m>~~2n</m> petals if <m>n</m> is even.</p> 
+    <image width="50%" xml:id="cat10-2-6"><description>rose</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.7]
         \draw[black, ->,>=stealth'] (-1.8,0)--(1.8,0);
@@ -912,49 +826,46 @@ Thus, the intersection points are <m>(2,4)</m> and <m>(-1,1)</m>, as shown at ri
         \draw[domain=0:12,smooth, samples=65,variable=\x,red,very thick] plot ({15*\x}:{1.5*cos(45*\x});
         \draw[gray, dashed] ({-2/sqrt(3)}, -2)--(0,0)--({-2/sqrt(3)}, 2);
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></stack></li></ul></p>
+    </latex-image></image></stack></li>
+</ul></p>
 </subsubsection>
 
 <subsubsection><title>Limaçons</title>
 <p><term><m>r=a\pm b\sin (\theta)~~~~~</m></term> or <term><m>~~~~~r=a\pm b\cos (\theta)</m></term></p>
 <p><ul cols="3">
     <li><stack><p><m>a \gt b</m>, with a dent.</p>
-    <sidebyside width="70%"><image xml:id="cat10-2-7" width="20%">
-        <description>limacon with dent</description><latex-image>
+    <image width="70%" xml:id="cat10-2-7"><description>limacon with dent</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.8]
         \draw[black, ->,>=stealth'] (-1.4,0)--(2.2,0);
         \draw[gray] (0,-1.8)--(0,1.8);
         \draw[domain=0:24,smooth, samples=65,variable=\x,red,very thick] plot ({15*\x}:{1 + .75*cos(15*\x});
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></stack></li>
+    </latex-image></image></stack></li>
     <li><stack><p><m>a \lt b</m>, with a loop.</p>
-    <sidebyside width="70%"><image xml:id="cat10-2-8">
-        <description>limacon with loop</description><latex-image>
+    <image width="70%" xml:id="cat10-2-8"><description>limacon with loop</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.8]
         \draw[black, ->,>=stealth'] (-1.8,0)--(1.8,0);
         \draw[gray] (0,-1.6)--(0,2);
         \draw[domain=0:24,smooth, samples=65,variable=\x,red,very thick] plot ({15*\x}:{.5 + 1*sin(15*\x});
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></stack></li>
+    </latex-image></image></stack></li>
     <li><stack><p><m>a \gt b</m>, a <term>cardioid</term>.</p>
-    <sidebyside width="70%"><image xml:id="cat10-2-9" width="20%">
-        <description>cardioid</description><latex-image>
+    <image width="70%" xml:id="cat10-2-9"><description>cardioid</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.8]
         \draw[black, ->,>=stealth'] (-1.8,0)--(1.8,0);
         \draw[gray] (0,-.8)--(0,2.8);
         \draw[domain=0:24,smooth, samples=65,variable=\x,red,very thick] plot ({15*\x}:{1 + 1*sin(15*\x});
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></stack></li></ul></p>
+    </latex-image></image></stack></li></ul></p>
 </subsubsection>
 
 <subsubsection><title>Lemniscates</title>
 <p><ul cols="2">
     <li><stack><p><term><m>r^2=a^2 \cos (2\theta)</m></term></p>
-    <sidebyside width="50%"><image xml:id="cat10-2-10">
-        <description>lemniscate</description><latex-image>
+    <image width="50%" xml:id="cat10-2-10"><description>lemniscate</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.8]
         \draw[black, ->,>=stealth'] (-2,0)--(2,0);
@@ -962,10 +873,9 @@ Thus, the intersection points are <m>(2,4)</m> and <m>(-1,1)</m>, as shown at ri
         \draw[domain=-3:3,smooth, samples=65,variable=\x,red,very thick] plot ({15*\x}:{1.5*sqrt(cos(30*\x)});
         \draw[domain=-3:3,smooth, samples=65,variable=\x,red,very thick] plot ({15*\x}:{-1.5*sqrt(cos(30*\x)});
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></stack></li>
+    </latex-image></image></stack></li>
     <li><stack><p><term><m>r^2=a^2 \sin (2\theta)</m></term></p>
-    <sidebyside width="50%"><image xml:id="cat10-2-11">
-        <description>lemniscate</description><latex-image>
+    <image width="50%" xml:id="cat10-2-11"><description>lemniscate</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.8]
         \draw[black, ->,>=stealth'] (-2,0)--(2,0);
@@ -973,37 +883,30 @@ Thus, the intersection points are <m>(2,4)</m> and <m>(-1,1)</m>, as shown at ri
         \draw[domain=0:6,smooth, samples=65,variable=\x,red,very thick] plot ({15*\x}:{1.5*sqrt(sin(30*\x)});
         \draw[domain=0:6,smooth, samples=65,variable=\x,red,very thick] plot ({15*\x}:{-1.5*sqrt(sin(30*\x)});
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></stack></li></ul></p>
+    </latex-image></image></stack></li></ul></p>
 </subsubsection>
 
 <subsubsection><title>Spirals</title>
 <p><ul cols="2">
-  <li><stack><p><term>Archimedean spiral</term></p><p><term><m>r=a \theta</m></term></p>
-    <sidebyside width="40%"><image xml:id="cat10-2-12">
-        <description>Archimedean spiral</description>
-        <latex-image>
+    <li><stack><p><term>Archimedean spiral</term></p><p><term><m>r=a \theta</m></term></p>
+    <image width="40%" xml:id="cat10-2-12"><description>Archimedean spiral</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.8]
         \draw[black, ->,>=stealth'] (-2,0)--(2,0);
         \draw[gray] (0,-2)--(0,2);
         \draw[domain=0:35,smooth, samples=65,variable=\x,red,very thick] plot ({15*\x}:{\x/17.5});
         \end{tikzpicture}]]>
-    </latex-image>
-    </image></sidebyside>
-</stack></li>
-  <li><stack><p><term>Logarithmic spiral</term></p><p><term><m>r=e^{a\theta}</m></term></p>
-    <sidebyside width="40%"><image xml:id="cat10-2-13">
-        <description>Logarithmic spiral</description>
-        <latex-image>
+    </latex-image></image></stack></li>
+    <li><stack><p><term>Logarithmic spiral</term></p><p><term><m>r=e^{a\theta}</m></term></p>
+    <image width="40%" xml:id="cat10-2-13"><description>Logarithmic spiral</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.8]
         \draw[black, ->,>=stealth'] (-2,0)--(2,0);
         \draw[gray] (0,-2)--(0,2);
         \draw[domain=0:3.45,smooth, samples=527,variable=\x,red,very thick] plot ({deg(2*pi*\x)}:{0.28*e^(0.18*pi*\x)});
         \end{tikzpicture}]]>
-    </latex-image>
-    </image></sidebyside>
-</stack></li></ul></p>
+    </latex-image></image></stack></li>
+</ul></p>
 </subsubsection>
 </subsection>
 
@@ -1018,28 +921,29 @@ Thus, the intersection points are <m>(2,4)</m> and <m>(-1,1)</m>, as shown at ri
 </subsubsection>
 
 <subsubsection><title>Concepts</title>
-<p><ol marker="1">
-  <li>When graphing an equation in polar coordinates, we think of sweeping around the pole in the counterclockwise direction, and at each angle <m>\theta</m> the <m>r</m>-value tells us how far the graph is from the pole.</li>
-<li>Standard graphs in polar coordinates include circles and roses, cardioids and limaçons, lemniscates, and spirals.</li>
-<li>To find the intersection points of the polar graphs <m>r=f(\theta)</m> and <m>r=g(\theta)</m> we solve the equation <m>f(\theta)=g(\theta)</m>. In addition, we should always check whether the pole is a point on both graphs.</li>
+<p><ol marker="1.">
+    <li>When graphing an equation in polar coordinates, we think of sweeping around the pole in the counterclockwise direction, and at each angle <m>\theta</m> the <m>r</m>-value tells us how far the graph is from the pole.</li>
+    <li>Standard graphs in polar coordinates include circles and roses, cardioids and limaçons, lemniscates, and spirals.</li>
+    <li>To find the intersection points of the polar graphs <m>r=f(\theta)</m> and <m>r=g(\theta)</m> we solve the equation <m>f(\theta)=g(\theta)</m>. In addition, we should always check whether the pole is a point on both graphs.</li>
 </ol></p></subsubsection>
 
 <subsubsection><title> Study Questions</title>
-<p><ol marker="1">
-  <li>Delbert says that the graph of <m>r=2\sin (\theta)</m> in the first example cannot be correct, because there are no points on the graph for angles between <m>\pi</m>and <m>2\pi</m>. How do you respond?</li>
-<li>Is it possible to have a rose with only two petals? What would its equation be?</li>
-<li>Francine says that a circle of the form <m>r=2a\cos (\theta)</m> is just a special case of a limaçon. Support or refute her statement.</li>
-<li>There are no points on the graph of <m>r^2=4\cos (2\theta)</m> for angles between <m>\dfrac{\pi}{4}</m> and <m>\dfrac{3\pi}{4}</m>  Why is that? </li></ol></p>
+<p><ol marker="1.">
+    <li>Delbert says that the graph of <m>r=2\sin (\theta)</m> in the first example cannot be correct, because there are no points on the graph for angles between <m>\pi</m>and <m>2\pi</m>. How do you respond?</li>
+    <li>Is it possible to have a rose with only two petals? What would its equation be?</li>
+    <li>Francine says that a circle of the form <m>r=2a\cos (\theta)</m> is just a special case of a limaçon. Support or refute her statement.</li>
+    <li>There are no points on the graph of <m>r^2=4\cos (2\theta)</m> for angles between <m>\dfrac{\pi}{4}</m> and <m>\dfrac{3\pi}{4}</m>  Why is that? </li>
+</ol></p>
 </subsubsection>
 
 <subsubsection><title>Skills</title>
-<p><ol marker="1">
-<li>Describe the effect of parameters in polar curves    #1<ndash/>16, 83<ndash/>84</li>
-<li>Compare polar and Cartesian graphs  #21<ndash/>24</li>
-<li>Sketch standard polar graphs    #17<ndash/>20, 25<ndash/>42, 75<ndash/>82</li>
-<li>Identify standard polar graphs    #43<ndash/>58</li>
-<li>Write equations for standard polar graphs    #59<ndash/>66</li>
-<li>Find intersection points of polar graphs    #67<ndash/>74</li></ol></p>
+<p><ol marker="1.">
+    <li>Describe the effect of parameters in polar curves    #1<ndash/>16, 83<ndash/>84</li>
+    <li>Compare polar and Cartesian graphs  #21<ndash/>24</li>
+    <li>Sketch standard polar graphs    #17<ndash/>20, 25<ndash/>42, 75<ndash/>82</li>
+    <li>Identify standard polar graphs    #43<ndash/>58</li>
+    <li>Write equations for standard polar graphs    #59<ndash/>66</li>
+    <li>Find intersection points of polar graphs    #67<ndash/>74</li></ol></p>
 </subsubsection>
 </subsection>
 

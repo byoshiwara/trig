@@ -9,8 +9,7 @@
 <subsection><title>The Sine and Cosine Functions</title>
 <p>Consider the graph shown below.</p>
 
-<sidebyside width="60%">
-    <image xml:id="fig-6-3-sin"><description>sine</description><latex-image>
+    <image width="60%" xml:id="fig-6-3-sin"><description>sine</description><latex-image>
         <![CDATA[
         \begin{tikzpicture}[scale=.8]
         \draw[cyan,step=1/2] (0,-2) grid (8,2);
@@ -25,7 +24,6 @@
         \draw[domain=0:8,smooth,variable=\x,red,very thick] plot ({\x},{sin(deg(\x))});
         \end{tikzpicture}]]>
     </latex-image></image>
-</sidebyside>
 
 <p> You can probably recognize this graph as one cycle of <m>y = \sin (t)</m>. For example, you can see that the graph completes one cycle at <m>t = 2\pi</m> radians, or approximately 6.28. It reaches its maximum value, <m>y = 1</m>, at <m>t = \dfrac{\pi}{2}</m>, or approximately 1.57. You should also notice that <m>y = 0</m> at <m>t = \pi</m>, approximately 3.14.</p>
 
@@ -35,7 +33,7 @@
 
 <solution><p>We start by making a table of values for <m>\sin (t)</m>, where <m>t</m> is in radians. We'll use the special values of <m>t</m>, because we know the sines of those values.</p>
 
-<sidebyside width="90%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                        
+<tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                        
     <row bottom="minor">
         <cell><m>t</m></cell>
         <cell><m>0</m></cell>
@@ -58,11 +56,11 @@
         <cell><m>0.707</m></cell>
         <cell><m>0.500</m></cell>
         <cell><m>0</m></cell></row>
-        </tabular></sidebyside>
+        </tabular>
 
 <p>In order to plot the points in the table, we scale the horizontal axis in multiples of <m>\dfrac{\pi}{12}</m>. (Note that the special values are all multiples of <m>\dfrac{\pi}{12}</m>. Thus, <m>\dfrac{\pi}{6} = 2\left(\dfrac{\pi}{12}\right)</m>, <m>~ \dfrac{\pi}{4} = 3\left(\dfrac{\pi}{12}\right)</m>, and so on.)  The table lists values of <m>\sin (t)</m> in the first two quadrants; in quadrants three and four the sine values are negative.</p>
 
-<sidebyside width="95%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                        
+<tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                        
     <row bottom="minor">
         <cell><m>t</m></cell>
         <cell><m>\pi</m></cell>
@@ -85,11 +83,10 @@
         <cell><m>-0.707</m></cell>
         <cell><m>-0.500</m></cell>
         <cell><m>0</m></cell></row>
-        </tabular></sidebyside>
+        </tabular>
 
     <p>The completed graph is shown below.</p>
-    <sidebyside width="80%">
-    <image xml:id="exam6-3-1"><description>sine</description><latex-image>
+    <image width="80%" xml:id="exam6-3-1"><description>sine</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=1.4]
 
@@ -117,14 +114,13 @@
 
         \draw[domain=0:2*pi,smooth,variable=\x,red,very thick] plot ({\x},{sin(deg(\x))});
         \end{tikzpicture}]]>
-    </latex-image></image>
-    </sidebyside></solution></example>
+    </latex-image></image></solution></example>
 
  <p>If we continued to plot points for values of <m>t</m> greater than <m>2 \pi</m> or less than 0, we would see the periodic behavior of the graph, as it repeats the same shape over each interval of length <m>2 \pi</m>, just as it does for periods of <m>360\degree</m> when the angles are measured in degrees.</p>
 
-<exercise><statement><p><ol marker="a">
+<exercise><statement><p><ol marker="a.">
     <li><p>Complete the table of values for <m>y = \cos (t)</m>.</p>
-    <sidebyside width="90%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                        
+    <tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                        
         <row bottom="minor">
             <cell><m>t</m></cell>
             <cell><m>0</m></cell>
@@ -147,9 +143,9 @@
             <cell><m>\hphantom{0000}</m></cell>
             <cell><m>\hphantom{0000}</m></cell>
             <cell><m>\hphantom{0000}</m></cell></row>
-        </tabular></sidebyside>
+        </tabular>
     
-    <sidebyside width="90%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                        
+    <tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                        
         <row bottom="minor">
             <cell><m>t</m></cell>
             <cell><m>\pi</m></cell>
@@ -172,10 +168,10 @@
             <cell><m>\hphantom{0000}</m></cell>
             <cell><m>\hphantom{0000}</m></cell>
             <cell><m>\hphantom{0000}</m></cell></row>
-        </tabular></sidebyside></li>
-        <li><p>Graph one cycle of <m>y = \cos (t)</m>, and scale the horizontal axis in multiples of <m>\pi</m>. Use the 
+        </tabular></li>
+    <li><p>Graph one cycle of <m>y = \cos (t)</m>, and scale the horizontal axis in multiples of <m>\pi</m>. Use the 
     grid below.</p>
-    <sidebyside width="90%"><image xml:id="exer6-3-1"><description>grid</description><latex-image>
+    <image width="90%" xml:id="exer6-3-1"><description>grid</description><latex-image>
             <![CDATA[
             \begin{tikzpicture} [scale=1.3]
             \draw[cyan,xstep=pi/12, ystep=1/4] (0,-3/2) grid ($2*pi*(1,0)+(0,3/2) $);
@@ -188,12 +184,11 @@
             \foreach \y in {-1, -0.5, 0.5,1}
             \draw[black, thick] (.06,\y ) --++(-.12,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {$\y$};
             \end{tikzpicture}]]>
-        </latex-image></image>
-    </sidebyside></li></ol></p>
-    </statement>
+        </latex-image></image></li>
+</ol></p></statement>
     
-    <answer><p><ol marker="a">
-        <li><sidebyside width="80%" margins="0% 10%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                        
+<answer><p><ol marker="a.">
+    <li><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                        
         <row bottom="minor">
             <cell><m>t</m></cell>
             <cell><m>0</m></cell>
@@ -216,9 +211,9 @@
             <cell><m>\dfrac{-1}{\sqrt{2}}</m></cell>
             <cell><m>\dfrac{-\sqrt{3}}{2}</m></cell>
             <cell><m>-1</m></cell></row>
-        </tabular></sidebyside></li>
+        </tabular></li>
     
-    <li><sidebyside width="80%" margins="0% 10%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                        
+    <li><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                        
         <row bottom="minor">
             <cell><m>t</m></cell>
             <cell><m>\pi</m></cell>
@@ -241,10 +236,9 @@
             <cell><m>\dfrac{1}{\sqrt{2}}</m></cell>
             <cell><m>\dfrac{\sqrt{3}}{2}</m></cell>
             <cell><m>1</m></cell></row>
-        </tabular></sidebyside></li>
+        </tabular></li>
     
-    <li><sidebyside width="75%" margins="0% 25%">
-        <image xml:id="exer6-3-1ans"><description>sinusoidal graph</description><latex-image>
+    <li><image width="75%" xml:id="exer6-3-1ans"><description>sinusoidal graph</description><latex-image>
             <![CDATA[
             \begin{tikzpicture}     
             \draw[cyan,xstep=pi/12, ystep=1/4] (0,-3/2) grid ($2*pi*(1,0)+(0,3/2) $);
@@ -274,10 +268,8 @@
     
             \draw[domain=0:2*pi,smooth,variable=\x,red,very thick] plot ({\x},{cos(deg(\x))});
             \end{tikzpicture}]]>
-        </latex-image></image>
-    </sidebyside></li>
-    </ol></p>    
-    </answer></exercise>
+        </latex-image></image></li>
+</ol></p></answer></exercise>
 
 <note><p>Because we know the basic shapes of the sine and cosine graphs, to make an adequate graph it is usually sufficient to plot the guide points at the quadrantal angles, and then draw a smooth curve through the points. Try it for yourself. Use the axes below.</p>
 
@@ -309,22 +301,20 @@
               \foreach \y in {-2, -1, 1, 2}
               \draw[black, thick] (.06,\y ) --++(-.12,0) node[anchor=east, xshift=-3] {$\y$};
               \end{tikzpicture}]]>
-          </latex-image></image>
-      </sidebyside></note>
+          </latex-image></image></sidebyside></note>
 
 <activity><title>Graphs of Sine and Cosine</title>
     <p></p>
-    <p>We are going to graph <m>f(t) = \sin (t)</m> and <m>g(t) = \cos (t)</m> from their definitions. The unit circle <m>x^2 + y^2 = 1</m> at the left of each grid is marked off in radians. (Each tick mark is <m>0.1</m> radian.) The horizontal <m>t</m>-axis of each grid is also marked in radians.</p>
+<p>We are going to graph <m>f(t) = \sin (t)</m> and <m>g(t) = \cos (t)</m> from their definitions. The unit circle <m>x^2 + y^2 = 1</m> at the left of each grid is marked off in radians. (Each tick mark is <m>0.1</m> radian.) The horizontal <m>t</m>-axis of each grid is also marked in radians.</p>
     
-    <p><ol marker="1">
+<p><ol marker="1.">
     <li>Choose a value of <m>t</m> along the horizontal axis of the <m>f(t) = \sin (t)</m> grid. This value of <m>t</m> represents an angle in radians.</li>
     <li>Now look at the unit circle and find the point <m>P</m> designated by that same angle in radians.</li>
     <li> Measure the vertical (signed) distance that gives the <m>y</m>-coordinate of point <m>P</m>.</li>
     <li>At the value of <m>t</m> you chose in step 1, lightly draw a vertical line segment the same length 
         as the <m>y</m>-coordinate of <m>P</m>. Put a dot at the top (or bottom) of the line segment.</li>
     <li>Repeat for some more values of <m>t</m>.  Connect the dots to see the graph of <m>f(t) = \sin (t)</m>.</li></ol></p>
-    <sidebyside width="100%">
-        <image xml:id="act6-2"><description>circle and grid</description><latex-image>
+        <image width="100%" xml:id="act6-2"><description>circle and grid</description><latex-image>
             <![CDATA[
             \begin{tikzpicture} [scale=1.6]    
             \draw[cyan] (-1.0001,-1.0001) grid[step = 0.1] (1,1);
@@ -358,17 +348,15 @@
             \node[text width=3cm, scale=1] at (3.6,-1.3) {$ f(t) =\sin t $};
             \end{tikzpicture}]]>
         </latex-image></image>
-    </sidebyside>
     
-    <p><ol marker="1">
+<p><ol marker="1.">
     <li>Choose a value of <m>t</m> along the horizontal axis of the <m>g(t) = \cos (t)</m> grid.  This value of <m>t</m> represents an angle in radians.</li>
     <li>Now look at the unit circle and find the point <m>P</m> designated by that same angle in radians.</li>
     <li>Measure the horizontal (signed) distance that gives the <m>x</m>-coordinate of point <m>P</m>.</li>
-    <li>At the value of <m>t</m> you chose in step 1, lightly draw a vertical line segment the same 
-        length as the <m>x</m>-coordinate of <m>P</m>. Put a dot at the top (or bottom) of the line segment.</li>
+    <li>At the value of <m>t</m> you chose in step 1, lightly draw a vertical line segment the same length as the <m>x</m>-coordinate of <m>P</m>. Put a dot at the top (or bottom) of the line segment.</li>
     <li>Repeat for some more values of <m>t</m>.  Connect the dots to see the graph of <m>g(t) = \cos (t)</m>.</li></ol></p>
-    <sidebyside width="100%"><!--<image source="photos/act6-3.png"><description>grid</description></image>-->
-        <image xml:id="act6-3"><description>unit circle and grid</description><latex-image>
+    <!--<image source="photos/act6-3.png"><description>grid</description></image>-->
+        <image width="100%" xml:id="act6-3"><description>unit circle and grid</description><latex-image>
             <![CDATA[
             \begin{tikzpicture} [scale=1.6]    
             \draw[cyan] (-1.0001,-1.0001) grid[step = 0.1] (1,1);
@@ -402,7 +390,6 @@
             \node[text width=3cm, scale=1] at (3.6,-1.3) {$ g(t) =\cos t $};
             \end{tikzpicture}]]>
         </latex-image></image>
-    </sidebyside>
     </activity>
 </subsection>
 
@@ -414,7 +401,7 @@
 
 <solution><p>We begin by making a table of values for the tangent function. We choose the special values for <m>t</m> between <m>0</m> and <m>\pi</m>.</p>
 
-<sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                        
+    <tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                        
     <row bottom="minor">
         <cell><m>t</m></cell>
         <cell><m>0</m></cell>
@@ -437,9 +424,10 @@
         <cell><m>-1</m></cell>
         <cell><m>-0.577</m></cell>
         <cell><m>0</m></cell></row>
-        </tabular></sidebyside>
+        </tabular>
 
-    <sidebyside widths="50% 50%" valigns="middle middle" margins="0% 0%"><p>Plot the points and connect them with smooth curves, remembering that <m>\tan (\dfrac{\pi}{2})</m> is undefined. The graph repeats for values of <m>t</m> between <m>\pi</m> and <m>2\pi</m>. So, while the graph in degrees had vertical asymptotes at <m>\theta = 90\degree</m> and <m>\theta = 270\degree</m>, this graph has vertical asymptotes at <m>t = \dfrac{\pi}{2}</m> and <m>t = \dfrac{3\pi}{2}</m>. The figure at right shows the graph of <m>y = \tan (t)</m> for <m>0 \le t \le 2\pi</m>.</p>
+<sidebyside widths="50% 50%" valigns="middle middle" margins="0% 0%">
+<p>Plot the points and connect them with smooth curves, remembering that <m>\tan (\dfrac{\pi}{2})</m> is undefined. The graph repeats for values of <m>t</m> between <m>\pi</m> and <m>2\pi</m>. So, while the graph in degrees had vertical asymptotes at <m>\theta = 90\degree</m> and <m>\theta = 270\degree</m>, this graph has vertical asymptotes at <m>t = \dfrac{\pi}{2}</m> and <m>t = \dfrac{3\pi}{2}</m>. The figure at right shows the graph of <m>y = \tan (t)</m> for <m>0 \le t \le 2\pi</m>.</p>
     <image xml:id="exam6-3-2"><description>tangent</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [xscale=.8, yscale=0.7]
@@ -470,7 +458,7 @@
 </sidebyside></solution></example>
 
 <exercise><statement><p>Sketch a graph of the tangent function <m>y =\tan (t)</m> and scale the horizontal axis in integers, as shown below. Label the <m>t</m>-intercepts and the vertical asymptotes with their coordinates.</p>
-<sidebyside width="50%"><image xml:id="exer6-3-2"><description>grid</description><latex-image>
+    <image width="50%" xml:id="exer6-3-2"><description>grid</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [xscale=.5, yscale=0.25]
         \draw[cyan] (0,-8) grid[xstep=0.5, ystep=1] (10,8);
@@ -480,11 +468,9 @@
         \foreach \x in {1,2,...,10} \draw[black] (\x,0.16)--++(0,-.32) node[below, yshift=-2, fill=white, inner sep=1] {\x};
         \foreach \y in {-8, -6, -4, -2, 2, 4, 6, 8} \draw[black] (0.08,\y)--++(-.16,0) node[left, xshift=-2, fill=white, inner sep=1] {$\y$};
         \end{tikzpicture}]]>
-    </latex-image></image>
-</sidebyside></statement>
+    </latex-image></image></statement>
 
-<answer>
-    <sidebyside width="50%" margins="0% 30%"><image xml:id="exer6-3-2ans"><description>tangent graph</description><latex-image>
+<answer><image width="50%" xml:id="exer6-3-2ans"><description>tangent graph</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [xscale=.5, yscale=0.25]
         \draw[cyan] (0,-8) grid[xstep=0.5, ystep=1] (10,8);
@@ -500,8 +486,7 @@
         \draw[domain={0:atan(8)*pi/180}, smooth, variable=\x,red,very thick,->,>=stealth'] plot ({\x},{tan(deg(\x))}) ;
         \draw[domain={3*pi-atan(8)*pi/180:10}, smooth, variable=\x,red,very thick, <-,>=stealth'] plot ({\x},{tan(deg(\x))}) ;
         \end{tikzpicture}]]>
-    </latex-image></image>
-</sidebyside></answer></exercise>
+    </latex-image></image></answer></exercise>
 </subsection>
 
 <subsection><title>Solving Equations</title>
@@ -511,8 +496,7 @@
 <example><statement><p>Use a graph to find all solutions of <m>\cos (t) = -0.62</m> between <m>0</m> and <m>2\pi</m>.</p></statement>
   
 <solution><p>The figure shows a graph of <m>y = \cos (t)</m>, with <m>t</m> in radians, and the horizontal line <m>y = -0.62</m>.  The solutions of the equation are the <m>t</m>-coordinates of the intersection points, and these appear to be about <m>t = 2.25</m> and slightly over <m>4.0</m>, perhaps <m>4.05</m>. You can check that these values roughly satisfy the equation; it is difficult to read the graph with any greater accuracy.</p>
-          <sidebyside width="80%">
-            <image xml:id="exam6-3-3"><description>cosine graph</description><latex-image>
+    <image width="80%" xml:id="exam6-3-3"><description>cosine graph</description><latex-image>
                 <![CDATA[
                 \begin{tikzpicture} [scale=2.2]
         
@@ -528,17 +512,14 @@
                 \draw[gray, very thick] (0,-0.62)--++(3.9,0);
                 \draw[domain=0:3.9,smooth,variable=\x,red,very thick] plot ({\x},{ cos(deg( (\x)/.6))});
                 \end{tikzpicture}]]>
-            </latex-image></image>
-          </sidebyside></solution></example>
+            </latex-image></image></solution></example>
 
 <exercise><statement><p>Use a graph to find the two angles between <m>0</m> and <m>2\pi</m> that satisfy <m>\sin (t) = -0.85</m>. </p></statement>
-
 <answer><p>Approximately 4.14 and 5.25</p></answer></exercise>
 
 <activity><title>Solving Equations</title>
 
-<sidebyside width="90%">
-    <image xml:id="act6-4"><description>unit circle and sine graph</description><latex-image>
+    <image width="90%" xml:id="act6-4"><description>unit circle and sine graph</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=1.6]    
             \draw[cyan] (-1.0001,-1.0001) grid[step = 0.1] (1,1);
@@ -571,21 +552,19 @@
         \draw[domain=1.5:5.4,smooth,variable=\x,red,very thick] plot ({\x},{ sin(deg( (\x-1.5)/.6))});
         \end{tikzpicture}]]>
     </latex-image></image>
-</sidebyside>
 
-<p><ol marker="1">
-    <li><p><ol marker="a">
+<p><ol marker="1.">
+    <li><p><ol marker="a.">
         <li>Use the graph of <m>y=\sin (t)</m> to estimate two solutions of the equation <m>\sin (t) = 0.65</m>.  
         Show your solutions on the graph.</li>
         <li>Use the unit circle to estimate two solutions of the equation <m>\sin (t) = 0.65</m>. Show your 
         solutions on the circle.</li></ol></p></li>
-<li><p><ol marker="a">
+    <li><p><ol marker="a.">
         <li>Use the graph of <m>y=\sin (t)</m> to estimate two solutions of the equation <m>\sin (t) = -0.2</m>.
         Show your solutions on the graph.</li>
         <li>Use the unit circle to estimate two solutions of the equation <m>\sin (t) = -0.2</m>. Show your 
         solutions on the circle.</li></ol></p>
-<sidebyside width="100%">
-    <image xml:id="act6-5"><description>unit circle and cosine graph</description><latex-image>
+    <image width="100%" xml:id="act6-5"><description>unit circle and cosine graph</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=1.6]    
             \draw[cyan] (-1.0001,-1.0001) grid[step = 0.1] (1,1);
@@ -617,15 +596,14 @@
 
         \draw[domain=1.5:5.4,smooth,variable=\x,red,very thick] plot ({\x},{ cos(deg( (\x-1.5)/.6))});
         \end{tikzpicture}]]>
-    </latex-image></image>
-</sidebyside></li>
+    </latex-image></image></li>
 
-<li><p><ol marker="a">
+<li><p><ol marker="a.">
         <li>Use the graph of <m>y=\cos (t)</m> to estimate two solutions of the equation <m>\cos (t) = 0.15</m>.
             Show your solutions on the graph.</li>
         <li>Use the unit circle to estimate two solutions of the equation <m>\cos (t) = 0.15</m>. Show your 
         solutions on the circle.</li></ol></p></li>
-<li><p><ol marker="a">
+<li><p><ol marker="a.">
         <li>Use the graph of <m>y=\cos (t)</m> to estimate two solutions of the equation <m>\cos (t) = -0.4</m>. 
             Show your solutions on the graph.</li>
         <li>Use the unit circle to estimate two solutions of the equation <m>\cos (t) = -0.4</m>. Show your 
@@ -634,19 +612,19 @@
 
 <p>We can also solve equations algebraically, using a calculator or computer to obtain more accurate values for the solutions.</p>
 
-<example><statement><p><ol marker="a">
+<example><statement><p><ol marker="a.">
     <li><p>Solve the equation <m>~~\cos (t) = -0.62~~</m> algebraically, for <m>0 \le t \le 2\pi</m>.</p></li>
     <li><p>Find all solutions of the equation.</p></li>
 </ol></p></statement>
     
-<solution><p><ol marker="a">
+<solution><p><ol marker="a.">
     <li><p>The cosine is negative in the second and third quadrants, so we expect to find our answers between <m>t = 1.57</m> and <m>t = 4.71</m>. We use a calculator to find one of the angles:
-        <me>\cos^{-1}~ (-0.62) = 2.23953903</me> 
+            <me>\cos^{-1}~ (-0.62) = 2.23953903</me> 
     Rounded to hundredths, the second quadrant angle is <m>t_1 = 2.24</m> radans. To find the other angle, we first find the reference angle for <m>t_1</m>:</p>
     <sidebyside widths="60% 33%" valigns="middle middle" margins="0% 4%">
-        <p><me> \text{reference angle} = \pi - t_1 = 0.90</me>
+            <p><me> \text{reference angle} = \pi - t_1 = 0.90</me>
     The third quadrant angle with the same reference angle is
-        <me>t_2 = \pi + 0.90 = 4.04</me></p>
+            <me>t_2 = \pi + 0.90 = 4.04</me></p>
     <image xml:id="exam6-3-4"><description>unit circle</description><latex-image>
         <![CDATA[
         \begin{tikzpicture}[scale=1.]
@@ -677,12 +655,12 @@
     <li><p>All angles coterminal with <m>t_1</m> and <m>t_2 </m> are also solutions of the equation <m>~~\cos t = -0.62~~</m>. So adding or subtracting multiples of <m>2 \pi</m> to <m>t_1</m> and <m>t_2 </m> produces all the solutions. For example, <m>2.24 + 2\pi = 8.52</m> and <m>4.04 - 2 \pi = -2.24</m> are solutions. We write the solutions as <m>t = 2.24 \pm 2 \pi k</m> and <m>t = 4.04 \pm 2 \pi k</m>, where <m>k</m> is an integer.</p></li>
 </ol></p></solution></example>
 
-<exercise><statement><p><ol marker="a">
+<exercise><statement><p><ol marker="a.">
     <li><p>Solve the equation <m>~~\sin (t) = -0.85~~</m> algebraically, for <m>0 \le t \le 2\pi</m>.</p></li>
     <li><p>Find all solutions of the equation.</p></li>
 </ol></p></statement>
 
-<answer><p><ol marker="a">
+<answer><p><ol marker="a.">
     <li><p><m>4.16</m> and <m>5.27</m></p></li>
     <li><p><m>4.16 \pm 2\pi k</m> and <m>5.27 \pm 2\pi k</m></p></li>
 </ol></p></answer></exercise>
@@ -698,11 +676,10 @@
  so the second solution is <m>t_2 = \dfrac{5\pi}{4}</m>.</p>  
  
  <p>All other solutions of the equation <m>\tan t = 1</m> can be found by adding (or subtracting) multiples of <m>2\pi</m> to these two solutions. We write the solutions as
-    <me>t = \dfrac{\pi}{4} \pm 2\pi k,~~ \dfrac{5\pi}{4} \pm 2\pi k,~~  \text{where } k \text{ is an integer.}</me></p>
+        <me>t = \dfrac{\pi}{4} \pm 2\pi k,~~ \dfrac{5\pi}{4} \pm 2\pi k,~~  \text{where } k \text{ is an integer.}</me></p>
 </solution></example>
 
 <exercise><statement><p>Find exact values for all the solutions of <m>~~\tan (t) = -\sqrt{3}</m>.</p></statement>
-
 <answer><p><m>\dfrac{2\pi}{3} \pm 2\pi k</m>, <m>~ \dfrac{5\pi}{3} \pm 2\pi k</m></p></answer></exercise>
 </subsection>
 
@@ -711,16 +688,16 @@
 <p> Now that we have defined trigonometric functions of real numbers, we can describe periodic phenomena as functions of time (or other variables besides angles).</p>
 
 <p>For example, we began this chapter with a Ferris wheel of radius 100 feet that rotates once every 8 minutes. If you board the Ferris wheel at the bottom, your height is given as a function of time by 
-    <me>h = f(t) = 100 - 100 \cos \left(\dfrac{\pi}{4}t\right)</me> 
+        <me>h = f(t) = 100 - 100 \cos \left(\dfrac{\pi}{4}t\right)</me> 
 where <m>t</m> is measured in minutes after boarding.</p>
 
 <sidebyside widths="45% 52%" valigns="middle middle" margins="0% 0%">
 <p>Thus, after <m>\alert{2}</m> minutes your height is
-  <md><mrow>f(\alert{2}) \amp = 100 - 100\cos \left(\dfrac{\pi}{2}\right)</mrow>
-       <mrow> \amp = 100 - 100(0) = 100</mrow></md>
+    <md><mrow>f(\alert{2}) \amp = 100 - 100\cos \left(\dfrac{\pi}{2}\right)</mrow>
+        <mrow> \amp = 100 - 100(0) = 100</mrow></md>
   and after <m>\alert{4}</m> minutes your height is
-  <md><mrow>f(\alert{4}) \amp = 100 - 100\cos (\pi)</mrow>
-        \amp = 100 - 100(-1) = 200</md></p>
+    <md><mrow>f(\alert{4}) \amp = 100 - 100\cos (\pi)</mrow>
+        <mrow>\amp = 100 - 100(-1) = 200</mrow></md></p>
     <image xml:id="fig-6-3-height"><description>sinusoidal graph</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [xscale=.4, yscale=.016]
@@ -734,23 +711,23 @@ where <m>t</m> is measured in minutes after boarding.</p>
 
         \draw[samples=65,domain=0:16,smooth,variable=\x,red,very thick] plot ({\x},{100-100* cos( 45*\x)});
         \end{tikzpicture}]]>
-    </latex-image></image>
-</sidebyside>
+    </latex-image></image></sidebyside>
+
 <p>The graph of <m>h = f(t)</m> is shown above. From the graph, we see that the midline of the function is <m>h = 100</m>, its amplitude is 100, and its period is 8 (which is reasonable because the Ferris wheel rotates every 8 minutes). You can review period, midline, and amplitude of periodic functions in Section 4.3.</p>
 
 <example><statement><p>The formula  
-    <me>D(t) = 12.25 - 5.25 \cos \left(\dfrac{\pi}{6}t\right)</me>  
-  gives the number of hours of daylight in Glasgow, Scotland, as a function of time, in months after January 1.</p>
-    <p><ol marker="a">
-  <li>Graph the function on your calculator (make sure the calculator is set in radian mode).</li>
-  <li>State the midline, amplitude, and period of the graph.</li>
-  <li>How many hours of daylight does Glasgow enjoy on the longest day of the year?</li>
-  <li>In which months does Glasgow experience less than 8 hours of light per day?</li>
-  </ol></p></statement>
+        <me>D(t) = 12.25 - 5.25 \cos \left(\dfrac{\pi}{6}t\right)</me>  
+gives the number of hours of daylight in Glasgow, Scotland, as a function of time, in months after January 1.</p>
+<p><ol marker="a.">
+    <li>Graph the function on your calculator (make sure the calculator is set in radian mode).</li>
+    <li>State the midline, amplitude, and period of the graph.</li>
+    <li>How many hours of daylight does Glasgow enjoy on the longest day of the year?</li>
+    <li>In which months does Glasgow experience less than 8 hours of light per day?</li>
+</ol></p></statement>
   
-  <solution><p><ol marker="a">
+<solution><p><ol marker="a.">
     <li><p>The graph is shown below.</p>
-      <sidebyside width="55%"><image xml:id="exam6-3-6"><description>sinusoidal graph</description><latex-image>
+      <image width="55%" xml:id="exam6-3-6"><description>sinusoidal graph</description><latex-image>
           <![CDATA[
           \begin{tikzpicture} [xscale=.3, yscale=.15]
           \draw[cyan] (0,0) grid[ystep=2] (18,24);
@@ -763,21 +740,21 @@ where <m>t</m> is measured in minutes after boarding.</p>
           \draw[blue, very thick, dashed] (0,12.25)--++(18,0);
           \draw[samples=65,domain=0:18,smooth,variable=\x,red,very thick] plot ({\x},{12.25-5.25* cos( 30*\x)});
           \end{tikzpicture}]]>
-      </latex-image></image></sidebyside></li> 
+      </latex-image></image></li> 
     <li>The midline of the graph is <m>D = 12.25</m> hours, the amplitude is 5.25 hours, and the period is 12 months.</li>
     <li>On the longest day of the year, there are <m>12.25 + 5.25 = 17.5</m> hours of daylight in Glasgow.</li>
     <li>From the graph, we see that <m>D(t) \lt 8</m> for <m>t</m> between 0 and 2, or in January and February. <m>D(t)</m> is also less than 8 for a short time between <m>t = 11</m> and <m>t = 12</m>, at the end of December.</li>
-  </ol></p></solution></example>
+</ol></p></solution></example>
 
 <exercise><statement><p>The pistons in an automobile engine move up and down in the cylinders. If <m>t</m> is in milliseconds, the distance from the top of the piston to the top of the cylinder is given in centimeters by
-    <me>D = 7 + 6\sin (4\pi t)</me></p>
-<p><ol marker= "a">
-<li>Graph the function on your calculator (make sure the calculator is set in radian mode).</li>
-<li>State the midline, amplitude, and period of the graph.</li>
-<li>Find the largest and the smallest clearance between the piston and the top of the cylinder.</li>
+        <me>D = 7 + 6\sin (4\pi t)</me></p>
+<p><ol marker= "a.">
+    <li>Graph the function on your calculator (make sure the calculator is set in radian mode).</li>
+    <li>State the midline, amplitude, and period of the graph.</li>
+    <li>Find the largest and the smallest clearance between the piston and the top of the cylinder.</li>
 </ol></p></statement>
 
-<answer><p><ol marker="a">
+<answer><p><ol marker="a.">
 <li><image xml:id="exer6-3-6ans" width="60%" margins="0% 40%"><description>sinusoidal graph</description><latex-image>
     <![CDATA[
     \begin{tikzpicture} [xscale=3, yscale=.2]
@@ -790,8 +767,7 @@ where <m>t</m> is measured in minutes after boarding.</p>
 
     \draw[samples=65,domain=0:2,smooth,variable=\x,red,very thick] plot ({\x},{7+6* sin( 4*180*\x)});
     \end{tikzpicture}]]>
-</latex-image></image>
-</li>
+    </latex-image></image></li>
 <li>Midline: <m>D = 7</m>, amplitude: <m>6</m>, period: <m>0.5</m> millisec</li>
 <li>Largest: 13 cm, smallest: 1 cm</li>
 </ol></p>
@@ -803,8 +779,7 @@ where <m>t</m> is measured in minutes after boarding.</p>
  <p> The <term>domain</term><idx><h>domain</h></idx> of a function is the set of all possible input values. For many familiar functions, the domain is the set of all real numbers. In particular, the domain of any linear or quadratic function is the set of all real numbers.</p>
  <p> Consider the functions <m>f(x) = 2x + 5</m> and <m>g(x) = x^2 - 4</m> shown below.  We can use any real number as an input for either of these functions, and their graphs extend across the entire <m>x</m>-axis.</p>
 
-<sidebyside width="95%">
-    <image xml:id="fig-6-3-domrge"><description>three graphs</description><latex-image>
+    <image width="95%" xml:id="fig-6-3-domrge"><description>three graphs</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.18]
         \coordinate (O) at (0,0);
@@ -862,16 +837,16 @@ where <m>t</m> is measured in minutes after boarding.</p>
         \node[align=left, text=blue, scale=.8] at (40, -13.3) { Domain: $x \ge -3$ \\ Range: $y \ge 0$};
         \end{tikzpicture}]]>
     </latex-image></image>
-</sidebyside>
 
 <p>However, for other types of functions we must sometimes exclude certain values from the domain.  For example, the domain of  the function <m>h(x) = \sqrt{x + 3}</m> is restricted because we cannot take the square root of a negative number. We must have <m>x + 3 \ge 0</m>, so the domain of the function consists of all <m>x \ge -3</m>.</p>
+
 <p>You can see the domain of a function in its graph; notice that there are no points on the graph of <m>h(x) = \sqrt{x + 3}</m> with <m>x</m>-coordinates less than <m>-3</m>.</p>
 
 <p>The <term>range</term><idx><h>range</h></idx> of a function is the set of all output values for the function. We can also see the range of a function in its graph; it is the set of all <m>y</m>-values for points on the graph.</p>  
 <p><ul>
-  <li>Because the graph of <m>f(x) = 2x + 5</m> extends infinitely in both directions, its range consists of all real numbers. There is an input value that will produce any output we want.</li>
-  <li> However, the range of <m>g(x) = x^2 - 4</m> consists of all <m>y \ge -4</m>, because there are no points on the graph with <m>y</m>-coordinate less than <m>-4</m>.</li>
-  <li> The range of <m>h(x) = \sqrt{x + 3}</m> consists of all <m>y \ge 0</m>.</li>
+    <li>Because the graph of <m>f(x) = 2x + 5</m> extends infinitely in both directions, its range consists of all real numbers. There is an input value that will produce any output we want.</li>
+    <li> However, the range of <m>g(x) = x^2 - 4</m> consists of all <m>y \ge -4</m>, because there are no points on the graph with <m>y</m>-coordinate less than <m>-4</m>.</li>
+    <li> The range of <m>h(x) = \sqrt{x + 3}</m> consists of all <m>y \ge 0</m>.</li>
 </ul></p>
 
 <assemblage><title>Domain and Range</title>
@@ -880,14 +855,14 @@ where <m>t</m> is measured in minutes after boarding.</p>
 </assemblage>
 
 <example><statement><p>Find the domain and range of each function.</p>
-<p><ol marker="a" cols="2">
+<p><ol marker="a." cols="2">
     <li><m>f(x) = 1 - x^2</m></li>
     <li><m>g(x) = \dfrac{1}{x - 3}</m></li>
 </ol></p></statement>
 
-<solution><p><ol marker="a">
+<solution><p><ol marker="a.">
 <li><p>There are no restrictions on the input values for this function, so its domain is all real numbers. The graph is a parabola with high point at <m>(0,1)</m>, so the range of the function is all <m>y \le 1</m>. See the figure below left.</p>
-        <sidebyside widths="28% 28%">
+<sidebyside widths="28% 28%">
     <image xml:id="exam6-3-7a"><description>parabola</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.17]
@@ -927,25 +902,22 @@ where <m>t</m> is measured in minutes after boarding.</p>
         \draw[red,very thick,->,>=stealth'] (7,1/4)--(8,1/5);
         \node[align=center, text=blue] at (0, -10.9) {$\displaystyle g(x)=\frac{1}{x-3}$};
         \end{tikzpicture}]]>
-    </latex-image></image>
-    </sidebyside></li>
+    </latex-image></image></sidebyside></li>
 
 <li>Because we cannot divide by zero, we cannot allow <m>x = 3</m> for this function. Thus, the domain of <m>g</m> is all real numbers except <m>3</m>. The graph has a horizontal asymptote at <m>y = 0</m>, and you can see that there is no input that will produce an output of zero. So the range of <m>g</m> is all real numbers except <m>0</m>.</li>
 </ol></p>
 </solution></example>
 
 <exercise><statement><p>Use the formula and a graph to find the domain and range.</p>
-<p><ol marker= "a" cols="2">
+<p><ol marker= "a." cols="2">
   <li><m>f(x) = \dfrac{2x}{x + 4}</m></li>
   <li><m>g(x) = 1 + \sqrt{5 - x}</m></li>
 </ol></p></statement>
 
-<answer>
-    <p><ol marker="a">
+<answer><p><ol marker="a.">
       <li>Dom (<m>f</m>): all real numbers except <m>-4</m>, Rge (<m>f</m>): all real numbers except <m>2</m></li>
       <li>Dom (<m>8</m>): <m>(-\infty, 5]</m>, Rge (<m>g</m>): <m>[1, \infty)</m></li>
-    </ol></p>
-</answer></exercise>
+</ol></p></answer></exercise>
 
 <p> What about the domain and range of the trigonometric functions? The sine and cosine both include all real numbers in their domains; we can find the sine or cosine of any number. Because the output values of the sine and cosine are both defined by the coordinates of points on a unit circle, their values cannot be greater than <m>1</m> or less than <m>-1</m>. The range of both sine and cosine is the interval <m>[-1,1]</m>.</p>
 
@@ -957,20 +929,20 @@ where <m>t</m> is measured in minutes after boarding.</p>
 <project>    
     <sidebyside><p>Evaluate the function in part (a), and solve the equation in part (b).
 </p></sidebyside>   
-    <sidebyside><p><ol marker="1" cols="2">
-        <li><p><m>f(x) = x^2 + 1</m><ol marker= "a">
+    <sidebyside><p><ol marker="1." cols="2">
+        <li><p><m>f(x) = x^2 + 1</m><ol marker= "a.">
               <li><m>f(5)</m></li>
               <li><m>f(x) = 5</m></li>
             </ol></p></li>
-        <li><p><m>g(x) = x^3 - 2</m><ol marker= "a">
+        <li><p><m>g(x) = x^3 - 2</m><ol marker= "a.">
               <li><m>g(-10)</m></li>
               <li><m>g(x) = -10</m></li>
             </ol></p></li>
-        <li><p><m>h(t) = \sqrt{2t + 6}</m><ol marker= "a">
+        <li><p><m>h(t) = \sqrt{2t + 6}</m><ol marker= "a.">
               <li><m>h(3)</m></li>
               <li><m>h(t) = 3</m></li>
             </ol></p></li>
-        <li><p><m>m(t) = 6\left(2^t\right)</m><ol marker= "a">
+        <li><p><m>m(t) = 6\left(2^t\right)</m><ol marker= "a.">
               <li><m>m(3)</m></li>
               <li><m>m(t) = 3</m></li>
             </ol></p></li>
@@ -979,24 +951,24 @@ where <m>t</m> is measured in minutes after boarding.</p>
     <sidebyside><p><m>\underline{\qquad\qquad\qquad\qquad}</m></p></sidebyside>
     <conclusion>
     <sidebyside><p>Algebra Refresher Answers</p></sidebyside>
-        <p><ol marker="1" cols="2">
-            <li><p><ol marker= "a">
-              <li><m>26</m></li> 
-              <li><m>\pm 2</m></li>
+        <p><ol marker="1." cols="2">
+            <li><p><ol marker= "a.">
+                <li><m>26</m></li> 
+                <li><m>\pm 2</m></li>
             </ol></p></li>
-            <li><p><ol marker= "a">
-              <li><m>-102</m></li> 
-              <li><m>-2</m></li>
+            <li><p><ol marker= "a.">
+                <li><m>-102</m></li> 
+                <li><m>-2</m></li>
             </ol></p></li>
-            <li><p><ol marker= "a">
-              <li><m>2\sqrt{3}</m></li> 
-              <li><m>\dfrac{3}{2}</m></li>
+            <li><p><ol marker= "a.">
+                <li><m>2\sqrt{3}</m></li> 
+                <li><m>\dfrac{3}{2}</m></li>
             </ol></p></li>
-            <li><p><ol marker= "a">
-              <li><m>48</m></li> 
-              <li><m>-1</m></li>
+            <li><p><ol marker= "a.">
+                <li><m>48</m></li> 
+                <li><m>-1</m></li>
             </ol></p></li>
-          </ol></p>
+        </ol></p>
     </conclusion>
 </project>
 </subsection>
@@ -1010,12 +982,12 @@ where <m>t</m> is measured in minutes after boarding.</p>
 </subsubsection>
 
 <subsubsection><title>Concepts</title>
-    <p><ol marker="1">
+    <p><ol marker="1.">
         <li>We can use circular functions of real numbers to describe periodic phenomena.</li>
         <li>The <term>domain</term> of a function is the set of all possible input values. The <term>range</term> of a function is the set of all output values for the function.</li>
         <li>We can use a graph to solve trigonometric equations, or the inverse trig keys on a calculator or computer. We can find exact values for the solutions of equations involving the special values without using a calculator.</li>
     
-            <li><sidebyside widths="32% 68%" valigns="middle middle"><p>
+        <li><sidebyside widths="32% 68%" valigns="middle middle"><p>
             <assemblage><title><m>f(x) = \sin (x)</m></title>
             <p>Domain: all real numbers</p>
             <p>Range: <m>[-1,1]</m></p>
@@ -1023,8 +995,7 @@ where <m>t</m> is measured in minutes after boarding.</p>
             <image xml:id="fig-6-3-sumsin">
             <description>sine graph</description>
             <xi:include href="Fig-sine-2-periods.ptx"/>
-        </image>
-    </sidebyside>
+        </image></sidebyside>
     
     <sidebyside widths="32% 68%" valigns="middle middle"><p>
         <assemblage><title><m>g(x) = \cos (x)</m></title>
@@ -1034,8 +1005,7 @@ where <m>t</m> is measured in minutes after boarding.</p>
         <image xml:id="fig-6-3-sumcos">
             <description>cosine graph</description>
             <xi:include href="Fig-cosine-2-periods.ptx"/>
-        </image>
-        </sidebyside>
+        </image></sidebyside>
     
         <sidebyside widths="48% 52%" valigns="middle middle"><p>
             <assemblage><title><m>h(x) = \tan (x)</m></title>
@@ -1046,18 +1016,15 @@ where <m>t</m> is measured in minutes after boarding.</p>
         <image xml:id="fig-6-3-sumtan">
             <description>tangent graph</description>
             <xi:include href="Fig-tangent-4-periods.ptx"/>
-        </image>
-        </sidebyside></li>   
+        </image></sidebyside></li>   
     </ol></p></subsubsection>
 
 <subsubsection><title> Study Questions</title>
-    <p><ol marker="1">
+    <p><ol marker="1.">
         <li>How do the graphs of the circular functions differ from the graphs of the trigonometric functions of angles in degrees?</li>
         <li><p>Use guidepoints to sketch graphs of <m>y = \cos (t)</m> and <m>y = \tan (t)</m>.</p>
         <sidebyside widths="60% 34%" valigns="middle middle" margins="0% 5%"><p>For each equation below, suppose that <m>\omega</m> is one of the solutions between <m>0</m> and <m>2\pi</m>. Use the diagram to find the other solution.</p>
-            <image xml:id="fig-6-3-sq">
-            <description>circle</description>
-            <latex-image>
+            <image xml:id="fig-6-3-sq"><description>circle</description><latex-image>
             <![CDATA[
             \begin{tikzpicture}
             \draw[black,thick,->,>=stealth'] (-1.1,0)--(1.3,0);
@@ -1077,9 +1044,7 @@ where <m>t</m> is measured in minutes after boarding.</p>
             \filldraw[black] (C) circle (.05cm) node[below left, color=red,xshift=6]{$\pi +\omega$};
             \filldraw[black] (D) circle (.05cm) node[below right, color=red,xshift=-6]{$2\pi-\omega$};
             \end{tikzpicture}]]>
-        </latex-image>
-        </image>
-        </sidebyside></li>
+        </latex-image></image></sidebyside></li>
         <li><m>\sin (t) = k</m></li>
         <li><m>\cos (t) = k</m></li>
         <li><m>\tan (t) = k</m></li>
@@ -1087,7 +1052,7 @@ where <m>t</m> is measured in minutes after boarding.</p>
     </subsubsection>
     
     <subsubsection><title>Skills</title>
-    <p><ol marker="1">
+    <p><ol marker="1.">
         <li>Graph the trig functions of real numbers    #1<ndash/>8</li>
         <li>Solve trigonometric equations graphically    #9<ndash/>20</li>
         <li>Work with reference angles    #21<ndash/>26</li>
