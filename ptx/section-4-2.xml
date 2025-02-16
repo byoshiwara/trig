@@ -2,10 +2,10 @@
 
 <section xml:id="Graphs-of-Trigonometric-Functions"   xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Graphs of Trigonometric Functions</title>
-<idx><h>trigonometric function</h><h>graph</h></idx>
+    <idx><h>trigonometric function</h><h>graph</h></idx>
 
 <subsection><title>A Periodic Function of Angle</title>
-<idx><h>periodic function</h></idx>
+    <idx><h>periodic function</h></idx>
 
 <p> Imagine that you are riding on a Ferris wheel. As the wheel turns, your height above the ground increases and then decreases again, repeating the same pattern each time the Ferris wheel makes a complete rotation. This pattern is an example of a <term>periodic function</term><idx><h>periodic function</h></idx>. We use periodic functions to model phenomena that exhibit cyclical behavior, such as the height of tides, seasonal patterns of growth in plants and animals, radio waves, and planetary motion.</p>
 
@@ -42,8 +42,8 @@
 
 <p>To simplify the model, we'll first graph <m>y</m> as the <term>output variable</term><idx><h>output variable</h></idx>, instead of <m>h</m>. As the angle <m>\theta</m> increases from <m>0\degree</m> to <m>90\degree</m>, your <m>y</m>-coordinate increases from 0 to 100. You are then at the top of the wheel. Then, as <m>\theta</m> increases from <m>90\degree</m> to <m>180\degree</m>, your <m>y</m>-coordinate decreases from 100 back to 0.</p>
 
-<sidebyside width="75%"><!--<image source="photos/4-2-ferris2.png"><description>angle</description></image>-->
-    <image xml:id="fig-4-2-ferris2"><description>ferris wheel</description><latex-image>
+<!--<image source="photos/4-2-ferris2.png"><description>angle</description></image>-->
+    <image width="75%" xml:id="fig-4-2-ferris2"><description>ferris wheel</description><latex-image>
         <![CDATA[
         \begin{tikzpicture}[scale=.9]
         \coordinate(O) at (-4,0);
@@ -119,7 +119,7 @@
         \filldraw[black] (Tp) circle (1.5pt);
         \draw[black] (0.15,2) --+ (-0.3,0) node[above left, color=blue]{100};
     \end{tikzpicture}]]>
-</latex-image></image></sidebyside>
+</latex-image></image>
 
 <p> Finally, as <m>\theta</m> increases from <m>180\degree</m> to <m>360\degree</m>, your <m>y</m>-coordinate decreases from 0 to <m>-100</m> and then increases from <m>-100</m> back to 0. You have made one complete rotation on the Ferris wheel. If you go around again, <m>\theta</m> increases from <m>360\degree</m> to <m>720\degree</m>, and the graph of your <m>y</m>-coordinate will repeat the pattern of the first rotation. The figure above shows how your <m>y</m>-coordinate is plotted as a function of the angle <m>\theta</m>.</p>
 
@@ -166,183 +166,147 @@
 <p> Our Ferris wheel model used values of <m>\sin (\theta)</m>, so let us explore its properties. Remember that the trigonometric ratio <m>\sin (\theta)</m> is actually a function of the angle <m>\theta</m>. Thus, for each value of <m>\theta</m>, there is only one value of <m>\sin (\theta)</m>, and we may write <m>f(\theta) = \sin (\theta)</m>.</p>  
 
 <activity><title>Graph of the Sine Function</title>
-    <p>Graph the sine function <m>f(\theta) = \sin (\theta)</m>.</p>
-    
-    <p><ol marker="1">
-        <li><p>First make a table of values. You can use your calculator's table feature to fill in the following values, rounded to two decimal places.</p>
-    
+<p>Graph the sine function <m>f(\theta) = \sin (\theta)</m>.</p>
+
+<p><ol marker="1.">
+    <li><p>First make a table of values. You can use your calculator's table feature to fill in the following values, rounded to two decimal places.</p>
+
     <tabular top="major" halign="left" right="minor" left="minor" bottom="minor">                  
-        <row bottom="minor">
-            <cell><m>\theta</m></cell>
-            <cell><m>0\degree</m></cell>
-            <cell><m>10\degree</m></cell>
-            <cell><m>20\degree</m></cell>
-            <cell><m>30\degree</m></cell>
-            <cell><m>40\degree</m></cell>
-            <cell><m>50\degree</m></cell>
-            <cell><m>60\degree</m></cell>
-            <cell><m>70\degree</m></cell>
-            <cell><m>80\degree</m></cell>
-            <cell><m>90\degree</m></cell></row>
-        <row>
-            <cell><m>\sin (\theta)</m></cell> 
-            <cell><m>\hphantom{000}</m></cell>
-            <cell><m>\hphantom{000}</m></cell>
-            <cell><m>\hphantom{000}</m></cell>
-            <cell><m>\hphantom{000}</m></cell>
-            <cell><m>\hphantom{000}</m></cell>
-            <cell><m>\hphantom{000}</m></cell>
-            <cell><m>\hphantom{000}</m></cell>
-            <cell><m>\hphantom{000}</m></cell>
-            <cell><m>\hphantom{000}</m></cell>
-            <cell><m>\hphantom{000}</m></cell></row>
-            </tabular></li>
-    
-        <li><p>Plot the points in the table and connect them with a smooth curve to graph the sine function for angles in the first quadrant, from <m>0\degree</m> to <m>90\degree</m>.</p>
-            <image xml:id="Act-4-2-2" width="39%"><description>grid for sine graph</description><latex-image>
-                <![CDATA[
-                \begin{tikzpicture}
-                \draw[cyan,xstep=pi/18,ystep=0.18]
-                (0,-1.8) grid (pi,1.8);
-            
-                \draw[->,>=stealth'] (-.3,0) -- (3.5,0) node[right] {$\theta$};
-                \draw[->,>=stealth'] (0,-1.8) -- (0,2.1) node[above] {$y$};
-            
-                \foreach \x [evaluate=\x as \xi using int( 60* \x )] in {0,1,...,3}
-                \draw[black] ($ pi*\x /3*(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi \degree$};
-                \foreach \y in {-0.9, 0.9}
-                \draw[black] (.08,\y ) --++(-.16,0);
-                \foreach \y in {-1,1}
-                \draw[black, thick] (.12,1.8*\y ) --++(-.24,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\y};
-                \end{tikzpicture}]]>
-            </latex-image></image></li>
-        <li><p>Recall that the values of <m>\sin (\theta)</m> for angles in the second quadrant can be found using reference angles: <m>\sin (180\degree - \theta) = \sin (\theta)</m>.  This fact gives us values of <m>\sin \theta</m>  from <m>90\degree</m> to <m>180\degree</m>.</p>
-    
-            <tabular top="major" halign="left" right="minor" left="minor" bottom="minor">                  
-                <row bottom="minor">
-                    <cell><m>\theta</m></cell>
-                    <cell><m>100\degree</m></cell>
-                    <cell><m>110\degree</m></cell>
-                    <cell><m>120\degree</m></cell>
-                    <cell><m>130\degree</m></cell>
-                    <cell><m>140\degree</m></cell>
-                    <cell><m>150\degree</m></cell>
-                    <cell><m>160\degree</m></cell>
-                    <cell><m>170\degree</m></cell>
-                    <cell><m>180\degree</m></cell></row>
-                <row>
-                    <cell><m>\sin (\theta)</m></cell> 
-                    <cell><m>\hphantom{000}</m></cell>
-                    <cell><m>\hphantom{000}</m></cell>
-                    <cell><m>\hphantom{000}</m></cell>
-                    <cell><m>\hphantom{000}</m></cell>
-                    <cell><m>\hphantom{000}</m></cell>
-                    <cell><m>\hphantom{000}</m></cell>
-                    <cell><m>\hphantom{000}</m></cell>
-                    <cell><m>\hphantom{000}</m></cell>
-                    <cell><m>\hphantom{000}</m></cell></row>
-            </tabular>
-    
-        <p>Continue your graph from part (2) for second quadrant angles.</p></li>
-    
-        <li><p>The values of <m>\sin (\theta)</m> in the third and fourth quadrants are the negatives of their values in the second and first quadrants.</p>
-    
-            <sidebyside><tabular top="major" halign="left" right="minor" left="minor" bottom="minor">                  
-                <row bottom="minor">
-                    <cell><m>\theta</m></cell>
-                    <cell><m>190\degree</m></cell>
-                    <cell><m>200\degree</m></cell>
-                    <cell><m>210\degree</m></cell>
-                    <cell><m>220\degree</m></cell>
-                    <cell><m>230\degree</m></cell>
-                    <cell><m>240\degree</m></cell>
-                    <cell><m>250\degree</m></cell>
-                    <cell><m>260\degree</m></cell>
-                    <cell><m>270\degree</m></cell></row>
-                    
-                <row>
-                    <cell><m>\sin (\theta)</m></cell> 
-                    <cell><m>\hphantom{000}</m></cell>
-                    <cell><m>\hphantom{000}</m></cell>
-                    <cell><m>\hphantom{000}</m></cell>
-                    <cell><m>\hphantom{000}</m></cell>
-                    <cell><m>\hphantom{000}</m></cell>
-                    <cell><m>\hphantom{000}</m></cell>
-                    <cell><m>\hphantom{000}</m></cell>
-                    <cell><m>\hphantom{000}</m></cell>
-                    <cell><m>\hphantom{000}</m></cell></row>
-            </tabular></sidebyside>
-    
-            <sidebyside><tabular top="major" halign="left" right="minor" left="minor" bottom="minor">                  
-                <row bottom="minor">
-                    <cell><m>\theta</m></cell>
-                    <cell><m>280\degree</m></cell>
-                    <cell><m>290\degree</m></cell>
-                    <cell><m>300\degree</m></cell>
-                    <cell><m>310\degree</m></cell>
-                    <cell><m>320\degree</m></cell>
-                    <cell><m>330\degree</m></cell>
-                    <cell><m>340\degree</m></cell>
-                    <cell><m>350\degree</m></cell>
-                    <cell><m>360\degree</m></cell></row>
-                <row>
-                    <cell><m>\sin (\theta)</m></cell> 
-                    <cell><m>\hphantom{000}</m></cell>
-                    <cell><m>\hphantom{000}</m></cell>
-                    <cell><m>\hphantom{000}</m></cell>
-                    <cell><m>\hphantom{000}</m></cell>
-                    <cell><m>\hphantom{000}</m></cell>
-                    <cell><m>\hphantom{000}</m></cell>
-                    <cell><m>\hphantom{000}</m></cell>
-                    <cell><m>\hphantom{000}</m></cell>
-                    <cell><m>\hphantom{000}</m></cell></row>
-            </tabular></sidebyside>
-            <p>Continue your graph from part (3) for third and fourth quadrant angles.</p>
-            <image xml:id="Act-4-2-3" width="70%"><description>grid for sine graph</description><latex-image>
-                <![CDATA[
-                \begin{tikzpicture}
-                \draw[cyan,xstep=pi/18,ystep=0.18]
-                (0,-1.8) grid (2*pi,1.8);
-            
-                \draw[->,>=stealth'] (-.3,0) -- (6.5,0) node[right] {$\theta$};
-                \draw[->,>=stealth'] (0,-1.8) -- (0,2.1) node[above] {$y$};
-            
-                \foreach \x [evaluate=\x as \xi using int( 60* \x )] in {0,1,...,6}
-                \draw[black] ($ pi*\x /3*(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi \degree$};
-                \foreach \y in {-0.9, 0.9}
-                \draw[black] (.08,\y ) --++(-.16,0);
-                \foreach \y in {-1,1}
-                \draw[black, thick] (.12,1.8*\y ) --++(-.24,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\y};
-                \end{tikzpicture}]]>
-            </latex-image></image>
-        </li>
-    
-        <li><p>The graph of <m>f(\theta) = \sin (\theta)</m> from <m>0\degree</m> to <m>360\degree</m> is shown below.</p>
-    <image xml:id="exam4-2-3a" width="70%"><description>sine graph</description><latex-image>
-        <![CDATA[
-        \begin{tikzpicture}
-        \draw[cyan,xstep=pi/18,ystep=0.18]
-        (0,-1.8) grid (2*pi,1.8);
-    
-        \draw[->,>=stealth'] (-.3,0) -- (6.5,0) node[right] {$\theta$};
-        \draw[->,>=stealth'] (0,-1.8) -- (0,2.1) node[above] {$y$};
-    
-        \foreach \x [evaluate=\x as \xi using int( 60* \x )] in {0,1,...,6}
-        \draw[black] ($ pi*\x /3*(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi \degree$};
-        \foreach \y in {-0.9, 0.9}
-        \draw[black] (.08,\y ) --++(-.16,0);
-        \foreach \y in {-1,1}
-        \draw[black, thick] (.12,1.8*\y ) --++(-.24,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\y};
-    
-        \draw[domain=0:2*pi,smooth,variable=\x,red,very thick] plot ({\x},{1.8*sin(deg(\x))});
-        \foreach \x [evaluate=\x as \xi using ( pi/180 * \x )] in {0,10,20,...,360}
-            \filldraw[black] (\xi, {1.8*sin(\x)} ) circle (1pt);
-        \end{tikzpicture}]]>
-    </latex-image></image></li></ol></p>
+                    <row bottom="minor">
+                        <cell><m>\theta</m></cell>
+                        <cell><m>0\degree</m></cell>
+                        <cell><m>10\degree</m></cell>
+                        <cell><m>20\degree</m></cell>
+                        <cell><m>30\degree</m></cell>
+                        <cell><m>40\degree</m></cell>
+                        <cell><m>50\degree</m></cell>
+                        <cell><m>60\degree</m></cell>
+                        <cell><m>70\degree</m></cell>
+                        <cell><m>80\degree</m></cell>
+                        <cell><m>90\degree</m></cell></row>
+                    <row>
+                        <cell><m>\sin (\theta)</m></cell> 
+                        <cell><m>\hphantom{000}</m></cell>
+                        <cell><m>\hphantom{000}</m></cell>
+                        <cell><m>\hphantom{000}</m></cell>
+                        <cell><m>\hphantom{000}</m></cell>
+                        <cell><m>\hphantom{000}</m></cell>
+                        <cell><m>\hphantom{000}</m></cell>
+                        <cell><m>\hphantom{000}</m></cell>
+                        <cell><m>\hphantom{000}</m></cell>
+                        <cell><m>\hphantom{000}</m></cell>
+                        <cell><m>\hphantom{000}</m></cell></row>
+                        </tabular></li>
+
+    <li><p>Plot the points in the table and connect them with a smooth curve to graph the sine function in the first quadrant, from <m>0\degree</m> to <m>90\degree</m>.</p></li>
+    <li><p>Recall that the values of <m>\sin (\theta)</m> in the second quadrant can be found using reference angles: <m>\sin (180\degree - \theta) = \sin (\theta)</m>.  This fact gives us values of <m>\sin \theta</m>  from <m>90\degree</m> to <m>180\degree</m>.</p>
+
+    <tabular top="major" halign="left" right="minor" left="minor" bottom="minor">                  
+                    <row bottom="minor">
+                        <cell><m>\theta</m></cell>
+                        <cell><m>100\degree</m></cell>
+                        <cell><m>110\degree</m></cell>
+                        <cell><m>120\degree</m></cell>
+                        <cell><m>130\degree</m></cell>
+                        <cell><m>140\degree</m></cell>
+                        <cell><m>150\degree</m></cell>
+                        <cell><m>160\degree</m></cell>
+                        <cell><m>170\degree</m></cell>
+                        <cell><m>180\degree</m></cell></row>
+                    <row>
+                        <cell><m>\sin (\theta)</m></cell> 
+                        <cell><m>\hphantom{000}</m></cell>
+                        <cell><m>\hphantom{000}</m></cell>
+                        <cell><m>\hphantom{000}</m></cell>
+                        <cell><m>\hphantom{000}</m></cell>
+                        <cell><m>\hphantom{000}</m></cell>
+                        <cell><m>\hphantom{000}</m></cell>
+                        <cell><m>\hphantom{000}</m></cell>
+                        <cell><m>\hphantom{000}</m></cell>
+                        <cell><m>\hphantom{000}</m></cell></row>
+                        </tabular>
+
+    <p>Continue your graph from part (2) for second quadrant angles.</p></li>
+
+    <li><p>The values of <m>\sin (\theta)</m> in the third and fourth quadrants are the negatives of their values in the second and first quadrants.</p>
+
+    <tabular top="major" halign="left" right="minor" left="minor" bottom="minor">                  
+                    <row bottom="minor">
+                        <cell><m>\theta</m></cell>
+                        <cell><m>190\degree</m></cell>
+                        <cell><m>200\degree</m></cell>
+                        <cell><m>210\degree</m></cell>
+                        <cell><m>220\degree</m></cell>
+                        <cell><m>230\degree</m></cell>
+                        <cell><m>240\degree</m></cell>
+                        <cell><m>250\degree</m></cell>
+                        <cell><m>260\degree</m></cell>
+                        <cell><m>270\degree</m></cell></row>
+                       
+                    <row>
+                        <cell><m>\sin (\theta)</m></cell> 
+                        <cell><m>\hphantom{000}</m></cell>
+                        <cell><m>\hphantom{000}</m></cell>
+                        <cell><m>\hphantom{000}</m></cell>
+                        <cell><m>\hphantom{000}</m></cell>
+                        <cell><m>\hphantom{000}</m></cell>
+                        <cell><m>\hphantom{000}</m></cell>
+                        <cell><m>\hphantom{000}</m></cell>
+                        <cell><m>\hphantom{000}</m></cell>
+                        <cell><m>\hphantom{000}</m></cell></row>
+                        </tabular>
+    <tabular top="major" halign="left" right="minor" left="minor" bottom="minor">                  
+                    <row bottom="minor">
+                        <cell><m>\theta</m></cell>
+                        <cell><m>280\degree</m></cell>
+                        <cell><m>290\degree</m></cell>
+                        <cell><m>300\degree</m></cell>
+                        <cell><m>310\degree</m></cell>
+                        <cell><m>320\degree</m></cell>
+                        <cell><m>330\degree</m></cell>
+                        <cell><m>340\degree</m></cell>
+                        <cell><m>350\degree</m></cell>
+                        <cell><m>360\degree</m></cell></row>
+                    <row>
+                        <cell><m>\sin (\theta)</m></cell> 
+                        <cell><m>\hphantom{000}</m></cell>
+                        <cell><m>\hphantom{000}</m></cell>
+                        <cell><m>\hphantom{000}</m></cell>
+                        <cell><m>\hphantom{000}</m></cell>
+                        <cell><m>\hphantom{000}</m></cell>
+                        <cell><m>\hphantom{000}</m></cell>
+                        <cell><m>\hphantom{000}</m></cell>
+                        <cell><m>\hphantom{000}</m></cell>
+                        <cell><m>\hphantom{000}</m></cell></row>
+                        </tabular></li>
+
+    <li><p>The graph of <m>f(\theta) = \sin (\theta)</m> from <m>0\degree</m> to <m>360\degree</m> is shown below.</p>
+    <image width="70%" xml:id="exam4-2-3a"><description>sine graph</description><latex-image>
+    <![CDATA[
+    \begin{tikzpicture}
+    \draw[cyan,xstep=pi/18,ystep=0.18]
+    (0,-1.8) grid (2*pi,1.8);
+
+    \draw[->,>=stealth'] (-.3,0) -- (6.5,0) node[right] {$\theta$};
+    \draw[->,>=stealth'] (0,-1.8) -- (0,2.1) node[above] {$y$};
+
+    \foreach \x [evaluate=\x as \xi using int( 60* \x )] in {0,1,...,6}
+    \draw[black] ($ pi*\x /3*(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$ \xi \degree$};
+    \foreach \y in {-0.9, 0.9}
+    \draw[black] (.08,\y ) --++(-.16,0);
+    \foreach \y in {-1,1}
+    \draw[black, thick] (.12,1.8*\y ) --++(-.24,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\y};
+
+    \draw[domain=0:2*pi,smooth,variable=\x,red,very thick] plot ({\x},{1.8*sin(deg(\x))});
+    \foreach \x [evaluate=\x as \xi using ( pi/180 * \x )] in {0,10,20,...,360}
+        \filldraw[black] (\xi, {1.8*sin(\x)} ) circle (1pt);
+    \end{tikzpicture}]]>
+    </latex-image></image></li>
+</ol></p>
 </activity>
 
 <p>If we continue the graph for angles larger than <m>360\degree</m> or smaller than <m>0\degree</m>, we find that the same pattern repeats, as shown below. This should not be surprising, because we know that coterminal angles have the same trigonometric ratios.</p>
-<sidebyside width="100%"><image xml:id="exam4-2-3b"><description>sine graph</description><latex-image>
+    <image width="100%" xml:id="exam4-2-3b"><description>sine graph</description><latex-image>
     <![CDATA[
     \begin{tikzpicture} [scale=.35]    
     \draw[cyan, xstep=1, ystep=1] (-12,-4) grid (24,4);
@@ -356,7 +320,7 @@
         \draw[black] (.15,{4*\y }) --++(-.3,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\y};    
     \draw[samples=65,domain=-12:24,smooth,variable=\x,red,very thick] plot ({\x},{4*sin(30*\x)});   
     \end{tikzpicture}]]>
-</latex-image></image></sidebyside>  
+    </latex-image></image>  
 
 <p> The sine is an example of a periodic function.<idx><h>periodic function</h></idx> The smallest interval on which the graph repeats is called the <term>period</term><idx><h>period</h></idx> of the graph. From the graph in the previous example, we make the following observations:</p>
 
@@ -369,16 +333,14 @@
 </ul></p></assemblage>
 
 <p>You can use your calculator to graph the sine function, by entering  </p>
-<p><m>\qquad\qquad\qquad \text{Y}_{1} =</m><kbd>SIN</kbd> <m>\small\boxed{X,T,\theta, n}</m> <kbd name="right-paren"/></p>
+    <p><m>\qquad\qquad\qquad \text{Y}_{1} =</m><kbd>SIN</kbd> <m>\small\boxed{X,T,\theta, n}</m> <kbd name="right-paren"/></p>
 <p>and pressing  <kbd>ZOOM</kbd> <m>7</m> for the trig window.  The graph shows two periods of the sine function, from  <m>\theta = -360\degree</m> to <m>\theta = 360\degree</m>.</p>
 
 <exercise><statement><p>Your height <m>h</m> on the Ferris wheel is a function of <m>\theta</m>, 
-    <me>h = 100 + y = 100 + 100 \sin (\theta)</me> 
-</p>
-<ol marker="a">
-<li>
-    Complete the table of values and graph the Ferris wheel function, <m>h = F(\theta)</m>.
-    <sidebyside width="75%"><tabular top="major" halign="left" right="minor" left="minor" bottom="minor">                  
+        <me>h = 100 + y = 100 + 100 \sin (\theta)</me> </p>
+<ol marker="a.">
+    <li>Complete the table of values and graph the Ferris wheel function, <m>h = F(\theta)</m>.
+        <tabular top="major" halign="left" right="minor" left="minor" bottom="minor">                  
         <row bottom="minor">
             <cell><m>\theta</m></cell>
             <cell><m>0\degree</m></cell>
@@ -406,9 +368,9 @@
             <cell><m>\hphantom{0000}</m></cell>
             <cell><m>\hphantom{0000}</m></cell>
             <cell><m>\hphantom{0000}</m></cell></row>
-            </tabular></sidebyside>
+            </tabular>
 
-<sidebyside width="75%"><tabular top="major" halign="left" right="minor" left="minor" bottom="minor">                  
+    <tabular top="major" halign="left" right="minor" left="minor" bottom="minor">                  
         <row bottom="minor">
             <cell><m>\theta</m></cell>
             <cell><m>210\degree</m></cell>
@@ -433,9 +395,9 @@
             <cell><m>\hphantom{0000}</m></cell>
             <cell><m>\hphantom{0000}</m></cell>
             <cell><m>\hphantom{0000}</m></cell></row>
-            </tabular></sidebyside>
+            </tabular>
 
-<sidebyside width="60%"><image xml:id="exer4-2-3"><description>grid</description><latex-image>
+    <image width="60%" xml:id="exer4-2-3"><description>grid</description><latex-image>
     <![CDATA[
     \begin{tikzpicture} [scale=1]
     \draw[cyan,xstep=0.5,ystep=0.4] (0,0) grid (6,4);
@@ -449,18 +411,12 @@
     \foreach \y  [evaluate=\y as \yi using int( 50* \y )] in {2,4}
     \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3] {\yi};
     \end{tikzpicture}]]>
-    </latex-image></image>
-</sidebyside>    </li>
-<li>
-    Give the period, amplitude, and midline of the graph.
-</li>
-</ol>
-</statement>
+    </latex-image></image></li>
+    <li>Give the period, amplitude, and midline of the graph.</li>
+</ol></statement>
 
-<answer>
-<p><ol marker="a">
-<li>
-<sidebyside width="75%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                  
+<answer><p><ol marker="a.">
+    <li><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                  
     <row bottom="minor">
         <cell><m>\theta</m></cell>
         <cell><m>0\degree</m></cell>
@@ -488,9 +444,9 @@
         <cell><m>186.6</m></cell>
         <cell><m>150</m></cell>
         <cell><m>100</m></cell></row>
-        </tabular></sidebyside>
+        </tabular>
 
-<sidebyside width="75%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                  
+    <tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                  
     <row bottom="minor">
         <cell><m>\theta</m></cell>
         <cell><m>210\degree</m></cell>
@@ -515,9 +471,9 @@
         <cell><m>13.4</m></cell>
         <cell><m>50</m></cell>
         <cell><m>100</m></cell></row>
-        </tabular></sidebyside>
+        </tabular>
 
-<sidebyside width="60%"><image xml:id="exer4-2-3ans"><description>sine graph</description><latex-image>
+    <image width="60%" xml:id="exer4-2-3ans"><description>sine graph</description><latex-image>
 <![CDATA[
 \begin{tikzpicture} [scale=1]
 \draw[cyan,xstep=0.5,ystep=0.4] (0,0) grid (6,4);
@@ -535,11 +491,8 @@
 \foreach \x [evaluate=\x as \xi using int( 60* \x )] in {0,0.5,...,6}
 \filldraw[black] (\x , {2+2*sin(pi/3*deg(\x))}) circle (1.5pt);
 \end{tikzpicture}]]>
-</latex-image></image></sidebyside>
-</li>
-<li>
-<p>Period: <m>360\degree</m>, amplitude: 100, midline: <m>h=100</m></p>
-</li>
+    </latex-image></image></li>
+    <li><p>Period: <m>360\degree</m>, amplitude: 100, midline: <m>h=100</m></p></li>
 </ol></p>
 </answer></exercise>
 
@@ -552,7 +505,7 @@
 <p>In the previous exercise you graphed the height of a person riding on a Ferris wheel. Your graph involved <m>\sin (\theta)</m>, because the sine function tells us the <m>y</m>-coordinate of a point that travels around a circle. The cosine function tells us the <m>x</m>-coordinate of a point that travels around a circle.</p>
 
 <example xml:id="Example-KOPS-Rule"><statement><sidebyside widths="65% 35%" margins="0% 0%">
-    <p>Small adjustments to the fit of a bicycle can affect both the cyclist's efficiency and the stress on his or her jounts.  The KOPS rule (Knee Over Pedal Stem) aligns the cyclist's knee directly over the pedal at the point of maximum force, as shown at right.  As the cyclist's foot rotates away from this KOPS line, stress on the knee increases.</p>
+<p>Small adjustments to the fit of a bicycle can affect both the cyclist's efficiency and the stress on his or her jounts.  The KOPS rule (Knee Over Pedal Stem) aligns the cyclist's knee directly over the pedal at the point of maximum force, as shown at right.  As the cyclist's foot rotates away from this KOPS line, stress on the knee increases.</p>
     <!-- <image source="photos/exam4-2-4bike.png"><description>bicycle</description></image>-->
     <image xml:id="exam4-2-4bike"><description>bicycle</description><latex-image>
         <![CDATA[
@@ -591,17 +544,17 @@
         \draw[gray, very thick] (-5,0) --(6.5,0);
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>  
-<p><ol marker="a">
+<p><ol marker="a.">
     <li>Suppose the pedal crank is 18 centimeters long.  When the crank makes an angle <m>\theta</m> with the horizontal, how far is the cyclist's foot displaced horizontally from the KOPS line?</li>
     <li>Graph the horizontal displacement, <m>d</m>, as a function of <m>\theta</m>.</li>
 </ol></p></statement>
         
-<solution><p><ol marker="a">
+<solution><p><ol marker="a.">
     <li><p>The cyclist's foot travels around a circle of radius 18 centimeters. If we place the origin at the center of the chain gear, the <m>x</m>-coordinate of the foot is given by 
-        <me>x = r \cos (\theta) = 18 \cos (\theta)</me></p> 
+            <me>x = r \cos (\theta) = 18 \cos (\theta)</me></p> 
     <sidebyside widths="58% 35%" margins="0% 0%" valigns="middle middle">
     <p> (See the figure at right.) The KOPS line is the vertical line <m>x = 18</m>, so the horizontal distance between the cyclist's foot and the KOPS line is 
-        <me>d = 18 - 18 \cos (\theta)</me>  </p>
+            <me>d = 18 - 18 \cos (\theta)</me>  </p>
     <image xml:id="exam4-2-4a"><description>KOPS line and circle</description><latex-image>
         <![CDATA[
         \begin{tikzpicture}[scale=.8]
@@ -629,7 +582,7 @@
     </latex-image></image></sidebyside></li>
     <li><p>You can use your calculator to verify the table and graph for the function <me>d = 18 - 18 \cos (\theta)</me> shown below.</p>
 
-    <sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                  
+    <tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                  
         <row bottom="minor">
             <cell><m>\theta</m></cell>
             <cell><m>0\degree</m></cell>
@@ -660,9 +613,9 @@
             <cell><m>9</m></cell>
             <cell><m>2.4</m></cell>
             <cell><m>0</m></cell></row>
-            </tabular></sidebyside>
+            </tabular>
 
-    <sidebyside widths="65%"><image xml:id="exam4-2-4b"><description>cosine graph</description><latex-image>
+    <image widths="65%" xml:id="exam4-2-4b"><description>cosine graph</description><latex-image>
         <![CDATA[
         \begin{tikzpicture}
         \draw[cyan,xstep=pi/6,ystep=0.3] (0,0) grid (2*pi,3.9);
@@ -677,17 +630,17 @@
 
         \draw[domain=0:2*pi,smooth,variable=\x,red,very thick] plot ({\x},{1.8-1.8*cos(deg(\x))});
         \end{tikzpicture}]]>
-        </latex-image></image></sidebyside></li>
+        </latex-image></image></li>
     </ol></p></solution>
 </example>
 
 <p>In the example above, the period is <m>360\degree</m>, the amplitude is 18 cm, and the midline is <m>d=18</m>. </p>
 <p>You can see that the cosine graph is similar to the sine graph, but they are not identical.</p>
 
-<exercise><statement><p><ol marker="a">
+<exercise><statement><p><ol marker="a.">
     <li><p>Complete the table below with values rounded to two decimal places. Use the table and your knowledge of reference angles to graph the cosine function, <m>f(\theta) = \cos (\theta)~</m> from <m>-180\degree</m> to <m>540\degree</m>.</p>
 
-    <sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                  
+    <tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                  
         <row bottom="minor">
             <cell><m>\theta</m></cell>
             <cell><m>0\degree</m></cell>
@@ -712,10 +665,9 @@
             <cell><m>\hphantom{0000}</m></cell>
             <cell><m>\hphantom{0000}</m></cell>
             <cell><m>\hphantom{0000}</m></cell></row>
-            </tabular></sidebyside>
+            </tabular>
 
-    <sidebyside width="90%">
-    <image xml:id="exer4-2-4"><description>grid</description><latex-image>
+    <image width="90%" xml:id="exer4-2-4"><description>grid</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [xscale=1.2, yscale=0.9]
         \draw[cyan,xstep=0.3333, ystep=0.4] (-2.01,-2) grid (6,2);
@@ -731,12 +683,12 @@
         \foreach \y  [evaluate=\y as \yi using int(  \y /2 )] in {-2,2}
         \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\yi};
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></li>
+    </latex-image></image></li>
     <li>Use your graph to find the period, amplitude, and midline of the cosine function. How does the graph of cosine differ from the graph of sine? (Hint:  Consider the intercepts of the graph, and the location of the maximum and minimum values.)</li>
     </ol></p></statement>
 
-<answer><p><ol marker="a">
-    <li><sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                  
+<answer><p><ol marker="a.">
+    <li><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">                  
                     <row bottom="minor">
                         <cell><m>\theta</m></cell>
                         <cell><m>0\degree</m></cell>
@@ -761,8 +713,8 @@
                         <cell><m>0.34</m></cell>
                         <cell><m>0.17</m></cell>
                         <cell><m>0</m></cell></row>
-                        </tabular></sidebyside>
-    <sidebyside width="90%"><image xml:id="exer4-2-4ans"><description>graph</description><latex-image>
+                        </tabular>
+    <image width="90%" xml:id="exer4-2-4ans"><description>graph</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [xscale=1.2, yscale=0.9]
         \draw[cyan,xstep=0.3333, ystep=0.4] (-2.01,-2) grid (6,2);
@@ -782,7 +734,7 @@
         \foreach \x [evaluate=\x as \xi using ( \x/9 )] in {0,1,2,...,9}
         \filldraw[black] (\xi , {2* cos(\x*10)}) ellipse (.03cm and .04cm);
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></li>
+    </latex-image></image></li>
     <li>Period: <m>360\degree</m>, amplitude: 1,  midline: <m>y = 0</m>.  The cosine graph starts <m>(\theta = 0\degree)</m> at its high point, while the sine graph starts <m>(\theta = 0\degree)</m> at its midline.</li></ol></p></answer></exercise>                     
 </subsection>
 
@@ -839,8 +791,7 @@
 <note><p>When we discuss trigonometric functions, there are several variables involved.  Our definitions of the trig ratios involve four variables: <m>x</m>, <m>y</m>, <m>r</m>, and <m>\theta</m>, as illustrated below.</p>
 
 <sidebyside widths="30% 30%" margins="15% 15%">
-    <image xml:id="fig-4-2-caut1"><description>angles</description>
-    <xi:include href="Angle-Q3.ptx"/></image>
+    <image xml:id="fig-4-2-caut1"><description>angles</description><xi:include href="Angle-Q3.ptx"/></image>
     <image xml:id="fig-4-2-caut2b"><description>graphs</description><latex-image>
         <![CDATA[
         \begin{tikzpicture}  [scale=.8]
@@ -860,8 +811,8 @@
     </latex-image></image></sidebyside>
 
  <p>If the value of <m>r</m> is fixed for a given situation, such as the Ferris wheel or the bicycle wheel discussed above, then <m>x</m> and <m>y</m> are both functions of <m>\theta</m>. This means that the values of <m>x</m> and <m>y</m> depend only on the value of the angle <m>\theta</m>.  If <m>r = 1</m>, we have
-<md><mrow>x \amp = f(\theta) = \cos (\theta)</mrow>
-     <mrow>y \amp = g(\theta) = \sin (\theta)</mrow></md>
+    <md><mrow>x \amp = f(\theta) = \cos (\theta)</mrow>
+        <mrow>y \amp = g(\theta) = \sin (\theta)</mrow></md>
 The graphs of these functions are shown below. Note particularly that the horizontal axis displays values of the input variable, and the vertical axis displays the output variable. </p>
 <sidebyside widths="45% 45%"><image xml:id="fig-4-2-caut2cos"><description>cosine graph</description><latex-image>
     <![CDATA[
@@ -894,48 +845,47 @@ The graphs of these functions are shown below. Note particularly that the horizo
     \draw[domain=-1:5,smooth,variable=\x,red,very thick] plot ({\x},{sin(pi/2*deg(\x))});
     \end{tikzpicture}]]>
 </latex-image></image></sidebyside>
+
 <p>If we use different variables for the input and output, the functions and their graphs are the same, but the axes should be labeled with the appropriate variables.</p></note>
                      
 <exercise><statement><p>Sketch a graph of each function, and label the axes.</p>
-    <p><ol marker="a" cols="2">
-        <li><m>d = F(\phi) = \sin (\phi)</m></li>
-        <li><m>t = G(\beta) = \cos (\beta)</m></li>
-    </ol></p></statement>
-    
-    <answer><p><ol marker="a" cols="2">
-        <li>
-            <image xml:id="exer4-2-5ansa"><description>sine graph</description><latex-image>
-            <![CDATA[
-            \begin{tikzpicture} [scale=.7]
-            \draw[cyan] (-1,-2) grid (5,2);
-    
-            \draw[->,>=stealth'] (-1.1,0) -- (5.3,0) node[right] {$\phi$};
-            \draw[->,>=stealth'] (0,-2.1) -- (0,2.3) node[above] {$d$};
-            \foreach \x [evaluate=\x as \xi using int( 90* \x )] in {-1,1,2,...,5}
-            \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=0pt] {$\xi^\circ$};
-    
-            \foreach \y   in {-1,1} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=0pt] {$\y$};
-    
-            \draw[domain=-1:5,smooth,variable=\x,red,very thick] plot ({\x},{sin(pi/2*deg(\x))});
-            \end{tikzpicture}]]>
+<p><ol marker="a." cols="2">
+    <li><m>d = F(\phi) = \sin (\phi)</m></li>
+    <li><m>t = G(\beta) = \cos (\beta)</m></li>
+</ol></p></statement>
+
+<answer><p><ol marker="a." cols="2">
+    <li><image width="100%" xml:id="exer4-2-5ansa"><description>sine graph</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture} [scale=.8]
+        \draw[cyan] (-1,-2) grid (5,2);
+
+        \draw[->,>=stealth'] (-1.1,0) -- (5.2,0) node[right] {$\phi$};
+        \draw[->,>=stealth'] (0,-2.1) -- (0,2.3) node[above] {$d$};
+        \foreach \x [evaluate=\x as \xi using int( 90* \x )] in {-1,1,2,...,5}
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$\xi^\circ$};
+
+        \foreach \y   in {-1,1} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\y};
+
+        \draw[domain=-1:5,smooth,variable=\x,red,very thick] plot ({\x},{sin(pi/2*deg(\x))});
+        \end{tikzpicture}]]>
         </latex-image></image></li>
-        <li><image xml:id="exer4-2-5ansb" width="85%"><description>cosine graph</description>
-            <latex-image>
-            <![CDATA[
-            \begin{tikzpicture} [scale=.7] 
-            \draw[cyan] (-1,-2) grid (5,2);
-    
-            \draw[->,>=stealth'] (-1.1,0) -- (5.3,0) node[right] {$\beta$};
-            \draw[->,>=stealth'] (0,-2.1) -- (0,2.3) node[above] {$t$};
-            \foreach \x [evaluate=\x as \xi using int( 90* \x )] in {-1,1,2,...,5}
-            \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=0pt] {$\xi^\circ$};
-    
-            \foreach \y   in {-1,1} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=0pt] {$\y$};
-    
-            \draw[domain=-1:5,smooth,variable=\x,red,very thick] plot ({\x},{cos(pi/2*deg(\x))});
-            \end{tikzpicture}]]>
-        </latex-image></image></li>
-    </ol></p></answer></exercise>
+    <li><image width="100%" xml:id="exer4-2-5ansb"><description>cosine graph</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture} [scale=.6] 
+        \draw[cyan] (-1,-2) grid (5,2);
+
+        \draw[->,>=stealth'] (-1.1,0) -- (5.2,0) node[right] {$\beta$};
+        \draw[->,>=stealth'] (0,-2.1) -- (0,2.3) node[above] {$t$};
+        \scriptsize   \foreach \x [evaluate=\x as \xi using int( 90* \x )] in {-1,1,2,...,5}
+        \draw[black] ($ \x *(1,0) +(0,.08) $) --++(0,-.16) node[anchor=north, xshift=0,yshift=-3, fill=white, inner sep=1pt] {$\xi^\circ$};
+
+        \foreach \y   in {-1,1} \draw[black] (.08,\y ) --++(-.16,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\y};
+
+        \draw[domain=-1:5,smooth,variable=\x,red,very thick] plot ({\x},{cos(pi/2*deg(\x))});
+        \end{tikzpicture}]]>
+    </latex-image></image></li>
+</ol></p></answer></exercise>
 
 <warning><p>When we write <m>\cos (\theta)</m>, we are using "cos" as the name of a function whose input is <m>\theta</m>.</p>
 <p> A common mistake is to think of <m>\cos (\theta)</m> as a product, cos <em>times</em> <m>\theta</m>, but this makes no sense, because "cos" by itself has no meaning. Remember that <m>\cos (\theta)</m>  represents a single number, namely the output of the cosine function.</p></warning>
@@ -948,9 +898,9 @@ The graphs of these functions are shown below. Note particularly that the horizo
 <sidebyside widths="75% 15%" valigns="middle middle" margins="0% 5%"><p>The tangent function is periodic, but its graph is not similar to the graphs of sine and cosine. Recall that the tangent of an angle in standard position is defined by 
     <me>\tan (\theta) = \dfrac{y}{x}</me> 
 Study the figure at right to see that as <m>\theta</m> increases from <m>0\degree</m> to <m>90\degree</m>, <m>y</m> increases while <m>x</m> remains constant, so the value of <m>\tan (\theta)</m> increases.</p> 
+
 <image xml:id="Tangent-for-increasing-slope"><description>Right triangles with a common base x and increasing y</description>
-        <xi:include href="Right-triangles-with-increasing-theta.xml"/>
-</image></sidebyside>
+        <xi:include href="Right-triangles-with-increasing-theta.xml"/></image></sidebyside>
 
 <example><statement><p>Sketch a graph of <m>f(\theta) = \tan (\theta)</m> for <m>0\degree \le \theta \le 180\degree</m>.</p></statement>
 
@@ -994,10 +944,11 @@ Study the figure at right to see that as <m>\theta</m> increases from <m>0\degre
         \filldraw[black] ({\x},{tan(30*\x)/2}) circle (2pt);
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
+
 <p>For <m>\theta</m> in the second quadrant, the tangent is negative. The reference angle for each angle in the second quadrant is its supplement, so </p>
 <sidebyside widths="55% 32%" valigns="middle middle" margins="0% 7%"><stack><p><me>\tan (\theta) =-\tan (180\degree - \theta)</me> </p>
     <p>as shown at right. For example, you can verify that </p></stack>
-    <image xml:id="exam4-2-6b"><description>supplementary angles</description><latex-image>
+        <image xml:id="exam4-2-6b"><description>supplementary angles</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.8]
         \coordinate(A) at (2,0);
@@ -1022,11 +973,11 @@ Study the figure at right to see that as <m>\theta</m> increases from <m>0\degre
         \draw[red!80!white,thick,->,>=stealth'] (1,0) arc (0:50:1) node[right, midway, xshift=0, yshift=1] {$50\degree$};
         \draw[red,thick,->,>=stealth'] (.5,0) arc (0:130:.5) node[above, midway, xshift=-4, yshift=5,fill=white, inner sep=0pt] {$130\degree$};
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside> 
+        </latex-image></image></sidebyside> 
 <p><me>\tan (130\degree) = -\tan (180\degree - 130\degree) = -\tan (50\degree) = -1.19</me></p>
 
 <sidebyside widths="60% 40%" valigns="middle middle" margins="0% 0%"><stack><p>In particular, for values of <m>\theta</m> close to <m>90\degree</m>, the values of <m>\tan (\theta)</m> are large negative numbers. We plot several points and sketch the graph in the second quadrant.</p>
-<tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
+    <tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
                     <row bottom="minor">
                         <cell><m>\theta</m></cell>
                         <cell><m>100\degree</m></cell>
@@ -1044,7 +995,7 @@ Study the figure at right to see that as <m>\theta</m> increases from <m>0\degre
                     </tabular>
 <p>In the figure at right, note that the graph has a break at <m>\theta = 90\degree</m>, because  <m>\tan (90\degree)</m> is undefined.</p></stack>
 
-    <image xml:id="exam4-2-6c"><description>tangent graph</description><latex-image>
+        <image xml:id="exam4-2-6c"><description>tangent graph</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=0.7]
         \draw[cyan] (0,-5) grid (6,5);
@@ -1064,10 +1015,9 @@ Study the figure at right to see that as <m>\theta</m> increases from <m>0\degre
     </latex-image></image></sidebyside></solution></example>
 
 <p>Now let's consider the graph of <m>f(\theta) = \tan (\theta)</m> in the third and fourth quadrants. The tangent is positive in the third quadrant, and negative in the fourth quadrant. In fact, from the figure below you can see that the angles <m>\theta</m> and <m>180\degree + \theta</m> are vertical angles.</p>
+
 <sidebyside widths="30% 27%" margins="15% 15%" valigns="middle middle">
-    <image xml:id="exam4-2-6d">
-        <description>angles differing by 180 degrees</description>
-        <latex-image>
+    <image xml:id="exam4-2-6d"><description>angles differing by 180 degrees</description><latex-image>
         <![CDATA[
         \begin{tikzpicture}  [scale=.7]
         \coordinate (O) at (0,0);
@@ -1092,11 +1042,8 @@ Study the figure at right to see that as <m>\theta</m> increases from <m>0\degre
         \draw[red, thick, ->,>=stealth'] (0.3,0) arc(0:{atan(2)+180}:.3) node[below  left, midway, xshift=2, yshift=10] {$180\degree + \theta$};
         \draw[red, thick, ->,>=stealth'] (0.6,0) arc(0:{atan(2)}:.6) node[above  right, midway, xshift=-2, yshift=-2] {$\theta$};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-    <image xml:id="exam4-2-6d2">
-        <description>angles differing by 180 deg</description>
-        <latex-image>
+        </latex-image></image>
+        <image xml:id="exam4-2-6d2"><description>angles differing by 180 deg</description><latex-image>
         <![CDATA[
         \begin{tikzpicture}  [scale=.7]
         \coordinate (O) at (0,0);
@@ -1128,7 +1075,8 @@ Study the figure at right to see that as <m>\theta</m> increases from <m>0\degre
             <mrow>\tan (230\degree) \amp = \tan (50\degree)</mrow>
             <mrow>\tan (250\degree) \amp = \tan (70\degree) </mrow></md>
 Thus, the graph of <m>\tan (\theta)</m> in the third quadrant is the same as its graph in the first quadrant. Similarly, the graph of the tangent function in the fourth quadrant is the same as its graph in the second quadrant. The completed graph is shown below.</p>
-<sidebyside width="60%"><image xml:id="exam4-2-6e"><description>tangent graph</description><latex-image>
+
+    <image width="60%" xml:id="exam4-2-6e"><description>tangent graph</description><latex-image>
     <![CDATA[
     \begin{tikzpicture} [scale=.6]
     \draw[cyan] (-4,-4) grid (8,4);
@@ -1150,17 +1098,17 @@ Thus, the graph of <m>\tan (\theta)</m> in the third quadrant is the same as its
 
     \draw[samples=65,domain={atan(-8)/45+8:8},smooth,variable=\x,red,very thick,<-,>=stealth'] plot ({\x},{tan(45*\x)/2});
     \end{tikzpicture}]]>
-</latex-image></image></sidebyside>
+    </latex-image></image>
 
 <exercise><statement>
-<p><ol marker="a">
+<p><ol marker="a.">
     <li>What is the period of the tangent function?</li>
     <li>Does the graph of tangent have an amplitude?</li>
     <li>For what values of <m>\theta</m> is <m>\tan (\theta)</m> undefined?</li>
     <li>Give the equations of any horizontal or vertical asymptotes for <m>0\degree \le \theta \le 360\degree</m>.</li>
 </ol></p></statement>
 
-<answer><p><ol marker="a">
+<answer><p><ol marker="a.">
     <li><m>180\degree</m></li>
     <li>No</li>
     <li><m>90\degree, ~270\degree</m>, and their coterminal angles</li>
@@ -1173,7 +1121,7 @@ Thus, the graph of <m>\tan (\theta)</m> in the third quadrant is the same as its
 <p>All sine and cosine graphs have the characteristic "wave" shape we've seen in previous examples. But we can alter the size and frequency of the waves by changing the formula for the function. In the next example we consider three variations of the sine function.</p>
 
 <example><statement><p>Make a table of values and sketch a graph for each of the functions. How does each differ from the graph of <m>y = \sin (\theta)</m> ?</p>
-<p><ol marker="a" cols="3">
+<p><ol marker="a." cols="3">
         <li><m>y = 3\sin (\theta)</m></li>
         <li><m>y = 3 + \sin (\theta)</m></li>
         <li><m>y = \sin (3\theta)</m></li>
@@ -1181,7 +1129,7 @@ Thus, the graph of <m>\tan (\theta)</m> in the third quadrant is the same as its
 
 <solution><p><ol marker="a">
     <li><p>We make a table with multiples of <m>45\degree</m>.</p>
-    <sidebyside><tabular top="major" halign="left" right="minor" left="minor" bottom="minor">                  
+        <tabular top="major" halign="left" right="minor" left="minor" bottom="minor">                  
         <row bottom="minor">
             <cell><m>\theta</m></cell>
             <cell><m>0\degree</m></cell>
@@ -1204,11 +1152,9 @@ Thus, the graph of <m>\tan (\theta)</m> in the third quadrant is the same as its
             <cell><m>-3</m></cell>
             <cell><m>-2.1</m></cell>
             <cell><m>0</m></cell></row>
-            </tabular></sidebyside>
+            </tabular>
     <sidebyside widths="55% 40%"><p>We plot the points, and connect them with a sine-shaped wave. Compare the graph, shown at right, to the graph of <m>y = \sin (\theta)</m>. The graph is like a sine graph, except that it oscillates between a maximum value of <m>3</m> and a minimum value of <m>-3</m>. The amplitude of this function is 3.</p>
-    <image xml:id="exam4-3-1a">
-        <description>graphs of sine and 3 sine</description>
-        <latex-image>
+        <image xml:id="exam4-3-1a"><description>graphs of sine and 3 sine</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.45] 
         \draw[cyan]
@@ -1229,11 +1175,9 @@ Thus, the graph of <m>\tan (\theta)</m> in the third quadrant is the same as its
         \draw[domain=-0:8,smooth,variable=\x,blue,very thick] plot ({\x},{ sin(deg(\x*pi/4))});
         \draw[blue, thick, <-,>=stealth'] (3.2, 0.7) -- +(0.9,0.3) node[right, fill=white, inner sep=1pt] {$y=\sin(\theta)$};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside></li>
+        </latex-image></image></sidebyside></li>
     <li><p>Again, we make a table of values with multiples of <m>45\degree</m> and plot the points.</p>
-    <sidebyside><tabular top="major" halign="left" right="minor" left="minor" bottom="minor">                  
+        <tabular top="major" halign="left" right="minor" left="minor" bottom="minor">                  
         <row bottom="minor">
             <cell><m>\theta</m></cell>
             <cell><m>0\degree</m></cell>
@@ -1256,10 +1200,9 @@ Thus, the graph of <m>\tan (\theta)</m> in the third quadrant is the same as its
             <cell><m>2</m></cell>
             <cell><m>2.1</m></cell>
             <cell><m>3</m></cell></row>
-            </tabular></sidebyside>
+            </tabular>
     <sidebyside widths="55% 40%"><p>This graph has the same amplitude as <m>y = \sin (\theta)</m>, but the entire graph is shifted up by 3 units, as shown at right. The midline of this function is the line <m>y = 3</m>.</p>   <image xml:id="exam4-3-1b">
-        <description>graph of sine and translated sine</description>
-        <latex-image>
+        <description>graph of sine and translated sine</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.45]  
         \draw[cyan]
@@ -1280,11 +1223,9 @@ Thus, the graph of <m>\tan (\theta)</m> in the third quadrant is the same as its
         \draw[domain=-0:8,smooth,variable=\x,blue,very thick] plot ({\x},{ sin(deg(\x*pi/4))});
         \draw[blue, thick, <-,>=stealth'] (3.2, 0.7) -- +(0.9,0.3) node[right, fill=white, inner sep=1pt] {$y=\sin(\theta)$};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside></li>
+    </latex-image></image></sidebyside></li>
     <li><p>This time we'll make a table with multiples of <m>15\degree</m>.</p> 
-        <sidebyside><tabular top="major" halign="left" right="minor" left="minor" bottom="minor">                  
+        <tabular top="major" halign="left" right="minor" left="minor" bottom="minor">                  
         <row bottom="minor">
             <cell><m>\theta</m></cell>
             <cell><m>15\degree</m></cell>
@@ -1313,10 +1254,9 @@ Thus, the graph of <m>\tan (\theta)</m> in the third quadrant is the same as its
             <cell><m>1</m></cell>
             <cell><m>0.7</m></cell>
             <cell><m>0</m></cell></row>
-            </tabular></sidebyside>
+            </tabular>
     <sidebyside widths="55% 40%"><p>You can continue the table for <m>\theta</m> between <m>180\degree</m> and <m>360\degree</m>, and plot the points to find the graph shown at right. The graph has the same amplitude and midline as <m>y = \sin (\theta)</m>, but it completes three cycles from <m>0\degree</m> to <m>360\degree</m> instead of one cycle. The period of this graph is one-third of <m>360\degree</m>, or <m>120\degree</m>.</p>   <image xml:id="exam4-3-1c">
-        <description>graph of sine and sine 3 theta</description>
-        <latex-image>
+        <description>graph of sine and sine 3 theta</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.45]  
         \draw[cyan]
@@ -1337,7 +1277,7 @@ Thus, the graph of <m>\tan (\theta)</m> in the third quadrant is the same as its
         \draw[domain=-0:8,smooth,variable=\x,blue,very thick] plot ({\x},{ sin(deg(\x*pi/4))});
         \draw[blue, thick, <-,>=stealth'] (1.9, 1.1) -- +(-0.5,0.4) node[above, xshift=2, fill=white, inner sep=1pt] {$y=\sin(\theta)$};
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></li>
+        </latex-image></image></sidebyside></li>
 </ol></p></solution></example>
 
 <p>The graphs in the previous example illustrate a general rule about sine and cosine graphs.</p>
@@ -1347,20 +1287,20 @@ Thus, the graph of <m>\tan (\theta)</m> in the third quadrant is the same as its
 <idx><h>period</h></idx>
 <idx><h>midline</h></idx>
 <idx><h>periodic function</h></idx>
-<p><ol marker="1">
+<p><ol marker="1.">
     <li>The graph of <me>\blert{y = A\cos(\theta)} ~~~\text{or}~~~ \blert{y = A\sin(\theta)}</me> has amplitude <m>\abs{A}</m>.</li>
     <li>The graph of <me>\blert{y =\cos (B\theta)} ~~~\text{or}~~~ \blert{y = \sin 9}</me> has period <m>\dfrac{360\degree}{\abs{B}}</m>.</li>
     <li>The graph of <me>\blert{y = k + \cos(\theta)} ~~~\text{or}~~~ \blert{y =k + \sin(\theta)}</me> has midline <m>y = k</m>.</li>
 </ol></p></assemblage>
 
 <exercise><statement><p>Sketch a graph for each of the following functions.  Describe how each is different from the graph of <m>y = \cos \theta</m>.</p>
-    <p><ol marker="a" cols="3">
+    <p><ol marker="a." cols="3">
         <li><m>h(\theta) = 2\cos (\theta)</m></li>
         <li><m>g(\theta) = \cos (2\theta)</m></li>
         <li><m>f(\theta) = 2 + \cos (\theta)</m></li>
     </ol></p></statement>
 <answer><p>
-    <ol marker="a">
+    <ol marker="a.">
         <li><sidebyside widths="35% 40%" valigns="middle middle"><!--<image source="photos/exer4-3-1ansc.png"><description>graph</description></image>-->
             <image xml:id="exer4-3-1ansc">
             <description>graph of 2 cosine</description>
@@ -1436,10 +1376,9 @@ Thus, the graph of <m>\tan (\theta)</m> in the third quadrant is the same as its
 <p>The quantities <m>A, B,</m> and <m>k</m> in the equations above are called <term>parameters</term><idx><h>parameter</h></idx>, and their values for a particular function give us information about its graph.</p>
 
 <example><statement><p>State the period, midline, and amplitude of the graph of <m>y = -3 + 4\sin (3\theta),</m>  and graph the function.</p></statement>
+
 <solution><sidebyside widths="45% 50%" valigns="middle middle" margins="0% 0%"><p>For this function, <m>A = 4,~ B = 3,</m> and <m>k = -3</m>.  Its amplitude is 4, its period is <m>\dfrac{360\degree}{3} = 120\degree</m>, and its midline is <m>y = -3</m>. The graph is shown at right.</p>
-    <image xml:id="exam4-3-2">
-        <description>graph -3+4sin(3 theta)</description>
-        <latex-image>
+        <image xml:id="exam4-3-2"><description>graph -3+4sin(3 theta)</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [xscale=.45, yscale=.30]
         \draw[cyan]
@@ -1458,16 +1397,14 @@ Thus, the graph of <m>\tan (\theta)</m> in the third quadrant is the same as its
 
         \node [text width= 3cm, text=red] at (7, 1.63){$y=-3+4\sin(3\theta)$};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
+        </latex-image></image>
 </sidebyside></solution></example>
 
 <exercise><statement><p>State the period, midline, and amplitude of the graph of  <m>y = 1 - 3\sin (2\theta),</m>  and graph the function.</p></statement>
-<answer>
-    <sidebyside widths="55% 38%" valigns="middle middle"><p>Amplitude 3, period <m>180\degree</m>, midline  <m>y = 1</m></p>
-    <image xml:id="exer4-3-2ans">
-        <description>sinusoidal graph</description>
-        <latex-image>
+
+<answer><sidebyside widths="55% 38%" valigns="middle middle">
+    <p>Amplitude 3, period <m>180\degree</m>, midline  <m>y = 1</m></p>
+        <image xml:id="exer4-3-2ans"><description>sinusoidal graph</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [xscale=0.48, yscale=.32]
         \draw[cyan] (-0.1,-2) grid (8,4);
@@ -1483,21 +1420,19 @@ Thus, the graph of <m>\tan (\theta)</m> in the third quadrant is the same as its
 
         \draw[samples=65,domain=-0:8,smooth,variable=\x,red,very thick] plot ({\x},{ 1-3*sin(deg(\x*2*pi/4))});
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-    </sidebyside>
+    </latex-image></image></sidebyside>
 </answer></exercise>
 </subsection>
+
 <subsection>
 <p>Review the following skills you will need for this section.</p>
 
-<project>
-    <sidebyside><p><ol marker="a">
+    <sidebyside><p><ol marker="a.">
         <li>Graph the function.</li>
         <li>Give the coordinates of any intercepts, and any maximum or minimum values.</li>
         </ol></p>
     </sidebyside>   
-    <sidebyside><p><ol marker="1" cols="2">
+    <sidebyside><p><ol marker="1." cols="2">
         <li><p><m>f(x) = -6 + \dfrac{2}{3} x</m></p></li>
         <li><p><m>g(x) = 4 - \dfrac{3}{2} x</m></p></li>
         <li><p><m>p(t) = t^2 - 4</m></p></li>
@@ -1509,10 +1444,9 @@ Thus, the graph of <m>\tan (\theta)</m> in the third quadrant is the same as its
     <sidebyside><p><m>\underline{\qquad\qquad\qquad\qquad}</m></p></sidebyside>
     <conclusion>
     <sidebyside><p>Algebra Refresher Answers</p></sidebyside>
-        <p><ol marker="1" cols="2">
-    <li><p><ol marker="a">
-        <li><sidebyside width="65%" margins="0% 5%">
-    <image xml:id="ar4-2-1"><description>graph</description><latex-image>
+        <p><ol marker="1." cols="2">
+    <li><p><ol marker="a.">
+        <li><image width="65%" xml:id="ar4-2-1"><description>graph</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.25]
         \draw[cyan, xstep=2, ystep=2] (-2,-8) grid (10,4);
@@ -1526,12 +1460,11 @@ Thus, the graph of <m>\tan (\theta)</m> in the third quadrant is the same as its
 
         \draw[domain=-2:10,smooth,variable=\x,red,very thick] plot ({\x},{-6+ 2/3 *\x)});
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></li>
-        <li><m>(0,-6)</m>, <m>~ (9,0)</m></li>
-    </ol></p></li>
-    <li><p><ol marker="a">
-        <li><sidebyside width="65%" margins="0% 5%">
-    <image xml:id="ar4-2-2"><description>graph</description><latex-image>
+        </latex-image></image></li>
+    <li><m>(0,-6), ~ (9,0)</m></li>
+</ol></p></li>
+    <li><p><ol marker="a.">
+        <li><image width="65%" xml:id="ar4-2-2"><description>graph</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.25]
         \draw[cyan, xstep=2, ystep=2] (-4,-6) grid (8,6);
@@ -1545,12 +1478,11 @@ Thus, the graph of <m>\tan (\theta)</m> in the third quadrant is the same as its
 
         \draw[domain={-4/3}:{20/3},smooth,variable=\x,red,very thick] plot ({\x},{4 - 3/2 *\x)});
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></li>
-        <li><m>(0,4)</m>, <m>~ \left(\dfrac{8}{3},0\right)</m></li>
-    </ol></p></li>
-    <li><p><ol marker="a">
-        <li><sidebyside width="65%" margins="0% 5%">
-    <image xml:id="ar4-2-3"><description>parabola</description><latex-image>
+        </latex-image></image></li>
+    <li><m>(0,4)</m>, <m>~ \left(\dfrac{8}{3},0\right)</m></li>
+</ol></p></li>
+    <li><p><ol marker="a.">
+        <li><image width="65%" xml:id="ar4-2-3"><description>parabola</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.25]
         \draw[cyan, xstep=2, ystep=2] (-6,-6) grid (6,6);
@@ -1564,12 +1496,11 @@ Thus, the graph of <m>\tan (\theta)</m> in the third quadrant is the same as its
 
         \draw[domain={-sqrt(10)}:{sqrt(10)},smooth,variable=\x,red,very thick] plot ({\x},{(\x)^2 -4});
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></li>
+    </latex-image></image></li>
         <li><m>(0,-4)</m>, <m>~ (-2,0)</m>, <m>~ (2,0)</m>, Min: <m>-4</m></li>
     </ol></p></li>
     <li><p><ol marker="a">
-        <li><sidebyside width="59%" margins="0% 5%">
-    <image xml:id="ar4-2-4"><description>parabola</description><latex-image>
+        <li><image width="65%" margins="0% 35%" xml:id="ar4-2-4"><description>parabola</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.25]
         \draw[cyan, xstep=2, ystep=2] (-6,-2) grid (6,10);
@@ -1583,12 +1514,12 @@ Thus, the graph of <m>\tan (\theta)</m> in the third quadrant is the same as its
 
         \draw[domain={-sqrt(11)}:{sqrt(11)},smooth,variable=\x,red,very thick] plot ({\x},{9 - (\x)^2 });
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></li>
+    </latex-image></image></li>
         <li><m>(0,9)</m>, <m>~ (-3,0)</m>, <m>~ (3,0)</m>, <m>\text{Max: }9</m></li>
     </ol></p></li>
     <li><p><ol marker="a">
-        <li><sidebyside width="65%" margins="0% 5%">
-    <image xml:id="ar4-2-5"><description>graph</description><latex-image>
+        <li><sidebyside >
+    <image width="65%" margins="0% 35%" xml:id="ar4-2-5"><description>graph</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [xscale=.25, yscale = .5]
         \draw[cyan, xstep=2, ystep=1] (-2,-2) grid (10,4);
@@ -1602,12 +1533,11 @@ Thus, the graph of <m>\tan (\theta)</m> in the third quadrant is the same as its
 
         \draw[domain={0:10},smooth,variable=\x,red,very thick] plot ({\x},{2 - sqrt(\x) });
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></li>
-        <li><m>(0,2)</m>, <m>~ (4,0)</m>, Max: <m>2</m></li>
-    </ol></p></li>
-    <li><p><ol marker="a">
-        <li><sidebyside width="65%" margins="0% 5%">
-    <image xml:id="ar4-2-6"><description>graph</description><latex-image>
+        </latex-image></image></li>
+    <li><m>(0,2), ~ (4,0), ~ \text{Max:}~2</m></li>
+</ol></p></li>
+    <li><p><ol marker="a.">
+        <li><image width="65%" xml:id="ar4-2-6"><description>graph</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [xscale=.25, yscale = .5]
         \draw[cyan, xstep=2, ystep=1] (-6,-2) grid (6,4);
@@ -1621,11 +1551,12 @@ Thus, the graph of <m>\tan (\theta)</m> in the third quadrant is the same as its
 
         \draw[domain={-6:4},smooth,variable=\x,red,very thick] plot ({\x},{sqrt(4-\x) });
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></li>
+    </latex-image></image></li>
         <li><m>(0,2)</m>, <m>~ (4,0)</m>,  Min: <m>~0</m></li>
     </ol></p></li>
 </ol></p>
 </conclusion>
+</ol></p></conclusion>
 </project>
 
 </subsection>
@@ -1648,11 +1579,11 @@ Thus, the graph of <m>\tan (\theta)</m> in the third quadrant is the same as its
 
 <subsubsection><title>Concepts</title>
 
-<p><ol marker="1">
+<p><ol marker="1.">
     <li><assemblage><title>Coordinates</title>
-    <p>If point <m>P</m> is located at a distance <m>r</m> from the origin in the direction specified by angle <m>\theta</m> in standard position, then the coordinates of <m>P</m> are
-    <me>x = r \cos (\theta) ~~~~ \text{and} ~~~~ y = r \sin (\theta)</me>
-    </p></assemblage></li>
+        <p>If point <m>P</m> is located at a distance <m>r</m> from the origin in the direction specified by angle <m>\theta</m> in standard position, then the coordinates of <m>P</m> are
+            <me>x = r \cos (\theta) ~~~~ \text{and} ~~~~ y = r \sin (\theta)</me></p>
+        </assemblage></li>
     <li>Navigational directions for ships and planes are sometimes given as <term>bearings</term>, which are angles measured clockwise from north.</li>
     <li>Periodic functions are used to model phenomena that exhibit cyclical behavior.</li>
     <li>The trigonometric ratios <m>\sin (\theta)</m> and <m>\cos (\theta)</m> are functions of the angle <m>\theta</m>.</li>
@@ -1661,15 +1592,16 @@ Thus, the graph of <m>\tan (\theta)</m> in the third quadrant is the same as its
     <li>We use the notation <m>y = f(x)</m> to indicate that <m>y</m> is a function of <m>x</m>, that is, <m>x</m> is the input variable and <m>y</m> is the output variable.</li>
     <li>The tangent function has period <m>180\degree</m>. It is undefined at odd multiples of <m>90\degree</m>, and is increasing on each interval of its domain.</li>
     <li><assemblage><title>Angle of Inclination</title>
-    <p>The <term>angle of inclination</term> of a line is the angle <m>\alpha</m> measured in the positive direction from the positive <m>x</m>-axis to the line. If the slope of the line is <m>m</m>, then
-    <me>\tan \alpha = m</me> where  <m>0\degree \le \alpha \le 180\degree</m>.</p></assemblage></li>
+        <p>The <term>angle of inclination</term> of a line is the angle <m>\alpha</m> measured in the positive direction from the positive <m>x</m>-axis to the line. If the slope of the line is <m>m</m>, then
+            <me>\tan \alpha = m</me> where  <m>0\degree \le \alpha \le 180\degree</m>.</p>
+        </assemblage></li>
 </ol></p></subsubsection>
 
 <subsubsection><title>Study Questions</title>
 
-<p><ol marker="1">
+<p><ol marker="1.">
     <li><sidebyside widths="60% 23%" valigns="middle middle"><p>Use the figure to help you fill in the blanks.</p>
-    <image xml:id="sq4-2-1"><description>circle</description><latex-image>
+        <image xml:id="sq4-2-1"><description>circle</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.72]
         \coordinate (O) at (0,0);
@@ -1692,15 +1624,15 @@ Thus, the graph of <m>\tan (\theta)</m> in the third quadrant is the same as its
 
         \node[text width=1cm, text=blue,fill=white, inner sep=0pt] at (1.5,-.5)  {$r=1$};
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside>        
-    <p><ol marker="a">
+        </latex-image></image></sidebyside>        
+    <p><ol marker="a.">
         <li><p>As <m>\theta</m> increases from <m>0\degree</m> to <m>90\degree</m>, <m>f(\theta) = \sin (\theta)</m> <fillin characters="6"/> from <fillin characters="4"/> to <fillin characters="4"/> .</p></li>
         <li><p>As <m>\theta</m> increases from <m>90\degree</m> to <m>180\degree</m>, <m>f(\theta) = \sin (\theta)</m> <fillin characters="6"/> from <fillin characters="4"/> to <fillin characters="4"/> .</p></li>
         <li><p>As <m>\theta</m> increases from <m>180\degree</m> to <m>270\degree</m>, <m>f(\theta) = \sin (\theta)</m> <fillin characters="6"/> from <fillin characters="4"/> to <fillin characters="4"/> .</p></li>
         <li><p>As <m>\theta</m> increases from <m>270\degree</m> to <m>360\degree</m>, <m>f(\theta) = \sin (\theta)</m> <fillin characters="6"/> from <fillin characters="4"/> to <fillin characters="4"/> .</p></li>
     </ol></p></li>
     <li><sidebyside widths="60% 23%"  valigns="middle middle"><p>Use the figure to help you fill in the blanks.</p>
-    <image xml:id="sq4-2-2"><description>circle</description><latex-image>
+        <image xml:id="sq4-2-2"><description>circle</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.72]
         \coordinate (O) at (0,0);
@@ -1723,8 +1655,8 @@ Thus, the graph of <m>\tan (\theta)</m> in the third quadrant is the same as its
 
         \node[text width=1cm, text=blue,fill=white, inner sep=0pt] at (1.5,-.5)  {$r=1$};
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside>        
-    <p><ol marker="a">
+        </latex-image></image></sidebyside>        
+    <p><ol marker="a.">
         <li><p>As <m>\theta</m> increases from <m>0\degree</m> to <m>90\degree</m>, <m>f(\theta) = \cos (\theta)</m> <fillin characters="6"/> from <fillin characters="4"/> to <fillin characters="4"/> .</p></li>
         <li><p>As <m>\theta</m> increases from <m>90\degree</m> to <m>180\degree</m>, <m>f(\theta) = \cos (\theta)</m> <fillin characters="6"/> from <fillin characters="4"/> to <fillin characters="4"/> .</p></li>
         <li><p>As <m>\theta</m> increases from <m>180\degree</m> to <m>270\degree</m>, <m>f(\theta) = \cos (\theta)</m> <fillin characters="6"/> from <fillin characters="4"/> to <fillin characters="4"/> .</p></li>
@@ -1735,7 +1667,7 @@ Thus, the graph of <m>\tan (\theta)</m> in the third quadrant is the same as its
 </ol></p></subsubsection>
 
 <subsubsection><title>Skills</title>
-<p><ol marker="1">
+<p><ol marker="1.">
     <li>Find coordinates    #1-12, 19-20</li>
     <li>Use bearings to determine position    #13-18</li>
     <li>Sketch graphs of the sine and cosine functions    #21-26, 31-32</li>

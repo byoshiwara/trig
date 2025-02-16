@@ -11,9 +11,7 @@
 <example><statement><p>Represent <m>~z=2+3i~</m> and <m>~iz=2i-3~</m> as vectors in the complex plane.</p></statement>
 
 <solution><sidebyside widths="60% 25%" margins="0% 10%" valigns="middle middle"><p>The vectors are shown at right. We see that multiplication by <m>i</m> corresponds to rotating the vector around the origin by <m>90\degree</m> in the counterclockwise direction.</p>
-    <image xml:id="exam10-4-1">
-        <description>complex numbers as vectors</description>
-        <latex-image>
+    <image xml:id="exam10-4-1"><description>complex numbers as vectors</description><latex-image>
         <![CDATA[
     \begin{tikzpicture} [scale=.32]
     \draw[cyan] (-4,-4) grid (4,4);
@@ -31,19 +29,17 @@
     \draw[red, thick, ->, >=stealth'] (O) -- ++(z) node[above right, yshift=-.1cm, fill=white, inner sep=0]{$z$};
     \draw[blue, thick, ->, >=stealth'] (O) -- ++(z2) node[above left, yshift=-.1cm, fill=white, inner sep=0]{$iz$};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside></solution></example> 
+    </latex-image></image></sidebyside>
+</solution></example> 
 
-<exercise><statement><p><ol marker="a">
-  <li>Let <m>z=1+i,</m> and calculate <m>iz,~ i^2z,</m> and <m>i^3z</m>.</li>  
-  <li>Plot <m>z,~ iz,~ i^2z,</m> and <m>i^3z</m> as points on the complex plane.</li></ol></p></statement>
-  <answer><p><ol marker="a">
-        <li><m>iz=i-1,~i^2z=-1-i,~i^3z=-i+1</m></li>
-        <li><sidebyside width="28%" margins="0% 0%"><!--<image source="photos/exer10-4-1ans.png"><description>graph</description></image>-->
-    <image xml:id="exer10-4-1ans">
-        <description>rotations of complex number</description>
-        <latex-image>
+<exercise><statement><p><ol marker="a.">
+    <li>Let <m>z=1+i,</m> and calculate <m>iz,~ i^2z,</m> and <m>i^3z</m>.</li>  
+    <li>Plot <m>z,~ iz,~ i^2z,</m> and <m>i^3z</m> as points on the complex plane.</li>
+</ol></p></statement>
+  
+<answer><p><ol marker="a.">
+    <li><m>iz=i-1,~i^2z=-1-i,~i^3z=-i+1</m></li>
+    <li><image width="28%" xml:id="exer10-4-1ans"><description>rotations of complex number</description><latex-image>
         <![CDATA[
     \begin{tikzpicture} [scale=.72]
     \draw[cyan] (-2,-2) grid (2,2);
@@ -59,24 +55,22 @@
     \filldraw[red] (z3) circle (.08cm) node[below left, yshift=-.15cm, fill=white, inner sep=0, text=black]{$i^2 z$};
     \filldraw[red] (z4) circle (.08cm) node[below right, yshift=-.15cm, fill=white, inner sep=0, text=black]{$i^3 z$};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-        </sidebyside></li></ol></p></answer></exercise>
+    </latex-image></image></li>
+</ol></p></answer></exercise>
 
 <p>The previous example suggests that multiplication by a complex number results in a rotation. Polar coordinates are well suited to processes that involve rotation, because they use angles to specify location. Thus, we will next represent complex numbers in an alternate polar form.</p></subsection>
 
 <subsection><title>Polar Form</title>
-<idx><h>polar form</h></idx>
+    <idx><h>polar form</h></idx>
 
 <p>The figure below shows the complex number <m>z=3+3i</m>, represented as a vector in the complex plane. The distance <m>r</m> from the origin to <m>z</m> is
         <me>r=\sqrt{3^2+3^2} = 3\sqrt{2}</me>
-and the angle from the real axis to the vector is <m>\theta=\dfrac{\pi}{4}</m>.</p> 
+and the angle from the real axis to the vector is <m>\theta=\dfrac{\pi}{4}</m>.</p>
+
 <sidebyside widths="60% 25%" margins="0% 10%" valigns="middle middle"><p>Using right triangle trigonometry, we see that
     <md><mrow>a \amp = 3\sqrt{2}\cos \left(\dfrac{\pi}{4}\right) = 3\sqrt{2} \cdot \dfrac{1}{\sqrt{2}} = 3</mrow>
         <mrow>b \amp = 3\sqrt{2} \sin \left(\dfrac{\pi}{4}\right) = 3\sqrt{2} \cdot \dfrac{1}{\sqrt{2}} = 3</mrow></md></p>
-    <image xml:id="fig10-4-1">
-        <description>polar form of complex number</description>
-        <latex-image>
+    <image xml:id="fig10-4-1"><description>polar form of complex number</description><latex-image>
         <![CDATA[
     \begin{tikzpicture} [scale=.72]
     \coordinate (O) at (0,0);
@@ -92,26 +86,22 @@ and the angle from the real axis to the vector is <m>\theta=\dfrac{\pi}{4}</m>.<
     \draw[red, ->,>=stealth'] (0:0.8) arc (0:45:0.8) node[right, yshift=3, midway] {$\theta = \displaystyle\frac{\pi}{4}$};
     \node[blue] at (1,2.2) {$r=3\sqrt{2}$};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside>
+    </latex-image></image></sidebyside>
 
 <p>In general, we can write the real and imaginary parts of <m>z</m> in terms of <m>r</m> and <m>\theta</m> as
         <me>a=r \cos (\theta)~~~~\text{and}~~~~b=r\sin (\theta)</me>
 Thus, the complex number <m>z=a+bi</m> can also be written as 
-    <me>z=(r\cos(\theta))+(r\sin (\theta))i~~~~\text{or}~~~~z=r(\cos(\theta)+i\sin (\theta))</me>.</p>
+        <me>z=(r\cos(\theta))+(r\sin (\theta))i~~~~\text{or}~~~~z=r(\cos(\theta)+i\sin (\theta))</me>.</p>
 
 <example><statement><p>Find the polar form for <m>z=\sqrt{3} + i</m>.</p></statement>
 
 <solution><p> We compute
-  <me>r=\sqrt{a^2+b^2} = \sqrt{3+1} = 2~~~~\text{and}~~~~\tan (\theta) = \dfrac{1}{\sqrt{3}}</me>
-</p>  
+        <me>r=\sqrt{a^2+b^2} = \sqrt{3+1} = 2~~~~\text{and}~~~~\tan (\theta) = \dfrac{1}{\sqrt{3}}</me></p>
+
 <sidebyside widths="60% 30%" valigns="middle middle" margins="0% 5%">
 <p>The angle <m>\theta</m> is in the first quadrant, so
-    <me>\theta = \tan^{-1} \left(\dfrac{1}{\sqrt{3}}\right) = \dfrac{\pi}{6}</me></p>
-    <image xml:id="exam10-4-2">
-        <description>polar form of complex number</description>
-        <latex-image>
+        <me>\theta = \tan^{-1} \left(\dfrac{1}{\sqrt{3}}\right) = \dfrac{\pi}{6}</me></p>
+    <image xml:id="exam10-4-2"><description>polar form of complex number</description><latex-image>
         <![CDATA[
     \begin{tikzpicture} [scale=1.3]
     \coordinate (O) at (0,0);
@@ -127,24 +117,24 @@ Thus, the complex number <m>z=a+bi</m> can also be written as
     \draw[red, ->,>=stealth'] (0:0.8) arc (0:30:0.8) node[right, yshift=3, midway] {$\theta =\displaystyle\frac{\pi}{6}$};
     \node[blue] at (0.6,0.7) {$r=2$};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside>
-<p>Thus,<m>~~z= 2\left(\cos \left(\dfrac{\pi}{6}\right) + i\sin \left(\dfrac{\pi}{6}\right)\right)</m></p></solution></example>
+    </latex-image></image></sidebyside>
+<p>Thus,<m>~~z= 2\left(\cos \left(\dfrac{\pi}{6}\right) + i\sin \left(\dfrac{\pi}{6}\right)\right)</m></p>
+</solution></example>
 
 <assemblage><title>Polar Form for a Complex Number</title>
-<idx><h>complex number</h><h>polar form</h></idx>
-<idx><h>polar form</h></idx>
-<idx><h>argument</h></idx>
-<idx><h>modulus</h></idx>
+    <idx><h>complex number</h><h>polar form</h></idx>
+    <idx><h>polar form</h></idx>
+    <idx><h>argument</h></idx>
+    <idx><h>modulus</h></idx>
 
 <p>The complex number <m>z=a+bi</m> can be written in the polar form
-    <me>\blert{z=r\left(\cos(\theta)+i\sin (\theta)\right)}</me>
+        <me>\blert{z=r\left(\cos(\theta)+i\sin (\theta)\right)}</me>
 where <m>~~r=\sqrt{a^2+b^2}~~</m> and <m>\theta</m> is defined by
         <me>a=r \cos (\theta),~~~~b=r\sin (\theta),~~~~0 \le \theta \le 2\pi</me>
 The angle <m>\theta</m> is called the <term>argument</term> of the complex number, and <m>r</m> is its length, or <term>modulus</term>.</p></assemblage>
 
-<exercise><statement><p>Find the polar form for <m>w=1+i\sqrt{3}</m>.</p></statement><answer><p><m>w=2\left(\cos \dfrac{\pi}{3} + i\sin \dfrac{\pi}{3}\right)</m></p></answer></exercise>
+<exercise><statement><p>Find the polar form for <m>w=1+i\sqrt{3}</m>.</p></statement>
+<answer><p><m>w=2\left(\cos \dfrac{\pi}{3} + i\sin \dfrac{\pi}{3}\right)</m></p></answer></exercise>
 
 <p> Of course, we can always recover the Cartesian form of a complex number from its polar form by evaluating the trigonometric functions. We'll check the result of the previous example: 
     <md><mrow> z \amp = 2\left(\cos \left(\dfrac{\pi}{6}\right) + i\sin \left(\dfrac{\pi}{6}\right)\right)</mrow>
@@ -156,21 +146,20 @@ The angle <m>\theta</m> is called the <term>argument</term> of the complex numbe
 <p>The polar form is especially convenient for computing the product or quotient of two complex numbers.</p>
 
 <assemblage><title>Product in Polar Form</title>
-<idx><h>polar form</h><h>product</h></idx>
+    <idx><h>polar form</h><h>product</h></idx>
 <p>If <m>z_1=r(\cos (\alpha)+i\sin (\alpha))</m> and <m>z_2=R(\cos (\beta)+i\sin (\beta))</m>, then
     <me> \blert{z_1z_2=rR\left((\cos (\alpha + \beta) + i \sin (\alpha + \beta)\right)}</me> </p></assemblage>
 
-<p> This formula, which you will prove in the Homework Problems, says that the product of two complex numbers in polar form is the complex number with modulus <m>rR</m> and argument <m>\alpha + \beta</m>.  Thus, to find the product of two complex numbers, we multiply their lengths and add their arguments.</p>
+<p>This formula, which you will prove in the Homework Problems, says that the product of two complex numbers in polar form is the complex number with modulus <m>rR</m> and argument <m>\alpha + \beta</m>. Thus, to find the product of two complex numbers, we multiply their lengths and add their arguments.</p>
 
 <example><statement><p>Find the product of <m>z= 2\left(\cos \left(\dfrac{\pi}{6}\right) + i\sin \left(\dfrac{\pi}{6}\right)\right)</m> and <m>w= 2\left(\cos \left(\dfrac{\pi}{3}\right) + i\sin \left(\dfrac{\pi}{3}\right)\right)</m>.</p></statement>
 
 <solution><p>We multiply the moduli, <m>2 \cdot 2 =4</m>, and add the arguments, <m>\dfrac{\pi}{6}+\dfrac{\pi}{3} = \dfrac{\pi}{2}</m>. The polar form of the product is thus
-    <me>zw=4\left(\cos \left(\dfrac{\pi}{2}\right) + i\sin \left(\dfrac{\pi}{2}\right)\right) = 4i</me>
+        <me>zw=4\left(\cos \left(\dfrac{\pi}{2}\right) + i\sin \left(\dfrac{\pi}{2}\right)\right) = 4i</me>
 Note that <m>z</m> and <m>w</m> are the numbers from the previous Example and Exercise, namely <m>z=\sqrt{3} + i</m> and <m>w=1+i\sqrt{3}</m>. You can compute the product <m>zw</m> in Cartesian form to check that you get the same result, <m>4i</m>.</p>
+
 <sidebyside widths="60% 25%" margins="0% 5%" valigns="middle middle"><p>The figure at right shows the graphs of <m>z</m> and <m>w</m>, and their product, <m>zw</m>. You can see that multiplying <m>z</m> by <m>w</m> rotates the graph of <m>z</m> by the argument of <m>w</m>, namely <m>\dfrac{\pi}{3}</m> or <m>60\degree</m>.</p>
-    <image xml:id="exam10-4-3">
-        <description>product of complex numbers</description>
-        <latex-image>
+    <image xml:id="exam10-4-3"><description>product of complex numbers</description><latex-image>
         <![CDATA[
     \begin{tikzpicture} [scale=.28]
     \coordinate(O) at (0,0);
@@ -189,32 +178,31 @@ Note that <m>z</m> and <m>w</m> are the numbers from the previous Example and Ex
     \draw[blue, thick, ->, >=stealth'] (O) -- (w) node[above right, fill=white, inner sep=1]{$w$};
     \draw[black, very thick, ->, >=stealth'] (O) -- (90:4) node[above, fill=white, inner sep=1]{$zw$};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside></solution></example>
+    </latex-image></image></sidebyside>
+</solution></example>
 
-<exercise><statement><p><ol marker="a"> 
-  <li>Find the polar forms of <m>z=3+3i</m> and <m>w=-2+2i</m>.</li> 
-  <li>Compute the product <m>zw</m>.</li></ol></p></statement><answer><p><ol marker="a">
-        <li><m>z=3\sqrt{2}\left(\cos \left(\dfrac{\pi}{4}\right) + i\sin \left(\dfrac{\pi}{4}\right)\right)</m>, <m>~w=2\sqrt{2}\left(\cos \left(\dfrac{5\pi}{4}\right) + i\sin \left(\dfrac{5\pi}{4}\right)\right)</m></li>
-        <li><p><m>-12i</m></p></li></ol></p></answer></exercise>
+<exercise><statement><p><ol marker="a."> 
+    <li>Find the polar forms of <m>z=3+3i</m> and <m>w=-2+2i</m>.</li> 
+    <li>Compute the product <m>zw</m>.</li></ol></p></statement><answer><p><ol marker="a">
+    <li><m>z=3\sqrt{2}\left(\cos \left(\dfrac{\pi}{4}\right) + i\sin \left(\dfrac{\pi}{4}\right)\right)</m>, <m>~w=2\sqrt{2}\left(\cos \left(\dfrac{5\pi}{4}\right) + i\sin \left(\dfrac{5\pi}{4}\right)\right)</m></li>
+    <li><p><m>-12i</m></p></li>
+</ol></p></answer></exercise>
 
 <p>The quotient of two complex numbers in polar form is computed in a similar fashion.</p>
 
 <assemblage><title>Quotient in Polar Form</title>
-<idx><h>polar form</h><h>quotient</h></idx>
+    <idx><h>polar form</h><h>quotient</h></idx>
 <p>If <m>z_1=r\left(\cos \left(\alpha\right)+i\sin \left(\alpha\right)\right)</m> and <m>z_2=R\left(\left(\cos \beta\right)+i\sin \left(\beta\right)\right)</m>, then
-<me>\blert{ \dfrac{z_1}{z_2}=\dfrac{r}{R}(\cos (\alpha - \beta) + i \sin (\alpha - \beta))}</me> </p></assemblage>
+        <me>\blert{ \dfrac{z_1}{z_2}=\dfrac{r}{R}(\cos (\alpha - \beta) + i \sin (\alpha - \beta))}</me> </p></assemblage>
 
 <example><statement><p>Find the quotient of <m>z= 2\left(\cos \left(\dfrac{\pi}{6}\right) + i\sin \left(\dfrac{\pi}{6}\right)\right)</m> and <m>w= 2\left(\cos \left(\dfrac{\pi}{3}\right) + i\sin \left(\dfrac{\pi}{3}\right)\right)</m>.</p></statement>
 
 <solution><p>We divide the moduli, <m>\dfrac{2}{2} = 1</m>, and subtract the arguments, <m>\dfrac{\pi}{6}-\dfrac{\pi}{3} = \dfrac{-\pi}{6}</m>.</p> 
+
 <sidebyside widths="65% 25%" margins="0% 5%" valigns="middle middle"><p>The polar form of the quotient is thus
-<me>\dfrac{z}{w}=1\left(\cos \left(\dfrac{-\pi}{6}\right) + i\sin \left(\dfrac{-\pi}{6}\right)\right)=\dfrac{\sqrt{3}}{2} - \dfrac{1}{2} i</me>
+        <me>\dfrac{z}{w}=1\left(\cos \left(\dfrac{-\pi}{6}\right) + i\sin \left(\dfrac{-\pi}{6}\right)\right)=\dfrac{\sqrt{3}}{2} - \dfrac{1}{2} i</me>
 The figure at right shows the graphs of <m>z,~w</m>, and the quotient <m>\dfrac{z}{w}</m>.</p>
-    <image xml:id="exam10-4-4">
-        <description>quotient of complex numbers</description>
-        <latex-image>
+    <image xml:id="exam10-4-4"><description>quotient of complex numbers</description><latex-image>
         <![CDATA[
     \begin{tikzpicture} [scale=.45]
     \coordinate(O) at (0,0);
@@ -234,9 +222,8 @@ The figure at right shows the graphs of <m>z,~w</m>, and the quotient <m>\dfrac{
     \draw[blue, thick, ->, >=stealth'] (O) -- (w) node[above right, fill=white, inner sep=0]{$w$};
     \draw[black, very thick, ->, >=stealth'] (O) -- (-30:1) node[below, yshift=-5, fill=white, inner sep=0]{$\displaystyle\frac{z}{w}$};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside></solution></example>
+    </latex-image></image></sidebyside>
+</solution></example>
 
 <exercise><statement><p>Compute the quotient <m>\dfrac{z}{w}</m> for <m>z=3+3i</m> and <m>2=-2+2i</m>.</p></statement>
 <answer><p><m>\dfrac{-3}{2}</m></p></answer></exercise>
@@ -245,24 +232,23 @@ The figure at right shows the graphs of <m>z,~w</m>, and the quotient <m>\dfrac{
 <subsection><title>Powers and Roots of Complex Numbers</title>
 
 <p> Because raising to a power is just repeated multiplication, we can also use the polar form to simplify powers of a complex number. For example, if <m>z=r(\cos(\alpha)+i\sin (\alpha))</m>, then 
-    <me>z^2=z \cdot z = r \cdot r(\cos(\alpha+ \alpha) +i\sin (\alpha + \alpha))</me>  
+        <me>z^2=z \cdot z = r \cdot r(\cos(\alpha+ \alpha) +i\sin (\alpha + \alpha))</me>  
 We compute <m>z^2</m> by squaring the modulus, <m>r</m>, and doubling the argument, <m>\alpha</m>, so the polar form is
-    <me>z^2= r^2(\cos (2\alpha)+i\sin (2\alpha))</me>  
+        <me>z^2= r^2(\cos (2\alpha)+i\sin (2\alpha))</me>  
 An analogous result holds for all positive integers <m>n</m>, and is known as De Moivre's Theorem.</p>
 
 <assemblage><title>De Moivre's Theorem</title>
-<idx><h>DeMoivre's Theorem</h></idx>
+    <idx><h>DeMoivre's Theorem</h></idx>
 <p>If <m>z=r(\cos(\alpha)+i\sin (\alpha))</m> is a complex number in polar form, and <m>n</m> is a positive integer, then
-    <me>\blert{z^n= r^n(\cos (n\alpha)+i\sin (n\alpha))}</me></p></assemblage>   
+        <me>\blert{z^n= r^n(\cos (n\alpha)+i\sin (n\alpha))}</me></p></assemblage>   
 
 <example><statement><p>Raise <m>z=\sqrt{3} + i</m> to the fourth power.</p></statement>
 
 <solution><p> We use the polar form, <m>z= 2\left(\cos \left(\dfrac{\pi}{6}\right) + i\sin \left(\dfrac{\pi}{6}\right)\right)</m>, and apply De Moivre's theorem. Then
-<md>
-    <mrow>z^4 \amp = 2^4\left(\cos \left(4 \cdot \dfrac{\pi}{6}\right)+i\sin \left(4 \cdot \dfrac{\pi}{6}\right)\right)</mrow>
-    <mrow>\amp=16\left(\cos \left(\dfrac{2\pi}{3}\right) + i\sin \left(\dfrac{2\pi}{3}\right)\right)</mrow>
-</md>
-The Cartesian form of <m>z^4</m> is thus <m>16\left(\dfrac{-1}{2} + i\dfrac{\sqrt{3}}{2}\right)</m>, or <m>-8+8i\sqrt{3}</m>.  You can check that you get this same result if you compute <m>\left(\sqrt{3} + i\right)^4</m> by expanding the power.</p></solution></example>
+    <md><mrow>z^4 \amp = 2^4\left(\cos \left(4 \cdot \dfrac{\pi}{6}\right)+i\sin \left(4 \cdot \dfrac{\pi}{6}\right)\right)</mrow>
+        <mrow>\amp=16\left(\cos \left(\dfrac{2\pi}{3}\right) + i\sin \left(\dfrac{2\pi}{3}\right)\right)</mrow></md>
+The Cartesian form of <m>z^4</m> is thus <m>16\left(\dfrac{-1}{2} + i\dfrac{\sqrt{3}}{2}\right)</m>, or <m>-8+8i\sqrt{3}</m>.  You can check that you get this same result if you compute <m>\left(\sqrt{3} + i\right)^4</m> by expanding the power.</p>
+</solution></example>
 
 <exercise><statement><p>Compute <m>w^3</m>, for <m>w=-\sqrt{2}+\sqrt{2}i</m>.</p></statement><answer><p><m>4\sqrt{2}+4\sqrt{2} i</m></p></answer></exercise>
 
@@ -275,19 +261,14 @@ The second square root of <m>z</m> is thus
         <me>r^{1/2}\left(\cos \left(\dfrac{\alpha}{2}+\pi\right)+i\sin \left(\dfrac{\alpha}{2}+\pi\right)\right)</me></p>
 
 <p> As an example consider <m>w=-8+8i\sqrt{3},</m> whose polar form is <m>16\left(\cos \left(\dfrac{2\pi}{3}\right) + i\sin\left( \dfrac{2\pi}{3}\right)\right)</m>, or by adding <m>2\pi</m> to the argument, <m>16\left(\cos\left( \dfrac{8\pi}{3}\right) + i\sin \left(\dfrac{8\pi}{3}\right)\right)</m>. The two square roots of <m>w</m> are 
-<md>
-    <mrow>z_1 \amp = 16^{1/2}\left(\cos \left(\dfrac{\pi}{3}\right) + i\sin \left(\dfrac{\pi}{3}\right)\right)=4\left(\dfrac{1}{2} + i\dfrac{\sqrt{3}}{2}\right) = 2+2i\sqrt{3}</mrow>
-    <mrow>z_2\amp=16^{1/2}\left(\cos \left(\dfrac{4\pi}{3}\right) + i\sin \left(\dfrac{4\pi}{3}\right)\right)=4\left(\dfrac{-1}{2} + i\dfrac{-\sqrt{3}}{2}\right) = -2-2i\sqrt{3}</mrow>
-</md></p>
+    <md><mrow>z_1 \amp = 16^{1/2}\left(\cos \left(\dfrac{\pi}{3}\right) + i\sin \left(\dfrac{\pi}{3}\right)\right)=4\left(\dfrac{1}{2} + i\dfrac{\sqrt{3}}{2}\right) = 2+2i\sqrt{3}</mrow>
+        <mrow>z_2\amp=16^{1/2}\left(\cos \left(\dfrac{4\pi}{3}\right) + i\sin \left(\dfrac{4\pi}{3}\right)\right)=4\left(\dfrac{-1}{2} + i\dfrac{-\sqrt{3}}{2}\right) = -2-2i\sqrt{3}</mrow></md></p>
+
 <sidebyside widths="70% 29%" margins="0% 0%" valigns="middle middle"><p>You can verify that both of these numbers are square roots of <m>w=-8+8i\sqrt{3}</m>, for instance,
-<md>
-    <mrow>\left(2+2i\sqrt{3}\right)^2 \amp = 4+2(2)\left(2i\sqrt{3}\right)+12i^2</mrow>
-    <mrow>\amp=-8+8i\sqrt{3}</mrow>
-</md>
+    <md><mrow>\left(2+2i\sqrt{3}\right)^2 \amp = 4+2(2)\left(2i\sqrt{3}\right)+12i^2</mrow>
+        <mrow>\amp=-8+8i\sqrt{3}</mrow></md>
 The graphs of <m>w</m> and its two square roots are shown at right.</p>
-    <image xml:id="fig10-4-2">
-        <description>square roots of complex number</description>
-        <latex-image>
+    <image xml:id="fig10-4-2"><description>square roots of complex number</description><latex-image>
         <![CDATA[
     \begin{tikzpicture} [scale=.11]
     \coordinate(O) at (0,0);
@@ -308,9 +289,7 @@ The graphs of <m>w</m> and its two square roots are shown at right.</p>
     \draw[red, thick, ->, >=stealth'] (O) -- (z1) node[above right,  yshift=.1cm, fill=white, inner sep=1]{$z_1$};
     \draw[red, thick, ->, >=stealth'] (O) -- (z2) node[below left, yshift=-.1cm, fill=white, inner sep=1]{$z_2$};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside>
+    </latex-image></image></sidebyside>
 
 <p>It is not hard to show that every number has three complex cube roots, four complex fourth roots, and so on.</p>
 
@@ -323,14 +302,11 @@ so one of its cube roots is
 But by adding multiples of <m>2\pi</m> to the argument, we can also write the polar form of  as
         <me>z=8(\cos 2\pi + i \sin 2\pi)~~~~\text{and}~~~~z=8(\cos 4\pi + i \sin 4\pi)</me></p>
 <p>Applying De Moivre's theorem to each of these expressions gives us two more cube roots
-    <md>
-        <mrow>z_2 \amp = 2\left(\cos \left(\dfrac{2\pi}{3}\right) + i\sin \left(\dfrac{2\pi}{3}\right)\right) = -1+i\sqrt{3}</mrow>
-        <mrow>z_3 \amp= 2\left(\cos \left(\dfrac{4\pi}{3}\right) + i\sin \left(\dfrac{4\pi}{3}\right)\right)= -1-i\sqrt{3}</mrow>
-    </md></p>
+    <md><mrow>z_2 \amp = 2\left(\cos \left(\dfrac{2\pi}{3}\right) + i\sin \left(\dfrac{2\pi}{3}\right)\right) = -1+i\sqrt{3}</mrow>
+        <mrow>z_3 \amp= 2\left(\cos \left(\dfrac{4\pi}{3}\right) + i\sin \left(\dfrac{4\pi}{3}\right)\right)= -1-i\sqrt{3}</mrow></md></p>
+
 <sidebyside widths="60% 30%" margins="0% 5%" valigns="middle middle"><p>The three roots are shown at right. Note that they are evenly spaced around a circle of radius 2. You can check that adding further muliples of <m>2\pi</m> to the argument does not generate any new cube roots.</p>
-    <image xml:id="exam10-4-6">
-        <description>square roots of complex number</description>
-        <latex-image>
+    <image xml:id="exam10-4-6"><description>square roots of complex number</description><latex-image>
         <![CDATA[
     \begin{tikzpicture} [scale=.72]
     \coordinate(O) at (0,0);
@@ -351,27 +327,27 @@ But by adding multiples of <m>2\pi</m> to the argument, we can also write the po
     \draw[red, thick, ->, >=stealth'] (O) -- (z2) node[above left, xshift=.3cm, text=black]{$-1+\sqrt{3}i$};
     \draw[red,  thick, ->, >=stealth'] (O) -- (z3) node[below left, xshift=.3cm, text=black]{$-1-\sqrt{3}i$};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside></solution></example>
+    </latex-image></image></sidebyside>
+</solution></example>
 
 <assemblage><title>Roots of a Complex Number</title>
 <p>A complex number <m>z=r(\cos \alpha + i\sin \alpha)</m> in polar form has <m>n</m> complex <m>n</m>th roots, given by
-    <me>\blert{z_k = r^{1/n}\left(\cos \left(\dfrac{\alpha + 2\pi k}{n}\right) + i\sin \left(\dfrac{\alpha + 2\pi k}{n}\right)\right)}</me>
+        <me>\blert{z_k = r^{1/n}\left(\cos \left(\dfrac{\alpha + 2\pi k}{n}\right) + i\sin \left(\dfrac{\alpha + 2\pi k}{n}\right)\right)}</me>
 for <m>k = 0,~1,~2, \cdots,~ n-1</m>.</p></assemblage>
 
-<exercise><statement><p><ol marker="a">
-<li>Write <m>i</m> in polar form.</li>
-<li>Find  four complex fourth roots of <m>i</m>.</li></ol></p></statement><answer><p><ol marker="a">
-        <li><m>\cos \left(\dfrac{\pi}{2}\right) + i\sin \left(\dfrac{\pi}{2}\right)</m></li>
-        <li><m>\cos \left(\dfrac{\pi}{8}\right) + i\sin \left(\dfrac{\pi}{8}\right)</m>, <m>~ \cos \left(\dfrac{5\pi}{8}\right) + i\sin \left(\dfrac{5\pi}{8}\right)</m>, <m>~ \cos \left(\dfrac{9\pi}{8}\right) + i\sin \left(\dfrac{9\pi}{8}\right)</m>, <m>~ \cos \left(\dfrac{13\pi}{8}\right) + i\sin \left(\dfrac{13\pi}{8}\right)</m></li></ol></p></answer></exercise>
+<exercise><statement><p><ol marker="a.">
+    <li>Write <m>i</m> in polar form.</li>
+    <li>Find  four complex fourth roots of <m>i</m>.</li></ol></p></statement><answer><p><ol marker="a">
+    <li><m>\cos \left(\dfrac{\pi}{2}\right) + i\sin \left(\dfrac{\pi}{2}\right)</m></li>
+    <li><m>\cos \left(\dfrac{\pi}{8}\right) + i\sin \left(\dfrac{\pi}{8}\right)</m>, <m>~ \cos \left(\dfrac{5\pi}{8}\right) + i\sin \left(\dfrac{5\pi}{8}\right)</m>, <m>~ \cos \left(\dfrac{9\pi}{8}\right) + i\sin \left(\dfrac{9\pi}{8}\right)</m>, <m>~ \cos \left(\dfrac{13\pi}{8}\right) + i\sin \left(\dfrac{13\pi}{8}\right)</m></li>
+</ol></p></answer></exercise>
 
 
 <p>Review the following skills you will need for this section.</p>
 <project>    
     <sidebyside><p>Write with fractional exponents. </p>
     </sidebyside>
-    <p><ol marker="1" cols="3">
+    <p><ol marker="1." cols="3">
         <li><p><m>\sqrt[3]{a}</m></p></li>
         <li><p><m>\dfrac{1}{\sqrt[4]{n}}</m></p></li>
         <li><p><m>\sqrt[4]{t^3}</m></p></li>
@@ -385,7 +361,7 @@ for <m>k = 0,~1,~2, \cdots,~ n-1</m>.</p></assemblage>
     <sidebyside><p><m>\underline{\qquad\qquad\qquad\qquad}</m></p></sidebyside>
     <conclusion>
     <sidebyside><p>Algebra Refresher Answers</p></sidebyside>
-        <p><ol marker="1" cols="3">
+        <p><ol marker="1." cols="3">
             <li><m>a^{1/3}</m></li>
             <li><m>n^{-1/4}</m></li>
             <li><m>t^{3/4}</m></li>
@@ -408,49 +384,50 @@ for <m>k = 0,~1,~2, \cdots,~ n-1</m>.</p></assemblage>
 </subsubsection>
 
 <subsubsection><title>Concepts</title>
-<p><ol marker="1">
-<li>Multiplying a complex number by <m>i</m> rotates its graph by <m>90\degree</m> around the origin.</li>
+<p><ol marker="1.">
+    <li>Multiplying a complex number by <m>i</m> rotates its graph by <m>90\degree</m> around the origin.</li>
 
-<li><assemblage><title>Polar Form for a Complex Number</title>
-<p>The complex number <m>z=a+bi</m> can be written in the polar form
-  <me>z=r(\cos(\theta)+i\sin (\theta))</me>
-where
-<me>r=\sqrt{a^2+b^2}</me>
-and <m>\theta</m> is defined by
-<me>a=r \cos (\theta),~~~~b=r\sin (\theta),~~~~0 \le \theta \le 2\pi</me>
-The angle <m>\theta</m> is called the <term>argument</term> of the complex number, and <m>r</m> is its length, or <term>modulus</term>.</p></assemblage></li>
+    <li><assemblage><title>Polar Form for a Complex Number</title>
+        <p>The complex number <m>z=a+bi</m> can be written in the polar form
+            <me>z=r(\cos(\theta)+i\sin (\theta))</me>
+        where
+            <me>r=\sqrt{a^2+b^2}</me>
+        and <m>\theta</m> is defined by
+            <me>a=r \cos (\theta),~~~~b=r\sin (\theta),~~~~0 \le \theta \le 2\pi</me>
+        The angle <m>\theta</m> is called the <term>argument</term> of the complex number, and <m>r</m> is its length, or <term>modulus</term>.</p></assemblage></li>
 
-<li><assemblage><title>Product and Quotient in Polar Form</title>
-<p>If <m>z_1=r(\cos (\alpha)+i\sin (\alpha))</m> and <m>z_2=R(\cos (\beta)+i\sin (\beta))</m>, then
-<me> z_1z_2=rR(\cos (\alpha + \beta) + i \sin (\alpha + \beta))</me> 
-and
-<me> \dfrac{z_1}{z_2}=\dfrac{r}{R}(\cos (\alpha - \beta) + i \sin (\alpha - \beta))</me> </p></assemblage></li>
+    <li><assemblage><title>Product and Quotient in Polar Form</title>
+        <p>If <m>z_1=r(\cos (\alpha)+i\sin (\alpha))</m> and <m>z_2=R(\cos (\beta)+i\sin (\beta))</m>, then
+            <me> z_1z_2=rR(\cos (\alpha + \beta) + i \sin (\alpha + \beta))</me> 
+        and
+            <me> \dfrac{z_1}{z_2}=\dfrac{r}{R}(\cos (\alpha - \beta) + i \sin (\alpha - \beta))</me> </p></assemblage></li>
 
-<li><assemblage><title>De Moivre's Theorem</title>
-<p>If <m>z=r(\cos(\alpha)+i\sin (\alpha))</m> is a complex number in polar form, and <m>n</m> is a positive integer, then
-<me>z^n= r^n(\cos (n\alpha)+i\sin (n\alpha))</me></p></assemblage></li>
+    <li><assemblage><title>De Moivre's Theorem</title>
+        <p>If <m>z=r(\cos(\alpha)+i\sin (\alpha))</m> is a complex number in polar form, and <m>n</m> is a positive integer, then
+            <me>z^n= r^n(\cos (n\alpha)+i\sin (n\alpha))</me></p></assemblage></li>
 
-<li><assemblage><title>Roots of a Complex Number</title>
-<p>A complex number <m>z=r(\cos (\alpha) + i\sin (\alpha))</m> in polar form has <m>n</m> complex <m>n</m>th roots, given by
-  <me>z_k = r^{1/n}\left(\cos \left(\dfrac{\alpha + 2\pi k}{n}\right) + i\sin \left(\dfrac{\alpha + 2\pi k}{n}\right)\right)</me>
-for <m>k = 0,~1,~2, \cdots,~ n-1</m>.</p></assemblage></li>
+    <li><assemblage><title>Roots of a Complex Number</title>
+        <p>A complex number <m>z=r(\cos (\alpha) + i\sin (\alpha))</m> in polar form has <m>n</m> complex <m>n</m>th roots, given by
+            <me>z_k = r^{1/n}\left(\cos \left(\dfrac{\alpha + 2\pi k}{n}\right) + i\sin \left(\dfrac{\alpha + 2\pi k}{n}\right)\right)</me>
+        for <m>k = 0,~1,~2, \cdots,~ n-1</m>.</p></assemblage></li>
 </ol></p></subsubsection>
 
 <subsubsection><title> Study Questions</title>
-<p><ol marker="1">
-<li>What happens to the vector representing a complex number when we multiply the number by <m>-i</m>?</li>
-<li>If <m>z=p+qi</m>, what do these expressions represent?  <m>p^2+q^2,~ p-qi,~ \dfrac{q}{p}</m></li>  
-<li>If <m>z_1</m> and <m>z_2</m> lie on the unit circle, explain why <m>z_1z_2</m> and <m>\dfrac{z_1}{z_2}</m> also lie on the unit circle.</li>
-<li>Explain how you could use DeMoivre's theorem to compute <m>z^{2/3}</m>.</li></ol></p>
+<p><ol marker="1.">
+    <li>What happens to the vector representing a complex number when we multiply the number by <m>-i</m>?</li>
+    <li>If <m>z=p+qi</m>, what do these expressions represent?  <m>p^2+q^2,~ p-qi,~ \dfrac{q}{p}</m></li>  
+    <li>If <m>z_1</m> and <m>z_2</m> lie on the unit circle, explain why <m>z_1z_2</m> and <m>\dfrac{z_1}{z_2}</m> also lie on the unit circle.</li>
+    <li>Explain how you could use DeMoivre's theorem to compute <m>z^{2/3}</m>.</li>
+</ol></p>
 </subsubsection>
 
 <subsubsection><title>Skills</title>
-<p><ol marker="1">
-<li>Convert from polar form to standard form    #5<ndash/>12</li>
-<li>Write a complex number in polar form    #13-22</li>
-<li>Find the product or quotient of two complex numbers in polar form    #25<ndash/>32</li>
-<li>Find a power of a complex number    #33<ndash/>42</li>
-<li>Find the complex roots of a number    #43<ndash/>48, 51<ndash/>52, 55<ndash/>60</li></ol></p>
+<p><ol marker="1.">
+    <li>Convert from polar form to standard form    #5<ndash/>12</li>
+    <li>Write a complex number in polar form    #13-22</li>
+    <li>Find the product or quotient of two complex numbers in polar form    #25<ndash/>32</li>
+    <li>Find a power of a complex number    #33<ndash/>42</li>
+    <li>Find the complex roots of a number    #43<ndash/>48, 51<ndash/>52, 55<ndash/>60</li></ol></p>
 </subsubsection>
 </subsection>
 

@@ -7,10 +7,7 @@
 
 <p>If we know two angles and one side of a triangle, we can use the Law of Sines to solve the triangle. We can also use the Law of Sines when we know two sides and the angle opposite one of them.  But the Law of Sines is not helpful for the problem that opened this chapter, finding the distance from Avery to Clio.  In this case we know two sides of the triangle, <m>a</m> and <m>c</m>, and the <em>included</em> angle, <m>B</m>.</p> 
 
-<sidebyside width="95%">
-    <image xml:id="fig-3-3intro">
-        <description>triangle</description>
-        <latex-image>
+    <image width="95%" xml:id="fig-3-3intro"><description>triangle</description><latex-image>
         <![CDATA[
         \begin{tikzpicture}[scale=.8]
         \coordinate (A) at (0,0);
@@ -47,19 +44,14 @@
 
         \node[text width=5.5cm,text=blue] at ($(A)+(3.,-1)$){Two sides and the included angle. We cannot use the Law of Sines.};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside> 
+    </latex-image></image>
 
 <p>To solve a triangle when we know two sides and the included angle, we will need a generalization of the Pythagorean theorem known as the Law of Cosines.</p>
 <p>In a right triangle, with <m>C = 90\degree</m>, the Pythagorean theorem tells us that
         <me>c^{2} = a^{2} + b^{2}</me>
 If we allow angle <m>C</m> to vary, but keep <m>a</m> and <m>b</m> the same length, the side <m>c</m> will grow or shrink, depending on whether we increase or decrease the angle <m>C</m>, as shown below.  </p>
 
-<sidebyside width="80%">
-    <image xml:id="fig-3-3cosinelaw">
-        <description>triangle</description>
-        <latex-image>
+    <image width="80%" xml:id="fig-3-3cosinelaw"><description>triangle</description><latex-image>
         <![CDATA[
         \begin{tikzpicture}[scale=.81]
         \coordinate (A) at (2,0);
@@ -105,9 +97,7 @@ If we allow angle <m>C</m> to vary, but keep <m>a</m> and <m>b</m> the same leng
         \node[text width=2.4cm,text=blue] at ($(C)+(1.,-1.2)$){$\angle C$ is obtuse $c^2 > a^2+b^2$};
 
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside>
+    </latex-image></image>
 
 <p> The Pythagorean theorem <idx><h>Pythagorean theorem</h></idx> is actually a special case of a more general law that applies to all triangles, no matter what the size of angle <m>C</m>. The equation relating the three sides of a triangle is 
         <me>c^{2} = a^{2} + b^{2} - 2ab \cos (C)</me>
@@ -128,17 +118,14 @@ You can see that when <m>C</m> is a right angle, <m>\cos 90\degree = 0</m>, so t
 
 <subsection><title>Finding a Side</title>
 
-<sidebyside widths="55% 35%" valigns="middle middle" margins="0% 5%"><p>Now we can solve the problem of the distance from Avery to Clio. Here is the figure from Section 3.1 showing the location of the three towns.</p><image xml:id="fig-3-1-towns-repeat">
-    <description>triangle</description>
-    <xi:include href="Fig-Avery-Clio-towns.ptx"/>
-</image></sidebyside>
+<sidebyside widths="55% 35%" valigns="middle middle" margins="0% 5%"><p>Now we can solve the problem of the distance from Avery to Clio. Here is the figure from Section 3.1 showing the location of the three towns.</p>
+    <image xml:id="fig-3-1-towns-repeat"><description>triangle</description><xi:include href="Fig-Avery-Clio-towns.ptx"/></image>
+</sidebyside>
 
 <example><statement><p>How far is it from Avery to Clio?</p> </statement>
 
 <solution><sidebyside widths="55% 30%" valigns="middle middle"><p>The angle <m>\angle ABC = 35\degree + 90\degree = 125\degree</m>. Thus, in <m>\triangle ABC</m> we have <m>a = 34,~ c = 48</m> and <m>B = 125\degree</m>. The distance from Avery to Clio is represented by <m>b</m> in the figure.</p> 
-    <image xml:id="exam3-3-1">
-        <description>triangle</description>
-        <latex-image>
+    <image xml:id="exam3-3-1"><description>triangle</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.72]
         \coordinate(A) at (3.2,0);
@@ -155,18 +142,16 @@ You can see that when <m>C</m> is a right angle, <m>\cos 90\degree = 0</m>, so t
 
         \draw[red,thick] (0.3,0) arc (0:{180-atan(1.857/1.3)}:0.3) node[above right, midway, yshift=-5] {$125\degree$};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside> 
-    <p>We know two sides and the included angle, and we choose the version of the Law of Cosines that uses our known angle, <m>B</m>.
+    </latex-image></image></sidebyside> 
+<p>We know two sides and the included angle, and we choose the version of the Law of Cosines that uses our known angle, <m>B</m>.
     <md><mrow>b^{2} \amp = a^{2} + c^{2} - 2ac \cos (B) \amp\amp \blert{\text{Substitute the known values.}}</mrow>
         <mrow>b^{2} \amp = 34^{2} + 48^{2} - 2(34)(48) \cos (125\degree) \amp\amp \blert{\text{Simplify the right side.}}</mrow>
         <mrow>b^{2} \amp = 3460 - 3264 \cos (125\degree) = 5332.153 \amp\amp \blert{\text{Take square roots.}} </mrow>
         <mrow>b \amp = 73.02</mrow></md>
-    Avery is about 73 miles from Clio.</p></solution></example>
+Avery is about 73 miles from Clio.</p></solution></example>
 
 <warning><p>When simplifying the Law of Cosines, be careful to follow the order of operations.  In the previous example, the right side of the equation
-<me> b^{2} = 34^{2} + 48^{2} - 2(34)(48) \cos (125\degree)</me>
+        <me> b^{2} = 34^{2} + 48^{2} - 2(34)(48) \cos (125\degree)</me>
 has three terms, and simplifies to 
     <md><mrow>b^{2} \amp = 1156 + 2304 - 3264 \cos (125\degree)</mrow>
         <mrow>b^{2} \amp = 3460 - 3264(-0.573567364 ...)</mrow></md>
@@ -183,9 +168,7 @@ Note that 3264 is the coefficient of <m>\cos (125\degree)</m>, so it would be in
 
 <example><statement>
     <sidebyside widths="55% 27%" valigns="middle middle" margins="0% 10%"><p>In the triangle at right, <m>a = 6,~ b = 7</m>, and <m>c = 11</m>. Find angle <m>C</m>.</p>
-    <image xml:id="exam3-3-2">
-        <description>triangle</description>
-        <latex-image>
+    <image xml:id="exam3-3-2"><description>triangle</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.27, rotate=-140]
 
@@ -201,9 +184,7 @@ Note that 3264 is the coefficient of <m>\cos (125\degree)</m>, so it would be in
         \draw[black,thick] (C)--(B) node [above left,midway] {\color{blue}6};
         \draw[black,thick] (A)--(C) node [above right,midway] {\color{blue}7};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside></statement>
+    </latex-image></image></sidebyside></statement>
 <solution><p>We choose the version of the Law of Cosines that uses angle <m>C</m>.
     <md><mrow>c^{2} \amp = a^{2} + b^{2} - 2ab \cos (C) \amp\amp \blert{\text{Substitute the known values.}}</mrow>
         <mrow>11^{2} \amp = 6^{2} + 7^{2} - 2(6)(7) \cos (C) \amp\amp \blert{\text{Simplify each side.}}</mrow>
@@ -211,7 +192,7 @@ Note that 3264 is the coefficient of <m>\cos (125\degree)</m>, so it would be in
         <mrow>36 \amp = -84 \cos (C) \amp\amp \blert{\text{Solve for cos (C).}}</mrow>
         <mrow>\dfrac{-3}{7} \amp = \cos (C) \amp\amp \blert{\text{Solve for C.}}</mrow>
         <mrow>C \amp = \cos^{-1} \left(\dfrac{-3}{7}\right) = 115.4\degree</mrow></md>
-    Angle <m>C</m> is about <m>115.4\degree</m>.</p></solution></example>
+Angle <m>C</m> is about <m>115.4\degree</m>.</p></solution></example>
 
 <exercise><statement><p>In <m>\triangle ABC</m>, <m>a = 5.3,~b = 4.7</m>, and <m>c = 6.1</m>. Find angle <m>B</m>, and round your answer to two decimal places.</p> </statement>
 <answer><p><m>48.07\degree</m></p></answer></exercise>
@@ -242,12 +223,9 @@ Alternatively, we can use the Law of Cosines to find angle <m>A</m>.
 
 <assemblage><title>The Ambiguous Case</title>
     <idx><h>ambiguous case</h></idx>
-<p><ol marker="1" cols="2">
+<p><ol marker="1." cols="2">
     <li><p>No solution: <m>a \lt b \sin (\alpha)</m></p>
-        <sidebyside width="50%">
-    <image xml:id="fig-3-3amcase1">
-        <description>triangle</description>
-        <latex-image>
+        <image width="50%" xml:id="fig-3-3amcase1"><description>triangle</description><latex-image>
         <![CDATA[
         \begin{tikzpicture}[scale=.7]
 
@@ -262,15 +240,10 @@ Alternatively, we can use the Law of Cosines to find angle <m>A</m>.
         \draw[red,thick] (C)--+(0,-.8) node [right,midway,text=blue] {$a$};
         \draw[black,thick] (A)--(C) node [above left,midway,text=blue] {$b$};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-        </sidebyside>
+        </latex-image></image>
         <p><m>\alpha</m> is too short to make a triangle.</p></li>
-        <li><p>One solution: <m>a = b \sin (\alpha)</m> </p>
-        <sidebyside width="50%">
-    <image xml:id="fig-3-3amcase2">
-        <description>triangle</description>
-        <latex-image>
+    <li><p>One solution: <m>a = b \sin (\alpha)</m> </p>
+        <image width="50%" xml:id="fig-3-3amcase2"><description>triangle</description><latex-image>
         <![CDATA[
         \begin{tikzpicture}[scale=.7]
         \coordinate (A) at (0,0);
@@ -284,15 +257,10 @@ Alternatively, we can use the Law of Cosines to find angle <m>A</m>.
         \draw[red,thick] (C)--+(0,-1.5) node [right,midway,text=blue] {$a$};
         \draw[black,thick] (A)--(C) node [above left,midway,text=blue] {$b$};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-        </sidebyside>
-            <p><m>\alpha</m> is exactly the right length to make a right triangle.</p></li>
-        <li><p>Two solutions:  <m>b \sin (\alpha) \lt a \lt b</m></p>   
-        <sidebyside width="50%">
-    <image xml:id="fig-3-3amcase3">
-        <description>triangle</description>
-        <latex-image>
+        </latex-image></image>
+        <p><m>\alpha</m> is exactly the right length to make a right triangle.</p></li>
+    <li><p>Two solutions:  <m>b \sin (\alpha) \lt a \lt b</m></p>   
+        <image width="50%" xml:id="fig-3-3amcase3"><description>triangle</description><latex-image>
         <![CDATA[
         \begin{tikzpicture}[scale=.7]
         \coordinate (A) at (0,0);
@@ -307,14 +275,9 @@ Alternatively, we can use the Law of Cosines to find angle <m>A</m>.
         \draw[red,thick] (C)--+(.547,-1.5) node [right,midway, yshift=-2,text=blue] {$a$};
         \draw[black,thick] (A)--(C) node [above left,midway,text=blue] {$b$};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-        </sidebyside></li>
-        <li><p>One solution: <m>a \gt b</m>  </p>
-        <sidebyside width="85%">
-    <image xml:id="fig-3-3amcase4">
-        <description>triangle</description>
-        <latex-image>
+        </latex-image></image></li>
+    <li><p>One solution: <m>a \gt b</m>  </p>
+        <image width="85%" xml:id="fig-3-3amcase4"><description>triangle</description><latex-image>
         <![CDATA[
         \begin{tikzpicture}[scale=.63]
         \coordinate (A) at (0,0);
@@ -329,7 +292,7 @@ Alternatively, we can use the Law of Cosines to find angle <m>A</m>.
         \draw[black,thick] (A)--(C) node [above left,midway] {\color{blue}$b$};
 
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></li>
+        </latex-image></image></li>
 </ol></p>
 </assemblage>
 
@@ -340,7 +303,7 @@ Alternatively, we can use the Law of Cosines to find angle <m>A</m>.
 <assemblage><title>Quadratic Formula</title>
 <idx><h>quadratic formula</h></idx>
 
-<p>The solutions of the quadratic equation <m>ax^{2} + bx + c = 0,~~a \not= 0,</m> are given by
+    <p>The solutions of the quadratic equation <m>ax^{2} + bx + c = 0,~~a \not= 0,</m> are given by
         <me>\blert{x = \dfrac{-b \pm \sqrt{b^{2} - 4ac}}{2a}}</me>
 </p></assemblage>
 
@@ -363,22 +326,19 @@ Alternatively, we can use the Law of Cosines to find angle <m>A</m>.
                 <mrow>\amp = \dfrac{15.497 \pm  4.490}{2} = 5.503~ \text{ or }~ 9.994</mrow></md></p>     
         
 <p>Because there are two positive solutions for side <m>c</m>, either <m>c = 5.503</m> or <m>c = 9.994</m>, there are two triangles with the given properties. We apply the Law of Cosines again to find angle <m>C</m> in each triangle.</p>  
-        <p>For the triangle with <m>c = 5.503</m>, we have</p>
+<p>For the triangle with <m>c = 5.503</m>, we have</p>
         <p><md><mrow>c^{2} \amp = a^{2} + b^{2} - 2ab \cos (C) \amp\amp \blert{\text{Substitute the known values.}}</mrow>
                 <mrow>5.503^{2} \amp = 8^{2} + 3^{2} - 2(8)(3) \cos (C) \amp\amp \blert{\text{Solve for} \cos (C).}</mrow>
                 <mrow>\cos (C) \amp = \dfrac{5.503^{2} - 64 - 9}{-48} = 0.889876\\
                 C \amp = \cos^{-1} 0.889876) = 27.1\degree</mrow></md></p>
 <p>and <m>A = 180\degree - (14.4\degree + 27.1\degree) = 138.5\degree</m>.</p>
 <p> For the triangle with <m>c = 9.994</m>, we have</p>
-<p><md><mrow>c^{2} \amp = a^{2} + b^{2} - 2ab \cos (C) \amp\amp \blert{\text{Substitute the known values.}}</mrow>
-    <mrow>9.994^{2} \amp = 8^{2} + 3^{2} - 2(8)(3) \cos (C) \amp\amp \blert{\text{Solve for} \cos (C).}</mrow>
-    <mrow>\cos (C) \amp = \dfrac{9.994^{2} - 64 - 9}{-48} = -0.560027</mrow>
-    <mrow>C \amp = \cos^{-1} (-0.560027) = 124.1\degree</mrow></md></p>
+    <p><md><mrow>c^{2} \amp = a^{2} + b^{2} - 2ab \cos (C) \amp\amp \blert{\text{Substitute the known values.}}</mrow>
+        <mrow>9.994^{2} \amp = 8^{2} + 3^{2} - 2(8)(3) \cos (C) \amp\amp \blert{\text{Solve for} \cos (C).}</mrow>
+        <mrow>\cos (C) \amp = \dfrac{9.994^{2} - 64 - 9}{-48} = -0.560027</mrow>
+        <mrow>C \amp = \cos^{-1} (-0.560027) = 124.1\degree</mrow></md></p>
 <p>and <m>A = 180\degree - (14.4\degree + 124.1\degree) = 41.5\degree</m>.  Both triangles are shown below.</p>
-<sidebyside width="90%">
-    <image xml:id="exam3-3-3">
-        <description>triangle</description>
-        <latex-image>
+    <image width="90%" xml:id="exam3-3-3"><description>triangle</description><latex-image>
         <![CDATA[
         \begin{tikzpicture}[scale=.8]
         \coordinate (A) at (3.73,.96);
@@ -414,14 +374,12 @@ Alternatively, we can use the Law of Cosines to find angle <m>A</m>.
         \draw[black,thick] (C)--(B) node [below,midway, yshift=-2] {$8$};
         \draw[black,thick] (A)--(C) node [below right,midway] {$3$};
         \end{tikzpicture}]]>
-    </latex-image>
-    </image>
-</sidebyside></solution></example>
+    </latex-image></image></solution></example>
 
 <note><p>In the previous Example, notice that we used the Law of Cosines instead of the Law of Sines to find a second angle in the triangle, because there is only one angle between <m>0\degree</m> and <m>180\degree</m> with a given cosine. We don't have to check the results, as we would if we used the Law of Sines.</p></note> 
 
- <exercise><statement><p>Use the Law of Cosines to find all triangles <m>ABC</m> with <m>A = 48\degree,~ a = 10</m>, and <m>b = 15</m>.</p></statement>
- <answer><p>No solution</p></answer></exercise>
+<exercise><statement><p>Use the Law of Cosines to find all triangles <m>ABC</m> with <m>A = 48\degree,~ a = 10</m>, and <m>b = 15</m>.</p></statement>
+<answer><p>No solution</p></answer></exercise>
 </subsection>
 
 <subsection><title>Navigation</title>
@@ -462,16 +420,16 @@ We know <m>a = 12</m> and <m>c = 18</m>.  We use the Law of Cosines to find <m>b
     </latex-image></image></sidebyside>
 
 <p><md><mrow>b^{2} \amp = a^{2} + c^{2} - 2ac \cos (B) \amp\amp \blert{\text{Substitute the known values.}}</mrow>
-    <mrow>\amp = 12^{2} + 18^{2} - 2(12)18 \cos (160\degree) \amp\amp \blert{\text{Evaluate.}}</mrow>
-    <mrow>\amp = 873.95\amp\amp \blert{\text{Take positive square root.}}</mrow>
-    <mrow>b \amp = 29.56 </mrow></md></p>
+        <mrow>\amp = 12^{2} + 18^{2} - 2(12)18 \cos (160\degree) \amp\amp \blert{\text{Evaluate.}}</mrow>
+        <mrow>\amp = 873.95\amp\amp \blert{\text{Take positive square root.}}</mrow>
+        <mrow>b \amp = 29.56 </mrow></md></p>
 
 <p>Next, we apply the Law of Cosines again to find <m>\angle A</m>.</p>
 <p><md><mrow>a^{2} \amp = b^{2} + c^{2} - 2bc \cos (A) \amp\amp \blert{\text{Substitute the known values.}}</mrow>
-    <mrow>12^{2} \amp = 29.56^{2} + 18^{2} - 2(29.56)(18) \cos (A) \amp\amp \blert{\text{Solve for} \cos (A).}</mrow>
-    <mrow>\cos (A) \amp = \dfrac{12^{2} - 29.56^{2} - 18^{2}}{-2(29.56)(18)} = 0.9903</mrow>
-    <mrow>C \amp = \cos^{-1} (0.9903) = 8\degree</mrow></md></p>
-    <p>Thus, <m>x = 29.56</m> and <m>\theta = 8\degree + 15\degree = 23\degree</m>. The speed boat should travel 29.56 miles on a heading <m>23\degree</m> east of north.</p></solution></example> 
+        <mrow>12^{2} \amp = 29.56^{2} + 18^{2} - 2(29.56)(18) \cos (A) \amp\amp \blert{\text{Solve for} \cos (A).}</mrow>
+        <mrow>\cos (A) \amp = \dfrac{12^{2} - 29.56^{2} - 18^{2}}{-2(29.56)(18)} = 0.9903</mrow>
+        <mrow>C \amp = \cos^{-1} (0.9903) = 8\degree</mrow></md></p>
+<p>Thus, <m>x = 29.56</m> and <m>\theta = 8\degree + 15\degree = 23\degree</m>. The speed boat should travel 29.56 miles on a heading <m>23\degree</m> east of north.</p></solution></example> 
 
 <exercise><statement><sidebyside widths="60% 35%" valigns="middle middle" margins="0% 0%">
 <p>Howard wants to fly from Anchorage to Nome, Alaska, a distance of 540 miles on a heading <m>57\degree</m> west of north. After flying for some time, he discovers that his heading is in error, and he is actually flying <m>47\degree</m> west of north. Howard corrects his flight plan and changes course when he is exactly 200 miles from Anchorage. What is his new heading, and how far is he from Nome?</p>
@@ -520,7 +478,7 @@ We know <m>a = 12</m> and <m>c = 18</m>.  We use the Law of Cosines to find <m>b
 <idx><h>solve</h><h>a triangle</h></idx>
 <idx><h>triangle</h><h>solving</h></idx>
 
-<sidebyside><tabular top="major" halign="left" right="minor" left="minor" bottom="minor">
+<tabular top="major" halign="left" right="minor" left="minor" bottom="minor">
         <row bottom="minor">
             <cell>If we know:</cell>
             <cell>We can use:</cell></row>
@@ -540,8 +498,8 @@ We know <m>a = 12</m> and <m>c = 18</m>.  We use the Law of Cosines to find <m>b
         <row>
             <cell>4. Three sides (SSS)</cell>
             <cell>4. Law of Cosines, to find an angle</cell></row> 
-            </tabular>
-</sidebyside></assemblage>
+        </tabular>
+</assemblage>
 
 <note><p> In the ambiguous case, SSA, the Law of Sines is easier to apply, but there will be two possible angles, and we must check each angle to see if it produces a solution. Using the Law of Cosines involves solving a quadratic equation, but each positive solution of the equation yields a solution of the triangle.</p></note>
 
@@ -638,18 +596,18 @@ We know <m>a = 12</m> and <m>c = 18</m>.  We use the Law of Cosines to find <m>b
 </subsubsection>
 
 <subsubsection><title>Concepts</title>
-<p><ol marker="1">
+<p><ol marker="1.">
     <li>The Law of Sines is not helpful when we know two sides of the triangle and the included angle. In this case we need the Law of Cosines.</li>
-<li><assemblage><title>Law of Cosines</title>
-    <p>If the angles of a triangle are <m>A, B</m>, and <m>C</m>, and the opposite sides are respectively <m>a, b,</m> and <m>c</m>, then</p>
-    <p><md><mrow>a^{2} = b^{2} + c^{2} - 2bc \cos (A)</mrow>
-        <mrow>b^{2} = a^{2} + c^{2} - 2ac \cos (B)</mrow>
-        <mrow>c^{2} = a^{2} + b^{2} - 2ab \cos (C)</mrow></md></p>         
-    </assemblage></li>
-<li>We can also use the Law of Cosines to find an angle when we know all three sides of a triangle.</li>
-<li>We can use the Law of Cosines to solve the ambiguous case.</li>
-<li><assemblage><title>How to Solve an Oblique Triangle</title>
-    <sidebyside><tabular top="major" halign="left" right="minor" left="minor" bottom="minor">
+    <li><assemblage><title>Law of Cosines</title>
+        <p>If the angles of a triangle are <m>A, B</m>, and <m>C</m>, and the opposite sides are respectively <m>a, b,</m> and <m>c</m>, then</p>
+        <p><md><mrow>a^{2} = b^{2} + c^{2} - 2bc \cos (A)</mrow>
+            <mrow>b^{2} = a^{2} + c^{2} - 2ac \cos (B)</mrow>
+            <mrow>c^{2} = a^{2} + b^{2} - 2ab \cos (C)</mrow></md></p>         
+        </assemblage></li>
+    <li>We can also use the Law of Cosines to find an angle when we know all three sides of a triangle.</li>
+    <li>We can use the Law of Cosines to solve the ambiguous case.</li>
+    <li><assemblage><title>How to Solve an Oblique Triangle</title>
+        <tabular top="major" halign="left" right="minor" left="minor" bottom="minor">
         <row bottom="minor">
             <cell>If we know:</cell>
             <cell>We can use:</cell></row>
@@ -670,11 +628,11 @@ We know <m>a = 12</m> and <m>c = 18</m>.  We use the Law of Cosines to find <m>b
             <cell>4. Three sides (SSS)</cell>
             <cell>4. Law of Cosines, to find an angle</cell></row> 
             </tabular>
-</sidebyside></assemblage></li>
+        </assemblage></li>
 </ol></p></subsubsection>
 
 <subsubsection><title>Study Questions</title>
-<p><ol marker="1">
+<p><ol marker="1.">
     <li>The Law of Cosines is really a generalization of what familiar theorem?</li>
     <li>If you know all three sides of a triangle and one angle, what might be the advantage in using the Law of Cosines o find another angle, instead of the Law of Sines?</li>
     <li>State the quadratic formula from memory. Try to sing the quadratic formula to the tune of "Pop Goes the Weasel."</li>
@@ -682,7 +640,7 @@ We know <m>a = 12</m> and <m>c = 18</m>.  We use the Law of Cosines to find <m>b
 </ol></p></subsubsection>
 
 <subsubsection><title>Skills</title>
-<p><ol marker="1">
+<p><ol marker="1.">
     <li>Use the Law of Cosines to find the side opposite an angle    #7-12</li>
     <li>Use the Law of Cosines to find an angle    #13-20</li>
     <li>Use the Law of Cosines to find a side adjacent to an angle    #21-26</li>
