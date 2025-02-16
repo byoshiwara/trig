@@ -171,8 +171,8 @@ The ship is about 1315 yards from the observer at <m>A</m>.</p>
 <p>In order to apply the Law of Sines to find a side, we must know one angle of the triangle and its opposite side (either <m>a</m> and <m>A</m>, or <m>b</m> and <m>B</m>, or <m>c</m> and <m>C</m>), and one other angle. Then we can find the side opposite that angle.</p>
 
 <example><statement><sidebyside widths="65% 35%" margins="0% 0%"><p>In the triangle shown at right, 
-    <me>A = 37\degree, B = 54\degree,~ \text{and}~  = 11</me>
-    <ol marker= "a.">
+    <me>A = 37\degree, B = 54\degree,~ \text{and}~  a= 11</me>
+    <ol marker= "a">
         <li>Find <m>b</m>.</li>
         <li>Solve the triangle.</li>
     </ol></p>
@@ -217,19 +217,21 @@ The ship is about 1315 yards from the observer at <m>A</m>.</p>
     <p>(Hint:  Which side will you find first?)</p></stack>
     <image xml:id="exer3-2-2"><description>triangle</description><latex-image>
         <![CDATA[
-    \begin{tikzpicture} [scale=.72]
+    \begin{tikzpicture} [scale=1]
     \coordinate (B) at (0,0);
-    \coordinate (A) at (0.6,1.8);
-    \coordinate (C) at (3.,0);
+    \coordinate (A) at (73:1.6);
+    \coordinate (C) at (2.187,0);
 
     \draw[black] (A) node[anchor= south] {$A$};
     \draw[black] (B) node[anchor=east, xshift=-3] {$B$};
     \draw[black] (C) node[anchor=west] {$C$};
 
     \draw[black, thick] (C)--(B) node[below,midway,text=blue] {$a$};
-    \draw[black, thick] (A)--(B) node[above left,midway,text=blue] {$c$};
+    \draw[black, thick] (A)--(B) node[above left,midway,yshift=-2,text=blue] {$c=16$};
     \draw[black, thick] (A)--(C) node[above right,midway,text=blue] {$b$};
-        \end{tikzpicture}]]>
+    \draw[red, thick] (C)++(-.4,0) arc(180:138:.4) node[left,midway,yshift=3] {$42\degree$};
+    \draw[red, thick] (A)++(251.565:.3) arc(251.565:318:.3) node[below right,midway,xshift=-7] {$65\degree$};
+    \end{tikzpicture}]]>
     </latex-image></image></sidebyside></statement>
 <answer><p><m>B = 73\degree</m>, <m>~b = 22.87</m>, <m>~a = 21.68</m></p></answer></exercise>
 </subsection>
@@ -239,25 +241,26 @@ The ship is about 1315 yards from the observer at <m>A</m>.</p>
 
 <p> We can also use the Law of Sines to find an unknown angle of a triangle. We must know two sides of the triangle and the angle opposite one of them.</p>
 
-<example><statement><sidebyside widths="60% 25%" margins="0% 10%">
+<example><statement><sidebyside widths="50% 38%" margins="0% 5%">
     <p>In the triangle shown at right, 
         <me>B = 55\degree, a = 5,~ \text{and}~ b = 11</me> 
     Solve the triangle.</p>
         <image xml:id="exam3-2-3"><description>triangle</description><latex-image>
             <![CDATA[
-        \begin{tikzpicture} [scale=.7]
+        \begin{tikzpicture} [scale=1.2]
         \coordinate (C) at (0,0);
         \coordinate (A) at (2.2,0);
-        \coordinate (B) at (-.226,.974);
+        \coordinate (B) at (103.1:1);
     
         \draw[black] (A) node[anchor= west] {$A$};
         \draw[black] (B) node[anchor=south, xshift=-2] {$B$};
         \draw[black] (C) node[anchor=north, xshift=-2] {$C$};
     
-        \draw[black, thick] (C)--(B) node[left,midway, yshift=-2, text=blue] {$a$};
+        \draw[black, thick] (C)--(B) node[left,midway, yshift=-2, text=blue] {$a=5$};
         \draw[black, thick] (A)--(B) node[above,midway, text=blue] {$c$};
-        \draw[black, thick] (A)--(C) node[below,midway, text=blue] {$b$};
-            \end{tikzpicture}]]>
+        \draw[black, thick] (A)--(C) node[below,midway, text=blue] {$b=11$};
+        \draw[red, thick] (103.1:.7) arc(-76.9:-21.9:.3) node[below right,midway,xshift=-2] {$55\degree$};
+        \end{tikzpicture}]]>
         </latex-image></image></sidebyside></statement>
     
 <solution><p>We must find the three remaining parts of the triangle, <m>A, C</m>, and <m>c</m>. First, we use the Law of Sines to find <m>\sin (A)</m>.
@@ -269,7 +272,11 @@ So <m>A = \sin^{-1}(0.3723) \approx 21.9\degree</m>. Now we know two angles, and
             <mrow>\amp = 180\degree - 55\degree - 21.9\degree = 103.1\degree</mrow></md>
 Finally, we use the Law of Sines to find side <m>c</m>.  
         <md><mrow>\dfrac{c}{\sin (C)} \amp = \dfrac{b}{\sin (B)} \amp\amp \blert{\text{Substitute the known values.}}</mrow>
-            <mrow>\dfrac{c}{\sin (103.1\degree)} \amp = \dfrac{11}{\sin (55\degree)} \amp\amp \blert{\text{Multiply both sides by} \sin (103.1\degree).}</mrow>
+            <mrow>\dfrac{c}{\sin (103.1\degree)} \amp = \dfrac{11}{\sin (55\degree)} \amp\amp 
+                \begin{array}{l}
+                    \blert{\text{Multiply both sides by }}\\
+                    \blert{\sin (103.1\degree).}
+                 \end{array}</mrow>
             <mrow>c \amp = \dfrac{11}{\sin (55\degree)} \cdot \sin (103.1\degree)</mrow></md>
 Evaluating this expression with a calculator gives <m>c \approx 13.1.</m></p></solution></example>
 
