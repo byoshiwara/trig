@@ -10,9 +10,9 @@ var ptx_lunr_docs = [
   "body": "  "
 },
 {
-  "id": "frontmatter-4",
+  "id": "preface",
   "level": "1",
-  "url": "frontmatter-4.html",
+  "url": "preface.html",
   "type": "Preface",
   "number": "",
   "title": "Preface",
