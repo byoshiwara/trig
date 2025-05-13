@@ -11194,7 +11194,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.1",
   "title": "Algebra with Trigonometric Ratios",
-  "body": " Algebra with Trigonometric Ratios  In this chapter we apply some techniques from algebra to analyze more complicated trigonometric expressions. Before we begin, let's review some algebraic terminology.  Algebra Refresher   An algebraic expression expression algebraic expression algebraic expression expression is any meaningful collection of numbers, variables, and operation symbols. For example, the height of a golf ball is given in feet by the expression , where is the number of seconds after the ball is hit.  We evaluate evaluate an expression by substituting a specific value for the variable or variables involved. Thus, after 1 second, the height of the golf ball is and after 2 seconds, the height is and so on.    Evaluating Trigonometric Expressions  trigonometric expression  expression trigonometric  expression trigonometric trigonometric expression  Trigonometric ratios represent numbers, and they may appear as part of an algebraic expression. Expressions containing trig ratios can be simplified or evaluated like other algebraic expressions.  Keep in mind that , for example, is not a product: it does not mean \"sin times X\" (whatever that might be). Instead, \"sin\" is the name of a function, and means to evaluate the sine function at X. Thus, is a single number, the output of the sine function.  Evaluate each expression for and .       Substituting the values for and , we get Next, we evaluate each trig ratio and follow the order of operations.  This expression includes the product of two trig ratios, .   Evaluate each expression for , .         In the previous Exercise, is not equal to . That is, (You can check this for yourself.) We must follow the order of operations and evaluate the expression inside parentheses before applying the sine function.   Simplifying Trigonometric Expressions  trigonometric expression simplifying  Because expressions such as and are just variables, we can use algebra skills to simplify expressions involving the trig functions. For the rest of this section, we'll try to illustrate all the skills you will need going forward with your study of trigonometry.  More Algebra  When we simplify simplify an algebraic expression, we obtain a new expression that has the same values as the old one, but is easier to work with. For example, we can apply the distributive law and combine like terms to simplify The new expression is equivalent equivalent to the old one, that is, the expressions have the same value when we evaluate them at any value of . For instance, you can check that, at ,  To simplify an expression containing trig ratios, we treat each ratio as a single variable. Compare the two calculations below: Both calculations are examples of combining like terms. In the second calculation, we treat and as variables, just as we treat and as variables in the first calculation.  Simplify.       Combine like terms. Note that and are not like terms.  Combine like terms. Note that is treated as .   Simplify  In the previous Checkpoint, note that and are not like terms. (We can choose values for and so that and have different values.)  Simplify, and evaluate for .  We can combine like terms to get Because is not one of the angles for which we know exact trig values, we use a calculator to evaluate the expression.   Simplify, and evaluate for    Powers of Trigonometric Ratios  trigonometric function raising to power  Compare the two expressions They are not the same.   The first expression, , says to compute and then square the result.  says to square the angle first, and then compute the cosine.   For example, if , then  We usually write instead of , to distinguish it from , and to reduce the number of parentheses. Thus, means the square of .  The square of cosine  trigonometric function raising to power   The same notation applies to the other trig ratios, so that  trigonometric function raising to power  Evaluate .   Other powers are written in the same fashion. Thus, for example, .  Evaluate   Products  trigonometric function product of  We can multiply together trigonometric expressions, just as we multiply algebraic expressions. Recall that we use the distributive law in computing products such as and  Using the distributive law, multiply .  Think of as a single variable, and multiply by each term inside parentheses. (The algebraic form of the calculation is shown below in blue).  Notice that we write as .  Multiply  We can also use the distributive law to multiply binomials that include trig ratios. You may have used the acronym FOIL (acronym: First, Outside, Inside, Last) to remember the four multiplications in a product of binomials:  irst terms, utside terms, nside terms, and ast terms.  Multiply .  This calculation is similar to the product , except that the variable has been replaced by . Compare the calculations for the two products; first the familiar algebraic product: We compute the product in this example in the same way, but replacing by .    Expand   Factoring  trigonometric expression factoring  We can factor trigonometric expressions with the same techniques we use for algebraic expressions. In the next two Examples, compare the familiar algebraic factoring with a similar trigonometric expression.  Factor.       We factor out the common factor, .  We factor out the common factor, .   Factor.         We can also factor quadratic trinomials.  Factor.       We look for numbers and so that . We see that their product must be , and their sum must be . By checking the factors of for the correct sum, we find and . Thus,  Now replace by to find   Factor.         Review the following skills you will need for this section.   Factor.            Algebra Refresher Answers             Section 5.1 Summary  Vocabulary   Expression  Evaluate  Binomial  Trinomial  Simplify  Equivalent expression  Like terms  Distributive law  Factor    Concepts   Expressions containing trig ratios can be simplified or evaluated like other algebraic expressions. To simplify an expression containing trig ratios, we treat each ratio as a single variable.  is not equal to (and the same holds for the other trig ratios). Remember that the parentheses indicate function notation, not multiplication.  We write to denote , and to denote . (Similarly for the other trig ratios.)  We can factor trigonometric expressions with the same techniques we use for algebraic expressions.   Study Questions   To evaluate , Delbert used the keystrokes and got the answer 1. Were his keystrokes correct? Why or why not?  Make up an example to show that .  Factor each expression, if possible.            Skills   Evaluate trigonometric expressions #1 22  Simplify trigonometric expressions #23 34  Recognize equivalent expressions #35 44  Multiply or expand trigonometric expressions #45 56  Factor trigonometric expressions #57 70     Homework 5.1  For Problems 1 8, evaluate the expressions, using exact values for the trigonometric ratios.           For Problems 9 16, evaluate the expressions for , and . Give exact values for your answers.           For Problems 17 22,evaluate the expressions using a calculator.                                             For Problems 23 28, combine like terms.                                    For Problems 29 34, simplify the expression, then evaluate.  for   for  for  for  for  for   For Problems 35 44, decide whether or not the expressions are equivalent. Explain.  No   No   Yes   No   No    For Problems 45 56, multiply or expand.                                                                         For Problems 57 70, factor.                                                                                 "
+  "body": " Algebra with Trigonometric Ratios  In this chapter we apply some techniques from algebra to analyze more complicated trigonometric expressions. Before we begin, let's review some algebraic terminology.  Algebra Refresher   An algebraic expression expression algebraic expression algebraic expression expression is any meaningful collection of numbers, variables, and operation symbols. For example, the height of a golf ball is given in feet by the expression , where is the number of seconds after the ball is hit.  We evaluate evaluate an expression by substituting a specific value for the variable or variables involved. Thus, after 1 second, the height of the golf ball is and after 2 seconds, the height is and so on.    Evaluating Trigonometric Expressions  trigonometric expression  expression trigonometric  expression trigonometric trigonometric expression  Trigonometric ratios represent numbers, and they may appear as part of an algebraic expression. Expressions containing trig ratios can be simplified or evaluated like other algebraic expressions.  Keep in mind that , for example, is not a product: it does not mean \"sin times X\" (whatever that might be). Instead, \"sin\" is the name of a function, and means to evaluate the sine function at X. Thus, is a single number, the output of the sine function.  Evaluate each expression for and .       Substituting the values for and , we get Next, we evaluate each trig ratio and follow the order of operations.  This expression includes the product of two trig ratios, .   Evaluate each expression for , .         In the previous Exercise, is not equal to . That is, (You can check this for yourself.) We must follow the order of operations and evaluate the expression inside parentheses before applying the sine function.   Simplifying Trigonometric Expressions  trigonometric expression simplifying  Because expressions such as and are just variables, we can use algebra skills to simplify expressions involving the trig functions. For the rest of this section, we'll try to illustrate all the skills you will need going forward with your study of trigonometry.  More Algebra  When we simplify simplify an algebraic expression, we obtain a new expression that has the same values as the old one, but is easier to work with. For example, we can apply the distributive law and combine like terms to simplify The new expression is equivalent equivalent to the old one, that is, the expressions have the same value when we evaluate them at any value of . For instance, you can check that, at ,  To simplify an expression containing trig ratios, we treat each ratio as a single variable. Compare the two calculations below: Both calculations are examples of combining like terms. In the second calculation, we treat and as variables, just as we treat and as variables in the first calculation.  Simplify.       Combine like terms. Note that and are not like terms.  Combine like terms. Note that is treated as .   Simplify  In the previous Checkpoint, note that and are not like terms. (We can choose values for and so that and have different values.)  Simplify, and evaluate for .  We can combine like terms to get Because is not one of the angles for which we know exact trig values, we use a calculator to evaluate the expression.   Simplify, and evaluate for    Powers of Trigonometric Ratios  trigonometric function raising to power  Compare the two expressions They are not the same.   The first expression, , says to compute and then square the result.  says to square the angle first, and then compute the cosine.   For example, if , then  We usually write instead of , to distinguish it from , and to reduce the number of parentheses. Thus, means the square of .  The square of cosine  trigonometric function raising to power   The same notation applies to the other trig ratios, so that  trigonometric function raising to power  Evaluate .   Other powers are written in the same fashion. Thus, for example, .  Evaluate   Products  trigonometric function product of  We can multiply together trigonometric expressions, just as we multiply algebraic expressions. Recall that we use the distributive law in computing products such as and  Using the distributive law, multiply .  Think of as a single variable, and multiply by each term inside parentheses. (The algebraic form of the calculation is shown below in blue).  Notice that we write as .  Multiply  We can also use the distributive law to multiply binomials that include trig ratios. You may have used the acronym FOIL (acronym: First, Outside, Inside, Last) to remember the four multiplications in a product of binomials:  irst terms, utside terms, nside terms, and ast terms.  Multiply .  This calculation is similar to the product , except that the variable has been replaced by . Compare the calculations for the two products; first the familiar algebraic product: We compute the product in this example in the same way, but replacing by .    Expand   Factoring  trigonometric expression factoring  We can factor trigonometric expressions with the same techniques we use for algebraic expressions. In the next two Examples, compare the familiar algebraic factoring with a similar trigonometric expression.  Factor.       We factor out the common factor, .  We factor out the common factor, .   Factor.         We can also factor quadratic trinomials.  Factor.       We look for numbers and so that . We see that their product must be , and their sum must be . By checking the factors of for the correct sum, we find and . Thus,  Now replace by to find   Factor.         Review the following skills you will need for this section.   Factor.            Algebra Refresher Answers             Section 5.1 Summary  Vocabulary   Expression  Evaluate  Binomial  Trinomial  Simplify  Equivalent expression  Like terms  Distributive law  Factor    Concepts   Expressions containing trig ratios can be simplified or evaluated like other algebraic expressions. To simplify an expression containing trig ratios, we treat each ratio as a single variable.  is not equal to (and the same holds for the other trig ratios). Remember that the parentheses indicate function notation, not multiplication.  We write to denote , and to denote . (Similarly for the other trig ratios.)  We can factor trigonometric expressions with the same techniques we use for algebraic expressions.   Study Questions   To evaluate , Delbert used the keystrokes and got the answer 1. Were his keystrokes correct? Why or why not?  Make up an example to show that .  Factor each expression, if possible.            Skills   Evaluate trigonometric expressions #1 22  Simplify trigonometric expressions #23 34  Recognize equivalent expressions #35 44  Multiply or expand trigonometric expressions #45 56  Factor trigonometric expressions #57 70     Homework 5.1  For Problems 1 8, evaluate the expressions, using exact values for the trigonometric ratios.           For Problems 9 16, evaluate the expressions for , and . Give exact values for your answers.           For Problems 17 22,evaluate the expressions using a calculator.                                             For Problems 23 28, combine like terms.                                    For Problems 29 34, simplify the expression, then evaluate.  for   for  for  for  for  for   For Problems 35 44, decide whether or not the expressions are equivalent. Explain.  , No  ,  , No  ,  , Yes  ,  , No  ,  , No  ,   For Problems 45 56, multiply or expand.                                                                         For Problems 57 70, factor.                                                                                 "
 },
 {
   "id": "Algebra-with-Trigonometric-Ratios-2-2-2",
@@ -11707,7 +11707,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "35",
   "title": "",
-  "body": "No "
+  "body": ", No "
 },
 {
   "id": "hmwk-5-1-exercises-7-3",
@@ -11716,7 +11716,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "36",
   "title": "",
-  "body": ""
+  "body": ", "
 },
 {
   "id": "hmwk-5-1-exercises-7-4",
@@ -11725,7 +11725,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "37",
   "title": "",
-  "body": "No "
+  "body": ", No "
 },
 {
   "id": "hmwk-5-1-exercises-7-5",
@@ -11734,7 +11734,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "38",
   "title": "",
-  "body": ""
+  "body": ", "
 },
 {
   "id": "hmwk-5-1-exercises-7-6",
@@ -11743,7 +11743,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "39",
   "title": "",
-  "body": "Yes "
+  "body": ", Yes "
 },
 {
   "id": "hmwk-5-1-exercises-7-7",
@@ -11752,7 +11752,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "40",
   "title": "",
-  "body": ""
+  "body": ", "
 },
 {
   "id": "hmwk-5-1-exercises-7-8",
@@ -11761,7 +11761,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "41",
   "title": "",
-  "body": "No "
+  "body": ", No "
 },
 {
   "id": "hmwk-5-1-exercises-7-9",
@@ -11770,7 +11770,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "42",
   "title": "",
-  "body": ""
+  "body": ", "
 },
 {
   "id": "hmwk-5-1-exercises-7-10",
@@ -11779,7 +11779,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "43",
   "title": "",
-  "body": "No "
+  "body": ", No "
 },
 {
   "id": "hmwk-5-1-exercises-7-11",
@@ -11788,7 +11788,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "44",
   "title": "",
-  "body": ""
+  "body": ", "
 },
 {
   "id": "hmwk-5-1-exercises-8-2",
