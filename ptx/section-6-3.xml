@@ -425,35 +425,37 @@
         <cell><m>-0.577</m></cell>
         <cell><m>0</m></cell></row>
         </tabular>
-
+<p>
+    We plot the points and connect them with smooth curves, remembering that <m>\tan \left(\dfrac{\pi}{2}\right)</m> is undefined. The graph repeats for values of <m>t</m> between <m>\pi</m> and <m>2\pi</m>, and we will include <m>t</m>-values outside the table in order to show three periods.
+</p>
 <sidebyside widths="50% 50%" valigns="middle middle" margins="0% 0%">
-<p>Plot the points and connect them with smooth curves, remembering that <m>\tan \left(\dfrac{\pi}{2}\right)</m> is undefined. The graph repeats for values of <m>t</m> between <m>\pi</m> and <m>2\pi</m>. So, while the graph in degrees had vertical asymptotes at <m>\theta = 90\degree</m> and <m>\theta = 270\degree</m>, this graph has vertical asymptotes at <m>t = \dfrac{\pi}{2}</m> and <m>t = \dfrac{3\pi}{2}</m>. The figure at right shows the graph of <m>y = \tan (t)</m> for <m>0 \le t \le 2\pi</m>.</p>
+<p>While the graph in degrees had vertical asymptotes at <m>\theta = \pm 90\degree</m> and <m>\theta = 270\degree</m>, this graph has vertical asymptotes at <m>t = \pm\dfrac{\pi}{2}</m> and <m>t = \dfrac{3\pi}{2}</m>. The figure at right shows the graph of <m>y = \tan (t)</m> for <m> \dfrac{-\pi}{2} \le t \le \dfrac{5\pi}{2}</m>.</p>
     <image xml:id="exam6-3-2"><description>tangent</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [xscale=.8, yscale=0.7]
         \draw[cyan,xstep=pi/4,ystep=1]
-        (0,-4) grid (2*pi,4);
+        (-pi/2,-4) grid (5*pi/2,4);
     
         \draw[gray, very thick, dashed] (pi/2,-4)--++(0,8);
+        \draw[gray, very thick, dashed] (-pi/2,-4)--++(0,8);
         \draw[gray, very thick, dashed] (3*pi/2,-4)--++(0,8);
+        \draw[gray, very thick, dashed] (5*pi/2,-4)--++(0,8);
 
-        \draw[->,>=stealth'] (-0,0) -- (6.6,0) node[right] {$t$};
-        \draw[->,>=stealth'] (0,-4) -- (0,4.3) node[above]{$y$};
+        \draw[->,>=stealth'] (-2,0) -- (8.6,0) node[right] {$t$};
+        \draw[->,>=stealth'] (0,-4) -- (0,4.1) node[above]{$y$};
 
-        \foreach \x in {1,2,...,8}
+        \foreach \x in {-2,-1,1,2,3,4,5,6,7,8}
         \draw[black] ($ pi*\x /4*(1,0) +(0,.08) $) --++(0,-.16);
         \foreach \y in {-4,-2,2, 4}
         \draw[black, thick] (.10,\y ) --++(-.2,0) node[anchor=east, xshift=-3, fill=white, inner sep=1pt] {\y};
 
-        \draw[black, thick] (2*pi,.2) --++(0,-.4) node[anchor=north, xshift=2,yshift=-3, fill=white, inner sep=1pt] {$2\pi$};
-
         \draw[black] (pi,.2) --++(0,-.4) node[anchor=north, yshift=-3, fill=white, inner sep=1pt] {$\pi$};
-
+        \draw[black, thick] (2*pi,.2) --++(0,-.4) node[anchor=north, xshift=2,yshift=-3, fill=white, inner sep=1pt] {$2\pi$};
         \draw[domain={pi-atan(4)*pi/180}:{pi+atan(4)*pi/180}, smooth, variable=\x,red,very thick, <->,>=stealth'] plot ({\x},{tan(deg(\x))}) ;
+        \draw[domain={2*pi-atan(4)*pi/180}:{2*pi+atan(4)*pi/180}, smooth, variable=\x,red,very thick, <->,>=stealth'] plot ({\x},{tan(deg(\x))}) ;
+        \draw[domain={-atan(4)*pi/180}:{atan(4)*pi/180}, smooth, variable=\x,red,very thick, <->,>=stealth'] plot ({\x},{tan(deg(\x))}) ;
 
-        \draw[domain={0:atan(4)*pi/180}, smooth, variable=\x,red,very thick,->,>=stealth'] plot ({\x},{tan(deg(\x))}) ;
-        \draw[domain={2*pi-atan(4)*pi/180:2*pi}, smooth, variable=\x,red,very thick, <-] plot ({\x},{tan(deg(\x))}) ;
-        \end{tikzpicture}]]>
+         \end{tikzpicture}]]>
     </latex-image></image>
 </sidebyside></solution></example>
 
@@ -652,7 +654,7 @@
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
     <p>Thus, the two solutions are <m>t_1 = 2.24</m> and <m>t_2 = 4.04</m> radians, as shown in the figure.</p></li>
-    <li><p>All angles coterminal with <m>t_1</m> and <m>t_2 </m> are also solutions of the equation <m>~~\cos t = -0.62~~</m>. So adding or subtracting multiples of <m>2 \pi</m> to <m>t_1</m> and <m>t_2 </m> produces all the solutions. For example, <m>2.24 + 2\pi = 8.52</m> and <m>4.04 - 2 \pi = -2.24</m> are solutions. We write the solutions as <m>t = 2.24 \pm 2 \pi k</m> and <m>t = 4.04 \pm 2 \pi k</m>, where <m>k</m> is an integer.</p></li>
+    <li><p>All angles coterminal with <m>t_1</m> and <m>t_2 </m> are also solutions of the equation <m>~~\cos t = -0.62~~</m>. So adding or subtracting multiples of <m>2 \pi</m> to <m>t_1</m> and <m>t_2 </m> produces all the solutions. For example, <m>2.24 + 2\pi = 8.52</m> and <m>4.04 - 2 \pi = -2.24</m> are solutions. We write the solutions as <m>t = 2.24 + 2 \pi k</m> and <m>t = 4.04 + 2 \pi k</m>, where <m>k</m> is an integer.</p></li>
 </ol></p></solution></example>
 
 <exercise><statement><p><ol marker="a.">
@@ -662,25 +664,19 @@
 
 <answer><p><ol marker="a.">
     <li><p><m>4.16</m> and <m>5.27</m></p></li>
-    <li><p><m>4.16 \pm 2\pi k</m> and <m>5.27 \pm 2\pi k</m></p></li>
+    <li><p><m>4.16 + 2\pi k</m> and <m>5.27 + 2\pi k</m></p></li>
 </ol></p></answer></exercise>
 
 <p>We can find exact values for the solutions of equations involving the special values without using a calculator.</p>
       
 <example><statement><p>Find exact values for all the solutions of <m>~~\tan (t) = 1</m>.</p></statement>
 
-<solution><p>Because <m>\tan \left(\dfrac{\pi}{4}\right) = 1</m>, one of the solutions is <m>t_1 = \dfrac{\pi}{4}</m>. Remember that there are two solutions between <m>0</m> and <m>2\pi</m>; and the tangent function is positive in the third quadrant.</p>
-
-<p>The third quadrant angle with reference angle <m>\dfrac{\pi}{4}</m> is
-        <m>~~\pi + \dfrac{\pi}{4} = \dfrac{5\pi}{4},~~</m>
- so the second solution is <m>t_2 = \dfrac{5\pi}{4}</m>.</p>  
- 
- <p>All other solutions of the equation <m>\tan t = 1</m> can be found by adding (or subtracting) multiples of <m>2\pi</m> to these two solutions. We write the solutions as
-        <me>t = \dfrac{\pi}{4} \pm 2\pi k,~~ \dfrac{5\pi}{4} \pm 2\pi k,~~  \text{where } k \text{ is an integer.}</me></p>
+<solution><p>Because <m>\tan \left(\dfrac{\pi}{4}\right) = 1</m>, one of the solutions is <m>t_1 = \dfrac{\pi}{4}</m>. Remember that <m>tan (t)</m> repeats every <m>\pi</m> units. All other solutions of the equation <m>\tan t = 1</m> can be found by adding (or subtracting) multiples of <m>\pi</m> to these two solutions. We write the solutions as
+        <me>t = \dfrac{\pi}{4} + \pi k ~~  \text{where } k \text{ is an integer.}</me></p>
 </solution></example>
 
 <exercise><statement><p>Find exact values for all the solutions of <m>~~\tan (t) = -\sqrt{3}</m>.</p></statement>
-<answer><p><m>\dfrac{2\pi}{3} \pm 2\pi k</m>, <m>~ \dfrac{5\pi}{3} \pm 2\pi k</m></p></answer></exercise>
+<answer><p><m>\dfrac{5\pi}{3} + 2\pi k</m></p></answer></exercise>
 </subsection>
 
 <subsection><title>Modeling with Circular Functions</title>
