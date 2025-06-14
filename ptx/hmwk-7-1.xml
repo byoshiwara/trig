@@ -1021,7 +1021,7 @@
     
 <answer><p><m>H=12-2.4\cos \left(\dfrac{\pi t}{6}\right)</m></p></answer></exercise>
 
-<exercise number="50"><statement><sidebyside widths="50% 40%" valigns="middle middle"><p>A weight is 6.5 feet above the floor, suspended from the ceiling by a spring.  The weight is pulled down to 5 feet above the floor and released, rising past 6.5 feet in 0.5 seconds before attaining its maximum height of feet.  The weight oscillates between its minimum and maximum height.</p><!--<image source="photos/hp7-1-50.png"><description>graph</description></image>-->
+<exercise number="50"><statement><sidebyside widths="50% 40%" valigns="middle middle"><p>A weight is 6.5 feet above the floor, suspended from the ceiling by a spring.  The weight is pulled down to 5 feet above the floor and released, rising past 6.5 feet in 0.5 second before attaining its maximum height of 8 feet.  The weight oscillates between its minimum and maximum height.</p><!--<image source="photos/hp7-1-50.png"><description>graph</description></image>-->
     <image xml:id="hp7-1-50"><description>sinusoidal graph</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [xscale=1., yscale=.225]
@@ -1055,11 +1055,11 @@
         \begin{tikzpicture} [xscale=.15, yscale=.25]
         \draw[cyan] (0,0) grid[xstep=7, ystep=1] (28,10);
         \draw[black,thick,->,>=stealth'] (0,0)--(29.5,0) node[right]{$t$};
-        \draw[black,thick,->,>=stealth'] (0,0)--(0,10.2) node[above]{$y$};
+        \draw[black,thick,->,>=stealth'] (0,0)--(0,10.8) node[above]{$y$};
         \foreach \y [evaluate=\y as \yi using int(10*\y)]  in {5,10} 
         \draw[black,thick] (.04,\y)--++(-.08,0) node[left]{\yi};
         \foreach \x in {7,14,21,28} \draw[black,thick] (\x,.3)--++(0,-.6) node[below]{\x};
-        \draw[samples=65,domain=0:28, smooth, variable=\x, red, thick] plot (\x,{5+5*cos(180*\x/7)});
+        \draw[samples=65,domain=0:28, smooth, variable=\x, red, thick] plot (\x,{5-5*cos(90*\x/7)});
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></statement></exercise>
 </exercisegroup>
