@@ -173,10 +173,10 @@ We have the equation of a circle with center <m>(0,1)</m> and radius <m>1</m>.</
 <example><statement><p>Graph the Archimedean spiral <m>r=2\theta</m>, for <m>0 \le \theta \le 6\pi</m>.</p></statement>
 
 <solution><p>After setting the calculator in Polar mode, we enter the equation <m>r=2\theta</m> and enter the window settings</p>
-<sidebyside widths="50% 30%" valigns="middle middle"><p>
+<sidebyside widths="60% 30%" margins="0% 0%" valigns="middle middle"><p>
     <md><mrow>\theta\text{min}\amp=0~~~~~~~~~~\theta\text{max}=6\pi~~~~\theta\text{step}=0.1</mrow>
-        <mrow>\text{Xmin}\amp=-25~~~~\text{Xmax}=25~~~~\text{Xstep}=5</mrow>
-        <mrow>\text{Ymin}\amp=-25~~~~\text{Ymax}=25~~~~~~\text{Yscl}=5</mrow></md>
+        <mrow>\text{Xmin}\amp=-25~~~~\text{Xmax}=25~~~~\text{Xscl}=5</mrow>
+        <mrow>\text{Ymin}\amp=-25~~~~\text{Ymax}=25~~~~\text{Yscl}=5</mrow></md>
 We then press Zoom 5 to set a square window. The graph is shown at right.</p>
     
     <image xml:id="exam10-2-2"><description>polar graph</description><latex-image>
@@ -216,12 +216,11 @@ We then press Zoom 5 to set a square window. The graph is shown at right.</p>
 
 <exercise><statement><p>Use a calculator to graph the polar equation <m>r=e^{0.1\theta}</m>.  Use the window settings
     <md><mrow>\theta\text{min}\amp=0~~~~~~~~~~\theta\text{max}=12\pi~~~~~\theta\text{step}=0.5</mrow>
-        <mrow>\text{Xmin}\amp=-45~~~~\text{Xmax}=45~~~~~~\text{Xstep}=10</mrow>
-        <mrow>\text{Ymin}\amp=-35~~~~\text{Ymax}=35~~~~~~~~~~\text{Yscl}=10</mrow></md></p></statement>
+        <mrow>\text{Xmin}\amp=-45~~~~\text{Xmax}=45~~~~~~~\text{Xscl}=10</mrow>
+        <mrow>\text{Ymin}\amp=-35~~~~\text{Ymax}=35~~~~~~~~\text{Yscl}=10</mrow></md></p></statement>
 
 <answer><image width="25%" xml:id="exer10-2-2ans"><description>polar graph spiral</description><latex-image>
-            <![CDATA[\tikzset{%
-            }
+            <![CDATA[
         \begin{tikzpicture} [scale=0.04]
         \coordinate(O) at (0,0);
         \foreach \angle [count=\xi] in {0, 15, ..., 345}{
@@ -241,8 +240,8 @@ We then press Zoom 5 to set a square window. The graph is shown at right.</p>
 
 <solution><p>We'll graph the equation in stages in order to see how the graph is traced out. Begin with the window settings
     <md><mrow>\theta\text{min}\amp=0~~~~~~~~~~~\theta\text{max}=\dfrac{\pi}{3}~~~~~~\theta\text{step}=0.5</mrow>
-        <mrow>\text{Xmin}\amp=-4.5~~~~\text{Xmax}=4.5~~~~~~\text{Xstep}=1</mrow>
-        <mrow>\text{Ymin}\amp=-3~~~~~~~\text{Ymax}=3~~~~~~~~~~~~\text{Yscl}=1</mrow></md>
+        <mrow>\text{Xmin}\amp=-4.5~~~~\text{Xmax}=4.5~~~~~~\text{Xscl}=1</mrow>
+        <mrow>\text{Ymin}\amp=-3~~~~~~~\text{Ymax}=3~~~~~~~~~~~\text{Yscl}=1</mrow></md>
 Watch as your calculator produces the graph shown in figure (a).</p>
 
 <sidebyside widths="23% 23% 23%">    
@@ -662,7 +661,7 @@ Thus, the intersection points are <m>(2,4)</m> and <m>(-1,1)</m>, as shown at ri
 
 <p> To find the intersection points of the polar graphs <m>r=f(\theta)</m> and <m>r=g(\theta)</m> we solve the equation <m>f(\theta) = g(\theta)</m>.</p>
 
-<example><statement><p>Find all intersection points of the graphs of <m>~~r=2+2\sin (\theta)~~</m> and <m>~~r=2+2\cos (\theta)</m>.</p></statement>
+<example><statement><p>Find all intersection points of the graphs of <m>~~r=2+2\sin (\theta)~~</m> and <m>~~r=2+2\cos (\theta)</m>, <m>0 \le \theta \le 2\pi</m>.</p></statement>
 
 <solution><p>We equate the two expressions for <m>r</m> and solve for <m>\theta</m>.
     <md><mrow>r=2+2\sin (\theta) \amp = r=2+2\cos (\theta)</mrow>
@@ -670,11 +669,11 @@ Thus, the intersection points are <m>(2,4)</m> and <m>(-1,1)</m>, as shown at ri
         <mrow>\tan (\theta) \amp = 1  \amp \amp \blert{\text{Solve for }\theta.}</mrow>
         <mrow>\theta\amp = \dfrac{\pi}{4},~\dfrac{5\pi}{4}</mrow></md></p>
 
-<p>We evaluate either expression for <m>t</m> to find the other coordinate of the intersection point.
+<p>We evaluate either expression for <m>r</m> to find the other coordinate of the intersection point.
     <md><mrow>\text{when}~~~~\theta = \dfrac{\pi}{4},~~~~r = 2 + 2\sin \left(\dfrac{\pi}{4}\right) = 2 + \left(\dfrac{1}{\sqrt{2}}\right) = 2 + \sqrt{2}</mrow>
         <mrow>\text{when}~~~~\theta = \dfrac{5\pi}{4},~~~~r = 2 + 2\sin \left(\dfrac{5\pi}{4}\right) = 2 + \left(\dfrac{-1}{\sqrt{2}}\right) = 2 - \sqrt{2}</mrow></md></p>
 
-<sidebyside widths="65% 25%"><p>Thus, two of the intersection points are <m>\left(2 + \sqrt{2}, \dfrac{\pi}{4}\right)</m> and <m>\left(2 - \sqrt{2}, \dfrac{5\pi}{4}\right)</m>, as shown at right. However, you can see in the figure that the graphs also appear to intersect at the pole. To verify that the pole indeed lies on both graphs, we can solve for <m>\theta</m> in each equation when <m>r=0</m>.</p>
+<sidebyside widths="65% 25%" valigns="middle middle"><p>Thus, two of the intersection points are <m>\left(2 + \sqrt{2}, \dfrac{\pi}{4}\right)</m> and <m>\left(2 - \sqrt{2}, \dfrac{5\pi}{4}\right)</m>, as shown at right.</p>
     <image xml:id="exam10-2-7"><description>cardioids</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.4]
@@ -694,13 +693,15 @@ Thus, the intersection points are <m>(2,4)</m> and <m>(-1,1)</m>, as shown at ri
 <p>However, you can see in the figure that the graphs also appear to intersect at the pole. To verify that the pole indeed lies on both graphs, we can solve for <m>\theta</m> in each equation when <m>r=\alert{0}</m>.
     <md><mrow>\alert{0} \amp =2+2\sin (\theta) \qquad \qquad\amp  \alert{0} \amp=2+2\cos (\theta) \qquad \qquad</mrow>
         <mrow> -1 \amp =\sin (\theta) \amp   -1 \amp= \cos \theta </mrow>
-        <mrow> \\\theta \amp = \dfrac{3\pi}{2}  \amp  \theta \amp=\pi</mrow></md></p>
+        <mrow> \theta \amp = \dfrac{3\pi}{2}  \amp  \theta \amp=\pi</mrow></md></p>
 <p>Both points, <m>\left(0,\dfrac{3\pi}{2}\right)</m> and <m>(0,\pi)</m>, represent the pole. Thus, the graphs intersect at three points: <m>\left(2 + \sqrt{2}, \dfrac{\pi}{4}\right)</m>, <m>\left(2 - \sqrt{2}, \dfrac{5\pi}{4}\right)</m>, and the pole.</p>
 </solution></example>
 
-<warning><p>As we saw in the previous Example, solving a system of equations <m>r=f(\theta)</m> and <m>r=g(\theta)</m> will not always reveal an intersection at the pole, because <m>r</m> may be equal to zero for different values of <m>\theta</m> in the two equations. We should always check separately whether the pole is a point on both graphs.</p></warning>  
+<warning><p>As we saw in the previous Example, solving a system of equations <m>r=f(\theta)</m> and <m>r=g(\theta)</m> will not always reveal an intersection at the pole, because <m>r</m> may be equal to zero for different values of <m>\theta</m> in the two equations. 
 
-<exercise><statement><p>Find all intersection points of the graphs of <m>r=1</m> and <m>r=2\cos\theta</m>.</p></statement><answer><p><m>\left(1, \dfrac{\pi}{3}\right)</m>,<m>~\left(1, \dfrac{5\pi}{3}\right)</m></p>
+In fact, every point has multiple representation in polar coordinates, for example <m>(r,\theta)</m> and <m>(-r,\pi+\theta)</m>. Solving the system of equations <m>r=f(\theta)</m> and <m>r=g(\theta)</m> could miss intersection points besides the pole. We should check the graphs to identify how many points of intersection there are.</p></warning>  
+
+<exercise><statement><p>Find all intersection points of the graphs of <m>r=1</m> and <m>r=2\cos\theta</m>, <m>0 \le \theta \le 2\pi</m>.</p></statement><answer><p><m>\left(1, \dfrac{\pi}{3}\right)</m>,<m>~\left(1, \dfrac{5\pi}{3}\right)</m></p>
 </answer></exercise>
 
 <p>Review the following skills you will need for this section.</p>
