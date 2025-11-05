@@ -517,7 +517,25 @@
             </latex-image></image></solution></example>
 
 <exercise><statement><p>Use a graph to find the two angles between <m>0</m> and <m>2\pi</m> that satisfy <m>\sin (t) = -0.85</m>. </p></statement>
-<answer><p>Approximately 4.14 and 5.25</p></answer></exercise>
+<answer><p>Approximately 4.14 and 5.25</p>
+    <image width="80%" xml:id="exer6-3-35"><description>sine graph and line y=-0.85</description><latex-image>
+                <![CDATA[
+                \begin{tikzpicture} [scale=2.2]
+        
+                \draw[cyan] (0,-1.0001) grid[xstep=.15, ystep=.2] (3.9,1);
+                \draw[black,thick,->,>=stealth'] (-0.05,0)--(4,0) node[right]{$t$};
+                \draw[black,thick,->,>=stealth'] (0,-1)--(0,1.2) node[above]{$y$};
+        
+                \foreach \x [evaluate=\x as \xi using ( .6* \x )]  in {1, 2,...,6}
+                 \draw[black] (\xi,.05)--++(0,-.1) node[below, yshift=-2, fill=white, inner sep =1] {$\x$};
+                 \foreach \y in {-1, -0.8,-0.6,-0.4,-0.2,0.2,0.4,0.6,0.8,1}
+                  \draw[black] (0,\y)--++(-.1,0) node[left] {$\y$};
+        
+                \draw[gray, very thick] (0,-0.85)--++(3.9,0);
+                \draw[domain=0:3.9,smooth,variable=\x,red,very thick] plot ({\x},{ sin(deg( (\x)/.6))});
+                \end{tikzpicture}]]>
+            </latex-image></image>
+    </answer></exercise>
 
 <activity><title>Solving Equations</title>
 
@@ -912,7 +930,7 @@ gives the number of hours of daylight in Glasgow, Scotland, as a function of tim
 
 <answer><p><ol marker="a.">
       <li>Dom (<m>f</m>): all real numbers except <m>-4</m>, Rge (<m>f</m>): all real numbers except <m>2</m></li>
-      <li>Dom (<m>8</m>): <m>(-\infty, 5]</m>, Rge (<m>g</m>): <m>[1, \infty)</m></li>
+      <li>Dom (<m>g</m>): <m>(-\infty, 5]</m>, Rge (<m>g</m>): <m>[1, \infty)</m></li>
 </ol></p></answer></exercise>
 
 <p> What about the domain and range of the trigonometric functions? The sine and cosine both include all real numbers in their domains; we can find the sine or cosine of any number. Because the output values of the sine and cosine are both defined by the coordinates of points on a unit circle, their values cannot be greater than <m>1</m> or less than <m>-1</m>. The range of both sine and cosine is the interval <m>[-1,1]</m>.</p>
@@ -922,7 +940,7 @@ gives the number of hours of daylight in Glasgow, Scotland, as a function of tim
 <p>These facts about the three trigonometric functions appear in the Section 6.3 Summary.</p>
 
 <p>Review the following skills you will need for this section.</p>
-<project>    
+<theorem>    
     <sidebyside><p>Evaluate the function in part (a), and solve the equation in part (b).
 </p></sidebyside>   
     <sidebyside><p><ol marker="1." cols="2">
@@ -966,7 +984,7 @@ gives the number of hours of daylight in Glasgow, Scotland, as a function of tim
             </ol></p></li>
         </ol></p>
     </conclusion>
-</project>
+</theorem>
 </subsection>
 
 <subsection><title>Section 6.3 Summary</title>

@@ -9,9 +9,50 @@
     
 <p>One of the main reasons we learned about reference angles is to help us solve trigonometric equations. Remember that there are always two angles between <m>0\degree</m> and <m>180\degree</m> with a given sine ratio between 0 and 1.</p>
 
-<p> For example, the two solutions to the equation <m>~\sin (\theta) = 0.4226~</m> are <m>25\degree</m> and <m>155\degree</m>. That is,
+<example><statement><p>You are riding on the Ferris wheel we modeled in Section 4.2, where your height above ground is given as a function of <m>\theta</m>  by
+            <me>h = 100 + 100 \sin (\theta)</me> 
+When your height is at least 136 feet, you can see the snow on a distant mountain range. Between what angles of rotation can you see snow?</p></statement>
+
+<solution><sidebyside widths = "55% 35%">
+<p>Look at the diagram of the Ferris wheel to see that when your height is 136 feet, the sine of the angle <m>\theta</m> is <m>\dfrac{36}{100}</m>, or 0.36. The angle with sine 0.36 is 
+        <me>\sin^{-1}(0.36) = 21.1 \degree</me></p>
+
+    <image xml:id="fig-4-2-ferris-height-136ft"><description>ferris wheel where height is 136</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture} [scale=.8]
+        \coordinate(O) at (0,0);
+        \def\t {atan(36/100)};
+        \coordinate(P) at ({\t}:2cm);
+        \coordinate(Q) at ({2*cos(\t)},0);
+        \coordinate(R) at ({180-\t}:2cm);
+        \draw[gray!80!white, thick, dashed] (-2.5,{2*sin(\t)}) -- +(5.2,0) ;
+   
+        \draw[black, thick] (O) circle (2cm);
+        \draw[gray!80!white, thick, ->,>=stealth'] (2.25,{2*sin(\t)+.5}) -- +(0,-.5) node[below, xshift=2, color=blue] { $36'$};
+        \draw[gray!80!white, thick, <-,>=stealth'] (2.25,0) -- +(0,-.7) node[below, yshift=2, color=blue] { $100'$};
+        \draw[gray!80!white, thick, <-,>=stealth'] (2.25,-2) -- +(0,.8) ;
+        \draw[gray!80!white, thick, <-,>=stealth'] (-2.25,{2*sin(\t)}) -- +(0,-1.3) node[below, xshift=-2, yshift=2, color=blue] { $136'$};
+        \draw[gray!80!white, thick, <-,>=stealth'] (-2.25,-2) -- +(0,.8) ;
+        \draw[gray!80!white, thick] (-2.5,-2) -- +(5.2,0);
+
+        \draw[black, thick, ->,>=stealth'] (0,-2.25)--(0,2.3);
+        \draw[black, thick, ->,>=stealth'] (-2.5,0)--(2.7,0);
+        \draw[red, thick, ->,>=stealth'] (1,0) arc (0:\t:1) node[right, midway, yshift=1] {$\theta$};
+
+        \draw[blue, thick] (O) --(P);
+
+        \filldraw[black] (P) circle (1.6pt);
+        \filldraw[black] (R) circle (1.6pt);
+        \end{tikzpicture}]]>
+    </latex-image></image></sidebyside>
+
+<p>And you will be able to see snow until you descend again below 136 feet. That will happen at the angle in the second quadrant with sine 0.36, namely, the second quadrant angle with reference angle 21.1°. And that angle is
+    <me>180 \degree - 21.1 \degree = 158.9 \degree</me>.</p>
+</solution></example>
+
+<p>As another example, the two solutions to the equation <m>~\sin (\theta) = 0.4226~</m> are <m>25\degree</m> and <m>155\degree</m>. That is,
         <me>\sin (25\degree) = \sin (155\degree) = 0.4226</me>
-These two angles are supplementary, so they have the same reference angle, as shown below.</p>  
+These two angles are supplementary, so they have the same reference angle, as shown below on the left.</p>  
 <sidebyside widths="35% 35%" margins="12% 12%">
     <image xml:id="fig-4-1-eqna"><description>angles</description><latex-image>
         <![CDATA[
@@ -61,54 +102,56 @@ These two angles are supplementary, so they have the same reference angle, as sh
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
 
-<p>There are also two solutions between <m>0\degree</m> and <m>360\degree</m> to the equation <m>\sin (\theta) = -0.4226</m>. They are the angles in the third and fourth quadrants whose reference angle is <m>25\degree</m>, namely <m>205\degree</m> and <m>355\degree</m>, as shown above. But your calculator will only give you one of these angles!</p> 
+<p>But now consider the equation <m>\sin (\theta) = -0.4226</m>. There are two solutions between <m>0\degree</m> and <m>360\degree</m> to this equation also. They are the angles in the third and fourth quadrants whose reference angle is <m>25\degree</m>, namely <m>205\degree</m> and <m>335\degree</m>, as shown above on the right. But your calculator will not give you one of these angles!</p> 
 
-<example><statement><p>You are riding on the Ferris wheel we modeled in Section 4.2, where your height above ground is given as a function of <m>\theta</m>  by
-            <me>h = 100 + 100 \sin (\theta)</me> 
-When your height is at least 136 feet, you can see the snow on a distant mountain range. Between what angles of rotation can you see snow?</p></statement>
+<p>When you ask your calculator for an angle whose sine is negative, it will give you a negative angle. For example, you will find
+    <me>\sin^{-1}(-0.4226) = -25\degree</me>
+Of course, the reference angle for <m>-25\degree</m> is <m>25\degree</m>, so you can find the solutions between <m>0\degree</m> and <m>360\degree</m> with that reference angle.</p>
 
-<solution><sidebyside widths = "55% 35%">
-<p>Look at the diagram of the Ferris wheel to see that when your height is 136 feet, the sine of the angle <m>\theta</m> is <m>\dfrac{36}{100}</m>, or 0.36. The angle with sine 0.36 is 
-        <me>\sin^{-1}(0.36) = 21.1 \degree</me></p>
+<exercise><statement><p>Solve the equation <m>~\sin (\theta) = -0.6428~</m> for angles between <m>0\degree</m> and <m>360\degree</m>. Round your answers to the nearest degree.</p></statement>
 
-    <image xml:id="fig-4-2-ferris-height-136ft"><description>ferris wheel where height is 136</description><latex-image>
+<answer><p>Use your calculator to evaluate 
+        <me>\sin^{-1}(-0.6428) = -40\degree</me>  
+The angle <m>-40\degree</m> is in the fourth quadrant, but it is not between <m>0\degree</m> and <m>360\degree</m>. We need an angle that is coterminal with <m>-40\degree</m>, so we add <m>360\degree</m>.
+    <me>-40\degree + 360\degree = 320\degree</me> 
+Thus, one of the solutions is <m>320\degree</m>.</p>
+
+<sidebyside widths="65% 30%" margins="0% 0%">
+ <p>The sine is also negative in the third quadrant, so there should also be a solution in the third quadrant. The reference angle for <m>320\degree</m> is <m>40\degree</m>, and the third-quadrant angle with reference angle <m>40\degree</m> is <m>220\degree</m>, as shown at right. You can check that, rounded to four decimal places, both angles satisfy the equation, that is, </p>
+        <image xml:id="exam4-1-8"><description>angles in 3rd and 4th quadrants</description><latex-image>
         <![CDATA[
-        \begin{tikzpicture} [scale=.8]
+        \begin{tikzpicture}[scale=.8]
         \coordinate(O) at (0,0);
-        \def\t {atan(36/100)};
-        \coordinate(P) at ({\t}:2cm);
-        \coordinate(Q) at ({2*cos(\t)},0);
-        \coordinate(R) at ({180-\t}:2cm);
-        \draw[gray!80!white, thick, dashed] (-2.5,{2*sin(\t)}) -- +(5.2,0) ;
-   
-        \draw[black, thick] (O) circle (2cm);
-        \draw[gray!80!white, thick, ->,>=stealth'] (2.25,{2*sin(\t)+.5}) -- +(0,-.5) node[below, xshift=2, color=blue] { $36'$};
-        \draw[gray!80!white, thick, <-,>=stealth'] (2.25,0) -- +(0,-.7) node[below, yshift=2, color=blue] { $100'$};
-        \draw[gray!80!white, thick, <-,>=stealth'] (2.25,-2) -- +(0,.8) ;
-        \draw[gray!80!white, thick, <-,>=stealth'] (-2.25,{2*sin(\t)}) -- +(0,-1.3) node[below, xshift=-2, yshift=2, color=blue] { $136'$};
-        \draw[gray!80!white, thick, <-,>=stealth'] (-2.25,-2) -- +(0,.8) ;
-        \draw[gray!80!white, thick] (-2.5,-2) -- +(5.2,0);
+        \coordinate(A) at (-40:2cm);
+        \coordinate(B) at (220:2cm);
+        \draw[black, thick, ->,>=stealth'] (0,-2.2)--(0,2.2) node[above] {$y$};
+        \draw[black, thick, ->,>=stealth'] (-2.2,0)--(2.2,0) node[right] {$x$};
+        \draw [gray!80!white] (O) circle [radius=2cm];
 
-        \draw[black, thick, ->,>=stealth'] (0,-2.25)--(0,2.3);
-        \draw[black, thick, ->,>=stealth'] (-2.5,0)--(2.7,0);
-        \draw[red, thick, ->,>=stealth'] (1,0) arc (0:\t:1) node[right, midway, yshift=1] {$\theta$};
+        \draw[blue, thick, ->,>=stealth'] (O) -- (B) node[below left, xshift=3, yshift=3] {\color{red}$220\degree$};
+        \draw[blue, thick, ->,>=stealth'] (O) -- (A) node[below right, xshift=-3, yshift=3] {\color{red}$320\degree$};
 
-        \draw[blue, thick] (O) --(P);
-
-        \filldraw[black] (P) circle (1.6pt);
-        \filldraw[black] (R) circle (1.6pt);
+        \draw [thick, red, <->,>=stealth'] (O) ++(.9,0) arc(0:-40:.9)
+           node[right, midway] {$40\degree$};
+        \draw [thick, red, <->,>=stealth'] (O) ++(-.9,0) arc(180:220:.9)
+           node[left, midway] {$40\degree$};
+        \draw [thick, red, ->,>=stealth'] (O) ++(.3,0) arc(0:320:.3);
+        \draw [thick, red, ->,>=stealth'] (O) ++(.6,0) arc(0:220:.6);
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside>
+        </latex-image></image></sidebyside>
+    <p><me>\sin (320\degree) = -0.6428~~~~\text{and} ~~~~\sin (220\degree) = -0.6428</me></p> 
+</answer></exercise>
 
-<p>And you will be able to see snow until you descend again below 136 feet. That will happen at the angle in the second quadrant with sine 0.36, namely, the second quadrant angle with reference angle 21.1°. And that angle is
-    <me>180 \degree - 21.1 \degree = 158.9 \degree</me>.</p>
-</solution></example>
+<note><p>In the previous Exercise we found two solutions of the equation <m>\sin (\theta) = -0.6428</m>. Actually, there are infinitely many solutions <mdash/> namely, all the angles coterminal with <m>320\degree</m> or <m>220\degree</m>.        
+Because we can easily find coterminal solutions by adding or subtracting multiples of <m>360\degree</m>, when solving an equation we usually list only the solutions between <m>0\degree</m> and <m>360\degree</m>.</p></note>
 
-<exercise><statement><p>Refer to the <xref ref="Example-KOPS-Rule" text="custom">Example</xref> in Section 4.2. about the Knee Over Pedal Stem Rule. The distance between the cyclist's foot and the KOPS line is 
+<p>What about equations involving the cosine? If the cosine is positive, the solutions will lie in the first and fourth quadrants.</p>
+
+<example><statement><p>Refer to the <xref ref="Example-KOPS-Rule" text="custom">Example</xref> in Section 4.2. about the Knee Over Pedal Stem Rule. The distance between the cyclist's foot and the KOPS line is 
         <me>d = 18 - 18 \cos (\theta)</me> 
 At what angles is the cyclist's knee within 9 centimeters of the KOPS line?</p></statement>
 
-<answer><sidebyside widths="58% 35%" margins="0% 0%" valigns="middle middle"><p>When the angle of the crank is between 0° and 60°, and again between 300° and 360°.</p>
+<solution><sidebyside widths="58% 35%" margins="0% 0%" valigns="middle middle"><p>We would like to find all angles for which <m>d</m> is less than 9. Consider the diagram of the bicycle wheel at right to see that the cosine of the angle at <m>d=9</m> cm is <m>\dfrac{9}{18} = \dfrac{1}{2}</m>. So we need two angles whose cosine is <m>\dfrac{1}{2}</m>, one in the first quadrant and one in the fourth quadrant. </p>
         <image xml:id="KOPS-9cm"><description>knee within 9cm of KOPS line</description><latex-image>
         <![CDATA[
         \begin{tikzpicture}[scale=.9]
@@ -137,50 +180,14 @@ At what angles is the cyclist's knee within 9 centimeters of the KOPS line?</p><
 
         \end{tikzpicture}]]>
         </latex-image></image></sidebyside>
-</answer></exercise>
-
-<example><statement><p>Solve the equation <m>~\sin (\theta) = -0.6428~</m> for angles between <m>0\degree</m> and <m>360\degree</m>. Round your answers to the nearest degree.</p></statement>
-
-<solution><p>Use your calculator to evaluate 
-        <me>\sin^{-1}(-0.6428) = -40\degree</me>  
-The angle <m>-40\degree</m> is in the fourth quadrant, but it is not between <m>0\degree</m> and <m>360\degree</m>. We need an angle that is coterminal with <m>-40\degree</m>, so we add <m>360\degree</m>.
-    <me>-40\degree + 360\degree = 320\degree</me> 
-Thus, one of the solutions is <m>320\degree</m>.</p>
-
-<sidebyside widths="65% 30%" margins="0% 0%">
- <p>The sine is also negative in the third quadrant, so there should also be a solution in the third quadrant. The reference angle for <m>320\degree</m> is <m>40\degree</m>, and the third-quadrant angle with reference angle <m>40\degree</m> is <m>220\degree</m>, as shown at right. You can check that, rounded to four decimal places, both angles satisfy the equation, that is, 
-        <me>\sin (320\degree) = -0.6428~~~~\text{and} ~~~~\sin (220\degree) = -0.6428</me> </p>
-        <image xml:id="exam4-1-8"><description>angles in 3rd and 4th quadrants</description><latex-image>
-        <![CDATA[
-        \begin{tikzpicture}[scale=.8]
-        \coordinate(O) at (0,0);
-        \coordinate(A) at (-40:2cm);
-        \coordinate(B) at (220:2cm);
-        \draw[black, thick, ->,>=stealth'] (0,-2.2)--(0,2.2) node[above] {$y$};
-        \draw[black, thick, ->,>=stealth'] (-2.2,0)--(2.2,0) node[right] {$x$};
-        \draw [gray!80!white] (O) circle [radius=2cm];
-
-        \draw[blue, thick, ->,>=stealth'] (O) -- (B) node[below left, xshift=3, yshift=3] {\color{red}$220\degree$};
-        \draw[blue, thick, ->,>=stealth'] (O) -- (A) node[below right, xshift=-3, yshift=3] {\color{red}$320\degree$};
-
-        \draw [thick, red, <->,>=stealth'] (O) ++(.9,0) arc(0:-40:.9)
-           node[right, midway] {$40\degree$};
-        \draw [thick, red, <->,>=stealth'] (O) ++(-.9,0) arc(180:220:.9)
-           node[left, midway] {$40\degree$};
-        \draw [thick, red, ->,>=stealth'] (O) ++(.3,0) arc(0:320:.3);
-        \draw [thick, red, ->,>=stealth'] (O) ++(.6,0) arc(0:220:.6);
-        \end{tikzpicture}]]>
-        </latex-image></image></sidebyside>
+    <p>You may recognize <m>\dfrac{1}{2}</m> as the cosine of the special angle 60°, or you can evaluate <m>\cos^{-1}\left(\dfrac{1}{2}\right)</m>. The fourth quadrant angle with reference angle 60° is 300°. So <m>d</m> is less than 9 when the angle of the crank is between 0° and 60°, and again between 300° and 360°.</p>
 </solution></example>
 
-<note><p>In the previous example we found two solutions of the equation <m>\sin (\theta) = -0.6428</m>. Actually, there are infinitely many solutions -- namely, all the angles coterminal with <m>320\degree</m> or <m>220\degree</m>.        
-Because we can easily find coterminal solutions by adding or subtracting multiples of <m>360\degree</m>, when solving an equation we usually list only the solutions between <m>0\degree</m> and <m>360\degree</m>.</p></note>
-
-<warning><p>When you ask your calculator to find an angle with a given sine (or cosine or tangent), it will give you only one of the many possible answers. You must be careful to choose the appropriate answer for the situation, using reference and coterminal angles.</p></warning>
+<p>If the cosine of an angle is negative, your calculator will give you the second quadrant angle with that cosine. For equations involving a negative tangent, your calculator will give you a negative angle.</p>
 
 <exercise><statement><p>Solve the equation <m>\tan (\theta) = -0.4</m> for angles between <m>0\degree</m> and <m>360\degree</m>.</p></statement>
 
-<answer><p><m>338.2\degree</m>, <m>~158.2\degree</m></p></answer></exercise>
+<answer><p>You can check that <m>\tan^{-1}-(0.4) = -21.8\degree</m>. The tangent is negative in the second and fourth quadrants, and the reference angle is <m>\tan^{-1}(0.4) = 21.8\degree</m>, so the solutions are <m>158.2\degree</m> and <m>338.2\degree</m>.</p></answer></exercise>
 </subsection>
 
 <subsection><title>The Unit Circle</title>
@@ -300,7 +307,7 @@ The reference angle for <m>315\degree</m> is <m>~ 360\degree - 315\degree = 45\d
         </latex-image></image>
 </sidebyside></statement>
 
-<answer><p><m>\sin (\varphi) = -0.7000</m>, <m>~\cos (\varphi) = -0.7141</m>, <m>~\tan (\varphi) = 0.9802</m></p></answer></exercise>
+<answer><p><m>y = -0.7</m>, so <m>\sin (\varphi) = -0.7000</m>. Then <m>x = -\sqrt{1-y^2} = -0.7141 = \cos (\varphi)</m>, and <m>~\tan (\varphi) = \dfrac{y}{x} = 0.9802</m>.</p></answer></exercise>
 
 <activity><title>Unit Circles</title>
 <idx><h>unit circle</h></idx>
@@ -388,12 +395,11 @@ The reference angle for <m>315\degree</m> is <m>~ 360\degree - 315\degree = 45\d
 
 <example><statement><p>Point <m>P</m> is located 6 centimeters from the origin in the direction of <m>292\degree</m>. Find the coordinates of <m>P</m>, rounded to hundredths.</p></statement>
 
-<solution><sidebyside widths="60% 30%" valigns="middle middle" margins="0% 5%">
+<solution><sidebyside widths="68% 30%" valigns="middle middle" margins="0% 0%">
 <p>The location of point <m>P</m> is shown at right. We see that <m>r = 6</m>, and we can use a calculator to evaluate <m>\cos (292\degree)</m> and <m>\sin (292\degree)</m>. 
         <md><mrow>x \amp = r \cos (292\degree) \amp\amp \text{and} \amp y \amp = r \sin (292\degree)</mrow>
             <mrow>\amp = 6(0.3746) \amp\amp\amp \amp = 6(-0.9272)</mrow>
-            <mrow>\amp = 2.2476 \amp\amp\amp \amp = -5.5632</mrow></md>    
-The coordinates of <m>P</m> are approximately <m>(2.25, -5.56)</m>.</p>
+            <mrow>\amp = 2.2476 \amp\amp\amp \amp = -5.5632</mrow></md></p>
     <image xml:id="exam4-2-1"><description>angle</description><latex-image>
     <![CDATA[
     \begin{tikzpicture}[scale=.9]
@@ -415,6 +421,7 @@ The coordinates of <m>P</m> are approximately <m>(2.25, -5.56)</m>.</p>
     \node[text width=1cm,fill=white, inner sep=1pt] at (-0.1,-1.5)    {$\color{blue} r=6$};
     \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
+    <p>    The coordinates of <m>P</m> are approximately <m>(2.25, -5.56)</m>.</p>
 </solution></example>
 
 <exercise><statement>
@@ -448,9 +455,9 @@ The coordinates of <m>P</m> are approximately <m>(2.25, -5.56)</m>.</p>
         \node[text width=1.cm, anchor=north west, xshift=-3, yshift=-3] at (P) {\color{red}treasure};
         \end{tikzpicture}]]>
         </latex-image></image></sidebyside> </statement>
-<answer><p><ol marker="a." cols="2">
-    <li>409.58 yds </li>
-    <li>286.79 yds</li> 
+<answer><p><ol marker="a.">
+    <li><m>500 \cos(35\degree) = 409.58</m> yds </li>
+    <li><m>500 \sin(35\degree) = 286.79</m> yds </li> 
 </ol></p></answer></exercise>
 </subsection>
 
@@ -505,7 +512,7 @@ Francine is about 25.4 miles south of the airport.</p></solution></example>
 
 <exercise><statement><p>Delbert leaves the airport and flies 150 miles at a bearing of <m>132\degree</m>. How far east of the airport is he at that time?</p></statement>
 
-<answer><p>111.5 mile</p></answer></exercise>
+<answer><p><m>150 \cos(42) = 111.5</m> mile</p></answer></exercise>
 </subsection>
 
 <subsection><title>Angle of Inclination</title>
@@ -612,9 +619,9 @@ The angle of inclination is <m>36.9\degree</m>.</p>
         \end{tikzpicture}]]>
         </latex-image></image></sidebyside></statement>
 
-<answer><p><m>129.8\degree</m></p></answer></exercise>
+<answer><p><m>180 \degree + \tan^{-1}\left(\dfrac{-6}{5}\right) = 129.8\degree</m></p></answer></exercise>
 
-<p>Thinking about slope and the angle of inclination can help us understand the graph of the tangent functin.</p>
+<p>Thinking about slope and the angle of inclination can help us understand the graph of the tangent function.</p>
 
 <example><statement><p><ol marker = "a.">
     <li><p>What happens to the slope of a line as its angle of inclination <m>\alpha</m> increases from <m>0\degree</m> toward <m>90\degree</m>?</p></li>
@@ -876,7 +883,7 @@ The angle of inclination is <m>36.9\degree</m>.</p>
         </latex-image></image></li>
 </ol></p></statement>
     
-<answer><p> (b)</p></answer></exercise>
+<answer><p> (b), because it has the correct period.</p></answer></exercise>
 
 <example><statement><p>The table shows the number of hours of daylight in Glasgow, Scotland on the first of each month.</p>
     <tabular top="major" halign="left" right="minor" left="minor" bottom="minor">                  
@@ -948,7 +955,7 @@ The angle of inclination is <m>36.9\degree</m>.</p>
 </ol></p></statement>
 
 <answer><p><ol marker="a.">
-    <li>From top to bottom in January:  Equator, Jacksonville, Anchorage, Arctic Circle</li>
+    <li>At the Equator there is no variation in the hours of daylight, so it is the constant graph at height 12. The greatest variation in the hours of daylight occurs farthest north, at the Arctic Circle, so it is the green graph, then red for Anchorage and blue for Jacksonville. </li>
     <li>14 hours and 10 hours</li>
     <li>Four months</li>
 </ol></p></answer></exercise>
@@ -1146,7 +1153,7 @@ for all <m>x</m>. The constant <m>p</m> is called the <term>period</term> of the
 </ol></p></answer></exercise>
 
 <p>Review the following skills you will need for this section.</p>
-<project>    
+<theorem>    
     <sidebyside><p>Sketch the graph.  Give the equations of any vertical or horizontal asymptotes.</p></sidebyside>   
     <sidebyside><p><ol marker="1." cols="2">
         <li><p><m>f(x) = \dfrac{1}{x - 2}</m></p></li>
@@ -1272,15 +1279,15 @@ for all <m>x</m>. The constant <m>p</m> is called the <term>period</term> of the
             </latex-image></image>
         <p><m>x = 1,~~y = 1</m></p></li>
 </ol></p></conclusion>
-</project>
+</theorem>
 </subsection>
 
 <subsection><title>Section 4.3 Summary</title>
 <subsubsection><title>Vocabulary</title>
-<p><ul cols="3">
+<p><ul cols="3">   
+    <li>Unit Circle</li>
     <li>Angle of Inclination</li>
     <li>Bearings</li>
-    <li>Unit Circle</li>
     <li>Period</li>
     <li>Periodic</li>
 </ul></p></subsubsection>
@@ -1301,7 +1308,7 @@ for all <m>x</m>. The constant <m>p</m> is called the <term>period</term> of the
 
     <li><assemblage><title>Angle of Inclination</title>
     <p>The <term>angle of inclination</term> of a line is the angle <m>\alpha</m> measured in the positive direction from the positive <m>x</m>-axis to the line. If the slope of the line is <m>m</m>, then
-            <me>\tan \alpha = m</me> where  <m>0\degree \le \alpha \le 180\degree</m>.</p></assemblage></li>
+            <me>\tan (\alpha) = m</me> where  <m>0\degree \le \alpha \le 180\degree</m>.</p></assemblage></li>
 
     <li><assemblage><title>Periodic Function</title>
     <p>The function <m>y = f(x)</m> is <term>periodic</term> if there is a smallest value of <m>p</m> such that <me>f(x + p) = f(x)</me> for all <m>x</m>. The constant <m>p</m>  is called the <term>period</term> of the function.</p></assemblage></li>
@@ -1324,7 +1331,7 @@ for all <m>x</m>. The constant <m>p</m> is called the <term>period</term> of the
     <li>Identify periodic functions and give their periods    #51<ndash/>54</li>
     <li>Sketch periodic functions    #55-58</li>
     <li>Sketch graphs to model sinusoidal functions    #59-68</li>
-    <li>Analyze periodic graphs    #69-7</li>
+    <li>Analyze periodic graphs    #69-76</li>
 </ol></p></subsubsection>
 </subsection>
 
