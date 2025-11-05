@@ -6,24 +6,14 @@
         \coordinate (O) at (0,0);
         \coordinate (A) at (0,2);
         \coordinate (B) at (4,0);
-        \filldraw[lightgray!50] (-2,0) rectangle ++(6.4,3.5);
-        \draw[blue,thick] (O)--(A);
-        \draw[blue,thick] (A) --++(B);
-        \draw[green!60!black,thick] (O)--($ (A)+(B) $);
+        \filldraw[brown!10] (-2.5,-1) rectangle ++(7.5,4);
+        \filldraw[lightgray!50] (-2.5,0) rectangle ++(7.5,2);
+        \draw[blue,thick,->,>=stealth'] (O)--(A)node[left,midway] {2 $\dfrac{\text{in}}{\text{sec}}$};
+        \draw[blue,thick,->,>=stealth'] (A) --++(B) node[above,midway] {4 in/sec};
+        \draw[green!60!black,very thick,->,>=stealth'] (O)--($ (A)+(B) $);
         \draw[red, ->,>=stealth'] (0:.8) arc(0:{atan(1/2)}:0.8) node[right, midway, yshift=0] {$26.2\degree$};
-        \draw[black,thick,->,>=stealth'] ($(O)+(-1.8,0)$)--++(0,2) node[right,midway] {2 $\dfrac{\text{in}}{\text{sec}}$};
-        \draw[black,thick,->,>=stealth'] ($(O)+(0,2.5)$)--++(4,0) node[above,midway] {4 in/sec};
-
-        \coordinate (O) at (7.5,0);
-        \coordinate (A) at ($(O)+(0,2)$);
-        \coordinate (B) at ($(O)+(4,0)$);
-        \filldraw[lightgray!50] ($ (O)+(-2,0)$) rectangle ++(6.4,3.5);
-        \draw[blue,thick] (O)--(A);
-        \draw[blue,thick] (A) --++(4,0);
-        \draw[green!60!black,thick] (O)--($ (A)+(4,0) $) node[below right, midway, text=blue] {4.47in};
-        \draw[red, ->,>=stealth'] ($(O)+(0:.8)$) arc(0:{atan(1/2)}:0.8) node[right, midway, yshift=0] {$26.2\degree$};
-        \draw[black,thick,->,>=stealth'] ($(O)+(-1.8,0)$)--++(0,2) node[right,midway] {2 in};
-        \draw[black,thick,->,>=stealth'] ($(O)+(0,2.5)$)--++(4,0) node[above,midway] {4 in};
+        \filldraw[black] (O) circle (.8mm) node[below left] {$P$};
+        \filldraw[black] (A) ++(B) circle (.8mm) node[above right] {$Q$};
         \end{tikzpicture}]]>
     </latex-image>
 </image>
