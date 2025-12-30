@@ -9,7 +9,7 @@
 
 <p>When we plot points in Cartesian coordinates, we start at the origin and move a distance right or left given by the <m>x</m>-coordinate of the point, then move up or down according to the <m>y</m>-coordinate. When we sketch the graph of an equation or function, we think of drawing the graph from left to right, with the "height" of the graph at each <m>x</m>-value given by the function, as shown in figure (a).</p>
 
-    <image width = "60%" xml:id="fig10-2-1"><description>Cartesian and polar graphs</description><latex-image>
+    <image width = "70%" xml:id="fig10-2-1"><description>Cartesian and polar graphs</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=1.2]
         \def\d{-9/2};
@@ -39,7 +39,8 @@
 
 <p>In polar coordinates, however, the dependent variable, <m>r</m>, gives not a height but a distance from the pole in direction <m>\theta</m>, as shown in figure (b). When graphing an equation in polar coordinates, we think of sweeping around the pole in the counterclockwise direction, and at each angle <m>\theta</m> the <m>r</m>-value tells us how far the graph is from the pole. </p>
 
-<example><statement><p>Graph the polar equation <m>r=2\sin (\theta)</m>.</p></statement>
+<example><statement><p>Graph the polar equation <m>r=2\sin (\theta)</m>.</p>
+</statement>
 
 <solution><p>We make a table of values, choosing the special values for <m>\theta</m>. For each value of <m>\theta</m>, we evaluate <m>r=2\sin (\theta)</m>.</p>
 
@@ -70,7 +71,7 @@
 
 <p>First we'll plot the points in the first quadrant.  Observe that as <m>\theta</m> increases from <m>0</m> to <m>\dfrac{\pi}{2}</m>, <m>r</m> increases from <m>0</m> to <m>2</m>.  Starting at the pole, we connect the points in order of increasing <m>\theta</m>.  Imagine a radial line sweeping around the graph through the first quadrant:  as the angle increases, the length of the segment increases, so that its tip traces out the graph shown in figure (a).</p>  
     
-    <image width="70%" xml:id="exam10-2-1"><description>polar graphs</description><latex-image>
+    <image width="80%" xml:id="exam10-2-1"><description>polar graphs</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.81]
         \coordinate(O) at (0,0);
@@ -137,18 +138,20 @@
 <p>When we plot the points in this table, we see that the original graph is traced out again. For example, the point <m>\left(\dfrac{7\pi}{6}, -1\right)</m> is the same as the point <m>\left(\dfrac{\pi}{6}, 1\right)</m>, the point <m>\left(\dfrac{5\pi}{4}, -\sqrt{2}\right)</m> is the same as the point <m>\left(\dfrac{\pi}{4}, \sqrt{2}\right)</m>, and so on, around the circle.  Thus, the graph of <m>r=2\sin \theta</m> is a circle, traced twice for <m>0 \le \theta \le 2\pi</m>.</p>
 </solution></example>
 
-<p>To prove that the graph in the previous Example is really a circle, we convert the equation <m>r=2\sin (\theta)</m> to Cartesian form. First, multiply both sides by <m>r</m> to obtain 
+<p>To prove that the graph in the previous Example is really a circle, we convert the equation <m>~r=2\sin (\theta)~</m> to Cartesian form. First, multiply both sides by <m>r</m> to obtain 
         <me>r^2=2r\sin (\theta)</me>
  Next, replace <m>r^2</m> by <m>x^2+y^2</m> and <m>r\sin (\theta)</m> by <m>y</m>, to get
         <me>x^2+y^2 = 2y</me>
- This equation is quadratic in two variables, so its graph is a conic section.  We put the equation in standard form by completing the square in <m>y</m>.
+ This equation is quadratic in two variables, so its graph is a conic section. We put the equation in standard form by completing the square in <m>y</m>.
     <md><mrow>x^2+y^2 - 2y \amp = 0  \amp \amp  \blert{\text{Add 1 to both sides.}}</mrow>
         <mrow>x^2+(y^2-2y ~\alert{+1}) \amp =\alert{1}  \amp \amp  \blert{\text{Write the equation in standard form.}}</mrow>
         <mrow>(x-0)^2 + (y-1)^2  \amp = 1</mrow></md>
 We have the equation of a circle with center <m>(0,1)</m> and radius <m>1</m>.</p>
 
-<exercise><statement><p>Graph the polar equation <m>r=4\cos(\theta)</m>.</p></statement>
-<answer><image width="23%" xml:id="exer10-2-1ans"><description>polar graph</description><latex-image>
+<exercise><statement><p>Graph the polar equation <m>~r=4\cos(\theta)</m>.</p>
+</statement>
+
+<answer><image width="30%" xml:id="exer10-2-1ans"><description>polar graph</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=0.35]
         \coordinate(O) at (0,0);
@@ -161,7 +164,8 @@ We have the equation of a circle with center <m>(0,1)</m> and radius <m>1</m>.</
         }
         \draw[domain=0:6,smooth,variable=\x,red,very thick] plot ({30*\x}:{4*cos(30*\x))});
         \end{tikzpicture}]]>
-    </latex-image></image></answer></exercise>
+    </latex-image></image>
+</answer></exercise>
 </subsection>
 
 <subsection><title>Using a Graphing Calculator</title>
@@ -170,10 +174,10 @@ We have the equation of a circle with center <m>(0,1)</m> and radius <m>1</m>.</
 
 <p> At the end of this section you will find a Catalog of the basic polar graphs and their properties. You can use your calculator, set in Polar mode, to experiment with these graphs. </p>
 
-<example><statement><p>Graph the Archimedean spiral <m>r=2\theta</m>, for <m>0 \le \theta \le 6\pi</m>.</p></statement>
+<example><statement><p>Graph the Archimedean spiral <m>~r=2\theta</m>, for <m>~0 \le \theta \le 6\pi</m>.</p></statement>
 
 <solution><p>After setting the calculator in Polar mode, we enter the equation <m>r=2\theta</m> and enter the window settings</p>
-<sidebyside widths="60% 30%" margins="0% 0%" valigns="middle middle"><p>
+<sidebyside widths="60% 35%" margins="0% 0%" valigns="middle middle"><p>
     <md><mrow>\theta\text{min}\amp=0~~~~~~~~~~\theta\text{max}=6\pi~~~~\theta\text{step}=0.1</mrow>
         <mrow>\text{Xmin}\amp=-25~~~~\text{Xmax}=25~~~~\text{Xscl}=5</mrow>
         <mrow>\text{Ymin}\amp=-25~~~~\text{Ymax}=25~~~~\text{Yscl}=5</mrow></md>
@@ -214,12 +218,13 @@ We then press Zoom 5 to set a square window. The graph is shown at right.</p>
     </tabular>
 <p>As <m>\theta</m> increases, <m>r</m> increases also, at a constant rate. We wind our way around the pole, steadily increasing our distance from the pole as we go. We spiral outwards, tracing the graph shown above.</p></solution></example>
 
-<exercise><statement><p>Use a calculator to graph the polar equation <m>r=e^{0.1\theta}</m>.  Use the window settings
+<exercise><statement><p>Use a calculator to graph the polar equation <m>~r=e^{0.1\theta}</m>.  Use the window settings
     <md><mrow>\theta\text{min}\amp=0~~~~~~~~~~\theta\text{max}=12\pi~~~~~\theta\text{step}=0.5</mrow>
         <mrow>\text{Xmin}\amp=-45~~~~\text{Xmax}=45~~~~~~~\text{Xscl}=10</mrow>
-        <mrow>\text{Ymin}\amp=-35~~~~\text{Ymax}=35~~~~~~~~\text{Yscl}=10</mrow></md></p></statement>
+        <mrow>\text{Ymin}\amp=-35~~~~\text{Ymax}=35~~~~~~~~\text{Yscl}=10</mrow></md></p>
+</statement>
 
-<answer><image width="25%" xml:id="exer10-2-2ans"><description>polar graph spiral</description><latex-image>
+<answer><image width="35%" xml:id="exer10-2-2ans"><description>polar graph spiral</description><latex-image>
             <![CDATA[
         \begin{tikzpicture} [scale=0.04]
         \coordinate(O) at (0,0);
@@ -232,11 +237,13 @@ We then press Zoom 5 to set a square window. The graph is shown at right.</p>
         }
         \draw[domain=0:6,smooth, samples=257,variable=\x,red,very thick] plot ({deg(2*pi*\x)}:{e^(0.2*pi*\x)});
         \end{tikzpicture}]]>
-    </latex-image></image></answer></exercise>
+    </latex-image></image>
+</answer></exercise>
 
 <p> It is important to connect the points on the graph in order of increasing <m>\theta</m>.</p> 
 
-<example><statement><p>Graph the polar equation <m>r=2\sin (3\theta)</m>.</p></statement>
+<example><statement><p>Graph the polar equation <m>~r=2\sin (3\theta)</m>.</p>
+</statement>
 
 <solution><p>We'll graph the equation in stages in order to see how the graph is traced out. Begin with the window settings
     <md><mrow>\theta\text{min}\amp=0~~~~~~~~~~~\theta\text{max}=\dfrac{\pi}{3}~~~~~~\theta\text{step}=0.5</mrow>
@@ -244,7 +251,7 @@ We then press Zoom 5 to set a square window. The graph is shown at right.</p>
         <mrow>\text{Ymin}\amp=-3~~~~~~~\text{Ymax}=3~~~~~~~~~~~\text{Yscl}=1</mrow></md>
 Watch as your calculator produces the graph shown in figure (a).</p>
 
-<sidebyside widths="23% 23% 23%">    
+<sidebyside widths="28% 28% 28%">    
     <image xml:id="exam10-2-3a"><description>one loop</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=0.4]
@@ -360,10 +367,13 @@ Watch as your calculator produces the graph shown in figure (a).</p>
         <cell><m>0</m></cell></row>
     </tabular>
 
-  <p>Finally, change <m>\theta\text{max}</m> to <m>\pi</m>, and graph again. For <m>\theta</m> between <m>\dfrac{2\pi}{3}</m> and <m>\pi</m>, the graph traces out a third loop, as shown in figure (c). For <m>\theta</m> between <m>\pi</m> and <m>2\pi</m>, the entire graph is traced a second time. The finished graph is a rose with 3 petals of length 2.</p></solution></example>
+  <p>Finally, change <m>\theta\text{max}</m> to <m>\pi</m>, and graph again. For <m>\theta</m> between <m>\dfrac{2\pi}{3}</m> and <m>\pi</m>, the graph traces out a third loop, as shown in figure (c). For <m>\theta</m> between <m>\pi</m> and <m>2\pi</m>, the entire graph is traced a second time. The finished graph is a rose with 3 petals of length 2.</p>
+</solution></example>
 
-<exercise><statement><p><ol marker="a.">
-    <li>Use your calculator to graph the polar equation <m>r=2\cos (3\theta)</m>.</li>  
+<exercise><statement>
+    <sidebyside widths= "60% 33%" valigns="middle middle">
+    <p><ol marker="a.">
+    <li><p>Use your calculator to graph the polar equation <m>~r=2\cos (3\theta)</m>.</p></li>  
     <li><p>Complete the table of values for the function.</p>
         <tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
     <row bottom="minor">  
@@ -385,7 +395,8 @@ Watch as your calculator produces the graph shown in figure (a).</p>
         <cell><m>\hphantom{000}</m></cell>
         <cell><m>\hphantom{000}</m></cell></row>
     </tabular></li> 
-    <li><sidebyside widths= "50% 25%" valigns="middle middle"><p>Sketch the graph by hand on the grid at right.</p>
+    <li><p>Sketch the graph by hand on the grid at right.</p></li>
+</ol></p>
     <image xml:id="exer10-2-3"><description>polar grid</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.3]
@@ -398,10 +409,10 @@ Watch as your calculator produces the graph shown in figure (a).</p>
         \node[fill=white, inner sep = 2, text=black] at (90:\r) {$\r$};
         }
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></li>
-</ol></p></statement>
+    </latex-image></image></sidebyside>
+</statement>
 
-<answer><image width="25%" xml:id="exer10-2-3ans"><description>polar graph: three petals</description><latex-image>
+<answer><image width="32%" xml:id="exer10-2-3ans"><description>polar graph: three petals</description><latex-image>
        <![CDATA[
         \begin{tikzpicture} [scale=.3]
         \coordinate(O) at (0,0);
@@ -414,18 +425,19 @@ Watch as your calculator produces the graph shown in figure (a).</p>
         }
         \draw[domain=0:12,smooth, samples=257,variable=\x,red,very thick] plot ({15*\x}:{2*cos(45*\x});
         \end{tikzpicture}]]>
-    </latex-image></image></answer></exercise>
+    </latex-image></image>
+</answer></exercise>
 </subsection>
 
 <subsection><title>Sketching Familiar Equations</title>
 
 <p>You should also be able to sketch the standard polar graphs by hand. Once you recognize an equation as a particular type of graph, say a rose or a limaçon, you can sketch the graph quickly by finding just a few well-chosen guidepoints. The next example demonstrates a technique for sketching a rose.</p>
 
-<example><statement><p>Graph the polar equation <m>r=3\sin (2\theta)</m>.</p></statement>
+<example><statement><p>Graph the polar equation <m>~r=3\sin (2\theta)</m>.</p></statement>
 
 <solution><p>Referring to the Catalog of Polar Graphs, we see that the graph of this equation is a <term>rose</term>, with petal length <m>a=3</m> and four petals, because <m>2n=4</m>. If we can locate the tips of the petals, we can use them as guidepoints to sketch the graph.</p>
 
-<p> Now, the points at the tips of the petals have <m>r=3</m>, so we substitute <m>r=3</m> into the equation of the rose to find the values of <m>\theta</m> at those points.
+<p>Now, the points at the tips of the petals have <m>r=3</m>, so we substitute <m>r=3</m> into the equation of the rose to find the values of <m>\theta</m> at those points.
     <md><mrow>3 \amp = 3\sin (2\theta)  \amp\amp \blert{\text{Divide both sides by } 3.}\\
               1 \amp = \sin (2\theta)   \amp\amp \blert{\text{Apply the arcsine function to both sides.}}</mrow>
         <mrow>\dfrac{\pi}{2} \amp = 2\theta    \amp\amp \blert{\text{Divide both sides by } 2.}</mrow>
@@ -435,7 +447,7 @@ Watch as your calculator produces the graph shown in figure (a).</p>
         <mrow>\theta \amp = \dfrac{\pi}{4} + 2\left(\dfrac{\pi}{2}\right) = \dfrac{5\pi}{4}</mrow>
         <mrow>\theta \amp = \dfrac{\pi}{4} + 3\left(\dfrac{\pi}{2}\right) = \dfrac{7\pi}{4}</mrow></md></p>
 
-<sidebyside widths="60% 25%" valigns="middle middle"><p>We plot the tips of the petals as guidepoints, at <m>\left(3, \dfrac{\pi}{4}\right)</m>,<m>~ \left(3, \dfrac{3\pi}{4}\right)</m>, <m>~ \left(3, \dfrac{5\pi}{4}\right)</m>and <m>(3, \dfrac{7\pi}{4})</m>. Now we can sketch a rose with 4 petals of length 3, as shown at right.</p>
+<sidebyside widths="55% 32%" valigns="middle middle"><p>We plot the tips of the petals as guidepoints, at <m>\left(3, \dfrac{\pi}{4}\right)</m>,<m>~ \left(3, \dfrac{3\pi}{4}\right)</m>, <m>~ \left(3, \dfrac{5\pi}{4}\right)</m>and <m>\left(3, \dfrac{7\pi}{4}\right)</m>. Now we can sketch a rose with 4 petals of length 3, as shown at right.</p>
     <image xml:id="exam10-2-4"><description>rose</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.36]
@@ -452,9 +464,9 @@ Watch as your calculator produces the graph shown in figure (a).</p>
     </latex-image></image></sidebyside>
 </solution></example>
 
-<exercise><statement><p>Graph the polar equation <m>r=4\cos (5\theta)</m>.</p></statement>
+<exercise><statement><p>Graph the polar equation <m>~r=4\cos (5\theta)</m>.</p></statement>
 
-<answer><image width="24%" xml:id="exer10-2-4ans"><description>rose</description><latex-image>
+<answer><image width="32%" xml:id="exer10-2-4ans"><description>rose</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.3]
         \coordinate(O) at (0,0);
@@ -470,12 +482,13 @@ Watch as your calculator produces the graph shown in figure (a).</p>
     </latex-image></image>
 </answer></exercise>
 
-<p> The <term>limaçons</term>, <m>r=a\pm\sin (\theta)</m> and <m>r=a\pm\cos (\theta)</m>, are another family of polar graphs.  In particular, the <term>cardioid</term> is a special case of a limaçon with <m>a=b</m>.</p>
+<p> The <term>limaçons</term>, <m>~r=a\pm\sin (\theta)~</m> and <m>~r=a\pm\cos (\theta)~</m>, are another family of polar graphs. In particular, the <term>cardioid</term> is a special case of a limaçon with <m>a=b</m>.</p>
 
-<example><statement><p>Graph the polar equation <m>r=3+2\cos (\theta)</m>.</p></statement>
+<example><statement><p>Graph the polar equation <m>~r=3+2\cos (\theta)</m>.</p>
+</statement>
 
-<solution><sidebyside widths="60% 30%" valigns="middle middle"><p>This is the equation for a limaçon, with <m>a=3</m> and <m>b=2</m>. Because <m>a \gt b</m>, the limaçon will have a dent, like a lima bean, rather than a loop.  As guidepoints, we locate the points at the four quadrantal angles.</p>
-
+<solution><p>This is the equation for a limaçon, with <m>a=3</m> and <m>b=2</m>. Because <m>a \gt b</m>, the limaçon will have a dent, like a lima bean, rather than a loop. As guidepoints, we locate the points at the four quadrantal angles.</p>
+<sidebyside widths="55% 35%" valigns="middle middle">
 <tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
     <row bottom="minor">
         <cell><m>\theta</m></cell>
@@ -492,9 +505,8 @@ Watch as your calculator produces the graph shown in figure (a).</p>
      <row>   
         <cell><m>\dfrac{3\pi}{2}</m></cell>
         <cell><m>3</m></cell></row>
-    </tabular></sidebyside>
+    </tabular>
 
-<sidebyside widths="60% 30%" valigns="middle middle"><p>We plot the guidepoints and connect them in order with a smooth curve, as shown below. Note that this limaçon involving cosine is symmetric about the <m>x</m>-axis; limaçons involving sine are symmetric about the <m>y</m>-axis.</p>
     <image xml:id="exam10-2-5"><description>limacon</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.3]
@@ -509,11 +521,13 @@ Watch as your calculator produces the graph shown in figure (a).</p>
         \draw[domain=0:24,smooth, samples=257,variable=\x,red,very thick] plot ({15*\x}:{3+2*cos(15*\x});
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
+
+<p>We plot the guidepoints and connect them in order with a smooth curve, as shown above. Note that this limaçon involving cosine is symmetric about the <m>x</m>-axis; limaçons involving sine are symmetric about the <m>y</m>-axis.</p>
 </solution></example>
 
-<exercise><statement><p>Graph the polar equation <m>r=1-3\sin (\theta)</m>.</p></statement>
+<exercise><statement><p>Graph the polar equation <m>~r=1-3\sin (\theta)</m>.</p></statement>
 
-<answer><image width="25%" xml:id="exer10-2-5ans"><description>limacon</description><latex-image>
+<answer><image width="35%" xml:id="exer10-2-5ans"><description>limacon</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.3]
         \coordinate(O) at (0,0);
@@ -533,7 +547,7 @@ Watch as your calculator produces the graph shown in figure (a).</p>
 
 <example><statement><p>Give a polar equation for each of the graphs below.</p>
 
-<sidebyside widths="22% 22%" margins="20% 20%">
+<sidebyside widths="30% 30%" margins="10% 10%">
     <image xml:id="exam10-2-6a"><description>circle</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.33]
@@ -569,15 +583,15 @@ Watch as your calculator produces the graph shown in figure (a).</p>
 </statement>
 
 <solution><p><ol marker="a.">
-    <li>The graph is a circle centered at <m>(-2,0)</m> and with radius 2, so we choose the equation <m>r=2a\cos (\theta)</m>, with <m>a=-2</m>. Thus, <m>r=-4\cos (\theta)</m>.</li>
-    <li><p>The graph is a cardioid with its axis of symmetry on the <m>x</m>-axis, and the "bottom" of the heart points in the positive<m>x</m>direction, so its equation has the form <m>r=a+a\cos (\theta)</m>.  At <m>\theta=0,~ r=2</m>, so we can solve for <m>a</m>: 
+    <li>The graph is a circle centered at <m>(-2,0)</m> and with radius 2, so we choose the equation <m>~r=2a\cos (\theta)</m>, with <m>a=-2</m>. Thus, <m>~r=-4\cos (\theta)</m>.</li>
+    <li><p>The graph is a cardioid with its axis of symmetry on the <m>x</m>-axis, and the "bottom" of the heart points in the positive<m>x</m>direction, so its equation has the form <m>~r=a+a\cos (\theta)</m>.  At <m>\theta=0,~ r=2</m>, so we can solve for <m>a</m>: 
         <md><mrow>2 \amp = a + a\cos (0)</mrow>
             <mrow>2 \amp = a + a(1) =2a</mrow></md>
-    Thus, <m>a=1</m> and we choose the equation <m>r=1+\cos (\theta)</m>.</p></li>
+    Thus, <m>a=1</m> and we choose the equation <m>~r=1+\cos (\theta)</m>.</p></li>
 </ol></p></solution></example>
 
 <exercise><statement><p>Give a polar equation for each of the graphs below.</p>
-<sidebyside widths="20% 20%" margins="20% 20%">
+<sidebyside widths="30% 30%" margins="10% 10%">
     <image xml:id="exer10-2-6a"><description>lemniscate</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.5]
@@ -623,13 +637,13 @@ Watch as your calculator produces the graph shown in figure (a).</p>
 
 <subsection><title>Finding Intersection Points</title>
 
-<p>To find the intersection points of two graphs, we solve the system made up of their equations. If the equations are <m>y=f(x)</m> and <m>y=g(x)</m>, we simply solve the equation <m>f(x)=g(x)</m>. For example, we find the intersection points of <m>y=x^2</m> and <m>y=x+2</m> by solving the equation <m>x^2-x-2=0</m> to get
+<p>To find the intersection points of two graphs, we solve the system made up of their equations. If the equations are <m>y=f(x)</m> and <m>y=g(x)</m>, we simply solve the equation <m>f(x)=g(x)</m>. For example, we find the intersection points of <m>~y=x^2~</m> and <m>~y=x+2~</m> by solving the equation <m>x^2-x-2=0</m> to get
     <md><mrow>x^2-x-2 \amp = 0</mrow>
         <mrow>(x-2)(x+1) \amp = 0</mrow>
         <mrow>x-2 = 0, ~~~ x+1 \amp = 0</mrow>
         <mrow>x=2,~~~~~~ x \amp = -1</mrow></md></p>   
 
-<sidebyside widths="60% 25%" valigns="middle middle" margins="0% 5%">
+<sidebyside widths="60% 30%" valigns="middle middle" margins="0% 5%">
 <p> These are the <m>x</m>-coordinates of the intersection points, and we can find the <m>y</m>-coordinates by substituting these values into either equation. 
 <ul>
     <li>For <m>x=2,</m> we find <m>y=2^2=4.</m></li>
@@ -661,7 +675,8 @@ Thus, the intersection points are <m>(2,4)</m> and <m>(-1,1)</m>, as shown at ri
 
 <p> To find the intersection points of the polar graphs <m>r=f(\theta)</m> and <m>r=g(\theta)</m> we solve the equation <m>f(\theta) = g(\theta)</m>.</p>
 
-<example><statement><p>Find all intersection points of the graphs of <m>~~r=2+2\sin (\theta)~~</m> and <m>~~r=2+2\cos (\theta)</m>, <m>0 \le \theta \le 2\pi</m>.</p></statement>
+<example><statement><p>Find all intersection points of the graphs of <m>~~r=2+2\sin (\theta)~~</m> and <m>~~r=2+2\cos (\theta)</m>, for <m>~0 \le \theta \le 2\pi</m>.</p>
+</statement>
 
 <solution><p>We equate the two expressions for <m>r</m> and solve for <m>\theta</m>.
     <md><mrow>r=2+2\sin (\theta) \amp = r=2+2\cos (\theta)</mrow>
@@ -673,7 +688,9 @@ Thus, the intersection points are <m>(2,4)</m> and <m>(-1,1)</m>, as shown at ri
     <md><mrow>\text{when}~~~~\theta = \dfrac{\pi}{4},~~~~r = 2 + 2\sin \left(\dfrac{\pi}{4}\right) = 2 + \left(\dfrac{1}{\sqrt{2}}\right) = 2 + \sqrt{2}</mrow>
         <mrow>\text{when}~~~~\theta = \dfrac{5\pi}{4},~~~~r = 2 + 2\sin \left(\dfrac{5\pi}{4}\right) = 2 + \left(\dfrac{-1}{\sqrt{2}}\right) = 2 - \sqrt{2}</mrow></md></p>
 
-<sidebyside widths="65% 25%" valigns="middle middle"><p>Thus, two of the intersection points are <m>\left(2 + \sqrt{2}, \dfrac{\pi}{4}\right)</m> and <m>\left(2 - \sqrt{2}, \dfrac{5\pi}{4}\right)</m>, as shown at right.</p>
+<sidebyside widths="60% 30%" valigns="middle middle"><p>Thus, two of the intersection points are 
+    <me>\left(2 + \sqrt{2}, \dfrac{\pi}{4}\right)~~ \text{and} ~~\left(2 - \sqrt{2}, \dfrac{5\pi}{4}\right)</me> 
+as shown at right.</p>
     <image xml:id="exam10-2-7"><description>cardioids</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.4]
@@ -697,11 +714,14 @@ Thus, the intersection points are <m>(2,4)</m> and <m>(-1,1)</m>, as shown at ri
 <p>Both points, <m>\left(0,\dfrac{3\pi}{2}\right)</m> and <m>(0,\pi)</m>, represent the pole. Thus, the graphs intersect at three points: <m>\left(2 + \sqrt{2}, \dfrac{\pi}{4}\right)</m>, <m>\left(2 - \sqrt{2}, \dfrac{5\pi}{4}\right)</m>, and the pole.</p>
 </solution></example>
 
-<warning><p>As we saw in the previous Example, solving a system of equations <m>r=f(\theta)</m> and <m>r=g(\theta)</m> will not always reveal an intersection at the pole, because <m>r</m> may be equal to zero for different values of <m>\theta</m> in the two equations. 
+<warning><p>As we saw in the previous Example, solving a system of equations <m>~r=f(\theta)~</m> and <m>~r=g(\theta)~</m> will not always reveal an intersection at the pole, because <m>r</m> may be equal to zero for different values of <m>\theta</m> in the two equations. </p>
 
-In fact, every point has multiple representation in polar coordinates, for example <m>(r,\theta)</m> and <m>(-r,\pi+\theta)</m>. Solving the system of equations <m>r=f(\theta)</m> and <m>r=g(\theta)</m> could miss intersection points besides the pole. We should check the graphs to identify how many points of intersection there are.</p></warning>  
+<p>In fact, every point has multiple representation in polar coordinates, for example <m>(r,\theta)</m> and <m>(-r,\pi+\theta)</m>. Solving the system of equations <m>~r=f(\theta)~</m> and <m>~r=g(\theta)~</m> could miss intersection points besides the pole. We should check the graphs to identify how many points of intersection there are.</p></warning>  
 
-<exercise><statement><p>Find all intersection points of the graphs of <m>r=1</m> and <m>r=2\cos(\theta)</m>, <m>0 \le \theta \le 2\pi</m>.</p></statement><answer><p><m>\left(1, \dfrac{\pi}{3}\right)</m>,<m>~\left(1, \dfrac{5\pi}{3}\right)</m></p>
+<exercise><statement><p>Find all intersection points of the graphs of <m>~r=1~</m> and <m>~r=2\cos(\theta)~</m>, for <m>~0 \le \theta \le 2\pi</m>.</p>
+</statement>
+
+<answer><p><m>\left(1, \dfrac{\pi}{3}\right)</m>,<m>~\left(1, \dfrac{5\pi}{3}\right)</m></p>
 </answer></exercise>
 
 <p>Review the following skills you will need for this section.</p>

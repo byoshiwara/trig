@@ -6,7 +6,7 @@
 
 <p>We have learned to use the trigonometric ratios to solve right triangles. But the trig ratios are only valid for the sides of right triangles. Can we find unknown sides or angles in an oblique triangle?</p> 
 
-    <image width="75%" xml:id="fig-3-2-intro"><description>triangles</description><latex-image>
+    <image width="75%" xml:id="fig-3-2-intro"><description>rigth triangle, oblique triangle</description><latex-image>
         <![CDATA[
     \begin{tikzpicture}
     \coordinate (C) at (0,0);
@@ -57,7 +57,7 @@
 Looking at <m>\triangle ABD</m>, we see that 
     <me>\dfrac{h}{c} = \sin (A).</me> </p></stack>
 
-    <image xml:id="fig-3-2-tworight"><description>triangles</description><latex-image>
+    <image xml:id="fig-3-2-tworight"><description>oblique triangle with altitude</description><latex-image>
     <![CDATA[
     \begin{tikzpicture} [scale=.72]
     \coordinate (C) at (0,0);
@@ -94,7 +94,7 @@ Putting both results together, we have the <term>Law of Sines</term>. The Law of
 <assemblage><title>Law of Sines</title>
     <idx><h>law of sines</h></idx>
     
-    <sidebyside widths="70% 25%" margins="0% 5%">
+    <sidebyside widths="70% 30%" margins="0% 0%">
     <p>If the angles of a triangle are <m>A, B</m>, and <m>C</m>, and the opposite sides are respectively <m>a, b,</m> and <m>c</m>, then
             <me>\blert{\dfrac {\sin (A)}{a} = \dfrac {\sin (B)}{b} = \dfrac {\sin (C)}{c}}</me></p>
         
@@ -108,8 +108,8 @@ Putting both results together, we have the <term>Law of Sines</term>. The Law of
 
 <p> In the next example, we use the Law of Sines to find a distance.</p>
 
-<example><statement><p>Two observers onshore sight a ship at an unknown distance from the shore. The observers are 400 yards apart at points <m>A</m> and <m>B</m>, and they each measure the angle from the shoreline to the ship, as shown below.  How far is the ship from the observer at <m>A</m>?</p>
-    <image width="70%" xml:id="exam3-2-1"><description>triangle</description><latex-image>
+<example><statement><p>Two observers onshore sight a ship at an unknown distance from the shore. The observers are 400 yards apart at points <m>A</m> and <m>B</m>, and they each measure the angle from the shoreline to the ship, as shown below. How far is the ship from the observer at <m>A</m>?</p>
+    <image width="80%" xml:id="exam3-2-1"><description>triangle</description><latex-image>
         <![CDATA[
     \begin{tikzpicture} [scale=.7]
     \coordinate (A) at (0,0);
@@ -143,8 +143,8 @@ Now we apply the Law of Sines, using angles <m>B</m> and <m>C</m>.
 The ship is about 1315 yards from the observer at <m>A</m>.</p>
 </solution></example>
 
-<exercise><statement><sidebyside widths="65% 32%" valigns="middle middle" margins="0% 0%"><p>Delbert and Francine are 40 feet apart on one side of a river. They make angle measurements to a pine tree on the opposite shore as shown at right. What is the distance  from Francine to the pine tree?</p>
-    <image xml:id="exer3-2-1"><description>triangle</description><latex-image>
+<exercise><statement><p>Delbert and Francine are 40 feet apart on one side of a river. They make angle measurements to a pine tree on the opposite shore as shown below. What is the distance from Francine to the pine tree?</p>
+    <image width="35%" xml:id="exer3-2-1"><description>triangle</description><latex-image>
         <![CDATA[
     \begin{tikzpicture} [scale=.72]
     \coordinate (C) at (0,0);
@@ -162,18 +162,20 @@ The ship is about 1315 yards from the observer at <m>A</m>.</p>
     \draw[red, thick] (C)++(-.3,0) arc(180:99:.3) node[above left,midway, xshift=5, yshift=-3] {$81\degree$};
     \draw[red, thick] (B)++(0,-.3) arc(-90:-169:.3) node[below left,midway,xshift=4, yshift=2] {$79\degree$};
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></statement>
+    </latex-image></image>
+</statement>
     
 <answer><p>The angle at <m>P</m> is <m>180 \degree-(79 \degree + 81 \degree) = 20 \degree</m>. Now we can use the Law of Sines:
-<me>\dfrac{d}{\sin(79\degree)} = \dfrac{40}{\sin(20\degree)}</me>
-Solving for <m>d</m> we find the distance is about 114.8 feet.</p></answer></exercise>
+    <me>\dfrac{d}{\sin(79\degree)} = \dfrac{40}{\sin(20\degree)}</me>
+Solving for <m>d</m> we find the distance is about 114.8 feet.</p>
+</answer></exercise>
 </subsection>
 
 <subsection><title>Solving Triangles with the Law of Sines</title>
 
 <p>In order to apply the Law of Sines to find a side, we must know one angle of the triangle and its opposite side (either <m>a</m> and <m>A</m>, or <m>b</m> and <m>B</m>, or <m>c</m> and <m>C</m>), and one other angle. Then we can find the side opposite that angle.</p>
 
-<example><statement><sidebyside widths="65% 35%" margins="0% 0%"><p>In the triangle shown at right, 
+<example><statement><sidebyside widths="60% 35%" margins="0% 5%"><p>In the triangle shown at right, 
     <me>A = 37\degree, B = 54\degree,~ \text{and}~  a= 11</me>
     <ol marker="a.">
         <li>Find <m>b</m>.</li>
@@ -200,12 +202,12 @@ Solving for <m>d</m> we find the distance is about 114.8 feet.</p></answer></exe
     </latex-image></image></sidebyside></statement>
 
 <solution><p><ol marker= "a.">
-    <li><p>We use the Law of Sines with <m>a</m> and angle <m>A</m> to find <m>b</m>.</p>
-        <p><md><mrow>\dfrac{a}{\sin (A)} \amp = \dfrac{b}{\sin (B)} \amp\amp \blert{\text{Substitute the given values.}}</mrow>
+    <li><p>We use the Law of Sines with <m>a</m> and angle <m>A</m> to find <m>b</m>.
+        <md><mrow>\dfrac{a}{\sin (A)} \amp = \dfrac{b}{\sin (B)} \amp\amp \blert{\text{Substitute the given values.}}</mrow>
             <mrow>\dfrac{11}{\sin (37\degree)} \amp = \dfrac{b}{\sin (54\degree)} \amp\amp \blert{\text{Solve for } b.}</mrow>
-            <mrow> \dfrac{11}{\sin (37\degree)} \cdot \sin (54\degree) \amp = b</mrow></md></p>
-        <p>Evaluating this expression with a calculator, we find that <m>b \approx 14.79</m>.</p></li>      
-    <li><p>The angle <m>C = 180\degree-(37\degree + 54\degree)=89\degree</m>. Now we use the Law of Sines to find side <m>c</m>.  
+            <mrow> \dfrac{11}{\sin (37\degree)} \cdot \sin (54\degree) \amp = b</mrow></md>
+        Evaluating this expression with a calculator, we find that <m>b \approx 14.79</m>.</p></li>      
+    <li><p>The angle <m>~C = 180\degree-(37\degree + 54\degree)=89\degree</m>. Now we use the Law of Sines to find side <m>c</m>.  
         Note that it is safer to use the given side, <m>a</m>, rather than the value we calculated for <m>b</m>.
             <md><mrow>\dfrac{a}{\sin (A)} \amp = \dfrac{c}{\sin (C)} \amp\amp \blert{\text{Substitute the known values.}}</mrow>
             <mrow>\dfrac{11}{\sin (37\degree)} \amp = \dfrac{c}{\sin (89\degree)} \amp\amp \blert{\text{Solve for } c.}</mrow>
@@ -213,7 +215,7 @@ Solving for <m>d</m> we find the distance is about 114.8 feet.</p></answer></exe
         so <m>c \approx 18.28.</m></p></li>     
     </ol></p></solution></example>
 
-<exercise><statement><sidebyside widths="50% 30%" margins="0% 15%" valigns="middle middle">
+<exercise><statement><sidebyside widths="50% 35%" margins="0% 10%" valigns="middle middle">
     <stack><p>In the triangle at right, 
             <me>A = 65\degree, C = 42\degree, ~\text{and}~ c = 16</me>  
     Solve the triangle.</p>  
@@ -235,18 +237,21 @@ Solving for <m>d</m> we find the distance is about 114.8 feet.</p></answer></exe
     \draw[red, thick] (C)++(-.4,0) arc(180:138:.4) node[left,midway,yshift=3] {$42\degree$};
     \draw[red, thick] (A)++(251.565:.3) arc(251.565:318:.3) node[below right,midway,xshift=-7] {$65\degree$};
     \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></statement>
+    </latex-image></image></sidebyside>
+</statement>
+
 <answer><p>First use the Law of Sines to find <m>a</m>.
         <me>\dfrac{a}{\sin(65\degree)} = \dfrac{16}{\sin(42\degree)}</me>
     Solving for <m>a</m> we find <m>a = 21.67</m>. Next we find angle <m>B</m>.
         <me>b = 180\degree-(65\degree+42\degree) = 73\degree</me>
     Finally, we use the Law of Sines to find <m>b</m>.
         <me>\dfrac{b}{\sin(73\degree)} = \dfrac{16}{\sin(42\degree)}</me>
-    Solving this equation, we find <m>b = 22.87</m>.</p></answer></exercise>
+    Solving this equation, we find <m>b = 22.87</m>.</p>
+</answer></exercise>
 </subsection>
 
 <subsection><title>Finding an Angle</title>
-<idx><h>angle</h><h>find</h></idx>
+    <idx><h>angle</h><h>find</h></idx>
 
 <p> We can also use the Law of Sines to find an unknown angle of a triangle. We must know two sides of the triangle and the angle opposite one of them.</p>
 
@@ -270,13 +275,14 @@ Solving for <m>d</m> we find the distance is about 114.8 feet.</p></answer></exe
         \draw[black, thick] (A)--(C) node[below,midway, text=blue] {$b=11$};
         \draw[red, thick] (103.1:.7) arc(-76.9:-21.9:.3) node[below right,midway,xshift=-2] {$55\degree$};
         \end{tikzpicture}]]>
-        </latex-image></image></sidebyside></statement>
+        </latex-image></image></sidebyside>
+</statement>
     
 <solution><p>We must find the three remaining parts of the triangle, <m>A, C</m>, and <m>c</m>. First, we use the Law of Sines to find <m>\sin (A)</m>.
         <md><mrow>\dfrac{\sin (A)}{a} \amp = \dfrac{\sin (B)}{b} \amp\amp \blert{\text{Substitute the known values.}}</mrow>
             <mrow>\dfrac{\sin (A)}{5} \amp = \dfrac{\sin (55\degree)}{11} \amp\amp \blert{\text{Multiply both sides by 5.}}</mrow>
             <mrow>\sin (A) \amp = 5 \cdot \dfrac{\sin (55\degree)}{11} \approx 0.3723</mrow></md>
-So <m>A = \sin^{-1}(0.3723) \approx 21.9\degree</m>. Now we know two angles, and we can find angle <m>C</m>.
+So <m>~A = \sin^{-1}(0.3723) \approx 21.9\degree</m>. Now we know two angles, and we can find angle <m>C</m>.
         <md><mrow>C \amp = 180\degree - (B + A)</mrow>
             <mrow>\amp = 180\degree - 55\degree - 21.9\degree = 103.1\degree</mrow></md>
 Finally, we use the Law of Sines to find side <m>c</m>.  
@@ -286,11 +292,12 @@ Finally, we use the Law of Sines to find side <m>c</m>.
                     \blert{\text{Multiply both sides by }}\\
                     \blert{\sin (103.1\degree).}
                  \end{array}</mrow>
-            <mrow>c \amp = \dfrac{11}{\sin (55\degree)} \cdot \sin (103.1\degree)</mrow></md>
-Evaluating this expression with a calculator gives <m>c \approx 13.1.</m></p></solution></example>
+            <mrow>~c \amp = \dfrac{11}{\sin (55\degree)} \cdot \sin (103.1\degree)</mrow></md>
+Evaluating this expression with a calculator gives <m>c \approx 13.1.</m></p>
+</solution></example>
 
 <warning><p>In the last Example we used the value of <m>\sin (A)</m> to find angle <m>A</m>. But there are two angles that satisfy <m>\sin (A) = 0.3723</m>, one acute (21.9<m>\degree</m>) and one obtuse (158.1<m>\degree</m>). How did we know which one to choose?</p>
-        <image width="45%" xml:id="fig-3-2-caut"><description>angles</description><latex-image>
+        <image width="45%" xml:id="fig-3-2-caut"><description>supplementary angles</description><latex-image>
         <![CDATA[
         \begin{tikzpicture}  [scale=.8]
         \coordinate (O) at (0,0);
@@ -332,7 +339,9 @@ Evaluating this expression with a calculator gives <m>c \approx 13.1.</m></p></s
 <answer><p><ol marker= "a.">
         <li><p>We can use the Law of Sines to find angle <m>A</m>.
             <me>\dfrac{\sin (A)}{7} = \dfrac{\sin (93\degree)}{11}</me>
-        Solve for <m>\sin(A)</m> to find <m>\sin(A)= 0.6355</m>, so <m>A = \sin^{-1}(0.6355) = 39.5\degree</m>. (Note that the supplement of <m>39.5\degree</m>, or <m>140.5\degree</m>, is too large to fit in the triangle because <m>C = 93\degree</m>.) </p></li>
+        Solve for <m>\sin(A)</m> to find <m>\sin(A)= 0.6355</m>, so 
+            <me>A = \sin^{-1}(0.6355) = 39.5\degree</me>. 
+        (Note that the supplement of <m>39.5\degree</m>, or <m>140.5\degree</m>, is too large to fit in the triangle because <m>C = 93\degree</m>.) </p></li>
         <li><p>Now we can find angle <m>B = 47.5\degree</m>, and use the Law of Sines again to find <m>b = 8.13</m>.</p></li>
     </ol></p></answer></exercise>
 
@@ -344,13 +353,13 @@ Evaluating this expression with a calculator gives <m>c \approx 13.1.</m></p></s
             <mrow>\sin (A) \amp = 8 \cdot \dfrac{\sin (14.4\degree)}{3} \approx 0.6632</mrow></md>
 There are two angles with sine <m>0.6632</m>:
     <ul>
-        <li>the acute angle <m>A = \sin^{-1}(0.6632) = 41.5\degree,</m></li>
-        <li> or its supplement, <m>A^{\prime} = 180\degree - 41.5\degree = 138.5\degree</m>.</li>
+        <li>the acute angle <m>~A = \sin^{-1}(0.6632) = 41.5\degree,</m></li>
+        <li> or its supplement, <m>~A^{\prime} = 180\degree - 41.5\degree = 138.5\degree</m>.</li>
     </ul></p>
     <p>Each of these angles produces a different solution triangle, because the angle <m>C</m> and side <m>c</m> will be different also.
     <ul>
-        <li>In the first case, angle <m>C = 180\degree - (14.4\degree + 138.5\degree) = 27.1\degree</m>, and we have the triangle shown in figure (a).</li>  
-        <li>In the second case, <m>C = 180\degree - (14.4\degree + 41.5\degree) = 124.1\degree</m>, which gives us the triangle shown in figure (b).</li>
+        <li>In the first case, angle <m>~C = 180\degree - (14.4\degree + 138.5\degree) = 27.1\degree</m>, and we have the triangle shown in figure (a).</li>  
+        <li>In the second case, <m>~C = 180\degree - (14.4\degree + 41.5\degree) = 124.1\degree</m>, which gives us the triangle shown in figure (b).</li>
             </ul></p>
         <image width="90%" xml:id="exam3-2-4"><description>triangles</description><latex-image>
             <![CDATA[
@@ -395,7 +404,7 @@ There are two angles with sine <m>0.6632</m>:
             \end{tikzpicture}]]>
         </latex-image></image></solution></example> 
     
-<exercise><statement><p>Suppose that <m>C = 29.7\degree, b = 8</m>, and <m>c = 5</m>.</p> 
+<exercise><statement><p>Suppose that <m>~C = 29.7\degree, ~b = 8</m>, and <m>~c = 5</m>.</p> 
     <p><ol marker="a.">
             <li>Find two possible values for angle <m>B</m>.</li>
             <li>Solve the triangle for both values of <m>B</m>, and sketch both solutions.</li>
@@ -404,9 +413,10 @@ There are two angles with sine <m>0.6632</m>:
 <answer><p><ol marker= "a.">
             <li>From the Law of Sines we find
                 <me>\dfrac{\sin (B)}{8} = \dfrac{\sin (29.7\degree)}{5}</me>
-            so <m>\sin B = 0.7927</m> and <m>B = 52.4\degree</m> or <m>B = 127.6\degree</m></li>
+            so <m>~\sin B = 0.7927~</m> and <m>B = 52.4\degree</m> or <m>B = 127.6\degree</m></li>
             <li>In each case, we find angle <m>A</m> and then use the Law of Sines to find side <m>a</m>.
-            <sidebyside widths="40% 30%"  margins="0% 25%" valigns = "middle middle"><p><m>A = 97.9\degree,~a = 10</m></p>
+            <sidebyside widths="40% 35%"  margins="0% 20%" valigns = "middle middle">
+                <p><m>A = 97.9\degree,~a = 10</m></p>
         <image xml:id="exer3-2-4ans"><description>triangle</description><latex-image>
             <![CDATA[
         \begin{tikzpicture}  [scale=1]
@@ -428,7 +438,8 @@ There are two angles with sine <m>0.6632</m>:
         \draw[red, thick] (B)++(209.7:.4) arc(209.7:264.1:.4) node[below left,midway, xshift=6, yshift=-3] {$52.4\degree$};
             \end{tikzpicture}]]>
         </latex-image></image></sidebyside>
-        <sidebyside widths="40% 38%" margins="0% 20%" valigns = "middle middle"><p>or <m>A = 22.7\degree,~a = 3.9</m></p>
+        <sidebyside widths="40% 43%" margins="0% 15%" valigns = "middle middle">
+            <p>or <m>A = 22.7\degree,~a = 3.9</m></p>
         <image xml:id="exer3-2-4anstoo"><description>triangle</description><latex-image>
             <![CDATA[
         \begin{tikzpicture} [scale=1.4]
@@ -450,7 +461,7 @@ There are two angles with sine <m>0.6632</m>:
         \draw[red, thick] (B)++(-.1305,-.0745) arc(209.7:337.3:.15) node[below,midway, xshift=0, yshift=2] {$127.6\degree$};
             \end{tikzpicture}]]>
         </latex-image></image></sidebyside></li>
-    </ol></p></answer></exercise> 
+</ol></p></answer></exercise> 
 
 <note><p>Because there can be more than one solution for a triangle in which we know two sides and an angle opposite one of them, this situation is called the <term>ambiguous case</term><idx><h>ambiguous case</h></idx> for the Law of Sines. (See Homework Problems 33<ndash/>42 for more about the ambiguous case.)</p></note>
 
@@ -460,7 +471,7 @@ There are two angles with sine <m>0.6632</m>:
 <p> In the next example, we use two triangles to solve the problem.</p>
 
 <example><statement><p>Richard wants to measure the height of a castle controlled by hostile forces. When he is as close as he can get to the castle, the angle of elevation to the top of the wall is <m>18.5\degree</m>. He then retreats 20 yards and measures the angle of elevation again; this time it is <m>15.9\degree</m>. How tall is the castle?</p>
-    <image width="65%" xml:id="exam3-2-5"><description>castle</description><latex-image>
+    <image width="65%" xml:id="exam3-2-5"><description>castle with angles of elevation</description><latex-image>
         <![CDATA[
     \begin{tikzpicture} [scale=.63]
     \filldraw[gray!30!white] (0,0) -- ++(0,4.5) -- ++(-.5,0) -- ++(0,-.5) -- ++(-.5,0) -- ++(0,.5) -- ++(-.5,0) -- ++(0,-.5) -- ++(-.5,0) -- ++(0,.5) -- ++(-.5,0) -- ++(0,-4.5)--cycle;
@@ -488,7 +499,7 @@ There are two angles with sine <m>0.6632</m>:
 
 <solution><sidebyside widths="45% 50%" valigns="middle middle">
 <p>Notice that <m>h</m> is one side of the right triangle <m>ADC</m>. If we can find its hypotenuse, labeled <m>r</m> in the figure, we can use the sine ratio to find <m>h</m>. To find <m>r</m>, we consider a second triangle, <m>ABC</m>, as shown below.</p>
-    <image xml:id="exam3-2-5soln"><description>castle</description><latex-image>
+    <image xml:id="exam3-2-5soln"><description>triangles</description><latex-image>
         <![CDATA[
     \begin{tikzpicture} [scale=.54]
     \coordinate (D) at (0,0);
@@ -572,7 +583,7 @@ The castle is about 38.33 yards tall.</p></answer></exercise>
 <example><statement> <p>Astronomers 1000 kilometers apart observe an asteroid with a parallax of <m>0.001\degree</m>. How far is the asteroid from Earth?</p></statement>
 
 <solution><p>We let <m>x</m> represent the distance to the asteroid. The asteroid and the two observers make an isosceles triangle with base 1000 km and equal sides of length <m>x</m>, as shown below.</p>
-    <image width="55%" xml:id="exam3-2-6"><description>parallax</description><latex-image>
+    <image width="60%" xml:id="exam3-2-6"><description>parallax triangle</description><latex-image>
         <![CDATA[
     \begin{tikzpicture} [scale=.7]
     \coordinate (O) at (0,0);
@@ -591,7 +602,7 @@ The castle is about 38.33 yards tall.</p></answer></exercise>
         \end{tikzpicture}]]>
     </latex-image></image>
 
-<p>The base angles of the triangle are both <m>\dfrac{180\degree - 0.001\degree}{2} = 89.999\degree</m>. By the Law of Sines,</p>
+<p>The base angles of the triangle are both <m>~\dfrac{180\degree - 0.001\degree}{2} = 89.999\degree</m>. By the Law of Sines,</p>
 <p><md><mrow>\dfrac{x}{\sin (89.999\degree)} \amp = \dfrac{1000}{\sin (0.001\degree)} \amp\amp \blert{\text{Solve for }x.}</mrow>
     <mrow>x \amp = \sin (89.999\degree) \cdot \dfrac{1000}{\sin (0.001\degree)}</mrow>
     <mrow>x \amp \approx 57,000,000</mrow></md></p>
@@ -622,7 +633,7 @@ The castle is about 38.33 yards tall.</p></answer></exercise>
 <example><statement><p>The star Wolf 359 has a parallax of <m>0.85^{\prime \prime}</m> when observed from opposites sides of Earth's orbit. How far away is the star?</p></statement>
 
 <solution><p>In the figure below, the star Wolf 359 is located at point <m>O</m>. Our Sun is located at point <m>C</m>, halfway between the two observation points at <m>A</m> and <m>B</m>. Thus, the distance between the observation points is twice the distance from the Earth to the Sun, or 2 AU.</p>
-    <image width="50%" xml:id="exam3-2-7"><description>triangles</description><latex-image>
+    <image width="50%" xml:id="exam3-2-7"><description>triangles for parallax</description><latex-image>
         <![CDATA[
     \begin{tikzpicture} [scale=.72]
     \coordinate (O) at (0,0);
@@ -651,7 +662,7 @@ The castle is about 38.33 yards tall.</p></answer></exercise>
         <me>\angle AOC = \dfrac{1}{2}(0.85^{\prime \prime}) = 0.425^{\prime \prime}</me> 
 We use the definition of tangent to find</p>
 <p><md><mrow>\tan 0.425^{\prime \prime} \amp = \dfrac{\text{opposite}}{\text{adjacent}}</mrow>
-    <mrow>\tan (0.425\degree / 3600) \amp = \dfrac{1}{x}  \amp\amp \blert{\text{Solve for }x.}</mrow>
+    <mrow>\tan (0.425\degree / 3600) \amp = \dfrac{1}{x}  ~~~~~~~~~~~~~ \blert{\text{Solve for }x.}</mrow>
     <mrow>x \amp = \dfrac{1}{\tan (0.425\degree / 3600)}  \approx 485,000</mrow></md></p>
     
 <p>The star is approximately <m>485,000</m> AU from Earth, or nearly half a million times the distance from Earth to the Sun.</p></solution></example>

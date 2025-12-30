@@ -3,9 +3,7 @@
 
 <section xml:id="Inverse-Trigonometric-Functions"   xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Inverse Trigonometric Functions</title>
-<idx><h>inverse</h><h>function</h></idx>
-<idx><h>inverse</h><h>function</h><seealso>inverse trigonometric function</seealso></idx>
-<idx><h>inverse trigonometric function</h></idx>
+    <idx><h>inverse</h><h>function</h></idx><idx><h>inverse</h><h>function</h><seealso>inverse trigonometric function</seealso></idx><idx><h>inverse trigonometric function</h></idx>
 
 <introduction><p>We have been using the calculator keys <m>\sin^{-1}</m>, <m>\cos^{-1}</m>, and <m>\tan^{-1}</m> to find approximate values of <m>\theta</m> when we know either <m>\sin \theta,~ \cos \theta</m>, or <m>\tan \theta</m>.  For example, if we know that <m>\cos \theta = 0.3</m>, then  
         <me>\theta = \cos^{-1}(0.3) \approx 1.2661~ \text{radians}</me></p>
@@ -15,12 +13,13 @@
 <p>Many functions can be described as an operation or as a sequence of operations on the input value, and this leads us to the notion of an inverse function.</p></introduction>
 
 <subsection><title>Inverse of a Function</title>
-<idx><h>inverse</h><h>function</h></idx>
+    <idx><h>inverse</h><h>function</h></idx>
+
 <p>Raising a number to the <m>n^{th}</m> power and taking <m>n^{th}</m> roots are an example of inverse operations.  For example, if we first cube a number and then take the cube root of the result, we return to the original number.</p>
 
-<image width="90%" source="photos/8-2-1.png"><description>inverse</description></image>
+<image width="100%" source="photos/8-2-1.png"><description>inverse operations</description></image>
 
-<p>We say that the two functions <m>f(x)=x^3</m> and <m>g(x)=\sqrt[3]{x}</m> are <term>inverse functions</term><idx><h>inverse</h><h>function</h></idx>.  Each of the functions undoes the results of the other function.  You can confirm this behavior by consulting the tables of values for the two functions.</p>  
+<p>We say that the two functions <m>f(x)=x^3</m> and <m>g(x)=\sqrt[3]{x}</m> are <term>inverse functions</term><idx><h>inverse</h><h>function</h></idx>. Each of the functions undoes the results of the other function. You can confirm this behavior by consulting the tables of values for the two functions.</p>  
 
 <sidebyside widths="25% 25%" margins="15% 15%"><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
                     <row bottom="minor">
@@ -76,7 +75,7 @@
                         <cell><m>2</m></cell></row>                       
         </tabular></sidebyside>
 
-<p>Observe that the table of values for <m>g(x)=\sqrt[3]{x}</m> can be obtained from the table for <m>f(x)=x^3</m> by interchanging the values of <m>x</m> and <m>y</m> in each ordered pair.  In fact, we can often find a formula for the inverse function by interchanging the input and output variables in the formula for the function, and then solving for the new output variable.</p>  
+<p>Observe that the table of values for <m>g(x)=\sqrt[3]{x}</m> can be obtained from the table for <m>f(x)=x^3</m> by interchanging the values of <m>x</m> and <m>y</m> in each ordered pair. In fact, we can often find a formula for the inverse function by interchanging the input and output variables in the formula for the function, and then solving for the new output variable.</p>  
 
 <p>For our example, we start with the formula for the cubing function:
     <md><mrow>y \amp = x^3  \amp\amp  \blert{\text{Interchange  }x \text{ and }y.}</mrow>
@@ -88,30 +87,34 @@ We use the notation <m>\blert{f^{-1}(x)}</m> to denote the inverse function. Thu
 <p>For example, if <m>f(x)=x^3</m>, we have <m>f^{-1}(x)=\sqrt[3]{x}</m>, but <m>\dfrac{1}{f(x)} = \dfrac{1}{x^3}</m>, and we know that <m>\sqrt[3]{x} \not= \dfrac{1}{x^3}</m>.</p>   
 <p>Although it is true that a negative exponent denotes a reciprocal, so that, for instance, <m>a^{-2} = \dfrac{1}{a^2}</m>, the <m>-1</m> in <m>f^{-1}(x)</m> is <em>not</em> an exponent; this is an entirely new use for the same symbol.</p></warning>
 
-<example><statement><p>Let <m>~~f(x)=\dfrac{1}{x-3}.~~</m> Find a formula for the inverse function.</p></statement>
+<example><statement><p>Let <m>~~f(x)=\dfrac{1}{x-3}.~~</m> Find a formula for the inverse function.</p>
+</statement>
 
 <solution><p>We interchange the variables in the formula for <m>f</m> (that is, in <m>y=\dfrac{1}{x-3}</m>) to get  
 <m>~~x = \dfrac{1}{y-3}.</m></p>
 <p>Now we solve for <m>y</m> in terms of <m>x</m> by taking the reciprocal of both sides.
 <m>~~y - 3 = \dfrac{1}{x},~~</m>
 so <m>~~y = \dfrac{1}{x} + 3.~~</m></p> 
-<p>The formula for the inverse function is <m>f^{-1}(x)=\dfrac{1}{x} + 3</m>.</p></solution></example> 
+<p>The formula for the inverse function is <m>f^{-1}(x)=\dfrac{1}{x} + 3</m>.</p>
+</solution></example> 
 
-<exercise><statement><p>Let <m>g(x)=2x-6</m>. Find a formula for the inverse function.</p></statement>
+<exercise><statement><p>Let <m>g(x)=2x-6</m>. Find a formula for the inverse function.</p>
+</statement>
 
-<answer><p><m>g^{-1}(x)=\dfrac{1}{2}x+3 </m></p></answer></exercise>
+<answer><p><m>g^{-1}(x)=\dfrac{1}{2}x+3 </m></p>
+</answer></exercise>
 
 <p>In the examples above, note that <m>f^{-1}(x) \not= \dfrac{1}{f(x)}</m>, and <m>g^{-1}(x) \not= \dfrac{1}{g(x)}</m>.</p>
 </subsection>
 
 <subsection><title>The Graph of the Inverse</title>
-<idx><h>inverse</h><h>graph of</h></idx>
+    <idx><h>inverse</h><h>graph of</h></idx>
 
-<p> If we graph the function <m>f(x)=x^3</m> and  its inverse <m>f^{-1}(x)=\sqrt[3]{x}</m> on the same set of axes, we see that the graphs are related in an interesting way, as shown below.</p>
+<p>If we graph the function <m>f(x)=x^3</m> and  its inverse <m>f^{-1}(x)=\sqrt[3]{x}</m> on the same set of axes, we see that the graphs are related in an interesting way, as shown below.</p>
 
 <sidebyside widths="50% 50%" valigns="middle middle"><stack><p>The graphs are symmetric about the line <m>y=x</m>, which means that if we were to place a mirror along the line each graph would be the reflection of the other.</p>
 <p>This symmetry occurs because we interchanged the roles of <m>x</m> and <m>y</m> when we defined the inverse function.</p></stack>  
-    <image xml:id="fig-8-2-2"><description>graph of inverse</description><latex-image>
+    <image xml:id="fig-8-2-2"><description>graph of inverse function</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.54]
         \draw[cyan] (-4,-4) grid (4,4);
@@ -138,7 +141,7 @@ so <m>~~y = \dfrac{1}{x} + 3.~~</m></p>
 
 <solution> <p><ol marker="a.">
     <li><sidebyside widths=" 50% 45%" valigns="middle middle" margins="0% 0%"><p>The graph is shown at right. Note that <m>f</m> has a vertical asymptote at <m>x=3</m>, and <m>f^{-1}</m> has a horizontal asymptote at <m>y=3</m>.</p>
-    <image xml:id="exam8-2-2"><description>graph of inverse</description><latex-image>
+    <image xml:id="exam8-2-2"><description>graph of inverse function</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.4]
         \draw[cyan] (-3,-3) grid (7,7);
@@ -156,12 +159,12 @@ so <m>~~y = \dfrac{1}{x} + 3.~~</m></p>
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></li>
     <li><p>Note that <m>f</m> is undefined at <m>x=3</m>, and <m>f^{-1}</m> is undefined at <m>x=0</m>. Thus, the domain of <m>f</m> is all real numbers except 3, and the domain of <m>f^{-1}</m> is all real numbers except 0.</p>
-    
-    <p> We can find the range of each function by examining its graph: 
+        <p> We can find the range of each function by examining its graph: 
     <ul>
         <li><m>f</m> has a horizontal asymptote at <m>y=0</m>, so there is no point on the graph with <m>y=0</m>. Its range is all real numbers except 0.</li>
         <li>Similarly, there is no point on the graph of <m>f^{-1}</m> with <m>y=3</m>, so its range is all real numbers except 3.</li></ul></p>
-    </li></ol></p></solution></example>
+    </li>
+</ol></p></solution></example>
 
 <exercise><statement><p><ol marker="a.">
     <li><sidebyside widths="50% 40%" valigns="middle middle" margins="0% 0%">
@@ -203,8 +206,7 @@ so <m>~~y = \dfrac{1}{x} + 3.~~</m></p>
 <p>From the examples above, we see that the domain of <m>f^{-1}</m> is the same as the range of <m>f</m>, and the range of <m>f^{-1}</m> is the same as the domain of <m>f</m>. This should seem reasonable, because we obtain the inverse function by interchanging the values of the input and output variables.</p>
 
 <assemblage><title>Domain and Range of Inverse Function</title>
-<idx><h>domain</h><h>of inverse function</h></idx>
-<idx><h>range</h><h>of inverse function</h></idx>
+    <idx><h>domain</h><h>of inverse function</h></idx><idx><h>range</h><h>of inverse function</h></idx>
 <p>Domain <m>(f) = </m> Range <m>(f^{-1})~~~~~~~~ \text{and}~~~~~~~~</m> Domain <m>(f^{-1}) = </m> Range <m>(f)</m></p>
 </assemblage>
 </subsection>
@@ -236,7 +238,7 @@ The graphs of <m>F</m> and its inverse are shown at right. You can see that alth
 <p>Now, we obtain the inverse by interchanging <m>x</m> and <m>y</m> in the formula for a function, so the <em>inverse</em> will be a function only if the <em>original</em> function passes the <em>horizontal</em> line test. A function that passes the horizontal line test is called <term>one-to-one</term><idx><h>one-to-one</h></idx>.</p>
 
 <assemblage><title>Horizontal Line Test</title>
-<idx><h>horizontal line test</h></idx>
+    <idx><h>horizontal line test</h></idx>
 <p>A function passes the <term>Horizontal Line Test</term> if every horizontal line intersects the graph at most once.  In that case, there is only one <m>x</m>-value for each <m>y</m>-value, and the function is called <term>one-to-one</term>.</p></assemblage>
 
 <warning><p>It is always the case that we can find the inverse of a function:  we just interchange the domain and range values.  However, the important question is whether the inverse is also a function.  If the inverse is a function, we say that “<m>f</m> has an <term>inverse function</term><idx><h>inverse</h><h>function</h></idx>.” All of this leads us to the following result.</p></warning>
@@ -249,7 +251,7 @@ The graphs of <m>F</m> and its inverse are shown at right. You can see that alth
     <li>Which of the functions are one-to-one?</li>
     <li>Which of these functions have inverse functions?</li>
 </ol></p>
-    <image width="85%" xml:id="exam8-2-3"><description>three graphs</description><latex-image>
+    <image width="90%" xml:id="exam8-2-3"><description>three graphs</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.2]
         \draw[cyan] (-8,-8) grid[step=2] (8,8);
@@ -287,7 +289,8 @@ The graphs of <m>F</m> and its inverse are shown at right. You can see that alth
         \node at ($ (\del,0)+(0,-11)$) {III};
         \draw[samples=65,domain={-2.23}:{6.525}, variable=\x, smooth, red, thick] plot ({\x+\del},{(\x+1)*(\x-4)^2 /6});
         \end{tikzpicture}]]>
-    </latex-image></image></statement>
+    </latex-image></image>
+</statement>
 
 <solution><p><ol marker="a.">
     <li>All three graphs pass the vertical line test, so all three represent functions.</li>
@@ -296,7 +299,7 @@ The graphs of <m>F</m> and its inverse are shown at right. You can see that alth
 </ol></p></solution></example>
 
 <exercise><statement><p>Which of the functions below are one-to-one?</p>
-    <image width="85%" xml:id="exer8-2-3"><description>three graphs</description><latex-image>
+    <image width="90%" xml:id="exer8-2-3"><description>three graphs</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.27]
         \draw[cyan] (-6,-6) grid[step=1] (6,6);
@@ -336,9 +339,11 @@ The graphs of <m>F</m> and its inverse are shown at right. You can see that alth
         \node at ($ (\del,0)+(2,-8)$) {III};
         \draw[samples=65,domain={-4}:{8}, variable=\x, smooth, red, thick] plot ({\x+\del},{ 5*e^\x)/(1+e^(\x)  ) });
         \end{tikzpicture}]]>
-    </latex-image></image></statement>
+    </latex-image></image>
+</statement>
 
-<answer><p>I and III</p></answer></exercise>
+<answer><p>I and III</p>
+</answer></exercise>
 </subsection>
 
 <subsection><title>Restricting the Domain: The Inverse Sine Function</title>
@@ -346,7 +351,7 @@ The graphs of <m>F</m> and its inverse are shown at right. You can see that alth
 
 <p>	Sometimes it is so important that the inverse be a function that we are willing to sacrifice part of the original function to achieve this result.</p>
 
-<sidebyside widths=" 55% 35%" valigns="middle middle"> <p>Look again at the graph of <m>F(x)=x^2 - 4</m>. If we use only nonnegative <m>x</m>-values for the domain, we create a new function,
+<sidebyside widths=" 55% 35%" valigns="middle middle"> <p>Look again at the graph of <m>~F(x)=x^2 - 4</m>. If we use only nonnegative <m>x</m>-values for the domain, we create a new function,
         <me>f(x)=x^2 - 4,~~x \ge 0</me>
 The graph of this new function is shown as a dashed curve in the figure at right.</p>
 <image xml:id="fig-8-2-4"><description>function and inverse function</description><latex-image>
@@ -368,6 +373,7 @@ The graph of this new function is shown as a dashed curve in the figure at right
 <p>We say that we have <em>restricted the domain</em><idx><h>domain</h><h>restrict</h></idx> of the original function, and we will use this technique to define inverse functions for the trigonometric functions.</p>
 
 <p>The sine function is not one-to-one; there are many angles that have the same sine value. In order to define its inverse function, we must restrict the domain of the sine to an interval on which the <m>y</m>-values do not repeat. But there are many candidates for such an interval; which one shall we choose?</p>  
+
 <p>	It turns out that the most useful interval is found by starting at <m>x=0</m> and moving as far as we can in either direction until the <m>y</m>-values begin to repeat. By doing so, we obtain the restricted domain <m>\dfrac{-\pi}{2} \le x \le \dfrac{\pi}{2}</m>, as shown below. This piece of the function includes all of the original range values, from <m>-1</m> to <m>1</m>.</p>
     <image width="80%" xml:id="fig-8-2-5"><description>restricted sine</description><latex-image>
         <![CDATA[
@@ -389,7 +395,7 @@ The graph of this new function is shown as a dashed curve in the figure at right
     </latex-image></image>
 
 <p>Because the sine function is one-to-one on this domain, its inverse is a function.</p>
-<p>The graph of the inverse sine function, <m>y=\sin^{-1}(x)</m>, is shown below. Its domain is the same as the range of the sine function, namely <m>-1 \le x \le 1</m>, and its range is our restricted domain for sine, <m>\dfrac{-\pi}{2} \le y \le \dfrac{\pi}{2}</m>.</p>
+<p>The graph of the inverse sine function, <m>~y=\sin^{-1}(x)</m>, is shown below. Its domain is the same as the range of the sine function, namely <m>-1 \le x \le 1</m>, and its range is our restricted domain for sine, <m>\dfrac{-\pi}{2} \le y \le \dfrac{\pi}{2}</m>.</p>
     <image width="40%" xml:id="fig-8-2-6"><description>inverse sine</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.75]
@@ -409,8 +415,7 @@ The graph of this new function is shown as a dashed curve in the figure at right
     </latex-image></image>
 
 <definition><title>The inverse sine function</title>
-<idx><h>inverse sine</h></idx>
-<idx><h>sin <m>\vphantom{t}^{-1}</m></h></idx>
+    <idx><h>inverse sine</h></idx><idx><h>sin <m>\vphantom{t}^{-1}</m></h></idx>
 <statement><p>The function <m>f(x)=\sin^{-1}(x)</m> is defined as follows:
     <me>\blert{\sin^{-1}(x)=\theta}~~~\text{if and only if}~~~~\blert{\sin (\theta) = x}~~~\text{and}~~~\blert{\dfrac{-\pi}{2} \le \theta \le \dfrac{\pi}{2}}</me></p></statement></definition>
 
@@ -434,7 +439,9 @@ The graph of this new function is shown as a dashed curve in the figure at right
 <ol marker="a." cols="2">
 	<li><m>\sin^{-1}\left[\sin \left(\dfrac{\pi}{3}\right)\right]</m></li>
 	<li><m>\sin^{-1}\left[\sin \left(\dfrac{2\pi}{3}\right)\right]</m></li>
-</ol></p></statement><answer><p><ol marker="a." cols="2">
+</ol></p></statement>
+
+<answer><p><ol marker="a." cols="2">
     <li><m> \dfrac{\pi}{3}</m></li>
     <li><m>\dfrac{\pi}{3}</m></li>
 </ol></p></answer></exercise>
@@ -482,8 +489,7 @@ The graph of this new function is shown as a dashed curve in the figure at right
     </latex-image></image> 
 
 <definition><title>The inverse cosine function</title>
-<idx><h>inverse cosine</h></idx>
-<idx><h>cos <m>\vphantom{t}^{-1}</m></h></idx>
+    <idx><h>inverse cosine</h></idx><idx><h>cos <m>\vphantom{t}^{-1}</m></h></idx>
 <statement><p>The function <m>f(x)=\cos^{-1}(x)</m> is defined as follows:
         <me>\blert{\cos^{-1}(x)=\theta}~~~\text{if and only if}~~~~\blert{\cos (\theta) = x}~~~\text{and}~~~\blert{0 \le \theta \le \pi}</me></p>
 </statement></definition>
@@ -501,7 +507,11 @@ The graph of this new function is shown as a dashed curve in the figure at right
     <li>Because <m>\cos \left(\dfrac{7\pi}{4}\right)</m> is positive, the angle <m>\cos^{-1}\left[\cos \left(\dfrac{7\pi}{4}\right)\right]</m> is a first quadrant angle whose cosine is the same as <m>\cos \left(\dfrac{7\pi}{4}\right)</m>.  This angle is <m>\dfrac{\pi}{4}</m>, so <m>\cos^{-1}\left[\cos \left(\dfrac{7\pi}{4}\right)\right]=\dfrac{\pi}{4}</m>.</li>
 </ol></p></solution></example>
 
-<exercise><statement><p>Simplify <m>\cos^{-1}(-1)</m> without using a calculator.</p></statement><answer><p><m>\pi</m></p></answer></exercise>
+<exercise><statement><p>Simplify <m>\cos^{-1}(-1)</m> without using a calculator.</p>
+</statement>
+
+<answer><p><m>\pi</m></p>
+</answer></exercise>
 
 <sidebyside widths="55% 35%" valigns= "middle middle"><p>Finally, consider the graph of the tangent function. To choose a convenient interval on which the tangent is one-to-one, we start at <m>x=0</m> and move as far as we can in either direction along the <m>x</m>-axis. In this way we obtain one cycle of the graph, on the interval <m>\dfrac{-\pi}{2} \lt \theta \lt \dfrac{\pi}{2}</m>, as shown at right.</p>
     <image xml:id="fig-8-2-9"><description>tan</description><latex-image>
@@ -550,8 +560,7 @@ The graph of this new function is shown as a dashed curve in the figure at right
     </latex-image></image></sidebyside>
 
 <definition><title>The inverse tangent function</title>
-<idx><h>inverse tangent</h></idx>
-<idx><h>tan <m>\vphantom{t}^{-1}</m></h></idx>
+    <idx><h>inverse tangent</h></idx><idx><h>tan <m>\vphantom{t}^{-1}</m></h></idx>
 <statement><p>The function <m>f(x)=\tan^{-1}(x)</m> is defined as follows:
         <me>\blert{\tan^{-1}(x)=\theta}~~~\text{if and only if}~~~~\blert{\tan (\theta) = x}~~~\text{and}~~~\blert{\dfrac{-\pi}{2} \lt \theta \lt \dfrac{\pi}{2}}</me></p>
 </statement></definition>
@@ -567,9 +576,11 @@ The graph of this new function is shown as a dashed curve in the figure at right
 	<li>Because <m>\dfrac{7\pi}{4}</m> is in the fourth quadrant, <m>\tan \left(\dfrac{7\pi}{4}\right)</m> is negative. The angle <m>\tan^{-1}\left[\tan \left(\dfrac{7\pi}{4}\right)\right]</m> is also in the fourth quadrant, but it must be between <m>\dfrac{-\pi}{2}</m> and 0. The angle <m>\dfrac{-\pi}{4}</m> is coterminal with <m>\dfrac{7\pi}{4}</m>, so <m>\tan^{-1}\left[\tan \left(\dfrac{7\pi}{4}\right)\right]=\dfrac{-\pi}{4}</m></li>
 </ol></p></solution></example>
 
-<exercise><statement><p>Simplify <m>\tan^{-1}(-1)</m> without using a calculator.</p></statement>
+<exercise><statement><p>Simplify <m>\tan^{-1}(-1)</m> without using a calculator.</p>
+</statement>
 
-<answer><p><m>\dfrac{-\pi}{4} </m></p></answer></exercise>
+<answer><p><m>\dfrac{-\pi}{4} </m></p>
+</answer></exercise>
 
 <warning><p>In the Examples above, perhaps you noticed that <m>\sin\left(\sin^{-1}(x)\right) = x</m> for any value of <m>x</m> in the domain of the inverse sine.  In other words, if we find the inverse sine of a number between <m>-1</m> and <m>1</m>, and then take the sine of the resulting angle, we get the original number back again. The same is true for the cosine and tangent, so that  <m>\cos\left(\cos^{-1}(x)\right) = x</m> and  <m>\tan\left(\tan^{-1}(x)\right) = x</m>.</p>
 
@@ -580,12 +591,11 @@ This inequality occurs because the inverse sine function returns just one of the
 <p>We summarize the content of the Caution above as follows.</p>
 
 <assemblage><title>Inverse Trigonometric Functions</title>
-<idx><h>inverse trigonometric function</h></idx>
-<idx><h>inverse trigonometric function</h><seealso>inverse cosine</seealso></idx><idx><h>inverse trigonometric function</h><seealso>inverse sine</seealso></idx><idx><h>inverse trigonometric function</h><seealso>inverse tangent</seealso></idx>
+    <idx><h>inverse trigonometric function</h></idx><idx><h>inverse trigonometric function</h><seealso>inverse cosine</seealso></idx><idx><h>inverse trigonometric function</h><seealso>inverse sine</seealso></idx><idx><h>inverse trigonometric function</h><seealso>inverse tangent</seealso></idx>
 <p>
-    <me>\sin\left(\sin^{-1}(x)\right) = x~~~~\text{for}~ -1 \le x \le 1</me>
-    <me>\cos\left(\cos^{-1}(x)\right) = x~~~~\text{for}~ -1 \le x \le 1</me>
-    <me>\tan\left(\tan^{-1}(x)\right) = x~~~~\text{for all}~x</me></p>
+    <md><mrow>\sin\left(\sin^{-1}(x)\right) \amp = x~~~~\text{for}~ -1 \le x \le 1</mrow>
+        <mrow>\cos\left(\cos^{-1}(x)\right) \amp = x~~~~\text{for}~ -1 \le x \le 1</mrow>
+        <mrow>\tan\left(\tan^{-1}(x)\right) \amp = x~~~~\text{for all}~x</mrow></md></p>
 <p>However,
 	<me>\sin^{-1}\left(\sin (x)\right)~~\text{may not be equal to}~x</me>
 	<me>\cos^{-1}\left(\cos (x)\right)~~\text{may not be equal to}~x</me>
@@ -603,7 +613,7 @@ This inequality occurs because the inverse sine function returns just one of the
 </ol></p></statement>
 
 <solution><p><ol marker="a.">
-	<li><sidebyside widths=" 70% 20%" valigns="middle middle"><p>We draw a sketch of the triangle formed by the tapestry and the lines of sight to its bottom and top, as shown at right.  From the triangle we see that <m>\tan (\theta) = \dfrac{3}{d}</m>, so <m>d=\dfrac{3}{\tan (\theta)}</m>.</p>
+	<li><sidebyside widths=" 70% 20%" valigns="middle middle"><p>We draw a sketch of the triangle formed by the tapestry and the lines of sight to its bottom and top, as shown at right. From the triangle we see that <m>\tan (\theta) = \dfrac{3}{d}</m>, so <m>d=\dfrac{3}{\tan (\theta)}</m>.</p>
     <image xml:id="exam8-2-7"><description>triangle</description><latex-image>
         <![CDATA[
         \begin{tikzpicture}[scale=.9]
@@ -616,8 +626,8 @@ This inequality occurs because the inverse sine function returns just one of the
         \draw[red] (0.5,0) arc (0:atan(3/2): 0.5) node [right, midway] {$\theta$};
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside></li>
-	<li>Because <m>\tan (\theta) = \dfrac{3}{d}</m>, <m>\theta = \tan^{-1}\left(\dfrac{3}{d}\right)</m>.</li></ol></p>
-</solution></example>
+	<li>Because <m>\tan (\theta) = \dfrac{3}{d}</m>, <m>\theta = \tan^{-1}\left(\dfrac{3}{d}\right)</m>.</li>
+</ol></p></solution></example>
 
 <exercise><statement><p>The tapestry from the previous example includes a 2-meter tall unicorn with its feet at the bottom of the tapestry.</p>
 <sidebyside widths="80% 20%" valigns="middle middle">
@@ -649,7 +659,8 @@ This inequality occurs because the inverse sine function returns just one of the
         \draw[gray!70!white,<-,>=stealth'] ((2.8,0)--++(0, 1.3);
         \node[text=blue] at (2.8,1.5) {$3$};
         \end{tikzpicture}]]>
-    </latex-image></image></sidebyside></statement>
+    </latex-image></image></sidebyside>
+</statement>
 
 <answer><p><ol marker="a." cols="2">
     <li><p><m>\alpha=\tan^{-1}\left(\dfrac{2}{d} \right)</m> </p></li>
@@ -699,7 +710,9 @@ This inequality occurs because the inverse sine function returns just one of the
 <ol marker="a." cols="2">
     <li><m>\tan\left[\arctan \left(\dfrac{-5}{2}\right)\right]</m></li>
     <li><m>\arctan\left[\tan \left(\dfrac{-5\pi}{6}\right)\right]</m></li>
-</ol></p></statement><answer><p><ol marker="a." cols="2">
+</ol></p></statement>
+
+<answer><p><ol marker="a." cols="2">
     <li><p><m>\dfrac{-5}{2} </m></p></li>
     <li><p><m>\dfrac{\pi}{6} </m></p></li>
 </ol></p></answer></exercise>
@@ -707,11 +720,13 @@ This inequality occurs because the inverse sine function returns just one of the
 
 <subsection><title>Simplifying Expressions</title>
 
-<p>	The key to simplifying expressions involving inverse trigonometric functions is to remember that the inverse sine, cosine, or tangent of a number can be treated as an angle.  If we assign a name such as <m>\theta</m> or <m>\phi</m> to the inverse trig value, it can often clarify the computations.</p>
+<p>The key to simplifying expressions involving inverse trigonometric functions is to remember that the inverse sine, cosine, or tangent of a number can be treated as an angle.  If we assign a name such as <m>\theta</m> or <m>\phi</m> to the inverse trig value, it can often clarify the computations.</p>
 
 <example><statement><p>Evaluate <m>\sin\left[\cos^{-1} \left(\dfrac{3}{5}\right)\right]</m>.</p></statement>
 
-<solution><p>Let <m>\theta</m> represent the angle <m>\cos^{-1} \dfrac{3}{5}</m>, so that <m>\theta = \cos^{-1} \left(\dfrac{3}{5}\right)</m>, and consequently <m>\cos (\theta) = \dfrac{3}{5}</m>. Then <m>\sin\left[\cos^{-1}\left( \dfrac{3}{5}\right)\right]</m> simplifies to <m>\sin (\theta)</m>, and we know that <m>\cos (\theta) = \dfrac{3}{5}</m>. If we know one of the trigonometric ratios of an angle, we can find all the others, either by using a diagram or by using identities.  In this case we'll use the Pythagorean identity, <m>\sin^2 (\theta) + \cos^2 (\theta) = 1</m>. We have
+<solution><p>Let <m>\theta</m> represent the angle <m>\cos^{-1} \dfrac{3}{5}</m>, so that <m>\theta = \cos^{-1} \left(\dfrac{3}{5}\right)</m>, and consequently <m>\cos (\theta) = \dfrac{3}{5}</m>. Then <m>\sin\left[\cos^{-1}\left( \dfrac{3}{5}\right)\right]</m> simplifies to <m>\sin (\theta)</m>, and we know that <m>\cos (\theta) = \dfrac{3}{5}</m>.</p>
+
+<p>If we know one of the trigonometric ratios of an angle, we can find all the others, either by using a diagram or by using identities. In this case we'll use the Pythagorean identity, <m>\sin^2 (\theta) + \cos^2 (\theta) = 1</m>. We have
         <me>\sin^2 (\theta) + \left(\dfrac{3}{5}\right)^2  = 1</me> 
 and solving for <m>\sin (\theta)</m> gives us <m>\sin (\theta) = \dfrac{\pm 4}{5}</m>. But <m>\theta = \cos^{-1} \left(\dfrac{3}{5}\right)</m> is a first quadrant angle, so its sine is positive.  Thus, <m>\sin\left[\cos^{-1}\left( \dfrac{3}{5}\right)\right] = \dfrac{4}{5}</m>.</p></solution></example>
 
@@ -724,7 +739,7 @@ and solving for <m>\sin (\theta)</m> gives us <m>\sin (\theta) = \dfrac{\pm 4}{5
 <example><statement><p>Simplify <m>~\tan[\sin^{-1} (x)]</m>, assuming that <m>0 \le x \le 1</m>.</p></statement>
 
 <solution><p>Let <m>~\theta = \sin^{-1}(x)</m>, so that <m>\sin (\theta) = x</m>, and we can rewrite the expression <m>~\tan[\sin^{-1} (x)]</m> as <m> \tan (\theta)</m>.  Now we use identities to write <m>\tan (\theta)</m> in terms of <m>x</m>.  First, from the Pythagorean identity we know that 
-        <me>\cos (\theta) = \sqrt{1-\sin^(2\theta)} = \sqrt{1-x^2}</me> 
+        <me>\cos (\theta) = \sqrt{1-\sin^2(\theta)} = \sqrt{1-x^2}</me> 
 and then
         <me>\tan (\theta) = \dfrac{\sin (\theta)}{\cos (\theta)} = \dfrac{x}{\sqrt{1-x^2}}</me></p>
 </solution></example>
