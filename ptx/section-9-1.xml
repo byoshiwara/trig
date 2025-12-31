@@ -261,23 +261,21 @@ The net displacement gives your current position relative to home: 10 miles in t
         \draw[cyan] (O) grid ++(5,6);
         \draw[red,thick,->,>=stealth'] ($ (O)+(4,5) $)--++(-3,-2) node[above, yshift=7, fill=white, inner sep=1] {\textbf{u}};
         \draw[blue,thick,->,>=stealth'] ($ (O)+(1,3) $)--++(1,-2) node[above left, xshift=-7, yshift=3, fill=white, inner sep=1] {\textbf{v}};
-        \draw[black,very thick,->,>=stealth'] ($ (O)+(4,5) $)--++(-2,-4) node[ right, midway, xshift=3, yshift=-2, fill=white, inner sep=1] {\textbf{w}};
+        \draw[black, thick,->,>=stealth'] ($ (O)+(4,5) $)--++(-2,-4) node[ right, midway, xshift=3, yshift=-2, fill=white, inner sep=1] {\textbf{w}};
         \node at (2.5,-.8) {a.};
 
         \coordinate (O) at (5.999,0);
-        \draw[cyan] (O) grid ++(9.001,8);
-        \draw[lightgray,line width=1mm,->,>=stealth'] ($ (O)+(1,4) $)--++(6,3) node[above right, xshift=2, yshift=0, fill=white, inner sep=1, text=black] {\textbf{w}};
-        \draw[red, thick,->,>=stealth'] ($ (O)+(1,4) $)--++(4,2) node[above left, yshift=2, fill=white, inner sep=1] {\textbf{u}};
-        \draw[blue,very thick,->,>=stealth'] ($ (O)+(5,6) $)--++(2,1) node[below, midway, xshift=0, yshift=-7, fill=white, inner sep=1] {\textbf{v}};
-        \draw[black,very thick,->,>=stealth'] ($ (O)+(1,1) $)--++(6,3) node[above right, xshift=2, yshift=0, fill=white, inner sep=1] {\textbf{w}};
+        \draw[cyan] (O) grid ++(9.001,7);
+        \draw[red, thick,->,>=stealth'] ($ (O)+(1,2) $)--++(4,2) node[above left, yshift=2, fill=white, inner sep=1] {\textbf{u}};
+        \draw[blue, thick,->,>=stealth'] ($ (O)+(5,4) $)--++(2,1) node[above left, xshift=0, yshift=2, fill=white, inner sep=1] {\textbf{v}};
+        \draw[black, thick,->,>=stealth'] ($ (O)+(1.1,1.75) $)--++(6,3) node[midway, xshift=2, yshift=-5, fill=white, inner sep=1] {\textbf{w}};
         \node at ($ (O)+(4.5,-.8)$) {b.};
 
         \coordinate (O) at (15.999,0);
-        \draw[cyan] (O) grid ++(10,9);
-        \draw[lightgray,line width=1.5mm,->,>=stealth'] ($ (O)+(2,8) $)--++(2,-2) node[above right, xshift=2, yshift=5, fill=white, inner sep=1, text=black] {\textbf{w}};
-        \draw[red,line width=.7mm,->,>=stealth'] ($ (O)+(2,8) $)--++(7,-7) node[above , yshift=7, fill=white, inner sep=1] {\textbf{u}};
-        \draw[blue,thick,->,>=stealth'] ($ (O)+(9,1) $)--++(-5,5) node[below,  yshift=-7, fill=white, inner sep=1] {\textbf{v}};
-        \draw[black,very thick,->,>=stealth'] ($ (O)+(1,4) $)--++(2,-2) node[above right, xshift=2, yshift=0, fill=white, inner sep=1] {\textbf{w}};
+        \draw[cyan] (O) grid ++(9.01,9);
+        \draw[red,thick,->,>=stealth'] ($ (O)+(1,8) $)--++(7,-7) node[below left, yshift=0, fill=white, inner sep=1] {\textbf{u}};
+        \draw[blue,thick,->,>=stealth'] ($ (O)+(8,1.25) $)--++(-5,5) node[right,  xshift=6, fill=white, inner sep=1] {\textbf{v}};
+        \draw[black, thick,->,>=stealth'] ($ (O)+(0.8,7.8) $)--++(2,-2) node[left, xshift=-5, yshift=0, fill=white, inner sep=1] {\textbf{w}};
         \node at ($ (O)+(5,-.8)$) {c.};
         \end{tikzpicture}]]>
     </latex-image></image>
@@ -316,12 +314,9 @@ The net displacement gives your current position relative to home: 10 miles in t
         \coordinate (C) at (45:4);
         \coordinate (N) at (90:1.3);
         \draw[black,thick,->,>=stealth'] (B)--(N) node[above]{N};
-        \draw[black,thick,->,>=stealth'] (C)--++(-2,0) node[left]{W};
         \draw[gray,thick] (B)--(A) node[above left, xshift=6, yshift=8, midway, text=blue] {3 mi};
         \draw[gray,thick] (B)--(C) node[below right, midway, midway, yshift=3, text=blue] {4 mi};
-        \draw[green, very thick,->,>=stealth'] (A)--(C);
-        \draw[red,->,>=stealth'] (C)++(165:1.2) arc(165:180:1.2);
-        \draw[red,<-,>=stealth'] (C)++(189.8:1.2) arc(189.8:204.8:1.2) node[below, xshift=2, yshift=3]{$\theta$};
+        \draw[blue, very thick,->,>=stealth'] (A)--(C);
         \draw[red,<->,>=stealth'] (B)++(90:.8) arc(90:60:.8) node[above, midway, xshift=3, yshift=-1] {$30\degree$};
         \filldraw[black] (B) circle (.04cm) node[left] {$B$};
         \filldraw[black] (A) circle (.04cm) node[left] {$A$};
@@ -329,7 +324,6 @@ The net displacement gives your current position relative to home: 10 miles in t
         \end{tikzpicture}]]>
     </latex-image></image></sidebyside>
 </statement>
-
 <solution><p>Consider the triangle <m>ABC</m>, where the resultant vector, <m>\bf{w}</m>, is side <m>AC</m>. Because the direction "southwest" forms a <m>45\degree</m> angle with north, angle <m>B</m> in the triangle is <m>15\degree</m>. We can use the law of cosines to compute the length of <m>\bf{w}</m>.
     <md><mrow>\|{\bf{w}}\|^2 \amp = 4^2 + 3^2 - 2(4)(3)\cos 15\degree</mrow>
         <mrow>\amp = 16 + 9 - 24(0.9659) = 1.81778</mrow></md>
@@ -354,8 +348,8 @@ Because side <m>BC</m> is <m>45\degree</m> from due west, we subtract angle <m>C
         \coordinate (A) at (70:2);
         \coordinate (B) at (20:3);
         \coordinate (C) at ($ (A)+(B) $);
-        \draw[green,  thick,->,>=stealth'] (O)--++(A) node[left, midway] {\textbf{u}};
-        \draw[green,  thick,->,>=stealth'] (B)--++(A) node[right, midway] {\textbf{u}};
+        \draw[black,  thick,->,>=stealth'] (O)--++(A) node[left, midway] {\textbf{u}};
+        \draw[black,  thick,->,>=stealth'] (B)--++(A) node[right, midway] {\textbf{u}};
         \draw[blue,  thick,->,>=stealth'] (O)--++(B) node[below, midway] {\textbf{v}};
         \draw[blue,  thick,->,>=stealth'] (A)--++(B) node[above, midway] {\textbf{v}};
         \draw[red,  thick,->,>=stealth'] (O)--++($ (A)+(B)$) node[above, midway, xshift=-7, scale=.9] {$\textbf{u}+\textbf{v}$};
@@ -402,14 +396,14 @@ Because side <m>BC</m> is <m>45\degree</m> from due west, we subtract angle <m>C
 
 <solution><p>We represent the ship's velocity by a vector <m>\bf{v}</m> and the velocity of the water current by vector <m>\bf{w}</m>, as shown in figure (a). The actual motion of the ship is the sum of these two vectors, and we can calculate the sum just as if the two motions had occurred separately, one after the other.</p>
 
-<p>So we will add <m>\bf{w}</m> to <m>\bf{v}</m> by placing the base of <m>\bf{w}</m> at the head of <m>\bf{v}</m>, as shown in figure (b). The resultant vector, <m>\bf{u}</m>, represents the actual motion of the ship.</p>
-
-    <image width="90%" xml:id="exam9-1-6ans"><description>vectors</description><latex-image>
+    <image width="50%" xml:id="exam9-1-6ans"><description>vectors</description><latex-image>
         <![CDATA[
-        \begin{tikzpicture} [scale=.22]
+        \begin{tikzpicture} [scale=.25]
         \coordinate (O) at (0,0);
         \draw[gray,->,>=stealth'] (0,-5) --++(0,10) node[above, text=black]{N};
-        \draw[gray,->,>=stealth'] (-5,0) --++(10,0) node[right, text=black]{E};
+        \draw[gray,->,>=stealth'] (-12,0) --++(17,0) node[right, text=black]{E};
+        \draw[red,<->,>=stealth'] (-10,0) arc(180:170:10) node[left, xshift=0, yshift=0, midway]{$\alpha$};
+        \draw[red,<->,>=stealth'] (0,-4.5) arc(270:290:4.5) node[below, xshift=0, yshift=0, midway]{$\beta$};
         \draw[green!70!black,thick,->,>=stealth'] (O) --++(170:15) node[above]{\textbf{v}};
         \node[above, text=blue] at (170:7.5) {15};
         \draw[green!70!black,thick,->,>=stealth'] (O) --++(-70:6) node[right]{\textbf{w}};
@@ -417,7 +411,15 @@ Because side <m>BC</m> is <m>45\degree</m> from due west, we subtract angle <m>C
         \draw[red,->,>=stealth'] (0,2) arc(90:-70:2) node[below right, xshift=-5, yshift=-4, midway]{$160\degree$};
         \draw[red,->,>=stealth'] (0,1.5) arc(90:-190:1.5) node[left, xshift=0, yshift=-10]{$280\degree$};
         \node at (-7,-6.5) {a.};
+        \end{tikzpicture}]]>
+    </latex-image></image>
 
+<p>So we will add <m>\bf{w}</m> to <m>\bf{v}</m> by placing the base of <m>\bf{w}</m> at the head of <m>\bf{v}</m>, as shown in figure (b). The resultant vector, <m>\bf{u}</m>, represents the actual motion of the ship.</p>
+
+    <image width="50%" xml:id="exam9-1-6ansb"><description>vectors</description><latex-image>
+        <![CDATA[
+        \begin{tikzpicture} [scale=.25]
+        \coordinate (O) at (0,0);
         %second diagram
         \def\delx{27};
         \coordinate (O) at (\delx,0);
@@ -427,15 +429,15 @@ Because side <m>BC</m> is <m>45\degree</m> from due west, we subtract angle <m>C
         \draw[lightgray] (P)--++(7.5,0);
         \draw[lightgray] (P)--++(0,-7.5);
         \draw[green!70!black,thick,->,>=stealth'] (O) --(P) node[above]{\textbf{v}};
-        \node[above, text=blue] at (170:7.5) {15};
-        \draw[green!70!black,thick,->,>=stealth'] ($(O)+(170:15) $) --++(-70:6) node[above , yshift=8]{\textbf{w}};
+        \draw[green!70!black,thick,->,>=stealth'] ($(O)+(170:15) $) --++(-70:6) node[left,xshift=0, yshift=5]{\textbf{w}};
         \draw[blue!70!black,thick,->,>=stealth'] (O) --++($(-70:6)+(170:15) $)node[below right, xshift=8]{\textbf{u}};
-        \draw[red,<-,>=stealth'] ($ (P)+(0,-2.5)$) arc(-90:-115:2.5) node[left, xshift=4,yshift=3] {$20\degree$};
-        \draw[red,<-,>=stealth'] ($ (P)+(-70:2.5)$) arc(-65:-45:2.5);
+        \draw[red] ($ (P)+(.342,-.94)$) arc(-70:-10:1) node[below, xshift=2,yshift=1] {$\theta$};
+        \draw[red,<-,>=stealth'] ($ (P)+(0,-3)$) arc(-90:-115:3) node[left, xshift=4,yshift=3] {$20\degree$};
+        \draw[red,<-,>=stealth'] ($ (P)+(-70:3)$) arc(-65:-45:3);
         \draw[red] ($ (P)+(6.5,0)$) arc(0:-10:6.5) node[right, midway, yshift=-1] {$\alpha$};
         \draw[red,<-,>=stealth'] ($ (O)+(-4.,0)$) arc(180:190:4.);
         \draw[red,<-,>=stealth'] ($ (O)+(170:4.)$) arc(170:155:4.) node[above, xshift=2] {$10\degree$};
-        \draw[red,<->,>=stealth'] ($ (O)+(170:6.5)$) arc(170:193.5:6.5) node[left, midway] {$\gamma$};
+        \draw[red,<->,>=stealth'] ($ (O)+(170:6.5)$) arc(170:193.5:6.5) node[left, midway] {$\phi$};
         \node at ($(O)+(-7,-6.5)$) {b.};
         \end{tikzpicture}]]>
     </latex-image></image>
@@ -529,8 +531,7 @@ are called simply the <term>components</term><idx><h>component</h></idx> of the 
 
 <example xml:id="Plane-300mph-30deg-north-of-west"><statement><p>A plane flies at 300 miles per hour in the direction <m>30\degree</m> north of west. Find the <m>x</m>- and <m>y</m>-components of its velocity.</p>
 </statement>
-
-<solution><p>We draw a triangle showing the plane's velocity, <m>\bf{v}</m>, as the sum of its vector components <m>v_x</m> and <m>v_y</m>, as shown below.</p> 
+<solution><p>We draw a triangle showing the plane's velocity, <m>\bf{v}</m>, as the sum of its vector components <m>\bf{v_x}</m> and <m>\bf{v_y}</m>, as shown below.</p> 
     <image width="35%" xml:id="exam9-1-8ans"><description>vectorrs</description><latex-image>
         <![CDATA[
         \begin{tikzpicture} [scale=.9]
@@ -541,16 +542,14 @@ are called simply the <term>components</term><idx><h>component</h></idx> of the 
         \draw[black,->,>=stealth'] (0,-.3)--(0,2) node[above]{$y$};
         \draw[black,->,>=stealth'] (-3,0)--(.8,0) node[right]{$x$};
         \draw[green!80!black,thick, ->,>=stealth'] (O) -- (x) ;
-        \draw[green!80!black,thick] (x) -- ++(0,-0.1) node[below] {$v_x$};
-        \draw[blue,thick,->,>=stealth'] (x)--(v);
+        \draw[green!80!black,thick] (x) -- ++(0,-0.1) node[below right] {$\bf{v_x}$};
+        \draw[blue,thick,->,>=stealth'] (x)--(v) node[below left] {$\bf{v_y}$};;
         \draw[red,thick,->,>=stealth'] (O)--(v) node[above right,midway, text=black] {300};
         \node[above right, yshift=-2, text=red] at (v) {\textbf{v}};
         \draw[lightgray] (.3,0) arc(0:150:0.3) node[above right, midway, yshift=-3, text=black]{$150\degree$};
         \draw[lightgray] (-.6,0) arc(180:150:0.6) node[left, midway, yshift=1, text=black]{$30\degree$};
-        \draw[blue] (y)--++(-0.1,0) node[left]{$v_y$};
         \end{tikzpicture}]]>
     </latex-image></image>
-
 <p>In this coordinate system, the angle <m>\theta</m> is <m>150\degree</m>.  Because the components are the legs of a right triangle, we have</p>
 <p><md><mrow>v_x \amp = 300\cos (150\degree) = -259.81</mrow>
     <mrow>v_y \amp = 300 \sin (150\degree) = 150</mrow></md></p>
@@ -589,7 +588,7 @@ are called simply the <term>components</term><idx><h>component</h></idx> of the 
         \coordinate (wy) at ($ 3*sin(150)*(0,1) + .4*sin(-10)*(0,1) $);
         \draw[black,->,>=stealth'] (0,-.3)--(0,2) node[above]{$y$};
         \draw[black,->,>=stealth'] (-3,0)--(1.3,0) node[right]{$x$};
-        \draw[red,thick,->,>=stealth'] (O)--(v) node[below left,midway, yshift=2, text=black] {300};
+        \draw[red,thick,->,>=stealth'] (O)--(v);
         \node[below left, yshift=2, text=red] at (v) {\textbf{v}};
         \draw[lightgray] (O)--($ 3.5*(u) $);
         \draw[blue,thick,->,>=stealth'] (O)--++(u) node[below]{\textbf{u}};
@@ -603,10 +602,6 @@ are called simply the <term>components</term><idx><h>component</h></idx> of the 
         \draw[gray, <-,>=stealth'] (-10:1) arc(-10:-25:1) node[below, yshift=1, text=black]{$10\degree$};
         \draw[lightgray, ->,>=stealth'] (.7,0) arc(0:145:0.7) node[above, midway, yshift=1, text=green!80!black, fill=white, inner sep=1]{$\theta$};
 
-        \draw[red] (y)--++(0.1,0) node[right, yshift=1]{$v_y$};
-        \draw[red] (x) -- ++(0,-0.1) node[below] {$v_x$};
-        \draw[green!80!black] (wy)--++(-0.1,0) node[left, yshift=-3]{$w_y$};
-        \draw[green!80!black] (wx) -- ++(0,-0.1) node[below, xshift=3] {$w_x$};
         \end{tikzpicture}]]>
     </latex-image></image>
 
