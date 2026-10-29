@@ -4,7 +4,17 @@
     project. To edit the content of your document, open `source/main.ptx`
     (default location).
 -->
-<project>
+<project ptx-version="2" source="ptx">
+  <targets>
+    <target name="web" format="html" source="trig.xml" publication="publication.xml"/>
+    <target name="print" format="pdf" source="trig.xml"/>
+    <target name="print-latex" format="latex" source="trig.xml"/>
+    <target name="runestone" format="html" source="trig.xml" output-dir="published/yoshiwaratrig" publication="runestone.xml" />
+  </targets>
+</project>
+
+<!-- This file provides the overall configuration for your PreTeXt project. 
+<project ptx-version="2" source="ptx">
   <targets>
     <target name="web">
       <format>html</format>
@@ -30,8 +40,6 @@
       <publication>publication/publication.xml</publication>
       <output-dir>output/subset</output-dir>
       <stringparam key="debug.skip-knowls" value="yes"/>
-      <!-- edit this to change the section/chapter/etc. to include
-           in your subset build -->
       <xmlid-root>testing</xmlid-root>
     </target>
   </targets>
@@ -49,4 +57,4 @@
       <node>node</node>
       <liblouis>file2brl</liblouis>
     </executables>
-</project>
+</project>-->
